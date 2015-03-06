@@ -1,0 +1,39 @@
+# Site settings
+title:       TrozWare
+email:       sarah@troz.net
+author:      Sarah Reichelt
+description: "Mac &amp; iOS Developer"
+baseurl:     ""
+url:         "http://127.0.0.1:4000"
+
+# Google analytics
+google_analytics:
+
+# Optional features
+animated:           false
+show_related_posts: true
+show_post_footers:  false
+
+# Disqus post comments
+# (leave blank to disable Disqus)
+disqus_shortname: trozware
+
+# Social icons
+show_social_icons: true
+github_username: 
+stackoverflow_id: 1082632
+twitter_username: sarahreichelt
+google_plus_id: 
+linkedin_username: 
+bitcoin_url:
+paypal_url:
+flattr_button:
+
+# Build settings
+markdown:     redcarpet
+redcarpet:
+  extensions: ['smart', 'tables', 'with_toc_data']
+permalink:    pretty
+paginate:     5
+sass:
+  compressed: true

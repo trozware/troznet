@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TrozWare</title>
+    <description>Mac &amp;amp; iOS Developer</description>
+    <link>http://127.0.0.1:4000/</link>
+    <atom:link href="http://127.0.0.1:4000/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>World Time In Words</title>
+        <description>&lt;p&gt;&lt;a href=&quot;http://itunes.apple.com/au/app/time-in-words/id509085586?mt=8&quot; target=&quot;_blank&quot;&gt;World Time In Words version 3.0&lt;/a&gt; is now available in the Mac App Store.&lt;/p&gt;
+
+&lt;p&gt;With version 3.0 of this app, I have changed the name to &amp;#8220;World Time In Words&amp;#8221;. This is to reflect what I feel to be the most useful feature of this app: the ability to convert between time zones.&lt;/p&gt;
+
+&lt;p&gt;It has two other new features:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The time shown in the menu bar can now be set to use 24-hour time. Go to Preferences to change this.&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;If you temporarily need to see the time in digital format, hold down Option when opening the menu.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;And there is one other thing in this version that I am almost too embarrassed to mention: after using this app for about two years, it was finally pointed out to me that the 3rd of every month was being shown as the &amp;#8220;3th&amp;#8221;. Oh dear &amp;#8211; it was a copy-paste error but I should I found it a long time ago.&lt;/p&gt;
+
+&lt;p&gt;As always, please let me know if you have any suggestions for future versions.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 10 Feb 2015 00:00:00 +1000</pubDate>
+        <link>http://127.0.0.1:4000/world-time-in-words/</link>
+        <guid isPermaLink="true">http://127.0.0.1:4000/world-time-in-words/</guid>
+      </item>
+    
+      <item>
+        <title>Man Reader 1.4 Now Available</title>
+        <description>&lt;p&gt;&lt;a href=&quot;/manreader/&quot;&gt;Man Reader 1.4&lt;/a&gt; is now available through the &lt;a href=&quot;http://itunes.apple.com/app/man-reader/id522583774?mt=12&quot;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h5 id=&quot;the-new-features-and-fixes-are:&quot;&gt;The new features and fixes are:&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Fix for plain text view not wrapping correctly for odd-sized fonts.&lt;/li&gt;
+&lt;li&gt;Fix for HTML text view over-riding font colors that may be invisible.&lt;/li&gt;
+&lt;li&gt;Search for missing entry (e.g. g++) no longer requires Enter or Return.&lt;/li&gt;
+&lt;li&gt;Better automatic selection of matching entries while searching.&lt;/li&gt;
+&lt;li&gt;Fix for animation warning message appearing in Console.&lt;/li&gt;
+&lt;li&gt;Status display shows when man page list is being updated.&lt;/li&gt;
+&lt;li&gt;Searching inside a page now allows a minimum of 2 characters (was 3), so flags&lt;br&gt;
+e.g. ‘-b’ do not need to be escaped.&lt;/li&gt;
+&lt;li&gt;Fixed path for Network Utility in tool bar (moved in OS X 10.9).&lt;/li&gt;
+&lt;li&gt;More information available about the effects of sand-boxing for this app.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For the first time, Man Reader is now also available as a &lt;a href=&quot;https://pay.paddle.com/checkout/490552&quot;&gt;direct purchase&lt;/a&gt;.&lt;br&gt;
+You can also download a &lt;a href=&quot;/manreader-paddle/ManReader.zip&quot;&gt;7 day free trial&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The reason for selling Man Reader outside the App Store is to avoid Apple&amp;#8217;s sandboxing restrictions, which may reduce the number of man pages that Man Reader is able to display. For more information about this problem, read &lt;a href=&quot;/manreader-sandbox/&quot;&gt;Sand-boxing Man Reader&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you have already purchased Man Reader from the App Store, but would like to have a non-sandboxed version, go to &lt;a href=&quot;/man-reader-no-sb/&quot;&gt;Man Reader (no SB)&lt;/a&gt; for more information on how to download a non-sandboxed version that will use your App Store licence.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 03 Apr 2014 00:00:00 +1000</pubDate>
+        <link>http://127.0.0.1:4000/man-reader-1-4-now-available/</link>
+        <guid isPermaLink="true">http://127.0.0.1:4000/man-reader-1-4-now-available/</guid>
+      </item>
+    
+      <item>
+        <title>Email clients for Mac &amp;#038; iOS</title>
+        <description>&lt;p&gt;Some people are moving away from email, but for me, it remains the best way to communicate online. I get to keep a record of conversations and the attached files are with the text so I can always see the context.&lt;/p&gt;
+
+&lt;p&gt;But I think everyone would agree that Apple have dropped the ball with Mail in OS X Mavericks, and to a lesser extent, in iOS 7.&lt;/p&gt;
+
+&lt;p&gt;So I have been on a campaign lately to find an email client that suits my needs. I don&amp;#8217;t feel that I have found the perfect answer yet, but I am getting there.&lt;/p&gt;
+
+&lt;p&gt;The first step was to work out what I really needed in an email client:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;support for IMAP accounts and Gmail accounts&lt;/li&gt;
+&lt;li&gt;&lt;span style=&quot;line-height: 1.5;&quot;&gt;unified inbox &amp;#8211; all accounts shown together&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;conversation threading&lt;/li&gt;
+&lt;li&gt;support for POP accounts (optional)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;On the Mac, I have narrowed it down to two clients that I am swapping between every few days: &lt;a href=&quot;https://www.uniboxapp.com&quot; target=&quot;_blank&quot;&gt;Unibox&lt;/a&gt; and &lt;a href=&quot;http://airmailapp.com&quot; target=&quot;_blank&quot;&gt;Airmail&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Unibox is different in the way it displays your emails. It is much more focussed on people and conversations, so the side bar shows all the people who you have sent emails to or received emails from, grouped by date. I really like the merging of incoming &amp;amp; outgoing emails, but it can be a bit weird if you delete the latest email from someone who then disappears from sight.&lt;/p&gt;
+
+&lt;p&gt;Emails are grouped by a single person, not by conversation. There is a button on appropriate emails to toggle conversation view for that particular thread, but it doesn&amp;#8217;t stick.&lt;/p&gt;
+
+&lt;p&gt;In order to show a conversation, they truncate emails in the main part of the window and show a &amp;#8220;More&amp;#8221; button at the bottom of the email to expand it. This was annoying, but in the latest beta, it performs much better, so you are not continually tapping this to see a long email.&lt;/p&gt;
+
+&lt;p&gt;Airmail has a more conventional display. Threading and the layout of threaded emails are both very nice. There are multiple view options, which I find can get a bit messy looking, so I prefer the &amp;#8220;Minimized View&amp;#8221; setting. Airmail also does POP accounts which is a plus.&lt;/p&gt;
+
+&lt;p&gt;The main reason I keep going back to Unibox is the unification. I have grown to like having sent and received messages all in the same window without having to go and find them somewhere else.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;On the iPad, I am currently using &lt;a href=&quot;http://www.getboxer.com&quot; target=&quot;_blank&quot;&gt;Boxer&lt;/a&gt; and have tried numerous others. &lt;a href=&quot;http://www.moltoapp.com/&quot; target=&quot;_blank&quot;&gt;Molto&lt;/a&gt; was quite good and the interface was fun, but it would only use landscape mode and like to be able to swap. Boxer is not great in portrait mode, but it does work.&lt;/p&gt;
+
+&lt;p&gt;So the jury is still out for iPad email clients, but on the Mac, I am leaning towards Unibox.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 25 Mar 2014 00:00:00 +1000</pubDate>
+        <link>http://127.0.0.1:4000/email-clients-for-mac-ios/</link>
+        <guid isPermaLink="true">http://127.0.0.1:4000/email-clients-for-mac-ios/</guid>
+      </item>
+    
+      <item>
+        <title>Berio Sequenza VII</title>
+        <description>&lt;p&gt;So my latest app is way outside my usual sphere but that&amp;#8217;s what happens when family decide that what you do might actually be useful!&lt;/p&gt;
+
+&lt;p&gt;My son is an oboist and he is currently learning Berio&amp;#8217;s Sequenza VII for Oboe. This is a weird piece without a standard time signature. Instead each line has 13 bars with each bar being allocated a certain time span in actual seconds. As can easily be imagined, this makes learning and practicing this piece more of a mathematical exercise than a musical one.&lt;/p&gt;
+
+&lt;p&gt;So I wrote him an app to sound out the end of each bar. Once he and his teacher used it, a few more features crept in and now I think it will be of great assistance to any student or teacher trying to work on this piece.&lt;/p&gt;
+
+&lt;p&gt;While I doubt that many oboists frequent this web site, it anyone who does can pass this on to any oboist, I would be very grateful, and I think the oboist would be too!&lt;/p&gt;
+
+&lt;p&gt;The app is available through the &lt;a href=&quot;https://itunes.apple.com/us/app/sequenza-vii/id730234638?mt=8&amp;#038;uo=4&quot; target=&quot;_blank&quot;&gt;iTunes App Store&lt;/a&gt;.&lt;br&gt;
+More details are on &lt;a href=&quot;/berio/&quot; title=&quot;Berio’s Sequenza VII&quot;&gt;this page&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 07 Nov 2013 00:00:00 +1000</pubDate>
+        <link>http://127.0.0.1:4000/berio-sequenza-vii/</link>
+        <guid isPermaLink="true">http://127.0.0.1:4000/berio-sequenza-vii/</guid>
+      </item>
+    
+      <item>
+        <title>Icon Builder &amp;#038; iOS 7</title>
+        <description>&lt;p&gt;Icon Builder 1.2 was released on 18 September 2013.&lt;br&gt;
+It was an update with 2 new functions:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The ability to create images to suit an Xcode 5 assets library &lt;/li&gt;
+&lt;li&gt;The ability to create icons with the required sizes for IOS 7 apps. &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Knowing that iOS 7 apps can only be built using Xcode 5, I linked the switch for these 2 abilities in a single check box.&lt;br&gt;
+The problem was not really that they were in a single checkbox but that I had labelled it badly, so it was not obvious that this was what needed to be checked to create iOS 7 sized icon files.&lt;/p&gt;
+
+&lt;p&gt;After some feedback from early users, it became clear to me that this was not enough. So 1.2.1 is now waiting for Apple&amp;#8217;s approval.&lt;br&gt;
+The changes in this version are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;More informative labelling of the checkbox. &lt;/li&gt;
+&lt;li&gt;The checkbox is checked by default is Xcode 5 is installed &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;While waiting for the new version to be approved, please be aware that iOS 7 icon sizes will only be generated if you select &amp;#8220;Check Assets (for Xcode 5.x or later)&amp;#8221;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 23 Sep 2013 00:00:00 +1000</pubDate>
+        <link>http://127.0.0.1:4000/icon-builder-ios-7/</link>
+        <guid isPermaLink="true">http://127.0.0.1:4000/icon-builder-ios-7/</guid>
+      </item>
+    
+      <item>
+        <title>Icon apps updated</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://itunes.apple.com/au/app/icns-maker/id550942266?mt=12&quot; target=&quot;_blank&quot;&gt;Icns Maker&lt;/a&gt; and &lt;a href=&quot;https://itunes.apple.com/au/app/icon-builder/id552293482?mt=12&quot; target=&quot;_blank&quot;&gt;Icon Builder&lt;/a&gt; have both just been updated to support Xcode 5.&lt;/p&gt;
+
+&lt;p&gt;Icon Builder is a Mac app that takes your images and creates all the required icon files for use in your iOS apps.&lt;br&gt;
+It now supports Xcode 5&amp;#8217;s image assets folders and if you are using Xcode 5, it will create the icon sizes required for iOS 7 app.&lt;/p&gt;
+
+&lt;p&gt;Icns Maker is a Mac app that takes your images and creates icons for use in your Mac apps.&lt;br&gt;
+For Xcode 4 or earlier, it creates a .icns file.&lt;br&gt;
+For Xcode 5, it creates a folder of images for use in your project&amp;#8217;s image assets folder.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 19 Sep 2013 00:00:00 +1000</pubDate>
+        <link>http://127.0.0.1:4000/icon-apps-updated/</link>
+        <guid isPermaLink="true">http://127.0.0.1:4000/icon-apps-updated/</guid>
+      </item>
+    
+      <item>
+        <title>Markdown</title>
+        <description>&lt;p&gt;For some time now, I have been aware of the increasing trend towards using Markdown for text editing and for creating HTML. Markdown has been on my list of &amp;#8220;things I should learn some day&amp;#8221; so I was interested last week to read about a new iBooks book called &lt;a href=&quot;http://macsparky.com/markdown&quot;&gt;The MacSparky Markdown Field Guide&lt;/a&gt;. This was sufficient inspiration so I got the book and read through it this weekend.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://static.squarespace.com/static/5008676d84aeae82b8acdd8c/t/5147c7a6e4b0d224b4419401/1363658669971/Markdown%20Cover%20Art%20-%20JPG.jpg?format=500w&quot; alt=&quot;The MacSparky Markdown Field Guide&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Actually, to say that I &lt;em&gt;read&lt;/em&gt; through the book is a mis-representation. The book was written using iBooks Author specially for the iPad and contains screen casts and interviews as well as text. But by the end of it, I now feel I have a basic understanding on Markdown and the ways in which I can use it.&lt;/p&gt;
+
+&lt;p&gt;I guess the really big thing about using Markdown is that is creates plain text files that are human-readable even without being converted to HTML. This makes them future-proof since they are not tied to a proprietary file format that may cease to exist at any time.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;using-markdown:&quot;&gt;Using Markdown:&lt;/h2&gt;
+
+&lt;p&gt;Since this web site is a self-hosted WordPress site, my next step was to look for a WordPress plugin that would allow me to use Markdown to create my posts. I could have used a Markdown editor that had HTML export, but I wanted to try something that would eliminate the extra step. The first one I decide to try was &lt;a href=&quot;http://wordpress.org/extend/plugins/markdown-on-save-improved/&quot;&gt;Markdown on Save Improved&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;One of the main reasons for choosing this one was that it stores the posts as both Markdown and as HTML. This saves time when going back to edit a post, avoids the constant changes that creep in when converting between formats all the time, and makes it so that the post will still display correctly even if Markdown is no longer supported. The only problem I have found so far is that it doesn&amp;#8217;t automatically create links &amp;amp; image links using the Markdown format, but uses standard &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; links instead.&lt;/p&gt;
+
+&lt;p&gt;My next stop, since I always use a Mac, was to get Brett Terpstra&amp;#8217;s collection of &lt;a href=&quot;http://brettterpstra.com/projects/markdown-service-tools/&quot;&gt;Services for Markdown&lt;/a&gt;. These add a lot on convenient shortcuts: one of my favourites is the ability to convert inline links to references links for increased readability while editing.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;first-impressions:&quot;&gt;First Impressions:&lt;/h2&gt;
+
+&lt;p&gt;So having written this first post in Markdown, how do I feel about it? I haven&amp;#8217;t really tried anything too weird this time, but there are a few things that were very easy to do. Particularly in the paragraph where I was talking about links &amp;amp; images and wanted to include the tags as text without having it interpreted as HTML. All I had to do was surround the text with back-ticks.&lt;/p&gt;
+
+&lt;p&gt;Links are vastly easier to manage and edit in Markdown. I miss the ability to specify that links should open in a new tab &amp;#8211; I prefer to have that setting for links that take you outside my web site, but the modern theories on usability seem to be heading towards deprecation of this feature, so I may just stop using it.&lt;/p&gt;
+
+&lt;p&gt;With the standard WordPress editor, I always felt that I was fighting it. I had to swap between the visual &amp;amp; HTML editor tabs and when I swapped tabs, things would sometimes change without me doing anything. So far, I feel more in control using Markdown and although I have lost the WYSIWYG visual editor, I no longer have to wade through the HTML editor to get the effect I want or to remove the results of a few careless clicks.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;what-next?&quot;&gt;What next?&lt;/h2&gt;
+
+&lt;p&gt;Some of the things on my wish list would be solved by a better editor and some by more powerful syntax.&lt;/p&gt;
+
+&lt;p&gt;Editor:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Adding links &amp;#038; images using Markdown style instead of HTML&lt;/li&gt;
+&lt;li&gt;Being able to create lists 
+
+&lt;ul&gt;
+&lt;li&gt;Markdown makes this very easy but this WP plugin does not support lists as far as I can tell&lt;/li&gt;
+&lt;li&gt;So these lists are in HTML&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Syntax:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Alignment of text &amp;#038; images&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Using a stand-alone Markdown editor would solve the editor questions, but I wanted to try writing this post completely in WordPress.&lt;br&gt;
+And with the alignment, there is nothing to stop me adding CSS to the Markdown.&lt;/p&gt;
+
+&lt;p&gt;Next time, I will test out a different WordPress Markdown editor and see how that goes. I will also test using a standalone editor and exporting its HTML to create a post.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 01 Apr 2013 00:00:00 +1000</pubDate>
+        <link>http://127.0.0.1:4000/markdown/</link>
+        <guid isPermaLink="true">http://127.0.0.1:4000/markdown/</guid>
+      </item>
+    
+      <item>
+        <title>A Knight&amp;#8217;s Move 1.3</title>
+        <description>&lt;p&gt;A Knight&amp;#8217;s Move has been updated to version 1.3. The iOS version is now available at the &lt;a href=&quot;https://itunes.apple.com/app/a-knights-move/id530090451?mt=8&quot; target=&quot;_blank&quot;&gt;iTunes App Store&lt;/a&gt; and the Mac version is available through the &lt;a href=&quot;https://itunes.apple.com/app/a-knights-move/id533321133?mt=12&quot; target=&quot;_blank&quot;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;three-new-level-packs:&quot;&gt;Three new level packs:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Eight by Eight&lt;/li&gt;
+&lt;li&gt;Bishops Rule&lt;/li&gt;
+&lt;li&gt;Castles&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Eight by Eight has every puzzle set in a chessboard sized grid with more conventional placing of pieces.&lt;br&gt;
+Bishops Rule has at least one Bishop in every puzzle.&lt;br&gt;
+Castles has a Castle or Rook in every puzzle and is suited to players who would like more of a challenge.&lt;/p&gt;
+
+&lt;h2 id=&quot;new-feature:&quot;&gt;New feature:&lt;/h2&gt;
+
+&lt;p&gt;When your knight has been taken, you have the option to undo the last move so you can try again without losing the moves you have already made.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/wp-content/uploads/2013/02/UndoLast.png&quot;&gt;&lt;img class=&quot;aligncenter size-full wp-image-473&quot; alt=&quot;Undo Last Move&quot; src=&quot;/wp-content/uploads/2013/02/UndoLast.png&quot; width=&quot;321&quot; height=&quot;460&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 27 Feb 2013 00:00:00 +1000</pubDate>
+        <link>http://127.0.0.1:4000/a-knights-move-1-3/</link>
+        <guid isPermaLink="true">http://127.0.0.1:4000/a-knights-move-1-3/</guid>
+      </item>
+    
+      <item>
+        <title>Icns Maker &amp;#038; Icon Builder updated</title>
+        <description>&lt;p&gt;January 18th 2013:&lt;/p&gt;
+
+&lt;p&gt;Both of the icon building apps have now been updated to fix a but that made incorrect icon sizes when running on a Retina MacBook Pro.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/icns-maker/&quot; title=&quot;Icns Maker&quot;&gt; Icns Maker&lt;/a&gt; uses your image to create an icns file for Mac apps.&lt;br&gt;
+&lt;a href=&quot;http://itunes.apple.com/app/icns-maker/id550942266?mt=12&amp;uo=4&quot; target=&quot;itunes_store&quot;&gt;&lt;img style=&quot;border: 0;&quot; alt=&quot;Icns Maker - TrozWare&quot; src=&quot;http://r.mzstatic.com/images/web/linkmaker/badge_macappstore-lrg.gif&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/icon-builder/&quot; title=&quot;Icon Builder&quot;&gt;Icon Builder&lt;/a&gt; uses your image to create the suite of icon files needed for iOS apps. &lt;a href=&quot;http://itunes.apple.com/app/icon-builder/id552293482?mt=12&amp;uo=4&quot; target=&quot;itunes_store&quot;&gt;&lt;img style=&quot;border: 0;&quot; alt=&quot;Icon Builder - TrozWare&quot; src=&quot;http://r.mzstatic.com/images/web/linkmaker/badge_macappstore-lrg.gif&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 19 Jan 2013 00:00:00 +1000</pubDate>
+        <link>http://127.0.0.1:4000/icns-maker-icon-builder-updated/</link>
+        <guid isPermaLink="true">http://127.0.0.1:4000/icns-maker-icon-builder-updated/</guid>
+      </item>
+    
+      <item>
+        <title>Icon Makers &amp;#038; Retina Macs</title>
+        <description>&lt;p&gt;Icns Maker which makes an icns icon file for Mac apps, and Icon Builder which makes the suite of png files needed for iOS apps, are both compatible with the Retina MacBook Pro.&lt;/p&gt;
+
+&lt;p&gt;However it was recently brought to my attention (thanks Cameron), that when running on a Retina MBP, all the icon files were exactly twice as large as they should be. The Icon.png file which supplies the main app icon for iPhone apps should be 57 pixels by 57 pixels. Using Icon Builder on a Retina MBP produced an Icon.png file that was 114 x 114 pixels.&lt;/p&gt;
+
+&lt;p&gt;I have now worked out how to persuade the Retina Mac that when I ask for an image size, I actually want that size, not the size that OS X thinks would look better. Updates to these 2 apps will be submitted to the App Store for approval later today which will solve the problem.&lt;/p&gt;
+
+&lt;p&gt;In the meantime, there is a work-around for Retina MBP users: force the app to run in low resolution mode.&lt;/p&gt;
+
+&lt;p&gt;In Finder, open your Applications folder and select the app (this works for both Icns Maker and Icon Builder). Press Command-I or choose Get Info from the File menu which will open a window like this:&lt;img class=&quot;aligncenter size-full wp-image-446&quot; alt=&quot;Selecting low resolution mode&quot; src=&quot;/wp-content/uploads/2013/01/LowRes.png&quot; width=&quot;379&quot; height=&quot;952&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Check the checkbox labelled &amp;#8220;Open in Low Resolution&amp;#8221;. Next time the app is opened, it will ignore the Retina options and use standard resolution only. This will create icon files with the correct sizes. However text may look slightly fuzzy.&lt;/p&gt;
+
+&lt;p&gt;When the updates to these apps become available, make sure you go back and un-check this setting to return to Retina mode.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 14 Jan 2013 00:00:00 +1000</pubDate>
+        <link>http://127.0.0.1:4000/icon-makers-retina-macs/</link>
+        <guid isPermaLink="true">http://127.0.0.1:4000/icon-makers-retina-macs/</guid>
+      </item>
+    
+  </channel>
+</rss>

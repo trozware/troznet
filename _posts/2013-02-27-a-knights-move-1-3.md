@@ -1,0 +1,29 @@
+---
+id: 472
+title: 'A Knight&#8217;s Move 1.3'
+author: Sarah
+layout: post
+guid: /?p=472
+permalink: /a-knights-move-1-3/
+categories:
+  - TrozWare
+---
+A Knight&#8217;s Move has been updated to version 1.3. The iOS version is now available at the <a href="https://itunes.apple.com/app/a-knights-move/id530090451?mt=8" target="_blank">iTunes App Store</a> and the Mac version is available through the <a href="https://itunes.apple.com/app/a-knights-move/id533321133?mt=12" target="_blank">Mac App Store</a>.
+
+## Three new level packs:
+
+  * Eight by Eight
+  * Bishops Rule
+  * Castles
+
+Eight by Eight has every puzzle set in a chessboard sized grid with more conventional placing of pieces.  
+Bishops Rule has at least one Bishop in every puzzle.  
+Castles has a Castle or Rook in every puzzle and is suited to players who would like more of a challenge.
+
+## New feature:
+
+When your knight has been taken, you have the option to undo the last move so you can try again without losing the moves you have already made.
+
+[<img class="aligncenter size-full wp-image-473" alt="Undo Last Move" src="/wp-content/uploads/2013/02/UndoLast.png" width="321" height="460" />][1]
+
+ [1]: /wp-content/uploads/2013/02/UndoLast.png

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Markdown &#8211; TrozWare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mac &amp; iOS Developer">
+    <meta name="author" content="Sarah Reichelt">
+    <meta name="keywords" content="trozware">
+    <link rel="canonical" href="http://127.0.0.1:4000/markdown/">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/pixyll.css" type="text/css">
+
+    <!-- Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Markdown">
+    <meta property="og:description" content="Mac &amp; iOS Developer">
+    <meta property="og:url" content="http://127.0.0.1:4000/markdown/">
+    <meta property="og:site_name" content="TrozWare">
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+</head>
+
+<body class="">
+  <div class="site-wrap">
+    <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="http://127.0.0.1:4000" class="site-title">TrozWare</a>
+      <nav class="site-nav right">
+        <a href="/applications/">Apps</a>
+<a href="/contact/">Contact</a>
+
+      </nav>
+      <div class="clearfix"></div>
+      
+        <div class="social-icons">
+  <div class="left">
+    
+    
+      <a class="fa fa-stack-overflow" href="https://stackoverflow.com/users/1082632"></a>
+    
+    <a class="fa fa-rss" href="/feed.xml"></a>
+    
+      <a class="fa fa-twitter" href="https://twitter.com/sarahreichelt"></a>
+    
+    
+    
+      <a class="fa fa-envelope" href="mailto:sarah@troz.net"></a>
+    
+    
+  </div>
+  <div class="right">
+    
+    
+    
+  </div>
+</div>
+<div class="clearfix"></div>
+
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        
+
+
+<div class="post-header mb2">
+  <h1>Markdown</h1>
+  <span class="post-meta">Apr 1, 2013</span><br>
+  
+  <span class="post-meta small">4 minute read</span>
+</div>
+
+<article class="post-content">
+  <p>For some time now, I have been aware of the increasing trend towards using Markdown for text editing and for creating HTML. Markdown has been on my list of &#8220;things I should learn some day&#8221; so I was interested last week to read about a new iBooks book called <a href="http://macsparky.com/markdown">The MacSparky Markdown Field Guide</a>. This was sufficient inspiration so I got the book and read through it this weekend.</p>
+
+<p><img src="http://static.squarespace.com/static/5008676d84aeae82b8acdd8c/t/5147c7a6e4b0d224b4419401/1363658669971/Markdown%20Cover%20Art%20-%20JPG.jpg?format=500w" alt="The MacSparky Markdown Field Guide"></p>
+
+<p>Actually, to say that I <em>read</em> through the book is a mis-representation. The book was written using iBooks Author specially for the iPad and contains screen casts and interviews as well as text. But by the end of it, I now feel I have a basic understanding on Markdown and the ways in which I can use it.</p>
+
+<p>I guess the really big thing about using Markdown is that is creates plain text files that are human-readable even without being converted to HTML. This makes them future-proof since they are not tied to a proprietary file format that may cease to exist at any time.</p>
+
+<hr>
+
+<h2 id="using-markdown:">Using Markdown:</h2>
+
+<p>Since this web site is a self-hosted WordPress site, my next step was to look for a WordPress plugin that would allow me to use Markdown to create my posts. I could have used a Markdown editor that had HTML export, but I wanted to try something that would eliminate the extra step. The first one I decide to try was <a href="http://wordpress.org/extend/plugins/markdown-on-save-improved/">Markdown on Save Improved</a>.</p>
+
+<p>One of the main reasons for choosing this one was that it stores the posts as both Markdown and as HTML. This saves time when going back to edit a post, avoids the constant changes that creep in when converting between formats all the time, and makes it so that the post will still display correctly even if Markdown is no longer supported. The only problem I have found so far is that it doesn&#8217;t automatically create links &amp; image links using the Markdown format, but uses standard <code>&lt;a&gt;</code> and <code>&lt;img&gt;</code> links instead.</p>
+
+<p>My next stop, since I always use a Mac, was to get Brett Terpstra&#8217;s collection of <a href="http://brettterpstra.com/projects/markdown-service-tools/">Services for Markdown</a>. These add a lot on convenient shortcuts: one of my favourites is the ability to convert inline links to references links for increased readability while editing.</p>
+
+<hr>
+
+<h2 id="first-impressions:">First Impressions:</h2>
+
+<p>So having written this first post in Markdown, how do I feel about it? I haven&#8217;t really tried anything too weird this time, but there are a few things that were very easy to do. Particularly in the paragraph where I was talking about links &amp; images and wanted to include the tags as text without having it interpreted as HTML. All I had to do was surround the text with back-ticks.</p>
+
+<p>Links are vastly easier to manage and edit in Markdown. I miss the ability to specify that links should open in a new tab &#8211; I prefer to have that setting for links that take you outside my web site, but the modern theories on usability seem to be heading towards deprecation of this feature, so I may just stop using it.</p>
+
+<p>With the standard WordPress editor, I always felt that I was fighting it. I had to swap between the visual &amp; HTML editor tabs and when I swapped tabs, things would sometimes change without me doing anything. So far, I feel more in control using Markdown and although I have lost the WYSIWYG visual editor, I no longer have to wade through the HTML editor to get the effect I want or to remove the results of a few careless clicks.</p>
+
+<hr>
+
+<h2 id="what-next?">What next?</h2>
+
+<p>Some of the things on my wish list would be solved by a better editor and some by more powerful syntax.</p>
+
+<p>Editor:</p>
+
+<ul>
+<li>Adding links &#038; images using Markdown style instead of HTML</li>
+<li>Being able to create lists 
+
+<ul>
+<li>Markdown makes this very easy but this WP plugin does not support lists as far as I can tell</li>
+<li>So these lists are in HTML</li>
+</ul></li>
+</ul>
+
+<p>Syntax:</p>
+
+<ul>
+<li>Alignment of text &#038; images</li>
+</ul>
+
+<p>Using a stand-alone Markdown editor would solve the editor questions, but I wanted to try writing this post completely in WordPress.<br>
+And with the alignment, there is nothing to stop me adding CSS to the Markdown.</p>
+
+<p>Next time, I will test out a different WordPress Markdown editor and see how that goes. I will also test using a standalone editor and exporting its HTML to create a post.</p>
+
+</article>
+
+
+
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname  = 'trozware';
+    var disqus_identifier = '/markdown';
+
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+  <h3 class="related-post-title">Related Posts</h3>
+  
+    <div class="post ml2">
+      <a href="/world-time-in-words/" class="post-link">
+        <h4 class="post-title">World Time In Words</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/man-reader-1-4-now-available/" class="post-link">
+        <h4 class="post-title">Man Reader 1.4 Now Available</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/email-clients-for-mac-ios/" class="post-link">
+        <h4 class="post-title">Email clients for Mac &#038; iOS</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/berio-sequenza-vii/" class="post-link">
+        <h4 class="post-title">Berio Sequenza VII</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/icon-builder-ios-7/" class="post-link">
+        <h4 class="post-title">Icon Builder &#038; iOS 7</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/icon-apps-updated/" class="post-link">
+        <h4 class="post-title">Icon apps updated</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/a-knights-move-1-3/" class="post-link">
+        <h4 class="post-title">A Knight&#8217;s Move 1.3</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/icns-maker-icon-builder-updated/" class="post-link">
+        <h4 class="post-title">Icns Maker &#038; Icon Builder updated</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/icon-makers-retina-macs/" class="post-link">
+        <h4 class="post-title">Icon Makers &#038; Retina Macs</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/icon-makers-for-mac-ios-apps/" class="post-link">
+        <h4 class="post-title">Icon makers for Mac &#038; iOS apps</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+  <div class="p2 wrap">
+    <div class="measure mt1 center">
+      <small>
+        Pixyll theme crafted with &lt;3 by <a href="http://johnotander.com">John Otander</a> (<a href="https://twitter.com/4lpine">@4lpine</a>).<br>
+        &lt;/&gt; available on <a href="https://github.com/johnotander/pixyll">Github</a>.
+      </small>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>
