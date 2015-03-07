@@ -6,7 +6,7 @@ layout: post
 guid: /?p=694
 permalink: /world-time-in-words/
 categories:
-  - TrozWare
+  - Time in Words
 ---
 <a href="http://itunes.apple.com/au/app/time-in-words/id509085586?mt=8" target="_blank">World Time In Words version 3.0</a> is now available in the Mac App Store.
 

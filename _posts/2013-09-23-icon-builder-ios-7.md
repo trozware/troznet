@@ -6,7 +6,7 @@ layout: post
 guid: /?p=546
 permalink: /icon-builder-ios-7/
 categories:
-  - TrozWare
+  - Icons
 ---
 Icon Builder 1.2 was released on 18 September 2013.  
 It was an update with 2 new functions:

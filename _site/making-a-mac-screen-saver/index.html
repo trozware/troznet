@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Mac &amp; iOS Developer">
     <meta name="author" content="Sarah Reichelt">
-    <meta name="keywords" content="trozware">
-    <link rel="canonical" href="http://127.0.0.1:4000/making-a-mac-screen-saver/">
+    <meta name="keywords" content="screen saver, time in words">
+    <link rel="canonical" href="http://trozware.github.io/making-a-mac-screen-saver/">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/pixyll.css" type="text/css">
@@ -26,7 +26,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Making a Mac Screen Saver">
     <meta property="og:description" content="Mac &amp; iOS Developer">
-    <meta property="og:url" content="http://127.0.0.1:4000/making-a-mac-screen-saver/">
+    <meta property="og:url" content="http://trozware.github.io/making-a-mac-screen-saver/">
     <meta property="og:site_name" content="TrozWare">
 
     <!-- Icons -->
@@ -46,12 +46,12 @@
     <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
 </head>
 
-<body class="">
+<body class="animated fade-in-down">
   <div class="site-wrap">
     <header class="site-header px2 px-responsive">
   <div class="mt2 wrap">
     <div class="measure">
-      <a href="http://127.0.0.1:4000" class="site-title">TrozWare</a>
+      <a href="http://trozware.github.io" class="site-title">TrozWare</a>
       <nav class="site-nav right">
         <a href="/applications/">Apps</a>
 <a href="/contact/">Contact</a>
@@ -104,102 +104,52 @@
 <article class="post-content">
   <p>Having just completed the my first screen saver for Mac &#8211; the <a href="/time-in-words-screen-saver-for-mac/" title="Time In Words Screen Saver for Mac">Time In Words Screen Saver</a>, I thought I would share some of the experiences. I am using OS X Lion (10.7) and Xcode 4.3.2</p>
 
-<p>The first thing is to create a new project in Xcode using the Screen Saver template:<a href="/wp-content/uploads/2012/05/ScreenSaverTemplate.png"><img class="aligncenter size-medium wp-image-206" title="Xcode Screen Saver Template" src="/wp-content/uploads/2012/05/ScreenSaverTemplate-300x203.png" alt="Xcode Screen Saver Template" width="300" height="203" /></a></p>
+<p>The first thing is to create a new project in Xcode using the Screen Saver template:</p>
+
+<p><a href="/wp-content/uploads/2012/05/ScreenSaverTemplate.png"><img class="aligncenter size-medium wp-image-206" title="Xcode Screen Saver Template" src="/wp-content/uploads/2012/05/ScreenSaverTemplate-441x300.png" alt="Xcode Screen Saver Template" /></a></p>
 
 <p>Xcode sets up a project for you with everything you need for a screen saver module. Start editing the ScreenSaverView.m file. The most important method here is animateOneFrame.</p>
 
-<div>
-  <p>
-    This is called every time the animation time interval elapses. This interval is set in initWithFrame:isPreview:. I have seen some debate online as to whether the drawing should be done in the animateOneFrame method or in the drawRect method. I chose to use animateOneFrame because they are both called when the screen saver starts which can lead to an unpleasant flicker.
-  </p>
-</div>
+<p>This is called every time the animation time interval elapses. This interval is set in initWithFrame:isPreview:. I have seen some debate online as to whether the drawing should be done in the animateOneFrame method or in the drawRect method. I chose to use animateOneFrame because they are both called when the screen saver starts which can lead to an unpleasant flicker.</p>
 
-<div>
-  Now it is up to you to decide what to show in the animateOneFrame method. For Time In Words, I assembled the data as a string, created a dictionary of text attributes, calculated the location where I wanted to show the text and used drawAtPoint:withAttributes: to display it.
-</div>
+<p>Now it is up to you to decide what to show in the animateOneFrame method. For Time In Words, I assembled the data as a string, created a dictionary of text attributes, calculated the location where I wanted to show the text and used drawAtPoint:withAttributes: to display it.</p>
 
-<p>&nbsp;</p>
+<p>There are a couple of important tricks when working out locations: firstly, you will need to know the bounds of the screen saver area. This will vary depending on the monitor, screen size or whether the screen saver is appearing in the preview window in System Preferences. The screen saver view has a method that does this work for you.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">NSRect viewBounds = [self bounds];
+</code></pre></div>
+<p>The next trick is that you are most likely going to need some random numbers. Again, the screen saver framework supplies these to you in several forms. I used SSRandomFloatBetween but there are others. Check the documentation.</p>
 
-<div>
-  There is a couple of important tricks when working out locations: firstly, you will need to know the bounds of the screen saver area. This will vary depending on the monitor, screen size or whether the screen saver is appearing in the preview window in System Preferences. The screen saver view has a method that does this work for you.
-</div>
+<p>I ran into an oddity in System Preferences that made testing a bit tedious. I built the screen saver module and double-clicked on it to install into System Preferences. That worked fine, but when I made some changes and repeated the process, the original screen saver was still in place. I found that I had to quit System Preferences each time. Deleting the old version of the screen saver was not necessary, but quitting the System Prefs app was essential.</p>
 
-<pre class="toolbar:2 lang:default decode:true">NSRect viewBounds = [self bounds];</pre>
+<p>So that gives the basic screen saver module but with no options. Adding options is not difficult, but as always, there are a few things that are not obvious on first glance.</p>
 
-<div>
-  The next trick is that you are most likely going to need some random numbers. Again, the screen saver framework supplies these to you in several forms. I used SSRandomFloatBetween but there are others. Check the documentation.
-</div>
+<p>Add a xib file to your project: I used a window template. Then change the window&#8217;s class to NSPanel and configure it as shown:</p>
 
-<p>&nbsp;</p>
+<p><img title="NSPanel Settings" src="/wp-content/uploads/2012/05/PanelSettings.png" alt="NSPanel Settings" /></p>
 
-<div>
-  I ran into an oddity in System Preferences that made testing a bit tedious. I built the screen saver module and double-clicked on it to install into System Preferences. That worked fine, but when I made some changes and repeated the process, the original screen saver was still in place. I found that I had to quit System Preferences each time. Deleting the old version of the screen saver was not necessary, but quitting the System Prefs app was essential.
-</div>
+<p>Set the File&#8217;s Owner class to the class of your Screen Saver view. In your ScreenSaverView.h file, declare a property for this new panel. e.g.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">@property (assign) IBOutlet NSPanel *optionsPanel;
+</code></pre></div>
+<p>@synthesize this in the ScreenSaverView.m file.
+In the xib file, connect the panel to this outlet.</p>
 
-<p>&nbsp;</p>
-
-<div>
-  So that gives the basic screen saver module but with no options. Adding options is not difficult, but as always, there are a few things that are not obvious on first glance.
-</div>
-
-<div>
-  Add a xib file to your project: I used a window template. Then change the window&#8217;s class to NSPanel and configure it as shown:
-</div>
-
-<div>
-  <a href="/wp-content/uploads/2012/05/PanelSettings.png"><img class="aligncenter size-medium wp-image-208" title="NSPanel Settings" src="/wp-content/uploads/2012/05/PanelSettings-139x300.png" alt="NSPanel Settings" width="139" height="300" /></a>
-</div>
-
-<div>
-  Set the File&#8217;s Owner class to the class of your Screen Saver view. In your ScreenSaverView.h file, declare a property for this new panel. e.g.
-</div>
-
-<div>
-  <pre class="toolbar:2 lang:default decode:true ">@property (assign) IBOutlet NSPanel *optionsPanel;</pre>
-  
-  <div>
-    @synthesize this in the ScreenSaverView.m file.<br /> In the xib file, connect the panel to this outlet.
-  </div>
-</div>
-
-<div>
-  Now go back to ScreenSaverView.m and add the following code:
-</div>
-
-<pre class="lang:default decode:true">- (BOOL)hasConfigureSheet
-
-{
-
+<p>Now go back to ScreenSaverView.m and add the following code:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">- (BOOL)hasConfigureSheet {
     return YES;
-
 }
 
-
-
-- (NSWindow*)configureSheet
-
-{
-
+- (NSWindow*)configureSheet {
     if (!self.optionsPanel) {
-
-        [NSBundle loadNibNamed:@"Options" owner:self];
-
+        [NSBundle loadNibNamed:@&quot;Options&quot; owner:self];
     }
-
     return self.optionsPanel;
-
 }
 
 
-
-- (IBAction)closeConfig:(id)sender
-
-{
-
+- (IBAction)closeConfig:(id)sender {
     [[NSApplication sharedApplication] endSheet:self.optionsPanel];
-
-}</pre>
-
+}
+</code></pre></div>
 <p>The hasConfigureSheet and configureSheet stubs are already there for you, but you can replace them with these versions.</p>
 
 <p>Go back to the xib file and drag in a button to close the options panel. Connect it to the closeConfig: action.</p>
@@ -211,52 +161,36 @@
 <p>Once the panel is opening and closing as required, you need to add the ability to store and retrieve the settings. Instead of using NSUserDefaults as you would in a standard Mac app, there is a special class call ScreenSaverDefaults for screen savers. It needs a unique module name, so I used the bundle identifier. For my Time In Words screen saver, this is &#8220;net.troz.Time-In-Words-Screen-Saver&#8221;. I defined a constant to hold this as a string, so I could use it anywhere I needed.</p>
 
 <p>In the initWithFrame:isPreview: method, I got a reference to the screen saver defaults for my screen saver and registered the defaults. I am never very sure about the need to do this, but it is supposed to be a good practice.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
+[defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys: 
+    @&quot;NO&quot;, @&quot;UseAlternativeZone&quot;, @&quot;&quot;, @&quot;AlternativeZoneName&quot;, nil]];
 
-<pre class="lang:default decode:true">ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
+Using them is exactly the same as using NSUserDefaults: 
 
-[defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
-
-                            @"NO", @"UseAlternativeZone",
-
-                            @"", @"AlternativeZoneName",
-
-                            nil]];</pre>
-
-<p>Using them is exactly the same as using NSUserDefaults:</p>
-
-<pre class="lang:default decode:true">// Reading
-
+// Reading
 ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
-
-BOOL useAlternativeZone = [defaults boolForKey:@"UseAlternativeZone"];
-
-NSString *alternativeZoneName = [defaults objectForKey:@"AlternativeZoneName"];
-
-
+BOOL useAlternativeZone = [defaults boolForKey:@&quot;UseAlternativeZone&quot;];
+NSString *alternativeZoneName = [defaults objectForKey:@&quot;AlternativeZoneName&quot;];
 
 ...
 
-
-
 // Writing
-
 ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
-
-[defaults setBool:useAlternative forKey:@"UseAlternativeZone"];
-
-[defaults setObject:alternativeZoneName forKey:@"AlternativeZoneName"];
-
-[defaults synchronize];</pre>
-
+[defaults setBool:useAlternative forKey:@&quot;UseAlternativeZone&quot;];
+[defaults setObject:alternativeZoneName forKey:@&quot;AlternativeZoneName&quot;];
+[defaults synchronize];
+</code></pre></div>
 <p>One last thing: if you want to distribute the screen saver, you will want to create an archive, possibly code-signing with your Apple developer ID to allow for Mountain Lion&#8217;s up-coming Gatekeeper security system. I code-signed the project and built an archive, but when I clicked &#8220;Distribute&#8221; in the Organizer, the only appropriate options was &#8220;Save Built Products&#8221;. I selected this option and ended up with a series of folders inside folders, with the screen saver module in about the fifth folder down. I don&#8217;t know why the module gets distributed like this, but I pulled it out of the folders and it worked fine.</p>
 
 <p>And that&#8217;s about it. A lot of this stuff is online or in Apple&#8217;s documentation, but there are enough oddities to make it worthwhile gathering together all that I learnt while making this screen saver.</p>
 
-<p style="text-align: center;">
-  Click this icon to download the screen saver: <a href="/screensaver/download-TiWscreenSaver.php"><img class="size-full wp-image-196 aligncenter" style="border-style: initial; border-color: initial; border-width: 0px;" title="Click to download Time In Words Screen Saver" src="/wp-content/uploads/2012/05/ScreenSaverIcon128.png" alt="Time In Words Screen Saver Download" width="128" height="128" /></a>
-</p>
+<p>Click this icon to download the screen saver:</p>
+
+<p><a href="/screensaver/download-TiWscreenSaver.php"><img class="size-full wp-image-196 aligncenter" style="border-style: initial; border-color: initial; border-width: 0px;" title="Click to download Time In Words Screen Saver" src="/wp-content/uploads/2012/05/ScreenSaverIcon128.png" alt="Time In Words Screen Saver Download" width="128" height="128" /></a></p>
 
 </article>
+
+<br>
 
 
 
@@ -275,79 +209,6 @@ ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:k
   <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
-
-  <h3 class="related-post-title">Related Posts</h3>
-  
-    <div class="post ml2">
-      <a href="/world-time-in-words/" class="post-link">
-        <h4 class="post-title">World Time In Words</h4>
-        <p class="post-summary"></p>
-      </a>
-    </div>
-  
-    <div class="post ml2">
-      <a href="/man-reader-1-4-now-available/" class="post-link">
-        <h4 class="post-title">Man Reader 1.4 Now Available</h4>
-        <p class="post-summary"></p>
-      </a>
-    </div>
-  
-    <div class="post ml2">
-      <a href="/email-clients-for-mac-ios/" class="post-link">
-        <h4 class="post-title">Email clients for Mac &#038; iOS</h4>
-        <p class="post-summary"></p>
-      </a>
-    </div>
-  
-    <div class="post ml2">
-      <a href="/berio-sequenza-vii/" class="post-link">
-        <h4 class="post-title">Berio Sequenza VII</h4>
-        <p class="post-summary"></p>
-      </a>
-    </div>
-  
-    <div class="post ml2">
-      <a href="/icon-builder-ios-7/" class="post-link">
-        <h4 class="post-title">Icon Builder &#038; iOS 7</h4>
-        <p class="post-summary"></p>
-      </a>
-    </div>
-  
-    <div class="post ml2">
-      <a href="/icon-apps-updated/" class="post-link">
-        <h4 class="post-title">Icon apps updated</h4>
-        <p class="post-summary"></p>
-      </a>
-    </div>
-  
-    <div class="post ml2">
-      <a href="/markdown/" class="post-link">
-        <h4 class="post-title">Markdown</h4>
-        <p class="post-summary"></p>
-      </a>
-    </div>
-  
-    <div class="post ml2">
-      <a href="/a-knights-move-1-3/" class="post-link">
-        <h4 class="post-title">A Knight&#8217;s Move 1.3</h4>
-        <p class="post-summary"></p>
-      </a>
-    </div>
-  
-    <div class="post ml2">
-      <a href="/icns-maker-icon-builder-updated/" class="post-link">
-        <h4 class="post-title">Icns Maker &#038; Icon Builder updated</h4>
-        <p class="post-summary"></p>
-      </a>
-    </div>
-  
-    <div class="post ml2">
-      <a href="/icon-makers-retina-macs/" class="post-link">
-        <h4 class="post-title">Icon Makers &#038; Retina Macs</h4>
-        <p class="post-summary"></p>
-      </a>
-    </div>
-  
 
 
       </div>

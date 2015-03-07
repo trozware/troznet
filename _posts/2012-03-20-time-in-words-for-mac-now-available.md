@@ -6,7 +6,7 @@ layout: post
 guid: /?p=105
 permalink: /time-in-words-for-mac-now-available/
 categories:
-  - TrozWare
+  - Time in Words
 ---
 Time In Words for Mac has just been approved and is now available for free from the <a href="http://itunes.apple.com/au/app/time-in-words/id509085586?mt=12" target="_blank">Mac App Store</a>.
 

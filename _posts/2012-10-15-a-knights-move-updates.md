@@ -6,7 +6,7 @@ layout: post
 guid: /?p=394
 permalink: /a-knights-move-updates/
 categories:
-  - TrozWare
+  - Knight's Move
 ---
 A Knight&#8217;s Move for iOS has been updated to take advantage of the taller iPhone 5 screen.
 

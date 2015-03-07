@@ -6,7 +6,8 @@ layout: post
 guid: /?p=229
 permalink: /man-reader-update-coming-soon/
 categories:
-  - TrozWare
+  - Man Reader
+  - Trouble-shooting
 ---
 Man Reader launched on the Mac App Store a couple of days ago and yesterday I got an email form a purchaser who reported that Man Reader was not displaying the man pages for MacPorts, even though he had the paths set up correctly.
 

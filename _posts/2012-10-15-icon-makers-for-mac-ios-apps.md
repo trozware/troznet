@@ -8,7 +8,7 @@ permalink: /icon-makers-for-mac-ios-apps/
 dsq_thread_id:
   - 3569563929
 categories:
-  - TrozWare
+  - Icons
 ---
 Announcing two new apps for creating icons for with Mac or iOS projects:
 

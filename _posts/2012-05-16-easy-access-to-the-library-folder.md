@@ -8,7 +8,7 @@ permalink: /easy-access-to-the-library-folder/
 dsq_thread_id:
   - 3571578097
 categories:
-  - TrozWare
+  - Operating systems
 ---
 In Mac OS X 10.7 (Lion), Apple decided to make it more difficult to access your Library folder, presumably to stop people doing stuff that made apps crash. But as a developer, I need access to my Library folder a lot. I need to check that preferences are being saved correctly. If I have an app that uses the Application Support folder, then I need to be able to check it. And for sand-boxed apps, they keep all their data in the Containers folder inside the Library.
 

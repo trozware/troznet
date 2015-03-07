@@ -7,6 +7,7 @@ guid: /?p=35
 permalink: /new-site-for-trozware/
 categories:
   - TrozWare
+  - Web
 ---
 Following the launch of Pic-a-POD for Mac and iOS in the relevant App Stores, I decided that it was time for a new look web site. <a href="http://www.picapod.com/" target="_blank">Pic-a-POD</a> has it&#8217;s own dedicated web site, so it seemed logical to make a more product oriented site, using the same look & feel.
 

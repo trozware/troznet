@@ -6,11 +6,11 @@ layout: post
 guid: /?p=181
 permalink: /support-for-older-operating-systems/
 categories:
-  - TrozWare
+  - Operating systems
 ---
 Working out what operating systems to support in your software is always a difficult decision. I only program for Mac & iOS systems for starters. This is because they are the systems I use and understand. I am not interested in expending the time & money needed to program and test my software for other systems.
 
-Within the Mac & iOS ecosystems, there is still the decision of which versions to support. Partially, this is based on the usage statistics of each version. I found a site that segments the current Mac market: <a href="http://www.netmarketshare.com/operating-system-market-share.aspx?qprid=10&qpcustomb=*2" target="_blank">Distribution of Mac OS X versions</a>. This tells me that OS 1.6 & OS 10.7 between them have 83% which makes 10.6 a good cut-off point.
+Within the Mac & iOS ecosystems, there is still the decision of which versions to support. Partially, this is based on the usage statistics of each version. I found a site that segments the current Mac market: <a href="http://www.netmarketshare.com/operating-system-market-share.aspx?qprid=10&qpcustomb=*2" target="_blank">Distribution of Mac OS X versions</a>. This tells me that OS 10.6 & OS 10.7 between them have 83% which makes 10.6 a good cut-off point.
 
 Distribution of iOS versions is harder to discover, but I found a post that did a good job of analysing the statistics that are available:
 

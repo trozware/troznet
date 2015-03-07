@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Mac &amp; iOS Developer">
     <meta name="author" content="Sarah Reichelt">
-    <meta name="keywords" content="trozware">
-    <link rel="canonical" href="http://127.0.0.1:4000/app-store-review-times/">
+    <meta name="keywords" content="app store">
+    <link rel="canonical" href="http://trozware.github.io/app-store-review-times/">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/pixyll.css" type="text/css">
@@ -26,7 +26,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="App Store Review Times">
     <meta property="og:description" content="Mac &amp; iOS Developer">
-    <meta property="og:url" content="http://127.0.0.1:4000/app-store-review-times/">
+    <meta property="og:url" content="http://trozware.github.io/app-store-review-times/">
     <meta property="og:site_name" content="TrozWare">
 
     <!-- Icons -->
@@ -46,12 +46,12 @@
     <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
 </head>
 
-<body class="">
+<body class="animated fade-in-down">
   <div class="site-wrap">
     <header class="site-header px2 px-responsive">
   <div class="mt2 wrap">
     <div class="measure">
-      <a href="http://127.0.0.1:4000" class="site-title">TrozWare</a>
+      <a href="http://trozware.github.io" class="site-title">TrozWare</a>
       <nav class="site-nav right">
         <a href="/applications/">Apps</a>
 <a href="/contact/">Contact</a>
@@ -108,27 +108,54 @@
 
 <p>I think this is an incorrect analysis. The slowdown started before iOS 6 and before the iPhone 5. I think it started in June when Apple started to enforce Mac sandboxing.</p>
 
-<p>As discussed in a </p>
-
-<p><a href="/sandboxing-and-the-mac-app-store/">previous post</a>, I have had a lot of trouble getting Man Reader to be sandbox-compatible leading to many rejections. One problem was that I had implemented sand-boxing before the deadline, but with some temporary entitlements to allow read-only access to required system files. This entitlement was approved initially, but after one rejection, an Apple reviewer told me that they had been approving all requested entitlements before the deadline, but now were actually reviewing them all.</p>
+<p>As discussed in a <a href="/sandboxing-and-the-mac-app-store/">previous post</a>, I have had a lot of trouble getting Man Reader to be sandbox-compatible leading to many rejections. One problem was that I had implemented sand-boxing before the deadline, but with some temporary entitlements to allow read-only access to required system files. This entitlement was approved initially, but after one rejection, an Apple reviewer told me that they had been approving all requested entitlements before the deadline, but now were actually reviewing them all.</p>
 
 <p>To me, this seems like a rather silly thing to have done which has now returned to haunt them. Instead of allowing developers time to get used to the restrictions, Apple reviewers allowed developers to think that their apps were sandbox-complient already. Then Apple was faced with the enormous task of re-checking all the entitlements that they had previously allowed without checking. This was unfair to developers and has only created extra work for the reviewers.</p>
 
 <p>Here is a table showing the recent review times for my Mac apps:</p>
 
-<p>[table]<br>
-App,Process,Review days,Dates<br>
-Time In Words,update,22,Sept 22 &#8211; Oct 14<br>
-Icns Maker,new app,24,Aug 5 &#8211; Aug 29<br>
-A Knight&#8217;s Move,update,26,Sept 6 &#8211; Oct 2<br>
-Icon Builder,new app,33,Aug 22 &#8211; Sept 24<br>
-[/table]</p>
+<table><thead>
+<tr>
+<th style="text-align: left">App</th>
+<th style="text-align: left">Process</th>
+<th style="text-align: center">Review days</th>
+<th style="text-align: center">Dates</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">Time In Words</td>
+<td style="text-align: left">update</td>
+<td style="text-align: center">22</td>
+<td style="text-align: center">Sept 22 &#8211; Oct 14</td>
+</tr>
+<tr>
+<td style="text-align: left">Icns Maker</td>
+<td style="text-align: left">new app</td>
+<td style="text-align: center">24</td>
+<td style="text-align: center">Aug 5 &#8211; Aug 29</td>
+</tr>
+<tr>
+<td style="text-align: left">A Knight&#8217;s Move</td>
+<td style="text-align: left">update</td>
+<td style="text-align: center">26</td>
+<td style="text-align: center">Sept 6 &#8211; Oct 2</td>
+</tr>
+<tr>
+<td style="text-align: left">Icon Builder</td>
+<td style="text-align: left">new app</td>
+<td style="text-align: center">33</td>
+<td style="text-align: center">Aug 22 &#8211; Sept 24</td>
+</tr>
+</tbody></table>
 
-<p>I have not included Man Reader as it was rejected too many times to be a valid data point.</p>
+<p><br>
+I have not included Man Reader as it was rejected too many times to be a valid data point.</p>
 
 <p>By comparison, when I submitted an update to A Knight&#8217;s Move for iOS in October, it was passed in only 8 days.</p>
 
 </article>
+
+<br>
 
 
 
@@ -147,79 +174,6 @@ Icon Builder,new app,33,Aug 22 &#8211; Sept 24<br>
   <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
-
-  <h3 class="related-post-title">Related Posts</h3>
-  
-    <div class="post ml2">
-      <a href="/world-time-in-words/" class="post-link">
-        <h4 class="post-title">World Time In Words</h4>
-        <p class="post-summary"></p>
-      </a>
-    </div>
-  
-    <div class="post ml2">
-      <a href="/man-reader-1-4-now-available/" class="post-link">
-        <h4 class="post-title">Man Reader 1.4 Now Available</h4>
-        <p class="post-summary"></p>
-      </a>
-    </div>
-  
-    <div class="post ml2">
-      <a href="/email-clients-for-mac-ios/" class="post-link">
-        <h4 class="post-title">Email clients for Mac &#038; iOS</h4>
-        <p class="post-summary"></p>
-      </a>
-    </div>
-  
-    <div class="post ml2">
-      <a href="/berio-sequenza-vii/" class="post-link">
-        <h4 class="post-title">Berio Sequenza VII</h4>
-        <p class="post-summary"></p>
-      </a>
-    </div>
-  
-    <div class="post ml2">
-      <a href="/icon-builder-ios-7/" class="post-link">
-        <h4 class="post-title">Icon Builder &#038; iOS 7</h4>
-        <p class="post-summary"></p>
-      </a>
-    </div>
-  
-    <div class="post ml2">
-      <a href="/icon-apps-updated/" class="post-link">
-        <h4 class="post-title">Icon apps updated</h4>
-        <p class="post-summary"></p>
-      </a>
-    </div>
-  
-    <div class="post ml2">
-      <a href="/markdown/" class="post-link">
-        <h4 class="post-title">Markdown</h4>
-        <p class="post-summary"></p>
-      </a>
-    </div>
-  
-    <div class="post ml2">
-      <a href="/a-knights-move-1-3/" class="post-link">
-        <h4 class="post-title">A Knight&#8217;s Move 1.3</h4>
-        <p class="post-summary"></p>
-      </a>
-    </div>
-  
-    <div class="post ml2">
-      <a href="/icns-maker-icon-builder-updated/" class="post-link">
-        <h4 class="post-title">Icns Maker &#038; Icon Builder updated</h4>
-        <p class="post-summary"></p>
-      </a>
-    </div>
-  
-    <div class="post ml2">
-      <a href="/icon-makers-retina-macs/" class="post-link">
-        <h4 class="post-title">Icon Makers &#038; Retina Macs</h4>
-        <p class="post-summary"></p>
-      </a>
-    </div>
-  
 
 
       </div>

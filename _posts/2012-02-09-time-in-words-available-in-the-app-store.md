@@ -6,7 +6,7 @@ layout: post
 guid: /?p=62
 permalink: /time-in-words-available-in-the-app-store/
 categories:
-  - TrozWare
+  - Time in Words
 ---
 Time In Words is now available at the App Store.
 

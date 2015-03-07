@@ -8,21 +8,21 @@ permalink: /interface-options-for-selecting-time-zones/
 dsq_thread_id:
   - 3569601004
 categories:
-  - TrozWare
+  - Time in Words
+  - UI
 ---
 As part of the design for [Time In Words for Mac][1], I had to work out the interface for selecting time zones. With [Time In Word for iOS][2], I used picker wheels which are excellent for selecting hierarchical data. On the Mac, there is no such thing as the iOS picker wheel and so I had to consider what to use instead.
 
 When you ask the system (Mac or iOS) for the available time zones, you get a list of names like this:
-
-Africa/Abidjan  
-Africa/Accra  
-&#8230;  
-America/Cayman  
-America/Chicago  
-&#8230;  
-Europe/Riga  
-Europe/Rome  
-etc.
+> Africa/Abidjan  
+> Africa/Accra  
+> &#8230;  
+> America/Cayman  
+> America/Chicago  
+> &#8230;  
+> Europe/Riga  
+> Europe/Rome  
+> etc.
 
 This seems obviously designed for a hierarchical display with the major regions as a first selection, filtering down to the cities in that region, making selection a two-step process. With the picker wheel in iOS, that is what I did. The first wheel selects the region which then populates the second wheel with the relevant city names. It makes it quick and easy to select a zone.
 

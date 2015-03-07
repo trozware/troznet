@@ -6,7 +6,8 @@ layout: post
 guid: /?p=309
 permalink: /update-to-time-in-words-screen-saver/
 categories:
-  - TrozWare
+  - Time in Words
+  - Screen saver
 ---
 [Time In Words screen saver][1] has just been updated to version 1.1 and is now fully compatible with Mountain Lion. It is free to use and can be [downloaded][2] here.
 
