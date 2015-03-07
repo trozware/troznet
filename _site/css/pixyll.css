@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6, p, dl, ol, ul {
 
 button, input, select, textarea {
   font-family: inherit;
-  font-size: 100%; }
+  font-size: 80%; }
 
 article, aside, details, figcaption, figure, footer, header, main, nav, section, summary {
   display: block; }
@@ -615,7 +615,8 @@ a:hover {
 
 */
 body {
-  font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman", serif; }
+  font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman", serif;
+  font-size: 62.5%; }
 
 html, body {
   height: 100%; }
