@@ -5,7 +5,7 @@ author: Sarah
 layout: post
 guid: /?p=75
 permalink: /scroll-bars-in-mac-ox-10-6-and-10-7/
-categories:
+tags:
   - UI
 ---
 With the introduction of OS X 10.7 (Lion), Apple removed the obvious scroll bars from windows and replaced them with a much more subtle scroll indicator, that only appears when you are actually scrolling. This was designed to match the iOS scrolling, as was the swap of scroll direction which makes much more sense if you use a trackpad.

@@ -5,7 +5,7 @@ author: Sarah
 layout: post
 guid: /?p=382
 permalink: /updating-apps-for-iphone-5/
-categories:
+tags:
   - Operating systems
   - UI
 ---

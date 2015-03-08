@@ -7,7 +7,7 @@ guid: /?p=205
 permalink: /making-a-mac-screen-saver/
 dsq_thread_id:
   - 3565951419
-categories:
+tags:
   - Screen saver
   - Time in Words
 ---

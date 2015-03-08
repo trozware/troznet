@@ -5,7 +5,7 @@ author: Sarah
 layout: post
 guid: /?p=298
 permalink: /a-knights-move-released/
-categories:
+tags:
   - Knight's Move
 ---
 &#8220;A Knight&#8217;s Move&#8221; is a fun, addictive and simple new puzzle game based on the movements of chess pieces. Your goal is to move your white knight across a board to a target square using the same movements as a knight in chess. Pawns may block your way, while enemy bishops, castles, knights and the queen may try to stop you.

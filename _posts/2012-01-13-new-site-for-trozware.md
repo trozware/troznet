@@ -5,7 +5,7 @@ author: Sarah
 layout: post
 guid: /?p=35
 permalink: /new-site-for-trozware/
-categories:
+tags:
   - TrozWare
   - Web
 ---

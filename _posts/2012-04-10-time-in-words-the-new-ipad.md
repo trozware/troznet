@@ -5,7 +5,7 @@ author: Sarah
 layout: post
 guid: /?p=118
 permalink: /time-in-words-the-new-ipad/
-categories:
+tags:
   - Time in Words
   - Trouble-shooting
 ---

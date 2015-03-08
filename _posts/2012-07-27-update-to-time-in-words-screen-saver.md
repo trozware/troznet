@@ -5,7 +5,7 @@ author: Sarah
 layout: post
 guid: /?p=309
 permalink: /update-to-time-in-words-screen-saver/
-categories:
+tags:
   - Time in Words
   - Screen saver
 ---

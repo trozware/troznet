@@ -5,7 +5,7 @@ author: Sarah
 layout: post
 guid: /?p=450
 permalink: /icns-maker-icon-builder-updated/
-categories:
+tags:
   - Icons
 ---
 January 18th 2013:

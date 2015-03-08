@@ -5,7 +5,7 @@ author: Sarah
 layout: post
 guid: /?p=314
 permalink: /sandboxing-and-the-mac-app-store/
-categories:
+tags:
   - Trouble-shooting
   - Sand-box
   - Man Reader

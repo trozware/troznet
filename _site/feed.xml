@@ -14,7 +14,7 @@
 
 &lt;p&gt;I had been reading about &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt;, so I decide to give it a go and also host my site on &lt;a href=&quot;https://pages.github.com&quot;&gt;GitHub&lt;/a&gt;, taking advantage of their faster servers.&lt;/p&gt;
 
-&lt;p&gt;So following the advice given by &lt;a href=&quot;http://www.girliemac.com/blog/2013/12/27/wordpress-to-jekyll/&quot;&gt;Girlie Mac&lt;/a&gt;, I have performed the migration from my self-hosted WordPress site. I am using the &lt;a href=&quot;http://pixyll.com&quot;&gt;Pixyll&lt;/a&gt; theme by &lt;a href=&quot;http://johnotander.com&quot;&gt;John Otander&lt;/a&gt; with a few tweaks of my own.
+&lt;p&gt;I followed the advice given by &lt;a href=&quot;http://www.girliemac.com/blog/2013/12/27/wordpress-to-jekyll/&quot;&gt;Girlie Mac&lt;/a&gt; and performed the migration from my self-hosted WordPress site. I am using the &lt;a href=&quot;http://pixyll.com&quot;&gt;Pixyll&lt;/a&gt; theme by &lt;a href=&quot;http://johnotander.com&quot;&gt;John Otander&lt;/a&gt; with a few tweaks of my own.
 The site is much faster to load, and I am hoping that the easier editing will inspire me to write more posts.&lt;/p&gt;
 
 &lt;p&gt;Of course it wasn&amp;rsquo;t all positive. WordPress did give me some features I liked, but I think overall the result is better.&lt;/p&gt;
@@ -22,7 +22,7 @@ The site is much faster to load, and I am hoping that the easier editing will in
 &lt;h4 id=&quot;wordpress:&quot;&gt;WordPress:&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;WordPress gives me a full LAMP stack, so I could run my own PHP scripts.&lt;/li&gt;
+&lt;li&gt;WordPress gave me a full LAMP stack, so I could run my own PHP scripts.&lt;/li&gt;
 &lt;li&gt;WordPress gave me a search function.&lt;/li&gt;
 &lt;li&gt;Commenting was built-in.&lt;/li&gt;
 &lt;/ul&gt;

@@ -5,7 +5,7 @@ author: Sarah
 layout: post
 guid: /?p=111
 permalink: /iphone-4-home-button/
-categories:
+tags:
   - UI
 ---
 My iPhone 4 is now 18 months old, and it&#8217;s Home button is starting to feel the strain. These buttons have been used much more than originally intended, with the new multitasking required double-presses, not to mention access to the camera etc. So basically , it is wearing out.

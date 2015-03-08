@@ -5,7 +5,7 @@ author: Sarah
 layout: post
 guid: /?p=546
 permalink: /icon-builder-ios-7/
-categories:
+tags:
   - Icons
 ---
 Icon Builder 1.2 was released on 18 September 2013.  

@@ -3,8 +3,9 @@ title: New Site for TrozWare
 author: Sarah
 layout: post
 permalink: /new-site-for-trozware/
-categories:
-  - TrozWare, Web
+tags:
+  - TrozWare
+  - Web
 ---
 ### Welcome to TrozWare's new site.
 

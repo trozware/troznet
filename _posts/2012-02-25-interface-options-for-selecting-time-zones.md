@@ -7,7 +7,7 @@ guid: /?p=81
 permalink: /interface-options-for-selecting-time-zones/
 dsq_thread_id:
   - 3569601004
-categories:
+tags:
   - Time in Words
   - UI
 ---

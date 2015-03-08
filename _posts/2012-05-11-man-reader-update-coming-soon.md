@@ -5,7 +5,7 @@ author: Sarah
 layout: post
 guid: /?p=229
 permalink: /man-reader-update-coming-soon/
-categories:
+tags:
   - Man Reader
   - Trouble-shooting
 ---

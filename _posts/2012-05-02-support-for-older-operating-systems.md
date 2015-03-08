@@ -5,7 +5,7 @@ author: Sarah
 layout: post
 guid: /?p=181
 permalink: /support-for-older-operating-systems/
-categories:
+tags:
   - Operating systems
 ---
 Working out what operating systems to support in your software is always a difficult decision. I only program for Mac & iOS systems for starters. This is because they are the systems I use and understand. I am not interested in expending the time & money needed to program and test my software for other systems.
