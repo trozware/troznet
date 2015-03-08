@@ -12,7 +12,7 @@ It appears that I am not alone in deciding to move away from WordPress. WordPres
 
 I had been reading about [Jekyll][5], so I decide to give it a go and also host my site on [GitHub][6], taking advantage of their faster servers.
 
-So following the advice given by [Girlie Mac][1], I have performed the migration from my self-hosted WordPress site. I am using the [Pixyll][2] theme by [John Otander][3] with a few tweaks of my own.
+I followed the advice given by [Girlie Mac][1] and performed the migration from my self-hosted WordPress site. I am using the [Pixyll][2] theme by [John Otander][3] with a few tweaks of my own.
 The site is much faster to load, and I am hoping that the easier editing will inspire me to write more posts.
 
 Of course it wasn't all positive. WordPress did give me some features I liked, but I think overall the result is better.
