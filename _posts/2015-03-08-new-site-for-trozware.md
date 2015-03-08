@@ -19,7 +19,7 @@ Of course it wasn't all positive. WordPress did give me some features I liked, b
 
 #### WordPress:
 
-- WordPress gives me a full LAMP stack, so I could run my own PHP scripts.
+- WordPress gave me a full LAMP stack, so I could run my own PHP scripts.
 - WordPress gave me a search function.
 - Commenting was built-in.
 
