@@ -7,7 +7,7 @@ baseurl:     ""
 url:         "http://trozware.github.io"
 
 # Google analytics
-google_analytics:
+google_analytics: UA-5511808
 
 # Optional features
 animated:           true
