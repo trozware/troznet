@@ -37,3 +37,4 @@ permalink:    pretty
 paginate:     5
 sass:
   compressed: true
+highlighter:	pygments

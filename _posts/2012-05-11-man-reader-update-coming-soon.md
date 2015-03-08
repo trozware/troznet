@@ -15,7 +15,9 @@ I installed MacPorts to check this out and ran into the same problem. Running th
 
 Man Reader uses the &#8220;apropos&#8221; command to list all available man pages, so I tested it next. When I found that it was not listing &#8220;port&#8221; either, I thought I had discovered the problem. OS X offers two commands for searching for man pages: apropos & whatis. The database files used by these commands are updated weekly by one of the periodic system commands. I manually ran this update command using:
 
-<pre class="toolbar:2 lang:sh decode:true">sudo /etc/periodic/weekly/320.whatis</pre>
+{% highlight bash %}
+sudo /etc/periodic/weekly/320.whatis
+{% endhighlight %}
 
 This did part of the job, as the apropos command when used in Terminal now contained the MacPorts man pages. However Man Reader still did not show these man pages.
 

@@ -18,4 +18,4 @@ The screen saver also shows a thumbnail image when in Mountain Lion and is code-
 The current version is compatible with 10.8 and 10.7. It may work in 10.6 but I cannot be sure. If anyone tries it, please let me know.
 
  [1]: /time-in-words-screen-saver-for-mac/ "Time In Words Screen Saver for Mac"
- [2]: /screensaver/download-TiWscreenSaver.php
+ [2]: /screensaver/TimeInWords-ScreenSaver.zip

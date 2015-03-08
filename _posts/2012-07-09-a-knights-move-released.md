@@ -20,7 +20,7 @@ See more about &#8220;A Knight&#8217;s Move&#8221; at the [Knight&#8217;s Move w
 
 Get the free game from the <a href="http://itunes.apple.com/app/a-knights-move/id533321133" target="_blank">Mac App Store</a> or the <a href="http://itunes.apple.com/app/a-knights-move/id530090451" target="_blank">iTunes App Store</a>.
 
-[<img title="Tutorial puzzle on iPhone" src="/wp-content/uploads/2012/07/Tutorial-500.png" alt="Tutorial puzzle on iPhone"/>][2]
+<img title="Tutorial puzzle on iPhone" src="/wp-content/uploads/2012/07/Tutorial-500.png" alt="Tutorial puzzle on iPhone"/>
 
 Tutorial puzzle on iPhone
 
@@ -29,5 +29,4 @@ Tutorial puzzle on iPhone
 Pesky Pawns - one of the more difficult puzzles on Mac.
 
  [1]: /knightsmove/
- [2]: /wp-content/uploads/2012/07/Tutorial.png
  [3]: /wp-content/uploads/2012/07/PeskyPawns.png

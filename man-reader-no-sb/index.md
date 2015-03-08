@@ -19,4 +19,4 @@ To install &#8216;Man Reader (no SB)&#8217;, click the download link below. This
 ## [Download Man Reader (no SB)][2]
 
  [1]: /manreader-sandbox/
- [2]: /manreader-nosb/download-mr.php
+ [2]: /manreader-nosb/ManReader-noSB.zip

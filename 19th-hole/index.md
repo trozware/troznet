@@ -23,18 +23,18 @@ When you have finished, you can archive the score card for future reference and 
   4. After each hole, enter the strokes played by each person.
   5. You can also record putts and various other statistics.
 
-[<img src="/wp-content/uploads/2014/04/1_4-500.png" alt="Scoring" />][1]
+<img src="/wp-content/uploads/2014/04/1_4-500.png" alt="Scoring" />
 
 Courses only need to be entered once and are then saved for future use.  
 Enter the course name, number of holes and select the tees in use. For each hole, enter the par, index/handicap, and the distance from each tee.
 
 If you are in a hurry to start the round, enter the name of the course and the number of holes. The rest of the data can be entered for each hole as you play, or can be edited later.
 
-[<img src="/wp-content/uploads/2014/04/3_4-500.png" alt="Adding a course" />][2] 
+<img src="/wp-content/uploads/2014/04/3_4-500.png" alt="Adding a course" />
 
 Players can be selected from your Contacts or entered manually. Add email addresses so the completed cards can be emailed after the round. Choose an icon for each player. If a player was selected from Contacts, you can use the photo assigned in the Contacts app.
 
-[<img src="/wp-content/uploads/2014/04/4_4-500.png" alt="Adding a player" />][3]
+<img src="/wp-content/uploads/2014/04/4_4-500.png" alt="Adding a player" />
 
 ### Gesture-controlled:
 
@@ -49,7 +49,7 @@ For a more complete score card, you can swipe downwards in the middle of the scr
 
 Tap on the hole details at the top of the screen to edit that data.
 
-[<img src="/wp-content/uploads/2014/04/5_4-500.png" alt="Gestures" />][4]
+<img src="/wp-content/uploads/2014/04/5_4-500.png" alt="Gestures" />
 
 ### After the game:
 
@@ -59,10 +59,4 @@ Once you are sure the scores are correct, tap the &#8220;Action&#8221; button in
 
 Completed rounds are listed when you tap &#8220;See Old Cards&#8221; with the most recent at the top. Tap one to see the complete score card for that round. Tap &#8220;Strokes&#8221;, &#8220;Putts&#8221; or &#8220;Stableford&#8221; to change what is shown for each hole. The summary is shown at the bottom.
 
-[<img src="/wp-content/uploads/2014/04/2_4-500.png" alt="Final Score Card" />][5]
-
- [1]: /wp-content/uploads/2014/04/1_4.png
- [2]: /wp-content/uploads/2014/04/3_4.png
- [3]: /wp-content/uploads/2014/04/4_4.png
- [4]: /wp-content/uploads/2014/04/5_4.png
- [5]: /wp-content/uploads/2014/04/2_4.png
+<img src="/wp-content/uploads/2014/04/2_4-500.png" alt="Final Score Card" />

@@ -60,7 +60,7 @@ Pic-a-POD is a utility application for Mac that downloads the picture of the day
   * <a href="http://itunes.apple.com/app/pic-a-pod/id477909802?mt=12" target="_blank">Mac App Store</a>
   * <a href="http://www.picapod.com/support/" target="_blank">Pic-a-POD Mac support site</a>
 
-[<img title="Pic-a-POD for Mac" alt="Pic-a-POD for Mac" src="/wp-content/Pic-a-POD-500.png" width="500" />][3]
+[<img title="Pic-a-POD for Mac" alt="Pic-a-POD for Mac" src="/images/Pic-a-POD-500.png" width="500" />][3]
 
 * * *
 
@@ -71,9 +71,8 @@ World Time In Words continues the theme of the iOS version, explaining the time 
   * <a href="http://itunes.apple.com/au/app/time-in-words/id509085586?mt=12" target="_blank">Mac App Store</a>
   * <a title="Time In Words for Mac" href="/time-in-words-for-mac/" target="_blank">Time In Words for Mac</a>
 
-[<img title="Time In Words menu plus time zones" alt="Time In Words menu plus time zones" src="/wp-content/uploads/2012/02/TiW-Mac-menu.png" width="500" />][4]
+<img title="Time In Words menu plus time zones" alt="Time In Words menu plus time zones" src="/wp-content/uploads/2012/02/TiW-Mac-menu.png" width="500" />
 
  [1]: /wp-content/uploads/2012/06/Mac1.png
  [2]: /wp-content/uploads/2012/04/ManReader.png
- [3]: /wp-content/Pic-a-POD.png
- [4]: /wp-content/uploads/2012/02/TiW-Mac-menu.png
+ [3]: /images/Pic-a-POD.png

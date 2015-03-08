@@ -16,7 +16,7 @@ Designed for fast, accurate score keeping with a color scheme chosen for optimal
   * <a href="https://itunes.apple.com/app/the-19th-hole/id871686159" target="_blank">iTunes App Store</a>
   * <a href="/19th-hole/" target="_blank">19th Hole</a>
 
-[<img title="19th Hole Scoring" alt="19th Hole Scoring" src="/wp-content/uploads/2014/04/1_4-500.png" />][1]
+<img title="19th Hole Scoring" alt="19th Hole Scoring" src="/wp-content/uploads/2014/04/1_4-500.png" />
 
 &nbsp;
 
@@ -31,7 +31,7 @@ When you have tried all the supplied puzzles or if you want something different,
   * <a href="http://itunes.apple.com/app/a-knights-move/id530090451" target="_blank">iTunes App Store</a>
   * <a href="/knightsmove/" target="_blank">A Knight&#8217;s Move</a>
 
-[<img title="A Knight's Move for iPhone" alt="A Knight's Move for iPhone" src="/wp-content/uploads/2012/06/iPhone1-500.png" />][2]
+<img title="A Knight's Move for iPhone" alt="A Knight's Move for iPhone" src="/wp-content/uploads/2012/06/iPhone1-500.png" />
 
 &nbsp;
 
@@ -42,7 +42,7 @@ Sequenza VII is an iPhone or iPod Touch app for oboists working on Berio&#8217;s
   * <a href="https://itunes.apple.com/us/app/sequenza-vii/id730234638?mt=8&uo=4" target="_blank">iTunes App Store</a>
   * [Berio&#8217;s Sequenza VII][3]
 
-[<img class="aligncenter size-medium wp-image-597" alt="Berio's Sequenza VII" src="/wp-content/uploads/2013/10/Berio_2-500.png" />][4]
+<img alt="Berio's Sequenza VII" src="/wp-content/uploads/2013/10/Berio_2-500.png" />
 
 ### Pic-a-POD:
 
@@ -51,7 +51,7 @@ Pic-a-POD for iOS is an app for iPad, iPhone or iPod Touch. It shows a list of t
   * <a href="http://itunes.apple.com/app/pic-a-pod/id480086912" target="_blank">iTunes App Store</a>
   * <a href="http://www.picapod.com/support-ios/" target="_blank">Pic-a-POD iOS support site</a>
 
-[<img class="aligncenter size-medium wp-image-31" title="Pic-a-POD for iOS" alt="Pic-a-POD for iOS" src="/wp-content/uploads/2012/01/Picapod-iOS-480x288.jpg" />][5]
+<img title="Pic-a-POD for iOS" alt="Pic-a-POD for iOS" src="/wp-content/uploads/2012/01/Picapod-iOS.jpg" />
 
 &nbsp;
 
@@ -62,11 +62,6 @@ Time In Words is a clock and calendar app that takes you out of the digital era 
   * <a href="http://itunes.apple.com/app/time-in-words/id498403851" target="_blank">iTunes App Store</a>
   * <a href="/time-in-words/" target="_blank">Time In Words for iOS</a>
 
-[<img class="aligncenter size-medium wp-image-45" title="Time" alt="Time" src="/wp-content/uploads/2012/01/time.png" />][6]
+<img title="Time" alt="Time" src="/wp-content/uploads/2012/01/time.png" />
 
- [1]: /wp-content/uploads/2014/04/1_4.png
- [2]: /wp-content/uploads/2012/06/iPhone1.png
  [3]: /berio/ "Berio’s Sequenza VII"
- [4]: /wp-content/uploads/2013/10/Berio_2.png
- [5]: /wp-content/uploads/2012/01/Picapod-iOS.jpg
- [6]: /wp-content/uploads/2012/01/time.png

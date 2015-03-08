@@ -18,7 +18,7 @@ dsq_thread_id:
 
 ![Make an icon set in 3 steps][1]
 
-   [1]: /wp-content/IconBuilder1.png
+   [1]: /images/IconBuilder1.png
 
 2: Choose the device family you are building for: iOS Universal, iPhone, iPad or Mac.
 
@@ -43,7 +43,7 @@ With Xcode 5 and later, Apple has changed the way a project stores image files, 
 
 ![Using the icons][2]
 
-   [2]: /wp-content/IconBuilder2.png
+   [2]: /images/IconBuilder2.png
 
 Icon Builder creates all the required image files in a folder called "AppIcon.appiconset" inside the "Images.xcassets" folder for your project. If you already have images stored in an appiconset folder, Icon Builder will not over-write them, but will add a new folder e.g. "AppIcon-1.appiconset". You can then switch between AppIcon sets in the project settings for your target app.
 

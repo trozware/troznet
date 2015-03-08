@@ -247,7 +247,7 @@ Castles has a Castle or Rook in every puzzle and is suited to players who would 
 
 &lt;p&gt;When your knight has been taken, you have the option to undo the last move so you can try again without losing the moves you have already made.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/wp-content/uploads/2013/02/UndoLast.png&quot;&gt;&lt;img class=&quot;aligncenter size-full wp-image-473&quot; alt=&quot;Undo Last Move&quot; src=&quot;/wp-content/uploads/2013/02/UndoLast.png&quot; width=&quot;321&quot; height=&quot;460&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;Undo Last Move&quot; src=&quot;/wp-content/uploads/2013/02/UndoLast.png&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 27 Feb 2013 00:00:00 +1000</pubDate>
         <link>http://trozware.github.io/a-knights-move-1-3/</link>
@@ -283,7 +283,7 @@ Castles has a Castle or Rook in every puzzle and is suited to players who would 
 
 &lt;p&gt;In the meantime, there is a work-around for Retina MBP users: force the app to run in low resolution mode.&lt;/p&gt;
 
-&lt;p&gt;In Finder, open your Applications folder and select the app (this works for both Icns Maker and Icon Builder). Press Command-I or choose Get Info from the File menu which will open a window like this:&lt;img class=&quot;aligncenter size-full wp-image-446&quot; alt=&quot;Selecting low resolution mode&quot; src=&quot;/wp-content/uploads/2013/01/LowRes.png&quot; width=&quot;379&quot; height=&quot;952&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;In Finder, open your Applications folder and select the app (this works for both Icns Maker and Icon Builder). Press Command-I or choose Get Info from the File menu which will open a window like this:&lt;img alt=&quot;Selecting low resolution mode&quot; src=&quot;/wp-content/uploads/2013/01/LowRes.png&quot; width=&quot;379&quot; height=&quot;952&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Check the checkbox labelled &amp;#8220;Open in Low Resolution&amp;#8221;. Next time the app is opened, it will ignore the Retina options and use standard resolution only. This will create icon files with the correct sizes. However text may look slightly fuzzy.&lt;/p&gt;
 

@@ -6,26 +6,6 @@ layout: page
 guid: /?page_id=141
 ---
 ## [Mac Apps][1]:
-<style>
-tbody > tr {
-	height: 70px;
-}
-td {
-	vertical-align: middle;
-}
-th:nth-of-type(1) {
-    width:40px;
-}
-th:nth-of-type(2) {
-    width:28%;
-}
-th:nth-of-type(3) {
-    width:10%;
-}
-th:nth-of-type(4) {
-    width:20%;
-}
-</style>
 
 App                          || Version | Release Date      | Download Link                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 :------ |:------------------- | :-----: | :---------------: | -------------:
@@ -68,7 +48,7 @@ App                          || Version | Release Date      | Download Link
  [15]: /time-in-words-for-mac/
  [16]: /images/ScreenSaverIcon36.png
  [17]: /time-in-words-screen-saver-for-mac/
- [18]: /screensaver/download-TiWscreenSaver.php
+ [18]: /screensaver/TimeInWords-ScreenSaver.zip
  [19]: /apps-ios/ "Apps for iOS"
  [20]: /images/19th_36.png
  [21]: /19th-hole/

@@ -24,6 +24,5 @@ Castles has a Castle or Rook in every puzzle and is suited to players who would 
 
 When your knight has been taken, you have the option to undo the last move so you can try again without losing the moves you have already made.
 
-[<img class="aligncenter size-full wp-image-473" alt="Undo Last Move" src="/wp-content/uploads/2013/02/UndoLast.png" width="321" height="460" />][1]
+<img alt="Undo Last Move" src="/wp-content/uploads/2013/02/UndoLast.png" />
 
- [1]: /wp-content/uploads/2013/02/UndoLast.png

@@ -98,7 +98,7 @@
   <h1>Making a Mac Screen Saver</h1>
   <span class="post-meta">May 9, 2012</span><br>
   
-  <span class="post-meta small">5 minute read</span>
+  <span class="post-meta small">6 minute read</span>
 </div>
 
 <article class="post-content">
@@ -106,7 +106,7 @@
 
 <p>The first thing is to create a new project in Xcode using the Screen Saver template:</p>
 
-<p><a href="/wp-content/uploads/2012/05/ScreenSaverTemplate.png"><img class="aligncenter size-medium wp-image-206" title="Xcode Screen Saver Template" src="/wp-content/uploads/2012/05/ScreenSaverTemplate-441x300.png" alt="Xcode Screen Saver Template" /></a></p>
+<p><a href="/wp-content/uploads/2012/05/ScreenSaverTemplate.png"><img title="Xcode Screen Saver Template" src="/wp-content/uploads/2012/05/ScreenSaverTemplate-441x300.png" alt="Xcode Screen Saver Template" /></a></p>
 
 <p>Xcode sets up a project for you with everything you need for a screen saver module. Start editing the ScreenSaverView.m file. The most important method here is animateOneFrame.</p>
 
@@ -115,8 +115,9 @@
 <p>Now it is up to you to decide what to show in the animateOneFrame method. For Time In Words, I assembled the data as a string, created a dictionary of text attributes, calculated the location where I wanted to show the text and used drawAtPoint:withAttributes: to display it.</p>
 
 <p>There are a couple of important tricks when working out locations: firstly, you will need to know the bounds of the screen saver area. This will vary depending on the monitor, screen size or whether the screen saver is appearing in the preview window in System Preferences. The screen saver view has a method that does this work for you.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">NSRect viewBounds = [self bounds];
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="n">NSRect</span> <span class="n">viewBounds</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">bounds</span><span class="p">];</span></code></pre></div>
+
 <p>The next trick is that you are most likely going to need some random numbers. Again, the screen saver framework supplies these to you in several forms. I used SSRandomFloatBetween but there are others. Check the documentation.</p>
 
 <p>I ran into an oddity in System Preferences that made testing a bit tedious. I built the screen saver module and double-clicked on it to install into System Preferences. That worked fine, but when I made some changes and repeated the process, the original screen saver was still in place. I found that I had to quit System Preferences each time. Deleting the old version of the screen saver was not necessary, but quitting the System Prefs app was essential.</p>
@@ -128,28 +129,30 @@
 <p><img title="NSPanel Settings" src="/wp-content/uploads/2012/05/PanelSettings.png" alt="NSPanel Settings" /></p>
 
 <p>Set the File&#8217;s Owner class to the class of your Screen Saver view. In your ScreenSaverView.h file, declare a property for this new panel. e.g.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">@property (assign) IBOutlet NSPanel *optionsPanel;
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="k">@property</span> <span class="p">(</span><span class="k">assign</span><span class="p">)</span> <span class="kt">IBOutlet</span> <span class="n">NSPanel</span> <span class="o">*</span><span class="n">optionsPanel</span><span class="p">;</span></code></pre></div>
+
 <p>@synthesize this in the ScreenSaverView.m file.
 In the xib file, connect the panel to this outlet.</p>
 
 <p>Now go back to ScreenSaverView.m and add the following code:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">- (BOOL)hasConfigureSheet {
-    return YES;
-}
 
-- (NSWindow*)configureSheet {
-    if (!self.optionsPanel) {
-        [NSBundle loadNibNamed:@&quot;Options&quot; owner:self];
-    }
-    return self.optionsPanel;
-}
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="p">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">hasConfigureSheet</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">-</span> <span class="p">(</span><span class="n">NSWindow</span><span class="o">*</span><span class="p">)</span><span class="nf">configureSheet</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">self</span><span class="p">.</span><span class="n">optionsPanel</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">[</span><span class="bp">NSBundle</span> <span class="nl">loadNibNamed</span><span class="p">:</span><span class="s">@&quot;Options&quot;</span> <span class="nl">owner</span><span class="p">:</span><span class="nb">self</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">self</span><span class="p">.</span><span class="n">optionsPanel</span><span class="p">;</span>
+<span class="p">}</span>
 
 
-- (IBAction)closeConfig:(id)sender {
-    [[NSApplication sharedApplication] endSheet:self.optionsPanel];
-}
-</code></pre></div>
+<span class="p">-</span> <span class="p">(</span><span class="kt">IBAction</span><span class="p">)</span><span class="nf">closeConfig:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nv">sender</span> <span class="p">{</span>
+    <span class="p">[[</span><span class="n">NSApplication</span> <span class="n">sharedApplication</span><span class="p">]</span> <span class="nl">endSheet</span><span class="p">:</span><span class="nb">self</span><span class="p">.</span><span class="n">optionsPanel</span><span class="p">];</span>
+<span class="p">}</span></code></pre></div>
+
 <p>The hasConfigureSheet and configureSheet stubs are already there for you, but you can replace them with these versions.</p>
 
 <p>Go back to the xib file and drag in a button to close the options panel. Connect it to the closeConfig: action.</p>
@@ -161,32 +164,33 @@ In the xib file, connect the panel to this outlet.</p>
 <p>Once the panel is opening and closing as required, you need to add the ability to store and retrieve the settings. Instead of using NSUserDefaults as you would in a standard Mac app, there is a special class call ScreenSaverDefaults for screen savers. It needs a unique module name, so I used the bundle identifier. For my Time In Words screen saver, this is &#8220;net.troz.Time-In-Words-Screen-Saver&#8221;. I defined a constant to hold this as a string, so I could use it anywhere I needed.</p>
 
 <p>In the initWithFrame:isPreview: method, I got a reference to the screen saver defaults for my screen saver and registered the defaults. I am never very sure about the need to do this, but it is supposed to be a good practice.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
-[defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys: 
-    @&quot;NO&quot;, @&quot;UseAlternativeZone&quot;, @&quot;&quot;, @&quot;AlternativeZoneName&quot;, nil]];
 
-Using them is exactly the same as using NSUserDefaults: 
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="n">ScreenSaverDefaults</span> <span class="o">*</span><span class="n">defaults</span> <span class="o">=</span> <span class="p">[</span><span class="n">ScreenSaverDefaults</span> <span class="nl">defaultsForModuleWithName</span><span class="p">:</span><span class="n">kModuleName</span><span class="p">];</span>
+<span class="p">[</span><span class="n">defaults</span> <span class="nl">registerDefaults</span><span class="p">:[</span><span class="bp">NSDictionary</span> <span class="nl">dictionaryWithObjectsAndKeys</span><span class="p">:</span> 
+    <span class="s">@&quot;NO&quot;</span><span class="p">,</span> <span class="s">@&quot;UseAlternativeZone&quot;</span><span class="p">,</span> <span class="s">@&quot;&quot;</span><span class="p">,</span> <span class="s">@&quot;AlternativeZoneName&quot;</span><span class="p">,</span> <span class="nb">nil</span><span class="p">]];</span>
+    
+<span class="n">Using</span> <span class="n">them</span> <span class="n">is</span> <span class="n">exactly</span> <span class="n">the</span> <span class="n">same</span> <span class="n">as</span> <span class="n">using</span> <span class="nl">NSUserDefaults</span><span class="p">:</span> 
 
-// Reading
-ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
-BOOL useAlternativeZone = [defaults boolForKey:@&quot;UseAlternativeZone&quot;];
-NSString *alternativeZoneName = [defaults objectForKey:@&quot;AlternativeZoneName&quot;];
+<span class="c1">// Reading</span>
+<span class="n">ScreenSaverDefaults</span> <span class="o">*</span><span class="n">defaults</span> <span class="o">=</span> <span class="p">[</span><span class="n">ScreenSaverDefaults</span> <span class="nl">defaultsForModuleWithName</span><span class="p">:</span><span class="n">kModuleName</span><span class="p">];</span>
+<span class="kt">BOOL</span> <span class="n">useAlternativeZone</span> <span class="o">=</span> <span class="p">[</span><span class="n">defaults</span> <span class="nl">boolForKey</span><span class="p">:</span><span class="s">@&quot;UseAlternativeZone&quot;</span><span class="p">];</span>
+<span class="bp">NSString</span> <span class="o">*</span><span class="n">alternativeZoneName</span> <span class="o">=</span> <span class="p">[</span><span class="n">defaults</span> <span class="nl">objectForKey</span><span class="p">:</span><span class="s">@&quot;AlternativeZoneName&quot;</span><span class="p">];</span>
 
-...
+<span class="p">...</span>
 
-// Writing
-ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
-[defaults setBool:useAlternative forKey:@&quot;UseAlternativeZone&quot;];
-[defaults setObject:alternativeZoneName forKey:@&quot;AlternativeZoneName&quot;];
-[defaults synchronize];
-</code></pre></div>
+<span class="c1">// Writing</span>
+<span class="n">ScreenSaverDefaults</span> <span class="o">*</span><span class="n">defaults</span> <span class="o">=</span> <span class="p">[</span><span class="n">ScreenSaverDefaults</span> <span class="nl">defaultsForModuleWithName</span><span class="p">:</span><span class="n">kModuleName</span><span class="p">];</span>
+<span class="p">[</span><span class="n">defaults</span> <span class="nl">setBool</span><span class="p">:</span><span class="n">useAlternative</span> <span class="nl">forKey</span><span class="p">:</span><span class="s">@&quot;UseAlternativeZone&quot;</span><span class="p">];</span>
+<span class="p">[</span><span class="n">defaults</span> <span class="nl">setObject</span><span class="p">:</span><span class="n">alternativeZoneName</span> <span class="nl">forKey</span><span class="p">:</span><span class="s">@&quot;AlternativeZoneName&quot;</span><span class="p">];</span>
+<span class="p">[</span><span class="n">defaults</span> <span class="n">synchronize</span><span class="p">];</span></code></pre></div>
+
 <p>One last thing: if you want to distribute the screen saver, you will want to create an archive, possibly code-signing with your Apple developer ID to allow for Mountain Lion&#8217;s up-coming Gatekeeper security system. I code-signed the project and built an archive, but when I clicked &#8220;Distribute&#8221; in the Organizer, the only appropriate options was &#8220;Save Built Products&#8221;. I selected this option and ended up with a series of folders inside folders, with the screen saver module in about the fifth folder down. I don&#8217;t know why the module gets distributed like this, but I pulled it out of the folders and it worked fine.</p>
 
 <p>And that&#8217;s about it. A lot of this stuff is online or in Apple&#8217;s documentation, but there are enough oddities to make it worthwhile gathering together all that I learnt while making this screen saver.</p>
 
 <p>Click this icon to download the screen saver:</p>
 
-<p><a href="/screensaver/download-TiWscreenSaver.php"><img class="size-full wp-image-196 aligncenter" style="border-style: initial; border-color: initial; border-width: 0px;" title="Click to download Time In Words Screen Saver" src="/wp-content/uploads/2012/05/ScreenSaverIcon128.png" alt="Time In Words Screen Saver Download" width="128" height="128" /></a></p>
+<p><a href="/screensaver/TimeInWords-ScreenSaver.zip"><img style="border-style: initial; border-color: initial; border-width: 0px;" title="Click to download Time In Words Screen Saver" src="/wp-content/uploads/2012/05/ScreenSaverIcon128.png" alt="Time In Words Screen Saver Download" width="128" height="128" /></a></p>
 
 </article>
 

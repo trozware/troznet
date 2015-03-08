@@ -23,8 +23,8 @@ For any problems with this app, please use the Contact Me link in the sidebar.
 
 Screen shots are for iPhone or iPod Touch. iPad is similar but allows four time zone conversions.
 
-<img title="Time" src="/wp-content/uploads/2012/01/time-200x300.png" alt="Time" width="200" height="300" /> 
-<img title="Date" src="/wp-content/uploads/2012/01/date-200x300.png" alt="Date" width="200" height="300" />
-<img title="Time and Date" src="/wp-content/uploads/2012/01/datetime-200x300.png" alt="Time and Date" width="200" height="300" /> 
-<img title="Time zone conversion" src="/wp-content/uploads/2012/01/convert-200x300.png" alt="Time zone conversion" width="200" height="300" />
-<img title="Settings" src="/wp-content/uploads/2012/01/prefs-208x300.png" alt="Settings" width="200" height="300" />
+<img title="Time" src="/images/TiW-iOS-1.png" alt="Time" /> 
+<img title="Date" src="/images/TiW-iOS-2.png" alt="Date" />
+<img title="Time and Date" src="/images/TiW-iOS-3.png" alt="Time and Date" /> 
+<img title="Time zone conversion" src="/images/TiW-iOS-4.png" alt="Time zone conversion" />
+<img title="Settings" src="/images/TiW-iOS-5.png" alt="Settings" />

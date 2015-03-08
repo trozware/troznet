@@ -42,7 +42,7 @@ Note that apps submitted to the Mac App Store now require a 1024&#215;1024 versi
 
 ## If you want more control:
 
-Click the “Smaller sizes” switch to show all the other image sizes.[<img class="aligncenter size-medium wp-image-536" alt="Get More Control" src="/wp-content/uploads/2012/08/IcnsMaker2-300x187.png" width="300" height="187" />][2]
+Click the “Smaller sizes” switch to show all the other image sizes.[<img alt="Get More Control" src="/wp-content/uploads/2012/08/IcnsMaker2-300x187.png" width="300" height="187" />][2]
 
 When you drag an image into the 1024 x 1024 area, it is resized to supply all the required images. If you have a smaller version of your icon image that you want to use for some of the smaller sizes, just drag the image into the largest image area that you want it to be used for.
 
