@@ -40,10 +40,12 @@ The site is much faster to load, and I am hoping that the easier editing will in
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;For comments, I have switched to Disqus, but I am not sure about it yet. I will evaluate over the next few weeks. In WordPress, I used a plugin to handle the spam that inevitably arrived. I am hoping that Disqus will protect me from that, but I have to see how good a job it does and whether the few real comments are worth it.
+&lt;p&gt;For comments, I have switched to &lt;a href=&quot;https://disqus.com&quot;&gt;Disqus&lt;/a&gt;, but I am not sure about it yet. I will evaluate over the next few weeks. In WordPress, I used a plugin to handle the spam that inevitably arrived. I am hoping that Disqus will protect me from that, but I have to see how good a job it does and whether the few real comments are worth it.
 A better option might be to turn off comments completely and just have a contact form (which I have added using &lt;a href=&quot;http://formspree.io&quot;&gt;Formspree&lt;/a&gt;).&lt;/p&gt;
 
 &lt;p&gt;Working in Markdown is great. I love how I can have a really clean look in my editor and still end up with well formatted HTML. I use Coda 2 on my Mac as my standard web editor, so that is what I am writing in now. I will probably experiment with other Markdown editors as I go. And for any Mac users out there working in Markdown, I highly recommend &lt;a href=&quot;http://brettterpstra.com/projects/markdown-service-tools/&quot;&gt;Brett Terpstra&amp;rsquo;s Markdown Service Tools&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; I couldn&amp;rsquo;t get  Disqus to apply the old comments to the posts on this new site, and given the low volume of legitimate comments, I have decided to turn off commenting. If anyone wants to say something, use the Contact link at the top right to send me a message and I will add it to the post if required.&lt;/p&gt;
 </description>
         <pubDate>Sun, 08 Mar 2015 00:00:00 +1000</pubDate>
         <link>http://trozware.github.io/new-site-for-trozware/</link>
