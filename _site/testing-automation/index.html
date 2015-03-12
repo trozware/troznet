@@ -96,8 +96,6 @@
         
 
 
-
-
 <div class="post-header mb2">
   <h1>Testing automation</h1>
   <span class="post-meta">Mar 12, 2015</span><br>
@@ -106,7 +104,28 @@
 </div>
 
 <article class="post-content">
-  
+  <p>Today I am experimenting with automating post generation.</p>
+
+<p>Firstly, there is the structure of the post Markdown document, which really boils down to the file name and the header.</p>
+
+<p>I have set up a macro in Typinator so that I just type the title of the post in a text document. Then I copy that titel to the clip board and type the shortcut. The header is then created with the title and the formatted permalink.</p>
+
+<p>To save the document, I use another Typinator snippet to convert the title (still in the clipboard) to lower case and to replace the spaces in the title with dashes.</p>
+
+<p>For starting the local Jekyll server, I have turned to an Alfred workflow. I have two actions in the workflow. One opens Terminal, cd&rsquo;s to my site folder and runs the command to start the local Jekyll server. The second opens my default browser to the local Jekyll test address.</p>
+
+<p>Both these actions happen simultaneously so the browser usually fails until refreshed.
+The server is left running in Terminal so I can shut it down when finished testing.</p>
+
+<p>The final stage is to publish, so I need to work out the commands for doing a git commit and push. Then I should be able to make another Alfred workflow to perform those tasks.</p>
+
+<p>Testing the git commands using Terminal, I have come up with the following sequence:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">git add .
+git commit -a -m &#39;Commit message here&#39;
+git push
+</code></pre></div>
+<p>The commit message could be the title of the post, so I need a way to construct the command and then execute it. Typinator is good at text manipulation, so I constructed another macro that takes the clipboard, uses it has the commit message and performs the git commands. I have to go into Terminal to trigger this macro, but then it appears to work.</p>
+
 </article>
 
 <br>
