@@ -7,6 +7,8 @@ guid: /?p=472
 permalink: /a-knights-move-1-3/
 tags:
   - Knight's Move
+  - iOS
+  - Mac
 ---
 A Knight&#8217;s Move has been updated to version 1.3. The iOS version is now available at the <a href="https://itunes.apple.com/app/a-knights-move/id530090451?mt=8" target="_blank">iTunes App Store</a> and the Mac version is available through the <a href="https://itunes.apple.com/app/a-knights-move/id533321133?mt=12" target="_blank">Mac App Store</a>.
 

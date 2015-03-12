@@ -9,6 +9,8 @@ dsq_thread_id:
   - 3569563929
 tags:
   - Icons
+  - Mac
+  - iOS
 ---
 Announcing two new apps for creating icons for with Mac or iOS projects:
 

@@ -9,6 +9,8 @@ dsq_thread_id:
   - 3567569230
 tags:
   - App Store
+  - Mac
+  - iOS
 ---
 There are been a lots of stories going around about lengthening Mac App Store review times. <a href="http://reviewtimes.shinydevelopment.com" target="_blank">Shiny Developments</a> crowd-sourced data certainly backs this up although they have  much more data for iOS apps than for Mac apps.
 

@@ -8,6 +8,7 @@ permalink: /man-reader-update-coming-soon/
 tags:
   - Man Reader
   - Trouble-shooting
+  - Mac
 ---
 Man Reader launched on the Mac App Store a couple of days ago and yesterday I got an email form a purchaser who reported that Man Reader was not displaying the man pages for MacPorts, even though he had the paths set up correctly.
 

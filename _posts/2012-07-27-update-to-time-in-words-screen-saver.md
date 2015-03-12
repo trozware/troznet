@@ -8,6 +8,7 @@ permalink: /update-to-time-in-words-screen-saver/
 tags:
   - Time in Words
   - Screen saver
+  - Mac
 ---
 [Time In Words screen saver][1] has just been updated to version 1.1 and is now fully compatible with Mountain Lion. It is free to use and can be [downloaded][2] here.
 

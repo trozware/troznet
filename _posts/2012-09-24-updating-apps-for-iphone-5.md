@@ -8,6 +8,7 @@ permalink: /updating-apps-for-iphone-5/
 tags:
   - Operating systems
   - UI
+  - iOS
 ---
 I have started work updating my iOS apps to fill the larger screen of an iPhone 5. My iPhone 5 is on order &#8211; I missed out on the first shipment, but hopefully it won&#8217;t be too long. Meanwhile, I will just test in the iPhone Simulator and hope this is OK.
 

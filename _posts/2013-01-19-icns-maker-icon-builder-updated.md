@@ -7,6 +7,7 @@ guid: /?p=450
 permalink: /icns-maker-icon-builder-updated/
 tags:
   - Icons
+  - Mac
 ---
 January 18th 2013:
 

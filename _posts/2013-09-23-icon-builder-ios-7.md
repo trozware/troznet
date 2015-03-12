@@ -7,6 +7,8 @@ guid: /?p=546
 permalink: /icon-builder-ios-7/
 tags:
   - Icons
+  - Mac
+  - iOS
 ---
 Icon Builder 1.2 was released on 18 September 2013.  
 It was an update with 2 new functions:

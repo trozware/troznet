@@ -1,0 +1,13 @@
+---
+layout: default
+title: Tags
+---
+
+<h2>{{ page.title }}</h2>
+
+<ul>
+	{% assign sorted_tags = (site.tags | sort:0) %}
+    {% for tag in sorted_tags %}		
+        <li><a href="/tags/{{ tag[0] }}">{{ tag[0] }} {{ tag[1].posts.count }}</a></li>
+    {% endfor %}
+</ul>

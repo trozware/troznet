@@ -7,6 +7,7 @@ guid: /?p=394
 permalink: /a-knights-move-updates/
 tags:
   - Knight's Move
+  - iOS
 ---
 A Knight&#8217;s Move for iOS has been updated to take advantage of the taller iPhone 5 screen.
 

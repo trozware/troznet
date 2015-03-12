@@ -7,6 +7,8 @@ guid: /?p=613
 permalink: /email-clients-for-mac-ios/
 tags:
   - Email
+  - Mac
+  - iOS
 ---
 Some people are moving away from email, but for me, it remains the best way to communicate online. I get to keep a record of conversations and the attached files are with the text so I can always see the context.
 

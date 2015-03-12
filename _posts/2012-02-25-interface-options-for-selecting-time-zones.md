@@ -9,6 +9,7 @@ dsq_thread_id:
   - 3569601004
 tags:
   - Time in Words
+  - Mac
   - UI
 ---
 As part of the design for [Time In Words for Mac][1], I had to work out the interface for selecting time zones. With [Time In Word for iOS][2], I used picker wheels which are excellent for selecting hierarchical data. On the Mac, there is no such thing as the iOS picker wheel and so I had to consider what to use instead.

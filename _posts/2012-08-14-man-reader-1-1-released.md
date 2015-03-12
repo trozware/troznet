@@ -7,6 +7,7 @@ guid: /?p=340
 permalink: /man-reader-1-1-released/
 tags:
   - Man Reader
+  - Mac
 ---
 The update of [Man Reader][1] to version 1.1 has just become available through the Mac App Store. This update has a bunch of [new features][2] &#8211; thanks to everyone who made suggestions.
 

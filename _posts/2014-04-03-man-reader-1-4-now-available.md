@@ -7,6 +7,7 @@ guid: /?p=640
 permalink: /man-reader-1-4-now-available/
 tags:
   - Man Reader
+  - Mac
 ---
 [Man Reader 1.4][1] is now available through the [Mac App Store][2].
 
