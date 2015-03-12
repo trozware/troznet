@@ -29,4 +29,4 @@ Testing the git commands using Terminal, I have come up with the following seque
 
 The commit message could be the title of the post, so I need a way to construct the command and then execute it. Typinator is good at text manipulation, so I constructed another macro that takes the clipboard, uses it has the commit message and performs the git commands. I have to go into Terminal to trigger this macro, but then it appears to work.
 
-
+So there is still room for improvement, but with a set of macros, I can automate a lot of the standard text entry, which is always good for reducing errors.
