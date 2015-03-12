@@ -7,6 +7,14 @@
     <atom:link href="http://trozware.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Testing automation</title>
+        <description></description>
+        <pubDate>Thu, 12 Mar 2015 00:00:00 +1000</pubDate>
+        <link>http://trozware.github.io/testing-automation/</link>
+        <guid isPermaLink="true">http://trozware.github.io/testing-automation/</guid>
+      </item>
+    
+      <item>
         <title>Workflow for writing a post</title>
         <description>&lt;p&gt;So here is where I need to get used to Jekyll and how things are done.
 I will end up automating this when I am sure of the process, but for now, I am just going to work my way through it.&lt;/p&gt;
@@ -368,33 +376,6 @@ And with the alignment, there is nothing to stop me adding CSS to the Markdown.&
         <pubDate>Mon, 01 Apr 2013 00:00:00 +1000</pubDate>
         <link>http://trozware.github.io/markdown/</link>
         <guid isPermaLink="true">http://trozware.github.io/markdown/</guid>
-      </item>
-    
-      <item>
-        <title>A Knight&amp;#8217;s Move 1.3</title>
-        <description>&lt;p&gt;A Knight&amp;#8217;s Move has been updated to version 1.3. The iOS version is now available at the &lt;a href=&quot;https://itunes.apple.com/app/a-knights-move/id530090451?mt=8&quot; target=&quot;_blank&quot;&gt;iTunes App Store&lt;/a&gt; and the Mac version is available through the &lt;a href=&quot;https://itunes.apple.com/app/a-knights-move/id533321133?mt=12&quot; target=&quot;_blank&quot;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;three-new-level-packs:&quot;&gt;Three new level packs:&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Eight by Eight&lt;/li&gt;
-&lt;li&gt;Bishops Rule&lt;/li&gt;
-&lt;li&gt;Castles&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Eight by Eight has every puzzle set in a chessboard sized grid with more conventional placing of pieces.&lt;br&gt;
-Bishops Rule has at least one Bishop in every puzzle.&lt;br&gt;
-Castles has a Castle or Rook in every puzzle and is suited to players who would like more of a challenge.&lt;/p&gt;
-
-&lt;h2 id=&quot;new-feature:&quot;&gt;New feature:&lt;/h2&gt;
-
-&lt;p&gt;When your knight has been taken, you have the option to undo the last move so you can try again without losing the moves you have already made.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&quot;Undo Last Move&quot; src=&quot;/wp-content/uploads/2013/02/UndoLast.png&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 27 Feb 2013 00:00:00 +1000</pubDate>
-        <link>http://trozware.github.io/a-knights-move-1-3/</link>
-        <guid isPermaLink="true">http://trozware.github.io/a-knights-move-1-3/</guid>
       </item>
     
   </channel>
