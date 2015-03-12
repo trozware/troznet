@@ -100,7 +100,7 @@
   <h1>Testing automation</h1>
   <span class="post-meta">Mar 12, 2015</span><br>
   
-  <span class="post-meta small">1 minute read</span>
+  <span class="post-meta small">2 minute read</span>
 </div>
 
 <article class="post-content">
@@ -108,25 +108,42 @@
 
 <p>Firstly, there is the structure of the post Markdown document, which really boils down to the file name and the header.</p>
 
-<p>I have set up a macro in Typinator so that I just type the title of the post in a text document. Then I copy that titel to the clip board and type the shortcut. The header is then created with the title and the formatted permalink.</p>
+<p>I have set up a macro in <a href="http://www.ergonis.com/products/typinator/">Typinator</a> so that I just type the title of the post in a text document. I copy that title to the clipboard and type the shortcut. The header is then created with the title and the formatted permalink.</p>
 
 <p>To save the document, I use another Typinator snippet to convert the title (still in the clipboard) to lower case and to replace the spaces in the title with dashes.</p>
 
-<p>For starting the local Jekyll server, I have turned to an Alfred workflow. I have two actions in the workflow. One opens Terminal, cd&rsquo;s to my site folder and runs the command to start the local Jekyll server. The second opens my default browser to the local Jekyll test address.</p>
+<p>For starting the local Jekyll server, I have turned to an <a href="http://www.alfredapp.com">Alfred</a> workflow. I have two actions in the workflow. One opens Terminal, cd&rsquo;s to my site folder and runs the command to start the local Jekyll server. The second opens my default browser to the local Jekyll test address.</p>
 
 <p>Both these actions happen simultaneously so the browser usually fails until refreshed.
 The server is left running in Terminal so I can shut it down when finished testing.</p>
 
-<p>The final stage is to publish, so I need to work out the commands for doing a git commit and push. Then I should be able to make another Alfred workflow to perform those tasks.</p>
+<p>After writing the post, the final stage is to publish, so I need to work out the commands for doing a git commit and push. Then I should be able to automate those tasks.</p>
 
 <p>Testing the git commands using Terminal, I have come up with the following sequence:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">git add .
-git commit -a -m &#39;Commit message here&#39;
+git commit -a -m &quot;Commit message here&quot;
 git push
 </code></pre></div>
-<p>The commit message could be the title of the post, so I need a way to construct the command and then execute it. Typinator is good at text manipulation, so I constructed another macro that takes the clipboard, uses it has the commit message and performs the git commands. I have to go into Terminal to trigger this macro, but then it appears to work.</p>
+<p>The commit message could be the title of the post, so I need a way to construct the command and then execute it. Typinator is good at text manipulation, so I constructed another macro that takes the clipboard, uses it as the commit message and performs the git commands. This gave a good commit message, but the actual commit failed, so that was no use.</p>
+
+<p>So then I went back to Alfred and created a workflow there with a series of Terminal commands to perform the actions above. This only allows a generic commit message, but it works as expected.</p>
 
 <p>So there is still room for improvement, but with a set of macros, I can automate a lot of the standard text entry, which is always good for reducing errors.</p>
+
+<hr>
+
+<p>The sequence now is:</p>
+
+<ol>
+<li>Open the text editor and type the title of the post.</li>
+<li>Cut this into the clipboard.</li>
+<li>Run the Typinator macro to fill in the post header.</li>
+<li>Save the post file, using the Typinator macro to construct the file name.</li>
+<li>Write the post, then use an Alfred workflow to test it locally.</li>
+<li>When ready, use an Alfred workflow to publish.</li>
+</ol>
+
+<hr>
 
 </article>
 
