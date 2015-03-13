@@ -6,9 +6,9 @@ layout: post
 guid: /?p=529
 permalink: /icon-apps-updated/
 tags:
-  - Icons
-  - Mac
-  - iOS
+  - icons
+  - mac
+  - ios
 ---
 <a href="https://itunes.apple.com/au/app/icns-maker/id550942266?mt=12" target="_blank">Icns Maker</a> and <a href="https://itunes.apple.com/au/app/icon-builder/id552293482?mt=12" target="_blank">Icon Builder</a> have both just been updated to support Xcode 5.
 

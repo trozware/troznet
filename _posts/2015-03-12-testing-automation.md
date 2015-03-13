@@ -4,8 +4,8 @@ author: Sarah
 layout: post
 permalink: /testing-automation/
 tags:
-  - Jekyll
-  - Web
+  - jekyll
+  - web
 ---
 Today I am experimenting with automating post generation.
 

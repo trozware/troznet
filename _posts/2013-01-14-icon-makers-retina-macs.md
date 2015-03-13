@@ -6,9 +6,9 @@ layout: post
 guid: /?p=445
 permalink: /icon-makers-retina-macs/
 tags:
-  - Icons
-  - Mac
-  - iOS
+  - icons
+  - mac
+  - ios
 ---
 Icns Maker which makes an icns icon file for Mac apps, and Icon Builder which makes the suite of png files needed for iOS apps, are both compatible with the Retina MacBook Pro.
 

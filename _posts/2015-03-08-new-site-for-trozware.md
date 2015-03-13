@@ -4,8 +4,8 @@ author: Sarah
 layout: post
 permalink: /new-site-for-trozware/
 tags:
-  - TrozWare
-  - Web
+  - trozware
+  - web
 ---
 ### Welcome to TrozWare's new site.
 

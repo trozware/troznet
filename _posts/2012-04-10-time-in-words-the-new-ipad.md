@@ -6,9 +6,9 @@ layout: post
 guid: /?p=118
 permalink: /time-in-words-the-new-ipad/
 tags:
-  - Time in Words
-  - iOS
-  - Trouble-shooting
+  - time in words
+  - ios
+  - trouble-shooting
 ---
 The new iPad has a Retina display, meaning that the pixel density is much greater. For some apps, this is a problem as their graphics are now scaled and look pixellated. However Time In Words is very simple. It uses standard fonts and interface widgets with no images or external graphics apart from the icon. The icon may not look perfect on a new iPad, but the display itself should look really great.
 

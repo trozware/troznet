@@ -4,9 +4,9 @@ author: Sarah
 layout: post
 permalink: /workflow-for-writing-a-post/
 tags:
-  - Jekyll
-  - Markdown
-  - Web
+  - jekyll
+  - markdown
+  - web
 ---
 
 So here is where I need to get used to Jekyll and how things are done.

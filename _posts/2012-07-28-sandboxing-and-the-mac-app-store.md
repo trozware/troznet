@@ -6,10 +6,10 @@ layout: post
 guid: /?p=314
 permalink: /sandboxing-and-the-mac-app-store/
 tags:
-  - Trouble-shooting
-  - Sand-box
-  - Man Reader
-  - Mac
+  - trouble-shooting
+  - sand-box
+  - man reader
+  - mac
 ---
 As of June 2012, all apps submitted to the Mac App Store have to be sandboxed i.e. they have to be able to run in a limited environment where they cannot interfere with other apps or other parts of the system. While this is generally a good thing, there are problems when apps have legitimate reasons for requiring access to other resources.
 

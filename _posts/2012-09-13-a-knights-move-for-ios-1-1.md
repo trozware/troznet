@@ -6,8 +6,8 @@ layout: post
 guid: /?p=356
 permalink: /a-knights-move-for-ios-1-1/
 tags:
-  - Knight's Move
-  - iOS
+  - knight's move
+  - ios
 ---
 <a href="http://itunes.apple.com/app/a-knights-move/id530090451" target="_blank">A Knight&#8217;s Move for iPad & iPhone</a> has just been updated to version 1.1
 

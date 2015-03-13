@@ -5,9 +5,32 @@ title: Tags
 
 <h2>{{ page.title }}</h2>
 
-<ul>
-	{% assign sorted_tags = (site.tags | sort:0) %}
-    {% for tag in sorted_tags %}	
-        <li><a href="/tags/{{ tag[0] }}">{{ tag[0] }} {{ tag[1].posts.count }}</a></li>
-    {% endfor %}
-</ul>
+{% assign sorted_tags = (site.tags | sort ) %}
+{% for category in sorted_tags %}
+     <span style="font-size: 1.25rem">
+        <a href="#{{ category | first }}">
+            {{ category | first }}
+        </a>
+    </span> &nbsp; 
+{% endfor %}
+
+<hr>
+
+{% assign sorted_tags = (site.tags | sort ) %}
+{% for tag in sorted_tags %}
+  {% assign t = tag | first %}
+  {% assign posts = tag | last %}
+
+<h3><a name="{{ t }}"></a>{{ t }}</h3>
+<table class="this">
+{% for post in posts %}
+  {% if post.tags contains t %}
+		<tr>
+			<td width="20%" style="padding: 6px; border-top: 0;"><time>{{ post.date | date:"%d %b %Y" }}</time></td>
+			<td style="padding: 6px; border-top: 0;"><a href="{{ post.url }}">{{ post.title }}</a></td>
+		</tr>
+  {% endif %}
+{% endfor %}
+</table>
+<a style="font-size: 2.0rem; float: right;" href="#Top">🔝</a>
+{% endfor %}

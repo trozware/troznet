@@ -6,8 +6,8 @@ layout: post
 guid: /?p=604
 permalink: /berio-sequenza-vii/
 tags:
-  - Music
-  - iOS
+  - music
+  - ios
 ---
 So my latest app is way outside my usual sphere but that&#8217;s what happens when family decide that what you do might actually be useful!
 

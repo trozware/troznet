@@ -6,8 +6,8 @@ layout: post
 guid: /?p=62
 permalink: /time-in-words-available-in-the-app-store/
 tags:
-  - Time in Words
-  - iOS
+  - time in words
+  - ios
 ---
 Time In Words is now available at the App Store.
 

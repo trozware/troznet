@@ -8,9 +8,9 @@ permalink: /icon-makers-for-mac-ios-apps/
 dsq_thread_id:
   - 3569563929
 tags:
-  - Icons
-  - Mac
-  - iOS
+  - icons
+  - mac
+  - ios
 ---
 Announcing two new apps for creating icons for with Mac or iOS projects:
 

@@ -6,8 +6,8 @@ layout: post
 guid: /?p=225
 permalink: /pic-a-pod-2-0-4-for-mac/
 tags:
-  - Pic-a-POD
-  - Mac
+  - pic-a-pod
+  - mac
 ---
 The latest update for [Pic-a-POD for Mac][1] is now available through the <a href="http://itunes.apple.com/app/pic-a-pod/id477909802?mt=12&uo=4" target="_blank">Mac App Store</a>.
 

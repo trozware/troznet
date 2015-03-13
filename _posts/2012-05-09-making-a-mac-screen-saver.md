@@ -8,9 +8,9 @@ permalink: /making-a-mac-screen-saver/
 dsq_thread_id:
   - 3565951419
 tags:
-  - Screen saver
-  - Time in Words
-  - Mac
+  - screen saver
+  - time in words
+  - mac
 ---
 Having just completed the my first screen saver for Mac &#8211; the [Time In Words Screen Saver][1], I thought I would share some of the experiences. I am using OS X Lion (10.7) and Xcode 4.3.2
 
