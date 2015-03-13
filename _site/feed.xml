@@ -3,8 +3,8 @@
   <channel>
     <title>TrozWare</title>
     <description>Mac &amp;amp; iOS Developer</description>
-    <link>http://trozware.github.io/</link>
-    <atom:link href="http://trozware.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://troz.net/</link>
+    <atom:link href="http://troz.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>Testing automation</title>
@@ -50,8 +50,8 @@ git push
 &lt;hr&gt;
 </description>
         <pubDate>Thu, 12 Mar 2015 00:00:00 +1000</pubDate>
-        <link>http://trozware.github.io/testing-automation/</link>
-        <guid isPermaLink="true">http://trozware.github.io/testing-automation/</guid>
+        <link>http://troz.net/testing-automation/</link>
+        <guid isPermaLink="true">http://troz.net/testing-automation/</guid>
       </item>
     
       <item>
@@ -147,8 +147,8 @@ I will end up automating this when I am sure of the process, but for now, I am j
 &lt;/ol&gt;
 </description>
         <pubDate>Tue, 10 Mar 2015 00:00:00 +1000</pubDate>
-        <link>http://trozware.github.io/workflow-for-writing-a-post/</link>
-        <guid isPermaLink="true">http://trozware.github.io/workflow-for-writing-a-post/</guid>
+        <link>http://troz.net/workflow-for-writing-a-post/</link>
+        <guid isPermaLink="true">http://troz.net/workflow-for-writing-a-post/</guid>
       </item>
     
       <item>
@@ -193,8 +193,8 @@ A better option might be to turn off comments completely and just have a contact
 &lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; I couldn&amp;rsquo;t get  Disqus to apply the old comments to the posts on this new site, and given the low volume of legitimate comments, I have decided to turn off commenting. If anyone wants to say something, use the Contact link at the top right to send me a message and I will add it to the post if required.&lt;/p&gt;
 </description>
         <pubDate>Sun, 08 Mar 2015 00:00:00 +1000</pubDate>
-        <link>http://trozware.github.io/new-site-for-trozware/</link>
-        <guid isPermaLink="true">http://trozware.github.io/new-site-for-trozware/</guid>
+        <link>http://troz.net/new-site-for-trozware/</link>
+        <guid isPermaLink="true">http://troz.net/new-site-for-trozware/</guid>
       </item>
     
       <item>
@@ -215,8 +215,8 @@ A better option might be to turn off comments completely and just have a contact
 &lt;p&gt;As always, please let me know if you have any suggestions for future versions.&lt;/p&gt;
 </description>
         <pubDate>Tue, 10 Feb 2015 00:00:00 +1000</pubDate>
-        <link>http://trozware.github.io/world-time-in-words/</link>
-        <guid isPermaLink="true">http://trozware.github.io/world-time-in-words/</guid>
+        <link>http://troz.net/world-time-in-words/</link>
+        <guid isPermaLink="true">http://troz.net/world-time-in-words/</guid>
       </item>
     
       <item>
@@ -246,8 +246,8 @@ You can also download a &lt;a href=&quot;/manreader-paddle/ManReader.zip&quot;&g
 &lt;p&gt;If you have already purchased Man Reader from the App Store, but would like to have a non-sandboxed version, go to &lt;a href=&quot;/man-reader-no-sb/&quot;&gt;Man Reader (no SB)&lt;/a&gt; for more information on how to download a non-sandboxed version that will use your App Store licence.&lt;/p&gt;
 </description>
         <pubDate>Thu, 03 Apr 2014 00:00:00 +1000</pubDate>
-        <link>http://trozware.github.io/man-reader-1-4-now-available/</link>
-        <guid isPermaLink="true">http://trozware.github.io/man-reader-1-4-now-available/</guid>
+        <link>http://troz.net/man-reader-1-4-now-available/</link>
+        <guid isPermaLink="true">http://troz.net/man-reader-1-4-now-available/</guid>
       </item>
     
       <item>
@@ -288,8 +288,8 @@ You can also download a &lt;a href=&quot;/manreader-paddle/ManReader.zip&quot;&g
 &lt;p&gt;So the jury is still out for iPad email clients, but on the Mac, I am leaning towards Unibox.&lt;/p&gt;
 </description>
         <pubDate>Tue, 25 Mar 2014 00:00:00 +1000</pubDate>
-        <link>http://trozware.github.io/email-clients-for-mac-ios/</link>
-        <guid isPermaLink="true">http://trozware.github.io/email-clients-for-mac-ios/</guid>
+        <link>http://troz.net/email-clients-for-mac-ios/</link>
+        <guid isPermaLink="true">http://troz.net/email-clients-for-mac-ios/</guid>
       </item>
     
       <item>
@@ -306,8 +306,8 @@ You can also download a &lt;a href=&quot;/manreader-paddle/ManReader.zip&quot;&g
 More details are on &lt;a href=&quot;/berio/&quot; title=&quot;Berio’s Sequenza VII&quot;&gt;this page&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Thu, 07 Nov 2013 00:00:00 +1000</pubDate>
-        <link>http://trozware.github.io/berio-sequenza-vii/</link>
-        <guid isPermaLink="true">http://trozware.github.io/berio-sequenza-vii/</guid>
+        <link>http://troz.net/berio-sequenza-vii/</link>
+        <guid isPermaLink="true">http://troz.net/berio-sequenza-vii/</guid>
       </item>
     
       <item>
@@ -334,8 +334,8 @@ The changes in this version are:&lt;/p&gt;
 &lt;p&gt;While waiting for the new version to be approved, please be aware that iOS 7 icon sizes will only be generated if you select &amp;#8220;Check Assets (for Xcode 5.x or later)&amp;#8221;&lt;/p&gt;
 </description>
         <pubDate>Mon, 23 Sep 2013 00:00:00 +1000</pubDate>
-        <link>http://trozware.github.io/icon-builder-ios-7/</link>
-        <guid isPermaLink="true">http://trozware.github.io/icon-builder-ios-7/</guid>
+        <link>http://troz.net/icon-builder-ios-7/</link>
+        <guid isPermaLink="true">http://troz.net/icon-builder-ios-7/</guid>
       </item>
     
       <item>
@@ -350,8 +350,8 @@ For Xcode 4 or earlier, it creates a .icns file.&lt;br&gt;
 For Xcode 5, it creates a folder of images for use in your project&amp;#8217;s image assets folder.&lt;/p&gt;
 </description>
         <pubDate>Thu, 19 Sep 2013 00:00:00 +1000</pubDate>
-        <link>http://trozware.github.io/icon-apps-updated/</link>
-        <guid isPermaLink="true">http://trozware.github.io/icon-apps-updated/</guid>
+        <link>http://troz.net/icon-apps-updated/</link>
+        <guid isPermaLink="true">http://troz.net/icon-apps-updated/</guid>
       </item>
     
       <item>
@@ -414,8 +414,8 @@ And with the alignment, there is nothing to stop me adding CSS to the Markdown.&
 &lt;p&gt;Next time, I will test out a different WordPress Markdown editor and see how that goes. I will also test using a standalone editor and exporting its HTML to create a post.&lt;/p&gt;
 </description>
         <pubDate>Mon, 01 Apr 2013 00:00:00 +1000</pubDate>
-        <link>http://trozware.github.io/markdown/</link>
-        <guid isPermaLink="true">http://trozware.github.io/markdown/</guid>
+        <link>http://troz.net/markdown/</link>
+        <guid isPermaLink="true">http://troz.net/markdown/</guid>
       </item>
     
   </channel>
