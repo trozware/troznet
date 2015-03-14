@@ -37,8 +37,6 @@ A better option might be to turn off comments completely and just have a contact
 	
 Working in Markdown is great. I love how I can have a really clean look in my editor and still end up with well formatted HTML. I use Coda 2 on my Mac as my standard web editor, so that is what I am writing in now. I will probably experiment with other Markdown editors as I go. And for any Mac users out there working in Markdown, I highly recommend [Brett Terpstra's Markdown Service Tools][7].
 
-**Update:** I couldn't get  Disqus to apply the old comments to the posts on this new site, and given the low volume of legitimate comments, I have decided to turn off commenting. If anyone wants to say something, use the Contact link at the top right to send me a message and I will add it to the post if required.
-
 
 [1]: http://www.girliemac.com/blog/2013/12/27/wordpress-to-jekyll/
 [2]: http://pixyll.com
