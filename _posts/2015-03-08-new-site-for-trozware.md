@@ -2,7 +2,7 @@
 title: New Site for TrozWare
 author: Sarah
 layout: post
-permalink: /new-site-for-trozware-2015/
+permalink: /new-site-for-trozware/
 tags:
   - trozware
   - web
