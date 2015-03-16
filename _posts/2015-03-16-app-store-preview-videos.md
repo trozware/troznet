@@ -2,6 +2,7 @@
 title: App Store Preview Videos
 author: Sarah
 layout: post
+permalink:    /:year/:month/:title/
 tags:
   - app store
   - ios
