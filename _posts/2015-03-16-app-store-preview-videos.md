@@ -32,8 +32,8 @@ For the next stage, I ned to wait until the app gets reviewed and hopefully appr
 
 As a reward for reading this post, here is a pre-release of the video, showing how to enter the score data for a hole of golf using [19th Hole][1]:
 
-<video controls width="300">
-  <source src="/images/Scoring2.mp4" type="video/mp4">
+<video controls poster="/images/19thHole-scoring-web.png">
+  <source src="/images/19thHole-scoring-web.mp4" type="video/mp4">
 	Your browser does not support the video tag.
 </video>
 

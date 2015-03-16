@@ -40,8 +40,13 @@ Players can be selected from your Contacts or entered manually. Add email addres
 
 All scores are entered using a special number button that you tap, then drag your finger up or down the screen to raise or lower the number.
 
-Hold your finger down on the number, then move it up or down to change the number displayed. To make it easier to see what you are doing, hold your finger down on the number, then first drag to one side before dragging up or down.
+Hold your finger down on the number, then move it up or down to change the number displayed. To make it easier to see what you are doing, hold your finger down on the number, then first drag to one side before dragging up or down. Play the video below to see how this works.
 
+<video controls poster="/images/19thHole-scoring-web.png">
+  <source src="/images/19thHole-scoring-web.mp4" type="video/mp4">
+</video>
+
+<br>
 To change hole, swipe left or right in the lower half of the screen, below the line. Swiping back from hole 1 allows you to change the handicaps. Swiping on from the last hole takes you to Notes where you can record any interesting events during this round.
 
 During a round, cumulative statistics are shown at the bottom of the screen.  

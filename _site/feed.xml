@@ -32,8 +32,8 @@
 
 &lt;p&gt;As a reward for reading this post, here is a pre-release of the video, showing how to enter the score data for a hole of golf using &lt;a href=&quot;http://troz.net/19th-hole/&quot;&gt;19th Hole&lt;/a&gt;:&lt;/p&gt;
 
-&lt;video controls width=&quot;300&quot;&gt;
-  &lt;source src=&quot;/images/Scoring2.mp4&quot; type=&quot;video/mp4&quot;&gt;
+&lt;video controls poster=&quot;/images/19thHole-scoring-web.png&quot;&gt;
+  &lt;source src=&quot;/images/19thHole-scoring-web.mp4&quot; type=&quot;video/mp4&quot;&gt;
     Your browser does not support the video tag.
 &lt;/video&gt;
 </description>
