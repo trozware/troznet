@@ -2,7 +2,7 @@
 title: App Store Preview Videos
 author: Sarah
 layout: post
-permalink:    /2015/03/qpp-store-preview-videos/
+permalink:    /2015/03/app-store-preview-videos/
 tags:
   - app store
   - ios
