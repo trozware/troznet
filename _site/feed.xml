@@ -7,6 +7,42 @@
     <atom:link href="http://troz.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>App Store Preview Videos</title>
+        <description>&lt;p&gt;Apple now allows app developers to add a video preview of their app when uploading to iTunes Connect. This video is shown to potential purchasers when they are looking at an app in the iTunes App Store, just like the screen shots.&lt;/p&gt;
+
+&lt;p&gt;I have been working on an update to &lt;a href=&quot;http://troz.net/19th-hole/&quot;&gt;19th Hole&lt;/a&gt; and since it uses a custom method for data input, I decided that a video would be really useful in this case.&lt;/p&gt;
+
+&lt;p&gt;The first step was to work out how to record video from my iPhone. In OS X Yosemite (10.10), this can be done using QuickTime Player. Connect your device to your Mac using a Lightning cable (I think it has to be a Lightning cable - the old cables will not work). Open up QuickTime Player and choose &amp;ldquo;New Movie Recording&amp;rdquo; from the File menu. By default this shows input from the Mac&amp;rsquo;s FaceTime camera, but just to the right of the red Record button, there is a down arrow that shows a popup menu. Click this and you can select your iPhone as the Camera. Since I wanted the sound effects included, I also selected my iPhone as the Microphone, but if you want to provide a voice-over or sound-track, you might want to change this.&lt;/p&gt;
+
+&lt;p&gt;That handles the technical side of recording, but I needed a way to show where I was tapping and pressing on the iPhone screen. After some searching, I found &lt;a href=&quot;https://github.com/toddreed/Touchpose&quot;&gt;Touchpose&lt;/a&gt; which was exactly what I wanted. Since it requires changing the main.m file, as well as changes to the app delegate, I created a branch in my app&amp;rsquo;s git repository so that I could apply these changes temporarily, but save them for next time. The only alternation I made to the default settings was to change the color of the cursor indicator to suit the color scheme of my app. And since this was a temporary change, I set it to show the cursor indicator all the time, not just when the screen was mirrored. All the details are shown in the sample project.&lt;/p&gt;
+
+&lt;p&gt;Next step was to actually record a session. After my first attempt (which lasted about 67 seconds), I checked the Apple specs and found that the video could not be longer than 30 seconds. So I re-thought what I wanted to include and tried again. It took a few tries to get what I wanted, but finally I ended up with a .mov file that was 26 seconds long.&lt;/p&gt;
+
+&lt;p&gt;On to iTunes Connect where I had the new version of the app set up already with its screen shots. Since I have an iPhone 6, the video was only suited for the 4.7 inch section. So I dragged it into the drop zone and waited. No good - the video frame rate was too high. It has to be 30 fps or less. QuickTime Player had made a video that was 50 fps.&lt;/p&gt;
+
+&lt;p&gt;The app I usually turn to for any video conversion needs is &lt;a href=&quot;https://handbrake.fr&quot;&gt;Handbrake&lt;/a&gt;. So I ran the app through Handbrake, specifying a frame rate of 30. This converted the video to .mp4 instead of .mov, but it was 30 fps. It wasn&amp;rsquo;t until I tried to upload it to iTunes Connect that I realised Handbrake had cropped the video from 750 x 1334 to 750 x 1330. After searching through the settings, I found where I needed to turn on custom clipping and set it to 0 so that the original dimensions were preserved. But iTunes Connect still didn&amp;rsquo;t like it, although this time the error message was un-informative.&lt;/p&gt;
+
+&lt;p&gt;Eventually, the brains trust on the other side of the room suggested iMovie. Not only that, but he found that once the original had been dragged into iMovie, the share options included an &amp;ldquo;App Preview&amp;rdquo; setting. This gave us a .mov file of the correct dimensions and the correct frame rate which iTunes Connect accepted.&lt;/p&gt;
+
+&lt;p&gt;iTunes Connect that allowed me to select the poster frame for the video and save the changes to the app meta data. At that point, it showed a notice saying that the app preview was being processed which could take up to 24 hours. It appears that the processing has been finished, as that notice has disappeared.&lt;/p&gt;
+
+&lt;p&gt;For the next stage, I ned to wait until the app gets reviewed and hopefully approved. Then it will be interesting to see how the video looks in the iTunes App Store.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;As a reward for reading this post, here is a pre-release of the video, showing how to enter the score data for a hole of golf using &lt;a href=&quot;http://troz.net/19th-hole/&quot;&gt;19th Hole&lt;/a&gt;:&lt;/p&gt;
+
+&lt;video controls width=&quot;300&quot;&gt;
+  &lt;source src=&quot;/images/Scoring2.mp4&quot; type=&quot;video/mp4&quot;&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+</description>
+        <pubDate>Mon, 16 Mar 2015 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2015/03/app-store-preview-videos/</link>
+        <guid isPermaLink="true">http://troz.net/2015/03/app-store-preview-videos/</guid>
+      </item>
+    
+      <item>
         <title>Testing automation</title>
         <description>&lt;p&gt;Today I am experimenting with automating post generation.&lt;/p&gt;
 
@@ -350,70 +386,6 @@ For Xcode 5, it creates a folder of images for use in your project&amp;#8217;s i
         <pubDate>Thu, 19 Sep 2013 00:00:00 +1000</pubDate>
         <link>http://troz.net/icon-apps-updated/</link>
         <guid isPermaLink="true">http://troz.net/icon-apps-updated/</guid>
-      </item>
-    
-      <item>
-        <title>Markdown</title>
-        <description>&lt;p&gt;For some time now, I have been aware of the increasing trend towards using Markdown for text editing and for creating HTML. Markdown has been on my list of &amp;#8220;things I should learn some day&amp;#8221; so I was interested last week to read about a new iBooks book called &lt;a href=&quot;http://macsparky.com/markdown&quot;&gt;The MacSparky Markdown Field Guide&lt;/a&gt;. This was sufficient inspiration so I got the book and read through it this weekend.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://static.squarespace.com/static/5008676d84aeae82b8acdd8c/t/5147c7a6e4b0d224b4419401/1363658669971/Markdown%20Cover%20Art%20-%20JPG.jpg?format=500w&quot; alt=&quot;The MacSparky Markdown Field Guide&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;Actually, to say that I &lt;em&gt;read&lt;/em&gt; through the book is a mis-representation. The book was written using iBooks Author specially for the iPad and contains screen casts and interviews as well as text. But by the end of it, I now feel I have a basic understanding on Markdown and the ways in which I can use it.&lt;/p&gt;
-
-&lt;p&gt;I guess the really big thing about using Markdown is that is creates plain text files that are human-readable even without being converted to HTML. This makes them future-proof since they are not tied to a proprietary file format that may cease to exist at any time.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;using-markdown:&quot;&gt;Using Markdown:&lt;/h2&gt;
-
-&lt;p&gt;Since this web site is a self-hosted WordPress site, my next step was to look for a WordPress plugin that would allow me to use Markdown to create my posts. I could have used a Markdown editor that had HTML export, but I wanted to try something that would eliminate the extra step. The first one I decide to try was &lt;a href=&quot;http://wordpress.org/extend/plugins/markdown-on-save-improved/&quot;&gt;Markdown on Save Improved&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;One of the main reasons for choosing this one was that it stores the posts as both Markdown and as HTML. This saves time when going back to edit a post, avoids the constant changes that creep in when converting between formats all the time, and makes it so that the post will still display correctly even if Markdown is no longer supported. The only problem I have found so far is that it doesn&amp;#8217;t automatically create links &amp;amp; image links using the Markdown format, but uses standard &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; links instead.&lt;/p&gt;
-
-&lt;p&gt;My next stop, since I always use a Mac, was to get Brett Terpstra&amp;#8217;s collection of &lt;a href=&quot;http://brettterpstra.com/projects/markdown-service-tools/&quot;&gt;Services for Markdown&lt;/a&gt;. These add a lot on convenient shortcuts: one of my favourites is the ability to convert inline links to references links for increased readability while editing.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;first-impressions:&quot;&gt;First Impressions:&lt;/h2&gt;
-
-&lt;p&gt;So having written this first post in Markdown, how do I feel about it? I haven&amp;#8217;t really tried anything too weird this time, but there are a few things that were very easy to do. Particularly in the paragraph where I was talking about links &amp;amp; images and wanted to include the tags as text without having it interpreted as HTML. All I had to do was surround the text with back-ticks.&lt;/p&gt;
-
-&lt;p&gt;Links are vastly easier to manage and edit in Markdown. I miss the ability to specify that links should open in a new tab &amp;#8211; I prefer to have that setting for links that take you outside my web site, but the modern theories on usability seem to be heading towards deprecation of this feature, so I may just stop using it.&lt;/p&gt;
-
-&lt;p&gt;With the standard WordPress editor, I always felt that I was fighting it. I had to swap between the visual &amp;amp; HTML editor tabs and when I swapped tabs, things would sometimes change without me doing anything. So far, I feel more in control using Markdown and although I have lost the WYSIWYG visual editor, I no longer have to wade through the HTML editor to get the effect I want or to remove the results of a few careless clicks.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;what-next?&quot;&gt;What next?&lt;/h2&gt;
-
-&lt;p&gt;Some of the things on my wish list would be solved by a better editor and some by more powerful syntax.&lt;/p&gt;
-
-&lt;p&gt;Editor:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Adding links &amp;#038; images using Markdown style instead of HTML&lt;/li&gt;
-&lt;li&gt;Being able to create lists 
-
-&lt;ul&gt;
-&lt;li&gt;Markdown makes this very easy but this WP plugin does not support lists as far as I can tell&lt;/li&gt;
-&lt;li&gt;So these lists are in HTML&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Syntax:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Alignment of text &amp;#038; images&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Using a stand-alone Markdown editor would solve the editor questions, but I wanted to try writing this post completely in WordPress.&lt;br&gt;
-And with the alignment, there is nothing to stop me adding CSS to the Markdown.&lt;/p&gt;
-
-&lt;p&gt;Next time, I will test out a different WordPress Markdown editor and see how that goes. I will also test using a standalone editor and exporting its HTML to create a post.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 01 Apr 2013 00:00:00 +1000</pubDate>
-        <link>http://troz.net/markdown/</link>
-        <guid isPermaLink="true">http://troz.net/markdown/</guid>
       </item>
     
   </channel>
