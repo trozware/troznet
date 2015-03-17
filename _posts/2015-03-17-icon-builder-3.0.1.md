@@ -4,7 +4,11 @@ author: Sarah
 layout: post
 permalink: /2015/03/icon-builder-3.0.1/
 tags:
-  - 
+  - icons
+  - mac
+  - ios
+  - apple watch
+  - xcode
 ---
 
 So why an announcement for such a minor upgrade?
