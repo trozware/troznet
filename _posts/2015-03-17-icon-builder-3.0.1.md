@@ -22,7 +22,7 @@ Sadly, Apple rejected the update because it referred to pre-release products. So
 
 After the Apple keynote on March 9th, I re-enabled the WatchKit portions of the app and re-submitted to the App Store, hoping that with the WatchKit SDK now part of the official Xcode release, Apple's reviewers would allow it to get through this time.
 
-This worked - in fact the app was reviewed and accewpted within 6 days - so now Icon Builder adds WatchKit to its list of supported platforms.
+This worked - in fact the app was reviewed and accepted within 6 days - so now Icon Builder adds WatchKit to its list of supported platforms.
 
 Actually, Apple may have done me a favour in rejecting the first one as they changed the specifications for the icons slightly between Xcode 6.2 beta and Xcode 6.2 release.
 
