@@ -26,6 +26,9 @@ This worked - in fact the app was reviewed and accepted within 6 days - so now I
 
 Actually, Apple may have done me a favour in rejecting the first one as they changed the specifications for the icons slightly between Xcode 6.2 beta and Xcode 6.2 release.
 
+- [Icon Builder page][1]
+- [Mac App Store link][2]
+
 ---
 
 #### What’s New in version 3?
@@ -36,3 +39,5 @@ Actually, Apple may have done me a favour in rejecting the first one as they cha
 * iTunesArtwork@2x file now saved as a JPG to avoid iTunes Connect errors.
 * Removed CarPlay icon - Xcode sometimes gave errors when this was included.
 
+[1]: http://troz.net/icon-builder/
+[2]: https://itunes.apple.com/us/app/icon-builder/id552293482?mt=12&uo=4
