@@ -98,31 +98,32 @@
     <h1 class="h2">Icon Builder</h1>
   </header>
   <article class="post-content">
-  <p><a href="/images/IconBuilder1.png">Icon Builder 3.0</a> is available from the Mac App Store. </p>
+  <p><a href="http://itunes.apple.com/app/icon-builder/id552293482?mt=12">Icon Builder 3.0.1</a> is available from the Mac App Store. </p>
 
-<h3 id="make-and-install-a-set-of-icons-for-an-ios-or-mac-app-in-3-steps:">Make and install a set of icons for an iOS or Mac app in 3 steps:</h3>
+<h3 id="make-and-install-a-set-of-icons-for-an-ios,-mac-or-apple-watch-app-in-3-steps:">Make and install a set of icons for an iOS, Mac or Apple Watch app in 3 steps:</h3>
 
 <p>1: Drag an image into the window.</p>
 
 <p><img src="/images/IconBuilder1.png" alt="Make an icon set in 3 steps"></p>
 
-<p>2: Choose the device family you are building for: iOS Universal, iPhone, iPad or Mac.</p>
+<p>2: Choose the device family you are building for: iOS Universal, iPhone, iPad, Mac or Apple Watch.</p>
 
 <p>If you are building for iOS and your app still supports iOS 6, then you need to change the setting in the iOS popup menu.</p>
 
 <p>3: Click &ldquo;Create icon assets&rdquo; and select the folder containing your Xcode project.</p>
 
-<p>Icon Builder will create an AppIcon set inside the &ldquo;Images.xcassets&rdquo; folder for that project.  </p>
+<p>Icon Builder will create an AppIcon set inside the &ldquo;Images.xcassets&rdquo; folder for that project.<br>
+The icons are immediately ready for use in your project with no installation necessary.</p>
 
 <blockquote>
-<p>The icons are immediately ready for use in your project with no installation necessary.<br> You will get the best results if you start with a 1024x1024 image.</p>
+<p>You will get the best results if you start with a 1024 x 1024 image.</p>
 </blockquote>
 
 <hr>
 
 <h3 id="why-is-this-necessary?">Why is this necessary?</h3>
 
-<p>Depending on the devices supported by your app, you will need many different sizes of icon file. There are some icons for iPad only, some for iPhone / iPod Touch only and others required for any iOS device. Mac apps use completely different icon sizes. Additionally, you will need larger versions of each image to support Retina displays and iOS 7 &amp; 8 use different icon sizes from the previous versions of iOS.</p>
+<p>Depending on the devices supported by your app, you will need many different sizes of icon file. There are some icons for iPad only, some for iPhone / iPod Touch only and others required for any iOS device. Mac apps use completely different icon sizes. And now we have Apple Watch with a different set of icons again. Additionally, you will need larger versions of each image to support Retina displays and iOS 7 &amp; 8 use different icon sizes from the previous versions of iOS. The iPhone 6 Plus uses @3x images in some cases.</p>
 
 <p>With Xcode 5 and later, Apple has changed the way a project stores image files, including the various sizes of app icon. Now your project contains a special folder called &ldquo;Images.xcassets&rdquo; which contains all the image files used in your project, including the app icons. Icon Builder will install the icon files into your &ldquo;Images.xcassets&rdquo; folder automatically.</p>
 
@@ -143,6 +144,7 @@
 <h3 id="what&#39;s-new-in-version-3?">What&rsquo;s New in version 3?</h3>
 
 <ul>
+<li>Support for WatchKit app icons (version 3.0.1)</li>
 <li>Simplified interface: removed display of smaller icons.</li>
 <li>Fix for @3x images not being saved when you selected iOS 6 support.</li>
 <li>iTunesArtwork@2x file now saved as a JPG to avoid iTunes Connect errors.</li>
@@ -153,7 +155,7 @@
 
 <p>The other big change is that Icon Builder now creates icons for Mac apps. Mac apps used to use a different file format, but now they use appiconsets too, so it made sense to merge both my icon apps into one.</p>
 
-<p>This app will NOT create the icns files that were used for Mac apps before Xcode 5 or 6. If you need icns files for another environment, use Icns Maker instead.</p>
+<p>This app will NOT create the icns files that were used for Mac apps before Xcode 5 or 6. If you need icns files for another environment, use <a href="http://troz.net/icns-maker/">Icns Maker</a> instead.</p>
 
 <hr>
 

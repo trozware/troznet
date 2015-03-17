@@ -7,12 +7,12 @@ guid: /?page_id=328
 dsq_thread_id:
   - 3565820802
 ---
-[Icon Builder 3.0][1] is available from the Mac App Store. 
+[Icon Builder 3.0.1][3] is available from the Mac App Store. 
 
-   [1]: http://itunes.apple.com/app/icon-builder/id552293482?mt=12
+   [3]: http://itunes.apple.com/app/icon-builder/id552293482?mt=12
 
 
-### Make and install a set of icons for an iOS or Mac app in 3 steps:
+### Make and install a set of icons for an iOS, Mac or Apple Watch app in 3 steps:
 
 1: Drag an image into the window.
 
@@ -20,20 +20,21 @@ dsq_thread_id:
 
    [1]: /images/IconBuilder1.png
 
-2: Choose the device family you are building for: iOS Universal, iPhone, iPad or Mac.
+2: Choose the device family you are building for: iOS Universal, iPhone, iPad, Mac or Apple Watch.
 
 If you are building for iOS and your app still supports iOS 6, then you need to change the setting in the iOS popup menu.
 
 3: Click "Create icon assets" and select the folder containing your Xcode project.
 
 Icon Builder will create an AppIcon set inside the "Images.xcassets" folder for that project.  
-> The icons are immediately ready for use in your project with no installation necessary.<br> You will get the best results if you start with a 1024x1024 image.
+The icons are immediately ready for use in your project with no installation necessary.
+> You will get the best results if you start with a 1024 x 1024 image.
 
 * * *
 
 ### Why is this necessary?
 
-Depending on the devices supported by your app, you will need many different sizes of icon file. There are some icons for iPad only, some for iPhone / iPod Touch only and others required for any iOS device. Mac apps use completely different icon sizes. Additionally, you will need larger versions of each image to support Retina displays and iOS 7 & 8 use different icon sizes from the previous versions of iOS.
+Depending on the devices supported by your app, you will need many different sizes of icon file. There are some icons for iPad only, some for iPhone / iPod Touch only and others required for any iOS device. Mac apps use completely different icon sizes. And now we have Apple Watch with a different set of icons again. Additionally, you will need larger versions of each image to support Retina displays and iOS 7 & 8 use different icon sizes from the previous versions of iOS. The iPhone 6 Plus uses @3x images in some cases.
 
 With Xcode 5 and later, Apple has changed the way a project stores image files, including the various sizes of app icon. Now your project contains a special folder called "Images.xcassets" which contains all the image files used in your project, including the app icons. Icon Builder will install the icon files into your "Images.xcassets" folder automatically.
 
@@ -55,6 +56,7 @@ The ReadMe-IconBuilder.rtf file (saved in the same folder as your xcodeproj file
 
 ### What's New in version 3?
 
+  * Support for WatchKit app icons (version 3.0.1)
   * Simplified interface: removed display of smaller icons.
   * Fix for @3x images not being saved when you selected iOS 6 support.
   * iTunesArtwork@2x file now saved as a JPG to avoid iTunes Connect errors.
@@ -64,7 +66,9 @@ In previous versions of Icon Builder, the app saved all the icon files and you h
 
 The other big change is that Icon Builder now creates icons for Mac apps. Mac apps used to use a different file format, but now they use appiconsets too, so it made sense to merge both my icon apps into one.
 
-This app will NOT create the icns files that were used for Mac apps before Xcode 5 or 6. If you need icns files for another environment, use Icns Maker instead.
+This app will NOT create the icns files that were used for Mac apps before Xcode 5 or 6. If you need icns files for another environment, use [Icns Maker][4] instead.
+
+[4]: http://troz.net/icns-maker/
 
 * * *
 

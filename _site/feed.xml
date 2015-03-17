@@ -7,6 +7,40 @@
     <atom:link href="http://troz.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Icon Builder 3.0.1</title>
+        <description>&lt;p&gt;So why an announcement for such a minor upgrade?&lt;/p&gt;
+
+&lt;p&gt;Version 3.0 got no announcement because it was not the release I wanted.&lt;/p&gt;
+
+&lt;p&gt;Having downloaded the Xcode 6.2 &amp;amp; 6.3 betas, I had worked out what icons were needed to a WatchKit app.
+This, combined with several other changes, made me bump the version number to 3.0.&lt;/p&gt;
+
+&lt;p&gt;Sadly, Apple rejected the update because it referred to pre-release products. So I pulled all mentions of WatchKit out of the interface and meta data and got 3.0 released.&lt;/p&gt;
+
+&lt;p&gt;After the Apple keynote on March 9th, I re-enabled the WatchKit portions of the app and re-submitted to the App Store, hoping that with the WatchKit SDK now part of the official Xcode release, Apple&amp;rsquo;s reviewers would allow it to get through this time.&lt;/p&gt;
+
+&lt;p&gt;This worked - in fact the app was reviewed and accewpted within 6 days - so now Icon Builder adds WatchKit to its list of supported platforms.&lt;/p&gt;
+
+&lt;p&gt;Actually, Apple may have done me a favour in rejecting the first one as they changed the specifications for the icons slightly between Xcode 6.2 beta and Xcode 6.2 release.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=&quot;what’s-new-in-version-3?&quot;&gt;What’s New in version 3?&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Support for WatchKit app icons (version 3.0.1)&lt;/li&gt;
+&lt;li&gt;Simplified interface: removed display of smaller icons.&lt;/li&gt;
+&lt;li&gt;Fix for @3x images not being saved when you selected iOS 6 support.&lt;/li&gt;
+&lt;li&gt;iTunesArtwork@2x file now saved as a JPG to avoid iTunes Connect errors.&lt;/li&gt;
+&lt;li&gt;Removed CarPlay icon - Xcode sometimes gave errors when this was included.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 17 Mar 2015 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2015/03/icon-builder-3.0.1/</link>
+        <guid isPermaLink="true">http://troz.net/2015/03/icon-builder-3.0.1/</guid>
+      </item>
+    
+      <item>
         <title>App Store Preview Videos</title>
         <description>&lt;p&gt;Apple now allows app developers to add a video preview of their app when uploading to iTunes Connect. This video is shown to potential purchasers when they are looking at an app in the iTunes App Store, just like the screen shots.&lt;/p&gt;
 
@@ -370,22 +404,6 @@ The changes in this version are:&lt;/p&gt;
         <pubDate>Mon, 23 Sep 2013 00:00:00 +1000</pubDate>
         <link>http://troz.net/icon-builder-ios-7/</link>
         <guid isPermaLink="true">http://troz.net/icon-builder-ios-7/</guid>
-      </item>
-    
-      <item>
-        <title>Icon apps updated</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://itunes.apple.com/au/app/icns-maker/id550942266?mt=12&quot; target=&quot;_blank&quot;&gt;Icns Maker&lt;/a&gt; and &lt;a href=&quot;https://itunes.apple.com/au/app/icon-builder/id552293482?mt=12&quot; target=&quot;_blank&quot;&gt;Icon Builder&lt;/a&gt; have both just been updated to support Xcode 5.&lt;/p&gt;
-
-&lt;p&gt;Icon Builder is a Mac app that takes your images and creates all the required icon files for use in your iOS apps.&lt;br&gt;
-It now supports Xcode 5&amp;#8217;s image assets folders and if you are using Xcode 5, it will create the icon sizes required for iOS 7 app.&lt;/p&gt;
-
-&lt;p&gt;Icns Maker is a Mac app that takes your images and creates icons for use in your Mac apps.&lt;br&gt;
-For Xcode 4 or earlier, it creates a .icns file.&lt;br&gt;
-For Xcode 5, it creates a folder of images for use in your project&amp;#8217;s image assets folder.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 19 Sep 2013 00:00:00 +1000</pubDate>
-        <link>http://troz.net/icon-apps-updated/</link>
-        <guid isPermaLink="true">http://troz.net/icon-apps-updated/</guid>
       </item>
     
   </channel>
