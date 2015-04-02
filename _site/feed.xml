@@ -7,6 +7,68 @@
     <atom:link href="http://troz.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>My First Apple Watch App</title>
+        <description>&lt;p&gt;I have just submitted my first Apple Watch app to the iTunes App Store. This is a scary thing to do, since I have never seen, touched or used an Apple Watch and all I had to go on was the Simulator that Apple supplies with Xcode.&lt;/p&gt;
+
+&lt;p&gt;At the moment, Apple has only made a limited set of Apple Watch features available to developers, and all Apple Watch apps come tethered to an iOS app - presumably this will mainly be iPhone apps, but I wonder will we be able to connect Apple Watches to iPads? Anyway, it made sense to extend one of my existing apps to use the Apple Watch instead of starting from scratch.&lt;/p&gt;
+
+&lt;p&gt;Of my &lt;a href=&quot;http://troz.net/apps-ios/&quot;&gt;iOS apps&lt;/a&gt;, I decided that &lt;a href=&quot;http://troz.net/19th-hole/&quot;&gt;The 19th Hole&lt;/a&gt;, my golf scoring app, would be well suited to the Apple Watch. The problem with using the iPhone version to score is that you have to keep pulling your iPhone in and out of your golf bag, sometimes in the rain, sometimes in bright sunlight. Being able to enter the scores on your wrist sounds like a big improvement. We know that the Apple Watch is at least somewhat water-resistant, but we are yet to see how well it performs in bright sunlight, however I would expect that Apple has put considerable effort into this.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;br&gt;
+Once I decided to write an Apple Watch app, the first step was to learn how. I read all Apple&amp;rsquo;s published documents to get a feel for what was possible and what user-interface objects would be available. I find online courses very helpful and by far the best Apple Watch course that I found was &lt;a href=&quot;http://www.raywenderlich.com/video-tutorials#watchkit&quot;&gt;Ray Wenderlich&amp;rsquo;s WatchKit video tutorial series&lt;/a&gt;. The instructors were very clear and explained how the layout and sizing of objects works on the Apple Watch, as well as how to set up and move between views and how to communicate from the Watch back to the iPhone. The layout section of the course was particularly valuable as no other course I found even mentioned this, although it is crucial to the interface design and allowing for the two sizes of watch.&lt;/p&gt;
+
+&lt;p&gt;I had released an update to &lt;a href=&quot;http://troz.net/19th-hole/&quot;&gt;The 19th Hole&lt;/a&gt; recently in preparation for this. I wanted to have squashed the bugs and updated the interface, so the only changes needed would be the WatchKit ones.&lt;/p&gt;
+
+&lt;p&gt;The first step in adding a WatchKit app to your existing app is to create a new target in the Xcode project. Choosing WatchKit actually adds two new targets: the WatchKit Extension which lives on the iPhone and supplies the code for the Watch, and the WatchKit App which lives on the Watch and provides the interface.&lt;/p&gt;
+
+&lt;p&gt;I decided to use a paged interface with one page per hole. Each of these pages has a table, with one row per player. A slider with plus &amp;amp; minus buttons lets you enter the score for each player and the total score for each player is also displayed.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/19thHole-Watch2.png&quot; alt=&quot;Data entry&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Apart from this data entry view, I have a splash screen which shows you the current round as set up on the iPhone and a final summary screen showing everyone&amp;rsquo;s totals.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/19thHole-Watch1.png&quot; alt=&quot;Splash screen&quot;&gt;
+&lt;img src=&quot;/images/19thHole-Watch3.png&quot; alt=&quot;Summary&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;These images are taken from the Apple Watch simulator running in 42mm mode.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;br&gt;
+The biggest programming problem was getting the communications working beween the two devices. The 19th Hole uses Core Data for all data storage. My first attempt shared this data between the two apps, allowing both to read and update the database. This almost worked, but if both apps were open, then changes in one device did not get across to the other. It seemed that the data was cached and I was unable to find a way to force either app to update every time.&lt;/p&gt;
+
+&lt;p&gt;My next attempt kept all the data in the iPhone app and had the WatchKit extension ask for whatever data it needed and send changes to the iPhone app. This worked much better and I was able to get live updates between the two devices.&lt;/p&gt;
+
+&lt;p&gt;The other issue is the fact that I have never seen, touched or used an Apple Watch. This means that I had to guess a lot of things:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;how well will it perform?&lt;/li&gt;
+&lt;li&gt;will the icon look OK?&lt;/li&gt;
+&lt;li&gt;are the controls large enough to use?&lt;/li&gt;
+&lt;li&gt;will the text be large enough to read?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;My main philosophy was to keep the Watch app as simple as possible and use the standard interface elements, font sizes etc. Hopefully that will work.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;br&gt;
+The final step was submitting the app to iTunes Connect for review. It was not clear to me how to do this, so I logged into iTunes Connect, created a new version and entered the meta-data. I couldn&amp;rsquo;t see anywhere to say anything about the Watch. I archived the main iOS app as usual and validated it with the Store. I had a few things to fix up, but I got the build submitted.&lt;/p&gt;
+
+&lt;p&gt;Back to iTunes Connect and once the uploaded build had been processed, I was able to select it and click &amp;ldquo;Submit for Review&amp;rdquo;. At this point, the page reported an error and showed me a new section where I could upload the Apple Watch icon and screen shots.&lt;/p&gt;
+
+&lt;p&gt;I had been unsure how the icon would look when made round, but it looks OK on the iTunes Connect page. How it will look on a tiny watch screen remains to be seen. Anyway, once I had my icon and screen shots uploaded, I was able to proceed to the next step. But then I got a message saying that the app could not be processed - no explanation. Thankfully, I had seen some developers on Twitter reporting this, and somebody said that the solution was to remove the alpha channel from your screen shots. Sorry for not giving credit here - I forget who said this, but it worked, so thank you whoever you are.&lt;/p&gt;
+
+&lt;p&gt;So now my app is waiting for review and who knows how long that will take. According to &lt;a href=&quot;http://appreviewtimes.com&quot;&gt;App Review Times&lt;/a&gt;, the current estimate is 8 days, but the trend is heading upwards. I would expect that to blow out in the next few weeks as developers try to get their apps ready for the Apple Watch release date of April 24th.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 02 Apr 2015 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2015/04/my-first-apple-watch-app/</link>
+        <guid isPermaLink="true">http://troz.net/2015/04/my-first-apple-watch-app/</guid>
+      </item>
+    
+      <item>
         <title>LiveCode stacks</title>
         <description>&lt;p&gt;When I converted my site to Jekyll &amp;amp; GitHub, one of the things I left behind was a collection of LiveCode (Revolution) stacks. For many years I was active in the Revolution community before going in other directions and over that time, I built up a small library of stacks that I released into the public domain.&lt;/p&gt;
 
@@ -382,24 +444,6 @@ You can also download a &lt;a href=&quot;/manreader-paddle/ManReader.zip&quot;&g
         <pubDate>Tue, 25 Mar 2014 00:00:00 +1000</pubDate>
         <link>http://troz.net/email-clients-for-mac-ios/</link>
         <guid isPermaLink="true">http://troz.net/email-clients-for-mac-ios/</guid>
-      </item>
-    
-      <item>
-        <title>Berio Sequenza VII</title>
-        <description>&lt;p&gt;So my latest app is way outside my usual sphere but that&amp;#8217;s what happens when family decide that what you do might actually be useful!&lt;/p&gt;
-
-&lt;p&gt;My son is an oboist and he is currently learning Berio&amp;#8217;s Sequenza VII for Oboe. This is a weird piece without a standard time signature. Instead each line has 13 bars with each bar being allocated a certain time span in actual seconds. As can easily be imagined, this makes learning and practicing this piece more of a mathematical exercise than a musical one.&lt;/p&gt;
-
-&lt;p&gt;So I wrote him an app to sound out the end of each bar. Once he and his teacher used it, a few more features crept in and now I think it will be of great assistance to any student or teacher trying to work on this piece.&lt;/p&gt;
-
-&lt;p&gt;While I doubt that many oboists frequent this web site, it anyone who does can pass this on to any oboist, I would be very grateful, and I think the oboist would be too!&lt;/p&gt;
-
-&lt;p&gt;The app is available through the &lt;a href=&quot;https://itunes.apple.com/us/app/sequenza-vii/id730234638?mt=8&amp;#038;uo=4&quot; target=&quot;_blank&quot;&gt;iTunes App Store&lt;/a&gt;.&lt;br&gt;
-More details are on &lt;a href=&quot;/berio/&quot; title=&quot;Berio’s Sequenza VII&quot;&gt;this page&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 07 Nov 2013 00:00:00 +1000</pubDate>
-        <link>http://troz.net/berio-sequenza-vii/</link>
-        <guid isPermaLink="true">http://troz.net/berio-sequenza-vii/</guid>
       </item>
     
   </channel>
