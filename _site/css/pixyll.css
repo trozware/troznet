@@ -48,6 +48,10 @@ small, .small, .f5 {
   font-size: .875rem;
   line-height: 1.5rem; }
 
+hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem; }
+
 @media screen and (min-width: 48em) {
   .h1 {
     font-size: 4rem;

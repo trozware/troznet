@@ -108,14 +108,13 @@
 
 <p>At the moment, Apple has only made a limited set of Apple Watch features available to developers, and all Apple Watch apps come tethered to an iOS app - presumably this will mainly be iPhone apps, but I wonder will we be able to connect Apple Watches to iPads? Anyway, it made sense to extend one of my existing apps to use the Apple Watch instead of starting from scratch.</p>
 
-<p>Of my <a href="http://troz.net/apps-ios/">iOS apps</a>, I decided that <a href="http://troz.net/19th-hole/">The 19th Hole</a>, my golf scoring app, would be well suited to the Apple Watch. The problem with using the iPhone version to score is that you have to keep pulling your iPhone in and out of your golf bag, sometimes in the rain, sometimes in bright sunlight. Being able to enter the scores on your wrist sounds like a big improvement. We know that the Apple Watch is at least somewhat water-resistant, but we are yet to see how well it performs in bright sunlight, however I would expect that Apple has put considerable effort into this.</p>
+<p>Of my <a href="/apps-ios/">iOS apps</a>, I decided that <a href="/19th-hole/">The 19th Hole</a>, my golf scoring app, would be well suited to the Apple Watch. The problem with using the iPhone version to score is that you have to keep pulling your iPhone in and out of your golf bag, sometimes in the rain, sometimes in bright sunlight. Being able to enter the scores on your wrist sounds like a big improvement. We know that the Apple Watch is at least somewhat water-resistant, but we are yet to see how well it performs in bright sunlight, however I would expect that Apple has put considerable effort into this.</p>
 
 <hr>
 
-<p><br>
-Once I decided to write an Apple Watch app, the first step was to learn how. I read all Apple&rsquo;s published documents to get a feel for what was possible and what user-interface objects would be available. I find online courses very helpful and by far the best Apple Watch course that I found was <a href="http://www.raywenderlich.com/video-tutorials#watchkit">Ray Wenderlich&rsquo;s WatchKit video tutorial series</a>. The instructors were very clear and explained how the layout and sizing of objects works on the Apple Watch, as well as how to set up and move between views and how to communicate from the Watch back to the iPhone. The layout section of the course was particularly valuable as no other course I found even mentioned this, although it is crucial to the interface design and allowing for the two sizes of watch.</p>
+<p>Once I decided to write an Apple Watch app, the first step was to learn how. I read all Apple&rsquo;s published documents to get a feel for what was possible and what user-interface objects would be available. I find online courses very helpful and by far the best Apple Watch course that I found was <a href="http://www.raywenderlich.com/video-tutorials#watchkit">Ray Wenderlich&rsquo;s WatchKit video tutorial series</a>. The instructors were very clear and explained how the layout and sizing of objects works on the Apple Watch, as well as how to set up and move between views and how to communicate from the Watch back to the iPhone. The layout section of the course was particularly valuable as no other course I found even mentioned this, although it is crucial to the interface design and allowing for the two sizes of watch.</p>
 
-<p>I had released an update to <a href="http://troz.net/19th-hole/">The 19th Hole</a> recently in preparation for this. I wanted to have squashed the bugs and updated the interface, so the only changes needed would be the WatchKit ones.</p>
+<p>I had released an update to <a href="/19th-hole/">The 19th Hole</a> recently in preparation for this. I wanted to have squashed the bugs and updated the interface, so the only changes needed would be the WatchKit ones.</p>
 
 <p>The first step in adding a WatchKit app to your existing app is to create a new target in the Xcode project. Choosing WatchKit actually adds two new targets: the WatchKit Extension which lives on the iPhone and supplies the code for the Watch, and the WatchKit App which lives on the Watch and provides the interface.</p>
 
@@ -132,8 +131,7 @@ Once I decided to write an Apple Watch app, the first step was to learn how. I r
 
 <hr>
 
-<p><br>
-The biggest programming problem was getting the communications working beween the two devices. The 19th Hole uses Core Data for all data storage. My first attempt shared this data between the two apps, allowing both to read and update the database. This almost worked, but if both apps were open, then changes in one device did not get across to the other. It seemed that the data was cached and I was unable to find a way to force either app to update every time.</p>
+<p>The biggest programming problem was getting the communications working beween the two devices. The 19th Hole uses Core Data for all data storage. My first attempt shared this data between the two apps, allowing both to read and update the database. This almost worked, but if both apps were open, then changes in one device did not get across to the other. It seemed that the data was cached and I was unable to find a way to force either app to update every time.</p>
 
 <p>My next attempt kept all the data in the iPhone app and had the WatchKit extension ask for whatever data it needed and send changes to the iPhone app. This worked much better and I was able to get live updates between the two devices.</p>
 
@@ -150,8 +148,7 @@ The biggest programming problem was getting the communications working beween th
 
 <hr>
 
-<p><br>
-The final step was submitting the app to iTunes Connect for review. It was not clear to me how to do this, so I logged into iTunes Connect, created a new version and entered the meta-data. I couldn&rsquo;t see anywhere to say anything about the Watch. I archived the main iOS app as usual and validated it with the Store. I had a few things to fix up, but I got the build submitted.</p>
+<p>The final step was submitting the app to iTunes Connect for review. It was not clear to me how to do this, so I logged into iTunes Connect, created a new version and entered the meta-data. I couldn&rsquo;t see anywhere to say anything about the Watch. I archived the main iOS app as usual and validated it with the Store. I had a few things to fix up, but I got the build submitted.</p>
 
 <p>Back to iTunes Connect and once the uploaded build had been processed, I was able to select it and click &ldquo;Submit for Review&rdquo;. At this point, the page reported an error and showed me a new section where I could upload the Apple Watch icon and screen shots.</p>
 

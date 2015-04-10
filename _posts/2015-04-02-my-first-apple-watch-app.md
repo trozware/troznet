@@ -15,9 +15,8 @@ At the moment, Apple has only made a limited set of Apple Watch features availab
 
 Of my [iOS apps][1], I decided that [The 19th Hole][2], my golf scoring app, would be well suited to the Apple Watch. The problem with using the iPhone version to score is that you have to keep pulling your iPhone in and out of your golf bag, sometimes in the rain, sometimes in bright sunlight. Being able to enter the scores on your wrist sounds like a big improvement. We know that the Apple Watch is at least somewhat water-resistant, but we are yet to see how well it performs in bright sunlight, however I would expect that Apple has put considerable effort into this.
 
-
 ---
-<br>
+
 Once I decided to write an Apple Watch app, the first step was to learn how. I read all Apple's published documents to get a feel for what was possible and what user-interface objects would be available. I find online courses very helpful and by far the best Apple Watch course that I found was [Ray Wenderlich's WatchKit video tutorial series][3]. The instructors were very clear and explained how the layout and sizing of objects works on the Apple Watch, as well as how to set up and move between views and how to communicate from the Watch back to the iPhone. The layout section of the course was particularly valuable as no other course I found even mentioned this, although it is crucial to the interface design and allowing for the two sizes of watch.
 
 I had released an update to [The 19th Hole][2] recently in preparation for this. I wanted to have squashed the bugs and updated the interface, so the only changes needed would be the WatchKit ones.
@@ -36,7 +35,7 @@ Apart from this data entry view, I have a splash screen which shows you the curr
 These images are taken from the Apple Watch simulator running in 42mm mode.
 
 ---
-<br>
+
 The biggest programming problem was getting the communications working beween the two devices. The 19th Hole uses Core Data for all data storage. My first attempt shared this data between the two apps, allowing both to read and update the database. This almost worked, but if both apps were open, then changes in one device did not get across to the other. It seemed that the data was cached and I was unable to find a way to force either app to update every time.
 
 My next attempt kept all the data in the iPhone app and had the WatchKit extension ask for whatever data it needed and send changes to the iPhone app. This worked much better and I was able to get live updates between the two devices.
@@ -51,7 +50,7 @@ The other issue is the fact that I have never seen, touched or used an Apple Wat
 My main philosophy was to keep the Watch app as simple as possible and use the standard interface elements, font sizes etc. Hopefully that will work.
 
 ---
-<br>
+
 The final step was submitting the app to iTunes Connect for review. It was not clear to me how to do this, so I logged into iTunes Connect, created a new version and entered the meta-data. I couldn't see anywhere to say anything about the Watch. I archived the main iOS app as usual and validated it with the Store. I had a few things to fix up, but I got the build submitted.
 
 Back to iTunes Connect and once the uploaded build had been processed, I was able to select it and click "Submit for Review". At this point, the page reported an error and showed me a new section where I could upload the Apple Watch icon and screen shots.
@@ -64,7 +63,7 @@ So now my app is waiting for review and who knows how long that will take. Accor
 
 
 
-[1]: http://troz.net/apps-ios/
-[2]: http://troz.net/19th-hole/
+[1]: /apps-ios/
+[2]: /19th-hole/
 [3]: http://www.raywenderlich.com/video-tutorials#watchkit
 [4]: http://appreviewtimes.com
