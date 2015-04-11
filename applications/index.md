@@ -33,7 +33,7 @@ App                          || Version | Release Date      | Download Link
 
 App                          || Version | Release Date      | Download Link                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 :------ |:------------------- | :-----: | :---------------: | -------------:
-![][20] | [19th Hole][21]                  | 1.1     | 23 May 2015     | <a href="https://itunes.apple.com/us/app/the-19th-hole/id871686159?mt=8&#038;uo=4" target="itunes_store" class="ios_apps"></a>
+![][20] | [19th Hole][21]                  | 2.0     | 11 April 2015     | <a href="https://itunes.apple.com/us/app/the-19th-hole/id871686159?mt=8&#038;uo=4" target="itunes_store" class="ios_apps"></a>
 ![][22] | [A Knight&#8217;s Move][3]       | 1.4     | 17 Jan 2014 | <a href="https://itunes.apple.com/us/app/a-knights-move/id530090451?mt=8&#038;uo=4" target="itunes_store" class="ios_apps"></a>
 ![][23] | [Berio&#8217;s Sequenza VII][24] | 1.1     | 25 Feb 2015 | <a href="https://itunes.apple.com/us/app/sequenza-vii/id730234638?mt=8&#038;uo=4" target="itunes_store" class="ios_apps"></a>
 ![][25] | [Pic-a-POD][13]                  | 2.0     | 23 Oct 2013 | <a href="https://itunes.apple.com/us/app/pic-a-pod/id480086912?mt=8&#038;uo=4" target="itunes_store" class="ios_apps"></a>
