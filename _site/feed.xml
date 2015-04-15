@@ -7,6 +7,67 @@
     <atom:link href="http://troz.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Time In Words 4.0</title>
+        <description>&lt;p&gt;&lt;a href=&quot;/time-in-words/&quot;&gt;Time In Words&lt;/a&gt; for iOS started off as a fun gimmick, emulating the &lt;a href=&quot;http://www.qlocktwo.com/&quot;&gt;Qlocktwo&lt;/a&gt; type of time display where the relevant words are highlighted in some way to spell out the time as a sentence. This very quickly evolved into what I hoped would be more useful app, still showing the original display, but also providing the current time &amp;amp; date as complete sentences. Then I added time conversions and discovered the real power and utility of writing out times as words.&lt;/p&gt;
+
+&lt;p&gt;When it comes to converting times, I doubt there are many people in the world who haven&amp;rsquo;t had problems.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Is that morning or afternoon for them?&lt;/li&gt;
+&lt;li&gt;Are they in tomorrow, today or yesterday?&lt;/li&gt;
+&lt;li&gt;What if they are using daylight-savings?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Having the time written out removes all ambiguity.
+As an example, Time In Words currently reports very clearly:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In Los Angeles, it is nine minutes to ten on Tuesday evening (daylight-savings time).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;When writing &lt;a href=&quot;/time-in-words-for-mac/&quot;&gt;Time In Words for Mac&lt;/a&gt;, I focussed immediately on the time zone conversion facilities, and provided a menu bar app that can display as many time zones as you like (although more than will show on a single screen would probably get annoying).&lt;/p&gt;
+
+&lt;p&gt;So when I decided to do a complete re-write of Time In Words for iOS, the obvious move was to emulate the Mac version and allow for as many time zones as the user wants, instead of the current 2 or 4 (iPhone or iPad). So I discarded the Qlocktwo display and the separate date display which used a similar mechanic. I kept the display that shows the current date and time, but every display after that shows the time in a different time zone. The time zones can be changed and re-ordered, so the ones you need most are the fastest to get to once the app opens.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;One new feature (again taken from the Mac version), is the ability to calculate &amp;ldquo;What time will it be&amp;hellip;&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/TiW_what_time.png&quot; alt=&quot;What time&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;You dial in your local date and time to see what time that will be in your selected zone. And if you want to calculate the other way around, tap the &amp;ldquo;Swap time zones&amp;rdquo; button.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;The main impetus for a re-write was the Apple Watch. I thought this would be a perfect app for the watch as it could use the Apple Watch&amp;rsquo;s superb time-keeping in conjunction with my text generation, to add a significant level of usability to the Apple Watch as regards time zone conversions.&lt;/p&gt;
+
+&lt;p&gt;Sadly, Apple disagrees… &lt;/p&gt;
+
+&lt;p&gt;I completed the app and submitted it to the App Store for review. The review process seems to be very fast at the moment and the app moved into review only one day later. And there it stuck for 3 days. This was very odd. My experience is that once an app gets into review, it only takes a few hours, if that. For &lt;a href=&quot;/19th-hole/&quot;&gt;19th Hole&lt;/a&gt; - my other app with an Apple Watch component, the review process took 30 hours. But 3 days!&lt;/p&gt;
+
+&lt;p&gt;Then I got a phone call from Apple where a very polite person explained to me that although this was not mentioned in any of the documentation, the marketing people had decided that no apps were to be allowed on the watch if they told the time.&lt;/p&gt;
+
+&lt;p&gt;I offered to remove the initial screen telling the local time, so the app would not actually supply the current time but only the time conversions, but that was not acceptable either.&lt;/p&gt;
+
+&lt;p&gt;Then I tried appealing the rejection. My hopes were not high, but I didn&amp;rsquo;t see any harm in asking. I again offered to remove the local time display and emphasised the accessibility advantages of displaying times in this manner. Another day, another phone call, another polite Apple person saying no.&lt;/p&gt;
+
+&lt;p&gt;So now I have re-submitted the app for review without the Apple Watch component, which is a shame. I am hoping that after some months they will review this policy and allow me to try again, but who knows.&lt;/p&gt;
+
+&lt;p&gt;So you can see what you are missing, here are a couple of screen shots from the watch app showing my local time, plus one time zone:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Watch_1.png&quot; alt=&quot;Local time&quot;&gt;
+&lt;span class=&quot;float_right&quot;&gt;&lt;img src=&quot;/images/Watch_2.png&quot; alt=&quot;Converted time&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;One more minor point. People who actually look at version numbers may wonder why I have gone from version 2.5 to version 4.0. When I was working on version 2.5, I considered making it version 3.0 and then changed my mind. However by that time I had already created a version 3.0 in iTunesConnect, so I was not able to use 3.0 again this time. This version was such a big change that I wanted it to be a .0 release, so that meant going to version 4.0&lt;/p&gt;
+</description>
+        <pubDate>Wed, 15 Apr 2015 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2015/04/time-in-words-4.0/</link>
+        <guid isPermaLink="true">http://troz.net/2015/04/time-in-words-4.0/</guid>
+      </item>
+    
+      <item>
         <title>Apple Watch App - Rejected, then Accepted</title>
         <description>&lt;p&gt;As described in a &lt;a href=&quot;/2015/04/my-first-apple-watch-app/&quot;&gt;previous post&lt;/a&gt;, about 9 days ago I submitted my first Apple Watch app for review.
 The app was an extension of my golf scoring app: &lt;a href=&quot;/19th-hole/&quot;&gt;The 19th Hole&lt;/a&gt;.&lt;/p&gt;
@@ -419,37 +480,6 @@ A better option might be to turn off comments completely and just have a contact
         <pubDate>Tue, 10 Feb 2015 00:00:00 +1000</pubDate>
         <link>http://troz.net/world-time-in-words/</link>
         <guid isPermaLink="true">http://troz.net/world-time-in-words/</guid>
-      </item>
-    
-      <item>
-        <title>Man Reader 1.4 Now Available</title>
-        <description>&lt;p&gt;&lt;a href=&quot;/manreader/&quot;&gt;Man Reader 1.4&lt;/a&gt; is now available through the &lt;a href=&quot;http://itunes.apple.com/app/man-reader/id522583774?mt=12&quot;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h5 id=&quot;the-new-features-and-fixes-are:&quot;&gt;The new features and fixes are:&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Fix for plain text view not wrapping correctly for odd-sized fonts.&lt;/li&gt;
-&lt;li&gt;Fix for HTML text view over-riding font colors that may be invisible.&lt;/li&gt;
-&lt;li&gt;Search for missing entry (e.g. g++) no longer requires Enter or Return.&lt;/li&gt;
-&lt;li&gt;Better automatic selection of matching entries while searching.&lt;/li&gt;
-&lt;li&gt;Fix for animation warning message appearing in Console.&lt;/li&gt;
-&lt;li&gt;Status display shows when man page list is being updated.&lt;/li&gt;
-&lt;li&gt;Searching inside a page now allows a minimum of 2 characters (was 3), so flags&lt;br&gt;
-e.g. ‘-b’ do not need to be escaped.&lt;/li&gt;
-&lt;li&gt;Fixed path for Network Utility in tool bar (moved in OS X 10.9).&lt;/li&gt;
-&lt;li&gt;More information available about the effects of sand-boxing for this app.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;For the first time, Man Reader is now also available as a &lt;a href=&quot;https://pay.paddle.com/checkout/490552&quot;&gt;direct purchase&lt;/a&gt;.&lt;br&gt;
-You can also download a &lt;a href=&quot;/manreader-paddle/ManReader.zip&quot;&gt;7 day free trial&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The reason for selling Man Reader outside the App Store is to avoid Apple&amp;#8217;s sandboxing restrictions, which may reduce the number of man pages that Man Reader is able to display. For more information about this problem, read &lt;a href=&quot;/manreader-sandbox/&quot;&gt;Sand-boxing Man Reader&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;If you have already purchased Man Reader from the App Store, but would like to have a non-sandboxed version, go to &lt;a href=&quot;/man-reader-no-sb/&quot;&gt;Man Reader (no SB)&lt;/a&gt; for more information on how to download a non-sandboxed version that will use your App Store licence.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 03 Apr 2014 00:00:00 +1000</pubDate>
-        <link>http://troz.net/man-reader-1-4-now-available/</link>
-        <guid isPermaLink="true">http://troz.net/man-reader-1-4-now-available/</guid>
       </item>
     
   </channel>
