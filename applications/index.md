@@ -19,6 +19,7 @@ display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.app
 App                          || Version | Release Date      | Download Link                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 :------ |:------------------- | :-----: | :---------------: | -------------:
 ![][2] | [A Knight&#8217;s Move][3] | 1.4     | 14 Jan 2014   | <a href="https://itunes.apple.com/us/app/a-knights-move/id533321133?mt=12&#038;uo=4" target="itunes_store" class="mac_apps"></a>
+![][28] | [Dice Pass][29] | 1.0     | 29 May 2015   | <a href="https://itunes.apple.com/app/dice-pass/id997688302?mt=12&#038;uo=4" target="itunes_store" class="mac_apps"></a>
 ![][4] | [Icns Maker][5]            | 1.2     | 18 Sep 2013 | <a href="https://itunes.apple.com/us/app/icns-maker/id550942266?mt=12&#038;uo=4" target="itunes_store" class="mac_apps"></a>
 ![][6] | [Icon Builder][7]          | 3.0.1   | 17 Mar 2015  | <a href="https://itunes.apple.com/us/app/icon-builder/id552293482?mt=12&#038;uo=4" target="itunes_store" class="mac_apps"></a>
 ![][8] | [Man Reader][9]            | 1.4     | 2 Apr 2014      | <a href="https://itunes.apple.com/us/app/man-reader/id522583774?mt=12&#038;uo=4" target="itunes_store" class="mac_apps"></a><br>[7 day free trial][10]<br>[Purchase directly][11]
@@ -67,4 +68,6 @@ App                          || Version | Release Date      | Download Link
  [25]: /images/pic-ios36.png
  [26]: /images/time-ios36.png
  [27]: /time-in-words/
+ [28]: /images/DicePass_36.png
+ [29]: /dicepass/
  
