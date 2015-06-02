@@ -18,5 +18,8 @@ To install &#8216;Man Reader (no SB)&#8217;, click the download link below. This
 
 ## [Download Man Reader (no SB)][2]
 
+I found out today (thanks Ron) that under OS X 10.10.3 the security settings no longer allow the downloaded version of Man Reader (no SB) to run, despite the fact that I have signed it with my Apple Developer ID. OS X gives a very un-helpful dialog reporting that the app is damaged. In fact the app is fine, but being blocked by the security settings. The solution as shown at [TechRecipes][3] is to change your security system preferences to alow downloaded apps from anywhere. You only need to do this temporarily as after you have run the app once you can set this setting back to whatever you had before.
+
  [1]: /manreader-sandbox/
  [2]: ManReader-noSB.zip
+ [3]: http://www.tech-recipes.com/rx/45404/mac-downloaded-app-is-damaged-and-cant-be-opened-error-solved/
