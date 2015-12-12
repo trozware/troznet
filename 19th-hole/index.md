@@ -13,7 +13,7 @@ Whether you are playing for the club championship, having a weekend round with f
 
 Designed for fast, accurate score keeping with a color scheme chosen for optimal outdoor viewing, 19th Hole uses a simple setup process and an intuitive, gesture-based score entry system. During and after the round, you can see totals and results using various methods: total strokes, total putts, match play (Irish match play for more than 2 players) & Stableford.
 
-Version 2.0 adds an Apple Watch app so strokes can be entered quickly and easily using the watch to avoid having to pull your iPhone out of your bag.
+19th Hole now includes an Apple Watch app so strokes can be entered quickly and easily using the watch to avoid having to pull your iPhone out of your bag.
 
 When you have finished, you can archive the score card for future reference and email the completed card to your fellow players.
 
@@ -29,7 +29,7 @@ When you have finished, you can archive the score card for future reference and 
 <img src="/wp-content/uploads/2014/04/1_4-500.png" alt="Scoring" />
 <br>iPhone
 
-<img title="Watch Scoring" alt="Watch Scoring" src="/images/19thHole-Watch2.png" />
+<img title="Watch Scoring" alt="Watch Scoring" src="/images/19thHole-Watch-v3.jpg" />
 <br>Apple Watch
 
 Courses only need to be entered once and are then saved for future use.  

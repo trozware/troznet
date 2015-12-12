@@ -37,4 +37,7 @@ permalink:    pretty
 paginate:     5
 sass:
   compressed: true
-highlighter:	pygments
+highlighter:	rouge
+
+gems: [jekyll-paginate]
+
