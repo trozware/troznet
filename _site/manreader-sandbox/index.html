@@ -104,13 +104,13 @@
 This is where the default man pages are all stored, but if you install other software (Xcode is a good example), then Man Reader may not be able to list all the available man pages on your system.</p>
 
 <p>To tell if Man Reader is missing man pages, copy &amp; paste the following command into the Terminal app:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">whatis . &gt;&gt; ~/Desktop/whatis.txt
+<div class="highlight"><pre><code class="language-text" data-lang="text">whatis . &gt;&gt; ~/Desktop/whatis.txt
 </code></pre></div>
 <p>Man Reader runs this command internally when it starts, but the Terminal app is not sand-boxed and so can access everything.<br>
 Running this command will create a text file on your desktop with a list of all available man pages on your system. Open it in a text editor that can show the number of lines in a file. <a href="http://www.barebones.com/products/textwrangler/">TextWrangler from Bare Bones Software</a> is a good free editor that will do this.</p>
 
 <p>To check what man pages ManReader can read, go to Finder and select &#8216;Go to Folder&#8230;&#8221; from the Go menu. Paste in the following path:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">~/Library/Containers/net.troz.Man-Reader/Data/Library/Application Support/Man Reader/
+<div class="highlight"><pre><code class="language-text" data-lang="text">~/Library/Containers/net.troz.Man-Reader/Data/Library/Application Support/Man Reader/
 </code></pre></div>
 <p>You will see two files: open the one called &#8216;ManReader.raw&#8217; in your text editor. This is the result of Man Reader running the whatis command. Compare the number of lines in the two files. Don&#8217;t worry about the order of the items in the file as that may vary, you are only concerned with the total number of lines in each.</p>
 

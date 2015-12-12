@@ -120,8 +120,8 @@ The server is left running in Terminal so I can shut it down when finished testi
 <p>After writing the post, the final stage is to publish, so I need to work out the commands for doing a git commit and push. Then I should be able to automate those tasks.</p>
 
 <p>Testing the git commands using Terminal, I have come up with the following sequence:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">git add .
-git commit -a -m "Commit message here"
+<div class="highlight"><pre><code class="language-text" data-lang="text">git add .
+git commit -a -m &quot;Commit message here&quot;
 git push
 </code></pre></div>
 <p>The commit message could be the title of the post, so I need a way to construct the command and then execute it. Typinator is good at text manipulation, so I constructed another macro that takes the clipboard, uses it as the commit message and performs the git commands. This gave a good commit message, but the actual commit failed, so that was no use.</p>

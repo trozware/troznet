@@ -118,7 +118,7 @@
 
 <p>There are a couple of important tricks when working out locations: firstly, you will need to know the bounds of the screen saver area. This will vary depending on the monitor, screen size or whether the screen saver is appearing in the preview window in System Preferences. The screen saver view has a method that does this work for you.</p>
 
-<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="n">NSRect</span> <span class="n">viewBounds</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span> <span class="nf">bounds</span><span class="p">];</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="n">NSRect</span> <span class="n">viewBounds</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">bounds</span><span class="p">];</span></code></pre></figure>
 
 <p>The next trick is that you are most likely going to need some random numbers. Again, the screen saver framework supplies these to you in several forms. I used SSRandomFloatBetween but there are others. Check the documentation.</p>
 
@@ -132,27 +132,27 @@
 
 <p>Set the File&#8217;s Owner class to the class of your Screen Saver view. In your ScreenSaverView.h file, declare a property for this new panel. e.g.</p>
 
-<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">)</span> <span class="n">IBOutlet</span> <span class="n">NSPanel</span> <span class="o">*</span><span class="n">optionsPanel</span><span class="p">;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="k">@property</span> <span class="p">(</span><span class="k">assign</span><span class="p">)</span> <span class="kt">IBOutlet</span> <span class="n">NSPanel</span> <span class="o">*</span><span class="n">optionsPanel</span><span class="p">;</span></code></pre></figure>
 
 <p>@synthesize this in the ScreenSaverView.m file.
 In the xib file, connect the panel to this outlet.</p>
 
 <p>Now go back to ScreenSaverView.m and add the following code:</p>
 
-<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">hasConfigureSheet</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="p">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">hasConfigureSheet</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="o">-</span> <span class="p">(</span><span class="n">NSWindow</span><span class="o">*</span><span class="p">)</span><span class="n">configureSheet</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">self</span><span class="p">.</span><span class="n">optionsPanel</span><span class="p">)</span> <span class="p">{</span>
-        <span class="p">[</span><span class="n">NSBundle</span> <span class="nf">loadNibNamed</span><span class="p">:</span><span class="s">@"Options"</span> <span class="nf">owner</span><span class="p">:</span><span class="n">self</span><span class="p">];</span>
+<span class="p">-</span> <span class="p">(</span><span class="n">NSWindow</span><span class="o">*</span><span class="p">)</span><span class="nf">configureSheet</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">self</span><span class="p">.</span><span class="n">optionsPanel</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">[</span><span class="bp">NSBundle</span> <span class="nl">loadNibNamed</span><span class="p">:</span><span class="s">@&quot;Options&quot;</span> <span class="nl">owner</span><span class="p">:</span><span class="nb">self</span><span class="p">];</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">optionsPanel</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nb">self</span><span class="p">.</span><span class="n">optionsPanel</span><span class="p">;</span>
 <span class="p">}</span>
 
 
-<span class="o">-</span> <span class="p">(</span><span class="n">IBAction</span><span class="p">)</span><span class="n">closeConfig</span><span class="o">:</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="n">sender</span> <span class="p">{</span>
-    <span class="p">[[</span><span class="n">NSApplication</span> <span class="nf">sharedApplication</span><span class="p">]</span> <span class="nf">endSheet</span><span class="p">:</span><span class="n">self</span><span class="p">.</span><span class="n">optionsPanel</span><span class="p">];</span>
+<span class="p">-</span> <span class="p">(</span><span class="kt">IBAction</span><span class="p">)</span><span class="nf">closeConfig:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nv">sender</span> <span class="p">{</span>
+    <span class="p">[[</span><span class="n">NSApplication</span> <span class="n">sharedApplication</span><span class="p">]</span> <span class="nl">endSheet</span><span class="p">:</span><span class="nb">self</span><span class="p">.</span><span class="n">optionsPanel</span><span class="p">];</span>
 <span class="p">}</span></code></pre></figure>
 
 <p>The hasConfigureSheet and configureSheet stubs are already there for you, but you can replace them with these versions.</p>
@@ -167,24 +167,24 @@ In the xib file, connect the panel to this outlet.</p>
 
 <p>In the initWithFrame:isPreview: method, I got a reference to the screen saver defaults for my screen saver and registered the defaults. I am never very sure about the need to do this, but it is supposed to be a good practice.</p>
 
-<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="n">ScreenSaverDefaults</span> <span class="o">*</span><span class="n">defaults</span> <span class="o">=</span> <span class="p">[</span><span class="n">ScreenSaverDefaults</span> <span class="nf">defaultsForModuleWithName</span><span class="p">:</span><span class="n">kModuleName</span><span class="p">];</span>
-<span class="p">[</span><span class="n">defaults</span> <span class="nf">registerDefaults</span><span class="p">:[</span><span class="n">NSDictionary</span> <span class="nf">dictionaryWithObjectsAndKeys</span><span class="p">:</span> 
-    <span class="s">@"NO"</span><span class="p">,</span> <span class="s">@"UseAlternativeZone"</span><span class="p">,</span> <span class="s">@""</span><span class="p">,</span> <span class="s">@"AlternativeZoneName"</span><span class="p">,</span> <span class="nb">nil</span><span class="p">]];</span>
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="n">ScreenSaverDefaults</span> <span class="o">*</span><span class="n">defaults</span> <span class="o">=</span> <span class="p">[</span><span class="n">ScreenSaverDefaults</span> <span class="nl">defaultsForModuleWithName</span><span class="p">:</span><span class="n">kModuleName</span><span class="p">];</span>
+<span class="p">[</span><span class="n">defaults</span> <span class="nl">registerDefaults</span><span class="p">:[</span><span class="bp">NSDictionary</span> <span class="nl">dictionaryWithObjectsAndKeys</span><span class="p">:</span> 
+    <span class="s">@&quot;NO&quot;</span><span class="p">,</span> <span class="s">@&quot;UseAlternativeZone&quot;</span><span class="p">,</span> <span class="s">@&quot;&quot;</span><span class="p">,</span> <span class="s">@&quot;AlternativeZoneName&quot;</span><span class="p">,</span> <span class="nb">nil</span><span class="p">]];</span>
     
-<span class="n">Using</span> <span class="n">them</span> <span class="n">is</span> <span class="n">exactly</span> <span class="n">the</span> <span class="n">same</span> <span class="n">as</span> <span class="n">using</span> <span class="n">NSUserDefaults</span><span class="o">:</span> 
+<span class="n">Using</span> <span class="n">them</span> <span class="n">is</span> <span class="n">exactly</span> <span class="n">the</span> <span class="n">same</span> <span class="n">as</span> <span class="n">using</span> <span class="nl">NSUserDefaults</span><span class="p">:</span> 
 
-<span class="c1">// Reading
-</span><span class="n">ScreenSaverDefaults</span> <span class="o">*</span><span class="n">defaults</span> <span class="o">=</span> <span class="p">[</span><span class="n">ScreenSaverDefaults</span> <span class="nf">defaultsForModuleWithName</span><span class="p">:</span><span class="n">kModuleName</span><span class="p">];</span>
-<span class="n">BOOL</span> <span class="n">useAlternativeZone</span> <span class="o">=</span> <span class="p">[</span><span class="n">defaults</span> <span class="nf">boolForKey</span><span class="p">:</span><span class="s">@"UseAlternativeZone"</span><span class="p">];</span>
-<span class="n">NSString</span> <span class="o">*</span><span class="n">alternativeZoneName</span> <span class="o">=</span> <span class="p">[</span><span class="n">defaults</span> <span class="nf">objectForKey</span><span class="p">:</span><span class="s">@"AlternativeZoneName"</span><span class="p">];</span>
+<span class="c1">// Reading</span>
+<span class="n">ScreenSaverDefaults</span> <span class="o">*</span><span class="n">defaults</span> <span class="o">=</span> <span class="p">[</span><span class="n">ScreenSaverDefaults</span> <span class="nl">defaultsForModuleWithName</span><span class="p">:</span><span class="n">kModuleName</span><span class="p">];</span>
+<span class="kt">BOOL</span> <span class="n">useAlternativeZone</span> <span class="o">=</span> <span class="p">[</span><span class="n">defaults</span> <span class="nl">boolForKey</span><span class="p">:</span><span class="s">@&quot;UseAlternativeZone&quot;</span><span class="p">];</span>
+<span class="bp">NSString</span> <span class="o">*</span><span class="n">alternativeZoneName</span> <span class="o">=</span> <span class="p">[</span><span class="n">defaults</span> <span class="nl">objectForKey</span><span class="p">:</span><span class="s">@&quot;AlternativeZoneName&quot;</span><span class="p">];</span>
 
 <span class="p">...</span>
 
-<span class="c1">// Writing
-</span><span class="n">ScreenSaverDefaults</span> <span class="o">*</span><span class="n">defaults</span> <span class="o">=</span> <span class="p">[</span><span class="n">ScreenSaverDefaults</span> <span class="nf">defaultsForModuleWithName</span><span class="p">:</span><span class="n">kModuleName</span><span class="p">];</span>
-<span class="p">[</span><span class="n">defaults</span> <span class="nf">setBool</span><span class="p">:</span><span class="n">useAlternative</span> <span class="nf">forKey</span><span class="p">:</span><span class="s">@"UseAlternativeZone"</span><span class="p">];</span>
-<span class="p">[</span><span class="n">defaults</span> <span class="nf">setObject</span><span class="p">:</span><span class="n">alternativeZoneName</span> <span class="nf">forKey</span><span class="p">:</span><span class="s">@"AlternativeZoneName"</span><span class="p">];</span>
-<span class="p">[</span><span class="n">defaults</span> <span class="nf">synchronize</span><span class="p">];</span></code></pre></figure>
+<span class="c1">// Writing</span>
+<span class="n">ScreenSaverDefaults</span> <span class="o">*</span><span class="n">defaults</span> <span class="o">=</span> <span class="p">[</span><span class="n">ScreenSaverDefaults</span> <span class="nl">defaultsForModuleWithName</span><span class="p">:</span><span class="n">kModuleName</span><span class="p">];</span>
+<span class="p">[</span><span class="n">defaults</span> <span class="nl">setBool</span><span class="p">:</span><span class="n">useAlternative</span> <span class="nl">forKey</span><span class="p">:</span><span class="s">@&quot;UseAlternativeZone&quot;</span><span class="p">];</span>
+<span class="p">[</span><span class="n">defaults</span> <span class="nl">setObject</span><span class="p">:</span><span class="n">alternativeZoneName</span> <span class="nl">forKey</span><span class="p">:</span><span class="s">@&quot;AlternativeZoneName&quot;</span><span class="p">];</span>
+<span class="p">[</span><span class="n">defaults</span> <span class="n">synchronize</span><span class="p">];</span></code></pre></figure>
 
 <p>One last thing: if you want to distribute the screen saver, you will want to create an archive, possibly code-signing with your Apple developer ID to allow for Mountain Lion&#8217;s up-coming Gatekeeper security system. I code-signed the project and built an archive, but when I clicked &#8220;Distribute&#8221; in the Organizer, the only appropriate options was &#8220;Save Built Products&#8221;. I selected this option and ended up with a series of folders inside folders, with the screen saver module in about the fifth folder down. I don&#8217;t know why the module gets distributed like this, but I pulled it out of the folders and it worked fine.</p>
 
