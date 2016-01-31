@@ -63,11 +63,11 @@ Pic-a-POD for iOS is an app for iPad, iPhone or iPod Touch. It shows a list of t
 
 ### Time In Words:
 
-Time In Words is a clock and calendar app that takes you out of the digital era and back to when saying “quarter to seven” or “five past two” was accurate enough. Available for  for iPad, iPhone or iPod Touch.
+Time In Words is a clock and calendar app that that performs time zone conversions and gives you the result in words for easy comprehension. No more wondering if the converted time is morning or afternoon, today, yesterday or tomorrow. Available for  for iPad, iPhone or iPod Touch.
 
   * <a href="http://itunes.apple.com/app/time-in-words/id498403851" target="_blank">iTunes App Store</a>
   * <a href="/time-in-words/" target="_blank">Time In Words for iOS</a>
 
-<img title="Time" alt="Time" src="/wp-content/uploads/2012/01/time.png" />
+<img title="Time" alt="Time" src="/images/TiW_1.jpeg" />
 
  [3]: /berio/ "Berio’s Sequenza VII"

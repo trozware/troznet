@@ -31,17 +31,6 @@ Dice Pass is a utility to app to generate random passphrases based on the Dicewa
 
 * * *
 
-### Icns Maker:
-
-Icns Maker takes your original image and creates the icns file for your Mac app in just 2 steps. Now updated for Xcode 5 Assets.
-
-  * <a href="http://itunes.apple.com/app/icns-maker/id550942266?mt=12&uo=4" target="_blank">Mac App Store</a>
-  * <a title="Icns Maker" href="/icns-maker/">Icns Maker</a>
-
-<img alt="Get more control" src="/wp-content/uploads/2012/08/Web2-471x300.png" width="500" />
-
-* * *
-
 ### Icon Builder:
 
 Icon Builder takes your original image and uses it to create the suite of icon files needed for your iOS apps. Now updated for Xcode 5 Assets and iOS 7 icon sizes.
@@ -82,7 +71,7 @@ World Time In Words continues the theme of the iOS version, explaining the time 
   * <a href="http://itunes.apple.com/au/app/time-in-words/id509085586?mt=12" target="_blank">Mac App Store</a>
   * <a title="Time In Words for Mac" href="/time-in-words-for-mac/">Time In Words for Mac</a>
 
-<img title="Time In Words menu plus time zones" alt="Time In Words menu plus time zones" src="/wp-content/uploads/2012/02/TiW-Mac-menu.png" width="500" />
+<img title="Time In Words menu plus time zones" alt="Time In Words menu plus time zones" src="/images/WTiW_1.png" />
 
  [1]: /wp-content/uploads/2012/06/Mac1.png
  [2]: /wp-content/uploads/2012/04/ManReader.png

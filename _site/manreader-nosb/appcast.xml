@@ -3,26 +3,20 @@
    <channel>
       <title>Man Reader (no SB) - Changelog</title>
       <link>/manreader-nosb/appcast.xml</link>
-      <description>First version available without sand-boxing</description>
+      <description>Man Reader without sand-boxing</description>
       <language>en</language>
          <item>
-            <title>Version 1.4</title>
-						<description><![CDATA[
-            <ul>
-                <li>No longer sand-boxed for better functionality.</li>
-                <li>Fix for plain text view not wrapping correctly for odd-sized fonts.</li>
-                <li>Search for missing entry (e.g. g++) no longer requires Enter or Return.</li>
-                <li>Better automatic selection of matching entries while searching.</li>
-                <li>Fix for animation warning message appearing in Console.</li>
-                <li>Status display showing when man page list is being updated.</li>
-                <li>Searching inside a page now allows a minimum of 2 characters, so flags e.g. '-b' do not need to be escaped.</li>
-            </ul>
+            <title>Version 1.5</title>
+			<description><![CDATA[
+				This version of the app will no longer be updated or supported.
+				The sand-boxing issues with the App Store version have been resolved.
+				Please switch back to using the app downloaded from the App Store.
             ]]>
             </description>
-						<pubDate>Mon, 31 Mar 2014 15:55:56 +1000</pubDate>
-						<enclosure url="/manreader-nosb/ManReader-noSB.zip"
-							sparkle:version="1.4" length="1959620" type="application/octet-stream" shortVersionString=""
-							sparkle:dsaSignature="MCwCFDD6K9qn+Tav33B+qe7XtM83mzncAhRJgiLZHa1nPtnzfZZcXiwp3LfRew==" />
+				<pubDate>Sun, 31 Jan 2016 16:25:48 +1000</pubDate>
+				<enclosure url="/manreader-nosb/ManReader-noSB.zip"
+					sparkle:version="1.5" length="949990" type="application/octet-stream" shortVersionString=""
+					sparkle:dsaSignature="MCwCFAfd0UAwWSmawfu5soYMf7excejGAhRg7DFJlv+H8mqC+XC2UF51oWLgVg==" />
         </item>
    </channel>
 </rss>
