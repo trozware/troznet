@@ -5,6 +5,7 @@ author:      Sarah Reichelt
 description: "Mac &amp; iOS Developer"
 baseurl:     ""
 url:         "http://troz.net"
+date_format: "%-d %b %Y"
 
 # Google analytics
 google_analytics: UA-5511808-2
@@ -13,24 +14,83 @@ google_analytics: UA-5511808-2
 animated:           false
 show_related_posts: false
 show_post_footers:  false
+show_social_icons:    false
+ajaxify_contact_form: false
+enable_mathjax: false
 
 # Disqus post comments
 # (leave blank to disable Disqus)
 disqus_shortname: trozware
 
+# Facebook Comments plugin
+# (leave blank to disable Facebook Comments, otherwise set it to true)
+facebook_comments:
+facebook_appid:
+facebook_comments_number: 10
+
 # Social icons
 show_social_icons: true
 github_username: 
+bitbucket_username:
 stackoverflow_id: 1082632
 twitter_username: sarahreichelt
+skype_username:
+steam_nickname:
 google_plus_id: 
 linkedin_username: 
+angellist_username:
+medium_id:
 bitcoin_url:
 paypal_url:
 flattr_button:
 
+# Post sharing icons
+show_sharing_icons: false
+# Change to 'true' to enable individual icons
+share_facebook: false
+share_twitter: false
+share_googleplus: false
+share_linkedin: false
+share_digg: false
+share_tumblr: false
+share_reddit: false
+share_stumbleupon: false
+share_hackernews: false
+
+text:
+  pagination:
+    newer: 'Newer'
+    older: 'Older'
+  share_buttons:
+    text:         'Share this post!'
+    facebook:     'Share on Facebook'
+    twitter:      'Share on Twitter'
+    googleplus:   'Share on Google+'
+    linkedin:     'Share on LinkedIn'
+    digg:         'Share on Digg'
+    tumblr:       'Share on Tumblr'
+    reddit:       'Share on Reddit'
+    stumbleupon:  'Share on StumbleUpon'
+    hackernews:   'Share on Hacker News'
+  post:
+    updated:        'Updated'
+    minute_read:    'minute read'
+    related_posts:  'Related Posts'
+  index:
+    coming_soon: 'Coming soon...'
+  contact:
+    email:    'Email Address'
+    content:  'What would you like to say?'
+    subject:  'TrozWare Contact'
+    submit:   'Send Message'
+    ajax:
+      sending:  'sending..'
+      sent:     'Message sent!'
+      error:    'Error!'
+  thanks: 'Thanks for contacting me. I will reply as soon as possible.'
+
 # Build settings
-markdown:     redcarpet
+markdown:     kramdown
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    pretty
@@ -39,5 +99,8 @@ sass:
   compressed: true
 highlighter:  pygments
 
-gems: [jekyll-paginate]
+gems:
+  - jekyll-paginate
+#   - jekyll-sitemap
+exclude: [vendor]
 

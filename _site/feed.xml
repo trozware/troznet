@@ -8,20 +8,23 @@
     
       <item>
         <title>Man Reader 1.5</title>
-        <description>&lt;p&gt;&lt;a href=&quot;/manreader/&quot;&gt;Man Reader 1.5&lt;/a&gt; is now available through the &lt;a href=&quot;http://itunes.apple.com/app/man-reader/id522583774?mt=12&quot;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
+        <description>&lt;p&gt;Man Reader has been updated to version 1.5 with a major improvement in the way it looks for available man pages.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/manreader/&quot;&gt;Man Reader 1.5&lt;/a&gt; is now available through the &lt;a href=&quot;http://itunes.apple.com/app/man-reader/id522583774?mt=12&quot;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h4 id=&quot;change-log&quot;&gt;Change Log:&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Much improved searching for available man pages.&lt;/li&gt;
-&lt;li&gt;Sand-boxed version now works just as well as the non-sand-boxed.&lt;/li&gt;
+  &lt;li&gt;Much improved searching for available man pages.&lt;/li&gt;
+  &lt;li&gt;Sand-boxed version now works just as well as the non-sand-boxed.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;The main feature of this version is that it solves the previous problems with the App Store version and sand-boxing. This was restricting the number of man pages listed in Man Reader so I had to release a non-sand-boxed version of the app to allow for full functionality.&lt;/p&gt;
 
 &lt;p&gt;However I discovered that although this gave better results, it was still missing a lot of man pages. Version 1.5 now queries the man page files in a completely different way which is listing many more man pages.&lt;/p&gt;
 
-&lt;p&gt;If you previously had downloaded the Man Reader (no SB) version of the app from this site, please revert to the App Store version which you would have needed to have bought in order to use the downloaded app. If you bought the app from Paddle, &lt;a href=&quot;mailto:sarah@troz.net?subject=Man%20Reader%20transfer%20to%20App%20Store&quot;&gt;contact me&lt;/a&gt; and I will transfer you to the App Store version. Neither of these versions will be supported or updated any more.&lt;/p&gt;
+&lt;p&gt;If you previously had downloaded the Man Reader (no SB) version of the app from this site, please revert to the App Store version which you would have needed to have bought in order to use the downloaded app. If you bought the app from Paddle, &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#115;&amp;#097;&amp;#114;&amp;#097;&amp;#104;&amp;#064;&amp;#116;&amp;#114;&amp;#111;&amp;#122;&amp;#046;&amp;#110;&amp;#101;&amp;#116;&amp;#063;&amp;#115;&amp;#117;&amp;#098;&amp;#106;&amp;#101;&amp;#099;&amp;#116;&amp;#061;&amp;#077;&amp;#097;&amp;#110;&amp;#037;&amp;#050;&amp;#048;&amp;#082;&amp;#101;&amp;#097;&amp;#100;&amp;#101;&amp;#114;&amp;#037;&amp;#050;&amp;#048;&amp;#116;&amp;#114;&amp;#097;&amp;#110;&amp;#115;&amp;#102;&amp;#101;&amp;#114;&amp;#037;&amp;#050;&amp;#048;&amp;#116;&amp;#111;&amp;#037;&amp;#050;&amp;#048;&amp;#065;&amp;#112;&amp;#112;&amp;#037;&amp;#050;&amp;#048;&amp;#083;&amp;#116;&amp;#111;&amp;#114;&amp;#101;&quot;&gt;contact me&lt;/a&gt; and I will transfer you to the App Store version. Neither of these other versions will be supported or updated any more.&lt;/p&gt;
+
 </description>
         <pubDate>Sun, 31 Jan 2016 00:00:00 +1000</pubDate>
         <link>http://troz.net/2016/01/man-reader-1.5/</link>
@@ -35,33 +38,34 @@ This version is a complete re-write to accommodate the changes in iOS 9 and watc
 
 &lt;p&gt;The major changes are to do with the way the iPhone and the Watch communicate. In watchOS1, all the brains of the app had to live in the iPhone, meaning that every single interaction on the Watch had to be referred back to the iPhone for processing and the result sent back to the Watch for display. This lead to communications delays and breakdowns which caused third-party apps to work sluggishly or not at all. In watchOS2, the brains of the watch part of the app can now operate inside the watch, greatly reducing the number of communications needed. As well as that, Apple has now provided us with multiple ways of getting data to and from the Watch which again improves performance and reliability.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
 &lt;p&gt;With the 19th Hole, I made the decision to change the method of inputting scores. The previous version used a slider with plus and minus buttons to adjust scores. The problems with this were the small target area of the plus &amp;amp; minus buttons as well as the fact that a slider with more than about 3 divisions was not useful as a visual indicator.&lt;/p&gt;
 
 &lt;p&gt;When watchOS2 allowed developers access to the digital crown, I decided to switch to using that instead. Now you tap the score box of the player you wish to adjust and use the digital crown to select a number,I think this will be easier to use while wearing a glove and hope that it is still easy to read out doors.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
 &lt;p&gt;The other suggestion is not to do with watchSO2 but is a general tip for using apps of this kind. By default, the Apple Watch will always show the watch face when you raise your wrist. Normally this is the most useful thing, but when scoring a round of golf, it would be easier if The 19th Hole app stayed at the front. To make this happen, you need to set to watch to show the last used app instead of the watch face. This can be set using the Apple Watch app on the phone or on the watch itself.&lt;/p&gt;
 
 &lt;p&gt;On the phone:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Open the Apple Watch app.&lt;/li&gt;
-&lt;li&gt;Select My Watch from the tabs at the bottom.&lt;/li&gt;
-&lt;li&gt;Tap &amp;ldquo;General&amp;rdquo; and then scroll down to tap &amp;ldquo;Wake Screen&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;Make sure &amp;ldquo;Resume Last Activity&amp;rdquo; is checked.&lt;/li&gt;
+  &lt;li&gt;Open the Apple Watch app.&lt;/li&gt;
+  &lt;li&gt;Select My Watch from the tabs at the bottom.&lt;/li&gt;
+  &lt;li&gt;Tap “General” and then scroll down to tap “Wake Screen”.&lt;/li&gt;
+  &lt;li&gt;Make sure “Resume Last Activity” is checked.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;On the watch:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Press the digital crown to see the app icons.&lt;/li&gt;
-&lt;li&gt;Find and tap the Settings icon.&lt;/li&gt;
-&lt;li&gt;Scroll down and tap &amp;ldquo;General&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;Tap &amp;ldquo;Wake Screen&amp;rdquo; and scroll down to make sure that &amp;ldquo;Previous Activity&amp;rdquo; is checked in the &amp;ldquo;Resume To&amp;rdquo; section.&lt;/li&gt;
+  &lt;li&gt;Press the digital crown to see the app icons.&lt;/li&gt;
+  &lt;li&gt;Find and tap the Settings icon.&lt;/li&gt;
+  &lt;li&gt;Scroll down and tap “General”.&lt;/li&gt;
+  &lt;li&gt;Tap “Wake Screen” and scroll down to make sure that “Previous Activity” is checked in the “Resume To” section.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         <pubDate>Sat, 12 Dec 2015 00:00:00 +1000</pubDate>
         <link>http://troz.net/2015/12/using-19th-hole-on-the-apple-watch/</link>
@@ -74,15 +78,16 @@ This version is a complete re-write to accommodate the changes in iOS 9 and watc
 
 &lt;p&gt;&lt;a href=&quot;https://xkcd.com/936/&quot;&gt;XKCD&lt;/a&gt; had a wonderful comic that illustrated the theory of using a passphrase composed of words that are easy to remember but with a combination that made the passphrase very hard to guess. However even when deciding to use a passphrase like this, it is not easy for us humans to avoid using words that have meaning for us, particularly when it is something we really need to remember.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://world.std.com/%7Ereinhold/diceware.html&quot;&gt;Diceware&lt;/a&gt; was developed to solve this problem. You have a set of 5 dice and a list of words assigned to each possible dice roll for 11111 to 66666. You roll the five dice and get the matching word from the list. Repeat this for the number of words you want to use in your passphrase and you have a random phrase that is hopefully still memorable.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://world.std.com/~reinhold/diceware.html&quot;&gt;Diceware&lt;/a&gt; was developed to solve this problem. You have a set of 5 dice and a list of words assigned to each possible dice roll for 11111 to 66666. You roll the five dice and get the matching word from the list. Repeat this for the number of words you want to use in your passphrase and you have a random phrase that is hopefully still memorable.&lt;/p&gt;
 
 &lt;p&gt;But this sounds like a lot of effort and not something you are likely to do when faced by a password entry field on a web page. So &lt;a href=&quot;/dicepass/&quot;&gt;Dice Pass&lt;/a&gt; was written to do the work for you quickly and easily.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/DicePass_Mac.png&quot; alt=&quot;Dice Pass for Mac&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/DicePass_Mac.png&quot; alt=&quot;Dice Pass for Mac&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Select the number of words you want in your passphrase and see the phrase immediately. Keep clicking the &amp;ldquo;Generate New Phrase&amp;rdquo; button until you get a phrase you like. If you feel that the computer is not to be trusted when generating a random number for the dice rolls, use your real dice and click the dice to change them to the roll you got. If you get a passphrase that is good except for one or two words, use the Re-Roll button beside those words to get a new roll for just that word.&lt;/p&gt;
+&lt;p&gt;Select the number of words you want in your passphrase and see the phrase immediately. Keep clicking the “Generate New Phrase” button until you get a phrase you like. If you feel that the computer is not to be trusted when generating a random number for the dice rolls, use your real dice and click the dice to change them to the roll you got. If you get a passphrase that is good except for one or two words, use the Re-Roll button beside those words to get a new roll for just that word.&lt;/p&gt;
 
 &lt;p&gt;Dice Pass is available from the &lt;a href=&quot;https://itunes.apple.com/app/dice-pass/id997688302?mt=12&amp;amp;uo=4&quot;&gt;Mac App Store&lt;/a&gt; now and coming soon for iOS.&lt;/p&gt;
+
 </description>
         <pubDate>Sat, 30 May 2015 00:00:00 +1000</pubDate>
         <link>http://troz.net/2015/05/dice-pass-for-mac/</link>
@@ -93,25 +98,25 @@ This version is a complete re-write to accommodate the changes in iOS 9 and watc
         <title>Apple Watch First Impressions</title>
         <description>&lt;p&gt;I realise that every one has written one of these posts, but given that everyone looks for and notices different things, I think it is still valid.&lt;/p&gt;
 
-&lt;p&gt;My first impression was &amp;ldquo;Why does it come in such a large box?&amp;rdquo;. The courier delivered two boxes - my 38mm Apple Watch Sport and Tim&amp;rsquo;s 42mm Apple Watch Sport. They both came in long boxes, with the 42mm box significantly longer. And both boxes were heavy! &lt;/p&gt;
+&lt;p&gt;My first impression was “Why does it come in such a large box?”. The courier delivered two boxes - my 38mm Apple Watch Sport and Tim’s 42mm Apple Watch Sport. They both came in long boxes, with the 42mm box significantly longer. And both boxes were heavy!&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
 &lt;h4 id=&quot;un-boxing&quot;&gt;Un-boxing:&lt;/h4&gt;
 
-&lt;p&gt;Opening them was a typical Apple experience: pull the tag to open the external cardboard box, lift out the white internal box. This opens to reveal the watch with the default strap attached (short for 38mm, long for 42mm). Lift the watch out and pull the tags to remove the plastic protective coating. (On a side note, it drives me crazy when people leave this coating on devices, but I can&amp;rsquo;t see this happening on the watch.) Underneath there is a sleeve containing the other half watch strap so you can swap from long to short. My family tells me that this also includes a user guide, but I didn’t read that - typical Apple user&amp;hellip; Under the sleeve is the power block and charging cable. The charging puck is larger than I expected and the cable is very long. Having removed all the components, the packaging is still quite heavy, so I guess Apple just wanted to make sure that no watches were damaged in transit and that it felt like a quality product.&lt;/p&gt;
+&lt;p&gt;Opening them was a typical Apple experience: pull the tag to open the external cardboard box, lift out the white internal box. This opens to reveal the watch with the default strap attached (short for 38mm, long for 42mm). Lift the watch out and pull the tags to remove the plastic protective coating. (On a side note, it drives me crazy when people leave this coating on devices, but I can’t see this happening on the watch.) Underneath there is a sleeve containing the other half watch strap so you can swap from long to short. My family tells me that this also includes a user guide, but I didn’t read that - typical Apple user… Under the sleeve is the power block and charging cable. The charging puck is larger than I expected and the cable is very long. Having removed all the components, the packaging is still quite heavy, so I guess Apple just wanted to make sure that no watches were damaged in transit and that it felt like a quality product.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
 &lt;h4 id=&quot;pairing&quot;&gt;Pairing:&lt;/h4&gt;
 
 &lt;p&gt;Pairing my watch to my iPhone was amazingly slick. After selecting my language, the watch displayed a sort of nebula pattern. On the iPhone, I launched the Apple Watch app, selected the pairing option and pointed the phone camera at the watch display. This did the pairing. Then I waited while all the relevant apps transferred their Apple Watch components to the watch and I was ready to start using it.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
 &lt;h4 id=&quot;the-watch&quot;&gt;The Watch:&lt;/h4&gt;
 
-&lt;p&gt;The watch comes with the modular watch face showing by default. This is a digital time read-out with various &amp;lsquo;complications&amp;rsquo;. 
+&lt;p&gt;The watch comes with the modular watch face showing by default. This is a digital time read-out with various ‘complications’. 
 Force-touch the watch face to change it - this takes a surprisingly strong touch. Then you can swipe sideways to select a watch style. Once you have a style selected, some of them offer further customisations: select how much detail is shown, choose what extra information to display, adjust colors.&lt;/p&gt;
 
 &lt;p&gt;This is a lot of fun and I am still changing mine very frequently. The good thing is that your customisations are stored, so if you set up the utility watch face in a particular way, then swap to the modular and configure it, when you go back to utility, your previous settings are all still there.&lt;/p&gt;
@@ -124,19 +129,19 @@ Force-touch the watch face to change it - this takes a surprisingly strong touch
 
 &lt;p&gt;A minor quibble is that the phases of the moon are displayed from a northern hemisphere point of view and do not match what we actually see here in Australia.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
 &lt;h4 id=&quot;battery-life&quot;&gt;Battery Life:&lt;/h4&gt;
 
-&lt;p&gt;This is a complete non-issue. On my first day with the watch, the battery was at 70% when I first turned it on. As you can imagine, usage was very intense that first day and I got to 8%. Since then, the battery level has only got down to 40 -50% over a day and it recharges to 100% within 2 hours. Tim&amp;rsquo;s 42mm model gets slightly better battery life as expected.&lt;/p&gt;
+&lt;p&gt;This is a complete non-issue. On my first day with the watch, the battery was at 70% when I first turned it on. As you can imagine, usage was very intense that first day and I got to 8%. Since then, the battery level has only got down to 40 -50% over a day and it recharges to 100% within 2 hours. Tim’s 42mm model gets slightly better battery life as expected.&lt;/p&gt;
 
-&lt;p&gt;I started off having the battery indicator as one of the &amp;#39;complications&amp;rsquo; on my watch face, but now I just ignore it.&lt;/p&gt;
+&lt;p&gt;I started off having the battery indicator as one of the ‘complications’ on my watch face, but now I just ignore it.&lt;/p&gt;
 
 &lt;p&gt;And the battery life of my iPhone has improved remarkably due to so many quick transactions being done through the watch instead.&lt;/p&gt;
 
 &lt;p&gt;I did have a charging problem one night. I woke up and checked the time and realised that the watch was quite warm to the touch. I checked the battery level which was actually lower than when I had put it on the charger. I took it off the charger for a few hours, then put it back and all was well.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
 &lt;h4 id=&quot;notifications&quot;&gt;Notifications:&lt;/h4&gt;
 
@@ -144,13 +149,13 @@ Force-touch the watch face to change it - this takes a surprisingly strong touch
 
 &lt;p&gt;At first we thought some notifications were not getting through to the watch, then we found out that if your iPhone is awake and un-locked, notifications are not passed on to the watch. So drop the time until sleep on your phone to the minimum which saves your phone battery and makes sure you receive most notifications on the watch.&lt;/p&gt;
 
-&lt;p&gt;If you want to stop any apps sending notifications through to the watch, this is easily set in the iPhone&amp;rsquo;s Apple Watch app.&lt;/p&gt;
+&lt;p&gt;If you want to stop any apps sending notifications through to the watch, this is easily set in the iPhone’s Apple Watch app.&lt;/p&gt;
 
 &lt;p&gt;I have noticed there is a bit of a delay. I hear an email or message arriving on my phone and it can be half a minute before it gets to my watch.&lt;/p&gt;
 
 &lt;p&gt;Once you get a notification, you can tap it to go to the parent app, swipe up to process it in some way depending on the type of notification, or swipe to the left to see a button that will clear the notification. If you want to get rid of all your notifications at once, do a force-touch on the notifications screen to get the option to clear them all.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
 &lt;h4 id=&quot;glances&quot;&gt;Glances:&lt;/h4&gt;
 
@@ -160,7 +165,7 @@ Force-touch the watch face to change it - this takes a surprisingly strong touch
 
 &lt;p&gt;The first glance in the sequence is essential though as it allows you to toggle airplane mode, do not disturb and silent mode. It also has a button that can make your iPhone make a sound to help you locate it. Hold this button down to make the iPhone flash come on as well.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
 &lt;h4 id=&quot;activity&quot;&gt;Activity:&lt;/h4&gt;
 
@@ -168,11 +173,11 @@ Force-touch the watch face to change it - this takes a surprisingly strong touch
 
 &lt;p&gt;The move tracking seems to be fine. I am not sure what metrics it uses, but on more active days, the numbers go up.&lt;/p&gt;
 
-&lt;p&gt;The exercise one doesn&amp;rsquo;t work for me. We went for a walk and when we returned, Tim&amp;rsquo;s watch showed 25 minutes exercise and mine showed 1 minute. We had walked the same distance at the same speed, as confirmed by the pedometer. Subsequent tests revealed that I don&amp;rsquo;t swing my arms enough when walking to trigger what ever sensor this is using. I can&amp;rsquo;t quite see why it ignores the pedometer completely, but hopefully this can be fixed by a software update. For now, I just ignore this circle.&lt;/p&gt;
+&lt;p&gt;The exercise one doesn’t work for me. We went for a walk and when we returned, Tim’s watch showed 25 minutes exercise and mine showed 1 minute. We had walked the same distance at the same speed, as confirmed by the pedometer. Subsequent tests revealed that I don’t swing my arms enough when walking to trigger what ever sensor this is using. I can’t quite see why it ignores the pedometer completely, but hopefully this can be fixed by a software update. For now, I just ignore this circle.&lt;/p&gt;
 
 &lt;p&gt;Standing is another issue since I use a standing desk, so I stand for many hours each day. Even when standing, I get my hourly reminders to stand. However I use this as a trigger to make me to move about for a minute, so I suppose that is still useful.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
 &lt;h4 id=&quot;communications&quot;&gt;Communications:&lt;/h4&gt;
 
@@ -188,13 +193,13 @@ Force-touch the watch face to change it - this takes a surprisingly strong touch
 
 &lt;p&gt;Digital Touch works between watches only. It is a fun gimmick and I can imagine us developing a set of key codes or sketches, but neither of us can draw very well, so the sketches are very rough. The heart beat is amusing, but the tapping is surprisingly effective as an attention-getter.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
 &lt;h4 id=&quot;summary&quot;&gt;Summary:&lt;/h4&gt;
 
-&lt;p&gt;I think this is the start of a new way of interacting with our technology in a way that is both closer to us and less intrusive. I am loving the watch so far and can&amp;rsquo;t wait to see where it goes from here.&lt;/p&gt;
+&lt;p&gt;I think this is the start of a new way of interacting with our technology in a way that is both closer to us and less intrusive. I am loving the watch so far and can’t wait to see where it goes from here.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 </description>
         <pubDate>Wed, 29 Apr 2015 00:00:00 +1000</pubDate>
         <link>http://troz.net/2015/04/apple-watch-first-impressions/</link>
@@ -205,38 +210,38 @@ Force-touch the watch face to change it - this takes a surprisingly strong touch
         <title>Time In Words 4.0</title>
         <description>&lt;p&gt;&lt;a href=&quot;/time-in-words/&quot;&gt;Time In Words&lt;/a&gt; for iOS started off as a fun gimmick, emulating the &lt;a href=&quot;http://www.qlocktwo.com/&quot;&gt;Qlocktwo&lt;/a&gt; type of time display where the relevant words are highlighted in some way to spell out the time as a sentence. This very quickly evolved into what I hoped would be more useful app, still showing the original display, but also providing the current time &amp;amp; date as complete sentences. Then I added time conversions and discovered the real power and utility of writing out times as words.&lt;/p&gt;
 
-&lt;p&gt;When it comes to converting times, I doubt there are many people in the world who haven&amp;rsquo;t had problems.&lt;/p&gt;
+&lt;p&gt;When it comes to converting times, I doubt there are many people in the world who haven’t had problems.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Is that morning or afternoon for them?&lt;/li&gt;
-&lt;li&gt;Are they in tomorrow, today or yesterday?&lt;/li&gt;
-&lt;li&gt;What if they are using daylight-savings?&lt;/li&gt;
+  &lt;li&gt;Is that morning or afternoon for them?&lt;/li&gt;
+  &lt;li&gt;Are they in tomorrow, today or yesterday?&lt;/li&gt;
+  &lt;li&gt;What if they are using daylight-savings?&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Having the time written out removes all ambiguity.
 As an example, Time In Words currently reports very clearly:&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;In Los Angeles, it is nine minutes to ten on Tuesday evening (daylight-savings time).&lt;/p&gt;
+  &lt;p&gt;In Los Angeles, it is nine minutes to ten on Tuesday evening (daylight-savings time).&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;When writing &lt;a href=&quot;/time-in-words-for-mac/&quot;&gt;Time In Words for Mac&lt;/a&gt;, I focussed immediately on the time zone conversion facilities, and provided a menu bar app that can display as many time zones as you like (although more than will show on a single screen would probably get annoying).&lt;/p&gt;
 
 &lt;p&gt;So when I decided to do a complete re-write of Time In Words for iOS, the obvious move was to emulate the Mac version and allow for as many time zones as the user wants, instead of the current 2 or 4 (iPhone or iPad). So I discarded the Qlocktwo display and the separate date display which used a similar mechanic. I kept the display that shows the current date and time, but every display after that shows the time in a different time zone. The time zones can be changed and re-ordered, so the ones you need most are the fastest to get to once the app opens.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;One new feature (again taken from the Mac version), is the ability to calculate &amp;ldquo;What time will it be&amp;hellip;&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;One new feature (again taken from the Mac version), is the ability to calculate “What time will it be…”&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/TiW_what_time.png&quot; alt=&quot;What time&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/TiW_what_time.png&quot; alt=&quot;What time&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;You dial in your local date and time to see what time that will be in your selected zone. And if you want to calculate the other way around, tap the &amp;ldquo;Swap time zones&amp;rdquo; button.&lt;/p&gt;
+&lt;p&gt;You dial in your local date and time to see what time that will be in your selected zone. And if you want to calculate the other way around, tap the “Swap time zones” button.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;The main impetus for a re-write was the Apple Watch. I thought this would be a perfect app for the watch as it could use the Apple Watch&amp;rsquo;s superb time-keeping in conjunction with my text generation, to add a significant level of usability to the Apple Watch as regards time zone conversions.&lt;/p&gt;
+&lt;p&gt;The main impetus for a re-write was the Apple Watch. I thought this would be a perfect app for the watch as it could use the Apple Watch’s superb time-keeping in conjunction with my text generation, to add a significant level of usability to the Apple Watch as regards time zone conversions.&lt;/p&gt;
 
-&lt;p&gt;Sadly, Apple disagrees… &lt;/p&gt;
+&lt;p&gt;Sadly, Apple disagrees…&lt;/p&gt;
 
 &lt;p&gt;I completed the app and submitted it to the App Store for review. The review process seems to be very fast at the moment and the app moved into review only one day later. And there it stuck for 3 days. This was very odd. My experience is that once an app gets into review, it only takes a few hours, if that. For &lt;a href=&quot;/19th-hole/&quot;&gt;19th Hole&lt;/a&gt; - my other app with an Apple Watch component, the review process took 30 hours. But 3 days!&lt;/p&gt;
 
@@ -244,18 +249,19 @@ As an example, Time In Words currently reports very clearly:&lt;/p&gt;
 
 &lt;p&gt;I offered to remove the initial screen telling the local time, so the app would not actually supply the current time but only the time conversions, but that was not acceptable either.&lt;/p&gt;
 
-&lt;p&gt;Then I tried appealing the rejection. My hopes were not high, but I didn&amp;rsquo;t see any harm in asking. I again offered to remove the local time display and emphasised the accessibility advantages of displaying times in this manner. Another day, another phone call, another polite Apple person saying no.&lt;/p&gt;
+&lt;p&gt;Then I tried appealing the rejection. My hopes were not high, but I didn’t see any harm in asking. I again offered to remove the local time display and emphasised the accessibility advantages of displaying times in this manner. Another day, another phone call, another polite Apple person saying no.&lt;/p&gt;
 
 &lt;p&gt;So now I have re-submitted the app for review without the Apple Watch component, which is a shame. I am hoping that after some months they will review this policy and allow me to try again, but who knows.&lt;/p&gt;
 
 &lt;p&gt;So you can see what you are missing, here are a couple of screen shots from the watch app showing my local time, plus one time zone:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/Watch_1.png&quot; alt=&quot;Local time&quot;&gt;
-&lt;span class=&quot;float_right&quot;&gt;&lt;img src=&quot;/images/Watch_2.png&quot; alt=&quot;Converted time&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/Watch_1.png&quot; alt=&quot;Local time&quot; /&gt;
+&lt;span class=&quot;float_right&quot;&gt;&lt;img src=&quot;/images/Watch_2.png&quot; alt=&quot;Converted time&quot; /&gt;&lt;/span&gt;&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
 &lt;p&gt;One more minor point. People who actually look at version numbers may wonder why I have gone from version 2.5 to version 4.0. When I was working on version 2.5, I considered making it version 3.0 and then changed my mind. However by that time I had already created a version 3.0 in iTunesConnect, so I was not able to use 3.0 again this time. This version was such a big change that I wanted it to be a .0 release, so that meant going to version 4.0&lt;/p&gt;
+
 </description>
         <pubDate>Wed, 15 Apr 2015 00:00:00 +1000</pubDate>
         <link>http://troz.net/2015/04/time-in-words-4.0/</link>
@@ -267,19 +273,21 @@ As an example, Time In Words currently reports very clearly:&lt;/p&gt;
         <description>&lt;p&gt;As described in a &lt;a href=&quot;/2015/04/my-first-apple-watch-app/&quot;&gt;previous post&lt;/a&gt;, about 9 days ago I submitted my first Apple Watch app for review.
 The app was an extension of my golf scoring app: &lt;a href=&quot;/19th-hole/&quot;&gt;The 19th Hole&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;I expected that App Store review times would go up dramatically once Apple had allowed developers to submit watch apps, but this proved to be incorrect. Three days after submission, the app was marked as &amp;ldquo;In Review&amp;rdquo;. This seemed to happen last thing on a Saturday, so there was no further action for two days, at which point the app was rejected, with the following details (sic):&lt;/p&gt;
+&lt;p&gt;I expected that App Store review times would go up dramatically once Apple had allowed developers to submit watch apps, but this proved to be incorrect. Three days after submission, the app was marked as “In Review”. This seemed to happen last thing on a Saturday, so there was no further action for two days, at which point the app was rejected, with the following details (sic):&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;We noticed an issue in your app that contributes to a lower quality user experience than Apple users expect. Specifically, &lt;/p&gt;
+  &lt;p&gt;We noticed an issue in your app that contributes to a lower quality user experience than Apple users expect. Specifically,&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;ul&gt;
-&lt;li&gt;while using the Apple Watch app with the phone app is in the background mode (display off), the new data entry on the Watch App does not refresh accordingly until the phone app is turn back on. &lt;/li&gt;
-&lt;/ul&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;while using the Apple Watch app with the phone app is in the background mode (display off), the new data entry on the Watch App does not refresh accordingly until the phone app is turn back on.&lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;So it appeared that the communication between the watch and the phone, which worked perfectly on the simulators, did not work at all on the actual devices. This is the problem with developing for a device that you do not have.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
 &lt;p&gt;After some research, it appears that the problem is with the phone not operating correctly in background mode. Apple provides for communications from the watch to the phone. The phone can respond, but only the watch can initiate a connection. I guess this makes sense since every watch will be paired with a phone but the reverse will not always be true.&lt;/p&gt;
 
@@ -300,13 +308,14 @@ Then the parent app is supposed to do whatever tasks are called for in the handl
 
 &lt;p&gt;So far, so good, and it all worked perfectly in the simulator. But it appears that although this call wakes the iPhone app, it does not stay awake long enough to do anything. Many thanks to Brian at &lt;a href=&quot;http://www.fiveminutewatchkit.com/blog/2015/3/11/one-weird-trick-to-fix-openparentapplicationreply&quot;&gt;Five Minute WatchKit&lt;/a&gt; who pointed out the way to make this work. Firstly, you create a dummy background task guaranteed to keep the iPhone app awake for 2 seconds. Then you perform your own work, using another background task. When that is finished, the phone can send the response and end the real background task. The dummy task will time out by itself after 2 seconds.&lt;/p&gt;
 
-&lt;p&gt;For my needs, I could probably reduce the 2 seconds considerably, but since this is a problem I am unable to test, I decided just to go with Brian&amp;rsquo;s suggestion as it is.&lt;/p&gt;
+&lt;p&gt;For my needs, I could probably reduce the 2 seconds considerably, but since this is a problem I am unable to test, I decided just to go with Brian’s suggestion as it is.&lt;/p&gt;
 
-&lt;p&gt;I re-submitted the app the same day it was rejected, and two days later it was back in review. The review process took longer than usual, but about 30 hours later, the app was marked &amp;ldquo;Pending an Apple Release&amp;rdquo;. I assumed this meant that Apple would release all WatchKit apps on 24th April when the watches shipped, but the following day the app was reported as &amp;ldquo;Pending Developer Release&amp;rdquo; (I had set it to release manually). Now I have told iTunesConnect to release the app and it is &amp;ldquo;Processing for App Store&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;I re-submitted the app the same day it was rejected, and two days later it was back in review. The review process took longer than usual, but about 30 hours later, the app was marked “Pending an Apple Release”. I assumed this meant that Apple would release all WatchKit apps on 24th April when the watches shipped, but the following day the app was reported as “Pending Developer Release” (I had set it to release manually). Now I have told iTunesConnect to release the app and it is “Processing for App Store”.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
 &lt;p&gt;On a related note, the start of pre-ordering for the Apple Watch was scheduled for a very civilised 5:01 pm here in eastern Australia. I had three watches all lined up in my Favorites in the Apple Store app, ready for ordering. When the store became live (at about 5:03 pm), I could not work out how to order all three in a single operation, so had to place these orders one at a time. I got the first two ordered for the soonest possible delivery, but by the time I got to the third (about 3 minutes later), I had missed out and it will ship in 4 to 6 weeks!&lt;/p&gt;
+
 </description>
         <pubDate>Sat, 11 Apr 2015 00:00:00 +1000</pubDate>
         <link>http://troz.net/2015/04/apple-watch-rejected-then-accepted/</link>
@@ -321,9 +330,9 @@ Then the parent app is supposed to do whatever tasks are called for in the handl
 
 &lt;p&gt;Of my &lt;a href=&quot;/apps-ios/&quot;&gt;iOS apps&lt;/a&gt;, I decided that &lt;a href=&quot;/19th-hole/&quot;&gt;The 19th Hole&lt;/a&gt;, my golf scoring app, would be well suited to the Apple Watch. The problem with using the iPhone version to score is that you have to keep pulling your iPhone in and out of your golf bag, sometimes in the rain, sometimes in bright sunlight. Being able to enter the scores on your wrist sounds like a big improvement. We know that the Apple Watch is at least somewhat water-resistant, but we are yet to see how well it performs in bright sunlight, however I would expect that Apple has put considerable effort into this.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;Once I decided to write an Apple Watch app, the first step was to learn how. I read all Apple&amp;rsquo;s published documents to get a feel for what was possible and what user-interface objects would be available. I find online courses very helpful and by far the best Apple Watch course that I found was &lt;a href=&quot;http://www.raywenderlich.com/video-tutorials#watchkit&quot;&gt;Ray Wenderlich&amp;rsquo;s WatchKit video tutorial series&lt;/a&gt;. The instructors were very clear and explained how the layout and sizing of objects works on the Apple Watch, as well as how to set up and move between views and how to communicate from the Watch back to the iPhone. The layout section of the course was particularly valuable as no other course I found even mentioned this, although it is crucial to the interface design and allowing for the two sizes of watch.&lt;/p&gt;
+&lt;p&gt;Once I decided to write an Apple Watch app, the first step was to learn how. I read all Apple’s published documents to get a feel for what was possible and what user-interface objects would be available. I find online courses very helpful and by far the best Apple Watch course that I found was &lt;a href=&quot;http://www.raywenderlich.com/video-tutorials#watchkit&quot;&gt;Ray Wenderlich’s WatchKit video tutorial series&lt;/a&gt;. The instructors were very clear and explained how the layout and sizing of objects works on the Apple Watch, as well as how to set up and move between views and how to communicate from the Watch back to the iPhone. The layout section of the course was particularly valuable as no other course I found even mentioned this, although it is crucial to the interface design and allowing for the two sizes of watch.&lt;/p&gt;
 
 &lt;p&gt;I had released an update to &lt;a href=&quot;/19th-hole/&quot;&gt;The 19th Hole&lt;/a&gt; recently in preparation for this. I wanted to have squashed the bugs and updated the interface, so the only changes needed would be the WatchKit ones.&lt;/p&gt;
 
@@ -331,16 +340,16 @@ Then the parent app is supposed to do whatever tasks are called for in the handl
 
 &lt;p&gt;I decided to use a paged interface with one page per hole. Each of these pages has a table, with one row per player. A slider with plus &amp;amp; minus buttons lets you enter the score for each player and the total score for each player is also displayed.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/19thHole-Watch2.png&quot; alt=&quot;Data entry&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/19thHole-Watch2.png&quot; alt=&quot;Data entry&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Apart from this data entry view, I have a splash screen which shows you the current round as set up on the iPhone and a final summary screen showing everyone&amp;rsquo;s totals.&lt;/p&gt;
+&lt;p&gt;Apart from this data entry view, I have a splash screen which shows you the current round as set up on the iPhone and a final summary screen showing everyone’s totals.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/19thHole-Watch1.png&quot; alt=&quot;Splash screen&quot;&gt;
-&lt;img src=&quot;/images/19thHole-Watch3.png&quot; alt=&quot;Summary&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/19thHole-Watch1.png&quot; alt=&quot;Splash screen&quot; /&gt;
+&lt;img src=&quot;/images/19thHole-Watch3.png&quot; alt=&quot;Summary&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;These images are taken from the Apple Watch simulator running in 42mm mode.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
 &lt;p&gt;The biggest programming problem was getting the communications working beween the two devices. The 19th Hole uses Core Data for all data storage. My first attempt shared this data between the two apps, allowing both to read and update the database. This almost worked, but if both apps were open, then changes in one device did not get across to the other. It seemed that the data was cached and I was unable to find a way to force either app to update every time.&lt;/p&gt;
 
@@ -349,23 +358,24 @@ Then the parent app is supposed to do whatever tasks are called for in the handl
 &lt;p&gt;The other issue is the fact that I have never seen, touched or used an Apple Watch. This means that I had to guess a lot of things:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;how well will it perform?&lt;/li&gt;
-&lt;li&gt;will the icon look OK?&lt;/li&gt;
-&lt;li&gt;are the controls large enough to use?&lt;/li&gt;
-&lt;li&gt;will the text be large enough to read?&lt;/li&gt;
+  &lt;li&gt;how well will it perform?&lt;/li&gt;
+  &lt;li&gt;will the icon look OK?&lt;/li&gt;
+  &lt;li&gt;are the controls large enough to use?&lt;/li&gt;
+  &lt;li&gt;will the text be large enough to read?&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;My main philosophy was to keep the Watch app as simple as possible and use the standard interface elements, font sizes etc. Hopefully that will work.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;The final step was submitting the app to iTunes Connect for review. It was not clear to me how to do this, so I logged into iTunes Connect, created a new version and entered the meta-data. I couldn&amp;rsquo;t see anywhere to say anything about the Watch. I archived the main iOS app as usual and validated it with the Store. I had a few things to fix up, but I got the build submitted.&lt;/p&gt;
+&lt;p&gt;The final step was submitting the app to iTunes Connect for review. It was not clear to me how to do this, so I logged into iTunes Connect, created a new version and entered the meta-data. I couldn’t see anywhere to say anything about the Watch. I archived the main iOS app as usual and validated it with the Store. I had a few things to fix up, but I got the build submitted.&lt;/p&gt;
 
-&lt;p&gt;Back to iTunes Connect and once the uploaded build had been processed, I was able to select it and click &amp;ldquo;Submit for Review&amp;rdquo;. At this point, the page reported an error and showed me a new section where I could upload the Apple Watch icon and screen shots.&lt;/p&gt;
+&lt;p&gt;Back to iTunes Connect and once the uploaded build had been processed, I was able to select it and click “Submit for Review”. At this point, the page reported an error and showed me a new section where I could upload the Apple Watch icon and screen shots.&lt;/p&gt;
 
 &lt;p&gt;I had been unsure how the icon would look when made round, but it looks OK on the iTunes Connect page. How it will look on a tiny watch screen remains to be seen. Anyway, once I had my icon and screen shots uploaded, I was able to proceed to the next step. But then I got a message saying that the app could not be processed - no explanation. Thankfully, I had seen some developers on Twitter reporting this, and somebody said that the solution was to remove the alpha channel from your screen shots. Sorry for not giving credit here - I forget who said this, but it worked, so thank you whoever you are.&lt;/p&gt;
 
 &lt;p&gt;So now my app is waiting for review and who knows how long that will take. According to &lt;a href=&quot;http://appreviewtimes.com&quot;&gt;App Review Times&lt;/a&gt;, the current estimate is 8 days, but the trend is heading upwards. I would expect that to blow out in the next few weeks as developers try to get their apps ready for the Apple Watch release date of April 24th.&lt;/p&gt;
+
 </description>
         <pubDate>Thu, 02 Apr 2015 00:00:00 +1000</pubDate>
         <link>http://troz.net/2015/04/my-first-apple-watch-app/</link>
@@ -381,10 +391,11 @@ Then the parent app is supposed to do whatever tasks are called for in the handl
 &lt;p&gt;I had assumed that since I had not been an active LiveCode user for many years, these stacks would have become worthless. But in the last couple of days, I have received a couple of queries from people looking for them.&lt;/p&gt;
 
 &lt;p&gt;So I created a new GitHub repository and uploaded them all to here:
-&lt;br&gt;
+&lt;br /&gt;
 &lt;a href=&quot;https://github.com/trozware/rev_stacks&quot;&gt;LiveCode stacks&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;None of these stacks have been updated recently, but feel free to use or adapt as you see fit. They have not been tested using recent versions of LiveCode, so may not work as expected. As stacks are provided as is. Use at your own risk.&lt;/p&gt;
+
 </description>
         <pubDate>Wed, 18 Mar 2015 00:00:00 +1000</pubDate>
         <link>http://troz.net/2015/03/livecode-stacks/</link>
@@ -402,28 +413,29 @@ This, combined with several other changes, made me bump the version number to 3.
 
 &lt;p&gt;Sadly, Apple rejected the update because it referred to pre-release products. So I pulled all mentions of WatchKit out of the interface and meta data and got 3.0 released.&lt;/p&gt;
 
-&lt;p&gt;After the Apple keynote on March 9th, I re-enabled the WatchKit portions of the app and re-submitted to the App Store, hoping that with the WatchKit SDK now part of the official Xcode release, Apple&amp;rsquo;s reviewers would allow it to get through this time.&lt;/p&gt;
+&lt;p&gt;After the Apple keynote on March 9th, I re-enabled the WatchKit portions of the app and re-submitted to the App Store, hoping that with the WatchKit SDK now part of the official Xcode release, Apple’s reviewers would allow it to get through this time.&lt;/p&gt;
 
 &lt;p&gt;This worked - in fact the app was reviewed and accepted within 6 days - so now Icon Builder adds WatchKit to its list of supported platforms.&lt;/p&gt;
 
 &lt;p&gt;Actually, Apple may have done me a favour in rejecting the first one as they changed the specifications for the icons slightly between Xcode 6.2 beta and Xcode 6.2 release.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://troz.net/icon-builder/&quot;&gt;Icon Builder page&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/us/app/icon-builder/id552293482?mt=12&amp;amp;uo=4&quot;&gt;Mac App Store link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://troz.net/icon-builder/&quot;&gt;Icon Builder page&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/us/app/icon-builder/id552293482?mt=12&amp;amp;uo=4&quot;&gt;Mac App Store link&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
-&lt;h4 id=&quot;what’s-new-in-version-3&quot;&gt;What’s New in version 3?&lt;/h4&gt;
+&lt;h4 id=&quot;whats-new-in-version-3&quot;&gt;What’s New in version 3?&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Support for WatchKit app icons (version 3.0.1)&lt;/li&gt;
-&lt;li&gt;Simplified interface: removed display of smaller icons.&lt;/li&gt;
-&lt;li&gt;Fix for @3x images not being saved when you selected iOS 6 support.&lt;/li&gt;
-&lt;li&gt;iTunesArtwork@2x file now saved as a JPG to avoid iTunes Connect errors.&lt;/li&gt;
-&lt;li&gt;Removed CarPlay icon - Xcode sometimes gave errors when this was included.&lt;/li&gt;
+  &lt;li&gt;Support for WatchKit app icons (version 3.0.1)&lt;/li&gt;
+  &lt;li&gt;Simplified interface: removed display of smaller icons.&lt;/li&gt;
+  &lt;li&gt;Fix for @3x images not being saved when you selected iOS 6 support.&lt;/li&gt;
+  &lt;li&gt;iTunesArtwork@2x file now saved as a JPG to avoid iTunes Connect errors.&lt;/li&gt;
+  &lt;li&gt;Removed CarPlay icon - Xcode sometimes gave errors when this was included.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         <pubDate>Tue, 17 Mar 2015 00:00:00 +1000</pubDate>
         <link>http://troz.net/2015/03/icon-builder-3.0.1/</link>
@@ -436,30 +448,31 @@ This, combined with several other changes, made me bump the version number to 3.
 
 &lt;p&gt;I have been working on an update to &lt;a href=&quot;http://troz.net/19th-hole/&quot;&gt;19th Hole&lt;/a&gt; and since it uses a custom method for data input, I decided that a video would be really useful in this case.&lt;/p&gt;
 
-&lt;p&gt;The first step was to work out how to record video from my iPhone. In OS X Yosemite (10.10), this can be done using QuickTime Player. Connect your device to your Mac using a Lightning cable (I think it has to be a Lightning cable - the old cables will not work). Open up QuickTime Player and choose &amp;ldquo;New Movie Recording&amp;rdquo; from the File menu. By default this shows input from the Mac&amp;rsquo;s FaceTime camera, but just to the right of the red Record button, there is a down arrow that shows a popup menu. Click this and you can select your iPhone as the Camera. Since I wanted the sound effects included, I also selected my iPhone as the Microphone, but if you want to provide a voice-over or sound-track, you might want to change this.&lt;/p&gt;
+&lt;p&gt;The first step was to work out how to record video from my iPhone. In OS X Yosemite (10.10), this can be done using QuickTime Player. Connect your device to your Mac using a Lightning cable (I think it has to be a Lightning cable - the old cables will not work). Open up QuickTime Player and choose “New Movie Recording” from the File menu. By default this shows input from the Mac’s FaceTime camera, but just to the right of the red Record button, there is a down arrow that shows a popup menu. Click this and you can select your iPhone as the Camera. Since I wanted the sound effects included, I also selected my iPhone as the Microphone, but if you want to provide a voice-over or sound-track, you might want to change this.&lt;/p&gt;
 
-&lt;p&gt;That handles the technical side of recording, but I needed a way to show where I was tapping and pressing on the iPhone screen. After some searching, I found &lt;a href=&quot;https://github.com/toddreed/Touchpose&quot;&gt;Touchpose&lt;/a&gt; which was exactly what I wanted. Since it requires changing the main.m file, as well as changes to the app delegate, I created a branch in my app&amp;rsquo;s git repository so that I could apply these changes temporarily, but save them for next time. The only alternation I made to the default settings was to change the color of the cursor indicator to suit the color scheme of my app. And since this was a temporary change, I set it to show the cursor indicator all the time, not just when the screen was mirrored. All the details are shown in the sample project.&lt;/p&gt;
+&lt;p&gt;That handles the technical side of recording, but I needed a way to show where I was tapping and pressing on the iPhone screen. After some searching, I found &lt;a href=&quot;https://github.com/toddreed/Touchpose&quot;&gt;Touchpose&lt;/a&gt; which was exactly what I wanted. Since it requires changing the main.m file, as well as changes to the app delegate, I created a branch in my app’s git repository so that I could apply these changes temporarily, but save them for next time. The only alternation I made to the default settings was to change the color of the cursor indicator to suit the color scheme of my app. And since this was a temporary change, I set it to show the cursor indicator all the time, not just when the screen was mirrored. All the details are shown in the sample project.&lt;/p&gt;
 
 &lt;p&gt;Next step was to actually record a session. After my first attempt (which lasted about 67 seconds), I checked the Apple specs and found that the video could not be longer than 30 seconds. So I re-thought what I wanted to include and tried again. It took a few tries to get what I wanted, but finally I ended up with a .mov file that was 26 seconds long.&lt;/p&gt;
 
 &lt;p&gt;On to iTunes Connect where I had the new version of the app set up already with its screen shots. Since I have an iPhone 6, the video was only suited for the 4.7 inch section. So I dragged it into the drop zone and waited. No good - the video frame rate was too high. It has to be 30 fps or less. QuickTime Player had made a video that was 50 fps.&lt;/p&gt;
 
-&lt;p&gt;The app I usually turn to for any video conversion needs is &lt;a href=&quot;https://handbrake.fr&quot;&gt;Handbrake&lt;/a&gt;. So I ran the app through Handbrake, specifying a frame rate of 30. This converted the video to .mp4 instead of .mov, but it was 30 fps. It wasn&amp;rsquo;t until I tried to upload it to iTunes Connect that I realised Handbrake had cropped the video from 750 x 1334 to 750 x 1330. After searching through the settings, I found where I needed to turn on custom clipping and set it to 0 so that the original dimensions were preserved. But iTunes Connect still didn&amp;rsquo;t like it, although this time the error message was un-informative.&lt;/p&gt;
+&lt;p&gt;The app I usually turn to for any video conversion needs is &lt;a href=&quot;https://handbrake.fr&quot;&gt;Handbrake&lt;/a&gt;. So I ran the app through Handbrake, specifying a frame rate of 30. This converted the video to .mp4 instead of .mov, but it was 30 fps. It wasn’t until I tried to upload it to iTunes Connect that I realised Handbrake had cropped the video from 750 x 1334 to 750 x 1330. After searching through the settings, I found where I needed to turn on custom clipping and set it to 0 so that the original dimensions were preserved. But iTunes Connect still didn’t like it, although this time the error message was un-informative.&lt;/p&gt;
 
-&lt;p&gt;Eventually, the brains trust on the other side of the room suggested iMovie. Not only that, but he found that once the original had been dragged into iMovie, the share options included an &amp;ldquo;App Preview&amp;rdquo; setting. This gave us a .mov file of the correct dimensions and the correct frame rate which iTunes Connect accepted.&lt;/p&gt;
+&lt;p&gt;Eventually, the brains trust on the other side of the room suggested iMovie. Not only that, but he found that once the original had been dragged into iMovie, the share options included an “App Preview” setting. This gave us a .mov file of the correct dimensions and the correct frame rate which iTunes Connect accepted.&lt;/p&gt;
 
 &lt;p&gt;iTunes Connect that allowed me to select the poster frame for the video and save the changes to the app meta data. At that point, it showed a notice saying that the app preview was being processed which could take up to 24 hours. It appears that the processing has been finished, as that notice has disappeared.&lt;/p&gt;
 
 &lt;p&gt;For the next stage, I ned to wait until the app gets reviewed and hopefully approved. Then it will be interesting to see how the video looks in the iTunes App Store.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
 &lt;p&gt;As a reward for reading this post, here is a pre-release of the video, showing how to enter the score data for a hole of golf using &lt;a href=&quot;http://troz.net/19th-hole/&quot;&gt;19th Hole&lt;/a&gt;:&lt;/p&gt;
 
-&lt;video controls poster=&quot;/images/19thHole-scoring-web.png&quot;&gt;
-  &lt;source src=&quot;/images/19thHole-scoring-web.mp4&quot; type=&quot;video/mp4&quot;&gt;
-    Your browser does not support the video tag.
+&lt;video controls=&quot;&quot; poster=&quot;/images/19thHole-scoring-web.png&quot;&gt;
+  &lt;source src=&quot;/images/19thHole-scoring-web.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+	Your browser does not support the video tag.
 &lt;/video&gt;
+
 </description>
         <pubDate>Mon, 16 Mar 2015 00:00:00 +1000</pubDate>
         <link>http://troz.net/2015/03/app-store-preview-videos/</link>
