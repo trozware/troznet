@@ -13,10 +13,10 @@
 				Please switch back to using the app downloaded from the App Store.
             ]]>
             </description>
-				<pubDate>Sun, 31 Jan 2016 16:20:42 +1000</pubDate>
-				<enclosure url="http://www.troz.net/manreader/Man Reader (no SB).zip"
-					sparkle:version="Man Reader (no SB)" length="949990" type="application/octet-stream" shortVersionString=""
-					sparkle:dsaSignature="MCwCFFAcBWdwVm4sGkDO5i/8avVqfqlmAhQw9aN729+TN/lMvWb28htyHwPbLQ==" />
+				<pubDate>Sun, 31 Jan 2016 16:25:48 +1000</pubDate>
+				<enclosure url="/manreader-nosb/ManReader-noSB.zip"
+					sparkle:version="1.5" length="949990" type="application/octet-stream" shortVersionString=""
+					sparkle:dsaSignature="MCwCFAfd0UAwWSmawfu5soYMf7excejGAhRg7DFJlv+H8mqC+XC2UF51oWLgVg==" />
         </item>
    </channel>
 </rss>
