@@ -24,16 +24,9 @@ tags:
   * Fixed path for Network Utility in tool bar (moved in OS X 10.9).
   * More information available about the effects of sand-boxing for this app.
 
-For the first time, Man Reader is now also available as a [direct purchase][3].  
-You can also download a [7 day free trial][4].
-
-The reason for selling Man Reader outside the App Store is to avoid Apple&#8217;s sandboxing restrictions, which may reduce the number of man pages that Man Reader is able to display. For more information about this problem, read [Sand-boxing Man Reader][5].
-
-If you have already purchased Man Reader from the App Store, but would like to have a non-sandboxed version, go to [Man Reader (no SB)][6] for more information on how to download a non-sandboxed version that will use your App Store licence.
-
  [1]: /manreader/
  [2]: http://itunes.apple.com/app/man-reader/id522583774?mt=12
- [3]: https://pay.paddle.com/checkout/490552
- [4]: /manreader-paddle/ManReader.zip
+ [3]: #
+ [4]: #
  [5]: /manreader-sandbox/
  [6]: /man-reader-no-sb/

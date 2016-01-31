@@ -7,6 +7,28 @@
     <atom:link href="http://troz.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Man Reader 1.5</title>
+        <description>&lt;p&gt;&lt;a href=&quot;/manreader/&quot;&gt;Man Reader 1.5&lt;/a&gt; is now available through the &lt;a href=&quot;http://itunes.apple.com/app/man-reader/id522583774?mt=12&quot;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;change-log&quot;&gt;Change Log:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Much improved searching for available man pages.&lt;/li&gt;
+&lt;li&gt;Sand-boxed version now works just as well as the non-sand-boxed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The main feature of this version is that it solves the previous problems with the App Store version and sand-boxing. This was restricting the number of man pages listed in Man Reader so I had to release a non-sand-boxed version of the app to allow for full functionality.&lt;/p&gt;
+
+&lt;p&gt;However I discovered that although this gave better results, it was still missing a lot of man pages. Version 1.5 now queries the man page files in a completely different way which is listing many more man pages.&lt;/p&gt;
+
+&lt;p&gt;If you previously had downloaded the Man Reader (no SB) version of the app from this site, please revert to the App Store version which you would have needed to have bought in order to use the downloaded app. If you bought the app from Paddle, &lt;a href=&quot;mailto:sarah@troz.net?subject=Man%20Reader%20transfer%20to%20App%20Store&quot;&gt;contact me&lt;/a&gt; and I will transfer you to the App Store version. Neither of these versions will be supported or updated any more.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 31 Jan 2016 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2016/01/man-reader-1.5/</link>
+        <guid isPermaLink="true">http://troz.net/2016/01/man-reader-1.5/</guid>
+      </item>
+    
+      <item>
         <title>Using 19th Hole on the Apple Watch</title>
         <description>&lt;p&gt;19th Hole for iPhone and Apple Watch version 3 is now available through the &lt;a href=&quot;https://itunes.apple.com/us/app/the-19th-hole/id871686159?mt=8&amp;amp;uo=4&quot;&gt;iTunes App Store&lt;/a&gt;.
 This version is a complete re-write to accommodate the changes in iOS 9 and watchOS2.&lt;/p&gt;
@@ -442,54 +464,6 @@ This, combined with several other changes, made me bump the version number to 3.
         <pubDate>Mon, 16 Mar 2015 00:00:00 +1000</pubDate>
         <link>http://troz.net/2015/03/app-store-preview-videos/</link>
         <guid isPermaLink="true">http://troz.net/2015/03/app-store-preview-videos/</guid>
-      </item>
-    
-      <item>
-        <title>Testing automation</title>
-        <description>&lt;p&gt;Today I am experimenting with automating post generation.&lt;/p&gt;
-
-&lt;p&gt;Firstly, there is the structure of the post Markdown document, which really boils down to the file name and the header.&lt;/p&gt;
-
-&lt;p&gt;I have set up a macro in &lt;a href=&quot;http://www.ergonis.com/products/typinator/&quot;&gt;Typinator&lt;/a&gt; so that I just type the title of the post in a text document. I copy that title to the clipboard and type the shortcut. The header is then created with the title and the formatted permalink.&lt;/p&gt;
-
-&lt;p&gt;To save the document, I use another Typinator snippet to convert the title (still in the clipboard) to lower case and to replace the spaces in the title with dashes.&lt;/p&gt;
-
-&lt;p&gt;For starting the local Jekyll server, I have turned to an &lt;a href=&quot;http://www.alfredapp.com&quot;&gt;Alfred&lt;/a&gt; workflow. I have two actions in the workflow. One opens Terminal, cd&amp;rsquo;s to my site folder and runs the command to start the local Jekyll server. The second opens my default browser to the local Jekyll test address.&lt;/p&gt;
-
-&lt;p&gt;Both these actions happen simultaneously so the browser usually fails until refreshed.
-The server is left running in Terminal so I can shut it down when finished testing.&lt;/p&gt;
-
-&lt;p&gt;After writing the post, the final stage is to publish, so I need to work out the commands for doing a git commit and push. Then I should be able to automate those tasks.&lt;/p&gt;
-
-&lt;p&gt;Testing the git commands using Terminal, I have come up with the following sequence:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;git add .
-git commit -a -m &amp;quot;Commit message here&amp;quot;
-git push
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The commit message could be the title of the post, so I need a way to construct the command and then execute it. Typinator is good at text manipulation, so I constructed another macro that takes the clipboard, uses it as the commit message and performs the git commands. This gave a good commit message, but the actual commit failed, so that was no use.&lt;/p&gt;
-
-&lt;p&gt;So then I went back to Alfred and created a workflow there with a series of Terminal commands to perform the actions above. This only allows a generic commit message, but it works as expected.&lt;/p&gt;
-
-&lt;p&gt;So there is still room for improvement, but with a set of macros, I can automate a lot of the standard text entry, which is always good for reducing errors.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;The sequence now is:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Open the text editor and type the title of the post.&lt;/li&gt;
-&lt;li&gt;Cut this into the clipboard.&lt;/li&gt;
-&lt;li&gt;Run the Typinator macro to fill in the post header.&lt;/li&gt;
-&lt;li&gt;Save the post file, using the Typinator macro to construct the file name.&lt;/li&gt;
-&lt;li&gt;Write the post, then use an Alfred workflow to test it locally.&lt;/li&gt;
-&lt;li&gt;When ready, use an Alfred workflow to publish.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Thu, 12 Mar 2015 00:00:00 +1000</pubDate>
-        <link>http://troz.net/testing-automation/</link>
-        <guid isPermaLink="true">http://troz.net/testing-automation/</guid>
       </item>
     
   </channel>
