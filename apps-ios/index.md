@@ -24,7 +24,7 @@ Designed for fast, accurate score keeping with a color scheme chosen for optimal
 <img title="Watch Scoring" alt="Watch Scoring" src="/images/19thHole-Watch-v3.jpg" />
 <br>Apple Watch
 
-&nbsp;
+--- 
 
 ### A Knight&#8217;s Move
 
@@ -39,7 +39,7 @@ When you have tried all the supplied puzzles or if you want something different,
 
 <img title="A Knight's Move for iPhone" alt="A Knight's Move for iPhone" src="/wp-content/uploads/2012/06/iPhone1-500.png" />
 
-&nbsp;
+--- 
 
 ### Berio&#8217;s Sequenza VII:
 
@@ -50,6 +50,19 @@ Sequenza VII is an iPhone or iPod Touch app for oboists working on Berio&#8217;s
 
 <img alt="Berio's Sequenza VII" src="/wp-content/uploads/2013/10/Berio_2-500.png" />
 
+--- 
+
+### Dice Pass:
+
+Dice Pass is a utility to app to generate random passphrases based on the Diceware system. Diceware uses a table of pre-defined words, each assigned a 5 digit code number containing the digits 1 to 6. The official way to generate a phrase is to roll 5 dice for each word you want in your passphrase and then consult the words table to find the matching word. Dice Pass does this for you.
+
+  * <a href="https://itunes.apple.com/app/dice-pass/id998397511" target="_blank">iTunes App Store</a>
+  * <a title="Dice Pass" href="/dicepass/">Dice Pass</a>
+
+![Dice Pass for Mac](/images/DicePass_iOS.png)
+
+--- 
+
 ### Pic-a-POD:
 
 Pic-a-POD for iOS is an app for iPad, iPhone or iPod Touch. It shows a list of the pictures for the current day and allows you to save any of these to your Camera Roll for use as wallpaper.
@@ -59,7 +72,7 @@ Pic-a-POD for iOS is an app for iPad, iPhone or iPod Touch. It shows a list of t
 
 <img title="Pic-a-POD for iOS" alt="Pic-a-POD for iOS" src="/wp-content/uploads/2012/01/Picapod-iOS.jpg" />
 
-&nbsp;
+--- 
 
 ### Time In Words:
 
@@ -70,4 +83,4 @@ Time In Words is a clock and calendar app that that performs time zone conversio
 
 <img title="Time" alt="Time" src="/images/TiW_1.jpeg" />
 
- [3]: /berio/ "Berio’s Sequenza VII"
+[3]: /berio/ "Berio’s Sequenza VII"

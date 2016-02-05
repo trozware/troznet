@@ -36,6 +36,7 @@ App                          || Version | Release Date      | Download Link
 ![][20] | [19th Hole Golf Scorer][21]                  | 3.0     | 7 Dec 2015     | <a href="https://itunes.apple.com/us/app/the-19th-hole/id871686159?mt=8&#038;uo=4" target="itunes_store" class="ios_apps"></a>
 ![][22] | [A Knight&#8217;s Move][3]       | 1.4     | 17 Jan 2014 | <a href="https://itunes.apple.com/us/app/a-knights-move/id530090451?mt=8&#038;uo=4" target="itunes_store" class="ios_apps"></a>
 ![][23] | [Berio&#8217;s Sequenza VII][24] | 1.1     | 25 Feb 2015 | <a href="https://itunes.apple.com/us/app/sequenza-vii/id730234638?mt=8&#038;uo=4" target="itunes_store" class="ios_apps"></a>
+![][30] | [Dice Pass][29] | 1.0     | 6 Jun 2015 | <a href="https://itunes.apple.com/app/dice-pass/id998397511?mt=8&#038;uo=4" target="itunes_store" class="ios_apps"></a>
 ![][25] | [Pic-a-POD][13]                  | 2.0     | 23 Oct 2013 | <a href="https://itunes.apple.com/us/app/pic-a-pod/id480086912?mt=8&#038;uo=4" target="itunes_store" class="ios_apps"></a>
 ![][26] | [Time In Words][27]              | 4.0     | 23 Apr 2015 | <a href="https://itunes.apple.com/us/app/time-in-words/id498403851?mt=8&#038;uo=4" target="itunes_store" class="ios_apps"></a>
 
@@ -69,4 +70,5 @@ App                          || Version | Release Date      | Download Link
  [27]: /time-in-words/
  [28]: /images/DicePass_36.png
  [29]: /dicepass/
- 
+ [30]: /images/DicePass_iOS-36.png
+ [31]: https://itunes.apple.com/app/dice-pass/id998397511

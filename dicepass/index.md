@@ -4,9 +4,12 @@ author: Sarah
 layout: page
 ---
 
-Dice Pass is available from the [Mac App Store][0] and coming soon for iOS.
+Dice Pass is available from the [Mac App Store][0] for Mac OS X and the [iTunes App Store][8] for iPhone or iPad.
 
 Dice Pass is a utility to app to generate random passphrases based on the [Diceware system][1]. Diceware uses a table of pre-defined words, each assigned a 5 digit code number containing the digits 1 to 6. The official way to generate a phrase is to roll 5 dice for each word you want in your passphrase and then consult the words table to find the matching word.
+
+![Dice Pass for Mac][9]
+<br> Dice Pass for iOS
 
 ![Dice Pass for Mac][7]
 <br> Dice Pass for Mac
@@ -61,7 +64,7 @@ No. The app saves no data except for basic preferences (window positioning & siz
 Some sites may require a passphrase that contains a mix of character types. These buttons will insert a special character, change the start of one word to uppercase, or insert a number. Tap the button again to undo the change. Again, these characters are chosen using the dice roll system and the special characters are selected and positioned using the method and data suggested by Arnold Reinhold.
     
     
-[0]: https://itunes.apple.com/app/a-knights-move/id533321133?mt=12&uo=4
+[0]: https://itunes.apple.com/us/app/dice-pass/id997688302
 [1]: http://world.std.com/~reinhold/diceware.html
 [2]: http://world.std.com/%7Ereinhold/dicewarefaq.html
 [3]: http://world.std.com/~reinhold/beale.wordlist.asc
@@ -69,3 +72,5 @@ Some sites may require a passphrase that contains a mix of character types. Thes
 [5]: https://howsecureismypassword.net
 [6]: http://www.passwordmeter.com
 [7]: /images/DicePass_Mac.png
+[8]: https://itunes.apple.com/app/dice-pass/id998397511
+[9]: /images/DicePass_iOS.png
