@@ -12,7 +12,7 @@
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for TrozWare" href="/feed.xml" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/pixyll.css?201602051502" type="text/css">
+    <link rel="stylesheet" href="/css/pixyll.css?201602051727" type="text/css">
 
     <!-- Fonts -->
     <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
@@ -149,17 +149,17 @@ I will end up automating this when I am sure of the process, but for now, I am j
 <ol>
   <li><strong>Start up the local Jekyll server:</strong>
     <ul>
-      <li>I opened Terminal and used <code>cd</code> to get to the folder containing my site.</li>
-      <li>Next I started the Jekyll server locally using <code>jekyll serve</code>.</li>
-      <li>This gave me the address of the local server - in my case <code>http://127.0.0.1:4000/</code> - so I went there in my browser to see the default page.</li>
+      <li>I opened Terminal and used <code class="highlighter-rouge">cd</code> to get to the folder containing my site.</li>
+      <li>Next I started the Jekyll server locally using <code class="highlighter-rouge">jekyll serve</code>.</li>
+      <li>This gave me the address of the local server - in my case <code class="highlighter-rouge">http://127.0.0.1:4000/</code> - so I went there in my browser to see the default page.</li>
     </ul>
   </li>
   <li><strong>My goal is to write a new blog post (this one in fact).</strong>
     <ul>
       <li>For advice on creating a new post, I went to the <a href="http://jekyllrb.com/docs/posts/">Jekyll docs</a>.</li>
       <li>Jekyll needs the file name to be a specific format which includes the date and title.</li>
-      <li>Looking in the <code>_posts</code> folder of the site folder, I see the previous post file is titled <code>2015-03-08-new-site-for-trozware.md</code>.</li>
-      <li>As it is now 10th March 2015, I am saving this file as: <code>2015-03-10-workflow-for-writing-a-post.md</code>.</li>
+      <li>Looking in the <code class="highlighter-rouge">_posts</code> folder of the site folder, I see the previous post file is titled <code class="highlighter-rouge">2015-03-08-new-site-for-trozware.md</code>.</li>
+      <li>As it is now 10th March 2015, I am saving this file as: <code class="highlighter-rouge">2015-03-10-workflow-for-writing-a-post.md</code>.</li>
       <li>Saving at this point shows a Jekyll error in the Terminal, but the next stage will fix that.</li>
     </ul>
   </li>
@@ -170,7 +170,7 @@ I will end up automating this when I am sure of the process, but for now, I am j
       <li>My site was imported from WordPress, so the older posts contain several header parameters that may not be necessary any more.</li>
       <li>Look at the screen shot below to see what I have in this post file:</li>
       <li>After saving, I see this entry in my Terminal:</li>
-      <li><code>Regenerating: 1 file(s) changed at 2015-03-10 13:50:40 ...done in 0.421789 seconds.</code></li>
+      <li><code class="highlighter-rouge">Regenerating: 1 file(s) changed at 2015-03-10 13:50:40 ...done in 0.421789 seconds.</code></li>
       <li>Now I can see the title and the start of the post on my first page and when clicking on it, I can see all the text.</li>
     </ul>
   </li>
@@ -178,8 +178,8 @@ I will end up automating this when I am sure of the process, but for now, I am j
     <ul>
       <li>This is not really necessary for this post, but I wanted to document it as part of the workflow.</li>
       <li>I wanted to show the front matter and start of this post, so I took a screen shot of the top of my editor window.</li>
-      <li>Then I renamed the image file and moved it into the <code>images</code> folder of my site.</li>
-      <li>Now to embed the image using this Markdown: <code>![Post header][2]</code></li>
+      <li>Then I renamed the image file and moved it into the <code class="highlighter-rouge">images</code> folder of my site.</li>
+      <li>Now to embed the image using this Markdown: <code class="highlighter-rouge">![Post header][2]</code></li>
       <li>As you can see, I prefer to group all links (images &amp; URLs) at the end of the document and keep the body of the text as clean as possible.</li>
       <li><img src="/images/post_header.png" alt="Post header" /></li>
     </ul>
@@ -187,16 +187,16 @@ I will end up automating this when I am sure of the process, but for now, I am j
   <li><strong>Proofing:</strong>
     <ul>
       <li>Now that I have the text of my post, I need to proof-read it from the local Jekyll server.</li>
-      <li>The <code>jekyll serve</code> command running in Terminal keeps the pages up-to-date as you edit, but you will need to refresh your page in the browser manually to check your changes.</li>
+      <li>The <code class="highlighter-rouge">jekyll serve</code> command running in Terminal keeps the pages up-to-date as you edit, but you will need to refresh your page in the browser manually to check your changes.</li>
       <li>And I have found that if you make a major change to the site e.g. a CSS file or a config file, then it is best to stop the Jekyll server and start it again to make it re-build all the files.</li>
-      <li>To be completely sure, stop the server and run <code>jekyll build</code> in Terminal although this may only do what <code>jekyll serve</code> does on startup anyway.</li>
+      <li>To be completely sure, stop the server and run <code class="highlighter-rouge">jekyll build</code> in Terminal although this may only do what <code class="highlighter-rouge">jekyll serve</code> does on startup anyway.</li>
     </ul>
   </li>
   <li><strong>Publishing:</strong>
     <ul>
       <li>Now it is time to publish.</li>
       <li>As I am using GitHub Pages to host, the site files are all part of a single Git repository.</li>
-      <li>And as I understand it, the data <strong>must</strong> be in the <code>master</code> branch.</li>
+      <li>And as I understand it, the data <strong>must</strong> be in the <code class="highlighter-rouge">master</code> branch.</li>
       <li>Opening up the GitHub client, I see that my repository has a bunch of changes:
         <ul>
           <li>the file I am working on</li>

@@ -12,7 +12,7 @@
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for TrozWare" href="/feed.xml" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/pixyll.css?201602051502" type="text/css">
+    <link rel="stylesheet" href="/css/pixyll.css?201602051727" type="text/css">
 
     <!-- Fonts -->
     <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
@@ -140,16 +140,18 @@ This is where the default man pages are all stored, but if you install other sof
 
 <p>To tell if Man Reader is missing man pages, copy &amp; paste the following command into the Terminal app:</p>
 
-<pre><code>whatis . &gt;&gt; ~/Desktop/whatis.txt
+<div class="highlighter-rouge"><pre class="highlight"><code>whatis . &gt;&gt; ~/Desktop/whatis.txt
 </code></pre>
+</div>
 
 <p>Man Reader runs this command internally when it starts, but the Terminal app is not sand-boxed and so can access everything.<br />
 Running this command will create a text file on your desktop with a list of all available man pages on your system. Open it in a text editor that can show the number of lines in a file. <a href="http://www.barebones.com/products/textwrangler/">TextWrangler from Bare Bones Software</a> is a good free editor that will do this.</p>
 
 <p>To check what man pages ManReader can read, go to Finder and select ‘Go to Folder…” from the Go menu. Paste in the following path:</p>
 
-<pre><code>~/Library/Containers/net.troz.Man-Reader/Data/Library/Application Support/Man Reader/
+<div class="highlighter-rouge"><pre class="highlight"><code>~/Library/Containers/net.troz.Man-Reader/Data/Library/Application Support/Man Reader/
 </code></pre>
+</div>
 
 <p>You will see two files: open the one called ‘ManReader.raw’ in your text editor. This is the result of Man Reader running the whatis command. Compare the number of lines in the two files. Don’t worry about the order of the items in the file as that may vary, you are only concerned with the total number of lines in each.</p>
 
