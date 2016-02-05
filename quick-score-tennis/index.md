@@ -2,6 +2,11 @@
 title: Quick Score - Tennis
 author: Sarah
 layout: page
+tags:
+  - tennis
+  - quick score
+  - ios
+  - apple watch
 ---
 Quick Score: Tennis is available from the [iTunes App Store][1] for iPhone and Apple Watch.
 
