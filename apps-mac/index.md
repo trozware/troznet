@@ -16,7 +16,7 @@ When you have tried all the supplied puzzles or if you want something different,
   * <a href="http://itunes.apple.com/app/a-knights-move/id533321133" target="_blank">Mac App Store</a>
   * <a href="/knightsmove/">A Knight&#8217;s Move</a>
 
-[<img title="A Knight's Move for Mac" alt="A Knight's Move for Mac" src="/wp-content/uploads/2012/06/Mac1-480x300.png" width="500" />][1]
+[<img title="A Knight's Move for Mac" alt="A Knight's Move for Mac" src="/images/KM-Mac1-480x300.png" width="500" />][1]
 
 * * *
 
@@ -38,7 +38,7 @@ Icon Builder takes your original image and uses it to create the suite of icon f
   * <a href="http://itunes.apple.com/app/icon-builder/id552293482?mt=12" target="_blank">Mac App Store</a>
   * <a title="Icon Builder" href="/icon-builder/">Icon Builder</a>
 
-<img alt="Click &quot;Smaller sizes&quot; to see the other images." src="/wp-content/uploads/2012/08/iOS-Pic21-500.png" width="500" />
+<img alt="Click &quot;Smaller sizes&quot; to see the other images." src="/images/iOS-Pic21-500.png" width="500" />
 
 * * *
 
@@ -49,7 +49,7 @@ Man Reader allows quick, convenient and easy access to the man pages on your sys
   * <a href="http://itunes.apple.com/app/man-reader/id522583774?mt=12" target="_blank">Mac App Store</a>
   * <a title="Man Reader" href="/manreader/">Man Reader</a>
 
-[<img title="ManReader" alt="Man Reader" src="/wp-content/uploads/2012/04/ManReader-480x300.png" width="500" />][2]
+[<img title="ManReader" alt="Man Reader" src="/images/ManReader-480x300.png" width="500" />][2]
 
 * * *
 
@@ -73,6 +73,6 @@ World Time In Words continues the theme of the iOS version, explaining the time 
 
 <img title="Time In Words menu plus time zones" alt="Time In Words menu plus time zones" src="/images/WTiW_1.png" />
 
- [1]: /wp-content/uploads/2012/06/Mac1.png
- [2]: /wp-content/uploads/2012/04/ManReader.png
+ [1]: /images/KM-Mac1.png
+ [2]: /images/ManReader.png
  [3]: /images/Pic-a-POD.png

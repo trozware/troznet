@@ -10,7 +10,7 @@ tags:
   - trouble-shooting
   - mac
 ---
-Man Reader launched on the Mac App Store a couple of days ago and yesterday I got an email form a purchaser who reported that Man Reader was not displaying the man pages for MacPorts, even though he had the paths set up correctly.
+Man Reader launched on the Mac App Store a couple of days ago and yesterday I got an email from a purchaser who reported that Man Reader was not displaying the man pages for MacPorts, even though he had the paths set up correctly.
 
 I installed MacPorts to check this out and ran into the same problem. Running the command &#8220;man port&#8221; in Terminal worked fine, but &#8220;port&#8221; did not appear in  Man Reader&#8217;s list.
 

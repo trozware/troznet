@@ -8,9 +8,7 @@ title: Tags
 {% assign sorted_tags = (site.tags | sort ) %}
 {% for category in sorted_tags %}
      <span>
-        <a href="#{{ category | first }}">
-            {{ category | first }}
-        </a>
+        <a href="#{{ category | first }}"> {{ category | first }}</a>
     </span> &nbsp; 
 {% endfor %}
 

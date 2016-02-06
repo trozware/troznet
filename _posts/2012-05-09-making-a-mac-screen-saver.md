@@ -16,7 +16,7 @@ Having just completed the my first screen saver for Mac &#8211; the [Time In Wo
 
 The first thing is to create a new project in Xcode using the Screen Saver template:
 
-[<img title="Xcode Screen Saver Template" src="/wp-content/uploads/2012/05/ScreenSaverTemplate-441x300.png" alt="Xcode Screen Saver Template" />][2]
+[<img title="Xcode Screen Saver Template" src="/images/ScreenSaverTemplate-441x300.png" alt="Xcode Screen Saver Template" />][2]
 
 Xcode sets up a project for you with everything you need for a screen saver module. Start editing the ScreenSaverView.m file. The most important method here is animateOneFrame.
 
@@ -38,7 +38,7 @@ So that gives the basic screen saver module but with no options. Adding options 
 
 Add a xib file to your project: I used a window template. Then change the window&#8217;s class to NSPanel and configure it as shown:
 
-<img title="NSPanel Settings" src="/wp-content/uploads/2012/05/PanelSettings.png" alt="NSPanel Settings" />
+<img title="NSPanel Settings" src="/images/PanelSettings.png" alt="NSPanel Settings" />
 
 Set the File&#8217;s Owner class to the class of your Screen Saver view. In your ScreenSaverView.h file, declare a property for this new panel. e.g.
 
@@ -107,7 +107,7 @@ And that&#8217;s about it. A lot of this stuff is online or in Apple&#8217;s doc
 
 Click this icon to download the screen saver:
   
-<a href="/screensaver/TimeInWords-ScreenSaver.zip"><img style="border-style: initial; border-color: initial; border-width: 0px;" title="Click to download Time In Words Screen Saver" src="/wp-content/uploads/2012/05/ScreenSaverIcon128.png" alt="Time In Words Screen Saver Download" width="128" height="128" /></a>
+<a href="/screensaver/TimeInWords-ScreenSaver.zip"><img style="border-style: initial; border-color: initial; border-width: 0px;" title="Click to download Time In Words Screen Saver" src="/images/ScreenSaverIcon128.png" alt="Time In Words Screen Saver Download" width="128" height="128" /></a>
 
  [1]: /time-in-words-screen-saver-for-mac/ "Time In Words Screen Saver for Mac"
- [2]: /wp-content/uploads/2012/05/ScreenSaverTemplate.png
+ [2]: /images/ScreenSaverTemplate.png

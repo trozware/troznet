@@ -13,13 +13,13 @@ With the introduction of OS X 10.7 (Lion), Apple removed the obvious scroll bars
 
 With the upcoming [Time In Words for Mac][1], I have a Preferences window to allow selection of time zones to display in the menu. The app will be compatible with 10.6 or later. Under 10.6, the scrollbars are always visible and this is what the Preferences display looks like:
 
-<img title="Preferences 10.6" src="/wp-content/uploads/2012/02/Prefs-10.6.png" alt="Preferences 10.6" width="550" height="272" />
+<img title="Preferences 10.6" src="/images/TiW-Prefs-10.6.png" alt="Preferences 10.6" width="550" height="272" />
 
 This may change, but the basic layout is there. As you can see, I have a 3-column table listing all the available time zones, with the final column right justified.
 
 Under 10.7, this doesn&#8217;t quite work:
 
-<img title="Preferences 10.7" src="/wp-content/uploads/2012/02/Prefs-10.7.png" alt="Preferences 10.7" width="550" height="272" />
+<img title="Preferences 10.7" src="/images/TiW-Prefs-10.7.png" alt="Preferences 10.7" width="550" height="272" />
 
 I had to grab this screen shot quickly after swiping the trackpad, but you can see the problem. When not scrolling, the scroll indicator is hidden and the right column is fully visible, but when dragging the scroll indicator appears on top of the right-justified entries in that column.
 

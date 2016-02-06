@@ -42,33 +42,33 @@ App                          || Version | Release Date      | Download Link
 
 
  [1]: /apps-mac/ "Apps for Mac"
- [2]: /images/Knights36.png
+ [2]: /icons/Knights36.png
  [3]: /knightsmove/
- [4]: /images/MacIconMaker36.png
+ [4]: /icons/MacIconMaker36.png
  [5]: /icns-maker/
- [6]: /images/iOSIconMaker36.png
+ [6]: /icons/iOSIconMaker36.png
  [7]: /icon-builder/
- [8]: /images/ManReader36.png
+ [8]: /icons/ManReader36.png
  [9]: /manreader/
  [10]: /manreader-paddle/ManReader.zip
  [11]: https://pay.paddle.com/checkout/490552
- [12]: /images/Pic36.png
+ [12]: /icons/Pic36.png
  [13]: http://www.picapod.com/
- [14]: /images/Time36.png
+ [14]: /icons/Time36.png
  [15]: /time-in-words-for-mac/
- [16]: /images/ScreenSaverIcon36.png
+ [16]: /icons/ScreenSaverIcon36.png
  [17]: /time-in-words-screen-saver-for-mac/
  [18]: /screensaver/TimeInWords-ScreenSaver.zip
  [19]: /apps-ios/ "Apps for iOS"
- [20]: /images/19th_36.png
+ [20]: /icons/19th_36.png
  [21]: /19th-hole/
- [22]: /images/KM-ios36.png
- [23]: /images/Berio_36.png
+ [22]: /icons/KM-ios36.png
+ [23]: /icons/Berio_36.png
  [24]: /berio/
- [25]: /images/pic-ios36.png
- [26]: /images/time-ios36.png
+ [25]: /icons/pic-ios36.png
+ [26]: /icons/time-ios36.png
  [27]: /time-in-words/
- [28]: /images/DicePass_36.png
+ [28]: /icons/DicePass_36.png
  [29]: /dicepass/
- [30]: /images/DicePass_iOS-36.png
+ [30]: /icons/DicePass_iOS-36.png
  [31]: https://itunes.apple.com/app/dice-pass/id998397511

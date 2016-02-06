@@ -7,6 +7,7 @@ guid: /?p=298
 permalink: /a-knights-move-released/
 tags:
   - knight's move
+  - chess
   - mac
   - ios
 ---
@@ -22,13 +23,13 @@ See more about &#8220;A Knight&#8217;s Move&#8221; at the [Knight&#8217;s Move w
 
 Get the game from the <a href="http://itunes.apple.com/app/a-knights-move/id533321133" target="_blank">Mac App Store</a> or the <a href="http://itunes.apple.com/app/a-knights-move/id530090451" target="_blank">iTunes App Store</a>.
 
-<img title="Tutorial puzzle on iPhone" src="/wp-content/uploads/2012/07/Tutorial-500.png" alt="Tutorial puzzle on iPhone"/>
+<img title="Tutorial puzzle on iPhone" src="/images/Tutorial-500.png" alt="Tutorial puzzle on iPhone"/>
 
 Tutorial puzzle on iPhone
 
-[<img title="Pesky Pawns - one of the more difficult puzzles on Mac." src="/wp-content/uploads/2012/07/PeskyPawns-600.png" alt="Pesky Pawns - one of the more difficult puzzles on Mac." />][3]
+[<img title="Pesky Pawns - one of the more difficult puzzles on Mac." src="/images/PeskyPawns-600.png" alt="Pesky Pawns - one of the more difficult puzzles on Mac." />][3]
 
 Pesky Pawns - one of the more difficult puzzles on Mac.
 
  [1]: /knightsmove/
- [3]: /wp-content/uploads/2012/07/PeskyPawns.png
+ [3]: /images/PeskyPawns.png

@@ -17,11 +17,11 @@ The major changes are to do with the way the iPhone and the Watch communicate. I
 
 With the 19th Hole, I made the decision to change the method of inputting scores. The previous version used a slider with plus and minus buttons to adjust scores. The problems with this were the small target area of the plus & minus buttons as well as the fact that a slider with more than about 3 divisions was not useful as a visual indicator.
 
-When watchOS2 allowed developers access to the digital crown, I decided to switch to using that instead. Now you tap the score box of the player you wish to adjust and use the digital crown to select a number,I think this will be easier to use while wearing a glove and hope that it is still easy to read out doors.
+When watchOS2 allowed developers access to the digital crown, I decided to switch to using that instead. Now you tap the score box of the player you wish to adjust and use the digital crown to select a number. I think this will be easier to use while wearing a glove and hope that it is still easy to read out doors.
 
 ---
 
-The other suggestion is not to do with watchSO2 but is a general tip for using apps of this kind. By default, the Apple Watch will always show the watch face when you raise your wrist. Normally this is the most useful thing, but when scoring a round of golf, it would be easier if The 19th Hole app stayed at the front. To make this happen, you need to set to watch to show the last used app instead of the watch face. This can be set using the Apple Watch app on the phone or on the watch itself.
+The other suggestion is not to do with watchOS2 but is a general tip for using apps of this kind. By default, the Apple Watch will always show the watch face when you raise your wrist. Normally this is the most useful thing, but when scoring a round of golf, it would be easier if The 19th Hole app stayed at the front. To make this happen, you need to set to watch to show the last used app instead of the watch face. This can be set using the Apple Watch app on the phone or on the watch itself.
 
 On the phone:
 

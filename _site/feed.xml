@@ -43,6 +43,44 @@ Until I release a new version of Icon Builder that allows for this this, I sugge
       </item>
     
       <item>
+        <title>Quick Score - Tennis</title>
+        <description>&lt;!-- Quick Score: Tennis is available from the [iTunes App Store][1] for iPhone and Apple Watch. --&gt;
+&lt;p&gt;Quick Score: Tennis will be available soon from the iTunes App Store for iPhone and Apple Watch.&lt;/p&gt;
+
+&lt;p&gt;Quick Score: Tennis is an app designed to allow you to score tennis matches quickly and easily on your iPhone or your Apple Watch.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/QST_Watch.png&quot; alt=&quot;Quick Score: Tennis on Apple Watch&quot; /&gt;
+&lt;br /&gt; Quick Score: Tennis on Apple Watch&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;When playing in a tennis match, your Apple Watch is the best way to score. Set your watch to resume last activity when raised and at the end of every point, a single tap is all it takes to record whether you won or lost the point. The watch will tell you the score for the current game as well as the score for the previous games and sets.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/QST1.png&quot; alt=&quot;Quick Score: Tennis on iPhone&quot; /&gt;
+&lt;br /&gt; Quick Score: Tennis on iPhone&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Any significant information is displayed: game won or lost, set won or last, match complete, change of ends, tie-breakers.&lt;/p&gt;
+
+&lt;p&gt;If scoring for a match that does not include you, the phone makes a good scoring device although the watch still works just as well. As with the watch, after every point it just takes a single tap to record the result of the point. The scores are displayed and significant information is announced.&lt;/p&gt;
+
+&lt;p&gt;The phone app records all matches played so any match can be reviewed later with the result of every game and set displayed. On the phone, the names of the players can be entered, either manually or by choosing from your contacts.  The result can be shared via email or message.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/QST2.png&quot; alt=&quot;Quick Score: Tennis summary&quot; /&gt;
+&lt;br /&gt; Quick Score: Tennis summary on iPhone&lt;/p&gt;
+
+&lt;p&gt;No ads, no in-app purchases, no features missing - you get the complete app for less than the price of a can of tennis balls.&lt;/p&gt;
+
+&lt;!--If you like this app, please leave a rating or a review at the App Store. If you have a problem or want to suggest a new feature, please [contact me directly][2] so I can respond.--&gt;
+
+</description>
+        <pubDate>Fri, 05 Feb 2016 00:00:00 +1000</pubDate>
+        <link>http://troz.net/quick-score-tennis/</link>
+        <guid isPermaLink="true">http://troz.net/quick-score-tennis/</guid>
+      </item>
+    
+      <item>
         <title>Man Reader 1.5</title>
         <description>&lt;p&gt;Man Reader has been updated to version 1.5 with a major improvement in the way it looks for available man pages.&lt;/p&gt;
 
@@ -78,11 +116,11 @@ This version is a complete re-write to accommodate the changes in iOS 9 and watc
 
 &lt;p&gt;With the 19th Hole, I made the decision to change the method of inputting scores. The previous version used a slider with plus and minus buttons to adjust scores. The problems with this were the small target area of the plus &amp;amp; minus buttons as well as the fact that a slider with more than about 3 divisions was not useful as a visual indicator.&lt;/p&gt;
 
-&lt;p&gt;When watchOS2 allowed developers access to the digital crown, I decided to switch to using that instead. Now you tap the score box of the player you wish to adjust and use the digital crown to select a number,I think this will be easier to use while wearing a glove and hope that it is still easy to read out doors.&lt;/p&gt;
+&lt;p&gt;When watchOS2 allowed developers access to the digital crown, I decided to switch to using that instead. Now you tap the score box of the player you wish to adjust and use the digital crown to select a number. I think this will be easier to use while wearing a glove and hope that it is still easy to read out doors.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;The other suggestion is not to do with watchSO2 but is a general tip for using apps of this kind. By default, the Apple Watch will always show the watch face when you raise your wrist. Normally this is the most useful thing, but when scoring a round of golf, it would be easier if The 19th Hole app stayed at the front. To make this happen, you need to set to watch to show the last used app instead of the watch face. This can be set using the Apple Watch app on the phone or on the watch itself.&lt;/p&gt;
+&lt;p&gt;The other suggestion is not to do with watchOS2 but is a general tip for using apps of this kind. By default, the Apple Watch will always show the watch face when you raise your wrist. Normally this is the most useful thing, but when scoring a round of golf, it would be easier if The 19th Hole app stayed at the front. To make this happen, you need to set to watch to show the last used app instead of the watch face. This can be set using the Apple Watch app on the phone or on the watch itself.&lt;/p&gt;
 
 &lt;p&gt;On the phone:&lt;/p&gt;
 
@@ -128,6 +166,74 @@ This version is a complete re-write to accommodate the changes in iOS 9 and watc
         <pubDate>Sat, 30 May 2015 00:00:00 +1000</pubDate>
         <link>http://troz.net/2015/05/dice-pass-for-mac/</link>
         <guid isPermaLink="true">http://troz.net/2015/05/dice-pass-for-mac/</guid>
+      </item>
+    
+      <item>
+        <title>Dice Pass</title>
+        <description>&lt;p&gt;Dice Pass is available from the &lt;a href=&quot;https://itunes.apple.com/us/app/dice-pass/id997688302&quot;&gt;Mac App Store&lt;/a&gt; for Mac OS X and the &lt;a href=&quot;https://itunes.apple.com/app/dice-pass/id998397511&quot;&gt;iTunes App Store&lt;/a&gt; for iPhone or iPad.&lt;/p&gt;
+
+&lt;p&gt;Dice Pass is a utility to app to generate random passphrases based on the &lt;a href=&quot;http://world.std.com/~reinhold/diceware.html&quot;&gt;Diceware system&lt;/a&gt;. Diceware uses a table of pre-defined words, each assigned a 5 digit code number containing the digits 1 to 6. The official way to generate a phrase is to roll 5 dice for each word you want in your passphrase and then consult the words table to find the matching word.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/DicePass_iOS.png&quot; alt=&quot;Dice Pass for Mac&quot; /&gt;
+&lt;br /&gt; Dice Pass for iOS&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/DicePass_Mac.png&quot; alt=&quot;Dice Pass for Mac&quot; /&gt;
+&lt;br /&gt; Dice Pass for Mac&lt;/p&gt;
+
+&lt;p&gt;The resulting phrase uses real words or common abbreviations, so it is easier to remember than a random collection of characters. At the same time, the random selection of words makes the generated passphrase much more secure as it avoids the human tendency to pick words with personal meaning.&lt;/p&gt;
+
+&lt;p&gt;The Diceware system was invented by Arnold Reinhold. This utility is not associated with or supported by Arnold Reinhold in any way, but uses his techniques with thanks. For more information about Diceware, have a look at the &lt;a href=&quot;http://world.std.com/%7Ereinhold/dicewarefaq.html&quot;&gt;Diceware Passphrase FAQ page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The word list used in this app is a variation compiled by &lt;a href=&quot;http://world.std.com/~reinhold/beale.wordlist.asc&quot;&gt;Alan Beale&lt;/a&gt; that removes some of the more obscure words.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;faq&quot;&gt;F.A.Q.&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;How many words should I use in my passphrase?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Arnold Reinhold recommends 6 words. He used to suggest that 5 was sufficient for most needs, but as of 2014 has increased this to 6. See the Diceware Passphrase FAQ page for more details. (Link above.)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How often can I re-generate the passphrase?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;As often as you like. Keep clicking until you get a phrase that you can remember. If you get a phrase where most of the words are good but you would like to change one or two, you can click ‘Re-Roll’ on individual words to change them.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Is there a way to check the strength of my passphrase?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;There are many password strength checkers on the internet and three of these are listed below. But always be careful when pasting your passphrase into a web page.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Online password strength checkers:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://rumkin.com/tools/password/passchk.php&quot;&gt;Rumkin.com Strength Test&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://howsecureismypassword.net&quot;&gt;How Secure Is My Password?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.passwordmeter.com&quot;&gt;The Password Meter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Some of the words in the phrase are not complete words.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The theory is that shorter words or abbreviations are easier to remember than long ones, without compromising security. But if you get a word you don’t like or think that you will not be able to remember, just re-roll that word.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What if I want to roll the dice myself?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Dice Pass allows you to tap on the 5 dice to set the numbers needed for each word manually. Each time you tap the number will go up be one, wrapping from 6 back to 1. The app will then look up the word table for you and show the new word.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;When the phrase gets too long I can’t see all the words.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The “Copy” button will copy the complete passphrase even if it is not all visible. You can also scroll by clicking and dragging along the passphrase.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Does my passphrase get saved by the app or transmitted over the internet?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;No. The app saves no data except for basic preferences (window positioning &amp;amp; size etc.). There is never any data sent over the network and the app will work perfectly if you disconnect your computer before using.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What are those 3 buttons: #, A and 1?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Some sites may require a passphrase that contains a mix of character types. These buttons will insert a special character, change the start of one word to uppercase, or insert a number. Tap the button again to undo the change. Again, these characters are chosen using the dice roll system and the special characters are selected and positioned using the method and data suggested by Arnold Reinhold.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 29 May 2015 00:00:00 +1000</pubDate>
+        <link>http://troz.net/dicepass/</link>
+        <guid isPermaLink="true">http://troz.net/dicepass/</guid>
       </item>
     
       <item>
@@ -416,66 +522,6 @@ Then the parent app is supposed to do whatever tasks are called for in the handl
         <pubDate>Thu, 02 Apr 2015 00:00:00 +1000</pubDate>
         <link>http://troz.net/2015/04/my-first-apple-watch-app/</link>
         <guid isPermaLink="true">http://troz.net/2015/04/my-first-apple-watch-app/</guid>
-      </item>
-    
-      <item>
-        <title>LiveCode stacks</title>
-        <description>&lt;p&gt;When I converted my site to Jekyll &amp;amp; GitHub, one of the things I left behind was a collection of LiveCode (Revolution) stacks. For many years I was active in the Revolution community before going in other directions and over that time, I built up a small library of stacks that I released into the public domain.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://livecode.com&quot;&gt;LiveCode&lt;/a&gt; is a cross-platform rapid development environment. There is an open source community edition available for anyone wishing to get started.&lt;/p&gt;
-
-&lt;p&gt;I had assumed that since I had not been an active LiveCode user for many years, these stacks would have become worthless. But in the last couple of days, I have received a couple of queries from people looking for them.&lt;/p&gt;
-
-&lt;p&gt;So I created a new GitHub repository and uploaded them all to here:
-&lt;br /&gt;
-&lt;a href=&quot;https://github.com/trozware/rev_stacks&quot;&gt;LiveCode stacks&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;None of these stacks have been updated recently, but feel free to use or adapt as you see fit. They have not been tested using recent versions of LiveCode, so may not work as expected. As stacks are provided as is. Use at your own risk.&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 18 Mar 2015 00:00:00 +1000</pubDate>
-        <link>http://troz.net/2015/03/livecode-stacks/</link>
-        <guid isPermaLink="true">http://troz.net/2015/03/livecode-stacks/</guid>
-      </item>
-    
-      <item>
-        <title>Icon Builder 3.0.1</title>
-        <description>&lt;p&gt;So why an announcement for such a minor upgrade?&lt;/p&gt;
-
-&lt;p&gt;Version 3.0 got no announcement because it was not the release I wanted.&lt;/p&gt;
-
-&lt;p&gt;Having downloaded the Xcode 6.2 &amp;amp; 6.3 betas, I had worked out what icons were needed to a WatchKit app.
-This, combined with several other changes, made me bump the version number to 3.0.&lt;/p&gt;
-
-&lt;p&gt;Sadly, Apple rejected the update because it referred to pre-release products. So I pulled all mentions of WatchKit out of the interface and meta data and got 3.0 released.&lt;/p&gt;
-
-&lt;p&gt;After the Apple keynote on March 9th, I re-enabled the WatchKit portions of the app and re-submitted to the App Store, hoping that with the WatchKit SDK now part of the official Xcode release, Apple’s reviewers would allow it to get through this time.&lt;/p&gt;
-
-&lt;p&gt;This worked - in fact the app was reviewed and accepted within 6 days - so now Icon Builder adds WatchKit to its list of supported platforms.&lt;/p&gt;
-
-&lt;p&gt;Actually, Apple may have done me a favour in rejecting the first one as they changed the specifications for the icons slightly between Xcode 6.2 beta and Xcode 6.2 release.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://troz.net/icon-builder/&quot;&gt;Icon Builder page&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/us/app/icon-builder/id552293482?mt=12&amp;amp;uo=4&quot;&gt;Mac App Store link&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;whats-new-in-version-3&quot;&gt;What’s New in version 3?&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Support for WatchKit app icons (version 3.0.1)&lt;/li&gt;
-  &lt;li&gt;Simplified interface: removed display of smaller icons.&lt;/li&gt;
-  &lt;li&gt;Fix for @3x images not being saved when you selected iOS 6 support.&lt;/li&gt;
-  &lt;li&gt;iTunesArtwork@2x file now saved as a JPG to avoid iTunes Connect errors.&lt;/li&gt;
-  &lt;li&gt;Removed CarPlay icon - Xcode sometimes gave errors when this was included.&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Tue, 17 Mar 2015 00:00:00 +1000</pubDate>
-        <link>http://troz.net/2015/03/icon-builder-3.0.1/</link>
-        <guid isPermaLink="true">http://troz.net/2015/03/icon-builder-3.0.1/</guid>
       </item>
     
   </channel>
