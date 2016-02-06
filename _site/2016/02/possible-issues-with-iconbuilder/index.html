@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>A Knight&#8217;s Move 1.3 &#8211; TrozWare</title>
+    <title>Possible issues with Icon Builder & Watch icons &#8211; TrozWare</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Mac &amp;amp; iOS Developer">
     <meta name="author" content="Sarah Reichelt">
     <meta name="keywords" content="">
-    <link rel="canonical" href="http://troz.net/a-knights-move-1-3/">
+    <link rel="canonical" href="http://troz.net/2016/02/possible-issues-with-iconbuilder/">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for TrozWare" href="/feed.xml" />
 
     <!-- Custom CSS -->
@@ -31,9 +31,9 @@
     <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="A Knight&amp;#8217;s Move 1.3">
+    <meta property="og:title" content="Possible issues with Icon Builder &amp; Watch icons">
     <meta property="og:description" content="Mac &amp;amp; iOS Developer">
-    <meta property="og:url" content="http://troz.net/a-knights-move-1-3/">
+    <meta property="og:url" content="http://troz.net/2016/02/possible-issues-with-iconbuilder/">
     <meta property="og:site_name" content="TrozWare">
 
     <!-- Twitter Card -->
@@ -41,9 +41,9 @@
     
         <meta name="twitter:site" content="@sarahreichelt" />
     
-    <meta name="twitter:title" content="A Knight&#8217;s Move 1.3" />
+    <meta name="twitter:title" content="Possible issues with Icon Builder & Watch icons" />
     <meta name="twitter:description" content="Mac &amp; iOS Developer" />
-    <meta name="twitter:url" content="http://troz.net/a-knights-move-1-3/" />
+    <meta name="twitter:url" content="http://troz.net/2016/02/possible-issues-with-iconbuilder/" />
 
     <!-- Icons -->
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
@@ -132,49 +132,57 @@
 
 
 <div class="post-header mb2">
-  <h1>A Knight&#8217;s Move 1.3</h1>
-  <span class="post-meta">27 Feb 2013</span><br>
+  <h1>Possible issues with Icon Builder & Watch icons</h1>
+  <span class="post-meta">6 Feb 2016</span><br>
   
   <span class="post-meta small">
   
-    1 minute read
+    2 minute read
   
   </span>
 </div>
 
 <article class="post-content">
-  <p>A Knight’s Move has been updated to version 1.3. The iOS version is now available at the <a href="https://itunes.apple.com/app/a-knights-move/id530090451?mt=8" target="_blank">iTunes App Store</a> and the Mac version is available through the <a href="https://itunes.apple.com/app/a-knights-move/id533321133?mt=12" target="_blank">Mac App Store</a>.</p>
+  <p>It has come to my attention that there are two possible issues with Icon Builder 3.0.1 when using icons created for an Apple Watch app.
+Once of them is something I can fix and the other appears to be a bug in Xcode 7.2</p>
 
-<h2 id="three-new-level-packs">Three new level packs:</h2>
+<p>The first problem is that iTines Connect now requires that the icons for an Apple Watch app include no alpha channel. This is becoming an increasing trend with it first having applied to the large icon file you upload directly to iTunes Connect, then to screen shots. I expect it to extend to iOS app icons soon, but hopefully Mac app icons can continue to include transparency.</p>
 
-<ul>
-  <li>Eight by Eight</li>
-  <li>Bishops Rule</li>
-  <li>Castles</li>
-</ul>
+<p>With Apple Watch icons, you are supposed to create a set of square icons and watchOS or iTunesConnect applies the rounding mask. Presumably this is more complicated if the icon contains an alpha channel even if there are no transparent pixels. If your Watch app icons contain an alpha channel, you will see errors like this after uploading your app to iTunes Connect:</p>
 
-<p>Eight by Eight has every puzzle set in a chessboard sized grid with more conventional placing of pieces.<br />
-Bishops Rule has at least one Bishop in every puzzle.<br />
-Castles has a Castle or Rook in every puzzle and is suited to players who would like more of a challenge.</p>
+<blockquote>
+  <p>Invalid Icon - The watch application ‘AppName.app/Watch/AppName WatchKit App.app’ contains an icon file ‘AppName.app/Watch/AppName WatchKit App.app/AppIcon-Watch24x24@2x.png’ with an alpha channel. Icons should not have an alpha channel.</p>
+</blockquote>
 
-<h2 id="new-feature">New feature:</h2>
+<p>You will probably get this error message for every icon size in the Watch app (8 in total).
+Until I release a new version of Icon Builder that allows for this this, I suggest you use this <a href="https://www.cocoacontrols.com/controls/alpha-channel-remover">Alpha Channel Remover app</a>.</p>
 
-<p>When your knight has been taken, you have the option to undo the last move so you can try again without losing the moves you have already made.</p>
+<p>In your Xcode project, go to WatchKit App Assets.xcassets, select the AppIcon set, right-click and choose “Show in Finder”. A folder will open containing eight .png files and one .json file. Drag &amp; drop the .png files into the Alpha Channel Remover window and click the “Remove Alpha Channel” button. This will replace all those image files with new versions without alpha channels. To confirm this, select any of the images and press Command-I to get info. In the More Info section, you will see “Alpha channel: No”.</p>
 
-<p><img alt="Undo Last Move" src="/wp-content/uploads/2013/02/UndoLast.png" /></p>
+<p>You can now submit your app again, but that only solves one of the issues.</p>
+
+<hr />
+
+<p>The other problem is that you will get a warning about the 44x44@2x.png icon file.</p>
+
+<blockquote>
+  <p>Invalid Icon Name - The watch application ‘AppName.app/Watch/AppName WatchKit App.app’ contains an invalid icon file name ‘AppName.app/Watch/AppName WatchKit App.app/AppIcon-Watch44x44@2x.png’. Make sure that icon file names follow the pattern<br /> “<code class="highlighter-rouge">*&lt;dimension&gt;@&lt;scale&gt;x.png</code>” and they match the required dimensions. Please visit https://developer.apple.com/watchkit/ for more information.</p>
+</blockquote>
+
+<p>As you can see in the error message, the icon name (which is set by Xcode) does conform to the required pattern, and the image is the correct size. This appears to be a <a href="http://www.openradar.me/23801324">bug in Xcode 7.2</a> but does not stop you from submitting your app as it is only a warning and not an error. Presumably this will be fixed in later version of Xcode. I am running Xcode 7.2.1 and still see this warning.</p>
 
 
 </article>
 
 <br>
-<!-- <a href="/tags/">Tags</a>: knight's move, ios, and mac -->
+<!-- <a href="/tags/">Tags</a>: icons, apple watch, and xcode -->
 Tags: 
 
-    <a href="/tags/#knight's move">knight's move</a>&nbsp;&nbsp;
+    <a href="/tags/#icons">icons</a>&nbsp;&nbsp;
 
-    <a href="/tags/#ios">ios</a>&nbsp;&nbsp;
+    <a href="/tags/#apple watch">apple watch</a>&nbsp;&nbsp;
 
-    <a href="/tags/#mac">mac</a>&nbsp;&nbsp;
+    <a href="/tags/#xcode">xcode</a>&nbsp;&nbsp;
 
 <hr>
 
@@ -186,8 +194,8 @@ Tags:
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_shortname  = 'trozware';
-    var disqus_identifier = '472';
-    var disqus_title      = 'A Knight&#8217;s Move 1.3';
+    var disqus_identifier = '/2016/02/possible-issues-with-iconbuilder';
+    var disqus_title      = 'Possible issues with Icon Builder & Watch icons';
 
     (function() {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -202,13 +210,6 @@ Tags:
 
 
   <h3 class="related-post-title">Related Posts</h3>
-  
-    <div class="post ml2">
-      <a href="/2016/02/possible-issues-with-iconbuilder/" class="post-link">
-        <h4 class="post-title">Possible issues with Icon Builder & Watch icons</h4>
-        <p class="post-summary"></p>
-      </a>
-    </div>
   
     <div class="post ml2">
       <a href="/2016/01/man-reader-1.5/" class="post-link">
@@ -269,6 +270,13 @@ Tags:
     <div class="post ml2">
       <a href="/2015/03/icon-builder-3.0.1/" class="post-link">
         <h4 class="post-title">Icon Builder 3.0.1</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/2015/03/app-store-preview-videos/" class="post-link">
+        <h4 class="post-title">App Store Preview Videos</h4>
         <p class="post-summary"></p>
       </a>
     </div>

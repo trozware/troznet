@@ -26,6 +26,14 @@ layout: default
   {{ content }}
 </article>
 
+<br>
+<!-- <a href="/tags/">Tags</a>: {{ page.tags | array_to_sentence_string }} -->
+Tags: 
+{% for tag in page.tags %}
+    <a href="/tags/#{{ tag }}">{{ tag }}</a>&nbsp;&nbsp;
+{% endfor %}
+<hr>
+
 {% if site.show_sharing_icons %}
   {% include share_buttons.html %}
 {% endif %}
