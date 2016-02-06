@@ -161,7 +161,6 @@ blockquote {
 
 blockquote,
 blockquote p {
-  font-size: 1.25rem;
   font-style: italic; }
 
 h1,
@@ -1022,8 +1021,7 @@ footer {
 blockquote {
   border-left: 5px solid #7a7a7a;
   font-style: italic;
-  margin-left: 0.5rem;
-  padding: 0.5rem; }
+  margin-left: 0.5rem; }
 
 blockquote footer {
   background-color: #fff;
@@ -1098,8 +1096,7 @@ blockquote footer {
     margin-top: .25rem; }
 
   blockquote {
-    margin-left: 2rem;
-    padding: 2rem; }
+    margin-left: 2rem; }
 
   .social-icons-left {
     text-align: left; }

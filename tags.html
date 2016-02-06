@@ -7,7 +7,7 @@ title: Tags
 
 {% assign sorted_tags = (site.tags | sort ) %}
 {% for category in sorted_tags %}
-     <span style="font-size: 1.25rem">
+     <span>
         <a href="#{{ category | first }}">
             {{ category | first }}
         </a>
