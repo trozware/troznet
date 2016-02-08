@@ -12,6 +12,12 @@ tags:
 It has come to my attention that there are two possible issues with Icon Builder 3.0.1 when using icons created for an Apple Watch app.
 Once of them is something I can fix and the other appears to be a bug in Xcode 7.2
 
+---
+
+**Update:** Version 3.2 of Icon Builder has been submitted to the Mac App Store for review. This removes the alpha channel from icons for a watch app.
+
+---
+
 The first problem is that iTines Connect now requires that the icons for an Apple Watch app include no alpha channel. This is becoming an increasing trend with it first having applied to the large icon file you upload directly to iTunes Connect, then to screen shots. I expect it to extend to iOS app icons soon, but hopefully Mac app icons can continue to include transparency.
 
 With Apple Watch icons, you are supposed to create a set of square icons and watchOS or iTunesConnect applies the rounding mask. Presumably this is more complicated if the icon contains an alpha channel even if there are no transparent pixels. If your Watch app icons contain an alpha channel, you will see errors like this after uploading your app to iTunes Connect:
