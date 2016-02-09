@@ -7,6 +7,79 @@
     <atom:link href="http://troz.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>New Twitter account</title>
+        <description>&lt;p&gt;I have started a new Twitter account so that I can provide rapid support to users of my apps.
+Please contact me &lt;a href=&quot;https://twitter.com/trozware&quot;&gt;@trozware&lt;/a&gt; if you have any questions, suggestions, bug reports or would just like to chat.&lt;/p&gt;
+
+&lt;p&gt;I will also be using this account to promote my new &lt;a href=&quot;/2016/02/learning-swift-an-introduction/&quot;&gt;Learning Swift&lt;/a&gt; series.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 09 Feb 2016 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2016/02/new-twitter-account/</link>
+        <guid isPermaLink="true">http://troz.net/2016/02/new-twitter-account/</guid>
+      </item>
+    
+      <item>
+        <title>Learning Swift - An Introduction</title>
+        <description>&lt;h3 id=&quot;welcome-to-learning-swift&quot;&gt;Welcome to Learning Swift.&lt;/h3&gt;
+
+&lt;p&gt;This is the first post in what I hope will be an extensive series dealing with the Swift language. Here are some of the questions I hope to answer:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Should I learn Swift? Why?&lt;/li&gt;
+  &lt;li&gt;Why is Swift do great?&lt;/li&gt;
+  &lt;li&gt;How should I start learning Swift?&lt;/li&gt;
+  &lt;li&gt;I already know Objective-C - how do I convert?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After that, I am planning a series of posts discussing the major differences of Swift from the view point of an Objective-C programmer and the aspects of Swift that I found difficult to grasp. Topics covered will include such things:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;optionals&lt;/li&gt;
+  &lt;li&gt;closures&lt;/li&gt;
+  &lt;li&gt;functional programming&lt;/li&gt;
+  &lt;li&gt;protocols&lt;/li&gt;
+  &lt;li&gt;generics&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I am coming from a background of Objective-C, so many of my posts will be dealing with aspects of Swift that are not familiar to Objective-C programmers. I will not assume any Objective-C programming experience, but some features of Swift that are new to me, will be familiar to people accustomed to other languages.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;So let’s start by answering the first question:&lt;/p&gt;
+
+&lt;h3 id=&quot;should-i-learn-swift&quot;&gt;Should I learn Swift?&lt;/h3&gt;
+
+&lt;p&gt;If you are writing or planning apps for any Apple platform - YES.&lt;br /&gt;
+If not, wait until Swift is available for the platforms you need to support.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;why&quot;&gt;Why?&lt;/h3&gt;
+
+&lt;h4 id=&quot;if-you-are-already-an-ios-or-mac-developer-yes&quot;&gt;If you are already an iOS or Mac developer: YES&lt;/h4&gt;
+
+&lt;p&gt;This is the new language and Apple is very committed to it. Objective-C is not going away any time soon, but Swift is where it is going to end up, so why not make the jump now while the language is still in development? You have to accept that fact that every release of Xcode is going to break your code, but the automatic re-factoring works very well. And by moving to Swift now, you get the chance to influence the direction of a new language. How often does that happen?&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;if-you-are-starting-to-learn-ios-or-mac-development-yes&quot;&gt;If you are starting to learn iOS or Mac development: YES&lt;/h4&gt;
+
+&lt;p&gt;If you have no history with Objective-C, then do not waste your time learning it. There is still a lot of sample code out there in Objective-C, but increasing numbers of tutorial sites are using Swift and converting their existing tutorials to Swift. It will help if you know just enough Objective-C to read it, but you do not need to know enough to write it.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;if-you-do-not-program-for-mac-or-ios-not-yet&quot;&gt;If you do NOT program for Mac or iOS: NOT YET&lt;/h4&gt;
+
+&lt;p&gt;Swift went open source in late 2015. This is a big deal and Apple’s plans for Swift are quite clear. They want Swift to be such a main-stream language that it is used instead of Java for basic computer science courses in universities. This was never going to happen unless the language was open-source and cross-platform. It is now open-source and available for &lt;a href=&quot;https://swift.org/download/#latest-development-snapshots&quot;&gt;Linux as well as Mac/iOS&lt;/a&gt;. While Apple has not yet released any further ports, I think there are more on the way for Raspberry Pi, Arduino and other embedded systems as well as server-side Swift libraries like &lt;a href=&quot;http://perfect.org&quot;&gt;Perfect&lt;/a&gt;. I expect that a version for Windows will not be far behind.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 09 Feb 2016 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2016/02/learning-swift-an-introduction/</link>
+        <guid isPermaLink="true">http://troz.net/2016/02/learning-swift-an-introduction/</guid>
+      </item>
+    
+      <item>
         <title>Possible issues with Icon Builder &amp; Watch icons</title>
         <description>&lt;p&gt;It has come to my attention that there are two possible issues with Icon Builder 3.0.1 when using icons created for an Apple Watch app.
 Once of them is something I can fix and the other appears to be a bug in Xcode 7.2&lt;/p&gt;
@@ -414,120 +487,6 @@ As an example, Time In Words currently reports very clearly:&lt;/p&gt;
         <pubDate>Wed, 15 Apr 2015 00:00:00 +1000</pubDate>
         <link>http://troz.net/2015/04/time-in-words-4.0/</link>
         <guid isPermaLink="true">http://troz.net/2015/04/time-in-words-4.0/</guid>
-      </item>
-    
-      <item>
-        <title>Apple Watch App - Rejected, then Accepted</title>
-        <description>&lt;p&gt;As described in a &lt;a href=&quot;/2015/04/my-first-apple-watch-app/&quot;&gt;previous post&lt;/a&gt;, about 9 days ago I submitted my first Apple Watch app for review.
-The app was an extension of my golf scoring app: &lt;a href=&quot;/19th-hole/&quot;&gt;The 19th Hole&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I expected that App Store review times would go up dramatically once Apple had allowed developers to submit watch apps, but this proved to be incorrect. Three days after submission, the app was marked as “In Review”. This seemed to happen last thing on a Saturday, so there was no further action for two days, at which point the app was rejected, with the following details (sic):&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;We noticed an issue in your app that contributes to a lower quality user experience than Apple users expect. Specifically,&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;while using the Apple Watch app with the phone app is in the background mode (display off), the new data entry on the Watch App does not refresh accordingly until the phone app is turn back on.&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;So it appeared that the communication between the watch and the phone, which worked perfectly on the simulators, did not work at all on the actual devices. This is the problem with developing for a device that you do not have.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;After some research, it appears that the problem is with the phone not operating correctly in background mode. Apple provides for communications from the watch to the phone. The phone can respond, but only the watch can initiate a connection. I guess this makes sense since every watch will be paired with a phone but the reverse will not always be true.&lt;/p&gt;
-
-&lt;p&gt;To talk to the phone, the watch uses this function:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;openParentApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;userInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;NSObject&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;AnyObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-         &lt;span class=&quot;n&quot;&gt;reply&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;reply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(([&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;NSObject&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;AnyObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;kt&quot;&gt;NSError&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The phone listens for messages in this event handler:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;n&quot;&gt;handleWatchKitExtensionRequest&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;userInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;NSObject&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;AnyObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]?,&lt;/span&gt;
-         &lt;span class=&quot;n&quot;&gt;reply&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;reply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(([&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;NSObject&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;AnyObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The name of the WatchKit function is slightly misleading as it does open the parent application, but only in the background.
-Then the parent app is supposed to do whatever tasks are called for in the handleWatchKitExtensionRequest function, and return any required data using the supplied reply() function.&lt;/p&gt;
-
-&lt;p&gt;So far, so good, and it all worked perfectly in the simulator. But it appears that although this call wakes the iPhone app, it does not stay awake long enough to do anything. Many thanks to Brian at &lt;a href=&quot;http://www.fiveminutewatchkit.com/blog/2015/3/11/one-weird-trick-to-fix-openparentapplicationreply&quot;&gt;Five Minute WatchKit&lt;/a&gt; who pointed out the way to make this work. Firstly, you create a dummy background task guaranteed to keep the iPhone app awake for 2 seconds. Then you perform your own work, using another background task. When that is finished, the phone can send the response and end the real background task. The dummy task will time out by itself after 2 seconds.&lt;/p&gt;
-
-&lt;p&gt;For my needs, I could probably reduce the 2 seconds considerably, but since this is a problem I am unable to test, I decided just to go with Brian’s suggestion as it is.&lt;/p&gt;
-
-&lt;p&gt;I re-submitted the app the same day it was rejected, and two days later it was back in review. The review process took longer than usual, but about 30 hours later, the app was marked “Pending an Apple Release”. I assumed this meant that Apple would release all WatchKit apps on 24th April when the watches shipped, but the following day the app was reported as “Pending Developer Release” (I had set it to release manually). Now I have told iTunesConnect to release the app and it is “Processing for App Store”.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;On a related note, the start of pre-ordering for the Apple Watch was scheduled for a very civilised 5:01 pm here in eastern Australia. I had three watches all lined up in my Favorites in the Apple Store app, ready for ordering. When the store became live (at about 5:03 pm), I could not work out how to order all three in a single operation, so had to place these orders one at a time. I got the first two ordered for the soonest possible delivery, but by the time I got to the third (about 3 minutes later), I had missed out and it will ship in 4 to 6 weeks!&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 11 Apr 2015 00:00:00 +1000</pubDate>
-        <link>http://troz.net/2015/04/apple-watch-rejected-then-accepted/</link>
-        <guid isPermaLink="true">http://troz.net/2015/04/apple-watch-rejected-then-accepted/</guid>
-      </item>
-    
-      <item>
-        <title>My First Apple Watch App</title>
-        <description>&lt;p&gt;I have just submitted my first Apple Watch app to the iTunes App Store. This is a scary thing to do, since I have never seen, touched or used an Apple Watch and all I had to go on was the Simulator that Apple supplies with Xcode.&lt;/p&gt;
-
-&lt;p&gt;At the moment, Apple has only made a limited set of Apple Watch features available to developers, and all Apple Watch apps come tethered to an iOS app - presumably this will mainly be iPhone apps, but I wonder will we be able to connect Apple Watches to iPads? Anyway, it made sense to extend one of my existing apps to use the Apple Watch instead of starting from scratch.&lt;/p&gt;
-
-&lt;p&gt;Of my &lt;a href=&quot;/apps-ios/&quot;&gt;iOS apps&lt;/a&gt;, I decided that &lt;a href=&quot;/19th-hole/&quot;&gt;The 19th Hole&lt;/a&gt;, my golf scoring app, would be well suited to the Apple Watch. The problem with using the iPhone version to score is that you have to keep pulling your iPhone in and out of your golf bag, sometimes in the rain, sometimes in bright sunlight. Being able to enter the scores on your wrist sounds like a big improvement. We know that the Apple Watch is at least somewhat water-resistant, but we are yet to see how well it performs in bright sunlight, however I would expect that Apple has put considerable effort into this.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Once I decided to write an Apple Watch app, the first step was to learn how. I read all Apple’s published documents to get a feel for what was possible and what user-interface objects would be available. I find online courses very helpful and by far the best Apple Watch course that I found was &lt;a href=&quot;http://www.raywenderlich.com/video-tutorials#watchkit&quot;&gt;Ray Wenderlich’s WatchKit video tutorial series&lt;/a&gt;. The instructors were very clear and explained how the layout and sizing of objects works on the Apple Watch, as well as how to set up and move between views and how to communicate from the Watch back to the iPhone. The layout section of the course was particularly valuable as no other course I found even mentioned this, although it is crucial to the interface design and allowing for the two sizes of watch.&lt;/p&gt;
-
-&lt;p&gt;I had released an update to &lt;a href=&quot;/19th-hole/&quot;&gt;The 19th Hole&lt;/a&gt; recently in preparation for this. I wanted to have squashed the bugs and updated the interface, so the only changes needed would be the WatchKit ones.&lt;/p&gt;
-
-&lt;p&gt;The first step in adding a WatchKit app to your existing app is to create a new target in the Xcode project. Choosing WatchKit actually adds two new targets: the WatchKit Extension which lives on the iPhone and supplies the code for the Watch, and the WatchKit App which lives on the Watch and provides the interface.&lt;/p&gt;
-
-&lt;p&gt;I decided to use a paged interface with one page per hole. Each of these pages has a table, with one row per player. A slider with plus &amp;amp; minus buttons lets you enter the score for each player and the total score for each player is also displayed.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/19thHole-Watch2.png&quot; alt=&quot;Data entry&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Apart from this data entry view, I have a splash screen which shows you the current round as set up on the iPhone and a final summary screen showing everyone’s totals.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/19thHole-Watch1.png&quot; alt=&quot;Splash screen&quot; /&gt;
-&lt;img src=&quot;/images/19thHole-Watch3.png&quot; alt=&quot;Summary&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;These images are taken from the Apple Watch simulator running in 42mm mode.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;The biggest programming problem was getting the communications working beween the two devices. The 19th Hole uses Core Data for all data storage. My first attempt shared this data between the two apps, allowing both to read and update the database. This almost worked, but if both apps were open, then changes in one device did not get across to the other. It seemed that the data was cached and I was unable to find a way to force either app to update every time.&lt;/p&gt;
-
-&lt;p&gt;My next attempt kept all the data in the iPhone app and had the WatchKit extension ask for whatever data it needed and send changes to the iPhone app. This worked much better and I was able to get live updates between the two devices.&lt;/p&gt;
-
-&lt;p&gt;The other issue is the fact that I have never seen, touched or used an Apple Watch. This means that I had to guess a lot of things:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;how well will it perform?&lt;/li&gt;
-  &lt;li&gt;will the icon look OK?&lt;/li&gt;
-  &lt;li&gt;are the controls large enough to use?&lt;/li&gt;
-  &lt;li&gt;will the text be large enough to read?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;My main philosophy was to keep the Watch app as simple as possible and use the standard interface elements, font sizes etc. Hopefully that will work.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;The final step was submitting the app to iTunes Connect for review. It was not clear to me how to do this, so I logged into iTunes Connect, created a new version and entered the meta-data. I couldn’t see anywhere to say anything about the Watch. I archived the main iOS app as usual and validated it with the Store. I had a few things to fix up, but I got the build submitted.&lt;/p&gt;
-
-&lt;p&gt;Back to iTunes Connect and once the uploaded build had been processed, I was able to select it and click “Submit for Review”. At this point, the page reported an error and showed me a new section where I could upload the Apple Watch icon and screen shots.&lt;/p&gt;
-
-&lt;p&gt;I had been unsure how the icon would look when made round, but it looks OK on the iTunes Connect page. How it will look on a tiny watch screen remains to be seen. Anyway, once I had my icon and screen shots uploaded, I was able to proceed to the next step. But then I got a message saying that the app could not be processed - no explanation. Thankfully, I had seen some developers on Twitter reporting this, and somebody said that the solution was to remove the alpha channel from your screen shots. Sorry for not giving credit here - I forget who said this, but it worked, so thank you whoever you are.&lt;/p&gt;
-
-&lt;p&gt;So now my app is waiting for review and who knows how long that will take. According to &lt;a href=&quot;http://appreviewtimes.com&quot;&gt;App Review Times&lt;/a&gt;, the current estimate is 8 days, but the trend is heading upwards. I would expect that to blow out in the next few weeks as developers try to get their apps ready for the Apple Watch release date of April 24th.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 02 Apr 2015 00:00:00 +1000</pubDate>
-        <link>http://troz.net/2015/04/my-first-apple-watch-app/</link>
-        <guid isPermaLink="true">http://troz.net/2015/04/my-first-apple-watch-app/</guid>
       </item>
     
   </channel>

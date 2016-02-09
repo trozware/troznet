@@ -3,16 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>learning-swift-an-introduction &#8211; TrozWare</title>
+    <title>Learning Swift - An Introduction &#8211; TrozWare</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Mac &amp;amp; iOS Developer">
+    <meta name="description" content="Welcome to Learning Swift. This is the first post in what I hope will be an extensive series dealing with the Swift language.">
     <meta name="author" content="Sarah Reichelt">
     <meta name="keywords" content="">
     <link rel="canonical" href="http://troz.net/2016/02/learning-swift-an-introduction/">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for TrozWare" href="/feed.xml" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/pixyll.css?201602070948" type="text/css">
+    <link rel="stylesheet" href="/css/pixyll.css?201602091525" type="text/css">
 
     <!-- Fonts -->
     <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
@@ -31,7 +31,7 @@
     <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="learning-swift-an-introduction">
+    <meta property="og:title" content="Learning Swift - An Introduction">
     <meta property="og:description" content="Mac &amp;amp; iOS Developer">
     <meta property="og:url" content="http://troz.net/2016/02/learning-swift-an-introduction/">
     <meta property="og:site_name" content="TrozWare">
@@ -39,10 +39,10 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
     
-        <meta name="twitter:site" content="@sarahreichelt" />
+        <meta name="twitter:site" content="@trozware" />
     
-    <meta name="twitter:title" content="learning-swift-an-introduction" />
-    <meta name="twitter:description" content="Mac &amp; iOS Developer" />
+    <meta name="twitter:title" content="Learning Swift - An Introduction" />
+    <meta name="twitter:description" content="Welcome to Learning Swift. This is the first post in what I hope will be an extensive series dealing with the Swift language." />
     <meta name="twitter:url" content="http://troz.net/2016/02/learning-swift-an-introduction/" />
 
     <!-- Icons -->
@@ -100,7 +100,7 @@
     
     <a class="fa fa-rss" href="/feed.xml"></a>
     
-      <a class="fa fa-twitter" href="https://twitter.com/sarahreichelt"></a>
+      <a class="fa fa-twitter" href="https://twitter.com/trozware"></a>
     
     
     
@@ -132,18 +132,18 @@
 
 
 <div class="post-header mb2">
-  <h1>learning-swift-an-introduction</h1>
-  <span class="post-meta">7 Feb 2016</span><br>
+  <h1>Learning Swift - An Introduction</h1>
+  <span class="post-meta">9 Feb 2016</span><br>
   
   <span class="post-meta small">
   
-    1 minute read
+    2 minute read
   
   </span>
 </div>
 
 <article class="post-content">
-  <p>Welcome to Learning Swift.</p>
+  <h3 id="welcome-to-learning-swift">Welcome to Learning Swift.</h3>
 
 <p>This is the first post in what I hope will be an extensive series dealing with the Swift language. Here are some of the questions I hope to answer:</p>
 
@@ -154,24 +154,57 @@
   <li>I already know Objective-C - how do I convert?</li>
 </ul>
 
-<p>After that, I am planning a series of posts discussing the major differences of Swift from the view point of an Objective-C programmer. Topics covered will include such things:</p>
+<p>After that, I am planning a series of posts discussing the major differences of Swift from the view point of an Objective-C programmer and the aspects of Swift that I found difficult to grasp. Topics covered will include such things:</p>
 
 <ul>
   <li>optionals</li>
   <li>closures</li>
   <li>functional programming</li>
   <li>protocols</li>
+  <li>generics</li>
 </ul>
 
 <p>I am coming from a background of Objective-C, so many of my posts will be dealing with aspects of Swift that are not familiar to Objective-C programmers. I will not assume any Objective-C programming experience, but some features of Swift that are new to me, will be familiar to people accustomed to other languages.</p>
 
+<hr />
+
+<p>So let’s start by answering the first question:</p>
+
+<h3 id="should-i-learn-swift">Should I learn Swift?</h3>
+
+<p>If you are writing or planning apps for any Apple platform - YES.<br />
+If not, wait until Swift is available for the platforms you need to support.</p>
+
+<hr />
+
+<h3 id="why">Why?</h3>
+
+<h4 id="if-you-are-already-an-ios-or-mac-developer-yes">If you are already an iOS or Mac developer: YES</h4>
+
+<p>This is the new language and Apple is very committed to it. Objective-C is not going away any time soon, but Swift is where it is going to end up, so why not make the jump now while the language is still in development? You have to accept that fact that every release of Xcode is going to break your code, but the automatic re-factoring works very well. And by moving to Swift now, you get the chance to influence the direction of a new language. How often does that happen?</p>
+
+<hr />
+
+<h4 id="if-you-are-starting-to-learn-ios-or-mac-development-yes">If you are starting to learn iOS or Mac development: YES</h4>
+
+<p>If you have no history with Objective-C, then do not waste your time learning it. There is still a lot of sample code out there in Objective-C, but increasing numbers of tutorial sites are using Swift and converting their existing tutorials to Swift. It will help if you know just enough Objective-C to read it, but you do not need to know enough to write it.</p>
+
+<hr />
+
+<h4 id="if-you-do-not-program-for-mac-or-ios-not-yet">If you do NOT program for Mac or iOS: NOT YET</h4>
+
+<p>Swift went open source in late 2015. This is a big deal and Apple’s plans for Swift are quite clear. They want Swift to be such a main-stream language that it is used instead of Java for basic computer science courses in universities. This was never going to happen unless the language was open-source and cross-platform. It is now open-source and available for <a href="https://swift.org/download/#latest-development-snapshots">Linux as well as Mac/iOS</a>. While Apple has not yet released any further ports, I think there are more on the way for Raspberry Pi, Arduino and other embedded systems as well as server-side Swift libraries like <a href="http://perfect.org">Perfect</a>. I expect that a version for Windows will not be far behind.</p>
+
+
 </article>
 
 <br>
-<!-- <a href="/tags/">Tags</a>: swift -->
+<!-- <a href="/tags/">Tags</a>: swift and learning -->
 Tags: 
 
     <a href="/tags/#swift">swift</a>&nbsp;&nbsp;
+
+    <a href="/tags/#learning">learning</a>&nbsp;&nbsp;
 
 <hr>
 
@@ -184,7 +217,7 @@ Tags:
   <script type="text/javascript">
     var disqus_shortname  = 'trozware';
     var disqus_identifier = '/2016/02/learning-swift-an-introduction';
-    var disqus_title      = 'learning-swift-an-introduction';
+    var disqus_title      = 'Learning Swift - An Introduction';
 
     (function() {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
