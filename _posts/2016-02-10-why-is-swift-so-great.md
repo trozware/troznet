@@ -1,14 +1,13 @@
 ---
-title: Why is Swift so great
+title: Why is Swift so great?
 author: Sarah
 layout: post
 permalink: /2016/02/why-is-swift-so-great/
 tags:
   - swift
   - learning
-summary: Why is Swift so great? Read Apple's technical answer and then my opinion as a developer.
+summary: Read Apple's technical answer and then my opinion as a developer.
 ---
-## Why is Swift so great?
 
 Firstly, I can give you the technical answer, as published by Apple:
 

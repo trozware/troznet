@@ -7,10 +7,8 @@
     <atom:link href="http://troz.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Why is Swift so great</title>
-        <description>&lt;h2 id=&quot;why-is-swift-so-great&quot;&gt;Why is Swift so great?&lt;/h2&gt;
-
-&lt;p&gt;Firstly, I can give you the technical answer, as published by Apple:&lt;/p&gt;
+        <title>Why is Swift so great?</title>
+        <description>&lt;p&gt;Firstly, I can give you the technical answer, as published by Apple:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Swift is a new programming language for iOS, OS X, watchOS, and tvOS apps that builds on the best of C and Objective-C, without the constraints of C compatibility. Swift adopts safe programming patterns and adds modern features to make programming easier, more flexible, and more fun. Swift’s clean slate, backed by the mature and much-loved Cocoa and Cocoa Touch frameworks, is an opportunity to reimagine how software development works.&lt;br /&gt;&lt;br /&gt;
