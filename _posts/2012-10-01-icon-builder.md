@@ -8,7 +8,7 @@ tags:
   - mac
   - icons
 ---
-[Icon Builder 3.0.1][3] is available from the Mac App Store. 
+[Icon Builder 3.2][3] is available from the Mac App Store. 
 
    [3]: http://itunes.apple.com/app/icon-builder/id552293482?mt=12
 

@@ -20,7 +20,7 @@ App                          || Version | Release Date      | Download Link
 :------ |:------------------- | :-----: | :---------------: | -------------:
 ![][2] | [A Knight&#8217;s Move][3] | 1.4     | 14 Jan 2014   | <a href="https://itunes.apple.com/us/app/a-knights-move/id533321133?mt=12&#038;uo=4" target="itunes_store" class="mac_apps"></a>
 ![][28] | [Dice Pass][29] | 1.0     | 29 May 2015   | <a href="https://itunes.apple.com/app/dice-pass/id997688302?mt=12&#038;uo=4" target="itunes_store" class="mac_apps"></a>
-![][6] | [Icon Builder][7]          | 3.1   | 16 Dec 2015  | <a href="https://itunes.apple.com/us/app/icon-builder/id552293482?mt=12&#038;uo=4" target="itunes_store" class="mac_apps"></a>
+![][6] | [Icon Builder][7]          | 3.2   | 10 Feb 2016  | <a href="https://itunes.apple.com/us/app/icon-builder/id552293482?mt=12&#038;uo=4" target="itunes_store" class="mac_apps"></a>
 ![][8] | [Man Reader][9]            | 1.5     | 14 Jan 2016      | <a href="https://itunes.apple.com/us/app/man-reader/id522583774?mt=12&#038;uo=4" target="itunes_store" class="mac_apps"></a>
 ![][12] | [Pic-a-POD][13]           | 2.0.6   | 27 Aug 2012    | <a href="https://itunes.apple.com/us/app/pic-a-pod/id477909802?mt=12&#038;uo=4" target="itunes_store" class="mac_apps"></a>
 ![][14] | [World Time In Words][15] | 3.0     | 9 Feb 2015  | <a href="https://itunes.apple.com/us/app/time-in-words/id509085586?mt=12&#038;uo=4" target="itunes_store" class="mac_apps"></a>

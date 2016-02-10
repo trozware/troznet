@@ -14,7 +14,7 @@ Once of them is something I can fix and the other appears to be a bug in Xcode 7
 
 ---
 
-**Update:** Version 3.2 of Icon Builder has been submitted to the Mac App Store for review. This removes the alpha channel from icons for a watch app.
+**Update:** Version 3.2 of Icon Builder is now available in the [Mac App Store][3]. This removes the alpha channel from icons for a watch app.
 
 ---
 
@@ -43,3 +43,4 @@ As you can see in the error message, the icon name (which is set by Xcode) does 
 
 [1]: https://www.cocoacontrols.com/controls/alpha-channel-remover
 [2]: http://www.openradar.me/23801324
+[3]: http://itunes.apple.com/app/man-reader/id522583774?mt=12
