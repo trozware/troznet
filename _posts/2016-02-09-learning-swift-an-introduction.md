@@ -14,7 +14,7 @@ summary: Welcome to Learning Swift. This is the first post in what I hope will b
 This is the first post in what I hope will be an extensive series dealing with the Swift language. Here are some of the questions I hope to answer:
 
 * Should I learn Swift? Why?
-* Why is Swift do great?
+* Why is Swift so great?
 * How should I start learning Swift?
 * I already know Objective-C - how do I convert?
 

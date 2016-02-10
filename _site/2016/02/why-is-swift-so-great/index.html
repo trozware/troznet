@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Interface options for selecting time zones &#8211; TrozWare</title>
+    <title>Why is Swift so great &#8211; TrozWare</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Mac &amp;amp; iOS Developer">
+    <meta name="description" content="Why is Swift so great? Read Apple&#39;s technical answer and then my opinion as a developer.">
     <meta name="author" content="Sarah Reichelt">
     <meta name="keywords" content="">
-    <link rel="canonical" href="http://troz.net/interface-options-for-selecting-time-zones/">
+    <link rel="canonical" href="http://troz.net/2016/02/why-is-swift-so-great/">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for TrozWare" href="/feed.xml" />
 
     <!-- Custom CSS -->
@@ -31,9 +31,9 @@
     <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Interface options for selecting time zones">
+    <meta property="og:title" content="Why is Swift so great">
     <meta property="og:description" content="Mac &amp;amp; iOS Developer">
-    <meta property="og:url" content="http://troz.net/interface-options-for-selecting-time-zones/">
+    <meta property="og:url" content="http://troz.net/2016/02/why-is-swift-so-great/">
     <meta property="og:site_name" content="TrozWare">
 
     <!-- Twitter Card -->
@@ -41,9 +41,9 @@
     
         <meta name="twitter:site" content="@trozware" />
     
-    <meta name="twitter:title" content="Interface options for selecting time zones" />
-    <meta name="twitter:description" content="Mac &amp; iOS Developer" />
-    <meta name="twitter:url" content="http://troz.net/interface-options-for-selecting-time-zones/" />
+    <meta name="twitter:title" content="Why is Swift so great" />
+    <meta name="twitter:description" content="Why is Swift so great? Read Apple's technical answer and then my opinion as a developer." />
+    <meta name="twitter:url" content="http://troz.net/2016/02/why-is-swift-so-great/" />
 
     <!-- Icons -->
     <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-touch-icon-57x57.png">
@@ -132,56 +132,63 @@
 
 
 <div class="post-header mb2">
-  <h1>Interface options for selecting time zones</h1>
-  <span class="post-meta">25 Feb 2012</span><br>
+  <h1>Why is Swift so great</h1>
+  <span class="post-meta">10 Feb 2016</span><br>
   
   <span class="post-meta small">
   
-    2 minute read
+    3 minute read
   
   </span>
 </div>
 
 <article class="post-content">
-  <p>As part of the design for <a href="/under-development/">Time In Words for Mac</a>, I had to work out the interface for selecting time zones. With <a href="/time-in-words/">Time In Word for iOS</a>, I used picker wheels which are excellent for selecting hierarchical data. On the Mac, there is no such thing as the iOS picker wheel and so I had to consider what to use instead.</p>
+  <h2 id="why-is-swift-so-great">Why is Swift so great?</h2>
 
-<p>When you ask the system (Mac or iOS) for the available time zones, you get a list of names like this:
-&gt; Africa/Abidjan<br />
-&gt; Africa/Accra<br />
-&gt; …<br />
-&gt; America/Cayman<br />
-&gt; America/Chicago<br />
-&gt; …<br />
-&gt; Europe/Riga<br />
-&gt; Europe/Rome<br />
-&gt; etc.</p>
+<p>Firstly, I can give you the technical answer, as published by Apple:</p>
 
-<p>This seems obviously designed for a hierarchical display with the major regions as a first selection, filtering down to the cities in that region, making selection a two-step process. With the picker wheel in iOS, that is what I did. The first wheel selects the region which then populates the second wheel with the relevant city names. It makes it quick and easy to select a zone.</p>
+<blockquote>
+  <p>Swift is a new programming language for iOS, OS X, watchOS, and tvOS apps that builds on the best of C and Objective-C, without the constraints of C compatibility. Swift adopts safe programming patterns and adds modern features to make programming easier, more flexible, and more fun. Swift’s clean slate, backed by the mature and much-loved Cocoa and Cocoa Touch frameworks, is an opportunity to reimagine how software development works.<br /><br />
+Swift has been years in the making. Apple laid the foundation for Swift by advancing our existing compiler, debugger, and framework infrastructure. We simplified memory management with Automatic Reference Counting (ARC). Our framework stack, built on the solid base of Foundation and Cocoa, has been modernized and standardized throughout. Objective-C itself has evolved to support blocks, collection literals, and modules, enabling framework adoption of modern language technologies without disruption. Thanks to this groundwork, we can now introduce a new language for the future of Apple software development.”</p>
+</blockquote>
 
-<p>I always prefer to use standard user interface objects because people are familiar with them, they automatically update with the system, and there is much less chance of the App Store rejecting the app. So I scrolled through the available Mac options and came to NSBrowser. This is basically what Finder uses when in column mode.</p>
+<p>Excerpt From: Apple Inc. “<a href="https://itunes.apple.com/book/swift-programming-language/id881256329">The Swift Programming Language (Swift 2.1)</a>.”</p>
 
-<p>I created an NSBrowser object, worked out a way to populate it and tested. It was incredibly slow! The list of regions appeared when the window opened, and that was no problem. Then I clicked a region and the first set of city names appeared instantly. But subsequent selections took about 3 seconds to appear.</p>
+<hr />
 
-<p>I added some timing tests and my data gathering was taking about 20 milliseconds. The log thought the browser had updated within about 100 milliseconds, so I guess the rest of the time was some redraw issue.</p>
+<h3 id="now-i-can-give-you-my-opinion">Now I can give you my opinion:</h3>
 
-<p>Apple provides a large number of sample projects so I downloaded one that used NSBrowser. It seemed fast and responsive, so I duplicated it’s different method of assembling the data and tried again. No luck – it was as slow as before.</p>
+<ul>
+  <li>Swift makes for code that is easier &amp; faster to write.</li>
+  <li>Swift makes for code that is easier &amp; cleaner to read (much more important than ease of writing).</li>
+  <li>Swift code is safer code.</li>
+  <li>Swift breaks free from the out-dated conventions of C-based languages.</li>
+</ul>
 
-<p>I am sure that if I kept at it, I would eventually work out what was causing the bottleneck and make NSBrowser work – after all, Finder is responsive enough, even if not great. But in the end, I decided that the advantages to using this form of interface didn’t justify the time spent, so I went with a simple table and a search field.</p>
+<hr />
 
-<p>It is fast to populate, responsive to searches and didn’t take long to set up. So I am happy, although still perplexed about NSBrowser. It is on my to-do list of things I want to work out one day.</p>
+<p>When Apple announced Swift at WWDC 2105, I was astounded. That such a major event could have been kept completely secret was amazing. Then I watched every video from WWDC 2015 that discussed Swift. Some were beyond me and others I absorbed. Looking back, I can see that the development of Objective-C over the past few years was all aimed at getting to this point, especially with the introduction of ARC and blocks.</p>
+
+<p>At that time, I was deeply involved in an existing Objective-C project and not able to  do much in Swift. But I went through the introduction at the start of the <a href="https://itunes.apple.com/book/swift-programming-language/id881256329">Swift Programming Language</a> book in iBooks and was able to get some ideas about how the language worked.</p>
+
+<p>Some months later, I was able to spend time on Swift. As a learning exercise, I converted an existing Objective-C iOS app to Swift. As might be expected, I really just wrote Objective-C code using Swift syntax. It took a lot more learning before I was able to write Swift-y code instead of just translated Objective-C. In future posts of this series, I hope to enable others to cross that divide faster than I did.</p>
+
+<p>Now when I go back to an Objective-C app, I feel like I am walking a tight-rope. When I use an NSArray, NSSet or NSDictionary, I think “How can I tell what sort of objects are in that array?”. When I use an object, I think “What if that object is nil?”. All of a sudden, code that appeared stable now feels random.</p>
+
+<hr />
+
+<p>One of the big things that people have latched onto with Swift is that it allows functional programming. I plan several detailed posts on functional programming in this series. But for now I would just recommend that you not worry about the distinction between procedural &amp; functional programming. Both have their advocates and their detractors. Both have their advantages and disadvantages. Just do what ever works for you and we can worry about this later.</p>
 
 
 </article>
 
 <br>
-<!-- <a href="/tags/">Tags</a>: time in words, mac, and ui -->
+<!-- <a href="/tags/">Tags</a>: swift and learning -->
 Tags: 
 
-    <a href="/tags/#time in words">time in words</a>&nbsp;&nbsp;
+    <a href="/tags/#swift">swift</a>&nbsp;&nbsp;
 
-    <a href="/tags/#mac">mac</a>&nbsp;&nbsp;
-
-    <a href="/tags/#ui">ui</a>&nbsp;&nbsp;
+    <a href="/tags/#learning">learning</a>&nbsp;&nbsp;
 
 <hr>
 
@@ -193,8 +200,8 @@ Tags:
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_shortname  = 'trozware';
-    var disqus_identifier = '/interface-options-for-selecting-time-zones';
-    var disqus_title      = 'Interface options for selecting time zones';
+    var disqus_identifier = '/2016/02/why-is-swift-so-great';
+    var disqus_title      = 'Why is Swift so great';
 
     (function() {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
