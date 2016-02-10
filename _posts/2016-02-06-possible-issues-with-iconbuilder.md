@@ -43,4 +43,4 @@ As you can see in the error message, the icon name (which is set by Xcode) does 
 
 [1]: https://www.cocoacontrols.com/controls/alpha-channel-remover
 [2]: http://www.openradar.me/23801324
-[3]: http://itunes.apple.com/app/man-reader/id522583774?mt=12
+[3]: http://itunes.apple.com/app/icon-builder/id552293482
