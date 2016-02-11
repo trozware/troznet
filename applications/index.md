@@ -14,31 +14,32 @@ display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.app
  }
 </style>
 
-## [Mac Apps][1]:
+## Mac Apps:
 
 App                          || Version | Release Date      | Download Link                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 :------ |:------------------- | :-----: | :---------------: | -------------:
-![][2] | [A Knight&#8217;s Move][3] | 1.4     | 14 Jan 2014   | <a href="https://itunes.apple.com/us/app/a-knights-move/id533321133?mt=12&#038;uo=4" target="itunes_store" class="mac_apps"></a>
-![][28] | [Dice Pass][29] | 1.0     | 29 May 2015   | <a href="https://itunes.apple.com/app/dice-pass/id997688302?mt=12&#038;uo=4" target="itunes_store" class="mac_apps"></a>
-![][6] | [Icon Builder][7]          | 3.2   | 10 Feb 2016  | <a href="https://itunes.apple.com/us/app/icon-builder/id552293482?mt=12&#038;uo=4" target="itunes_store" class="mac_apps"></a>
-![][8] | [Man Reader][9]            | 1.5     | 14 Jan 2016      | <a href="https://itunes.apple.com/us/app/man-reader/id522583774?mt=12&#038;uo=4" target="itunes_store" class="mac_apps"></a>
-![][12] | [Pic-a-POD][13]           | 2.0.6   | 27 Aug 2012    | <a href="https://itunes.apple.com/us/app/pic-a-pod/id477909802?mt=12&#038;uo=4" target="itunes_store" class="mac_apps"></a>
-![][14] | [World Time In Words][15] | 3.0     | 9 Feb 2015  | <a href="https://itunes.apple.com/us/app/time-in-words/id509085586?mt=12&#038;uo=4" target="itunes_store" class="mac_apps"></a>
+![][2] | [A Knight&#8217;s Move][3] | 1.4     | 14 Jan 2014   | <a href="https://itunes.apple.com/app/a-knights-move/id533321133" target="itunes_store" class="mac_apps"></a>
+![][28] | [Dice Pass][29] | 1.0     | 29 May 2015   | <a href="https://itunes.apple.com/app/dice-pass/id997688302" target="itunes_store" class="mac_apps"></a>
+![][6] | [Icon Builder][7]          | 3.2   | 10 Feb 2016  | <a href="https://itunes.apple.com/app/icon-builder/id552293482" target="itunes_store" class="mac_apps"></a>
+![][8] | [Man Reader][9]            | 1.5     | 14 Jan 2016      | <a href="https://itunes.apple.com/app/man-reader/id522583774" target="itunes_store" class="mac_apps"></a>
+![][12] | [Pic-a-POD][13]           | 2.0.6   | 27 Aug 2012    | <a href="https://itunes.apple.com/app/pic-a-pod/id477909802" target="itunes_store" class="mac_apps"></a>
+![][14] | [World Time In Words][15] | 3.0     | 9 Feb 2015  | <a href="https://itunes.apple.com/app/time-in-words/id509085586" target="itunes_store" class="mac_apps"></a>
 ![][16] | [TiW Screen Saver][17]    | 1.2     | 23 Jan 2013   | [Download][18]
 
 <br>
 <br>
   
-## [iOS Apps][19]:
+## iOS Apps:
 
 App                          || Version | Release Date      | Download Link                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 :------ |:------------------- | :-----: | :---------------: | -------------:
-![][20] | [19th Hole Golf Scorer][21]                  | 3.0     | 7 Dec 2015     | <a href="https://itunes.apple.com/us/app/the-19th-hole/id871686159?mt=8&#038;uo=4" target="itunes_store" class="ios_apps"></a>
-![][22] | [A Knight&#8217;s Move][3]       | 1.4     | 17 Jan 2014 | <a href="https://itunes.apple.com/us/app/a-knights-move/id530090451?mt=8&#038;uo=4" target="itunes_store" class="ios_apps"></a>
-![][23] | [Berio&#8217;s Sequenza VII][24] | 1.1     | 25 Feb 2015 | <a href="https://itunes.apple.com/us/app/sequenza-vii/id730234638?mt=8&#038;uo=4" target="itunes_store" class="ios_apps"></a>
-![][30] | [Dice Pass][29] | 1.0     | 6 Jun 2015 | <a href="https://itunes.apple.com/app/dice-pass/id998397511?mt=8&#038;uo=4" target="itunes_store" class="ios_apps"></a>
-![][25] | [Pic-a-POD][13]                  | 2.0     | 23 Oct 2013 | <a href="https://itunes.apple.com/us/app/pic-a-pod/id480086912?mt=8&#038;uo=4" target="itunes_store" class="ios_apps"></a>
-![][26] | [Time In Words][27]              | 4.0     | 23 Apr 2015 | <a href="https://itunes.apple.com/us/app/time-in-words/id498403851?mt=8&#038;uo=4" target="itunes_store" class="ios_apps"></a>
+![][20] | [19th Hole Golf Scorer][21]                  | 3.0     | 7 Dec 2015     | <a href="https://itunes.apple.com/app/the-19th-hole/id871686159" target="itunes_store" class="ios_apps"></a>
+![][22] | [A Knight&#8217;s Move][3]       | 1.4     | 17 Jan 2014 | <a href="https://itunes.apple.com/app/a-knights-move/id530090451" target="itunes_store" class="ios_apps"></a>
+![][23] | [Berio&#8217;s Sequenza VII][24] | 1.1     | 25 Feb 2015 | <a href="https://itunes.apple.com/app/sequenza-vii/id730234638" target="itunes_store" class="ios_apps"></a>
+![][30] | [Dice Pass][29] | 1.0     | 6 Jun 2015 | <a href="https://itunes.apple.com/app/dice-pass/id998397511" target="itunes_store" class="ios_apps"></a>
+![][31] | [Quick Score - Tennis][32]                  | 1.0     | 10 Feb 2016 | <a href="https://itunes.apple.com/app/quick-score-tennis/id1065155745" target="itunes_store" class="ios_apps"></a>
+![][25] | [Pic-a-POD][13]                  | 2.0     | 23 Oct 2013 | <a href="https://itunes.apple.com/app/pic-a-pod/id480086912" target="itunes_store" class="ios_apps"></a>
+![][26] | [Time In Words][27]              | 4.0     | 23 Apr 2015 | <a href="https://itunes.apple.com/app/time-in-words/id498403851" target="itunes_store" class="ios_apps"></a>
 
 
  [1]: /apps-mac/ "Apps for Mac"
@@ -71,4 +72,5 @@ App                          || Version | Release Date      | Download Link
  [28]: /icons/DicePass_36.png
  [29]: /dicepass/
  [30]: /icons/DicePass_iOS-36.png
- [31]: https://itunes.apple.com/app/dice-pass/id998397511
+ [31]: /icons/QS-Tennis36.png
+ [32]: /quick-score-tennis/
