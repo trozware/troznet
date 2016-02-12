@@ -71,6 +71,6 @@ App                          || Version | Release Date      | Download Link
  [27]: /time-in-words/
  [28]: /icons/DicePass_36.png
  [29]: /dicepass/
- [30]: /icons/DicePass_iOS-36.png
+ [30]: /icons/DicePass-36.png
  [31]: /icons/QS-Tennis36.png
  [32]: /quick-score-tennis/
