@@ -7,6 +7,193 @@
     <atom:link href="http://troz.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Learning Swift - Optionals</title>
+        <description>&lt;p&gt;Today I plan to discuss optionals since they were a feature of Swift that I found difficult to grasp at first.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-is-an-optional-in-swift&quot;&gt;What is an optional in Swift?&lt;/h3&gt;
+
+&lt;p&gt;An optional is a variable of a specified type that can also be nil.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-does-this-matter&quot;&gt;Why does this matter?&lt;/h3&gt;
+
+&lt;p&gt;In Objective-C, any object type could be nil. If you declared a variable like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;then &lt;code class=&quot;highlighter-rouge&quot;&gt;myString&lt;/code&gt; was set to nil by default.&lt;/p&gt;
+
+&lt;p&gt;But this could cause issues, especially as Objective-C does not complain if you send a message to nil. This could lead to bugs that were very difficult to track down.&lt;/p&gt;
+
+&lt;p&gt;The other big use for nil is when returning from a function which has found no appropriate data to return. The classic example is when looking for the index of an element in an array. What should be returned if the element is not found in the array?&lt;/p&gt;
+
+&lt;p&gt;Some languages return -1, Objective-C uses &lt;code class=&quot;highlighter-rouge&quot;&gt;NSNotFound&lt;/code&gt;, but you have to know what each language is going to do. The more logical answer is nil. However if your function is expected to return an integer, then it cannot return nil because nil is not an integer.&lt;/p&gt;
+
+&lt;p&gt;This is where optionals come in: if the function is expected to return an optional integer, it can return with an integer with the index of the matching element, or it can return nil if the element was not found. This is much clearer and less prone to error.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;how-does-swift-handle-optionals&quot;&gt;How does Swift handle optionals?&lt;/h2&gt;
+
+&lt;p&gt;One of the first things that struck me about Swift was how clean the code looked, without so many non-alphanumeric characters scattered around. Gone were all the:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;But instead, Swift code sprouted:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;What were these?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The key to understanding optionals is to realise that when you declare an optional variable of a certain type, you are actually declaring a box that can hold a variable of that type or can hold nil.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you grasp that concept, it all becomes much more obvious.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;optionalInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The ? indicates that this is an optional variable. It does not have to be initialised as it is already set to nil which is valid for an optional variable. Without the ? this would require initialisation as it would not be valid for it to be nil.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;setting-an-optional&quot;&gt;Setting an optional:&lt;/h3&gt;
+
+&lt;p&gt;Setting the value of an optional variable is just the same as any other variable:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;n&quot;&gt;optionalInteger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;optionalInteger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;getting-an-optional&quot;&gt;Getting an optional:&lt;/h3&gt;
+
+&lt;p&gt;The difference arises when you need to get the data out of the optional variable in order to use it. This process is called un-wrapping and it means to get the variable value out of the ‘box’ it is stored it.&lt;/p&gt;
+
+&lt;h4 id=&quot;the-most-obvious-way-is-to-use-&quot;&gt;The most obvious way is to use !&lt;/h4&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;newInteger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;optionalInteger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;DO NOT DO THIS!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This is called forced-unwrapping and assumes that the optional variable is not nil. If the optional is nil, this will crash.
+In Xcode, when you connect interface elements from your storyboard to a Swift file, Xcode will use ! like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;@IBOutlet&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;weak&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;startButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;I have to assume Xcode knows what it is doing and the button will be available when needed, but you should not use ! - it is un-safe. By using it, you are vowing to the compiler that when it gets to that point, the optional value will not be nil. There are much better and safer ways of doing that.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;use-if-let&quot;&gt;Use ‘if let’:&lt;/h4&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doubleNumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;optionalInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;integerValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;optionalInteger&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// integerValue is not an optional&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// and is guaranteed to contain an Int&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;integerValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// no integer found in the optional,&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// so return nil to indicate failure&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;use-guard&quot;&gt;Use guard:&lt;/h4&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doubleNumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;optionalInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;integerValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;optionalInteger&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// get out quickly, &lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// returning nil to indicate failure&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// integerValue is not an optional &lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// and is guaranteed to contain an Int&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;integerValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;These two alternatives (&lt;code class=&quot;highlighter-rouge&quot;&gt;if let&lt;/code&gt; &amp;amp; &lt;code class=&quot;highlighter-rouge&quot;&gt;guard&lt;/code&gt;) do the same job but in opposite ways. In both cases, they perform a conditional un-wrapping that may or may not give a valid result. &lt;code class=&quot;highlighter-rouge&quot;&gt;if let&lt;/code&gt; checks if it is OK to proceed. &lt;code class=&quot;highlighter-rouge&quot;&gt;guard&lt;/code&gt; checks to see if it is NOT OK to proceed. Which you use is really a matter of personal preference and working out what is more logical in each case.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;guard&lt;/code&gt; statement is really good for checking data early in a process and making a quick exit it something is wrong.
+The &lt;code class=&quot;highlighter-rouge&quot;&gt;if let&lt;/code&gt; construct encloses your success code inside a block and can sometimes leave the failure code a long way from the check which can make it less obvious. The other potential issue with &lt;code class=&quot;highlighter-rouge&quot;&gt;if let&lt;/code&gt; is the “pyramid of doom” common in early Swift code as demonstrated in this rather contrived example:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isValidAddressBookEntry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;emailAddress&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;phoneNumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;validFirstName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;firstName&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;validLastName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lastName&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;validEmail&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emailAddress&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;validPhone&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;phoneNumber&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Thankfully, Swift 2 allows us to chain both &lt;code class=&quot;highlighter-rouge&quot;&gt;if let&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;guard&lt;/code&gt; statements. Here is the previous example re-factored for Swift 2:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isValidAddressBookEntry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;emailAddress&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;phoneNumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;validFirstName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;validLastName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;validEmail&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emailAddress&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;validPhone&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;phoneNumber&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;use-optional-chaining&quot;&gt;Use optional chaining:&lt;/h4&gt;
+
+&lt;p&gt;The final way to deal with optionals safely is to use optional chaining:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SocialMediaAccounts&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;facebook&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;twitter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;handle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;socialMedia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SocialMediaAccounts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;socialMedia&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SocialMediaAccounts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;twitterAccount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;socialMedia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;facebook&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;twitterAccount&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;twitterHandle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;socialMedia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;twitter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;handle&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;In this example, we have defined a &lt;code class=&quot;highlighter-rouge&quot;&gt;SocialMediaAccounts&lt;/code&gt; struct that holds optional &lt;code class=&quot;highlighter-rouge&quot;&gt;Person&lt;/code&gt; structs for the various social media outlets. The &lt;code class=&quot;highlighter-rouge&quot;&gt;socialMedia&lt;/code&gt; variable is defined as an optional and then created. A &lt;code class=&quot;highlighter-rouge&quot;&gt;twitterAccount&lt;/code&gt; variable of type &lt;code class=&quot;highlighter-rouge&quot;&gt;Person&lt;/code&gt; is also created but contains no data at the moment.&lt;/p&gt;
+
+&lt;p&gt;When assigning the &lt;code class=&quot;highlighter-rouge&quot;&gt;twitterAccount&lt;/code&gt; to the &lt;code class=&quot;highlighter-rouge&quot;&gt;socialMedia.twitter&lt;/code&gt; property, a ? is inserted which checks to see that &lt;code class=&quot;highlighter-rouge&quot;&gt;socialMedia&lt;/code&gt; is not nil. If it is nil, then execution of that line stops at the ? and nothing bad will happen.&lt;/p&gt;
+
+&lt;p&gt;In the same way, when trying to read back the twitter handle, we chained together 2 optionals with ?’s. If either &lt;code class=&quot;highlighter-rouge&quot;&gt;socialMedia&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;socialMedia.twitter&lt;/code&gt; is nil, that line will not complete. Again this is perfectly safe and the app will not crash.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;All the examples in this article are available in a &lt;a href=&quot;https://github.com/trozware/optionals&quot;&gt;Swift playground&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 12 Feb 2016 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2016/02/learning-swift-optionals/</link>
+        <guid isPermaLink="true">http://troz.net/2016/02/learning-swift-optionals/</guid>
+      </item>
+    
+      <item>
         <title>Quick Score - Tennis</title>
         <description>&lt;p&gt;Quick Score: Tennis is available from the &lt;a href=&quot;https://itunes.apple.com/app/quick-score-tennis/id1065155745&quot;&gt;iTunes App Store&lt;/a&gt; for iPhone and Apple Watch.&lt;/p&gt;
 
@@ -301,74 +488,6 @@ This version is a complete re-write to accommodate the changes in iOS 9 and watc
         <pubDate>Sat, 30 May 2015 00:00:00 +1000</pubDate>
         <link>http://troz.net/2015/05/dice-pass-for-mac/</link>
         <guid isPermaLink="true">http://troz.net/2015/05/dice-pass-for-mac/</guid>
-      </item>
-    
-      <item>
-        <title>Dice Pass</title>
-        <description>&lt;p&gt;Dice Pass is available from the &lt;a href=&quot;https://itunes.apple.com/us/app/dice-pass/id997688302&quot;&gt;Mac App Store&lt;/a&gt; for Mac OS X and the &lt;a href=&quot;https://itunes.apple.com/app/dice-pass/id998397511&quot;&gt;iTunes App Store&lt;/a&gt; for iPhone or iPad.&lt;/p&gt;
-
-&lt;p&gt;Dice Pass is a utility to app to generate random passphrases based on the &lt;a href=&quot;http://world.std.com/~reinhold/diceware.html&quot;&gt;Diceware system&lt;/a&gt;. Diceware uses a table of pre-defined words, each assigned a 5 digit code number containing the digits 1 to 6. The official way to generate a phrase is to roll 5 dice for each word you want in your passphrase and then consult the words table to find the matching word.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/DicePass_iOS.png&quot; alt=&quot;Dice Pass for Mac&quot; /&gt;
-&lt;br /&gt; Dice Pass for iOS&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/DicePass_Mac.png&quot; alt=&quot;Dice Pass for Mac&quot; /&gt;
-&lt;br /&gt; Dice Pass for Mac&lt;/p&gt;
-
-&lt;p&gt;The resulting phrase uses real words or common abbreviations, so it is easier to remember than a random collection of characters. At the same time, the random selection of words makes the generated passphrase much more secure as it avoids the human tendency to pick words with personal meaning.&lt;/p&gt;
-
-&lt;p&gt;The Diceware system was invented by Arnold Reinhold. This utility is not associated with or supported by Arnold Reinhold in any way, but uses his techniques with thanks. For more information about Diceware, have a look at the &lt;a href=&quot;http://world.std.com/%7Ereinhold/dicewarefaq.html&quot;&gt;Diceware Passphrase FAQ page&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The word list used in this app is a variation compiled by &lt;a href=&quot;http://world.std.com/~reinhold/beale.wordlist.asc&quot;&gt;Alan Beale&lt;/a&gt; that removes some of the more obscure words.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;faq&quot;&gt;F.A.Q.&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;How many words should I use in my passphrase?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Arnold Reinhold recommends 6 words. He used to suggest that 5 was sufficient for most needs, but as of 2014 has increased this to 6. See the Diceware Passphrase FAQ page for more details. (Link above.)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;How often can I re-generate the passphrase?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;As often as you like. Keep clicking until you get a phrase that you can remember. If you get a phrase where most of the words are good but you would like to change one or two, you can click ‘Re-Roll’ on individual words to change them.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Is there a way to check the strength of my passphrase?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;There are many password strength checkers on the internet and three of these are listed below. But always be careful when pasting your passphrase into a web page.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Online password strength checkers:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://rumkin.com/tools/password/passchk.php&quot;&gt;Rumkin.com Strength Test&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://howsecureismypassword.net&quot;&gt;How Secure Is My Password?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.passwordmeter.com&quot;&gt;The Password Meter&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Some of the words in the phrase are not complete words.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;The theory is that shorter words or abbreviations are easier to remember than long ones, without compromising security. But if you get a word you don’t like or think that you will not be able to remember, just re-roll that word.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;What if I want to roll the dice myself?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Dice Pass allows you to tap on the 5 dice to set the numbers needed for each word manually. Each time you tap the number will go up be one, wrapping from 6 back to 1. The app will then look up the word table for you and show the new word.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;When the phrase gets too long I can’t see all the words.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;The “Copy” button will copy the complete passphrase even if it is not all visible. You can also scroll by clicking and dragging along the passphrase.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Does my passphrase get saved by the app or transmitted over the internet?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;No. The app saves no data except for basic preferences (window positioning &amp;amp; size etc.). There is never any data sent over the network and the app will work perfectly if you disconnect your computer before using.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;What are those 3 buttons: #, A and 1?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Some sites may require a passphrase that contains a mix of character types. These buttons will insert a special character, change the start of one word to uppercase, or insert a number. Tap the button again to undo the change. Again, these characters are chosen using the dice roll system and the special characters are selected and positioned using the method and data suggested by Arnold Reinhold.&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 29 May 2015 00:00:00 +1000</pubDate>
-        <link>http://troz.net/dicepass/</link>
-        <guid isPermaLink="true">http://troz.net/dicepass/</guid>
       </item>
     
   </channel>
