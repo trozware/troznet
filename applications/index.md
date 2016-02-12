@@ -73,4 +73,4 @@ App                          || Version | Release Date      | Download Link
  [29]: /dicepass/
  [31]: /icons/QS-Tennis36.png
  [32]: /quick-score-tennis/
- [33]: /icons/DicePass_iOS-36.png
+ [33]: /icons/DicePass-iOS-36.png
