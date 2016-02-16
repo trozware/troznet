@@ -1,6 +1,13 @@
-## How do I start to learn Swift?
-
-The first think to do is to download the latest version of Apple's [Swift Programming Language book][1] from the iBooks Store.
+---
+title: How do I start to learn Swift
+author: Sarah
+layout: post
+permalink: /2016/02/how-do-i-start-to-learn-swift/
+tags:
+  - swift
+  - learning
+---
+The first thing to do is to download the latest version of Apple's [Swift Programming Language book][1] from the iBooks Store.
 
 You can just read this book, especially the first section: "A Swift Tour", but you will get more out of it if you follow along with the playground. There is a link to download the playground from the book which you can use directly if you are reading using iBooks on the Mac. If you are not, here is the [download link][2].
 
@@ -25,6 +32,7 @@ Here are some of my favourites:
 * [Natasha the Robot][6] - my favourite Swift blogger - sign up for her newsletter and follow her on Twitter.
 * [Apple's Swift Blog][7] - not many posts, but good for learning about new features.
 * [Erica Sadun][8] - sometimes a bit too technical for me, but often contains some really useful snippets. Erica has the distinction of being the first person outside Apple to have had a Swift language proposal accepted as part of the open source development process.
+* [Andy Bargh][12] - detailed articles on various aspects of Swift, plus a weekly newsletter.
 * [Ray Wenderlich tutorials][5] - search for Swift and find heaps of tutorials covering many difference aspects.
 * [Swift Sandbox][9] - weekly newsletter filled with interesting articles.
 * [SwiftMonthly][9] - useful newsletter with links to tutorials, videos and projects.
@@ -44,3 +52,4 @@ And I hope you will keep coming back to this site to see what new Swift-related 
 [9]: http://swiftsandbox.io
 [10]: http://swiftmonthly.com
 [11]: http://swiftdoc.org
+[12]: http://andybargh.com
