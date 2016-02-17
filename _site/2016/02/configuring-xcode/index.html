@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Configuring Xcode &#8211; TrozWare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mac &amp;amp; iOS Developer">
+    <meta name="author" content="Sarah Reichelt">
+    <meta name="keywords" content="">
+    <link rel="canonical" href="http://troz.net/2016/02/configuring-xcode/">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for TrozWare" href="/feed.xml" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/pixyll.css" type="text/css">
+
+    <!-- Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    
+
+    <!-- MathJax -->
+    
+
+    <!-- Verifications -->
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Configuring Xcode">
+    <meta property="og:description" content="Mac &amp;amp; iOS Developer">
+    <meta property="og:url" content="http://troz.net/2016/02/configuring-xcode/">
+    <meta property="og:site_name" content="TrozWare">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    
+        <meta name="twitter:site" content="@trozware" />
+    
+    <meta name="twitter:title" content="Configuring Xcode" />
+    <meta name="twitter:description" content="Mac &amp; iOS Developer" />
+    <meta name="twitter:url" content="http://troz.net/2016/02/configuring-xcode/" />
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/icons/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/icons/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/icons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/icons/favicon-32x32.png" sizes="32x32">
+
+    
+    <script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-5511808-2', 'auto');
+       ga('send', 'pageview');
+    </script>
+    
+</head>
+
+<body class="site">
+
+	
+
+  <div class="site-wrap">
+    <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="http://troz.net" class="site-title">TrozWare</a>
+      <nav class="site-nav">
+        <a href="/applications/">Apps</a>
+<a href="/tags/">Tags</a>
+<a href="/archives/">Archives</a>
+<a href="/contact/">Contact</a>
+
+      </nav>
+      <div class="clearfix"></div>
+      
+        <div class="social-icons">
+  <div class="social-icons-right">
+    
+    
+    
+      <a class="fa fa-stack-overflow" href="https://stackoverflow.com/users/1082632"></a>
+    
+    <a class="fa fa-rss" href="/feed.xml"></a>
+    
+      <a class="fa fa-twitter" href="https://twitter.com/trozware"></a>
+    
+    
+    
+    
+    
+      <a class="fa fa-envelope" href="mailto:sarah@troz.net"></a>
+    
+    
+    
+    
+  </div>
+  <div class="right">
+    
+    
+    
+  </div>
+</div>
+<div class="clearfix"></div>
+
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        
+
+
+<div class="post-header mb2">
+  <h1>Configuring Xcode</h1>
+  <span class="post-meta">17 Feb 2016</span><br>
+  
+  <span class="post-meta small">
+  
+    4 minute read
+  
+  </span>
+</div>
+
+<article class="post-content">
+  <p>While not strictly a part of my Learning Swift series, today I thought I would discuss some of the ways to configure and use Xcode to be a more productive and comfortable programmer.</p>
+
+<h3 id="editor-color-themes-and-fonts">1. Editor color themes and fonts:</h3>
+
+<p><img src="/images/XcodeFontPrefs.png" alt="" /></p>
+
+<p>Step through the supplied themes and find the best one for you. Then click the ‘+’ button at the bottom of the list and duplicate the selected theme. Now you can tweak it to suit you. Each text category can have its own font and size, but you can make multiple selections in order to do a bulk change. don’t forget to check out the Console section too - I dislike the default bold text for many of the console reports, so always change that.</p>
+
+<p>An editing font should be mono-spaced i.e. every character should take up exactly the same width on the screen. This makes your code look neater and neater code is easier to read when you come back to it. I also much prefer a sans-serif font, but that is a matter of preference.</p>
+
+<p>Menlo is the font used by Xcode as a default, but there are many other options either in the default installation of OS X or as free downloads. I change every now and then just to keep things interesting, but my favourites are:</p>
+
+<ul>
+  <li><a href="https://github.com/adobe-fonts/source-code-pro">Source Code Pro</a></li>
+  <li><a href="https://github.com/chrissimpkins/hack">Hack</a></li>
+  <li><a href="https://github.com/mozilla/Fira">Fira</a></li>
+  <li><a href="http://www.fontsquirrel.com/fonts/Inconsolata">Inconsolata</a></li>
+</ul>
+
+<p>Look for a font that makes it easy to distinguish the digit ‘1’ from a lowercase ‘l’ and where the digit ‘0’ is different to the ‘O’.</p>
+
+<p>To install and use a new font, download the files and then double-click a TTF or OTF font file to install it in FontBook. Once the font is installed, you may need to restart Xcode in order to make it available.</p>
+
+<hr />
+
+<h3 id="add-ons">2. Add-ons:</h3>
+
+<p>The easiest way to find and install add-ons for Xcode is using the <a href="http://alcatraz.io">Alcatraz package manager</a>. The installation instructions are on the linked page, and once installed, restart Xcode to see “Package Manager” in the Window menu. Adding plugins and themes is very easy, but some may require Xcode to restart before they appear.</p>
+
+<p>When you start Xcode the first time after installing extra plugins, you will get a warning about possible instability due to non-Apple plugins. Click the “Load” button to load them anyway and if Xcode becomes unstable, then delete the one you think might be the culprit.</p>
+
+<p>Alcatraz makes it very easy to un-install add-ons as well as install, so you can test them out.</p>
+
+<p><img src="/images/Alcatraz.png" alt="" /></p>
+
+<p>Here are two of my favourites (search for them by name in the Alcatraz Package Manager window to install them or to see more details):</p>
+
+<h4 id="cocoapods">CocoaPods:</h4>
+
+<p>This puts the power of the CocoaPods command line interface inside Xcode and available through the Products menu.
+<a href="https://cocoapods.org">CocoaPods</a> is a dependency manager for Swift and Objective-C projects. It has over ten thousand libraries so is a great resource for any Apple developers. The CocoaPods site has instructions for installing the tool and then you can use it via this plugin. You may need to change the GEM_PATH as shown in the screen shot below. To find out what you should enter there, open a Terminal window and type <code class="highlighter-rouge">which pod</code> at the prompt:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>which pod
+/usr/local/bin/pod</code></pre></figure>
+
+<p>The result shows exactly where the pod tool is installed, so delete the word <code class="highlighter-rouge">pod</code> in order to get the containing folder and enter that as your GEM_PATH. In my case that was <code class="highlighter-rouge">/usr/local/bin/</code> but yours may be different.</p>
+
+<p><img src="/images/CocoaPods.png" alt="" /></p>
+
+<p><br /></p>
+
+<h4 id="colorsenserainbow">ColorSenseRainbow:</h4>
+
+<p>As you can from the screen shot below, this gives you a color swatch when the cursor is inside a UIColor or NSColor initialiser. Clicking in the swatch pops up the color picker which can edit the color in your code.</p>
+
+<p><img src="/images/ColorSenseRainbow.png" alt="" /></p>
+
+<hr />
+
+<h3 id="documentation">3. Documentation:</h3>
+
+<p>Xcode has excellent documentation, but unless you specifically download it, this will all be accessed online. If you have a bad or non-existent connection, this can be annoying. Go to Xcode’s Preferences -&gt; Downloads and download all the document sets you are interested in. They are quite large, but having them local will be a big bonus.</p>
+
+<p>The other tool I use for documentation is <a href="https://kapeli.com/dash">Dash</a>. It supports many languages and is not just for use in Xcode. I found the Xcode integration plugin was not very useful as it conflicted with other useful behaviours. So I set up a global shortcut in System Preferences to search Dash for the selected text. This is much faster than Xcode’s built-in documentation.</p>
+
+<p><img src="/images/Dash.png" alt="" /></p>
+
+<hr />
+
+<h3 id="other-preferences">4. Other preferences:</h3>
+
+<p>Go through the preference panes in Xcode’s preferences and tweak to suit your style or your group’s preferred style.</p>
+
+<p>General and Text Editing are important. Text Editing has a second tab for Indentation which is easy to miss. Indentation styles seem to cause a lot of heated debate, so make sure you check this out.</p>
+
+<p>Accounts is vital if you are publishing to the App Stores and also makes it easy to transfer all your develop information from one computer to another.</p>
+
+<p>Fonts &amp; Colors and Downloads are discussed above.</p>
+
+<p>I tend to leave the  others set to the defaults.</p>
+
+
+</article>
+
+<br>
+<!-- <a href="/tags/">Tags</a>: xcode and learning -->
+Tags: 
+
+    <a href="/tags/#xcode">xcode</a>&nbsp;&nbsp;
+
+    <a href="/tags/#learning">learning</a>&nbsp;&nbsp;
+
+<hr>
+
+
+
+
+
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname  = 'trozware';
+    var disqus_identifier = '/2016/02/configuring-xcode';
+    var disqus_title      = 'Configuring Xcode';
+
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="center">
+  <div class="measure">
+    <small>
+      Theme crafted with &lt;3 by <a href="http://johnotander.com">John Otander</a> (<a href="https://twitter.com/4lpine">@4lpine</a>).<br>
+      &lt;/&gt; available on <a href="https://github.com/johnotander/pixyll">Github</a>.
+    </small>
+  </div>
+</footer>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-5511808-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>
