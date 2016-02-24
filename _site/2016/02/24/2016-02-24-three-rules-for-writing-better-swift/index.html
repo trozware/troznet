@@ -1,0 +1,60 @@
+<h3 id="do-not-use-">1. Do not use !</h3>
+
+<p>Swift uses optionals for values that can be nil. To use an optional value, you need to “un-wrap” it first, which means getting the actual value out. assuming that the value exists and the optional is not actually nil.</p>
+
+<p><a href="/2016/02/learning-swift-optionals/">Optionals</a> are the subject of a complete post by themselves, but for now, I will just say this:
+When you use ! you are <strong>promising</strong> the compiler that you will make sure there is a real value in that optional by the time it is needed.</p>
+
+<p>If this is not the case, your app will crash as shown in this playground:</p>
+
+<p><img src="/images/Playground2.png" alt="Playground crash" /></p>
+
+<p>Instead of using ! you should use optional chaining with ? or check the value with <code class="highlighter-rouge">guard</code> or <code class="highlighter-rouge">if let</code> before use.</p>
+
+<p>One trap to beware of is with Xcode’s attempts to be helpful and suggest fixes to problems. If you use an optional where it cannot work, Xcode will warn you that it is incorrect, but the suggested fix will be to insert !</p>
+
+<p><img src="/images/optional_fix.png" alt="Optional fix" /></p>
+
+<p>When you see this, do not accept the suggested fix, but use it as a warning to show that you need to fix the problem properly.</p>
+
+<hr />
+
+<h3 id="use-let-not-var">2. Use let, not var</h3>
+
+<p>Using constants in C-based languages is a pain. I could never remember the Objective-C syntax for declaring a static constant, so used to fall back to using #define for global constants. Inside my objects, all instance properties were variables, not constants. Inside functions, it was the same.</p>
+
+<p>It doesn’t take much imagination to work out that your apps will perform better and more securely if values that do not need to change are allocated as constants instead of variables.</p>
+
+<p>With Swift, this is easy as you just declare a constant using the <code class="highlighter-rouge">let</code> keyword and declare variables using <code class="highlighter-rouge">var</code>. The Swift compiler will now warn you if you have used <code class="highlighter-rouge">var</code> where <code class="highlighter-rouge">let</code> would do, but I prefer to declare everything using <code class="highlighter-rouge">let</code> and only change to <code class="highlighter-rouge">var</code> when this causes an error as shown in this playground example:</p>
+
+<p><img src="/images/Playground3.png" alt="Playground let error" /></p>
+
+<hr />
+
+<h3 id="allow-the-compiler-to-infer-types">3. Allow the compiler to infer types</h3>
+
+<p>With Objective-C and many other languages, you have to tell the compiler exactly what each variable is going to be: a string, an integer, an object of a certain type.</p>
+
+<p>With Swift, the compiler is clever enough to work this out for you, which can make your code much cleaner looking and easy to read.</p>
+
+<p>There are a few exceptions to this rule which are shown in the playground below:</p>
+
+<p>Lines 3 - 6 are allowing the Swift compiler to decide what the type is and it is choosing valid types: Int, Double, String and UIView.</p>
+
+<p>Line 8 is a case where we do not want the default type, which would be Double so we need to tell the compiler that this one really should be a CGFloat.</p>
+
+<p>Lines 10 &amp; 11 both deal with an array of Ints. In line 10, the values are supplied so the type of the array can be inferred.
+In the second case, the array is initially empty, so the type needs to be specified in the declaration.</p>
+
+<p>Lines 13 and 14 are the same but with dictionaries instead of arrays.</p>
+
+<p>In each case, it would have been valid Swift to specify the type but why bother? The more text you enter , the more change of mistake and it leaves your code looking cluttered.</p>
+
+<p>If you ever need to check what type has been assigned to a constant or variable, Option-click on it in Xcode and you willl get a popup telling you what it is.</p>
+
+<p><img src="/images/Playground4.png" alt="Playground types" /></p>
+
+<hr />
+
+<p>This was going to be five rules, but then I got a bit too verbose so will add more rules in a separate post.</p>
+

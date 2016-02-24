@@ -1,10 +1,19 @@
-## Three Rules for Writing Better Swift:
+---
+title: Three Rules for Writing Better Swift
+author: Sarah
+layout: post
+permalink: /2016/02/three-rules-for-writing-better-swift/
+tags:
+  - swift
+  - learning
+summary: 1. Do not use !.<br>2. Use let, not var.<br>3. Allow the compiler to infer types.
+---
 
 ### 1. Do not use !
 
-Swift uses optionals for values that can be nil. To use an optional value, you need to "un-wrap" it first, which means getting the actual value out. assuming that the value exists and the optional is not actually nil.
+Swift uses optionals for values that can be nil. To use an optional value, you need to "un-wrap" it first, which means getting the actual value out, assuming that the value exists and the optional is not actually nil.
 
-Optionals will be the subject of a complete post by themselves, but for now, I will just say this:
+[Optionals][5] are the subject of a complete post by themselves, but for now, I will just say this:
 When you use ! you are **promising** the compiler that you will make sure there is a real value in that optional by the time it is needed.
 
 If this is not the case, your app will crash as shown in this playground:
@@ -12,6 +21,13 @@ If this is not the case, your app will crash as shown in this playground:
 ![Playground crash][1]
 
 Instead of using ! you should use optional chaining with ? or check the value with `guard` or `if let` before use.
+
+One trap to beware of is with Xcode's attempts to be helpful and suggest fixes to problems. If you use an optional where it cannot work, Xcode will warn you that it is incorrect, but the suggested fix will be to insert !
+
+![Optional fix][4]
+
+When you see this, do not accept the suggested fix, but use it as a warning to show that you need to fix the problem properly.
+
 
 ---
 
@@ -52,9 +68,11 @@ If you ever need to check what type has been assigned to a constant or variable,
 
 ---
 
-This was going to be five rules, but then I got a bot too verbose so will add more rules in a separate post.
+This was going to be five rules, but then I got a bit too verbose so will add more rules in a separate post.
 
 
 [1]: /images/Playground2.png
 [2]: /images/Playground3.png
 [3]: /images/Playground4.png
+[4]: /images/optional_fix.png
+[5]: /2016/02/learning-swift-optionals/

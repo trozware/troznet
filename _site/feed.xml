@@ -7,6 +7,74 @@
     <atom:link href="http://troz.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Three Rules for Writing Better Swift</title>
+        <description>&lt;h3 id=&quot;do-not-use-&quot;&gt;1. Do not use !&lt;/h3&gt;
+
+&lt;p&gt;Swift uses optionals for values that can be nil. To use an optional value, you need to “un-wrap” it first, which means getting the actual value out, assuming that the value exists and the optional is not actually nil.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/2016/02/learning-swift-optionals/&quot;&gt;Optionals&lt;/a&gt; are the subject of a complete post by themselves, but for now, I will just say this:
+When you use ! you are &lt;strong&gt;promising&lt;/strong&gt; the compiler that you will make sure there is a real value in that optional by the time it is needed.&lt;/p&gt;
+
+&lt;p&gt;If this is not the case, your app will crash as shown in this playground:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Playground2.png&quot; alt=&quot;Playground crash&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Instead of using ! you should use optional chaining with ? or check the value with &lt;code class=&quot;highlighter-rouge&quot;&gt;guard&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;if let&lt;/code&gt; before use.&lt;/p&gt;
+
+&lt;p&gt;One trap to beware of is with Xcode’s attempts to be helpful and suggest fixes to problems. If you use an optional where it cannot work, Xcode will warn you that it is incorrect, but the suggested fix will be to insert !&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/optional_fix.png&quot; alt=&quot;Optional fix&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When you see this, do not accept the suggested fix, but use it as a warning to show that you need to fix the problem properly.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;use-let-not-var&quot;&gt;2. Use let, not var&lt;/h3&gt;
+
+&lt;p&gt;Using constants in C-based languages is a pain. I could never remember the Objective-C syntax for declaring a static constant, so used to fall back to using #define for global constants. Inside my objects, all instance properties were variables, not constants. Inside functions, it was the same.&lt;/p&gt;
+
+&lt;p&gt;It doesn’t take much imagination to work out that your apps will perform better and more securely if values that do not need to change are allocated as constants instead of variables.&lt;/p&gt;
+
+&lt;p&gt;With Swift, this is easy as you just declare a constant using the &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; keyword and declare variables using &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt;. The Swift compiler will now warn you if you have used &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; where &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; would do, but I prefer to declare everything using &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; and only change to &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; when this causes an error as shown in this playground example:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Playground3.png&quot; alt=&quot;Playground let error&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;allow-the-compiler-to-infer-types&quot;&gt;3. Allow the compiler to infer types&lt;/h3&gt;
+
+&lt;p&gt;With Objective-C and many other languages, you have to tell the compiler exactly what each variable is going to be: a string, an integer, an object of a certain type.&lt;/p&gt;
+
+&lt;p&gt;With Swift, the compiler is clever enough to work this out for you, which can make your code much cleaner looking and easy to read.&lt;/p&gt;
+
+&lt;p&gt;There are a few exceptions to this rule which are shown in the playground below:&lt;/p&gt;
+
+&lt;p&gt;Lines 3 - 6 are allowing the Swift compiler to decide what the type is and it is choosing valid types: Int, Double, String and UIView.&lt;/p&gt;
+
+&lt;p&gt;Line 8 is a case where we do not want the default type, which would be Double so we need to tell the compiler that this one really should be a CGFloat.&lt;/p&gt;
+
+&lt;p&gt;Lines 10 &amp;amp; 11 both deal with an array of Ints. In line 10, the values are supplied so the type of the array can be inferred.
+In the second case, the array is initially empty, so the type needs to be specified in the declaration.&lt;/p&gt;
+
+&lt;p&gt;Lines 13 and 14 are the same but with dictionaries instead of arrays.&lt;/p&gt;
+
+&lt;p&gt;In each case, it would have been valid Swift to specify the type but why bother? The more text you enter , the more change of mistake and it leaves your code looking cluttered.&lt;/p&gt;
+
+&lt;p&gt;If you ever need to check what type has been assigned to a constant or variable, Option-click on it in Xcode and you willl get a popup telling you what it is.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Playground4.png&quot; alt=&quot;Playground types&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;This was going to be five rules, but then I got a bit too verbose so will add more rules in a separate post.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 24 Feb 2016 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2016/02/three-rules-for-writing-better-swift/</link>
+        <guid isPermaLink="true">http://troz.net/2016/02/three-rules-for-writing-better-swift/</guid>
+      </item>
+    
+      <item>
         <title>Configuring Xcode</title>
         <description>&lt;p&gt;While not strictly a part of my Learning Swift series, today I thought I would discuss some of the ways to configure and use Xcode to be a more productive and comfortable programmer.&lt;/p&gt;
 
@@ -532,31 +600,6 @@ Until I release a new version of Icon Builder that allows for this this, I sugge
         <pubDate>Sat, 06 Feb 2016 00:00:00 +1000</pubDate>
         <link>http://troz.net/2016/02/possible-issues-with-iconbuilder/</link>
         <guid isPermaLink="true">http://troz.net/2016/02/possible-issues-with-iconbuilder/</guid>
-      </item>
-    
-      <item>
-        <title>Man Reader 1.5</title>
-        <description>&lt;p&gt;Man Reader has been updated to version 1.5 with a major improvement in the way it looks for available man pages.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/manreader/&quot;&gt;Man Reader 1.5&lt;/a&gt; is now available through the &lt;a href=&quot;http://itunes.apple.com/app/man-reader/id522583774?mt=12&quot;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h4 id=&quot;change-log&quot;&gt;Change Log:&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Much improved searching for available man pages.&lt;/li&gt;
-  &lt;li&gt;Sand-boxed version now works just as well as the non-sand-boxed.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The main feature of this version is that it solves the previous problems with the App Store version and sand-boxing. This was restricting the number of man pages listed in Man Reader so I had to release a non-sand-boxed version of the app to allow for full functionality.&lt;/p&gt;
-
-&lt;p&gt;However I discovered that although this gave better results, it was still missing a lot of man pages. Version 1.5 now queries the man page files in a completely different way which is listing many more man pages.&lt;/p&gt;
-
-&lt;p&gt;If you previously had downloaded the Man Reader (no SB) version of the app from this site, please revert to the App Store version which you would have needed to have bought in order to use the downloaded app. If you bought the app from Paddle, &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#115;&amp;#097;&amp;#114;&amp;#097;&amp;#104;&amp;#064;&amp;#116;&amp;#114;&amp;#111;&amp;#122;&amp;#046;&amp;#110;&amp;#101;&amp;#116;&amp;#063;&amp;#115;&amp;#117;&amp;#098;&amp;#106;&amp;#101;&amp;#099;&amp;#116;&amp;#061;&amp;#077;&amp;#097;&amp;#110;&amp;#037;&amp;#050;&amp;#048;&amp;#082;&amp;#101;&amp;#097;&amp;#100;&amp;#101;&amp;#114;&amp;#037;&amp;#050;&amp;#048;&amp;#116;&amp;#114;&amp;#097;&amp;#110;&amp;#115;&amp;#102;&amp;#101;&amp;#114;&amp;#037;&amp;#050;&amp;#048;&amp;#116;&amp;#111;&amp;#037;&amp;#050;&amp;#048;&amp;#065;&amp;#112;&amp;#112;&amp;#037;&amp;#050;&amp;#048;&amp;#083;&amp;#116;&amp;#111;&amp;#114;&amp;#101;&quot;&gt;contact me&lt;/a&gt; and I will transfer you to the App Store version. Neither of these other versions will be supported or updated any more.&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 31 Jan 2016 00:00:00 +1000</pubDate>
-        <link>http://troz.net/2016/01/man-reader-1.5/</link>
-        <guid isPermaLink="true">http://troz.net/2016/01/man-reader-1.5/</guid>
       </item>
     
   </channel>
