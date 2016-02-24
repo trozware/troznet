@@ -75,6 +75,92 @@ In the second case, the array is initially empty, so the type needs to be specif
       </item>
     
       <item>
+        <title>Singleton to Protocol</title>
+        <description>&lt;p&gt;I was driving through the town of &lt;a href=&quot;https://en.wikipedia.org/wiki/Singleton,_New_South_Wales&quot;&gt;Singleton&lt;/a&gt; the other day and of course, it got me thinking about using singletons in my apps. Singletons were a very common pattern in Objective-C programming and appear in many of Apple’s own APIs, but seem to be coming increasingly frowned upon in the Swift world.&lt;/p&gt;
+
+&lt;h3 id=&quot;so-what-is-a-singleton&quot;&gt;So what is a singleton?&lt;/h3&gt;
+
+&lt;p&gt;A singleton is a class that only expects to have a single instance. Think of it as a global instance of a class. In some cases this makes perfect sense if there can only ever be one instance of a particular class or if there is a default variant that suits most cases e.g.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sharedApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;NSUserDefaults&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;standardUserDefaults&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;NSNotificationCenter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defaultCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;NSFileManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defaultManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;NSURLSession&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sharedSession&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;If you use an object whose name starts with “shared”, “standard” or “default” you can be pretty sure it is an singleton.&lt;/p&gt;
+
+&lt;h3 id=&quot;and-whats-the-problem-with-singletons&quot;&gt;And what’s the problem with singletons?&lt;/h3&gt;
+
+&lt;p&gt;There are probably many different opinions here but I have two thoughts about this:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;They are effectively global variables and global variables can make your code messy.&lt;/li&gt;
+  &lt;li&gt;If they can be accessed by multiple other objects, possibly at the same time, then you can get conflicts. These can be handled by clever use of background queues, but it isn’t easy.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;what-to-use-instead&quot;&gt;What to use instead?&lt;/h3&gt;
+
+&lt;p&gt;As I drove, I mused on a singleton that I had implemented recently. It was a Logging utility that allowed any object in my app (mostly view controllers) to save a new entry to a log file. The Logging class looked like this (stripped down for clarity):&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Logger&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sharedLogger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Logger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addToEventLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// use private functions to find log file URL&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// append event text with time stamp&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Any object in my app could use the Logger like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kt&quot;&gt;Logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sharedLogger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;addToEventLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newLogEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;When I got to think about how I was using this, I realised that instead of a Logger &lt;em&gt;object&lt;/em&gt; that everything could use, what I really needed was a Loggable &lt;em&gt;behaviour&lt;/em&gt; that I could apply to some classes that would allow them to log events. For me, this was the break-through:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Create a behaviour, not an object.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As soon as I started thinking about this as a behaviour, a protocol became the obvious solution, so this is what I created:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;protocol&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Loggable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// not declaring functions here&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// as they should NOT be over-written&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Loggable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addToEventLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// use private functions to find log file URL&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// append event text with time stamp&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;We run immediately into one of the peculiarities of Swift protocol extensions which has been very well explained by &lt;a href=&quot;http://cjwirth.com/2016/01/20/swift-protocol-extension-weirdness/&quot;&gt;Caesar Wirth&lt;/a&gt;. If I had declared the &lt;code class=&quot;highlighter-rouge&quot;&gt;addToEventLog()&lt;/code&gt; function in the protocol, then any class or struct conforming to this protocol would have been free to over-write this function and provide its own version. This is not what I wanted here - I wanted every object to use the same version. So I left the function declaration out of the protocol definition and only included it in the protocol extension.&lt;/p&gt;
+
+&lt;p&gt;To use this behaviour, a class or struct just has to be declared as conforming to the Loggable protocol:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MyClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Loggable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doSomething&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;addToEventLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;I did something!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;In my case, I knew that I would want all my NSViewControllers to be able to add log events, so instead of setting them all individually as conforming to the protocol, I used this shortcut which extends all NSViewControllers to conform to the protocol.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Loggable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;I added this line to the Loggable.swift file where I declared the protocol and its extension, but outside both of them.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 24 Feb 2016 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2016/02/singleton-to-protocol/</link>
+        <guid isPermaLink="true">http://troz.net/2016/02/singleton-to-protocol/</guid>
+      </item>
+    
+      <item>
         <title>Configuring Xcode</title>
         <description>&lt;p&gt;While not strictly a part of my Learning Swift series, today I thought I would discuss some of the ways to configure and use Xcode to be a more productive and comfortable programmer.&lt;/p&gt;
 
@@ -558,48 +644,6 @@ If not, wait until Swift is available for the platforms you need to support.&lt;
         <pubDate>Tue, 09 Feb 2016 00:00:00 +1000</pubDate>
         <link>http://troz.net/2016/02/learning-swift-an-introduction/</link>
         <guid isPermaLink="true">http://troz.net/2016/02/learning-swift-an-introduction/</guid>
-      </item>
-    
-      <item>
-        <title>Possible issues with Icon Builder &amp; Watch icons</title>
-        <description>&lt;p&gt;It has come to my attention that there are two possible issues with Icon Builder 3.0.1 when using icons created for an Apple Watch app.
-Once of them is something I can fix and the other appears to be a bug in Xcode 7.2&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; Version 3.2 of Icon Builder is now available in the &lt;a href=&quot;http://itunes.apple.com/app/icon-builder/id552293482&quot;&gt;Mac App Store&lt;/a&gt;. This removes the alpha channel from icons for a watch app.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;The first problem is that iTines Connect now requires that the icons for an Apple Watch app include no alpha channel. This is becoming an increasing trend with it first having applied to the large icon file you upload directly to iTunes Connect, then to screen shots. I expect it to extend to iOS app icons soon, but hopefully Mac app icons can continue to include transparency.&lt;/p&gt;
-
-&lt;p&gt;With Apple Watch icons, you are supposed to create a set of square icons and watchOS or iTunesConnect applies the rounding mask. Presumably this is more complicated if the icon contains an alpha channel even if there are no transparent pixels. If your Watch app icons contain an alpha channel, you will see errors like this after uploading your app to iTunes Connect:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Invalid Icon - The watch application ‘AppName.app/Watch/AppName WatchKit App.app’ contains an icon file ‘AppName.app/Watch/AppName WatchKit App.app/AppIcon-Watch24x24@2x.png’ with an alpha channel. Icons should not have an alpha channel.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;You will probably get this error message for every icon size in the Watch app (8 in total).
-Until I release a new version of Icon Builder that allows for this this, I suggest you use this &lt;a href=&quot;https://www.cocoacontrols.com/controls/alpha-channel-remover&quot;&gt;Alpha Channel Remover app&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;In your Xcode project, go to WatchKit App Assets.xcassets, select the AppIcon set, right-click and choose “Show in Finder”. A folder will open containing eight .png files and one .json file. Drag &amp;amp; drop the .png files into the Alpha Channel Remover window and click the “Remove Alpha Channel” button. This will replace all those image files with new versions without alpha channels. To confirm this, select any of the images and press Command-I to get info. In the More Info section, you will see “Alpha channel: No”.&lt;/p&gt;
-
-&lt;p&gt;You can now submit your app again, but that only solves one of the issues.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;The other problem is that you will get a warning about the 44x44@2x.png icon file.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Invalid Icon Name - The watch application ‘AppName.app/Watch/AppName WatchKit App.app’ contains an invalid icon file name ‘AppName.app/Watch/AppName WatchKit App.app/AppIcon-Watch44x44@2x.png’. Make sure that icon file names follow the pattern&lt;br /&gt; “&lt;code class=&quot;highlighter-rouge&quot;&gt;*&amp;lt;dimension&amp;gt;@&amp;lt;scale&amp;gt;x.png&lt;/code&gt;” and they match the required dimensions. Please visit https://developer.apple.com/watchkit/ for more information.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;As you can see in the error message, the icon name (which is set by Xcode) does conform to the required pattern, and the image is the correct size. This appears to be a &lt;a href=&quot;http://www.openradar.me/23801324&quot;&gt;bug in Xcode 7.2&lt;/a&gt; but does not stop you from submitting your app as it is only a warning and not an error. Presumably this will be fixed in later version of Xcode. I am running Xcode 7.2.1 and still see this warning.&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 06 Feb 2016 00:00:00 +1000</pubDate>
-        <link>http://troz.net/2016/02/possible-issues-with-iconbuilder/</link>
-        <guid isPermaLink="true">http://troz.net/2016/02/possible-issues-with-iconbuilder/</guid>
       </item>
     
   </channel>
