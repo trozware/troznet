@@ -7,6 +7,148 @@
     <atom:link href="http://troz.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Learning Swift - Generics</title>
+        <description>&lt;p&gt;One of the nice things about Swift is how clean your code looks. A lot of the weird characters that pepper the code of other languages has been eliminated: No more semi-colons, asterisks etc.&lt;/p&gt;
+
+&lt;p&gt;But then you are reading somebody else’s code and you find these angle brackets all over the place and they don’t seem to make sense.&lt;/p&gt;
+
+&lt;p&gt;What does this mean?&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Comparable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;It looks like it is a function to find the middle element in an array, but what is &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;T: Comparable&amp;gt;&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;[T]&lt;/code&gt; or even just &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt;? They are describing Generic data types.&lt;/p&gt;
+
+&lt;p&gt;Using the dictionary, I find the following definition for &lt;code class=&quot;highlighter-rouge&quot;&gt;generic&lt;/code&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;characteristic of or relating to a class or group of things; not specific.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And that really provides quite a good definition for Swift’s generics too. They allow you to assign a non-specific data type to a function so that function can be used for many different data types.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;But enough of the theory: by far the best way to understand generics is to encounter the problem they are meant to solve and then to solve it.&lt;/p&gt;
+
+&lt;p&gt;The other day I was processing data to feed to a charting library. I ended up with an array of CGFloats, but there were too many of them, so I wrote a function to give me the last x elements of an array of CGFloats:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;endOfArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;CGFloat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;numberOfElementsToInclude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;CGFloat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numberOfElementsToInclude&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;startingElement&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numberOfElementsToInclude&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;endOfArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;startingElement&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;..&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endOfArray&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;largeArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;CGFloat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;4.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;5.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;6.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;7.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;8.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;9.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;10.0&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;smallArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;endOfArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;largeArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;numberOfElementsToInclude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// smallArray now equals [8.0, 9.0, 10.0]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;OK, so &lt;code class=&quot;highlighter-rouge&quot;&gt;largeArray&lt;/code&gt; isn’t actually the largest array you have ever seen, but it works for demo purposes. In my code, I had over 20,000 entries in the large array and only wanted the last 5,000.&lt;/p&gt;
+
+&lt;p&gt;I was completely happy with that until I found another data source where the data was an array of Ints. Still perfectly chartable using my charting library, but I could not get the end of the array using my nice function. First thought was to replicate the function:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;endOfArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;numberOfElementsToInclude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numberOfElementsToInclude&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;startingElement&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numberOfElementsToInclude&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;endOfArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;startingElement&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;..&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endOfArray&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;largeArrayInt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; 	&lt;span class=&quot;c1&quot;&gt;// type inferred to be Int&lt;/span&gt;
+    &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;smallArrayInt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;endOfArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;largeArrayInt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;numberOfElementsToInclude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// smallArrayInt now equals [4, 5, 6, 7, 8, 9, 10]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;A quick glance will reveal that the declaration line was the only thing that changed. I didn’t have to give the function a new name because the compiler worked out which of the two functions to use based on the types supplied. So all I was doing was replacing &lt;code class=&quot;highlighter-rouge&quot;&gt;CGFloat&lt;/code&gt; with &lt;code class=&quot;highlighter-rouge&quot;&gt;Int&lt;/code&gt; in two places (the &lt;code class=&quot;highlighter-rouge&quot;&gt;numberOfElementsToInclude&lt;/code&gt; parameter remains an &lt;code class=&quot;highlighter-rouge&quot;&gt;Int&lt;/code&gt; in both cases).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;As soon as you find yourself replicating code and only changing the types of the data, that is a sign that you need to use generics.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;For my first attempt at creating a generic function, all I did was replace the word &lt;code class=&quot;highlighter-rouge&quot;&gt;CGFloat&lt;/code&gt; with &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt; where &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt; indicates some type that will be specified when the function is called. The convention is to use single letters for generic types: &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt; for Type, &lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt; for AnyObject, &lt;code class=&quot;highlighter-rouge&quot;&gt;Z&lt;/code&gt; because you feel like it. The choice is up to you.&lt;/p&gt;
+
+&lt;p&gt;That produced this error:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Generics_error.png&quot; alt=&quot;Generics error&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Use of undeclared type &#39;T&#39;&lt;/code&gt;. Well that seems fair enough… how is the compiler supposed to know what a T is?&lt;/p&gt;
+
+&lt;p&gt;It turns out that this is where the angle brackets come into play. You have to warn the compiler that this function is going to get a generic type and that the &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt; is only a placeholder, not a real type. So this version compiles and works - notice the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;T&amp;gt;&lt;/code&gt; between the function name and the opening bracket:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endOfArray&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;numberOfElementsToInclude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numberOfElementsToInclude&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;startingElement&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numberOfElementsToInclude&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;endOfArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;startingElement&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;..&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endOfArray&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now I have no code duplication and if I ever get another data set that uses a different object type, my function will still work.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Now we know to use generics instead of replicating code that operates in the same way on different data types.&lt;/p&gt;
+
+&lt;p&gt;And we know how to construct a generic function.&lt;/p&gt;
+
+&lt;p&gt;Using it is identical to using the two functions I had before:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;largeArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;CGFloat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;4.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;5.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;6.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;7.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;8.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;9.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;10.0&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;smallArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;endOfArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;largeArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;numberOfElementsToInclude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;largeArrayInt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; 	&lt;span class=&quot;c1&quot;&gt;// type inferred to be Int&lt;/span&gt;
+    &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;smallArrayInt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;endOfArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;largeArrayInt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;numberOfElementsToInclude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You do not have to specify what &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt; is when calling the function, that will be inferred from the supplied data.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Moving on into more advanced use cases, we have two things to consider:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Functions where the generic parameters must conform to a protocol.&lt;/li&gt;
+  &lt;li&gt;Functions that take generic parameters of different types.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The example function I started with (not mine but I forget where I got it… If it is yours, thanks you very much) used:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Comparable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Instead of specifying the type as completely generic, it specified that it must conform to the Comparable protocol.
+This is because the function body used a &lt;code class=&quot;highlighter-rouge&quot;&gt;sort()&lt;/code&gt; function so the generic function needed to be sure that the elements in the array could be compared. This technique can also be used to restrict the parameter types to sub-classes of a certain class.&lt;/p&gt;
+
+&lt;p&gt;For a function with more than one generic data type, you need to use more than one placeholder letter:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;genericWithTwoDifferentTypes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;U&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;param1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;param2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;U&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;And in exactly the same way, both &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;U&lt;/code&gt; can be set to conform to a protocol or be members of a certain super-class.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Hopefully this has taken some of the mystery out of generics, but if you have any questions, please get in touch using the &lt;a href=&quot;/contact/&quot;&gt;Contact page&lt;/a&gt;, comment below or contact me via Twitter: &lt;a href=&quot;https://twitter.com/trozware&quot;&gt;@trozware&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 29 Feb 2016 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2016/02/learning-swift-generics/</link>
+        <guid isPermaLink="true">http://troz.net/2016/02/learning-swift-generics/</guid>
+      </item>
+    
+      <item>
         <title>Singleton to Protocol</title>
         <description>&lt;p&gt;I was driving through the town of &lt;a href=&quot;https://en.wikipedia.org/wiki/Singleton,_New_South_Wales&quot;&gt;Singleton&lt;/a&gt; the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple’s own APIs, but seem to be increasingly frowned upon in the Swift world.&lt;/p&gt;
 
@@ -590,66 +732,6 @@ Please contact me &lt;a href=&quot;https://twitter.com/trozware&quot;&gt;@trozwa
         <pubDate>Tue, 09 Feb 2016 00:00:00 +1000</pubDate>
         <link>http://troz.net/2016/02/new-twitter-account/</link>
         <guid isPermaLink="true">http://troz.net/2016/02/new-twitter-account/</guid>
-      </item>
-    
-      <item>
-        <title>Learning Swift - An Introduction</title>
-        <description>&lt;h3 id=&quot;welcome-to-learning-swift&quot;&gt;Welcome to Learning Swift.&lt;/h3&gt;
-
-&lt;p&gt;This is the first post in what I hope will be an extensive series dealing with the Swift language. Here are some of the questions I hope to answer:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Should I learn Swift? Why?&lt;/li&gt;
-  &lt;li&gt;Why is Swift so great?&lt;/li&gt;
-  &lt;li&gt;How should I start learning Swift?&lt;/li&gt;
-  &lt;li&gt;I already know Objective-C - how do I convert?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;After that, I am planning a series of posts discussing the major differences of Swift from the view point of an Objective-C programmer and the aspects of Swift that I found difficult to grasp. Topics covered will include such things:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;optionals&lt;/li&gt;
-  &lt;li&gt;closures&lt;/li&gt;
-  &lt;li&gt;functional programming&lt;/li&gt;
-  &lt;li&gt;protocols&lt;/li&gt;
-  &lt;li&gt;generics&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I am coming from a background of Objective-C, so many of my posts will be dealing with aspects of Swift that are not familiar to Objective-C programmers. I will not assume any Objective-C programming experience, but some features of Swift that are new to me, will be familiar to people accustomed to other languages.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;So let’s start by answering the first question:&lt;/p&gt;
-
-&lt;h3 id=&quot;should-i-learn-swift&quot;&gt;Should I learn Swift?&lt;/h3&gt;
-
-&lt;p&gt;If you are writing or planning apps for any Apple platform - YES.&lt;br /&gt;
-If not, wait until Swift is available for the platforms you need to support.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;why&quot;&gt;Why?&lt;/h3&gt;
-
-&lt;h4 id=&quot;if-you-are-already-an-ios-or-mac-developer-yes&quot;&gt;If you are already an iOS or Mac developer: YES&lt;/h4&gt;
-
-&lt;p&gt;This is the new language and Apple is very committed to it. Objective-C is not going away any time soon, but Swift is where it is going to end up, so why not make the jump now while the language is still in development? You have to accept that fact that every release of Xcode is going to break your code, but the automatic re-factoring works very well. And by moving to Swift now, you get the chance to influence the direction of a new language. How often does that happen?&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;if-you-are-starting-to-learn-ios-or-mac-development-yes&quot;&gt;If you are starting to learn iOS or Mac development: YES&lt;/h4&gt;
-
-&lt;p&gt;If you have no history with Objective-C, then do not waste your time learning it. There is still a lot of sample code out there in Objective-C, but increasing numbers of tutorial sites are using Swift and converting their existing tutorials to Swift. It will help if you know just enough Objective-C to read it, but you do not need to know enough to write it.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;if-you-do-not-program-for-mac-or-ios-not-yet&quot;&gt;If you do NOT program for Mac or iOS: NOT YET&lt;/h4&gt;
-
-&lt;p&gt;Swift went open source in late 2015. This is a big deal and Apple’s plans for Swift are quite clear. They want Swift to be such a main-stream language that it is used instead of Java for basic computer science courses in universities. This was never going to happen unless the language was open-source and cross-platform. It is now open-source and available for &lt;a href=&quot;https://swift.org/download/#latest-development-snapshots&quot;&gt;Linux as well as Mac/iOS&lt;/a&gt;. While Apple has not yet released any further ports, I think there are more on the way for Raspberry Pi, Arduino and other embedded systems as well as server-side Swift libraries like &lt;a href=&quot;http://perfect.org&quot;&gt;Perfect&lt;/a&gt;. I expect that a version for Windows will not be far behind.&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 09 Feb 2016 00:00:00 +1000</pubDate>
-        <link>http://troz.net/2016/02/learning-swift-an-introduction/</link>
-        <guid isPermaLink="true">http://troz.net/2016/02/learning-swift-an-introduction/</guid>
       </item>
     
   </channel>
