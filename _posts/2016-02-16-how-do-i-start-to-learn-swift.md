@@ -33,7 +33,7 @@ Here are some of my favourites:
 * [Apple's Swift Blog][7] - not many posts, but good for learning about new features.
 * [Erica Sadun][8] - sometimes a bit too technical for me, but often contains some really useful snippets. Erica has the distinction of being the first person outside Apple to have had a Swift language proposal accepted as part of the open source development process.
 * [Andy Bargh][12] - detailed articles on various aspects of Swift, plus a weekly newsletter.
-* [Ray Wenderlich tutorials][5] - search for Swift and find heaps of tutorials covering many difference aspects.
+* [Ray Wenderlich tutorials][5] - search for Swift and find heaps of tutorials covering many different aspects.
 * [Swift Sandbox][9] - weekly newsletter filled with interesting articles.
 * [SwiftMonthly][10] - useful newsletter with links to tutorials, videos and projects.
 * [SwiftDoc.org][11] - the documentation in Xcode is still heavily skewed towards Objective-C programmers and it can be difficult to find Swift-specific entries. This site makes it easy. 

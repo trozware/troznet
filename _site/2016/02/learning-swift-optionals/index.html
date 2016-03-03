@@ -309,7 +309,7 @@ The <code class="highlighter-rouge">if let</code> construct encloses your succes
 <span class="n">socialMedia</span> <span class="o">=</span> <span class="kt">SocialMediaAccounts</span><span class="p">()</span>
 <span class="k">var</span> <span class="nv">twitterAccount</span> <span class="o">=</span> <span class="kt">Person</span><span class="p">()</span>
 
-<span class="n">socialMedia</span><span class="p">?</span><span class="o">.</span><span class="n">facebook</span> <span class="o">=</span> <span class="n">twitterAccount</span>
+<span class="n">socialMedia</span><span class="p">?</span><span class="o">.</span><span class="n">twitter</span> <span class="o">=</span> <span class="n">twitterAccount</span>
 <span class="k">let</span> <span class="nv">twitterHandle</span> <span class="o">=</span> <span class="n">socialMedia</span><span class="p">?</span><span class="o">.</span><span class="n">twitter</span><span class="p">?</span><span class="o">.</span><span class="n">handle</span></code></pre></figure>
 
 <p>In this example, we have defined a <code class="highlighter-rouge">SocialMediaAccounts</code> struct that holds optional <code class="highlighter-rouge">Person</code> structs for the various social media outlets. The <code class="highlighter-rouge">socialMedia</code> variable is defined as an optional and then created. A <code class="highlighter-rouge">twitterAccount</code> variable of type <code class="highlighter-rouge">Person</code> is also created but contains no data at the moment.</p>

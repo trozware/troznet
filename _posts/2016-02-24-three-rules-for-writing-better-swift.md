@@ -33,7 +33,7 @@ When you see this, do not accept the suggested fix, but use it as a warning to s
 
 ### 2. Use let, not var
 
-Using constants in C-based languages is a pain. I could never remember the Objective-C syntax for declaring a static constant, so used to fall back to using #define for global constants. Inside my objects, all instance properties were variables, not constants. Inside functions, it was the same.
+Using constants in C-based languages is a pain. I could never remember the Objective-C syntax for declaring a static constant, so used to fall back to using `#define` for global constants. Inside my objects, all instance properties were variables, not constants. Inside functions, it was the same.
 
 It doesn't take much imagination to work out that your apps will perform better and more securely if values that do not need to change are allocated as constants instead of variables.
 
