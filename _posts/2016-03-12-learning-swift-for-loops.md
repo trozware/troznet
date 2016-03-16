@@ -175,7 +175,11 @@ This works right now in Swift 2 but contains two features that are about to be d
 - [Remove C-style for-loops with conditions and incrementers][1]
 - [Remove the ++ and -- operators][2]
 
+---
+
+All the examples in this article are available in a [Swift playground][3].
 
 
 [1]: https://github.com/apple/swift-evolution/blob/master/proposals/0007-remove-c-style-for-loops.md
 [2]: https://github.com/apple/swift-evolution/blob/master/proposals/0004-remove-pre-post-inc-decrement.md
+[3]: https://github.com/trozware/for-loops
