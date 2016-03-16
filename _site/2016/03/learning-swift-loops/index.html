@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Learning Swift - For-Loops &#8211; TrozWare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mac &amp;amp; iOS Developer">
+    <meta name="author" content="Sarah Reichelt">
+    <meta name="keywords" content="">
+    <link rel="canonical" href="http://troz.net/2016/03/learning-swift-loops/">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for TrozWare" href="/feed.xml" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/pixyll.css" type="text/css">
+
+    <!-- Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    
+
+    <!-- MathJax -->
+    
+
+    <!-- Verifications -->
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Learning Swift - For-Loops">
+    <meta property="og:description" content="Mac &amp;amp; iOS Developer">
+    <meta property="og:url" content="http://troz.net/2016/03/learning-swift-loops/">
+    <meta property="og:site_name" content="TrozWare">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    
+        <meta name="twitter:site" content="@trozware" />
+    
+    <meta name="twitter:title" content="Learning Swift - For-Loops" />
+    <meta name="twitter:description" content="Mac &amp; iOS Developer" />
+    <meta name="twitter:url" content="http://troz.net/2016/03/learning-swift-loops/" />
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/icons/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/icons/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/icons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/icons/favicon-32x32.png" sizes="32x32">
+
+    
+    <script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-5511808-2', 'auto');
+       ga('send', 'pageview');
+    </script>
+    
+</head>
+
+<body class="site">
+
+	
+
+  <div class="site-wrap">
+    <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="http://troz.net" class="site-title">TrozWare</a>
+      <nav class="site-nav">
+        <a href="/applications/">Apps</a>
+<a href="/tags/">Tags</a>
+<a href="/archives/">Archives</a>
+<a href="/contact/">Contact</a>
+
+      </nav>
+      <div class="clearfix"></div>
+      
+        <div class="social-icons">
+  <div class="social-icons-right">
+    
+    
+    
+      <a class="fa fa-stack-overflow" href="https://stackoverflow.com/users/1082632"></a>
+    
+    <a class="fa fa-rss" href="/feed.xml"></a>
+    
+      <a class="fa fa-twitter" href="https://twitter.com/trozware"></a>
+    
+    
+    
+    
+    
+      <a class="fa fa-envelope" href="mailto:sarah@troz.net"></a>
+    
+    
+    
+    
+  </div>
+  <div class="right">
+    
+    
+    
+  </div>
+</div>
+<div class="clearfix"></div>
+
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        
+
+
+<div class="post-header mb2">
+  <h1>Learning Swift - For-Loops</h1>
+  <span class="post-meta">12 Mar 2016</span><br>
+  
+  <span class="post-meta small">
+  
+    4 minute read
+  
+  </span>
+</div>
+
+<article class="post-content">
+  <p>Loops are a fundamental building block of any program. Doing repetitive tasks fast and accurately is what computers are really good at and what we humans get very bored doing. Swift offers several different ways to perform loops, but today we are going to concentrate on for-loops.</p>
+
+<p>The most basic form of loop is the <code class="highlighter-rouge">for-in</code> loop. There are two ways this can be used: looping over the numbers in a range or looping over the elements in an array or dictionary.</p>
+
+<p>Firstly, the range:</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="mi">0</span> <span class="o">..&lt;</span> <span class="mi">5</span> <span class="p">{</span>
+    <span class="nf">printWithSpace</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// prints:  0 1 2 3 4 </span></code></pre></figure>
+
+<p><em>I am using a custom print function that allows me to print the results on a single line for convenience.</em></p>
+
+<p>This <code class="highlighter-rouge">for-in</code> loop uses a half-open range and it is effectively saying:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>start with x at 0
+print x with a space
+add 1 to x
+is x still less than 5?
+    yes - go back to the print stage
+    no - stop
+</code></pre>
+</div>
+
+<p>If we wanted to go all the way to 5 instead of stopping before 5, we would use a closed range by replacing <code class="highlighter-rouge">..&lt;</code> with <code class="highlighter-rouge">...</code></p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="mi">0</span> <span class="o">...</span> <span class="mi">5</span> <span class="p">{</span>
+    <span class="nf">printWithSpace</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// prints:  0 1 2 3 4 5 </span></code></pre></figure>
+
+<hr />
+
+<p>These methods work fine if we want to loop through a range of numbers one at a time but what if we want a different increment? There are several ways to vary the step.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">stride(through:by:)</code></li>
+  <li><code class="highlighter-rouge">stride(to:by:)</code></li>
+  <li><code class="highlighter-rouge">where</code></li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="mi">0</span><span class="o">.</span><span class="nf">stride</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">printWithSpace</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// prints:  0 2 4 6 8 </span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="mi">0</span><span class="o">.</span><span class="nf">stride</span><span class="p">(</span><span class="nv">through</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">printWithSpace</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// prints:  0 2 4 6 8 10 </span></code></pre></figure>
+
+<p>The 2 variations of <code class="highlighter-rouge">stride</code> are analogous to the 2 ways of expressing the range in the the <code class="highlighter-rouge">for-in</code> loop.
+Both of them start with a number. In these examples I used 0 (zero) but you could use a variable name.</p>
+
+<p><code class="highlighter-rouge">stride(to:by:)</code> starts with the number and each time through the loop, increments the number by the amount of the <code class="highlighter-rouge">by</code> parameter. If the incremented number is less than the <code class="highlighter-rouge">to</code> parameter, the loop continues.</p>
+
+<p><code class="highlighter-rouge">stride(through:by:)</code> works the same way but continues until the incremented number is greater than or equal to the <code class="highlighter-rouge">through</code> parameter.</p>
+
+<p>Using a negative value for <code class="highlighter-rouge">by</code> allows counting backwards:</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="mi">10</span><span class="o">.</span><span class="nf">stride</span><span class="p">(</span><span class="nv">through</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">printWithSpace</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// prints:  10 8 6 4 2 0 </span></code></pre></figure>
+
+<p>Stride can also be used for floating point loops:</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="nv">startingNumber</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="n">startingNumber</span><span class="o">.</span><span class="nf">stride</span><span class="p">(</span><span class="nv">through</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">printWithSpace</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// prints:  0.1  0.3  0.5  0.7  0.9  </span></code></pre></figure>
+
+<p>Note that the result does not contain the <code class="highlighter-rouge">through</code> parameter as the next iteration would have produced 1.1 which is greater than it. And also <code class="highlighter-rouge">startingNumber</code> did not have to be a variable as it is never actually changed.</p>
+
+<p>Using <code class="highlighter-rouge">where</code> makes it possible to step through a loop while conforming to some conditional:</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="mi">0</span> <span class="o">...</span> <span class="mi">10</span> <span class="k">where</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+    <span class="nf">printWithSpace</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// prints:  0 3 6 9</span></code></pre></figure>
+
+<hr />
+
+<p>The other main use for <code class="highlighter-rouge">for-in</code> loops is for iterating through the elements of an array or dictionary:</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="nv">arrayOfInts</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span> <span class="p">]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="n">arrayOfInts</span> <span class="p">{</span>
+    <span class="nf">printWithSpace</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// prints:  2 4 6 8 10 12</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="nv">myDict</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">:</span> <span class="s">"one"</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s">"two"</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s">"three"</span> <span class="p">]</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="n">myDict</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">key</span><span class="se">)</span><span class="s"> = </span><span class="se">\(</span><span class="n">value</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// prints:</span>
+<span class="c1">//   2 = two</span>
+<span class="c1">//   3 = three</span>
+<span class="c1">//   1 = one</span></code></pre></figure>
+
+<p>As a dictionary is un-sorted, the order of the items may vary.</p>
+
+<p>If you want to loop through an array while also monitoring the index of each element, you can use <code class="highlighter-rouge">enumerate()</code></p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="nv">arrayOfNames</span> <span class="o">=</span> <span class="p">[</span> <span class="s">"Andy"</span><span class="p">,</span> <span class="s">"Buzz"</span><span class="p">,</span> <span class="s">"Woody"</span> <span class="p">]</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">element</span><span class="p">)</span> <span class="k">in</span> <span class="n">arrayOfNames</span><span class="o">.</span><span class="nf">enumerate</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"The name at index </span><span class="se">\(</span><span class="n">index</span><span class="se">)</span><span class="s"> is </span><span class="se">\(</span><span class="n">element</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// prints:</span>
+<span class="c1">//   The name at index 0 is Andy</span>
+<span class="c1">//   The name at index 1 is Buzz</span>
+<span class="c1">//   The name at index 2 is Woody</span></code></pre></figure>
+
+<p>If your array contains optionals, you can use <code class="highlighter-rouge">for case let</code> to test each value:</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="nv">arrayWithOptionals</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">?]</span> <span class="o">=</span> <span class="p">[</span> <span class="s">"Woody"</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="s">"Buzz"</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="s">"Rex"</span> <span class="p">]</span>
+<span class="k">for</span> <span class="k">case</span> <span class="k">let</span> <span class="nv">name</span><span class="p">?</span> <span class="k">in</span> <span class="n">arrayWithOptionals</span> <span class="p">{</span>
+    <span class="nf">printWithSpace</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// prints: Woody Buzz Rex </span></code></pre></figure>
+
+<p>The <code class="highlighter-rouge">name</code> variable is un-wrapped each time through the loop so can be used safely.</p>
+
+<p>Any of these loop styles can be combined with <code class="highlighter-rouge">where</code> to perform checks on each iteration:</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="nv">arrayWithOptionals</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">?]</span> <span class="o">=</span> <span class="p">[</span> <span class="s">"Woody"</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="s">"Buzz"</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="s">"Rex"</span> <span class="p">]</span>
+<span class="k">for</span> <span class="k">case</span> <span class="k">let</span> <span class="nv">name</span><span class="p">?</span> <span class="k">in</span> <span class="n">arrayWithOptionals</span> <span class="k">where</span> <span class="n">name</span><span class="o">.</span><span class="n">characters</span><span class="o">.</span><span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="p">{</span>
+    <span class="nf">printWithSpace</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// prints: Buzz Rex </span></code></pre></figure>
+
+<hr />
+
+<p>Some of you may be wondering what happened to the old C-style loops like this:</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">for</span> <span class="k">var</span> <span class="nv">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">x</span><span class="o">++</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nv">terminator</span><span class="p">:</span> <span class="s">" "</span><span class="p">)</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>This works right now in Swift 2 but contains two features that are about to be deprecated in Swift 3 and will soon stop working, so don’t use this form of loop. The <code class="highlighter-rouge">++</code> and <code class="highlighter-rouge">--</code> operators are going and this style of loop declaration is also going. For further details, check out the relevant proposals at Swift Evolution:</p>
+
+<ul>
+  <li><a href="https://github.com/apple/swift-evolution/blob/master/proposals/0007-remove-c-style-for-loops.md">Remove C-style for-loops with conditions and incrementers</a></li>
+  <li><a href="https://github.com/apple/swift-evolution/blob/master/proposals/0004-remove-pre-post-inc-decrement.md">Remove the ++ and – operators</a></li>
+</ul>
+
+
+</article>
+
+<br>
+<!-- <a href="/tags/">Tags</a>: swift and learning -->
+Tags: 
+
+    <a href="/tags/#swift">swift</a>&nbsp;&nbsp;
+
+    <a href="/tags/#learning">learning</a>&nbsp;&nbsp;
+
+<hr>
+
+
+
+
+
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname  = 'trozware';
+    var disqus_identifier = '/2016/03/learning-swift-for-loops';
+    var disqus_title      = 'Learning Swift - For-Loops';
+
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="center">
+  <div class="measure">
+    <small>
+      Theme crafted with &lt;3 by <a href="http://johnotander.com">John Otander</a> (<a href="https://twitter.com/4lpine">@4lpine</a>).<br>
+      &lt;/&gt; available on <a href="https://github.com/johnotander/pixyll">Github</a>.
+    </small>
+  </div>
+</footer>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-5511808-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>
