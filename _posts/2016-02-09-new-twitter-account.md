@@ -7,7 +7,7 @@ tags:
   - twitter
   - support
   - swift
-  - learning
+  - learning swift
 ---
 
 I have started a new Twitter account so that I can provide rapid support to users of my apps.

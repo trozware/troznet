@@ -5,7 +5,7 @@ layout: post
 permalink: /2016/03/learning-swift-loops/
 tags:
   - swift
-  - learning
+  - learning swift
 ---
 Loops are a fundamental building block of any program. Doing repetitive tasks fast and accurately is what computers are really good at and what we humans get very bored doing. Swift offers several different ways to perform loops, but today we are going to concentrate on for-loops.
 

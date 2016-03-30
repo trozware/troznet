@@ -5,7 +5,7 @@ layout: post
 permalink: /2016/02/learning-swift-generics/
 tags:
   - swift
-  - learning
+  - learning swift
 ---
 
 One of the nice things about Swift is how clean your code looks. A lot of the weird characters that pepper the code of other languages has been eliminated: No more semi-colons, asterisks etc.

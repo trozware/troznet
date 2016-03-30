@@ -5,7 +5,7 @@ layout: post
 permalink: /2016/02/how-do-i-start-to-learn-swift/
 tags:
   - swift
-  - learning
+  - learning swift
 ---
 The first thing to do is to download the latest version of Apple's [Swift Programming Language book][1] from the iBooks Store.
 

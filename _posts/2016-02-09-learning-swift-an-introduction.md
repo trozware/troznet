@@ -5,7 +5,7 @@ layout: post
 permalink: /2016/02/learning-swift-an-introduction/
 tags:
   - swift
-  - learning
+  - learning swift
 summary: Welcome to Learning Swift. This is the first post in what I hope will be an extensive series dealing with the Swift language.
 ---
 

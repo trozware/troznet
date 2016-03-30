@@ -5,7 +5,7 @@ layout: post
 permalink: /2016/02/why-is-swift-so-great/
 tags:
   - swift
-  - learning
+  - learning swift
 summary: Read Apple's technical answer and then my opinion as a developer.
 ---
 

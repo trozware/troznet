@@ -5,7 +5,7 @@ layout: post
 permalink: /2016/02/singleton-to-protocol/
 tags:
   - swift
-  - learning
+  - learning swift
 ---
 
 I was driving through the town of [Singleton][1] the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple's own APIs, but seem to be increasingly frowned upon in the Swift world.

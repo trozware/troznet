@@ -5,7 +5,7 @@ layout: post
 permalink: /2016/02/three-rules-for-writing-better-swift/
 tags:
   - swift
-  - learning
+  - learning swift
 summary: 1. Do not use !.<br>2. Use let, not var.<br>3. Allow the compiler to infer types.
 ---
 

@@ -5,7 +5,7 @@ layout: post
 permalink: /2016/02/configuring-xcode/
 tags:
   - xcode
-  - learning
+  - learning swift
 ---
 While not strictly a part of my Learning Swift series, today I thought I would discuss some of the ways to configure and use Xcode to be a more productive and comfortable programmer.
 

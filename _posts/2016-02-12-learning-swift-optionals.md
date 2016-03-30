@@ -5,7 +5,7 @@ layout: post
 permalink: /2016/02/learning-swift-optionals/
 tags:
   - swift
-  - learning
+  - learning swift
   - optionals
 ---
 
