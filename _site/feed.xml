@@ -1,0 +1,1062 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TrozWare</title>
+    <description>Mac &amp;amp; iOS Developer</description>
+    <link>http://troz.net/</link>
+    <atom:link href="http://troz.net/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Road Trip Apps</title>
+        <description>&lt;p&gt;Over the past few months, we have done two long road trips: one approximately 4,000 km and the other about 1,800 km. These gave us the chance to try out various apps for navigation and travel information. We live in Queensland, Australia and some of these comments may be country-specific.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;navigation&quot;&gt;Navigation:&lt;/h3&gt;
+
+&lt;p&gt;The basic navigation came down to three apps:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.apple.com/ios/maps/&quot;&gt;Apple Maps&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/app/google-maps-real-time-navigation/id585027354&quot;&gt;Google Maps&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/au/app/metroview-gps-navigation/id370753892&quot;&gt;Metroview&lt;/a&gt; (Australia and New Zealand only)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Each has their strengths and weaknesses:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Apple Maps is by far the most beautiful and easy to read. It integrates perfectly with Contacts (as you would expect). Turn-by-turn directions were mostly excellent. The biggest downside is that it does not allow you to specify a route avoiding tolls.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Google Maps allows you to plot a route avoiding tolls… if you can find the setting. Its traffic reporting is by far the best and it would offer suggested changes of routes during the trip to get around traffic. The interface is confusing at times. Turn-by-turn directions were good, although I would have preferred an Australian voice option.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Metroview has all the maps downloaded which saves on data connection costs and handles bad connectivity areas better. Its best feature is notification of speed limits and alerts if you go over the limit, although it gets confused when on over or under-passes. Another very useful feature is the display of lanes when approaching highway exits, so you could tell which lane to be in. Apparently the voice guidance is now more natural but we didn’t try this. The display is messy and cluttered compared to the others.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We ended up with the following sequence:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Apple Maps for the bulk of the trip.&lt;/li&gt;
+  &lt;li&gt;Google Maps &amp;amp; Metroview (on 2 separate iPhones) in the metropolitan areas and when about to take a highway exit.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Even then it was amusing to see the apps panic when you took a new road and the apps assumed you had left the road and were heading through the bush! And at one point there was a large and official sign saying “Ignore GPS - do not take this turn” and sure enough, both Apple Maps and Google Maps wanted us to turn down a little country lane instead of keeping to the highway.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;speed-display&quot;&gt;Speed Display:&lt;/h3&gt;
+
+&lt;p&gt;Apart from the basic navigation apps, we tried a couple of speed display apps. There are a lot of HUD speed apps out there that project the data on the the windscreen but they had two problems:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;They only worked when it was dark. As soon as the sun got up, they became invisible.&lt;/li&gt;
+  &lt;li&gt;They required you to place your iPhone flat on the dashboard so even if they had worked during the day, the iPhone would have got far too hot and shut-down. (We have a mount that holds our iPhones in front of the air vents to avoid this over-heating problem. Any mount that sticks to the windscreen itself leaves the iPhone too exposed to the sun.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;One we stuck with (in non-HUD mode) was &lt;a href=&quot;https://itunes.apple.com/app/speedometer-+-hud-digital/id375318117&quot;&gt;Speedometer + HUD&lt;/a&gt;. This had a clear display with a few flaws:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;When moving from 99 kph to 100 kph, the display was not re-arranged for 3 digits. Moving from 101 down to 100 fixed it, but as 100 kph is the standard speed limit, this was a frequent annoyance.&lt;/li&gt;
+  &lt;li&gt;Adjusting the speed limit was too fiddly and difficult even for the passenger. It would have been impossible for the driver.&lt;/li&gt;
+  &lt;li&gt;It only works in landscape mode which does not always suit the car mounts - we ended up perching the 2nd iPhone on the unused ashtray.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We also tried &lt;a href=&quot;https://itunes.apple.com/app/talking-hud-voice-prompt-speedometer/id873194479&quot;&gt;Talking HUD&lt;/a&gt; but didn’t like it. It worked solely in HUD mode, so was only useful at night or very early morning. It had voice prompts to tell you when to change gear but in an automatic car, they were just a distraction and it was not obvious how to turn them off.&lt;/p&gt;
+
+&lt;p&gt;But overall, we found having a speed display app as well as a navigation app to be the best combination. The audible alerts when you went over speed were very useful when over-taking or getting up to speed as you could get the information without having to take your eyes off the road.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;future-app-plans&quot;&gt;Future App Plans:&lt;/h3&gt;
+
+&lt;p&gt;Having determined that a speed display app is really useful, but not finding one that suited us perfectly, the obvious next step was to design my own. I wanted it to have the following features:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;clean display, visible in all light conditions&lt;/li&gt;
+  &lt;li&gt;easily settable speed limit&lt;/li&gt;
+  &lt;li&gt;audible and visual over-speed warnings&lt;/li&gt;
+  &lt;li&gt;no HUD mode&lt;/li&gt;
+  &lt;li&gt;Apple Watch component for when you only had a single iPhone and it was navigating but you still wanted a speed display&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So watch this space for further news of my up-coming app…&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 07 Apr 2016 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2016/04/road-trip-apps/</link>
+        <guid isPermaLink="true">http://troz.net/2016/04/road-trip-apps/</guid>
+      </item>
+    
+      <item>
+        <title>Structs vs Classes</title>
+        <description>&lt;p&gt;One of the big debates among Swift developers is when to use &lt;code class=&quot;highlighter-rouge&quot;&gt;structs&lt;/code&gt; and when to use &lt;code class=&quot;highlighter-rouge&quot;&gt;classes&lt;/code&gt;. Classes are the building blocks of object-oriented programming but structs as provided by Swift are newly powerful. Structs have been around in C-based languages for a long time, but Swift has made them more powerful and given them more features so that they are almost indistinguishable from classes. So what are the differences and which one should you use?&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;where-they-are-the-same&quot;&gt;Where they are the same:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;both can define initializers&lt;/li&gt;
+  &lt;li&gt;both can define properties&lt;/li&gt;
+  &lt;li&gt;both can define methods&lt;/li&gt;
+  &lt;li&gt;both can conform to protocols&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;where-they-are-different&quot;&gt;Where they are different:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;classes can inherit from other classes&lt;/li&gt;
+  &lt;li&gt;structs cannot inherit from other structs&lt;/li&gt;
+  &lt;li&gt;classes are reference types&lt;/li&gt;
+  &lt;li&gt;structs are value types&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The reference type vs value type difference is where things really get interesting. Have a look at this example of a class with a single property:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PersonClass&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+
+    &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;personA&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PersonClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Woody&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;personA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// Woody&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;personB&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;personA&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;personB&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Buzz&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;personB&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// Buzz&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;That looks like standard stuff, but what do you think &lt;code class=&quot;highlighter-rouge&quot;&gt;personA&lt;/code&gt;’s name is now? If you guessed “Buzz” then you win a prize! &lt;em&gt;(No, not a real prize - pat yourself on the back.)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;This is because when we created the &lt;code class=&quot;highlighter-rouge&quot;&gt;personB&lt;/code&gt; variable and assigned &lt;code class=&quot;highlighter-rouge&quot;&gt;personA&lt;/code&gt; to it, we did not assign the &lt;strong&gt;VALUE&lt;/strong&gt; of &lt;code class=&quot;highlighter-rouge&quot;&gt;personA&lt;/code&gt;, we assigned a &lt;strong&gt;REFERENCE&lt;/strong&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;personA&lt;/code&gt; - actually the address in memory of &lt;code class=&quot;highlighter-rouge&quot;&gt;personA&lt;/code&gt; rather than the data inside.&lt;/p&gt;
+
+&lt;p&gt;So now we have two objects and they are both looking at the same spot in memory for their data. This means that changing the name of &lt;code class=&quot;highlighter-rouge&quot;&gt;personB&lt;/code&gt; changed the name of &lt;code class=&quot;highlighter-rouge&quot;&gt;personA&lt;/code&gt; as well.&lt;/p&gt;
+
+&lt;p&gt;Let’s try the same thing with a struct:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PersonStruct&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;personC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PersonStruct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Rex&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;personC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// Rex&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;personD&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;personC&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;personD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Hamm&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;personD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// Hamm&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;personC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// Rex&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This time, because we are using a struct, when we assign &lt;code class=&quot;highlighter-rouge&quot;&gt;personC&lt;/code&gt; to the new &lt;code class=&quot;highlighter-rouge&quot;&gt;personD&lt;/code&gt; variable, we are actually making a copy of &lt;code class=&quot;highlighter-rouge&quot;&gt;personC&lt;/code&gt; and setting the values of &lt;code class=&quot;highlighter-rouge&quot;&gt;personD&lt;/code&gt; to this new copy. So now we can change &lt;code class=&quot;highlighter-rouge&quot;&gt;personD&lt;/code&gt; without messing with &lt;code class=&quot;highlighter-rouge&quot;&gt;personC&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Note that I did not have a define an &lt;code class=&quot;highlighter-rouge&quot;&gt;init&lt;/code&gt; for the struct because it creates one automatically. You can still add one yourself if you want to do anything different, but you do not have to.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;At first glance, you may think that you should now use structs all the time to avoid these unintended consequences, but it isn’t quite as simple as that. Sometimes a class is still the best thing to use.&lt;/p&gt;
+
+&lt;p&gt;The inheritance capabilities of classes can make your decision simple: if you need to create a button and want to start by sub-classing UIButton or NSButton, then your button must be a class, not a struct. This will apply to most user interface objects.&lt;/p&gt;
+
+&lt;p&gt;Apple really wants us to use structs and in the Swift standard libraries, a very high percentage of the objects are structs. But structs are especially well suited to a certain subset of objects.&lt;/p&gt;
+
+&lt;p&gt;The best explanation that I have found of when to use a struct is the &lt;a href=&quot;http://faq.sealedabstract.com/structs_or_classes/#an-alternative-hypothesis&quot;&gt;Jeff Trick&lt;/a&gt;. Reduced down, the rule is:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If you can overload == to compare two instances of your object, use a struct. &lt;br /&gt;
+If this doesn’t make sense, use a class.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So use structs for your things: Person, Shape, Brick, Cat. &lt;br /&gt;
+Use classes for everything else.&lt;/p&gt;
+
+&lt;p&gt;I would add one caveat: don’t fight the compiler. If using a struct is giving lots of errors and warnings, change to a class.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;A logical consequence of this is that all structs should conform to the &lt;a href=&quot;http://swiftdoc.org/v2.2/protocol/Equatable/&quot;&gt;Equatable&lt;/a&gt; protocol.&lt;/p&gt;
+
+&lt;p&gt;Re-factoring &lt;code class=&quot;highlighter-rouge&quot;&gt;PersonStruct&lt;/code&gt; to make it conform just requires a single function:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;lhs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PersonStruct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rhs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PersonStruct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lhs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rhs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PersonStruct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Equatable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Since this struct only has one property, we can say that two instances of this struct are equal if the names are equal.
+(If you are copying this code into a playground, the overloading function has to come before the struct definition.)&lt;/p&gt;
+
+&lt;p&gt;Testing this, we can see:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;personC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PersonStruct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Rex&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;personD&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;personC&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;personD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Hamm&quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;personC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;personD&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;personE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PersonStruct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Rex&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;personC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;personE&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;personC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;personE&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Conveniently, providing an &lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt; function effectively gives us a &lt;code class=&quot;highlighter-rouge&quot;&gt;!=&lt;/code&gt; function for free as you can see from the last example.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;There is one final point I would like to make about struct and that concerns mutating functions. Look at what happens if we include a function that changes the &lt;code class=&quot;highlighter-rouge&quot;&gt;name&lt;/code&gt; property in the struct:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/mutating.png&quot; alt=&quot;Mutating error&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Fix-it is very helpfully pointing out that the method needs to be marked as &lt;code class=&quot;highlighter-rouge&quot;&gt;mutating&lt;/code&gt; for this to work and is showing where this should go. Accepting the suggestion will get rid of the error and then the name can be changed using this method.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PersonStruct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Equatable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;mutating&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;changeName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;newName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isEmpty&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newName&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;personC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PersonStruct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Woody&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;personC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// Woody&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;personC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;changeName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Sid&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;personC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// Sid&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;There is no problem about using &lt;code class=&quot;highlighter-rouge&quot;&gt;mutating&lt;/code&gt; and it will not have the unintended consequences of using classes. Despite the scary name, a mutating function actually returns a new copy of the struct.&lt;/p&gt;
+
+&lt;p&gt;The problem arises if you have many nested structs and the mutating has to spread through the list. So don’t nest your structs - at least not more than two deep!&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 30 Mar 2016 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2016/03/structs-vs-classes/</link>
+        <guid isPermaLink="true">http://troz.net/2016/03/structs-vs-classes/</guid>
+      </item>
+    
+      <item>
+        <title>Learning Swift - For-Loops</title>
+        <description>&lt;p&gt;Loops are a fundamental building block of any program. Doing repetitive tasks fast and accurately is what computers are really good at and what we humans get very bored doing. Swift offers several different ways to perform loops, but today we are going to concentrate on for-loops.&lt;/p&gt;
+
+&lt;p&gt;The most basic form of loop is the &lt;code class=&quot;highlighter-rouge&quot;&gt;for-in&lt;/code&gt; loop. There are two ways this can be used: looping over the numbers in a range or looping over the elements in an array or dictionary.&lt;/p&gt;
+
+&lt;p&gt;Firstly, the range:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;..&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;printWithSpace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// prints:  0 1 2 3 4 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;em&gt;I am using a custom print function that allows me to print the results on a single line for convenience.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;This &lt;code class=&quot;highlighter-rouge&quot;&gt;for-in&lt;/code&gt; loop uses a half-open range and it is effectively saying:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;start with x at 0
+print x with a space
+add 1 to x
+is x still less than 5?
+    yes - go back to the print stage
+    no - stop
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If we wanted to go all the way to 5 instead of stopping before 5, we would use a closed range by replacing &lt;code class=&quot;highlighter-rouge&quot;&gt;..&amp;lt;&lt;/code&gt; with &lt;code class=&quot;highlighter-rouge&quot;&gt;...&lt;/code&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;printWithSpace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// prints:  0 1 2 3 4 5 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;These methods work fine if we want to loop through a range of numbers one at a time but what if we want a different increment? There are several ways to vary the step.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;stride(through:by:)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;stride(to:by:)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;where&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;stride&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;printWithSpace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// prints:  0 2 4 6 8 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;stride&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;through&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;printWithSpace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// prints:  0 2 4 6 8 10 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The 2 variations of &lt;code class=&quot;highlighter-rouge&quot;&gt;stride&lt;/code&gt; are analogous to the 2 ways of expressing the range in the the &lt;code class=&quot;highlighter-rouge&quot;&gt;for-in&lt;/code&gt; loop.
+Both of them start with a number. In these examples I used 0 (zero) but you could use a variable name.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;stride(to:by:)&lt;/code&gt; starts with the number and each time through the loop, increments the number by the amount of the &lt;code class=&quot;highlighter-rouge&quot;&gt;by&lt;/code&gt; parameter. If the incremented number is less than the &lt;code class=&quot;highlighter-rouge&quot;&gt;to&lt;/code&gt; parameter, the loop continues.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;stride(through:by:)&lt;/code&gt; works the same way but continues until the incremented number is greater than or equal to the &lt;code class=&quot;highlighter-rouge&quot;&gt;through&lt;/code&gt; parameter.&lt;/p&gt;
+
+&lt;p&gt;Using a negative value for &lt;code class=&quot;highlighter-rouge&quot;&gt;by&lt;/code&gt; allows counting backwards:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;stride&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;through&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;printWithSpace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// prints:  10 8 6 4 2 0 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Stride can also be used for floating point loops:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;startingNumber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;startingNumber&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;stride&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;through&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;printWithSpace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// prints:  0.1  0.3  0.5  0.7  0.9  &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Note that the result does not contain the &lt;code class=&quot;highlighter-rouge&quot;&gt;through&lt;/code&gt; parameter as the next iteration would have produced 1.1 which is greater than it. And also &lt;code class=&quot;highlighter-rouge&quot;&gt;startingNumber&lt;/code&gt; did not have to be a variable as it is never actually changed.&lt;/p&gt;
+
+&lt;p&gt;Using &lt;code class=&quot;highlighter-rouge&quot;&gt;where&lt;/code&gt; makes it possible to step through a loop while conforming to some conditional:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;printWithSpace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// prints:  0 3 6 9&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The other main use for &lt;code class=&quot;highlighter-rouge&quot;&gt;for-in&lt;/code&gt; loops is for iterating through the elements of an array or dictionary:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;arrayOfInts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arrayOfInts&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;printWithSpace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// prints:  2 4 6 8 10 12&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;myDict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;one&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;two&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;three&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myDict&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; = &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// prints:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//   2 = two&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//   3 = three&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//   1 = one&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;As a dictionary is un-sorted, the order of the items may vary.&lt;/p&gt;
+
+&lt;p&gt;If you want to loop through an array while also monitoring the index of each element, you can use &lt;code class=&quot;highlighter-rouge&quot;&gt;enumerate()&lt;/code&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;arrayOfNames&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Andy&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Buzz&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Woody&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arrayOfNames&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The name at index &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; is &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// prints:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//   The name at index 0 is Andy&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//   The name at index 1 is Buzz&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//   The name at index 2 is Woody&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;If your array contains optionals, you can use &lt;code class=&quot;highlighter-rouge&quot;&gt;for case let&lt;/code&gt; to test each value:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;arrayWithOptionals&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Woody&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Buzz&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Rex&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arrayWithOptionals&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;printWithSpace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// prints: Woody Buzz Rex &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;name&lt;/code&gt; variable is un-wrapped each time through the loop so can be used safely.&lt;/p&gt;
+
+&lt;p&gt;Any of these loop styles can be combined with &lt;code class=&quot;highlighter-rouge&quot;&gt;where&lt;/code&gt; to perform checks on each iteration:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;arrayWithOptionals&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Woody&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Buzz&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Rex&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arrayWithOptionals&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;characters&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;printWithSpace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// prints: Buzz Rex &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Some of you may be wondering what happened to the old C-style loops like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;terminator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This works right now in Swift 2 but contains two features that are about to be deprecated in Swift 3 and will soon stop working, so don’t use this form of loop. The &lt;code class=&quot;highlighter-rouge&quot;&gt;++&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;--&lt;/code&gt; operators are going and this style of loop declaration is also going. For further details, check out the relevant proposals at Swift Evolution:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/apple/swift-evolution/blob/master/proposals/0007-remove-c-style-for-loops.md&quot;&gt;Remove C-style for-loops with conditions and incrementers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/apple/swift-evolution/blob/master/proposals/0004-remove-pre-post-inc-decrement.md&quot;&gt;Remove the ++ and – operators&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;All the examples in this article are available in a &lt;a href=&quot;https://github.com/trozware/for-loops&quot;&gt;Swift playground&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 12 Mar 2016 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2016/03/learning-swift-loops/</link>
+        <guid isPermaLink="true">http://troz.net/2016/03/learning-swift-loops/</guid>
+      </item>
+    
+      <item>
+        <title>Learning Swift - Generics</title>
+        <description>&lt;p&gt;One of the nice things about Swift is how clean your code looks. A lot of the weird characters that pepper the code of other languages has been eliminated: No more semi-colons, asterisks etc.&lt;/p&gt;
+
+&lt;p&gt;But then you are reading somebody else’s code and you find these angle brackets all over the place and they don’t seem to make sense.&lt;/p&gt;
+
+&lt;p&gt;What does this mean?&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Comparable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;It looks like it is a function to find the middle element in an array, but what is &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;T: Comparable&amp;gt;&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;[T]&lt;/code&gt; or even just &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt;? They are describing Generic data types.&lt;/p&gt;
+
+&lt;p&gt;Using the dictionary, I find the following definition for &lt;code class=&quot;highlighter-rouge&quot;&gt;generic&lt;/code&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;characteristic of or relating to a class or group of things; not specific.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And that really provides quite a good definition for Swift’s generics too. They allow you to assign a non-specific data type to a function so that function can be used for many different data types.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;But enough of the theory: by far the best way to understand generics is to encounter the problem they are meant to solve and then to solve it.&lt;/p&gt;
+
+&lt;p&gt;The other day I was processing data to feed to a charting library. I ended up with an array of CGFloats, but there were too many of them, so I wrote a function to give me the last x elements of an array of CGFloats:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;endOfArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;CGFloat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;numberOfElementsToInclude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;CGFloat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numberOfElementsToInclude&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;startingElement&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numberOfElementsToInclude&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;endOfArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;startingElement&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;..&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endOfArray&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;largeArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;CGFloat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;4.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;5.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;6.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;7.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;8.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;9.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;10.0&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;smallArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;endOfArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;largeArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;numberOfElementsToInclude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// smallArray now equals [8.0, 9.0, 10.0]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;OK, so &lt;code class=&quot;highlighter-rouge&quot;&gt;largeArray&lt;/code&gt; isn’t actually the largest array you have ever seen, but it works for demo purposes. In my code, I had over 20,000 entries in the large array and only wanted the last 5,000.&lt;/p&gt;
+
+&lt;p&gt;I was completely happy with that until I found another data source where the data was an array of Ints. Still perfectly chartable using my charting library, but I could not get the end of the array using my nice function. First thought was to replicate the function:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;endOfArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;numberOfElementsToInclude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numberOfElementsToInclude&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;startingElement&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numberOfElementsToInclude&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;endOfArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;startingElement&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;..&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endOfArray&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;largeArrayInt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; 	&lt;span class=&quot;c1&quot;&gt;// type inferred to be Int&lt;/span&gt;
+    &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;smallArrayInt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;endOfArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;largeArrayInt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;numberOfElementsToInclude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// smallArrayInt now equals [4, 5, 6, 7, 8, 9, 10]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;A quick glance will reveal that the declaration line was the only thing that changed. I didn’t have to give the function a new name because the compiler worked out which of the two functions to use based on the types supplied. So all I was doing was replacing &lt;code class=&quot;highlighter-rouge&quot;&gt;CGFloat&lt;/code&gt; with &lt;code class=&quot;highlighter-rouge&quot;&gt;Int&lt;/code&gt; in two places (the &lt;code class=&quot;highlighter-rouge&quot;&gt;numberOfElementsToInclude&lt;/code&gt; parameter remains an &lt;code class=&quot;highlighter-rouge&quot;&gt;Int&lt;/code&gt; in both cases).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;As soon as you find yourself replicating code and only changing the types of the data, that is a sign that you need to use generics.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;For my first attempt at creating a generic function, all I did was replace the word &lt;code class=&quot;highlighter-rouge&quot;&gt;CGFloat&lt;/code&gt; with &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt; where &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt; indicates some type that will be specified when the function is called. The convention is to use single letters for generic types: &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt; for Type, &lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt; for AnyObject, &lt;code class=&quot;highlighter-rouge&quot;&gt;Z&lt;/code&gt; because you feel like it. The choice is up to you.&lt;/p&gt;
+
+&lt;p&gt;That produced this error:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Generics_error.png&quot; alt=&quot;Generics error&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Use of undeclared type &#39;T&#39;&lt;/code&gt;. Well that seems fair enough… how is the compiler supposed to know what a T is?&lt;/p&gt;
+
+&lt;p&gt;It turns out that this is where the angle brackets come into play. You have to warn the compiler that this function is going to get a generic type and that the &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt; is only a placeholder, not a real type. So this version compiles and works - notice the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;T&amp;gt;&lt;/code&gt; between the function name and the opening bracket:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endOfArray&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;numberOfElementsToInclude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numberOfElementsToInclude&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;startingElement&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numberOfElementsToInclude&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;endOfArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;startingElement&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;..&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endOfArray&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now I have no code duplication and if I ever get another data set that uses a different object type, my function will still work.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Now we know to use generics instead of replicating code that operates in the same way on different data types.&lt;/p&gt;
+
+&lt;p&gt;And we know how to construct a generic function.&lt;/p&gt;
+
+&lt;p&gt;Using it is identical to using the two functions I had before:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;largeArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;CGFloat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;4.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;5.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;6.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;7.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;8.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;9.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;10.0&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;smallArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;endOfArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;largeArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;numberOfElementsToInclude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;largeArrayInt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; 	&lt;span class=&quot;c1&quot;&gt;// type inferred to be Int&lt;/span&gt;
+    &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;smallArrayInt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;endOfArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;largeArrayInt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;numberOfElementsToInclude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You do not have to specify what &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt; is when calling the function, that will be inferred from the supplied data.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Moving on into more advanced use cases, we have two things to consider:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Functions where the generic parameters must conform to a protocol.&lt;/li&gt;
+  &lt;li&gt;Functions that take generic parameters of different types.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The example function I started with (not mine but I forget where I got it… If it is yours, thanks you very much) used:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Comparable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Instead of specifying the type as completely generic, it specified that it must conform to the Comparable protocol.
+This is because the function body used a &lt;code class=&quot;highlighter-rouge&quot;&gt;sort()&lt;/code&gt; function so the generic function needed to be sure that the elements in the array could be compared. This technique can also be used to restrict the parameter types to sub-classes of a certain class.&lt;/p&gt;
+
+&lt;p&gt;For a function with more than one generic data type, you need to use more than one placeholder letter:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;genericWithTwoDifferentTypes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;U&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;param1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;param2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;U&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;And in exactly the same way, both &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;U&lt;/code&gt; can be set to conform to a protocol or be members of a certain super-class.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Hopefully this has taken some of the mystery out of generics, but if you have any questions, please get in touch using the &lt;a href=&quot;/contact/&quot;&gt;Contact page&lt;/a&gt;, comment below or contact me via Twitter: &lt;a href=&quot;https://twitter.com/trozware&quot;&gt;@trozware&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 29 Feb 2016 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2016/02/learning-swift-generics/</link>
+        <guid isPermaLink="true">http://troz.net/2016/02/learning-swift-generics/</guid>
+      </item>
+    
+      <item>
+        <title>Singleton to Protocol</title>
+        <description>&lt;p&gt;I was driving through the town of &lt;a href=&quot;https://en.wikipedia.org/wiki/Singleton,_New_South_Wales&quot;&gt;Singleton&lt;/a&gt; the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple’s own APIs, but seem to be increasingly frowned upon in the Swift world.&lt;/p&gt;
+
+&lt;h3 id=&quot;so-what-is-a-singleton&quot;&gt;So what is a singleton?&lt;/h3&gt;
+
+&lt;p&gt;A singleton is a class that only expects to have a single instance. Think of it as a global instance of a class. In some cases this makes perfect sense if there can only ever be one instance of a particular class or if there is a default variant that suits most cases e.g.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sharedApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;NSUserDefaults&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;standardUserDefaults&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;NSNotificationCenter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defaultCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;NSFileManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defaultManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;NSURLSession&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sharedSession&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;If you are using an object whose name starts with “shared”, “standard” or “default” you can be pretty sure it is an singleton.&lt;/p&gt;
+
+&lt;h3 id=&quot;and-whats-the-problem-with-singletons&quot;&gt;And what’s the problem with singletons?&lt;/h3&gt;
+
+&lt;p&gt;There are probably many different opinions here but I have two thoughts about this:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;They are effectively global variables and global variables can make your code messy and un-predictable.&lt;/li&gt;
+  &lt;li&gt;If they can be accessed by multiple other objects, possibly at the same time, then you can get conflicts. These can be handled by clever use of background queues, but it isn’t easy.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;what-to-use-instead&quot;&gt;What to use instead?&lt;/h3&gt;
+
+&lt;p&gt;As I drove, I mused on a singleton that I had implemented recently. It was a logging utility that allowed any object in my app (mostly view controllers) to save a new entry to a log file. The basic structure of the Logger class was this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Logger&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sharedLogger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Logger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addToEventLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// use private functions to find log file URL&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// append event text with time stamp&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Any object in my app could use the Logger like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kt&quot;&gt;Logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sharedLogger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;addToEventLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newLogEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;When I got to think about how I was using this, I realised that instead of a Logger &lt;em&gt;object&lt;/em&gt; that everything could use, what I really needed was a Loggable &lt;em&gt;behaviour&lt;/em&gt; that I could apply &amp;amp; restrict to the few classes that actually needed to log events. For me, this was the break-through:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Create a behaviour, not an object.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As soon as I started thinking about this as a behaviour, a protocol became the obvious solution, so this is what I created:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;protocol&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Loggable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// not declaring functions here&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// as they should NOT be over-written&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Loggable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addToEventLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// use private functions to find log file URL&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// append event text with time stamp&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;We run immediately into one of the peculiarities of Swift protocol extensions which has been very well explained by &lt;a href=&quot;http://cjwirth.com/2016/01/20/swift-protocol-extension-weirdness/&quot;&gt;Caesar Wirth&lt;/a&gt;. If I had declared the &lt;code class=&quot;highlighter-rouge&quot;&gt;addToEventLog(_:)&lt;/code&gt; function in the protocol, then any class or struct conforming to this protocol would have been free to over-write this function and provide its own version. This is not what I wanted here - I wanted every object to use the same version. So I left the function declaration out of the protocol definition and only included it in the protocol extension.&lt;/p&gt;
+
+&lt;p&gt;To use this behaviour, a class or struct just has to be declared as conforming to the Loggable protocol:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MyClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Loggable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doSomething&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;addToEventLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;I did something!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;For my app, I knew that I would want all my NSViewControllers to be able to add log events, so instead of setting them all individually as conforming to the protocol, I used this shortcut which extends all NSViewControllers to conform to the protocol.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Loggable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;I added this line to the Loggable.swift file where I declared the protocol and its extension, but outside both of them.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Protocol-oriented programming is a new technique to me, so it really helps when I can find a practical example of where it solves a problem.&lt;/p&gt;
+
+&lt;p&gt;If you are new to POP, I highly recommend the &lt;a href=&quot;https://developer.apple.com/videos/play/wwdc2015/408/&quot;&gt;Crusty talk&lt;/a&gt; from WWDC 2015. And this article by &lt;a href=&quot;http://matthijshollemans.com/2015/07/22/mixins-and-traits-in-swift-2/&quot;&gt;Matthijs Hollemans&lt;/a&gt; was invaluable to me in demonstrating the problems with object inheritance that are solved by protocols.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 26 Feb 2016 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2016/02/singleton-to-protocol/</link>
+        <guid isPermaLink="true">http://troz.net/2016/02/singleton-to-protocol/</guid>
+      </item>
+    
+      <item>
+        <title>Three Rules for Writing Better Swift</title>
+        <description>&lt;h3 id=&quot;do-not-use-&quot;&gt;1. Do not use !&lt;/h3&gt;
+
+&lt;p&gt;Swift uses optionals for values that can be nil. To use an optional value, you need to “un-wrap” it first, which means getting the actual value out, assuming that the value exists and the optional is not actually nil.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/2016/02/learning-swift-optionals/&quot;&gt;Optionals&lt;/a&gt; are the subject of a complete post by themselves, but for now, I will just say this:
+When you use ! you are &lt;strong&gt;promising&lt;/strong&gt; the compiler that you will make sure there is a real value in that optional by the time it is needed.&lt;/p&gt;
+
+&lt;p&gt;If this is not the case, your app will crash as shown in this playground:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Playground2.png&quot; alt=&quot;Playground crash&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Instead of using ! you should use optional chaining with ? or check the value with &lt;code class=&quot;highlighter-rouge&quot;&gt;guard&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;if let&lt;/code&gt; before use.&lt;/p&gt;
+
+&lt;p&gt;One trap to beware of is with Xcode’s attempts to be helpful and suggest fixes to problems. If you use an optional where it cannot work, Xcode will warn you that it is incorrect, but the suggested fix will be to insert !&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/optional_fix.png&quot; alt=&quot;Optional fix&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When you see this, do not accept the suggested fix, but use it as a warning to show that you need to fix the problem properly.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;use-let-not-var&quot;&gt;2. Use let, not var&lt;/h3&gt;
+
+&lt;p&gt;Using constants in C-based languages is a pain. I could never remember the Objective-C syntax for declaring a static constant, so used to fall back to using &lt;code class=&quot;highlighter-rouge&quot;&gt;#define&lt;/code&gt; for global constants. Inside my objects, all instance properties were variables, not constants. Inside functions, it was the same.&lt;/p&gt;
+
+&lt;p&gt;It doesn’t take much imagination to work out that your apps will perform better and more securely if values that do not need to change are allocated as constants instead of variables.&lt;/p&gt;
+
+&lt;p&gt;With Swift, this is easy as you just declare a constant using the &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; keyword and declare variables using &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt;. The Swift compiler will now warn you if you have used &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; where &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; would do, but I prefer to declare everything using &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; and only change to &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; when this causes an error as shown in this playground example:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Playground3.png&quot; alt=&quot;Playground let error&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;allow-the-compiler-to-infer-types&quot;&gt;3. Allow the compiler to infer types&lt;/h3&gt;
+
+&lt;p&gt;With Objective-C and many other languages, you have to tell the compiler exactly what each variable is going to be: a string, an integer, an object of a certain type.&lt;/p&gt;
+
+&lt;p&gt;With Swift, the compiler is clever enough to work this out for you, which can make your code much cleaner looking and easy to read.&lt;/p&gt;
+
+&lt;p&gt;There are a few exceptions to this rule which are shown in the playground below:&lt;/p&gt;
+
+&lt;p&gt;Lines 3 - 6 are allowing the Swift compiler to decide what the type is and it is choosing valid types: Int, Double, String and UIView.&lt;/p&gt;
+
+&lt;p&gt;Line 8 is a case where we do not want the default type, which would be Double so we need to tell the compiler that this one really should be a CGFloat.&lt;/p&gt;
+
+&lt;p&gt;Lines 10 &amp;amp; 11 both deal with an array of Ints. In line 10, the values are supplied so the type of the array can be inferred.
+In the second case, the array is initially empty, so the type needs to be specified in the declaration.&lt;/p&gt;
+
+&lt;p&gt;Lines 13 and 14 are the same but with dictionaries instead of arrays.&lt;/p&gt;
+
+&lt;p&gt;In each case, it would have been valid Swift to specify the type but why bother? The more text you enter , the more change of mistake and it leaves your code looking cluttered.&lt;/p&gt;
+
+&lt;p&gt;If you ever need to check what type has been assigned to a constant or variable, Option-click on it in Xcode and you willl get a popup telling you what it is.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Playground4.png&quot; alt=&quot;Playground types&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;This was going to be five rules, but then I got a bit too verbose so will add more rules in a separate post.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 24 Feb 2016 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2016/02/three-rules-for-writing-better-swift/</link>
+        <guid isPermaLink="true">http://troz.net/2016/02/three-rules-for-writing-better-swift/</guid>
+      </item>
+    
+      <item>
+        <title>Configuring Xcode</title>
+        <description>&lt;p&gt;While not strictly a part of my Learning Swift series, today I thought I would discuss some of the ways to configure and use Xcode to be a more productive and comfortable programmer.&lt;/p&gt;
+
+&lt;h3 id=&quot;editor-color-themes-and-fonts&quot;&gt;1. Editor color themes and fonts:&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/XcodeFontPrefs.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Step through the supplied themes and find the best one for you. Then click the ‘+’ button at the bottom of the list and duplicate the selected theme. Now you can tweak it to suit you. Each text category can have its own font and size, but you can make multiple selections in order to do a bulk change. don’t forget to check out the Console section too - I dislike the default bold text for many of the console reports, so always change that.&lt;/p&gt;
+
+&lt;p&gt;An editing font should be mono-spaced i.e. every character should take up exactly the same width on the screen. This makes your code look neater and neater code is easier to read when you come back to it. I also much prefer a sans-serif font, but that is a matter of preference.&lt;/p&gt;
+
+&lt;p&gt;Menlo is the font used by Xcode as a default, but there are many other options either in the default installation of OS X or as free downloads. I change every now and then just to keep things interesting, but my favourites are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/adobe-fonts/source-code-pro&quot;&gt;Source Code Pro&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/chrissimpkins/hack&quot;&gt;Hack&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/mozilla/Fira&quot;&gt;Fira&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.fontsquirrel.com/fonts/Inconsolata&quot;&gt;Inconsolata&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Look for a font that makes it easy to distinguish the digit ‘1’ from a lowercase ‘l’ and where the digit ‘0’ is different to the ‘O’.&lt;/p&gt;
+
+&lt;p&gt;To install and use a new font, download the files and then double-click a TTF or OTF font file to install it in FontBook. Once the font is installed, you may need to restart Xcode in order to make it available.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;add-ons&quot;&gt;2. Add-ons:&lt;/h3&gt;
+
+&lt;p&gt;The easiest way to find and install add-ons for Xcode is using the &lt;a href=&quot;http://alcatraz.io&quot;&gt;Alcatraz package manager&lt;/a&gt;. The installation instructions are on the linked page, and once installed, restart Xcode to see “Package Manager” in the Window menu. Adding plugins and themes is very easy, but some may require Xcode to restart before they appear.&lt;/p&gt;
+
+&lt;p&gt;When you start Xcode the first time after installing extra plugins, you will get a warning about possible instability due to non-Apple plugins. Click the “Load” button to load them anyway and if Xcode becomes unstable, then delete the one you think might be the culprit.&lt;/p&gt;
+
+&lt;p&gt;Alcatraz makes it very easy to un-install add-ons as well as install, so you can test them out.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Alcatraz.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here are two of my favourites (search for them by name in the Alcatraz Package Manager window to install them or to see more details):&lt;/p&gt;
+
+&lt;h4 id=&quot;cocoapods&quot;&gt;CocoaPods:&lt;/h4&gt;
+
+&lt;p&gt;This puts the power of the CocoaPods command line interface inside Xcode and available through the Products menu.
+&lt;a href=&quot;https://cocoapods.org&quot;&gt;CocoaPods&lt;/a&gt; is a dependency manager for Swift and Objective-C projects. It has over ten thousand libraries so is a great resource for any Apple developers. The CocoaPods site has instructions for installing the tool and then you can use it via this plugin. You may need to change the GEM_PATH as shown in the screen shot below. To find out what you should enter there, open a Terminal window and type &lt;code class=&quot;highlighter-rouge&quot;&gt;which pod&lt;/code&gt; at the prompt:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;which pod
+/usr/local/bin/pod&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The result shows exactly where the pod tool is installed, so delete the word &lt;code class=&quot;highlighter-rouge&quot;&gt;pod&lt;/code&gt; in order to get the containing folder and enter that as your GEM_PATH. In my case that was &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/bin/&lt;/code&gt; but yours may be different.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/CocoaPods.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;colorsenserainbow&quot;&gt;ColorSenseRainbow:&lt;/h4&gt;
+
+&lt;p&gt;As you can from the screen shot below, this gives you a color swatch when the cursor is inside a UIColor or NSColor initialiser. Clicking in the swatch pops up the color picker which can edit the color in your code.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/ColorSenseRainbow.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;documentation&quot;&gt;3. Documentation:&lt;/h3&gt;
+
+&lt;p&gt;Xcode has excellent documentation, but unless you specifically download it, this will all be accessed online. If you have a bad or non-existent connection, this can be annoying. Go to Xcode’s Preferences -&amp;gt; Downloads and download all the document sets you are interested in. They are quite large, but having them local will be a big bonus.&lt;/p&gt;
+
+&lt;p&gt;The other tool I use for documentation is &lt;a href=&quot;https://kapeli.com/dash&quot;&gt;Dash&lt;/a&gt;. It supports many languages and is not just for use in Xcode. I found the Xcode integration plugin was not very useful as it conflicted with other useful behaviours. So I set up a global shortcut in System Preferences to search Dash for the selected text. This is much faster than Xcode’s built-in documentation.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Dash.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;other-preferences&quot;&gt;4. Other preferences:&lt;/h3&gt;
+
+&lt;p&gt;Go through the preference panes in Xcode’s preferences and tweak to suit your style or your group’s preferred style.&lt;/p&gt;
+
+&lt;p&gt;General and Text Editing are important. Text Editing has a second tab for Indentation which is easy to miss. Indentation styles seem to cause a lot of heated debate, so make sure you check this out.&lt;/p&gt;
+
+&lt;p&gt;Accounts is vital if you are publishing to the App Stores and also makes it easy to transfer all your develop information from one computer to another.&lt;/p&gt;
+
+&lt;p&gt;Fonts &amp;amp; Colors and Downloads are discussed above.&lt;/p&gt;
+
+&lt;p&gt;I tend to leave the  others set to the defaults.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 17 Feb 2016 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2016/02/configuring-xcode/</link>
+        <guid isPermaLink="true">http://troz.net/2016/02/configuring-xcode/</guid>
+      </item>
+    
+      <item>
+        <title>How do I start to learn Swift?</title>
+        <description>&lt;p&gt;The first thing to do is to download the latest version of Apple’s &lt;a href=&quot;https://itunes.apple.com/book/swift-programming-language/id881256329&quot;&gt;Swift Programming Language book&lt;/a&gt; from the iBooks Store.&lt;/p&gt;
+
+&lt;p&gt;You can just read this book, especially the first section: “A Swift Tour”, but you will get more out of it if you follow along with the playground. There is a link to download the playground from the book which you can use directly if you are reading using iBooks on the Mac. If you are not, here is the &lt;a href=&quot;https://developer.apple.com/go/?id=swift-tour&quot;&gt;download link&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You will also need to install &lt;a href=&quot;https://itunes.apple.com/app/xcode/id497799835&quot;&gt;Xcode&lt;/a&gt; from the Mac App Store. Xcode is Apple’s IDE and is used for programming Mac, iPhones, iPads, Apple Watches and Apple TVs.&lt;/p&gt;
+
+&lt;p&gt;Swift introduced the playground to Xcode. A playground is a fantastic way to learn and experiment. You do not need to create a project, build, run a separate app, install on a device. Code typed into a playground is run immediately and you can see the results instantly, line by line.&lt;/p&gt;
+
+&lt;p&gt;Here is an example of a playground showing the code on the left and the result of each line appearing on the right.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Playground1.png&quot; alt=&quot;Playground&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Once you have gone through the Swift Tour, Apple’s book becomes more of a reference guide to return to whenever you get stuck. The other way I use it is to check up on changes made when a new version of Swift is released. As the language is still rapidly evolving, these can be quite extensive. Once I have the latest version of the book, I go to the Revision History at the back and click the links to read about the features that have been added or changed.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Apart from Apple’s documentation, there are a lot of great web sites, blogs and Twitter accounts out there. There are also useful newsletters that give a weekly summary of exciting developments.&lt;/p&gt;
+
+&lt;p&gt;Here are some of my favourites:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.natashatherobot.com&quot;&gt;Natasha the Robot&lt;/a&gt; - my favourite Swift blogger - sign up for her newsletter and follow her on Twitter.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/swift/blog/&quot;&gt;Apple’s Swift Blog&lt;/a&gt; - not many posts, but good for learning about new features.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ericasadun.com&quot;&gt;Erica Sadun&lt;/a&gt; - sometimes a bit too technical for me, but often contains some really useful snippets. Erica has the distinction of being the first person outside Apple to have had a Swift language proposal accepted as part of the open source development process.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://andybargh.com&quot;&gt;Andy Bargh&lt;/a&gt; - detailed articles on various aspects of Swift, plus a weekly newsletter.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.raywenderlich.com&quot;&gt;Ray Wenderlich tutorials&lt;/a&gt; - search for Swift and find heaps of tutorials covering many different aspects.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://swiftsandbox.io&quot;&gt;Swift Sandbox&lt;/a&gt; - weekly newsletter filled with interesting articles.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://swiftmonthly.com&quot;&gt;SwiftMonthly&lt;/a&gt; - useful newsletter with links to tutorials, videos and projects.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://swiftdoc.org&quot;&gt;SwiftDoc.org&lt;/a&gt; - the documentation in Xcode is still heavily skewed towards Objective-C programmers and it can be difficult to find Swift-specific entries. This site makes it easy.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And I hope you will keep coming back to this site to see what new Swift-related articles are available.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 16 Feb 2016 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2016/02/how-do-i-start-to-learn-swift/</link>
+        <guid isPermaLink="true">http://troz.net/2016/02/how-do-i-start-to-learn-swift/</guid>
+      </item>
+    
+      <item>
+        <title>Learning Swift - Optionals</title>
+        <description>&lt;p&gt;Today I plan to discuss optionals since they were a feature of Swift that I found difficult to grasp at first.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-is-an-optional-in-swift&quot;&gt;What is an optional in Swift?&lt;/h3&gt;
+
+&lt;p&gt;An optional is a variable of a specified type that can also be nil.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-does-this-matter&quot;&gt;Why does this matter?&lt;/h3&gt;
+
+&lt;p&gt;In Objective-C, any object type could be nil. If you declared a variable like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;then &lt;code class=&quot;highlighter-rouge&quot;&gt;myString&lt;/code&gt; was set to nil by default.&lt;/p&gt;
+
+&lt;p&gt;But this could cause issues, especially as Objective-C does not complain if you send a message to nil. This could lead to bugs that were very difficult to track down.&lt;/p&gt;
+
+&lt;p&gt;The other big use for nil is when returning from a function which has found no appropriate data to return. The classic example is when looking for the index of an element in an array. What should be returned if the element is not found in the array?&lt;/p&gt;
+
+&lt;p&gt;Some languages return -1, Objective-C uses &lt;code class=&quot;highlighter-rouge&quot;&gt;NSNotFound&lt;/code&gt;, but you have to know what each language is going to do. The more logical answer is nil. However if your function is expected to return an integer, then it cannot return nil because nil is not an integer.&lt;/p&gt;
+
+&lt;p&gt;This is where optionals come in: if the function is expected to return an optional integer, it can return with an integer with the index of the matching element, or it can return nil if the element was not found. This is much clearer and less prone to error.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;how-does-swift-handle-optionals&quot;&gt;How does Swift handle optionals?&lt;/h2&gt;
+
+&lt;p&gt;One of the first things that struck me about Swift was how clean the code looked, without so many non-alphanumeric characters scattered around. Gone were all the:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;But instead, Swift code sprouted:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;What were these?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The key to understanding optionals is to realise that when you declare an optional variable of a certain type, you are actually declaring a box that can hold a variable of that type or can hold nil.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you grasp that concept, it all becomes much more obvious.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;optionalInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The ? indicates that this is an optional variable. It does not have to be initialised as it is already set to nil which is valid for an optional variable. Without the ? this would require initialisation as it would not be valid for it to be nil.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;setting-an-optional&quot;&gt;Setting an optional:&lt;/h3&gt;
+
+&lt;p&gt;Setting the value of an optional variable is just the same as any other variable:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;n&quot;&gt;optionalInteger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;optionalInteger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;getting-an-optional&quot;&gt;Getting an optional:&lt;/h3&gt;
+
+&lt;p&gt;The difference arises when you need to get the data out of the optional variable in order to use it. This process is called un-wrapping and it means to get the variable value out of the ‘box’ it is stored it.&lt;/p&gt;
+
+&lt;h4 id=&quot;the-most-obvious-way-is-to-use-&quot;&gt;The most obvious way is to use !&lt;/h4&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;newInteger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;optionalInteger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;DO NOT DO THIS!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This is called forced-unwrapping and assumes that the optional variable is not nil. If the optional is nil, this will crash.
+In Xcode, when you connect interface elements from your storyboard to a Swift file, Xcode will use ! like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;@IBOutlet&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;weak&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;startButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;I have to assume Xcode knows what it is doing and the button will be available when needed, but you should not use ! - it is un-safe. By using it, you are vowing to the compiler that when it gets to that point, the optional value will not be nil. There are much better and safer ways of doing that.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;use-if-let&quot;&gt;Use ‘if let’:&lt;/h4&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doubleNumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;optionalInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;integerValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;optionalInteger&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// integerValue is not an optional&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// and is guaranteed to contain an Int&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;integerValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// no integer found in the optional,&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// so return nil to indicate failure&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;use-guard&quot;&gt;Use guard:&lt;/h4&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doubleNumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;optionalInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;integerValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;optionalInteger&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// get out quickly, &lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// returning nil to indicate failure&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// integerValue is not an optional &lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// and is guaranteed to contain an Int&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;integerValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;These two alternatives (&lt;code class=&quot;highlighter-rouge&quot;&gt;if let&lt;/code&gt; &amp;amp; &lt;code class=&quot;highlighter-rouge&quot;&gt;guard&lt;/code&gt;) do the same job but in opposite ways. In both cases, they perform a conditional un-wrapping that may or may not give a valid result. &lt;code class=&quot;highlighter-rouge&quot;&gt;if let&lt;/code&gt; checks if it is OK to proceed. &lt;code class=&quot;highlighter-rouge&quot;&gt;guard&lt;/code&gt; checks to see if it is NOT OK to proceed. Which you use is really a matter of personal preference and working out what is more logical in each case.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;guard&lt;/code&gt; statement is really good for checking data early in a process and making a quick exit it something is wrong.
+The &lt;code class=&quot;highlighter-rouge&quot;&gt;if let&lt;/code&gt; construct encloses your success code inside a block and can sometimes leave the failure code a long way from the check which can make it less obvious. The other potential issue with &lt;code class=&quot;highlighter-rouge&quot;&gt;if let&lt;/code&gt; is the “pyramid of doom” common in early Swift code as demonstrated in this rather contrived example:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isValidAddressBookEntry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;emailAddress&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;phoneNumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;validFirstName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;firstName&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;validLastName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lastName&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;validEmail&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emailAddress&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;validPhone&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;phoneNumber&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Thankfully, Swift 2 allows us to chain both &lt;code class=&quot;highlighter-rouge&quot;&gt;if let&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;guard&lt;/code&gt; statements. Here is the previous example re-factored for Swift 2:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isValidAddressBookEntry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;emailAddress&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;phoneNumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;validFirstName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;validLastName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;validEmail&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emailAddress&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;validPhone&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;phoneNumber&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;use-optional-chaining&quot;&gt;Use optional chaining:&lt;/h4&gt;
+
+&lt;p&gt;The final way to deal with optionals safely is to use optional chaining:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SocialMediaAccounts&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;facebook&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;twitter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;handle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;socialMedia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SocialMediaAccounts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;socialMedia&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SocialMediaAccounts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;twitterAccount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;socialMedia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;twitter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;twitterAccount&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;twitterHandle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;socialMedia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;twitter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;handle&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;In this example, we have defined a &lt;code class=&quot;highlighter-rouge&quot;&gt;SocialMediaAccounts&lt;/code&gt; struct that holds optional &lt;code class=&quot;highlighter-rouge&quot;&gt;Person&lt;/code&gt; structs for the various social media outlets. The &lt;code class=&quot;highlighter-rouge&quot;&gt;socialMedia&lt;/code&gt; variable is defined as an optional and then created. A &lt;code class=&quot;highlighter-rouge&quot;&gt;twitterAccount&lt;/code&gt; variable of type &lt;code class=&quot;highlighter-rouge&quot;&gt;Person&lt;/code&gt; is also created but contains no data at the moment.&lt;/p&gt;
+
+&lt;p&gt;When assigning the &lt;code class=&quot;highlighter-rouge&quot;&gt;twitterAccount&lt;/code&gt; to the &lt;code class=&quot;highlighter-rouge&quot;&gt;socialMedia.twitter&lt;/code&gt; property, a ? is inserted which checks to see that &lt;code class=&quot;highlighter-rouge&quot;&gt;socialMedia&lt;/code&gt; is not nil. If it is nil, then execution of that line stops at the ? and nothing bad will happen.&lt;/p&gt;
+
+&lt;p&gt;In the same way, when trying to read back the twitter handle, we chained together 2 optionals with ?’s. If either &lt;code class=&quot;highlighter-rouge&quot;&gt;socialMedia&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;socialMedia.twitter&lt;/code&gt; is nil, that line will not complete. Again this is perfectly safe and the app will not crash.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;All the examples in this article are available in a &lt;a href=&quot;https://github.com/trozware/optionals&quot;&gt;Swift playground&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 12 Feb 2016 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2016/02/learning-swift-optionals/</link>
+        <guid isPermaLink="true">http://troz.net/2016/02/learning-swift-optionals/</guid>
+      </item>
+    
+      <item>
+        <title>Quick Score - Tennis</title>
+        <description>&lt;p&gt;Quick Score: Tennis is available from the &lt;a href=&quot;https://itunes.apple.com/app/quick-score-tennis/id1065155745&quot;&gt;iTunes App Store&lt;/a&gt; for iPhone and Apple Watch.&lt;/p&gt;
+
+&lt;p&gt;Quick Score: Tennis is an app designed to allow you to score tennis matches quickly and easily on your iPhone or your Apple Watch.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/QST_Watch.png&quot; alt=&quot;Quick Score: Tennis on Apple Watch&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When playing in a tennis match, your Apple Watch is the best way to score. Set your watch to resume last activity when raised, and at the end of every point a single tap is all it takes to record whether you won or lost the point. The watch will tell you the score for the current game as well as the score for the previous games and sets. If you enter a point wrong, a force-press allows you to undo the last point, or to end the match.&lt;/p&gt;
+
+&lt;p&gt;Any significant information is displayed: game won or lost, set won or last, match complete, change of ends, tie-breakers.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/QST1.png&quot; alt=&quot;Quick Score: Tennis on iPhone&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If scoring for a match that does not include you, the phone makes a good scoring device although the watch still works just as well. As with the watch, after every point it just takes a single tap to record the result of the point. The scores are displayed and significant information is announced.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The phone app records all matches played so any match can be reviewed later with the result of every game and set displayed. On the phone, the names of the players can be entered, either manually or by choosing from your contacts.  The result can be shared via email or message.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/QST2.png&quot; alt=&quot;Quick Score: Tennis summary&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;No ads, no in-app purchases, no features missing - you get the complete app for less than the price of a can of tennis balls.&lt;/p&gt;
+
+&lt;p&gt;If you like this app, please leave a rating or a review at the App Store. If you have a problem or want to suggest a new feature, please &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#115;&amp;#097;&amp;#114;&amp;#097;&amp;#104;&amp;#064;&amp;#116;&amp;#114;&amp;#111;&amp;#122;&amp;#046;&amp;#110;&amp;#101;&amp;#116;&amp;#063;&amp;#115;&amp;#117;&amp;#098;&amp;#106;&amp;#101;&amp;#099;&amp;#116;&amp;#061;&amp;#081;&amp;#117;&amp;#105;&amp;#099;&amp;#107;&amp;#037;&amp;#050;&amp;#048;&amp;#083;&amp;#099;&amp;#111;&amp;#114;&amp;#101;&amp;#037;&amp;#051;&amp;#065;&amp;#037;&amp;#050;&amp;#048;&amp;#084;&amp;#101;&amp;#110;&amp;#110;&amp;#105;&amp;#115;&quot;&gt;contact me directly&lt;/a&gt; so I can respond.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 11 Feb 2016 00:00:00 +1000</pubDate>
+        <link>http://troz.net/quick-score-tennis/</link>
+        <guid isPermaLink="true">http://troz.net/quick-score-tennis/</guid>
+      </item>
+    
+  </channel>
+</rss>
