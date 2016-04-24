@@ -67,9 +67,17 @@ Having determined that a speed display app is really useful, but not finding one
 
 So watch this space for further news of my up-coming app...
 
+---
+
+### Update:
+
+"[What Is My Speed?][7]" is available now from the [iTunes App Store][6] for iPhone and Apple Watch.
+
 
 [1]: https://www.apple.com/ios/maps/
 [2]: https://itunes.apple.com/app/google-maps-real-time-navigation/id585027354
 [3]: https://itunes.apple.com/au/app/metroview-gps-navigation/id370753892
 [4]: https://itunes.apple.com/app/speedometer-+-hud-digital/id375318117
 [5]: https://itunes.apple.com/app/talking-hud-voice-prompt-speedometer/id873194479
+[6]: https://itunes.apple.com/app/what-is-my-speed/id1091394524
+[7]: /what-is-my-speed/

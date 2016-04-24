@@ -40,7 +40,7 @@ App                          || Version | Release Date      | Download Link
 ![][31] | [Quick Score - Tennis][32]                  | 1.0     | 10 Feb 2016 | <a href="https://itunes.apple.com/app/quick-score-tennis/id1065155745" target="itunes_store" class="ios_apps"></a>
 ![][25] | [Pic-a-POD][13]                  | 2.0     | 23 Oct 2013 | <a href="https://itunes.apple.com/app/pic-a-pod/id480086912" target="itunes_store" class="ios_apps"></a>
 ![][26] | [Time In Words][27]              | 4.0     | 23 Apr 2015 | <a href="https://itunes.apple.com/app/time-in-words/id498403851" target="itunes_store" class="ios_apps"></a>
-![][35] | [What Is My Speed?][34]              | 1.0     | Coming soon | <!-- <a href="https://itunes.apple.com/app/what-is-my-speed/id1091394524" target="itunes_store" class="ios_apps"></a> -->
+![][35] | [What Is My Speed?][34]              | 1.0     | 22 Apr 2016 | <a href="https://itunes.apple.com/app/what-is-my-speed/id1091394524" target="itunes_store" class="ios_apps"></a>
 
 
  [1]: /apps-mac/ "Apps for Mac"

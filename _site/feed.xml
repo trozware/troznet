@@ -15,9 +15,13 @@ img {
     margin-right: auto }
 &lt;/style&gt;
 
-&lt;p&gt;“What Is My Speed?” will be available soon from the iTunes App Store for iPhone and Apple Watch.&lt;/p&gt;
+&lt;p&gt;“What Is My Speed?” is available now from the &lt;a href=&quot;https://itunes.apple.com/app/what-is-my-speed/id1091394524&quot;&gt;iTunes App Store&lt;/a&gt; for iPhone and Apple Watch.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/speed_1.png&quot; alt=&quot;What Is My Speed? - iPhone&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you read my recent blog post on &lt;a href=&quot;/2016/04/road-trip-apps/&quot;&gt;Road Trip Apps&lt;/a&gt; you will have realised that I was working on an app to fill a gap that I discovered in our road trip app arsenal. So here it is: “What Is My Speed?” for iPhone &amp;amp; Apple Watch.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;p&gt;Track your speed on your iPhone or Apple Watch while driving, bicycling, running or walking.
 See your course and altitude at all times.&lt;/p&gt;
@@ -32,6 +36,8 @@ See your course and altitude at all times.&lt;/p&gt;
 
 &lt;p&gt;Your current iPhone settings are used to set the default units for speed and altitude, but these are easily changed after tapping the info button.&lt;/p&gt;
 
+&lt;hr /&gt;
+
 &lt;p&gt;To monitor your speed on your Apple Watch, you need to start the app on your iPhone, but then it does not have to remain in the foreground. However speed limit warnings will only be given when the iPhone app is active.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/speed_watch_1.png&quot; alt=&quot;What Is My Speed? Apple Watch&quot; /&gt;&lt;/p&gt;
@@ -41,6 +47,8 @@ See your course and altitude at all times.&lt;/p&gt;
 &lt;p&gt;Tap the “?” button on the main screen to be reminded of the available swipes.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/speed_3.png&quot; alt=&quot;What Is My Speed? adjust speed limit - iPhone&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;p&gt;&lt;strong&gt;Location permissions:&lt;/strong&gt; On startup, the app will request permission to access your location. This is how the speed, course and altitude data is gathered so is essential for the app to operate. If you have an Apple Watch with the app installed, the app will continue to track your speed while in the background so that the data can be sent to your watch. If you do not have an Apple Watch or the app is not installed on the watch, your speed will only ever be tracked when the app is the current foreground app.&lt;/p&gt;
 
@@ -127,6 +135,12 @@ See your course and altitude at all times.&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;So watch this space for further news of my up-coming app…&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;update&quot;&gt;Update:&lt;/h3&gt;
+
+&lt;p&gt;“&lt;a href=&quot;/what-is-my-speed/&quot;&gt;What Is My Speed?&lt;/a&gt;” is available now from the &lt;a href=&quot;https://itunes.apple.com/app/what-is-my-speed/id1091394524&quot;&gt;iTunes App Store&lt;/a&gt; for iPhone and Apple Watch.&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 07 Apr 2016 00:00:00 +1000</pubDate>
