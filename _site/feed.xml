@@ -7,6 +7,74 @@
     <atom:link href="http://troz.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>How To Confuse TestFlight</title>
+        <description>&lt;p&gt;&lt;a href=&quot;#tldr&quot;&gt;TL;DR&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I ran into an unusual problem when testing my latest app: “&lt;a href=&quot;/what-is-my-speed/&quot;&gt;What Is My Speed?&lt;/a&gt;”. It is now available from the &lt;a href=&quot;https://itunes.apple.com/app/what-is-my-speed/id1091394524&quot;&gt;iTunes App Store&lt;/a&gt;, but getting there was a struggle.&lt;/p&gt;
+
+&lt;p&gt;Xcode is terrible at renaming projects, so it is a really good idea to have worked out your app’s name before starting. I would even recommend creating an app ID in your Apple Developer account and registering the app name in iTunes Connect. Only once you get to iTunes Connect will the name be checked for uniqueness. Searching the App Stores is not enough as it does not cover un-released apps or apps that are not available in your country.&lt;/p&gt;
+
+&lt;p&gt;So I set up my app. I was hoping for “What’s My Speed?” but was happy with “What Is My Speed?”.&lt;/p&gt;
+
+&lt;p&gt;Next step was to create the project in Xcode which I did using the app name and manually entering the bundle identifier that I had registered at Apple Developer. Xcode accepted the name without any warnings and created the default targets using that name.&lt;/p&gt;
+
+&lt;p&gt;In the default unit testing file, the module was defined like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;@testable&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;What_Is_My_Speed_&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;which made me think that Xcode was quite happy to have parsed the app name as required to replace any unwanted characters to suit.&lt;/p&gt;
+
+&lt;p&gt;The app was built, passed all unit tests, profiled, analyzed, tested on real devices as well as the simulators and uploaded to TestFlight.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;BARRRPPPP!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/TestFlight_error.png&quot; alt=&quot;This app cannot be installed&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;What?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;(I forgot to take a screenshot but found a similar one online. Thanks &lt;a href=&quot;https://www.simpletechs.net/apps/easy-fix-for-testflight-problem-after-restoring-from-backup/&quot;&gt;Simple Techs&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I have had experience with TestFlight’s oddities in the past, so I incremented the build number and tried again, thinking that maybe there had been a processing issue. Same result.&lt;/p&gt;
+
+&lt;p&gt;This started a very frustrating 24 hours as I ran through all the possibilities I could think of or find suggested on the net. Due to disastrous Australian internet speeds, especially uploads, each attempt took from 40 - 120 minutes. About 5 minutes to implement the next idea, 25 minutes upload time, then the rest waiting for Apple to process the app so I could try again.&lt;/p&gt;
+
+&lt;p&gt;Here is what I tried:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Uploaded a fresh build.&lt;/li&gt;
+  &lt;li&gt;Removed Bitcode.&lt;/li&gt;
+  &lt;li&gt;Fixed the code signing identity which was set to iOS Developer for some reason.&lt;/li&gt;
+  &lt;li&gt;Manually specified the provisioning profiles for all three components (iPhone app, WatchKit app, WatchKit Extension).&lt;/li&gt;
+  &lt;li&gt;Manually selected the code signing identity for the provisioning profiles.&lt;/li&gt;
+  &lt;li&gt;Uploaded using Application Loader instead of Xcode.&lt;/li&gt;
+  &lt;li&gt;Removed third-party framework.&lt;/li&gt;
+  &lt;li&gt;Removed WatchKit app.&lt;/li&gt;
+  &lt;li&gt;Revoked my distribution profile, re-created it and updated all provisioning profiles.&lt;/li&gt;
+  &lt;li&gt;Created a completely blank project with same app name and bundle identifier.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;As you can see from this list, I thought it was a code signing or profile error. Using &lt;a href=&quot;https://itunes.apple.com/app/apple-configurator-2/id1037126344&quot;&gt;Apple Configurator 2&lt;/a&gt; (the modern version of iPhone Configuration Utility), I was able to get the logs from my iPhone and entries like the following seemed to confirm this:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Error Domain=LaunchServicesError Code=0 &quot;(null)&quot; UserInfo={Error=ApplicationVerificationFailed, ErrorDetail=-402620393, ErrorDescription=Failed to verify code signature of /private/var/installd/Library/Caches/com.apple.mobile.
+installd.staging/temp.2LWJ2h/extracted/Payload/What Is My Speed?.app : 0xe8008017 (A signed resource has been added, modified, or deleted.)}&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;But when I got to the stage of a completely blank app still failing, I suddenly thought of the question mark. With the benefit of my preamble to this post, you all probably got there long before I did, but I got there in the end.&lt;/p&gt;
+
+&lt;p&gt;The solution was to remove the question mark from the names of the targets in Xcode. I had to fix up the module names in my unit testing files, but apart from that, there were no changes. After this I was able to upload the complete app to TestFlight and install it on my iPhone.&lt;/p&gt;
+
+&lt;p&gt;It is possible that it was the Product Names that were the issue, rather than the target name as in Build Settings, Product Name is set to be &lt;code class=&quot;highlighter-rouge&quot;&gt;$(TARGET_NAME)&lt;/code&gt; by default but I didn’t test that. Maybe next time…&lt;/p&gt;
+
+&lt;p&gt;&lt;a name=&quot;tldr&quot;&gt;TL;DR&lt;/a&gt; Do not put any unusual characters in your target names. Alphanumerics and spaces are OK, but I am not sure about anything else.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 24 Apr 2016 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2016/04/how-to-confuse-testflight/</link>
+        <guid isPermaLink="true">http://troz.net/2016/04/how-to-confuse-testflight/</guid>
+      </item>
+    
+      <item>
         <title>What Is My Speed?</title>
         <description>&lt;style&gt;
 img {
@@ -893,193 +961,6 @@ In the second case, the array is initially empty, so the type needs to be specif
         <pubDate>Tue, 16 Feb 2016 00:00:00 +1000</pubDate>
         <link>http://troz.net/2016/02/how-do-i-start-to-learn-swift/</link>
         <guid isPermaLink="true">http://troz.net/2016/02/how-do-i-start-to-learn-swift/</guid>
-      </item>
-    
-      <item>
-        <title>Learning Swift - Optionals</title>
-        <description>&lt;p&gt;Today I plan to discuss optionals since they were a feature of Swift that I found difficult to grasp at first.&lt;/p&gt;
-
-&lt;h3 id=&quot;what-is-an-optional-in-swift&quot;&gt;What is an optional in Swift?&lt;/h3&gt;
-
-&lt;p&gt;An optional is a variable of a specified type that can also be nil.&lt;/p&gt;
-
-&lt;h3 id=&quot;why-does-this-matter&quot;&gt;Why does this matter?&lt;/h3&gt;
-
-&lt;p&gt;In Objective-C, any object type could be nil. If you declared a variable like this:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;then &lt;code class=&quot;highlighter-rouge&quot;&gt;myString&lt;/code&gt; was set to nil by default.&lt;/p&gt;
-
-&lt;p&gt;But this could cause issues, especially as Objective-C does not complain if you send a message to nil. This could lead to bugs that were very difficult to track down.&lt;/p&gt;
-
-&lt;p&gt;The other big use for nil is when returning from a function which has found no appropriate data to return. The classic example is when looking for the index of an element in an array. What should be returned if the element is not found in the array?&lt;/p&gt;
-
-&lt;p&gt;Some languages return -1, Objective-C uses &lt;code class=&quot;highlighter-rouge&quot;&gt;NSNotFound&lt;/code&gt;, but you have to know what each language is going to do. The more logical answer is nil. However if your function is expected to return an integer, then it cannot return nil because nil is not an integer.&lt;/p&gt;
-
-&lt;p&gt;This is where optionals come in: if the function is expected to return an optional integer, it can return with an integer with the index of the matching element, or it can return nil if the element was not found. This is much clearer and less prone to error.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;how-does-swift-handle-optionals&quot;&gt;How does Swift handle optionals?&lt;/h2&gt;
-
-&lt;p&gt;One of the first things that struck me about Swift was how clean the code looked, without so many non-alphanumeric characters scattered around. Gone were all the:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;But instead, Swift code sprouted:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;What were these?&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;The key to understanding optionals is to realise that when you declare an optional variable of a certain type, you are actually declaring a box that can hold a variable of that type or can hold nil.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Once you grasp that concept, it all becomes much more obvious.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;optionalInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The ? indicates that this is an optional variable. It does not have to be initialised as it is already set to nil which is valid for an optional variable. Without the ? this would require initialisation as it would not be valid for it to be nil.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;setting-an-optional&quot;&gt;Setting an optional:&lt;/h3&gt;
-
-&lt;p&gt;Setting the value of an optional variable is just the same as any other variable:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;n&quot;&gt;optionalInteger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;optionalInteger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;getting-an-optional&quot;&gt;Getting an optional:&lt;/h3&gt;
-
-&lt;p&gt;The difference arises when you need to get the data out of the optional variable in order to use it. This process is called un-wrapping and it means to get the variable value out of the ‘box’ it is stored it.&lt;/p&gt;
-
-&lt;h4 id=&quot;the-most-obvious-way-is-to-use-&quot;&gt;The most obvious way is to use !&lt;/h4&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;newInteger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;optionalInteger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;DO NOT DO THIS!&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;This is called forced-unwrapping and assumes that the optional variable is not nil. If the optional is nil, this will crash.
-In Xcode, when you connect interface elements from your storyboard to a Swift file, Xcode will use ! like this:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;@IBOutlet&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;weak&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;startButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;I have to assume Xcode knows what it is doing and the button will be available when needed, but you should not use ! - it is un-safe. By using it, you are vowing to the compiler that when it gets to that point, the optional value will not be nil. There are much better and safer ways of doing that.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;use-if-let&quot;&gt;Use ‘if let’:&lt;/h4&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doubleNumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;optionalInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;integerValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;optionalInteger&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// integerValue is not an optional&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// and is guaranteed to contain an Int&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;integerValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// no integer found in the optional,&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// so return nil to indicate failure&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;use-guard&quot;&gt;Use guard:&lt;/h4&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doubleNumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;optionalInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;integerValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;optionalInteger&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// get out quickly, &lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// returning nil to indicate failure&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// integerValue is not an optional &lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// and is guaranteed to contain an Int&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;integerValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;These two alternatives (&lt;code class=&quot;highlighter-rouge&quot;&gt;if let&lt;/code&gt; &amp;amp; &lt;code class=&quot;highlighter-rouge&quot;&gt;guard&lt;/code&gt;) do the same job but in opposite ways. In both cases, they perform a conditional un-wrapping that may or may not give a valid result. &lt;code class=&quot;highlighter-rouge&quot;&gt;if let&lt;/code&gt; checks if it is OK to proceed. &lt;code class=&quot;highlighter-rouge&quot;&gt;guard&lt;/code&gt; checks to see if it is NOT OK to proceed. Which you use is really a matter of personal preference and working out what is more logical in each case.&lt;/p&gt;
-
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;guard&lt;/code&gt; statement is really good for checking data early in a process and making a quick exit it something is wrong.
-The &lt;code class=&quot;highlighter-rouge&quot;&gt;if let&lt;/code&gt; construct encloses your success code inside a block and can sometimes leave the failure code a long way from the check which can make it less obvious. The other potential issue with &lt;code class=&quot;highlighter-rouge&quot;&gt;if let&lt;/code&gt; is the “pyramid of doom” common in early Swift code as demonstrated in this rather contrived example:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isValidAddressBookEntry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;emailAddress&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;phoneNumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;validFirstName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;firstName&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;validLastName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lastName&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;validEmail&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emailAddress&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;validPhone&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;phoneNumber&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Thankfully, Swift 2 allows us to chain both &lt;code class=&quot;highlighter-rouge&quot;&gt;if let&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;guard&lt;/code&gt; statements. Here is the previous example re-factored for Swift 2:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isValidAddressBookEntry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;emailAddress&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;phoneNumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt;
-            &lt;span class=&quot;nv&quot;&gt;validFirstName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;validLastName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;validEmail&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emailAddress&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;validPhone&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;phoneNumber&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;use-optional-chaining&quot;&gt;Use optional chaining:&lt;/h4&gt;
-
-&lt;p&gt;The final way to deal with optionals safely is to use optional chaining:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SocialMediaAccounts&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;facebook&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;twitter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;handle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;socialMedia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SocialMediaAccounts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;socialMedia&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SocialMediaAccounts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;twitterAccount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;socialMedia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;twitter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;twitterAccount&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;twitterHandle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;socialMedia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;twitter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;handle&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;In this example, we have defined a &lt;code class=&quot;highlighter-rouge&quot;&gt;SocialMediaAccounts&lt;/code&gt; struct that holds optional &lt;code class=&quot;highlighter-rouge&quot;&gt;Person&lt;/code&gt; structs for the various social media outlets. The &lt;code class=&quot;highlighter-rouge&quot;&gt;socialMedia&lt;/code&gt; variable is defined as an optional and then created. A &lt;code class=&quot;highlighter-rouge&quot;&gt;twitterAccount&lt;/code&gt; variable of type &lt;code class=&quot;highlighter-rouge&quot;&gt;Person&lt;/code&gt; is also created but contains no data at the moment.&lt;/p&gt;
-
-&lt;p&gt;When assigning the &lt;code class=&quot;highlighter-rouge&quot;&gt;twitterAccount&lt;/code&gt; to the &lt;code class=&quot;highlighter-rouge&quot;&gt;socialMedia.twitter&lt;/code&gt; property, a ? is inserted which checks to see that &lt;code class=&quot;highlighter-rouge&quot;&gt;socialMedia&lt;/code&gt; is not nil. If it is nil, then execution of that line stops at the ? and nothing bad will happen.&lt;/p&gt;
-
-&lt;p&gt;In the same way, when trying to read back the twitter handle, we chained together 2 optionals with ?’s. If either &lt;code class=&quot;highlighter-rouge&quot;&gt;socialMedia&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;socialMedia.twitter&lt;/code&gt; is nil, that line will not complete. Again this is perfectly safe and the app will not crash.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;All the examples in this article are available in a &lt;a href=&quot;https://github.com/trozware/optionals&quot;&gt;Swift playground&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 12 Feb 2016 00:00:00 +1000</pubDate>
-        <link>http://troz.net/2016/02/learning-swift-optionals/</link>
-        <guid isPermaLink="true">http://troz.net/2016/02/learning-swift-optionals/</guid>
       </item>
     
   </channel>

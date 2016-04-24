@@ -6,7 +6,7 @@ permalink: /2016/03/structs-vs-classes/
 tags:
   - swift
   - learning swift
-  - OOP
+  - oop
   - class
   - struct
 ---
