@@ -1,0 +1,60 @@
+<p><a href="#tldr">TL;DR</a></p>
+
+<p>I ran into an unusual problem when testing my latest app: “<a href="/what-is-my-speed/">What Is My Speed?</a>”. It is now available from the <a href="https://itunes.apple.com/app/what-is-my-speed/id1091394524">iTunes App Store</a>, but getting there was a struggle.</p>
+
+<p>Xcode is terrible at renaming projects, so it is a really good idea to have worked out your app’s name before starting. I would even recommend creating an app ID in your Apple Developer account and registering the app name in iTunes Connect. Only once you get to iTunes Connect will the name be checked for uniqueness. Searching the App Stores is not enough as it does not cover un-released apps or apps that are not available in your country.</p>
+
+<p>So I set up my app. I was hoping for “What’s My Speed?” but was happy with “What Is My Speed?”.</p>
+
+<p>Next step was to create the project in Xcode which I did using the app name and manually entering the bundle identifier that I had registered at Apple Developer. Xcode accepted the name without any warnings and created the default targets using that name.</p>
+
+<p>In the default unit testing file, the module was defined like this:</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">@testable</span> <span class="kd">import</span> <span class="kt">What_Is_My_Speed_</span></code></pre></figure>
+
+<p>which made me think that Xcode was quite happy to have parsed the app name as required to replace any unwanted characters to suit.</p>
+
+<p>The app was built, passed all unit tests, profiled, analyzed, tested on real devices as well as the simulators and uploaded to TestFlight.</p>
+
+<p><strong>BARRRPPPP!</strong></p>
+
+<p><img src="/images/TestFlight_error.png" alt="This app cannot be installed" /></p>
+
+<p>What?</p>
+
+<p><em>(I forgot to take a screenshot but found a similar one online. Thanks <a href="https://www.simpletechs.net/apps/easy-fix-for-testflight-problem-after-restoring-from-backup/">Simple Techs</a>)</em></p>
+
+<p>I have had experience with TestFlight’s oddities in the past, so I incremented the build number and tried again, thinking that maybe there had been a processing issue. Same result.</p>
+
+<p>This started a very frustrating 24 hours as I ran through all the possibilities I could think of or find suggested on the net. Due to disastrous Australian internet speeds, especially uploads, each attempt took from 40 - 120 minutes. About 5 minutes to implement the next idea, 25 minutes upload time, then the rest waiting for Apple to process the app so I could try again.</p>
+
+<p>Here is what I tried:</p>
+
+<ol>
+  <li>Uploaded a fresh build.</li>
+  <li>Removed Bitcode.</li>
+  <li>Fixed the code signing identity which was set to iOS Developer for some reason.</li>
+  <li>Manually specified the provisioning profiles for all three components (iPhone app, WatchKit app, WatchKit Extension).</li>
+  <li>Manually selected the code signing identity for the provisioning profiles.</li>
+  <li>Uploaded using Application Loader instead of Xcode.</li>
+  <li>Removed third-party framework.</li>
+  <li>Removed WatchKit app.</li>
+  <li>Revoked my distribution profile, re-created it and updated all provisioning profiles.</li>
+  <li>Created a completely blank project with same app name and bundle identifier.</li>
+</ol>
+
+<p>As you can see from this list, I thought it was a code signing or profile error. Using <a href="https://itunes.apple.com/app/apple-configurator-2/id1037126344">Apple Configurator 2</a> (the modern version of iPhone Configuration Utility), I was able to get the logs from my iPhone and entries like the following seemed to confirm this:</p>
+
+<blockquote>
+  <p><code class="highlighter-rouge">Error Domain=LaunchServicesError Code=0 "(null)" UserInfo={Error=ApplicationVerificationFailed, ErrorDetail=-402620393, ErrorDescription=Failed to verify code signature of /private/var/installd/Library/Caches/com.apple.mobile.
+installd.staging/temp.2LWJ2h/extracted/Payload/What Is My Speed?.app : 0xe8008017 (A signed resource has been added, modified, or deleted.)}</code></p>
+</blockquote>
+
+<p>But when I got to the stage of a completely blank app still failing, I suddenly thought of the question mark. With the benefit of my preamble to this post, you all probably got there long before I did, but I got there in the end.</p>
+
+<p>The solution was to remove the question mark from the names of the targets in Xcode. I had to fix up the module names in my unit testing files, but apart from that, there were no changes. After this I was able to upload the complete app to TestFlight and install it on my iPhone.</p>
+
+<p>It is possible that it was the Product Names that were the issue, rather than the target name as in Build Settings, Product Name is set to be <code class="highlighter-rouge">$(TARGET_NAME)</code> by default but I didn’t test that. Maybe next time…</p>
+
+<p><a name="tldr">TL;DR</a> Do not put any unusual characters in your target names. Alphanumerics and spaces are OK, but I am not sure about anything else.</p>
+

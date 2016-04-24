@@ -7,6 +7,7 @@ tags:
   - app store
   - testflight
   - xcode
+summary: I ran into an unusual problem when testing my latest app - What Is My Speed. It is now available from the iTunes App Store, but getting there was a struggle.
 ---
 
 [TL;DR][5]
