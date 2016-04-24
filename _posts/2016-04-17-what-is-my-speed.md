@@ -5,6 +5,7 @@ layout: page
 permalink: /what-is-my-speed/
 tags:
   - speed
+  - travel
   - ios
   - apple watch
 summary: What Is My Speed? is available now from the iTunes App Store for iPhone and Apple Watch. Track your speed on your iPhone or Apple Watch while driving, bicycling, running or walking. See your course and altitude at all times.
