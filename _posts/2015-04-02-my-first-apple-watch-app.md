@@ -5,6 +5,7 @@ layout: post
 permalink: /2015/04/my-first-apple-watch-app/
 tags:
   - apple watch
+  - watch
   - ios
   - golf
 ---

@@ -8,6 +8,7 @@ tags:
   - mac
   - ios
   - apple watch
+  - watch
   - xcode
 ---
 

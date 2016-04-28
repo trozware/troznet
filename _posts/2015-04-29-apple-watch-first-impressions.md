@@ -5,6 +5,7 @@ layout: post
 permalink: /2015/04/apple-watch-first-impressions/
 tags:
   - apple watch
+  - watch
   - ios
   - iphone
 ---

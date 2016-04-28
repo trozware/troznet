@@ -6,6 +6,7 @@ permalink: /2016/02/possible-issues-with-iconbuilder/
 tags:
   - icons
   - apple watch
+  - watch
   - xcode
 ---
 

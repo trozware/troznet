@@ -5,6 +5,7 @@ layout: post
 permalink: /2015/04/apple-watch-rejected-then-accepted/
 tags:
   - apple watch
+  - watch
   - golf
 ---
 

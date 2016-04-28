@@ -9,6 +9,7 @@ tags:
   - ios
   - apple watch
   - scoring
+  - watch
 ---
 Quick Score: Tennis is available from the [iTunes App Store][1] for iPhone and Apple Watch.
 
