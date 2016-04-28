@@ -21,7 +21,7 @@ But I ordered three Apple Watches as soon as they were available and myself, hus
 
 - **Accuracy**: It is a fantastically accurate time-piece. Not enough people give this credit, but we have always been used to clocks and watches that were inherently inaccurate. Having a device on my wrist that I **know** to be perfectly accurate is an amazing thing.
 
-- **Notifications**: this takes a bit of work to get right and with every new app, you need to assess whether to have its notifications appear on your wrist. But the wonderful thing is knowing that you haven't missed anything and being able to glance at your wrist when a notification arrives and tell - unobtrusively - whether this is something that needs immediate attention. And instant responses to messages and emails is amazingly useful.
+- **Notifications**: this takes a bit of work to get right and with every new app, you need to assess whether to have its notifications appear on your wrist. But the wonderful thing is knowing that you haven't missed anything and being able to glance at your wrist when a notification arrives and tell - unobtrusively - whether this is something that needs immediate attention. And the ability to respond instantly to messages and emails with just a couple of taps is amazingly useful.
 
 - **Customisable watch faces**: depending on what I am doing, I need quick access to different pieces of information. When travelling, I can set up a watch face with multiple time zones. When working, I need a timer. When on holiday, I prefer one of the more relaxing but less detailed watch faces.
 
@@ -43,7 +43,7 @@ There are other good features, but I think those are my favourites.
 
 - **Sketches don't always get through or can take ages**. We thought it would be a lot of fun to send each other little sketches and so it is, despite our total lack of any artistic skills. But it loses a bit of impact when you have to send a message 20 minutes later asking if the sketch has arrived.
 
-- **The exercise tracking seems to be a bit erratic**. If my husband and I go for a walk together, he comes back with 25 minutes of exercise and I only have 7 minutes. Am I not going fast enough? Are my arms not swinging enough? If it is very hot and I am sweating, I seem to get better numbers - is this because my heart is beating faster or the capillaries closer to the surface have expanded? Or is the watch picking up a better signal that way? Either way, I still like the activity circles, but the green ring frustrates me a bit.
+- **The exercise tracking seems to be a bit erratic**. If my husband and I go for a walk together, he comes back with 25 minutes of exercise and I only have 7 minutes. Am I not going fast enough? Are my arms not swinging enough? If it is very hot and my wrist gets sweaty, I seem to get better numbers - is this because my heart is beating faster or the capillaries closer to the surface have expanded? Or is the watch picking up a better signal that way? Either way, I still like the activity circles, but the green ring frustrates me a bit.
 
 ---
 
