@@ -7,6 +7,32 @@
     <atom:link href="http://troz.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>19th Hole Golf Scorer 3.1</title>
+        <description>&lt;p&gt;One of the problems with using 19th Hole on the Apple Watch is making the app show every time you raise your wrist. My solution to this was to go into Settings (either on my iPhone through the Watch app, or directly on the watch) and change it to “Resume Last Activity” on wrist raise. This worked fine but as I usually prefer the watch face to show on wrist raise, I had to keep setting and re-setting this which was a pain.&lt;/p&gt;
+
+&lt;p&gt;But last week I noticed the fine print when changing this setting. In this screen shot from the Watch app on my iPhone, you can see that “session-based apps” and “some third-party workout apps” will over-ride the “Show Watch Face” setting.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/WakeScreen.jpg&quot; alt=&quot;Wrist raise settings&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I started to research this and found that if an app starts a “workout session”, then it will become the active app until the session is ended or some other app starts a session. So I got to work and added a workout session to the 19th Hole’s Apple Watch app.&lt;/p&gt;
+
+&lt;p&gt;When you start scoring a round on the Apple Watch, you will see this dialog asking if you would like to start a workout:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Watch-workout.png&quot; alt=&quot;Start workout dialog&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The workout will be stopped automatically when you have scored the last hole. You can also use a force-press on the scoring screen to turn the workout off or on at any time.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Watch_end_workout.png&quot; alt=&quot;Stop workout&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This should make the app much more usable as an Apple Watch app, so happy golfing :-)&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 07 May 2016 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2016/05/19th-hole-golf-scorer-3.1/</link>
+        <guid isPermaLink="true">http://troz.net/2016/05/19th-hole-golf-scorer-3.1/</guid>
+      </item>
+    
+      <item>
         <title>My Year With Apple Watch</title>
         <description>&lt;p&gt;As the Apple Watch hits its first birthday, there seems to be in increasing number of bloggers complaining about it. One (which I refuse to link to) titled “My Year of Hell With the Apple Watch”. I think the article has since been re-published with a slightly less inflammatory title, but really! Did somebody rivet the watch to his wrist? If it was so awful, why not just stop using it?&lt;/p&gt;
 
@@ -923,95 +949,6 @@ In the second case, the array is initially empty, so the type needs to be specif
         <pubDate>Wed, 24 Feb 2016 00:00:00 +1000</pubDate>
         <link>http://troz.net/2016/02/three-rules-for-writing-better-swift/</link>
         <guid isPermaLink="true">http://troz.net/2016/02/three-rules-for-writing-better-swift/</guid>
-      </item>
-    
-      <item>
-        <title>Configuring Xcode</title>
-        <description>&lt;p&gt;While not strictly a part of my Learning Swift series, today I thought I would discuss some of the ways to configure and use Xcode to be a more productive and comfortable programmer.&lt;/p&gt;
-
-&lt;h3 id=&quot;editor-color-themes-and-fonts&quot;&gt;1. Editor color themes and fonts:&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/XcodeFontPrefs.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Step through the supplied themes and find the best one for you. Then click the ‘+’ button at the bottom of the list and duplicate the selected theme. Now you can tweak it to suit you. Each text category can have its own font and size, but you can make multiple selections in order to do a bulk change. don’t forget to check out the Console section too - I dislike the default bold text for many of the console reports, so always change that.&lt;/p&gt;
-
-&lt;p&gt;An editing font should be mono-spaced i.e. every character should take up exactly the same width on the screen. This makes your code look neater and neater code is easier to read when you come back to it. I also much prefer a sans-serif font, but that is a matter of preference.&lt;/p&gt;
-
-&lt;p&gt;Menlo is the font used by Xcode as a default, but there are many other options either in the default installation of OS X or as free downloads. I change every now and then just to keep things interesting, but my favourites are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/adobe-fonts/source-code-pro&quot;&gt;Source Code Pro&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/chrissimpkins/hack&quot;&gt;Hack&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/mozilla/Fira&quot;&gt;Fira&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.fontsquirrel.com/fonts/Inconsolata&quot;&gt;Inconsolata&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Look for a font that makes it easy to distinguish the digit ‘1’ from a lowercase ‘l’ and where the digit ‘0’ is different to the ‘O’.&lt;/p&gt;
-
-&lt;p&gt;To install and use a new font, download the files and then double-click a TTF or OTF font file to install it in FontBook. Once the font is installed, you may need to restart Xcode in order to make it available.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;add-ons&quot;&gt;2. Add-ons:&lt;/h3&gt;
-
-&lt;p&gt;The easiest way to find and install add-ons for Xcode is using the &lt;a href=&quot;http://alcatraz.io&quot;&gt;Alcatraz package manager&lt;/a&gt;. The installation instructions are on the linked page, and once installed, restart Xcode to see “Package Manager” in the Window menu. Adding plugins and themes is very easy, but some may require Xcode to restart before they appear.&lt;/p&gt;
-
-&lt;p&gt;When you start Xcode the first time after installing extra plugins, you will get a warning about possible instability due to non-Apple plugins. Click the “Load” button to load them anyway and if Xcode becomes unstable, then delete the one you think might be the culprit.&lt;/p&gt;
-
-&lt;p&gt;Alcatraz makes it very easy to un-install add-ons as well as install, so you can test them out.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Alcatraz.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Here are two of my favourites (search for them by name in the Alcatraz Package Manager window to install them or to see more details):&lt;/p&gt;
-
-&lt;h4 id=&quot;cocoapods&quot;&gt;CocoaPods:&lt;/h4&gt;
-
-&lt;p&gt;This puts the power of the CocoaPods command line interface inside Xcode and available through the Products menu.
-&lt;a href=&quot;https://cocoapods.org&quot;&gt;CocoaPods&lt;/a&gt; is a dependency manager for Swift and Objective-C projects. It has over ten thousand libraries so is a great resource for any Apple developers. The CocoaPods site has instructions for installing the tool and then you can use it via this plugin. You may need to change the GEM_PATH as shown in the screen shot below. To find out what you should enter there, open a Terminal window and type &lt;code class=&quot;highlighter-rouge&quot;&gt;which pod&lt;/code&gt; at the prompt:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;which pod
-/usr/local/bin/pod&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The result shows exactly where the pod tool is installed, so delete the word &lt;code class=&quot;highlighter-rouge&quot;&gt;pod&lt;/code&gt; in order to get the containing folder and enter that as your GEM_PATH. In my case that was &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/bin/&lt;/code&gt; but yours may be different.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/CocoaPods.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;colorsenserainbow&quot;&gt;ColorSenseRainbow:&lt;/h4&gt;
-
-&lt;p&gt;As you can from the screen shot below, this gives you a color swatch when the cursor is inside a UIColor or NSColor initialiser. Clicking in the swatch pops up the color picker which can edit the color in your code.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/ColorSenseRainbow.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;documentation&quot;&gt;3. Documentation:&lt;/h3&gt;
-
-&lt;p&gt;Xcode has excellent documentation, but unless you specifically download it, this will all be accessed online. If you have a bad or non-existent connection, this can be annoying. Go to Xcode’s Preferences -&amp;gt; Downloads and download all the document sets you are interested in. They are quite large, but having them local will be a big bonus.&lt;/p&gt;
-
-&lt;p&gt;The other tool I use for documentation is &lt;a href=&quot;https://kapeli.com/dash&quot;&gt;Dash&lt;/a&gt;. It supports many languages and is not just for use in Xcode. I found the Xcode integration plugin was not very useful as it conflicted with other useful behaviours. So I set up a global shortcut in System Preferences to search Dash for the selected text. This is much faster than Xcode’s built-in documentation.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Dash.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;other-preferences&quot;&gt;4. Other preferences:&lt;/h3&gt;
-
-&lt;p&gt;Go through the preference panes in Xcode’s preferences and tweak to suit your style or your group’s preferred style.&lt;/p&gt;
-
-&lt;p&gt;General and Text Editing are important. Text Editing has a second tab for Indentation which is easy to miss. Indentation styles seem to cause a lot of heated debate, so make sure you check this out.&lt;/p&gt;
-
-&lt;p&gt;Accounts is vital if you are publishing to the App Stores and also makes it easy to transfer all your develop information from one computer to another.&lt;/p&gt;
-
-&lt;p&gt;Fonts &amp;amp; Colors and Downloads are discussed above.&lt;/p&gt;
-
-&lt;p&gt;I tend to leave the  others set to the defaults.&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 17 Feb 2016 00:00:00 +1000</pubDate>
-        <link>http://troz.net/2016/02/configuring-xcode/</link>
-        <guid isPermaLink="true">http://troz.net/2016/02/configuring-xcode/</guid>
       </item>
     
   </channel>

@@ -33,7 +33,7 @@ App                          || Version | Release Date      | Download Link
 
 App                          || Version | Release Date      | Download Link                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 :------ |:------------------- | :-----: | :---------------: | -------------:
-![][20] | [19th Hole Golf Scorer][21]                  | 3.0     | 7 Dec 2015     | <a href="https://itunes.apple.com/app/the-19th-hole/id871686159" target="itunes_store" class="ios_apps"></a>
+![][20] | [19th Hole Golf Scorer][21]                  | 3.1     | 6 May 2016     | <a href="https://itunes.apple.com/app/the-19th-hole/id871686159" target="itunes_store" class="ios_apps"></a>
 ![][22] | [A Knight&#8217;s Move][3]       | 1.4     | 17 Jan 2014 | <a href="https://itunes.apple.com/app/a-knights-move/id530090451" target="itunes_store" class="ios_apps"></a>
 ![][23] | [Berio&#8217;s Sequenza VII][24] | 1.1     | 25 Feb 2015 | <a href="https://itunes.apple.com/app/sequenza-vii/id730234638" target="itunes_store" class="ios_apps"></a>
 ![][33] | [Dice Pass][29] | 1.0     | 6 Jun 2015 | <a href="https://itunes.apple.com/app/dice-pass/id998397511" target="itunes_store" class="ios_apps"></a>
