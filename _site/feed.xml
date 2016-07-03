@@ -7,6 +7,32 @@
     <atom:link href="http://troz.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Dice Pass Mac Update</title>
+        <description>&lt;p&gt;I recently got an email from someone who had purchased &lt;a href=&quot;/dicepass/&quot;&gt;Dice Pass&lt;/a&gt; for Mac from the &lt;a href=&quot;https://itunes.apple.com/app/dice-pass/id997688302&quot;&gt;Mac App Store&lt;/a&gt; but had been unable to get it to run. This person was using OS X 10.9.3.&lt;/p&gt;
+
+&lt;p&gt;I checked the App Store specifications and it showed that 10.9 was the minimum system requirement, so it should have worked. But going back to my Xcode project, I found that it was set to a minimum of OS X 10.10.&lt;/p&gt;
+
+&lt;p&gt;I tried to re-compile for OS X 10.9 but this failed as the app uses several features that are not available prior to 10.10.&lt;/p&gt;
+
+&lt;p&gt;The minimum system version as displayed in the App Store is supposedly deduced automatically by the App Store servers from the app’s binary. Somehow this was incorrect in the App Store, so some people may have bought that app and found that it did not work despite them having what was listed as a compatible system.&lt;/p&gt;
+
+&lt;p&gt;If you bought Dice Pass for OS X 10.9 and are unable to run it, I have three possible solutions for you:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Upgrade your operating system to at least 10.10.&lt;/li&gt;
+  &lt;li&gt;Ask Apple for a refund since it was their error that caused you to buy an app that you cannot run.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#115;&amp;#097;&amp;#114;&amp;#097;&amp;#104;&amp;#064;&amp;#116;&amp;#114;&amp;#111;&amp;#122;&amp;#046;&amp;#110;&amp;#101;&amp;#116;&amp;#063;&amp;#115;&amp;#117;&amp;#098;&amp;#106;&amp;#101;&amp;#099;&amp;#116;&amp;#061;&amp;#068;&amp;#105;&amp;#099;&amp;#101;&amp;#037;&amp;#050;&amp;#048;&amp;#080;&amp;#097;&amp;#115;&amp;#115;&amp;#037;&amp;#050;&amp;#048;&amp;#105;&amp;#079;&amp;#083;&amp;#037;&amp;#050;&amp;#048;&amp;#114;&amp;#101;&amp;#100;&amp;#101;&amp;#101;&amp;#109;&amp;#037;&amp;#050;&amp;#048;&amp;#099;&amp;#111;&amp;#100;&amp;#101;&quot;&gt;Send me a screen shot&lt;/a&gt; of the app failing to start properly on your system and I will send you a code to redeem a free copy of Dice Pass for iOS.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I have updated the app in the App Store changing nothing but the version number and it is now showing the correct minimum system requirement. My apologies if you have been inconvenienced by this error.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 03 Jul 2016 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2016/07/dice-pass-mac-update/</link>
+        <guid isPermaLink="true">http://troz.net/2016/07/dice-pass-mac-update/</guid>
+      </item>
+    
+      <item>
         <title>Learning Swift - Sets</title>
         <description>&lt;p&gt;Sets are the forgotten collection type in many languages, including Swift. I think most developers use Arrays without really considering the advantages of using a Set but they have some amazingly useful features that should make them a part of any progammer’s toolkit.&lt;/p&gt;
 
@@ -995,98 +1021,6 @@ This is because the function body used a &lt;code class=&quot;highlighter-rouge&
         <pubDate>Mon, 29 Feb 2016 00:00:00 +1000</pubDate>
         <link>http://troz.net/2016/02/learning-swift-generics/</link>
         <guid isPermaLink="true">http://troz.net/2016/02/learning-swift-generics/</guid>
-      </item>
-    
-      <item>
-        <title>Singleton to Protocol</title>
-        <description>&lt;p&gt;I was driving through the town of &lt;a href=&quot;https://en.wikipedia.org/wiki/Singleton,_New_South_Wales&quot;&gt;Singleton&lt;/a&gt; the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple’s own APIs, but seem to be increasingly frowned upon in the Swift world.&lt;/p&gt;
-
-&lt;h3 id=&quot;so-what-is-a-singleton&quot;&gt;So what is a singleton?&lt;/h3&gt;
-
-&lt;p&gt;A singleton is a class that only expects to have a single instance. Think of it as a global instance of a class. In some cases this makes perfect sense if there can only ever be one instance of a particular class or if there is a default variant that suits most cases e.g.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sharedApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;NSUserDefaults&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;standardUserDefaults&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;NSNotificationCenter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defaultCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;NSFileManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defaultManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;NSURLSession&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sharedSession&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;If you are using an object whose name starts with “shared”, “standard” or “default” you can be pretty sure it is an singleton.&lt;/p&gt;
-
-&lt;h3 id=&quot;and-whats-the-problem-with-singletons&quot;&gt;And what’s the problem with singletons?&lt;/h3&gt;
-
-&lt;p&gt;There are probably many different opinions here but I have two thoughts about this:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;They are effectively global variables and global variables can make your code messy and un-predictable.&lt;/li&gt;
-  &lt;li&gt;If they can be accessed by multiple other objects, possibly at the same time, then you can get conflicts. These can be handled by clever use of background queues, but it isn’t easy.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;what-to-use-instead&quot;&gt;What to use instead?&lt;/h3&gt;
-
-&lt;p&gt;As I drove, I mused on a singleton that I had implemented recently. It was a logging utility that allowed any object in my app (mostly view controllers) to save a new entry to a log file. The basic structure of the Logger class was this:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Logger&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sharedLogger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Logger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addToEventLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;// use private functions to find log file URL&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;// append event text with time stamp&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Any object in my app could use the Logger like this:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kt&quot;&gt;Logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sharedLogger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;addToEventLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newLogEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;When I got to think about how I was using this, I realised that instead of a Logger &lt;em&gt;object&lt;/em&gt; that everything could use, what I really needed was a Loggable &lt;em&gt;behaviour&lt;/em&gt; that I could apply &amp;amp; restrict to the few classes that actually needed to log events. For me, this was the break-through:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Create a behaviour, not an object.&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;As soon as I started thinking about this as a behaviour, a protocol became the obvious solution, so this is what I created:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;protocol&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Loggable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// not declaring functions here&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// as they should NOT be over-written&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Loggable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addToEventLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;// use private functions to find log file URL&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;// append event text with time stamp&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;We run immediately into one of the peculiarities of Swift protocol extensions which has been very well explained by &lt;a href=&quot;http://cjwirth.com/2016/01/20/swift-protocol-extension-weirdness/&quot;&gt;Caesar Wirth&lt;/a&gt;. If I had declared the &lt;code class=&quot;highlighter-rouge&quot;&gt;addToEventLog(_:)&lt;/code&gt; function in the protocol, then any class or struct conforming to this protocol would have been free to over-write this function and provide its own version. This is not what I wanted here - I wanted every object to use the same version. So I left the function declaration out of the protocol definition and only included it in the protocol extension.&lt;/p&gt;
-
-&lt;p&gt;To use this behaviour, a class or struct just has to be declared as conforming to the Loggable protocol:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MyClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Loggable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doSomething&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nf&quot;&gt;addToEventLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;I did something!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;For my app, I knew that I would want all my NSViewControllers to be able to add log events, so instead of setting them all individually as conforming to the protocol, I used this shortcut which extends all NSViewControllers to conform to the protocol.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Loggable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;I added this line to the Loggable.swift file where I declared the protocol and its extension, but outside both of them.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Protocol-oriented programming is a new technique to me, so it really helps when I can find a practical example of where it solves a problem.&lt;/p&gt;
-
-&lt;p&gt;If you are new to POP, I highly recommend the &lt;a href=&quot;https://developer.apple.com/videos/play/wwdc2015/408/&quot;&gt;Crusty talk&lt;/a&gt; from WWDC 2015. And this article by &lt;a href=&quot;http://matthijshollemans.com/2015/07/22/mixins-and-traits-in-swift-2/&quot;&gt;Matthijs Hollemans&lt;/a&gt; was invaluable to me in demonstrating the problems with object inheritance that are solved by protocols.&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 26 Feb 2016 00:00:00 +1000</pubDate>
-        <link>http://troz.net/2016/02/singleton-to-protocol/</link>
-        <guid isPermaLink="true">http://troz.net/2016/02/singleton-to-protocol/</guid>
       </item>
     
   </channel>

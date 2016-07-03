@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>TrozWare</title>
+    <title>Dice Pass Mac Update &#8211; TrozWare</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Mac &amp;amp; iOS Developer">
     <meta name="author" content="Sarah Reichelt">
-    
-    <link rel="canonical" href="http://troz.net/page7/">
+    <meta name="keywords" content="">
+    <link rel="canonical" href="http://troz.net/2016/07/dice-pass-mac-update/">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for TrozWare" href="/feed.xml" />
 
     <!-- Custom CSS -->
@@ -31,9 +31,9 @@
     <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="TrozWare">
+    <meta property="og:title" content="Dice Pass Mac Update">
     <meta property="og:description" content="Mac &amp;amp; iOS Developer">
-    <meta property="og:url" content="http://troz.net/page7/">
+    <meta property="og:url" content="http://troz.net/2016/07/dice-pass-mac-update/">
     <meta property="og:site_name" content="TrozWare">
 
     <!-- Twitter Card -->
@@ -41,9 +41,9 @@
     
         <meta name="twitter:site" content="@trozware" />
     
-    <meta name="twitter:title" content="TrozWare" />
+    <meta name="twitter:title" content="Dice Pass Mac Update" />
     <meta name="twitter:description" content="Mac &amp; iOS Developer" />
-    <meta name="twitter:url" content="http://troz.net/page7/" />
+    <meta name="twitter:url" content="http://troz.net/2016/07/dice-pass-mac-update/" />
 
     <!-- Icons -->
     <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-touch-icon-57x57.png">
@@ -130,90 +130,77 @@
       <div class="measure">
         
 
-<div class="home">
+
+<div class="post-header mb2">
+  <h1>Dice Pass Mac Update</h1>
+  <span class="post-meta">3 Jul 2016</span><br>
   
-    <div class="posts">
-      
-        <div class="post py3">
-          <p class="post-meta">17 Mar 2015</p>
-          <a href="/2015/03/icon-builder-3.0.1/" class="post-link"><h3 class="h1 post-title">Icon Builder 3.0.1</h3></a>
-          <p class="post-summary">
-            
-              <p>So why an announcement for such a minor upgrade?</p>
-
-
-            
-          </p>
-        </div>
-      
-        <div class="post py3">
-          <p class="post-meta">16 Mar 2015</p>
-          <a href="/2015/03/app-store-preview-videos/" class="post-link"><h3 class="h1 post-title">App Store Preview Videos</h3></a>
-          <p class="post-summary">
-            
-              <p>Apple now allows app developers to add a video preview of their app when uploading to iTunes Connect. This video is shown to potential purchasers when they are looking at an app in the iTunes App Store, just like the screen shots.</p>
-
-
-            
-          </p>
-        </div>
-      
-        <div class="post py3">
-          <p class="post-meta">16 Mar 2015</p>
-          <a href="/19th-hole/" class="post-link"><h3 class="h1 post-title">19th Hole</h3></a>
-          <p class="post-summary">
-            
-              <p>19th Hole is the golf scoring app for everyone, and it is available from the <a href="https://itunes.apple.com/us/app/the-19th-hole/id871686159?mt=8&#038;uo=4" target="_blank">iTunes App Store</a>.</p>
-
-
-            
-          </p>
-        </div>
-      
-        <div class="post py3">
-          <p class="post-meta">12 Mar 2015</p>
-          <a href="/testing-automation/" class="post-link"><h3 class="h1 post-title">Testing automation</h3></a>
-          <p class="post-summary">
-            
-              <p>Today I am experimenting with automating post generation.</p>
-
-
-            
-          </p>
-        </div>
-      
-        <div class="post py3">
-          <p class="post-meta">10 Mar 2015</p>
-          <a href="/workflow-for-writing-a-post/" class="post-link"><h3 class="h1 post-title">Workflow for writing a post</h3></a>
-          <p class="post-summary">
-            
-              <p>So here is where I need to get used to Jekyll and how things are done.
-I will end up automating this when I am sure of the process, but for now, I am just going to work my way through it.</p>
-
-
-            
-          </p>
-        </div>
-      
-    </div>
-
-    <div class="pagination clearfix mb1 mt4">
-  <div class="left">
-    
-      
-        <a class="pagination-item" href="/page6/">Newer</a>
-      
-    
-  </div>
-  <div class="right">
-    
-      <a class="pagination-item" href="/page8/">Older</a>
-    
-  </div>
+  <span class="post-meta small">
+  
+    1 minute read
+  
+  </span>
 </div>
 
-  
-</div>
+<article class="post-content">
+  <p>I recently got an email from someone who had purchased <a href="/dicepass/">Dice Pass</a> for Mac from the <a href="https://itunes.apple.com/app/dice-pass/id997688302">Mac App Store</a> but had been unable to get it to run. This person was using OS X 10.9.3.</p>
+
+<p>I checked the App Store specifications and it showed that 10.9 was the minimum system requirement, so it should have worked. But going back to my Xcode project, I found that it was set to a minimum of OS X 10.10.</p>
+
+<p>I tried to re-compile for OS X 10.9 but this failed as the app uses several features that are not available prior to 10.10.</p>
+
+<p>The minimum system version as displayed in the App Store is supposedly deduced automatically by the App Store servers from the app’s binary. Somehow this was incorrect in the App Store, so some people may have bought that app and found that it did not work despite them having what was listed as a compatible system.</p>
+
+<p>If you bought Dice Pass for OS X 10.9 and are unable to run it, I have three possible solutions for you:</p>
+
+<ol>
+  <li>Upgrade your operating system to at least 10.10.</li>
+  <li>Ask Apple for a refund since it was their error that caused you to buy an app that you cannot run.</li>
+  <li><a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#097;&#114;&#097;&#104;&#064;&#116;&#114;&#111;&#122;&#046;&#110;&#101;&#116;&#063;&#115;&#117;&#098;&#106;&#101;&#099;&#116;&#061;&#068;&#105;&#099;&#101;&#037;&#050;&#048;&#080;&#097;&#115;&#115;&#037;&#050;&#048;&#105;&#079;&#083;&#037;&#050;&#048;&#114;&#101;&#100;&#101;&#101;&#109;&#037;&#050;&#048;&#099;&#111;&#100;&#101;">Send me a screen shot</a> of the app failing to start properly on your system and I will send you a code to redeem a free copy of Dice Pass for iOS.</li>
+</ol>
+
+<p>I have updated the app in the App Store changing nothing but the version number and it is now showing the correct minimum system requirement. My apologies if you have been inconvenienced by this error.</p>
+
+
+</article>
+
+<br>
+<!-- <a href="/tags/">Tags</a>: app store, dice, mac, and password -->
+Tags: 
+
+    <a href="/tags/#app store">app store</a>&nbsp;&nbsp;
+
+    <a href="/tags/#dice">dice</a>&nbsp;&nbsp;
+
+    <a href="/tags/#mac">mac</a>&nbsp;&nbsp;
+
+    <a href="/tags/#password">password</a>&nbsp;&nbsp;
+
+<hr>
+
+
+
+
+
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname  = 'trozware';
+    var disqus_identifier = '/2016/07/dice-pass-mac-update';
+    var disqus_title      = 'Dice Pass Mac Update';
+
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
 
       </div>
     </div>
