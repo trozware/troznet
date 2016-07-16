@@ -36,7 +36,7 @@ Man Reader assembles a list of the commands with available man pages on your sys
 
 ---
 
-##### Man Reader version 1.6 changes:
+##### Man Reader version 1.6 changes (13 Jul 2016):
   * Much improved searching for available man pages, including permissions fix for some pages.
   * Fixed error with new search term being over-written.
   * Sand-boxed version now works just as well as the non-sand-boxed so please switch back to this version.

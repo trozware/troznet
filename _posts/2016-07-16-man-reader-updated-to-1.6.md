@@ -7,7 +7,7 @@ tags:
   - man reader
   - mac
 ---
-Man Reader has been updated to version 1.6 with a fix to the permissions needed for the way it looks for available man pages.
+Man Reader has been updated to version 1.6 with the permissions needed for finding all available man pages and a fix for search terms being over-written after a background update.
 
 [Man Reader 1.6][1] is now available through the [Mac App Store][2].
 
