@@ -145,16 +145,18 @@
 <article class="post-content">
   <p>As part of the design for <a href="/under-development/">Time In Words for Mac</a>, I had to work out the interface for selecting time zones. With <a href="/time-in-words/">Time In Word for iOS</a>, I used picker wheels which are excellent for selecting hierarchical data. On the Mac, there is no such thing as the iOS picker wheel and so I had to consider what to use instead.</p>
 
-<p>When you ask the system (Mac or iOS) for the available time zones, you get a list of names like this:
-&gt; Africa/Abidjan<br />
-&gt; Africa/Accra<br />
-&gt; …<br />
-&gt; America/Cayman<br />
-&gt; America/Chicago<br />
-&gt; …<br />
-&gt; Europe/Riga<br />
-&gt; Europe/Rome<br />
-&gt; etc.</p>
+<p>When you ask the system (Mac or iOS) for the available time zones, you get a list of names like this:</p>
+<blockquote>
+  <p>Africa/Abidjan<br />
+Africa/Accra<br />
+…<br />
+America/Cayman<br />
+America/Chicago<br />
+…<br />
+Europe/Riga<br />
+Europe/Rome<br />
+etc.</p>
+</blockquote>
 
 <p>This seems obviously designed for a hierarchical display with the major regions as a first selection, filtering down to the cities in that region, making selection a two-step process. With the picker wheel in iOS, that is what I did. The first wheel selects the region which then populates the second wheel with the relevant city names. It makes it quick and easy to select a zone.</p>
 

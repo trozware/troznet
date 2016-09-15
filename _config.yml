@@ -30,14 +30,14 @@ facebook_comments_number: 10
 
 # Social icons
 show_social_icons: true
-github_username: 
+github_username:
 bitbucket_username:
 stackoverflow_id: 1082632
 twitter_username: trozware
 skype_username:
 steam_nickname:
-google_plus_id: 
-linkedin_username: 
+google_plus_id:
+linkedin_username:
 angellist_username:
 medium_id:
 bitcoin_url:
@@ -101,6 +101,6 @@ highlighter:  rouge
 
 gems:
   - jekyll-paginate
+#  - jekyll-admin
 #   - jekyll-sitemap
 exclude: [vendor]
-

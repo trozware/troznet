@@ -9,9 +9,14 @@ tags:
   - knight's move
   - chess
   - mac
-  - ios
 ---
-&#8220;A Knight&#8217;s Move&#8221; is a fun, addictive and simple new puzzle game based on the movements of chess pieces. Your goal is to move your white knight across a board to a target square using the same movements as a knight in chess. Pawns may block your way, while enemy bishops, castles, knights and the queen may try to stop you.
+
+**UPDATE:** September 2016 - A Knight's Move for iOS is no longer available.<br>
+[A Knight's Move for Mac][1] is still supported.
+
+---
+
+&#8220;A Knight&#8217;s Move&#8221; is a fun, addictive and simple puzzle game based on the movements of chess pieces. Your goal is to move your white knight across a board to a target square using the same movements as a knight in chess. Pawns may block your way, while enemy bishops, castles, knights and the queen may try to stop you.
 
 The game is available for iPad, iPhone and iPod Touch from the iTunes Store and requires iOS 5.0 or later. The Mac version is available from the Mac App Store and requires OS X 10.7 or later.
 
@@ -21,7 +26,7 @@ Once you have played the tutorial pack, you can move on to the other puzzle pack
 
 See more about &#8220;A Knight&#8217;s Move&#8221; at the [Knight&#8217;s Move web page][1]
 
-Get the game from the <a href="http://itunes.apple.com/app/a-knights-move/id533321133" target="_blank">Mac App Store</a> or the <a href="http://itunes.apple.com/app/a-knights-move/id530090451" target="_blank">iTunes App Store</a>.
+Get the game from the <a href="http://itunes.apple.com/app/a-knights-move/id533321133" target="_blank">Mac App Store</a>.
 
 <img title="Tutorial puzzle on iPhone" src="/images/Tutorial-500.png" alt="Tutorial puzzle on iPhone"/>
 

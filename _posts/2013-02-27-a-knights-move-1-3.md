@@ -8,10 +8,15 @@ permalink: /a-knights-move-1-3/
 tags:
   - knight's move
   - chess
-  - ios
   - mac
 ---
-A Knight&#8217;s Move has been updated to version 1.3. The iOS version is now available at the <a href="https://itunes.apple.com/app/a-knights-move/id530090451?mt=8" target="_blank">iTunes App Store</a> and the Mac version is available through the <a href="https://itunes.apple.com/app/a-knights-move/id533321133?mt=12" target="_blank">Mac App Store</a>.
+
+**UPDATE:** September 2016 - A Knight's Move for iOS is no longer available.<br>
+[A Knight's Move for Mac][1] is still supported.
+
+---
+
+A Knight&#8217;s Move has been updated to version 1.3. The Mac version is available through the <a href="https://itunes.apple.com/app/a-knights-move/id533321133?mt=12" target="_blank">Mac App Store</a>.
 
 ## Three new level packs:
 
@@ -29,3 +34,5 @@ When your knight has been taken, you have the option to undo the last move so yo
 
 <img alt="Undo Last Move" src="/images/KM-UndoLast.png" />
 
+
+[1]: /knightsmove/

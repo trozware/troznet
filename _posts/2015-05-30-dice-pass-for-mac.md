@@ -21,7 +21,7 @@ But this sounds like a lot of effort and not something you are likely to do when
 
 Select the number of words you want in your passphrase and see the phrase immediately. Keep clicking the "Generate New Phrase" button until you get a phrase you like. If you feel that the computer is not to be trusted when generating a random number for the dice rolls, use your real dice and click the dice to change them to the roll you got. If you get a passphrase that is good except for one or two words, use the Re-Roll button beside those words to get a new roll for just that word.
 
-Dice Pass is available from the [Mac App Store][5] now and coming soon for iOS.
+Dice Pass is available from the [Mac App Store][5] now.
 
 [1]: https://xkcd.com/936/
 [2]: http://world.std.com/~reinhold/diceware.html
