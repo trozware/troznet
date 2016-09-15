@@ -8,7 +8,7 @@ tags:
   - apps
   - ios
 ---
-With the release of iOS 10 and the need to update iOS apps to suit, I have decided it is time to retire some of my lesser-performing apps as it is not worth the effort to maintain them.
+With the release of iOS 10 and the need to update iOS apps to suit, I have decided it is time to retire some of my lesser-performing apps as it is not worth the effort required to maintain them.
 
 At the moment, the following iOS apps are no longer available:
 
