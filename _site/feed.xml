@@ -93,6 +93,38 @@
       </item>
     
       <item>
+        <title>Dice Pass Updated</title>
+        <description>&lt;p&gt;&lt;a href=&quot;/dicepass/&quot;&gt;Dice Pass 1.1&lt;/a&gt; is now available from the &lt;a href=&quot;https://itunes.apple.com/app/dice-pass/id997688302&quot;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-does-dice-pass-do&quot;&gt;What does Dice Pass do?&lt;/h3&gt;
+
+&lt;p&gt;Dice Pass is a utility to app to generate random passphrases based on the &lt;a href=&quot;http://world.std.com/~reinhold/diceware.html&quot;&gt;Diceware&lt;/a&gt; system. Diceware uses a table of pre-defined words, each assigned a 5 digit code number containing the digits 1 to 6. The official way to generate a phrase is to roll 5 dice for each word you want in your passphrase and then consult the words table to find the matching word.&lt;/p&gt;
+
+&lt;p&gt;The resulting phrase uses real words or common abbreviations so it is easier to remember than a random collection of characters. At the same time, the random selection of words makes the generated passphrase much more secure as it avoids the human tendency to pick words with personal meaning.&lt;/p&gt;
+
+&lt;p&gt;Dice Pass allows you to select the number of words in your passphrase, re-generate the entire passphrase any time, re-roll a single word in your passphrase or set the dice rolls manually for maximum security and randomness.&lt;/p&gt;
+
+&lt;h3 id=&quot;whats-new-in-version-11&quot;&gt;What’s New in Version 1.1:&lt;/h3&gt;
+
+&lt;p&gt;You can now select from three word lists in the Word Lists menu:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;original Diceware list&lt;/li&gt;
+  &lt;li&gt;Beale list (fewer Americanisms and obscure words)&lt;/li&gt;
+  &lt;li&gt;Diceware 8k list (a list of words that is a whole power of two in length)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can also import your own word list if you prefer.&lt;/p&gt;
+
+&lt;p&gt;Dice Pass 1.1 is compatible with macOS Sierra.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 17 Sep 2016 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2016/09/dice-pass-updated/</link>
+        <guid isPermaLink="true">http://troz.net/2016/09/dice-pass-updated/</guid>
+      </item>
+    
+      <item>
         <title>Retiring old apps</title>
         <description>&lt;p&gt;With the release of iOS 10 and the need to update iOS apps to suit, I have decided it is time to retire some of my lesser-performing apps as it is not worth the effort required to maintain them.&lt;/p&gt;
 
@@ -157,12 +189,11 @@
 
 &lt;p&gt;The minimum system version as displayed in the App Store is supposedly deduced automatically by the App Store servers from the app’s binary. Somehow this was incorrect in the App Store, so some people may have bought that app and found that it did not work despite them having what was listed as a compatible system.&lt;/p&gt;
 
-&lt;p&gt;If you bought Dice Pass for OS X 10.9 and are unable to run it, I have three possible solutions for you:&lt;/p&gt;
+&lt;p&gt;If you bought Dice Pass for OS X 10.9 and are unable to run it, I have two possible solutions for you:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Upgrade your operating system to at least 10.10.&lt;/li&gt;
   &lt;li&gt;Ask Apple for a refund since it was their error that caused you to buy an app that you cannot run.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;mailto:sarah@troz.net?subject=Dice%20Pass%20iOS%20redeem%20code&quot;&gt;Send me a screen shot&lt;/a&gt; of the app failing to start properly on your system and I will send you a code to redeem a free copy of Dice Pass for iOS.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;I have updated the app in the App Store changing nothing but the version number and it is now showing the correct minimum system requirement. My apologies if you have been inconvenienced by this error.&lt;/p&gt;
@@ -617,96 +648,6 @@ See your course and altitude at all times.&lt;/p&gt;
         <pubDate>Sun, 17 Apr 2016 00:00:00 +1000</pubDate>
         <link>http://troz.net/what-is-my-speed/</link>
         <guid isPermaLink="true">http://troz.net/what-is-my-speed/</guid>
-      </item>
-    
-      <item>
-        <title>Road Trip Apps</title>
-        <description>&lt;p&gt;Over the past few months, we have done two long road trips: one approximately 4,000 km and the other about 1,800 km. These gave us the chance to try out various apps for navigation and travel information. We live in Queensland, Australia and some of these comments may be country-specific.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;navigation&quot;&gt;Navigation:&lt;/h3&gt;
-
-&lt;p&gt;The basic navigation came down to three apps:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.apple.com/ios/maps/&quot;&gt;Apple Maps&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/app/google-maps-real-time-navigation/id585027354&quot;&gt;Google Maps&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/au/app/metroview-gps-navigation/id370753892&quot;&gt;Metroview&lt;/a&gt; (Australia and New Zealand only)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Each has their strengths and weaknesses:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Apple Maps is by far the most beautiful and easy to read. It integrates perfectly with Contacts (as you would expect). Turn-by-turn directions were mostly excellent. The biggest downside is that it does not allow you to specify a route avoiding tolls.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Google Maps allows you to plot a route avoiding tolls… if you can find the setting. Its traffic reporting is by far the best and it would offer suggested changes of routes during the trip to get around traffic. The interface is confusing at times. Turn-by-turn directions were good, although I would have preferred an Australian voice option.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Metroview has all the maps downloaded which saves on data connection costs and handles bad connectivity areas better. Its best feature is notification of speed limits and alerts if you go over the limit, although it gets confused when on over or under-passes. Another very useful feature is the display of lanes when approaching highway exits, so you could tell which lane to be in. Apparently the voice guidance is now more natural but we didn’t try this. The display is messy and cluttered compared to the others.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We ended up with the following sequence:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Apple Maps for the bulk of the trip.&lt;/li&gt;
-  &lt;li&gt;Google Maps &amp;amp; Metroview (on 2 separate iPhones) in the metropolitan areas and when about to take a highway exit.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Even then it was amusing to see the apps panic when you took a new road and the apps assumed you had left the road and were heading through the bush! And at one point there was a large and official sign saying “Ignore GPS - do not take this turn” and sure enough, both Apple Maps and Google Maps wanted us to turn down a little country lane instead of keeping to the highway.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;speed-display&quot;&gt;Speed Display:&lt;/h3&gt;
-
-&lt;p&gt;Apart from the basic navigation apps, we tried a couple of speed display apps. There are a lot of HUD speed apps out there that project the data on the the windscreen but they had two problems:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;They only worked when it was dark. As soon as the sun got up, they became invisible.&lt;/li&gt;
-  &lt;li&gt;They required you to place your iPhone flat on the dashboard so even if they had worked during the day, the iPhone would have got far too hot and shut-down. (We have a mount that holds our iPhones in front of the air vents to avoid this over-heating problem. Any mount that sticks to the windscreen itself leaves the iPhone too exposed to the sun.)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;One we stuck with (in non-HUD mode) was &lt;a href=&quot;https://itunes.apple.com/app/speedometer-+-hud-digital/id375318117&quot;&gt;Speedometer + HUD&lt;/a&gt;. This had a clear display with a few flaws:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;When moving from 99 kph to 100 kph, the display was not re-arranged for 3 digits. Moving from 101 down to 100 fixed it, but as 100 kph is the standard speed limit, this was a frequent annoyance.&lt;/li&gt;
-  &lt;li&gt;Adjusting the speed limit was too fiddly and difficult even for the passenger. It would have been impossible for the driver.&lt;/li&gt;
-  &lt;li&gt;It only works in landscape mode which does not always suit the car mounts - we ended up perching the 2nd iPhone on the unused ashtray.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We also tried &lt;a href=&quot;https://itunes.apple.com/app/talking-hud-voice-prompt-speedometer/id873194479&quot;&gt;Talking HUD&lt;/a&gt; but didn’t like it. It worked solely in HUD mode, so was only useful at night or very early morning. It had voice prompts to tell you when to change gear but in an automatic car, they were just a distraction and it was not obvious how to turn them off.&lt;/p&gt;
-
-&lt;p&gt;But overall, we found having a speed display app as well as a navigation app to be the best combination. The audible alerts when you went over speed were very useful when over-taking or getting up to speed as you could get the information without having to take your eyes off the road.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;future-app-plans&quot;&gt;Future App Plans:&lt;/h3&gt;
-
-&lt;p&gt;Having determined that a speed display app is really useful, but not finding one that suited us perfectly, the obvious next step was to design my own. I wanted it to have the following features:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;clean display, visible in all light conditions&lt;/li&gt;
-  &lt;li&gt;easily settable speed limit&lt;/li&gt;
-  &lt;li&gt;audible and visual over-speed warnings&lt;/li&gt;
-  &lt;li&gt;no HUD mode&lt;/li&gt;
-  &lt;li&gt;Apple Watch component for when you only had a single iPhone and it was navigating but you still wanted a speed display&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;So watch this space for further news of my up-coming app…&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;update&quot;&gt;Update:&lt;/h3&gt;
-
-&lt;p&gt;“&lt;a href=&quot;/what-is-my-speed/&quot;&gt;What Is My Speed?&lt;/a&gt;” is available now from the &lt;a href=&quot;https://itunes.apple.com/app/what-is-my-speed/id1091394524&quot;&gt;iTunes App Store&lt;/a&gt; for iPhone and Apple Watch.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 07 Apr 2016 00:00:00 +1000</pubDate>
-        <link>http://troz.net/2016/04/road-trip-apps/</link>
-        <guid isPermaLink="true">http://troz.net/2016/04/road-trip-apps/</guid>
       </item>
     
   </channel>

@@ -17,14 +17,12 @@ I tried to re-compile for OS X 10.9 but this failed as the app uses several feat
 
 The minimum system version as displayed in the App Store is supposedly deduced automatically by the App Store servers from the app's binary. Somehow this was incorrect in the App Store, so some people may have bought that app and found that it did not work despite them having what was listed as a compatible system.
 
-If you bought Dice Pass for OS X 10.9 and are unable to run it, I have three possible solutions for you:
+If you bought Dice Pass for OS X 10.9 and are unable to run it, I have two possible solutions for you:
 
 1. Upgrade your operating system to at least 10.10.
 2. Ask Apple for a refund since it was their error that caused you to buy an app that you cannot run.
-3. [Send me a screen shot][1] of the app failing to start properly on your system and I will send you a code to redeem a free copy of Dice Pass for iOS.
 
 I have updated the app in the App Store changing nothing but the version number and it is now showing the correct minimum system requirement. My apologies if you have been inconvenienced by this error.
 
-[1]: mailto:sarah@troz.net?subject=Dice%20Pass%20iOS%20redeem%20code
 [2]: /dicepass/
 [3]: https://itunes.apple.com/app/dice-pass/id997688302
