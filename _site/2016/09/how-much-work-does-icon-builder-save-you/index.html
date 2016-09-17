@@ -8,7 +8,7 @@
     <meta name="description" content="Mac &amp;amp; iOS Developer">
     <meta name="author" content="Sarah Reichelt">
     <meta name="keywords" content="">
-    <link rel="canonical" href="http://troz.net/2016/07/how-much-work-does-icon-builder-save-you/">
+    <link rel="canonical" href="http://troz.net/2016/09/how-much-work-does-icon-builder-save-you/">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for TrozWare" href="/feed.xml" />
 
     <!-- Custom CSS -->
@@ -33,7 +33,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="How much work does Icon Builder save you?">
     <meta property="og:description" content="Mac &amp;amp; iOS Developer">
-    <meta property="og:url" content="http://troz.net/2016/07/how-much-work-does-icon-builder-save-you/">
+    <meta property="og:url" content="http://troz.net/2016/09/how-much-work-does-icon-builder-save-you/">
     <meta property="og:site_name" content="TrozWare">
 
     <!-- Twitter Card -->
@@ -43,7 +43,7 @@
     
     <meta name="twitter:title" content="How much work does Icon Builder save you?" />
     <meta name="twitter:description" content="Mac &amp; iOS Developer" />
-    <meta name="twitter:url" content="http://troz.net/2016/07/how-much-work-does-icon-builder-save-you/" />
+    <meta name="twitter:url" content="http://troz.net/2016/09/how-much-work-does-icon-builder-save-you/" />
 
     <!-- Icons -->
     <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-touch-icon-57x57.png">
@@ -133,23 +133,34 @@
 
 <div class="post-header mb2">
   <h1>How much work does Icon Builder save you?</h1>
-  <span class="post-meta">30 Jul 2016</span><br>
+  <span class="post-meta">17 Sep 2016</span><br>
   
   <span class="post-meta small">
   
-    2 minute read
+    1 minute read
   
   </span>
 </div>
 
 <article class="post-content">
-  <p><a href="/icon-builder/">Icon Builder</a> is a Mac app that takes a single image file and creates all the different image sizes that you need to make a set of icons for your app: Mac, iPhone, iPad, iOS Universal or Apple Watch. You can get it through the <a href="https://itunes.apple.com/app/icon-builder/id552293482">Mac App Store</a>.</p>
+  <p><a href="/icon-builder/">Icon Builder</a> is a Mac app that takes a single image file and creates all the different image sizes that you need to make a set of icons for your app: Mac, iPhone, iPad, iOS Universal or Apple Watch.</p>
+
+<p>Version 4, released 16 September 2016 is available through the <a href="https://itunes.apple.com/app/icon-builder/id552293482">Mac App Store</a>.</p>
+
+<h3 id="whats-new-in-version-4">What’s New in Version 4:</h3>
+
+<ul>
+  <li>Added support for iMessage apps and Sticker Pack apps.</li>
+  <li>Added support for creating Mac .icns files.</li>
+  <li>Better removal of alpha channel for Apple Watch icons.</li>
+  <li>Clearer usage instructions in ReadMe files.</li>
+  <li>iTunes Artwork folders will no longer be over-written with the latest image files.</li>
+  <li>Supports macOS Sierra and Xcode 8</li>
+</ul>
 
 <p><img src="/images/IconBuilder.png" alt="Icon Builder" /></p>
 
-<p>Recently I was working on an update so that the app could also make icons for the new iOS 10 Sticker Pack apps and iMessages apps. After struggling with document icons for an upcoming document-based app, I also added the ability to create Mac icns files which was previously only available in my companion app Icns Maker.</p>
-
-<p>While working on all these new icon sets (and wishing I had the time to re-write the app in Swift…), I counted up all the icon files that Icon Builder makes for each app type:</p>
+<p>While working on version 4 and accommodating all these new icon sets (and wishing I had the time to re-write the app in Swift…), I counted up all the icon files that Icon Builder makes for each app type:</p>
 
 <table>
   <thead>
@@ -165,27 +176,27 @@
     </tr>
     <tr>
       <td style="text-align: left">iPhone</td>
-      <td style="text-align: right">6</td>
+      <td style="text-align: right">8</td>
     </tr>
     <tr>
       <td style="text-align: left">iPhone supporting pre iOS 7</td>
-      <td style="text-align: right">9</td>
+      <td style="text-align: right">11</td>
     </tr>
     <tr>
       <td style="text-align: left">iPad</td>
-      <td style="text-align: right">7</td>
+      <td style="text-align: right">9</td>
     </tr>
     <tr>
       <td style="text-align: left">iPad supporting pre iOS 7</td>
-      <td style="text-align: right">11</td>
+      <td style="text-align: right">13</td>
     </tr>
     <tr>
       <td style="text-align: left">iOS Universal</td>
-      <td style="text-align: right">11</td>
+      <td style="text-align: right">14</td>
     </tr>
     <tr>
       <td style="text-align: left">iOS Universal supporting pre iOS 7</td>
-      <td style="text-align: right">17</td>
+      <td style="text-align: right">20</td>
     </tr>
     <tr>
       <td style="text-align: left">Apple Watch (also requires iOS app icons)</td>
@@ -193,28 +204,22 @@
     </tr>
     <tr>
       <td style="text-align: left">Sticker Pack app</td>
-      <td style="text-align: right">15</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">iMessages app</td>
       <td style="text-align: right">11</td>
     </tr>
     <tr>
+      <td style="text-align: left">iMessages app</td>
+      <td style="text-align: right">14</td>
+    </tr>
+    <tr>
       <td style="text-align: left">iMessages app Messages extension</td>
-      <td style="text-align: right">12</td>
+      <td style="text-align: right">9</td>
     </tr>
   </tbody>
 </table>
 
-<blockquote>
-  <p>The figures for the Sticker Pack and iMessage apps are valid for Xcode 8 beta 3 but may change, in which case I will update Icon Builder to match.</p>
-</blockquote>
-
 <p>So as you can see, Icon Builder is doing a lot of work for you. It also names all the icon files using the expected format, stores them in an concept folder, creates the JSON file that identifies them all to Xcode and optionally installs them in your Xcode project automatically. That’s a lot of value for dragging in an icon and clicking a button!</p>
 
 <p>So next time your designer sends you the twentieth tweaked icon for the day, don’t get mad. Just drop it into Icon Builder and sit back while it does all the work. (No need to tell the designer that…)</p>
-
-<p>I submitted the app to iTunes Connect for review and release but sadly it was rejected due to references to pre-release software. If any developers would like to use Icon Builder to help with Sticker Pack or iMessages apps, <a href="mailto:sarah@troz.net?subject=Icon%20Builer%20pre-release&amp;body=Attach%20a%20screenshot%20of%20Icon%20Builder%20running%20on%20your%20Mac:">send me a screen shot</a> of Icon Builder running on your computer and I will send you a pre-release copy of Icon Builder.</p>
 
 
 </article>
@@ -237,7 +242,7 @@ Tags:
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_shortname  = 'trozware';
-    var disqus_identifier = '/2016/07/how-much-work-does-icon-builder-save-you';
+    var disqus_identifier = '/2016/09/how-much-work-does-icon-builder-save-you';
     var disqus_title      = 'How much work does Icon Builder save you?';
 
     (function() {
