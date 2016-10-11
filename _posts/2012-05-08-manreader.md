@@ -36,6 +36,12 @@ Man Reader assembles a list of the commands with available man pages on your sys
 
 ---
 
+##### Man Reader version 1.7 changes (10 Oct 2016):
+  * Updated for macOS Sierra.
+  * List of pages now uses alternating colors even if not using the defaults.
+  * Minimum supported system version raised to 10.11.
+  * Minor display glitches fixed.
+
 ##### Man Reader version 1.6 changes (13 Jul 2016):
   * Much improved searching for available man pages, including permissions fix for some pages.
   * Fixed error with new search term being over-written.
