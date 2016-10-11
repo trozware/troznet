@@ -7,6 +7,25 @@
     <atom:link href="http://troz.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Man Reader Update</title>
+        <description>&lt;p&gt;&lt;a href=&quot;/manreader/&quot;&gt;Man Reader&lt;/a&gt; has just been updated to version 1.7 and is available through the &lt;a href=&quot;http://itunes.apple.com/app/man-reader/id522583774?mt=12&quot;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The main reason for this update was to make the app work well with macOS Sierra, as I found that version 1.6 was sometimes crashing on launch. While doing this, the update was rejected by the App Store reviewers because it crashed on OS X 10.10. Since I no longer have a Mac running 10.10, I decided to set the minimum supported system version to OS X 10.11. If you need support for older versions, you should still be able to download version 1.6 which will work back to 10.7.&lt;/p&gt;
+
+&lt;p&gt;I also took the opportunity to fix some graphical issues, dealing with different color schemes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The man page list now shows alternating colors even when not using the default scheme.&lt;/li&gt;
+  &lt;li&gt;When scrolling the man pages past the top or the bottom with a non-white background, you should no longer see white blocks top &amp;amp; bottom.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Wed, 12 Oct 2016 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2016/10/man-reader-update/</link>
+        <guid isPermaLink="true">http://troz.net/2016/10/man-reader-update/</guid>
+      </item>
+    
+      <item>
         <title>Podcasting</title>
         <description>&lt;p&gt;I have recently started what I hope will be a weekly podcast with my friend and colleague, &lt;a href=&quot;https://twitter.com/jerrydaniels&quot;&gt;Jerry Daniels&lt;/a&gt;. Each podcast will be about 30 minutes in length.&lt;/p&gt;
 
@@ -554,74 +573,6 @@ The default &lt;code class=&quot;highlighter-rouge&quot;&gt;isSubsetOf()&lt;/cod
         <pubDate>Thu, 28 Apr 2016 00:00:00 +1000</pubDate>
         <link>http://troz.net/2016/04/my-year-with-apple-watch/</link>
         <guid isPermaLink="true">http://troz.net/2016/04/my-year-with-apple-watch/</guid>
-      </item>
-    
-      <item>
-        <title>How To Confuse TestFlight</title>
-        <description>&lt;p&gt;&lt;a href=&quot;#tldr&quot;&gt;TL;DR&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I ran into an unusual problem when testing my latest app: “&lt;a href=&quot;/what-is-my-speed/&quot;&gt;What Is My Speed?&lt;/a&gt;”. It is now available from the &lt;a href=&quot;https://itunes.apple.com/app/what-is-my-speed/id1091394524&quot;&gt;iTunes App Store&lt;/a&gt;, but getting there was a struggle.&lt;/p&gt;
-
-&lt;p&gt;Xcode is terrible at renaming projects, so it is a really good idea to have worked out your app’s name before starting. I would even recommend creating an app ID in your Apple Developer account and registering the app name in iTunes Connect. Only once you get to iTunes Connect will the name be checked for uniqueness. Searching the App Stores is not enough as it does not cover un-released apps or apps that are not available in your country.&lt;/p&gt;
-
-&lt;p&gt;So I set up my app. I was hoping for “What’s My Speed?” but was happy with “What Is My Speed?”.&lt;/p&gt;
-
-&lt;p&gt;Next step was to create the project in Xcode which I did using the app name and manually entering the bundle identifier that I had registered at Apple Developer. Xcode accepted the name without any warnings and created the default targets using that name.&lt;/p&gt;
-
-&lt;p&gt;In the default unit testing file, the module was defined like this:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;@testable&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;What_Is_My_Speed_&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;which made me think that Xcode was quite happy to have parsed the app name as required to replace any unwanted characters to suit.&lt;/p&gt;
-
-&lt;p&gt;The app was built, passed all unit tests, profiled, analyzed, tested on real devices as well as the simulators and uploaded to TestFlight.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;BARRRPPPP!&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/TestFlight_error.png&quot; alt=&quot;This app cannot be installed&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;What?&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;(I forgot to take a screenshot but found a similar one online. Thanks &lt;a href=&quot;https://www.simpletechs.net/apps/easy-fix-for-testflight-problem-after-restoring-from-backup/&quot;&gt;Simple Techs&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;I have had experience with TestFlight’s oddities in the past, so I incremented the build number and tried again, thinking that maybe there had been a processing issue. Same result.&lt;/p&gt;
-
-&lt;p&gt;This started a very frustrating 24 hours as I ran through all the possibilities I could think of or find suggested on the net. Due to disastrous Australian internet speeds, especially uploads, each attempt took from 40 - 120 minutes. About 5 minutes to implement the next idea, 25 minutes upload time, then the rest waiting for Apple to process the app so I could try again.&lt;/p&gt;
-
-&lt;p&gt;Here is what I tried:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Uploaded a fresh build.&lt;/li&gt;
-  &lt;li&gt;Removed Bitcode.&lt;/li&gt;
-  &lt;li&gt;Fixed the code signing identity which was set to iOS Developer for some reason.&lt;/li&gt;
-  &lt;li&gt;Manually specified the provisioning profiles for all three components (iPhone app, WatchKit app, WatchKit Extension).&lt;/li&gt;
-  &lt;li&gt;Manually selected the code signing identity for the provisioning profiles.&lt;/li&gt;
-  &lt;li&gt;Uploaded using Application Loader instead of Xcode.&lt;/li&gt;
-  &lt;li&gt;Removed third-party framework.&lt;/li&gt;
-  &lt;li&gt;Removed WatchKit app.&lt;/li&gt;
-  &lt;li&gt;Revoked my distribution profile, re-created it and updated all provisioning profiles.&lt;/li&gt;
-  &lt;li&gt;Created a completely blank project with same app name and bundle identifier.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;As you can see from this list, I thought it was a code signing or profile error. Using &lt;a href=&quot;https://itunes.apple.com/app/apple-configurator-2/id1037126344&quot;&gt;Apple Configurator 2&lt;/a&gt; (the modern version of iPhone Configuration Utility), I was able to get the logs from my iPhone and entries like the following seemed to confirm this:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Error Domain=LaunchServicesError Code=0 &quot;(null)&quot; UserInfo={Error=ApplicationVerificationFailed, ErrorDetail=-402620393, ErrorDescription=Failed to verify code signature of /private/var/installd/Library/Caches/com.apple.mobile.
-installd.staging/temp.2LWJ2h/extracted/Payload/What Is My Speed?.app : 0xe8008017 (A signed resource has been added, modified, or deleted.)}&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;But when I got to the stage of a completely blank app still failing, I suddenly thought of the question mark. With the benefit of my preamble to this post, you all probably got there long before I did, but I got there in the end.&lt;/p&gt;
-
-&lt;p&gt;The solution was to remove the question mark from the names of the targets in Xcode. I had to fix up the module names in my unit testing files, but apart from that, there were no changes. After this I was able to upload the complete app to TestFlight and install it on my iPhone.&lt;/p&gt;
-
-&lt;p&gt;It is possible that it was the Product Names that were the issue, rather than the target name as in Build Settings, Product Name is set to be &lt;code class=&quot;highlighter-rouge&quot;&gt;$(TARGET_NAME)&lt;/code&gt; by default but I didn’t test that. Maybe next time…&lt;/p&gt;
-
-&lt;p&gt;&lt;a name=&quot;tldr&quot;&gt;TL;DR&lt;/a&gt; Do not put any unusual characters in your target names. Alphanumerics and spaces are OK, but I am not sure about anything else.&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 24 Apr 2016 00:00:00 +1000</pubDate>
-        <link>http://troz.net/2016/04/how-to-confuse-testflight/</link>
-        <guid isPermaLink="true">http://troz.net/2016/04/how-to-confuse-testflight/</guid>
       </item>
     
   </channel>
