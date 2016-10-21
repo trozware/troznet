@@ -8,7 +8,7 @@
     <meta name="description" content="macOS, iOS &amp;amp; watchOS Developer">
     <meta name="author" content="Sarah Reichelt">
     <meta name="keywords" content="">
-    <link rel="canonical" href="http://troz.net/2016/02/configuring-xcode/">
+    <link rel="canonical" href="http://localhost:4000/2016/02/configuring-xcode/">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for TrozWare" href="/feed.xml" />
 
     <!-- Custom CSS -->
@@ -33,7 +33,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Configuring Xcode">
     <meta property="og:description" content="macOS, iOS &amp;amp; watchOS Developer">
-    <meta property="og:url" content="http://troz.net/2016/02/configuring-xcode/">
+    <meta property="og:url" content="http://localhost:4000/2016/02/configuring-xcode/">
     <meta property="og:site_name" content="TrozWare">
 
     <!-- Twitter Card -->
@@ -44,7 +44,7 @@
         
         <meta name="twitter:title" content="Configuring Xcode" />
         <meta name="twitter:description" content="macOS, iOS &amp; watchOS Developer" />
-        <meta name="twitter:url" content="http://troz.net/2016/02/configuring-xcode/" />
+        <meta name="twitter:url" content="http://localhost:4000/2016/02/configuring-xcode/" />
         <meta name="twitter:image" content="http://troz.net/icons/apple-touch-icon-152x152.png" />
     
 
@@ -84,7 +84,7 @@
     <header class="site-header px2 px-responsive">
   <div class="mt2 wrap">
     <div class="measure">
-      <a href="http://troz.net" class="site-title">TrozWare</a>
+      <a href="http://localhost:4000" class="site-title">TrozWare</a>
       <nav class="site-nav">
         <a href="/applications/">Apps</a>
 <a href="/tags/">Tags</a>
@@ -140,7 +140,7 @@
   
   <span class="post-meta small">
   
-    4 minute read
+    3 minute read
   
   </span>
 </div>
@@ -156,7 +156,9 @@
 
 <p>An editing font should be mono-spaced i.e. every character should take up exactly the same width on the screen. This makes your code look neater and neater code is easier to read when you come back to it. I also much prefer a sans-serif font, but that is a matter of preference.</p>
 
-<p>Menlo is the font used by Xcode as a default, but there are many other options either in the default installation of OS X or as free downloads. I change every now and then just to keep things interesting, but my favourites are:</p>
+<p>Menlo is the font used by Xcode as a default, but there are many other options either in the default installation of OS X or as free downloads. I change every now and then just to keep things interesting, but my current selection is <a href="https://github.com/tonsky/FiraCode">Fira Code</a>. I love the way it merges two character symbols into a single character for faster comprehension.</p>
+
+<p>My other favourites are:</p>
 
 <ul>
   <li><a href="https://github.com/adobe-fonts/source-code-pro">Source Code Pro</a></li>
@@ -173,35 +175,7 @@
 
 <h3 id="add-ons">2. Add-ons:</h3>
 
-<p>The easiest way to find and install add-ons for Xcode is using the <a href="http://alcatraz.io">Alcatraz package manager</a>. The installation instructions are on the linked page, and once installed, restart Xcode to see “Package Manager” in the Window menu. Adding plugins and themes is very easy, but some may require Xcode to restart before they appear.</p>
-
-<p>When you start Xcode the first time after installing extra plugins, you will get a warning about possible instability due to non-Apple plugins. Click the “Load” button to load them anyway and if Xcode becomes unstable, then delete the one you think might be the culprit.</p>
-
-<p>Alcatraz makes it very easy to un-install add-ons as well as install, so you can test them out.</p>
-
-<p><img src="/images/Alcatraz.png" alt="" /></p>
-
-<p>Here are two of my favourites (search for them by name in the Alcatraz Package Manager window to install them or to see more details):</p>
-
-<h4 id="cocoapods">CocoaPods:</h4>
-
-<p>This puts the power of the CocoaPods command line interface inside Xcode and available through the Products menu.
-<a href="https://cocoapods.org">CocoaPods</a> is a dependency manager for Swift and Objective-C projects. It has over ten thousand libraries so is a great resource for any Apple developers. The CocoaPods site has instructions for installing the tool and then you can use it via this plugin. You may need to change the GEM_PATH as shown in the screen shot below. To find out what you should enter there, open a Terminal window and type <code class="highlighter-rouge">which pod</code> at the prompt:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>which pod
-/usr/local/bin/pod</code></pre></figure>
-
-<p>The result shows exactly where the pod tool is installed, so delete the word <code class="highlighter-rouge">pod</code> in order to get the containing folder and enter that as your GEM_PATH. In my case that was <code class="highlighter-rouge">/usr/local/bin/</code> but yours may be different.</p>
-
-<p><img src="/images/CocoaPods.png" alt="" /></p>
-
-<p><br /></p>
-
-<h4 id="colorsenserainbow">ColorSenseRainbow:</h4>
-
-<p>As you can from the screen shot below, this gives you a color swatch when the cursor is inside a UIColor or NSColor initialiser. Clicking in the swatch pops up the color picker which can edit the color in your code.</p>
-
-<p><img src="/images/ColorSenseRainbow.png" alt="" /></p>
+<p><strong>Update:</strong> Xcode 8 has removed the ability to run any plugins or to use Alcatraz, so this sectrion is no longer valid. Instead Apple is offering offical support for Xcode Source Editor Extensions, so they are the way of the future.</p>
 
 <hr />
 

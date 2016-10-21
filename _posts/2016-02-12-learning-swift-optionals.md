@@ -39,7 +39,7 @@ One of the first things that struck me about Swift was how clean the code looked
 
 {% highlight swift %}
 * ; [ ]
-{% endhighlight %}
+  {% endhighlight %}
 
 But instead, Swift code sprouted:
 
@@ -98,13 +98,13 @@ I have to assume Xcode knows what it is doing and the button will be available w
 #### Use 'if let':
 
 {% highlight swift %}
-func doubleNumber(optionalInteger: Int?) -> Int? {
+func doubleNumber(_ optionalInteger: Int?) -> Int? {
     if let integerValue = optionalInteger {
         // integerValue is not an optional
         // and is guaranteed to contain an Int
         return integerValue * 2
     }
-
+    
     // no integer found in the optional,
     // so return nil to indicate failure
     return nil
@@ -116,13 +116,13 @@ func doubleNumber(optionalInteger: Int?) -> Int? {
 #### Use guard:
 
 {% highlight swift %}
-func doubleNumber(optionalInteger: Int?) -> Int? {
+func doubleNumber(_ optionalInteger: Int?) -> Int? {
     guard let integerValue = optionalInteger else {
         // get out quickly, 
         // returning nil to indicate failure
         return nil
     }
-
+    
     // integerValue is not an optional 
     // and is guaranteed to contain an Int
     return integerValue * 2
@@ -140,7 +140,7 @@ func isValidAddressBookEntry(
     lastName: String?,
     emailAddress: String?,
     phoneNumber: String?) -> Bool {
-
+    
         if let validFirstName = firstName {
             if let validLastName = lastName {
                 if let validEmail = emailAddress {
@@ -162,7 +162,7 @@ func isValidAddressBookEntry(
     lastName: String?,
     emailAddress: String?,
     phoneNumber: String?) -> Bool {
-
+    
         if let
             validFirstName = firstName,
             validLastName = lastName,
@@ -208,6 +208,7 @@ In the same way, when trying to read back the twitter handle, we chained togethe
 
 ---
 
-All the examples in this article are available in a [Swift playground][1].
+All the examples in this article are available in a [Swift playground][1] which has been updated to Swift 3 syntax.
 
 [1]: https://github.com/trozware/optionals
+

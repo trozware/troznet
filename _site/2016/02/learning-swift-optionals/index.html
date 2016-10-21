@@ -8,7 +8,7 @@
     <meta name="description" content="macOS, iOS &amp;amp; watchOS Developer">
     <meta name="author" content="Sarah Reichelt">
     <meta name="keywords" content="">
-    <link rel="canonical" href="http://troz.net/2016/02/learning-swift-optionals/">
+    <link rel="canonical" href="http://localhost:4000/2016/02/learning-swift-optionals/">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for TrozWare" href="/feed.xml" />
 
     <!-- Custom CSS -->
@@ -33,7 +33,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Learning Swift - Optionals">
     <meta property="og:description" content="macOS, iOS &amp;amp; watchOS Developer">
-    <meta property="og:url" content="http://troz.net/2016/02/learning-swift-optionals/">
+    <meta property="og:url" content="http://localhost:4000/2016/02/learning-swift-optionals/">
     <meta property="og:site_name" content="TrozWare">
 
     <!-- Twitter Card -->
@@ -44,7 +44,7 @@
         
         <meta name="twitter:title" content="Learning Swift - Optionals" />
         <meta name="twitter:description" content="macOS, iOS &amp; watchOS Developer" />
-        <meta name="twitter:url" content="http://troz.net/2016/02/learning-swift-optionals/" />
+        <meta name="twitter:url" content="http://localhost:4000/2016/02/learning-swift-optionals/" />
         <meta name="twitter:image" content="http://troz.net/icons/apple-touch-icon-152x152.png" />
     
 
@@ -84,7 +84,7 @@
     <header class="site-header px2 px-responsive">
   <div class="mt2 wrap">
     <div class="measure">
-      <a href="http://troz.net" class="site-title">TrozWare</a>
+      <a href="http://localhost:4000" class="site-title">TrozWare</a>
       <nav class="site-nav">
         <a href="/applications/">Apps</a>
 <a href="/tags/">Tags</a>
@@ -174,7 +174,8 @@
 
 <p>One of the first things that struck me about Swift was how clean the code looked, without so many non-alphanumeric characters scattered around. Gone were all the:</p>
 
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="o">*</span> <span class="p">;</span> <span class="p">[</span> <span class="p">]</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="o">*</span> <span class="p">;</span> <span class="p">[</span> <span class="p">]</span>
+  </code></pre></figure>
 
 <p>But instead, Swift code sprouted:</p>
 
@@ -222,13 +223,13 @@ In Xcode, when you connect interface elements from your storyboard to a Swift fi
 
 <h4 id="use-if-let">Use ‘if let’:</h4>
 
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">func</span> <span class="nf">doubleNumber</span><span class="p">(</span><span class="nv">optionalInteger</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">func</span> <span class="nf">doubleNumber</span><span class="p">(</span><span class="n">_</span> <span class="nv">optionalInteger</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span> <span class="p">{</span>
     <span class="k">if</span> <span class="k">let</span> <span class="nv">integerValue</span> <span class="o">=</span> <span class="n">optionalInteger</span> <span class="p">{</span>
         <span class="c1">// integerValue is not an optional</span>
         <span class="c1">// and is guaranteed to contain an Int</span>
         <span class="k">return</span> <span class="n">integerValue</span> <span class="o">*</span> <span class="mi">2</span>
     <span class="p">}</span>
-
+    
     <span class="c1">// no integer found in the optional,</span>
     <span class="c1">// so return nil to indicate failure</span>
     <span class="k">return</span> <span class="kc">nil</span>
@@ -238,13 +239,13 @@ In Xcode, when you connect interface elements from your storyboard to a Swift fi
 
 <h4 id="use-guard">Use guard:</h4>
 
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">func</span> <span class="nf">doubleNumber</span><span class="p">(</span><span class="nv">optionalInteger</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">func</span> <span class="nf">doubleNumber</span><span class="p">(</span><span class="n">_</span> <span class="nv">optionalInteger</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span> <span class="p">{</span>
     <span class="k">guard</span> <span class="k">let</span> <span class="nv">integerValue</span> <span class="o">=</span> <span class="n">optionalInteger</span> <span class="k">else</span> <span class="p">{</span>
         <span class="c1">// get out quickly, </span>
         <span class="c1">// returning nil to indicate failure</span>
         <span class="k">return</span> <span class="kc">nil</span>
     <span class="p">}</span>
-
+    
     <span class="c1">// integerValue is not an optional </span>
     <span class="c1">// and is guaranteed to contain an Int</span>
     <span class="k">return</span> <span class="n">integerValue</span> <span class="o">*</span> <span class="mi">2</span>
@@ -260,7 +261,7 @@ The <code class="highlighter-rouge">if let</code> construct encloses your succes
     <span class="nv">lastName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
     <span class="nv">emailAddress</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
     <span class="nv">phoneNumber</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
-
+    
         <span class="k">if</span> <span class="k">let</span> <span class="nv">validFirstName</span> <span class="o">=</span> <span class="n">firstName</span> <span class="p">{</span>
             <span class="k">if</span> <span class="k">let</span> <span class="nv">validLastName</span> <span class="o">=</span> <span class="n">lastName</span> <span class="p">{</span>
                 <span class="k">if</span> <span class="k">let</span> <span class="nv">validEmail</span> <span class="o">=</span> <span class="n">emailAddress</span> <span class="p">{</span>
@@ -280,7 +281,7 @@ The <code class="highlighter-rouge">if let</code> construct encloses your succes
     <span class="nv">lastName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
     <span class="nv">emailAddress</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
     <span class="nv">phoneNumber</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
-
+    
         <span class="k">if</span> <span class="k">let</span>
             <span class="nv">validFirstName</span> <span class="o">=</span> <span class="n">firstName</span><span class="p">,</span>
             <span class="n">validLastName</span> <span class="o">=</span> <span class="n">lastName</span><span class="p">,</span>
@@ -323,7 +324,7 @@ The <code class="highlighter-rouge">if let</code> construct encloses your succes
 
 <hr />
 
-<p>All the examples in this article are available in a <a href="https://github.com/trozware/optionals">Swift playground</a>.</p>
+<p>All the examples in this article are available in a <a href="https://github.com/trozware/optionals">Swift playground</a> which has been updated to Swift 3 syntax.</p>
 
 
 </article>

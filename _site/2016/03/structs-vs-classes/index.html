@@ -8,7 +8,7 @@
     <meta name="description" content="macOS, iOS &amp;amp; watchOS Developer">
     <meta name="author" content="Sarah Reichelt">
     <meta name="keywords" content="">
-    <link rel="canonical" href="http://troz.net/2016/03/structs-vs-classes/">
+    <link rel="canonical" href="http://localhost:4000/2016/03/structs-vs-classes/">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for TrozWare" href="/feed.xml" />
 
     <!-- Custom CSS -->
@@ -33,7 +33,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Structs vs Classes">
     <meta property="og:description" content="macOS, iOS &amp;amp; watchOS Developer">
-    <meta property="og:url" content="http://troz.net/2016/03/structs-vs-classes/">
+    <meta property="og:url" content="http://localhost:4000/2016/03/structs-vs-classes/">
     <meta property="og:site_name" content="TrozWare">
 
     <!-- Twitter Card -->
@@ -44,7 +44,7 @@
         
         <meta name="twitter:title" content="Structs vs Classes" />
         <meta name="twitter:description" content="macOS, iOS &amp; watchOS Developer" />
-        <meta name="twitter:url" content="http://troz.net/2016/03/structs-vs-classes/" />
+        <meta name="twitter:url" content="http://localhost:4000/2016/03/structs-vs-classes/" />
         <meta name="twitter:image" content="http://troz.net/icons/apple-touch-icon-152x152.png" />
     
 
@@ -84,7 +84,7 @@
     <header class="site-header px2 px-responsive">
   <div class="mt2 wrap">
     <div class="measure">
-      <a href="http://troz.net" class="site-title">TrozWare</a>
+      <a href="http://localhost:4000" class="site-title">TrozWare</a>
       <nav class="site-nav">
         <a href="/applications/">Apps</a>
 <a href="/tags/">Tags</a>
@@ -236,18 +236,15 @@ Use classes for everything else.</p>
 
 <p>A logical consequence of this is that all structs should conform to the <a href="http://swiftdoc.org/v2.2/protocol/Equatable/">Equatable</a> protocol.</p>
 
-<p>Re-factoring <code class="highlighter-rouge">PersonStruct</code> to make it conform just requires a single function:</p>
+<p>Extending <code class="highlighter-rouge">PersonStruct</code> to make it conform just requires a single function:</p>
 
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">PersonStruct</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">PersonStruct</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">lhs</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">rhs</span><span class="o">.</span><span class="n">name</span>
-<span class="p">}</span>
-
-<span class="kd">struct</span> <span class="kt">PersonStruct</span><span class="p">:</span> <span class="kt">Equatable</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">extension</span> <span class="kt">PersonStruct</span><span class="p">:</span> <span class="kt">Equatable</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">PersonStruct</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">PersonStruct</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">lhs</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">rhs</span><span class="o">.</span><span class="n">name</span>
+    <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Since this struct only has one property, we can say that two instances of this struct are equal if the names are equal.
-(If you are copying this code into a playground, the overloading function has to come before the struct definition.)</p>
+<p>Since this struct only has one property, we can say that two instances of this struct are equal if the names are equal.</p>
 
 <p>Testing this, we can see:</p>
 
@@ -275,7 +272,7 @@ Use classes for everything else.</p>
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">struct</span> <span class="kt">PersonStruct</span><span class="p">:</span> <span class="kt">Equatable</span> <span class="p">{</span>
     <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
 
-    <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">changeName</span><span class="p">(</span><span class="nv">newName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">changeName</span><span class="p">(</span><span class="n">to</span> <span class="nv">newName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="o">!</span><span class="n">newName</span><span class="o">.</span><span class="n">isEmpty</span> <span class="p">{</span>
             <span class="n">name</span> <span class="o">=</span> <span class="n">newName</span>
         <span class="p">}</span>
@@ -285,7 +282,7 @@ Use classes for everything else.</p>
 <span class="k">var</span> <span class="nv">personC</span> <span class="o">=</span> <span class="kt">PersonStruct</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Woody"</span><span class="p">)</span>
 <span class="n">personC</span><span class="o">.</span><span class="n">name</span>    <span class="c1">// Woody</span>
 
-<span class="n">personC</span><span class="o">.</span><span class="nf">changeName</span><span class="p">(</span><span class="s">"Sid"</span><span class="p">)</span>
+<span class="n">personC</span><span class="o">.</span><span class="nf">changeName</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="s">"Sid"</span><span class="p">)</span>
 <span class="n">personC</span><span class="o">.</span><span class="n">name</span>    <span class="c1">// Sid</span></code></pre></figure>
 
 <p>There is no problem about using <code class="highlighter-rouge">mutating</code> and it will not have the unintended consequences of using classes. Despite the scary name, a mutating function actually returns a new copy of the struct.</p>

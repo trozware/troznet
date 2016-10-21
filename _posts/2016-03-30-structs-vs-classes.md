@@ -99,20 +99,17 @@ I would add one caveat: don't fight the compiler. If using a struct is giving lo
 
 A logical consequence of this is that all structs should conform to the [Equatable][2] protocol.
 
-Re-factoring `PersonStruct` to make it conform just requires a single function:
+Extending `PersonStruct` to make it conform just requires a single function:
 
 {% highlight swift %}
-func == (lhs: PersonStruct, rhs: PersonStruct) -> Bool {
-    return lhs.name == rhs.name
-}
-
-struct PersonStruct: Equatable {
-    var name: String
+extension PersonStruct: Equatable {
+    static func == (lhs: PersonStruct, rhs: PersonStruct) -> Bool {
+        return lhs.name == rhs.name
+    }
 }
 {% endhighlight %}
 
 Since this struct only has one property, we can say that two instances of this struct are equal if the names are equal.
-(If you are copying this code into a playground, the overloading function has to come before the struct definition.)
 
 Testing this, we can see:
 
@@ -143,7 +140,7 @@ Fix-it is very helpfully pointing out that the method needs to be marked as `mut
 struct PersonStruct: Equatable {
     var name: String
 
-    mutating func changeName(newName: String) {
+    mutating func changeName(to newName: String) {
         if !newName.isEmpty {
             name = newName
         }
@@ -153,7 +150,7 @@ struct PersonStruct: Equatable {
 var personC = PersonStruct(name: "Woody")
 personC.name    // Woody
 
-personC.changeName("Sid")
+personC.changeName(to: "Sid")
 personC.name    // Sid
 {% endhighlight %}
 

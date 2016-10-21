@@ -44,12 +44,12 @@ for x in 0 ... 5 {
 
 These methods work fine if we want to loop through a range of numbers one at a time but what if we want a different increment? There are several ways to vary the step.
 
-- `stride(through:by:)`
-- `stride(to:by:)`
+- `stride(from:to:by:)`
+- `stride(from:through:by:)`
 - `where`
 
 {% highlight swift %}
-for x in 0.stride(to: 10, by: 2) {
+for x in stride(from: 0, to: 10, by: 2) {
     printWithSpace(x)
 }
 // prints:  0 2 4 6 8 
@@ -57,33 +57,32 @@ for x in 0.stride(to: 10, by: 2) {
 
 
 {% highlight swift %}
-for x in 0.stride(through: 10, by: 2) {
+for x in stride(from: 0, through: 10, by: 2) {
     printWithSpace(x)
 }
 // prints:  0 2 4 6 8 10 
 {% endhighlight %}
 
 The 2 variations of `stride` are analogous to the 2 ways of expressing the range in the the `for-in` loop.
-Both of them start with a number. In these examples I used 0 (zero) but you could use a variable name.
 
-`stride(to:by:)` starts with the number and each time through the loop, increments the number by the amount of the `by` parameter. If the incremented number is less than the `to` parameter, the loop continues.
+`stride(from:to:by:)` starts with the number in the `from` parameter and each time through the loop, increments that number by the amount of the `by` parameter. If the incremented number is less than the `to` parameter, the loop continues.
 
-`stride(through:by:)` works the same way but continues until the incremented number is greater than or equal to the `through` parameter.
+`stride(from:through:by:)` works the same way but continues until the incremented number is greater than or equal to the `through` parameter.
 
 Using a negative value for `by` allows counting backwards:
 
 {% highlight swift %}
-for x in 10.stride(through: 0, by: -2) {
+for x in stride(from: 10, through: 0, by: -2) {
     printWithSpace(x)
 }
 // prints:  10 8 6 4 2 0 
 {% endhighlight %}
 
-Stride can also be used for floating point loops:
+Stride can also be used for floating point loops although the result may contain some unexpected changes in precision e.g 0.7000000000000001 instead of the expected 0.7
 
 {% highlight swift %}
 let startingNumber = 0.1
-for x in startingNumber.stride(through: 1.0, by: 0.2) {
+for x in stride(from: startingNumber, through: 1.0, by: 0.2) {
     printWithSpace(x)
 }
 // prints:  0.1  0.3  0.5  0.7  0.9  
@@ -125,11 +124,11 @@ for (key, value) in myDict {
 
 As a dictionary is un-sorted, the order of the items may vary.
 
-If you want to loop through an array while also monitoring the index of each element, you can use `enumerate()`
+If you want to loop through an array while also monitoring the index of each element, you can use `enumerated()`
 
 {% highlight swift %}
 let arrayOfNames = [ "Andy", "Buzz", "Woody" ]
-for (index, element) in arrayOfNames.enumerate() {
+for (index, element) in arrayOfNames.enumerated() {
     print("The name at index \(index) is \(element)")
 }
 // prints:
@@ -170,14 +169,14 @@ for var x = 0; x < 5; x++ {
 }
 {% endhighlight %}
 
-This works right now in Swift 2 but contains two features that are about to be deprecated in Swift 3 and will soon stop working, so don't use this form of loop. The `++` and `--` operators are going and this style of loop declaration is also going. For further details, check out the relevant proposals at Swift Evolution:
+This does not work in Swift 3: the `++` and `--` operators and this style of loop declaration have been removed from the language. For further details, check out the relevant proposals at Swift Evolution:
 
 - [Remove C-style for-loops with conditions and incrementers][1]
 - [Remove the ++ and -- operators][2]
 
 ---
 
-All the examples in this article are available in a [Swift playground][3].
+All the examples in this article are available in a [Swift playground][3] now updated to Swift 3 syntax.
 
 
 [1]: https://github.com/apple/swift-evolution/blob/master/proposals/0007-remove-c-style-for-loops.md

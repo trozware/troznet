@@ -15,14 +15,14 @@ I was driving through the town of [Singleton][1] the other day and of course, it
 A singleton is a class that only expects to have a single instance. Think of it as a global instance of a class. In some cases this makes perfect sense if there can only ever be one instance of a particular class or if there is a default variant that suits most cases e.g.
 
 {% highlight swift %}
-UIApplication.sharedApplication()
-NSUserDefaults.standardUserDefaults()
-NSNotificationCenter.defaultCenter()
-NSFileManager.defaultManager()
-NSURLSession.sharedSession()
+UIApplication.shared
+UserDefaults.standard
+NotificationCenter.default
+FileManager.default
+URLSession.shared
 {% endhighlight %}
 
-If you are using an object whose name starts with "shared", "standard" or "default" you can be pretty sure it is an singleton.
+If you are using an object with a property name of "shared", "standard" or "default" you can be pretty sure it is an singleton.
 
 ### And what's the problem with singletons?
 
@@ -39,7 +39,7 @@ As I drove, I mused on a singleton that I had implemented recently. It was a log
 class Logger {
     static let sharedLogger = Logger()
 
-    func addToEventLog(event: String) {
+    func addToLog(event: String) {
       // use private functions to find log file URL
       // append event text with time stamp
     }
@@ -49,7 +49,7 @@ class Logger {
 Any object in my app could use the Logger like this:
 
 {% highlight swift %}
-Logger.sharedLogger.addToEventLog(newLogEvent)
+Logger.sharedLogger.addToLog(event: newLogEvent)
 {% endhighlight %}
 
 When I got to think about how I was using this, I realised that instead of a Logger *object* that everything could use, what I really needed was a Loggable *behaviour* that I could apply & restrict to the few classes that actually needed to log events. For me, this was the break-through:
@@ -66,23 +66,23 @@ protocol Loggable {
 
 extension Loggable {
 
-    func addToEventLog(event: String) {
+    func addToLog(event: String) {
       // use private functions to find log file URL
       // append event text with time stamp
     }
-    
+
 }
 {% endhighlight %}
 
 
-We run immediately into one of the peculiarities of Swift protocol extensions which has been very well explained by [Caesar Wirth][2]. If I had declared the `addToEventLog(_:)` function in the protocol, then any class or struct conforming to this protocol would have been free to over-write this function and provide its own version. This is not what I wanted here - I wanted every object to use the same version. So I left the function declaration out of the protocol definition and only included it in the protocol extension.
+We run immediately into one of the peculiarities of Swift protocol extensions which has been very well explained by [Caesar Wirth][2]. If I had declared `addToLog(_:)` in the protocol, then any class or struct conforming to this protocol would have been free to over-write this function and provide its own version. This is not what I wanted here - I wanted every object to use the same version. So I left the function declaration out of the protocol definition and only included it in the protocol extension.
 
 To use this behaviour, a class or struct just has to be declared as conforming to the Loggable protocol:
 
 {% highlight swift %}
 class MyClass: Loggable {
     func doSomething() {
-        addToEventLog("I did something!")
+        addToLog(event: "I did something!")
     }
 }
 {% endhighlight %}

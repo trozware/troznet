@@ -8,7 +8,7 @@
     <meta name="description" content="macOS, iOS &amp;amp; watchOS Developer">
     <meta name="author" content="Sarah Reichelt">
     <meta name="keywords" content="">
-    <link rel="canonical" href="http://troz.net/2016/02/singleton-to-protocol/">
+    <link rel="canonical" href="http://localhost:4000/2016/02/singleton-to-protocol/">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for TrozWare" href="/feed.xml" />
 
     <!-- Custom CSS -->
@@ -33,7 +33,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Singleton to Protocol">
     <meta property="og:description" content="macOS, iOS &amp;amp; watchOS Developer">
-    <meta property="og:url" content="http://troz.net/2016/02/singleton-to-protocol/">
+    <meta property="og:url" content="http://localhost:4000/2016/02/singleton-to-protocol/">
     <meta property="og:site_name" content="TrozWare">
 
     <!-- Twitter Card -->
@@ -44,7 +44,7 @@
         
         <meta name="twitter:title" content="Singleton to Protocol" />
         <meta name="twitter:description" content="macOS, iOS &amp; watchOS Developer" />
-        <meta name="twitter:url" content="http://troz.net/2016/02/singleton-to-protocol/" />
+        <meta name="twitter:url" content="http://localhost:4000/2016/02/singleton-to-protocol/" />
         <meta name="twitter:image" content="http://troz.net/icons/apple-touch-icon-152x152.png" />
     
 
@@ -84,7 +84,7 @@
     <header class="site-header px2 px-responsive">
   <div class="mt2 wrap">
     <div class="measure">
-      <a href="http://troz.net" class="site-title">TrozWare</a>
+      <a href="http://localhost:4000" class="site-title">TrozWare</a>
       <nav class="site-nav">
         <a href="/applications/">Apps</a>
 <a href="/tags/">Tags</a>
@@ -152,13 +152,13 @@
 
 <p>A singleton is a class that only expects to have a single instance. Think of it as a global instance of a class. In some cases this makes perfect sense if there can only ever be one instance of a particular class or if there is a default variant that suits most cases e.g.</p>
 
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kt">UIApplication</span><span class="o">.</span><span class="nf">sharedApplication</span><span class="p">()</span>
-<span class="kt">NSUserDefaults</span><span class="o">.</span><span class="nf">standardUserDefaults</span><span class="p">()</span>
-<span class="kt">NSNotificationCenter</span><span class="o">.</span><span class="nf">defaultCenter</span><span class="p">()</span>
-<span class="kt">NSFileManager</span><span class="o">.</span><span class="nf">defaultManager</span><span class="p">()</span>
-<span class="kt">NSURLSession</span><span class="o">.</span><span class="nf">sharedSession</span><span class="p">()</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span>
+<span class="kt">UserDefaults</span><span class="o">.</span><span class="n">standard</span>
+<span class="kt">NotificationCenter</span><span class="o">.</span><span class="k">default</span>
+<span class="kt">FileManager</span><span class="o">.</span><span class="k">default</span>
+<span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span></code></pre></figure>
 
-<p>If you are using an object whose name starts with “shared”, “standard” or “default” you can be pretty sure it is an singleton.</p>
+<p>If you are using an object with a property name of “shared”, “standard” or “default” you can be pretty sure it is an singleton.</p>
 
 <h3 id="and-whats-the-problem-with-singletons">And what’s the problem with singletons?</h3>
 
@@ -176,7 +176,7 @@
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="kt">Logger</span> <span class="p">{</span>
     <span class="kd">static</span> <span class="k">let</span> <span class="nv">sharedLogger</span> <span class="o">=</span> <span class="kt">Logger</span><span class="p">()</span>
 
-    <span class="kd">func</span> <span class="nf">addToEventLog</span><span class="p">(</span><span class="nv">event</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">addToLog</span><span class="p">(</span><span class="nv">event</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
       <span class="c1">// use private functions to find log file URL</span>
       <span class="c1">// append event text with time stamp</span>
     <span class="p">}</span>
@@ -184,7 +184,7 @@
 
 <p>Any object in my app could use the Logger like this:</p>
 
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kt">Logger</span><span class="o">.</span><span class="n">sharedLogger</span><span class="o">.</span><span class="nf">addToEventLog</span><span class="p">(</span><span class="n">newLogEvent</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kt">Logger</span><span class="o">.</span><span class="n">sharedLogger</span><span class="o">.</span><span class="nf">addToLog</span><span class="p">(</span><span class="nv">event</span><span class="p">:</span> <span class="n">newLogEvent</span><span class="p">)</span></code></pre></figure>
 
 <p>When I got to think about how I was using this, I realised that instead of a Logger <em>object</em> that everything could use, what I really needed was a Loggable <em>behaviour</em> that I could apply &amp; restrict to the few classes that actually needed to log events. For me, this was the break-through:</p>
 
@@ -201,20 +201,20 @@
 
 <span class="kd">extension</span> <span class="kt">Loggable</span> <span class="p">{</span>
 
-    <span class="kd">func</span> <span class="nf">addToEventLog</span><span class="p">(</span><span class="nv">event</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">addToLog</span><span class="p">(</span><span class="nv">event</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
       <span class="c1">// use private functions to find log file URL</span>
       <span class="c1">// append event text with time stamp</span>
     <span class="p">}</span>
-    
+
 <span class="p">}</span></code></pre></figure>
 
-<p>We run immediately into one of the peculiarities of Swift protocol extensions which has been very well explained by <a href="http://cjwirth.com/2016/01/20/swift-protocol-extension-weirdness/">Caesar Wirth</a>. If I had declared the <code class="highlighter-rouge">addToEventLog(_:)</code> function in the protocol, then any class or struct conforming to this protocol would have been free to over-write this function and provide its own version. This is not what I wanted here - I wanted every object to use the same version. So I left the function declaration out of the protocol definition and only included it in the protocol extension.</p>
+<p>We run immediately into one of the peculiarities of Swift protocol extensions which has been very well explained by <a href="http://cjwirth.com/2016/01/20/swift-protocol-extension-weirdness/">Caesar Wirth</a>. If I had declared <code class="highlighter-rouge">addToLog(_:)</code> in the protocol, then any class or struct conforming to this protocol would have been free to over-write this function and provide its own version. This is not what I wanted here - I wanted every object to use the same version. So I left the function declaration out of the protocol definition and only included it in the protocol extension.</p>
 
 <p>To use this behaviour, a class or struct just has to be declared as conforming to the Loggable protocol:</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="kt">MyClass</span><span class="p">:</span> <span class="kt">Loggable</span> <span class="p">{</span>
     <span class="kd">func</span> <span class="nf">doSomething</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nf">addToEventLog</span><span class="p">(</span><span class="s">"I did something!"</span><span class="p">)</span>
+        <span class="nf">addToLog</span><span class="p">(</span><span class="nv">event</span><span class="p">:</span> <span class="s">"I did something!"</span><span class="p">)</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 

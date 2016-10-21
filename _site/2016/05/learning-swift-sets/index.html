@@ -8,7 +8,7 @@
     <meta name="description" content="macOS, iOS &amp;amp; watchOS Developer">
     <meta name="author" content="Sarah Reichelt">
     <meta name="keywords" content="">
-    <link rel="canonical" href="http://troz.net/2016/05/learning-swift-sets/">
+    <link rel="canonical" href="http://localhost:4000/2016/05/learning-swift-sets/">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for TrozWare" href="/feed.xml" />
 
     <!-- Custom CSS -->
@@ -33,7 +33,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Learning Swift - Sets">
     <meta property="og:description" content="macOS, iOS &amp;amp; watchOS Developer">
-    <meta property="og:url" content="http://troz.net/2016/05/learning-swift-sets/">
+    <meta property="og:url" content="http://localhost:4000/2016/05/learning-swift-sets/">
     <meta property="og:site_name" content="TrozWare">
 
     <!-- Twitter Card -->
@@ -44,7 +44,7 @@
         
         <meta name="twitter:title" content="Learning Swift - Sets" />
         <meta name="twitter:description" content="macOS, iOS &amp; watchOS Developer" />
-        <meta name="twitter:url" content="http://troz.net/2016/05/learning-swift-sets/" />
+        <meta name="twitter:url" content="http://localhost:4000/2016/05/learning-swift-sets/" />
         <meta name="twitter:image" content="http://troz.net/icons/apple-touch-icon-152x152.png" />
     
 
@@ -84,7 +84,7 @@
     <header class="site-header px2 px-responsive">
   <div class="mt2 wrap">
     <div class="measure">
-      <a href="http://troz.net" class="site-title">TrozWare</a>
+      <a href="http://localhost:4000" class="site-title">TrozWare</a>
       <nav class="site-nav">
         <a href="/applications/">Apps</a>
 <a href="/tags/">Tags</a>
@@ -148,7 +148,7 @@
 <article class="post-content">
   <p>Sets are the forgotten collection type in many languages, including Swift. I think most developers use Arrays without really considering the advantages of using a Set but they have some amazingly useful features that should make them a part of any progammer’s toolkit.</p>
 
-<p>If you want to follow along with a playground, you can download it <a href="https://github.com/trozware/sets">here</a>:</p>
+<p>If you want to follow along with a playground, you can download it <a href="https://github.com/trozware/sets">here</a>.</p>
 
 <h3 id="what-is-a-set">What is a Set?</h3>
 
@@ -164,7 +164,7 @@
 <p>If you are running these commands in a playground, notice that the differences between the 2 results:</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="p">[</span><span class="s">"dog"</span><span class="p">,</span> <span class="s">"cat"</span><span class="p">,</span> <span class="s">"hamster"</span><span class="p">,</span> <span class="s">"dog"</span><span class="p">]</span>	<span class="c1">// myArray</span>
-<span class="p">{</span><span class="s">"cat"</span><span class="p">,</span> <span class="s">"dog"</span><span class="p">,</span> <span class="s">"hamster"</span><span class="p">}</span>		<span class="c1">// mySet</span></code></pre></figure>
+<span class="p">{</span><span class="s">"hamster"</span><span class="p">,</span> <span class="s">"cat"</span><span class="p">,</span> <span class="s">"dog"</span><span class="p">}</span>		<span class="c1">// mySet</span></code></pre></figure>
 
 <ol>
   <li>The Array is shown wrapped in square brackets, the Set is shown wrapped in curly braces. This is just a visual clue and doesn’t really mean anything. You cannot initialize a set using curly braces.</li>
@@ -188,18 +188,18 @@
    <span class="n">myArray</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="s">"cat"</span><span class="p">)</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>With Swift, you don’t have to care. Just use <code class="highlighter-rouge">insert()</code> and let the Set work out whether to add the item or not.</p>
+<p>With Sets, you don’t have to care. Just use <code class="highlighter-rouge">insert()</code> and let the Set work out whether to add the item or not.</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="n">mySet</span><span class="o">.</span><span class="nf">insert</span><span class="p">(</span><span class="s">"goldfish"</span><span class="p">)</span>  
-<span class="c1">// goldfish added: {"cat", "dog", "hamster", "goldfish"}</span>
+<span class="c1">// goldfish added: {"hamster", "cat", "dog", "goldfish"}</span>
 <span class="n">mySet</span><span class="o">.</span><span class="nf">insert</span><span class="p">(</span><span class="s">"dog"</span><span class="p">)</span>       
-<span class="c1">// dog already there: {"cat", "dog", "hamster", "goldfish"}</span></code></pre></figure>
+<span class="c1">// dog already there: {"hamster", "cat", "dog", "goldfish"}</span></code></pre></figure>
 
 <p>Removing elements is also easier than in Arrays. For an Array, you first have to find the index of the element and remove it by index:</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="c1">// myArray.remove("hamster") // will not compile</span>
-<span class="k">if</span> <span class="k">let</span> <span class="nv">index</span> <span class="o">=</span> <span class="n">myArray</span><span class="o">.</span><span class="nf">indexOf</span><span class="p">(</span><span class="s">"hamster"</span><span class="p">)</span> <span class="p">{</span>
-   <span class="n">myArray</span><span class="o">.</span><span class="nf">removeAtIndex</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+<span class="k">if</span> <span class="k">let</span> <span class="nv">index</span> <span class="o">=</span> <span class="n">myArray</span><span class="o">.</span><span class="nf">index</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="s">"hamster"</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">myArray</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">index</span><span class="p">)</span>
 <span class="p">}</span></code></pre></figure>
 
 <p>But in a Set, you can remove any element easily and trying to remove an element that doesn’t exist will fail without an error.</p>
@@ -217,17 +217,17 @@
 <p>One useful side-effect of these easy conversions is the ability to ‘unique’ an Array in a single line. This may be inefficient for large arrays, but works very well for small ones. Just be careful if the order of the elements is important as you cannot guarantee the order of elements in a Set.</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="nv">myArrayUniqued</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">(</span><span class="kt">Set</span><span class="p">(</span><span class="n">myArray</span><span class="p">))</span>
-<span class="c1">// ["hamster", "cat", "dog"]</span></code></pre></figure>
+<span class="c1">// ["cat", "dog"]</span></code></pre></figure>
 
 <h3 id="iterating-over-elements-in-a-set">Iterating over elements in a Set:</h3>
 
-<p>As with an Array, you can use a <code class="highlighter-rouge">for element in set</code> structure, or you can use <code class="highlighter-rouge">enumerate()</code>. But you cannot subscript a Set.</p>
+<p>As with an Array, you can use a <code class="highlighter-rouge">for element in set</code> structure, or you can use <code class="highlighter-rouge">enumerated()</code>. But you cannot subscript a Set.</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">for</span> <span class="n">animal</span> <span class="k">in</span> <span class="n">mySet</span> <span class="p">{</span>
    <span class="nf">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
 <span class="p">}</span>
 
-<span class="k">for</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">animal</span><span class="p">)</span> <span class="k">in</span> <span class="n">mySet</span><span class="o">.</span><span class="nf">enumerate</span><span class="p">()</span> <span class="p">{</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">animal</span><span class="p">)</span> <span class="k">in</span> <span class="n">mySet</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
    <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">index</span><span class="se">)</span><span class="s"> = </span><span class="se">\(</span><span class="n">animal</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
 <span class="p">}</span>
 
@@ -245,25 +245,25 @@
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="nv">set1</span><span class="p">:</span> <span class="kt">Set</span> <span class="o">=</span> <span class="p">[</span><span class="s">"dog"</span><span class="p">,</span> <span class="s">"cat"</span><span class="p">,</span> <span class="s">"pig"</span><span class="p">]</span>
 <span class="k">let</span> <span class="nv">set2</span><span class="p">:</span> <span class="kt">Set</span> <span class="o">=</span> <span class="p">[</span><span class="s">"cow"</span><span class="p">,</span> <span class="s">"horse"</span><span class="p">,</span> <span class="s">"pig"</span><span class="p">]</span>
 
-<span class="k">let</span> <span class="nv">intersect</span> <span class="o">=</span> <span class="n">set1</span><span class="o">.</span><span class="nf">intersect</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">intersect</span> <span class="o">=</span> <span class="n">set1</span><span class="o">.</span><span class="nf">intersection</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>
 <span class="c1">// {"pig"}</span>
 
-<span class="k">let</span> <span class="nv">subtract</span> <span class="o">=</span> <span class="n">set1</span><span class="o">.</span><span class="nf">subtract</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">subtract</span> <span class="o">=</span> <span class="n">set1</span><span class="o">.</span><span class="nf">subtracting</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>
 <span class="c1">// {"cat", "dog"}</span>
 
 <span class="k">let</span> <span class="nv">union</span> <span class="o">=</span> <span class="n">set1</span><span class="o">.</span><span class="nf">union</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>
-<span class="c1">// {"pig", "horse", "cat", "dog", "cow"}</span>
+<span class="c1">// {"pig", "cat", "dog", "cow" "horse"}</span>
 
-<span class="k">let</span> <span class="nv">xor</span> <span class="o">=</span> <span class="n">set1</span><span class="o">.</span><span class="nf">exclusiveOr</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>
-<span class="c1">// {"horse", "cat", "dog", "cow"}</span></code></pre></figure>
+<span class="k">let</span> <span class="nv">xor</span> <span class="o">=</span> <span class="n">set1</span><span class="o">.</span><span class="nf">symmetricDifference</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>
+<span class="c1">// {"cat", "dog", "cow", "horse"}</span></code></pre></figure>
 
 <p>In the code example above, we have two Sets  of animals, with one animal in common.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">intersect()</code> lists the elements in common.</li>
-  <li><code class="highlighter-rouge">subtract()</code> lists the elements in one Set after removing all elements that are in the other.</li>
+  <li><code class="highlighter-rouge">intersection()</code> lists the elements in common.</li>
+  <li><code class="highlighter-rouge">subtracting()</code> lists the elements in one Set after removing all elements that are in the other.</li>
   <li><code class="highlighter-rouge">union()</code> joins all the elements without duplicates.</li>
-  <li><code class="highlighter-rouge">exclusiveOr()</code> lists the elements that are in one or other of the Sets but not in both.</li>
+  <li><code class="highlighter-rouge">symmetricDifference()</code> lists the elements that are in one or other of the Sets but not in both. (Swift 3 renamed this function from <code class="highlighter-rouge">exclusiveOr()</code>)</li>
 </ul>
 
 <p>Here is my best attempt at a pretty drawing to show how these go together:</p>
@@ -279,8 +279,8 @@
 
 <span class="k">let</span> <span class="nv">smallSet</span><span class="p">:</span> <span class="kt">Set</span> <span class="o">=</span> <span class="p">[</span><span class="s">"pig"</span><span class="p">,</span> <span class="s">"cow"</span><span class="p">]</span>
 
-<span class="n">smallSet</span><span class="o">.</span><span class="nf">isSubsetOf</span><span class="p">(</span><span class="n">set1</span><span class="p">)</span>	<span class="c1">// false</span>
-<span class="n">smallSet</span><span class="o">.</span><span class="nf">isSubsetOf</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>	<span class="c1">// true</span></code></pre></figure>
+<span class="n">smallSet</span><span class="o">.</span><span class="nf">isSubset</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">set1</span><span class="p">)</span>	<span class="c1">// false</span>
+<span class="n">smallSet</span><span class="o">.</span><span class="nf">isSubset</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">set2</span><span class="p">)</span>	<span class="c1">// true</span></code></pre></figure>
 
 <p><code class="highlighter-rouge">smallSet</code> is <strong>not</strong> a subset of <code class="highlighter-rouge">set1</code> because it contains an element that is not in <code class="highlighter-rouge">set1</code>.
 <code class="highlighter-rouge">smallSet</code> <strong>is</strong> a subset of <code class="highlighter-rouge">set2</code> because every element in <code class="highlighter-rouge">smallSet</code> is also in <code class="highlighter-rouge">set2</code>.</p>
@@ -288,37 +288,37 @@
 <p><img src="/images/sets_2.png" alt="" /></p>
 
 <p>If you want to get technical, a Set should not be considered a subset of an identical Set.
-The default <code class="highlighter-rouge">isSubsetOf()</code> allows this, but you can use <code class="highlighter-rouge">isStrictSubsetOf()</code> if you prefer.</p>
+The default <code class="highlighter-rouge">isSubset(of:)</code> allows this, but you can use <code class="highlighter-rouge">isStrictSubset(of:)</code> if you prefer.</p>
 
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="n">set1</span><span class="o">.</span><span class="nf">isSubsetOf</span><span class="p">(</span><span class="n">set1</span><span class="p">)</span>		<span class="c1">// true</span>
-<span class="n">set1</span><span class="o">.</span><span class="nf">isStrictSubsetOf</span><span class="p">(</span><span class="n">set1</span><span class="p">)</span>	<span class="c1">// false</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="n">set1</span><span class="o">.</span><span class="nf">isSubset</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">set1</span><span class="p">)</span>		<span class="c1">// true</span>
+<span class="n">set1</span><span class="o">.</span><span class="nf">isStrictSubset</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">set1</span><span class="p">)</span>	<span class="c1">// false</span></code></pre></figure>
 
-<p>Super-sets works just the same but in reverse so the diagram above explains it too:</p>
+<p>Superset works just the same but in reverse so the diagram above explains it too:</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="nv">set1</span><span class="p">:</span> <span class="kt">Set</span> <span class="o">=</span> <span class="p">[</span><span class="s">"dog"</span><span class="p">,</span> <span class="s">"cat"</span><span class="p">,</span> <span class="s">"pig"</span><span class="p">]</span>
 <span class="k">let</span> <span class="nv">set2</span><span class="p">:</span> <span class="kt">Set</span> <span class="o">=</span> <span class="p">[</span><span class="s">"cow"</span><span class="p">,</span> <span class="s">"horse"</span><span class="p">,</span> <span class="s">"pig"</span><span class="p">]</span>
 
 <span class="k">let</span> <span class="nv">smallSet</span><span class="p">:</span> <span class="kt">Set</span> <span class="o">=</span> <span class="p">[</span><span class="s">"pig"</span><span class="p">,</span> <span class="s">"cow"</span><span class="p">]</span>
 
-<span class="n">set1</span><span class="o">.</span><span class="nf">isSupersetOf</span><span class="p">(</span><span class="n">smallSet</span><span class="p">)</span>	<span class="c1">// false</span>
-<span class="n">set2</span><span class="o">.</span><span class="nf">isSupersetOf</span><span class="p">(</span><span class="n">smallSet</span><span class="p">)</span>	<span class="c1">// true</span>
+<span class="n">set1</span><span class="o">.</span><span class="nf">isSuperset</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">smallSet</span><span class="p">)</span>	<span class="c1">// false</span>
+<span class="n">set2</span><span class="o">.</span><span class="nf">isSuperset</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">smallSet</span><span class="p">)</span>	<span class="c1">// true</span>
 
-<span class="n">set1</span><span class="o">.</span><span class="nf">isSupersetOf</span><span class="p">(</span><span class="n">set1</span><span class="p">)</span>		<span class="c1">// true</span>
-<span class="n">set1</span><span class="o">.</span><span class="nf">isStrictSupersetOf</span><span class="p">(</span><span class="n">set1</span><span class="p">)</span>	<span class="c1">// false</span></code></pre></figure>
+<span class="n">set1</span><span class="o">.</span><span class="nf">isSuperset</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">set1</span><span class="p">)</span>		<span class="c1">// true</span>
+<span class="n">set1</span><span class="o">.</span><span class="nf">isStrictSuperset</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">set1</span><span class="p">)</span>		<span class="c1">// false</span></code></pre></figure>
 
 <p><code class="highlighter-rouge">set1</code> is <strong>not</strong> a superset of <code class="highlighter-rouge">smallSet</code> because it does not contain every element in <code class="highlighter-rouge">smallSet</code>.
 <code class="highlighter-rouge">set2</code> <strong>is</strong> a superset of <code class="highlighter-rouge">smallSet</code> because every element in <code class="highlighter-rouge">smallSet</code> is also in <code class="highlighter-rouge">set2</code>.</p>
 
-<p>The <code class="highlighter-rouge">isSupersetOf()</code> and <code class="highlighter-rouge">isStrictSupersetOf()</code> functions allow or reject identical sets.</p>
+<p>The <code class="highlighter-rouge">isSuperset(of:)</code> and <code class="highlighter-rouge">isStrictSuperset(of:)</code> functions allow or reject identical sets.</p>
 
-<p>The final comparison tool that might be useful is <code class="highlighter-rouge">isDisjointWith()</code> which returns true only if the two Sets have no elements in common i.e. if there is no overlap in the circles.</p>
+<p>The final comparison tool that might be useful is <code class="highlighter-rouge">isDisjoint(with:)</code> which returns true only if the two Sets have no elements in common i.e. if there is no overlap in the circles.</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="nv">set1</span><span class="p">:</span> <span class="kt">Set</span> <span class="o">=</span> <span class="p">[</span><span class="s">"dog"</span><span class="p">,</span> <span class="s">"cat"</span><span class="p">,</span> <span class="s">"pig"</span><span class="p">]</span>
 <span class="k">let</span> <span class="nv">set2</span><span class="p">:</span> <span class="kt">Set</span> <span class="o">=</span> <span class="p">[</span><span class="s">"cow"</span><span class="p">,</span> <span class="s">"horse"</span><span class="p">,</span> <span class="s">"pig"</span><span class="p">]</span>
 <span class="k">let</span> <span class="nv">otherSet</span><span class="p">:</span> <span class="kt">Set</span> <span class="o">=</span> <span class="p">[</span><span class="s">"duck"</span><span class="p">,</span> <span class="s">"chicken"</span><span class="p">]</span>
 
-<span class="n">set1</span><span class="o">.</span><span class="nf">isDisjointWith</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>	<span class="c1">// false</span>
-<span class="n">set1</span><span class="o">.</span><span class="nf">isDisjointWith</span><span class="p">(</span><span class="n">otherSet</span><span class="p">)</span>	<span class="c1">// true</span></code></pre></figure>
+<span class="n">set1</span><span class="o">.</span><span class="nf">isDisjoint</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">set2</span><span class="p">)</span>		<span class="c1">// false</span>
+<span class="n">set1</span><span class="o">.</span><span class="nf">isDisjoint</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">otherSet</span><span class="p">)</span>		<span class="c1">// true</span></code></pre></figure>
 
 <p>“pig” occurs in both <code class="highlighter-rouge">set1</code> and <code class="highlighter-rouge">set2</code> so they are <strong>not</strong> disjoint.
 <code class="highlighter-rouge">otherSet</code> and <code class="highlighter-rouge">set1</code> have no matching entries so they <strong>are</strong> disjoint.</p>

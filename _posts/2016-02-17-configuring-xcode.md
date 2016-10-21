@@ -17,7 +17,9 @@ Step through the supplied themes and find the best one for you. Then click the '
 
 An editing font should be mono-spaced i.e. every character should take up exactly the same width on the screen. This makes your code look neater and neater code is easier to read when you come back to it. I also much prefer a sans-serif font, but that is a matter of preference.
 
-Menlo is the font used by Xcode as a default, but there are many other options either in the default installation of OS X or as free downloads. I change every now and then just to keep things interesting, but my favourites are:
+Menlo is the font used by Xcode as a default, but there are many other options either in the default installation of OS X or as free downloads. I change every now and then just to keep things interesting, but my current selection is [Fira Code][13]. I love the way it merges two character symbols into a single character for faster comprehension.
+
+My other favourites are:
 
 * [Source Code Pro][2]
 * [Hack][3]
@@ -32,37 +34,7 @@ To install and use a new font, download the files and then double-click a TTF or
 
 ### 2. Add-ons:
 
-The easiest way to find and install add-ons for Xcode is using the [Alcatraz package manager][6]. The installation instructions are on the linked page, and once installed, restart Xcode to see "Package Manager" in the Window menu. Adding plugins and themes is very easy, but some may require Xcode to restart before they appear.
-
-When you start Xcode the first time after installing extra plugins, you will get a warning about possible instability due to non-Apple plugins. Click the "Load" button to load them anyway and if Xcode becomes unstable, then delete the one you think might be the culprit.
-
-Alcatraz makes it very easy to un-install add-ons as well as install, so you can test them out.
-
-![][7]
-
-Here are two of my favourites (search for them by name in the Alcatraz Package Manager window to install them or to see more details):
-
-#### CocoaPods:
-
-This puts the power of the CocoaPods command line interface inside Xcode and available through the Products menu.
-[CocoaPods][10] is a dependency manager for Swift and Objective-C projects. It has over ten thousand libraries so is a great resource for any Apple developers. The CocoaPods site has instructions for installing the tool and then you can use it via this plugin. You may need to change the GEM_PATH as shown in the screen shot below. To find out what you should enter there, open a Terminal window and type `which pod` at the prompt:
- 
-{% highlight bash %}
-$ which pod
-/usr/local/bin/pod
-{% endhighlight %}
-
-The result shows exactly where the pod tool is installed, so delete the word `pod` in order to get the containing folder and enter that as your GEM_PATH. In my case that was `/usr/local/bin/` but yours may be different.
-
-![][8]
-
-<br>
-
-#### ColorSenseRainbow:
-
-As you can from the screen shot below, this gives you a color swatch when the cursor is inside a UIColor or NSColor initialiser. Clicking in the swatch pops up the color picker which can edit the color in your code.
-
-![][9]
+**Update:** Xcode 8 has removed the ability to run any plugins or to use Alcatraz, so this sectrion is no longer valid. Instead Apple is offering offical support for Xcode Source Editor Extensions, so they are the way of the future.
 
 ---
 
@@ -103,3 +75,4 @@ I tend to leave the  others set to the defaults.
 [10]: https://cocoapods.org
 [11]: https://kapeli.com/dash
 [12]: /images/Dash.png
+[13]: https://github.com/tonsky/FiraCode

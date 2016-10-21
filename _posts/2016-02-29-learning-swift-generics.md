@@ -33,7 +33,7 @@ But enough of the theory: by far the best way to understand generics is to encou
 The other day I was processing data to feed to a charting library. I ended up with an array of CGFloats, but there were too many of them, so I wrote a function to give me the last x elements of an array of CGFloats:
 
 {% highlight swift %}
-func endOfArray(array: [CGFloat], numberOfElementsToInclude: Int) -> [CGFloat] {
+func endOf(array: [CGFloat], numberOfElementsToInclude: Int) -> [CGFloat] {
     if numberOfElementsToInclude > array.count {
         return array
     }
@@ -46,7 +46,7 @@ func endOfArray(array: [CGFloat], numberOfElementsToInclude: Int) -> [CGFloat] {
 let largeArray: [CGFloat] = [
     1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0
 ]
-let smallArray = endOfArray(largeArray, numberOfElementsToInclude: 3)
+let smallArray = endOf(array: largeArray, numberOfElementsToInclude: 3)
 // smallArray now equals [8.0, 9.0, 10.0]
 {% endhighlight %}
 
@@ -55,7 +55,7 @@ OK, so `largeArray` isn't actually the largest array you have ever seen, but it 
 I was completely happy with that until I found another data source where the data was an array of Ints. Still perfectly chartable using my charting library, but I could not get the end of the array using my nice function. First thought was to replicate the function:
 
 {% highlight swift %}
-func endOfArray(array: [Int], numberOfElementsToInclude: Int) -> [Int] {
+func endOf(array: [Int], numberOfElementsToInclude: Int) -> [Int] {
     if numberOfElementsToInclude > array.count {
         return array
     }
@@ -68,7 +68,7 @@ func endOfArray(array: [Int], numberOfElementsToInclude: Int) -> [Int] {
 let largeArrayInt = [ 	// type inferred to be Int
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 ]
-let smallArrayInt = endOfArray(largeArrayInt, numberOfElementsToInclude: 7)
+let smallArrayInt = endOf(array: largeArrayInt, numberOfElementsToInclude: 7)
 // smallArrayInt now equals [4, 5, 6, 7, 8, 9, 10]
 {% endhighlight %}
 
@@ -82,12 +82,12 @@ That produced this error:
 
 ![Generics error][1]
 
-`Use of undeclared type 'T'`. Well that seems fair enough... how is the compiler supposed to know what a T is? 
+`Use of undeclared type 'T'`. Well that seems fair enough... how is the compiler supposed to know what a `T` is? 
 
 It turns out that this is where the angle brackets come into play. You have to warn the compiler that this function is going to get a generic type and that the `T` is only a placeholder, not a real type. So this version compiles and works - notice the `<T>` between the function name and the opening bracket:
 
 {% highlight swift %}
-func endOfArray<T>(array: [T], numberOfElementsToInclude: Int) -> [T] {
+func endOf<T>(array: [T], numberOfElementsToInclude: Int) -> [T] {
     if numberOfElementsToInclude > array.count {
         return array
     }
@@ -112,12 +112,12 @@ Using it is identical to using the two functions I had before:
 let largeArray: [CGFloat] = [
     1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0
 ]
-let smallArray = endOfArray(largeArray, numberOfElementsToInclude: 3)
+let smallArray = endOf(array: largeArray, numberOfElementsToInclude: 3)
 
 let largeArrayInt = [ 	// type inferred to be Int
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 ]
-let smallArrayInt = endOfArray(largeArrayInt, numberOfElementsToInclude: 7)
+let smallArrayInt = endOf(array: largeArrayInt, numberOfElementsToInclude: 7)
 {% endhighlight %}
 
 You do not have to specify what `T` is when calling the function, that will be inferred from the supplied data.

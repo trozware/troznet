@@ -8,7 +8,7 @@
     <meta name="description" content="macOS, iOS &amp;amp; watchOS Developer">
     <meta name="author" content="Sarah Reichelt">
     <meta name="keywords" content="">
-    <link rel="canonical" href="http://troz.net/2016/02/learning-swift-generics/">
+    <link rel="canonical" href="http://localhost:4000/2016/02/learning-swift-generics/">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for TrozWare" href="/feed.xml" />
 
     <!-- Custom CSS -->
@@ -33,7 +33,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Learning Swift - Generics">
     <meta property="og:description" content="macOS, iOS &amp;amp; watchOS Developer">
-    <meta property="og:url" content="http://troz.net/2016/02/learning-swift-generics/">
+    <meta property="og:url" content="http://localhost:4000/2016/02/learning-swift-generics/">
     <meta property="og:site_name" content="TrozWare">
 
     <!-- Twitter Card -->
@@ -44,7 +44,7 @@
         
         <meta name="twitter:title" content="Learning Swift - Generics" />
         <meta name="twitter:description" content="macOS, iOS &amp; watchOS Developer" />
-        <meta name="twitter:url" content="http://troz.net/2016/02/learning-swift-generics/" />
+        <meta name="twitter:url" content="http://localhost:4000/2016/02/learning-swift-generics/" />
         <meta name="twitter:image" content="http://troz.net/icons/apple-touch-icon-152x152.png" />
     
 
@@ -84,7 +84,7 @@
     <header class="site-header px2 px-responsive">
   <div class="mt2 wrap">
     <div class="measure">
-      <a href="http://troz.net" class="site-title">TrozWare</a>
+      <a href="http://localhost:4000" class="site-title">TrozWare</a>
       <nav class="site-nav">
         <a href="/applications/">Apps</a>
 <a href="/tags/">Tags</a>
@@ -170,7 +170,7 @@
 
 <p>The other day I was processing data to feed to a charting library. I ended up with an array of CGFloats, but there were too many of them, so I wrote a function to give me the last x elements of an array of CGFloats:</p>
 
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">func</span> <span class="nf">endOfArray</span><span class="p">(</span><span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="kt">CGFloat</span><span class="p">],</span> <span class="nv">numberOfElementsToInclude</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">CGFloat</span><span class="p">]</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">func</span> <span class="nf">endOf</span><span class="p">(</span><span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="kt">CGFloat</span><span class="p">],</span> <span class="nv">numberOfElementsToInclude</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">CGFloat</span><span class="p">]</span> <span class="p">{</span>
     <span class="k">if</span> <span class="n">numberOfElementsToInclude</span> <span class="o">&gt;</span> <span class="n">array</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
         <span class="k">return</span> <span class="n">array</span>
     <span class="p">}</span>
@@ -183,14 +183,14 @@
 <span class="k">let</span> <span class="nv">largeArray</span><span class="p">:</span> <span class="p">[</span><span class="kt">CGFloat</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
     <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">10.0</span>
 <span class="p">]</span>
-<span class="k">let</span> <span class="nv">smallArray</span> <span class="o">=</span> <span class="nf">endOfArray</span><span class="p">(</span><span class="n">largeArray</span><span class="p">,</span> <span class="nv">numberOfElementsToInclude</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">smallArray</span> <span class="o">=</span> <span class="nf">endOf</span><span class="p">(</span><span class="nv">array</span><span class="p">:</span> <span class="n">largeArray</span><span class="p">,</span> <span class="nv">numberOfElementsToInclude</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
 <span class="c1">// smallArray now equals [8.0, 9.0, 10.0]</span></code></pre></figure>
 
 <p>OK, so <code class="highlighter-rouge">largeArray</code> isn’t actually the largest array you have ever seen, but it works for demo purposes. In my code, I had over 20,000 entries in the large array and only wanted the last 5,000.</p>
 
 <p>I was completely happy with that until I found another data source where the data was an array of Ints. Still perfectly chartable using my charting library, but I could not get the end of the array using my nice function. First thought was to replicate the function:</p>
 
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">func</span> <span class="nf">endOfArray</span><span class="p">(</span><span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">],</span> <span class="nv">numberOfElementsToInclude</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">func</span> <span class="nf">endOf</span><span class="p">(</span><span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">],</span> <span class="nv">numberOfElementsToInclude</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
     <span class="k">if</span> <span class="n">numberOfElementsToInclude</span> <span class="o">&gt;</span> <span class="n">array</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
         <span class="k">return</span> <span class="n">array</span>
     <span class="p">}</span>
@@ -203,7 +203,7 @@
 <span class="k">let</span> <span class="nv">largeArrayInt</span> <span class="o">=</span> <span class="p">[</span> 	<span class="c1">// type inferred to be Int</span>
     <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span>
 <span class="p">]</span>
-<span class="k">let</span> <span class="nv">smallArrayInt</span> <span class="o">=</span> <span class="nf">endOfArray</span><span class="p">(</span><span class="n">largeArrayInt</span><span class="p">,</span> <span class="nv">numberOfElementsToInclude</span><span class="p">:</span> <span class="mi">7</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">smallArrayInt</span> <span class="o">=</span> <span class="nf">endOf</span><span class="p">(</span><span class="nv">array</span><span class="p">:</span> <span class="n">largeArrayInt</span><span class="p">,</span> <span class="nv">numberOfElementsToInclude</span><span class="p">:</span> <span class="mi">7</span><span class="p">)</span>
 <span class="c1">// smallArrayInt now equals [4, 5, 6, 7, 8, 9, 10]</span></code></pre></figure>
 
 <p>A quick glance will reveal that the declaration line was the only thing that changed. I didn’t have to give the function a new name because the compiler worked out which of the two functions to use based on the types supplied. So all I was doing was replacing <code class="highlighter-rouge">CGFloat</code> with <code class="highlighter-rouge">Int</code> in two places (the <code class="highlighter-rouge">numberOfElementsToInclude</code> parameter remains an <code class="highlighter-rouge">Int</code> in both cases).</p>
@@ -216,11 +216,11 @@
 
 <p><img src="/images/Generics_error.png" alt="Generics error" /></p>
 
-<p><code class="highlighter-rouge">Use of undeclared type 'T'</code>. Well that seems fair enough… how is the compiler supposed to know what a T is?</p>
+<p><code class="highlighter-rouge">Use of undeclared type 'T'</code>. Well that seems fair enough… how is the compiler supposed to know what a <code class="highlighter-rouge">T</code> is?</p>
 
 <p>It turns out that this is where the angle brackets come into play. You have to warn the compiler that this function is going to get a generic type and that the <code class="highlighter-rouge">T</code> is only a placeholder, not a real type. So this version compiles and works - notice the <code class="highlighter-rouge">&lt;T&gt;</code> between the function name and the opening bracket:</p>
 
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">func</span> <span class="n">endOfArray</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="kt">T</span><span class="p">],</span> <span class="nv">numberOfElementsToInclude</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">func</span> <span class="n">endOf</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="kt">T</span><span class="p">],</span> <span class="nv">numberOfElementsToInclude</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="p">{</span>
     <span class="k">if</span> <span class="n">numberOfElementsToInclude</span> <span class="o">&gt;</span> <span class="n">array</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
         <span class="k">return</span> <span class="n">array</span>
     <span class="p">}</span>
@@ -243,12 +243,12 @@
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="nv">largeArray</span><span class="p">:</span> <span class="p">[</span><span class="kt">CGFloat</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
     <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">10.0</span>
 <span class="p">]</span>
-<span class="k">let</span> <span class="nv">smallArray</span> <span class="o">=</span> <span class="nf">endOfArray</span><span class="p">(</span><span class="n">largeArray</span><span class="p">,</span> <span class="nv">numberOfElementsToInclude</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">smallArray</span> <span class="o">=</span> <span class="nf">endOf</span><span class="p">(</span><span class="nv">array</span><span class="p">:</span> <span class="n">largeArray</span><span class="p">,</span> <span class="nv">numberOfElementsToInclude</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="k">let</span> <span class="nv">largeArrayInt</span> <span class="o">=</span> <span class="p">[</span> 	<span class="c1">// type inferred to be Int</span>
     <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span>
 <span class="p">]</span>
-<span class="k">let</span> <span class="nv">smallArrayInt</span> <span class="o">=</span> <span class="nf">endOfArray</span><span class="p">(</span><span class="n">largeArrayInt</span><span class="p">,</span> <span class="nv">numberOfElementsToInclude</span><span class="p">:</span> <span class="mi">7</span><span class="p">)</span></code></pre></figure>
+<span class="k">let</span> <span class="nv">smallArrayInt</span> <span class="o">=</span> <span class="nf">endOf</span><span class="p">(</span><span class="nv">array</span><span class="p">:</span> <span class="n">largeArrayInt</span><span class="p">,</span> <span class="nv">numberOfElementsToInclude</span><span class="p">:</span> <span class="mi">7</span><span class="p">)</span></code></pre></figure>
 
 <p>You do not have to specify what <code class="highlighter-rouge">T</code> is when calling the function, that will be inferred from the supplied data.</p>
 

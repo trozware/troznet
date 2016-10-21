@@ -8,7 +8,7 @@
     <meta name="description" content="macOS, iOS &amp;amp; watchOS Developer">
     <meta name="author" content="Sarah Reichelt">
     <meta name="keywords" content="">
-    <link rel="canonical" href="http://troz.net/2016/03/learning-swift-loops/">
+    <link rel="canonical" href="http://localhost:4000/2016/03/learning-swift-loops/">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for TrozWare" href="/feed.xml" />
 
     <!-- Custom CSS -->
@@ -33,7 +33,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Learning Swift - For-Loops">
     <meta property="og:description" content="macOS, iOS &amp;amp; watchOS Developer">
-    <meta property="og:url" content="http://troz.net/2016/03/learning-swift-loops/">
+    <meta property="og:url" content="http://localhost:4000/2016/03/learning-swift-loops/">
     <meta property="og:site_name" content="TrozWare">
 
     <!-- Twitter Card -->
@@ -44,7 +44,7 @@
         
         <meta name="twitter:title" content="Learning Swift - For-Loops" />
         <meta name="twitter:description" content="macOS, iOS &amp; watchOS Developer" />
-        <meta name="twitter:url" content="http://troz.net/2016/03/learning-swift-loops/" />
+        <meta name="twitter:url" content="http://localhost:4000/2016/03/learning-swift-loops/" />
         <meta name="twitter:image" content="http://troz.net/icons/apple-touch-icon-152x152.png" />
     
 
@@ -84,7 +84,7 @@
     <header class="site-header px2 px-responsive">
   <div class="mt2 wrap">
     <div class="measure">
-      <a href="http://troz.net" class="site-title">TrozWare</a>
+      <a href="http://localhost:4000" class="site-title">TrozWare</a>
       <nav class="site-nav">
         <a href="/applications/">Apps</a>
 <a href="/tags/">Tags</a>
@@ -182,39 +182,38 @@ is x still less than 5?
 <p>These methods work fine if we want to loop through a range of numbers one at a time but what if we want a different increment? There are several ways to vary the step.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">stride(through:by:)</code></li>
-  <li><code class="highlighter-rouge">stride(to:by:)</code></li>
+  <li><code class="highlighter-rouge">stride(from:to:by:)</code></li>
+  <li><code class="highlighter-rouge">stride(from:through:by:)</code></li>
   <li><code class="highlighter-rouge">where</code></li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="mi">0</span><span class="o">.</span><span class="nf">stride</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="nf">stride</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
     <span class="nf">printWithSpace</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="p">}</span>
 <span class="c1">// prints:  0 2 4 6 8 </span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="mi">0</span><span class="o">.</span><span class="nf">stride</span><span class="p">(</span><span class="nv">through</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="nf">stride</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">through</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
     <span class="nf">printWithSpace</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="p">}</span>
 <span class="c1">// prints:  0 2 4 6 8 10 </span></code></pre></figure>
 
-<p>The 2 variations of <code class="highlighter-rouge">stride</code> are analogous to the 2 ways of expressing the range in the the <code class="highlighter-rouge">for-in</code> loop.
-Both of them start with a number. In these examples I used 0 (zero) but you could use a variable name.</p>
+<p>The 2 variations of <code class="highlighter-rouge">stride</code> are analogous to the 2 ways of expressing the range in the the <code class="highlighter-rouge">for-in</code> loop.</p>
 
-<p><code class="highlighter-rouge">stride(to:by:)</code> starts with the number and each time through the loop, increments the number by the amount of the <code class="highlighter-rouge">by</code> parameter. If the incremented number is less than the <code class="highlighter-rouge">to</code> parameter, the loop continues.</p>
+<p><code class="highlighter-rouge">stride(from:to:by:)</code> starts with the number in the <code class="highlighter-rouge">from</code> parameter and each time through the loop, increments that number by the amount of the <code class="highlighter-rouge">by</code> parameter. If the incremented number is less than the <code class="highlighter-rouge">to</code> parameter, the loop continues.</p>
 
-<p><code class="highlighter-rouge">stride(through:by:)</code> works the same way but continues until the incremented number is greater than or equal to the <code class="highlighter-rouge">through</code> parameter.</p>
+<p><code class="highlighter-rouge">stride(from:through:by:)</code> works the same way but continues until the incremented number is greater than or equal to the <code class="highlighter-rouge">through</code> parameter.</p>
 
 <p>Using a negative value for <code class="highlighter-rouge">by</code> allows counting backwards:</p>
 
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="mi">10</span><span class="o">.</span><span class="nf">stride</span><span class="p">(</span><span class="nv">through</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="nf">stride</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">through</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
     <span class="nf">printWithSpace</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="p">}</span>
 <span class="c1">// prints:  10 8 6 4 2 0 </span></code></pre></figure>
 
-<p>Stride can also be used for floating point loops:</p>
+<p>Stride can also be used for floating point loops although the result may contain some unexpected changes in precision e.g 0.7000000000000001 instead of the expected 0.7</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="nv">startingNumber</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="n">startingNumber</span><span class="o">.</span><span class="nf">stride</span><span class="p">(</span><span class="nv">through</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="nf">stride</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">startingNumber</span><span class="p">,</span> <span class="nv">through</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">)</span> <span class="p">{</span>
     <span class="nf">printWithSpace</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="p">}</span>
 <span class="c1">// prints:  0.1  0.3  0.5  0.7  0.9  </span></code></pre></figure>
@@ -249,10 +248,10 @@ Both of them start with a number. In these examples I used 0 (zero) but you coul
 
 <p>As a dictionary is un-sorted, the order of the items may vary.</p>
 
-<p>If you want to loop through an array while also monitoring the index of each element, you can use <code class="highlighter-rouge">enumerate()</code></p>
+<p>If you want to loop through an array while also monitoring the index of each element, you can use <code class="highlighter-rouge">enumerated()</code></p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="nv">arrayOfNames</span> <span class="o">=</span> <span class="p">[</span> <span class="s">"Andy"</span><span class="p">,</span> <span class="s">"Buzz"</span><span class="p">,</span> <span class="s">"Woody"</span> <span class="p">]</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">element</span><span class="p">)</span> <span class="k">in</span> <span class="n">arrayOfNames</span><span class="o">.</span><span class="nf">enumerate</span><span class="p">()</span> <span class="p">{</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">element</span><span class="p">)</span> <span class="k">in</span> <span class="n">arrayOfNames</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
     <span class="nf">print</span><span class="p">(</span><span class="s">"The name at index </span><span class="se">\(</span><span class="n">index</span><span class="se">)</span><span class="s"> is </span><span class="se">\(</span><span class="n">element</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
 <span class="p">}</span>
 <span class="c1">// prints:</span>
@@ -286,7 +285,7 @@ Both of them start with a number. In these examples I used 0 (zero) but you coul
     <span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nv">terminator</span><span class="p">:</span> <span class="s">" "</span><span class="p">)</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>This works right now in Swift 2 but contains two features that are about to be deprecated in Swift 3 and will soon stop working, so don’t use this form of loop. The <code class="highlighter-rouge">++</code> and <code class="highlighter-rouge">--</code> operators are going and this style of loop declaration is also going. For further details, check out the relevant proposals at Swift Evolution:</p>
+<p>This does not work in Swift 3: the <code class="highlighter-rouge">++</code> and <code class="highlighter-rouge">--</code> operators and this style of loop declaration have been removed from the language. For further details, check out the relevant proposals at Swift Evolution:</p>
 
 <ul>
   <li><a href="https://github.com/apple/swift-evolution/blob/master/proposals/0007-remove-c-style-for-loops.md">Remove C-style for-loops with conditions and incrementers</a></li>
@@ -295,7 +294,7 @@ Both of them start with a number. In these examples I used 0 (zero) but you coul
 
 <hr />
 
-<p>All the examples in this article are available in a <a href="https://github.com/trozware/for-loops">Swift playground</a>.</p>
+<p>All the examples in this article are available in a <a href="https://github.com/trozware/for-loops">Swift playground</a> now updated to Swift 3 syntax.</p>
 
 
 </article>

@@ -9,7 +9,7 @@ tags:
 ---
 Sets are the forgotten collection type in many languages, including Swift. I think most developers use Arrays without really considering the advantages of using a Set but they have some amazingly useful features that should make them a part of any progammer's toolkit.
 
-If you want to follow along with a playground, you can download it [here][6]:
+If you want to follow along with a playground, you can download it [here][6].
 
 ### What is a Set?
 
@@ -28,7 +28,7 @@ If you are running these commands in a playground, notice that the differences b
 
 {% highlight swift %}
 ["dog", "cat", "hamster", "dog"]	// myArray
-{"cat", "dog", "hamster"}		// mySet
+{"hamster", "cat", "dog"}		// mySet
 {% endhighlight %}
 
 1. The Array is shown wrapped in square brackets, the Set is shown wrapped in curly braces. This is just a visual clue and doesn't really mean anything. You cannot initialize a set using curly braces.
@@ -55,21 +55,21 @@ if !myArray.contains("cat") {
 }
 {% endhighlight %}
 
-With Swift, you don't have to care. Just use `insert()` and let the Set work out whether to add the item or not.
+With Sets, you don't have to care. Just use `insert()` and let the Set work out whether to add the item or not.
 
 {% highlight swift %}
 mySet.insert("goldfish")  
-// goldfish added: {"cat", "dog", "hamster", "goldfish"}
+// goldfish added: {"hamster", "cat", "dog", "goldfish"}
 mySet.insert("dog")       
-// dog already there: {"cat", "dog", "hamster", "goldfish"}
+// dog already there: {"hamster", "cat", "dog", "goldfish"}
 {% endhighlight %}
 
 Removing elements is also easier than in Arrays. For an Array, you first have to find the index of the element and remove it by index:
 
 {% highlight swift %}
 // myArray.remove("hamster") // will not compile
-if let index = myArray.indexOf("hamster") {
-   myArray.removeAtIndex(index)
+if let index = myArray.index(of: "hamster") {
+   myArray.remove(at: index)
 }
 {% endhighlight %}
 
@@ -93,19 +93,19 @@ One useful side-effect of these easy conversions is the ability to 'unique' an A
 
 {% highlight swift %}
 let myArrayUniqued = Array(Set(myArray))
-// ["hamster", "cat", "dog"]
+// ["cat", "dog"]
 {% endhighlight %}
 
 ### Iterating over elements in a Set:
 
-As with an Array, you can use a `for element in set` structure, or you can use `enumerate()`. But you cannot subscript a Set.
+As with an Array, you can use a `for element in set` structure, or you can use `enumerated()`. But you cannot subscript a Set.
 
 {% highlight swift %}
 for animal in mySet {
    print(animal)
 }
 
-for (index, animal) in mySet.enumerate() {
+for (index, animal) in mySet.enumerated() {
    print("\(index) = \(animal)")
 }
 
@@ -125,25 +125,25 @@ Remember in school when you learnt about Venn diagrams with pretty interlocking 
 let set1: Set = ["dog", "cat", "pig"]
 let set2: Set = ["cow", "horse", "pig"]
 
-let intersect = set1.intersect(set2)
+let intersect = set1.intersection(set2)
 // {"pig"}
 
-let subtract = set1.subtract(set2)
+let subtract = set1.subtracting(set2)
 // {"cat", "dog"}
 
 let union = set1.union(set2)
-// {"pig", "horse", "cat", "dog", "cow"}
+// {"pig", "cat", "dog", "cow" "horse"}
 
-let xor = set1.exclusiveOr(set2)
-// {"horse", "cat", "dog", "cow"}
+let xor = set1.symmetricDifference(set2)
+// {"cat", "dog", "cow", "horse"}
 {% endhighlight %}
 
 In the code example above, we have two Sets  of animals, with one animal in common.
 
-- `intersect()` lists the elements in common.
-- `subtract()` lists the elements in one Set after removing all elements that are in the other.
+- `intersection()` lists the elements in common.
+- `subtracting()` lists the elements in one Set after removing all elements that are in the other.
 - `union()` joins all the elements without duplicates.
-- `exclusiveOr()` lists the elements that are in one or other of the Sets but not in both.
+- `symmetricDifference()` lists the elements that are in one or other of the Sets but not in both. (Swift 3 renamed this function from `exclusiveOr()`)
 
 Here is my best attempt at a pretty drawing to show how these go together:
 
@@ -159,8 +159,8 @@ let set2: Set = ["cow", "horse", "pig"]
 
 let smallSet: Set = ["pig", "cow"]
 
-smallSet.isSubsetOf(set1)	// false
-smallSet.isSubsetOf(set2)	// true
+smallSet.isSubset(of: set1)	// false
+smallSet.isSubset(of: set2)	// true
 {% endhighlight %}
 
 `smallSet` is **not** a subset of `set1` because it contains an element that is not in `set1`.
@@ -169,14 +169,14 @@ smallSet.isSubsetOf(set2)	// true
 ![][3]
 
 If you want to get technical, a Set should not be considered a subset of an identical Set.
-The default `isSubsetOf()` allows this, but you can use `isStrictSubsetOf()` if you prefer.
+The default `isSubset(of:)` allows this, but you can use `isStrictSubset(of:)` if you prefer.
 
 {% highlight swift %}
-set1.isSubsetOf(set1)		// true
-set1.isStrictSubsetOf(set1)	// false
+set1.isSubset(of: set1)		// true
+set1.isStrictSubset(of: set1)	// false
 {% endhighlight %}
 
-Super-sets works just the same but in reverse so the diagram above explains it too:
+Superset works just the same but in reverse so the diagram above explains it too:
 
 {% highlight swift %}
 let set1: Set = ["dog", "cat", "pig"]
@@ -184,27 +184,27 @@ let set2: Set = ["cow", "horse", "pig"]
 
 let smallSet: Set = ["pig", "cow"]
 
-set1.isSupersetOf(smallSet)	// false
-set2.isSupersetOf(smallSet)	// true
+set1.isSuperset(of: smallSet)	// false
+set2.isSuperset(of: smallSet)	// true
 
-set1.isSupersetOf(set1)		// true
-set1.isStrictSupersetOf(set1)	// false
+set1.isSuperset(of: set1)		// true
+set1.isStrictSuperset(of: set1)		// false
 {% endhighlight %}
 
 `set1` is **not** a superset of `smallSet` because it does not contain every element in `smallSet`.
 `set2` **is** a superset of `smallSet` because every element in `smallSet` is also in `set2`.
 
-The `isSupersetOf()` and `isStrictSupersetOf()` functions allow or reject identical sets.
+The `isSuperset(of:)` and `isStrictSuperset(of:)` functions allow or reject identical sets.
 
-The final comparison tool that might be useful is `isDisjointWith()` which returns true only if the two Sets have no elements in common i.e. if there is no overlap in the circles.
+The final comparison tool that might be useful is `isDisjoint(with:)` which returns true only if the two Sets have no elements in common i.e. if there is no overlap in the circles.
 
 {% highlight swift %}
 let set1: Set = ["dog", "cat", "pig"]
 let set2: Set = ["cow", "horse", "pig"]
 let otherSet: Set = ["duck", "chicken"]
 
-set1.isDisjointWith(set2)	// false
-set1.isDisjointWith(otherSet)	// true
+set1.isDisjoint(with: set2)		// false
+set1.isDisjoint(with: otherSet)		// true
 {% endhighlight %}
 
 "pig" occurs in both `set1` and `set2` so they are **not** disjoint.
