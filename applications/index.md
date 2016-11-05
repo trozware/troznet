@@ -6,12 +6,12 @@ layout: page
 guid: /?page_id=141
 ---
 <style>
- .mac_apps {
-	 display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_macappstore-lrg.png) no-repeat;width:165px;height:40px;@media only screen{background-image:url(https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_macappstore-lrg.svg);}
- }
- .ios_apps {
-display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_appstore-lrg.png) no-repeat;width:135px;height:40px;@media only screen{background-image:url(https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_appstore-lrg.svg);}
- }
+.mac_apps {
+display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/assets/shared/badges/en-us/macappstore-lrg.svg) no-repeat;width:130px;height:40px;background-size:contain;
+}
+.ios_apps {
+display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg) no-repeat;width:130px;height:40px;background-size:contain;
+}
 </style>
 
 ## Mac Apps:
@@ -21,7 +21,7 @@ App                          || Version | Release Date      | Download Link
 ![][2] | [A Knight&#8217;s Move][3] | 1.5     | 19 Sep 2016   | <a href="https://itunes.apple.com/app/a-knights-move/id533321133" target="itunes_store" class="mac_apps"></a>
 ![][28] | [Dice Pass][29] | 1.1     | 17 Sep 2016   | <a href="https://itunes.apple.com/app/dice-pass/id997688302" target="itunes_store" class="mac_apps"></a>
 ![][6] | [Icon Builder][7]          | 4.0   | 16 Sep 2016  | <a href="https://itunes.apple.com/app/icon-builder/id552293482" target="itunes_store" class="mac_apps"></a>
-![][8] | [Man Reader][9]            | 1.7     | 10 Oct 2016      | <a href="https://itunes.apple.com/app/man-reader/id522583774" target="itunes_store" class="mac_apps"></a>
+![][8] | [Man Reader][9]            | 1.8     | 23 Oct 2016      | <a href="https://itunes.apple.com/app/man-reader/id522583774" target="itunes_store" class="mac_apps"></a>
 ![][12] | [Pic-a-POD][13]           | 2.0.6   | 27 Aug 2012    | <a href="https://itunes.apple.com/app/pic-a-pod/id477909802" target="itunes_store" class="mac_apps"></a>
 ![][14] | [World Time In Words][15] | 3.0     | 9 Feb 2015  | <a href="https://itunes.apple.com/app/time-in-words/id509085586" target="itunes_store" class="mac_apps"></a>
 ![][16] | [TiW Screen Saver][17]    | 1.2     | 23 Jan 2013   | [Download][18]
