@@ -48,7 +48,7 @@
         <meta name="twitter:description" content="{{ page.iphoneappdesc }}">
         <meta name="twitter:app:name:iphone" content="{{ page.iphoneappname }}">
         <meta name="twitter:app:id:iphone" content="{{ page.iphoneappid }}">
-    {% else if page.macappname %}
+    {% elsif page.macappname %}
         <meta name="twitter:card" content="summary" />
         {% if site.twitter_username %}
             <meta name="twitter:site" content="@{{ site.twitter_username }}" />
@@ -56,7 +56,7 @@
         <meta name="twitter:title" content="{{ page.macappname }}" />
         <meta name="twitter:description" content="{{ page.macappdesc }}" />
         <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
-        <meta name="twitter:image" content="{{ page.macappimage }}" />
+        <meta name="twitter:image" content="{{ site.url }}{{ page.macappimage }}" />
     {% else %}
         <meta name="twitter:card" content="summary" />
         {% if site.twitter_username %}
@@ -65,7 +65,7 @@
         <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
         <meta name="twitter:description" content="{% if page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}" />
         <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
-        <meta name="twitter:image" content="http://troz.net/icons/apple-touch-icon-152x152.png" />
+        <meta name="twitter:image" content="{{ site.url }}/icons/apple-touch-icon-152x152.png" />
     {% endif %}
 
     <!-- Icons -->

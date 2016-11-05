@@ -8,7 +8,7 @@ tags:
   - mac
   - icons
 macappname: Icon Builder
-macappimage: http://troz.net/icons/IconBuilder128.png
+macappimage: /icons/IconBuilder128.png
 macappdesc: Make and install a set of icons for an iOS, Mac or Apple Watch app in just 3 steps.
 ---
 

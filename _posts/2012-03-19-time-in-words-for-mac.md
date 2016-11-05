@@ -8,7 +8,7 @@ tags:
   - time in words
   - world time
 macappname: World Time In Words
-macappimage: http://troz.net/icons/TimeInWords128.png
+macappimage: /icons/TimeInWords128.png
 macappdesc: A menu bar utility app that displays your current time and date in words as well as your preferred time zones.
 ---
 

@@ -7,7 +7,7 @@ tags:
   - man reader
   - mac
 macappname: Man Reader
-macappimage: http://troz.net/icons/ManReader128.png
+macappimage: /icons/ManReader128.png
 macappdesc: A utility app for reading macOS man pages.
 ---
 
