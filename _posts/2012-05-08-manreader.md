@@ -6,9 +6,9 @@ permalink: /manreader/
 tags:
   - man reader
   - mac
-iphoneappname: Man Reader
-iphoneappid: 522583774
-iphoneappdesc: Man Reader is a utility app for reading macOS man pages.
+macappname: Man Reader
+macappimage: http://troz.net/icons/ManReader128.png
+macappdesc: Man Reader is a utility app for reading macOS man pages.
 ---
 Man Reader is a utility app for reading macOS&#8217;s man pages. Man Reader allows quick, convenient and easy access to the man pages on your system, useful for programmers, system administrators and tweakers.
 
