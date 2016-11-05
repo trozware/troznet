@@ -8,7 +8,11 @@ tags:
   - dice
   - mac
   - password
+macappname: Dice Pass
+macappimage: /icons/DicePass128.png
+macappdesc: A utility to app to generate random passphrases based on the Diceware system.
 ---
+
 I recently got an email from someone who had purchased [Dice Pass][2] for Mac from the [Mac App Store][3] but had been unable to get it to run. This person was using OS X 10.9.3.
 
 I checked the App Store specifications and it showed that 10.9 was the minimum system requirement, so it should have worked. But going back to my Xcode project, I found that it was set to a minimum of OS X 10.10.

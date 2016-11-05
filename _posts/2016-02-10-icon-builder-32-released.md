@@ -10,6 +10,9 @@ tags:
   - apple watch
   - watch
   - app store
+macappname: Icon Builder
+macappimage: /icons/IconBuilder128.png
+macappdesc: Make and install a set of icons for an iOS, Mac or Apple Watch app in just 3 steps.
 ---
 
 [Icon Builder 3.2][1] is now available from the Mac App Store. 

@@ -6,6 +6,9 @@ permalink: /2015/12/using-19th-hole-on-the-apple-watch/
 tags:
   - golf
   - watch
+iphoneappname: 19th Hole Golf Scorer
+iphoneappid: 871686159
+iphoneappdesc: The golf scoring app for everyone, for iPhone and Apple Watch.
 ---
 
 19th Hole for iPhone and Apple Watch version 3 is now available through the [iTunes App Store][1].

@@ -7,7 +7,11 @@ tags:
 - mac
 - dice
 - passwords
+macappname: Dice Pass
+macappimage: /icons/DicePass128.png
+macappdesc: A utility to app to generate random passphrases based on the Diceware system.
 ---
+
 [Dice Pass 1.1][1] is now available from the [Mac App Store][2].
 
 ### What does Dice Pass do?

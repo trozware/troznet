@@ -8,7 +8,11 @@ tags:
   - golf
   - scoring
 summary: I finally worked out how to make the app stay as the active app on my Apple Watch without having to change settings every time.
+iphoneappname: 19th Hole Golf Scorer
+iphoneappid: 871686159
+iphoneappdesc: The golf scoring app for everyone, for iPhone and Apple Watch.
 ---
+
 One of the problems with using 19th Hole on the Apple Watch is making the app show every time you raise your wrist. My solution to this was to go into Settings (either on my iPhone through the Watch app, or directly on the watch) and change it to "Resume Last Activity" on wrist raise. This worked fine but as I usually prefer the watch face to show on wrist raise, I had to keep setting and re-setting this which was a pain.
 
 But last week I noticed the fine print when changing this setting. In this screen shot from the Watch app on my iPhone, you can see that "session-based apps" and "some third-party workout apps" will over-ride the "Show Watch Face" setting.

@@ -9,6 +9,9 @@ tags:
   - knight's move
   - chess
   - mac
+macappname: A Knight's Move
+macappimage: /icons/KnightsMove128.png
+macappdesc: A puzzle game where you have to move your knight across a board to a target square using the same movements as a knight in chess.
 ---
 
 **UPDATE:** September 2016 - A Knight's Move for iOS is no longer available.<br>

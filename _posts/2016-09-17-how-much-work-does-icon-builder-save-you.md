@@ -6,7 +6,11 @@ permalink: /2016/09/how-much-work-does-icon-builder-save-you/
 tags:
   - icons
   - mac
+macappname: Icon Builder
+macappimage: /icons/IconBuilder128.png
+macappdesc: Make and install a set of icons for an iOS, Mac or Apple Watch app in just 3 steps.
 ---
+
 [Icon Builder][1] is a Mac app that takes a single image file and creates all the different image sizes that you need to make a set of icons for your app: Mac, iPhone, iPad, iOS Universal or Apple Watch.
 
 Version 4, released 16 September 2016 is available through the [Mac App Store][2].

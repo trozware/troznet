@@ -6,6 +6,9 @@ permalink: /2016/10/man-reader-update/
 tags:
   - man reader
   - mac
+macappname: Man Reader
+macappimage: /icons/ManReader128.png
+macappdesc: A utility app for reading macOS man pages.
 ---
 
 [Man Reader][1] has just been updated to version 1.7 and is available through the [Mac App Store][2].

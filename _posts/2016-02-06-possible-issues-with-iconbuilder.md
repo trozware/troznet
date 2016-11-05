@@ -8,6 +8,9 @@ tags:
   - apple watch
   - watch
   - xcode
+macappname: Icon Builder
+macappimage: /icons/IconBuilder128.png
+macappdesc: Make and install a set of icons for an iOS, Mac or Apple Watch app in just 3 steps.
 ---
 
 It has come to my attention that there are two possible issues with Icon Builder 3.0.1 when using icons created for an Apple Watch app.
