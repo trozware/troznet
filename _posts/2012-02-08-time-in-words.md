@@ -6,7 +6,11 @@ permalink: /time-in-words/
 tags:
   - ios
   - time in words
+iphoneappname: Time In Words
+iphoneappid: 498403851
+iphoneappdesc: Show the date and time in words, for your time zone of selected zones around the world.
 ---
+
 Time In Words is a clock and calendar app that takes you out of the digital era and back to when saying &#8220;quarter to seven&#8221; or &#8220;five past two&#8221; was accurate enough. When people look at an analog watch, they tend to interpret the time to the closest five minutes which allows for inaccuracies in the watch as well as providing only a useful level of detail. This app goes back to that, showing date and/or time in multiple ways, but all in words.
 
 <a href="http://itunes.apple.com/app/time-in-words/id498403851" target="_blank">Time In Words is available from the App Store.</a>

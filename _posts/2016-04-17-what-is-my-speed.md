@@ -11,7 +11,7 @@ tags:
   - watch
 iphoneappname: What Is My Speed?
 iphoneappid: 1091394524
-iphoneappdesc: What Is My Speed? allows you to track your speed on your iPhone or Apple Watch while driving, bicycling, running or walking. See your course and altitude at all times. Set the speed limit to trigger warnings where appropriate.
+iphoneappdesc: Track your speed on your iPhone or Apple Watch while driving, bicycling, running or walking. See your course and altitude at all times. Set the speed limit to trigger warnings where appropriate.
 summary: What Is My Speed? allows you to track your speed on your iPhone or Apple Watch while driving, bicycling, running or walking. See your course and altitude at all times. Set the speed limit to trigger warnings where appropriate.
 ---
 <style>

@@ -7,7 +7,11 @@ tags:
   - ios
   - mac
   - icons
+macappname: Icon Builder
+macappimage: http://troz.net/icons/IconBuilder128.png
+macappdesc: Make and install a set of icons for an iOS, Mac or Apple Watch app in just 3 steps.
 ---
+
 [Icon Builder 3.2][3] is available from the Mac App Store. 
 
    [3]: http://itunes.apple.com/app/icon-builder/id552293482?mt=12

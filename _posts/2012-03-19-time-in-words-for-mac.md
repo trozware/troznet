@@ -7,7 +7,11 @@ tags:
   - mac
   - time in words
   - world time
+macappname: World Time In Words
+macappimage: http://troz.net/icons/TimeInWords128.png
+macappdesc: A menu bar utility app that displays your current time and date in words as well as your preferred time zones.
 ---
+
 <a href="http://itunes.apple.com/au/app/time-in-words/id509085586?mt=8" target="_blank">World Time In Words for Mac</a> version 3.0 is now available through the Mac App Store. This update changes the name from &#8220;Time In Words&#8221; to &#8220;World Time In Words&#8221; as an acknowledgment that the major feature of this app is converting time between different time zones. This update adds the ability to show digital time if you need greater accuracy &#8211; just hold down Option as you open the menu. I have also added the ability to show 24-hour time in the menu bar.
 
 World Time In Words runs as a menu bar utility app that displays your current time and date in words. Optionally, it can be set to display a number of time zones, again in plain English so it is always clear which day is being referred to. It shows the time in words in your menu bar all the time if you like, and now offers a convenient way to work out what the time will be in other zones at a specified local time.
