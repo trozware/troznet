@@ -7,6 +7,75 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Looking for beta testers</title>
+        <description>&lt;p&gt;I am looking for beta testers for my latest Mac app: &lt;strong&gt;&lt;a href=&quot;/work/&quot;&gt;Work&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Work&lt;/strong&gt; is a project organizer app for developers, designers, students or any professional who works with multiple projects involving files &amp;amp; folders, web pages, email addresses and lists of to-do’s. Click the link above for more information and help for getting started.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Work&lt;/strong&gt; requires macOS 10.12 or OS X 10.11.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you would like to test this app, please &lt;a href=&quot;mailto:work@troz.net?subject=Work%20beta%20test&quot;&gt;contact me&lt;/a&gt;, giving details of your Mac and operating system. The easiest way to do this is to select &lt;strong&gt;About This Mac&lt;/strong&gt; in the Apple menu and send me a screen shot of the window that appears.&lt;/p&gt;
+
+&lt;p&gt;All beta testers will receive a free license to Work when it is released.
+If you report a legitimate bug or provide valuable feed-back, you will also receive a free license to your choice of one of my &lt;a href=&quot;/applications/&quot;&gt;other apps&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 17 Nov 2016 00:00:00 +1000</pubDate>
+        <link>http://localhost:4000/2016/11/looking-for-beta-testers/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/looking-for-beta-testers/</guid>
+      </item>
+    
+      <item>
+        <title>Work</title>
+        <description>&lt;p&gt;&lt;strong&gt;Work&lt;/strong&gt; is a project organizer app for developers, designers, students or any professional who works with multiple projects involving files &amp;amp; folders, web pages, email addresses and lists of to-do’s.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Work&lt;/strong&gt; requires macOS 10.12 or OS X 10.11 and will be available from the Mac App Store soon, and I am looking for &lt;a href=&quot;/2016/11/looking-for-beta-testers/&quot;&gt;beta testers&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;We all know what it is like to be in the middle of a project or rushing to complete an assignment…&lt;/p&gt;
+
+&lt;p&gt;We have files scattered all over the place, email addresses of team members or clients, web pages with specifications or useful information, to-do’s written on sticky notes or scraps of paper.&lt;/p&gt;
+
+&lt;p&gt;Wouldn’t it be better if there was one place where you could have quick and easy access to all these items, but without having to change the way you work? With the &lt;strong&gt;Work&lt;/strong&gt; app, you can regain control - the app helps you get to what you want so you save time.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Here is my project document for the &lt;strong&gt;Work&lt;/strong&gt; app itself.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Work1_marked.png&quot; alt=&quot;Work&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I have gathered together links to the project files I need to open, images, web pages for the app and for relevant information etc. My most frequently used links are starred so I can focus on them whenever I want a shorter list.&lt;/p&gt;
+
+&lt;p&gt;Switching to &lt;strong&gt;To-Do&lt;/strong&gt; mode, you can see that I have grouped my various to-do’s into logical sections - and at the moment, there are no un-fixed bugs on my to-do list - hurray!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Work2_marked.png&quot; alt=&quot;Work - To-Do's&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Work&lt;/strong&gt; doesn’t move or rename any of your files - it merely links all these things together for fast, convenient and searchable access. It even tracks files or folders if you move them later.&lt;/p&gt;
+
+&lt;p&gt;Make a &lt;strong&gt;Work&lt;/strong&gt; document for every project, drag in the relevant files or folders, add web page addresses and email addresses, make your own to-do lists.&lt;/p&gt;
+
+&lt;p&gt;Create groups to gather items together, adjust the display to view only the entries you want, use quick look to get a fast glimpse of files or web pages.&lt;/p&gt;
+
+&lt;p&gt;Work also supports the Touch Bar on the new MacBook Pros:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Work_TB.png&quot; alt=&quot;Work - TouchBar&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Select &lt;strong&gt;Work Help&lt;/strong&gt; from the &lt;strong&gt;Help&lt;/strong&gt; menu to see a special &lt;strong&gt;Work&lt;/strong&gt; document with useful links as well as a sequence of to-do’s to guide you through the basics of using the app.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 05 Nov 2016 00:00:00 +1000</pubDate>
+        <link>http://localhost:4000/work/</link>
+        <guid isPermaLink="true">http://localhost:4000/work/</guid>
+      </item>
+    
+      <item>
         <title>Another Man Reader Update...</title>
         <description>&lt;p&gt;A quick update to &lt;a href=&quot;/manreader/&quot;&gt;Man Reader&lt;/a&gt; to version 1.8 is now available through the &lt;a href=&quot;http://itunes.apple.com/app/man-reader/id522583774?mt=12&quot;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
 
@@ -264,238 +333,6 @@
         <pubDate>Sun, 03 Jul 2016 00:00:00 +1000</pubDate>
         <link>http://localhost:4000/2016/07/dice-pass-mac-update/</link>
         <guid isPermaLink="true">http://localhost:4000/2016/07/dice-pass-mac-update/</guid>
-      </item>
-    
-      <item>
-        <title>Learning Swift - Sets</title>
-        <description>&lt;p&gt;Sets are the forgotten collection type in many languages, including Swift. I think most developers use Arrays without really considering the advantages of using a Set but they have some amazingly useful features that should make them a part of any progammer’s toolkit.&lt;/p&gt;
-
-&lt;p&gt;If you want to follow along with a playground, you can download it &lt;a href=&quot;https://github.com/trozware/sets&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;what-is-a-set&quot;&gt;What is a Set?&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;A Set is an un-ordered collection of unique items.&lt;/strong&gt; That’s it - nothing more than that. So it is very similar to an Array, but it is not indexed like an Array and it cannot contain more than one of each entry.&lt;/p&gt;
-
-&lt;h3 id=&quot;creating-a-set&quot;&gt;Creating a Set:&lt;/h3&gt;
-
-&lt;p&gt;Creating a Set is as easy as creating an Array:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;myArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;dog&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;cat&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hamster&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;dog&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;mySet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;dog&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;cat&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hamster&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;dog&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;If you are running these commands in a playground, notice that the differences between the 2 results:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;dog&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;cat&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hamster&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;dog&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;// myArray&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hamster&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;cat&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;dog&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;		&lt;span class=&quot;c1&quot;&gt;// mySet&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;The Array is shown wrapped in square brackets, the Set is shown wrapped in curly braces. This is just a visual clue and doesn’t really mean anything. You cannot initialize a set using curly braces.&lt;/li&gt;
-  &lt;li&gt;All the supplied elements of the Array are listed, but the Set has removed the duplicate “dog” element. This did not cause an error or warning, it just happened quietly.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;When initializing a Set, you must add &lt;code class=&quot;highlighter-rouge&quot;&gt;: Set&lt;/code&gt; to distinguish it from an array initialization. In the example above, I did not specify the data type of the elements in the Set as the Swift compiler was able to infer this from the contents. But if initializing an empty array, the data type must be specified. To check how to do this, I option-clicked on &lt;code class=&quot;highlighter-rouge&quot;&gt;mySet&lt;/code&gt; to see what the Swift compiler thought it was.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/set_types.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;So mySet is actually &lt;code class=&quot;highlighter-rouge&quot;&gt;Set&amp;lt;String&amp;gt;&lt;/code&gt;. This means that to create an empty Set, you need to use something like this:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;emptySetOfStrings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;emptySetOfInts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;adding-and-removing-elements&quot;&gt;Adding and removing elements:&lt;/h3&gt;
-
-&lt;p&gt;If you have been using an Array to store unique values, then you have probably written code like this:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myArray&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;contains&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cat&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-   &lt;span class=&quot;n&quot;&gt;myArray&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cat&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;With Sets, you don’t have to care. Just use &lt;code class=&quot;highlighter-rouge&quot;&gt;insert()&lt;/code&gt; and let the Set work out whether to add the item or not.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;n&quot;&gt;mySet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;goldfish&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
-&lt;span class=&quot;c1&quot;&gt;// goldfish added: {&quot;hamster&quot;, &quot;cat&quot;, &quot;dog&quot;, &quot;goldfish&quot;}&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;mySet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;dog&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;       
-&lt;span class=&quot;c1&quot;&gt;// dog already there: {&quot;hamster&quot;, &quot;cat&quot;, &quot;dog&quot;, &quot;goldfish&quot;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Removing elements is also easier than in Arrays. For an Array, you first have to find the index of the element and remove it by index:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// myArray.remove(&quot;hamster&quot;) // will not compile&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myArray&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hamster&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-   &lt;span class=&quot;n&quot;&gt;myArray&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;But in a Set, you can remove any element easily and trying to remove an element that doesn’t exist will fail without an error.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;n&quot;&gt;mySet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hamster&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;		&lt;span class=&quot;c1&quot;&gt;// returns &quot;hamster&quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;mySet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;canary&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;		&lt;span class=&quot;c1&quot;&gt;// returns nil&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;converting-between-sets-and-arrays&quot;&gt;Converting between Sets and Arrays:&lt;/h3&gt;
-
-&lt;p&gt;Sometimes you need to be able to switch between the two. My most recent example was when I wanted to store data from a Set in a plist. Sets are not property list types but Arrays are, so I converted the Set to an Array before storing it in the plist. When reading the data in from the plist, I converted it back to a Set.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;myArrayAsSet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;mySetAsArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mySet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;One useful side-effect of these easy conversions is the ability to ‘unique’ an Array in a single line. This may be inefficient for large arrays, but works very well for small ones. Just be careful if the order of the elements is important as you cannot guarantee the order of elements in a Set.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;myArrayUniqued&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// [&quot;cat&quot;, &quot;dog&quot;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;iterating-over-elements-in-a-set&quot;&gt;Iterating over elements in a Set:&lt;/h3&gt;
-
-&lt;p&gt;As with an Array, you can use a &lt;code class=&quot;highlighter-rouge&quot;&gt;for element in set&lt;/code&gt; structure, or you can use &lt;code class=&quot;highlighter-rouge&quot;&gt;enumerated()&lt;/code&gt;. But you cannot subscript a Set.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;animal&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mySet&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-   &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;animal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;animal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mySet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;enumerated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-   &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; = &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;animal&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// will not compile&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//for index in 0 ..&amp;lt; mySet.count {&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//   print(&quot;\(index) = \(mySet[index])&quot;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;where-sets-get-really-interesting&quot;&gt;Where Sets get really interesting:&lt;/h2&gt;
-
-&lt;p&gt;Remember in school when you learnt about Venn diagrams with pretty interlocking circles? Sets can do the same things, although you will have to do your own pretty drawings :-)&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;set1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;dog&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;cat&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;pig&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;set2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cow&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;horse&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;pig&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;intersect&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;set1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;intersection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// {&quot;pig&quot;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;subtract&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;set1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;subtracting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// {&quot;cat&quot;, &quot;dog&quot;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;union&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;set1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;union&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// {&quot;pig&quot;, &quot;cat&quot;, &quot;dog&quot;, &quot;cow&quot; &quot;horse&quot;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;xor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;set1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;symmetricDifference&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// {&quot;cat&quot;, &quot;dog&quot;, &quot;cow&quot;, &quot;horse&quot;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;In the code example above, we have two Sets  of animals, with one animal in common.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;intersection()&lt;/code&gt; lists the elements in common.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;subtracting()&lt;/code&gt; lists the elements in one Set after removing all elements that are in the other.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;union()&lt;/code&gt; joins all the elements without duplicates.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;symmetricDifference()&lt;/code&gt; lists the elements that are in one or other of the Sets but not in both. (Swift 3 renamed this function from &lt;code class=&quot;highlighter-rouge&quot;&gt;exclusiveOr()&lt;/code&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Here is my best attempt at a pretty drawing to show how these go together:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/sets_1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;The next fun trick is working out sub-sets, super-sets and disjoint sets.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;set1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;dog&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;cat&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;pig&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;set2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cow&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;horse&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;pig&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;smallSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pig&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;cow&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;smallSet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;isSubset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;set1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;smallSet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;isSubset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;set2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;smallSet&lt;/code&gt; is &lt;strong&gt;not&lt;/strong&gt; a subset of &lt;code class=&quot;highlighter-rouge&quot;&gt;set1&lt;/code&gt; because it contains an element that is not in &lt;code class=&quot;highlighter-rouge&quot;&gt;set1&lt;/code&gt;.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;smallSet&lt;/code&gt; &lt;strong&gt;is&lt;/strong&gt; a subset of &lt;code class=&quot;highlighter-rouge&quot;&gt;set2&lt;/code&gt; because every element in &lt;code class=&quot;highlighter-rouge&quot;&gt;smallSet&lt;/code&gt; is also in &lt;code class=&quot;highlighter-rouge&quot;&gt;set2&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/sets_2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;If you want to get technical, a Set should not be considered a subset of an identical Set.
-The default &lt;code class=&quot;highlighter-rouge&quot;&gt;isSubset(of:)&lt;/code&gt; allows this, but you can use &lt;code class=&quot;highlighter-rouge&quot;&gt;isStrictSubset(of:)&lt;/code&gt; if you prefer.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;n&quot;&gt;set1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;isSubset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;set1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;		&lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;set1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;isStrictSubset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;set1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Superset works just the same but in reverse so the diagram above explains it too:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;set1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;dog&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;cat&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;pig&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;set2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cow&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;horse&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;pig&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;smallSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pig&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;cow&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;set1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;isSuperset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;smallSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;set2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;isSuperset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;smallSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;set1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;isSuperset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;set1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;		&lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;set1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;isStrictSuperset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;set1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;		&lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set1&lt;/code&gt; is &lt;strong&gt;not&lt;/strong&gt; a superset of &lt;code class=&quot;highlighter-rouge&quot;&gt;smallSet&lt;/code&gt; because it does not contain every element in &lt;code class=&quot;highlighter-rouge&quot;&gt;smallSet&lt;/code&gt;.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;set2&lt;/code&gt; &lt;strong&gt;is&lt;/strong&gt; a superset of &lt;code class=&quot;highlighter-rouge&quot;&gt;smallSet&lt;/code&gt; because every element in &lt;code class=&quot;highlighter-rouge&quot;&gt;smallSet&lt;/code&gt; is also in &lt;code class=&quot;highlighter-rouge&quot;&gt;set2&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;isSuperset(of:)&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;isStrictSuperset(of:)&lt;/code&gt; functions allow or reject identical sets.&lt;/p&gt;
-
-&lt;p&gt;The final comparison tool that might be useful is &lt;code class=&quot;highlighter-rouge&quot;&gt;isDisjoint(with:)&lt;/code&gt; which returns true only if the two Sets have no elements in common i.e. if there is no overlap in the circles.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;set1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;dog&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;cat&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;pig&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;set2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cow&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;horse&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;pig&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;otherSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;duck&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;chicken&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;set1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;isDisjoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;set2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;		&lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;set1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;isDisjoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;otherSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;		&lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;“pig” occurs in both &lt;code class=&quot;highlighter-rouge&quot;&gt;set1&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;set2&lt;/code&gt; so they are &lt;strong&gt;not&lt;/strong&gt; disjoint.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;otherSet&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;set1&lt;/code&gt; have no matching entries so they &lt;strong&gt;are&lt;/strong&gt; disjoint.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;when-should-you-use-a-set&quot;&gt;When should you use a Set?&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;If you want the elements to be unique.&lt;/li&gt;
-  &lt;li&gt;If you want easy methods of comparing the contents of different collections.&lt;/li&gt;
-  &lt;li&gt;If you want to be able to remove elements easily.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;when-should-you-not-use-a-set&quot;&gt;When should you not use a Set?&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;If you need the collection to be able to hold multiples of an element.&lt;/li&gt;
-  &lt;li&gt;If the order of the collection is important.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;For more details on Sets, check out &lt;a href=&quot;http://swiftdoc.org/v2.2/type/Set/&quot;&gt;SwiftDoc.org&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 28 May 2016 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/2016/05/learning-swift-sets/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/05/learning-swift-sets/</guid>
-      </item>
-    
-      <item>
-        <title>19th Hole Golf Scorer 3.1</title>
-        <description>&lt;p&gt;One of the problems with using 19th Hole on the Apple Watch is making the app show every time you raise your wrist. My solution to this was to go into Settings (either on my iPhone through the Watch app, or directly on the watch) and change it to “Resume Last Activity” on wrist raise. This worked fine but as I usually prefer the watch face to show on wrist raise, I had to keep setting and re-setting this which was a pain.&lt;/p&gt;
-
-&lt;p&gt;But last week I noticed the fine print when changing this setting. In this screen shot from the Watch app on my iPhone, you can see that “session-based apps” and “some third-party workout apps” will over-ride the “Show Watch Face” setting.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/WakeScreen.jpg&quot; alt=&quot;Wrist raise settings&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I started to research this and found that if an app starts a “workout session”, then it will become the active app until the session is ended or some other app starts a session. So I got to work and added a workout session to the 19th Hole’s Apple Watch app.&lt;/p&gt;
-
-&lt;p&gt;When you start scoring a round on the Apple Watch, you will see this dialog asking if you would like to start a workout:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Watch-workout.png&quot; alt=&quot;Start workout dialog&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The workout will be stopped automatically when you have scored the last hole. You can also use a force-press on the scoring screen to turn the workout off or on at any time.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/Watch_end_workout.png&quot; alt=&quot;Stop workout&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This should make the app much more usable as an Apple Watch app, so happy golfing :-)&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 07 May 2016 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/2016/05/19th-hole-golf-scorer-3.1/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/05/19th-hole-golf-scorer-3.1/</guid>
       </item>
     
   </channel>
