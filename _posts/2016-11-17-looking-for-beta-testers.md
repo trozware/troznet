@@ -10,12 +10,12 @@ tags:
   - beta
 macappname: Work
 macappimage: /icons/Work128.png
-macappdesc: A project organizer for developers, designers, students or any professional who works with multiple projects involving files & folders, web pages, email addresses and lists of to-do's.
+macappdesc: A project organizer for developers, designers, students or any professional who works with multiple projects involving files & folders, web pages, email addresses and lists of tasks.
 ---
 
 I am looking for beta testers for my latest Mac app: **[Work][1]**.
 
-**Work** is a project organizer app for developers, designers, students or any professional who works with multiple projects involving files & folders, web pages, email addresses and lists of to-do's. Click the link above for more information and help for getting started.
+**Work** is a project organizer app for developers, designers, students or any professional who works with multiple projects involving files & folders, web pages, email addresses and lists of tasks. Click the link above for more information and help for getting started.
 
 **Work** requires macOS 10.12 or OS X 10.11.
 
