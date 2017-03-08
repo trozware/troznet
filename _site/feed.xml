@@ -7,6 +7,71 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Blackmail Marketing</title>
+        <description>&lt;p&gt;I use my iPad to play games as a form of  relaxation. Nearly all the games I play are puzzle apps with levels that can be played in a few minutes. Nearly all of them are free to install. So how do they make money?&lt;/p&gt;
+
+&lt;p&gt;Now I would be the last person you should consult about marketing but it has always seemed to me that the best way to market your product is to convince people that it offers something they want so that they are prepared to pay for it.&lt;/p&gt;
+
+&lt;p&gt;This is not the currently favored approach for mobile apps - at least certainly not for games. No, the theory at the moment is to cause so much frustration and annoyance that people give you money to make it stop. Blackmail marketing.&lt;/p&gt;
+
+&lt;p&gt;A frequently used method is showing ads, sometimes just banner ads but more often full screen video ads that run for up to 30 seconds. If you interrupt the ad, you don’t get the reward.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Every goal reached triggers an ad.&lt;/li&gt;
+  &lt;li&gt;Quitting and resuming the app triggers an ad.&lt;/li&gt;
+  &lt;li&gt;Wanting to play another level triggers an ad.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The theory is that you get so annoyed with this that you pay money to disable the ads.&lt;/p&gt;
+
+&lt;p&gt;The other common tactic is the delay. A tower defence game needs you to build a tower? OK, that will take 12 hours real time and you can’t proceed until it’s finished. Or you can spend 12 gems which are sold as an in-app purchase. Maybe you can only play 3 levels and then you need to recharge: again, pay up or wait. You keep dying on that level? You’re out of lives. Pay up or wait until tomorrow. These delays are completely artificial. They have nothing to do with game play but are solely designed to infuriate you enough to get you to pay.&lt;/p&gt;
+
+&lt;p&gt;So when, and perhaps more importantly why, did mobile app marketing become so negative? What happened to making your customers happy? Do unhappy customers spend more?&lt;/p&gt;
+
+&lt;p&gt;Financially, it appears that irritating your users is a successful strategy. Nearly all the top grossing games in the App Store are “free to play” in that the initial download costs nothing. But these big studios are raking in enormous sums of money, so many people are persuaded to spend significant money by these infuriating schemes.&lt;/p&gt;
+
+&lt;p&gt;A large part of this must be due to the various App Stores driving prices to the bottom. Gone are the days when the price of a mobile app was other than risible. So app developers have four choices:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Do it as a hobby or learning exercise.&lt;/li&gt;
+  &lt;li&gt;Distribute apps as a form of self–promotion for other work.&lt;/li&gt;
+  &lt;li&gt;Work for someone who pays you a real wage to develop apps.&lt;/li&gt;
+  &lt;li&gt;Join the blackmailers.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So how does this relate to indy developers like me? I care about my users and want them to be happy.&lt;/p&gt;
+
+&lt;p&gt;I have tried several different approaches to app distribution:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Totally free gets by far the most downloads but is economically ridiculous unless the app adds value to your business in some other way.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A tip jar gets you nothing.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In-app purchases (in my limited experience) make less than selling the app up-front for a small price.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Banner ads with no method of forcing people to watch them generate almost no revenue.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So that leaves me with where I am today - selling apps for a few dollars and nothing more. Happily, I have found that Mac users are more prepared to pay a few dollars for an app, so I have shut down many of my iOS apps and am concentrating on the Mac app market.&lt;/p&gt;
+
+&lt;p&gt;Am I letting my principles stand in the way of mobile app profits? Should I just join the gang and start blackmailing my customers? If so, what form should this take?&lt;/p&gt;
+
+&lt;p&gt;At the moment, I am considering banner ads on the screen with an in-app purchase to disable them entirely. I read a suggestion for a less invasive method of doing this by creating your own ads for your other apps. This might be what I end up doing.&lt;/p&gt;
+
+&lt;p&gt;I would welcome any suggestions, advice or comments. Please join the discussion below or contact me using one of the links at the top of the page.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 08 Mar 2017 00:00:00 +1000</pubDate>
+        <link>http://localhost:4000/2017/03/blackmail-marketing/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/03/blackmail-marketing/</guid>
+      </item>
+    
+      <item>
         <title>NCSS 2017</title>
         <description>&lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://swiftlang.ng.bluemix.net/#/repl&quot;&gt;IBM Swift Sandbox&lt;/a&gt;&lt;/li&gt;
@@ -356,32 +421,6 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
         <pubDate>Thu, 15 Sep 2016 00:00:00 +1000</pubDate>
         <link>http://localhost:4000/2016/09/retiring-old-apps/</link>
         <guid isPermaLink="true">http://localhost:4000/2016/09/retiring-old-apps/</guid>
-      </item>
-    
-      <item>
-        <title>Man Reader updated to 1.6</title>
-        <description>&lt;p&gt;Man Reader has been updated to version 1.6 with the permissions needed for finding all available man pages and a fix for search terms being over-written after a background update.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/manreader/&quot;&gt;Man Reader 1.6&lt;/a&gt; is now available through the &lt;a href=&quot;http://itunes.apple.com/app/man-reader/id522583774?mt=12&quot;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h4 id=&quot;change-log&quot;&gt;Change Log:&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Permissions fix when searching for available man pages.&lt;/li&gt;
-  &lt;li&gt;Fixed error with new search term being over-written.&lt;/li&gt;
-  &lt;li&gt;Sand-boxed version now works just as well as the non-sand-boxed so please switch back to this version.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This version fixes a problem with sand-boxing permissions potentially not allowing access to all the installed man pages on your system. This should now be fixed but if you discover any man pages that are available through Terminal but not through Man Read, please &lt;a href=&quot;mailto:sarah@troz.net?subject=Man%20Reader%20not%20detecting%20some%20man%20pages&quot;&gt;email me the details&lt;/a&gt; and help me make Man Reader better.&lt;/p&gt;
-
-&lt;p&gt;There was also an issue with a previous search being restored after a background update, even if a new search term had been entered. This has been fixed.&lt;/p&gt;
-
-&lt;p&gt;If you previously had downloaded the Man Reader (no SB) version of the app from this site, please revert to the App Store version which you would have needed to have bought in order to use the downloaded app. If you bought the app from Paddle, &lt;a href=&quot;mailto:sarah@troz.net?subject=Man%20Reader%20transfer%20to%20App%20Store&quot;&gt;contact me&lt;/a&gt; and I will transfer you to the App Store version. Neither of these other versions will be supported or updated any more.&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 16 Jul 2016 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/2016/07/man-reader-updated-to-1.6/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/07/man-reader-updated-to-1.6/</guid>
       </item>
     
   </channel>
