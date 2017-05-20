@@ -28,6 +28,6 @@ Dice Pass is available from the [Mac App Store][5] now.
 
 [1]: https://xkcd.com/936/
 [2]: http://world.std.com/~reinhold/diceware.html
-[3]: /images/DicePass_Mac.png
-[4]: /dicepass/
+[3]: {{ site.url }}/images/DicePass_Mac.png
+[4]: {{ site.url }}/dicepass/
 [5]: https://itunes.apple.com/app/dice-pass/id997688302?mt=12&uo=4

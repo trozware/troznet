@@ -20,7 +20,7 @@ In the meantime, there is a work-around for Retina MBP users: force the app to r
 
 In Finder, open your Applications folder and select the app (this works for both Icns Maker and Icon Builder). Press Command-I or choose Get Info from the File menu which will open a window like this:
 
-<img alt="Selecting low resolution mode" src="/images/LowRes.png" width="379" height="952" />
+<img alt="Selecting low resolution mode" src="{{ site.url }}/images/LowRes.png" width="379" height="952" />
 
 Check the checkbox labelled &#8220;Open in Low Resolution&#8221;. Next time the app is opened, it will ignore the Retina options and use standard resolution only. This will create icon files with the correct sizes. However text may look slightly fuzzy.
 

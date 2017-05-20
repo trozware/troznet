@@ -36,6 +36,6 @@ You can also import your own word list if you prefer.
 Dice Pass 1.1 is compatible with macOS Sierra.
 
 
-[1]: /dicepass/
+[1]: {{ site.url }}/dicepass/
 [2]: https://itunes.apple.com/app/dice-pass/id997688302
 [3]: http://world.std.com/~reinhold/diceware.html

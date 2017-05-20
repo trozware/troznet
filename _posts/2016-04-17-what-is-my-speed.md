@@ -59,8 +59,8 @@ Tap the "?" button on the main screen to be reminded of the available swipes.
 **Location permissions:** On startup, the app will request permission to access your location. This is how the speed, course and altitude data is gathered so is essential for the app to operate. If you have an Apple Watch with the app installed, the app will continue to track your speed while in the background so that the data can be sent to your watch. If you do not have an Apple Watch or the app is not installed on the watch, your speed will only ever be tracked when the app is the current foreground app.
 
 [1]: https://itunes.apple.com/app/what-is-my-speed/id1091394524
-[2]: /images/speed_1.png
-[3]: /images/speed_2.png
-[4]: /images/speed_watch_1.png
-[5]: /images/speed_3.png
-[6]: /2016/04/road-trip-apps/
+[2]: {{ site.url }}/images/speed_1.png
+[3]: {{ site.url }}/images/speed_2.png
+[4]: {{ site.url }}/images/speed_watch_1.png
+[5]: {{ site.url }}/images/speed_3.png
+[6]: {{ site.url }}/2016/04/road-trip-apps/

@@ -151,7 +151,7 @@ Here is my best attempt at a pretty drawing to show how these go together:
 
 ---
 
-The next fun trick is working out sub-sets, super-sets and disjoint sets. 
+The next fun trick is working out sub-sets, super-sets and disjoint sets.
 
 {% highlight swift %}
 let set1: Set = ["dog", "cat", "pig"]
@@ -227,9 +227,9 @@ set1.isDisjoint(with: otherSet)		// true
 
 For more details on Sets, check out [SwiftDoc.org][5].
 
-[1]: /images/set_types.png
-[2]: /images/sets_1.png
-[3]: /images/sets_2.png
-[4]: /images/sets_title.png
+[1]: {{ site.url }}/images/set_types.png
+[2]: {{ site.url }}/images/sets_1.png
+[3]: {{ site.url }}/images/sets_2.png
+[4]: {{ site.url }}/images/sets_title.png
 [5]: http://swiftdoc.org/v2.2/type/Set/
 [6]: https://github.com/trozware/sets

@@ -24,19 +24,19 @@ A Knight's Move is a puzzle game where you have to move your knight across a boa
 
 ![A Knight's Move for Mac][3]
 
-   [3]: /images/KnightsMoveMac1.png
+   [3]: {{ site.url }}/images/KnightsMoveMac1.png
 
 Get from the starting position to the target in the shortest possible number of moves. Score stars based on the moves taken. If you need help, take a one star penalty to show all possible moves. If you really get stuck, after several tries the Cheat button allows you to see a solution, although that will cost you all your stars.
 
 ![A Knight's Move for Mac][5]
 
-   [5]: /images/KnightsMoveMac2.png
+   [5]: {{ site.url }}/images/KnightsMoveMac2.png
 
 Choose your preferred board and chess pieces.
 
 ![A Knight's Move Preferences][8]
 
-   [8]: /images/KM-Prefs.png
+   [8]: {{ site.url }}/images/KM-Prefs.png
 
 * * *
 ## FAQ:
@@ -62,4 +62,4 @@ Choose your preferred board and chess pieces.
 **Q.** I think I solved a puzzle in fewer moves than the minimum moves shown.  
 **A.** Great! Please take a screen shot of the puzzle and annotate it to show your moves. Email it in to sarah@troz.net so that I can edit the puzzle for the next update.
 
- [15]: /a-knights-move-1-3/ "A Knight’s Move 1.3"
+ [15]: {{ site.url }}/a-knights-move-1-3/ "A Knight’s Move 1.3"

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Sandboxing and the Mac App Store &#8211; TrozWare</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="macOS, iOS &amp;amp; watchOS Developer">
+    <meta name="description" content="macOS, iOS and watchOS Developer">
     <meta name="author" content="Sarah Reichelt">
     <meta name="keywords" content="">
     <link rel="canonical" href="http://troz.net/sandboxing-and-the-mac-app-store/">
@@ -32,7 +32,7 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Sandboxing and the Mac App Store">
-    <meta property="og:description" content="macOS, iOS &amp;amp; watchOS Developer">
+    <meta property="og:description" content="macOS, iOS and watchOS Developer">
     <meta property="og:url" content="http://troz.net/sandboxing-and-the-mac-app-store/">
     <meta property="og:site_name" content="TrozWare">
 
@@ -43,7 +43,7 @@
             <meta name="twitter:site" content="@trozware" />
         
         <meta name="twitter:title" content="Sandboxing and the Mac App Store" />
-        <meta name="twitter:description" content="macOS, iOS &amp; watchOS Developer" />
+        <meta name="twitter:description" content="macOS, iOS and watchOS Developer" />
         <meta name="twitter:url" content="http://troz.net/sandboxing-and-the-mac-app-store/" />
         <meta name="twitter:image" content="http://troz.net/icons/apple-touch-icon-152x152.png" />
     
@@ -161,7 +161,7 @@
 
 <p>I have run into direct issues with sandboxing already. With <a href="http://www.picapod.com/" target="_blank">Pic-a-POD</a>, I used to have links to the Desktop and Screen Saver panes in System Preferences. These used AppleScripts which required a temporary entitlement to send an AppleEvent. The app was rejected because of this, so I had to modify this feature – it now just takes you to the relevant section of System Prefs, but not directly to either Desktop or Screen Saver. However Pic-a-POD’s help, which runs in Apple’s Help Viewer app, contains exactly the same AppleScripts and so is allowed to access these preference panes directly. Try working out the logic of that one!</p>
 
-<p>I have more serious problems with <a title="Man Reader" href="/manreader/" target="_blank">Man Reader</a>. Man Reader displays a list of the man pages on your system. Depending on the tools you have installed, these pages may be in a variety of locations. The shell command that detects them first reads a config file and then checks the folders listed in that config file. All it needs is read-only access. With the first sandboxed version, I asked for a temporary entitlement to give me read-only access to the startup disk. This was granted, but I have since been informed that all requested entitlements were granted before the App Store cut-off date. This may have been meant to be helpful, but it was not useful to allow access that would later be removed without any warning.</p>
+<p>I have more serious problems with <a title="Man Reader" href="http://troz.net/manreader/" target="_blank">Man Reader</a>. Man Reader displays a list of the man pages on your system. Depending on the tools you have installed, these pages may be in a variety of locations. The shell command that detects them first reads a config file and then checks the folders listed in that config file. All it needs is read-only access. With the first sandboxed version, I asked for a temporary entitlement to give me read-only access to the startup disk. This was granted, but I have since been informed that all requested entitlements were granted before the App Store cut-off date. This may have been meant to be helpful, but it was not useful to allow access that would later be removed without any warning.</p>
 
 <p>The current version of Man Reader waiting for approval asks for read-only access to the config file directly and then to every folder listed in that config file. If approved, this should be able to access all the man pages on a system. I have no idea whether these entitlements will be granted, but if not, then I will have to remove Man Reader from the App Store. It would be wrong to continue to sell an app that only functioned in a limited manner, even though the App Store is far and away my best form of marketing.</p>
 

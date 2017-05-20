@@ -20,6 +20,5 @@ The main reason for this version was that Man Reader was not previously detectin
 
 
 
-[1]: /manreader/
+[1]: {{ site.url }}/manreader/
 [2]: http://itunes.apple.com/app/man-reader/id522583774?mt=12
-

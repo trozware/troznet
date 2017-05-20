@@ -17,4 +17,4 @@ I will also be using this account to promote my new [Learning Swift][2] series.
 
 
 [1]: https://twitter.com/trozware
-[2]: /2016/02/learning-swift-an-introduction/
+[2]: {{ site.url }}/2016/02/learning-swift-an-introduction/

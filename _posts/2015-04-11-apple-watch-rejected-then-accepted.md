@@ -14,9 +14,9 @@ The app was an extension of my golf scoring app: [The 19th Hole][2].
 
 I expected that App Store review times would go up dramatically once Apple had allowed developers to submit watch apps, but this proved to be incorrect. Three days after submission, the app was marked as "In Review". This seemed to happen last thing on a Saturday, so there was no further action for two days, at which point the app was rejected, with the following details (sic):
 
-> We noticed an issue in your app that contributes to a lower quality user experience than Apple users expect. Specifically, 
+> We noticed an issue in your app that contributes to a lower quality user experience than Apple users expect. Specifically,
 
-> - while using the Apple Watch app with the phone app is in the background mode (display off), the new data entry on the Watch App does not refresh accordingly until the phone app is turn back on. 
+> - while using the Apple Watch app with the phone app is in the background mode (display off), the new data entry on the Watch App does not refresh accordingly until the phone app is turn back on.
 
 So it appeared that the communication between the watch and the phone, which worked perfectly on the simulators, did not work at all on the actual devices. This is the problem with developing for a device that you do not have.
 
@@ -31,7 +31,7 @@ To talk to the phone, the watch uses this function:
          reply reply: (([NSObject : AnyObject]!,
          NSError!) -> Void)?) -> Bool
 {% endhighlight %}
-                                          
+
 The phone listens for messages in this event handler:
 
 {% highlight swift %}
@@ -55,6 +55,6 @@ On a related note, the start of pre-ordering for the Apple Watch was scheduled f
 
 
 
-[1]: /2015/04/my-first-apple-watch-app/
-[2]: /19th-hole/
+[1]: {{ site.url }}/2015/04/my-first-apple-watch-app/
+[2]: {{ site.url }}/19th-hole/
 [3]: http://www.fiveminutewatchkit.com/blog/2015/3/11/one-weird-trick-to-fix-openparentapplicationreply

@@ -71,8 +71,8 @@ If you ever need to check what type has been assigned to a constant or variable,
 This was going to be five rules, but then I got a bit too verbose so will add more rules in a separate post.
 
 
-[1]: /images/Playground2.png
-[2]: /images/Playground3.png
-[3]: /images/Playground4.png
-[4]: /images/optional_fix.png
-[5]: /2016/02/learning-swift-optionals/
+[1]: {{ site.url }}/images/Playground2.png
+[2]: {{ site.url }}/images/Playground3.png
+[3]: {{ site.url }}/images/Playground4.png
+[4]: {{ site.url }}/images/optional_fix.png
+[5]: {{ site.url }}/2016/02/learning-swift-optionals/

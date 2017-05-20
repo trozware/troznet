@@ -24,9 +24,9 @@ tags:
   * Fixed path for Network Utility in tool bar (moved in OS X 10.9).
   * More information available about the effects of sand-boxing for this app.
 
- [1]: /manreader/
+ [1]: {{ site.url }}/manreader/
  [2]: http://itunes.apple.com/app/man-reader/id522583774?mt=12
  [3]: #
  [4]: #
- [5]: /manreader-sandbox/
- [6]: /man-reader-no-sb/
+ [5]: {{ site.url }}/manreader-sandbox/
+ [6]: {{ site.url }}/man-reader-no-sb/

@@ -20,4 +20,4 @@ While I doubt that many oboists frequent this web site, it anyone who does can p
 The app is available through the <a href="https://itunes.apple.com/us/app/sequenza-vii/id730234638?mt=8&#038;uo=4" target="_blank">iTunes App Store</a>.  
 More details are on [this page][1].
 
- [1]: /berio/ "Berio’s Sequenza VII"
+ [1]: {{ site.url }}/berio/ "Berio’s Sequenza VII"

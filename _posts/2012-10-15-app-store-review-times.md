@@ -30,10 +30,10 @@ Time In Words|update|22|Sept 22 &#8211; Oct 14
 Icns Maker|new app|24|Aug 5 &#8211; Aug 29  
 A Knight&#8217;s Move|update|26|Sept 6 &#8211; Oct 2  
 Icon Builder|new app|33|Aug 22 &#8211; Sept 24  
-   
+
 <br>
 I have not included Man Reader as it was rejected too many times to be a valid data point.
 
 By comparison, when I submitted an update to A Knight&#8217;s Move for iOS in October, it was passed in only 8 days.
 
- [1]: /sandboxing-and-the-mac-app-store/
+ [1]: {{ site.url }}/sandboxing-and-the-mac-app-store/

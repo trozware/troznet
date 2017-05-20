@@ -31,6 +31,6 @@ The workout will be stopped automatically when you have scored the last hole. Yo
 
 This should make the app much more usable as an Apple Watch app, so happy golfing :-)
 
-[1]: /images/WakeScreen.jpg
-[2]: /images/Watch-workout.png
-[3]: /images/Watch_end_workout.png
+[1]: {{ site.url }}/images/WakeScreen.jpg
+[2]: {{ site.url }}/images/Watch-workout.png
+[3]: {{ site.url }}/images/Watch_end_workout.png

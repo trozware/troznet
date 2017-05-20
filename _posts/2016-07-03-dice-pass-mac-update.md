@@ -28,5 +28,5 @@ If you bought Dice Pass for OS X 10.9 and are unable to run it, I have two possi
 
 I have updated the app in the App Store changing nothing but the version number and it is now showing the correct minimum system requirement. My apologies if you have been inconvenienced by this error.
 
-[2]: /dicepass/
+[2]: {{ site.url }}/dicepass/
 [3]: https://itunes.apple.com/app/dice-pass/id997688302

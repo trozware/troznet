@@ -46,6 +46,6 @@ So as you can see, Icon Builder is doing a lot of work for you. It also names al
 
 So next time your designer sends you the twentieth tweaked icon for the day, don't get mad. Just drop it into Icon Builder and sit back while it does all the work. (No need to tell the designer that...)
 
-[1]: /icon-builder/
+[1]: {{ site.url }}/icon-builder/
 [2]: https://itunes.apple.com/app/icon-builder/id552293482
-[3]: /images/IconBuilder.png
+[3]: {{ site.url }}/images/IconBuilder.png

@@ -8,13 +8,13 @@ tags:
   - icons
 ---
 
-[Icns Maker][1] is available from the Mac App Store. 
+[Icns Maker][1] is available from the Mac App Store.
 
    [1]: http://itunes.apple.com/app/icns-maker/id550942266?mt=12&uo=4
 
 # Make an icns in 2 steps:
 
-[<img alt="Make an icns in 2 steps" src="/images/IcnsMaker1-300x255.png" width="300" height="255" />][1]
+[<img alt="Make an icns in 2 steps" src="{{ site.url }}/images/IcnsMaker1-300x255.png" width="300" height="255" />][1]
 
 1. Drag an image into the window.
 
@@ -42,7 +42,7 @@ Note that apps submitted to the Mac App Store now require a 1024&#215;1024 versi
 
 ## If you want more control:
 
-Click the “Smaller sizes” switch to show all the other image sizes.[<img alt="Get More Control" src="/images/IcnsMaker2-300x187.png" width="300" height="187" />][2]
+Click the “Smaller sizes” switch to show all the other image sizes.[<img alt="Get More Control" src="{{ site.url }}/images/IcnsMaker2-300x187.png" width="300" height="187" />][2]
 
 When you drag an image into the 1024 x 1024 area, it is resized to supply all the required images. If you have a smaller version of your icon image that you want to use for some of the smaller sizes, just drag the image into the largest image area that you want it to be used for.
 
@@ -89,6 +89,6 @@ If you want, you can specify a different image for every required size.
 **Q.** I&#8217;m a programmer, not a graphic designer. How do I make icon images?  
 **A.** One easy way to create basic shapes with gradients, text, added images etc. is to use Keynote. I presume PowerPoint has the same sort of abilities.
 
- [1]: /images/IcnsMaker1.png
- [2]: /images/IcnsMaker2.png
- [3]: /icon-builder/ "Icon Builder"
+ [1]: {{ site.url }}/images/IcnsMaker1.png
+ [2]: {{ site.url }}/images/IcnsMaker2.png
+ [3]: {{ site.url }}/icon-builder/ "Icon Builder"

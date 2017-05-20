@@ -82,7 +82,7 @@ That produced this error:
 
 ![Generics error][1]
 
-`Use of undeclared type 'T'`. Well that seems fair enough... how is the compiler supposed to know what a `T` is? 
+`Use of undeclared type 'T'`. Well that seems fair enough... how is the compiler supposed to know what a `T` is?
 
 It turns out that this is where the angle brackets come into play. You have to warn the compiler that this function is going to get a generic type and that the `T` is only a placeholder, not a real type. So this version compiles and works - notice the `<T>` between the function name and the opening bracket:
 
@@ -103,7 +103,7 @@ Now I have no code duplication and if I ever get another data set that uses a di
 ---
 
 Now we know to use generics instead of replicating code that operates in the same way on different data types.
-   
+
 And we know how to construct a generic function.
 
 Using it is identical to using the two functions I had before:
@@ -153,6 +153,6 @@ And in exactly the same way, both `T` and `U` can be set to conform to a protoco
 Hopefully this has taken some of the mystery out of generics, but if you have any questions, please get in touch using the [Contact page][2], comment below or contact me via Twitter: [@trozware][3].
 
 
-[1]: /images/Generics_error.png
-[2]: /contact/
+[1]: {{ site.url }}/images/Generics_error.png
+[2]: {{ site.url }}/contact/
 [3]: https://twitter.com/trozware

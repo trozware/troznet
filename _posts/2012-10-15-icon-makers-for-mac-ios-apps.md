@@ -53,5 +53,5 @@ Originally these apps were named in a consistent manner: Mac Icon Builder and iO
 
 Then I tried Icns Maker and Icon Maker. Icns Maker was approved, but there is already an app called Icon Maker, so I went with Icon Builder. But by that time Icns Maker had already been released, so there was no way to make the names more consistent.
 
- [1]: /icns-maker/ "Icns Maker"
- [2]: /icon-builder/ "Icon Builder"
+ [1]: {{ site.url }}/icns-maker/ "Icns Maker"
+ [2]: {{ site.url }}/icon-builder/ "Icon Builder"

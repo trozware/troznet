@@ -38,4 +38,4 @@ When your knight has been taken, you have the option to undo the last move so yo
 <img alt="Undo Last Move" src="/images/KM-UndoLast.png" />
 
 
-[1]: /knightsmove/
+[1]: {{ site.url }}/knightsmove/

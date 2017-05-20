@@ -7,7 +7,7 @@ tags:
   - travel
   - ios
 ---
-Over the past few months, we have done two long road trips: one approximately 4,000 km and the other about 1,800 km. These gave us the chance to try out various apps for navigation and travel information. We live in Queensland, Australia and some of these comments may be country-specific. 
+Over the past few months, we have done two long road trips: one approximately 4,000 km and the other about 1,800 km. These gave us the chance to try out various apps for navigation and travel information. We live in Queensland, Australia and some of these comments may be country-specific.
 
 ---
 
@@ -40,7 +40,7 @@ Even then it was amusing to see the apps panic when you took a new road and the 
 
 Apart from the basic navigation apps, we tried a couple of speed display apps. There are a lot of HUD speed apps out there that project the data on the the windscreen but they had two problems:
 
-- They only worked when it was dark. As soon as the sun got up, they became invisible. 
+- They only worked when it was dark. As soon as the sun got up, they became invisible.
 - They required you to place your iPhone flat on the dashboard so even if they had worked during the day, the iPhone would have got far too hot and shut-down. (We have a mount that holds our iPhones in front of the air vents to avoid this over-heating problem. Any mount that sticks to the windscreen itself leaves the iPhone too exposed to the sun.)
 
 One we stuck with (in non-HUD mode) was [Speedometer + HUD][4]. This had a clear display with a few flaws:
@@ -80,4 +80,4 @@ So watch this space for further news of my up-coming app...
 [4]: https://itunes.apple.com/app/speedometer-+-hud-digital/id375318117
 [5]: https://itunes.apple.com/app/talking-hud-voice-prompt-speedometer/id873194479
 [6]: https://itunes.apple.com/app/what-is-my-speed/id1091394524
-[7]: /what-is-my-speed/
+[7]: {{ site.url }}/what-is-my-speed/

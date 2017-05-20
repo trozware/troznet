@@ -58,7 +58,7 @@ Man Reader assembles a list of the commands with available man pages on your sys
 ##### Man Reader version 1.5 changes:
   * Much improved searching for available man pages.
   * Sand-boxed version now works just as well as the non-sand-boxed.
-  
+
 ##### Man Reader version 1.4 changes:
 
   * Fix for plain text view not wrapping correctly for odd-sized fonts.
@@ -103,11 +103,11 @@ Man Reader assembles a list of the commands with available man pages on your sys
 
 If you have any problems with Man Reader, any suggestions for future versions or encounter any bugs, please [contact me][8].
 
- [1]: /images/MR_Start_small.png "Man Reader"
- [2]: /images/MR_Start.png
+ [1]: {{ site.url }}/images/MR_Start_small.png "Man Reader"
+ [2]: {{ site.url }}/images/MR_Start.png
  [3]: http://itunes.apple.com/app/man-reader/id522583774?mt=12
- [4]: /manreader-paddle/ManReader.zip
+ [4]: {{ site.url }}/manreader-paddle/ManReader.zip
  [5]: https://pay.paddle.com/checkout/490552
- [6]: /manreader-sandbox/
- [7]: /man-reader-no-sb/
+ [6]: {{ site.url }}/manreader-sandbox/
+ [7]: {{ site.url }}/man-reader-no-sb/
  [8]: mailto:sarah@troz.net?subject=Man%20Reader

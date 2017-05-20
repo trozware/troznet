@@ -23,7 +23,7 @@ I will end up automating this when I am sure of the process, but for now, I am j
 	- Looking in the `_posts` folder of the site folder, I see the previous post file is titled `2015-03-08-new-site-for-trozware.md`.
 	- As it is now 10th March 2015, I am saving this file as: `2015-03-10-workflow-for-writing-a-post.md`.
 	- Saving at this point shows a Jekyll error in the Terminal, but the next stage will fix that.
-	
+
 1. **Front matter:**
 	- Jekyll specifies that each file must have a [front matter block][1] in a certain format.
 	- The header has certain essential parameters and then more optional ones.
@@ -32,7 +32,7 @@ I will end up automating this when I am sure of the process, but for now, I am j
 	- After saving, I see this entry in my Terminal:
 	- `Regenerating: 1 file(s) changed at 2015-03-10 13:50:40 ...done in 0.421789 seconds.`
 	- Now I can see the title and the start of the post on my first page and when clicking on it, I can see all the text.
-	
+
 1. **Adding an image:**
 	- This is not really necessary for this post, but I wanted to document it as part of the workflow.
 	- I wanted to show the front matter and start of this post, so I took a screen shot of the top of my editor window.
@@ -40,13 +40,13 @@ I will end up automating this when I am sure of the process, but for now, I am j
 	- Now to embed the image using this Markdown: `![Post header][2]`
 	- As you can see, I prefer to group all links (images & URLs) at the end of the document and keep the body of the text as clean as possible.
 	- ![Post header][2]
-	
+
 1. **Proofing:**
 	- Now that I have the text of my post, I need to proof-read it from the local Jekyll server.
 	- The `jekyll serve` command running in Terminal keeps the pages up-to-date as you edit, but you will need to refresh your page in the browser manually to check your changes.
 	- And I have found that if you make a major change to the site e.g. a CSS file or a config file, then it is best to stop the Jekyll server and start it again to make it re-build all the files.
 	- To be completely sure, stop the server and run `jekyll build` in Terminal although this may only do what `jekyll serve` does on startup anyway.
-	
+
 1. **Publishing:**
 	- Now it is time to publish.
 	- As I am using GitHub Pages to host, the site files are all part of a single Git repository.
@@ -62,7 +62,7 @@ I will end up automating this when I am sure of the process, but for now, I am j
 		1. Commit
 		2. Sync
 	- And that's it. My new post is online and ready for reading.
-	
+
 1. **Summary:**
 	- This was my first post after the one I wrote when setting up, so the first real post.
 	- While there appear to be a lot of steps, none of them are difficult.
@@ -75,5 +75,5 @@ I will end up automating this when I am sure of the process, but for now, I am j
 
 
 [1]: http://jekyllrb.com/docs/frontmatter/
-[2]: /images/post_header.png
+[2]: {{ site.url }}/images/post_header.png
 [3]: http://jekyllrb.com/docs/posts/

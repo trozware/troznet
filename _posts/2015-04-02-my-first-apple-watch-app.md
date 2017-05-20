@@ -26,12 +26,12 @@ The first step in adding a WatchKit app to your existing app is to create a new 
 
 I decided to use a paged interface with one page per hole. Each of these pages has a table, with one row per player. A slider with plus & minus buttons lets you enter the score for each player and the total score for each player is also displayed.
 
-![Data entry](/images/19thHole-Watch2.png)
+![Data entry]({{ site.url }}/images/19thHole-Watch2.png)
 
 Apart from this data entry view, I have a splash screen which shows you the current round as set up on the iPhone and a final summary screen showing everyone's totals.
 
-![Splash screen](/images/19thHole-Watch1.png)
-![Summary](/images/19thHole-Watch3.png)
+![Splash screen]({{ site.url }}/images/19thHole-Watch1.png)
+![Summary]({{ site.url }}/images/19thHole-Watch3.png)
 
 These images are taken from the Apple Watch simulator running in 42mm mode.
 
@@ -64,7 +64,7 @@ So now my app is waiting for review and who knows how long that will take. Accor
 
 
 
-[1]: /apps-ios/
-[2]: /19th-hole/
+[1]: {{ site.url }}/apps-ios/
+[2]: {{ site.url }}/19th-hole/
 [3]: http://www.raywenderlich.com/video-tutorials#watchkit
 [4]: http://appreviewtimes.com

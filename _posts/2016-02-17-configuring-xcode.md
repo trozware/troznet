@@ -63,16 +63,16 @@ I tend to leave the  others set to the defaults.
 
 
 
-[1]: /images/XcodeFontPrefs.png
+[1]: {{ site.url }}/images/XcodeFontPrefs.png
 [2]: https://github.com/adobe-fonts/source-code-pro
 [3]: https://github.com/chrissimpkins/hack
 [4]: https://github.com/mozilla/Fira
 [5]: http://www.fontsquirrel.com/fonts/Inconsolata
 [6]: http://alcatraz.io
-[7]: /images/Alcatraz.png
-[8]: /images/CocoaPods.png
-[9]: /images/ColorSenseRainbow.png
+[7]: {{ site.url }}/images/Alcatraz.png
+[8]: {{ site.url }}/images/CocoaPods.png
+[9]: {{ site.url }}/images/ColorSenseRainbow.png
 [10]: https://cocoapods.org
 [11]: https://kapeli.com/dash
-[12]: /images/Dash.png
+[12]: {{ site.url }}/images/Dash.png
 [13]: https://github.com/tonsky/FiraCode

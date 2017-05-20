@@ -18,5 +18,4 @@ Time In Words is a clock and calendar app that takes you out of the digital era 
 Check out the [Time In Words web page][2] for more info and screen shots.
 
  [1]: http://itunes.apple.com/app/time-in-words/id498403851
- [2]: /time-in-words/
- 
+ [2]: {{ site.url }}/time-in-words/

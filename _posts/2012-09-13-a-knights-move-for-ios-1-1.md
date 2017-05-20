@@ -29,4 +29,4 @@ The big change was that all puzzles packs are now included in the free app, whic
 
 Note that iAds will not appear in all countries. You may just see a banner linking you to my other apps on the iPad. On iPhone, you will not see anything different.
 
-[1]: /knightsmove/
+[1]: {{ site.url }}/knightsmove/

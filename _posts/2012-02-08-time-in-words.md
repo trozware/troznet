@@ -27,8 +27,8 @@ For any problems with this app, please use the Contact Me link in the sidebar.
 
 Screen shots are for iPhone or iPod Touch. iPad is similar but allows four time zone conversions.
 
-<img title="Time" src="/images/TiW-iOS-1.png" alt="Time" /> 
-<img title="Date" src="/images/TiW-iOS-2.png" alt="Date" />
-<img title="Time and Date" src="/images/TiW-iOS-3.png" alt="Time and Date" /> 
-<img title="Time zone conversion" src="/images/TiW-iOS-4.png" alt="Time zone conversion" />
-<img title="Settings" src="/images/TiW-iOS-5.png" alt="Settings" />
+<img title="Time" src="{{ site.url }}/images/TiW-iOS-1.png" alt="Time" /> 
+<img title="Date" src="{{ site.url }}/images/TiW-iOS-2.png" alt="Date" />
+<img title="Time and Date" src="{{ site.url }}/images/TiW-iOS-3.png" alt="Time and Date" /> 
+<img title="Time zone conversion" src="{{ site.url }}/images/TiW-iOS-4.png" alt="Time zone conversion" />
+<img title="Settings" src="{{ site.url }}/images/TiW-iOS-5.png" alt="Settings" />

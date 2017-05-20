@@ -30,7 +30,7 @@ which made me think that Xcode was quite happy to have parsed the app name as re
 
 The app was built, passed all unit tests, profiled, analyzed, tested on real devices as well as the simulators and uploaded to TestFlight.
 
-**BARRRPPPP!** 
+**BARRRPPPP!**
 
 ![This app cannot be installed][3]
 
@@ -60,7 +60,7 @@ As you can see from this list, I thought it was a code signing or profile error.
  > ```Error Domain=LaunchServicesError Code=0 "(null)" UserInfo={Error=ApplicationVerificationFailed, ErrorDetail=-402620393, ErrorDescription=Failed to verify code signature of /private/var/installd/Library/Caches/com.apple.mobile.
  > installd.staging/temp.2LWJ2h/extracted/Payload/What Is My Speed?.app : 0xe8008017 (A signed resource has been added, modified, or deleted.)}```
 
-But when I got to the stage of a completely blank app still failing, I suddenly thought of the question mark. With the benefit of my preamble to this post, you all probably got there long before I did, but I got there in the end. 
+But when I got to the stage of a completely blank app still failing, I suddenly thought of the question mark. With the benefit of my preamble to this post, you all probably got there long before I did, but I got there in the end.
 
 The solution was to remove the question mark from the names of the targets in Xcode. I had to fix up the module names in my unit testing files, but apart from that, there were no changes. After this I was able to upload the complete app to TestFlight and install it on my iPhone.
 
@@ -68,9 +68,9 @@ It is possible that it was the Product Names that were the issue, rather than th
 
 <a name="tldr">TL;DR</a> Do not put any unusual characters in your target names. Alphanumerics and spaces are OK, but I am not sure about anything else.
 
-[1]: /what-is-my-speed/
+[1]: {{ site.url }}/what-is-my-speed/
 [2]: https://itunes.apple.com/app/what-is-my-speed/id1091394524
-[3]: /images/TestFlight_error.png
+[3]: {{ site.url }}/images/TestFlight_error.png
 [4]: https://itunes.apple.com/app/apple-configurator-2/id1037126344
 [5]: #tldr
 [6]: https://www.simpletechs.net/apps/easy-fix-for-testflight-problem-after-restoring-from-backup/

@@ -25,4 +25,4 @@ Apple does not have an ad system for Mac, so the Mac version is now a paid app t
 
 The in-app purchasing was an interesting experiment, but the ratio of purchases to downloads was too low to sustain the development.
 
-[1]: /knightsmove/
+[1]: {{ site.url }}/knightsmove/

@@ -160,4 +160,4 @@ The problem arises if you have many nested structs and the mutating has to sprea
 
 [1]: http://faq.sealedabstract.com/structs_or_classes/#an-alternative-hypothesis
 [2]: http://swiftdoc.org/v2.2/protocol/Equatable/
-[3]: /images/mutating.png
+[3]: {{ site.url }}/images/mutating.png

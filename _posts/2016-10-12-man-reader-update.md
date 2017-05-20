@@ -24,6 +24,5 @@ I also took the opportunity to fix some graphical issues, dealing with different
 
 
 
-[1]: /manreader/
+[1]: {{ site.url }}/manreader/
 [2]: http://itunes.apple.com/app/man-reader/id522583774?mt=12
-

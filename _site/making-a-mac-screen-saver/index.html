@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Making a Mac Screen Saver &#8211; TrozWare</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="macOS, iOS &amp;amp; watchOS Developer">
+    <meta name="description" content="macOS, iOS and watchOS Developer">
     <meta name="author" content="Sarah Reichelt">
     <meta name="keywords" content="">
     <link rel="canonical" href="http://troz.net/making-a-mac-screen-saver/">
@@ -32,7 +32,7 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Making a Mac Screen Saver">
-    <meta property="og:description" content="macOS, iOS &amp;amp; watchOS Developer">
+    <meta property="og:description" content="macOS, iOS and watchOS Developer">
     <meta property="og:url" content="http://troz.net/making-a-mac-screen-saver/">
     <meta property="og:site_name" content="TrozWare">
 
@@ -43,7 +43,7 @@
             <meta name="twitter:site" content="@trozware" />
         
         <meta name="twitter:title" content="Making a Mac Screen Saver" />
-        <meta name="twitter:description" content="macOS, iOS &amp; watchOS Developer" />
+        <meta name="twitter:description" content="macOS, iOS and watchOS Developer" />
         <meta name="twitter:url" content="http://troz.net/making-a-mac-screen-saver/" />
         <meta name="twitter:image" content="http://troz.net/icons/apple-touch-icon-152x152.png" />
     
@@ -149,11 +149,11 @@
 </div>
 
 <article class="post-content">
-  <p>Having just completed the my first screen saver for Mac – the <a href="/time-in-words-screen-saver-for-mac/" title="Time In Words Screen Saver for Mac">Time In Words Screen Saver</a>, I thought I would share some of the experiences. I am using OS X Lion (10.7) and Xcode 4.3.2</p>
+  <p>Having just completed the my first screen saver for Mac – the <a href="http://troz.net/time-in-words-screen-saver-for-mac/" title="Time In Words Screen Saver for Mac">Time In Words Screen Saver</a>, I thought I would share some of the experiences. I am using OS X Lion (10.7) and Xcode 4.3.2</p>
 
 <p>The first thing is to create a new project in Xcode using the Screen Saver template:</p>
 
-<p><a href="/images/ScreenSaverTemplate.png"><img title="Xcode Screen Saver Template" src="/images/ScreenSaverTemplate-441x300.png" alt="Xcode Screen Saver Template" /></a></p>
+<p><a href="http://troz.net/images/ScreenSaverTemplate.png"><img title="Xcode Screen Saver Template" src="http://troz.net/images/ScreenSaverTemplate-441x300.png" alt="Xcode Screen Saver Template" /></a></p>
 
 <p>Xcode sets up a project for you with everything you need for a screen saver module. Start editing the ScreenSaverView.m file. The most important method here is animateOneFrame.</p>
 
@@ -213,10 +213,10 @@ In the xib file, connect the panel to this outlet.</p>
 <p>In the initWithFrame:isPreview: method, I got a reference to the screen saver defaults for my screen saver and registered the defaults. I am never very sure about the need to do this, but it is supposed to be a good practice.</p>
 
 <figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="n">ScreenSaverDefaults</span> <span class="o">*</span><span class="n">defaults</span> <span class="o">=</span> <span class="p">[</span><span class="n">ScreenSaverDefaults</span> <span class="nf">defaultsForModuleWithName</span><span class="p">:</span><span class="n">kModuleName</span><span class="p">];</span>
-<span class="p">[</span><span class="n">defaults</span> <span class="nf">registerDefaults</span><span class="p">:[</span><span class="n">NSDictionary</span> <span class="nf">dictionaryWithObjectsAndKeys</span><span class="p">:</span> 
+<span class="p">[</span><span class="n">defaults</span> <span class="nf">registerDefaults</span><span class="p">:[</span><span class="n">NSDictionary</span> <span class="nf">dictionaryWithObjectsAndKeys</span><span class="p">:</span>
     <span class="s">@"NO"</span><span class="p">,</span> <span class="s">@"UseAlternativeZone"</span><span class="p">,</span> <span class="s">@""</span><span class="p">,</span> <span class="s">@"AlternativeZoneName"</span><span class="p">,</span> <span class="nb">nil</span><span class="p">]];</span>
-    
-<span class="n">Using</span> <span class="n">them</span> <span class="n">is</span> <span class="n">exactly</span> <span class="n">the</span> <span class="n">same</span> <span class="n">as</span> <span class="n">using</span> <span class="n">NSUserDefaults</span><span class="o">:</span> 
+
+<span class="n">Using</span> <span class="n">them</span> <span class="n">is</span> <span class="n">exactly</span> <span class="n">the</span> <span class="n">same</span> <span class="n">as</span> <span class="n">using</span> <span class="n">NSUserDefaults</span><span class="o">:</span>
 
 <span class="c1">// Reading
 </span><span class="n">ScreenSaverDefaults</span> <span class="o">*</span><span class="n">defaults</span> <span class="o">=</span> <span class="p">[</span><span class="n">ScreenSaverDefaults</span> <span class="nf">defaultsForModuleWithName</span><span class="p">:</span><span class="n">kModuleName</span><span class="p">];</span>
@@ -237,7 +237,7 @@ In the xib file, connect the panel to this outlet.</p>
 
 <p>Click this icon to download the screen saver:</p>
 
-<p><a href="/screensaver/TimeInWords-ScreenSaver.zip"><img style="border-style: initial; border-color: initial; border-width: 0px;" title="Click to download Time In Words Screen Saver" src="/images/ScreenSaverIcon128.png" alt="Time In Words Screen Saver Download" width="128" height="128" /></a></p>
+<p><a href="http://troz.net/screensaver/TimeInWords-ScreenSaver.zip"><img style="border-style: initial; border-color: initial; border-width: 0px;" title="Click to download Time In Words Screen Saver" src="http://troz.net/images/ScreenSaverIcon128.png" alt="Time In Words Screen Saver Download" width="128" height="128" /></a></p>
 
 
 </article>

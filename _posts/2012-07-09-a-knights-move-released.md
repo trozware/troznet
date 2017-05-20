@@ -39,5 +39,5 @@ Tutorial puzzle on iPhone
 
 Pesky Pawns - one of the more difficult puzzles on Mac.
 
- [1]: /knightsmove/
- [3]: /images/PeskyPawns.png
+ [1]: {{ site.url }}/knightsmove/
+ [3]: {{ site.url }}/images/PeskyPawns.png

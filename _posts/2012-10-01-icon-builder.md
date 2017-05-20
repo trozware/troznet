@@ -12,7 +12,7 @@ macappimage: /icons/IconBuilder128.png
 macappdesc: Make and install a set of icons for an iOS, Mac or Apple Watch app in just 3 steps.
 ---
 
-[Icon Builder 3.2][3] is available from the Mac App Store. 
+[Icon Builder 3.2][3] is available from the Mac App Store.
 
    [3]: http://itunes.apple.com/app/icon-builder/id552293482?mt=12
 
@@ -23,7 +23,7 @@ macappdesc: Make and install a set of icons for an iOS, Mac or Apple Watch app i
 
 ![Make an icon set in 3 steps][1]
 
-   [1]: /images/IconBuilder1.png
+   [1]: {{ site.url }}/images/IconBuilder1.png
 
 2: Choose the device family you are building for: iOS Universal, iPhone, iPad, Mac or Apple Watch.
 
@@ -49,7 +49,7 @@ With Xcode 5 and later, Apple has changed the way a project stores image files, 
 
 ![Using the icons][2]
 
-   [2]: /images/IconBuilder2.png
+   [2]: {{ site.url }}/images/IconBuilder2.png
 
 Icon Builder creates all the required image files in a folder called "AppIcon.appiconset" inside the "Images.xcassets" folder for your project. If you already have images stored in an appiconset folder, Icon Builder will not over-write them, but will add a new folder e.g. "AppIcon-1.appiconset". You can then switch between AppIcon sets in the project settings for your target app.
 
@@ -73,7 +73,7 @@ The other big change is that Icon Builder now creates icons for Mac apps. Mac ap
 
 This app will NOT create the icns files that were used for Mac apps before Xcode 5 or 6. If you need icns files for another environment, use [Icns Maker][4] instead.
 
-[4]: http://troz.net/icns-maker/
+[4]: {{ site.url }}/icns-maker/
 
 * * *
 
@@ -97,7 +97,7 @@ Does this app make icons for iOS 8 apps?
 
 Does Icon Builder create icons for use in Mac apps?
 
-  * Yes. When Mac apps used a different file format, I had a separate app to create Mac icns files. Now Mac apps use image assets just like iOS apps, but with different image sizes. Select Mac in the Device popup to create icons for a Mac app. 
+  * Yes. When Mac apps used a different file format, I had a separate app to create Mac icns files. Now Mac apps use image assets just like iOS apps, but with different image sizes. Select Mac in the Device popup to create icons for a Mac app.
 
 What version of Xcode do I need?
 

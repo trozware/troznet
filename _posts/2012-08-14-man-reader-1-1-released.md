@@ -15,7 +15,7 @@ As detailed in a [previous post][3], there have been major issues getting this a
 
 I hope everyone finds the new features useful. Please [keep the suggestions coming in][4] to make this app even better!
 
- [1]: /manreader/ "Man Reader"
- [2]: /manreader/#new_features
- [3]: /sandboxing-and-the-mac-app-store/
+ [1]: {{ site.url }}/manreader/ "Man Reader"
+ [2]: {{ site.url }}/manreader/#new_features
+ [3]: {{ site.url }}/sandboxing-and-the-mac-app-store/
  [4]: mailto:sarah@troz.net?subject=Man%20Reader

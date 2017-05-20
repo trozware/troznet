@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TrozWare</title>
-    <description>macOS, iOS &amp;amp; watchOS Developer</description>
+    <description>macOS, iOS and watchOS Developer</description>
     <link>http://troz.net/</link>
     <atom:link href="http://troz.net/feed.xml" rel="self" type="application/rss+xml" />
     
@@ -10,15 +10,23 @@
         <title>JSON Feed for TrozWare</title>
         <description>&lt;p&gt;&lt;a href=&quot;https://jsonfeed.org/2017/05/17/announcing_json_feed&quot;&gt;jsonfeed.org&lt;/a&gt; has announced a new format for web site feeds, designed as an alternative to RSS. TrozWare has had an XML RSS feed for years, but I don’t think anyone ever uses it (I certainly don’t), so today I have replaced it with a JSON feed, which you can access through the &lt;a class=&quot;fa fa-rss&quot; href=&quot;/feed.json&quot;&gt;&lt;/a&gt; button at the top of every page.&lt;/p&gt;
 
-&lt;p&gt;I am sure many JSON Feed viewers will appear soon, but the only one I know about so far is at &lt;a href=&quot;http://json-feed-viewer.herokuapp.com&quot;&gt;http://json-feed-viewer.herokuapp.com&lt;/a&gt;. As soon as this update to my site goes live, I will add it to the list of sites on this page.&lt;/p&gt;
+&lt;p&gt;I am sure many JSON Feed viewers will appear soon, but the only one I know about so far is at &lt;a href=&quot;http://json-feed-viewer.herokuapp.com&quot;&gt;http://json-feed-viewer.herokuapp.com&lt;/a&gt;. As soon as this update to my site goes live, I will apply to have TrozWare added to the list of sites on this page. Meanwhile, you can paste in the URL: &lt;code class=&quot;highlighter-rouge&quot;&gt;http://troz.net/feed.json&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;This site is constructed using Jekyll, so I am very grateful to Niclas Darville for his very easy to follow &lt;a href=&quot;https://ndarville.com/blog/2017/05/19/json-feed-for-jekyll/&quot;&gt;guide&lt;/a&gt;. However it is still well worth reading through the &lt;a href=&quot;https://jsonfeed.org/version/1&quot;&gt;official specs&lt;/a&gt; to see what else you want to add, or if you want to remove anything. I had to tweak a few settings to make it work for my configuration, and I added some more objects, but Niclas got me off to a flying start.&lt;/p&gt;
+
+&lt;p&gt;Two things to watch out for:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Make sure your feed is producing valid JSON (I had an extra comma that was breaking it…).&lt;/li&gt;
+  &lt;li&gt;As third-party apps &amp;amp; sites may be displaying your content, you need to make sure that you are not using relative URLs for images and internal links. I was using relative image URLs like &lt;code class=&quot;highlighter-rouge&quot;&gt;/images/WorkHelp1.png&lt;/code&gt; but that showed a broken link in the feed viewer, so I have changed all such links to &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;site.url&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}/images/WorkHelp&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.png&lt;/span&gt;&lt;/code&gt;. Hopefully that will work correctly on my local test server as well as when published.
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://jsonfeed.org/graphics/icon.png&quot; alt=&quot;JSON Feed icon&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;JSON Feed offers a nice icon which I would have liked to use, but I could not work out a way to make it play nicely with the existing icons on my pages which all use &lt;a href=&quot;http://fontawesome.io&quot;&gt;Font Awesome&lt;/a&gt; icons. So I ended up just using the existing Feed icon. Hopefully Font Awesome will soon add a JSON Feed icon to their already impressive list.&lt;/p&gt;
 
-&lt;p&gt;If anyone still wants to use the &lt;a href=&quot;/feed.xml&quot;&gt;RSS feed&lt;/a&gt;, it is no longer linked to the buttons at the top of the pages, but you can access it manually.&lt;/p&gt;
+&lt;p&gt;If anyone still wants to use the &lt;a href=&quot;http://troz.net/feed.xml&quot;&gt;RSS feed&lt;/a&gt;, it is no longer linked to the buttons at the top of the pages, but you can access it manually.&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 20 May 2017 00:00:00 +1000</pubDate>
@@ -167,7 +175,7 @@
     
       <item>
         <title>Looking for beta testers</title>
-        <description>&lt;p&gt;I am looking for beta testers for my latest Mac app: &lt;strong&gt;&lt;a href=&quot;/work/&quot;&gt;Work&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+        <description>&lt;p&gt;I am looking for beta testers for my latest Mac app: &lt;strong&gt;&lt;a href=&quot;http://troz.net/work/&quot;&gt;Work&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Work&lt;/strong&gt; is a project organizer app for developers, designers, students or any professional who works with multiple projects involving files &amp;amp; folders, web pages, email addresses and lists of tasks. Click the link above for more information and help for getting started.&lt;/p&gt;
 
@@ -178,7 +186,7 @@
 &lt;p&gt;If you would like to test this app, please &lt;a href=&quot;mailto:work@troz.net?subject=Work%20beta%20test&quot;&gt;contact me&lt;/a&gt;, giving details of your Mac and operating system. The easiest way to do this is to select &lt;strong&gt;About This Mac&lt;/strong&gt; in the Apple menu and send me a screen shot of the window that appears.&lt;/p&gt;
 
 &lt;p&gt;All beta testers will receive a free license to Work when it is released.
-If you report a legitimate bug or provide valuable feed-back, you will also receive a free license to your choice of one of my &lt;a href=&quot;/applications/&quot;&gt;other apps&lt;/a&gt;.&lt;/p&gt;
+If you report a legitimate bug or provide valuable feed-back, you will also receive a free license to your choice of one of my &lt;a href=&quot;http://troz.net/applications/&quot;&gt;other apps&lt;/a&gt;.&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 17 Nov 2016 00:00:00 +1000</pubDate>
@@ -204,7 +212,7 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
 
 &lt;p&gt;Here is the project document you will see when you select &lt;strong&gt;Work Help&lt;/strong&gt; from the &lt;strong&gt;Help&lt;/strong&gt; menu:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/WorkHelp1.png&quot; alt=&quot;Work&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://troz.net/images/WorkHelp1.png&quot; alt=&quot;Work&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;It gathers together some useful links to information about &lt;strong&gt;Work&lt;/strong&gt; and my other apps or to allow you to contact me. In &lt;strong&gt;Work&lt;/strong&gt; documents for my apps, I assemble the project files I need to open, images, web page addresses etc. My most frequently used links are starred so I can focus on them whenever I want a shorter list.&lt;/p&gt;
 
@@ -212,7 +220,7 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
 
 &lt;p&gt;Switching to &lt;strong&gt;Tasks&lt;/strong&gt; mode allows you to focus on your tasks list. Tasks can be grouped, re-ordered and marked as complete. Use the &lt;strong&gt;View&lt;/strong&gt; menu to hide completed tasks if you want a more compact list. Use the &lt;strong&gt;Edit&lt;/strong&gt; menu or the toolbar buttons to edit groups - this allows you to create your own custom groupings.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/WorkHelp2.png&quot; alt=&quot;Work - Tasks&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://troz.net/images/WorkHelp2.png&quot; alt=&quot;Work - Tasks&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -224,7 +232,7 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
 
 &lt;p&gt;Work also supports the Touch Bar on the new MacBook Pros:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/Work_TB.png&quot; alt=&quot;Work - TouchBar&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://troz.net/images/Work_TB.png&quot; alt=&quot;Work - TouchBar&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -238,7 +246,7 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
     
       <item>
         <title>Another Man Reader Update...</title>
-        <description>&lt;p&gt;A quick update to &lt;a href=&quot;/manreader/&quot;&gt;Man Reader&lt;/a&gt; to version 1.8 is now available through the &lt;a href=&quot;http://itunes.apple.com/app/man-reader/id522583774?mt=12&quot;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
+        <description>&lt;p&gt;A quick update to &lt;a href=&quot;http://troz.net/manreader/&quot;&gt;Man Reader&lt;/a&gt; to version 1.8 is now available through the &lt;a href=&quot;http://itunes.apple.com/app/man-reader/id522583774?mt=12&quot;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The main reason for this version was that Man Reader was not previously detecting man pages installed by third-party IDEs in the Applications folder. There was also an issue with Man Reader failing to display the text of the previously selected man page on app launch.&lt;/p&gt;
 
@@ -255,7 +263,7 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
     
       <item>
         <title>Man Reader Update</title>
-        <description>&lt;p&gt;&lt;a href=&quot;/manreader/&quot;&gt;Man Reader&lt;/a&gt; has just been updated to version 1.7 and is available through the &lt;a href=&quot;http://itunes.apple.com/app/man-reader/id522583774?mt=12&quot;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
+        <description>&lt;p&gt;&lt;a href=&quot;http://troz.net/manreader/&quot;&gt;Man Reader&lt;/a&gt; has just been updated to version 1.7 and is available through the &lt;a href=&quot;http://itunes.apple.com/app/man-reader/id522583774?mt=12&quot;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The main reason for this update was to make the app work well with macOS Sierra, as I found that version 1.6 was sometimes crashing on launch. While doing this, the update was rejected by the App Store reviewers because it crashed on OS X 10.10. Since I no longer have a Mac running 10.10, I decided to set the minimum supported system version to OS X 10.11. If you need support for older versions, you should still be able to download version 1.6 which will work back to 10.7.&lt;/p&gt;
 
@@ -300,7 +308,7 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
     
       <item>
         <title>How much work does Icon Builder save you?</title>
-        <description>&lt;p&gt;&lt;a href=&quot;/icon-builder/&quot;&gt;Icon Builder&lt;/a&gt; is a Mac app that takes a single image file and creates all the different image sizes that you need to make a set of icons for your app: Mac, iPhone, iPad, iOS Universal or Apple Watch.&lt;/p&gt;
+        <description>&lt;p&gt;&lt;a href=&quot;http://troz.net/icon-builder/&quot;&gt;Icon Builder&lt;/a&gt; is a Mac app that takes a single image file and creates all the different image sizes that you need to make a set of icons for your app: Mac, iPhone, iPad, iOS Universal or Apple Watch.&lt;/p&gt;
 
 &lt;p&gt;Version 4, released 16 September 2016 is available through the &lt;a href=&quot;https://itunes.apple.com/app/icon-builder/id552293482&quot;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
 
@@ -315,7 +323,7 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
   &lt;li&gt;Supports macOS Sierra and Xcode 8&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/IconBuilder.png&quot; alt=&quot;Icon Builder&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://troz.net/images/IconBuilder.png&quot; alt=&quot;Icon Builder&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;While working on version 4 and accommodating all these new icon sets (and wishing I had the time to re-write the app in Swift…), I counted up all the icon files that Icon Builder makes for each app type:&lt;/p&gt;
 
@@ -386,7 +394,7 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
     
       <item>
         <title>Dice Pass Updated</title>
-        <description>&lt;p&gt;&lt;a href=&quot;/dicepass/&quot;&gt;Dice Pass 1.1&lt;/a&gt; is now available from the &lt;a href=&quot;https://itunes.apple.com/app/dice-pass/id997688302&quot;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
+        <description>&lt;p&gt;&lt;a href=&quot;http://troz.net/dicepass/&quot;&gt;Dice Pass 1.1&lt;/a&gt; is now available from the &lt;a href=&quot;https://itunes.apple.com/app/dice-pass/id997688302&quot;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;what-does-dice-pass-do&quot;&gt;What does Dice Pass do?&lt;/h3&gt;
 

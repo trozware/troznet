@@ -13,4 +13,4 @@ Time In Words for Mac has just been approved and is now available for free from 
 
 For more details, check out the [Time In Words for Mac][1] web page.
 
- [1]: /time-in-words-for-mac/
+ [1]: {{ site.url }}/time-in-words-for-mac/

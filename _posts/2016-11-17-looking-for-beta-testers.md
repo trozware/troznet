@@ -28,6 +28,6 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
 
 
 
-[1]: /work/
+[1]: {{ site.url }}/work/
 [2]: mailto:work@troz.net?subject=Work%20beta%20test
-[3]: /applications/
+[3]: {{ site.url }}/applications/

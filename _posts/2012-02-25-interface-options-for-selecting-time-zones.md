@@ -39,5 +39,5 @@ I am sure that if I kept at it, I would eventually work out what was causing the
 
 It is fast to populate, responsive to searches and didn&#8217;t take long to set up. So I am happy, although still perplexed about NSBrowser. It is on my to-do list of things I want to work out one day.
 
- [1]: /under-development/
- [2]: /time-in-words/
+ [1]: {{ site.url }}/time-in-words-for-mac/
+ [2]: {{ site.url }}/time-in-words/

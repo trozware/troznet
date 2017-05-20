@@ -36,7 +36,7 @@ Here are some of my favourites:
 * [Ray Wenderlich tutorials][5] - search for Swift and find heaps of tutorials covering many different aspects.
 * [Swift Sandbox][9] - weekly newsletter filled with interesting articles.
 * [SwiftMonthly][10] - useful newsletter with links to tutorials, videos and projects.
-* [SwiftDoc.org][11] - the documentation in Xcode is still heavily skewed towards Objective-C programmers and it can be difficult to find Swift-specific entries. This site makes it easy. 
+* [SwiftDoc.org][11] - the documentation in Xcode is still heavily skewed towards Objective-C programmers and it can be difficult to find Swift-specific entries. This site makes it easy.
 
 And I hope you will keep coming back to this site to see what new Swift-related articles are available.
 
@@ -44,7 +44,7 @@ And I hope you will keep coming back to this site to see what new Swift-related 
 [1]: https://itunes.apple.com/book/swift-programming-language/id881256329
 [2]: https://developer.apple.com/go/?id=swift-tour
 [3]: https://itunes.apple.com/app/xcode/id497799835
-[4]: /images/Playground1.png
+[4]: {{ site.url }}/images/Playground1.png
 [5]: http://www.raywenderlich.com
 [6]: https://www.natashatherobot.com
 [7]: https://developer.apple.com/swift/blog/

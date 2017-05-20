@@ -29,7 +29,7 @@ So when I decided to do a complete re-write of Time In Words for iOS, the obviou
 
 One new feature (again taken from the Mac version), is the ability to calculate "What time will it be..."
 
-![What time](/images/TiW_what_time.png)
+![What time]({{ site.url }}/images/TiW_what_time.png)
 
 You dial in your local date and time to see what time that will be in your selected zone. And if you want to calculate the other way around, tap the "Swap time zones" button.
 
@@ -37,7 +37,7 @@ You dial in your local date and time to see what time that will be in your selec
 
 The main impetus for a re-write was the Apple Watch. I thought this would be a perfect app for the watch as it could use the Apple Watch's superb time-keeping in conjunction with my text generation, to add a significant level of usability to the Apple Watch as regards time zone conversions.
 
-Sadly, Apple disagrees… 
+Sadly, Apple disagrees…
 
 I completed the app and submitted it to the App Store for review. The review process seems to be very fast at the moment and the app moved into review only one day later. And there it stuck for 3 days. This was very odd. My experience is that once an app gets into review, it only takes a few hours, if that. For [19th Hole][4] - my other app with an Apple Watch component, the review process took 30 hours. But 3 days!
 
@@ -51,7 +51,7 @@ So now I have re-submitted the app for review without the Apple Watch component,
 
 So you can see what you are missing, here are a couple of screen shots from the watch app showing my local time, plus one time zone:
 
-![Local time](/images/Watch_1.png)
+![Local time]({{ site.url }}/images/Watch_1.png)
 <span class="float_right">![Converted time](/images/Watch_2.png)</span>
 
 ---
@@ -59,7 +59,7 @@ So you can see what you are missing, here are a couple of screen shots from the 
 One more minor point. People who actually look at version numbers may wonder why I have gone from version 2.5 to version 4.0. When I was working on version 2.5, I considered making it version 3.0 and then changed my mind. However by that time I had already created a version 3.0 in iTunesConnect, so I was not able to use 3.0 again this time. This version was such a big change that I wanted it to be a .0 release, so that meant going to version 4.0
 
 
-[1]: /time-in-words/
+[1]: {{ site.url }}/time-in-words/
 [2]: http://www.qlocktwo.com/
-[3]: /time-in-words-for-mac/
-[4]: /19th-hole/
+[3]: {{ site.url }}/time-in-words-for-mac/
+[4]: {{ site.url }}/19th-hole/

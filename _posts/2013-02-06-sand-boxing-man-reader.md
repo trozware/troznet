@@ -44,7 +44,7 @@ As an example, on my system, the whatis.txt file contains 8954 lines and the Man
 
 Please [contact me][5] if you have any issues with this.
 
- [1]: /manreader/
+ [1]: {{ site.url }}/manreader/
  [2]: http://www.barebones.com/products/textwrangler/
  [3]: #
  [4]: #

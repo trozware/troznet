@@ -16,7 +16,7 @@ Having just completed the my first screen saver for Mac &#8211; the [Time In Wo
 
 The first thing is to create a new project in Xcode using the Screen Saver template:
 
-[<img title="Xcode Screen Saver Template" src="/images/ScreenSaverTemplate-441x300.png" alt="Xcode Screen Saver Template" />][2]
+[<img title="Xcode Screen Saver Template" src="{{ site.url }}/images/ScreenSaverTemplate-441x300.png" alt="Xcode Screen Saver Template" />][2]
 
 Xcode sets up a project for you with everything you need for a screen saver module. Start editing the ScreenSaverView.m file. The most important method here is animateOneFrame.
 
@@ -82,10 +82,10 @@ In the initWithFrame:isPreview: method, I got a reference to the screen saver de
 
 {% highlight objc %}
 ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
-[defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys: 
+[defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
     @"NO", @"UseAlternativeZone", @"", @"AlternativeZoneName", nil]];
-    
-Using them is exactly the same as using NSUserDefaults: 
+
+Using them is exactly the same as using NSUserDefaults:
 
 // Reading
 ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
@@ -100,14 +100,14 @@ ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:k
 [defaults setObject:alternativeZoneName forKey:@"AlternativeZoneName"];
 [defaults synchronize];
 {% endhighlight %}
-    
+
 One last thing: if you want to distribute the screen saver, you will want to create an archive, possibly code-signing with your Apple developer ID to allow for Mountain Lion&#8217;s up-coming Gatekeeper security system. I code-signed the project and built an archive, but when I clicked &#8220;Distribute&#8221; in the Organizer, the only appropriate options was &#8220;Save Built Products&#8221;. I selected this option and ended up with a series of folders inside folders, with the screen saver module in about the fifth folder down. I don&#8217;t know why the module gets distributed like this, but I pulled it out of the folders and it worked fine.
 
 And that&#8217;s about it. A lot of this stuff is online or in Apple&#8217;s documentation, but there are enough oddities to make it worthwhile gathering together all that I learnt while making this screen saver.
 
 Click this icon to download the screen saver:
-  
-<a href="/screensaver/TimeInWords-ScreenSaver.zip"><img style="border-style: initial; border-color: initial; border-width: 0px;" title="Click to download Time In Words Screen Saver" src="/images/ScreenSaverIcon128.png" alt="Time In Words Screen Saver Download" width="128" height="128" /></a>
 
- [1]: /time-in-words-screen-saver-for-mac/ "Time In Words Screen Saver for Mac"
- [2]: /images/ScreenSaverTemplate.png
+<a href="{{ site.url }}/screensaver/TimeInWords-ScreenSaver.zip"><img style="border-style: initial; border-color: initial; border-width: 0px;" title="Click to download Time In Words Screen Saver" src="{{ site.url }}/images/ScreenSaverIcon128.png" alt="Time In Words Screen Saver Download" width="128" height="128" /></a>
+
+ [1]: {{ site.url }}/time-in-words-screen-saver-for-mac/ "Time In Words Screen Saver for Mac"
+ [2]: {{ site.url }}/images/ScreenSaverTemplate.png

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>My First Apple Watch App &#8211; TrozWare</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="macOS, iOS &amp;amp; watchOS Developer">
+    <meta name="description" content="macOS, iOS and watchOS Developer">
     <meta name="author" content="Sarah Reichelt">
     <meta name="keywords" content="">
     <link rel="canonical" href="http://troz.net/2015/04/my-first-apple-watch-app/">
@@ -32,7 +32,7 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
     <meta property="og:title" content="My First Apple Watch App">
-    <meta property="og:description" content="macOS, iOS &amp;amp; watchOS Developer">
+    <meta property="og:description" content="macOS, iOS and watchOS Developer">
     <meta property="og:url" content="http://troz.net/2015/04/my-first-apple-watch-app/">
     <meta property="og:site_name" content="TrozWare">
 
@@ -43,7 +43,7 @@
             <meta name="twitter:site" content="@trozware" />
         
         <meta name="twitter:title" content="My First Apple Watch App" />
-        <meta name="twitter:description" content="macOS, iOS &amp; watchOS Developer" />
+        <meta name="twitter:description" content="macOS, iOS and watchOS Developer" />
         <meta name="twitter:url" content="http://troz.net/2015/04/my-first-apple-watch-app/" />
         <meta name="twitter:image" content="http://troz.net/icons/apple-touch-icon-152x152.png" />
     
@@ -153,24 +153,24 @@
 
 <p>At the moment, Apple has only made a limited set of Apple Watch features available to developers, and all Apple Watch apps come tethered to an iOS app - presumably this will mainly be iPhone apps, but I wonder will we be able to connect Apple Watches to iPads? Anyway, it made sense to extend one of my existing apps to use the Apple Watch instead of starting from scratch.</p>
 
-<p>Of my <a href="/apps-ios/">iOS apps</a>, I decided that <a href="/19th-hole/">The 19th Hole</a>, my golf scoring app, would be well suited to the Apple Watch. The problem with using the iPhone version to score is that you have to keep pulling your iPhone in and out of your golf bag, sometimes in the rain, sometimes in bright sunlight. Being able to enter the scores on your wrist sounds like a big improvement. We know that the Apple Watch is at least somewhat water-resistant, but we are yet to see how well it performs in bright sunlight, however I would expect that Apple has put considerable effort into this.</p>
+<p>Of my <a href="http://troz.net/apps-ios/">iOS apps</a>, I decided that <a href="http://troz.net/19th-hole/">The 19th Hole</a>, my golf scoring app, would be well suited to the Apple Watch. The problem with using the iPhone version to score is that you have to keep pulling your iPhone in and out of your golf bag, sometimes in the rain, sometimes in bright sunlight. Being able to enter the scores on your wrist sounds like a big improvement. We know that the Apple Watch is at least somewhat water-resistant, but we are yet to see how well it performs in bright sunlight, however I would expect that Apple has put considerable effort into this.</p>
 
 <hr />
 
 <p>Once I decided to write an Apple Watch app, the first step was to learn how. I read all Apple’s published documents to get a feel for what was possible and what user-interface objects would be available. I find online courses very helpful and by far the best Apple Watch course that I found was <a href="http://www.raywenderlich.com/video-tutorials#watchkit">Ray Wenderlich’s WatchKit video tutorial series</a>. The instructors were very clear and explained how the layout and sizing of objects works on the Apple Watch, as well as how to set up and move between views and how to communicate from the Watch back to the iPhone. The layout section of the course was particularly valuable as no other course I found even mentioned this, although it is crucial to the interface design and allowing for the two sizes of watch.</p>
 
-<p>I had released an update to <a href="/19th-hole/">The 19th Hole</a> recently in preparation for this. I wanted to have squashed the bugs and updated the interface, so the only changes needed would be the WatchKit ones.</p>
+<p>I had released an update to <a href="http://troz.net/19th-hole/">The 19th Hole</a> recently in preparation for this. I wanted to have squashed the bugs and updated the interface, so the only changes needed would be the WatchKit ones.</p>
 
 <p>The first step in adding a WatchKit app to your existing app is to create a new target in the Xcode project. Choosing WatchKit actually adds two new targets: the WatchKit Extension which lives on the iPhone and supplies the code for the Watch, and the WatchKit App which lives on the Watch and provides the interface.</p>
 
 <p>I decided to use a paged interface with one page per hole. Each of these pages has a table, with one row per player. A slider with plus &amp; minus buttons lets you enter the score for each player and the total score for each player is also displayed.</p>
 
-<p><img src="/images/19thHole-Watch2.png" alt="Data entry" /></p>
+<p><img src="http://troz.net/images/19thHole-Watch2.png" alt="Data entry" /></p>
 
 <p>Apart from this data entry view, I have a splash screen which shows you the current round as set up on the iPhone and a final summary screen showing everyone’s totals.</p>
 
-<p><img src="/images/19thHole-Watch1.png" alt="Splash screen" />
-<img src="/images/19thHole-Watch3.png" alt="Summary" /></p>
+<p><img src="http://troz.net/images/19thHole-Watch1.png" alt="Splash screen" />
+<img src="http://troz.net/images/19thHole-Watch3.png" alt="Summary" /></p>
 
 <p>These images are taken from the Apple Watch simulator running in 42mm mode.</p>
 

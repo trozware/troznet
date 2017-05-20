@@ -31,4 +31,4 @@ So now I am not quite sure what to do. Here are the options I have considered:
 
 I will have to experiment with various options and see what I can do.
 
- [1]: /time-in-words-for-mac/
+ [1]: {{ site.url }}/time-in-words-for-mac/
