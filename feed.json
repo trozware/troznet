@@ -11,7 +11,7 @@ layout: null
     "favicon": "{{ site.url }}/icons/favicon-96x96.png",
     "expired": false,
     "author": {
-        "name": "Sarah Reichelt",
+        "name": "Sarah Reichelt"
     },
     "items": [
 {% for post in site.posts %}
@@ -21,7 +21,8 @@ layout: null
             "content_html": {{ post.content | jsonify }},
             "url": "{{ site.url }}{{ post.url }}",
             "summary": {{ post.excerpt | smartify | jsonify }},
-            "date_published": "{{ post.date }}"
+            "date_published": "{{ post.date }}",
+            "tags": ["{{ post.tags | sort | join: '", "' }}"]
         }{% unless forloop.last == true %},{% endunless %}
 {% endfor %}
     ]
