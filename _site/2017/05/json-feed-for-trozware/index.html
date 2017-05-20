@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Time In Words for Mac now available &#8211; TrozWare</title>
+    <title>JSON Feed for TrozWare &#8211; TrozWare</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="macOS, iOS &amp;amp; watchOS Developer">
+    <meta name="description" content="[&quot;Today I have replaced the RSS feed for this site with a JSON feed.&quot;]">
     <meta name="author" content="Sarah Reichelt">
     <meta name="keywords" content="">
-    <link rel="canonical" href="http://troz.net/time-in-words-for-mac-now-available/">
+    <link rel="canonical" href="http://troz.net/2017/05/json-feed-for-trozware/">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for TrozWare" href="/feed.xml" />
 
     <!-- Custom CSS -->
@@ -31,9 +31,9 @@
     <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Time In Words for Mac now available">
+    <meta property="og:title" content="JSON Feed for TrozWare">
     <meta property="og:description" content="macOS, iOS &amp;amp; watchOS Developer">
-    <meta property="og:url" content="http://troz.net/time-in-words-for-mac-now-available/">
+    <meta property="og:url" content="http://troz.net/2017/05/json-feed-for-trozware/">
     <meta property="og:site_name" content="TrozWare">
 
     <!-- Twitter Card -->
@@ -42,9 +42,9 @@
         
             <meta name="twitter:site" content="@trozware" />
         
-        <meta name="twitter:title" content="Time In Words for Mac now available" />
-        <meta name="twitter:description" content="macOS, iOS &amp; watchOS Developer" />
-        <meta name="twitter:url" content="http://troz.net/time-in-words-for-mac-now-available/" />
+        <meta name="twitter:title" content="JSON Feed for TrozWare" />
+        <meta name="twitter:description" content="Today I have replaced the RSS feed for this site with a JSON feed." />
+        <meta name="twitter:url" content="http://troz.net/2017/05/json-feed-for-trozware/" />
         <meta name="twitter:image" content="http://troz.net/icons/apple-touch-icon-152x152.png" />
     
 
@@ -138,8 +138,8 @@
 
 
 <div class="post-header mb2">
-  <h1>Time In Words for Mac now available</h1>
-  <span class="post-meta">20 Mar 2012</span><br>
+  <h1>JSON Feed for TrozWare</h1>
+  <span class="post-meta">20 May 2017</span><br>
   
   <span class="post-meta small">
   
@@ -149,20 +149,30 @@
 </div>
 
 <article class="post-content">
-  <p>Time In Words for Mac has just been approved and is now available for free from the <a href="http://itunes.apple.com/au/app/time-in-words/id509085586?mt=12" target="_blank">Mac App Store</a>.</p>
+  <p><a href="https://jsonfeed.org/2017/05/17/announcing_json_feed">jsonfeed.org</a> has announced a new format for web site feeds, designed as an alternative to RSS. TrozWare has had an XML RSS feed for years, but I don’t think anyone ever uses it (I certainly don’t), so today I have replaced it with a JSON feed, which you can access through the <a class="fa fa-rss" href="/feed.json"></a> button at the top of every page.</p>
 
-<p>For more details, check out the <a href="/time-in-words-for-mac/">Time In Words for Mac</a> web page.</p>
+<p>I am sure many JSON Feed viewers will appear soon, but the only one I know about so far is at <a href="http://json-feed-viewer.herokuapp.com">http://json-feed-viewer.herokuapp.com</a>. As soon as this update to my site goes live, I will add it to the list of sites on this page.</p>
+
+<p>This site is constructed using Jekyll, so I am very grateful to Niclas Darville for his very easy to follow <a href="https://ndarville.com/blog/2017/05/19/json-feed-for-jekyll/">guide</a>. However it is still well worth reading through the <a href="https://jsonfeed.org/version/1">official specs</a> to see what else you want to add, or if you want to remove anything. I had to tweak a few settings to make it work for my configuration, and I added some more objects, but Niclas got me off to a flying start.</p>
+
+<p><img src="https://jsonfeed.org/graphics/icon.png" alt="JSON Feed icon" /></p>
+
+<p>JSON Feed offers a nice icon which I would have liked to use, but I could not work out a way to make it play nicely with the existing icons on my pages which all use <a href="http://fontawesome.io">Font Awesome</a> icons. So I ended up just using the existing Feed icon. Hopefully Font Awesome will soon add a JSON Feed icon to their already impressive list.</p>
+
+<p>If anyone still wants to use the <a href="/feed.xml">RSS feed</a>, it is no longer linked to the buttons at the top of the pages, but you can access it manually.</p>
 
 
 </article>
 
 <br>
-<!-- <a href="/tags/">Tags</a>: time in words and mac -->
+<!-- <a href="/tags/">Tags</a>: trozware, json, and rss -->
 Tags: 
 
-    <a href="/tags/#time in words">time in words</a>&nbsp;&nbsp;
+    <a href="/tags/#trozware">trozware</a>&nbsp;&nbsp;
 
-    <a href="/tags/#mac">mac</a>&nbsp;&nbsp;
+    <a href="/tags/#json">json</a>&nbsp;&nbsp;
+
+    <a href="/tags/#rss">rss</a>&nbsp;&nbsp;
 
 <hr>
 
@@ -174,8 +184,8 @@ Tags:
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_shortname  = 'trozware';
-    var disqus_identifier = '/time-in-words-for-mac-now-available';
-    var disqus_title      = 'Time In Words for Mac now available';
+    var disqus_identifier = '/2017/05/json-feed-for-trozware';
+    var disqus_title      = 'JSON Feed for TrozWare';
 
     (function() {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

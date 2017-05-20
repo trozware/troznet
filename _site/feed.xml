@@ -3,8 +3,28 @@
   <channel>
     <title>TrozWare</title>
     <description>macOS, iOS &amp;amp; watchOS Developer</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://troz.net/</link>
+    <atom:link href="http://troz.net/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>JSON Feed for TrozWare</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://jsonfeed.org/2017/05/17/announcing_json_feed&quot;&gt;jsonfeed.org&lt;/a&gt; has announced a new format for web site feeds, designed as an alternative to RSS. TrozWare has had an XML RSS feed for years, but I don’t think anyone ever uses it (I certainly don’t), so today I have replaced it with a JSON feed, which you can access through the &lt;a class=&quot;fa fa-rss&quot; href=&quot;/feed.json&quot;&gt;&lt;/a&gt; button at the top of every page.&lt;/p&gt;
+
+&lt;p&gt;I am sure many JSON Feed viewers will appear soon, but the only one I know about so far is at &lt;a href=&quot;http://json-feed-viewer.herokuapp.com&quot;&gt;http://json-feed-viewer.herokuapp.com&lt;/a&gt;. As soon as this update to my site goes live, I will add it to the list of sites on this page.&lt;/p&gt;
+
+&lt;p&gt;This site is constructed using Jekyll, so I am very grateful to Niclas Darville for his very easy to follow &lt;a href=&quot;https://ndarville.com/blog/2017/05/19/json-feed-for-jekyll/&quot;&gt;guide&lt;/a&gt;. However it is still well worth reading through the &lt;a href=&quot;https://jsonfeed.org/version/1&quot;&gt;official specs&lt;/a&gt; to see what else you want to add, or if you want to remove anything. I had to tweak a few settings to make it work for my configuration, and I added some more objects, but Niclas got me off to a flying start.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://jsonfeed.org/graphics/icon.png&quot; alt=&quot;JSON Feed icon&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;JSON Feed offers a nice icon which I would have liked to use, but I could not work out a way to make it play nicely with the existing icons on my pages which all use &lt;a href=&quot;http://fontawesome.io&quot;&gt;Font Awesome&lt;/a&gt; icons. So I ended up just using the existing Feed icon. Hopefully Font Awesome will soon add a JSON Feed icon to their already impressive list.&lt;/p&gt;
+
+&lt;p&gt;If anyone still wants to use the &lt;a href=&quot;/feed.xml&quot;&gt;RSS feed&lt;/a&gt;, it is no longer linked to the buttons at the top of the pages, but you can access it manually.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 20 May 2017 00:00:00 +1000</pubDate>
+        <link>http://troz.net/2017/05/json-feed-for-trozware/</link>
+        <guid isPermaLink="true">http://troz.net/2017/05/json-feed-for-trozware/</guid>
+      </item>
     
       <item>
         <title>Blackmail Marketing</title>
@@ -67,8 +87,8 @@
 &lt;p&gt;I would welcome any suggestions, advice or comments. Please join the discussion below or contact me using one of the links at the top of the page.&lt;/p&gt;
 </description>
         <pubDate>Wed, 08 Mar 2017 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/2017/03/blackmail-marketing/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/03/blackmail-marketing/</guid>
+        <link>http://troz.net/2017/03/blackmail-marketing/</link>
+        <guid isPermaLink="true">http://troz.net/2017/03/blackmail-marketing/</guid>
       </item>
     
       <item>
@@ -141,8 +161,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Fri, 06 Jan 2017 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/ncss2017/</link>
-        <guid isPermaLink="true">http://localhost:4000/ncss2017/</guid>
+        <link>http://troz.net/ncss2017/</link>
+        <guid isPermaLink="true">http://troz.net/ncss2017/</guid>
       </item>
     
       <item>
@@ -162,8 +182,8 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
 
 </description>
         <pubDate>Thu, 17 Nov 2016 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/2016/11/looking-for-beta-testers/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/11/looking-for-beta-testers/</guid>
+        <link>http://troz.net/2016/11/looking-for-beta-testers/</link>
+        <guid isPermaLink="true">http://troz.net/2016/11/looking-for-beta-testers/</guid>
       </item>
     
       <item>
@@ -212,8 +232,8 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
 
 </description>
         <pubDate>Wed, 16 Nov 2016 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/work/</link>
-        <guid isPermaLink="true">http://localhost:4000/work/</guid>
+        <link>http://troz.net/work/</link>
+        <guid isPermaLink="true">http://troz.net/work/</guid>
       </item>
     
       <item>
@@ -229,8 +249,8 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
 
 </description>
         <pubDate>Sat, 05 Nov 2016 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/2016/11/another-man-reader-update/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/11/another-man-reader-update/</guid>
+        <link>http://troz.net/2016/11/another-man-reader-update/</link>
+        <guid isPermaLink="true">http://troz.net/2016/11/another-man-reader-update/</guid>
       </item>
     
       <item>
@@ -248,8 +268,8 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
 
 </description>
         <pubDate>Wed, 12 Oct 2016 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/2016/10/man-reader-update/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/man-reader-update/</guid>
+        <link>http://troz.net/2016/10/man-reader-update/</link>
+        <guid isPermaLink="true">http://troz.net/2016/10/man-reader-update/</guid>
       </item>
     
       <item>
@@ -274,8 +294,8 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
 
 </description>
         <pubDate>Tue, 11 Oct 2016 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/2016/10/podcasting/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/podcasting/</guid>
+        <link>http://troz.net/2016/10/podcasting/</link>
+        <guid isPermaLink="true">http://troz.net/2016/10/podcasting/</guid>
       </item>
     
       <item>
@@ -360,8 +380,8 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
 
 </description>
         <pubDate>Sat, 17 Sep 2016 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/2016/09/how-much-work-does-icon-builder-save-you/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/09/how-much-work-does-icon-builder-save-you/</guid>
+        <link>http://troz.net/2016/09/how-much-work-does-icon-builder-save-you/</link>
+        <guid isPermaLink="true">http://troz.net/2016/09/how-much-work-does-icon-builder-save-you/</guid>
       </item>
     
       <item>
@@ -392,37 +412,8 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
 
 </description>
         <pubDate>Sat, 17 Sep 2016 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/2016/09/dice-pass-updated/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/09/dice-pass-updated/</guid>
-      </item>
-    
-      <item>
-        <title>Retiring old apps</title>
-        <description>&lt;p&gt;With the release of iOS 10 and the need to update iOS apps to suit, I have decided it is time to retire some of my lesser-performing apps as it is not worth the effort required to maintain them.&lt;/p&gt;
-
-&lt;p&gt;At the moment, the following iOS apps are no longer available:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;A Knight’s Move&lt;/li&gt;
-  &lt;li&gt;Dice Pass&lt;/li&gt;
-  &lt;li&gt;Pic-a-POD&lt;/li&gt;
-  &lt;li&gt;Quick Score - Tennis&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;For the first three listed there, the Mac versions are still available:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/app/a-knights-move/id533321133&quot;&gt;A Knight’s Move for Mac&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/app/dice-pass/id997688302&quot;&gt;Dice Pass for Mac&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/app/pic-a-pod/id477909802&quot;&gt;Pic-a-POD for Mac&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;If you bought any of these apps and would like a promo code for the Mac version, send me a screen shot of the app running on your iPhone or iPad and I will send you a code.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 15 Sep 2016 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/2016/09/retiring-old-apps/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/09/retiring-old-apps/</guid>
+        <link>http://troz.net/2016/09/dice-pass-updated/</link>
+        <guid isPermaLink="true">http://troz.net/2016/09/dice-pass-updated/</guid>
       </item>
     
   </channel>

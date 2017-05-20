@@ -1,0 +1,33 @@
+---
+title: JSON Feed for TrozWare
+author: Sarah
+layout: post
+permalink: /2017/05/json-feed-for-trozware/
+tags:
+  - trozware
+  - json
+  - rss
+summary:
+  - Today I have replaced the RSS feed for this site with a JSON feed.
+---
+
+[jsonfeed.org][1] has announced a new format for web site feeds, designed as an alternative to RSS. TrozWare has had an XML RSS feed for years, but I don't think anyone ever uses it (I certainly don't), so today I have replaced it with a JSON feed, which you can access through the <a class="fa fa-rss" href="/feed.json"></a> button at the top of every page.
+
+I am sure many JSON Feed viewers will appear soon, but the only one I know about so far is at [http://json-feed-viewer.herokuapp.com][8]. As soon as this update to my site goes live, I will add it to the list of sites on this page.
+
+This site is constructed using Jekyll, so I am very grateful to Niclas Darville for his very easy to follow [guide][3]. However it is still well worth reading through the [official specs][4] to see what else you want to add, or if you want to remove anything. I had to tweak a few settings to make it work for my configuration, and I added some more objects, but Niclas got me off to a flying start.
+
+![JSON Feed icon][6]
+
+JSON Feed offers a nice icon which I would have liked to use, but I could not work out a way to make it play nicely with the existing icons on my pages which all use [Font Awesome][7] icons. So I ended up just using the existing Feed icon. Hopefully Font Awesome will soon add a JSON Feed icon to their already impressive list.
+
+If anyone still wants to use the [RSS feed][5], it is no longer linked to the buttons at the top of the pages, but you can access it manually.
+
+[1]: https://jsonfeed.org/2017/05/17/announcing_json_feed
+[2]: /feed.json
+[3]: https://ndarville.com/blog/2017/05/19/json-feed-for-jekyll/
+[4]: https://jsonfeed.org/version/1
+[5]: /feed.xml
+[6]: https://jsonfeed.org/graphics/icon.png
+[7]: http://fontawesome.io
+[8]: http://json-feed-viewer.herokuapp.com
