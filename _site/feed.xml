@@ -8,7 +8,15 @@
     
       <item>
         <title>JSON Parsing in Swift 4</title>
-        <description>&lt;p&gt;Since &lt;strong&gt;JSON&lt;/strong&gt; has become the de facto standard for data transfers around the internet, there has always been a lot of interest in Swift libraries to parse JSON into Swift classes or structs. Searching for “swift json library” on &lt;a href=&quot;https://github.com/search?q=swift+json+library&quot;&gt;GitHub&lt;/a&gt; discovers 77 repositories. So why are there so many? And what has Swift 4 done to &lt;em&gt;sherlock&lt;/em&gt; them all?&lt;/p&gt;
+        <description>&lt;p&gt;&lt;strong&gt;Updated:&lt;/strong&gt; 3rd September 2017.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Checked syntax using Xcode 9.0 beta 6.&lt;/li&gt;
+  &lt;li&gt;Added section on &lt;a href=&quot;#nulls&quot;&gt;allowing for nulls&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Since &lt;strong&gt;JSON&lt;/strong&gt; has become the de facto standard for data transfers around the internet, there has always been a lot of interest in Swift libraries to parse JSON into Swift classes or structs. Searching for “swift json library” on &lt;a href=&quot;https://github.com/search?q=swift+json+library&quot;&gt;GitHub&lt;/a&gt; discovers &lt;s&gt;77&lt;/s&gt; 86 repositories. So why are there so many? And what has Swift 4 done to &lt;em&gt;sherlock&lt;/em&gt; them all?&lt;/p&gt;
 
 &lt;p&gt;The problem has always been converting loosely typed JSON to strictly typed Swift which involves a lot of type casting, checking, optionals etc. Swift has always provided access to the Objective-C methods for converting JSON to and from NSData, NSDictionary and NSArray. (These are now called Data, Dictionary and Array, but those labels are so universal, that I sometimes feel a more specific nomenclature would be useful. Have you tried doing a search for ‘Data’?)&lt;/p&gt;
 
@@ -74,7 +82,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;The first thing to note is that the Swift struct (and its embedded structs) use multiple different types: Int, String, Double, Address, Coordinates, Company. The JSON data only has strings and numbers and even then, some of the numbers are really strings - look at the lat &amp;amp; lng entries. So converting from JSON to aå struct and back again has always been problematic, but lets give it a go using built-in Swift 3 processing with no external libraries.&lt;/p&gt;
+&lt;p&gt;The first thing to note is that the Swift struct (and its embedded structs) use multiple different types: Int, String, Double, Address, Coordinates, Company. The JSON data only has strings and numbers and even then, some of the numbers are really strings - look at the lat &amp;amp; lng entries. So converting from JSON to a struct and back again has always been problematic, but let’s give it a go using built-in Swift 3 processing with no external libraries.&lt;/p&gt;
 
 &lt;h3 id=&quot;decoding-in-swift-3&quot;&gt;Decoding in Swift 3:&lt;/h3&gt;
 
@@ -205,7 +213,7 @@
 
 &lt;h3 id=&quot;decoding-in-swift-4&quot;&gt;Decoding in Swift 4:&lt;/h3&gt;
 
-&lt;p&gt;So this works, and I get an array of Users objects. But it isn’t pretty and it takes a lot of code to do the processing. So now I am going to move on to doing this in Swift 4. I am using Xcode 9.0 beta 2 (9M137d) so if you have a later version, you may need to adapt to any changes.&lt;/p&gt;
+&lt;p&gt;So this works, and I get an array of Users objects. But it isn’t pretty and it takes a lot of code to do the processing. So now I am going to move on to doing this in Swift 4. I am using Xcode 9.0 beta 6 (9M214v) so if you have a later version, you may need to adapt to any changes.&lt;/p&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Codable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;
@@ -244,6 +252,8 @@
 &lt;/div&gt;
 
 &lt;p&gt;Ignoring the complexities of converting latitude and longitude to Doubles, I get vastly simpler code. I declare all the structs as conforming to the &lt;code class=&quot;highlighter-rouge&quot;&gt;Codable&lt;/code&gt; protocol and then I can remove all the init methods and just let &lt;code class=&quot;highlighter-rouge&quot;&gt;JSONDecoder&lt;/code&gt; do its magic. I just have to tell it what data type to expect - in this case an Array of Users.  I don’t have to worry about the initial conversion of the JSON data  to a Dictionary or looping through the elements using flatMap.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;In the playground, I used a do…catch structure to check the result of the decode function, but I have used try? here to keep the code short.&lt;/em&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;changing-data-types&quot;&gt;Changing data types:&lt;/h4&gt;
 
@@ -354,7 +364,9 @@
 
 &lt;h3 id=&quot;advanced-decoding&quot;&gt;Advanced Decoding:&lt;/h3&gt;
 
-&lt;p&gt;Now that we have the basics, I want to look at two more features: changing property names and date handling.&lt;/p&gt;
+&lt;p&gt;Now that we have the basics, I want to look at three more features: changing property names, date handling and allowing for nulls.&lt;/p&gt;
+
+&lt;h4 id=&quot;changing-property-names&quot;&gt;Changing Property Names:&lt;/h4&gt;
 
 &lt;p&gt;In these examples I used exactly the same names for the properties as were used in the JSON. In the Swift 3 version, it would have been easy to change the property names, since the data for each property was being extracted manually. In Swift 4, if you want the decoder to change names, you have to tell it what you want.&lt;/p&gt;
 
@@ -397,6 +409,8 @@
 
 &lt;p&gt;And that’s all I have to do. Now the JSON is correctly converted to a Person. As an exercise, use JSONEncoder to get back to JSON from the Person. You will see that the JSON correctly names the elements using “name1” and “name2”.&lt;/p&gt;
 
+&lt;h4 id=&quot;date-handling&quot;&gt;Date Handling:&lt;/h4&gt;
+
 &lt;p&gt;Next let’s look at dates - add this code to the playground:&lt;/p&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;jsonString2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
@@ -434,6 +448,57 @@
 
 &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;backToJson&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jsonEncoder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;project&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;jsonString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;backToJson&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utf8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jsonString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;allowing-for-nulls&quot;&gt;&lt;a name=&quot;nulls&quot;&gt;&lt;/a&gt;Allowing For Nulls:&lt;/h4&gt;
+
+&lt;p&gt;JSON data will often include &lt;strong&gt;null&lt;/strong&gt; where there is no value for a particular property name. When using JSONDecoder or JSONEncoder, this can be allowed for by using Optionals. If you are not clear about Optionals, have a look at my previous article: &lt;a href=&quot;https://troz.net/2016/02/learning-swift-optionals/&quot;&gt;Learning Swift - Optionals&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The crucial step is to declare the properties of the Swift object as optionals if you think they could get a null value.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Role&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Codable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nickName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;jsonStringWithNulls&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+[
+    {
+        &quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;: &quot;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Sally&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;,
+        &quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;: &quot;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Sparrow&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;,
+        &quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nickName&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;: null
+    },
+    {
+        &quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;: &quot;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Doctor&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;,
+        &quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;: &quot;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Who&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;,
+        &quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nickName&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;: &quot;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;The&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Doctor&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;
+    }
+]
+&quot;&quot;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;jsonDataWithNulls&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jsonStringWithNulls&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;using&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utf8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;jsonDecoder3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;JSONDecoder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;roles&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jsonDecoder3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;decode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Role&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jsonDataWithNulls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nf&quot;&gt;dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;roles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In this example (which you can find in the Swift 4 Extras page on &lt;a href=&quot;https://github.com/trozware/json&quot;&gt;my playground&lt;/a&gt;), I have declared a struct called Role with 3 String properties. The 3rd String - nickName - is an Optional so it may be a String or it may be nil.&lt;/p&gt;
+
+&lt;p&gt;The JSON contains 2 elements - one has a nickName value and the other has it as null. Because the matching property in the Swift struct is an optional, this works as expected and the nickName property for Sally Sparrow is decoded as nil. If you remove the question mark to make nickName non-optional, the decoding will fail.&lt;/p&gt;
+
+&lt;p&gt;Going back to JSON from a Swift object with optionals works much the same except that it does not specifically mark items as null, it just leaves them out.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;jsonEncoder2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;JSONEncoder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;jsonEncoder2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;outputFormatting&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prettyPrinted&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;backToJsonWithNulls&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jsonEncoder2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;roles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;jsonString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;backToJsonWithNulls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utf8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jsonString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;

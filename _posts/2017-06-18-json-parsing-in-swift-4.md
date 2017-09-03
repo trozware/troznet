@@ -10,7 +10,13 @@ tags:
 summary: Parsing JSON in Swift 4 is now much easier than before and dozens of Swift 3 JSON libraries have just been sherlocked.
 ---
 
-Since **JSON** has become the de facto standard for data transfers around the internet, there has always been a lot of interest in Swift libraries to parse JSON into Swift classes or structs. Searching for "swift json library" on [GitHub][2] discovers 77 repositories. So why are there so many? And what has Swift 4 done to *sherlock* them all?
+**Updated:** 3rd September 2017.
+* Checked syntax using Xcode 9.0 beta 6.
+* Added section on [allowing for nulls][5].
+
+---
+
+Since **JSON** has become the de facto standard for data transfers around the internet, there has always been a lot of interest in Swift libraries to parse JSON into Swift classes or structs. Searching for "swift json library" on [GitHub][2] discovers <s>77</s> 86 repositories. So why are there so many? And what has Swift 4 done to *sherlock* them all?
 
 The problem has always been converting loosely typed JSON to strictly typed Swift which involves a lot of type casting, checking, optionals etc. Swift has always provided access to the Objective-C methods for converting JSON to and from NSData, NSDictionary and NSArray. (These are now called Data, Dictionary and Array, but those labels are so universal, that I sometimes feel a more specific nomenclature would be useful. Have you tried doing a search for 'Data'?)
 
@@ -76,7 +82,7 @@ struct User {
 }
 ```
 
-The first thing to note is that the Swift struct (and its embedded structs) use multiple different types: Int, String, Double, Address, Coordinates, Company. The JSON data only has strings and numbers and even then, some of the numbers are really strings - look at the lat & lng entries. So converting from JSON to aå struct and back again has always been problematic, but lets give it a go using built-in Swift 3 processing with no external libraries.
+The first thing to note is that the Swift struct (and its embedded structs) use multiple different types: Int, String, Double, Address, Coordinates, Company. The JSON data only has strings and numbers and even then, some of the numbers are really strings - look at the lat & lng entries. So converting from JSON to a struct and back again has always been problematic, but let's give it a go using built-in Swift 3 processing with no external libraries.
 
 ### Decoding in Swift 3:
 
@@ -209,7 +215,7 @@ I have to confess that it took quite come time to get this right ... lots of gua
 
 ### Decoding in Swift 4:
 
-So this works, and I get an array of Users objects. But it isn't pretty and it takes a lot of code to do the processing. So now I am going to move on to doing this in Swift 4. I am using Xcode 9.0 beta 2 (9M137d) so if you have a later version, you may need to adapt to any changes.
+So this works, and I get an array of Users objects. But it isn't pretty and it takes a lot of code to do the processing. So now I am going to move on to doing this in Swift 4. I am using Xcode 9.0 beta 6 (9M214v) so if you have a later version, you may need to adapt to any changes.
 
 ```swift
 struct User: Codable {
@@ -248,6 +254,8 @@ let users = try? jsonDecoder.decode(Array<User>.self,
 ```
 
 Ignoring the complexities of converting latitude and longitude to Doubles, I get vastly simpler code. I declare all the structs as conforming to the `Codable` protocol and then I can remove all the init methods and just let `JSONDecoder` do its magic. I just have to tell it what data type to expect - in this case an Array of Users.  I don't have to worry about the initial conversion of the JSON data  to a Dictionary or looping through the elements using flatMap.
+
+*In the playground, I used a do...catch structure to check the result of the decode function, but I have used try? here to keep the code short.*
 
 #### Changing data types:
 
@@ -346,7 +354,9 @@ Notice how the encoded data is not quite the same as I received because the lat 
 
 ### Advanced Decoding:
 
-Now that we have the basics, I want to look at two more features: changing property names and date handling.
+Now that we have the basics, I want to look at three more features: changing property names, date handling and allowing for nulls.
+
+#### Changing Property Names:
 
 In these examples I used exactly the same names for the properties as were used in the JSON. In the Swift 3 version, it would have been easy to change the property names, since the data for each property was being extracted manually. In Swift 4, if you want the decoder to change names, you have to tell it what you want.
 
@@ -388,6 +398,8 @@ struct Person: Codable {
 ```
 
 And that's all I have to do. Now the JSON is correctly converted to a Person. As an exercise, use JSONEncoder to get back to JSON from the Person. You will see that the JSON correctly names the elements using "name1" and "name2".
+
+#### Date Handling:
 
 Next let's look at dates - add this code to the playground:
 
@@ -432,6 +444,57 @@ if let backToJson = try? jsonEncoder.encode(project) {
 }
 ```
 
+#### <a name ="nulls"></a>Allowing For Nulls:
+
+JSON data will often include **null** where there is no value for a particular property name. When using JSONDecoder or JSONEncoder, this can be allowed for by using Optionals. If you are not clear about Optionals, have a look at my previous article: [Learning Swift - Optionals][4].
+
+The crucial step is to declare the properties of the Swift object as optionals if you think they could get a null value.
+
+```swift
+struct Role: Codable {
+    let firstName: String
+    let lastName: String
+    let nickName: String?
+}
+
+let jsonStringWithNulls = """
+[
+    {
+        "firstName": "Sally",
+        "lastName": "Sparrow",
+        "nickName": null
+    },
+    {
+        "firstName": "Doctor",
+        "lastName": "Who",
+        "nickName": "The Doctor"
+    }
+]
+"""
+let jsonDataWithNulls = jsonStringWithNulls.data(using: .utf8)!
+
+let jsonDecoder3 = JSONDecoder()
+let roles = try? jsonDecoder3.decode(Array<Role>.self, from: jsonDataWithNulls)
+dump(roles)
+```
+
+In this example (which you can find in the Swift 4 Extras page on [my playground][3]), I have declared a struct called Role with 3 String properties. The 3rd String - nickName - is an Optional so it may be a String or it may be nil.
+
+The JSON contains 2 elements - one has a nickName value and the other has it as null. Because the matching property in the Swift struct is an optional, this works as expected and the nickName property for Sally Sparrow is decoded as nil. If you remove the question mark to make nickName non-optional, the decoding will fail.
+
+Going back to JSON from a Swift object with optionals works much the same except that it does not specifically mark items as null, it just leaves them out.
+
+```swift
+let jsonEncoder2 = JSONEncoder()
+jsonEncoder2.outputFormatting = .prettyPrinted
+
+if let backToJsonWithNulls = try? jsonEncoder2.encode(roles) {
+    if let jsonString = String(data: backToJsonWithNulls, encoding: .utf8) {
+        print(jsonString)
+    }
+}
+```
+
 ### Property Lists:
 
 As well as JSONDecoder and JSONEncoder, Swift 4 has introduced PropertyListDecoder and PropertyListEncoder, so let's take a quick look at that.
@@ -457,7 +520,7 @@ I don't see this is being quite as useful as the JSON Encoding & Decoding, but I
 
 ### Codable:
 
-In all the Swift 4 examples above, I set the structs to conform to `Codable`. Reading Apple's docs, I see that `Codable` is actually a typealias referring to 2 separate protocols: 
+In all the Swift 4 examples above, I set the structs to conform to `Codable`. Reading Apple's docs, I see that `Codable` is actually a typealias referring to 2 separate protocols:
 
 ```Swift
 typealias Codable = Decodable & Encodable
@@ -472,4 +535,5 @@ Much more information can be found in the [Apple documentation][1].
 [1]: https://developer.apple.com/documentation/swift/encoding_decoding_and_serialization
 [2]: https://github.com/search?q=swift+json+library
 [3]: https://github.com/trozware/json
-
+[4]: https://troz.net/2016/02/learning-swift-optionals/
+[5]: #nulls
