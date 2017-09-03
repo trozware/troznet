@@ -3,8 +3,8 @@
   <channel>
     <title>TrozWare</title>
     <description>macOS, iOS and watchOS Developer</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://troz.net/</link>
+    <atom:link href="http://troz.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>JSON Parsing in Swift 4</title>
@@ -541,8 +541,8 @@
 
 </description>
         <pubDate>Sun, 18 Jun 2017 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/2017/06/json-parsing-in-swift-4/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/06/json-parsing-in-swift-4/</guid>
+        <link>http://troz.net/2017/06/json-parsing-in-swift-4/</link>
+        <guid isPermaLink="true">http://troz.net/2017/06/json-parsing-in-swift-4/</guid>
       </item>
     
       <item>
@@ -563,11 +563,11 @@
 
 &lt;p&gt;I didn’t want to create the front matter manually for each post. On my Mac I have a text expander snippet that handles that but copying from &lt;a href=&quot;http://mattgemmell.com/using-the-ipad-for-blogging-with-jekyll/&quot;&gt;Matt Gemell’s post&lt;/a&gt; on the topic, I created an Editorial workflow to create a new post. As a side-note, Matt has a series of posts on using an iPad which I have found very useful and inspirational.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/Workflow.jpeg&quot; alt=&quot;Editorial workflow&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://troz.net/images/Workflow.jpeg&quot; alt=&quot;Editorial workflow&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Text entry and editing is a task that I have always felt was too difficult in iOS, particularly when it came to selecting text and moving the cursor. However there are now several improvements. As with iOS 10, a two-fingered press on the keyboard transforms it into a trackpad for moving the cursor. If you already have text selected, this moves the selection handles. The new iOS 11 keyboard has a really nice feature for entering non-alphabetic characters. The keys now show a small grey character above the main character. Drag down on the key to move the small character into the main key and type it. For example, drag down on the h key to type (.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/keyboard-drag.png&quot; alt=&quot;Keyboard drag&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://troz.net/images/keyboard-drag.png&quot; alt=&quot;Keyboard drag&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Editorial has its own editing helpers. There is an additional toolbar above the keyboard with a tab key as well as frequently used Markdown modifiers. And swiping across this toolbar moves the cursor. This is a much slower move than when using the keyboard as a trackpad so might be better for more precise movements.&lt;/p&gt;
 
@@ -577,7 +577,7 @@
 
 &lt;p&gt;Next step is to find the relevant URLs - drag &amp;amp; drop with multi-tasking to the rescue! Swipe up from the bottom of the screen to see the new Dock. This also makes the keyboard disappear. Hold down on the Safari icon until you grab it, then drag it up into the Editorial window. Now it is open as an overlay.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/safari-overlay.png&quot; alt=&quot;Safari as overlay&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://troz.net/images/safari-overlay.png&quot; alt=&quot;Safari as overlay&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;At this point, I have several options:&lt;/p&gt;
 
@@ -595,7 +595,7 @@
 
 &lt;p&gt;So now I have my links, but I want to insert a few images. I used iOS 11’s new screen shot abilities. Press the usual home button &amp;amp; power button combination to take a screen shot and it appears as a small picture in the bottom left of the screen. Tap it to start editing: markup, crop etc. Then I used the sharing button to save the picture to Dropbox, putting it inside the images folder in my web site folder.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/screenshot.jpeg&quot; alt=&quot;Editing a screenshot&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://troz.net/images/screenshot.jpeg&quot; alt=&quot;Editing a screenshot&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I want to insert an image link but I have just worked out that I saved this Markdown file in the root folder instead of the _posts folder. I can’t see a way to move it from inside Editorial, so I will swap to the Dropbox app to move the file - be right back…  (I see now how I could have done this in Editorial.)&lt;/p&gt;
 
@@ -633,8 +633,8 @@
 
 </description>
         <pubDate>Sat, 17 Jun 2017 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/2017/06/posting-from-my-new-ipad</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/06/posting-from-my-new-ipad</guid>
+        <link>http://troz.net/2017/06/posting-from-my-new-ipad</link>
+        <guid isPermaLink="true">http://troz.net/2017/06/posting-from-my-new-ipad</guid>
       </item>
     
       <item>
@@ -657,12 +657,12 @@
 
 &lt;p&gt;JSON Feed offers a nice icon which I would have liked to use, but I could not work out a way to make it play nicely with the existing icons on my pages which all use &lt;a href=&quot;http://fontawesome.io&quot;&gt;Font Awesome&lt;/a&gt; icons. So I ended up just using the existing Feed icon. Hopefully Font Awesome will soon add a JSON Feed icon to their already impressive list.&lt;/p&gt;
 
-&lt;p&gt;If anyone still wants to use the &lt;a href=&quot;http://localhost:4000/feed.xml&quot;&gt;RSS feed&lt;/a&gt;, it is no longer linked to the buttons at the top of the pages, but you can access it manually.&lt;/p&gt;
+&lt;p&gt;If anyone still wants to use the &lt;a href=&quot;http://troz.net/feed.xml&quot;&gt;RSS feed&lt;/a&gt;, it is no longer linked to the buttons at the top of the pages, but you can access it manually.&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 20 May 2017 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/2017/05/json-feed-for-trozware/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/05/json-feed-for-trozware/</guid>
+        <link>http://troz.net/2017/05/json-feed-for-trozware/</link>
+        <guid isPermaLink="true">http://troz.net/2017/05/json-feed-for-trozware/</guid>
       </item>
     
       <item>
@@ -726,8 +726,8 @@
 &lt;p&gt;I would welcome any suggestions, advice or comments. Please join the discussion below or contact me using one of the links at the top of the page.&lt;/p&gt;
 </description>
         <pubDate>Wed, 08 Mar 2017 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/2017/03/blackmail-marketing/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/03/blackmail-marketing/</guid>
+        <link>http://troz.net/2017/03/blackmail-marketing/</link>
+        <guid isPermaLink="true">http://troz.net/2017/03/blackmail-marketing/</guid>
       </item>
     
       <item>
@@ -800,13 +800,13 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Fri, 06 Jan 2017 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/ncss2017/</link>
-        <guid isPermaLink="true">http://localhost:4000/ncss2017/</guid>
+        <link>http://troz.net/ncss2017/</link>
+        <guid isPermaLink="true">http://troz.net/ncss2017/</guid>
       </item>
     
       <item>
         <title>Looking for beta testers</title>
-        <description>&lt;p&gt;I am looking for beta testers for my latest Mac app: &lt;strong&gt;&lt;a href=&quot;http://localhost:4000/work/&quot;&gt;Work&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+        <description>&lt;p&gt;I am looking for beta testers for my latest Mac app: &lt;strong&gt;&lt;a href=&quot;http://troz.net/work/&quot;&gt;Work&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Work&lt;/strong&gt; is a project organizer app for developers, designers, students or any professional who works with multiple projects involving files &amp;amp; folders, web pages, email addresses and lists of tasks. Click the link above for more information and help for getting started.&lt;/p&gt;
 
@@ -817,12 +817,12 @@
 &lt;p&gt;If you would like to test this app, please &lt;a href=&quot;mailto:work@troz.net?subject=Work%20beta%20test&quot;&gt;contact me&lt;/a&gt;, giving details of your Mac and operating system. The easiest way to do this is to select &lt;strong&gt;About This Mac&lt;/strong&gt; in the Apple menu and send me a screen shot of the window that appears.&lt;/p&gt;
 
 &lt;p&gt;All beta testers will receive a free license to Work when it is released.
-If you report a legitimate bug or provide valuable feed-back, you will also receive a free license to your choice of one of my &lt;a href=&quot;http://localhost:4000/applications/&quot;&gt;other apps&lt;/a&gt;.&lt;/p&gt;
+If you report a legitimate bug or provide valuable feed-back, you will also receive a free license to your choice of one of my &lt;a href=&quot;http://troz.net/applications/&quot;&gt;other apps&lt;/a&gt;.&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 17 Nov 2016 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/2016/11/looking-for-beta-testers/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/11/looking-for-beta-testers/</guid>
+        <link>http://troz.net/2016/11/looking-for-beta-testers/</link>
+        <guid isPermaLink="true">http://troz.net/2016/11/looking-for-beta-testers/</guid>
       </item>
     
       <item>
@@ -843,7 +843,7 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
 
 &lt;p&gt;Here is the project document you will see when you select &lt;strong&gt;Work Help&lt;/strong&gt; from the &lt;strong&gt;Help&lt;/strong&gt; menu:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/WorkHelp1.png&quot; alt=&quot;Work&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://troz.net/images/WorkHelp1.png&quot; alt=&quot;Work&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;It gathers together some useful links to information about &lt;strong&gt;Work&lt;/strong&gt; and my other apps or to allow you to contact me. In &lt;strong&gt;Work&lt;/strong&gt; documents for my apps, I assemble the project files I need to open, images, web page addresses etc. My most frequently used links are starred so I can focus on them whenever I want a shorter list.&lt;/p&gt;
 
@@ -851,7 +851,7 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
 
 &lt;p&gt;Switching to &lt;strong&gt;Tasks&lt;/strong&gt; mode allows you to focus on your tasks list. Tasks can be grouped, re-ordered and marked as complete. Use the &lt;strong&gt;View&lt;/strong&gt; menu to hide completed tasks if you want a more compact list. Use the &lt;strong&gt;Edit&lt;/strong&gt; menu or the toolbar buttons to edit groups - this allows you to create your own custom groupings.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/WorkHelp2.png&quot; alt=&quot;Work - Tasks&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://troz.net/images/WorkHelp2.png&quot; alt=&quot;Work - Tasks&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -863,7 +863,7 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
 
 &lt;p&gt;Work also supports the Touch Bar on the new MacBook Pros:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/Work_TB.png&quot; alt=&quot;Work - TouchBar&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://troz.net/images/Work_TB.png&quot; alt=&quot;Work - TouchBar&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -871,13 +871,13 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
 
 </description>
         <pubDate>Wed, 16 Nov 2016 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/work/</link>
-        <guid isPermaLink="true">http://localhost:4000/work/</guid>
+        <link>http://troz.net/work/</link>
+        <guid isPermaLink="true">http://troz.net/work/</guid>
       </item>
     
       <item>
         <title>Another Man Reader Update...</title>
-        <description>&lt;p&gt;A quick update to &lt;a href=&quot;http://localhost:4000/manreader/&quot;&gt;Man Reader&lt;/a&gt; to version 1.8 is now available through the &lt;a href=&quot;http://itunes.apple.com/app/man-reader/id522583774?mt=12&quot;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
+        <description>&lt;p&gt;A quick update to &lt;a href=&quot;http://troz.net/manreader/&quot;&gt;Man Reader&lt;/a&gt; to version 1.8 is now available through the &lt;a href=&quot;http://itunes.apple.com/app/man-reader/id522583774?mt=12&quot;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The main reason for this version was that Man Reader was not previously detecting man pages installed by third-party IDEs in the Applications folder. There was also an issue with Man Reader failing to display the text of the previously selected man page on app launch.&lt;/p&gt;
 
@@ -888,13 +888,13 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
 
 </description>
         <pubDate>Sat, 05 Nov 2016 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/2016/11/another-man-reader-update/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/11/another-man-reader-update/</guid>
+        <link>http://troz.net/2016/11/another-man-reader-update/</link>
+        <guid isPermaLink="true">http://troz.net/2016/11/another-man-reader-update/</guid>
       </item>
     
       <item>
         <title>Man Reader Update</title>
-        <description>&lt;p&gt;&lt;a href=&quot;http://localhost:4000/manreader/&quot;&gt;Man Reader&lt;/a&gt; has just been updated to version 1.7 and is available through the &lt;a href=&quot;http://itunes.apple.com/app/man-reader/id522583774?mt=12&quot;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
+        <description>&lt;p&gt;&lt;a href=&quot;http://troz.net/manreader/&quot;&gt;Man Reader&lt;/a&gt; has just been updated to version 1.7 and is available through the &lt;a href=&quot;http://itunes.apple.com/app/man-reader/id522583774?mt=12&quot;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The main reason for this update was to make the app work well with macOS Sierra, as I found that version 1.6 was sometimes crashing on launch. While doing this, the update was rejected by the App Store reviewers because it crashed on OS X 10.10. Since I no longer have a Mac running 10.10, I decided to set the minimum supported system version to OS X 10.11. If you need support for older versions, you should still be able to download version 1.6 which will work back to 10.7.&lt;/p&gt;
 
@@ -907,8 +907,8 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
 
 </description>
         <pubDate>Wed, 12 Oct 2016 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/2016/10/man-reader-update/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/man-reader-update/</guid>
+        <link>http://troz.net/2016/10/man-reader-update/</link>
+        <guid isPermaLink="true">http://troz.net/2016/10/man-reader-update/</guid>
       </item>
     
       <item>
@@ -933,8 +933,8 @@ If you report a legitimate bug or provide valuable feed-back, you will also rece
 
 </description>
         <pubDate>Tue, 11 Oct 2016 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/2016/10/podcasting/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/podcasting/</guid>
+        <link>http://troz.net/2016/10/podcasting/</link>
+        <guid isPermaLink="true">http://troz.net/2016/10/podcasting/</guid>
       </item>
     
   </channel>
