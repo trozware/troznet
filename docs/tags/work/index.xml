@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Work on TrozWare</title>
+    <link>https://troz.net/tags/work/</link>
+    <description>Recent content in Work on TrozWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 17 Nov 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://troz.net/tags/work/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Looking for beta testers</title>
+      <link>https://troz.net/2016/11/looking-for-beta-testers/</link>
+      <pubDate>Thu, 17 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/2016/11/looking-for-beta-testers/</guid>
+      <description>I am looking for beta testers for my latest Mac app: Work.
+Work is a project organizer app for developers, designers, students or any professional who works with multiple projects involving files &amp;amp; folders, web pages, email addresses and lists of tasks. Click the link above for more information and help for getting started.
+Work requires macOS 10.12 or OS X 10.11.
+If you would like to test this app, please contact me, giving details of your Mac and operating system.</description>
+    </item>
+    
+    <item>
+      <title>Work</title>
+      <link>https://troz.net/work/</link>
+      <pubDate>Wed, 16 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/work/</guid>
+      <description>Work is a project organizer app for developers, designers, students or any professional who works with multiple projects involving files &amp;amp; folders, web pages, email addresses and lists of tasks.
+Work requires macOS 10.12 or OS X 10.11 and will be available from the Mac App Store soon.
+We all know what it is like to be in the middle of a project or rushing to complete an assignment&amp;hellip;
+We have files scattered all over the place, email addresses of team members or clients, web pages with specifications or useful information, tasks scribbled on sticky notes or scraps of paper.</description>
+    </item>
+    
+  </channel>
+</rss>

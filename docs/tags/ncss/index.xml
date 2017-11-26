@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ncss on TrozWare</title>
+    <link>https://troz.net/tags/ncss/</link>
+    <description>Recent content in Ncss on TrozWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 06 Jan 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://troz.net/tags/ncss/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NCSS 2017</title>
+      <link>https://troz.net/ncss2017/</link>
+      <pubDate>Fri, 06 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/ncss2017/</guid>
+      <description>  IBM Swift Sandbox  Sandbox Code Samples  Strings
+ Optionals
+ Functions
+ Closures
+ Objects
+ Protocols
+ Generics
+  Contact Details:  Email: sarah@troz.net
+ Twitter: @trozware
+ Slides: NCSS 2017 Swift MC.pdf
+  Useful Links:  The Swift Programming Language
+ Swift.org
+ Newsletters
+ Tutorials
+  </description>
+    </item>
+    
+  </channel>
+</rss>

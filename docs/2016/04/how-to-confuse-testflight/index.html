@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>How To Confuse TestFlight - TrozWare</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Sarah" />
+  <meta name="description" content="TL;DR
+I ran into an unusual problem when testing my latest app: &amp;ldquo;What Is My Speed?&amp;rdquo;. It is now available from the iTunes App Store, but getting there was a struggle.
+Xcode is terrible at renaming projects, so it is a really good idea to have worked out your app&amp;rsquo;s name before starting. I would even recommend creating an app ID in your Apple Developer account and registering the app name in iTunes Connect." />
+
+  <meta name="keywords" content="Swift, Apple, macOS, iOS, Apple Watch" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.31" />
+
+
+<link rel="canonical" href="https://troz.net/2016/04/how-to-confuse-testflight/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+
+
+<meta property="og:title" content="How To Confuse TestFlight" />
+<meta property="og:description" content="TL;DR
+I ran into an unusual problem when testing my latest app: &ldquo;What Is My Speed?&rdquo;. It is now available from the iTunes App Store, but getting there was a struggle.
+Xcode is terrible at renaming projects, so it is a really good idea to have worked out your app&rsquo;s name before starting. I would even recommend creating an app ID in your Apple Developer account and registering the app name in iTunes Connect." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troz.net/2016/04/how-to-confuse-testflight/" />
+
+
+
+<meta property="article:published_time" content="2016-04-24T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2016-04-24T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="How To Confuse TestFlight">
+<meta itemprop="description" content="TL;DR
+I ran into an unusual problem when testing my latest app: &ldquo;What Is My Speed?&rdquo;. It is now available from the iTunes App Store, but getting there was a struggle.
+Xcode is terrible at renaming projects, so it is a really good idea to have worked out your app&rsquo;s name before starting. I would even recommend creating an app ID in your Apple Developer account and registering the app name in iTunes Connect.">
+
+
+<meta itemprop="datePublished" content="2016-04-24T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2016-04-24T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="677">
+
+
+
+<meta itemprop="keywords" content="app store,testflight,xcode," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="How To Confuse TestFlight"/>
+<meta name="twitter:description" content="TL;DR
+I ran into an unusual problem when testing my latest app: &ldquo;What Is My Speed?&rdquo;. It is now available from the iTunes App Store, but getting there was a struggle.
+Xcode is terrible at renaming projects, so it is a really good idea to have worked out your app&rsquo;s name before starting. I would even recommend creating an app ID in your Apple Developer account and registering the app name in iTunes Connect."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">TrozWare</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/apps/">
+        <li class="mobile-menu-item">Apps</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">TrozWare</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/apps/">Apps</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">How To Confuse TestFlight</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 4 Mar 2016 </span>
+        
+        <span class="more-meta"> 677 words </span>
+        <span class="more-meta"> 4 minute read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+      
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p><a href="#tldr">TL;DR</a></p>
+
+<p>I ran into an unusual problem when testing my latest app: &ldquo;<a href="/what-is-my-speed/">What Is My
+Speed?</a>&rdquo;. It is now available from the <a href="https://itunes.apple.com/app/what-is-my-speed/id1091394524">iTunes App Store</a>, but getting
+there was a struggle.</p>
+
+<p>Xcode is terrible at renaming projects, so it is a really good idea to have
+worked out your app&rsquo;s name before starting. I would even recommend creating an
+app ID in your Apple Developer account and registering the app name in iTunes
+Connect. Only once you get to iTunes Connect will the name be checked for
+uniqueness. Searching the App Stores is not enough as it does not cover
+un-released apps or apps that are not available in your country.</p>
+
+<p>So I set up my app. I was hoping for &ldquo;What&rsquo;s My Speed?&rdquo; but was happy with &ldquo;What
+Is My Speed?&ldquo;.</p>
+
+<p>Next step was to create the project in Xcode which I did using the app name and
+manually entering the bundle identifier that I had registered at Apple
+Developer. Xcode accepted the name without any warnings and created the default
+targets using that name.</p>
+
+<p>In the default unit testing file, the module was defined like this:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"> @testable <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">What</span><span style="color:#f92672">*</span><span style="color:#a6e22e">Is_My_Speed</span><span style="color:#f92672">*</span> </code></pre></div>
+
+<p>which made me think that Xcode was quite happy to have parsed the app name as
+required to replace any unwanted characters to suit.</p>
+
+<p>The app was built, passed all unit tests, profiled, analyzed, tested on real
+devices as well as the simulators and uploaded to TestFlight.</p>
+
+<p><strong>BARRRPPPP!</strong></p>
+
+<p><img src="/images/TestFlight_error.png" alt="This app cannot be installed" /></p>
+
+<p>What?</p>
+
+<p><em>(I forgot to take a screenshot but found a similar one online. Thanks <a href="https://www.simpletechs.net/apps/easy-fix-for-testflight-problem-after-restoring-from-backup/">Simple
+Techs</a>)</em></p>
+
+<p>I have had experience with TestFlight&rsquo;s oddities in the past, so I incremented
+the build number and tried again, thinking that maybe there had been a
+processing issue. Same result.</p>
+
+<p>This started a very frustrating 24 hours as I ran through all the possibilities
+I could think of or find suggested on the net. Due to disastrous Australian
+internet speeds, especially uploads, each attempt took from 40 - 120 minutes.
+About 5 minutes to implement the next idea, 25 minutes upload time, then the
+rest waiting for Apple to process the app so I could try again.</p>
+
+<p>Here is what I tried:</p>
+
+<ol>
+<li>Uploaded a fresh build.</li>
+<li>Removed Bitcode.</li>
+<li>Fixed the code signing identity which was set to iOS Developer for some
+reason.</li>
+<li>Manually specified the provisioning profiles for all three components (iPhone
+app, WatchKit app, WatchKit Extension).</li>
+<li>Manually selected the code signing identity for the provisioning profiles.</li>
+<li>Uploaded using Application Loader instead of Xcode.</li>
+<li>Removed third-party framework.</li>
+<li>Removed WatchKit app.</li>
+<li>Revoked my distribution profile, re-created it and updated all provisioning
+profiles.</li>
+<li>Created a completely blank project with same app name and bundle identifier.</li>
+</ol>
+
+<p>As you can see from this list, I thought it was a code signing or profile error.
+Using <a href="https://itunes.apple.com/app/apple-configurator-2/id1037126344">Apple Configurator 2</a> (the modern version of iPhone Configuration
+Utility), I was able to get the logs from my iPhone and entries like the
+following seemed to confirm this:</p>
+
+<blockquote>
+<p><code>Error Domain=LaunchServicesError Code=0 &quot;(null)&quot; UserInfo={Error=ApplicationVerificationFailed, ErrorDetail=-402620393, ErrorDescription=Failed to verify code signature of /private/var/installd/Library/Caches/com.apple.mobile.
+installd.staging/temp.2LWJ2h/extracted/Payload/What Is My Speed?.app : 0xe8008017 (A signed resource has been added, modified, or deleted.)}```
+</code></p>
+</blockquote>
+
+<p>But when I got to the stage of a completely blank app still failing, I suddenly
+thought of the question mark. With the benefit of my preamble to this post, you
+all probably got there long before I did, but I got there in the end.</p>
+
+<p>The solution was to remove the question mark from the names of the targets in
+Xcode. I had to fix up the module names in my unit testing files, but apart from
+that, there were no changes. After this I was able to upload the complete app to
+TestFlight and install it on my iPhone.</p>
+
+<p>It is possible that it was the Product Names that were the issue, rather than
+the target name as in Build Settings, Product Name is set to be <code>$(TARGET_NAME)</code>
+by default but I didn&rsquo;t test that. Maybe next time&hellip;</p>
+
+<p><a name="tldr">TL;DR</a> Do not put any unusual characters in your target names.
+Alphanumerics and spaces are OK, but I am not sure about anything else.</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  
+  <p class="copyright-item">
+    <span class="item-title">Last Modified</span>
+    <span class="item-content">4 Mar 2016</span>
+  </p>
+  
+  
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/app-store/">app store</a>
+          
+          <a href="/tags/testflight/">testflight</a>
+          
+          <a href="/tags/xcode/">xcode</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/2016/04/my-year-with-apple-watch/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">My Year With Apple Watch</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/2016/04/road-trip-apps/">
+            <span class="next-text nav-default">Road Trip Apps</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:sarah@troz.net" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1082632" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/trozware" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/trozware" class="iconfont icon-github" title="github"></a>
+  <a href="https://troz.net/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme -
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2012 -
+    2017
+    <span class="author">Sarah Reichelt</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Testflight on TrozWare</title>
+    <link>https://troz.net/tags/testflight/</link>
+    <description>Recent content in Testflight on TrozWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 24 Apr 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://troz.net/tags/testflight/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How To Confuse TestFlight</title>
+      <link>https://troz.net/2016/04/how-to-confuse-testflight/</link>
+      <pubDate>Sun, 24 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/2016/04/how-to-confuse-testflight/</guid>
+      <description>TL;DR
+I ran into an unusual problem when testing my latest app: &amp;ldquo;What Is My Speed?&amp;rdquo;. It is now available from the iTunes App Store, but getting there was a struggle.
+Xcode is terrible at renaming projects, so it is a really good idea to have worked out your app&amp;rsquo;s name before starting. I would even recommend creating an app ID in your Apple Developer account and registering the app name in iTunes Connect.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Structs vs Classes - TrozWare</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Sarah" />
+  <meta name="description" content="One of the big debates among Swift developers is when to use structs and when to use classes. Classes are the building blocks of object-oriented programming but structs as provided by Swift are newly powerful. Structs have been around in C-based languages for a long time, but Swift has made them more powerful and given them more features so that they are almost indistinguishable from classes. So what are the differences and which one should you use?" />
+
+  <meta name="keywords" content="Swift, Apple, macOS, iOS, Apple Watch" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.31" />
+
+
+<link rel="canonical" href="https://troz.net/2016/03/structs-vs-classes/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+
+
+<meta property="og:title" content="Structs vs Classes" />
+<meta property="og:description" content="One of the big debates among Swift developers is when to use structs and when to use classes. Classes are the building blocks of object-oriented programming but structs as provided by Swift are newly powerful. Structs have been around in C-based languages for a long time, but Swift has made them more powerful and given them more features so that they are almost indistinguishable from classes. So what are the differences and which one should you use?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troz.net/2016/03/structs-vs-classes/" />
+
+
+
+<meta property="article:published_time" content="2016-03-30T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2016-03-30T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Structs vs Classes">
+<meta itemprop="description" content="One of the big debates among Swift developers is when to use structs and when to use classes. Classes are the building blocks of object-oriented programming but structs as provided by Swift are newly powerful. Structs have been around in C-based languages for a long time, but Swift has made them more powerful and given them more features so that they are almost indistinguishable from classes. So what are the differences and which one should you use?">
+
+
+<meta itemprop="datePublished" content="2016-03-30T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2016-03-30T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="914">
+
+
+
+<meta itemprop="keywords" content="swift,learning swift,oop,class,struct," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Structs vs Classes"/>
+<meta name="twitter:description" content="One of the big debates among Swift developers is when to use structs and when to use classes. Classes are the building blocks of object-oriented programming but structs as provided by Swift are newly powerful. Structs have been around in C-based languages for a long time, but Swift has made them more powerful and given them more features so that they are almost indistinguishable from classes. So what are the differences and which one should you use?"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">TrozWare</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/apps/">
+        <li class="mobile-menu-item">Apps</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">TrozWare</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/apps/">Apps</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Structs vs Classes</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 3 Mar 2016 </span>
+        
+        <span class="more-meta"> 914 words </span>
+        <span class="more-meta"> 5 minute read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#where-they-are-the-same">Where they are the same:</a></li>
+<li><a href="#where-they-are-different">Where they are different:</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>One of the big debates among Swift developers is when to use <code>structs</code> and when
+to use <code>classes</code>. Classes are the building blocks of object-oriented programming
+but structs as provided by Swift are newly powerful. Structs have been around in
+C-based languages for a long time, but Swift has made them more powerful and
+given them more features so that they are almost indistinguishable from classes.
+So what are the differences and which one should you use?</p>
+
+<hr />
+
+<h2 id="where-they-are-the-same">Where they are the same:</h2>
+
+<ul>
+<li>both can define initializers</li>
+<li>both can define properties</li>
+<li>both can define methods</li>
+<li>both can conform to protocols</li>
+</ul>
+
+<h2 id="where-they-are-different">Where they are different:</h2>
+
+<ul>
+<li>classes can inherit from other classes</li>
+<li>structs cannot inherit from other structs</li>
+<li>classes are reference types</li>
+<li>structs are value types</li>
+</ul>
+
+<hr />
+
+<p>The reference type vs value type difference is where things really get
+interesting. Have a look at this example of a class with a single property:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PersonClass</span> { <span style="color:#66d9ef">var</span> name: String
+
+    <span style="color:#66d9ef">init</span>(name: String) {
+        <span style="color:#66d9ef">self</span>.name = name
+    }
+
+}
+
+<span style="color:#66d9ef">var</span> personA = PersonClass(name: <span style="color:#e6db74">&#34;Woody&#34;</span>) personA.name <span style="color:#75715e">// Woody</span>
+
+<span style="color:#66d9ef">var</span> personB = personA personB.name = <span style="color:#e6db74">&#34;Buzz&#34;</span> personB.name <span style="color:#75715e">// Buzz </span></code></pre></div>
+
+<p>That looks like standard stuff, but what do you think <code>personA</code>&rsquo;s name is now?
+If you guessed &ldquo;Buzz&rdquo; then you win a prize! <em>(No, not a real prize - pat
+yourself on the back.)</em></p>
+
+<p>This is because when we created the <code>personB</code> variable and assigned <code>personA</code> to
+it, we did not assign the <strong>VALUE</strong> of <code>personA</code>, we assigned a <strong>REFERENCE</strong> to
+<code>personA</code> - actually the address in memory of <code>personA</code> rather than the data
+inside.</p>
+
+<p>So now we have two objects and they are both looking at the same spot in memory
+for their data. This means that changing the name of <code>personB</code> changed the name
+of <code>personA</code> as well.</p>
+
+<p>Let&rsquo;s try the same thing with a struct:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">PersonStruct</span> { <span style="color:#66d9ef">var</span> name: String }
+
+<span style="color:#66d9ef">var</span> personC = PersonStruct(name: <span style="color:#e6db74">&#34;Rex&#34;</span>) personC.name <span style="color:#75715e">// Rex</span>
+
+<span style="color:#66d9ef">var</span> personD = personC personD.name = <span style="color:#e6db74">&#34;Hamm&#34;</span> personD.name <span style="color:#75715e">// Hamm</span>
+
+personC.name <span style="color:#75715e">// Rex </span></code></pre></div>
+
+<p>This time, because we are using a struct, when we assign <code>personC</code> to the new
+<code>personD</code> variable, we are actually making a copy of <code>personC</code> and setting the
+values of <code>personD</code> to this new copy. So now we can change <code>personD</code> without
+messing with <code>personC</code>.</p>
+
+<p>Note that I did not have a define an <code>init</code> for the struct because it creates
+one automatically. You can still add one yourself if you want to do anything
+different, but you do not have to.</p>
+
+<hr />
+
+<p>At first glance, you may think that you should now use structs all the time to
+avoid these unintended consequences, but it isn&rsquo;t quite as simple as that.
+Sometimes a class is still the best thing to use.</p>
+
+<p>The inheritance capabilities of classes can make your decision simple: if you
+need to create a button and want to start by sub-classing UIButton or NSButton,
+then your button must be a class, not a struct. This will apply to most user
+interface objects.</p>
+
+<p>Apple really wants us to use structs and in the Swift standard libraries, a very
+high percentage of the objects are structs. But structs are especially well
+suited to a certain subset of objects.</p>
+
+<p>The best explanation that I have found of when to use a struct is the <a href="http://faq.sealedabstract.com/structs_or_classes/#an-alternative-hypothesis">Jeff
+Trick</a>. Reduced down, the rule is:</p>
+
+<blockquote>
+<p>If you can overload == to compare two instances of your object, use a struct.
+<br> If this doesn&rsquo;t make sense, use a class.</p>
+</blockquote>
+
+<p>So use structs for your things: Person, Shape, Brick, Cat. <br> Use classes for
+everything else.</p>
+
+<p>I would add one caveat: don&rsquo;t fight the compiler. If using a struct is giving
+lots of errors and warnings, change to a class.</p>
+
+<hr />
+
+<p>A logical consequence of this is that all structs should conform to the
+<a href="http://swiftdoc.org/v2.2/protocol/Equatable/">Equatable</a> protocol.</p>
+
+<p>Extending <code>PersonStruct</code> to make it conform just requires a single function:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"> <span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">PersonStruct</span>: Equatable { <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">func</span> == (lhs:
+PersonStruct, rhs: PersonStruct) -&gt; Bool { <span style="color:#66d9ef">return</span> lhs.name == rhs.name } } </code></pre></div>
+
+<p>Since this struct only has one property, we can say that two instances of this
+struct are equal if the names are equal.</p>
+
+<p>Testing this, we can see:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"> <span style="color:#66d9ef">var</span> personC = PersonStruct(name: <span style="color:#e6db74">&#34;Rex&#34;</span>)
+
+<span style="color:#66d9ef">var</span> personD = personC personD.name = <span style="color:#e6db74">&#34;Hamm&#34;</span>
+
+personC == personD <span style="color:#75715e">// false</span>
+
+<span style="color:#66d9ef">let</span> personE = PersonStruct(name: <span style="color:#e6db74">&#34;Rex&#34;</span>) personC == personE <span style="color:#75715e">// true personC !=</span>
+personE <span style="color:#75715e">// false </span></code></pre></div>
+
+<p>Conveniently, providing an <code>==</code> function effectively gives us a <code>!=</code> function
+for free as you can see from the last example.</p>
+
+<hr />
+
+<p>There is one final point I would like to make about struct and that concerns
+mutating functions. Look at what happens if we include a function that changes
+the <code>name</code> property in the struct:</p>
+
+<p><img src="/images/mutating.png" alt="Mutating error" /></p>
+
+<p>Fix-it is very helpfully pointing out that the method needs to be marked as
+<code>mutating</code> for this to work and is showing where this should go. Accepting the
+suggestion will get rid of the error and then the name can be changed using this
+method.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">PersonStruct</span>: Equatable { <span style="color:#66d9ef">var</span> name: String
+
+    <span style="color:#66d9ef">mutating</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">changeName</span>(to newName: String) {
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">!</span>newName.isEmpty {
+            name = newName
+        }
+    }
+
+}
+
+<span style="color:#66d9ef">var</span> personC = PersonStruct(name: <span style="color:#e6db74">&#34;Woody&#34;</span>) personC.name <span style="color:#75715e">// Woody</span>
+
+personC.changeName(to: <span style="color:#e6db74">&#34;Sid&#34;</span>) personC.name <span style="color:#75715e">// Sid </span></code></pre></div>
+
+<p>There is no problem about using <code>mutating</code> and it will not have the unintended
+consequences of using classes. Despite the scary name, a mutating function
+actually returns a new copy of the struct.</p>
+
+<p>The problem arises if you have many nested structs and the mutating has to
+spread through the list. So don&rsquo;t nest your structs - at least not more than two
+deep!</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  
+  <p class="copyright-item">
+    <span class="item-title">Last Modified</span>
+    <span class="item-content">3 Mar 2016</span>
+  </p>
+  
+  
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/swift/">swift</a>
+          
+          <a href="/tags/learning-swift/">learning swift</a>
+          
+          <a href="/tags/oop/">oop</a>
+          
+          <a href="/tags/class/">class</a>
+          
+          <a href="/tags/struct/">struct</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/2016/04/road-trip-apps/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Road Trip Apps</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/2016/03/learning-swift-loops/">
+            <span class="next-text nav-default">Learning Swift - For-Loops</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:sarah@troz.net" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1082632" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/trozware" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/trozware" class="iconfont icon-github" title="github"></a>
+  <a href="https://troz.net/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme -
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2012 -
+    2017
+    <span class="author">Sarah Reichelt</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+
+
+
+
+</body>
+</html>

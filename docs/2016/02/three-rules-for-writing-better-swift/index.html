@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Three Rules for Writing Better Swift - TrozWare</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Sarah" />
+  <meta name="description" content="1. Do not use ! Swift uses optionals for values that can be nil. To use an optional value, you need to &amp;ldquo;un-wrap&amp;rdquo; it first, which means getting the actual value out, assuming that the value exists and the optional is not actually nil.
+Optionals are the subject of a complete post by themselves, but for now, I will just say this: When you use ! you are promising the compiler that you will make sure there is a real value in that optional by the time it is needed." />
+
+  <meta name="keywords" content="Swift, Apple, macOS, iOS, Apple Watch" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.31" />
+
+
+<link rel="canonical" href="https://troz.net/2016/02/three-rules-for-writing-better-swift/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+
+
+<meta property="og:title" content="Three Rules for Writing Better Swift" />
+<meta property="og:description" content="1. Do not use ! Swift uses optionals for values that can be nil. To use an optional value, you need to &ldquo;un-wrap&rdquo; it first, which means getting the actual value out, assuming that the value exists and the optional is not actually nil.
+Optionals are the subject of a complete post by themselves, but for now, I will just say this: When you use ! you are promising the compiler that you will make sure there is a real value in that optional by the time it is needed." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troz.net/2016/02/three-rules-for-writing-better-swift/" />
+
+
+
+<meta property="article:published_time" content="2016-02-24T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2016-02-24T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Three Rules for Writing Better Swift">
+<meta itemprop="description" content="1. Do not use ! Swift uses optionals for values that can be nil. To use an optional value, you need to &ldquo;un-wrap&rdquo; it first, which means getting the actual value out, assuming that the value exists and the optional is not actually nil.
+Optionals are the subject of a complete post by themselves, but for now, I will just say this: When you use ! you are promising the compiler that you will make sure there is a real value in that optional by the time it is needed.">
+
+
+<meta itemprop="datePublished" content="2016-02-24T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2016-02-24T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="624">
+
+
+
+<meta itemprop="keywords" content="swift,learning swift," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Three Rules for Writing Better Swift"/>
+<meta name="twitter:description" content="1. Do not use ! Swift uses optionals for values that can be nil. To use an optional value, you need to &ldquo;un-wrap&rdquo; it first, which means getting the actual value out, assuming that the value exists and the optional is not actually nil.
+Optionals are the subject of a complete post by themselves, but for now, I will just say this: When you use ! you are promising the compiler that you will make sure there is a real value in that optional by the time it is needed."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">TrozWare</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/apps/">
+        <li class="mobile-menu-item">Apps</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">TrozWare</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/apps/">Apps</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Three Rules for Writing Better Swift</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2 Mar 2016 </span>
+        
+        <span class="more-meta"> 624 words </span>
+        <span class="more-meta"> 3 minute read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#1-do-not-use">1. Do not use !</a></li>
+<li><a href="#2-use-let-not-var">2. Use let, not var</a></li>
+<li><a href="#3-allow-the-compiler-to-infer-types">3. Allow the compiler to infer types</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h2 id="1-do-not-use">1. Do not use !</h2>
+
+<p>Swift uses optionals for values that can be nil. To use an optional value, you
+need to &ldquo;un-wrap&rdquo; it first, which means getting the actual value out, assuming
+that the value exists and the optional is not actually nil.</p>
+
+<p><a href="/2016/02/learning-swift-optionals/">Optionals</a> are the subject of a complete post by themselves, but for now, I
+will just say this: When you use ! you are <strong>promising</strong> the compiler that you
+will make sure there is a real value in that optional by the time it is needed.</p>
+
+<p>If this is not the case, your app will crash as shown in this playground:</p>
+
+<p><img src="/images/Playground2.png" alt="Playground crash" /></p>
+
+<p>Instead of using ! you should use optional chaining with ? or check the value
+with <code>guard</code> or <code>if let</code> before use.</p>
+
+<p>One trap to beware of is with Xcode&rsquo;s attempts to be helpful and suggest fixes
+to problems. If you use an optional where it cannot work, Xcode will warn you
+that it is incorrect, but the suggested fix will be to insert !</p>
+
+<p><img src="/images/optional_fix.png" alt="Optional fix" /></p>
+
+<p>When you see this, do not accept the suggested fix, but use it as a warning to
+show that you need to fix the problem properly.</p>
+
+<hr />
+
+<h2 id="2-use-let-not-var">2. Use let, not var</h2>
+
+<p>Using constants in C-based languages is a pain. I could never remember the
+Objective-C syntax for declaring a static constant, so used to fall back to
+using <code>#define</code> for global constants. Inside my objects, all instance properties
+were variables, not constants. Inside functions, it was the same.</p>
+
+<p>It doesn&rsquo;t take much imagination to work out that your apps will perform better
+and more securely if values that do not need to change are allocated as
+constants instead of variables.</p>
+
+<p>With Swift, this is easy as you just declare a constant using the <code>let</code> keyword
+and declare variables using <code>var</code>. The Swift compiler will now warn you if you
+have used <code>var</code> where <code>let</code> would do, but I prefer to declare everything using
+<code>let</code> and only change to <code>var</code> when this causes an error as shown in this
+playground example:</p>
+
+<p><img src="/images/Playground3.png" alt="Playground let error" /></p>
+
+<hr />
+
+<h2 id="3-allow-the-compiler-to-infer-types">3. Allow the compiler to infer types</h2>
+
+<p>With Objective-C and many other languages, you have to tell the compiler exactly
+what each variable is going to be: a string, an integer, an object of a certain
+type.</p>
+
+<p>With Swift, the compiler is clever enough to work this out for you, which can
+make your code much cleaner looking and easy to read.</p>
+
+<p>There are a few exceptions to this rule which are shown in the playground below:</p>
+
+<p>Lines 3 - 6 are allowing the Swift compiler to decide what the type is and it is
+choosing valid types: Int, Double, String and UIView.</p>
+
+<p>Line 8 is a case where we do not want the default type, which would be Double so
+we need to tell the compiler that this one really should be a CGFloat.</p>
+
+<p>Lines 10 &amp; 11 both deal with an array of Ints. In line 10, the values are
+supplied so the type of the array can be inferred. In the second case, the array
+is initially empty, so the type needs to be specified in the declaration.</p>
+
+<p>Lines 13 and 14 are the same but with dictionaries instead of arrays.</p>
+
+<p>In each case, it would have been valid Swift to specify the type but why bother?
+The more text you enter , the more change of mistake and it leaves your code
+looking cluttered.</p>
+
+<p>If you ever need to check what type has been assigned to a constant or variable,
+Option-click on it in Xcode and you willl get a popup telling you what it is.</p>
+
+<p><img src="/images/Playground4.png" alt="Playground types" /></p>
+
+<hr />
+
+<p>This was going to be five rules, but then I got a bit too verbose so will add
+more rules in a separate post.</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  
+  <p class="copyright-item">
+    <span class="item-title">Last Modified</span>
+    <span class="item-content">2 Mar 2016</span>
+  </p>
+  
+  
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/swift/">swift</a>
+          
+          <a href="/tags/learning-swift/">learning swift</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/2016/02/singleton-to-protocol/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Singleton to Protocol</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/2016/02/configuring-xcode/">
+            <span class="next-text nav-default">Configuring Xcode</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:sarah@troz.net" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1082632" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/trozware" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/trozware" class="iconfont icon-github" title="github"></a>
+  <a href="https://troz.net/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme -
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2012 -
+    2017
+    <span class="author">Sarah Reichelt</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+
+
+
+
+</body>
+</html>

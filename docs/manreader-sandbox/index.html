@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Sand-Boxing Man Reader - TrozWare</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Sarah" />
+  <meta name="description" content="These instructions are no longer valid. As of version 1.5, the App Store version of Man Reader has solved the sand-boxing issues and is now as powerful as the non-sand-boxed version.
+The non-sand-boxed version will no longer be supported or updated, so please revert to the App Store version.
+As with all apps in the App Store, Man Reader is restricted by Apple&amp;rsquo;s sand-boxing policy. Sand-boxing is a great thing. It isolates apps from each other and from the system, making it far less likely that a problem app will cause wide-spread havoc." />
+
+  <meta name="keywords" content="Swift, Apple, macOS, iOS, Apple Watch" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.31" />
+
+
+<link rel="canonical" href="https://troz.net/manreader-sandbox/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+
+
+<meta property="og:title" content="Sand-Boxing Man Reader" />
+<meta property="og:description" content="These instructions are no longer valid. As of version 1.5, the App Store version of Man Reader has solved the sand-boxing issues and is now as powerful as the non-sand-boxed version.
+The non-sand-boxed version will no longer be supported or updated, so please revert to the App Store version.
+As with all apps in the App Store, Man Reader is restricted by Apple&rsquo;s sand-boxing policy. Sand-boxing is a great thing. It isolates apps from each other and from the system, making it far less likely that a problem app will cause wide-spread havoc." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troz.net/manreader-sandbox/" />
+
+
+
+<meta property="article:published_time" content="2013-02-06T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2013-02-06T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Sand-Boxing Man Reader">
+<meta itemprop="description" content="These instructions are no longer valid. As of version 1.5, the App Store version of Man Reader has solved the sand-boxing issues and is now as powerful as the non-sand-boxed version.
+The non-sand-boxed version will no longer be supported or updated, so please revert to the App Store version.
+As with all apps in the App Store, Man Reader is restricted by Apple&rsquo;s sand-boxing policy. Sand-boxing is a great thing. It isolates apps from each other and from the system, making it far less likely that a problem app will cause wide-spread havoc.">
+
+
+<meta itemprop="datePublished" content="2013-02-06T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-02-06T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="484">
+
+
+
+<meta itemprop="keywords" content="man reader,mac,sand-box," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Sand-Boxing Man Reader"/>
+<meta name="twitter:description" content="These instructions are no longer valid. As of version 1.5, the App Store version of Man Reader has solved the sand-boxing issues and is now as powerful as the non-sand-boxed version.
+The non-sand-boxed version will no longer be supported or updated, so please revert to the App Store version.
+As with all apps in the App Store, Man Reader is restricted by Apple&rsquo;s sand-boxing policy. Sand-boxing is a great thing. It isolates apps from each other and from the system, making it far less likely that a problem app will cause wide-spread havoc."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">TrozWare</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/apps/">
+        <li class="mobile-menu-item">Apps</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">TrozWare</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/apps/">Apps</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Sand-Boxing Man Reader</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2 Mar 2013 </span>
+        
+        <span class="more-meta"> 484 words </span>
+        <span class="more-meta"> 3 minute read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+      
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>These instructions are no longer valid. As of version 1.5, the App Store version of Man Reader has solved the sand-boxing issues and is now as powerful as the non-sand-boxed version.</p>
+
+<p>The non-sand-boxed version will no longer be supported or updated, so please revert to the App Store version.</p>
+
+<hr />
+
+<p>As with all apps in the App Store, <a href="/manreader/">Man Reader</a> is restricted by Apple&rsquo;s sand-boxing policy. Sand-boxing is a great thing. It isolates apps from each other and from the system, making it far less likely that a problem app will cause wide-spread havoc. However for an app like Man Reader, this can lead to a drop in functionality.</p>
+
+<p>Due to the permissions limitations of sand-boxing, Man Reader can only search defined paths on your system drive e.g. /usr/, /opt/<br />
+This is where the default man pages are all stored, but if you install other software (Xcode is a good example), then Man Reader may not be able to list all the available man pages on your system.</p>
+
+<p>To tell if Man Reader is missing man pages, copy &amp; paste the following command into the Terminal app:</p>
+
+<pre><code>whatis . &gt;&gt; ~/Desktop/whatis.txt
+</code></pre>
+
+<p>Man Reader runs this command internally when it starts, but the Terminal app is not sand-boxed and so can access everything.<br />
+Running this command will create a text file on your desktop with a list of all available man pages on your system. Open it in a text editor that can show the number of lines in a file. <a href="http://www.barebones.com/products/textwrangler/">TextWrangler from Bare Bones Software</a> is a good free editor that will do this.</p>
+
+<p>To check what man pages ManReader can read, go to Finder and select &lsquo;Go to Folder&hellip;&rdquo; from the Go menu. Paste in the following path:</p>
+
+<pre><code>~/Library/Containers/net.troz.Man-Reader/Data/Library/Application Support/Man Reader/
+</code></pre>
+
+<p>You will see two files: open the one called &lsquo;ManReader.raw&rsquo; in your text editor. This is the result of Man Reader running the whatis command. Compare the number of lines in the two files. Don&rsquo;t worry about the order of the items in the file as that may vary, you are only concerned with the total number of lines in each.</p>
+
+<p>There may be one or two lines more in the whatis.txt file but if there is a big difference, then you are being sand-boxed&hellip;<br />
+As an example, on my system, the whatis.txt file contains 8954 lines and the ManReader.raw file contains 2320 lines!</p>
+
+<p><del>If you are affected by this or think that you might be, I now have a solution - actually two possible solutions:</del></p>
+
+<p><del>If you have already bought Man Reader from the App Store, then you can <a href="#">download a non-sandboxed version</a>. This will only work if you have the App Store version of the app installed.</del></p>
+
+<p><del>If you do not already own a copy of Man Reader, and want to buy it un-sandboxed, then you can now <a href="#">buy it directly</a>.</del></p>
+
+<p>Please <a href="mailto:sarah@troz.net?subject=Man%20Reader%20and%20Sand-Boxing">contact me</a> if you have any issues with this.</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  
+  <p class="copyright-item">
+    <span class="item-title">Last Modified</span>
+    <span class="item-content">2 Mar 2013</span>
+  </p>
+  
+  
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/man-reader/">man reader</a>
+          
+          <a href="/tags/mac/">mac</a>
+          
+          <a href="/tags/sand-box/">sand-box</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/man-reader-no-sb/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Man Reader (no SB)</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/icns-maker-icon-builder-updated/">
+            <span class="next-text nav-default">Icns Maker &amp; Icon Builder updated</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:sarah@troz.net" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1082632" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/trozware" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/trozware" class="iconfont icon-github" title="github"></a>
+  <a href="https://troz.net/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme -
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2012 -
+    2017
+    <span class="author">Sarah Reichelt</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+
+
+
+
+</body>
+</html>

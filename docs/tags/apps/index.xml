@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apps on TrozWare</title>
+    <link>https://troz.net/tags/apps/</link>
+    <description>Recent content in Apps on TrozWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 15 Sep 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://troz.net/tags/apps/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Retiring old apps</title>
+      <link>https://troz.net/2016/09/retiring-old-apps/</link>
+      <pubDate>Thu, 15 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/2016/09/retiring-old-apps/</guid>
+      <description>With the release of iOS 10 and the need to update iOS apps to suit, I have decided it is time to retire some of my lesser-performing apps as it is not worth the effort required to maintain them.
+At the moment, the following iOS apps are no longer available:
+ A Knight&amp;rsquo;s Move Dice Pass Pic-a-POD Quick Score - Tennis  For the first three listed there, the Mac versions are still available:</description>
+    </item>
+    
+  </channel>
+</rss>

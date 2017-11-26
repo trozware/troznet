@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Learning Swift - Optionals - TrozWare</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Sarah Reichelt" />
+  <meta name="description" content="
+" />
+
+  <meta name="keywords" content="Swift, Apple, macOS, iOS, Apple Watch" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.31" />
+
+
+<link rel="canonical" href="https://troz.net/2016/02/learning-swift-optionals/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+
+
+<meta property="og:title" content="Learning Swift - Optionals" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troz.net/2016/02/learning-swift-optionals/" />
+
+
+
+<meta property="article:published_time" content="2016-02-12T14:24:00&#43;10:00"/>
+
+<meta property="article:modified_time" content="2016-02-12T14:24:00&#43;10:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Learning Swift - Optionals">
+<meta itemprop="description" content="">
+
+
+<meta itemprop="datePublished" content="2016-02-12T14:24:00&#43;10:00" />
+<meta itemprop="dateModified" content="2016-02-12T14:24:00&#43;10:00" />
+<meta itemprop="wordCount" content="1133">
+
+
+
+<meta itemprop="keywords" content="swift,learning swift,optionals," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Learning Swift - Optionals"/>
+<meta name="twitter:description" content=""/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">TrozWare</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/apps/">
+        <li class="mobile-menu-item">Apps</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">TrozWare</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/apps/">Apps</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Learning Swift - Optionals</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2 Mar 2016 </span>
+        
+        <span class="more-meta"> 1133 words </span>
+        <span class="more-meta"> 6 minute read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#what-is-an-optional-in-swift">What is an optional in Swift?</a></li>
+<li><a href="#why-does-this-matter">Why does this matter?</a></li>
+<li><a href="#how-does-swift-handle-optionals">How does Swift handle optionals?</a></li>
+<li><a href="#setting-an-optional">Setting an optional:</a></li>
+<li><a href="#getting-an-optional">Getting an optional:</a>
+<ul>
+<li><a href="#the-most-obvious-way-is-to-use">The most obvious way is to use !</a></li>
+<li><a href="#use-if-let">Use &lsquo;if let&rsquo;:</a></li>
+<li><a href="#use-guard">Use guard:</a></li>
+<li><a href="#use-optional-chaining">Use optional chaining:</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p></p>
+
+<p>Today I plan to discuss optionals since they were a feature of Swift that I
+found difficult to grasp at first.</p>
+
+<h2 id="what-is-an-optional-in-swift">What is an optional in Swift?</h2>
+
+<p>An optional is a variable of a specified type that can also be nil.</p>
+
+<h2 id="why-does-this-matter">Why does this matter?</h2>
+
+<p>In Objective-C, any object type could be nil. If you declared a variable like
+this:</p>
+
+<pre><code class="language-objectivec">NSString *myString;
+</code></pre>
+
+<p>then <code>myString</code> was set to nil by default.</p>
+
+<p>But this could cause issues, especially as Objective-C does not complain if you
+send a message to nil. This could lead to bugs that were very difficult to track
+down.</p>
+
+<p>The other big use for nil is when returning from a function which has found no
+appropriate data to return. The classic example is when looking for the index of
+an element in an array. What should be returned if the element is not found in
+the array?</p>
+
+<p>Some languages return -1, Objective-C uses <code>NSNotFound</code>, but you have to know
+what each language is going to do. The more logical answer is nil. However if
+your function is expected to return an integer, then it cannot return nil
+because nil is not an integer.</p>
+
+<p>This is where optionals come in: if the function is expected to return an
+optional integer, it can return with an integer with the index of the matching
+element, or it can return nil if the element was not found. This is much clearer
+and less prone to error.</p>
+
+<hr />
+
+<h2 id="how-does-swift-handle-optionals">How does Swift handle optionals?</h2>
+
+<p>One of the first things that struck me about Swift was how clean the code
+looked, without so many non-alphanumeric characters scattered around. Gone were
+all the:</p>
+
+<pre><code class="language-swift">* ; [ ]
+</code></pre>
+
+<p>But instead, Swift code sprouted:</p>
+
+<pre><code class="language-swift">! ?
+</code></pre>
+
+<p>What were these?</p>
+
+<p><strong>The key to understanding optionals is to realise that when you declare an
+optional variable of a certain type, you are actually declaring a box that can
+hold a variable of that type or can hold nil.</strong></p>
+
+<p>Once you grasp that concept, it all becomes much more obvious.</p>
+
+<pre><code class="language-swift">var optionalInteger: Int?
+</code></pre>
+
+<p>The ? indicates that this is an optional variable. It does not have to be
+initialised as it is already set to nil which is valid for an optional variable.
+Without the ? this would require initialisation as it would not be valid for it
+to be nil.</p>
+
+<hr />
+
+<h2 id="setting-an-optional">Setting an optional:</h2>
+
+<p>Setting the value of an optional variable is just the same as any other
+variable:</p>
+
+<pre><code class="language-swift">optionalInteger = 3
+optionalInteger = 42
+</code></pre>
+
+<hr />
+
+<h2 id="getting-an-optional">Getting an optional:</h2>
+
+<p>The difference arises when you need to get the data out of the optional variable
+in order to use it. This process is called un-wrapping and it means to get the
+variable value out of the &lsquo;box&rsquo; it is stored it.</p>
+
+<h3 id="the-most-obvious-way-is-to-use">The most obvious way is to use !</h3>
+
+<pre><code class="language-swift">let newInteger = optionalInteger!
+</code></pre>
+
+<p><strong>DO NOT DO THIS!</strong></p>
+
+<p>This is called forced-unwrapping and assumes that the optional variable is not
+nil. If the optional is nil, this will crash. In Xcode, when you connect
+interface elements from your storyboard to a Swift file, Xcode will use ! like
+this:</p>
+
+<pre><code class="language-swift">@IBOutlet weak var startButton: UIButton!
+</code></pre>
+
+<p>I have to assume Xcode knows what it is doing and the button will be available
+when needed, but you should not use ! - it is un-safe. By using it, you are
+vowing to the compiler that when it gets to that point, the optional value will
+not be nil. There are much better and safer ways of doing that.</p>
+
+<hr />
+
+<h3 id="use-if-let">Use &lsquo;if let&rsquo;:</h3>
+
+<pre><code class="language-swift">func doubleNumber(_ optionalInteger: Int?) -&gt; Int? {
+    if let integerValue = optionalInteger {
+        // integerValue is not an optional
+        // and is guaranteed to contain an Int
+        return integerValue * 2
+    }
+
+    // no integer found in the optional,
+    // so return nil to indicate failure
+    return nil
+}
+</code></pre>
+
+<hr />
+
+<h3 id="use-guard">Use guard:</h3>
+
+<pre><code class="language-swift">func doubleNumber(_ optionalInteger: Int?) -&gt; Int? {
+    guard let integerValue = optionalInteger else {
+        // get out quickly,
+        // returning nil to indicate failure
+        return nil
+    }
+
+    // integerValue is not an optional
+    // and is guaranteed to contain an Int
+    return integerValue * 2
+}
+</code></pre>
+
+<p>These two alternatives (<code>if let</code> &amp; <code>guard</code>) do the same job but in opposite
+ways. In both cases, they perform a conditional un-wrapping that may or may not
+give a valid result. <code>if let</code> checks if it is OK to proceed. <code>guard</code> checks to
+see if it is NOT OK to proceed. Which you use is really a matter of personal
+preference and working out what is more logical in each case.</p>
+
+<p>The <code>guard</code> statement is really good for checking data early in a process and
+making a quick exit it something is wrong. The <code>if let</code> construct encloses your
+success code inside a block and can sometimes leave the failure code a long way
+from the check which can make it less obvious. The other potential issue with
+<code>if let</code> is the &ldquo;pyramid of doom&rdquo; common in early Swift code as demonstrated in
+this rather contrived example:</p>
+
+<pre><code class="language-swift">func isValidAddressBookEntry(
+    firstName: String?,
+    lastName: String?,
+    emailAddress: String?,
+    phoneNumber: String?) -&gt; Bool {
+
+        if let validFirstName = firstName {
+            if let validLastName = lastName {
+                if let validEmail = emailAddress {
+                    if let validPhone = phoneNumber {
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+}
+</code></pre>
+
+<p>Thankfully, Swift 2 allows us to chain both <code>if let</code> and <code>guard</code> statements.
+Here is the previous example re-factored for Swift 2:</p>
+
+<pre><code class="language-swift">func isValidAddressBookEntry(
+    firstName: String?,
+    lastName: String?,
+    emailAddress: String?,
+    phoneNumber: String?) -&gt; Bool {
+
+        if let
+            validFirstName = firstName,
+            validLastName = lastName,
+            validEmail = emailAddress,
+            validPhone = phoneNumber {
+                return true
+        }
+        return false
+}
+</code></pre>
+
+<hr />
+
+<h3 id="use-optional-chaining">Use optional chaining:</h3>
+
+<p>The final way to deal with optionals safely is to use optional chaining:</p>
+
+<pre><code class="language-swift">struct SocialMediaAccounts {
+    var facebook: Person?
+    var twitter: Person?
+}
+
+struct Person {
+    var firstName: String?
+    var lastName: String?
+    var handle: String?
+}
+
+var socialMedia: SocialMediaAccounts?
+socialMedia = SocialMediaAccounts()
+var twitterAccount = Person()
+
+socialMedia?.twitter = twitterAccount
+let twitterHandle = socialMedia?.twitter?.handle
+</code></pre>
+
+<p>In this example, we have defined a <code>SocialMediaAccounts</code> struct that holds
+optional <code>Person</code> structs for the various social media outlets. The
+<code>socialMedia</code> variable is defined as an optional and then created. A
+<code>twitterAccount</code> variable of type <code>Person</code> is also created but contains no data
+at the moment.</p>
+
+<p>When assigning the <code>twitterAccount</code> to the <code>socialMedia.twitter</code> property, a ?
+is inserted which checks to see that <code>socialMedia</code> is not nil. If it is nil,
+then execution of that line stops at the ? and nothing bad will happen.</p>
+
+<p>In the same way, when trying to read back the twitter handle, we chained
+together 2 optionals with ?&rsquo;s. If either <code>socialMedia</code> or <code>socialMedia.twitter</code>
+is nil, that line will not complete. Again this is perfectly safe and the app
+will not crash.</p>
+
+<hr />
+
+<p>All the examples in this article are available in a <a href="https://github.com/trozware/optionals">Swift playground</a> which
+has been updated to Swift 3 syntax.</p>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  
+  <p class="copyright-item">
+    <span class="item-title">Last Modified</span>
+    <span class="item-content">2 Mar 2016</span>
+  </p>
+  
+  
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/swift/">swift</a>
+          
+          <a href="/tags/learning-swift/">learning swift</a>
+          
+          <a href="/tags/optionals/">optionals</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/2016/02/how-do-i-start-to-learn-swift/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">How do I start to learn Swift?</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/2016/02/icon-builder-32-released/">
+            <span class="next-text nav-default">Icon Builder 3.2 Released</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:sarah@troz.net" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1082632" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/trozware" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/trozware" class="iconfont icon-github" title="github"></a>
+  <a href="https://troz.net/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme -
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2012 -
+    2017
+    <span class="author">Sarah Reichelt</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+
+
+
+
+</body>
+</html>

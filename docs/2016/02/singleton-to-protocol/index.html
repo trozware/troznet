@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Singleton to Protocol - TrozWare</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Sarah" />
+  <meta name="description" content="I was driving through the town of Singleton the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple&amp;rsquo;s own APIs, but seem to be increasingly frowned upon in the Swift world.
+So what is a singleton? A singleton is a class that only expects to have a single instance." />
+
+  <meta name="keywords" content="Swift, Apple, macOS, iOS, Apple Watch" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.31" />
+
+
+<link rel="canonical" href="https://troz.net/2016/02/singleton-to-protocol/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+
+
+<meta property="og:title" content="Singleton to Protocol" />
+<meta property="og:description" content="I was driving through the town of Singleton the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple&rsquo;s own APIs, but seem to be increasingly frowned upon in the Swift world.
+So what is a singleton? A singleton is a class that only expects to have a single instance." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troz.net/2016/02/singleton-to-protocol/" />
+
+
+
+<meta property="article:published_time" content="2016-02-26T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2016-02-26T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Singleton to Protocol">
+<meta itemprop="description" content="I was driving through the town of Singleton the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple&rsquo;s own APIs, but seem to be increasingly frowned upon in the Swift world.
+So what is a singleton? A singleton is a class that only expects to have a single instance.">
+
+
+<meta itemprop="datePublished" content="2016-02-26T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2016-02-26T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="674">
+
+
+
+<meta itemprop="keywords" content="swift,learning swift," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Singleton to Protocol"/>
+<meta name="twitter:description" content="I was driving through the town of Singleton the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple&rsquo;s own APIs, but seem to be increasingly frowned upon in the Swift world.
+So what is a singleton? A singleton is a class that only expects to have a single instance."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">TrozWare</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/apps/">
+        <li class="mobile-menu-item">Apps</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">TrozWare</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/apps/">Apps</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Singleton to Protocol</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2 Mar 2016 </span>
+        
+        <span class="more-meta"> 674 words </span>
+        <span class="more-meta"> 4 minute read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#so-what-is-a-singleton">So what is a singleton?</a></li>
+<li><a href="#and-what-s-the-problem-with-singletons">And what&rsquo;s the problem with singletons?</a></li>
+<li><a href="#what-to-use-instead">What to use instead?</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>I was driving through the town of <a href="https://en.wikipedia.org/wiki/Singleton,_New_South_Wales">Singleton</a> the other day and of course, it
+got me thinking about using singletons in my apps. Singletons were a commonly
+used pattern in Objective-C programming and appear in many of Apple&rsquo;s own APIs,
+but seem to be increasingly frowned upon in the Swift world.</p>
+
+<h2 id="so-what-is-a-singleton">So what is a singleton?</h2>
+
+<p>A singleton is a class that only expects to have a single instance. Think of it
+as a global instance of a class. In some cases this makes perfect sense if there
+can only ever be one instance of a particular class or if there is a default
+variant that suits most cases e.g.</p>
+
+<pre><code class="language-swift">UIApplication.shared
+UserDefaults.standard
+NotificationCenter.default
+FileManager.default
+URLSession.shared
+</code></pre>
+
+<p>If you are using an object with a property name of &ldquo;shared&rdquo;, &ldquo;standard&rdquo; or
+&ldquo;default&rdquo; you can be pretty sure it is an singleton.</p>
+
+<h2 id="and-what-s-the-problem-with-singletons">And what&rsquo;s the problem with singletons?</h2>
+
+<p>There are probably many different opinions here but I have two thoughts about
+this:</p>
+
+<ol>
+<li>They are effectively global variables and global variables can make your code
+messy and un-predictable.</li>
+<li>If they can be accessed by multiple other objects, possibly at the same time,
+then you can get conflicts. These can be handled by clever use of background
+queues, but it isn&rsquo;t easy.</li>
+</ol>
+
+<h2 id="what-to-use-instead">What to use instead?</h2>
+
+<p>As I drove, I mused on a singleton that I had implemented recently. It was a
+logging utility that allowed any object in my app (mostly view controllers) to
+save a new entry to a log file. The basic structure of the Logger class was
+this:</p>
+
+<pre><code class="language-swift">class Logger {
+    static let sharedLogger = Logger()
+
+    func addToLog(event: String) {
+      // use private functions to find log file URL
+      // append event text with time stamp
+    }
+
+}
+</code></pre>
+
+<p>Any object in my app could use the Logger like this:</p>
+
+<pre><code class="language-swift">Logger.sharedLogger.addToLog(event: newLogEvent)
+</code></pre>
+
+<p>When I got to think about how I was using this, I realised that instead of a
+Logger <em>object</em> that everything could use, what I really needed was a Loggable
+<em>behaviour</em> that I could apply &amp; restrict to the few classes that actually
+needed to log events. For me, this was the break-through:</p>
+
+<blockquote>
+<p><strong>Create a behaviour, not an object.</strong></p>
+</blockquote>
+
+<p>As soon as I started thinking about this as a behaviour, a protocol became the
+obvious solution, so this is what I created:</p>
+
+<pre><code class="language-swift">protocol Loggable {
+  // not declaring functions here
+  // as they should NOT be over-written
+}
+
+extension Loggable {
+
+    func addToLog(event: String) {
+      // use private functions to find log file URL
+      // append event text with time stamp
+    }
+
+}
+</code></pre>
+
+<p>We run immediately into one of the peculiarities of Swift protocol extensions
+which has been very well explained by <a href="http://cjwirth.com/2016/01/20/swift-protocol-extension-weirdness/">Caesar Wirth</a>. If I had declared
+<code>addToLog(_:)</code> in the protocol, then any class or struct conforming to this
+protocol would have been free to over-write this function and provide its own
+version. This is not what I wanted here - I wanted every object to use the same
+version. So I left the function declaration out of the protocol definition and
+only included it in the protocol extension.</p>
+
+<p>To use this behaviour, a class or struct just has to be declared as conforming
+to the Loggable protocol:</p>
+
+<pre><code class="language-swift">class MyClass: Loggable {
+  func doSomething() {
+    addToLog(event: &quot;I did something!&quot;)
+  }
+}
+</code></pre>
+
+<p>For my app, I knew that I would want all my NSViewControllers to be able to add
+log events, so instead of setting them all individually as conforming to the
+protocol, I used this shortcut which extends all NSViewControllers to conform to
+the protocol.</p>
+
+<pre><code class="language-swift">extension NSViewController: Loggable {}
+</code></pre>
+
+<p>I added this line to the Loggable.swift file where I declared the protocol and
+its extension, but outside both of them.</p>
+
+<hr />
+
+<p>Protocol-oriented programming is a new technique to me, so it really helps when
+I can find a practical example of where it solves a problem.</p>
+
+<p>If you are new to POP, I highly recommend the <a href="https://developer.apple.com/videos/play/wwdc2015/408/">Crusty talk</a> from WWDC 2015.
+And this article by <a href="http://matthijshollemans.com/2015/07/22/mixins-and-traits-in-swift-2/">Matthijs Hollemans</a> was invaluable to me in
+demonstrating the problems with object inheritance that are solved by protocols.</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  
+  <p class="copyright-item">
+    <span class="item-title">Last Modified</span>
+    <span class="item-content">2 Mar 2016</span>
+  </p>
+  
+  
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/swift/">swift</a>
+          
+          <a href="/tags/learning-swift/">learning swift</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/2016/02/learning-swift-generics/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Learning Swift - Generics</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/2016/02/three-rules-for-writing-better-swift/">
+            <span class="next-text nav-default">Three Rules for Writing Better Swift</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:sarah@troz.net" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1082632" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/trozware" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/trozware" class="iconfont icon-github" title="github"></a>
+  <a href="https://troz.net/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme -
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2012 -
+    2017
+    <span class="author">Sarah Reichelt</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+
+
+
+
+</body>
+</html>

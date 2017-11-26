@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Learning Swift on TrozWare</title>
+    <link>https://troz.net/tags/learning-swift/</link>
+    <description>Recent content in Learning Swift on TrozWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 18 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://troz.net/tags/learning-swift/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JSON Parsing in Swift 4</title>
+      <link>https://troz.net/2017/06/json-parsing-in-swift-4/</link>
+      <pubDate>Sun, 18 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/2017/06/json-parsing-in-swift-4/</guid>
+      <description>Updated: 3rd September 2017.
+ Checked syntax using Xcode 9.0 beta 6. Added section on allowing for nulls.  Since JSON has become the de facto standard for data transfers around the internet, there has always been a lot of interest in Swift libraries to parse JSON into Swift classes or structs. Searching for &amp;ldquo;swift json library&amp;rdquo; on GitHub discovers 77 86 repositories. So why are there so many? And what has Swift 4 done to sherlock them all?</description>
+    </item>
+    
+    <item>
+      <title>Learning Swift - Sets</title>
+      <link>https://troz.net/2016/05/learning-swift-sets/</link>
+      <pubDate>Sat, 28 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/2016/05/learning-swift-sets/</guid>
+      <description>Sets are the forgotten collection type in many languages, including Swift. I think most developers use Arrays without really considering the advantages of using a Set but they have some amazingly useful features that should make them a part of any progammer&amp;rsquo;s toolkit.
+If you want to follow along with a playground, you can download it here.
+What is a Set? A Set is an un-ordered collection of unique items.</description>
+    </item>
+    
+    <item>
+      <title>Structs vs Classes</title>
+      <link>https://troz.net/2016/03/structs-vs-classes/</link>
+      <pubDate>Wed, 30 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/2016/03/structs-vs-classes/</guid>
+      <description>One of the big debates among Swift developers is when to use structs and when to use classes. Classes are the building blocks of object-oriented programming but structs as provided by Swift are newly powerful. Structs have been around in C-based languages for a long time, but Swift has made them more powerful and given them more features so that they are almost indistinguishable from classes. So what are the differences and which one should you use?</description>
+    </item>
+    
+    <item>
+      <title>Learning Swift - For-Loops</title>
+      <link>https://troz.net/2016/03/learning-swift-loops/</link>
+      <pubDate>Sat, 12 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/2016/03/learning-swift-loops/</guid>
+      <description>Loops are a fundamental building block of any program. Doing repetitive tasks fast and accurately is what computers are really good at and what we humans get very bored doing. Swift offers several different ways to perform loops, but today we are going to concentrate on for-loops.
+The most basic form of loop is the for-in loop. There are two ways this can be used: looping over the numbers in a range or looping over the elements in an array or dictionary.</description>
+    </item>
+    
+    <item>
+      <title>Learning Swift - Generics</title>
+      <link>https://troz.net/2016/02/learning-swift-generics/</link>
+      <pubDate>Mon, 29 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/2016/02/learning-swift-generics/</guid>
+      <description>One of the nice things about Swift is how clean your code looks. A lot of the weird characters that pepper the code of other languages has been eliminated: No more semi-colons, asterisks etc.
+But then you are reading somebody else&amp;rsquo;s code and you find these angle brackets all over the place and they don&amp;rsquo;t seem to make sense.
+What does this mean?
+func mid&amp;lt;T: Comparable&amp;gt;(array: [T]) -&amp;gt; T  It looks like it is a function to find the middle element in an array, but what is &amp;lt;T: Comparable&amp;gt; or [T] or even just T?</description>
+    </item>
+    
+    <item>
+      <title>Singleton to Protocol</title>
+      <link>https://troz.net/2016/02/singleton-to-protocol/</link>
+      <pubDate>Fri, 26 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/2016/02/singleton-to-protocol/</guid>
+      <description>I was driving through the town of Singleton the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple&amp;rsquo;s own APIs, but seem to be increasingly frowned upon in the Swift world.
+So what is a singleton? A singleton is a class that only expects to have a single instance.</description>
+    </item>
+    
+    <item>
+      <title>Three Rules for Writing Better Swift</title>
+      <link>https://troz.net/2016/02/three-rules-for-writing-better-swift/</link>
+      <pubDate>Wed, 24 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/2016/02/three-rules-for-writing-better-swift/</guid>
+      <description>1. Do not use ! Swift uses optionals for values that can be nil. To use an optional value, you need to &amp;ldquo;un-wrap&amp;rdquo; it first, which means getting the actual value out, assuming that the value exists and the optional is not actually nil.
+Optionals are the subject of a complete post by themselves, but for now, I will just say this: When you use ! you are promising the compiler that you will make sure there is a real value in that optional by the time it is needed.</description>
+    </item>
+    
+    <item>
+      <title>Configuring Xcode</title>
+      <link>https://troz.net/2016/02/configuring-xcode/</link>
+      <pubDate>Wed, 17 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/2016/02/configuring-xcode/</guid>
+      <description>While not strictly a part of my Learning Swift series, today I thought I would discuss some of the ways to configure and use Xcode to be a more productive and comfortable programmer.
+1. Editor color themes and fonts: Step through the supplied themes and find the best one for you. Then click the &amp;lsquo;+&amp;rsquo; button at the bottom of the list and duplicate the selected theme. Now you can tweak it to suit you.</description>
+    </item>
+    
+    <item>
+      <title>How do I start to learn Swift?</title>
+      <link>https://troz.net/2016/02/how-do-i-start-to-learn-swift/</link>
+      <pubDate>Tue, 16 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/2016/02/how-do-i-start-to-learn-swift/</guid>
+      <description>The first thing to do is to download the latest version of Apple&amp;rsquo;s Swift Programming Language book from the iBooks Store.
+You can just read this book, especially the first section: &amp;ldquo;A Swift Tour&amp;rdquo;, but you will get more out of it if you follow along with the playground. There is a link to download the playground from the book which you can use directly if you are reading using iBooks on the Mac.</description>
+    </item>
+    
+    <item>
+      <title>Learning Swift - Optionals</title>
+      <link>https://troz.net/2016/02/learning-swift-optionals/</link>
+      <pubDate>Fri, 12 Feb 2016 14:24:00 +1000</pubDate>
+      
+      <guid>https://troz.net/2016/02/learning-swift-optionals/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Why is Swift so great?</title>
+      <link>https://troz.net/2016/02/why-is-swift-so-great/</link>
+      <pubDate>Wed, 10 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/2016/02/why-is-swift-so-great/</guid>
+      <description>Firstly, I can give you the technical answer, as published by Apple:
+ Swift is a new programming language for iOS, OS X, watchOS, and tvOS apps that builds on the best of C and Objective-C, without the constraints of C compatibility. Swift adopts safe programming patterns and adds modern features to make programming easier, more flexible, and more fun. Swift’s clean slate, backed by the mature and much-loved Cocoa and Cocoa Touch frameworks, is an opportunity to reimagine how software development works.</description>
+    </item>
+    
+    <item>
+      <title>Learning Swift - An Introduction</title>
+      <link>https://troz.net/2016/02/learning-swift-an-introduction/</link>
+      <pubDate>Tue, 09 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/2016/02/learning-swift-an-introduction/</guid>
+      <description>Welcome to Learning Swift. This is the first post in what I hope will be an extensive series dealing with the Swift language. Here are some of the questions I hope to answer:
+ Should I learn Swift? Why? Why is Swift so great? How should I start learning Swift? I already know Objective-C - how do I convert?  After that, I am planning a series of posts discussing the major differences of Swift from the view point of an Objective-C programmer and the aspects of Swift that I found difficult to grasp.</description>
+    </item>
+    
+    <item>
+      <title>New Twitter account</title>
+      <link>https://troz.net/2016/02/new-twitter-account/</link>
+      <pubDate>Tue, 09 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/2016/02/new-twitter-account/</guid>
+      <description>I have started a new Twitter account so that I can provide rapid support to users of my apps. Please contact me @trozware if you have any questions, suggestions, bug reports or would just like to chat.
+I will also be using this account to promote my new Learning Swift series.</description>
+    </item>
+    
+  </channel>
+</rss>

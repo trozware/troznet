@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Icons on TrozWare</title>
+    <link>https://troz.net/tags/icons/</link>
+    <description>Recent content in Icons on TrozWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 17 Sep 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://troz.net/tags/icons/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How much work does Icon Builder save you?</title>
+      <link>https://troz.net/2016/09/how-much-work-does-icon-builder-save-you/</link>
+      <pubDate>Sat, 17 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/2016/09/how-much-work-does-icon-builder-save-you/</guid>
+      <description>Icon Builder is a Mac app that takes a single image file and creates all the different image sizes that you need to make a set of icons for your app: Mac, iPhone, iPad, iOS Universal or Apple Watch.
+Version 4, released 16 September 2016 is available through the Mac App Store.
+What&amp;rsquo;s New in Version 4:  Added support for iMessage apps and Sticker Pack apps. Added support for creating Mac .</description>
+    </item>
+    
+    <item>
+      <title>Icon Builder 3.2 Released</title>
+      <link>https://troz.net/2016/02/icon-builder-32-released/</link>
+      <pubDate>Wed, 10 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/2016/02/icon-builder-32-released/</guid>
+      <description>Icon Builder 3.2 is now available from the Mac App Store.
+ Icons for Apple Watch apps now have their alpha channel removed. Tidier folder structure for related files (iTunes Artwork files and Read Me). Updated to work with Xcode 7&amp;rsquo;s Assets.xcassets folders. Creates iPad Pro icons for Xcode 7.2 or later. Fix for Retina Macs creating double-sized images.  </description>
+    </item>
+    
+    <item>
+      <title>Possible issues with Icon Builder &amp; Watch icons</title>
+      <link>https://troz.net/2016/02/possible-issues-with-iconbuilder/</link>
+      <pubDate>Sat, 06 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/2016/02/possible-issues-with-iconbuilder/</guid>
+      <description>It has come to my attention that there are two possible issues with Icon Builder 3.0.1 when using icons created for an Apple Watch app. Once of them is something I can fix and the other appears to be a bug in Xcode 7.2
+Update: Version 3.2 of Icon Builder is now available in the Mac App Store. This removes the alpha channel from icons for a watch app.
+The first problem is that iTines Connect now requires that the icons for an Apple Watch app include no alpha channel.</description>
+    </item>
+    
+    <item>
+      <title>Icon Builder 3.0.1</title>
+      <link>https://troz.net/2015/03/icon-builder-3.0.1/</link>
+      <pubDate>Tue, 17 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/2015/03/icon-builder-3.0.1/</guid>
+      <description>So why an announcement for such a minor upgrade?
+Version 3.0 got no announcement because it was not the release I wanted.
+Having downloaded the Xcode 6.2 &amp;amp; 6.3 betas, I had worked out what icons were needed to a WatchKit app. This, combined with several other changes, made me bump the version number to 3.0.
+Sadly, Apple rejected the update because it referred to pre-release products. So I pulled all mentions of WatchKit out of the interface and meta data and got 3.</description>
+    </item>
+    
+    <item>
+      <title>Icon Builder &amp; iOS 7</title>
+      <link>https://troz.net/icon-builder-ios-7/</link>
+      <pubDate>Mon, 23 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/icon-builder-ios-7/</guid>
+      <description>Icon Builder 1.2 was released on 18 September 2013.
+It was an update with 2 new functions:
+ The ability to create images to suit an Xcode 5 assets library The ability to create icons with the required sizes for IOS 7 apps.  Knowing that iOS 7 apps can only be built using Xcode 5, I linked the switch for these 2 abilities in a single check box.
+The problem was not really that they were in a single checkbox but that I had labelled it badly, so it was not obvious that this was what needed to be checked to create iOS 7 sized icon files.</description>
+    </item>
+    
+    <item>
+      <title>Icon apps updated</title>
+      <link>https://troz.net/icon-apps-updated/</link>
+      <pubDate>Thu, 19 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/icon-apps-updated/</guid>
+      <description>Icns Maker and Icon Builder have both just been updated to support Xcode 5.
+Icon Builder is a Mac app that takes your images and creates all the required icon files for use in your iOS apps.
+It now supports Xcode 5&amp;rsquo;s image assets folders and if you are using Xcode 5, it will create the icon sizes required for iOS 7 app.
+Icns Maker is a Mac app that takes your images and creates icons for use in your Mac apps.</description>
+    </item>
+    
+    <item>
+      <title>Icns Maker &amp; Icon Builder updated</title>
+      <link>https://troz.net/icns-maker-icon-builder-updated/</link>
+      <pubDate>Sat, 19 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/icns-maker-icon-builder-updated/</guid>
+      <description>January 18th 2013:
+Both of the icon building apps have now been updated to fix a but that made incorrect icon sizes when running on a Retina MacBook Pro.
+Icns Maker uses your image to create an icns file for Mac apps.
+
+Icon Builder uses your image to create the suite of icon files needed for iOS apps.</description>
+    </item>
+    
+    <item>
+      <title>Icon Makers &amp; Retina Macs</title>
+      <link>https://troz.net/icon-makers-retina-macs/</link>
+      <pubDate>Mon, 14 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/icon-makers-retina-macs/</guid>
+      <description>Icns Maker which makes an icns icon file for Mac apps, and Icon Builder which makes the suite of png files needed for iOS apps, are both compatible with the Retina MacBook Pro.
+However it was recently brought to my attention (thanks Cameron), that when running on a Retina MBP, all the icon files were exactly twice as large as they should be. The Icon.png file which supplies the main app icon for iPhone apps should be 57 pixels by 57 pixels.</description>
+    </item>
+    
+    <item>
+      <title>Icon makers for Mac &amp; iOS apps</title>
+      <link>https://troz.net/icon-makers-for-mac-ios-apps/</link>
+      <pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/icon-makers-for-mac-ios-apps/</guid>
+      <description>Announcing two new apps for creating icons for with Mac or iOS projects:
+Icns Maker helps you convert a single image into a .icns file in two steps.
+Icon Builder creates all the files needed to set up your icons for any iOS project.
+Creating icon files for Mac apps: In versions of Xcode before 4.4, Apple provided an app called “Icon Composer”. It allowed you to drag images into a window and export a .</description>
+    </item>
+    
+    <item>
+      <title>Icns Maker</title>
+      <link>https://troz.net/icns-maker/</link>
+      <pubDate>Mon, 01 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/icns-maker/</guid>
+      <description>Icns Maker is available from the Mac App Store.
+Make an icns in 2 steps: 
+ Drag an image into the window.
+ Click “Create icns” or “Create assets”.
+  This creates a .icns file or assets folder that can be imported directly into your Xcode project for use in your app.
+Why is this necessary? In versions of Xcode before 4.4, Apple provided an app called “Icon Composer”.</description>
+    </item>
+    
+    <item>
+      <title>Icon Builder</title>
+      <link>https://troz.net/icon-builder/</link>
+      <pubDate>Mon, 01 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/icon-builder/</guid>
+      <description>Icon Builder 3.2 is available from the Mac App Store.
+Make and install a set of icons for an iOS, Mac or Apple Watch app in 3 steps: 1: Drag an image into the window.
+2: Choose the device family you are building for: iOS Universal, iPhone, iPad, Mac or Apple Watch.
+If you are building for iOS and your app still supports iOS 6, then you need to change the setting in the iOS popup menu.</description>
+    </item>
+    
+  </channel>
+</rss>

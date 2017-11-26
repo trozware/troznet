@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Icns Maker - TrozWare</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Sarah" />
+  <meta name="description" content="Icns Maker is available from the Mac App Store.
+Make an icns in 2 steps: 
+ Drag an image into the window.
+ Click “Create icns” or “Create assets”.
+  This creates a .icns file or assets folder that can be imported directly into your Xcode project for use in your app.
+Why is this necessary? In versions of Xcode before 4.4, Apple provided an app called “Icon Composer”." />
+
+  <meta name="keywords" content="Swift, Apple, macOS, iOS, Apple Watch" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.31" />
+
+
+<link rel="canonical" href="https://troz.net/icns-maker/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+
+
+<meta property="og:title" content="Icns Maker" />
+<meta property="og:description" content="Icns Maker is available from the Mac App Store.
+Make an icns in 2 steps: 
+ Drag an image into the window.
+ Click “Create icns” or “Create assets”.
+  This creates a .icns file or assets folder that can be imported directly into your Xcode project for use in your app.
+Why is this necessary? In versions of Xcode before 4.4, Apple provided an app called “Icon Composer”." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troz.net/icns-maker/" />
+
+
+
+<meta property="article:published_time" content="2012-10-01T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2012-10-01T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Icns Maker">
+<meta itemprop="description" content="Icns Maker is available from the Mac App Store.
+Make an icns in 2 steps: 
+ Drag an image into the window.
+ Click “Create icns” or “Create assets”.
+  This creates a .icns file or assets folder that can be imported directly into your Xcode project for use in your app.
+Why is this necessary? In versions of Xcode before 4.4, Apple provided an app called “Icon Composer”.">
+
+
+<meta itemprop="datePublished" content="2012-10-01T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2012-10-01T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="789">
+
+
+
+<meta itemprop="keywords" content="mac,icons," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Icns Maker"/>
+<meta name="twitter:description" content="Icns Maker is available from the Mac App Store.
+Make an icns in 2 steps: 
+ Drag an image into the window.
+ Click “Create icns” or “Create assets”.
+  This creates a .icns file or assets folder that can be imported directly into your Xcode project for use in your app.
+Why is this necessary? In versions of Xcode before 4.4, Apple provided an app called “Icon Composer”."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">TrozWare</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/apps/">
+        <li class="mobile-menu-item">Apps</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">TrozWare</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/apps/">Apps</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+      
+
+<p><a href="/images/IcnsMaker1.png">Icns Maker</a> is available from the Mac App Store.</p>
+
+<h1 id="make-an-icns-in-2-steps">Make an icns in 2 steps:</h1>
+
+<p><a href="/images/IcnsMaker1.png"><img alt="Make an icns in 2 steps" src="/images/IcnsMaker1-300x255.png" width="300" height="255" /></a></p>
+
+<ol>
+<li><p>Drag an image into the window.</p></li>
+
+<li><p>Click “Create icns” or “Create assets”.</p></li>
+</ol>
+
+<p>This creates a .icns file or assets folder that can be imported directly into
+your Xcode project for use in your app.</p>
+
+<hr />
+
+<h2 id="why-is-this-necessary">Why is this necessary?</h2>
+
+<p>In versions of Xcode before 4.4, Apple provided an app called “Icon Composer”.
+It allowed you to drag images into a window and export a .icns file for use in
+your apps. With Xcode 4.4, Apple has changed the way icons are handled for Mac
+apps and &ldquo;Icon Composer&rdquo; is no longer supplied.</p>
+
+<p>Search the Xcode documentation for “Icon Design Guidelines” and scroll down to
+“Provide the Correct Resources” and “Packaging Your Icon Resources” for more
+info.</p>
+
+<p>For Xcode 4, you now create a special .iconset folder and load it up with
+various sized images. Then you run a shell command to stitch these specifically
+named files into a single .icns file that can be used in your Xcode project.
+None of this is rocket science, but it is tedious and repetitive - just the
+right sort of task for a computer.</p>
+
+<p>With Xcode 5.x, Apple has changed things again. Now your project contains a
+special folder called “Images.xcassets” which contains all the image files used
+in your project, including the app icons.</p>
+
+<p>If you have checked the “Create Assets (for Xcode 5.x or later)” checkbox, a
+folder of images will be created instead of the icns file. The images in this
+folder can be imported into your “Images.xcassets” folder for use as your app
+icon. A ReadMe file in the images folder will give the details on this.</p>
+
+<p>Note that apps submitted to the Mac App Store now require a 1024x1024 version of
+the icon.</p>
+
+<hr />
+
+<h2 id="if-you-want-more-control">If you want more control:</h2>
+
+<p>Click the “Smaller sizes” switch to show all the other image
+sizes.<a href="/images/IcnsMaker2.png"><img alt="Get More Control" src="/images/IcnsMaker2-300x187.png" width="300" height="187" /></a></p>
+
+<p>When you drag an image into the 1024 x 1024 area, it is resized to supply all
+the required images. If you have a smaller version of your icon image that you
+want to use for some of the smaller sizes, just drag the image into the largest
+image area that you want it to be used for.</p>
+
+<p>As an example, if you want to show a lower resolution image for 64x64, 32x32 and
+16x16, create the lower resolution image at 64x64 pixels and drag it into the
+64x64 area. It will be used for the 64x64 image and resized to make the 32x32
+and 16x16 images. The larger images will still use the original 1024x1024 image
+scaled down.</p>
+
+<p>If you want, you can specify a different image for every required size.</p>
+
+<p>512x512 images will be resized to 1024x1024 if required to assist when
+converting older icons, but no other images will be enlarged.</p>
+
+<hr />
+
+<h2 id="faq">FAQ</h2>
+
+<p><strong>Q.</strong> What image types can I use?<br />
+**A. **Any image type compatible with QuickTime, including JPEG, PNG, TIFF, GIF,
+PDF, PSD, BMP.</p>
+
+<p><strong>Q.</strong> Does this app make icons for OS X Mavericks (10.9) apps?<br />
+**A. **Yes, the required image sizes for icons have not changed in 10.9.</p>
+
+<p><strong>Q.</strong> What version of Xcode do I need?<br />
+**A. **This app is designed to help when using Xcode 4.4 or later.</p>
+
+<ul>
+<li>For Xcode 4.x, make sure to un-check &ldquo;Create Assets (for Xcode 5.x or later)&rdquo;.</li>
+<li>For Xcode 5.x, check the &ldquo;Create Assets (for Xcode 5.x or later)&rdquo; checkbox.</li>
+</ul>
+
+<p><strong>Q.</strong> What if my starting image is the wrong size?<br />
+**A. ** If your image is not square, it will be cropped when you drag it in. If it
+is the wrong size for the image area you are dragging it into, it will be resized
+to fit.</p>
+
+<p><strong>Q.</strong> How I start again with a blank slate?<br />
+<strong>A.</strong> Choose “New” from the File menu, or press Command-N.</p>
+
+<p><strong>Q.</strong> Do I have to drag images in?<br />
+<strong>A.</strong> No, you can copy &amp; paste an image file, or an image.</p>
+
+<p><strong>Q.</strong> What if I want to update an existing .icns file?<br />
+<strong>A.</strong> Drag it in or choose “Open icns…” from the File menu. You may find that you
+need to make a new image for the 1024x1024 size.</p>
+
+<p><strong>Q.</strong> Does Mac Icns Maker create icons suitable for Retina displays?<br />
+<strong>A.</strong> Yes. That is why it uses a 1024x1024 version of your image.</p>
+
+<p><strong>Q.</strong> Does Icns Maker create icons for use in iPad and iPhone apps?<br />
+<strong>A.</strong> No. icns files are used in Mac apps only. For iOS apps, check out the companion
+product:<a href="/icon-builder/" title="Icon Builder"> Icon Builder</a>.</p>
+
+<p><strong>Q.</strong> I&rsquo;m a programmer, not a graphic designer. How do I make icon images?<br />
+<strong>A.</strong> One easy way to create basic shapes with gradients, text, added images etc.
+is to use Keynote. I presume PowerPoint has the same sort of abilities.</p>
+
+  </div>
+</article>
+        </div>
+        
+  
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:sarah@troz.net" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1082632" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/trozware" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/trozware" class="iconfont icon-github" title="github"></a>
+  <a href="https://troz.net/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme -
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2012 -
+    2017
+    <span class="author">Sarah Reichelt</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+
+
+
+
+</body>
+</html>

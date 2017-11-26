@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Dice Pass - TrozWare</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Sarah" />
+  <meta name="description" content="Dice Pass is available from the Mac App Store.
+Dice Pass is a utility to app to generate random passphrases based on the Diceware system. Diceware uses a table of pre-defined words, each assigned a 5 digit code number containing the digits 1 to 6. The official way to generate a phrase is to roll 5 dice for each word you want in your passphrase and then consult the words table to find the matching word." />
+
+  <meta name="keywords" content="Swift, Apple, macOS, iOS, Apple Watch" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.31" />
+
+
+<link rel="canonical" href="https://troz.net/dicepass/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+
+
+<meta property="og:title" content="Dice Pass" />
+<meta property="og:description" content="Dice Pass is available from the Mac App Store.
+Dice Pass is a utility to app to generate random passphrases based on the Diceware system. Diceware uses a table of pre-defined words, each assigned a 5 digit code number containing the digits 1 to 6. The official way to generate a phrase is to roll 5 dice for each word you want in your passphrase and then consult the words table to find the matching word." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troz.net/dicepass/" />
+
+
+
+<meta property="article:published_time" content="2015-05-29T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2015-05-29T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Dice Pass">
+<meta itemprop="description" content="Dice Pass is available from the Mac App Store.
+Dice Pass is a utility to app to generate random passphrases based on the Diceware system. Diceware uses a table of pre-defined words, each assigned a 5 digit code number containing the digits 1 to 6. The official way to generate a phrase is to roll 5 dice for each word you want in your passphrase and then consult the words table to find the matching word.">
+
+
+<meta itemprop="datePublished" content="2015-05-29T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2015-05-29T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="738">
+
+
+
+<meta itemprop="keywords" content="mac,dice,passwords," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Dice Pass"/>
+<meta name="twitter:description" content="Dice Pass is available from the Mac App Store.
+Dice Pass is a utility to app to generate random passphrases based on the Diceware system. Diceware uses a table of pre-defined words, each assigned a 5 digit code number containing the digits 1 to 6. The official way to generate a phrase is to roll 5 dice for each word you want in your passphrase and then consult the words table to find the matching word."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">TrozWare</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/apps/">
+        <li class="mobile-menu-item">Apps</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">TrozWare</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/apps/">Apps</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+      
+
+<p>Dice Pass is available from the <a href="https://itunes.apple.com/us/app/dice-pass/id997688302">Mac App Store</a>.</p>
+
+<p>Dice Pass is a utility to app to generate random passphrases based on the <a href="http://world.std.com/~reinhold/diceware.html">Diceware system</a>. Diceware uses a table of pre-defined words, each assigned a 5 digit code number containing the digits 1 to 6. The official way to generate a phrase is to roll 5 dice for each word you want in your passphrase and then consult the words table to find the matching word.</p>
+
+<p><img src="/images/DicePass_Mac.png" alt="Dice Pass for Mac" /></p>
+
+<p>The resulting phrase uses real words or common abbreviations, so it is easier to remember than a random collection of characters. At the same time, the random selection of words makes the generated passphrase much more secure as it avoids the human tendency to pick words with personal meaning.</p>
+
+<p>The Diceware system was invented by Arnold Reinhold. This utility is not associated with or supported by Arnold Reinhold in any way, but uses his techniques with thanks. For more information about Diceware, have a look at the <a href="http://world.std.com/%7Ereinhold/dicewarefaq.html">Diceware Passphrase FAQ page</a>.</p>
+
+<p>The default word list used in this app is a variation compiled by <a href="http://world.std.com/~reinhold/beale.wordlist.asc">Alan Beale</a> that removes some of the more obscure words. But you can select the original Diceware word list or the Diceware 8k word list fromt rh Word List menu if you prefer to use something different. You can also provide your own word list file if you prefer.</p>
+
+<hr />
+
+<h2 id="f-a-q">F.A.Q.</h2>
+
+<p><strong>How many words should I use in my passphrase?</strong></p>
+
+<p>Arnold Reinhold recommends 6 words. He used to suggest that 5 was sufficient for most needs, but as of 2014 has increased this to 6. See the Diceware Passphrase FAQ page for more details. (Link above.)</p>
+
+<p><strong>How often can I re-generate the passphrase?</strong></p>
+
+<p>As often as you like. Keep clicking until you get a phrase that you can remember. If you get a phrase where most of the words are good but you would like to change one or two, you can click &rsquo;Re-Roll&rsquo; on individual words to change them.</p>
+
+<p><strong>Is there a way to check the strength of my passphrase?</strong></p>
+
+<p>There are many password strength checkers on the internet and three of these are listed below. But always be careful when pasting your passphrase into a web page.</p>
+
+<p><strong>Online password strength checkers:</strong></p>
+
+<ul>
+<li><a href="http://rumkin.com/tools/password/passchk.php">Rumkin.com Strength Test</a></li>
+<li><a href="https://howsecureismypassword.net">How Secure Is My Password?</a></li>
+<li><a href="http://www.passwordmeter.com">The Password Meter</a></li>
+</ul>
+
+<p><strong>Some of the words in the phrase are not complete words.</strong></p>
+
+<p>The theory is that shorter words or abbreviations are easier to remember than long ones, without compromising security. But if you get a word you don&rsquo;t like or think that you will not be able to remember, just re-roll that word.</p>
+
+<p><strong>What if I want to roll the dice myself?</strong></p>
+
+<p>Dice Pass allows you to tap on the 5 dice to set the numbers needed for each word manually. Each time you tap the number will go up be one, wrapping from 6 back to 1. The app will then look up the word table for you and show the new word.</p>
+
+<p><strong>When the phrase gets too long I can&rsquo;t see all the words.</strong></p>
+
+<p>The &ldquo;Copy&rdquo; button will copy the complete passphrase even if it is not all visible. You can also scroll by clicking and dragging along the passphrase.</p>
+
+<p><strong>Does my passphrase get saved by the app or transmitted over the internet?</strong></p>
+
+<p>No. The app saves no data except for basic preferences (window positioning &amp; size, preferred word list etc.). There is never any data sent over the network and the app will work perfectly if you disconnect your computer before using.</p>
+
+<p><strong>What are those 3 buttons: #, A and 1?</strong></p>
+
+<p>Some sites may require a passphrase that contains a mix of character types. These buttons will insert a special character, change the start of one word to uppercase, or insert a number. Tap the button again to undo the change. Again, these characters are chosen using the dice roll system and the special characters are selected and positioned using the method and data suggested by Arnold Reinhold.</p>
+
+<p><strong>I thought there was a version of Dice Pass for iOS!</strong></p>
+
+<p>There was, but with the need to update apps to support iOS 10, I decided to drop support for some under-performing iOS apps. If you bought the iOS version and would like to switch to the Mac, send me a screen shot of the app running on your iPhone or iPad and I will send you a free promo code for the Mac version.</p>
+
+  </div>
+</article>
+        </div>
+        
+  
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:sarah@troz.net" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1082632" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/trozware" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/trozware" class="iconfont icon-github" title="github"></a>
+  <a href="https://troz.net/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme -
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2012 -
+    2017
+    <span class="author">Sarah Reichelt</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scoring on TrozWare</title>
+    <link>https://troz.net/tags/scoring/</link>
+    <description>Recent content in Scoring on TrozWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 07 May 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://troz.net/tags/scoring/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>19th Hole Golf Scorer 3.1</title>
+      <link>https://troz.net/2016/05/19th-hole-golf-scorer-3.1/</link>
+      <pubDate>Sat, 07 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/2016/05/19th-hole-golf-scorer-3.1/</guid>
+      <description>One of the problems with using 19th Hole on the Apple Watch is making the app show every time you raise your wrist. My solution to this was to go into Settings (either on my iPhone through the Watch app, or directly on the watch) and change it to &amp;ldquo;Resume Last Activity&amp;rdquo; on wrist raise. This worked fine but as I usually prefer the watch face to show on wrist raise, I had to keep setting and re-setting this which was a pain.</description>
+    </item>
+    
+    <item>
+      <title>19th Hole</title>
+      <link>https://troz.net/19th-hole/</link>
+      <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/19th-hole/</guid>
+      <description>19th Hole is the golf scoring app for everyone, and it is available from the iTunes App Store.
+Whether you are playing for the club championship, having a weekend round with friends or playing pitch&amp;rsquo;n&amp;rsquo;putt with the kids, 19th Hole makes it easy to keep score.
+Designed for fast, accurate score keeping with a color scheme chosen for optimal outdoor viewing, 19th Hole uses a simple setup process and an intuitive, gesture-based score entry system.</description>
+    </item>
+    
+  </channel>
+</rss>
