@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://troz.net/post/2017-11-29-moving-to-hugo/</loc>
+    <lastmod>2017-11-29T17:42:57+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://troz.net/contact/</loc>
     <lastmod>2017-11-26T11:22:18+10:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -716,6 +723,13 @@
   </url>
   
   <url>
+    <loc>https://troz.net/tags/hugo/</loc>
+    <lastmod>2017-11-29T17:42:57+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://troz.net/tags/icons/</loc>
     <lastmod>2016-09-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -745,7 +759,7 @@
   
   <url>
     <loc>https://troz.net/tags/jekyll/</loc>
-    <lastmod>2017-06-17T00:00:00+00:00</lastmod>
+    <lastmod>2017-11-29T17:42:57+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -864,7 +878,7 @@
   
   <url>
     <loc>https://troz.net/post/</loc>
-    <lastmod>2017-06-18T00:00:00+00:00</lastmod>
+    <lastmod>2017-11-29T17:42:57+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -976,7 +990,7 @@
   
   <url>
     <loc>https://troz.net/</loc>
-    <lastmod>2017-11-26T11:22:18+10:00</lastmod>
+    <lastmod>2017-11-29T17:42:57+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1011,7 +1025,7 @@
   
   <url>
     <loc>https://troz.net/tags/web/</loc>
-    <lastmod>2015-03-12T00:00:00+00:00</lastmod>
+    <lastmod>2017-11-29T17:42:57+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
