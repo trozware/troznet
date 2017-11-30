@@ -1,7 +1,5 @@
 ---
 date: 2012-05-09T00:00:00Z
-dsq_thread_id:
-- 3565951419
 tags:
 - screen saver
 - time in words

@@ -1,12 +1,18 @@
 ---
 date: 2016-02-24T00:00:00Z
-summary: 1. Do not use !.<br>2. Use let, not var.<br>3. Allow the compiler to infer
-  types.
 tags:
 - swift
 - learning swift
 title: Three Rules for Writing Better Swift
 ---
+
+1. Do not use !.
+2. Use let, not var.
+3. Allow the compiler to infer types.
+
+Read on for more details...
+
+  <!--more-->
 
 ## 1. Do not use !
 

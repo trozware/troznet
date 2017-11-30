@@ -1,7 +1,5 @@
 ---
 date: 2017-06-18T00:00:00Z
-summary: Parsing JSON in Swift 4 is now much easier than before and dozens of Swift
-  3 JSON libraries have just been sherlocked.
 tags:
 - swift
 - json
@@ -21,6 +19,8 @@ internet, there has always been a lot of interest in Swift libraries to parse
 JSON into Swift classes or structs. Searching for "swift json library" on
 [GitHub][2] discovers <s>77</s> 86 repositories. So why are there so many? And
 what has Swift 4 done to _sherlock_ them all?
+
+<!--more-->
 
 The problem has always been converting loosely typed JSON to strictly typed
 Swift which involves a lot of type casting, checking, optionals etc. Swift has

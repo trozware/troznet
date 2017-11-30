@@ -1,7 +1,5 @@
 ---
 date: 2012-02-25T00:00:00Z
-dsq_thread_id:
-- 3569601004
 tags:
 - time in words
 - mac

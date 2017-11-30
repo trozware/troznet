@@ -3,8 +3,6 @@ date: 2016-05-07T00:00:00Z
 iphoneappdesc: The golf scoring app for everyone, for iPhone and Apple Watch.
 iphoneappid: 871686159
 iphoneappname: 19th Hole Golf Scorer
-summary: I finally worked out how to make the app stay as the active app on my Apple
-  Watch without having to change settings every time.
 tags:
 - ios
 - golf

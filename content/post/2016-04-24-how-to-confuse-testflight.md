@@ -1,7 +1,5 @@
 ---
 date: 2016-04-24T00:00:00Z
-summary: I ran into an unusual problem when testing my latest app - What Is My Speed.
-  It is now available from the iTunes App Store, but getting there was a struggle.
 tags:
 - app store
 - testflight
@@ -9,11 +7,13 @@ tags:
 title: How To Confuse TestFlight
 ---
 
-[TL;DR][5]
-
 I ran into an unusual problem when testing my latest app: "[What Is My
 Speed?][1]". It is now available from the [iTunes App Store][2], but getting
 there was a struggle.
+
+<!--more-->
+
+[TL;DR][5]
 
 Xcode is terrible at renaming projects, so it is a really good idea to have
 worked out your app's name before starting. I would even recommend creating an

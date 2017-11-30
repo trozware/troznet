@@ -1,7 +1,5 @@
 ---
 date: 2017-05-20T00:00:00Z
-summary:
-- Today I have replaced the RSS feed for this site with a JSON feed.
 tags:
 - trozware
 - json
@@ -14,6 +12,8 @@ alternative to RSS. TrozWare has had an XML RSS feed for years, but I don't
 think anyone ever uses it (I certainly don't), so today I have replaced it with
 a JSON feed, which you can access through the
 <a class="fa fa-rss" href="/feed.json"></a> button at the top of every page.
+
+<!--more-->
 
 I am sure many JSON Feed viewers will appear soon, but the only one I know about
 so far is at [http://json-feed-viewer.herokuapp.com][8]. As soon as this update

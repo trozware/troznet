@@ -59,7 +59,7 @@ So I drew up a list of demands for any theme I chose:
   * front page with recent posts
   * tags
   * archive page
-* Written using MarkDown
+* Written using Markdown
 * Static pages for apps listing, about, contact etc.
 * Syntax highlighting
 * Social links
@@ -99,12 +99,12 @@ set up menus, configure the social media links I wanted to show, set date
 formats, set the number of items to show per page and so on.
 
 I had a couple of more static pages that I wanted to show, so I added their
-MarkDown files to the content folder.
+Markdown files to the content folder.
 
 One nice feature which I had missed in Jekyll (or at least the way I had it set
 up) was the ability to separate blog posts from more static web pages. Each of
 my apps has an information/support page that does not accept comments and
-doesn't need to be listed in the Archives. By moving these MarkDown files from
+doesn't need to be listed in the Archives. By moving these Markdown files from
 `contents/posts` to `contents/pages`, I was able to achieve this.
 
 Adding Google Analytics and Disqus commenting was as easy as entering my IDs in
@@ -166,7 +166,7 @@ So how am I going with my check list?
 
 * Responsive - ALMOST, not Hugo's fault
 * Blog style - YES
-* Written using MarkDown - YES
+* Written using Markdown - YES
 * Static pages for apps listing, about, contact etc. - YES
 * Syntax highlighting - YES
 * Social links - YES

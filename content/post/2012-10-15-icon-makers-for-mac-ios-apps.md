@@ -1,7 +1,5 @@
 ---
 date: 2012-10-15T00:00:00Z
-dsq_thread_id:
-- 3569563929
 tags:
 - icons
 - mac

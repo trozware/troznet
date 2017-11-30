@@ -1,7 +1,5 @@
 ---
 date: 2012-05-16T00:00:00Z
-dsq_thread_id:
-- 3571578097
 tags:
 - operating systems
 - mac

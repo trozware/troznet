@@ -7,7 +7,7 @@ theme = "even"
 
 hasCJKLanguage = false     # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
 paginate = 10                                              # （可选）首页显示的文章条目数量，默认为10
-disqusShortname = "trozware"      # disqus_shortname
+disqusShortname = ""      # disqus_shortname
 googleAnalytics = "UA-5511808-2"      # UA-XXXXXXXX-X
 copyright = ""            # default: author.name ↓        # 默认为下面配置的author.name ↓
 
