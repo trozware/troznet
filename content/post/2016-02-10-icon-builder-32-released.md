@@ -11,7 +11,6 @@ tags:
 - ios
 - apple watch
 - watch
-- app store
 title: Icon Builder 3.2 Released
 url: /2016/02/icon-builder-32-released/
 ---

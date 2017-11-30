@@ -32,16 +32,6 @@ At the moment, the following iOS apps are no longer available:
     </item>
     
     <item>
-      <title>Dice Pass Mac Update</title>
-      <link>https://troz.net/2016/07/dice-pass-mac-update/</link>
-      <pubDate>Sun, 03 Jul 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://troz.net/2016/07/dice-pass-mac-update/</guid>
-      <description>I recently got an email from someone who had purchased Dice Pass for Mac from the Mac App Store but had been unable to get it to run. This person was using OS X 10.9.3.
-I checked the App Store specifications and it showed that 10.9 was the minimum system requirement, so it should have worked. But going back to my Xcode project, I found that it was set to a minimum of OS X 10.</description>
-    </item>
-    
-    <item>
       <title>How To Confuse TestFlight</title>
       <link>https://troz.net/2016/04/how-to-confuse-testflight/</link>
       <pubDate>Sun, 24 Apr 2016 00:00:00 +0000</pubDate>
@@ -50,16 +40,6 @@ I checked the App Store specifications and it showed that 10.9 was the minimum s
       <description>TL;DR
 I ran into an unusual problem when testing my latest app: &amp;ldquo;What Is My Speed?&amp;rdquo;. It is now available from the iTunes App Store, but getting there was a struggle.
 Xcode is terrible at renaming projects, so it is a really good idea to have worked out your app&amp;rsquo;s name before starting. I would even recommend creating an app ID in your Apple Developer account and registering the app name in iTunes Connect.</description>
-    </item>
-    
-    <item>
-      <title>Icon Builder 3.2 Released</title>
-      <link>https://troz.net/2016/02/icon-builder-32-released/</link>
-      <pubDate>Wed, 10 Feb 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://troz.net/2016/02/icon-builder-32-released/</guid>
-      <description>Icon Builder 3.2 is now available from the Mac App Store.
- Icons for Apple Watch apps now have their alpha channel removed. Tidier folder structure for related files (iTunes Artwork files and Read Me). Updated to work with Xcode 7&amp;rsquo;s Assets.xcassets folders. Creates iPad Pro icons for Xcode 7.2 or later. Fix for Retina Macs creating double-sized images.  </description>
     </item>
     
     <item>

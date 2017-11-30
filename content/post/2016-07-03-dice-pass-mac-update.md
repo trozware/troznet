@@ -6,7 +6,6 @@ macappdesc: A utility to app to generate random passphrases based on the Dicewar
 macappimage: /icons/DicePass128.png
 macappname: Dice Pass
 tags:
-- app store
 - dice
 - mac
 - password
