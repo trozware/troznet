@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Configuring Xcode - TrozWare</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Sarah Reichelt" />
+  <meta name="description" content="While not strictly a part of my Learning Swift series, today I thought I would discuss some of the ways to configure and use Xcode to be a more productive and comfortable programmer.
+1. Editor color themes and fonts: Step through the supplied themes and find the best one for you. Then click the &amp;lsquo;&#43;&amp;rsquo; button at the bottom of the list and duplicate the selected theme. Now you can tweak it to suit you." />
+
+  <meta name="keywords" content="Swift, Apple, macOS, iOS, Apple Watch" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.31" />
+
+
+<link rel="canonical" href="https://troz.net/post/2016-02-17-configuring-xcode/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+
+
+<meta property="og:title" content="Configuring Xcode" />
+<meta property="og:description" content="While not strictly a part of my Learning Swift series, today I thought I would discuss some of the ways to configure and use Xcode to be a more productive and comfortable programmer.
+1. Editor color themes and fonts: Step through the supplied themes and find the best one for you. Then click the &lsquo;&#43;&rsquo; button at the bottom of the list and duplicate the selected theme. Now you can tweak it to suit you." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troz.net/post/2016-02-17-configuring-xcode/" />
+
+
+
+<meta property="article:published_time" content="2016-02-17T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2016-02-17T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Configuring Xcode">
+<meta itemprop="description" content="While not strictly a part of my Learning Swift series, today I thought I would discuss some of the ways to configure and use Xcode to be a more productive and comfortable programmer.
+1. Editor color themes and fonts: Step through the supplied themes and find the best one for you. Then click the &lsquo;&#43;&rsquo; button at the bottom of the list and duplicate the selected theme. Now you can tweak it to suit you.">
+
+
+<meta itemprop="datePublished" content="2016-02-17T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2016-02-17T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="584">
+
+
+
+<meta itemprop="keywords" content="xcode,learning swift," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Configuring Xcode"/>
+<meta name="twitter:description" content="While not strictly a part of my Learning Swift series, today I thought I would discuss some of the ways to configure and use Xcode to be a more productive and comfortable programmer.
+1. Editor color themes and fonts: Step through the supplied themes and find the best one for you. Then click the &lsquo;&#43;&rsquo; button at the bottom of the list and duplicate the selected theme. Now you can tweak it to suit you."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">TrozWare</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/apps/">
+        <li class="mobile-menu-item">Apps</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">TrozWare</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/apps/">Apps</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Configuring Xcode</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 17 Feb 2016 </span>
+        
+        <span class="more-meta"> 584 words </span>
+        <span class="more-meta"> 3 minute read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#1-editor-color-themes-and-fonts">1. Editor color themes and fonts:</a></li>
+<li><a href="#2-add-ons">2. Add-ons:</a></li>
+<li><a href="#3-documentation">3. Documentation:</a></li>
+<li><a href="#4-other-preferences">4. Other preferences:</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>While not strictly a part of my Learning Swift series, today I thought I would
+discuss some of the ways to configure and use Xcode to be a more productive and
+comfortable programmer.</p>
+
+<h2 id="1-editor-color-themes-and-fonts">1. Editor color themes and fonts:</h2>
+
+<p><img src="/images/XcodeFontPrefs.png" alt="Editor" /></p>
+
+<p>Step through the supplied themes and find the best one for you. Then click the
+&lsquo;+&rsquo; button at the bottom of the list and duplicate the selected theme. Now you
+can tweak it to suit you. Each text category can have its own font and size, but
+you can make multiple selections in order to do a bulk change. don&rsquo;t forget to
+check out the Console section too - I dislike the default bold text for many of
+the console reports, so always change that.</p>
+
+<p>An editing font should be mono-spaced i.e. every character should take up
+exactly the same width on the screen. This makes your code look neater and
+neater code is easier to read when you come back to it. I also much prefer a
+sans-serif font, but that is a matter of preference.</p>
+
+<p>Menlo is the font used by Xcode as a default, but there are many other options
+either in the default installation of OS X or as free downloads. I change every
+now and then just to keep things interesting, but my current selection is <a href="https://github.com/tonsky/FiraCode">Fira
+Code</a>. I love the way it merges two character symbols into a single
+character for faster comprehension.</p>
+
+<p>My other favourites are:</p>
+
+<ul>
+<li><a href="https://github.com/adobe-fonts/source-code-pro">Source Code Pro</a></li>
+<li><a href="https://github.com/chrissimpkins/hack">Hack</a></li>
+<li><a href="https://github.com/mozilla/Fira">Fira</a></li>
+<li><a href="http://www.fontsquirrel.com/fonts/Inconsolata">Inconsolata</a></li>
+</ul>
+
+<p>Look for a font that makes it easy to distinguish the digit &lsquo;1&rsquo; from a lowercase
+&lsquo;l&rsquo; and where the digit &lsquo;0&rsquo; is different to the &lsquo;O&rsquo;.</p>
+
+<p>To install and use a new font, download the files and then double-click a TTF or
+OTF font file to install it in FontBook. Once the font is installed, you may
+need to restart Xcode in order to make it available.</p>
+
+<hr />
+
+<h2 id="2-add-ons">2. Add-ons:</h2>
+
+<p><strong>Update:</strong> Xcode 8 has removed the ability to run any plugins or to use
+Alcatraz, so this sectrion is no longer valid. Instead Apple is offering offical
+support for Xcode Source Editor Extensions, so they are the way of the future.</p>
+
+<hr />
+
+<h2 id="3-documentation">3. Documentation:</h2>
+
+<p>Xcode has excellent documentation, but unless you specifically download it, this
+will all be accessed online. If you have a bad or non-existent connection, this
+can be annoying. Go to Xcode&rsquo;s Preferences -&gt; Downloads and download all the
+document sets you are interested in. They are quite large, but having them local
+will be a big bonus.</p>
+
+<p>The other tool I use for documentation is <a href="https://kapeli.com/dash">Dash</a>. It supports many languages
+and is not just for use in Xcode. I found the Xcode integration plugin was not
+very useful as it conflicted with other useful behaviours. So I set up a global
+shortcut in System Preferences to search Dash for the selected text. This is
+much faster than Xcode&rsquo;s built-in documentation.</p>
+
+<p><img src="/images/Dash.png" alt="Dash" /></p>
+
+<hr />
+
+<h2 id="4-other-preferences">4. Other preferences:</h2>
+
+<p>Go through the preference panes in Xcode&rsquo;s preferences and tweak to suit your
+style or your group&rsquo;s preferred style.</p>
+
+<p>General and Text Editing are important. Text Editing has a second tab for
+Indentation which is easy to miss. Indentation styles seem to cause a lot of
+heated debate, so make sure you check this out.</p>
+
+<p>Accounts is vital if you are publishing to the App Stores and also makes it easy
+to transfer all your develop information from one computer to another.</p>
+
+<p>Fonts &amp; Colors and Downloads are discussed above.</p>
+
+<p>I tend to leave the others set to the defaults.</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  
+  <p class="copyright-item">
+    <span class="item-title">Last Modified</span>
+    <span class="item-content">17 Feb 2016</span>
+  </p>
+  
+  
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/xcode/">xcode</a>
+          
+          <a href="/tags/learning-swift/">learning swift</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2016-02-24-three-rules-for-writing-better-swift/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Three Rules for Writing Better Swift</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2016-02-16-how-do-i-start-to-learn-swift/">
+            <span class="next-text nav-default">How do I start to learn Swift?</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:sarah@troz.net" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1082632" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/trozware" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/trozware" class="iconfont icon-github" title="github"></a>
+  <a href="https://troz.net/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme -
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2012 -
+    2017
+    <span class="author">Sarah Reichelt</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-5511808-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

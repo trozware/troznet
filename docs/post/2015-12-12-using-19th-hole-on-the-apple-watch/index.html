@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Using 19th Hole on the Apple Watch - TrozWare</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Sarah Reichelt" />
+  <meta name="description" content="19th Hole for iPhone and Apple Watch version 3 is now available through the iTunes App Store. This version is a complete re-write to accommodate the changes in iOS 9 and watchOS2.
+The major changes are to do with the way the iPhone and the Watch communicate. In watchOS1, all the brains of the app had to live in the iPhone, meaning that every single interaction on the Watch had to be referred back to the iPhone for processing and the result sent back to the Watch for display." />
+
+  <meta name="keywords" content="Swift, Apple, macOS, iOS, Apple Watch" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.31" />
+
+
+<link rel="canonical" href="https://troz.net/post/2015-12-12-using-19th-hole-on-the-apple-watch/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+
+
+<meta property="og:title" content="Using 19th Hole on the Apple Watch" />
+<meta property="og:description" content="19th Hole for iPhone and Apple Watch version 3 is now available through the iTunes App Store. This version is a complete re-write to accommodate the changes in iOS 9 and watchOS2.
+The major changes are to do with the way the iPhone and the Watch communicate. In watchOS1, all the brains of the app had to live in the iPhone, meaning that every single interaction on the Watch had to be referred back to the iPhone for processing and the result sent back to the Watch for display." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troz.net/post/2015-12-12-using-19th-hole-on-the-apple-watch/" />
+
+
+
+<meta property="article:published_time" content="2015-12-12T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2015-12-12T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Using 19th Hole on the Apple Watch">
+<meta itemprop="description" content="19th Hole for iPhone and Apple Watch version 3 is now available through the iTunes App Store. This version is a complete re-write to accommodate the changes in iOS 9 and watchOS2.
+The major changes are to do with the way the iPhone and the Watch communicate. In watchOS1, all the brains of the app had to live in the iPhone, meaning that every single interaction on the Watch had to be referred back to the iPhone for processing and the result sent back to the Watch for display.">
+
+
+<meta itemprop="datePublished" content="2015-12-12T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2015-12-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="461">
+
+
+
+<meta itemprop="keywords" content="golf,watch," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Using 19th Hole on the Apple Watch"/>
+<meta name="twitter:description" content="19th Hole for iPhone and Apple Watch version 3 is now available through the iTunes App Store. This version is a complete re-write to accommodate the changes in iOS 9 and watchOS2.
+The major changes are to do with the way the iPhone and the Watch communicate. In watchOS1, all the brains of the app had to live in the iPhone, meaning that every single interaction on the Watch had to be referred back to the iPhone for processing and the result sent back to the Watch for display."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">TrozWare</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/apps/">
+        <li class="mobile-menu-item">Apps</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">TrozWare</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/apps/">Apps</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Using 19th Hole on the Apple Watch</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 12 Dec 2015 </span>
+        
+        <span class="more-meta"> 461 words </span>
+        <span class="more-meta"> 3 minute read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+      
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>19th Hole for iPhone and Apple Watch version 3 is now available through the
+<a href="https://itunes.apple.com/us/app/the-19th-hole/id871686159?mt=8&amp;uo=4">iTunes App Store</a>. This version is a complete re-write to accommodate the
+changes in iOS 9 and watchOS2.</p>
+
+<p>The major changes are to do with the way the iPhone and the Watch communicate.
+In watchOS1, all the brains of the app had to live in the iPhone, meaning that
+every single interaction on the Watch had to be referred back to the iPhone for
+processing and the result sent back to the Watch for display. This lead to
+communications delays and breakdowns which caused third-party apps to work
+sluggishly or not at all. In watchOS2, the brains of the watch part of the app
+can now operate inside the watch, greatly reducing the number of communications
+needed. As well as that, Apple has now provided us with multiple ways of getting
+data to and from the Watch which again improves performance and reliability.</p>
+
+<hr />
+
+<p>With the 19th Hole, I made the decision to change the method of inputting
+scores. The previous version used a slider with plus and minus buttons to adjust
+scores. The problems with this were the small target area of the plus &amp; minus
+buttons as well as the fact that a slider with more than about 3 divisions was
+not useful as a visual indicator.</p>
+
+<p>When watchOS2 allowed developers access to the digital crown, I decided to
+switch to using that instead. Now you tap the score box of the player you wish
+to adjust and use the digital crown to select a number. I think this will be
+easier to use while wearing a glove and hope that it is still easy to read out
+doors.</p>
+
+<hr />
+
+<p>The other suggestion is not to do with watchOS2 but is a general tip for using
+apps of this kind. By default, the Apple Watch will always show the watch face
+when you raise your wrist. Normally this is the most useful thing, but when
+scoring a round of golf, it would be easier if The 19th Hole app stayed at the
+front. To make this happen, you need to set to watch to show the last used app
+instead of the watch face. This can be set using the Apple Watch app on the
+phone or on the watch itself.</p>
+
+<p>On the phone:</p>
+
+<ul>
+<li>Open the Apple Watch app.</li>
+<li>Select My Watch from the tabs at the bottom.</li>
+<li>Tap &ldquo;General&rdquo; and then scroll down to tap &ldquo;Wake Screen&rdquo;.</li>
+<li>Make sure &ldquo;Resume Last Activity&rdquo; is checked.</li>
+</ul>
+
+<p>On the watch:</p>
+
+<ul>
+<li>Press the digital crown to see the app icons.</li>
+<li>Find and tap the Settings icon.</li>
+<li>Scroll down and tap &ldquo;General&rdquo;.</li>
+<li>Tap &ldquo;Wake Screen&rdquo; and scroll down to make sure that &ldquo;Previous Activity&rdquo; is
+checked in the &ldquo;Resume To&rdquo; section.</li>
+</ul>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  
+  <p class="copyright-item">
+    <span class="item-title">Last Modified</span>
+    <span class="item-content">12 Dec 2015</span>
+  </p>
+  
+  
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/golf/">golf</a>
+          
+          <a href="/tags/watch/">watch</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2016-01-31-man-reader-1.5/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Man Reader 1.5</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2015-05-30-dice-pass-for-mac/">
+            <span class="next-text nav-default">Dice Pass for Mac</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:sarah@troz.net" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1082632" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/trozware" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/trozware" class="iconfont icon-github" title="github"></a>
+  <a href="https://troz.net/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme -
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2012 -
+    2017
+    <span class="author">Sarah Reichelt</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-5511808-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

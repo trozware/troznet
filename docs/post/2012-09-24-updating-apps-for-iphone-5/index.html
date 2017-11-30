@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Updating apps for iPhone 5 - TrozWare</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Sarah Reichelt" />
+  <meta name="description" content="I have started work updating my iOS apps to fill the larger screen of an iPhone
+ My iPhone 5 is on order - I missed out on the first shipment, but hopefully it won&amp;rsquo;t be too long. Meanwhile, I will just test in the iPhone Simulator and hope this is OK.  But it was a puzzle to me how to get an app to fill the longer screen. I have the latest Xcode and the latest Simulator which allows you to specify what screen size iPhone to simulate." />
+
+  <meta name="keywords" content="Swift, Apple, macOS, iOS, Apple Watch" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.31" />
+
+
+<link rel="canonical" href="https://troz.net/post/2012-09-24-updating-apps-for-iphone-5/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+
+
+<meta property="og:title" content="Updating apps for iPhone 5" />
+<meta property="og:description" content="I have started work updating my iOS apps to fill the larger screen of an iPhone
+ My iPhone 5 is on order - I missed out on the first shipment, but hopefully it won&rsquo;t be too long. Meanwhile, I will just test in the iPhone Simulator and hope this is OK.  But it was a puzzle to me how to get an app to fill the longer screen. I have the latest Xcode and the latest Simulator which allows you to specify what screen size iPhone to simulate." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troz.net/post/2012-09-24-updating-apps-for-iphone-5/" />
+
+
+
+<meta property="article:published_time" content="2012-09-24T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2012-09-24T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Updating apps for iPhone 5">
+<meta itemprop="description" content="I have started work updating my iOS apps to fill the larger screen of an iPhone
+ My iPhone 5 is on order - I missed out on the first shipment, but hopefully it won&rsquo;t be too long. Meanwhile, I will just test in the iPhone Simulator and hope this is OK.  But it was a puzzle to me how to get an app to fill the longer screen. I have the latest Xcode and the latest Simulator which allows you to specify what screen size iPhone to simulate.">
+
+
+<meta itemprop="datePublished" content="2012-09-24T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2012-09-24T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="403">
+
+
+
+<meta itemprop="keywords" content="operating systems,ui,ios," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Updating apps for iPhone 5"/>
+<meta name="twitter:description" content="I have started work updating my iOS apps to fill the larger screen of an iPhone
+ My iPhone 5 is on order - I missed out on the first shipment, but hopefully it won&rsquo;t be too long. Meanwhile, I will just test in the iPhone Simulator and hope this is OK.  But it was a puzzle to me how to get an app to fill the longer screen. I have the latest Xcode and the latest Simulator which allows you to specify what screen size iPhone to simulate."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">TrozWare</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/apps/">
+        <li class="mobile-menu-item">Apps</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">TrozWare</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/apps/">Apps</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Updating apps for iPhone 5</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 24 Sep 2012 </span>
+        
+        <span class="more-meta"> 403 words </span>
+        <span class="more-meta"> 2 minute read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+      
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>I have started work updating my iOS apps to fill the larger screen of an iPhone</p>
+
+<ol>
+<li>My iPhone 5 is on order - I missed out on the first shipment, but hopefully
+it won&rsquo;t be too long. Meanwhile, I will just test in the iPhone Simulator and
+hope this is OK.</li>
+</ol>
+
+<p>But it was a puzzle to me how to get an app to fill the longer screen. I have
+the latest Xcode and the latest Simulator which allows you to specify what
+screen size iPhone to simulate. So I re-built an app and nothing changed - it
+showing black strips top &amp; bottom and left my app at the old size.</p>
+
+<p>After trying many different things and reading a lot of the new sections of the
+Apple developer documentation, I finally found the answer online:</p>
+
+<p style="padding-left: 30px;">
+  <strong>If you want your app to fill the 4" screen, you must provide</strong><br /> <strong> a new launch image file called "Default-568h@2x.png".</strong><br /> <strong> This image must be exactly 640 x 1136 pixels.</strong>
+</p>
+
+<p>Apparently the system uses the presence or absence of this file this to detect
+whether your app supports the longer iPhone.</p>
+
+<p>I read that Xcode is supposed to warn you of the consequences if this file is
+missing, but in my case, when I opened my project, Xcode helpfully used the old
+launch image in its place. It showed a warning icon that the image was the wrong
+size, but nothing else.</p>
+
+<p>The next problem was how to create this file. I use screen shots, but until the
+app worked in the correct format, I wasn&rsquo;t going to be able to get the screen
+shot. So I made it a 2 step process: first I duplicated the original launch
+image, renamed it and resized it. It looked wrong but this was irrelevant - it
+was enough to get the app working in the correct format. Once I had the app
+working, I was able to take a screen shot and create the final launch image.</p>
+
+<p>Once you have the app working in 2 sizes, you have to do more work with the
+layout, either using springs &amp; struts or using the modern auto-layout feature. I
+find auto-layout confusing, but it is obviously more powerful and the way of the
+future, so I am trying to work it out. I found a good tutorial at
+<a href="http://www.raywenderlich.com/20881/beginning-auto-layout-part-1-of-2" target="_blank">Ray
+Wenderlich&rsquo;s site</a>. While directed at iOS 6, it also applies to Mac apps.</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  
+  <p class="copyright-item">
+    <span class="item-title">Last Modified</span>
+    <span class="item-content">24 Sep 2012</span>
+  </p>
+  
+  
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/operating-systems/">operating systems</a>
+          
+          <a href="/tags/ui/">ui</a>
+          
+          <a href="/tags/ios/">ios</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2012-10-15-icon-makers-for-mac-ios-apps/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Icon makers for Mac &amp; iOS apps</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2012-09-13-a-knights-move-for-ios-1-1/">
+            <span class="next-text nav-default">A Knight&#39;s Move for iOS 1.1</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:sarah@troz.net" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1082632" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/trozware" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/trozware" class="iconfont icon-github" title="github"></a>
+  <a href="https://troz.net/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme -
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2012 -
+    2017
+    <span class="author">Sarah Reichelt</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-5511808-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>
