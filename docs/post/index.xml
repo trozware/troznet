@@ -27,39 +27,58 @@ re-installed Jekyll but found that it had been updated from version 2 to version
     
     <item>
       <title>JSON Parsing in Swift 4</title>
-      <link>https://troz.net/2017/06/json-parsing-in-swift-4/</link>
+      <link>https://troz.net/post/2017-06-18-json-parsing-in-swift-4/</link>
       <pubDate>Sun, 18 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2017/06/json-parsing-in-swift-4/</guid>
-      <description>Updated: 3rd September 2017.
- Checked syntax using Xcode 9.0 beta 6. Added section on allowing for nulls.  Since JSON has become the de facto standard for data transfers around the internet, there has always been a lot of interest in Swift libraries to parse JSON into Swift classes or structs. Searching for &amp;ldquo;swift json library&amp;rdquo; on GitHub discovers 77 86 repositories. So why are there so many? And what has Swift 4 done to sherlock them all?</description>
+      <guid>https://troz.net/post/2017-06-18-json-parsing-in-swift-4/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Updated:&lt;/strong&gt; 3rd September 2017.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Checked syntax using Xcode 9.0 beta 6.&lt;/li&gt;
+&lt;li&gt;Added section on &lt;a href=&#34;#nulls&#34;&gt;allowing for nulls&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Since &lt;strong&gt;JSON&lt;/strong&gt; has become the de facto standard for data transfers around the
+internet, there has always been a lot of interest in Swift libraries to parse
+JSON into Swift classes or structs. Searching for &amp;ldquo;swift json library&amp;rdquo; on
+&lt;a href=&#34;https://github.com/search?q=swift+json+library&#34;&gt;GitHub&lt;/a&gt; discovers &lt;s&gt;77&lt;/s&gt; 86 repositories. So why are there so many? And
+what has Swift 4 done to &lt;em&gt;sherlock&lt;/em&gt; them all?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Posting from my new iPad</title>
-      <link>https://troz.net/2017/06/posting-from-my-new-ipad/</link>
+      <link>https://troz.net/post/2017-06-17-posting-from-my-new-ipad/</link>
       <pubDate>Sat, 17 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2017/06/posting-from-my-new-ipad/</guid>
+      <guid>https://troz.net/post/2017-06-17-posting-from-my-new-ipad/</guid>
       <description>Last week I got a 10.5” iPad Pro. I have had an iPad ever since the original release, but I have to confess to mainly using it for content consumption rather than creation. Since I am usually close to a Mac anyway, there didn’t seem a lot of point. But now that iOS 11 is really addressing the issue of making the iPad a &amp;ldquo;pro&amp;rdquo; device, I decided to give it a try.</description>
     </item>
     
     <item>
       <title>JSON Feed for TrozWare</title>
-      <link>https://troz.net/2017/05/json-feed-for-trozware/</link>
+      <link>https://troz.net/post/2017-05-20-json-feed-for-trozware/</link>
       <pubDate>Sat, 20 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2017/05/json-feed-for-trozware/</guid>
-      <description>jsonfeed.org has announced a new format for web site feeds, designed as an alternative to RSS. TrozWare has had an XML RSS feed for years, but I don&amp;rsquo;t think anyone ever uses it (I certainly don&amp;rsquo;t), so today I have replaced it with a JSON feed, which you can access through the  button at the top of every page.
-I am sure many JSON Feed viewers will appear soon, but the only one I know about so far is at http://json-feed-viewer.</description>
+      <guid>https://troz.net/post/2017-05-20-json-feed-for-trozware/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://jsonfeed.org/2017/05/17/announcing_json_feed&#34;&gt;jsonfeed.org&lt;/a&gt; has announced a new format for web site feeds, designed as an
+alternative to RSS. TrozWare has had an XML RSS feed for years, but I don&amp;rsquo;t
+think anyone ever uses it (I certainly don&amp;rsquo;t), so today I have replaced it with
+a JSON feed, which you can access through the
+&lt;a class=&#34;fa fa-rss&#34; href=&#34;https://troz.net/feed.json&#34;&gt;&lt;/a&gt; button at the top of every page.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Blackmail Marketing</title>
-      <link>https://troz.net/2017/03/blackmail-marketing/</link>
+      <link>https://troz.net/post/2017-03-08-blackmail-marketing/</link>
       <pubDate>Wed, 08 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2017/03/blackmail-marketing/</guid>
+      <guid>https://troz.net/post/2017-03-08-blackmail-marketing/</guid>
       <description>I use my iPad to play games as a form of relaxation. Nearly all the games I play are puzzle apps with levels that can be played in a few minutes. Nearly all of them are free to install. So how do they make money?
 Now I would be the last person you should consult about marketing but it has always seemed to me that the best way to market your product is to convince people that it offers something they want so that they are prepared to pay for it.</description>
     </item>
@@ -70,29 +89,18 @@ Now I would be the last person you should consult about marketing but it has alw
       <pubDate>Fri, 06 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/ncss2017/</guid>
-      <description>  IBM Swift Sandbox  Sandbox Code Samples  Strings
- Optionals
- Functions
- Closures
- Objects
- Protocols
- Generics
-  Contact Details:  Email: sarah@troz.net
- Twitter: @trozware
- Slides: NCSS 2017 Swift MC.pdf
-  Useful Links:  The Swift Programming Language
- Swift.org
- Newsletters
- Tutorials
-  </description>
+      <description>&lt;p&gt;I gave a Masterclass on Swift at the NCSS Summer School 2017 in Sydney on 8th
+January 2107. This post contains useful links for use during and after my class.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Looking for beta testers</title>
-      <link>https://troz.net/2016/11/looking-for-beta-testers/</link>
+      <link>https://troz.net/post/2016-11-17-looking-for-beta-testers/</link>
       <pubDate>Thu, 17 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/11/looking-for-beta-testers/</guid>
+      <guid>https://troz.net/post/2016-11-17-looking-for-beta-testers/</guid>
       <description>I am looking for beta testers for my latest Mac app: Work.
 Work is a project organizer app for developers, designers, students or any professional who works with multiple projects involving files &amp;amp; folders, web pages, email addresses and lists of tasks. Click the link above for more information and help for getting started.
 Work requires macOS 10.12 or OS X 10.11.
@@ -101,10 +109,10 @@ If you would like to test this app, please contact me, giving details of your Ma
     
     <item>
       <title>Another Man Reader Update...</title>
-      <link>https://troz.net/2016/11/another-man-reader-update/</link>
+      <link>https://troz.net/post/2016-11-05-another-man-reader-update/</link>
       <pubDate>Sat, 05 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/11/another-man-reader-update/</guid>
+      <guid>https://troz.net/post/2016-11-05-another-man-reader-update/</guid>
       <description>A quick update to Man Reader to version 1.8 is now available through the Mac App Store.
 The main reason for this version was that Man Reader was not previously detecting man pages installed by third-party IDEs in the Applications folder. There was also an issue with Man Reader failing to display the text of the previously selected man page on app launch.
  More complete search for man pages, including in third-party IDEs.</description>
@@ -112,20 +120,20 @@ The main reason for this version was that Man Reader was not previously detectin
     
     <item>
       <title>Man Reader Update</title>
-      <link>https://troz.net/2016/10/man-reader-update/</link>
+      <link>https://troz.net/post/2016-10-12-man-reader-update/</link>
       <pubDate>Wed, 12 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/10/man-reader-update/</guid>
+      <guid>https://troz.net/post/2016-10-12-man-reader-update/</guid>
       <description>Man Reader has just been updated to version 1.7 and is available through the Mac App Store.
 The main reason for this update was to make the app work well with macOS Sierra, as I found that version 1.6 was sometimes crashing on launch. While doing this, the update was rejected by the App Store reviewers because it crashed on OS X 10.10. Since I no longer have a Mac running 10.</description>
     </item>
     
     <item>
       <title>Podcasting</title>
-      <link>https://troz.net/2016/10/podcasting/</link>
+      <link>https://troz.net/post/2016-10-11-podcasting/</link>
       <pubDate>Tue, 11 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/10/podcasting/</guid>
+      <guid>https://troz.net/post/2016-10-11-podcasting/</guid>
       <description>I have recently started what I hope will be a weekly podcast with my friend and colleague, Jerry Daniels. Each podcast will be about 30 minutes in length.
 We will discuss Macs, iPhones, iPads, macOS, iOS, programming and anything tech-related that we find interesting. I hope you will find it entertaining and informative, so please join us.
 We are using ZCast which has an iPhone app that makes it super easy to get together and record our chats.</description>
@@ -133,20 +141,20 @@ We are using ZCast which has an iPhone app that makes it super easy to get toget
     
     <item>
       <title>Dice Pass Updated</title>
-      <link>https://troz.net/2016/09/dice-pass-updated/</link>
+      <link>https://troz.net/post/2016-09-17-dice-pass-updated/</link>
       <pubDate>Sat, 17 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/09/dice-pass-updated/</guid>
+      <guid>https://troz.net/post/2016-09-17-dice-pass-updated/</guid>
       <description>Dice Pass 1.1 is now available from the Mac App Store.
 What does Dice Pass do? Dice Pass is a utility to app to generate random passphrases based on the Diceware system. Diceware uses a table of pre-defined words, each assigned a 5 digit code number containing the digits 1 to 6. The official way to generate a phrase is to roll 5 dice for each word you want in your passphrase and then consult the words table to find the matching word.</description>
     </item>
     
     <item>
       <title>How much work does Icon Builder save you?</title>
-      <link>https://troz.net/2016/09/how-much-work-does-icon-builder-save-you/</link>
+      <link>https://troz.net/post/2016-09-17-how-much-work-does-icon-builder-save-you/</link>
       <pubDate>Sat, 17 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/09/how-much-work-does-icon-builder-save-you/</guid>
+      <guid>https://troz.net/post/2016-09-17-how-much-work-does-icon-builder-save-you/</guid>
       <description>Icon Builder is a Mac app that takes a single image file and creates all the different image sizes that you need to make a set of icons for your app: Mac, iPhone, iPad, iOS Universal or Apple Watch.
 Version 4, released 16 September 2016 is available through the Mac App Store.
 What&amp;rsquo;s New in Version 4:  Added support for iMessage apps and Sticker Pack apps. Added support for creating Mac .</description>
@@ -154,10 +162,10 @@ What&amp;rsquo;s New in Version 4:  Added support for iMessage apps and Sticker 
     
     <item>
       <title>Retiring old apps</title>
-      <link>https://troz.net/2016/09/retiring-old-apps/</link>
+      <link>https://troz.net/post/2016-09-15-retiring-old-apps/</link>
       <pubDate>Thu, 15 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/09/retiring-old-apps/</guid>
+      <guid>https://troz.net/post/2016-09-15-retiring-old-apps/</guid>
       <description>With the release of iOS 10 and the need to update iOS apps to suit, I have decided it is time to retire some of my lesser-performing apps as it is not worth the effort required to maintain them.
 At the moment, the following iOS apps are no longer available:
  A Knight&amp;rsquo;s Move Dice Pass Pic-a-POD Quick Score - Tennis  For the first three listed there, the Mac versions are still available:</description>
@@ -165,10 +173,10 @@ At the moment, the following iOS apps are no longer available:
     
     <item>
       <title>Man Reader updated to 1.6</title>
-      <link>https://troz.net/2016/07/man-reader-updated-to-1.6/</link>
+      <link>https://troz.net/post/2016-07-16-man-reader-updated-to-1.6/</link>
       <pubDate>Sat, 16 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/07/man-reader-updated-to-1.6/</guid>
+      <guid>https://troz.net/post/2016-07-16-man-reader-updated-to-1.6/</guid>
       <description>Man Reader has been updated to version 1.6 with the permissions needed for finding all available man pages and a fix for search terms being over-written after a background update.
 Man Reader 1.6 is now available through the Mac App Store.
 Change Log:  Permissions fix when searching for available man pages. Fixed error with new search term being over-written. Sand-boxed version now works just as well as the non-sand-boxed so please switch back to this version.</description>
@@ -176,20 +184,20 @@ Change Log:  Permissions fix when searching for available man pages. Fixed error
     
     <item>
       <title>Dice Pass Mac Update</title>
-      <link>https://troz.net/2016/07/dice-pass-mac-update/</link>
+      <link>https://troz.net/post/2016-07-03-dice-pass-mac-update/</link>
       <pubDate>Sun, 03 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/07/dice-pass-mac-update/</guid>
+      <guid>https://troz.net/post/2016-07-03-dice-pass-mac-update/</guid>
       <description>I recently got an email from someone who had purchased Dice Pass for Mac from the Mac App Store but had been unable to get it to run. This person was using OS X 10.9.3.
 I checked the App Store specifications and it showed that 10.9 was the minimum system requirement, so it should have worked. But going back to my Xcode project, I found that it was set to a minimum of OS X 10.</description>
     </item>
     
     <item>
       <title>Learning Swift - Sets</title>
-      <link>https://troz.net/2016/05/learning-swift-sets/</link>
+      <link>https://troz.net/post/2016-05-28-learning-swift-sets/</link>
       <pubDate>Sat, 28 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/05/learning-swift-sets/</guid>
+      <guid>https://troz.net/post/2016-05-28-learning-swift-sets/</guid>
       <description>Sets are the forgotten collection type in many languages, including Swift. I think most developers use Arrays without really considering the advantages of using a Set but they have some amazingly useful features that should make them a part of any progammer&amp;rsquo;s toolkit.
 If you want to follow along with a playground, you can download it here.
 What is a Set? A Set is an un-ordered collection of unique items.</description>
@@ -197,39 +205,41 @@ What is a Set? A Set is an un-ordered collection of unique items.</description>
     
     <item>
       <title>19th Hole Golf Scorer 3.1</title>
-      <link>https://troz.net/2016/05/19th-hole-golf-scorer-3.1/</link>
+      <link>https://troz.net/post/2016-05-07-19th-hole-golf-scorer-3.1/</link>
       <pubDate>Sat, 07 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/05/19th-hole-golf-scorer-3.1/</guid>
+      <guid>https://troz.net/post/2016-05-07-19th-hole-golf-scorer-3.1/</guid>
       <description>One of the problems with using 19th Hole on the Apple Watch is making the app show every time you raise your wrist. My solution to this was to go into Settings (either on my iPhone through the Watch app, or directly on the watch) and change it to &amp;ldquo;Resume Last Activity&amp;rdquo; on wrist raise. This worked fine but as I usually prefer the watch face to show on wrist raise, I had to keep setting and re-setting this which was a pain.</description>
     </item>
     
     <item>
       <title>My Year With Apple Watch</title>
-      <link>https://troz.net/2016/04/my-year-with-apple-watch/</link>
+      <link>https://troz.net/post/2016-04-28-my-year-with-apple-watch/</link>
       <pubDate>Thu, 28 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/04/my-year-with-apple-watch/</guid>
+      <guid>https://troz.net/post/2016-04-28-my-year-with-apple-watch/</guid>
       <description>As the Apple Watch hits its first birthday, there seems to be in increasing number of bloggers complaining about it. One (which I refuse to link to) titled &amp;ldquo;My Year of Hell With the Apple Watch&amp;rdquo;. I think the article has since been re-published with a slightly less inflammatory title, but really! Did somebody rivet the watch to his wrist? If it was so awful, why not just stop using it?</description>
     </item>
     
     <item>
       <title>How To Confuse TestFlight</title>
-      <link>https://troz.net/2016/04/how-to-confuse-testflight/</link>
+      <link>https://troz.net/post/2016-04-24-how-to-confuse-testflight/</link>
       <pubDate>Sun, 24 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/04/how-to-confuse-testflight/</guid>
-      <description>TL;DR
-I ran into an unusual problem when testing my latest app: &amp;ldquo;What Is My Speed?&amp;rdquo;. It is now available from the iTunes App Store, but getting there was a struggle.
-Xcode is terrible at renaming projects, so it is a really good idea to have worked out your app&amp;rsquo;s name before starting. I would even recommend creating an app ID in your Apple Developer account and registering the app name in iTunes Connect.</description>
+      <guid>https://troz.net/post/2016-04-24-how-to-confuse-testflight/</guid>
+      <description>&lt;p&gt;I ran into an unusual problem when testing my latest app: &amp;ldquo;&lt;a href=&#34;https://troz.net/what-is-my-speed/&#34;&gt;What Is My
+Speed?&lt;/a&gt;&amp;rdquo;. It is now available from the &lt;a href=&#34;https://itunes.apple.com/app/what-is-my-speed/id1091394524&#34;&gt;iTunes App Store&lt;/a&gt;, but getting
+there was a struggle.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Road Trip Apps</title>
-      <link>https://troz.net/2016/04/road-trip-apps/</link>
+      <link>https://troz.net/post/2016-04-07-road-trip-apps/</link>
       <pubDate>Thu, 07 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/04/road-trip-apps/</guid>
+      <guid>https://troz.net/post/2016-04-07-road-trip-apps/</guid>
       <description>Over the past few months, we have done two long road trips: one approximately 4,000 km and the other about 1,800 km. These gave us the chance to try out various apps for navigation and travel information. We live in Queensland, Australia and some of these comments may be country-specific.
 Navigation The basic navigation came down to three apps:
  Apple Maps Google Maps Metroview (Australia and New Zealand only)  Each has their strengths and weaknesses:</description>
@@ -237,29 +247,29 @@ Navigation The basic navigation came down to three apps:
     
     <item>
       <title>Structs vs Classes</title>
-      <link>https://troz.net/2016/03/structs-vs-classes/</link>
+      <link>https://troz.net/post/2016-03-30-structs-vs-classes/</link>
       <pubDate>Wed, 30 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/03/structs-vs-classes/</guid>
+      <guid>https://troz.net/post/2016-03-30-structs-vs-classes/</guid>
       <description>One of the big debates among Swift developers is when to use structs and when to use classes. Classes are the building blocks of object-oriented programming but structs as provided by Swift are newly powerful. Structs have been around in C-based languages for a long time, but Swift has made them more powerful and given them more features so that they are almost indistinguishable from classes. So what are the differences and which one should you use?</description>
     </item>
     
     <item>
       <title>Learning Swift - For-Loops</title>
-      <link>https://troz.net/2016/03/learning-swift-loops/</link>
+      <link>https://troz.net/post/2016-03-12-learning-swift-for-loops/</link>
       <pubDate>Sat, 12 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/03/learning-swift-loops/</guid>
+      <guid>https://troz.net/post/2016-03-12-learning-swift-for-loops/</guid>
       <description>Loops are a fundamental building block of any program. Doing repetitive tasks fast and accurately is what computers are really good at and what we humans get very bored doing. Swift offers several different ways to perform loops, but today we are going to concentrate on for-loops.
 The most basic form of loop is the for-in loop. There are two ways this can be used: looping over the numbers in a range or looping over the elements in an array or dictionary.</description>
     </item>
     
     <item>
       <title>Learning Swift - Generics</title>
-      <link>https://troz.net/2016/02/learning-swift-generics/</link>
+      <link>https://troz.net/post/2016-02-29-learning-swift-generics/</link>
       <pubDate>Mon, 29 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/02/learning-swift-generics/</guid>
+      <guid>https://troz.net/post/2016-02-29-learning-swift-generics/</guid>
       <description>One of the nice things about Swift is how clean your code looks. A lot of the weird characters that pepper the code of other languages has been eliminated: No more semi-colons, asterisks etc.
 But then you are reading somebody else&amp;rsquo;s code and you find these angle brackets all over the place and they don&amp;rsquo;t seem to make sense.
 What does this mean?
@@ -268,99 +278,106 @@ func mid&amp;lt;T: Comparable&amp;gt;(array: [T]) -&amp;gt; T  It looks like it 
     
     <item>
       <title>Singleton to Protocol</title>
-      <link>https://troz.net/2016/02/singleton-to-protocol/</link>
+      <link>https://troz.net/post/2016-02-26-singleton-to-protocol/</link>
       <pubDate>Fri, 26 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/02/singleton-to-protocol/</guid>
+      <guid>https://troz.net/post/2016-02-26-singleton-to-protocol/</guid>
       <description>I was driving through the town of Singleton the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple&amp;rsquo;s own APIs, but seem to be increasingly frowned upon in the Swift world.
 So what is a singleton? A singleton is a class that only expects to have a single instance.</description>
     </item>
     
     <item>
       <title>Three Rules for Writing Better Swift</title>
-      <link>https://troz.net/2016/02/three-rules-for-writing-better-swift/</link>
+      <link>https://troz.net/post/2016-02-24-three-rules-for-writing-better-swift/</link>
       <pubDate>Wed, 24 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/02/three-rules-for-writing-better-swift/</guid>
-      <description>1. Do not use ! Swift uses optionals for values that can be nil. To use an optional value, you need to &amp;ldquo;un-wrap&amp;rdquo; it first, which means getting the actual value out, assuming that the value exists and the optional is not actually nil.
-Optionals are the subject of a complete post by themselves, but for now, I will just say this: When you use ! you are promising the compiler that you will make sure there is a real value in that optional by the time it is needed.</description>
+      <guid>https://troz.net/post/2016-02-24-three-rules-for-writing-better-swift/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;Do not use !.&lt;/li&gt;
+&lt;li&gt;Use let, not var.&lt;/li&gt;
+&lt;li&gt;Allow the compiler to infer types.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Read on for more details&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Configuring Xcode</title>
-      <link>https://troz.net/2016/02/configuring-xcode/</link>
+      <link>https://troz.net/post/2016-02-17-configuring-xcode/</link>
       <pubDate>Wed, 17 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/02/configuring-xcode/</guid>
+      <guid>https://troz.net/post/2016-02-17-configuring-xcode/</guid>
       <description>While not strictly a part of my Learning Swift series, today I thought I would discuss some of the ways to configure and use Xcode to be a more productive and comfortable programmer.
 1. Editor color themes and fonts: Step through the supplied themes and find the best one for you. Then click the &amp;lsquo;+&amp;rsquo; button at the bottom of the list and duplicate the selected theme. Now you can tweak it to suit you.</description>
     </item>
     
     <item>
       <title>How do I start to learn Swift?</title>
-      <link>https://troz.net/2016/02/how-do-i-start-to-learn-swift/</link>
+      <link>https://troz.net/post/2016-02-16-how-do-i-start-to-learn-swift/</link>
       <pubDate>Tue, 16 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/02/how-do-i-start-to-learn-swift/</guid>
+      <guid>https://troz.net/post/2016-02-16-how-do-i-start-to-learn-swift/</guid>
       <description>The first thing to do is to download the latest version of Apple&amp;rsquo;s Swift Programming Language book from the iBooks Store.
 You can just read this book, especially the first section: &amp;ldquo;A Swift Tour&amp;rdquo;, but you will get more out of it if you follow along with the playground. There is a link to download the playground from the book which you can use directly if you are reading using iBooks on the Mac.</description>
     </item>
     
     <item>
       <title>Learning Swift - Optionals</title>
-      <link>https://troz.net/2016/02/learning-swift-optionals/</link>
+      <link>https://troz.net/post/2016-02-12-learning-swift-optionals/</link>
       <pubDate>Fri, 12 Feb 2016 14:24:00 +1000</pubDate>
       
-      <guid>https://troz.net/2016/02/learning-swift-optionals/</guid>
+      <guid>https://troz.net/post/2016-02-12-learning-swift-optionals/</guid>
       <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Icon Builder 3.2 Released</title>
-      <link>https://troz.net/2016/02/icon-builder-32-released/</link>
+      <link>https://troz.net/post/2016-02-10-icon-builder-32-released/</link>
       <pubDate>Wed, 10 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/02/icon-builder-32-released/</guid>
+      <guid>https://troz.net/post/2016-02-10-icon-builder-32-released/</guid>
       <description>Icon Builder 3.2 is now available from the Mac App Store.
  Icons for Apple Watch apps now have their alpha channel removed. Tidier folder structure for related files (iTunes Artwork files and Read Me). Updated to work with Xcode 7&amp;rsquo;s Assets.xcassets folders. Creates iPad Pro icons for Xcode 7.2 or later. Fix for Retina Macs creating double-sized images.  </description>
     </item>
     
     <item>
       <title>Why is Swift so great?</title>
-      <link>https://troz.net/2016/02/why-is-swift-so-great/</link>
+      <link>https://troz.net/post/2016-02-10-why-is-swift-so-great/</link>
       <pubDate>Wed, 10 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/02/why-is-swift-so-great/</guid>
+      <guid>https://troz.net/post/2016-02-10-why-is-swift-so-great/</guid>
       <description>Firstly, I can give you the technical answer, as published by Apple:
  Swift is a new programming language for iOS, OS X, watchOS, and tvOS apps that builds on the best of C and Objective-C, without the constraints of C compatibility. Swift adopts safe programming patterns and adds modern features to make programming easier, more flexible, and more fun. Swift’s clean slate, backed by the mature and much-loved Cocoa and Cocoa Touch frameworks, is an opportunity to reimagine how software development works.</description>
     </item>
     
     <item>
       <title>Learning Swift - An Introduction</title>
-      <link>https://troz.net/2016/02/learning-swift-an-introduction/</link>
+      <link>https://troz.net/post/2016-02-09-learning-swift-an-introduction/</link>
       <pubDate>Tue, 09 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/02/learning-swift-an-introduction/</guid>
+      <guid>https://troz.net/post/2016-02-09-learning-swift-an-introduction/</guid>
       <description>Welcome to Learning Swift. This is the first post in what I hope will be an extensive series dealing with the Swift language. Here are some of the questions I hope to answer:
  Should I learn Swift? Why? Why is Swift so great? How should I start learning Swift? I already know Objective-C - how do I convert?  After that, I am planning a series of posts discussing the major differences of Swift from the view point of an Objective-C programmer and the aspects of Swift that I found difficult to grasp.</description>
     </item>
     
     <item>
       <title>New Twitter account</title>
-      <link>https://troz.net/2016/02/new-twitter-account/</link>
+      <link>https://troz.net/post/2016-02-09-new-twitter-account/</link>
       <pubDate>Tue, 09 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/02/new-twitter-account/</guid>
+      <guid>https://troz.net/post/2016-02-09-new-twitter-account/</guid>
       <description>I have started a new Twitter account so that I can provide rapid support to users of my apps. Please contact me @trozware if you have any questions, suggestions, bug reports or would just like to chat.
 I will also be using this account to promote my new Learning Swift series.</description>
     </item>
     
     <item>
       <title>Possible issues with Icon Builder &amp; Watch icons</title>
-      <link>https://troz.net/2016/02/possible-issues-with-iconbuilder/</link>
+      <link>https://troz.net/post/2016-02-06-possible-issues-with-iconbuilder/</link>
       <pubDate>Sat, 06 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/02/possible-issues-with-iconbuilder/</guid>
+      <guid>https://troz.net/post/2016-02-06-possible-issues-with-iconbuilder/</guid>
       <description>It has come to my attention that there are two possible issues with Icon Builder 3.0.1 when using icons created for an Apple Watch app. Once of them is something I can fix and the other appears to be a bug in Xcode 7.2
 Update: Version 3.2 of Icon Builder is now available in the Mac App Store. This removes the alpha channel from icons for a watch app.
 The first problem is that iTines Connect now requires that the icons for an Apple Watch app include no alpha channel.</description>
@@ -368,10 +385,10 @@ The first problem is that iTines Connect now requires that the icons for an Appl
     
     <item>
       <title>Man Reader 1.5</title>
-      <link>https://troz.net/2016/01/man-reader-1.5/</link>
+      <link>https://troz.net/post/2016-01-31-man-reader-1.5/</link>
       <pubDate>Sun, 31 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2016/01/man-reader-1.5/</guid>
+      <guid>https://troz.net/post/2016-01-31-man-reader-1.5/</guid>
       <description>Man Reader has been updated to version 1.5 with a major improvement in the way it looks for available man pages.
 Man Reader 1.5 is now available through the Mac App Store.
 Change Log:  Much improved searching for available man pages. Sand-boxed version now works just as well as the non-sand-boxed.  The main feature of this version is that it solves the previous problems with the App Store version and sand-boxing.</description>
@@ -379,79 +396,79 @@ Change Log:  Much improved searching for available man pages. Sand-boxed version
     
     <item>
       <title>Using 19th Hole on the Apple Watch</title>
-      <link>https://troz.net/2015/12/using-19th-hole-on-the-apple-watch/</link>
+      <link>https://troz.net/post/2015-12-12-using-19th-hole-on-the-apple-watch/</link>
       <pubDate>Sat, 12 Dec 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2015/12/using-19th-hole-on-the-apple-watch/</guid>
+      <guid>https://troz.net/post/2015-12-12-using-19th-hole-on-the-apple-watch/</guid>
       <description>19th Hole for iPhone and Apple Watch version 3 is now available through the iTunes App Store. This version is a complete re-write to accommodate the changes in iOS 9 and watchOS2.
 The major changes are to do with the way the iPhone and the Watch communicate. In watchOS1, all the brains of the app had to live in the iPhone, meaning that every single interaction on the Watch had to be referred back to the iPhone for processing and the result sent back to the Watch for display.</description>
     </item>
     
     <item>
       <title>Dice Pass for Mac</title>
-      <link>https://troz.net/2015/05/dice-pass-for-mac/</link>
+      <link>https://troz.net/post/2015-05-30-dice-pass-for-mac/</link>
       <pubDate>Sat, 30 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2015/05/dice-pass-for-mac/</guid>
+      <guid>https://troz.net/post/2015-05-30-dice-pass-for-mac/</guid>
       <description>We live in a world of passwords and passphrases and there is a constant struggle between having a secure and a memorable password. As a result, many of us re-use passwords even though we know this is a bad idea.
 XKCD had a wonderful comic that illustrated the theory of using a passphrase composed of words that are easy to remember but with a combination that made the passphrase very hard to guess.</description>
     </item>
     
     <item>
       <title>Apple Watch First Impressions</title>
-      <link>https://troz.net/2015/04/apple-watch-first-impressions/</link>
+      <link>https://troz.net/post/2015-04-29-apple-watch-first-impressions/</link>
       <pubDate>Wed, 29 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2015/04/apple-watch-first-impressions/</guid>
+      <guid>https://troz.net/post/2015-04-29-apple-watch-first-impressions/</guid>
       <description>I realise that every one has written one of these posts, but given that everyone looks for and notices different things, I think it is still valid.
 My first impression was &amp;ldquo;Why does it come in such a large box?&amp;rdquo;. The courier delivered two boxes - my 38mm Apple Watch Sport and Tim&amp;rsquo;s 42mm Apple Watch Sport. They both came in long boxes, with the 42mm box significantly longer. And both boxes were heavy!</description>
     </item>
     
     <item>
       <title>Time In Words 4.0</title>
-      <link>https://troz.net/2015/04/time-in-words-4.0/</link>
+      <link>https://troz.net/post/2015-04-15-time-in-words-4.0/</link>
       <pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2015/04/time-in-words-4.0/</guid>
+      <guid>https://troz.net/post/2015-04-15-time-in-words-4.0/</guid>
       <description>Time In Words for iOS started off as a fun gimmick, emulating the Qlocktwo type of time display where the relevant words are highlighted in some way to spell out the time as a sentence. This very quickly evolved into what I hoped would be more useful app, still showing the original display, but also providing the current time &amp;amp; date as complete sentences. Then I added time conversions and discovered the real power and utility of writing out times as words.</description>
     </item>
     
     <item>
       <title>Apple Watch App - Rejected, then Accepted</title>
-      <link>https://troz.net/2015/04/apple-watch-rejected-then-accepted/</link>
+      <link>https://troz.net/post/2015-04-11-apple-watch-rejected-then-accepted/</link>
       <pubDate>Sat, 11 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2015/04/apple-watch-rejected-then-accepted/</guid>
+      <guid>https://troz.net/post/2015-04-11-apple-watch-rejected-then-accepted/</guid>
       <description>As described in a previous post, about 9 days ago I submitted my first Apple Watch app for review. The app was an extension of my golf scoring app: The 19th Hole.
 I expected that App Store review times would go up dramatically once Apple had allowed developers to submit watch apps, but this proved to be incorrect. Three days after submission, the app was marked as &amp;ldquo;In Review&amp;rdquo;. This seemed to happen last thing on a Saturday, so there was no further action for two days, at which point the app was rejected, with the following details (sic):</description>
     </item>
     
     <item>
       <title>My First Apple Watch App</title>
-      <link>https://troz.net/2015/04/my-first-apple-watch-app/</link>
+      <link>https://troz.net/post/2015-04-02-my-first-apple-watch-app/</link>
       <pubDate>Thu, 02 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2015/04/my-first-apple-watch-app/</guid>
+      <guid>https://troz.net/post/2015-04-02-my-first-apple-watch-app/</guid>
       <description>I have just submitted my first Apple Watch app to the iTunes App Store. This is a scary thing to do, since I have never seen, touched or used an Apple Watch and all I had to go on was the Simulator that Apple supplies with Xcode.
 At the moment, Apple has only made a limited set of Apple Watch features available to developers, and all Apple Watch apps come tethered to an iOS app - presumably this will mainly be iPhone apps, but I wonder will we be able to connect Apple Watches to iPads?</description>
     </item>
     
     <item>
       <title>LiveCode stacks</title>
-      <link>https://troz.net/2015/03/livecode-stacks/</link>
+      <link>https://troz.net/post/2015-03-18-livecode-stacks/</link>
       <pubDate>Wed, 18 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2015/03/livecode-stacks/</guid>
+      <guid>https://troz.net/post/2015-03-18-livecode-stacks/</guid>
       <description>When I converted my site to Jekyll &amp;amp; GitHub, one of the things I left behind was a collection of LiveCode (Revolution) stacks. For many years I was active in the Revolution community before going in other directions and over that time, I built up a small library of stacks that I released into the public domain.
 LiveCode is a cross-platform rapid development environment. There is an open source community edition available for anyone wishing to get started.</description>
     </item>
     
     <item>
       <title>Icon Builder 3.0.1</title>
-      <link>https://troz.net/2015/03/icon-builder-3.0.1/</link>
+      <link>https://troz.net/post/2015-03-17-icon-builder-3.0.1/</link>
       <pubDate>Tue, 17 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2015/03/icon-builder-3.0.1/</guid>
+      <guid>https://troz.net/post/2015-03-17-icon-builder-3.0.1/</guid>
       <description>So why an announcement for such a minor upgrade?
 Version 3.0 got no announcement because it was not the release I wanted.
 Having downloaded the Xcode 6.2 &amp;amp; 6.3 betas, I had worked out what icons were needed to a WatchKit app. This, combined with several other changes, made me bump the version number to 3.0.
@@ -460,20 +477,20 @@ Sadly, Apple rejected the update because it referred to pre-release products. So
     
     <item>
       <title>App Store Preview Videos</title>
-      <link>https://troz.net/2015/03/app-store-preview-videos/</link>
+      <link>https://troz.net/post/2015-03-16-app-store-preview-videos/</link>
       <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2015/03/app-store-preview-videos/</guid>
+      <guid>https://troz.net/post/2015-03-16-app-store-preview-videos/</guid>
       <description>Apple now allows app developers to add a video preview of their app when uploading to iTunes Connect. This video is shown to potential purchasers when they are looking at an app in the iTunes App Store, just like the screen shots.
 I have been working on an update to 19th Hole and since it uses a custom method for data input, I decided that a video would be really useful in this case.</description>
     </item>
     
     <item>
       <title>Testing automation</title>
-      <link>https://troz.net/testing-automation/</link>
+      <link>https://troz.net/post/2015-03-12-testing-automation/</link>
       <pubDate>Thu, 12 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/testing-automation/</guid>
+      <guid>https://troz.net/post/2015-03-12-testing-automation/</guid>
       <description>Today I am experimenting with automating post generation.
 Firstly, there is the structure of the post Markdown document, which really boils down to the file name and the header.
 I have set up a macro in Typinator so that I just type the title of the post in a text document. I copy that title to the clipboard and type the shortcut. The header is then created with the title and the formatted permalink.</description>
@@ -481,10 +498,10 @@ I have set up a macro in Typinator so that I just type the title of the post in 
     
     <item>
       <title>Workflow for writing a post</title>
-      <link>https://troz.net/workflow-for-writing-a-post/</link>
+      <link>https://troz.net/post/2015-03-10-workflow-for-writing-a-post/</link>
       <pubDate>Tue, 10 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/workflow-for-writing-a-post/</guid>
+      <guid>https://troz.net/post/2015-03-10-workflow-for-writing-a-post/</guid>
       <description>So here is where I need to get used to Jekyll and how things are done. I will end up automating this when I am sure of the process, but for now, I am just going to work my way through it.
  Start up the local Jekyll server:
  I opened Terminal and used cd to get to the folder containing my site. Next I started the Jekyll server locally using jekyll serve.</description>
@@ -492,30 +509,30 @@ I have set up a macro in Typinator so that I just type the title of the post in 
     
     <item>
       <title>New Site for TrozWare</title>
-      <link>https://troz.net/new-site-for-trozware/</link>
+      <link>https://troz.net/post/2015-03-08-new-site-for-trozware/</link>
       <pubDate>Sun, 08 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/new-site-for-trozware/</guid>
+      <guid>https://troz.net/post/2015-03-08-new-site-for-trozware/</guid>
       <description>Welcome to TrozWare&amp;rsquo;s new site. It appears that I am not alone in deciding to move away from WordPress. WordPress is great - easy to set up and with lots of cool themes to allow customisation of your site. But it is slow, especially if (like me) you are running on a low-cost shared server.
 I had been reading about Jekyll, so I decide to give it a go and also host my site on GitHub, taking advantage of their faster servers.</description>
     </item>
     
     <item>
       <title>Man Reader 1.4 Now Available</title>
-      <link>https://troz.net/man-reader-1-4-now-available/</link>
+      <link>https://troz.net/post/2014-04-03-man-reader-1-4-now-available/</link>
       <pubDate>Thu, 03 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/man-reader-1-4-now-available/</guid>
+      <guid>https://troz.net/post/2014-04-03-man-reader-1-4-now-available/</guid>
       <description>Man Reader 1.4 is now available through the Mac App Store.
 The new features and fixes are:  Fix for plain text view not wrapping correctly for odd-sized fonts. Fix for HTML text view over-riding font colors that may be invisible. Search for missing entry (e.g. g++) no longer requires Enter or Return. Better automatic selection of matching entries while searching. Fix for animation warning message appearing in Console. Status display shows when man page list is being updated.</description>
     </item>
     
     <item>
       <title>Email clients for Mac and iOS</title>
-      <link>https://troz.net/email-clients-for-mac-ios/</link>
+      <link>https://troz.net/post/2014-03-25-email-clients-for-mac-ios/</link>
       <pubDate>Tue, 25 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/email-clients-for-mac-ios/</guid>
+      <guid>https://troz.net/post/2014-03-25-email-clients-for-mac-ios/</guid>
       <description>Some people are moving away from email, but for me, it remains the best way to communicate online. I get to keep a record of conversations and the attached files are with the text so I can always see the context.
 But I think everyone would agree that Apple have dropped the ball with Mail in OS X Mavericks, and to a lesser extent, in iOS 7.
 So I have been on a campaign lately to find an email client that suits my needs.</description>
@@ -523,20 +540,20 @@ So I have been on a campaign lately to find an email client that suits my needs.
     
     <item>
       <title>Berio Sequenza VII</title>
-      <link>https://troz.net/berio-sequenza-vii/</link>
+      <link>https://troz.net/post/2013-11-07-berio-sequenza-vii/</link>
       <pubDate>Thu, 07 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/berio-sequenza-vii/</guid>
+      <guid>https://troz.net/post/2013-11-07-berio-sequenza-vii/</guid>
       <description>So my latest app is way outside my usual sphere but that&amp;rsquo;s what happens when family decide that what you do might actually be useful!
 My son is an oboist and he is currently learning Berio&amp;rsquo;s Sequenza VII for Oboe. This is a weird piece without a standard time signature. Instead each line has 13 bars with each bar being allocated a certain time span in actual seconds. As can easily be imagined, this makes learning and practicing this piece more of a mathematical exercise than a musical one.</description>
     </item>
     
     <item>
       <title>Icon Builder &amp; iOS 7</title>
-      <link>https://troz.net/icon-builder-ios-7/</link>
+      <link>https://troz.net/post/2013-09-23-icon-builder-ios-7/</link>
       <pubDate>Mon, 23 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/icon-builder-ios-7/</guid>
+      <guid>https://troz.net/post/2013-09-23-icon-builder-ios-7/</guid>
       <description>Icon Builder 1.2 was released on 18 September 2013.
 It was an update with 2 new functions:
  The ability to create images to suit an Xcode 5 assets library The ability to create icons with the required sizes for IOS 7 apps.  Knowing that iOS 7 apps can only be built using Xcode 5, I linked the switch for these 2 abilities in a single check box.
@@ -545,10 +562,10 @@ The problem was not really that they were in a single checkbox but that I had la
     
     <item>
       <title>Icon apps updated</title>
-      <link>https://troz.net/icon-apps-updated/</link>
+      <link>https://troz.net/post/2013-09-19-icon-apps-updated/</link>
       <pubDate>Thu, 19 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/icon-apps-updated/</guid>
+      <guid>https://troz.net/post/2013-09-19-icon-apps-updated/</guid>
       <description>Icns Maker and Icon Builder have both just been updated to support Xcode 5.
 Icon Builder is a Mac app that takes your images and creates all the required icon files for use in your iOS apps.
 It now supports Xcode 5&amp;rsquo;s image assets folders and if you are using Xcode 5, it will create the icon sizes required for iOS 7 app.
@@ -557,19 +574,19 @@ Icns Maker is a Mac app that takes your images and creates icons for use in your
     
     <item>
       <title>Markdown</title>
-      <link>https://troz.net/markdown/</link>
+      <link>https://troz.net/post/2013-04-01-markdown/</link>
       <pubDate>Mon, 01 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/markdown/</guid>
+      <guid>https://troz.net/post/2013-04-01-markdown/</guid>
       <description>For some time now, I have been aware of the increasing trend towards using Markdown for text editing and for creating HTML. Markdown has been on my list of &amp;ldquo;things I should learn some day&amp;rdquo; so I was interested last week to read about a new iBooks book called The MacSparky Markdown Field Guide. This was sufficient inspiration so I got the book and read through it this weekend.</description>
     </item>
     
     <item>
       <title>A Knight&#39;s Move 1.3</title>
-      <link>https://troz.net/a-knights-move-1-3/</link>
+      <link>https://troz.net/post/2013-02-27-a-knights-move-1-3/</link>
       <pubDate>Wed, 27 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/a-knights-move-1-3/</guid>
+      <guid>https://troz.net/post/2013-02-27-a-knights-move-1-3/</guid>
       <description>UPDATE: September 2016 - A Knight&amp;rsquo;s Move for iOS is no longer available.
 A Knight&amp;rsquo;s Move for Mac is still supported.
 A Knight&amp;rsquo;s Move has been updated to version 1.3. The Mac version is available through the Mac App Store.
@@ -578,10 +595,10 @@ Three new level packs:  Eight by Eight Bishops Rule Castles  Eight by Eight has 
     
     <item>
       <title>Man Reader (no SB)</title>
-      <link>https://troz.net/man-reader-no-sb/</link>
+      <link>https://troz.net/post/2013-02-06-man-reader-no-sb/</link>
       <pubDate>Wed, 06 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/man-reader-no-sb/</guid>
+      <guid>https://troz.net/post/2013-02-06-man-reader-no-sb/</guid>
       <description>These instructions are no longer valid. As of version 1.5, the App Store version of Man Reader has solved the sand-boxing issues and is now as powerful as the non-sand-boxed version.
 The non-sand-boxed version will no longer be supported or updated, so please revert to the App Store version.
 If you find that Man Reader is not working well for you due to Apple&amp;rsquo;s sandboxing restrictions, then you can download a non-sandboxed version here.</description>
@@ -589,10 +606,10 @@ If you find that Man Reader is not working well for you due to Apple&amp;rsquo;s
     
     <item>
       <title>Sand-Boxing Man Reader</title>
-      <link>https://troz.net/manreader-sandbox/</link>
+      <link>https://troz.net/post/2013-02-06-sand-boxing-man-reader/</link>
       <pubDate>Wed, 06 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/manreader-sandbox/</guid>
+      <guid>https://troz.net/post/2013-02-06-sand-boxing-man-reader/</guid>
       <description>These instructions are no longer valid. As of version 1.5, the App Store version of Man Reader has solved the sand-boxing issues and is now as powerful as the non-sand-boxed version.
 The non-sand-boxed version will no longer be supported or updated, so please revert to the App Store version.
 As with all apps in the App Store, Man Reader is restricted by Apple&amp;rsquo;s sand-boxing policy. Sand-boxing is a great thing. It isolates apps from each other and from the system, making it far less likely that a problem app will cause wide-spread havoc.</description>
@@ -600,33 +617,33 @@ As with all apps in the App Store, Man Reader is restricted by Apple&amp;rsquo;s
     
     <item>
       <title>Icns Maker &amp; Icon Builder updated</title>
-      <link>https://troz.net/icns-maker-icon-builder-updated/</link>
+      <link>https://troz.net/post/2013-01-19-icns-maker-icon-builder-updated/</link>
       <pubDate>Sat, 19 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/icns-maker-icon-builder-updated/</guid>
+      <guid>https://troz.net/post/2013-01-19-icns-maker-icon-builder-updated/</guid>
       <description>January 18th 2013:
 Both of the icon building apps have now been updated to fix a but that made incorrect icon sizes when running on a Retina MacBook Pro.
 Icns Maker uses your image to create an icns file for Mac apps.
 
-Icon Builder uses your image to create the suite of icon files needed for iOS apps.</description>
+Icon Builder uses your image to create the suite of icon files needed for iOS apps.</description>
     </item>
     
     <item>
       <title>Icon Makers &amp; Retina Macs</title>
-      <link>https://troz.net/icon-makers-retina-macs/</link>
+      <link>https://troz.net/post/2013-01-14-icon-makers-retina-macs/</link>
       <pubDate>Mon, 14 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/icon-makers-retina-macs/</guid>
+      <guid>https://troz.net/post/2013-01-14-icon-makers-retina-macs/</guid>
       <description>Icns Maker which makes an icns icon file for Mac apps, and Icon Builder which makes the suite of png files needed for iOS apps, are both compatible with the Retina MacBook Pro.
 However it was recently brought to my attention (thanks Cameron), that when running on a Retina MBP, all the icon files were exactly twice as large as they should be. The Icon.png file which supplies the main app icon for iPhone apps should be 57 pixels by 57 pixels.</description>
     </item>
     
     <item>
       <title>A Knight&#39;s Move updates</title>
-      <link>https://troz.net/a-knights-move-updates/</link>
+      <link>https://troz.net/post/2012-10-15-a-knights-move-updates/</link>
       <pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/a-knights-move-updates/</guid>
+      <guid>https://troz.net/post/2012-10-15-a-knights-move-updates/</guid>
       <description>UPDATE: September 2016 - A Knight&amp;rsquo;s Move for iOS is no longer available.
 A Knight&amp;rsquo;s Move for Mac is still supported.
 A Knight&amp;rsquo;s Move for iOS has been updated to take advantage of the taller iPhone 5 screen.
@@ -636,20 +653,20 @@ For iOS, the app is now free but supported by iAds (please click through if you 
     
     <item>
       <title>App Store Review Times</title>
-      <link>https://troz.net/app-store-review-times/</link>
+      <link>https://troz.net/post/2012-10-15-app-store-review-times/</link>
       <pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/app-store-review-times/</guid>
+      <guid>https://troz.net/post/2012-10-15-app-store-review-times/</guid>
       <description>There are been a lots of stories going around about lengthening Mac App Store review times. Shiny Developments crowd-sourced data certainly backs this up although they have much more data for iOS apps than for Mac apps.
 Some people, including Lex Friedman of MacWorld and John Gruber of Daring Fireball, are suggesting that the delays are due to the rush of new apps to support the iPhone 5 and iOS 6.</description>
     </item>
     
     <item>
       <title>Icon makers for Mac &amp; iOS apps</title>
-      <link>https://troz.net/icon-makers-for-mac-ios-apps/</link>
+      <link>https://troz.net/post/2012-10-15-icon-makers-for-mac-ios-apps/</link>
       <pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/icon-makers-for-mac-ios-apps/</guid>
+      <guid>https://troz.net/post/2012-10-15-icon-makers-for-mac-ios-apps/</guid>
       <description>Announcing two new apps for creating icons for with Mac or iOS projects:
 Icns Maker helps you convert a single image into a .icns file in two steps.
 Icon Builder creates all the files needed to set up your icons for any iOS project.
@@ -658,20 +675,20 @@ Creating icon files for Mac apps: In versions of Xcode before 4.4, Apple provide
     
     <item>
       <title>Updating apps for iPhone 5</title>
-      <link>https://troz.net/updating-apps-for-iphone-5/</link>
+      <link>https://troz.net/post/2012-09-24-updating-apps-for-iphone-5/</link>
       <pubDate>Mon, 24 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/updating-apps-for-iphone-5/</guid>
-      <description>I have started work updating my iOS apps to fill the larger screen of an iPhone 5. My iPhone 5 is on order - I missed out on the first shipment, but hopefully it won&amp;rsquo;t be too long. Meanwhile, I will just test in the iPhone Simulator and hope this is OK.
-But it was a puzzle to me how to get an app to fill the longer screen. I have the latest Xcode and the latest Simulator which allows you to specify what screen size iPhone to simulate.</description>
+      <guid>https://troz.net/post/2012-09-24-updating-apps-for-iphone-5/</guid>
+      <description>I have started work updating my iOS apps to fill the larger screen of an iPhone
+ My iPhone 5 is on order - I missed out on the first shipment, but hopefully it won&amp;rsquo;t be too long. Meanwhile, I will just test in the iPhone Simulator and hope this is OK.  But it was a puzzle to me how to get an app to fill the longer screen. I have the latest Xcode and the latest Simulator which allows you to specify what screen size iPhone to simulate.</description>
     </item>
     
     <item>
       <title>A Knight&#39;s Move for iOS 1.1</title>
-      <link>https://troz.net/a-knights-move-for-ios-1-1/</link>
+      <link>https://troz.net/post/2012-09-13-a-knights-move-for-ios-1-1/</link>
       <pubDate>Thu, 13 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/a-knights-move-for-ios-1-1/</guid>
+      <guid>https://troz.net/post/2012-09-13-a-knights-move-for-ios-1-1/</guid>
       <description>UPDATE: September 2016 - A Knight&amp;rsquo;s Move for iOS is no longer available.
 A Knight&amp;rsquo;s Move for Mac is still supported.
 A Knight&amp;rsquo;s Move for iPad &amp;amp; iPhone has just been updated to version 1.1
@@ -681,30 +698,30 @@ There were some minor changes:
     
     <item>
       <title>Man Reader 1.1 Released</title>
-      <link>https://troz.net/man-reader-1-1-released/</link>
+      <link>https://troz.net/post/2012-08-14-man-reader-1-1-released/</link>
       <pubDate>Tue, 14 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/man-reader-1-1-released/</guid>
+      <guid>https://troz.net/post/2012-08-14-man-reader-1-1-released/</guid>
       <description>The update of Man Reader to version 1.1 has just become available through the Mac App Store. This update has a bunch of new features - thanks to everyone who made suggestions.
 As detailed in a previous post, there have been major issues getting this app approved with Apple&amp;rsquo;s new sand-boxing restrictions fully in place. But to their credit, the Apple reviewers have been unfailing helpful and polite in answering my questions and keeping me informed.</description>
     </item>
     
     <item>
       <title>Sandboxing and the Mac App Store</title>
-      <link>https://troz.net/sandboxing-and-the-mac-app-store/</link>
+      <link>https://troz.net/post/2012-07-28-sandboxing-and-the-mac-app-store/</link>
       <pubDate>Sat, 28 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/sandboxing-and-the-mac-app-store/</guid>
+      <guid>https://troz.net/post/2012-07-28-sandboxing-and-the-mac-app-store/</guid>
       <description>As of June 2012, all apps submitted to the Mac App Store have to be sandboxed i.e. they have to be able to run in a limited environment where they cannot interfere with other apps or other parts of the system. While this is generally a good thing, there are problems when apps have legitimate reasons for requiring access to other resources.
 One annoyance for developers is that Apple&amp;rsquo;s apps are mostly not sandboxed.</description>
     </item>
     
     <item>
       <title>Update to Time In Words screen saver</title>
-      <link>https://troz.net/update-to-time-in-words-screen-saver/</link>
+      <link>https://troz.net/post/2012-07-27-update-to-time-in-words-screen-saver/</link>
       <pubDate>Fri, 27 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/update-to-time-in-words-screen-saver/</guid>
+      <guid>https://troz.net/post/2012-07-27-update-to-time-in-words-screen-saver/</guid>
       <description>Time In Words screen saver has just been updated to version 1.1 and is now fully compatible with Mountain Lion. It is free to use and can be downloaded here.
 The basic screen saver worked before, but searching for an alternative time zone would crash System Preferences. That is now fixed.
 The screen saver also shows a thumbnail image when in Mountain Lion and is code-signed with my developer ID for compatibility with Mountain Lion&amp;rsquo;s Gatekeeper.</description>
@@ -712,10 +729,10 @@ The screen saver also shows a thumbnail image when in Mountain Lion and is code-
     
     <item>
       <title>A Knight&#39;s Move Released</title>
-      <link>https://troz.net/a-knights-move-released/</link>
+      <link>https://troz.net/post/2012-07-09-a-knights-move-released/</link>
       <pubDate>Mon, 09 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/a-knights-move-released/</guid>
+      <guid>https://troz.net/post/2012-07-09-a-knights-move-released/</guid>
       <description>UPDATE: September 2016 - A Knight&amp;rsquo;s Move for iOS is no longer available.
 A Knight&amp;rsquo;s Move for Mac is still supported.
 &amp;ldquo;A Knight&amp;rsquo;s Move&amp;rdquo; is a fun, addictive and simple puzzle game based on the movements of chess pieces. Your goal is to move your white knight across a board to a target square using the same movements as a knight in chess. Pawns may block your way, while enemy bishops, castles, knights and the queen may try to stop you.</description>
@@ -723,39 +740,39 @@ A Knight&amp;rsquo;s Move for Mac is still supported.
     
     <item>
       <title>Easy access to the Library folder</title>
-      <link>https://troz.net/easy-access-to-the-library-folder/</link>
+      <link>https://troz.net/post/2012-05-16-easy-access-to-the-library-folder/</link>
       <pubDate>Wed, 16 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/easy-access-to-the-library-folder/</guid>
+      <guid>https://troz.net/post/2012-05-16-easy-access-to-the-library-folder/</guid>
       <description>In Mac OS X 10.7 (Lion), Apple decided to make it more difficult to access your Library folder, presumably to stop people doing stuff that made apps crash. But as a developer, I need access to my Library folder a lot. I need to check that preferences are being saved correctly. If I have an app that uses the Application Support folder, then I need to be able to check it.</description>
     </item>
     
     <item>
       <title>Man Reader update coming soon</title>
-      <link>https://troz.net/man-reader-update-coming-soon/</link>
+      <link>https://troz.net/post/2012-05-11-man-reader-update-coming-soon/</link>
       <pubDate>Fri, 11 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/man-reader-update-coming-soon/</guid>
+      <guid>https://troz.net/post/2012-05-11-man-reader-update-coming-soon/</guid>
       <description>Man Reader launched on the Mac App Store a couple of days ago and yesterday I got an email from a purchaser who reported that Man Reader was not displaying the man pages for MacPorts, even though he had the paths set up correctly.
 I installed MacPorts to check this out and ran into the same problem. Running the command &amp;ldquo;man port&amp;rdquo; in Terminal worked fine, but &amp;ldquo;port&amp;rdquo; did not appear in Man Reader&amp;rsquo;s list.</description>
     </item>
     
     <item>
       <title>Pic-a-POD 2.0.4 for Mac</title>
-      <link>https://troz.net/pic-a-pod-2-0-4-for-mac/</link>
+      <link>https://troz.net/post/2012-05-11-pic-a-pod-2-0-4-for-mac/</link>
       <pubDate>Fri, 11 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/pic-a-pod-2-0-4-for-mac/</guid>
+      <guid>https://troz.net/post/2012-05-11-pic-a-pod-2-0-4-for-mac/</guid>
       <description> The latest update for Pic-a-POD for Mac is now available through the Mac App Store.
 Bug fix:  selecting an iPhoto pic from the Recent Desktops menu now works correctly.  New features:  Better indication of downloads and when large pics are not yet available Direct link to App Store in Help menu - please rate or review.  </description>
     </item>
     
     <item>
       <title>Making a Mac Screen Saver</title>
-      <link>https://troz.net/making-a-mac-screen-saver/</link>
+      <link>https://troz.net/post/2012-05-09-making-a-mac-screen-saver/</link>
       <pubDate>Wed, 09 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/making-a-mac-screen-saver/</guid>
+      <guid>https://troz.net/post/2012-05-09-making-a-mac-screen-saver/</guid>
       <description>Having just completed the my first screen saver for Mac - the Time In Words Screen Saver, I thought I would share some of the experiences. I am using OS X Lion (10.7) and Xcode 4.3.2
 The first thing is to create a new project in Xcode using the Screen Saver template:
 
@@ -764,10 +781,10 @@ Xcode sets up a project for you with everything you need for a screen saver modu
     
     <item>
       <title>Time In Words Screen Saver</title>
-      <link>https://troz.net/time-in-words-screen-saver-for-mac/</link>
+      <link>https://troz.net/post/2012-05-07-time-in-words-screen-saver-for-mac/</link>
       <pubDate>Mon, 07 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/time-in-words-screen-saver-for-mac/</guid>
+      <guid>https://troz.net/post/2012-05-07-time-in-words-screen-saver-for-mac/</guid>
       <description>The latest member of the Time In Words suite of apps is a screen saver module for Macs.
 Version 1.2 updated January 2013: compatible with Lion (OS X 10.7), Mountain Lion (OS X 10.8), Mavericks (OS X 10.9) &amp;amp; Yosemite (OS X 10.10).
 Download Time In Words Screen Saver
@@ -776,69 +793,69 @@ Like Time In Words for iOS and World Time In Words for Mac, it displays the time
     
     <item>
       <title>Support for older operating systems</title>
-      <link>https://troz.net/support-for-older-operating-systems/</link>
+      <link>https://troz.net/post/2012-05-02-support-for-older-operating-systems/</link>
       <pubDate>Wed, 02 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/support-for-older-operating-systems/</guid>
+      <guid>https://troz.net/post/2012-05-02-support-for-older-operating-systems/</guid>
       <description>Working out what operating systems to support in your software is always a difficult decision. I only program for Mac &amp;amp; iOS systems for starters. This is because they are the systems I use and understand. I am not interested in expending the time &amp;amp; money needed to program and test my software for other systems.
 Within the Mac &amp;amp; iOS ecosystems, there is still the decision of which versions to support.</description>
     </item>
     
     <item>
       <title>Time In Words &amp; the new iPad</title>
-      <link>https://troz.net/time-in-words-the-new-ipad/</link>
+      <link>https://troz.net/post/2012-04-10-time-in-words-the-new-ipad/</link>
       <pubDate>Tue, 10 Apr 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/time-in-words-the-new-ipad/</guid>
+      <guid>https://troz.net/post/2012-04-10-time-in-words-the-new-ipad/</guid>
       <description>The new iPad has a Retina display, meaning that the pixel density is much greater. For some apps, this is a problem as their graphics are now scaled and look pixellated. However Time In Words is very simple. It uses standard fonts and interface widgets with no images or external graphics apart from the icon. The icon may not look perfect on a new iPad, but the display itself should look really great.</description>
     </item>
     
     <item>
       <title>iPhone 4 Home Button</title>
-      <link>https://troz.net/iphone-4-home-button/</link>
+      <link>https://troz.net/post/2012-03-28-iphone-4-home-button/</link>
       <pubDate>Wed, 28 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/iphone-4-home-button/</guid>
+      <guid>https://troz.net/post/2012-03-28-iphone-4-home-button/</guid>
       <description>My iPhone 4 is now 18 months old, and it&amp;rsquo;s Home button is starting to feel the strain. These buttons have been used much more than originally intended, with the new multitasking required double-presses, not to mention access to the camera etc. So basically , it is wearing out.
 The phone is out of warranty and there is no way I am going to pay for an expensive repair when my current phone contract will expire later this year, and hopefully the iPhone 5 will be ready for me then.</description>
     </item>
     
     <item>
       <title>Time In Words for Mac now available</title>
-      <link>https://troz.net/time-in-words-for-mac-now-available/</link>
+      <link>https://troz.net/post/2012-03-20-time-in-words-for-mac-now-available/</link>
       <pubDate>Tue, 20 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/time-in-words-for-mac-now-available/</guid>
+      <guid>https://troz.net/post/2012-03-20-time-in-words-for-mac-now-available/</guid>
       <description>Time In Words for Mac has just been approved and is now available for free from the Mac App Store.
 For more details, check out the Time In Words for Mac web page.</description>
     </item>
     
     <item>
       <title>Interface options for selecting time zones</title>
-      <link>https://troz.net/interface-options-for-selecting-time-zones/</link>
+      <link>https://troz.net/post/2012-02-25-interface-options-for-selecting-time-zones/</link>
       <pubDate>Sat, 25 Feb 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/interface-options-for-selecting-time-zones/</guid>
+      <guid>https://troz.net/post/2012-02-25-interface-options-for-selecting-time-zones/</guid>
       <description>As part of the design for [Time In Words for Mac][1], I had to work out the interface for selecting time zones. With [Time In Word for iOS][2], I used picker wheels which are excellent for selecting hierarchical data. On the Mac, there is no such thing as the iOS picker wheel and so I had to consider what to use instead.
 When you ask the system (Mac or iOS) for the available time zones, you get a list of names like this:</description>
     </item>
     
     <item>
       <title>Scroll bars in Mac OX 10.6 and 10.7</title>
-      <link>https://troz.net/scroll-bars-in-mac-ox-10-6-and-10-7/</link>
+      <link>https://troz.net/post/2012-02-25-scroll-bars-in-mac-ox-10-6-and-10-7/</link>
       <pubDate>Sat, 25 Feb 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/scroll-bars-in-mac-ox-10-6-and-10-7/</guid>
+      <guid>https://troz.net/post/2012-02-25-scroll-bars-in-mac-ox-10-6-and-10-7/</guid>
       <description>With the introduction of OS X 10.7 (Lion), Apple removed the obvious scroll bars from windows and replaced them with a much more subtle scroll indicator, that only appears when you are actually scrolling. This was designed to match the iOS scrolling, as was the swap of scroll direction which makes much more sense if you use a trackpad.
 With the upcoming Time In Words for Mac, I have a Preferences window to allow selection of time zones to display in the menu.</description>
     </item>
     
     <item>
       <title>Time In Words available in the App Store</title>
-      <link>https://troz.net/time-in-words-available-in-the-app-store/</link>
+      <link>https://troz.net/post/2012-02-09-time-in-words-available-in-the-app-store/</link>
       <pubDate>Thu, 09 Feb 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/time-in-words-available-in-the-app-store/</guid>
+      <guid>https://troz.net/post/2012-02-09-time-in-words-available-in-the-app-store/</guid>
       <description>Time In Words is now available at the App Store.
 Time In Words is a clock and calendar app that takes you out of the digital era and back to when saying “quarter to seven” or “five past two” was accurate enough.
 

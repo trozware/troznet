@@ -12,22 +12,41 @@
     
     <item>
       <title>JSON Parsing in Swift 4</title>
-      <link>https://troz.net/2017/06/json-parsing-in-swift-4/</link>
+      <link>https://troz.net/post/2017-06-18-json-parsing-in-swift-4/</link>
       <pubDate>Sun, 18 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2017/06/json-parsing-in-swift-4/</guid>
-      <description>Updated: 3rd September 2017.
- Checked syntax using Xcode 9.0 beta 6. Added section on allowing for nulls.  Since JSON has become the de facto standard for data transfers around the internet, there has always been a lot of interest in Swift libraries to parse JSON into Swift classes or structs. Searching for &amp;ldquo;swift json library&amp;rdquo; on GitHub discovers 77 86 repositories. So why are there so many? And what has Swift 4 done to sherlock them all?</description>
+      <guid>https://troz.net/post/2017-06-18-json-parsing-in-swift-4/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Updated:&lt;/strong&gt; 3rd September 2017.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Checked syntax using Xcode 9.0 beta 6.&lt;/li&gt;
+&lt;li&gt;Added section on &lt;a href=&#34;#nulls&#34;&gt;allowing for nulls&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Since &lt;strong&gt;JSON&lt;/strong&gt; has become the de facto standard for data transfers around the
+internet, there has always been a lot of interest in Swift libraries to parse
+JSON into Swift classes or structs. Searching for &amp;ldquo;swift json library&amp;rdquo; on
+&lt;a href=&#34;https://github.com/search?q=swift+json+library&#34;&gt;GitHub&lt;/a&gt; discovers &lt;s&gt;77&lt;/s&gt; 86 repositories. So why are there so many? And
+what has Swift 4 done to &lt;em&gt;sherlock&lt;/em&gt; them all?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>JSON Feed for TrozWare</title>
-      <link>https://troz.net/2017/05/json-feed-for-trozware/</link>
+      <link>https://troz.net/post/2017-05-20-json-feed-for-trozware/</link>
       <pubDate>Sat, 20 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2017/05/json-feed-for-trozware/</guid>
-      <description>jsonfeed.org has announced a new format for web site feeds, designed as an alternative to RSS. TrozWare has had an XML RSS feed for years, but I don&amp;rsquo;t think anyone ever uses it (I certainly don&amp;rsquo;t), so today I have replaced it with a JSON feed, which you can access through the  button at the top of every page.
-I am sure many JSON Feed viewers will appear soon, but the only one I know about so far is at http://json-feed-viewer.</description>
+      <guid>https://troz.net/post/2017-05-20-json-feed-for-trozware/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://jsonfeed.org/2017/05/17/announcing_json_feed&#34;&gt;jsonfeed.org&lt;/a&gt; has announced a new format for web site feeds, designed as an
+alternative to RSS. TrozWare has had an XML RSS feed for years, but I don&amp;rsquo;t
+think anyone ever uses it (I certainly don&amp;rsquo;t), so today I have replaced it with
+a JSON feed, which you can access through the
+&lt;a class=&#34;fa fa-rss&#34; href=&#34;https://troz.net/feed.json&#34;&gt;&lt;/a&gt; button at the top of every page.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -12,40 +12,40 @@
     
     <item>
       <title>Updating apps for iPhone 5</title>
-      <link>https://troz.net/updating-apps-for-iphone-5/</link>
+      <link>https://troz.net/post/2012-09-24-updating-apps-for-iphone-5/</link>
       <pubDate>Mon, 24 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/updating-apps-for-iphone-5/</guid>
-      <description>I have started work updating my iOS apps to fill the larger screen of an iPhone 5. My iPhone 5 is on order - I missed out on the first shipment, but hopefully it won&amp;rsquo;t be too long. Meanwhile, I will just test in the iPhone Simulator and hope this is OK.
-But it was a puzzle to me how to get an app to fill the longer screen. I have the latest Xcode and the latest Simulator which allows you to specify what screen size iPhone to simulate.</description>
+      <guid>https://troz.net/post/2012-09-24-updating-apps-for-iphone-5/</guid>
+      <description>I have started work updating my iOS apps to fill the larger screen of an iPhone
+ My iPhone 5 is on order - I missed out on the first shipment, but hopefully it won&amp;rsquo;t be too long. Meanwhile, I will just test in the iPhone Simulator and hope this is OK.  But it was a puzzle to me how to get an app to fill the longer screen. I have the latest Xcode and the latest Simulator which allows you to specify what screen size iPhone to simulate.</description>
     </item>
     
     <item>
       <title>iPhone 4 Home Button</title>
-      <link>https://troz.net/iphone-4-home-button/</link>
+      <link>https://troz.net/post/2012-03-28-iphone-4-home-button/</link>
       <pubDate>Wed, 28 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/iphone-4-home-button/</guid>
+      <guid>https://troz.net/post/2012-03-28-iphone-4-home-button/</guid>
       <description>My iPhone 4 is now 18 months old, and it&amp;rsquo;s Home button is starting to feel the strain. These buttons have been used much more than originally intended, with the new multitasking required double-presses, not to mention access to the camera etc. So basically , it is wearing out.
 The phone is out of warranty and there is no way I am going to pay for an expensive repair when my current phone contract will expire later this year, and hopefully the iPhone 5 will be ready for me then.</description>
     </item>
     
     <item>
       <title>Interface options for selecting time zones</title>
-      <link>https://troz.net/interface-options-for-selecting-time-zones/</link>
+      <link>https://troz.net/post/2012-02-25-interface-options-for-selecting-time-zones/</link>
       <pubDate>Sat, 25 Feb 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/interface-options-for-selecting-time-zones/</guid>
+      <guid>https://troz.net/post/2012-02-25-interface-options-for-selecting-time-zones/</guid>
       <description>As part of the design for [Time In Words for Mac][1], I had to work out the interface for selecting time zones. With [Time In Word for iOS][2], I used picker wheels which are excellent for selecting hierarchical data. On the Mac, there is no such thing as the iOS picker wheel and so I had to consider what to use instead.
 When you ask the system (Mac or iOS) for the available time zones, you get a list of names like this:</description>
     </item>
     
     <item>
       <title>Scroll bars in Mac OX 10.6 and 10.7</title>
-      <link>https://troz.net/scroll-bars-in-mac-ox-10-6-and-10-7/</link>
+      <link>https://troz.net/post/2012-02-25-scroll-bars-in-mac-ox-10-6-and-10-7/</link>
       <pubDate>Sat, 25 Feb 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/scroll-bars-in-mac-ox-10-6-and-10-7/</guid>
+      <guid>https://troz.net/post/2012-02-25-scroll-bars-in-mac-ox-10-6-and-10-7/</guid>
       <description>With the introduction of OS X 10.7 (Lion), Apple removed the obvious scroll bars from windows and replaced them with a much more subtle scroll indicator, that only appears when you are actually scrolling. This was designed to match the iOS scrolling, as was the swap of scroll direction which makes much more sense if you use a trackpad.
 With the upcoming Time In Words for Mac, I have a Preferences window to allow selection of time zones to display in the menu.</description>
     </item>

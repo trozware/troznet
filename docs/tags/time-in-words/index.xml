@@ -12,31 +12,19 @@
     
     <item>
       <title>Time In Words 4.0</title>
-      <link>https://troz.net/2015/04/time-in-words-4.0/</link>
+      <link>https://troz.net/post/2015-04-15-time-in-words-4.0/</link>
       <pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/2015/04/time-in-words-4.0/</guid>
+      <guid>https://troz.net/post/2015-04-15-time-in-words-4.0/</guid>
       <description>Time In Words for iOS started off as a fun gimmick, emulating the Qlocktwo type of time display where the relevant words are highlighted in some way to spell out the time as a sentence. This very quickly evolved into what I hoped would be more useful app, still showing the original display, but also providing the current time &amp;amp; date as complete sentences. Then I added time conversions and discovered the real power and utility of writing out times as words.</description>
     </item>
     
     <item>
-      <title>World Time In Words</title>
-      <link>https://troz.net/world-time-in-words/</link>
-      <pubDate>Tue, 10 Feb 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://troz.net/world-time-in-words/</guid>
-      <description>World Time In Words version 3.0 is now available in the Mac App Store.
-With version 3.0 of this app, I have changed the name to &amp;ldquo;World Time In Words&amp;rdquo;. This is to reflect what I feel to be the most useful feature of this app: the ability to convert between time zones.
-It has two other new features:
- The time shown in the menu bar can now be set to use 24-hour time.</description>
-    </item>
-    
-    <item>
       <title>Update to Time In Words screen saver</title>
-      <link>https://troz.net/update-to-time-in-words-screen-saver/</link>
+      <link>https://troz.net/post/2012-07-27-update-to-time-in-words-screen-saver/</link>
       <pubDate>Fri, 27 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/update-to-time-in-words-screen-saver/</guid>
+      <guid>https://troz.net/post/2012-07-27-update-to-time-in-words-screen-saver/</guid>
       <description>Time In Words screen saver has just been updated to version 1.1 and is now fully compatible with Mountain Lion. It is free to use and can be downloaded here.
 The basic screen saver worked before, but searching for an alternative time zone would crash System Preferences. That is now fixed.
 The screen saver also shows a thumbnail image when in Mountain Lion and is code-signed with my developer ID for compatibility with Mountain Lion&amp;rsquo;s Gatekeeper.</description>
@@ -44,10 +32,10 @@ The screen saver also shows a thumbnail image when in Mountain Lion and is code-
     
     <item>
       <title>Making a Mac Screen Saver</title>
-      <link>https://troz.net/making-a-mac-screen-saver/</link>
+      <link>https://troz.net/post/2012-05-09-making-a-mac-screen-saver/</link>
       <pubDate>Wed, 09 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/making-a-mac-screen-saver/</guid>
+      <guid>https://troz.net/post/2012-05-09-making-a-mac-screen-saver/</guid>
       <description>Having just completed the my first screen saver for Mac - the Time In Words Screen Saver, I thought I would share some of the experiences. I am using OS X Lion (10.7) and Xcode 4.3.2
 The first thing is to create a new project in Xcode using the Screen Saver template:
 
@@ -56,10 +44,10 @@ Xcode sets up a project for you with everything you need for a screen saver modu
     
     <item>
       <title>Time In Words Screen Saver</title>
-      <link>https://troz.net/time-in-words-screen-saver-for-mac/</link>
+      <link>https://troz.net/post/2012-05-07-time-in-words-screen-saver-for-mac/</link>
       <pubDate>Mon, 07 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/time-in-words-screen-saver-for-mac/</guid>
+      <guid>https://troz.net/post/2012-05-07-time-in-words-screen-saver-for-mac/</guid>
       <description>The latest member of the Time In Words suite of apps is a screen saver module for Macs.
 Version 1.2 updated January 2013: compatible with Lion (OS X 10.7), Mountain Lion (OS X 10.8), Mavericks (OS X 10.9) &amp;amp; Yosemite (OS X 10.10).
 Download Time In Words Screen Saver
@@ -68,61 +56,43 @@ Like Time In Words for iOS and World Time In Words for Mac, it displays the time
     
     <item>
       <title>Time In Words &amp; the new iPad</title>
-      <link>https://troz.net/time-in-words-the-new-ipad/</link>
+      <link>https://troz.net/post/2012-04-10-time-in-words-the-new-ipad/</link>
       <pubDate>Tue, 10 Apr 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/time-in-words-the-new-ipad/</guid>
+      <guid>https://troz.net/post/2012-04-10-time-in-words-the-new-ipad/</guid>
       <description>The new iPad has a Retina display, meaning that the pixel density is much greater. For some apps, this is a problem as their graphics are now scaled and look pixellated. However Time In Words is very simple. It uses standard fonts and interface widgets with no images or external graphics apart from the icon. The icon may not look perfect on a new iPad, but the display itself should look really great.</description>
     </item>
     
     <item>
       <title>Time In Words for Mac now available</title>
-      <link>https://troz.net/time-in-words-for-mac-now-available/</link>
+      <link>https://troz.net/post/2012-03-20-time-in-words-for-mac-now-available/</link>
       <pubDate>Tue, 20 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/time-in-words-for-mac-now-available/</guid>
+      <guid>https://troz.net/post/2012-03-20-time-in-words-for-mac-now-available/</guid>
       <description>Time In Words for Mac has just been approved and is now available for free from the Mac App Store.
 For more details, check out the Time In Words for Mac web page.</description>
     </item>
     
     <item>
-      <title>World Time In Words for Mac</title>
-      <link>https://troz.net/time-in-words-for-mac/</link>
-      <pubDate>Mon, 19 Mar 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://troz.net/time-in-words-for-mac/</guid>
-      <description>World Time In Words for Mac version 3.0 is now available through the Mac App Store. This update changes the name from &amp;ldquo;Time In Words&amp;rdquo; to &amp;ldquo;World Time In Words&amp;rdquo; as an acknowledgment that the major feature of this app is converting time between different time zones. This update adds the ability to show digital time if you need greater accuracy - just hold down Option as you open the menu.</description>
-    </item>
-    
-    <item>
       <title>Interface options for selecting time zones</title>
-      <link>https://troz.net/interface-options-for-selecting-time-zones/</link>
+      <link>https://troz.net/post/2012-02-25-interface-options-for-selecting-time-zones/</link>
       <pubDate>Sat, 25 Feb 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/interface-options-for-selecting-time-zones/</guid>
+      <guid>https://troz.net/post/2012-02-25-interface-options-for-selecting-time-zones/</guid>
       <description>As part of the design for [Time In Words for Mac][1], I had to work out the interface for selecting time zones. With [Time In Word for iOS][2], I used picker wheels which are excellent for selecting hierarchical data. On the Mac, there is no such thing as the iOS picker wheel and so I had to consider what to use instead.
 When you ask the system (Mac or iOS) for the available time zones, you get a list of names like this:</description>
     </item>
     
     <item>
       <title>Time In Words available in the App Store</title>
-      <link>https://troz.net/time-in-words-available-in-the-app-store/</link>
+      <link>https://troz.net/post/2012-02-09-time-in-words-available-in-the-app-store/</link>
       <pubDate>Thu, 09 Feb 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/time-in-words-available-in-the-app-store/</guid>
+      <guid>https://troz.net/post/2012-02-09-time-in-words-available-in-the-app-store/</guid>
       <description>Time In Words is now available at the App Store.
 Time In Words is a clock and calendar app that takes you out of the digital era and back to when saying “quarter to seven” or “five past two” was accurate enough.
 
 Check out the Time In Words web page for more info and screen shots.</description>
-    </item>
-    
-    <item>
-      <title>Time In Words for iOS</title>
-      <link>https://troz.net/time-in-words/</link>
-      <pubDate>Wed, 08 Feb 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://troz.net/time-in-words/</guid>
-      <description>Time In Words is a clock and calendar app that takes you out of the digital era and back to when saying &amp;ldquo;quarter to seven&amp;rdquo; or &amp;ldquo;five past two&amp;rdquo; was accurate enough. When people look at an analog watch, they tend to interpret the time to the closest five minutes which allows for inaccuracies in the watch as well as providing only a useful level of detail. This app goes back to that, showing date and/or time in multiple ways, but all in words.</description>
     </item>
     
   </channel>

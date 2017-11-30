@@ -12,10 +12,10 @@
     
     <item>
       <title>Workflow for writing a post</title>
-      <link>https://troz.net/workflow-for-writing-a-post/</link>
+      <link>https://troz.net/post/2015-03-10-workflow-for-writing-a-post/</link>
       <pubDate>Tue, 10 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/workflow-for-writing-a-post/</guid>
+      <guid>https://troz.net/post/2015-03-10-workflow-for-writing-a-post/</guid>
       <description>So here is where I need to get used to Jekyll and how things are done. I will end up automating this when I am sure of the process, but for now, I am just going to work my way through it.
  Start up the local Jekyll server:
  I opened Terminal and used cd to get to the folder containing my site. Next I started the Jekyll server locally using jekyll serve.</description>
@@ -23,10 +23,10 @@
     
     <item>
       <title>Markdown</title>
-      <link>https://troz.net/markdown/</link>
+      <link>https://troz.net/post/2013-04-01-markdown/</link>
       <pubDate>Mon, 01 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/markdown/</guid>
+      <guid>https://troz.net/post/2013-04-01-markdown/</guid>
       <description>For some time now, I have been aware of the increasing trend towards using Markdown for text editing and for creating HTML. Markdown has been on my list of &amp;ldquo;things I should learn some day&amp;rdquo; so I was interested last week to read about a new iBooks book called The MacSparky Markdown Field Guide. This was sufficient inspiration so I got the book and read through it this weekend.</description>
     </item>
     

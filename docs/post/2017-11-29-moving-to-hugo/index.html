@@ -89,7 +89,7 @@ re-installed Jekyll but found that it had been updated from version 2 to version
 
 
 
-<meta itemprop="keywords" content="hugo,jekyll,web," />
+<meta itemprop="keywords" content="hugo,jekyll,web,blog," />
 <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Moving to Hugo"/>
 <meta name="twitter:description" content="Yesterday, I came to update my blog: I had a new post in draft form and I wanted
 to update the Swift code to version 4. However installing High Sierra had
@@ -258,7 +258,7 @@ only the visuals but the capabilities of the site.</p>
 <li>tags</li>
 <li>archive page</li>
 </ul></li>
-<li>Written using MarkDown</li>
+<li>Written using Markdown</li>
 <li>Static pages for apps listing, about, contact etc.</li>
 <li>Syntax highlighting</li>
 <li>Social links</li>
@@ -301,12 +301,12 @@ set up menus, configure the social media links I wanted to show, set date
 formats, set the number of items to show per page and so on.</p>
 
 <p>I had a couple of more static pages that I wanted to show, so I added their
-MarkDown files to the content folder.</p>
+Markdown files to the content folder.</p>
 
 <p>One nice feature which I had missed in Jekyll (or at least the way I had it set
 up) was the ability to separate blog posts from more static web pages. Each of
 my apps has an information/support page that does not accept comments and
-doesn&rsquo;t need to be listed in the Archives. By moving these MarkDown files from
+doesn&rsquo;t need to be listed in the Archives. By moving these Markdown files from
 <code>contents/posts</code> to <code>contents/pages</code>, I was able to achieve this.</p>
 
 <p>Adding Google Analytics and Disqus commenting was as easy as entering my IDs in
@@ -369,7 +369,7 @@ the <code>docs</code> folder and I was live with the new site.</p>
 <ul>
 <li>Responsive - ALMOST, not Hugo&rsquo;s fault</li>
 <li>Blog style - YES</li>
-<li>Written using MarkDown - YES</li>
+<li>Written using Markdown - YES</li>
 <li>Static pages for apps listing, about, contact etc. - YES</li>
 <li>Syntax highlighting - YES</li>
 <li>Social links - YES</li>
@@ -433,13 +433,15 @@ investigating Twitter cards, search &amp; JSON Feed.</p>
           
           <a href="/tags/web/">web</a>
           
+          <a href="/tags/blog/">blog</a>
+          
         </div>
 
       
       <nav class="post-nav">
         
         
-          <a class="next" href="/2017/06/json-parsing-in-swift-4/">
+          <a class="next" href="/post/2017-06-18-json-parsing-in-swift-4/">
             <span class="next-text nav-default">JSON Parsing in Swift 4</span>
             <span class="prev-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
@@ -449,21 +451,7 @@ investigating Twitter cards, search &amp; JSON Feed.</p>
   </article>
         </div>
         
-  <div id="disqus_thread"></div>
-    <script type="text/javascript">
-    (function() {
-        
-        
-        if (window.location.hostname === 'localhost') return;
-
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        var disqus_shortname = 'trozware';
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com/" class="dsq-brlink" target="_blank">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
 
   
       </div>  

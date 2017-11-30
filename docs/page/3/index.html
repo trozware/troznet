@@ -138,7 +138,7 @@
     
       <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/03/structs-vs-classes/">Structs vs Classes</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/2016-03-30-structs-vs-classes/">Structs vs Classes</a></h1>
     <div class="post-meta">
       <span class="post-time"> 30 Mar 2016 </span>
       
@@ -152,7 +152,7 @@
       One of the big debates among Swift developers is when to use structs and when to use classes. Classes are the building blocks of object-oriented programming but structs as provided by Swift are newly powerful. Structs have been around in C-based languages for a long time, but Swift has made them more powerful and given them more features so that they are almost indistinguishable from classes. So what are the differences and which one should you use?
     </div>
     <div class="read-more">
-      <a href="/2016/03/structs-vs-classes/" class="read-more-link">Read more..</a>
+      <a href="/post/2016-03-30-structs-vs-classes/" class="read-more-link">Read more..</a>
     </div>
   </div>
 </article>
@@ -160,7 +160,7 @@
     
       <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/03/learning-swift-loops/">Learning Swift - For-Loops</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/2016-03-12-learning-swift-for-loops/">Learning Swift - For-Loops</a></h1>
     <div class="post-meta">
       <span class="post-time"> 12 Mar 2016 </span>
       
@@ -175,7 +175,7 @@
 The most basic form of loop is the for-in loop. There are two ways this can be used: looping over the numbers in a range or looping over the elements in an array or dictionary.
     </div>
     <div class="read-more">
-      <a href="/2016/03/learning-swift-loops/" class="read-more-link">Read more..</a>
+      <a href="/post/2016-03-12-learning-swift-for-loops/" class="read-more-link">Read more..</a>
     </div>
   </div>
 </article>
@@ -183,7 +183,7 @@ The most basic form of loop is the for-in loop. There are two ways this can be u
     
       <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/02/learning-swift-generics/">Learning Swift - Generics</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/2016-02-29-learning-swift-generics/">Learning Swift - Generics</a></h1>
     <div class="post-meta">
       <span class="post-time"> 29 Feb 2016 </span>
       
@@ -200,7 +200,7 @@ What does this mean?
 func mid&lt;T: Comparable&gt;(array: [T]) -&gt; T  It looks like it is a function to find the middle element in an array, but what is &lt;T: Comparable&gt; or [T] or even just T?
     </div>
     <div class="read-more">
-      <a href="/2016/02/learning-swift-generics/" class="read-more-link">Read more..</a>
+      <a href="/post/2016-02-29-learning-swift-generics/" class="read-more-link">Read more..</a>
     </div>
   </div>
 </article>
@@ -208,7 +208,7 @@ func mid&lt;T: Comparable&gt;(array: [T]) -&gt; T  It looks like it is a functio
     
       <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/02/singleton-to-protocol/">Singleton to Protocol</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/2016-02-26-singleton-to-protocol/">Singleton to Protocol</a></h1>
     <div class="post-meta">
       <span class="post-time"> 26 Feb 2016 </span>
       
@@ -223,7 +223,7 @@ func mid&lt;T: Comparable&gt;(array: [T]) -&gt; T  It looks like it is a functio
 So what is a singleton? A singleton is a class that only expects to have a single instance.
     </div>
     <div class="read-more">
-      <a href="/2016/02/singleton-to-protocol/" class="read-more-link">Read more..</a>
+      <a href="/post/2016-02-26-singleton-to-protocol/" class="read-more-link">Read more..</a>
     </div>
   </div>
 </article>
@@ -231,22 +231,29 @@ So what is a singleton? A singleton is a class that only expects to have a singl
     
       <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/02/three-rules-for-writing-better-swift/">Three Rules for Writing Better Swift</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/2016-02-24-three-rules-for-writing-better-swift/">Three Rules for Writing Better Swift</a></h1>
     <div class="post-meta">
       <span class="post-time"> 24 Feb 2016 </span>
       
-      <span class="more-meta"> 624 words </span>
-      <span class="more-meta"> 3 minute read </span>
+      <span class="more-meta"> 643 words </span>
+      <span class="more-meta"> 4 minute read </span>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      1. Do not use ! Swift uses optionals for values that can be nil. To use an optional value, you need to &ldquo;un-wrap&rdquo; it first, which means getting the actual value out, assuming that the value exists and the optional is not actually nil.
-Optionals are the subject of a complete post by themselves, but for now, I will just say this: When you use ! you are promising the compiler that you will make sure there is a real value in that optional by the time it is needed.
+      <ol>
+<li>Do not use !.</li>
+<li>Use let, not var.</li>
+<li>Allow the compiler to infer types.</li>
+</ol>
+
+<p>Read on for more details&hellip;</p>
+
+<p></p>
     </div>
     <div class="read-more">
-      <a href="/2016/02/three-rules-for-writing-better-swift/" class="read-more-link">Read more..</a>
+      <a href="/post/2016-02-24-three-rules-for-writing-better-swift/" class="read-more-link">Read more..</a>
     </div>
   </div>
 </article>
@@ -254,7 +261,7 @@ Optionals are the subject of a complete post by themselves, but for now, I will 
     
       <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/02/configuring-xcode/">Configuring Xcode</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/2016-02-17-configuring-xcode/">Configuring Xcode</a></h1>
     <div class="post-meta">
       <span class="post-time"> 17 Feb 2016 </span>
       
@@ -269,7 +276,7 @@ Optionals are the subject of a complete post by themselves, but for now, I will 
 1. Editor color themes and fonts: Step through the supplied themes and find the best one for you. Then click the &lsquo;+&rsquo; button at the bottom of the list and duplicate the selected theme. Now you can tweak it to suit you.
     </div>
     <div class="read-more">
-      <a href="/2016/02/configuring-xcode/" class="read-more-link">Read more..</a>
+      <a href="/post/2016-02-17-configuring-xcode/" class="read-more-link">Read more..</a>
     </div>
   </div>
 </article>
@@ -277,7 +284,7 @@ Optionals are the subject of a complete post by themselves, but for now, I will 
     
       <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/02/how-do-i-start-to-learn-swift/">How do I start to learn Swift?</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/2016-02-16-how-do-i-start-to-learn-swift/">How do I start to learn Swift?</a></h1>
     <div class="post-meta">
       <span class="post-time"> 16 Feb 2016 </span>
       
@@ -292,7 +299,7 @@ Optionals are the subject of a complete post by themselves, but for now, I will 
 You can just read this book, especially the first section: &ldquo;A Swift Tour&rdquo;, but you will get more out of it if you follow along with the playground. There is a link to download the playground from the book which you can use directly if you are reading using iBooks on the Mac.
     </div>
     <div class="read-more">
-      <a href="/2016/02/how-do-i-start-to-learn-swift/" class="read-more-link">Read more..</a>
+      <a href="/post/2016-02-16-how-do-i-start-to-learn-swift/" class="read-more-link">Read more..</a>
     </div>
   </div>
 </article>
@@ -300,7 +307,7 @@ You can just read this book, especially the first section: &ldquo;A Swift Tour&r
     
       <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/02/learning-swift-optionals/">Learning Swift - Optionals</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/2016-02-12-learning-swift-optionals/">Learning Swift - Optionals</a></h1>
     <div class="post-meta">
       <span class="post-time"> 12 Feb 2016 </span>
       
@@ -314,7 +321,7 @@ You can just read this book, especially the first section: &ldquo;A Swift Tour&r
       <p></p>
     </div>
     <div class="read-more">
-      <a href="/2016/02/learning-swift-optionals/" class="read-more-link">Read more..</a>
+      <a href="/post/2016-02-12-learning-swift-optionals/" class="read-more-link">Read more..</a>
     </div>
   </div>
 </article>
@@ -322,7 +329,7 @@ You can just read this book, especially the first section: &ldquo;A Swift Tour&r
     
       <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/02/icon-builder-32-released/">Icon Builder 3.2 Released</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/2016-02-10-icon-builder-32-released/">Icon Builder 3.2 Released</a></h1>
     <div class="post-meta">
       <span class="post-time"> 10 Feb 2016 </span>
       
@@ -337,7 +344,7 @@ You can just read this book, especially the first section: &ldquo;A Swift Tour&r
  Icons for Apple Watch apps now have their alpha channel removed. Tidier folder structure for related files (iTunes Artwork files and Read Me). Updated to work with Xcode 7&rsquo;s Assets.xcassets folders. Creates iPad Pro icons for Xcode 7.2 or later. Fix for Retina Macs creating double-sized images.  
     </div>
     <div class="read-more">
-      <a href="/2016/02/icon-builder-32-released/" class="read-more-link">Read more..</a>
+      <a href="/post/2016-02-10-icon-builder-32-released/" class="read-more-link">Read more..</a>
     </div>
   </div>
 </article>
@@ -345,7 +352,7 @@ You can just read this book, especially the first section: &ldquo;A Swift Tour&r
     
       <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/02/why-is-swift-so-great/">Why is Swift so great?</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/2016-02-10-why-is-swift-so-great/">Why is Swift so great?</a></h1>
     <div class="post-meta">
       <span class="post-time"> 10 Feb 2016 </span>
       
@@ -360,7 +367,7 @@ You can just read this book, especially the first section: &ldquo;A Swift Tour&r
  Swift is a new programming language for iOS, OS X, watchOS, and tvOS apps that builds on the best of C and Objective-C, without the constraints of C compatibility. Swift adopts safe programming patterns and adds modern features to make programming easier, more flexible, and more fun. Swift’s clean slate, backed by the mature and much-loved Cocoa and Cocoa Touch frameworks, is an opportunity to reimagine how software development works.
     </div>
     <div class="read-more">
-      <a href="/2016/02/why-is-swift-so-great/" class="read-more-link">Read more..</a>
+      <a href="/post/2016-02-10-why-is-swift-so-great/" class="read-more-link">Read more..</a>
     </div>
   </div>
 </article>
