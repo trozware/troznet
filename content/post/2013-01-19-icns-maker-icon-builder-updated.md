@@ -4,7 +4,6 @@ tags:
 - icons
 - mac
 title: Icns Maker & Icon Builder updated
-url: /icns-maker-icon-builder-updated/
 ---
 
 January 18th 2013:

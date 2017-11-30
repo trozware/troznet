@@ -4,7 +4,6 @@ tags:
 - swift
 - learning swift
 title: Learning Swift - Sets
-url: /2016/05/learning-swift-sets/
 ---
 
 Sets are the forgotten collection type in many languages, including Swift. I

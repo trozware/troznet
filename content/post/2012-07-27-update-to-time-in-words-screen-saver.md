@@ -5,7 +5,6 @@ tags:
 - screen saver
 - mac
 title: Update to Time In Words screen saver
-url: /update-to-time-in-words-screen-saver/
 ---
 
 [Time In Words screen saver][1] has just been updated to version 1.1 and is now

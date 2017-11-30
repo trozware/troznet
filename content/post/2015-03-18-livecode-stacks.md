@@ -4,7 +4,6 @@ tags:
 - livecode
 - revolution
 title: LiveCode stacks
-url: /2015/03/livecode-stacks/
 ---
 
 When I converted my site to Jekyll & GitHub, one of the things I left behind was

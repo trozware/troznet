@@ -4,7 +4,6 @@ tags:
 - xcode
 - learning swift
 title: Configuring Xcode
-url: /2016/02/configuring-xcode/
 ---
 
 While not strictly a part of my Learning Swift series, today I thought I would

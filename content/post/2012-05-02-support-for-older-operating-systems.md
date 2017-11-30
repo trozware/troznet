@@ -3,7 +3,6 @@ date: 2012-05-02T00:00:00Z
 tags:
 - operating systems
 title: Support for older operating systems
-url: /support-for-older-operating-systems/
 ---
 
 Working out what operating systems to support in your software is always a

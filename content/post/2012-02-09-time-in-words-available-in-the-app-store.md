@@ -4,7 +4,6 @@ tags:
 - time in words
 - ios
 title: Time In Words available in the App Store
-url: /time-in-words-available-in-the-app-store/
 ---
 
 Time In Words is now available at the App Store.

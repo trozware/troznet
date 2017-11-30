@@ -10,7 +10,6 @@ tags:
 - watch
 - xcode
 title: Possible issues with Icon Builder & Watch icons
-url: /2016/02/possible-issues-with-iconbuilder/
 ---
 
 It has come to my attention that there are two possible issues with Icon Builder

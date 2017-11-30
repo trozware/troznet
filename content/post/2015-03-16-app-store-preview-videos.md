@@ -4,7 +4,6 @@ tags:
 - app store
 - ios
 title: App Store Preview Videos
-url: /2015/03/app-store-preview-videos/
 ---
 
 Apple now allows app developers to add a video preview of their app when

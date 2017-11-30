@@ -5,7 +5,6 @@ tags:
 - swift
 - learning swift
 title: Why is Swift so great?
-url: /2016/02/why-is-swift-so-great/
 ---
 
 Firstly, I can give you the technical answer, as published by Apple:

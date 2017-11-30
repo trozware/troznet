@@ -4,7 +4,6 @@ tags:
 - man reader
 - mac
 title: Man Reader 1.4 Now Available
-url: /man-reader-1-4-now-available/
 ---
 
 [Man Reader 1.4][1] is now available through the [Mac App Store][2].

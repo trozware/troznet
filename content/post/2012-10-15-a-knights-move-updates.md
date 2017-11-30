@@ -7,7 +7,6 @@ macappname: A Knight's Move
 tags:
 - knight's move
 title: A Knight's Move updates
-url: /a-knights-move-updates/
 ---
 
 **UPDATE:** September 2016 - A Knight's Move for iOS is no longer available.<br>

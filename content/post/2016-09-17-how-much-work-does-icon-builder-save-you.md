@@ -8,7 +8,6 @@ tags:
 - icons
 - mac
 title: How much work does Icon Builder save you?
-url: /2016/09/how-much-work-does-icon-builder-save-you/
 ---
 
 [Icon Builder][1] is a Mac app that takes a single image file and creates all

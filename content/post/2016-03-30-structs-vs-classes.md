@@ -7,7 +7,6 @@ tags:
 - class
 - struct
 title: Structs vs Classes
-url: /2016/03/structs-vs-classes/
 ---
 
 One of the big debates among Swift developers is when to use `structs` and when

@@ -6,7 +6,6 @@ tags:
 - swift
 - learning swift
 title: Learning Swift - An Introduction
-url: /2016/02/learning-swift-an-introduction/
 ---
 
 ## Welcome to Learning Swift.

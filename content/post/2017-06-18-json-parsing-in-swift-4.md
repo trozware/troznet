@@ -7,7 +7,6 @@ tags:
 - json
 - learning swift
 title: JSON Parsing in Swift 4
-url: /2017/06/json-parsing-in-swift-4/
 ---
 
 **Updated:** 3rd September 2017.
@@ -622,5 +621,5 @@ Much more information can be found in the [Apple documentation][1].
 [1]: https://developer.apple.com/documentation/swift/encoding_decoding_and_serialization
 [2]: https://github.com/search?q=swift+json+library
 [3]: https://github.com/trozware/json
-[4]: https://troz.net/2016/02/learning-swift-optionals/
+[4]: /post/2016-02-12-learning-swift-optionals/
 [5]: #nulls

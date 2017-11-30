@@ -4,7 +4,6 @@ tags:
 - swift
 - learning swift
 title: Learning Swift - For-Loops
-url: /2016/03/learning-swift-loops/
 ---
 
 Loops are a fundamental building block of any program. Doing repetitive tasks

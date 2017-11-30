@@ -5,7 +5,6 @@ tags:
 - mac
 - sand-box
 title: Sand-Boxing Man Reader
-url: /manreader-sandbox/
 ---
 
 These instructions are no longer valid. As of version 1.5, the App Store version

@@ -3,7 +3,6 @@ date: 2017-03-08T00:00:00Z
 tags:
 - app store
 title: Blackmail Marketing
-url: /2017/03/blackmail-marketing/
 ---
 
 I use my iPad to play games as a form of relaxation. Nearly all the games I play

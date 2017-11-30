@@ -5,7 +5,6 @@ tags:
 - time in words
 - screen saver
 title: Time In Words Screen Saver
-url: /time-in-words-screen-saver-for-mac/
 ---
 
 The latest member of the Time In Words suite of apps is a screen saver module

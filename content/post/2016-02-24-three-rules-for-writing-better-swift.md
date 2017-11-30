@@ -6,7 +6,6 @@ tags:
 - swift
 - learning swift
 title: Three Rules for Writing Better Swift
-url: /2016/02/three-rules-for-writing-better-swift/
 ---
 
 ## 1. Do not use !
@@ -99,4 +98,4 @@ more rules in a separate post.
 [2]: /images/Playground3.png
 [3]: /images/Playground4.png
 [4]: /images/optional_fix.png
-[5]: /2016/02/learning-swift-optionals/
+[5]: /post/2016-02-12-learning-swift-optionals/

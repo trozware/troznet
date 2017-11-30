@@ -7,7 +7,6 @@ tags:
 - time in words
 - mac
 title: Making a Mac Screen Saver
-url: /making-a-mac-screen-saver/
 ---
 
 Having just completed the my first screen saver for Mac - the [Time In Words

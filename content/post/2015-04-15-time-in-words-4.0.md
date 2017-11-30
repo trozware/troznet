@@ -4,7 +4,6 @@ tags:
 - time in words
 - ios
 title: Time In Words 4.0
-url: /2015/04/time-in-words-4.0/
 ---
 
 [Time In Words][1] for iOS started off as a fun gimmick, emulating the

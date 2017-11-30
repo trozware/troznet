@@ -7,7 +7,6 @@ tags:
 - golf
 - watch
 title: Using 19th Hole on the Apple Watch
-url: /2015/12/using-19th-hole-on-the-apple-watch/
 ---
 
 19th Hole for iPhone and Apple Watch version 3 is now available through the

@@ -4,7 +4,6 @@ tags:
 - man reader
 - mac
 title: Man Reader 1.1 Released
-url: /man-reader-1-1-released/
 ---
 
 The update of [Man Reader][1] to version 1.1 has just become available through

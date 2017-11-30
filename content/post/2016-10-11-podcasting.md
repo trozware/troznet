@@ -5,7 +5,6 @@ tags:
 - ios
 - iphone
 title: Podcasting
-url: /2016/10/podcasting/
 ---
 
 I have recently started what I hope will be a weekly podcast with my friend and

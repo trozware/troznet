@@ -5,7 +5,6 @@ tags:
 - trouble-shooting
 - mac
 title: Man Reader update coming soon
-url: /man-reader-update-coming-soon/
 ---
 
 Man Reader launched on the Mac App Store a couple of days ago and yesterday I

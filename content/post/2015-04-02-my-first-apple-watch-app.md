@@ -6,7 +6,6 @@ tags:
 - ios
 - golf
 title: My First Apple Watch App
-url: /2015/04/my-first-apple-watch-app/
 ---
 
 I have just submitted my first Apple Watch app to the iTunes App Store. This is

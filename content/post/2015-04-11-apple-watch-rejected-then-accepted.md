@@ -5,7 +5,6 @@ tags:
 - watch
 - golf
 title: Apple Watch App - Rejected, then Accepted
-url: /2015/04/apple-watch-rejected-then-accepted/
 ---
 
 As described in a [previous post][1], about 9 days ago I submitted my first
@@ -89,6 +88,6 @@ the first two ordered for the soonest possible delivery, but by the time I got
 to the third (about 3 minutes later), I had missed out and it will ship in 4 to
 6 weeks!
 
-[1]: /2015/04/my-first-apple-watch-app/
+[1]: /post/2015-04-02-my-first-apple-watch-app/
 [2]: /19th-hole/
 [3]: http://www.fiveminutewatchkit.com/blog/2015/3/11/one-weird-trick-to-fix-openparentapplicationreply

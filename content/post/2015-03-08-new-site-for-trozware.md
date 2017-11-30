@@ -4,7 +4,6 @@ tags:
 - trozware
 - web
 title: New Site for TrozWare
-url: /new-site-for-trozware/
 ---
 
 ## Welcome to TrozWare's new site.

@@ -7,7 +7,6 @@ tags:
 - man reader
 - mac
 title: Man Reader Update
-url: /2016/10/man-reader-update/
 ---
 
 [Man Reader][1] has just been updated to version 1.7 and is available through

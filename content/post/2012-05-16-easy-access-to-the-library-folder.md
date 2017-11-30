@@ -6,7 +6,6 @@ tags:
 - operating systems
 - mac
 title: Easy access to the Library folder
-url: /easy-access-to-the-library-folder/
 ---
 
 In Mac OS X 10.7 (Lion), Apple decided to make it more difficult to access your

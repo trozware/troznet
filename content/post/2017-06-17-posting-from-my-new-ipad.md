@@ -8,7 +8,6 @@ tags:
 - jekyll
 - blog
 title: Posting from my new iPad
-url: /2017/06/posting-from-my-new-ipad
 ---
 
 Last week I got a 10.5” iPad Pro. I have had an iPad ever since the original

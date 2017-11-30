@@ -6,7 +6,6 @@ draft: false
 keywords: []
 description: ""
 tags: [swift, learning swift, optionals]
-url: /2016/02/learning-swift-optionals/
 ---
 
 <!--more-->

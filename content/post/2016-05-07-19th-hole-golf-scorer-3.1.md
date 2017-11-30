@@ -10,7 +10,6 @@ tags:
 - golf
 - scoring
 title: 19th Hole Golf Scorer 3.1
-url: /2016/05/19th-hole-golf-scorer-3.1/
 ---
 
 One of the problems with using 19th Hole on the Apple Watch is making the app

@@ -9,7 +9,6 @@ tags:
 - dice
 - passwords
 title: Dice Pass Updated
-url: /2016/09/dice-pass-updated/
 ---
 
 [Dice Pass 1.1][1] is now available from the [Mac App Store][2].

@@ -7,7 +7,6 @@ tags:
 - man reader
 - mac
 title: Another Man Reader Update...
-url: /2016/11/another-man-reader-update/
 ---
 
 A quick update to [Man Reader][1] to version 1.8 is now available through the

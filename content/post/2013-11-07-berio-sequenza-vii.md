@@ -4,7 +4,6 @@ tags:
 - music
 - ios
 title: Berio Sequenza VII
-url: /berio-sequenza-vii/
 ---
 
 So my latest app is way outside my usual sphere but that's what happens when

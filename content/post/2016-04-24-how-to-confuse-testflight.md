@@ -7,7 +7,6 @@ tags:
 - testflight
 - xcode
 title: How To Confuse TestFlight
-url: /2016/04/how-to-confuse-testflight/
 ---
 
 [TL;DR][5]

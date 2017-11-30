@@ -5,7 +5,6 @@ tags:
 - web
 - blog
 title: Testing automation
-url: /testing-automation/
 ---
 
 Today I am experimenting with automating post generation.

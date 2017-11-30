@@ -4,7 +4,6 @@ tags:
 - swift
 - learning swift
 title: Singleton to Protocol
-url: /2016/02/singleton-to-protocol/
 ---
 
 I was driving through the town of [Singleton][1] the other day and of course, it

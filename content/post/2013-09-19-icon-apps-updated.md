@@ -5,7 +5,6 @@ tags:
 - mac
 - ios
 title: Icon apps updated
-url: /icon-apps-updated/
 ---
 
 <a href="https://itunes.apple.com/au/app/icns-maker/id550942266?mt=12" target="_blank">Icns

@@ -4,7 +4,6 @@ tags:
 - apple watch
 - watch
 title: My Year With Apple Watch
-url: /2016/04/my-year-with-apple-watch/
 ---
 
 As the Apple Watch hits its first birthday, there seems to be in increasing

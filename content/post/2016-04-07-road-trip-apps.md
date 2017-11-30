@@ -4,7 +4,6 @@ tags:
 - travel
 - ios
 title: Road Trip Apps
-url: /2016/04/road-trip-apps/
 ---
 
 Over the past few months, we have done two long road trips: one approximately

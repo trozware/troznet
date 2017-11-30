@@ -7,7 +7,6 @@ tags:
 - mac
 - ios
 title: Icon makers for Mac & iOS apps
-url: /icon-makers-for-mac-ios-apps/
 ---
 
 Announcing two new apps for creating icons for with Mac or iOS projects:

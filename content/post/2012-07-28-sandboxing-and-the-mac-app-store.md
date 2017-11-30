@@ -6,7 +6,6 @@ tags:
 - man reader
 - mac
 title: Sandboxing and the Mac App Store
-url: /sandboxing-and-the-mac-app-store/
 ---
 
 As of June 2012, all apps submitted to the Mac App Store have to be sandboxed

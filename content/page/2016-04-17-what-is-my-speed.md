@@ -82,4 +82,4 @@ the app is the current foreground app.
 [3]: /images/speed_2.png
 [4]: /images/speed_watch_1.png
 [5]: /images/speed_3.png
-[6]: /2016/04/road-trip-apps/
+[6]: /post/2016-04-07-road-trip-apps/

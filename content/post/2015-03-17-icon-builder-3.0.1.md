@@ -8,7 +8,6 @@ tags:
 - watch
 - xcode
 title: Icon Builder 3.0.1
-url: /2015/03/icon-builder-3.0.1/
 ---
 
 So why an announcement for such a minor upgrade?

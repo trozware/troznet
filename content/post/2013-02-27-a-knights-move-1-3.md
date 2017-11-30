@@ -9,7 +9,6 @@ tags:
 - chess
 - mac
 title: A Knight's Move 1.3
-url: /a-knights-move-1-3/
 ---
 
 **UPDATE:** September 2016 - A Knight's Move for iOS is no longer available.<br>

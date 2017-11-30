@@ -4,7 +4,6 @@ tags:
 - pic-a-pod
 - mac
 title: Pic-a-POD 2.0.4 for Mac
-url: /pic-a-pod-2-0-4-for-mac/
 ---
 
 The latest update for [Pic-a-POD for Mac][1] is now available through the

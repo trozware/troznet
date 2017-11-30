@@ -6,7 +6,6 @@ tags:
 - web
 - blog
 title: Workflow for writing a post
-url: /workflow-for-writing-a-post/
 ---
 
 So here is where I need to get used to Jekyll and how things are done. I will

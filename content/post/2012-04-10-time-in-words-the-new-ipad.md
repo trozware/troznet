@@ -5,7 +5,6 @@ tags:
 - ios
 - trouble-shooting
 title: Time In Words & the new iPad
-url: /time-in-words-the-new-ipad/
 ---
 
 The new iPad has a Retina display, meaning that the pixel density is much

@@ -5,7 +5,6 @@ tags:
 - mac
 - ios
 title: Icon Makers & Retina Macs
-url: /icon-makers-retina-macs/
 ---
 
 Icns Maker which makes an icns icon file for Mac apps, and Icon Builder which

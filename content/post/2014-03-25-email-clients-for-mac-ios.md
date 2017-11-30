@@ -5,7 +5,6 @@ tags:
 - mac
 - ios
 title: Email clients for Mac and iOS
-url: /email-clients-for-mac-ios/
 ---
 
 Some people are moving away from email, but for me, it remains the best way to

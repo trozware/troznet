@@ -9,7 +9,6 @@ tags:
 - mac
 - password
 title: Dice Pass Mac Update
-url: /2016/07/dice-pass-mac-update/
 ---
 
 I recently got an email from someone who had purchased [Dice Pass][2] for Mac

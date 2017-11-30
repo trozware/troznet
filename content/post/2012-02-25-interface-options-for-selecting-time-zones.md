@@ -7,7 +7,6 @@ tags:
 - mac
 - ui
 title: Interface options for selecting time zones
-url: /interface-options-for-selecting-time-zones/
 ---
 
 As part of the design for [Time In Words for Mac][1], I had to work out the

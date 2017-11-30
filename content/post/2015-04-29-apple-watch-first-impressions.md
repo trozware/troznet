@@ -6,7 +6,6 @@ tags:
 - ios
 - iphone
 title: Apple Watch First Impressions
-url: /2015/04/apple-watch-first-impressions/
 ---
 
 I realise that every one has written one of these posts, but given that everyone

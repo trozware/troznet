@@ -9,7 +9,6 @@ tags:
 - password
 - dice
 title: Dice Pass for Mac
-url: /2015/05/dice-pass-for-mac/
 ---
 
 We live in a world of passwords and passphrases and there is a constant struggle

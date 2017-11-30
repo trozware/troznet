@@ -5,7 +5,6 @@ tags:
 - iphone
 - trouble-shooting
 title: iPhone 4 Home Button
-url: /iphone-4-home-button/
 ---
 
 My iPhone 4 is now 18 months old, and it's Home button is starting to feel the

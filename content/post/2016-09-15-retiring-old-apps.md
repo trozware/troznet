@@ -5,7 +5,6 @@ tags:
 - apps
 - ios
 title: Retiring old apps
-url: /2016/09/retiring-old-apps/
 ---
 
 With the release of iOS 10 and the need to update iOS apps to suit, I have

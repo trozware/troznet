@@ -7,7 +7,6 @@ tags:
 - json
 - rss
 title: JSON Feed for TrozWare
-url: /2017/05/json-feed-for-trozware/
 ---
 
 [jsonfeed.org][1] has announced a new format for web site feeds, designed as an

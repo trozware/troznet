@@ -7,7 +7,6 @@ tags:
 - mac
 - ios
 title: App Store Review Times
-url: /app-store-review-times/
 ---
 
 There are been a lots of stories going around about lengthening Mac App Store

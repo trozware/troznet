@@ -4,7 +4,6 @@ tags:
 - swift
 - learning swift
 title: How do I start to learn Swift?
-url: /2016/02/how-do-i-start-to-learn-swift/
 ---
 
 The first thing to do is to download the latest version of Apple's [Swift

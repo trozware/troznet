@@ -12,7 +12,6 @@ tags:
 - beta
 - apps
 title: Looking for beta testers
-url: /2016/11/looking-for-beta-testers/
 ---
 
 I am looking for beta testers for my latest Mac app: **[Work][1]**.

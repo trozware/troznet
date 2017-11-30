@@ -4,7 +4,6 @@ tags:
 - ui
 - mac
 title: Scroll bars in Mac OX 10.6 and 10.7
-url: /scroll-bars-in-mac-ox-10-6-and-10-7/
 ---
 
 With the introduction of OS X 10.7 (Lion), Apple removed the obvious scroll bars

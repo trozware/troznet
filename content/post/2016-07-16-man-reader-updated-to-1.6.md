@@ -7,7 +7,6 @@ tags:
 - man reader
 - mac
 title: Man Reader updated to 1.6
-url: /2016/07/man-reader-updated-to-1.6/
 ---
 
 Man Reader has been updated to version 1.6 with the permissions needed for

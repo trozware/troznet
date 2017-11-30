@@ -5,7 +5,6 @@ tags:
 - mac
 - sand-box
 title: Man Reader (no SB)
-url: /man-reader-no-sb/
 ---
 
 These instructions are no longer valid. As of version 1.5, the App Store version

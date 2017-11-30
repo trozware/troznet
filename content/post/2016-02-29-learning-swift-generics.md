@@ -4,7 +4,6 @@ tags:
 - swift
 - learning swift
 title: Learning Swift - Generics
-url: /2016/02/learning-swift-generics/
 ---
 
 One of the nice things about Swift is how clean your code looks. A lot of the

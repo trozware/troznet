@@ -4,7 +4,6 @@ tags:
 - time in words
 - mac
 title: Time In Words for Mac now available
-url: /time-in-words-for-mac-now-available/
 ---
 
 Time In Words for Mac has just been approved and is now available for free from

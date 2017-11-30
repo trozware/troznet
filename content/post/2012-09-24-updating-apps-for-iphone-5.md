@@ -5,7 +5,6 @@ tags:
 - ui
 - ios
 title: Updating apps for iPhone 5
-url: /updating-apps-for-iphone-5/
 ---
 
 I have started work updating my iOS apps to fill the larger screen of an iPhone
