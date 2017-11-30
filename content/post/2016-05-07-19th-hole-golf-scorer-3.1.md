@@ -1,5 +1,4 @@
 ---
-author: Sarah
 date: 2016-05-07T00:00:00Z
 iphoneappdesc: The golf scoring app for everyone, for iPhone and Apple Watch.
 iphoneappid: 871686159

@@ -1,5 +1,4 @@
 ---
-author: Sarah
 date: 2016-02-06T00:00:00Z
 macappdesc: Make and install a set of icons for an iOS, Mac or Apple Watch app in
   just 3 steps.

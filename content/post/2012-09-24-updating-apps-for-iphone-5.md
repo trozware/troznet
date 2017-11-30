@@ -1,8 +1,5 @@
 ---
-author: Sarah
 date: 2012-09-24T00:00:00Z
-guid: /?p=382
-id: 382
 tags:
 - operating systems
 - ui
@@ -12,9 +9,10 @@ url: /updating-apps-for-iphone-5/
 ---
 
 I have started work updating my iOS apps to fill the larger screen of an iPhone
+
 5. My iPhone 5 is on order - I missed out on the first shipment, but hopefully
-it won't be too long. Meanwhile, I will just test in the iPhone Simulator and
-hope this is OK.
+   it won't be too long. Meanwhile, I will just test in the iPhone Simulator and
+   hope this is OK.
 
 But it was a puzzle to me how to get an app to fill the longer screen. I have
 the latest Xcode and the latest Simulator which allows you to specify what

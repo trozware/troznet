@@ -1,8 +1,5 @@
 ---
-author: Sarah
 date: 2012-10-15T00:00:00Z
-guid: /?p=394
-id: 394
 macappdesc: A puzzle game where you have to move your knight across a board to a target
   square using the same movements as a knight in chess.
 macappimage: /icons/KnightsMove128.png
@@ -18,12 +15,16 @@ url: /a-knights-move-updates/
 
 ---
 
-A Knight's Move for iOS has been updated to take advantage of the taller iPhone 5 screen.
+A Knight's Move for iOS has been updated to take advantage of the taller iPhone
+5 screen.
 
-In-app purchasing of packs has been removed from both Mac & iOS versions.  
-For iOS, the app is now free but supported by iAds (please click through if you would like to show your support).  
-Apple does not have an ad system for Mac, so the Mac version is now a paid app that includes all the puzzle packs.
+In-app purchasing of packs has been removed from both Mac & iOS versions.\
+For iOS, the app is now free but supported by iAds (please click through if you would
+like to show your support).\
+Apple does not have an ad system for Mac, so the Mac version is now a paid app
+that includes all the puzzle packs.
 
-The in-app purchasing was an interesting experiment, but the ratio of purchases to downloads was too low to sustain the development.
+The in-app purchasing was an interesting experiment, but the ratio of purchases
+to downloads was too low to sustain the development.
 
 [1]: /knightsmove/

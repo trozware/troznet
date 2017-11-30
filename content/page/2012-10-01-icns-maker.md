@@ -1,9 +1,5 @@
 ---
-author: Sarah
 date: 2012-10-01T00:00:00Z
-tags:
-- mac
-- icons
 title: Icns Maker
 url: /icns-maker/
 ---

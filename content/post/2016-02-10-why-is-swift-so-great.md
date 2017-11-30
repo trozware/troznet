@@ -1,5 +1,4 @@
 ---
-author: Sarah
 date: 2016-02-10T00:00:00Z
 summary: Read Apple's technical answer and then my opinion as a developer.
 tags:

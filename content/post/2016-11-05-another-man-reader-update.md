@@ -1,5 +1,4 @@
 ---
-author: Sarah
 date: 2016-11-05T00:00:00Z
 macappdesc: A utility app for reading macOS man pages.
 macappimage: /icons/ManReader128.png

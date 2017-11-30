@@ -1,5 +1,4 @@
 ---
-author: Sarah
 date: 2015-04-11T00:00:00Z
 tags:
 - apple watch

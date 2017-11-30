@@ -1,5 +1,4 @@
 ---
-author: Sarah
 date: 2017-05-20T00:00:00Z
 summary:
 - Today I have replaced the RSS feed for this site with a JSON feed.

@@ -1,5 +1,4 @@
 ---
-author: Sarah
 date: 2016-11-17T00:00:00Z
 macappdesc: A project organizer for developers, designers, students or any professional
   who works with multiple projects involving files & folders, web pages, email addresses
@@ -11,6 +10,7 @@ tags:
 - productivity
 - work
 - beta
+- apps
 title: Looking for beta testers
 url: /2016/11/looking-for-beta-testers/
 ---

@@ -1,8 +1,5 @@
 ---
-author: Sarah
 date: 2012-04-10T00:00:00Z
-guid: /?p=118
-id: 118
 tags:
 - time in words
 - ios

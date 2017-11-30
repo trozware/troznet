@@ -1,5 +1,4 @@
 ---
-author: Sarah
 date: 2016-02-09T00:00:00Z
 tags:
 - twitter

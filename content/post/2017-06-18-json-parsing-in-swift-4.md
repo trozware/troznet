@@ -1,5 +1,4 @@
 ---
-author: Sarah
 date: 2017-06-18T00:00:00Z
 summary: Parsing JSON in Swift 4 is now much easier than before and dozens of Swift
   3 JSON libraries have just been sherlocked.

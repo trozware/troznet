@@ -1,8 +1,5 @@
 ---
-author: Sarah
 date: 2013-02-27T00:00:00Z
-guid: /?p=472
-id: 472
 macappdesc: A puzzle game where you have to move your knight across a board to a target
   square using the same movements as a knight in chess.
 macappimage: /icons/KnightsMove128.png
@@ -20,23 +17,28 @@ url: /a-knights-move-1-3/
 
 ---
 
-A Knight's Move has been updated to version 1.3. The Mac version is available through the <a href="https://itunes.apple.com/app/a-knights-move/id533321133?mt=12" target="_blank">Mac App Store</a>.
+A Knight's Move has been updated to version 1.3. The Mac version is available
+through the
+<a href="https://itunes.apple.com/app/a-knights-move/id533321133?mt=12" target="_blank">Mac
+App Store</a>.
 
 ## Three new level packs:
 
-  * Eight by Eight
-  * Bishops Rule
-  * Castles
+* Eight by Eight
+* Bishops Rule
+* Castles
 
-Eight by Eight has every puzzle set in a chessboard sized grid with more conventional placing of pieces.  
-Bishops Rule has at least one Bishop in every puzzle.  
-Castles has a Castle or Rook in every puzzle and is suited to players who would like more of a challenge.
+Eight by Eight has every puzzle set in a chessboard sized grid with more
+conventional placing of pieces.\
+Bishops Rule has at least one Bishop in every puzzle.\
+Castles has a Castle or Rook in every puzzle and is suited to players who would
+like more of a challenge.
 
 ## New feature:
 
-When your knight has been taken, you have the option to undo the last move so you can try again without losing the moves you have already made.
+When your knight has been taken, you have the option to undo the last move so
+you can try again without losing the moves you have already made.
 
 <img alt="Undo Last Move" src="/images/KM-UndoLast.png" />
-
 
 [1]: /knightsmove/

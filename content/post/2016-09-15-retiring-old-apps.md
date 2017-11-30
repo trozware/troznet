@@ -1,5 +1,4 @@
 ---
-author: Sarah
 date: 2016-09-15T00:00:00Z
 tags:
 - app store

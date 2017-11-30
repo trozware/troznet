@@ -4,7 +4,6 @@ date: 2017-11-26T11:16:58+10:00
 lastmod: 2017-11-26T11:16:58+10:00
 draft: false
 description: ""
-author: ""
 
 # you can close something for this content if you open it in config.toml.
 comment: false

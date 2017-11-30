@@ -1,5 +1,4 @@
 ---
-author: Sarah
 date: 2016-02-09T00:00:00Z
 summary: Welcome to Learning Swift. This is the first post in what I hope will be
   an extensive series dealing with the Swift language.

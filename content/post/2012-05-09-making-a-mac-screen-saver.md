@@ -1,10 +1,7 @@
 ---
-author: Sarah
 date: 2012-05-09T00:00:00Z
 dsq_thread_id:
 - 3565951419
-guid: /?p=205
-id: 205
 tags:
 - screen saver
 - time in words

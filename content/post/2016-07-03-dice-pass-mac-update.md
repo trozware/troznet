@@ -1,5 +1,4 @@
 ---
-author: Sarah
 date: 2016-07-03T00:00:00Z
 macappdesc: A utility to app to generate random passphrases based on the Diceware
   system.

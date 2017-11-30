@@ -1,8 +1,5 @@
 ---
-author: Sarah
 date: 2014-03-25T00:00:00Z
-guid: /?p=613
-id: 613
 tags:
 - email
 - mac

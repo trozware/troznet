@@ -3,7 +3,7 @@ title: "Moving to Hugo"
 date: 2017-11-29T17:42:57+10:00
 lastmod: 2017-11-29T17:42:57+10:00
 draft: false
-tags: ["hugo", "jekyll", "web"]
+tags: ["hugo", "jekyll", "web", "blog"]
 ---
 
 Yesterday, I came to update my blog: I had a new post in draft form and I wanted

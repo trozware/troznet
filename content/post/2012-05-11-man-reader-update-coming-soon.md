@@ -1,8 +1,5 @@
 ---
-author: Sarah
 date: 2012-05-11T00:00:00Z
-guid: /?p=229
-id: 229
 tags:
 - man reader
 - trouble-shooting
