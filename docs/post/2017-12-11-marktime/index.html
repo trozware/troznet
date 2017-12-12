@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Mark Time - TrozWare</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Sarah Reichelt" />
+  <meta name="description" content="img {width: 300px; }  Mark Time is an application for Celestial Navigation that solves the problem of how to take an accurate time reading to go with each sextant sighting. Here is how it was developed&amp;hellip;
+
+" />
+
+  <meta name="keywords" content="Swift, Apple, macOS, iOS, Apple Watch" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.31" />
+
+
+<link rel="canonical" href="https://troz.net/post/2017-12-11-marktime/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+
+
+<meta property="og:title" content="Mark Time" />
+<meta property="og:description" content="
+
+Mark Time is an application for Celestial Navigation that solves the
+problem of how to take an accurate time reading to go with each sextant
+sighting. Here is how it was developed&hellip;
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troz.net/post/2017-12-11-marktime/" />
+
+
+
+<meta property="article:published_time" content="2017-12-12T09:14:07&#43;10:00"/>
+
+<meta property="article:modified_time" content="2017-12-12T09:14:07&#43;10:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Mark Time">
+<meta itemprop="description" content="
+
+Mark Time is an application for Celestial Navigation that solves the
+problem of how to take an accurate time reading to go with each sextant
+sighting. Here is how it was developed&hellip;
+
+">
+
+
+<meta itemprop="datePublished" content="2017-12-12T09:14:07&#43;10:00" />
+<meta itemprop="dateModified" content="2017-12-12T09:14:07&#43;10:00" />
+<meta itemprop="wordCount" content="882">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Mark Time"/>
+<meta name="twitter:description" content="
+
+Mark Time is an application for Celestial Navigation that solves the
+problem of how to take an accurate time reading to go with each sextant
+sighting. Here is how it was developed&hellip;
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">TrozWare</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/apps/">
+        <li class="mobile-menu-item">Apps</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">TrozWare</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/apps/">Apps</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Mark Time</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 12 Dec 2017 </span>
+        
+        <span class="more-meta"> 882 words </span>
+        <span class="more-meta"> 5 minute read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#the-basic-specs">The Basic Specs</a></li>
+<li><a href="#ui-considerations">UI considerations</a></li>
+<li><a href="#refinements">Refinements</a></li>
+<li><a href="#release">Release</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <style>img {width: 300px; } </style>
+
+<p><a href="https://itunes.apple.com/us/app/mark-time/id1305580742?mt=8">Mark Time</a> is an application for Celestial Navigation that solves the
+problem of how to take an accurate time reading to go with each sextant
+sighting. Here is how it was developed&hellip;</p>
+
+<p></p>
+
+<hr />
+
+<p>A day in the life of a software developer - &ldquo;it would be great if there was an
+app that did&hellip;&rdquo;</p>
+
+<p>One of the family is learning celestial navigation and was struggling with the
+problem that you either need a partner or more than 2 hands. The key factor is
+that you need to record the exact time at the moment when you take your
+sighting. And this time has to be in UTC to make your subsequent calculations
+work.</p>
+
+<p>Since this is a very simple app, I decided it would be fun to describe the
+development process from first specifications to release in the App Store.</p>
+
+<h3 id="the-basic-specs">The Basic Specs</h3>
+
+<ul>
+<li>tap anywhere on the screen to record the time</li>
+<li>convert the time to Universal Time (UT)</li>
+<li>display that time in a specific format: DD:HH:MM:SS</li>
+<li>store the last 5 tap times</li>
+</ul>
+
+<p>A <code>UITapGestureRecognizer</code> over the entire view solved the first requirement.
+The native <code>Date</code> object handles time zone conversions perfectly, and then it
+was a matter of configuring a <code>DateFormatter</code> with a custom format string to
+provide the required date display.</p>
+
+<p>The last 5 times are stored in <code>UserDefaults</code> and displayed in reverse order so
+the most recent is always at the top.</p>
+
+<h3 id="ui-considerations">UI considerations</h3>
+
+<ul>
+<li>colour scheme must work in bright sunlight</li>
+<li>text should use dynamic sizing so it works if people adjust the text size on
+their iPhones</li>
+<li>the UI elements must be out of the way of the new iPhone X system gestures.</li>
+<li>while it will most likely be used on iPhones, allow for iPads as well</li>
+</ul>
+
+<p>I had done extensive tests of colour schemes when developing my golf scoring app
+19th Hole, so I already had the answer to the colours question: dark grey
+background with white text.</p>
+
+<p>Allowing for dynamic type should have been easy - choose a font style e.g. body,
+headline, title 1 and set it to adjust automatically. But with a display that is
+mainly numeric, the display looked terrible because the numbers in the default
+San Francisco are non-proportional. So I switched to Helvetica Neue and watched
+for dynamic font size changes manually.</p>
+
+<p>The iPhone X should be fine since I used the new safe area layout guides.</p>
+
+<p>For iPad, I didn&rsquo;t make a lot of UI changes since I don&rsquo;t expect it to be used
+much, but the display is bigger and probably easier to read.</p>
+
+<p><img src="/images/MarkTime1.png" alt="Mark Time" /></p>
+
+<h3 id="refinements">Refinements</h3>
+
+<p>As always, once the first few iterations have been through the testing process,
+there were a few things that needed changing and then feature creep set in&hellip;</p>
+
+<ul>
+<li>change the date format to be more readable</li>
+<li>change the basic tap gesture so that it triggers on tap down, not tap up</li>
+<li>add a button to clear all the stored data</li>
+<li>display the current time in UTC and in the same format</li>
+<li>cheat mode - record latitude and longitude for each time so the calculations
+can be checked</li>
+<li>change the format for showing the latitude and longitude</li>
+<li>sound &amp; haptics to provide feedback</li>
+<li>settings</li>
+</ul>
+
+<p>The date format was DD:HH:MM:SS so for 12th December at 1:01:46 pm, this would
+show 12:13:01:46 which we decided was a bit confusing. One tended to assume the
+first section was actually the hours. Under the new scheme, that same date
+displays as 12d 13h 01m 46.654s. The extra precision on the seconds was to show
+that the time really was changing if you tapped multiple times quickly.</p>
+
+<p>To make the time record immediately, I removed the <code>UITapGestureRecognizer</code> and
+placed <code>UIButtons</code> covering all the relevant active areas. They respond on Touch
+Down for a much faster reaction.</p>
+
+<p>Usually, I make a separate View Controller for preferences. This time, because
+the app needed access to the standard Settings app for Location services, I
+decided to add the app&rsquo;s preferences to the app&rsquo;s page in the Settings app. This
+worked really well, and made the app itself smaller and simpler.</p>
+
+<p><img src="/images/MarkTime3.png" alt="Mark Time" /></p>
+
+<p>In cheat mode, the location is recorded at every tap and then the info button
+beside each time shows the details. This needed to handle the permissions
+required for accessing the user&rsquo;s location. The latitude and longitude are shown
+in decimal format and at first, I also showed them in DMS (degrees, minutes,
+seconds) format. I found out that for navigation calculations, they prefer to
+see degrees and decimal minutes, no seconds. And rather oddly, this is displayed
+something like this: 153° 22&rsquo;.84 E</p>
+
+<p>Sounds and haptics were added, configurable through Settings. The sound was a
+nice loud double-beep designed to be clearly audible to tell you when you had
+recorded a time.</p>
+
+<p><img src="/images/MarkTime2.png" alt="Mark Time" /></p>
+
+<h3 id="release">Release</h3>
+
+<p>After numerous rounds of TestFlight, I was ready to release. The app was
+submitted to iTunes Connect and ready for review on Dec 9, 2017 at 7:36 PM. It
+moved into review on Dec 11, 2017 at 8:07 AM and was ready for sale on Dec 11,
+2017 at 10:19 AM. So less than 39 hours from start to finish of the review
+process for a new app - things have certainly changed!</p>
+
+<p>The app is free - you can get it from the <a href="https://itunes.apple.com/us/app/mark-time/id1305580742?mt=8">iTunes App Store</a>.</p>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  
+  <p class="copyright-item">
+    <span class="item-title">Last Modified</span>
+    <span class="item-content">12 Dec 2017</span>
+  </p>
+  
+  
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/2017-11-29-moving-to-hugo/">
+            <span class="next-text nav-default">Moving to Hugo</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:sarah@troz.net" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1082632" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/trozware" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/trozware" class="iconfont icon-github" title="github"></a>
+  <a href="https://troz.net/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme -
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2012 -
+    2017
+    <span class="author">Sarah Reichelt</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-5511808-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

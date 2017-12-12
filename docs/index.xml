@@ -5,10 +5,25 @@
     <link>https://troz.net/</link>
     <description>Recent content on TrozWare</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 29 Nov 2017 17:42:57 +1000</lastBuildDate>
+    <lastBuildDate>Tue, 12 Dec 2017 09:14:07 +1000</lastBuildDate>
     
 	<atom:link href="https://troz.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mark Time</title>
+      <link>https://troz.net/post/2017-12-11-marktime/</link>
+      <pubDate>Tue, 12 Dec 2017 09:14:07 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2017-12-11-marktime/</guid>
+      <description>&lt;style&gt;img {width: 300px; } &lt;/style&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://itunes.apple.com/us/app/mark-time/id1305580742?mt=8&#34;&gt;Mark Time&lt;/a&gt; is an application for Celestial Navigation that solves the
+problem of how to take an accurate time reading to go with each sextant
+sighting. Here is how it was developed&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Moving to Hugo</title>
@@ -21,6 +36,20 @@ to update the Swift code to version 4. However installing High Sierra had
 removed &lt;a href=&#34;https://jekyllrb.com&#34; title=&#34;Jekyll&#34;&gt;Jekyll&lt;/a&gt; which is the site generator that I had been using. I
 re-installed Jekyll but found that it had been updated from version 2 to version
 3.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Marktime</title>
+      <link>https://troz.net/marktime/</link>
+      <pubDate>Sun, 26 Nov 2017 14:48:53 +1000</pubDate>
+      
+      <guid>https://troz.net/marktime/</guid>
+      <description>&lt;style&gt;img {width: 300px; } &lt;/style&gt;
+
+&lt;p&gt;Mark Time is now available now from the &lt;a href=&#34;https://itunes.apple.com/us/app/mark-time/id1305580742?mt=8&#34;&gt;iTunes App Store&lt;/a&gt; for iPhone and
+iPad as an assistant for celestial navigators.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

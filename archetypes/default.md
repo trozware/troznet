@@ -5,10 +5,7 @@ lastmod: {{ .Date }}
 draft: true
 description: ""
 tags: []
-
-# you can close something for this content if you open it in config.toml.
-comment: false
-toc: false
+toc: true
 ---
 
 <!--more-->
