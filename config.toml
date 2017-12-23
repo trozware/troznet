@@ -122,9 +122,15 @@ publishDir = "docs"
 #  isPlainText = true
 #  isHTML = false
 #
-#[outputs]
-#  home = ["HTML", "RSS"]
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
 #  page = ["HTML", "MarkDown"]
-#  section = ["HTML", "RSS"]
+#  section = ["HTML", "RSS", "JSON"]
 #  taxonomy = ["HTML", "RSS"]
 #  taxonomyTerm = ["HTML"]
+
+[outputFormats.JSON]
+ mediaType = "application/json"
+ isPlainText = true
+ isHTML = false
+ baseName = "feed"
