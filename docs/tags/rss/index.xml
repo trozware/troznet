@@ -12,10 +12,10 @@
     
     <item>
       <title>JSON Feed for TrozWare</title>
-      <link>https://troz.net/post/2017-05-20-json-feed-for-trozware/</link>
+      <link>https://troz.net/post/2017/json-feed-for-trozware/</link>
       <pubDate>Sat, 20 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/post/2017-05-20-json-feed-for-trozware/</guid>
+      <guid>https://troz.net/post/2017/json-feed-for-trozware/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://jsonfeed.org/2017/05/17/announcing_json_feed&#34;&gt;jsonfeed.org&lt;/a&gt; has announced a new format for web site feeds, designed as an
 alternative to RSS. TrozWare has had an XML RSS feed for years, but I don&amp;rsquo;t
 think anyone ever uses it (I certainly don&amp;rsquo;t), so today I have replaced it with

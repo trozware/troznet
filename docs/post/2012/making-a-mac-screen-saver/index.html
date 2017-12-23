@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Making a Mac Screen Saver - TrozWare</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Sarah Reichelt" />
+  <meta name="description" content="Having just completed the my first screen saver for Mac - the Time In Words Screen Saver, I thought I would share some of the experiences. I am using OS X Lion (10.7) and Xcode 4.3.2
+The first thing is to create a new project in Xcode using the Screen Saver template:
+
+Xcode sets up a project for you with everything you need for a screen saver module. Start editing the ScreenSaverView." />
+
+  <meta name="keywords" content="Swift, Apple, macOS, iOS, Apple Watch" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.31" />
+
+
+<link rel="canonical" href="https://troz.net/post/2012/making-a-mac-screen-saver/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+
+
+<meta property="og:title" content="Making a Mac Screen Saver" />
+<meta property="og:description" content="Having just completed the my first screen saver for Mac - the Time In Words Screen Saver, I thought I would share some of the experiences. I am using OS X Lion (10.7) and Xcode 4.3.2
+The first thing is to create a new project in Xcode using the Screen Saver template:
+
+Xcode sets up a project for you with everything you need for a screen saver module. Start editing the ScreenSaverView." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troz.net/post/2012/making-a-mac-screen-saver/" />
+
+
+
+<meta property="article:published_time" content="2012-05-09T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2012-05-09T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Making a Mac Screen Saver">
+<meta itemprop="description" content="Having just completed the my first screen saver for Mac - the Time In Words Screen Saver, I thought I would share some of the experiences. I am using OS X Lion (10.7) and Xcode 4.3.2
+The first thing is to create a new project in Xcode using the Screen Saver template:
+
+Xcode sets up a project for you with everything you need for a screen saver module. Start editing the ScreenSaverView.">
+
+
+<meta itemprop="datePublished" content="2012-05-09T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2012-05-09T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="934">
+
+
+
+<meta itemprop="keywords" content="screen saver,time in words,mac," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Making a Mac Screen Saver"/>
+<meta name="twitter:description" content="Having just completed the my first screen saver for Mac - the Time In Words Screen Saver, I thought I would share some of the experiences. I am using OS X Lion (10.7) and Xcode 4.3.2
+The first thing is to create a new project in Xcode using the Screen Saver template:
+
+Xcode sets up a project for you with everything you need for a screen saver module. Start editing the ScreenSaverView."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">TrozWare</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/apps/">
+        <li class="mobile-menu-item">Apps</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">TrozWare</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/apps/">Apps</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Making a Mac Screen Saver</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 09 May 2012 </span>
+        
+        <span class="more-meta"> 934 words </span>
+        <span class="more-meta"> 5 minute read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+      
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>Having just completed the my first screen saver for Mac - the <a href="/time-in-words-screen-saver-for-mac/" title="Time In Words Screen Saver for Mac">Time In Words
+Screen Saver</a>, I thought I would share some of the experiences. I am using OS
+X Lion (10.7) and Xcode 4.3.2</p>
+
+<p>The first thing is to create a new project in Xcode using the Screen Saver
+template:</p>
+
+<p><a href="/images/ScreenSaverTemplate.png"><img title="Xcode Screen Saver Template" src="/images/ScreenSaverTemplate-441x300.png" alt="Xcode Screen Saver Template" /></a></p>
+
+<p>Xcode sets up a project for you with everything you need for a screen saver
+module. Start editing the ScreenSaverView.m file. The most important method here
+is animateOneFrame.</p>
+
+<p>This is called every time the animation time interval elapses. This interval is
+set in <code>initWithFrame:isPreview:</code>. I have seen some debate online as to whether
+the drawing should be done in the <code>animateOneFrame</code> method or in the <code>drawRect</code>
+method. I chose to use <code>animateOneFrame</code> because they are both called when the
+screen saver starts which can lead to an unpleasant flicker.</p>
+
+<p>Now it is up to you to decide what to show in the <code>animateOneFrame</code> method. For
+Time In Words, I assembled the data as a string, created a dictionary of text
+attributes, calculated the location where I wanted to show the text and used
+<code>drawAtPoint:withAttributes:</code> to display it.</p>
+
+<p>There are a couple of important tricks when working out locations: firstly, you
+will need to know the bounds of the screen saver area. This will vary depending
+on the monitor, screen size or whether the screen saver is appearing in the
+preview window in System Preferences. The screen saver view has a method that
+does this work for you.</p>
+
+<pre><code class="language-objectivec">NSRect viewBounds = [self bounds];
+</code></pre>
+
+<p>The next trick is that you are most likely going to need some random numbers.
+Again, the screen saver framework supplies these to you in several forms. I used
+<code>SSRandomFloatBetween</code> but there are others. Check the documentation.</p>
+
+<p>I ran into an oddity in System Preferences that made testing a bit tedious. I
+built the screen saver module and double-clicked on it to install into System
+Preferences. That worked fine, but when I made some changes and repeated the
+process, the original screen saver was still in place. I found that I had to
+quit System Preferences each time. Deleting the old version of the screen saver
+was not necessary, but quitting the System Prefs app was essential.</p>
+
+<p>So that gives the basic screen saver module but with no options. Adding options
+is not difficult, but as always, there are a few things that are not obvious on
+first glance.</p>
+
+<p>Add a xib file to your project: I used a window template. Then change the
+window&rsquo;s class to NSPanel and configure it as shown:</p>
+
+<p><img title="NSPanel Settings" src="/images/PanelSettings.png" alt="NSPanel Settings" /></p>
+
+<p>Set the File&rsquo;s Owner class to the class of your Screen Saver view. In your
+ScreenSaverView.h file, declare a property for this new panel. e.g.</p>
+
+<pre><code class="language-objectivec"> @property (assign) IBOutlet NSPanel *optionsPanel;
+</code></pre>
+
+<p>@synthesize this in the ScreenSaverView.m file. In the xib file, connect the
+panel to this outlet.</p>
+
+<p>Now go back to ScreenSaverView.m and add the following code:</p>
+
+<pre><code class="language-objectivec">* (BOOL)hasConfigureSheet { return YES; }
+
+* (NSWindow *)configureSheet { if (!self.optionsPanel) { [NSBundle
+  loadNibNamed:@&quot;Options&quot; owner:self]; } return self.optionsPanel; }
+
+- (IBAction)closeConfig:(id)sender { [[NSApplication sharedApplication]
+  endSheet:self.optionsPanel]; }
+</code></pre>
+
+<p>The <code>hasConfigureSheet</code> and <code>configureSheet</code> stubs are already there for you,
+but you can replace them with these versions.</p>
+
+<p>Go back to the xib file and drag in a button to close the options panel. Connect
+it to the <code>closeConfig:</code> action.</p>
+
+<p>Save everything, build, install in System Preferences and test. Firstly, the
+&ldquo;Options&hellip;&rdquo; button should be enabled. Clicking it should open your panel as a
+sheet, and when you click your button, the panel should close.</p>
+
+<p>If that doesn&rsquo;t work, check the class assignments, the connections, the settings
+for the NSPanel and the code in that order.</p>
+
+<p>Once the panel is opening and closing as required, you need to add the ability
+to store and retrieve the settings. Instead of using NSUserDefaults as you would
+in a standard Mac app, there is a special class call ScreenSaverDefaults for
+screen savers. It needs a unique module name, so I used the bundle identifier.
+For my Time In Words screen saver, this is
+&ldquo;net.troz.Time-In-Words-Screen-Saver&rdquo;. I defined a constant to hold this as a
+string, so I could use it anywhere I needed.</p>
+
+<p>In the <code>initWithFrame:isPreview:</code> method, I got a reference to the screen saver
+defaults for my screen saver and registered the defaults. I am never very sure
+about the need to do this, but it is supposed to be a good practice.</p>
+
+<pre><code class="language-objectivec">ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
+[defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
+  @&quot;NO&quot;, @&quot;UseAlternativeZone&quot;, @&quot;&quot;,
+  @&quot;AlternativeZoneName&quot;, nil]
+];
+</code></pre>
+
+<p>Using them is exactly the same as using NSUserDefaults:</p>
+
+<pre><code class="language-objectivec">// Reading
+ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
+BOOL useAlternativeZone = [defaults boolForKey:@&quot;UseAlternativeZone&quot;];
+NSString *alternativeZoneName = [defaults objectForKey:@&quot;AlternativeZoneName&quot;];
+</code></pre>
+
+<p>&hellip;</p>
+
+<pre><code class="language-objectivec">// Writing
+ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:kModuleName]; [defaults setBool:useAlternative forKey:@&quot;UseAlternativeZone&quot;];
+[defaults setObject:alternativeZoneName forKey:@&quot;AlternativeZoneName&quot;];
+[defaults synchronize];
+</code></pre>
+
+<p>One last thing: if you want to distribute the screen saver, you will want to
+create an archive, possibly code-signing with your Apple developer ID to allow
+for Mountain Lion&rsquo;s up-coming Gatekeeper security system. I code-signed the
+project and built an archive, but when I clicked &ldquo;Distribute&rdquo; in the Organizer,
+the only appropriate options was &ldquo;Save Built Products&rdquo;. I selected this option
+and ended up with a series of folders inside folders, with the screen saver
+module in about the fifth folder down. I don&rsquo;t know why the module gets
+distributed like this, but I pulled it out of the folders and it worked fine.</p>
+
+<p>And that&rsquo;s about it. A lot of this stuff is online or in Apple&rsquo;s documentation,
+but there are enough oddities to make it worthwhile gathering together all that
+I learnt while making this screen saver.</p>
+
+<p>Click this icon to download the screen saver:</p>
+
+<p><a href="/screensaver/TimeInWords-ScreenSaver.zip"><img src="/images/ScreenSaverIcon128.png"></a></p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  
+  <p class="copyright-item">
+    <span class="item-title">Last Modified</span>
+    <span class="item-content">09 May 2012</span>
+  </p>
+  
+  
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/screen-saver/">screen saver</a>
+          
+          <a href="/tags/time-in-words/">time in words</a>
+          
+          <a href="/tags/mac/">mac</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2012/pic-a-pod-2-0-4-for-mac/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Pic-a-POD 2.0.4 for Mac</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2012/support-for-older-operating-systems/">
+            <span class="next-text nav-default">Support for older operating systems</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:sarah@troz.net" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1082632" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/trozware" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/trozware" class="iconfont icon-github" title="github"></a>
+  <a href="https://troz.net/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme -
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2012 -
+    2017
+    <span class="author">Sarah Reichelt</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-5511808-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

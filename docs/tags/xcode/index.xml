@@ -12,10 +12,10 @@
     
     <item>
       <title>How To Confuse TestFlight</title>
-      <link>https://troz.net/post/2016-04-24-how-to-confuse-testflight/</link>
+      <link>https://troz.net/post/2016/how-to-confuse-testflight/</link>
       <pubDate>Sun, 24 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/post/2016-04-24-how-to-confuse-testflight/</guid>
+      <guid>https://troz.net/post/2016/how-to-confuse-testflight/</guid>
       <description>&lt;p&gt;I ran into an unusual problem when testing my latest app: &amp;ldquo;&lt;a href=&#34;https://troz.net/what-is-my-speed/&#34;&gt;What Is My
 Speed?&lt;/a&gt;&amp;rdquo;. It is now available from the &lt;a href=&#34;https://itunes.apple.com/app/what-is-my-speed/id1091394524&#34;&gt;iTunes App Store&lt;/a&gt;, but getting
 there was a struggle.&lt;/p&gt;
@@ -25,20 +25,20 @@ there was a struggle.&lt;/p&gt;
     
     <item>
       <title>Configuring Xcode</title>
-      <link>https://troz.net/post/2016-02-17-configuring-xcode/</link>
+      <link>https://troz.net/post/2016/configuring-xcode/</link>
       <pubDate>Wed, 17 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/post/2016-02-17-configuring-xcode/</guid>
+      <guid>https://troz.net/post/2016/configuring-xcode/</guid>
       <description>While not strictly a part of my Learning Swift series, today I thought I would discuss some of the ways to configure and use Xcode to be a more productive and comfortable programmer.
 1. Editor color themes and fonts: Step through the supplied themes and find the best one for you. Then click the &amp;lsquo;+&amp;rsquo; button at the bottom of the list and duplicate the selected theme. Now you can tweak it to suit you.</description>
     </item>
     
     <item>
       <title>Possible issues with Icon Builder &amp; Watch icons</title>
-      <link>https://troz.net/post/2016-02-06-possible-issues-with-iconbuilder/</link>
+      <link>https://troz.net/post/2016/possible-issues-with-iconbuilder/</link>
       <pubDate>Sat, 06 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/post/2016-02-06-possible-issues-with-iconbuilder/</guid>
+      <guid>https://troz.net/post/2016/possible-issues-with-iconbuilder/</guid>
       <description>It has come to my attention that there are two possible issues with Icon Builder 3.0.1 when using icons created for an Apple Watch app. Once of them is something I can fix and the other appears to be a bug in Xcode 7.2
 Update: Version 3.2 of Icon Builder is now available in the Mac App Store. This removes the alpha channel from icons for a watch app.
 The first problem is that iTines Connect now requires that the icons for an Apple Watch app include no alpha channel.</description>
@@ -46,10 +46,10 @@ The first problem is that iTines Connect now requires that the icons for an Appl
     
     <item>
       <title>Icon Builder 3.0.1</title>
-      <link>https://troz.net/post/2015-03-17-icon-builder-3.0.1/</link>
+      <link>https://troz.net/post/2015/icon-builder-3.0.1/</link>
       <pubDate>Tue, 17 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/post/2015-03-17-icon-builder-3.0.1/</guid>
+      <guid>https://troz.net/post/2015/icon-builder-3.0.1/</guid>
       <description>So why an announcement for such a minor upgrade?
 Version 3.0 got no announcement because it was not the release I wanted.
 Having downloaded the Xcode 6.2 &amp;amp; 6.3 betas, I had worked out what icons were needed to a WatchKit app. This, combined with several other changes, made me bump the version number to 3.0.

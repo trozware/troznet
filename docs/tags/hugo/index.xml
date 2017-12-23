@@ -12,10 +12,10 @@
     
     <item>
       <title>Moving to Hugo</title>
-      <link>https://troz.net/post/2017-11-29-moving-to-hugo/</link>
+      <link>https://troz.net/post/2017/moving-to-hugo/</link>
       <pubDate>Wed, 29 Nov 2017 17:42:57 +1000</pubDate>
       
-      <guid>https://troz.net/post/2017-11-29-moving-to-hugo/</guid>
+      <guid>https://troz.net/post/2017/moving-to-hugo/</guid>
       <description>&lt;p&gt;Yesterday, I came to update my blog: I had a new post in draft form and I wanted
 to update the Swift code to version 4. However installing High Sierra had
 removed &lt;a href=&#34;https://jekyllrb.com&#34; title=&#34;Jekyll&#34;&gt;Jekyll&lt;/a&gt; which is the site generator that I had been using. I

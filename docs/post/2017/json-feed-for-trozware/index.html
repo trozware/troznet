@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>JSON Feed for TrozWare - TrozWare</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Sarah Reichelt" />
+  <meta name="description" content="jsonfeed.org has announced a new format for web site feeds, designed as an alternative to RSS. TrozWare has had an XML RSS feed for years, but I don&amp;rsquo;t think anyone ever uses it (I certainly don&amp;rsquo;t), so today I have replaced it with a JSON feed, which you can access through the  button at the top of every page.
+
+" />
+
+  <meta name="keywords" content="Swift, Apple, macOS, iOS, Apple Watch" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.31" />
+
+
+<link rel="canonical" href="https://troz.net/post/2017/json-feed-for-trozware/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+
+
+<meta property="og:title" content="JSON Feed for TrozWare" />
+<meta property="og:description" content="jsonfeed.org has announced a new format for web site feeds, designed as an
+alternative to RSS. TrozWare has had an XML RSS feed for years, but I don&rsquo;t
+think anyone ever uses it (I certainly don&rsquo;t), so today I have replaced it with
+a JSON feed, which you can access through the
+ button at the top of every page.
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troz.net/post/2017/json-feed-for-trozware/" />
+
+
+
+<meta property="article:published_time" content="2017-05-20T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2017-05-20T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="JSON Feed for TrozWare">
+<meta itemprop="description" content="jsonfeed.org has announced a new format for web site feeds, designed as an
+alternative to RSS. TrozWare has had an XML RSS feed for years, but I don&rsquo;t
+think anyone ever uses it (I certainly don&rsquo;t), so today I have replaced it with
+a JSON feed, which you can access through the
+ button at the top of every page.
+
+">
+
+
+<meta itemprop="datePublished" content="2017-05-20T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-05-20T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="375">
+
+
+
+<meta itemprop="keywords" content="trozware,json,rss," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="JSON Feed for TrozWare"/>
+<meta name="twitter:description" content="jsonfeed.org has announced a new format for web site feeds, designed as an
+alternative to RSS. TrozWare has had an XML RSS feed for years, but I don&rsquo;t
+think anyone ever uses it (I certainly don&rsquo;t), so today I have replaced it with
+a JSON feed, which you can access through the
+ button at the top of every page.
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">TrozWare</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/apps/">
+        <li class="mobile-menu-item">Apps</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">TrozWare</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/apps/">Apps</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">JSON Feed for TrozWare</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 20 May 2017 </span>
+        
+        <span class="more-meta"> 375 words </span>
+        <span class="more-meta"> 2 minute read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+      
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p><a href="https://jsonfeed.org/2017/05/17/announcing_json_feed">jsonfeed.org</a> has announced a new format for web site feeds, designed as an
+alternative to RSS. TrozWare has had an XML RSS feed for years, but I don&rsquo;t
+think anyone ever uses it (I certainly don&rsquo;t), so today I have replaced it with
+a JSON feed, which you can access through the
+<a class="fa fa-rss" href="/feed.json"></a> button at the top of every page.</p>
+
+<p></p>
+
+<p>I am sure many JSON Feed viewers will appear soon, but the only one I know about
+so far is at <a href="http://json-feed-viewer.herokuapp.com">http://json-feed-viewer.herokuapp.com</a>. As soon as this update
+to my site goes live, I will apply to have TrozWare added to the list of sites
+on this page. Meanwhile, you can paste in the URL: <code>http://troz.net/feed.json</code>.</p>
+
+<p>This site is constructed using Jekyll, so I am very grateful to Niclas Darville
+for his very easy to follow <a href="https://ndarville.com/blog/2017/05/19/json-feed-for-jekyll/">guide</a>. However it is still well worth reading
+through the <a href="https://jsonfeed.org/version/1">official specs</a> to see what else you want to add, or if you want
+to remove anything. I had to tweak a few settings to make it work for my
+configuration, and I added some more objects, but Niclas got me off to a flying
+start.</p>
+
+<p>Two things to watch out for:</p>
+
+<ol>
+<li>Make sure your feed is producing valid JSON (I had an extra comma that was
+breaking it&hellip;).</li>
+<li>As third-party apps &amp; sites may be displaying your content, you need to make
+sure that you are not using relative URLs for images and internal links. I
+was using relative image URLs like <code>/images/WorkHelp1.png</code> but that showed a
+broken link in the feed viewer, so I have changed all such links to
+<code>/images/WorkHelp1.png</code>. Hopefully that will work correctly on my local test
+server as well as when published. <br><br></li>
+</ol>
+
+<p><img src="https://jsonfeed.org/graphics/icon.png" alt="JSON Feed icon" /></p>
+
+<p>JSON Feed offers a nice icon which I would have liked to use, but I could not
+work out a way to make it play nicely with the existing icons on my pages which
+all use <a href="http://fontawesome.io">Font Awesome</a> icons. So I ended up just using the existing Feed
+icon. Hopefully Font Awesome will soon add a JSON Feed icon to their already
+impressive list.</p>
+
+<p>If anyone still wants to use the <a href="/index.xml">RSS feed</a>, it is no longer linked to the
+buttons at the top of the pages, but you can access it manually.</p>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  
+  <p class="copyright-item">
+    <span class="item-title">Last Modified</span>
+    <span class="item-content">20 May 2017</span>
+  </p>
+  
+  
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/trozware/">trozware</a>
+          
+          <a href="/tags/json/">json</a>
+          
+          <a href="/tags/rss/">rss</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2017/posting-from-my-new-ipad/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Posting from my new iPad</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2017/blackmail-marketing/">
+            <span class="next-text nav-default">Blackmail Marketing</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:sarah@troz.net" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1082632" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/trozware" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/trozware" class="iconfont icon-github" title="github"></a>
+  <a href="https://troz.net/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme -
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2012 -
+    2017
+    <span class="author">Sarah Reichelt</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-5511808-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

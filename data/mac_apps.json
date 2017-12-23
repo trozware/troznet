@@ -1,0 +1,58 @@
+[
+  {
+    "icon": "Knights36.png",
+    "name": "A Knight's Move",
+    "webpage": "/knightsmove/",
+    "version": "1.5",
+    "updated": "19 Sep 2016",
+    "app_id": "533321133"
+  },
+  {
+    "icon": "DicePass_36.png",
+    "name": "Dice Pass",
+    "webpage": "/dicepass/",
+    "version": "1.1",
+    "updated": "17 Sep 2016",
+    "app_id": "997688302"
+  },
+  {
+    "icon": "iOSIconMaker36.png",
+    "name": "Icon Builder",
+    "webpage": "/icon-builder/",
+    "version": "4.0",
+    "updated": "16 Sep 2016",
+    "app_id": "552293482"
+  },
+  {
+    "icon": "ManReader36.png",
+    "name": "Man Reader",
+    "webpage": "/manreader/",
+    "version": "1.9",
+    "updated": "27 Nov 2017",
+    "app_id": "522583774"
+  },
+  {
+    "icon": "Pic36.png",
+    "name": "Pic-a-POD",
+    "webpage": "http://www.picapod.com/",
+    "version": "2.0.7",
+    "updated": "12 Jun 2017",
+    "app_id": "477909802"
+  },
+  {
+    "icon": "Time36.png",
+    "name": "World Time In Words",
+    "webpage": "/time-in-words-for-mac/",
+    "version": "3.0",
+    "updated": "9 Feb 2015",
+    "app_id": "509085586"
+  },
+  {
+    "icon": "ScreenSaverIcon36.png",
+    "name": "TiW Screen Saver",
+    "webpage": "/time-in-words-screen-saver-for-mac/",
+    "version": "1.2",
+    "updated": "23 Jan 2013",
+    "download": "/screensaver/TimeInWords-ScreenSaver.zip"
+  }
+]

@@ -1,0 +1,30 @@
+.app_header {
+   text-decoration: underline;
+}
+
+img {
+   padding-right: 10px;
+}
+
+.app_name {
+   font-weight: bold;
+   font-size: 1.2rem;
+}
+
+.mac_app_button {
+   display: inline-block;
+   overflow: hidden;
+   background: url(http://linkmaker.itunes.apple.com/assets/shared/badges/en-us/macappstore-lrg.svg) no-repeat;
+   width: 165px;
+   height: 40px;
+   background-size: contain;
+}
+
+.ios_app_button {
+   display: inline-block;
+   overflow: hidden;
+   background: url(http://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg) no-repeat;
+   width: 135px;
+   height: 40px;
+   background-size: contain;
+}

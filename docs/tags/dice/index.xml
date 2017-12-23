@@ -12,30 +12,30 @@
     
     <item>
       <title>Dice Pass Updated</title>
-      <link>https://troz.net/post/2016-09-17-dice-pass-updated/</link>
+      <link>https://troz.net/post/2016/dice-pass-updated/</link>
       <pubDate>Sat, 17 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/post/2016-09-17-dice-pass-updated/</guid>
+      <guid>https://troz.net/post/2016/dice-pass-updated/</guid>
       <description>Dice Pass 1.1 is now available from the Mac App Store.
 What does Dice Pass do? Dice Pass is a utility to app to generate random passphrases based on the Diceware system. Diceware uses a table of pre-defined words, each assigned a 5 digit code number containing the digits 1 to 6. The official way to generate a phrase is to roll 5 dice for each word you want in your passphrase and then consult the words table to find the matching word.</description>
     </item>
     
     <item>
       <title>Dice Pass Mac Update</title>
-      <link>https://troz.net/post/2016-07-03-dice-pass-mac-update/</link>
+      <link>https://troz.net/post/2016/dice-pass-mac-update/</link>
       <pubDate>Sun, 03 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/post/2016-07-03-dice-pass-mac-update/</guid>
+      <guid>https://troz.net/post/2016/dice-pass-mac-update/</guid>
       <description>I recently got an email from someone who had purchased Dice Pass for Mac from the Mac App Store but had been unable to get it to run. This person was using OS X 10.9.3.
 I checked the App Store specifications and it showed that 10.9 was the minimum system requirement, so it should have worked. But going back to my Xcode project, I found that it was set to a minimum of OS X 10.</description>
     </item>
     
     <item>
       <title>Dice Pass for Mac</title>
-      <link>https://troz.net/post/2015-05-30-dice-pass-for-mac/</link>
+      <link>https://troz.net/post/2015/dice-pass-for-mac/</link>
       <pubDate>Sat, 30 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/post/2015-05-30-dice-pass-for-mac/</guid>
+      <guid>https://troz.net/post/2015/dice-pass-for-mac/</guid>
       <description>We live in a world of passwords and passphrases and there is a constant struggle between having a secure and a memorable password. As a result, many of us re-use passwords even though we know this is a bad idea.
 XKCD had a wonderful comic that illustrated the theory of using a passphrase composed of words that are easy to remember but with a combination that made the passphrase very hard to guess.</description>
     </item>

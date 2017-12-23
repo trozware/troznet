@@ -12,10 +12,10 @@
     
     <item>
       <title>Moving to Hugo</title>
-      <link>https://troz.net/post/2017-11-29-moving-to-hugo/</link>
+      <link>https://troz.net/post/2017/moving-to-hugo/</link>
       <pubDate>Wed, 29 Nov 2017 17:42:57 +1000</pubDate>
       
-      <guid>https://troz.net/post/2017-11-29-moving-to-hugo/</guid>
+      <guid>https://troz.net/post/2017/moving-to-hugo/</guid>
       <description>&lt;p&gt;Yesterday, I came to update my blog: I had a new post in draft form and I wanted
 to update the Swift code to version 4. However installing High Sierra had
 removed &lt;a href=&#34;https://jekyllrb.com&#34; title=&#34;Jekyll&#34;&gt;Jekyll&lt;/a&gt; which is the site generator that I had been using. I
@@ -27,19 +27,19 @@ re-installed Jekyll but found that it had been updated from version 2 to version
     
     <item>
       <title>Posting from my new iPad</title>
-      <link>https://troz.net/post/2017-06-17-posting-from-my-new-ipad/</link>
+      <link>https://troz.net/post/2017/posting-from-my-new-ipad/</link>
       <pubDate>Sat, 17 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/post/2017-06-17-posting-from-my-new-ipad/</guid>
+      <guid>https://troz.net/post/2017/posting-from-my-new-ipad/</guid>
       <description>Last week I got a 10.5” iPad Pro. I have had an iPad ever since the original release, but I have to confess to mainly using it for content consumption rather than creation. Since I am usually close to a Mac anyway, there didn’t seem a lot of point. But now that iOS 11 is really addressing the issue of making the iPad a &amp;ldquo;pro&amp;rdquo; device, I decided to give it a try.</description>
     </item>
     
     <item>
       <title>Testing automation</title>
-      <link>https://troz.net/post/2015-03-12-testing-automation/</link>
+      <link>https://troz.net/post/2015/testing-automation/</link>
       <pubDate>Thu, 12 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/post/2015-03-12-testing-automation/</guid>
+      <guid>https://troz.net/post/2015/testing-automation/</guid>
       <description>Today I am experimenting with automating post generation.
 Firstly, there is the structure of the post Markdown document, which really boils down to the file name and the header.
 I have set up a macro in Typinator so that I just type the title of the post in a text document. I copy that title to the clipboard and type the shortcut. The header is then created with the title and the formatted permalink.</description>
@@ -47,10 +47,10 @@ I have set up a macro in Typinator so that I just type the title of the post in 
     
     <item>
       <title>Workflow for writing a post</title>
-      <link>https://troz.net/post/2015-03-10-workflow-for-writing-a-post/</link>
+      <link>https://troz.net/post/2015/workflow-for-writing-a-post/</link>
       <pubDate>Tue, 10 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/post/2015-03-10-workflow-for-writing-a-post/</guid>
+      <guid>https://troz.net/post/2015/workflow-for-writing-a-post/</guid>
       <description>So here is where I need to get used to Jekyll and how things are done. I will end up automating this when I am sure of the process, but for now, I am just going to work my way through it.
  Start up the local Jekyll server:
  I opened Terminal and used cd to get to the folder containing my site. Next I started the Jekyll server locally using jekyll serve.</description>

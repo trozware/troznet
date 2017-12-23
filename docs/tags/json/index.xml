@@ -12,10 +12,10 @@
     
     <item>
       <title>JSON Parsing in Swift 4</title>
-      <link>https://troz.net/post/2017-06-18-json-parsing-in-swift-4/</link>
+      <link>https://troz.net/post/2017/json-parsing-in-swift-4/</link>
       <pubDate>Sun, 18 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/post/2017-06-18-json-parsing-in-swift-4/</guid>
+      <guid>https://troz.net/post/2017/json-parsing-in-swift-4/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Updated:&lt;/strong&gt; 3rd September 2017.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -36,10 +36,10 @@ what has Swift 4 done to &lt;em&gt;sherlock&lt;/em&gt; them all?&lt;/p&gt;
     
     <item>
       <title>JSON Feed for TrozWare</title>
-      <link>https://troz.net/post/2017-05-20-json-feed-for-trozware/</link>
+      <link>https://troz.net/post/2017/json-feed-for-trozware/</link>
       <pubDate>Sat, 20 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/post/2017-05-20-json-feed-for-trozware/</guid>
+      <guid>https://troz.net/post/2017/json-feed-for-trozware/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://jsonfeed.org/2017/05/17/announcing_json_feed&#34;&gt;jsonfeed.org&lt;/a&gt; has announced a new format for web site feeds, designed as an
 alternative to RSS. TrozWare has had an XML RSS feed for years, but I don&amp;rsquo;t
 think anyone ever uses it (I certainly don&amp;rsquo;t), so today I have replaced it with
