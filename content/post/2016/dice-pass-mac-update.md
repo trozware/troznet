@@ -1,9 +1,9 @@
 ---
 date: 2016-07-03T00:00:00Z
-macappdesc: A utility to app to generate random passphrases based on the Diceware
+mac_app_desc: A utility to app to generate random passphrases based on the Diceware
   system.
-macappimage: /icons/DicePass128.png
-macappname: Dice Pass
+mac_app_image: /icons/DicePass128.png
+mac_app_name: Dice Pass
 tags:
 - dice
 - mac

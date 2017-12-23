@@ -1,13 +1,13 @@
 ---
 date: 2013-11-06T00:00:00Z
-iphoneappdesc: For oboists trying to learn Berio's Sequenza VII.
-iphoneappid: 730234638
-iphoneappname: Berio's Sequenza VII
+ios_app_desc: For oboists trying to learn Berio's Sequenza VII.
+ios_app_id: 730234638
+ios_app_name: "Berio's Sequenza VII"
 title: Berio's Sequenza VII
 url: /berio/
 ---
 
-<a href="http://en.wikipedia.org/wiki/Luciano_Berio" target="_blank">Luciano
+<a href="http://en.wikipedia.org/wiki/Luciano_Berio" target="itunes_store">Luciano
 Berio</a> wrote a series of Sequenzas for various instruments with Sequenza VII
 being the one for oboe.\
 <img src="/images/Berio_icon.png" alt="Sequenza VII icon" width="86" height="86" />
@@ -15,14 +15,14 @@ being the one for oboe.\
 Preparing this work creates some unique problems for the oboist as Berio did not
 adhere to any time signature that could be indicated by a metronome. Instead,
 each line consists of
-<a href="http://www.nuoboe.com/berio/html/factsheet.html" target="_blank">13
+<a href="http://www.nuoboe.com/berio/html/factsheet.html" target="itunes_store">13
 bars (measures) with each bar's length specified in exact seconds</a>.
 
 When my son (an oboist currently studying in Melbourne, Australia) started
 trying to learn this piece, it occurred to him that having an iOS app developer
 in the family could be of some assistance. So with instructions from him and
 with suggestions from other oboists, I have developed the
-<a href="https://itunes.apple.com/us/app/sequenza-vii/id730234638?mt=8&uo=4" target="_blank">Berio
+<a href="https://itunes.apple.com/us/app/sequenza-vii/id730234638?mt=8&uo=4" target="itunes_store">Berio
 Sequenza VII app for iPhone or iPod Touch</a>.
 
 <img src="/images/Berio_2-500.png" alt="Berio's Sequenza VII" />

@@ -787,20 +787,6 @@ Creating icon files for Mac apps: In versions of Xcode before 4.4, Apple provide
     </item>
     
     <item>
-      <title>Icns Maker</title>
-      <link>https://troz.net/icns-maker/</link>
-      <pubDate>Mon, 01 Oct 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://troz.net/icns-maker/</guid>
-      <description>Icns Maker is available from the Mac App Store.
-Make an icns in 2 steps: 
- Drag an image into the window.
- Click “Create icns” or “Create assets”.
-  This creates a .icns file or assets folder that can be imported directly into your Xcode project for use in your app.
-Why is this necessary? In versions of Xcode before 4.4, Apple provided an app called “Icon Composer”.</description>
-    </item>
-    
-    <item>
       <title>Icon Builder</title>
       <link>https://troz.net/icon-builder/</link>
       <pubDate>Mon, 01 Oct 2012 00:00:00 +0000</pubDate>

@@ -9,6 +9,9 @@ tags: []
 url: /marktime/
 comment: false
 toc: false
+ios_app_id: 1305580742
+ios_app_name: Mark Time
+ios_app_desc: Mark Time is an application for Celestial Navigation that solves the problem of how to take an accurate time reading to go with each sextant sighting.
 ---
 
 <style>img {width: 300px; } </style>

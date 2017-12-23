@@ -1,9 +1,8 @@
 ---
 date: 2012-02-08T00:00:00Z
-iphoneappdesc: Show the date and time in words, for your time zone of selected zones
-  around the world.
-iphoneappid: 498403851
-iphoneappname: Time In Words
+ios_app_desc: Show the date and time in words, for your time zone of selected zones around the world.
+ios_app_id: 498403851
+ios_app_name: Time In Words
 title: Time In Words for iOS
 url: /time-in-words/
 ---

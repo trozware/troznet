@@ -1,9 +1,9 @@
 ---
 date: 2016-09-17T00:00:00Z
-macappdesc: Make and install a set of icons for an iOS, Mac or Apple Watch app in
+mac_app_desc: Make and install a set of icons for an iOS, Mac or Apple Watch app in
   just 3 steps.
-macappimage: /icons/IconBuilder128.png
-macappname: Icon Builder
+mac_app_image: /icons/IconBuilder128.png
+mac_app_name: Icon Builder
 tags:
 - icons
 - mac

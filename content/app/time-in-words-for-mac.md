@@ -1,9 +1,9 @@
 ---
 date: 2012-03-19T00:00:00Z
-macappdesc: A menu bar utility app that displays your current time and date in words
+mac_app_desc: A menu bar utility app that displays your current time and date in words
   as well as your preferred time zones.
-macappimage: /icons/TimeInWords128.png
-macappname: World Time In Words
+mac_app_image: /icons/TimeInWords128.png
+mac_app_name: World Time In Words
 title: World Time In Words for Mac
 url: /time-in-words-for-mac/
 ---

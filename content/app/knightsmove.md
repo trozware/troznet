@@ -2,10 +2,10 @@
 apple-itunes-app:
 - app-id=530090451
 date: 2012-07-08T00:00:00Z
-macappdesc: A puzzle game where you have to move your knight across a board to a target
+mac_app_desc: A puzzle game where you have to move your knight across a board to a target
   square using the same movements as a knight in chess.
-macappimage: /icons/KnightsMove128.png
-macappname: A Knight's Move
+mac_app_image: /icons/KnightsMove128.png
+mac_app_name: A Knight's Move
 title: A Knight's Move
 url: /knightsmove/
 ---

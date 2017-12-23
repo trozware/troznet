@@ -1,8 +1,8 @@
 ---
 date: 2016-07-16T00:00:00Z
-macappdesc: A utility app for reading macOS man pages.
-macappimage: /icons/ManReader128.png
-macappname: Man Reader
+mac_app_desc: A utility app for reading macOS man pages.
+mac_app_image: /icons/ManReader128.png
+mac_app_name: Man Reader
 tags:
 - man reader
 - mac

@@ -1,10 +1,10 @@
 ---
 date: 2016-11-17T00:00:00Z
-macappdesc: A project organizer for developers, designers, students or any professional
+mac_app_desc: A project organizer for developers, designers, students or any professional
   who works with multiple projects involving files & folders, web pages, email addresses
   and lists of tasks.
-macappimage: /icons/Work128.png
-macappname: Work
+mac_app_image: /icons/Work128.png
+mac_app_name: Work
 tags:
 - mac
 - productivity

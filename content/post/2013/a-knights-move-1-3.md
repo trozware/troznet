@@ -1,9 +1,9 @@
 ---
 date: 2013-02-27T00:00:00Z
-macappdesc: A puzzle game where you have to move your knight across a board to a target
+mac_app_desc: A puzzle game where you have to move your knight across a board to a target
   square using the same movements as a knight in chess.
-macappimage: /icons/KnightsMove128.png
-macappname: A Knight's Move
+mac_app_image: /icons/KnightsMove128.png
+mac_app_name: A Knight's Move
 tags:
 - knight's move
 - chess
