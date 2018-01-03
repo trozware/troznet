@@ -1,5 +1,6 @@
 ---
 date: 2016-03-30T00:00:00Z
+lastmod: 2018-01-03T19:53:00+10:00
 tags:
 - swift
 - learning swift
@@ -10,7 +11,9 @@ title: Structs vs Classes
 ---
 
 One of the big debates among Swift developers is when to use `structs` and when
-to use `classes`. Classes are the building blocks of object-oriented programming
+to use `classes`.
+
+Classes are the building blocks of object-oriented programming
 but structs as provided by Swift are newly powerful. Structs have been around in
 C-based languages for a long time, but Swift has made them more powerful and
 given them more features so that they are almost indistinguishable from classes.
@@ -18,14 +21,14 @@ So what are the differences and which one should you use?
 
 ---
 
-## Where they are the same:
+## Where they are the same?
 
 * both can define initializers
 * both can define properties
 * both can define methods
 * both can conform to protocols
 
-## Where they are different:
+## Where they are different?
 
 * classes can inherit from other classes
 * structs cannot inherit from other structs
@@ -37,18 +40,22 @@ So what are the differences and which one should you use?
 The reference type vs value type difference is where things really get
 interesting. Have a look at this example of a class with a single property:
 
-{{< highlight swift >}} class PersonClass { var name: String
+```swift
+class PersonClass {
+    var name: String
 
     init(name: String) {
         self.name = name
     }
-
 }
 
-var personA = PersonClass(name: "Woody") personA.name // Woody
+var personA = PersonClass(name: "Woody")
+personA.name // Woody
 
-var personB = personA personB.name = "Buzz" personB.name // Buzz {{< /
-highlight >}}
+var personB = personA
+personB.name = "Buzz"
+personB.name // Buzz
+```
 
 That looks like standard stuff, but what do you think `personA`'s name is now?
 If you guessed "Buzz" then you win a prize! _(No, not a real prize - pat
@@ -65,13 +72,20 @@ of `personA` as well.
 
 Let's try the same thing with a struct:
 
-{{< highlight swift >}} struct PersonStruct { var name: String }
+```swift
+struct PersonStruct {
+  var name: String
+}
 
-var personC = PersonStruct(name: "Rex") personC.name // Rex
+var personC = PersonStruct(name: "Rex")
+personC.name // Rex
 
-var personD = personC personD.name = "Hamm" personD.name // Hamm
+var personD = personC
+personD.name = "Hamm"
+personD.name // Hamm
 
-personC.name // Rex {{< / highlight >}}
+personC.name // Rex
+```
 
 This time, because we are using a struct, when we assign `personC` to the new
 `personD` variable, we are actually making a copy of `personC` and setting the
@@ -97,8 +111,7 @@ Apple really wants us to use structs and in the Swift standard libraries, a very
 high percentage of the objects are structs. But structs are especially well
 suited to a certain subset of objects.
 
-The best explanation that I have found of when to use a struct is the [Jeff
-Trick][1]. Reduced down, the rule is:
+The best explanation that I have found of when to use a struct is the [Jeff Trick][1]. Reduced down, the rule is:
 
 > If you can overload == to compare two instances of your object, use a struct.
 > <br> If this doesn't make sense, use a class.
@@ -116,23 +129,30 @@ A logical consequence of this is that all structs should conform to the
 
 Extending `PersonStruct` to make it conform just requires a single function:
 
-{{< highlight swift >}} extension PersonStruct: Equatable { static func == (lhs:
-PersonStruct, rhs: PersonStruct) -> Bool { return lhs.name == rhs.name } } {{< /
-highlight >}}
+```swift
+extension PersonStruct: Equatable {
+  static func == (lhs: PersonStruct, rhs: PersonStruct) -> Bool {
+    return lhs.name == rhs.name
+  }
+}
+```
 
 Since this struct only has one property, we can say that two instances of this
 struct are equal if the names are equal.
 
 Testing this, we can see:
 
-{{< highlight swift >}} var personC = PersonStruct(name: "Rex")
-
-var personD = personC personD.name = "Hamm"
+```swift
+var personC = PersonStruct(name: "Rex")
+var personD = personC
+personD.name = "Hamm"
 
 personC == personD // false
 
-let personE = PersonStruct(name: "Rex") personC == personE // true personC !=
-personE // false {{< / highlight >}}
+let personE = PersonStruct(name: "Rex")
+personC == personE // true
+personC != personE // false
+```
 
 Conveniently, providing an `==` function effectively gives us a `!=` function
 for free as you can see from the last example.
@@ -150,19 +170,23 @@ Fix-it is very helpfully pointing out that the method needs to be marked as
 suggestion will get rid of the error and then the name can be changed using this
 method.
 
-{{< highlight swift >}} struct PersonStruct: Equatable { var name: String
+```swift
+struct PersonStruct: Equatable {
+    var name: String
 
     mutating func changeName(to newName: String) {
         if !newName.isEmpty {
             name = newName
         }
     }
-
 }
 
-var personC = PersonStruct(name: "Woody") personC.name // Woody
+var personC = PersonStruct(name: "Woody")
+personC.name // Woody
 
-personC.changeName(to: "Sid") personC.name // Sid {{< / highlight >}}
+personC.changeName(to: "Sid")
+personC.name // Sid
+```
 
 There is no problem about using `mutating` and it will not have the unintended
 consequences of using classes. Despite the scary name, a mutating function

@@ -320,7 +320,17 @@ Navigation The basic navigation came down to three apps:
       <pubDate>Wed, 30 Mar 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/structs-vs-classes/</guid>
-      <description>One of the big debates among Swift developers is when to use structs and when to use classes. Classes are the building blocks of object-oriented programming but structs as provided by Swift are newly powerful. Structs have been around in C-based languages for a long time, but Swift has made them more powerful and given them more features so that they are almost indistinguishable from classes. So what are the differences and which one should you use?</description>
+      <description>One of the big debates among Swift developers is when to use structs and when to use classes.
+Classes are the building blocks of object-oriented programming but structs as provided by Swift are newly powerful. Structs have been around in C-based languages for a long time, but Swift has made them more powerful and given them more features so that they are almost indistinguishable from classes. So what are the differences and which one should you use?</description>
+    </item>
+    
+    <item>
+      <title>Learning Swift - Optionals</title>
+      <link>https://troz.net/post/2016/learning-swift-optionals/</link>
+      <pubDate>Sat, 12 Mar 2016 14:24:00 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2016/learning-swift-optionals/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -390,15 +400,6 @@ So what is a singleton? A singleton is a class that only expects to have a singl
       <guid>https://troz.net/post/2016/how-do-i-start-to-learn-swift/</guid>
       <description>The first thing to do is to download the latest version of Apple&amp;rsquo;s Swift Programming Language book from the iBooks Store.
 You can just read this book, especially the first section: &amp;ldquo;A Swift Tour&amp;rdquo;, but you will get more out of it if you follow along with the playground. There is a link to download the playground from the book which you can use directly if you are reading using iBooks on the Mac.</description>
-    </item>
-    
-    <item>
-      <title>Learning Swift - Optionals</title>
-      <link>https://troz.net/post/2016/learning-swift-optionals/</link>
-      <pubDate>Fri, 12 Feb 2016 14:24:00 +1000</pubDate>
-      
-      <guid>https://troz.net/post/2016/learning-swift-optionals/</guid>
-      <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

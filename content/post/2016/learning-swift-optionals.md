@@ -1,7 +1,7 @@
 ---
 title: "Learning Swift - Optionals"
-date: 2016-02-12T14:24:00+10:00
-lastmod: 2016-02-12T14:24:00+10:00
+date: 2016-03-12T14:24:00+10:00
+lastmod: 2018-01-03T19:09:00+10:00
 draft: false
 keywords: []
 description: ""
@@ -84,7 +84,7 @@ to be nil.
 
 ---
 
-## Setting an optional:
+## Setting an optional
 
 Setting the value of an optional variable is just the same as any other
 variable:
@@ -96,7 +96,7 @@ optionalInteger = 42
 
 ---
 
-## Getting an optional:
+## Getting an optional
 
 The difference arises when you need to get the data out of the optional variable
 in order to use it. This process is called un-wrapping and it means to get the
@@ -126,7 +126,7 @@ not be nil. There are much better and safer ways of doing that.
 
 ---
 
-### Use 'if let':
+### Use 'if let'
 
 ```swift
 func doubleNumber(_ optionalInteger: Int?) -> Int? {
@@ -144,7 +144,7 @@ func doubleNumber(_ optionalInteger: Int?) -> Int? {
 
 ---
 
-### Use guard:
+### Use guard
 
 ```swift
 func doubleNumber(_ optionalInteger: Int?) -> Int? {
@@ -174,12 +174,10 @@ from the check which can make it less obvious. The other potential issue with
 this rather contrived example:
 
 ```swift
-func isValidAddressBookEntry(
-    firstName: String?,
-    lastName: String?,
-    emailAddress: String?,
-    phoneNumber: String?) -> Bool {
-
+func isValidAddressBookEntry(firstName: String?,
+                             lastName: String?,
+                             emailAddress: String?,
+                             phoneNumber: String?) -> Bool {
         if let validFirstName = firstName {
             if let validLastName = lastName {
                 if let validEmail = emailAddress {
@@ -193,30 +191,46 @@ func isValidAddressBookEntry(
 }
 ```
 
-Thankfully, Swift 2 allows us to chain both `if let` and `guard` statements.
-Here is the previous example re-factored for Swift 2:
+Thankfully, Swift now allows us to chain both `if let` and `guard` statements.
+Here is the previous example re-factored to use `if let`:
 
 ```swift
-func isValidAddressBookEntry(
-    firstName: String?,
-    lastName: String?,
-    emailAddress: String?,
-    phoneNumber: String?) -> Bool {
+func isValidAddressBookEntrySwift2(firstName: String?,
+                                   lastName: String?,
+                                   emailAddress: String?,
+                                   phoneNumber: String?) -> Bool {
+      if let validFirstName = firstName,
+          let validLastName = lastName,
+          let validEmail = emailAddress,
+          let validPhone = phoneNumber {
+          return true
+      }
+      return false
+}
+```
 
-        if let
-            validFirstName = firstName,
-            validLastName = lastName,
-            validEmail = emailAddress,
-            validPhone = phoneNumber {
-                return true
-        }
-        return false
+And here is the same function but using `guard` which allows the inputs to be checked immediately and the function exited if the u=inputs are not valid. For a short function like this, the change is not really significant, but if the function does a lot of processing of the input data, checking first and getting out as soon as possible is more efficient.
+
+```swift
+func isValidAddressBookEntryUsingGuard(firstName: String?,
+                                       lastName: String?,
+                                       emailAddress: String?,
+                                       phoneNumber: String?) -> Bool {
+    guard
+        let validFirstName = firstName,
+        let validLastName = lastName,
+        let validEmail = emailAddress,
+        let validPhone = phoneNumber else {
+            return false
+    }
+
+    return true
 }
 ```
 
 ---
 
-### Use optional chaining:
+### Use optional chaining
 
 The final way to deal with optionals safely is to use optional chaining:
 
@@ -258,6 +272,6 @@ will not crash.
 ---
 
 All the examples in this article are available in a [Swift playground][1] which
-has been updated to Swift 3 syntax.
+has been updated to Swift 4 syntax.
 
 [1]: https://github.com/trozware/optionals
