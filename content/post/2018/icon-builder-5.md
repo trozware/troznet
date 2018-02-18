@@ -79,7 +79,7 @@ While this solved the alpha channel problem, the transparent parts of the icon j
 
 ![Transparent image converted to JPEG][4]
 
-_For anyone horrified at my use of force-unwrapping, I never do this in a production app but in a playground, it makes the code a shorter and it doesn't really matter if I get a crash there._
+_For anyone horrified at my use of force-unwrapping, I never do this in a production app but in a playground, it makes the code shorter and it doesn't really matter if I get a crash there._
 
 ### Converting transparent pixels to white
 
