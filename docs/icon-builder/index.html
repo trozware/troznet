@@ -17,10 +17,10 @@
 
 
 <meta name="author" content="Sarah Reichelt" />
-  <meta name="description" content="Icon Builder 3.2 is available from the Mac App Store.
+  <meta name="description" content="Icon Builder 5.0 will soon be available from the Mac App Store.
 Make and install a set of icons for an iOS, Mac or Apple Watch app in 3 steps: 1: Drag an image into the window.
-2: Choose the device family you are building for: iOS Universal, iPhone, iPad, Mac or Apple Watch.
-If you are building for iOS and your app still supports iOS 6, then you need to change the setting in the iOS popup menu." />
+2: Choose the device family you are building for: iOS Universal, iPhone, iPad, Apple Watch, Mac, Sticker Pack or iMessage.
+3: Click &amp;ldquo;Create icon assets&amp;rdquo; and select the folder containing your Xcode project." />
 
   <meta name="keywords" content="Swift, Apple, macOS, iOS, Apple Watch" />
 
@@ -29,7 +29,7 @@ If you are building for iOS and your app still supports iOS 6, then you need to 
 
 
 
-<meta name="generator" content="Hugo 0.31" />
+<meta name="generator" content="Hugo 0.36" />
 
 
 <link rel="canonical" href="https://troz.net/icon-builder/" />
@@ -48,10 +48,10 @@ If you are building for iOS and your app still supports iOS 6, then you need to 
 
 
 <meta property="og:title" content="Icon Builder" />
-<meta property="og:description" content="Icon Builder 3.2 is available from the Mac App Store.
+<meta property="og:description" content="Icon Builder 5.0 will soon be available from the Mac App Store.
 Make and install a set of icons for an iOS, Mac or Apple Watch app in 3 steps: 1: Drag an image into the window.
-2: Choose the device family you are building for: iOS Universal, iPhone, iPad, Mac or Apple Watch.
-If you are building for iOS and your app still supports iOS 6, then you need to change the setting in the iOS popup menu." />
+2: Choose the device family you are building for: iOS Universal, iPhone, iPad, Apple Watch, Mac, Sticker Pack or iMessage.
+3: Click &ldquo;Create icon assets&rdquo; and select the folder containing your Xcode project." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://troz.net/icon-builder/" />
 
@@ -72,15 +72,15 @@ If you are building for iOS and your app still supports iOS 6, then you need to 
 
 
 <meta itemprop="name" content="Icon Builder">
-<meta itemprop="description" content="Icon Builder 3.2 is available from the Mac App Store.
+<meta itemprop="description" content="Icon Builder 5.0 will soon be available from the Mac App Store.
 Make and install a set of icons for an iOS, Mac or Apple Watch app in 3 steps: 1: Drag an image into the window.
-2: Choose the device family you are building for: iOS Universal, iPhone, iPad, Mac or Apple Watch.
-If you are building for iOS and your app still supports iOS 6, then you need to change the setting in the iOS popup menu.">
+2: Choose the device family you are building for: iOS Universal, iPhone, iPad, Apple Watch, Mac, Sticker Pack or iMessage.
+3: Click &ldquo;Create icon assets&rdquo; and select the folder containing your Xcode project.">
 
 
 <meta itemprop="datePublished" content="2012-10-01T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2012-10-01T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1489">
+<meta itemprop="wordCount" content="1670">
 
 
 
@@ -163,7 +163,7 @@ If you are building for iOS and your app still supports iOS 6, then you need to 
   <div class="post-content">
       
 
-<p><a href="http://itunes.apple.com/app/icon-builder/id552293482?mt=12">Icon Builder 3.2</a> is available from the Mac App Store.</p>
+<p><a href="http://itunes.apple.com/app/icon-builder/id552293482?mt=12">Icon Builder 5.0</a> will soon be available from the Mac App Store.</p>
 
 <h2 id="make-and-install-a-set-of-icons-for-an-ios-mac-or-apple-watch-app-in-3-steps">Make and install a set of icons for an iOS, Mac or Apple Watch app in 3 steps:</h2>
 
@@ -171,18 +171,25 @@ If you are building for iOS and your app still supports iOS 6, then you need to 
 
 <p><img src="/images/IconBuilder1.png" alt="Make an icon set in 3 steps" /></p>
 
-<p>2: Choose the device family you are building for: iOS Universal, iPhone, iPad,
-Mac or Apple Watch.</p>
+<p>2: Choose the device family you are building for: iOS Universal, iPhone, iPad, Apple Watch, Mac, Sticker Pack or iMessage.</p>
 
-<p>If you are building for iOS and your app still supports iOS 6, then you need to
-change the setting in the iOS popup menu.</p>
+<p>3: Click &ldquo;Create icon assets&rdquo; and select the folder containing your Xcode project.</p>
 
-<p>3: Click &ldquo;Create icon assets&rdquo; and select the folder containing your Xcode
-project.</p>
-
-<p>Icon Builder will create an AppIcon set inside the &ldquo;Images.xcassets&rdquo; folder for
-that project.<br />
+<p>Icon Builder will create an AppIcon set inside the &ldquo;Assets.xcassets&rdquo; folder for
+that project.
 The icons are immediately ready for use in your project with no installation necessary.</p>
+
+<hr />
+
+<h2 id="why-is-this-necessary">Why is this necessary?</h2>
+
+<p>Depending on the devices supported by your app, you will need many different sizes of icon file. There are some icons for iPad only, some for iPhone / iPod Touch only and others required for any iOS device. Mac apps use completely different icon sizes. Apple Watch apps need a completely different set of icons and now with iOS 10, Messages apps and Sticker apps require even more - 2 different icon sets for Messages app. Additionally, you will need larger versions of each image to support Retina displays.</p>
+
+<p>These icons must be in PNG format, with the color space set to sRGB (or P3 for iOS apps, but Icon Builder always uses sRGB) and for iOS apps, with no transparency and with alpha channel in the image files.</p>
+
+<p>Your Xcode project contains a special folder called “Assets.xcassets” which contains all the image files used in your project, including the app icons. Icon Builder will install the icon files into your “Assets.xcassets” folder automatically and the icons are immediately ready for use in your project with no installation necessary.</p>
+
+<p>Icon Builder still allows you to create the old-style .icns file if required by selecting “Mac icns” in the device family popup menu. This can be useful for other development environments or when making icons for documents in your Mac app.</p>
 
 <blockquote>
 <p>You will get the best results if you start with a 1024 x 1024 image.</p>
@@ -190,226 +197,160 @@ The icons are immediately ready for use in your project with no installation nec
 
 <hr />
 
-<h2 id="why-is-this-necessary">Why is this necessary?</h2>
-
-<p>Depending on the devices supported by your app, you will need many different
-sizes of icon file. There are some icons for iPad only, some for iPhone / iPod
-Touch only and others required for any iOS device. Mac apps use completely
-different icon sizes. And now we have Apple Watch with a different set of icons
-again. Additionally, you will need larger versions of each image to support
-Retina displays and iOS 7 &amp; 8 use different icon sizes from the previous
-versions of iOS. The iPhone 6 Plus uses @3x images in some cases.</p>
-
-<p>With Xcode 5 and later, Apple has changed the way a project stores image files,
-including the various sizes of app icon. Now your project contains a special
-folder called &ldquo;Images.xcassets&rdquo; which contains all the image files used in your
-project, including the app icons. Icon Builder will install the icon files into
-your &ldquo;Images.xcassets&rdquo; folder automatically.</p>
-
-<hr />
-
 <h2 id="using-the-icon-images">Using the icon images:</h2>
 
 <p><img src="/images/IconBuilder2.png" alt="Using the icons" /></p>
 
-<p>Icon Builder creates all the required image files in a folder called
-&ldquo;AppIcon.appiconset&rdquo; inside the &ldquo;Images.xcassets&rdquo; folder for your project. If
-you already have images stored in an appiconset folder, Icon Builder will not
-over-write them, but will add a new folder e.g. &ldquo;AppIcon-1.appiconset&rdquo;. You can
-then switch between AppIcon sets in the project settings for your target app.</p>
+<p>Icon Builder creates all the required image files in a folder called “AppIcon.appiconset”, “AppIcon-Watch.appiconset” or “iMessage App Icon.stickersiconset” inside the “Assets.xcassets” folder for your project. If you already have images stored in an appiconset folder, Icon Builder will not over-write them, but will add a new folder e.g. “AppIcon-1.appiconset”. You can then switch between AppIcon sets in the project settings for your target app.</p>
 
-<p>For submitting apps to the iTunes App Store, you will need a 1024x1024 image.
-For convenience, this file (iTunesArtwork@2x.jpg) is saved for you in a folder
-called iTunes Artwork images in the same folder as your xcodeproj file. For iOS,
-this folder will also include a 512x512 file called iTunesArtwork with no file
-extension. You will need to include this in your project (but not in
-&ldquo;Images.xcassets&rdquo;) if you are distributing an AdHoc version of your iOS app
-through iTunes.</p>
-
-<p>The ReadMe-IconBuilder.rtf file (saved in the same folder as your xcodeproj
-file) has more information about the image files created.</p>
+<p>If you prefer to add the icon files manually, select a folder that does not contain a .xcodeproj file and the icon sets will be saved directly to that folder. You can then drag the iconset folder manually into “Assets.xcassets” in your Xcode project.</p>
 
 <hr />
 
-<h2 id="what-s-new-in-version-3">What&rsquo;s New in version 3?</h2>
+<h2 id="what-s-new-in-version-5">What&rsquo;s New in version 5?</h2>
 
 <ul>
-<li>Support for WatchKit app icons (version 3.0.1)</li>
-<li>Simplified interface: removed display of smaller icons.</li>
-<li>Fix for @3x images not being saved when you selected iOS 6 support.</li>
-<li>iTunesArtwork@2x file now saved as a JPG to avoid iTunes Connect errors.</li>
-<li>Removed CarPlay icon - Xcode sometimes gave errors when this was included.</li>
+<li>Icon images have the correct sRGB color profile attached.</li>
+<li>For iOS icons, transparency is replaced by white and the alpha channel is removed from the image file.</li>
+<li>The icons created match the latest Apple guidelines.</li>
+<li>The app has been completely re-written in Swift to use the latest macOS APIs so only supports macOS 10.13.x or later.</li>
 </ul>
-
-<p>In previous versions of Icon Builder, the app saved all the icon files and you
-had to install them into your app project manually. Now Icon Builder creates an
-appiconset and installs it automatically in your project.</p>
-
-<p>The other big change is that Icon Builder now creates icons for Mac apps. Mac
-apps used to use a different file format, but now they use appiconsets too, so
-it made sense to merge both my icon apps into one.</p>
-
-<p>This app will NOT create the icns files that were used for Mac apps before Xcode
-5 or 6. If you need icns files for another environment, use <a href="/icns-maker/">Icns Maker</a>
-instead.</p>
 
 <hr />
 
 <h2 id="faq">FAQ</h2>
 
-<p>I thought there were only 2 steps before - why are there 3 now?</p>
+<p><strong>I thought there were only 2 steps before - why are there 3 now?</strong></p>
 
 <ul>
-<li>The 2 step process gave you a folder of image files. You then had to install
-them manually. So really, there were always three steps, but the app was not
-helping you with step 3. By adding a third step asking you to locate your
-project folder, I was able to make the app install the icons for you
-automatically. So the app is doing step 3 for you.</li>
+<li>The 2 step process gave you a folder of image files. You then had to install them manually. So really, there were always three steps, but the app was not helping you with step 3. By adding a third step asking you to locate your project folder, I was able to make the app install the icons for you automatically. So the app is doing step 3 for you.</li>
 </ul>
 
-<p>What if I want to install the icon files myself?</p>
+<p><strong>What if I want to install the icon files myself?</strong></p>
 
 <ul>
-<li>When asked to select a folder to save the icons, select a folder that does not
-contain a .xcodeproj file. Icon Builder will save all the files, but not
-install them into an Images.xcassets folder automatically.</li>
+<li>When asked to select a folder to save the icons, select a folder that does not contain a .xcodeproj file. Icon Builder will save all the files, but not install them into an Assets.xcassets or Images.xcassets folder automatically.</li>
 </ul>
 
-<p>What image types can I use?</p>
+<p><strong>What image types can I use?</strong></p>
 
 <ul>
-<li>Any image type compatible with QuickTime, including JPEG, PNG, TIFF, GIF, PDF,
-PSD, BMP.</li>
+<li>Any image type compatible with QuickTime, including JPEG, PNG, TIFF, GIF, PDF, PSD, BMP.</li>
 </ul>
 
-<p>Does this app make icons for iOS 8 apps?</p>
+<p><strong>Does Icon Builder create icons for use in Mac apps?</strong></p>
 
 <ul>
-<li>Yes, the default is to make icons for iOS 7 &amp; 8 only. If your app supports iOS
-6 as well, select &ldquo;Include iOS 6&rdquo; from the iOS popup and the icon sizes will
-be altered to suit. iOS 8 does require some larger icons to support the higher
-resolution display in the iPhone 6 Plus. Icon Builder now also creates those
-files.</li>
+<li>Yes. Mac apps use image assets just like iOS apps, but with different image sizes. Select &ldquo;Mac App&rdquo; in the Device popup to create icons for a Mac app.</li>
+<li>Icon Builder still allows you to create the old-style .icns file if required by selecting &ldquo;Mac icns file&rdquo; in the Device popup menu. This can be useful for other development environments or when making icons for documents in your Mac app.</li>
 </ul>
 
-<p>Does Icon Builder create icons for use in Mac apps?</p>
+<p><strong>What is the difference between Mac App Icon and Mac icns file?</strong></p>
 
 <ul>
-<li>Yes. When Mac apps used a different file format, I had a separate app to
-create Mac icns files. Now Mac apps use image assets just like iOS apps, but
-with different image sizes. Select Mac in the Device popup to create icons for
-a Mac app.</li>
+<li>&ldquo;Mac AppIcon&rdquo; will create the modern AppIcon set of images for inclusion in your Assets.xcassets.</li>
+<li>&ldquo;Mac icns file&rdquo; will create an old style .icns file with all the image sizes embedded into a single file. Open the file in Preview to see the contents.</li>
 </ul>
 
-<p>What version of Xcode do I need?</p>
+<p><strong>Does Icon Builder create icons for use in Watch Kit apps?</strong></p>
 
 <ul>
-<li>This app requires Xcode 5.x or later.</li>
+<li>Yes. Select &ldquo;Apple Watch&rdquo; from the Device popup. Create a WatchKit target in your iOS project if necessary. When you are choosing the location to save the icons, select the folder containing the main .xcodeproj file. Icon Builder will find the WatchKit App folder and save the icons to the WatchKit App&#39;s Assets.xcassets folder. The icon set will be called AppIcon-Watch to help you distinguish between sets when allocating them to your apps.</li>
+<li>When the WatchKit icons have been made, Icon Builder will ask you if you want to use the same image to create the icons for the parent iOS app. Unless you want a different icon for the parent app, select the parent app device at this point to create the second set.</li>
 </ul>
 
-<p>I don&rsquo;t use Xcode, I use an alternative IDE. Can I still use the icons created
-by this app?</p>
+<p><strong>Does Icon Builder create icons for use in iMessage apps and Sticker Pack apps?</strong></p>
 
 <ul>
-<li>Yes, you can save the icon set to a folder and install the icons manually in
-the IDE of your choice.</li>
+<li>Yes. Select &ldquo;Sticker Pack App&rdquo; or &ldquo;iMessage App&rdquo; from the Device popup. When you are choosing the location to save the icons, select the folder containing the main .xcodeproj file and Icon Builder will create the icon sets accordingly.</li>
+<li>iMessage apps require two sets: one for the Messages extension and one for the parent iOS app. When the iMessage icons have been made, Icon Builder will ask you if you want to use the same image to create the icons for the parent iOS app. Unless you want a different icon for the parent app, select the parent app device at this point to create the second set.</li>
 </ul>
 
-<p>What if my starting image is the wrong size?</p>
+<p><strong>Why is my starting image re-sized for a Sticker Pack app or iMessage app?</strong></p>
 
 <ul>
-<li>If your image is not square, it will be cropped when you drag it in.</li>
+<li>For Mac, iOS and Apple Watch apps, all the icons are square. For Sticker Pack apps and iMessage apps, most (but not all) of the icons are letterbox-shaped. Icon Builder displays your starting image in letterbox format when you choose &ldquo;Sticker Pack App&rdquo; &ldquo;iMessage App&rdquo; so that you can see how it will look.</li>
+</ul>
+
+<p><strong>When I choose any iOS app type, my starting image loses its transparent background!</strong></p>
+
+<ul>
+<li>Apple requires that iOS icons have no transparency so Icon Builder displays the image like that so you can confirm the look. If you do not like the default change, edit the image to remove the transparency before using Icon Builder.</li>
+</ul>
+
+<p><strong>What versions of macOS and Xcode do I need?</strong></p>
+
+<ul>
+<li>This app requires macOS 10.13 as it uses the latest APIs to manipulate images.</li>
+<li>Xcode 9 is the latest version, but Xcode 8 will probably work.</li>
+</ul>
+
+<p><strong>I don&rsquo;t use Xcode, I use an alternative IDE. Can I still use the icons created by this app?</strong></p>
+
+<ul>
+<li>Yes, you can save the icon set to a folder and install the icons manually in the IDE of your choice. If your IDE requires a .icns file, select &ldquo;Mac icns file&rdquo; from the device popup.</li>
+</ul>
+
+<p><strong>What if my starting image is the wrong size?</strong></p>
+
+<ul>
+<li>If your image is not the correct size, it will be cropped or expanded when you drag it in.</li>
 <li>It will then be resized to create all the required image sizes.</li>
+<li>If this does not give the result you want, resize or crop the image before dropping it into Icon Builder.</li>
 </ul>
 
-<p>How do I start again with a blank slate?</p>
+<p><strong>How do I start again with a blank slate?</strong></p>
 
 <ul>
 <li>Choose &ldquo;New&rdquo; from the File menu, or press Command-N.</li>
 </ul>
 
-<p>Do I have to drag images into the app?</p>
+<p><strong>Do I have to drag images into the app?</strong></p>
 
 <ul>
 <li>No, you can copy &amp; paste an image file, or an image.</li>
-<li>Or choose &ldquo;Open Image…&rdquo; from the File menu, or press Command-O.</li>
+<li>Or choose &ldquo;Open Image&hellip;&rdquo; from the File menu, or press Command-O.</li>
 </ul>
 
-<p>How can I delete the icons from my project?</p>
+<p><strong>How can I delete the icons from my project?</strong></p>
 
 <ul>
-<li>Select &ldquo;Images.xcassets&rdquo; in the project navigator.</li>
+<li>Select &ldquo;Assets.xcassets&rdquo; in the project navigator.</li>
 <li>In the next sidebar, you will see a list of the asset sets in your project.</li>
-<li>Select the one you want to delete (e.g. AppIcon, AppIcon-1) and press the
-Delete key.</li>
+<li>Select the one you want to delete (e.g. AppIcon, AppIcon-1, AppIcon-Watch) and press the Delete key.</li>
 </ul>
 
-<p>I have an old project with no &ldquo;Images.xcassets&rdquo; - how do I add that?</p>
+<p><strong>I have an old project with no &ldquo;Assets.xcassets&rdquo; - how do I add that?</strong></p>
 
 <ul>
 <li>Select the project at the top of the Project Navigator.</li>
 <li>Make sure you are editing the target and go to the General tab.</li>
 <li>In the &ldquo;App Icons&rdquo; section, click the &ldquo;Use Asset Catalog&rdquo; button.</li>
-<li>The &ldquo;Images.xcassets&rdquo; folder will be created and any existing icons will be
-migrated to the new structure.</li>
+<li>The &ldquo;Assets.xcassets&rdquo; folder will be created and any existing icons will be migrated to the new structure.</li>
 </ul>
 
-<p>Why has the app made more icons than I need?</p>
+<p><strong>What if I want to use the images from a Mac .icns file?</strong></p>
 
 <ul>
-<li>If your app only supports iOS <sup>7</sup>&frasl;<sub>8</sub> or only works with one family of iOS
-devices, then it does not need all the icons.</li>
-<li>Select your options from the Device &amp; iOS popups to adjust the number of icons
-created.</li>
+<li>Drag it in just like any image file. However the largest image in an .icns bundle is 512 x 512, so you may want to create a larger version.</li>
 </ul>
 
-<p>What if I want to use the images from a Mac .icns file?</p>
+<p><strong>Why are there files with @2x and @3x in the names?</strong></p>
 
 <ul>
-<li>Drag it in just like any image file. However the largest image in an .icns
-bundle is 512 x 512, so you may want to create a larger version.</li>
+<li>These are for high-resolution displays. iOS knows it needs a certain image size, but if the device has a Retina display, the system will look for an @2x file so it can squeeze twice as many pixels in and make it look sharp. For the larger or more recent iPhones, the system will use the @3x files if they are available.</li>
 </ul>
 
-<p>Why are there files with @2x and @3x in the names?</p>
+<p><strong>I use Pixelmator. Can I drag my pxm files into Icon Builder?</strong></p>
 
 <ul>
-<li>These are for Retina displays and for iOS 7 or 8. iOS knows it needs a certain
-image size, but if the device has a Retina display, the system will look for
-an @2x file so it can squeeze twice as many pixels in and make it look sharp.
-For the iPhone 6 Plus, the system will use the @3x files if they are
-available.</li>
+<li>No. Pixelmator&rsquo;s pxm files cannot be used directly. Export them as png files first.</li>
 </ul>
 
-<p>Why is the iTunesArtwork@2x.jpg file a JPG when all the other files are PNGs?</p>
+<p><strong>I’m a programmer, not a graphic designer. How do I make icon images?</strong></p>
 
 <ul>
-<li>iTunes Connect requires a 1024x1024 image file uploaded for each app.
-Recently, iTunes Connect has started rejecting some PNGs because they
-contained an alpha channel, even if they appeared to have no transparency. The
-best way to ensure there would be no alpha channel was to save the image as a
-JPG.</li>
-</ul>
-
-<p>Why does the iTunesArtwork file have no file extension?</p>
-
-<ul>
-<li>I don&rsquo;t know. But that is what Apple specifies for AdHoc distribution through
-iTunes. It is actually a .png image so if you need to open it, add the .png
-file extension temporarily.</li>
-</ul>
-
-<p>I use Pixelmator. Can I drag my pxm files into Icon Builder?</p>
-
-<ul>
-<li>No. Pixelmator&rsquo;s pxm files cannot be used directly. Export them as png files
-first.</li>
-</ul>
-
-<p>I’m a programmer, not a graphic designer. How do I make icon images?</p>
-
-<ul>
-<li>One easy way to create basic shapes with gradients, text, added images etc. is
-to use Keynote. I presume PowerPoint has the same sort of abilities.</li>
+<li>One easy way to create basic shapes with gradients, text, added images etc. is to use Keynote. I presume PowerPoint has the same sort of abilities.</li>
 </ul>
 
   </div>
