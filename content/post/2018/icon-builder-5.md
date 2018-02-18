@@ -6,6 +6,10 @@ draft: false
 description: ""
 tags: ["icons", "mac", "ios", "watch", "apple watch"]
 toc: true
+mac_app_desc: Make and install a set of icons for an iOS, Mac or Apple Watch app in
+  just 3 steps.
+mac_app_image: /icons/IconBuilder128.png
+mac_app_name: Icon Builder
 ---
 
 [Icon Builder 5.0][9] has been submitted to the [Mac App Store][1] for review and should be available within a day or two. This is a complete re-write for better compatibility with Apple's latest icon requirements. Read on to see what I have fixed and how...
