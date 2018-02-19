@@ -16,7 +16,7 @@
       <pubDate>Sun, 18 Feb 2018 10:19:18 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/icon-builder-5/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;Icon Builder 5.0&lt;/a&gt; has been submitted to the &lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Mac App Store&lt;/a&gt; for review and should be available within a day or two. This is a complete re-write for better compatibility with Apple&amp;rsquo;s latest icon requirements. Read on to see what I have fixed and how&amp;hellip;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;Icon Builder 5.0&lt;/a&gt; is now available from the &lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Mac App Store&lt;/a&gt;. This is a complete re-write for better compatibility with Apple&amp;rsquo;s latest icon requirements. Read on to see what I have fixed and how&amp;hellip;&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -815,10 +815,11 @@ Creating icon files for Mac apps: In versions of Xcode before 4.4, Apple provide
       <pubDate>Mon, 01 Oct 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/icon-builder/</guid>
-      <description>Icon Builder 5.0 will soon be available from the Mac App Store.
+      <description>Icon Builder 5.0 is available from the Mac App Store.
 Make and install a set of icons for an iOS, Mac or Apple Watch app in 3 steps: 1: Drag an image into the window.
 2: Choose the device family you are building for: iOS Universal, iPhone, iPad, Apple Watch, Mac, Sticker Pack or iMessage.
-3: Click &amp;ldquo;Create icon assets&amp;rdquo; and select the folder containing your Xcode project.</description>
+3: Click &amp;ldquo;Create icon assets&amp;rdquo; and select the folder containing your Xcode project.
+Icon Builder will create an AppIcon set inside the &amp;ldquo;Assets.</description>
     </item>
     
     <item>

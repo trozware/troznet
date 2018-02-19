@@ -8,7 +8,7 @@ title: Icon Builder
 url: /icon-builder/
 ---
 
-[Icon Builder 5.0][3] will soon be available from the Mac App Store.
+[Icon Builder 5.0][3] is available from the Mac App Store.
 
 [3]: http://itunes.apple.com/app/icon-builder/id552293482?mt=12
 
