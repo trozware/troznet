@@ -1,0 +1,145 @@
+[{
+  "classname": "Death Knight",
+  "specs": [{
+    "name": "Blood",
+    "priorities": ["Stamina", "Strength", "Haste", "Versatility", "Mastery", "Crit"]
+  }, {
+    "name": "Frost",
+    "priorities": ["Strength", "Mastery", "Crit", "Haste", "Versatility"]
+  }, {
+    "name": "Unholy",
+    "priorities": ["Strength", "Mastery", "Haste", "Crit = Versatility"]
+  }]
+}, {
+  "classname": "Demon Hunter",
+  "specs": [{
+    "name": "Havoc",
+    "priorities": ["Crit", "Haste", "Versatility", "Agility", "Mastery"]
+  }, {
+    "name": "Vengeance",
+    "priorities": ["Stamina", "Agility", "Versatility", "Mastery = Haste", "Crit"]
+  }]
+}, {
+  "classname": "Druid",
+  "specs": [{
+    "name": "Balance",
+    "priorities": ["Haste", "Intellect", "Mastery", "Crit", "Versatility"]
+  }, {
+    "name": "Feral",
+    "priorities": ["Agility", "Crit", "Mastery", "Versatility", "Haste"]
+  }, {
+    "name": "Guardian",
+    "priorities": ["Stamina", "Versatility", "Mastery", "Haste", "Agility", "Crit"]
+  }, {
+    "name": "Restoration",
+    "priorities": ["Intellect", "Mastery", "Haste", "Crit", "Versatility"]
+  }]
+}, {
+  "classname": "Hunter",
+  "specs": [{
+    "name": "Beast Mastery",
+    "priorities": ["Agility", "Mastery", "Haste", "Crit", "Versatility"]
+  }, {
+    "name": "Marksmanship",
+    "priorities": ["Mastery", "Agility", "Crit", "Haste", "Versatility"]
+  }, {
+    "name": "Survival",
+    "priorities": ["Agility", "Haste", "Mastery", "Crit", "Versatility"]
+  }]
+}, {
+  "classname": "Mage",
+  "specs": [{
+    "name": "Arcane",
+    "priorities": ["Intellect", "Mastery", "Crit", "Versatility", "Haste"]
+  }, {
+    "name": "Fire",
+    "priorities": ["Intellect", "Crit", "Mastery", "Haste", "Versatility"]
+  }, {
+    "name": "Frost",
+    "priorities": ["Intellect", "Haste", "Crit", "Versatility", "Mastery"]
+  }]
+}, {
+  "classname": "Monk",
+  "specs": [{
+    "name": "Brewmaster",
+    "priorities": ["Stamina", "Agility", "Haste", "Mastery = Crit", "Versatility"]
+  }, {
+    "name": "Mistweaver",
+    "priorities": ["Intellect", "Crit", "Versatility", "Mastery", "Haste"]
+  }, {
+    "name": "Windwalker",
+    "priorities": ["Agility", "Mastery", "Crit", "Versatility", "Haste"]
+  }]
+}, {
+  "classname": "Paladin",
+  "specs": [{
+    "name": "Holy",
+    "priorities": ["Intellect", "Crit", "Mastery", "Versatility", "Haste"]
+  }, {
+    "name": "Protection",
+    "priorities": ["Stamina", "Strength", "Haste", "Versatility", "Mastery", "Crit"]
+  }, {
+    "name": "Retribution",
+    "priorities": ["Strength", "Haste", "Crit = Versatility", "Mastery"]
+  }]
+}, {
+  "classname": "Priest",
+  "specs": [{
+    "name": "Discipline",
+    "priorities": ["Intellect", "Haste", "Crit = Mastery", "Versatility"]
+  }, {
+    "name": "Holy",
+    "priorities": ["Intellect", "Mastery", "Crit", "Haste", "Versatility"]
+  }, {
+    "name": "Shadow",
+    "priorities": ["Haste", "Crit", "Mastery", "Versatility", "Intellect"]
+  }]
+}, {
+  "classname": "Rogue",
+  "specs": [{
+    "name": "Assassination",
+    "priorities": ["Agility", "Mastery", "Versatility", "Crit", "Haste"]
+  }, {
+    "name": "Outlaw",
+    "priorities": ["Agility", "Versatility", "Haste", "Crit", "Mastery"]
+  }, {
+    "name": "Subtlety",
+    "priorities": ["Agility", "Mastery", "Versatility", "Crit", "Haste"]
+  }]
+}, {
+  "classname": "Shaman",
+  "specs": [{
+    "name": "Elemental",
+    "priorities": ["Intellect", "Mastery", "Crit", "Versatility", "Haste"]
+  }, {
+    "name": "Enhancement",
+    "priorities": ["Agility", "Haste", "Mastery", "Crit", "Versatility"]
+  }, {
+    "name": "Restoration",
+    "priorities": ["Intellect", "Mastery", "Crit", "Versatility", "Haste"]
+  }]
+}, {
+  "classname": "Warlock",
+  "specs": [{
+    "name": "Affliction",
+    "priorities": ["Mastery", "Crit", "Haste", "Intellect", "Versatility"]
+  }, {
+    "name": "Demonology",
+    "priorities": ["Haste", "Intellect", "Crit", "Mastery", "Versatility"]
+  }, {
+    "name": "Destruction",
+    "priorities": ["Intellect", "Haste", "Crit", "Versatility", "Mastery"]
+  }]
+}, {
+  "classname": "Warrior",
+  "specs": [{
+    "name": "Arms",
+    "priorities": ["Mastery", "Haste", "Strength", "Versatility", "Crit"]
+  }, {
+    "name": "Fury",
+    "priorities": ["Haste", "Mastery", "Versatility", "Strength", "Crit"]
+  }, {
+    "name": "Protection",
+    "priorities": ["Stamina", "Strength", "Haste", "Mastery", "Versatility", "Crit"]
+  }]
+}]

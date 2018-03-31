@@ -5,10 +5,38 @@
     <link>https://troz.net/</link>
     <description>Recent content on TrozWare</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 18 Feb 2018 10:19:18 +1000</lastBuildDate>
+    <lastBuildDate>Sat, 31 Mar 2018 11:43:03 +1000</lastBuildDate>
     
 	<atom:link href="https://troz.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Wow Stats</title>
+      <link>https://troz.net/wow-stats/</link>
+      <pubDate>Sat, 31 Mar 2018 11:43:03 +1000</pubDate>
+      
+      <guid>https://troz.net/wow-stats/</guid>
+      <description>WoW Stats Do you play World of Warcraft? Have you ever agonised over a new piece of gear - are those stats better or worse for my class and specialization?
+Is your computer festooned with sticky notes reminding you that your prot pally needs haste over mastery but the enhancement shaman needs agility?
+Get rid of the notes and use the WoW Stats app instead.
+
+Data comes from Noxxic and is updated automatically with each new patch.</description>
+    </item>
+    
+    <item>
+      <title>Consistent Swift Style</title>
+      <link>https://troz.net/post/2018/swiftlint/</link>
+      <pubDate>Sat, 31 Mar 2018 09:35:21 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2018/swiftlint/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Why is important to style your code?&lt;/li&gt;
+&lt;li&gt;How do you decide on a style?&lt;/li&gt;
+&lt;li&gt;Is there a way to enforce this style automatically?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Icon Builder 5</title>

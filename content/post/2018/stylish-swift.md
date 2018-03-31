@@ -1,20 +1,18 @@
 ---
 title: "Stylish Swift"
-date: 2018-02-18T18:57:17+10:00
-lastmod: 2018-02-18T18:57:17+10:00
+date: 2018-03-31T09:34:18+10:00
+lastmod: 2018-03-31T09:34:18+10:00
 draft: true
-description: "How to write Swiftier Swift."
+description: "Writing Swiftier Swift."
 tags: ["swift"]
 toc: true
 ---
 
-How to write Swiftier Swift.
+When Swift first appeared in 2014, the early adopters were mainly, like me, Objective-C programmers. This lead to people writing what was effectively Objective-C code, but with Swift syntax. While it worked, this was code that didn't make use of the advantages of a modern language like Swift. It was like speaking a foreign language by using a direct translation of each word - understandable, but not really correct.
 
 <!--more-->
 
 ## Early Swift
-
-When Swift first appeared in 2014, the early adopters were mainly, like me, Objective-C programmers. This lead to people writing what was effectively Objective-C code, but with Swift syntax. While it worked, this was code that didn't make use of the advantages of a modern language like Swift. It was like speaking a foreign language by using a direct translation of each word - it is understandable, but not really correct.
 
 As an example, here is how an Objective-C programmer might have written Swift code to double every number between 1 and 20:
 
@@ -55,16 +53,19 @@ And what makes the Swiftier version better?
 * Immutability - it uses a constant (let) instead of a variable (var) and never changes it.
 * Range instead of a strict loop.
 * No semi-colons or unnecessary symbols.
-* Function programming (map) for greater efficiency.
+* Functional programming (map) for greater efficiency.
 
 ## What makes code Swifty?
 
 I don't have a definitive list, but here are some of the things I try to do, or at least consider:
 
 * Use `let` instead of `var` wherever possible.
+* Don't end lines with semi-colons.
+* Avoid using `self.` when not necessary.
 * Use `for ... in` to loop through collections.
+* Never force-unwrap optionals.
 * Think about whether you can use a `struct` instead of a `class`.
-* Think about whether you can use a `protocol` instead of class inheritance.
-* Try to avoid mutability.
-* Use `map, 'filter` or `reduce` where possible.
+* Think about using a `protocol` instead of class inheritance.
+* Use `map`, `filter` and `reduce` where possible.
+* Performs checks early in functions and get out quickly, using `guard`.
 * Make `extensions` to keep your code organised.
