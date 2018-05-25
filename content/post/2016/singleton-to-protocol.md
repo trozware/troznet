@@ -34,11 +34,11 @@ If you are using an object with a property name of "shared", "standard" or
 There are probably many different opinions here but I have two thoughts about
 this:
 
-1. They are effectively global variables and global variables can make your code
-   messy and un-predictable.
-2. If they can be accessed by multiple other objects, possibly at the same time,
-   then you can get conflicts. These can be handled by clever use of background
-   queues, but it isn't easy.
+1.  They are effectively global variables and global variables can make your code
+    messy and un-predictable.
+2.  If they can be accessed by multiple other objects, possibly at the same time,
+    then you can get conflicts. These can be handled by clever use of background
+    queues, but it isn't easy.
 
 ## What to use instead?
 
@@ -132,6 +132,6 @@ And this article by [Matthijs Hollemans][4] was invaluable to me in
 demonstrating the problems with object inheritance that are solved by protocols.
 
 [1]: https://en.wikipedia.org/wiki/Singleton,_New_South_Wales
-[2]: http://cjwirth.com/2016/01/20/swift-protocol-extension-weirdness/
+[2]: https://cjwirth.com/tech/swift-protocol-extension-weirdness
 [3]: https://developer.apple.com/videos/play/wwdc2015/408/
 [4]: http://matthijshollemans.com/2015/07/22/mixins-and-traits-in-swift-2/

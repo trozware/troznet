@@ -274,7 +274,7 @@ extension Loggable {
 </code></pre>
 
 <p>We run immediately into one of the peculiarities of Swift protocol extensions
-which has been very well explained by <a href="http://cjwirth.com/2016/01/20/swift-protocol-extension-weirdness/">Caesar Wirth</a>. If I had declared
+which has been very well explained by <a href="https://cjwirth.com/tech/swift-protocol-extension-weirdness">Caesar Wirth</a>. If I had declared
 <code>addToLog(_:)</code> in the protocol, then any class or struct conforming to this
 protocol would have been free to over-write this function and provide its own
 version. This is not what I wanted here - I wanted every object to use the same
@@ -407,13 +407,6 @@ demonstrating the problems with object inheritance that are solved by protocols.
   
 <script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
 
-
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-5511808-2', 'auto');
-ga('send', 'pageview');
-</script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
 
 
 
