@@ -25,10 +25,10 @@
   },
   {
     "icon": "time-ios36.png",
-    "name": "Time In Words",
+    "name": "World Time In Words",
     "webpage": "/time-in-words/",
-    "version": "4.0",
-    "updated": "23 Apr 2015",
+    "version": "5.0",
+    "updated": "2 Jun 2018",
     "app_id": "498403851"
   },
   {
@@ -38,13 +38,13 @@
     "version": "1.0",
     "updated": "22 Apr 2016",
     "app_id": "1091394524"
-},
-{
-  "icon": "wow-stats36.png",
-  "name": "WoW Stats",
-  "webpage": "/wow-stats/",
-  "version": "1.1",
-  "updated": "31 Mar 2018",
-  "app_id": "1364247768"
-}
+  },
+  {
+    "icon": "wow-stats36.png",
+    "name": "WoW Stats",
+    "webpage": "/wow-stats/",
+    "version": "1.2",
+    "updated": "12 Jun 2018",
+    "app_id": "1364247768"
+  }
 ]

@@ -3,6 +3,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://troz.net/post/2018/functional-programming/</loc>
+    <lastmod>2018-06-14T14:18:53+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/post/2018/world-time-in-words-ios-update/</loc>
+    <lastmod>2018-06-14T10:41:46+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://troz.net/post/2018/privacy-policy/</loc>
     <lastmod>2018-05-26T09:51:56+10:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -690,7 +704,7 @@
   
   <url>
     <loc>https://troz.net/time-in-words/</loc>
-    <lastmod>2012-02-08T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-14T10:38:20+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -772,6 +786,13 @@
   </url>
   
   <url>
+    <loc>https://troz.net/tags/functional/</loc>
+    <lastmod>2018-06-14T14:18:53+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://troz.net/tags/gdpr/</loc>
     <lastmod>2018-05-26T09:51:56+10:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -843,7 +864,7 @@
   
   <url>
     <loc>https://troz.net/tags/learning-swift/</loc>
-    <lastmod>2017-06-18T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-14T14:18:53+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -941,7 +962,7 @@
   
   <url>
     <loc>https://troz.net/post/</loc>
-    <lastmod>2018-05-26T09:51:56+10:00</lastmod>
+    <lastmod>2018-06-14T14:18:53+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1018,7 +1039,7 @@
   
   <url>
     <loc>https://troz.net/tags/swift/</loc>
-    <lastmod>2018-03-31T09:35:21+10:00</lastmod>
+    <lastmod>2018-06-14T14:18:53+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1045,8 +1066,15 @@
   </url>
   
   <url>
+    <loc>https://troz.net/tags/time/</loc>
+    <lastmod>2018-06-14T10:41:46+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://troz.net/tags/time-in-words/</loc>
-    <lastmod>2015-04-15T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-14T10:41:46+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1067,7 +1095,7 @@
   
   <url>
     <loc>https://troz.net/</loc>
-    <lastmod>2018-05-26T09:51:56+10:00</lastmod>
+    <lastmod>2018-06-14T14:18:53+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1110,6 +1138,13 @@
   <url>
     <loc>https://troz.net/tags/work/</loc>
     <lastmod>2016-11-17T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/world-time-in-words/</loc>
+    <lastmod>2018-06-14T10:41:46+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

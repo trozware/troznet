@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Functional Programming in Swift - TrozWare</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Sarah Reichelt" /><meta name="description" content="What is Functional Programming and how can we use it in Swift?" />
+
+  <meta name="keywords" content="Swift, Apple, macOS, iOS, Apple Watch" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.37.1" />
+
+
+<link rel="canonical" href="https://troz.net/post/2018/functional-programming/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+
+
+<meta property="og:title" content="Functional Programming in Swift" />
+<meta property="og:description" content="What is Functional Programming and how can we use it in Swift?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troz.net/post/2018/functional-programming/" />
+
+
+
+<meta property="article:published_time" content="2018-06-14T14:18:53&#43;10:00"/>
+
+<meta property="article:modified_time" content="2018-06-14T14:18:53&#43;10:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Functional Programming in Swift">
+<meta itemprop="description" content="What is Functional Programming and how can we use it in Swift?">
+
+
+<meta itemprop="datePublished" content="2018-06-14T14:18:53&#43;10:00" />
+<meta itemprop="dateModified" content="2018-06-14T14:18:53&#43;10:00" />
+<meta itemprop="wordCount" content="2491">
+
+
+
+<meta itemprop="keywords" content="swift,functional,learning swift," />
+
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@trozware" />
+    <meta name="twitter:title" content="TrozWare" />
+    <meta name="twitter:description" content="macOS, iOS and watchOS Developer" />
+    <meta name="twitter:url" content="http://troz.net/" />
+    <meta name="twitter:image" content="http://troz.net/icons/apple-touch-icon-152x152.png" />
+
+
+
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">TrozWare</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/apps/">
+        <li class="mobile-menu-item">Apps</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/contact/">
+        <li class="mobile-menu-item">Contact</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">TrozWare</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/apps/">Apps</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/contact/">Contact</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Functional Programming in Swift</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 14 Jun 2018 </span>
+        
+        <span class="more-meta"> 2491 words </span>
+        <span class="more-meta"> 12 minute read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#what-is-functional-programming">What is Functional Programming?</a></li>
+<li><a href="#functional-programming-in-swift">Functional Programming in Swift</a>
+<ul>
+<li><a href="#pure-functions">Pure functions</a></li>
+<li><a href="#avoid-mutability">Avoid mutability</a>
+<ul>
+<li><a href="#filter">Filter</a></li>
+<li><a href="#map">Map</a></li>
+<li><a href="#reduce">Reduce</a></li>
+</ul></li>
+<li><a href="#using-functions-as-building-blocks">Using functions as building blocks</a>
+<ul>
+<li><a href="#naming">Naming</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#closures">Closures</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>What is Functional Programming and how can we use it in Swift?</p>
+
+<p>Search online for any definition of functional programming and you will find many different definitions, few of which are practically helpful. I have no claim to be an expert, but as a Swift enthusiast, this is what I have distilled out of the morass.</p>
+
+<p></p>
+
+<h2 id="what-is-functional-programming">What is Functional Programming?</h2>
+
+<p>Without providing a concrete definition, here are what I see as the 3 main goals of functional programming:</p>
+
+<ul>
+<li>use pure functions where possible</li>
+<li>avoid mutability where possible</li>
+<li>use functions as the basic building blocks</li>
+</ul>
+
+<p>So let&rsquo;s go through those one by one and see how they fit into the Swift language.</p>
+
+<h2 id="functional-programming-in-swift">Functional Programming in Swift</h2>
+
+<p>You can <a href="https://github.com/trozware/functional-programming">download a playground containing all these examples from GitHub</a>.</p>
+
+<h3 id="pure-functions">Pure functions</h3>
+
+<p>A function is considered pure if it will always produce the same result for the same input, regardless of where it is and what calls it.</p>
+
+<p>Imagine you are writing a role-playing game and for a given fight, you need to be able to calculate the damage per second caused by a character.</p>
+
+<pre><code class="language-swift">class DamageDealer {
+
+    var damageDone: Int = 0
+    var timeTaken: TimeInterval = 0
+
+    func damagePerSecond() -&gt; Double {
+        if timeTaken == 0 {
+            return 0
+        }
+        let dps = Double(damageDone) / timeTaken
+        if dps &lt; 0 {
+            return 0
+        }
+        return dps
+    }
+
+}
+
+let mage = DamageDealer()
+mage.damageDone = 32
+mage.timeTaken = 10
+
+mage.damagePerSecond()
+</code></pre>
+
+<p>The <code>damagePerSecond</code> function takes no parameters but uses the properties of its containing object. This works in this class, but there are 3 big problems:</p>
+
+<ol>
+<li>The function is not transportable - you cannot copy it into another class as it is totally dependent on the structure of the properties in the containing class.</li>
+<li>When calling the function, it is not clear what data it is going to use.</li>
+<li>This function is difficult to test as calling the function with the same parameters (none) will produce different results depending on the setup.</li>
+</ol>
+
+<p>So for a version that uses a pure function, we could replace <code>damagePerSecond()</code> with this:</p>
+
+<pre><code class="language-swift">func damagePerSecondPure(damage: Int, time: TimeInterval) -&gt; Double {
+    if time == 0 {
+        return 0
+    }
+    let dps = Double(damage) / time
+    if dps &lt; 0 {
+        return 0
+    }
+    return dps
+}
+
+mage.damagePerSecondPure(damage: mage.damageDone, time: mage.timeTaken)
+</code></pre>
+
+<p>Calling the function is now more verbose, but reading the call gives you much more information about what is going to happen. Testing is easy, and the function is completely self-contained so can be copied into any class or struct.</p>
+
+<h3 id="avoid-mutability">Avoid mutability</h3>
+
+<p>This one has become the poster child of Swift Functional Programming as Swift provides some very convenient ways to avoid mutability.</p>
+
+<p>The first is <code>let</code> versus <code>var</code>. My rule is always to start defining any variable/constant with <code>let</code> and only changing to <code>var</code> if the compiler raises an error. In the current versions of Xcode, it will give a warning if you use <code>var</code> unnecessarily which is great, but I still stick to using <code>let</code> first.</p>
+
+<p>The most powerful way Swift lets us avoid mutability with Functional Programming is with <code>map</code>, <code>filter</code> and <code>reduce</code>.</p>
+
+<h4 id="filter">Filter</h4>
+
+<p>Consider this function that checks possible player names:</p>
+
+<pre><code class="language-swift">func checkPlayerNames(names: [String]) -&gt; [String] {
+    var validNames: [String] = []
+
+    for name in names {
+        if name.count &gt; 3 &amp;&amp; !name.contains(&quot; &quot;) {
+            validNames.append(name)
+        }
+    }
+
+    return validNames
+}
+
+let allNames = [ &quot;Woody&quot;, &quot;Rex&quot;, &quot;Slinky&quot;, &quot;Buzz Lightyear&quot;, &quot;Hamm&quot; ]
+let checkedNames = checkPlayerNames(names: allNames)
+</code></pre>
+
+<p>Only names with more than 3 characters and no spaces are considered valid. So this function creates an empty array and then loops through each member of the supplied array and appends any valid names to the new array before returning it.</p>
+
+<p>This function is a pure function and it works as expected. But the <code>validNames</code> array is mutable and there is no need for it to be.</p>
+
+<p>Converting this to avoid mutability, we get:</p>
+
+<pre><code class="language-swift">func checkPlayerNamesUsingFilter(names: [String]) -&gt; [String] {
+    let validNames = names.filter { name in
+        name.count &gt; 3 &amp;&amp; !name.contains(&quot; &quot;)
+    }
+    return validNames
+}
+</code></pre>
+
+<p>Inside the <code>filter</code> closure delimited by the curly braces after the word <code>filter</code>, (more about closures below), the element in the array being evaluated is stored in the <code>name</code> constant. The checks are done and this implicitly returns a <code>Bool</code> - true if the checks pass, false if they do not. If the closure returns true, the name is valid and will be part of the validNames array.</p>
+
+<p>And if you really want to be concise:</p>
+
+<pre><code class="language-swift">func checkPlayerNamesUsingFilterShort(names: [String]) -&gt; [String] {
+    return names.filter { $0.count &gt; 3 &amp;&amp; !$0.contains(&quot; &quot;) }
+}
+</code></pre>
+
+<p>I recommend the first method even if it is a bit more verbose. Storing the result in a constant before returning it makes debugging much easier. Using $0 instead of using a named parameter is convenient, but I prefer not to do this unless the closure is very simple.</p>
+
+<h4 id="map">Map</h4>
+
+<p><code>filter</code> takes an array of objects and returns a sub-array containing every element which returned true for the checks inside the filter body.</p>
+
+<p><code>map</code> changes the elements in an array and can return an array of the same type or an array of different types.</p>
+
+<p>Here is a function to square every integer in an array in the old style, using a mutable array to accumulate the result:</p>
+
+<pre><code class="language-swift">func squareNumbers(_ numbers: [Int]) -&gt; [Int] {
+    var squares: [Int] = []
+
+    for number in numbers {
+        squares.append(number * number)
+    }
+
+    return squares
+}
+
+let numbers = [ 1, 2, 3, 4, 5, 6 ]
+squareNumbers(numbers)
+</code></pre>
+
+<p>And doing the same thing using <code>map</code>:</p>
+
+<pre><code class="language-swift">func squareNumbersUsingMap(_ numbers: [Int]) -&gt; [Int] {
+    let squares = numbers.map { $0 * $0 }
+    return squares
+}
+</code></pre>
+
+<p>In this case, the type of the data did not change: integers went in, integers came out.
+But <code>map</code> can change the type as well.</p>
+
+<pre><code class="language-swift">func squareRoots(_ numbers: [Int]) -&gt; [Double] {
+    let roots = numbers.map { number in
+        sqrt(Double(number))
+    }
+    return roots
+}
+
+squareRoots(numbers)
+</code></pre>
+
+<p>And there is a final twist to <code>map</code> that used to be called <code>flatMap</code> but is now called <code>compactMap</code> and that allows us to get rid of optionals as we map through an array.</p>
+
+<pre><code class="language-swift">func convertStringsToInts(_ strings: [String]) -&gt; [Int] {
+    let ints = strings.compactMap { return Int($0) }
+    return ints
+}
+
+let strings = [ &quot;1&quot;, &quot;two&quot;, &quot;&quot;, &quot;0.34&quot;, &quot;65&quot;, &quot;-93&quot;, &quot;4e8&quot; ]
+convertStringsToInts(strings)
+</code></pre>
+
+<p>The conversion of <code>String</code> to <code>Int</code> may fail and so returns an optional. If this function had used <code>map</code> instead of <code>compactMap</code>, the result would have been an array of optional Ints: <code>[Int?]</code>. By using <code>compactMap</code>, every <code>nil</code> value was dropped and only valid integers are included.</p>
+
+<h4 id="reduce">Reduce</h4>
+
+<p>The final tool in the immutability toolbox is <code>reduce</code> and this is one that took me a while to wrap my head around.</p>
+
+<p>Imagine that you wanted to add up all the integers in an array. Here is a way to do it using a mutable variable and a loop:</p>
+
+<pre><code class="language-swift">func sumNumbers(_ numbers: [Int]) -&gt; Int {
+    var total = 0
+
+    for num in numbers {
+        total += num
+    }
+
+    return total
+}
+
+let numbers = [ 1, 2, 3, 4, 5, 6 ]
+sumNumbers(numbers)
+</code></pre>
+
+<p>I can&rsquo;t use <code>filter</code> or <code>map</code> here because I want to end up with a single value after applying some logic to every item in the array. So here is where I use <code>reduce</code>.</p>
+
+<pre><code class="language-swift">func sumNumbersUsingReduce(_ numbers: [Int]) -&gt; Int {
+
+    let total = numbers.reduce(0) { (cumulativeTotal, nextValue) in
+        return cumulativeTotal + nextValue
+    }
+    return total
+}
+
+sumNumbersUsingReduce(numbers)
+</code></pre>
+
+<p>The <code>reduce</code> function takes 2 parameters. The first is the starting value - in this case it is zero. The second paramter is a function (I am using a closure) this in turn takes 2 parameters and here is where it gets complicated. Inside the closure function, the 2 parameters are the current result and the next value from the loop. And what you return from this closure is going to be the new cumulative value which will either be fed back into the loop, or returned as the final result. The first time through the loop, the first parameter will be the initial value as set in the reduce function call.</p>
+
+<p>To see how this happens, here is a version sprinkled with <code>print</code> statements showing what happens each time through the loop:</p>
+
+<pre><code class="language-swift">func sumNumbersReduceDebug(_ numbers: [Int]) -&gt; Int {
+    let total = numbers.reduce(0) { (cumulativeTotal, nextValue) in
+        print(&quot;cumulativeTotal = \(cumulativeTotal)&quot;)
+        print(&quot;nextValue = \(nextValue)&quot;)
+        print(&quot;about to return \(cumulativeTotal) + \(nextValue) = \(cumulativeTotal + nextValue) which will become the next culmulative or the final value&quot;)
+
+        return cumulativeTotal + nextValue
+    }
+    print(&quot;final result = \(total)&quot;)
+    return total
+}
+
+let shortNumbers = [ 5, 3, 8 ]
+
+sumNumbersReduceDebug(shortNumbers)
+</code></pre>
+
+<p>This produces a log showing:</p>
+
+<pre><code class="language-text">cumulativeTotal = 0
+nextValue = 5
+about to return 0 + 5 = 5 which will become the next culmulative or the final value
+cumulativeTotal = 5
+nextValue = 3
+about to return 5 + 3 = 8 which will become the next culmulative or the final value
+cumulativeTotal = 8
+nextValue = 8
+about to return 8 + 8 = 16 which will become the next culmulative or the final value
+final result = 16
+</code></pre>
+
+<h3 id="using-functions-as-building-blocks">Using functions as building blocks</h3>
+
+<p>This one is more a matter of style than of any particular programming technique. Basically, keep each function small and break your code into small chunks with obvious naming. This makes your code easier to read, test and debug and it beomes vastly more reusable.</p>
+
+<p>Consider this totally made-up function:</p>
+
+<pre><code class="language-swift">func configureDisplay(for userId: String?) {
+    guard let userId = userId else {
+        showLoginScreen()
+        return
+    }
+
+    displayUserData(for: userId)
+    let userType = getPermissions(for: userId)
+
+    populateMenus(for: userType)
+    loadInitialData(for: userId)
+
+    playSound(.welcome)
+}
+
+configureDisplay(for: &quot;abc123&quot;)
+configureDisplay(for: nil)
+</code></pre>
+
+<p>Is it easy to read?
+Can you work out what it does? Now imagine all that functionality in a single huge function - would that be as good to use?</p>
+
+<p>As a way of encouraging shorter functions, which leads inevitably to this sort of structured code, I strongly recommend using SwiftLint to check your code. I wrote a <a href="/post/2018/swiftlint/">post about this</a> a while ago which you might find useful.</p>
+
+<h4 id="naming">Naming</h4>
+
+<p>The other key thing to mention and it is a point that Apple makes very strongly, is to name your functions and their parameters so as to make them as readable as possible from the calling site. You write a function once, but you most likely call it multiple times, so it is the calling site that needs to be really easy to read.</p>
+
+<p>Returning to the game example, here is a dummy function to show damage caused to a target:</p>
+
+<pre><code class="language-swift">func displayDamage(damage: Int, target: String) {}
+
+displayDamage(damage: 31, target: &quot;Ogre&quot;)
+</code></pre>
+
+<p>There is nothing really wrong with the function, but calling it is a bit clunky and doesn&rsquo;t read well with the repeated use of the word &lsquo;damage&rsquo;.</p>
+
+<p>What about this version?</p>
+
+<pre><code class="language-swift">func display(damage: Int, doneTo target: String) {}
+
+display(damage: 42, doneTo: &quot;Wolf&quot;)
+</code></pre>
+
+<p>There are no repeated words in the caller and by using two labels for the second parameter, the calling site can read almost like a sentence, but inside the function, <code>target</code> is still a more logical name.</p>
+
+<p>A third alternative is to use an un-named parameter if the naming logic is implicit in the function name itself:</p>
+
+<pre><code class="language-swift">func displayDamage(_ damage: Int, doneTo target: String) {}
+
+displayDamage(12, doneTo: &quot;Orc&quot;)
+</code></pre>
+
+<hr />
+
+<h2 id="closures">Closures</h2>
+
+<p>As promised above, a very quick explanation of closures, which really deserve their own post&hellip;</p>
+
+<p>In Swift, as in many languages, functions can be passed as parameters to other functions. As an example, I have set up 2 functions to perform a simple calculation on a given integer:</p>
+
+<pre><code class="language-swift">func cube(_ number: Int) -&gt; Int {
+    return number * number * number
+}
+cube(3)
+
+func square(_ number: Int) -&gt; Int {
+    return number * number
+}
+square(3)
+</code></pre>
+
+<p>Now imagine that you wanted to create a more general function that could call either one of these functions with any number:</p>
+
+<pre><code class="language-swift">func doCalculation(_ number: Int, calculation: (Int) -&gt; Int) -&gt; Int {
+    return calculation(number)
+}
+</code></pre>
+
+<p><code>doCalculation</code> takes 2 parameters. The first one is easy - it is just an integer. The second one is weird! For every parameter of a function, you have to supply the type of that parameter. Usually this is quite straight-forward: Int, String, MyCustomClass etc. But what is the <code>type</code> of a function? Option-clicking on the word <code>cube</code> in my function definition, I see this:</p>
+
+<p><img src="/images/FunctionType.png" alt="Function type" /></p>
+
+<p>And ignoring the parameter labels, this basically provides the function type: Int inside parentheses for the input, then the arrow, then Int again for the return type. So the type definition for the <code>cube</code> function is <code>(Int) -&gt; Int</code>. And when I define the type for the calculation parameter in the <code>doCalculation</code> function, this is exactly what I put. The last part of the function definition is specifiying the overall return type as an Int.</p>
+
+<p>Using the <code>cube</code> and <code>square</code> functions inside <code>doCalculation</code> works like this:</p>
+
+<pre><code class="language-swift">doCalculation(7, calculation: square)
+doCalculation(4, calculation: cube)
+</code></pre>
+
+<p>But what if I didn&rsquo;t want to define all the functions I might call in advance? Then I can send the function body to the <code>doCalculation</code> function instead of using a pre-built function. This way of using a function inside another function is referred to as a closure.</p>
+
+<pre><code class="language-swift">doCalculation(6, calculation: { number in
+    return number * 12
+})
+</code></pre>
+
+<p>The <code>doCalculation</code> function in unchanged, but instead of passing it a reference to a function, I am directly passing it the instructions it should use to get the result. As with any function, the instructions are contained within a set of curly braces. The input to this function is listed after the opening curly brace followed by the keyword <code>in</code>. Then the function body does whatever it needs to and returns the result.</p>
+
+<p>You may have heard the term <code>trailing closure</code>. This refers to a function where the last parameter is a function. If that function is called using a closure, there is a short-hand way of writing this, omitting the closure&rsquo;s parameter name and moving the closing parenthesis to before the opening curly brace.</p>
+
+<pre><code class="language-swift">doCalculation(16) { number in
+    return number % 3
+}
+</code></pre>
+
+<p>With the <code>filter</code>, <code>map</code> and <code>reduce</code> functions I showed above, this is the way their logic was supplied but here is how the filter example would look without using a closure:</p>
+
+<pre><code class="language-swift">func checkName(_ name: String) -&gt; Bool {
+    return name.count &gt; 3 &amp;&amp; !name.contains(&quot; &quot;)
+}
+
+func checkPlayerNamesUsingFunction(names: [String]) -&gt; [String] {
+    let validNames = names.filter(checkName)
+    return validNames
+}
+
+let allNames = [ &quot;Woody&quot;, &quot;Rex&quot;, &quot;Slinky&quot;, &quot;Buzz Lightyear&quot;, &quot;Hamm&quot; ]
+let checkedNames = checkPlayerNamesUsingFunction(names: allNames)
+</code></pre>
+
+<p>Which methods you use are up to you - they all work. If you have a function that will be called in many different places, maybe it makes more sense to define it once and pass around a reference to that function. If not, a closure has the advantage that it keeps everything together. There is more to closures, particularly to do with variable scope, but I think this post has gone on long enough already&hellip;. maybe next time.</p>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  
+  <p class="copyright-item">
+    <span class="item-title">Last Modified</span>
+    <span class="item-content">14 Jun 2018</span>
+  </p>
+  
+  
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/swift/">swift</a>
+          
+          <a href="/tags/functional/">functional</a>
+          
+          <a href="/tags/learning-swift/">learning swift</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/2018/world-time-in-words-ios-update/">
+            <span class="next-text nav-default">World Time in Words iOS Update</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:sarah@troz.net" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1082632" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/trozware" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/trozware" class="iconfont icon-github" title="github"></a>
+  <a href="https://troz.net/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  <a href="https://troz.net//feed.json" type="application/json" title="JSON">
+      <img style="width: 30px; height: 30px; padding: 0 0 16px 10px;" src="https://jsonfeed.org/graphics/icon.png" alt="JSON">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme -
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2012 -
+    2018
+    <span class="author">Sarah Reichelt</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  
+<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+
+
+
+
+</body>
+</html>

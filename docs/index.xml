@@ -5,10 +5,34 @@
     <link>https://troz.net/</link>
     <description>Recent content on TrozWare</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 26 May 2018 09:51:56 +1000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Jun 2018 14:18:53 +1000</lastBuildDate>
     
 	<atom:link href="https://troz.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Functional Programming in Swift</title>
+      <link>https://troz.net/post/2018/functional-programming/</link>
+      <pubDate>Thu, 14 Jun 2018 14:18:53 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2018/functional-programming/</guid>
+      <description>&lt;p&gt;What is Functional Programming and how can we use it in Swift?&lt;/p&gt;
+
+&lt;p&gt;Search online for any definition of functional programming and you will find many different definitions, few of which are practically helpful. I have no claim to be an expert, but as a Swift enthusiast, this is what I have distilled out of the morass.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>World Time in Words iOS Update</title>
+      <link>https://troz.net/post/2018/world-time-in-words-ios-update/</link>
+      <pubDate>Thu, 14 Jun 2018 10:41:46 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2018/world-time-in-words-ios-update/</guid>
+      <description>&lt;p&gt;Its been a long time since the last update to Time In Words for iOS but after prompting by Apple (&lt;em&gt;update or we will remove it from the App Store&lt;/em&gt;), I finally did it. I was never really happy with the last design of Time in Words for iOS, particularly for the iPad, so this was a good opportunity to do a complete re-design, bringing the app more into alignment with its Mac counterpart. And it got a new name to match its new direction and is now called World Time in Words.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Privacy Policy</title>
@@ -1093,12 +1117,13 @@ Check out the Time In Words web page for more info and screen shots.</descriptio
     </item>
     
     <item>
-      <title>Time In Words for iOS</title>
+      <title>World Time In Words for iOS</title>
       <link>https://troz.net/time-in-words/</link>
       <pubDate>Wed, 08 Feb 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/time-in-words/</guid>
-      <description>Time In Words is a clock and calendar app that takes you out of the digital era and back to when saying &amp;ldquo;quarter to seven&amp;rdquo; or &amp;ldquo;five past two&amp;rdquo; was accurate enough. When people look at an analog watch, they tend to interpret the time to the closest five minutes which allows for inaccuracies in the watch as well as providing only a useful level of detail. This app goes back to that, showing date and/or time in multiple ways, but all in words.</description>
+      <description>World Time In Words is a clock and time converter app that takes you away from numbers and shows you the time as a complete sentence. No more worrying about whether it is morning or evening or whether it is yesterday, today or tomorrow in some other part of the world.
+Do you plan on phoning an overseas friend in the middle of the night? How about scheduling an online meeting with people in different time zones?</description>
     </item>
     
   </channel>

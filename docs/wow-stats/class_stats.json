@@ -1,145 +1,747 @@
-[{
-  "classname": "Death Knight",
-  "specs": [{
-    "name": "Blood",
-    "priorities": ["Stamina", "Strength", "Haste", "Versatility", "Mastery", "Crit"]
-  }, {
-    "name": "Frost",
-    "priorities": ["Strength", "Mastery", "Crit", "Haste", "Versatility"]
-  }, {
-    "name": "Unholy",
-    "priorities": ["Strength", "Mastery", "Haste", "Crit = Versatility"]
-  }]
-}, {
-  "classname": "Demon Hunter",
-  "specs": [{
-    "name": "Havoc",
-    "priorities": ["Crit", "Haste", "Versatility", "Agility", "Mastery"]
-  }, {
-    "name": "Vengeance",
-    "priorities": ["Stamina", "Agility", "Versatility", "Mastery = Haste", "Crit"]
-  }]
-}, {
-  "classname": "Druid",
-  "specs": [{
-    "name": "Balance",
-    "priorities": ["Haste", "Intellect", "Mastery", "Crit", "Versatility"]
-  }, {
-    "name": "Feral",
-    "priorities": ["Agility", "Crit", "Mastery", "Versatility", "Haste"]
-  }, {
-    "name": "Guardian",
-    "priorities": ["Stamina", "Versatility", "Mastery", "Haste", "Agility", "Crit"]
-  }, {
-    "name": "Restoration",
-    "priorities": ["Intellect", "Mastery", "Haste", "Crit", "Versatility"]
-  }]
-}, {
-  "classname": "Hunter",
-  "specs": [{
-    "name": "Beast Mastery",
-    "priorities": ["Agility", "Mastery", "Haste", "Crit", "Versatility"]
-  }, {
-    "name": "Marksmanship",
-    "priorities": ["Mastery", "Agility", "Crit", "Haste", "Versatility"]
-  }, {
-    "name": "Survival",
-    "priorities": ["Agility", "Haste", "Mastery", "Crit", "Versatility"]
-  }]
-}, {
-  "classname": "Mage",
-  "specs": [{
-    "name": "Arcane",
-    "priorities": ["Intellect", "Mastery", "Crit", "Versatility", "Haste"]
-  }, {
-    "name": "Fire",
-    "priorities": ["Intellect", "Crit", "Mastery", "Haste", "Versatility"]
-  }, {
-    "name": "Frost",
-    "priorities": ["Intellect", "Haste", "Crit", "Versatility", "Mastery"]
-  }]
-}, {
-  "classname": "Monk",
-  "specs": [{
-    "name": "Brewmaster",
-    "priorities": ["Stamina", "Agility", "Haste", "Mastery = Crit", "Versatility"]
-  }, {
-    "name": "Mistweaver",
-    "priorities": ["Intellect", "Crit", "Versatility", "Mastery", "Haste"]
-  }, {
-    "name": "Windwalker",
-    "priorities": ["Agility", "Mastery", "Crit", "Versatility", "Haste"]
-  }]
-}, {
-  "classname": "Paladin",
-  "specs": [{
-    "name": "Holy",
-    "priorities": ["Intellect", "Crit", "Mastery", "Versatility", "Haste"]
-  }, {
-    "name": "Protection",
-    "priorities": ["Stamina", "Strength", "Haste", "Versatility", "Mastery", "Crit"]
-  }, {
-    "name": "Retribution",
-    "priorities": ["Strength", "Haste", "Crit = Versatility", "Mastery"]
-  }]
-}, {
-  "classname": "Priest",
-  "specs": [{
-    "name": "Discipline",
-    "priorities": ["Intellect", "Haste", "Crit = Mastery", "Versatility"]
-  }, {
-    "name": "Holy",
-    "priorities": ["Intellect", "Mastery", "Crit", "Haste", "Versatility"]
-  }, {
-    "name": "Shadow",
-    "priorities": ["Haste", "Crit", "Mastery", "Versatility", "Intellect"]
-  }]
-}, {
-  "classname": "Rogue",
-  "specs": [{
-    "name": "Assassination",
-    "priorities": ["Agility", "Mastery", "Versatility", "Crit", "Haste"]
-  }, {
-    "name": "Outlaw",
-    "priorities": ["Agility", "Versatility", "Haste", "Crit", "Mastery"]
-  }, {
-    "name": "Subtlety",
-    "priorities": ["Agility", "Mastery", "Versatility", "Crit", "Haste"]
-  }]
-}, {
-  "classname": "Shaman",
-  "specs": [{
-    "name": "Elemental",
-    "priorities": ["Intellect", "Mastery", "Crit", "Versatility", "Haste"]
-  }, {
-    "name": "Enhancement",
-    "priorities": ["Agility", "Haste", "Mastery", "Crit", "Versatility"]
-  }, {
-    "name": "Restoration",
-    "priorities": ["Intellect", "Mastery", "Crit", "Versatility", "Haste"]
-  }]
-}, {
-  "classname": "Warlock",
-  "specs": [{
-    "name": "Affliction",
-    "priorities": ["Mastery", "Crit", "Haste", "Intellect", "Versatility"]
-  }, {
-    "name": "Demonology",
-    "priorities": ["Haste", "Intellect", "Crit", "Mastery", "Versatility"]
-  }, {
-    "name": "Destruction",
-    "priorities": ["Intellect", "Haste", "Crit", "Versatility", "Mastery"]
-  }]
-}, {
-  "classname": "Warrior",
-  "specs": [{
-    "name": "Arms",
-    "priorities": ["Mastery", "Haste", "Strength", "Versatility", "Crit"]
-  }, {
-    "name": "Fury",
-    "priorities": ["Haste", "Mastery", "Versatility", "Strength", "Crit"]
-  }, {
-    "name": "Protection",
-    "priorities": ["Stamina", "Strength", "Haste", "Mastery", "Versatility", "Crit"]
-  }]
-}]
+[
+  {
+    "classname": "Death Knight",
+    "specs": [
+      {
+        "name": "Blood",
+        "priorities": [
+          "Stamina",
+          "Strength",
+          "Haste",
+          "Versatility",
+          "Mastery",
+          "Crit"
+        ],
+        "talents": [
+          "Heartbreaker",
+          "Rapid Decomposition",
+          "Ossuary",
+          "Red Thirst",
+          "March Of The Damned",
+          "Foul Bulwark",
+          "Purgatory"
+        ]
+      },
+      {
+        "name": "Frost",
+        "priorities": [
+          "Strength",
+          "Mastery",
+          "Crit",
+          "Haste",
+          "Versatility"
+        ],
+        "talents": [
+          "Runic Attenuation",
+          "Horn Of Winter",
+          "Icecap",
+          "Blinding Sleet",
+          "Volatile Shielding",
+          "Frostscythe",
+          "Obliteration"
+        ]
+      },
+      {
+        "name": "Unholy",
+        "priorities": [
+          "Strength",
+          "Mastery",
+          "Haste",
+          "Crit = Versatility"
+        ],
+        "talents": [
+          "Ebon Fever",
+          "Pestilent Pustules",
+          "Clawing Shadows",
+          "Sludge Belcher",
+          "Spell Eater",
+          "Necrosis",
+          "Soul Reaper"
+        ]
+      }
+    ]
+  },
+  {
+    "classname": "Demon Hunter",
+    "specs": [
+      {
+        "name": "Havoc",
+        "priorities": [
+          "Crit",
+          "Haste",
+          "Versatility",
+          "Agility",
+          "Mastery"
+        ],
+        "talents": [
+          "Felblade",
+          "Demon Blades",
+          "First Blood",
+          "Soul Rending",
+          "Nemesis",
+          "Unleashed Power",
+          "Chaos Blades"
+        ]
+      },
+      {
+        "name": "Vengeance",
+        "priorities": [
+          "Stamina",
+          "Agility",
+          "Versatility",
+          "Mastery = Haste",
+          "Crit"
+        ],
+        "talents": [
+          "Abyssal Strike",
+          "Fallout",
+          "Felblade",
+          "Fracture",
+          "Quickened Sigils",
+          "Fel Devastation",
+          "Last Resort"
+        ]
+      }
+    ]
+  },
+  {
+    "classname": "Druid",
+    "specs": [
+      {
+        "name": "Balance",
+        "priorities": [
+          "Haste",
+          "Intellect",
+          "Mastery",
+          "Crit",
+          "Versatility"
+        ],
+        "talents": [
+          "Starlord",
+          "Displacer Beast",
+          "Guardian Affinity",
+          "Typhoon",
+          "Incarnation Chosen Of Elune",
+          "Blessing Of The Ancients",
+          "Natures Balance"
+        ]
+      },
+      {
+        "name": "Feral",
+        "priorities": [
+          "Agility",
+          "Crit",
+          "Mastery",
+          "Versatility",
+          "Haste"
+        ],
+        "talents": [
+          "Blood Scent",
+          "Displacer Beast",
+          "Balance Affinity",
+          "Mighty Bash",
+          "Soul Of The Forest",
+          "Brutal Slash",
+          "Moment Of Clarity"
+        ]
+      },
+      {
+        "name": "Guardian",
+        "priorities": [
+          "Stamina",
+          "Versatility",
+          "Mastery",
+          "Haste",
+          "Agility",
+          "Crit"
+        ],
+        "talents": [
+          "Bristling Fur",
+          "Guttural Roars",
+          "Restoration Affinity",
+          "Typhoon",
+          "Galactic Guardian",
+          "Guardian Of Elune",
+          "Pulverize"
+        ]
+      },
+      {
+        "name": "Restoration",
+        "priorities": [
+          "Intellect",
+          "Mastery",
+          "Haste",
+          "Crit",
+          "Versatility"
+        ],
+        "talents": [
+          "Cenarion Ward",
+          "Displacer Beast",
+          "Guardian Affinity",
+          "Typhoon",
+          "Cultivation",
+          "Spring Blossoms",
+          "Flourish"
+        ]
+      }
+    ]
+  },
+  {
+    "classname": "Hunter",
+    "specs": [
+      {
+        "name": "Beast Mastery",
+        "priorities": [
+          "Agility",
+          "Mastery",
+          "Haste",
+          "Crit",
+          "Versatility"
+        ],
+        "talents": [
+          "Way Of The Cobra",
+          "Dire Frenzy",
+          "Posthaste",
+          "Bestial Fury",
+          "Binding Shot",
+          "A Murder Of Crows",
+          "Killer Cobra"
+        ]
+      },
+      {
+        "name": "Marksmanship",
+        "priorities": [
+          "Mastery",
+          "Agility",
+          "Crit",
+          "Haste",
+          "Versatility"
+        ],
+        "talents": [
+          "Lone Wolf",
+          "True Aim",
+          "Posthaste",
+          "Explosive Shot",
+          "Binding Shot",
+          "Volley",
+          "Trick Shot"
+        ]
+      },
+      {
+        "name": "Survival",
+        "priorities": [
+          "Agility",
+          "Haste",
+          "Mastery",
+          "Crit",
+          "Versatility"
+        ],
+        "talents": [
+          "Way Of The Moknathal",
+          "Snake Hunter",
+          "Disengage",
+          "Caltrops",
+          "Rangers Net",
+          "Serpent Sting",
+          "Spitting Cobra"
+        ]
+      }
+    ]
+  },
+  {
+    "classname": "Mage",
+    "specs": [
+      {
+        "name": "Arcane",
+        "priorities": [
+          "Intellect",
+          "Mastery",
+          "Crit",
+          "Versatility",
+          "Haste"
+        ],
+        "talents": [
+          "Amplification",
+          "Slipstream",
+          "Rune Of Power",
+          "Resonance",
+          "Chrono Shift",
+          "Erosion",
+          "Overpowered"
+        ]
+      },
+      {
+        "name": "Fire",
+        "priorities": [
+          "Intellect",
+          "Crit",
+          "Mastery",
+          "Haste",
+          "Versatility"
+        ],
+        "talents": [
+          "Conflagration",
+          "Shimmer",
+          "Rune Of Power",
+          "Flame On",
+          "Frenetic Speed",
+          "Living Bomb",
+          "Cinderstorm"
+        ]
+      },
+      {
+        "name": "Frost",
+        "priorities": [
+          "Intellect",
+          "Haste",
+          "Crit",
+          "Versatility",
+          "Mastery"
+        ],
+        "talents": [
+          "Bone Chilling",
+          "Shimmer",
+          "Mirror Image",
+          "Frozen Touch",
+          "Ice Ward",
+          "Unstable Magic",
+          "Thermal Void"
+        ]
+      }
+    ]
+  },
+  {
+    "classname": "Monk",
+    "specs": [
+      {
+        "name": "Brewmaster",
+        "priorities": [
+          "Stamina",
+          "Agility",
+          "Haste",
+          "Mastery = Crit",
+          "Versatility"
+        ],
+        "talents": [
+          "Eye Of The Tiger",
+          "Tigers Lust",
+          "Black Ox Brew",
+          "Summon Black Ox Statue",
+          "Mystic Vitality",
+          "Rushing Jade Wind",
+          "Blackout Combo"
+        ]
+      },
+      {
+        "name": "Mistweaver",
+        "priorities": [
+          "Intellect",
+          "Crit",
+          "Versatility",
+          "Mastery",
+          "Haste"
+        ],
+        "talents": [
+          "Chi Burst",
+          "Tigers Lust",
+          "Mist Wrap",
+          "Leg Sweep",
+          "Healing Elixir",
+          "Invoke Chiji The Red Crane",
+          "Focused Thunder"
+        ]
+      },
+      {
+        "name": "Windwalker",
+        "priorities": [
+          "Agility",
+          "Mastery",
+          "Crit",
+          "Versatility",
+          "Haste"
+        ],
+        "talents": [
+          "Chi Wave",
+          "Tigers Lust",
+          "Energizing Elixir",
+          "Leg Sweep",
+          "Healing Elixir",
+          "Hit Combo",
+          "Whirling Dragon Punch"
+        ]
+      }
+    ]
+  },
+  {
+    "classname": "Paladin",
+    "specs": [
+      {
+        "name": "Holy",
+        "priorities": [
+          "Intellect",
+          "Crit",
+          "Mastery",
+          "Versatility",
+          "Haste"
+        ],
+        "talents": [
+          "Bestow Faith",
+          "Rule Of Law",
+          "Blinding Light",
+          "Aura Of Mercy",
+          "Divine Purpose",
+          "Judgment Of Light",
+          "Beacon Of Faith"
+        ]
+      },
+      {
+        "name": "Protection",
+        "priorities": [
+          "Stamina",
+          "Strength",
+          "Haste",
+          "Versatility",
+          "Mastery",
+          "Crit"
+        ],
+        "talents": [
+          "Blessed Hammer",
+          "Bastion Of Light",
+          "Fist Of Justice",
+          "Blessing Of Spellwarding",
+          "Hand Of The Protector",
+          "Judgment Of Light",
+          "Righteous Protector"
+        ]
+      },
+      {
+        "name": "Retribution",
+        "priorities": [
+          "Strength",
+          "Haste",
+          "Crit = Versatility",
+          "Mastery"
+        ],
+        "talents": [
+          "Final Verdict",
+          "Zeal",
+          "Blinding Light",
+          "Divine Hammer",
+          "Eye For An Eye",
+          "Cavalier",
+          "Crusade"
+        ]
+      }
+    ]
+  },
+  {
+    "classname": "Priest",
+    "specs": [
+      {
+        "name": "Discipline",
+        "priorities": [
+          "Intellect",
+          "Haste",
+          "Crit = Mastery",
+          "Versatility"
+        ],
+        "talents": [
+          "Twist Of Fate",
+          "Angelic Feather",
+          "Shining Force",
+          "Shield Discipline",
+          "Sanctuary",
+          "Purge The Wicked",
+          "Evangelism"
+        ]
+      },
+      {
+        "name": "Holy",
+        "priorities": [
+          "Intellect",
+          "Mastery",
+          "Crit",
+          "Haste",
+          "Versatility"
+        ],
+        "talents": [
+          "Enlightenment",
+          "Angelic Feather",
+          "Afterlife",
+          "Light Of The Naaru",
+          "Piety",
+          "Divinity",
+          "Benediction"
+        ]
+      },
+      {
+        "name": "Shadow",
+        "priorities": [
+          "Haste",
+          "Crit",
+          "Mastery",
+          "Versatility",
+          "Intellect"
+        ],
+        "talents": [
+          "Twist Of Fate",
+          "Body And Soul",
+          "Mind Bomb",
+          "Lingering Insanity",
+          "Auspicious Spirits",
+          "Mindbender",
+          "Legacy Of The Void"
+        ]
+      }
+    ]
+  },
+  {
+    "classname": "Rogue",
+    "specs": [
+      {
+        "name": "Assassination",
+        "priorities": [
+          "Agility",
+          "Mastery",
+          "Versatility",
+          "Crit",
+          "Haste"
+        ],
+        "talents": [
+          "Master Poisoner",
+          "Subterfuge",
+          "Vigor",
+          "Cheat Death",
+          "Thuggee",
+          "Toxic Blade",
+          "Venom Rush"
+        ]
+      },
+      {
+        "name": "Outlaw",
+        "priorities": [
+          "Agility",
+          "Versatility",
+          "Haste",
+          "Crit",
+          "Mastery"
+        ],
+        "talents": [
+          "Ghostly Strike",
+          "Grappling Hook",
+          "Deeper Stratagem",
+          "Cheat Death",
+          "Prey On The Weak",
+          "Alacrity",
+          "Marked For Death"
+        ]
+      },
+      {
+        "name": "Subtlety",
+        "priorities": [
+          "Agility",
+          "Mastery",
+          "Versatility",
+          "Crit",
+          "Haste"
+        ],
+        "talents": [
+          "Master Of Subtlety",
+          "Nightstalker",
+          "Deeper Stratagem",
+          "Cheat Death",
+          "Prey On The Weak",
+          "Dark Shadow",
+          "Death From Above"
+        ]
+      }
+    ]
+  },
+  {
+    "classname": "Shaman",
+    "specs": [
+      {
+        "name": "Elemental",
+        "priorities": [
+          "Intellect",
+          "Mastery",
+          "Crit",
+          "Versatility",
+          "Haste"
+        ],
+        "talents": [
+          "Totem Mastery",
+          "Gust Of Wind",
+          "Lightning Surge Totem",
+          "Ancestral Swiftness",
+          "Elemental Blast",
+          "Echo Of The Elements",
+          "Lightning Rod"
+        ]
+      },
+      {
+        "name": "Enhancement",
+        "priorities": [
+          "Agility",
+          "Haste",
+          "Mastery",
+          "Crit",
+          "Versatility"
+        ],
+        "talents": [
+          "Landslide",
+          "Wind Rush Totem",
+          "Lightning Surge Totem",
+          "Ancestral Swiftness",
+          "Tempest",
+          "Crashing Storm",
+          "Ascendance"
+        ]
+      },
+      {
+        "name": "Restoration",
+        "priorities": [
+          "Intellect",
+          "Mastery",
+          "Crit",
+          "Versatility",
+          "Haste"
+        ],
+        "talents": [
+          "Torrent",
+          "Graceful Spirit",
+          "Lightning Surge Totem",
+          "Ancestral Guidance",
+          "Ancestral Protection Totem",
+          "Cloudburst Totem",
+          "High Tide"
+        ]
+      }
+    ]
+  },
+  {
+    "classname": "Warlock",
+    "specs": [
+      {
+        "name": "Affliction",
+        "priorities": [
+          "Mastery",
+          "Crit",
+          "Haste",
+          "Intellect",
+          "Versatility"
+        ],
+        "talents": [
+          "Malefic Grasp",
+          "Contagion",
+          "Demonic Circle",
+          "Phantom Singularity",
+          "Burning Rush",
+          "Grimoire Of Supremacy",
+          "Siphon Life"
+        ]
+      },
+      {
+        "name": "Demonology",
+        "priorities": [
+          "Haste",
+          "Intellect",
+          "Crit",
+          "Mastery",
+          "Versatility"
+        ],
+        "talents": [
+          "Demonic Calling",
+          "Improved Dreadstalkers",
+          "Demonic Circle",
+          "Hand Of Doom",
+          "Burning Rush",
+          "Grimoire Of Service",
+          "Soul Conduit"
+        ]
+      },
+      {
+        "name": "Destruction",
+        "priorities": [
+          "Intellect",
+          "Haste",
+          "Crit",
+          "Versatility",
+          "Mastery"
+        ],
+        "talents": [
+          "Backdraft",
+          "Empowered Life Tap",
+          "Demonic Circle",
+          "Soul Harvest",
+          "Burning Rush",
+          "Grimoire Of Service",
+          "Channel Demonfire"
+        ]
+      }
+    ]
+  },
+  {
+    "classname": "Warrior",
+    "specs": [
+      {
+        "name": "Arms",
+        "priorities": [
+          "Mastery",
+          "Haste",
+          "Strength",
+          "Versatility",
+          "Crit"
+        ],
+        "talents": [
+          "Dauntless",
+          "Double Time",
+          "Trauma",
+          "Bounding Stride",
+          "Fervor Of Battle",
+          "In For The Kill",
+          "Opportunity Strikes"
+        ]
+      },
+      {
+        "name": "Fury",
+        "priorities": [
+          "Haste",
+          "Mastery",
+          "Versatility",
+          "Strength",
+          "Crit"
+        ],
+        "talents": [
+          "Endless Rage",
+          "Double Time",
+          "Avatar",
+          "Warpaint",
+          "Frothing Berserker",
+          "Inner Rage",
+          "Reckless Abandon"
+        ]
+      },
+      {
+        "name": "Protection",
+        "priorities": [
+          "Stamina",
+          "Strength",
+          "Haste",
+          "Mastery",
+          "Versatility",
+          "Crit"
+        ],
+        "talents": [
+          "Shockwave",
+          "Inspiring Presence",
+          "Avatar",
+          "Warlords Challenge",
+          "Indomitable",
+          "Vengeance",
+          "Heavy Repercussions"
+        ]
+      }
+    ]
+  }
+]
