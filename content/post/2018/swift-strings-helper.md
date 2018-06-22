@@ -3,7 +3,7 @@ title: "Swift Strings Helper"
 date: 2018-06-21T14:45:59+10:00
 lastmod: 2018-06-21T14:45:59+10:00
 draft: false
-description: ""
+description: "I have created a library of string handling routines for Swift."
 tags: ["swift", "library", "framework"]
 toc: true
 ---
@@ -51,7 +51,7 @@ And now here is the kicker: the results (`subStr` and `sub` in the examples abov
 
 I guess there are cases for using `Substring` but I always just end up casting to `String` to solve this, but only after the compiler has choked on what I thought was a `String` all along.
 
-### The Solution
+## The Solution
 
 To make my life easier, I worked out all the ways that I wanted to be able to split up strings. Basically just two ways: by character number or by substring. Swift already has a `substring` method but it uses `String.Index` as shown above. To avoid confusion, I named my functions all `sub`.
 
@@ -80,7 +80,7 @@ let subStr = startingString.sub(upTo: "xyz")
 let subStr = startingString.sub(from: "abc", upTo: "xyz")
 ```
 
-### Extras
+## Extras
 
 Once I had created a string helper library, I started thinking about all the other string utilities that would be useful. So I started adding all sorts of facilities:
 

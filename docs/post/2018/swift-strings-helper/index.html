@@ -16,12 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Sarah Reichelt" />
-  <meta name="description" content="Hands up everyone who can remember how to work with Swift strings, especially when it comes to substrings and ranges? &amp;hellip;.
-Nobody?
-Me neither. So I decided that I would work it out once and create myself a library to make it easy for myself in the future. And then I thought that other people might like it too. So I have created my first open sourced project.
-
-" />
+<meta name="author" content="Sarah Reichelt" /><meta name="description" content="I have created a library of string handling routines for Swift." />
 
   <meta name="keywords" content="Swift, Apple, macOS, iOS, Apple Watch" />
 
@@ -49,13 +44,7 @@ Me neither. So I decided that I would work it out once and create myself a libra
 
 
 <meta property="og:title" content="Swift Strings Helper" />
-<meta property="og:description" content="Hands up everyone who can remember how to work with Swift strings, especially when it comes to substrings and ranges? &hellip;.
-
-Nobody?
-
-Me neither. So I decided that I would work it out once and create myself a library to make it easy for myself in the future. And then I thought that other people might like it too. So I have created my first open sourced project.
-
-" />
+<meta property="og:description" content="I have created a library of string handling routines for Swift." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://troz.net/post/2018/swift-strings-helper/" />
 
@@ -76,13 +65,7 @@ Me neither. So I decided that I would work it out once and create myself a libra
 
 
 <meta itemprop="name" content="Swift Strings Helper">
-<meta itemprop="description" content="Hands up everyone who can remember how to work with Swift strings, especially when it comes to substrings and ranges? &hellip;.
-
-Nobody?
-
-Me neither. So I decided that I would work it out once and create myself a library to make it easy for myself in the future. And then I thought that other people might like it too. So I have created my first open sourced project.
-
-">
+<meta itemprop="description" content="I have created a library of string handling routines for Swift.">
 
 
 <meta itemprop="datePublished" content="2018-06-21T14:45:59&#43;10:00" />
@@ -189,11 +172,9 @@ Me neither. So I decided that I would work it out once and create myself a libra
 <li>
 <ul>
 <li><a href="#strings-in-swift">Strings in Swift</a></li>
-<li><a href="#the-problems">The Problems</a>
-<ul>
+<li><a href="#the-problems">The Problems</a></li>
 <li><a href="#the-solution">The Solution</a></li>
 <li><a href="#extras">Extras</a></li>
-</ul></li>
 <li><a href="#open-source">Open Source</a></li>
 </ul></li>
 </ul>
@@ -244,7 +225,7 @@ let subStr = str[subStart ..&lt; subEnd]       // &quot;play&quot;
 
 <p>I guess there are cases for using <code>Substring</code> but I always just end up casting to <code>String</code> to solve this, but only after the compiler has choked on what I thought was a <code>String</code> all along.</p>
 
-<h3 id="the-solution">The Solution</h3>
+<h2 id="the-solution">The Solution</h2>
 
 <p>To make my life easier, I worked out all the ways that I wanted to be able to split up strings. Basically just two ways: by character number or by substring. Swift already has a <code>substring</code> method but it uses <code>String.Index</code> as shown above. To avoid confusion, I named my functions all <code>sub</code>.</p>
 
@@ -271,7 +252,7 @@ let subStr = startingString.sub(upTo: &quot;xyz&quot;)
 let subStr = startingString.sub(from: &quot;abc&quot;, upTo: &quot;xyz&quot;)
 </code></pre>
 
-<h3 id="extras">Extras</h3>
+<h2 id="extras">Extras</h2>
 
 <p>Once I had created a string helper library, I started thinking about all the other string utilities that would be useful. So I started adding all sorts of facilities:</p>
 
