@@ -13,17 +13,33 @@
           "Crit"
         ],
         "talents": [
-          "Heartbreaker",
-          "Rapid Decomposition",
+          "Blooddrinker",
+          "Hemostasis",
           "Ossuary",
-          "Red Thirst",
-          "March Of The Damned",
-          "Foul Bulwark",
-          "Purgatory"
+          "Will Of The Necropolis",
+          "Grip Of The Dead",
+          "Bloodworms",
+          "Red Thirst"
         ]
       },
       {
         "name": "Frost",
+        "priorities": [
+          "Strength",
+          "Crit >= Haste >= Mastery >= Versatility"
+        ],
+        "talents": [
+          "Icy Talons",
+          "Runic Attenuation",
+          "Asphyxiate",
+          "Frozen Pulse",
+          "Permafrost",
+          "Gathering Storm",
+          "Breath Of Sindragosa"
+        ]
+      },
+      {
+        "name": "Unholy",
         "priorities": [
           "Strength",
           "Mastery",
@@ -32,31 +48,13 @@
           "Versatility"
         ],
         "talents": [
-          "Runic Attenuation",
-          "Horn Of Winter",
-          "Icecap",
-          "Blinding Sleet",
-          "Volatile Shielding",
-          "Frostscythe",
-          "Obliteration"
-        ]
-      },
-      {
-        "name": "Unholy",
-        "priorities": [
-          "Strength",
-          "Mastery",
-          "Haste",
-          "Crit = Versatility"
-        ],
-        "talents": [
-          "Ebon Fever",
-          "Pestilent Pustules",
           "Clawing Shadows",
-          "Sludge Belcher",
-          "Spell Eater",
-          "Necrosis",
-          "Soul Reaper"
+          "Ebon Fever",
+          "Deaths Reach",
+          "Harbinger Of Doom",
+          "Wraith Walk",
+          "Pestilence",
+          "Army Of The Damned"
         ]
       }
     ]
@@ -67,20 +65,19 @@
       {
         "name": "Havoc",
         "priorities": [
-          "Crit",
-          "Haste",
-          "Versatility",
           "Agility",
+          "Haste >= Versatility",
+          "Crit",
           "Mastery"
         ],
         "talents": [
           "Felblade",
-          "Demon Blades",
+          "Immolation Aura",
+          "Trail Of Ruin",
+          "Desperate Instincts",
           "First Blood",
-          "Soul Rending",
-          "Nemesis",
           "Unleashed Power",
-          "Chaos Blades"
+          "Nemesis"
         ]
       },
       {
@@ -88,17 +85,18 @@
         "priorities": [
           "Stamina",
           "Agility",
+          "Haste",
           "Versatility",
-          "Mastery = Haste",
+          "Mastery",
           "Crit"
         ],
         "talents": [
           "Abyssal Strike",
           "Fallout",
-          "Felblade",
+          "Flame Crash",
           "Fracture",
           "Quickened Sigils",
-          "Fel Devastation",
+          "Spirit Bomb",
           "Last Resort"
         ]
       }
@@ -110,58 +108,54 @@
       {
         "name": "Balance",
         "priorities": [
-          "Haste",
           "Intellect",
-          "Mastery",
-          "Crit",
-          "Versatility"
+          "Haste",
+          "Crit >= Versatility",
+          "Mastery"
         ],
         "talents": [
-          "Starlord",
-          "Displacer Beast",
-          "Guardian Affinity",
+          "Force Of Nature",
+          "Wild Charge",
+          "Guardian Affinity Balance",
           "Typhoon",
           "Incarnation Chosen Of Elune",
-          "Blessing Of The Ancients",
-          "Natures Balance"
+          "Twin Moons",
+          "Fury Of Elune"
         ]
       },
       {
         "name": "Feral",
         "priorities": [
           "Agility",
-          "Crit",
-          "Mastery",
-          "Versatility",
-          "Haste"
+          "Haste",
+          "Mastery >= Crit >= Versatility"
         ],
         "talents": [
-          "Blood Scent",
-          "Displacer Beast",
+          "Lunar Inspiration",
+          "Wild Charge",
           "Balance Affinity",
-          "Mighty Bash",
-          "Soul Of The Forest",
-          "Brutal Slash",
-          "Moment Of Clarity"
+          "Typhoon",
+          "Jagged Wounds",
+          "Savage Roar",
+          "Bloodtalons"
         ]
       },
       {
         "name": "Guardian",
         "priorities": [
           "Stamina",
-          "Versatility",
-          "Mastery",
-          "Haste",
           "Agility",
-          "Crit"
+          "Mastery",
+          "Versatility",
+          "Crit >= Haste"
         ],
         "talents": [
           "Bristling Fur",
-          "Guttural Roars",
+          "Wild Charge",
           "Restoration Affinity",
-          "Typhoon",
-          "Galactic Guardian",
-          "Guardian Of Elune",
+          "Mighty Bash",
+          "Soul Of The Forest Guardian",
+          "Survival Of The Fittest",
           "Pulverize"
         ]
       },
@@ -175,12 +169,12 @@
           "Versatility"
         ],
         "talents": [
-          "Cenarion Ward",
-          "Displacer Beast",
-          "Guardian Affinity",
-          "Typhoon",
+          "Abundance",
+          "Renewal",
+          "Balance Affinity Restoration",
+          "Mass Entanglement",
           "Cultivation",
-          "Spring Blossoms",
+          "Inner Peace",
           "Flourish"
         ]
       }
@@ -193,38 +187,33 @@
         "name": "Beast Mastery",
         "priorities": [
           "Agility",
-          "Mastery",
-          "Haste",
-          "Crit",
-          "Versatility"
+          "Haste >= Crit >= Versatility >= Mastery"
         ],
         "talents": [
-          "Way Of The Cobra",
-          "Dire Frenzy",
-          "Posthaste",
-          "Bestial Fury",
-          "Binding Shot",
+          "Killer Instinct",
+          "Chimaera Shot",
+          "Natural Mending",
           "A Murder Of Crows",
-          "Killer Cobra"
+          "Posthaste",
+          "Stomp",
+          "Aspect Of The Beast"
         ]
       },
       {
         "name": "Marksmanship",
         "priorities": [
-          "Mastery",
           "Agility",
-          "Crit",
-          "Haste",
-          "Versatility"
+          "Haste = Versatility",
+          "Crit >= Mastery"
         ],
         "talents": [
-          "Lone Wolf",
-          "True Aim",
+          "Serpent Sting",
+          "Careful Aim",
+          "Natural Mending",
+          "Hunters Mark",
           "Posthaste",
-          "Explosive Shot",
-          "Binding Shot",
-          "Volley",
-          "Trick Shot"
+          "Lethal Shots",
+          "Lock And Load"
         ]
       },
       {
@@ -232,18 +221,18 @@
         "priorities": [
           "Agility",
           "Haste",
-          "Mastery",
+          "Versatility",
           "Crit",
-          "Versatility"
+          "Mastery"
         ],
         "talents": [
-          "Way Of The Moknathal",
-          "Snake Hunter",
-          "Disengage",
-          "Caltrops",
-          "Rangers Net",
-          "Serpent Sting",
-          "Spitting Cobra"
+          "Alpha Predator",
+          "Butchery",
+          "Natural Mending",
+          "Bloodseeker",
+          "Born To Be Wild",
+          "Flanking Strike",
+          "Birds Of Prey"
         ]
       }
     ]
@@ -255,18 +244,16 @@
         "name": "Arcane",
         "priorities": [
           "Intellect",
-          "Mastery",
-          "Crit",
-          "Versatility",
-          "Haste"
+          "Versatility >= Crit >= Haste",
+          "Mastery"
         ],
         "talents": [
           "Amplification",
-          "Slipstream",
+          "Shimmer",
           "Rune Of Power",
           "Resonance",
           "Chrono Shift",
-          "Erosion",
+          "Touch Of The Magi",
           "Overpowered"
         ]
       },
@@ -276,36 +263,34 @@
           "Intellect",
           "Crit",
           "Mastery",
-          "Haste",
-          "Versatility"
+          "Versatility >= Haste"
         ],
         "talents": [
-          "Conflagration",
+          "Searing Touch",
           "Shimmer",
           "Rune Of Power",
-          "Flame On",
+          "Phoenix Flames",
           "Frenetic Speed",
-          "Living Bomb",
-          "Cinderstorm"
+          "Conflagration",
+          "Pyroclasm"
         ]
       },
       {
         "name": "Frost",
         "priorities": [
           "Intellect",
-          "Haste",
           "Crit",
-          "Versatility",
-          "Mastery"
+          "Haste",
+          "Versatility >= Mastery"
         ],
         "talents": [
           "Bone Chilling",
           "Shimmer",
-          "Mirror Image",
-          "Frozen Touch",
-          "Ice Ward",
-          "Unstable Magic",
-          "Thermal Void"
+          "Incanters Flow",
+          "Ebonbolt",
+          "Frigid Winds",
+          "Splitting Ice",
+          "Glacial Spike"
         ]
       }
     ]
@@ -318,18 +303,19 @@
         "priorities": [
           "Stamina",
           "Agility",
-          "Haste",
-          "Mastery = Crit",
-          "Versatility"
+          "Crit",
+          "Versatility",
+          "Mastery",
+          "Haste"
         ],
         "talents": [
           "Eye Of The Tiger",
           "Tigers Lust",
           "Black Ox Brew",
-          "Summon Black Ox Statue",
-          "Mystic Vitality",
-          "Rushing Jade Wind",
-          "Blackout Combo"
+          "Tiger Tail Sweep",
+          "Dampen Harm",
+          "Rushing Jade Wind Brewmaster",
+          "High Tolerance"
         ]
       },
       {
@@ -338,35 +324,35 @@
           "Intellect",
           "Crit",
           "Versatility",
-          "Mastery",
-          "Haste"
+          "Haste",
+          "Mastery"
         ],
         "talents": [
-          "Chi Burst",
-          "Tigers Lust",
           "Mist Wrap",
-          "Leg Sweep",
-          "Healing Elixir",
-          "Invoke Chiji The Red Crane",
-          "Focused Thunder"
+          "Tigers Lust",
+          "Mana Tea",
+          "Ring Of Peace",
+          "Dampen Harm",
+          "Summon Jade Serpent Statue",
+          "Upwelling"
         ]
       },
       {
         "name": "Windwalker",
         "priorities": [
           "Agility",
+          "Versatility",
           "Mastery",
           "Crit",
-          "Versatility",
           "Haste"
         ],
         "talents": [
-          "Chi Wave",
+          "Chi Burst",
           "Tigers Lust",
-          "Energizing Elixir",
-          "Leg Sweep",
-          "Healing Elixir",
-          "Hit Combo",
+          "Fist Of The White Tiger",
+          "Good Karma",
+          "Dampen Harm",
+          "Invoke Xuen, The White Tiger",
           "Whirling Dragon Punch"
         ]
       }
@@ -380,17 +366,16 @@
         "priorities": [
           "Intellect",
           "Crit",
-          "Mastery",
-          "Versatility",
+          "Mastery >= Versatility",
           "Haste"
         ],
         "talents": [
           "Bestow Faith",
           "Rule Of Law",
           "Blinding Light",
-          "Aura Of Mercy",
-          "Divine Purpose",
+          "Devotion Aura",
           "Judgment Of Light",
+          "Avenging Crusader",
           "Beacon Of Faith"
         ]
       },
@@ -400,17 +385,16 @@
           "Stamina",
           "Strength",
           "Haste",
-          "Versatility",
-          "Mastery",
+          "Versatility >= Mastery",
           "Crit"
         ],
         "talents": [
-          "Blessed Hammer",
+          "Redoubt",
           "Bastion Of Light",
-          "Fist Of Justice",
-          "Blessing Of Spellwarding",
+          "Blinding Light",
+          "Cavalier",
           "Hand Of The Protector",
-          "Judgment Of Light",
+          "Aegis Of Light",
           "Righteous Protector"
         ]
       },
@@ -419,16 +403,16 @@
         "priorities": [
           "Strength",
           "Haste",
-          "Crit = Versatility",
+          "Crit >= Versatility",
           "Mastery"
         ],
         "talents": [
-          "Final Verdict",
           "Zeal",
-          "Blinding Light",
-          "Divine Hammer",
-          "Eye For An Eye",
-          "Cavalier",
+          "Hammer Of Wrath",
+          "Fist Of Justice Retribution",
+          "Consecration",
+          "Unbreakable Spirit",
+          "Selfless Healer",
           "Crusade"
         ]
       }
@@ -442,16 +426,16 @@
         "priorities": [
           "Intellect",
           "Haste",
-          "Crit = Mastery",
-          "Versatility"
+          "Mastery",
+          "Versatility >= Crit"
         ],
         "talents": [
-          "Twist Of Fate",
+          "Castigation",
           "Angelic Feather",
+          "Mindbender",
           "Shining Force",
-          "Shield Discipline",
-          "Sanctuary",
-          "Purge The Wicked",
+          "Contrition",
+          "Halo",
           "Evangelism"
         ]
       },
@@ -467,30 +451,30 @@
         "talents": [
           "Enlightenment",
           "Angelic Feather",
-          "Afterlife",
-          "Light Of The Naaru",
-          "Piety",
-          "Divinity",
-          "Benediction"
+          "Cosmic Ripple",
+          "Shining Force",
+          "Binding Heal",
+          "Benediction",
+          "Word Salvation"
         ]
       },
       {
         "name": "Shadow",
         "priorities": [
+          "Intellect",
           "Haste",
           "Crit",
-          "Mastery",
           "Versatility",
-          "Intellect"
+          "Mastery"
         ],
         "talents": [
-          "Twist Of Fate",
+          "Fortress Of The Mind",
           "Body And Soul",
-          "Mind Bomb",
-          "Lingering Insanity",
-          "Auspicious Spirits",
-          "Mindbender",
-          "Legacy Of The Void"
+          "Dark Void",
+          "Last Word",
+          "Crash",
+          "Mindbender Shadow",
+          "Dark Ascension"
         ]
       }
     ]
@@ -502,19 +486,19 @@
         "name": "Assassination",
         "priorities": [
           "Agility",
-          "Mastery",
-          "Versatility",
+          "Haste",
           "Crit",
-          "Haste"
+          "Mastery",
+          "Versatility"
         ],
         "talents": [
           "Master Poisoner",
-          "Subterfuge",
+          "Nightstalker",
           "Vigor",
           "Cheat Death",
-          "Thuggee",
+          "Prey On The Weak",
           "Toxic Blade",
-          "Venom Rush"
+          "Poison Bomb"
         ]
       },
       {
@@ -523,36 +507,34 @@
           "Agility",
           "Versatility",
           "Haste",
-          "Crit",
-          "Mastery"
+          "Crit >= Mastery"
         ],
         "talents": [
-          "Ghostly Strike",
-          "Grappling Hook",
-          "Deeper Stratagem",
+          "Quick Draw",
+          "Hit And Run",
+          "Vigor",
           "Cheat Death",
           "Prey On The Weak",
           "Alacrity",
-          "Marked For Death"
+          "Killing Spree"
         ]
       },
       {
         "name": "Subtlety",
         "priorities": [
           "Agility",
-          "Mastery",
-          "Versatility",
-          "Crit",
-          "Haste"
+          "Haste",
+          "Mastery >= Versatility",
+          "Crit"
         ],
         "talents": [
-          "Master Of Subtlety",
+          "Find Weakness",
           "Nightstalker",
-          "Deeper Stratagem",
+          "Marked For Death",
           "Cheat Death",
           "Prey On The Weak",
           "Dark Shadow",
-          "Death From Above"
+          "Master Of Shadows"
         ]
       }
     ]
@@ -564,19 +546,17 @@
         "name": "Elemental",
         "priorities": [
           "Intellect",
-          "Mastery",
           "Crit",
-          "Versatility",
-          "Haste"
+          "Haste >= Versatility >= Mastery"
         ],
         "talents": [
-          "Totem Mastery",
-          "Gust Of Wind",
-          "Lightning Surge Totem",
-          "Ancestral Swiftness",
-          "Elemental Blast",
-          "Echo Of The Elements",
-          "Lightning Rod"
+          "Exposed Elements",
+          "Totem Mastery Elemental",
+          "Spirit Wolf",
+          "High Voltage",
+          "Natures Guardian",
+          "Primal Elementalist",
+          "Unlimited Power"
         ]
       },
       {
@@ -584,36 +564,35 @@
         "priorities": [
           "Agility",
           "Haste",
-          "Mastery",
           "Crit",
-          "Versatility"
+          "Versatility",
+          "Mastery"
         ],
         "talents": [
+          "Lightning Shield",
           "Landslide",
+          "Spirit Wolf",
+          "Searing Assault",
           "Wind Rush Totem",
-          "Lightning Surge Totem",
-          "Ancestral Swiftness",
-          "Tempest",
-          "Crashing Storm",
-          "Ascendance"
+          "Sundering",
+          "Earthen Spike"
         ]
       },
       {
         "name": "Restoration",
         "priorities": [
           "Intellect",
-          "Mastery",
           "Crit",
           "Versatility",
-          "Haste"
+          "Haste >= Mastery"
         ],
         "talents": [
           "Torrent",
-          "Graceful Spirit",
-          "Lightning Surge Totem",
-          "Ancestral Guidance",
-          "Ancestral Protection Totem",
-          "Cloudburst Totem",
+          "Echo Of The Elements",
+          "Spirit Wolf",
+          "Ancestral Vigor",
+          "Natures Guardian",
+          "Downpour",
           "High Tide"
         ]
       }
@@ -625,58 +604,55 @@
       {
         "name": "Affliction",
         "priorities": [
-          "Mastery",
-          "Crit",
-          "Haste",
           "Intellect",
+          "Mastery = Haste",
+          "Crit",
           "Versatility"
         ],
         "talents": [
-          "Malefic Grasp",
-          "Contagion",
+          "Deathbolt",
+          "Writhe In Agony",
+          "Dark Pact",
+          "Vile Taint",
           "Demonic Circle",
-          "Phantom Singularity",
-          "Burning Rush",
-          "Grimoire Of Supremacy",
-          "Siphon Life"
+          "Shadow Embrace",
+          "Creeping Death"
         ]
       },
       {
         "name": "Demonology",
         "priorities": [
-          "Haste",
           "Intellect",
-          "Crit",
           "Mastery",
-          "Versatility"
+          "Haste",
+          "Crit >= Versatility"
         ],
         "talents": [
-          "Demonic Calling",
-          "Improved Dreadstalkers",
+          "Dreadlash",
+          "Doom",
+          "Dark Pact",
+          "Soul Strike",
           "Demonic Circle",
-          "Hand Of Doom",
-          "Burning Rush",
-          "Grimoire Of Service",
-          "Soul Conduit"
+          "Grimoire Felguard",
+          "Sacrificed Souls"
         ]
       },
       {
         "name": "Destruction",
         "priorities": [
           "Intellect",
-          "Haste",
-          "Crit",
+          "Haste >= Crit",
           "Versatility",
           "Mastery"
         ],
         "talents": [
-          "Backdraft",
-          "Empowered Life Tap",
+          "Flashover",
+          "Reverse Entropy",
+          "Dark Pact",
+          "Fire And Brimstone",
           "Demonic Circle",
-          "Soul Harvest",
-          "Burning Rush",
-          "Grimoire Of Service",
-          "Channel Demonfire"
+          "Grimoire Of Supremacy",
+          "Dark Soul Instability"
         ]
       }
     ]
@@ -687,39 +663,39 @@
       {
         "name": "Arms",
         "priorities": [
-          "Mastery",
-          "Haste",
           "Strength",
+          "Crit",
+          "Haste",
           "Versatility",
-          "Crit"
+          "Mastery"
         ],
         "talents": [
-          "Dauntless",
+          "Skullsplitter",
           "Double Time",
-          "Trauma",
+          "Rend",
           "Bounding Stride",
-          "Fervor Of Battle",
+          "Warbreaker",
           "In For The Kill",
-          "Opportunity Strikes"
+          "Anger Management"
         ]
       },
       {
         "name": "Fury",
         "priorities": [
-          "Haste",
-          "Mastery",
-          "Versatility",
           "Strength",
-          "Crit"
+          "Crit",
+          "Haste",
+          "Versatility",
+          "Mastery"
         ],
         "talents": [
           "Endless Rage",
           "Double Time",
-          "Avatar",
-          "Warpaint",
-          "Frothing Berserker",
-          "Inner Rage",
-          "Reckless Abandon"
+          "Furious Slash",
+          "Bounding Stride",
+          "Carnage",
+          "Dragon Roar",
+          "Anger Management"
         ]
       },
       {
@@ -728,18 +704,17 @@
           "Stamina",
           "Strength",
           "Haste",
-          "Mastery",
-          "Versatility",
+          "Mastery >= Versatility",
           "Crit"
         ],
         "talents": [
-          "Shockwave",
-          "Inspiring Presence",
-          "Avatar",
-          "Warlords Challenge",
-          "Indomitable",
-          "Vengeance",
-          "Heavy Repercussions"
+          "Punish",
+          "Bounding Stride",
+          "Unstoppable Force",
+          "Bolster",
+          "Rumbling Earth",
+          "Booming Voice",
+          "Anger Management"
         ]
       }
     ]
