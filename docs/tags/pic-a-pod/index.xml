@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pic a Pod on TrozWare</title>
+    <link>https://troz.net/tags/pic-a-pod/</link>
+    <description>Recent content in Pic a Pod on TrozWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 11 May 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://troz.net/tags/pic-a-pod/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pic-a-POD 2.0.4 for Mac</title>
+      <link>https://troz.net/post/2012/pic-a-pod-2-0-4-for-mac/</link>
+      <pubDate>Fri, 11 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2012/pic-a-pod-2-0-4-for-mac/</guid>
+      <description> The latest update for Pic-a-POD for Mac is now available through the Mac App Store.
+Bug fix:  selecting an iPhoto pic from the Recent Desktops menu now works correctly.  New features:  Better indication of downloads and when large pics are not yet available Direct link to App Store in Help menu - please rate or review.  </description>
+    </item>
+    
+  </channel>
+</rss>

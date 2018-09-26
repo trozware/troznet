@@ -1,6 +1,7 @@
 ---
 date: 2012-03-19T00:00:00Z
-mac_app_desc: A menu bar utility app that displays your current time and date in words
+mac_app_desc:
+  A menu bar utility app that displays your current time and date in words
   as well as your preferred time zones.
 mac_app_image: /icons/TimeInWords128.png
 mac_app_name: World Time In Words
@@ -9,8 +10,10 @@ url: /time-in-words-for-mac/
 ---
 
 <a href="http://itunes.apple.com/au/app/time-in-words/id509085586?mt=8" target="_blank">World
-Time In Words for Mac</a> version 3.0 is now available through the Mac App
-Store. This update changes the name from "Time In Words" to "World Time In
+Time In Words for Mac</a> version 3.2 is now available through the Mac App
+Store. This version adds support for macOS Mojave dark mode.
+
+Version 3 changed the name from "Time In Words" to "World Time In
 Words" as an acknowledgment that the major feature of this app is converting
 time between different time zones. This update adds the ability to show digital
 time if you need greater accuracy - just hold down Option as you open the menu.
@@ -18,7 +21,7 @@ I have also added the ability to show 24-hour time in the menu bar.
 
 World Time In Words runs as a menu bar utility app that displays your current
 time and date in words. Optionally, it can be set to display a number of time
-zones, again in plain English so it is always clear which day is being referred
+zones, in plain English so it is always clear which day is being referred
 to. It shows the time in words in your menu bar all the time if you like, and
 now offers a convenient way to work out what the time will be in other zones at
 a specified local time.
@@ -37,10 +40,6 @@ the right to move a time zone to the list on the left, which shows the time
 zones that will appear in the menu. Drag a line out of the list on the left to
 remove a zone, or double-click the unwanted line. Drag and drop to re-arrange
 the zones in the selected list.</span>
-
-Mars geeks: scroll to the bottom of the time zone list or search for Mars,
-Curiosity or Opportunity to find the Mars Rovers. Adding them to your selected
-time zones will show how many Sols (Martian days) the rovers have been on Mars.
 
 Once you have selected some time zones, your menu may look like
 this:<img src="/images/WTiW-web-3.png" alt="World Time In Words menu with added time zones" width="280" height="667" />
@@ -71,9 +70,9 @@ If you want to make World Time In Words start automatically whenever you log in
 to your Mac, check the "Auto start..." checkbox. This uses Apple's new methods
 of adding sandboxed items to the login startup list which has two consequences:
 
-* World Time In Words will not show up in your Login Items if you go to System
+- World Time In Words will not show up in your Login Items if you go to System
   Preferences
-* The auto-start will only work if the app is installed in your Applications
+- The auto-start will only work if the app is installed in your Applications
   folder.
 
 While I do not think the second item is a problem, since the App Store

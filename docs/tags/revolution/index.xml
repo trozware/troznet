@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Revolution on TrozWare</title>
+    <link>https://troz.net/tags/revolution/</link>
+    <description>Recent content in Revolution on TrozWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 18 Mar 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://troz.net/tags/revolution/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LiveCode stacks</title>
+      <link>https://troz.net/post/2015/livecode-stacks/</link>
+      <pubDate>Wed, 18 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2015/livecode-stacks/</guid>
+      <description>When I converted my site to Jekyll &amp;amp; GitHub, one of the things I left behind was a collection of LiveCode (Revolution) stacks. For many years I was active in the Revolution community before going in other directions and over that time, I built up a small library of stacks that I released into the public domain.
+LiveCode is a cross-platform rapid development environment. There is an open source community edition available for anyone wishing to get started.</description>
+    </item>
+    
+  </channel>
+</rss>

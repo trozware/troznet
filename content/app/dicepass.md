@@ -1,6 +1,7 @@
 ---
 date: 2015-05-29T00:00:00Z
-mac_app_desc: A utility to app to generate random passphrases based on the Diceware
+mac_app_desc:
+  A utility to app to generate random passphrases based on the Diceware
   system.
 mac_app_image: /icons/DicePass128.png
 mac_app_name: Dice Pass
@@ -8,7 +9,7 @@ title: Dice Pass
 url: /dicepass/
 ---
 
-Dice Pass is available from the [Mac App Store][0].
+Dice Pass is available from the [Mac App Store][0] and version 3.2 (released 26th September 2018) supports macOS Mojave's dark mode.
 
 Dice Pass is a utility to app to generate random passphrases based on the
 [Diceware system][1]. Diceware uses a table of pre-defined words, each assigned
@@ -59,9 +60,9 @@ page.
 
 **Online password strength checkers:**
 
-* [Rumkin.com Strength Test][4]
-* [How Secure Is My Password?][5]
-* [The Password Meter][6]
+- [Rumkin.com Strength Test][4]
+- [How Secure Is My Password?][5]
+- [The Password Meter][6]
 
 **Some of the words in the phrase are not complete words.**
 

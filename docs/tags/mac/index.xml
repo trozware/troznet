@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mac on TrozWare</title>
+    <link>https://troz.net/tags/mac/</link>
+    <description>Recent content in Mac on TrozWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 26 Sep 2018 16:49:43 +1000</lastBuildDate>
+    
+	<atom:link href="https://troz.net/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Moving to the Dark Side</title>
+      <link>https://troz.net/post/2018/moving-to-the-dark-side/</link>
+      <pubDate>Wed, 26 Sep 2018 16:49:43 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2018/moving-to-the-dark-side/</guid>
+      <description>&lt;p&gt;With the release of macOS Mojave on 24th September 2018, I have started updating my Mac apps, mainly to enable support for dark mode if appropriate.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>App Updates</title>
+      <link>https://troz.net/post/2018/app-updates/</link>
+      <pubDate>Sat, 26 May 2018 09:22:57 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2018/app-updates/</guid>
+      <description>&lt;p&gt;Just a quick post to let you know about some recent app updates&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Icon Builder 5</title>
+      <link>https://troz.net/post/2018/icon-builder-5/</link>
+      <pubDate>Sun, 18 Feb 2018 10:19:18 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2018/icon-builder-5/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;Icon Builder 5.0&lt;/a&gt; is now available from the &lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Mac App Store&lt;/a&gt;. This is a complete re-write for better compatibility with Apple&amp;rsquo;s latest icon requirements. Read on to see what I have fixed and how&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Looking for beta testers</title>
+      <link>https://troz.net/post/2016/looking-for-beta-testers/</link>
+      <pubDate>Thu, 17 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2016/looking-for-beta-testers/</guid>
+      <description>I am looking for beta testers for my latest Mac app: Work.
+Work is a project organizer app for developers, designers, students or any professional who works with multiple projects involving files &amp;amp; folders, web pages, email addresses and lists of tasks. Click the link above for more information and help for getting started.
+Work requires macOS 10.12 or OS X 10.11.
+If you would like to test this app, please contact me, giving details of your Mac and operating system.</description>
+    </item>
+    
+    <item>
+      <title>Another Man Reader Update...</title>
+      <link>https://troz.net/post/2016/another-man-reader-update/</link>
+      <pubDate>Sat, 05 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2016/another-man-reader-update/</guid>
+      <description>A quick update to Man Reader to version 1.8 is now available through the Mac App Store.
+The main reason for this version was that Man Reader was not previously detecting man pages installed by third-party IDEs in the Applications folder. There was also an issue with Man Reader failing to display the text of the previously selected man page on app launch.
+ More complete search for man pages, including in third-party IDEs.</description>
+    </item>
+    
+    <item>
+      <title>Man Reader Update</title>
+      <link>https://troz.net/post/2016/man-reader-update/</link>
+      <pubDate>Wed, 12 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2016/man-reader-update/</guid>
+      <description>Man Reader has just been updated to version 1.7 and is available through the Mac App Store.
+The main reason for this update was to make the app work well with macOS Sierra, as I found that version 1.6 was sometimes crashing on launch. While doing this, the update was rejected by the App Store reviewers because it crashed on OS X 10.10. Since I no longer have a Mac running 10.</description>
+    </item>
+    
+    <item>
+      <title>Podcasting</title>
+      <link>https://troz.net/post/2016/podcasting/</link>
+      <pubDate>Tue, 11 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2016/podcasting/</guid>
+      <description>I have recently started what I hope will be a weekly podcast with my friend and colleague, Jerry Daniels. Each podcast will be about 30 minutes in length.
+We will discuss Macs, iPhones, iPads, macOS, iOS, programming and anything tech-related that we find interesting. I hope you will find it entertaining and informative, so please join us.
+We are using ZCast which has an iPhone app that makes it super easy to get together and record our chats.</description>
+    </item>
+    
+    <item>
+      <title>Dice Pass Updated</title>
+      <link>https://troz.net/post/2016/dice-pass-updated/</link>
+      <pubDate>Sat, 17 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2016/dice-pass-updated/</guid>
+      <description>Dice Pass 1.1 is now available from the Mac App Store.
+What does Dice Pass do? Dice Pass is a utility to app to generate random passphrases based on the Diceware system. Diceware uses a table of pre-defined words, each assigned a 5 digit code number containing the digits 1 to 6. The official way to generate a phrase is to roll 5 dice for each word you want in your passphrase and then consult the words table to find the matching word.</description>
+    </item>
+    
+    <item>
+      <title>How much work does Icon Builder save you?</title>
+      <link>https://troz.net/post/2016/how-much-work-does-icon-builder-save-you/</link>
+      <pubDate>Sat, 17 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2016/how-much-work-does-icon-builder-save-you/</guid>
+      <description>Icon Builder is a Mac app that takes a single image file and creates all the different image sizes that you need to make a set of icons for your app: Mac, iPhone, iPad, iOS Universal or Apple Watch.
+Version 4, released 16 September 2016 is available through the Mac App Store.
+What&amp;rsquo;s New in Version 4:  Added support for iMessage apps and Sticker Pack apps. Added support for creating Mac .</description>
+    </item>
+    
+    <item>
+      <title>Man Reader updated to 1.6</title>
+      <link>https://troz.net/post/2016/man-reader-updated-to-1.6/</link>
+      <pubDate>Sat, 16 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2016/man-reader-updated-to-1.6/</guid>
+      <description>Man Reader has been updated to version 1.6 with the permissions needed for finding all available man pages and a fix for search terms being over-written after a background update.
+Man Reader 1.6 is now available through the Mac App Store.
+Change Log:  Permissions fix when searching for available man pages. Fixed error with new search term being over-written. Sand-boxed version now works just as well as the non-sand-boxed so please switch back to this version.</description>
+    </item>
+    
+    <item>
+      <title>Dice Pass Mac Update</title>
+      <link>https://troz.net/post/2016/dice-pass-mac-update/</link>
+      <pubDate>Sun, 03 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2016/dice-pass-mac-update/</guid>
+      <description>I recently got an email from someone who had purchased Dice Pass for Mac from the Mac App Store but had been unable to get it to run. This person was using OS X 10.9.3.
+I checked the App Store specifications and it showed that 10.9 was the minimum system requirement, so it should have worked. But going back to my Xcode project, I found that it was set to a minimum of OS X 10.</description>
+    </item>
+    
+    <item>
+      <title>Icon Builder 3.2 Released</title>
+      <link>https://troz.net/post/2016/icon-builder-32-released/</link>
+      <pubDate>Wed, 10 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2016/icon-builder-32-released/</guid>
+      <description>Icon Builder 3.2 is now available from the Mac App Store.
+ Icons for Apple Watch apps now have their alpha channel removed. Tidier folder structure for related files (iTunes Artwork files and Read Me). Updated to work with Xcode 7&amp;rsquo;s Assets.xcassets folders. Creates iPad Pro icons for Xcode 7.2 or later. Fix for Retina Macs creating double-sized images.  </description>
+    </item>
+    
+    <item>
+      <title>Man Reader 1.5</title>
+      <link>https://troz.net/post/2016/man-reader-1.5/</link>
+      <pubDate>Sun, 31 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2016/man-reader-1.5/</guid>
+      <description>Man Reader has been updated to version 1.5 with a major improvement in the way it looks for available man pages.
+Man Reader 1.5 is now available through the Mac App Store.
+Change Log:  Much improved searching for available man pages. Sand-boxed version now works just as well as the non-sand-boxed.  The main feature of this version is that it solves the previous problems with the App Store version and sand-boxing.</description>
+    </item>
+    
+    <item>
+      <title>Dice Pass for Mac</title>
+      <link>https://troz.net/post/2015/dice-pass-for-mac/</link>
+      <pubDate>Sat, 30 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2015/dice-pass-for-mac/</guid>
+      <description>We live in a world of passwords and passphrases and there is a constant struggle between having a secure and a memorable password. As a result, many of us re-use passwords even though we know this is a bad idea.
+XKCD had a wonderful comic that illustrated the theory of using a passphrase composed of words that are easy to remember but with a combination that made the passphrase very hard to guess.</description>
+    </item>
+    
+    <item>
+      <title>Icon Builder 3.0.1</title>
+      <link>https://troz.net/post/2015/icon-builder-3.0.1/</link>
+      <pubDate>Tue, 17 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2015/icon-builder-3.0.1/</guid>
+      <description>So why an announcement for such a minor upgrade?
+Version 3.0 got no announcement because it was not the release I wanted.
+Having downloaded the Xcode 6.2 &amp;amp; 6.3 betas, I had worked out what icons were needed to a WatchKit app. This, combined with several other changes, made me bump the version number to 3.0.
+Sadly, Apple rejected the update because it referred to pre-release products. So I pulled all mentions of WatchKit out of the interface and meta data and got 3.</description>
+    </item>
+    
+    <item>
+      <title>Man Reader 1.4 Now Available</title>
+      <link>https://troz.net/post/2014/man-reader-1-4-now-available/</link>
+      <pubDate>Thu, 03 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2014/man-reader-1-4-now-available/</guid>
+      <description>Man Reader 1.4 is now available through the Mac App Store.
+The new features and fixes are:  Fix for plain text view not wrapping correctly for odd-sized fonts. Fix for HTML text view over-riding font colors that may be invisible. Search for missing entry (e.g. g++) no longer requires Enter or Return. Better automatic selection of matching entries while searching. Fix for animation warning message appearing in Console. Status display shows when man page list is being updated.</description>
+    </item>
+    
+    <item>
+      <title>Email clients for Mac and iOS</title>
+      <link>https://troz.net/post/2014/email-clients-for-mac-ios/</link>
+      <pubDate>Tue, 25 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2014/email-clients-for-mac-ios/</guid>
+      <description>Some people are moving away from email, but for me, it remains the best way to communicate online. I get to keep a record of conversations and the attached files are with the text so I can always see the context.
+But I think everyone would agree that Apple have dropped the ball with Mail in OS X Mavericks, and to a lesser extent, in iOS 7.
+So I have been on a campaign lately to find an email client that suits my needs.</description>
+    </item>
+    
+    <item>
+      <title>Icon Builder &amp; iOS 7</title>
+      <link>https://troz.net/post/2013/icon-builder-ios-7/</link>
+      <pubDate>Mon, 23 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2013/icon-builder-ios-7/</guid>
+      <description>Icon Builder 1.2 was released on 18 September 2013.
+It was an update with 2 new functions:
+ The ability to create images to suit an Xcode 5 assets library The ability to create icons with the required sizes for IOS 7 apps.  Knowing that iOS 7 apps can only be built using Xcode 5, I linked the switch for these 2 abilities in a single check box.
+The problem was not really that they were in a single checkbox but that I had labelled it badly, so it was not obvious that this was what needed to be checked to create iOS 7 sized icon files.</description>
+    </item>
+    
+    <item>
+      <title>Icon apps updated</title>
+      <link>https://troz.net/post/2013/icon-apps-updated/</link>
+      <pubDate>Thu, 19 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2013/icon-apps-updated/</guid>
+      <description>Icns Maker and Icon Builder have both just been updated to support Xcode 5.
+Icon Builder is a Mac app that takes your images and creates all the required icon files for use in your iOS apps.
+It now supports Xcode 5&amp;rsquo;s image assets folders and if you are using Xcode 5, it will create the icon sizes required for iOS 7 app.
+Icns Maker is a Mac app that takes your images and creates icons for use in your Mac apps.</description>
+    </item>
+    
+    <item>
+      <title>A Knight&#39;s Move 1.3</title>
+      <link>https://troz.net/post/2013/a-knights-move-1-3/</link>
+      <pubDate>Wed, 27 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2013/a-knights-move-1-3/</guid>
+      <description>UPDATE: September 2016 - A Knight&amp;rsquo;s Move for iOS is no longer available.
+A Knight&amp;rsquo;s Move for Mac is still supported.
+A Knight&amp;rsquo;s Move has been updated to version 1.3. The Mac version is available through the Mac App Store.
+Three new level packs:  Eight by Eight Bishops Rule Castles  Eight by Eight has every puzzle set in a chessboard sized grid with more conventional placing of pieces.</description>
+    </item>
+    
+    <item>
+      <title>Man Reader (no SB)</title>
+      <link>https://troz.net/post/2013/man-reader-no-sb/</link>
+      <pubDate>Wed, 06 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2013/man-reader-no-sb/</guid>
+      <description>These instructions are no longer valid. As of version 1.5, the App Store version of Man Reader has solved the sand-boxing issues and is now as powerful as the non-sand-boxed version.
+The non-sand-boxed version will no longer be supported or updated, so please revert to the App Store version.
+If you find that Man Reader is not working well for you due to Apple&amp;rsquo;s sandboxing restrictions, then you can download a non-sandboxed version here.</description>
+    </item>
+    
+    <item>
+      <title>Sand-Boxing Man Reader</title>
+      <link>https://troz.net/post/2013/sand-boxing-man-reader/</link>
+      <pubDate>Wed, 06 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2013/sand-boxing-man-reader/</guid>
+      <description>These instructions are no longer valid. As of version 1.5, the App Store version of Man Reader has solved the sand-boxing issues and is now as powerful as the non-sand-boxed version.
+The non-sand-boxed version will no longer be supported or updated, so please revert to the App Store version.
+As with all apps in the App Store, Man Reader is restricted by Apple&amp;rsquo;s sand-boxing policy. Sand-boxing is a great thing. It isolates apps from each other and from the system, making it far less likely that a problem app will cause wide-spread havoc.</description>
+    </item>
+    
+    <item>
+      <title>Icns Maker &amp; Icon Builder updated</title>
+      <link>https://troz.net/post/2013/icns-maker-icon-builder-updated/</link>
+      <pubDate>Sat, 19 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2013/icns-maker-icon-builder-updated/</guid>
+      <description>January 18th 2013:
+Both of the icon building apps have now been updated to fix a but that made incorrect icon sizes when running on a Retina MacBook Pro.
+Icns Maker uses your image to create an icns file for Mac apps.
+
+Icon Builder uses your image to create the suite of icon files needed for iOS apps.</description>
+    </item>
+    
+    <item>
+      <title>Icon Makers &amp; Retina Macs</title>
+      <link>https://troz.net/post/2013/icon-makers-retina-macs/</link>
+      <pubDate>Mon, 14 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2013/icon-makers-retina-macs/</guid>
+      <description>Icns Maker which makes an icns icon file for Mac apps, and Icon Builder which makes the suite of png files needed for iOS apps, are both compatible with the Retina MacBook Pro.
+However it was recently brought to my attention (thanks Cameron), that when running on a Retina MBP, all the icon files were exactly twice as large as they should be. The Icon.png file which supplies the main app icon for iPhone apps should be 57 pixels by 57 pixels.</description>
+    </item>
+    
+    <item>
+      <title>App Store Review Times</title>
+      <link>https://troz.net/post/2012/app-store-review-times/</link>
+      <pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2012/app-store-review-times/</guid>
+      <description>There are been a lots of stories going around about lengthening Mac App Store review times. Shiny Developments crowd-sourced data certainly backs this up although they have much more data for iOS apps than for Mac apps.
+Some people, including Lex Friedman of MacWorld and John Gruber of Daring Fireball, are suggesting that the delays are due to the rush of new apps to support the iPhone 5 and iOS 6.</description>
+    </item>
+    
+    <item>
+      <title>Icon makers for Mac &amp; iOS apps</title>
+      <link>https://troz.net/post/2012/icon-makers-for-mac-ios-apps/</link>
+      <pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2012/icon-makers-for-mac-ios-apps/</guid>
+      <description>Announcing two new apps for creating icons for with Mac or iOS projects:
+Icns Maker helps you convert a single image into a .icns file in two steps.
+Icon Builder creates all the files needed to set up your icons for any iOS project.
+Creating icon files for Mac apps: In versions of Xcode before 4.4, Apple provided an app called “Icon Composer”. It allowed you to drag images into a window and export a .</description>
+    </item>
+    
+    <item>
+      <title>Man Reader 1.1 Released</title>
+      <link>https://troz.net/post/2012/man-reader-1-1-released/</link>
+      <pubDate>Tue, 14 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2012/man-reader-1-1-released/</guid>
+      <description>The update of Man Reader to version 1.1 has just become available through the Mac App Store. This update has a bunch of new features - thanks to everyone who made suggestions.
+As detailed in a previous post, there have been major issues getting this app approved with Apple&amp;rsquo;s new sand-boxing restrictions fully in place. But to their credit, the Apple reviewers have been unfailing helpful and polite in answering my questions and keeping me informed.</description>
+    </item>
+    
+    <item>
+      <title>Sandboxing and the Mac App Store</title>
+      <link>https://troz.net/post/2012/sandboxing-and-the-mac-app-store/</link>
+      <pubDate>Sat, 28 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2012/sandboxing-and-the-mac-app-store/</guid>
+      <description>As of June 2012, all apps submitted to the Mac App Store have to be sandboxed i.e. they have to be able to run in a limited environment where they cannot interfere with other apps or other parts of the system. While this is generally a good thing, there are problems when apps have legitimate reasons for requiring access to other resources.
+One annoyance for developers is that Apple&amp;rsquo;s apps are mostly not sandboxed.</description>
+    </item>
+    
+    <item>
+      <title>Update to Time In Words screen saver</title>
+      <link>https://troz.net/post/2012/update-to-time-in-words-screen-saver/</link>
+      <pubDate>Fri, 27 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2012/update-to-time-in-words-screen-saver/</guid>
+      <description>Time In Words screen saver has just been updated to version 1.1 and is now fully compatible with Mountain Lion. It is free to use and can be downloaded here.
+The basic screen saver worked before, but searching for an alternative time zone would crash System Preferences. That is now fixed.
+The screen saver also shows a thumbnail image when in Mountain Lion and is code-signed with my developer ID for compatibility with Mountain Lion&amp;rsquo;s Gatekeeper.</description>
+    </item>
+    
+    <item>
+      <title>A Knight&#39;s Move Released</title>
+      <link>https://troz.net/post/2012/a-knights-move-released/</link>
+      <pubDate>Mon, 09 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2012/a-knights-move-released/</guid>
+      <description>UPDATE: September 2016 - A Knight&amp;rsquo;s Move for iOS is no longer available.
+A Knight&amp;rsquo;s Move for Mac is still supported.
+&amp;ldquo;A Knight&amp;rsquo;s Move&amp;rdquo; is a fun, addictive and simple puzzle game based on the movements of chess pieces. Your goal is to move your white knight across a board to a target square using the same movements as a knight in chess. Pawns may block your way, while enemy bishops, castles, knights and the queen may try to stop you.</description>
+    </item>
+    
+    <item>
+      <title>Easy access to the Library folder</title>
+      <link>https://troz.net/post/2012/easy-access-to-the-library-folder/</link>
+      <pubDate>Wed, 16 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2012/easy-access-to-the-library-folder/</guid>
+      <description>In Mac OS X 10.7 (Lion), Apple decided to make it more difficult to access your Library folder, presumably to stop people doing stuff that made apps crash. But as a developer, I need access to my Library folder a lot. I need to check that preferences are being saved correctly. If I have an app that uses the Application Support folder, then I need to be able to check it.</description>
+    </item>
+    
+    <item>
+      <title>Man Reader update coming soon</title>
+      <link>https://troz.net/post/2012/man-reader-update-coming-soon/</link>
+      <pubDate>Fri, 11 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2012/man-reader-update-coming-soon/</guid>
+      <description>Man Reader launched on the Mac App Store a couple of days ago and yesterday I got an email from a purchaser who reported that Man Reader was not displaying the man pages for MacPorts, even though he had the paths set up correctly.
+I installed MacPorts to check this out and ran into the same problem. Running the command &amp;ldquo;man port&amp;rdquo; in Terminal worked fine, but &amp;ldquo;port&amp;rdquo; did not appear in Man Reader&amp;rsquo;s list.</description>
+    </item>
+    
+    <item>
+      <title>Pic-a-POD 2.0.4 for Mac</title>
+      <link>https://troz.net/post/2012/pic-a-pod-2-0-4-for-mac/</link>
+      <pubDate>Fri, 11 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2012/pic-a-pod-2-0-4-for-mac/</guid>
+      <description> The latest update for Pic-a-POD for Mac is now available through the Mac App Store.
+Bug fix:  selecting an iPhoto pic from the Recent Desktops menu now works correctly.  New features:  Better indication of downloads and when large pics are not yet available Direct link to App Store in Help menu - please rate or review.  </description>
+    </item>
+    
+    <item>
+      <title>Making a Mac Screen Saver</title>
+      <link>https://troz.net/post/2012/making-a-mac-screen-saver/</link>
+      <pubDate>Wed, 09 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2012/making-a-mac-screen-saver/</guid>
+      <description>Having just completed the my first screen saver for Mac - the Time In Words Screen Saver, I thought I would share some of the experiences. I am using OS X Lion (10.7) and Xcode 4.3.2
+The first thing is to create a new project in Xcode using the Screen Saver template:
+
+Xcode sets up a project for you with everything you need for a screen saver module. Start editing the ScreenSaverView.</description>
+    </item>
+    
+    <item>
+      <title>Time In Words Screen Saver</title>
+      <link>https://troz.net/time-in-words-screen-saver-for-mac/</link>
+      <pubDate>Mon, 07 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/time-in-words-screen-saver-for-mac/</guid>
+      <description>The latest member of the Time In Words suite of apps is a screen saver module for Macs.
+Version 1.2 updated January 2013: compatible with Lion (OS X 10.7), Mountain Lion (OS X 10.8), Mavericks (OS X 10.9) &amp;amp; Yosemite (OS X 10.10).
+Download Time In Words Screen Saver
+Like Time In Words for iOS and World Time In Words for Mac, it displays the time and date in plain words which are easy to read and comprehend.</description>
+    </item>
+    
+    <item>
+      <title>Time In Words for Mac now available</title>
+      <link>https://troz.net/post/2012/time-in-words-for-mac-now-available/</link>
+      <pubDate>Tue, 20 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2012/time-in-words-for-mac-now-available/</guid>
+      <description>Time In Words for Mac has just been approved and is now available for free from the Mac App Store.
+For more details, check out the Time In Words for Mac web page.</description>
+    </item>
+    
+    <item>
+      <title>Interface options for selecting time zones</title>
+      <link>https://troz.net/post/2012/interface-options-for-selecting-time-zones/</link>
+      <pubDate>Sat, 25 Feb 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2012/interface-options-for-selecting-time-zones/</guid>
+      <description>As part of the design for [Time In Words for Mac][1], I had to work out the interface for selecting time zones. With [Time In Word for iOS][2], I used picker wheels which are excellent for selecting hierarchical data. On the Mac, there is no such thing as the iOS picker wheel and so I had to consider what to use instead.
+When you ask the system (Mac or iOS) for the available time zones, you get a list of names like this:</description>
+    </item>
+    
+    <item>
+      <title>Scroll bars in Mac OX 10.6 and 10.7</title>
+      <link>https://troz.net/post/2012/scroll-bars-in-mac-ox-10-6-and-10-7/</link>
+      <pubDate>Sat, 25 Feb 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2012/scroll-bars-in-mac-ox-10-6-and-10-7/</guid>
+      <description>With the introduction of OS X 10.7 (Lion), Apple removed the obvious scroll bars from windows and replaced them with a much more subtle scroll indicator, that only appears when you are actually scrolling. This was designed to match the iOS scrolling, as was the swap of scroll direction which makes much more sense if you use a trackpad.
+With the upcoming Time In Words for Mac, I have a Preferences window to allow selection of time zones to display in the menu.</description>
+    </item>
+    
+  </channel>
+</rss>

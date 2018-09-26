@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sand Box on TrozWare</title>
+    <link>https://troz.net/tags/sand-box/</link>
+    <description>Recent content in Sand Box on TrozWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 06 Feb 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://troz.net/tags/sand-box/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Man Reader (no SB)</title>
+      <link>https://troz.net/post/2013/man-reader-no-sb/</link>
+      <pubDate>Wed, 06 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2013/man-reader-no-sb/</guid>
+      <description>These instructions are no longer valid. As of version 1.5, the App Store version of Man Reader has solved the sand-boxing issues and is now as powerful as the non-sand-boxed version.
+The non-sand-boxed version will no longer be supported or updated, so please revert to the App Store version.
+If you find that Man Reader is not working well for you due to Apple&amp;rsquo;s sandboxing restrictions, then you can download a non-sandboxed version here.</description>
+    </item>
+    
+    <item>
+      <title>Sand-Boxing Man Reader</title>
+      <link>https://troz.net/post/2013/sand-boxing-man-reader/</link>
+      <pubDate>Wed, 06 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2013/sand-boxing-man-reader/</guid>
+      <description>These instructions are no longer valid. As of version 1.5, the App Store version of Man Reader has solved the sand-boxing issues and is now as powerful as the non-sand-boxed version.
+The non-sand-boxed version will no longer be supported or updated, so please revert to the App Store version.
+As with all apps in the App Store, Man Reader is restricted by Apple&amp;rsquo;s sand-boxing policy. Sand-boxing is a great thing. It isolates apps from each other and from the system, making it far less likely that a problem app will cause wide-spread havoc.</description>
+    </item>
+    
+    <item>
+      <title>Sandboxing and the Mac App Store</title>
+      <link>https://troz.net/post/2012/sandboxing-and-the-mac-app-store/</link>
+      <pubDate>Sat, 28 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2012/sandboxing-and-the-mac-app-store/</guid>
+      <description>As of June 2012, all apps submitted to the Mac App Store have to be sandboxed i.e. they have to be able to run in a limited environment where they cannot interfere with other apps or other parts of the system. While this is generally a good thing, there are problems when apps have legitimate reasons for requiring access to other resources.
+One annoyance for developers is that Apple&amp;rsquo;s apps are mostly not sandboxed.</description>
+    </item>
+    
+  </channel>
+</rss>

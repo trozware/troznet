@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Man Reader on TrozWare</title>
+    <link>https://troz.net/tags/man-reader/</link>
+    <description>Recent content in Man Reader on TrozWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 05 Nov 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://troz.net/tags/man-reader/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Another Man Reader Update...</title>
+      <link>https://troz.net/post/2016/another-man-reader-update/</link>
+      <pubDate>Sat, 05 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2016/another-man-reader-update/</guid>
+      <description>A quick update to Man Reader to version 1.8 is now available through the Mac App Store.
+The main reason for this version was that Man Reader was not previously detecting man pages installed by third-party IDEs in the Applications folder. There was also an issue with Man Reader failing to display the text of the previously selected man page on app launch.
+ More complete search for man pages, including in third-party IDEs.</description>
+    </item>
+    
+    <item>
+      <title>Man Reader Update</title>
+      <link>https://troz.net/post/2016/man-reader-update/</link>
+      <pubDate>Wed, 12 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2016/man-reader-update/</guid>
+      <description>Man Reader has just been updated to version 1.7 and is available through the Mac App Store.
+The main reason for this update was to make the app work well with macOS Sierra, as I found that version 1.6 was sometimes crashing on launch. While doing this, the update was rejected by the App Store reviewers because it crashed on OS X 10.10. Since I no longer have a Mac running 10.</description>
+    </item>
+    
+    <item>
+      <title>Man Reader updated to 1.6</title>
+      <link>https://troz.net/post/2016/man-reader-updated-to-1.6/</link>
+      <pubDate>Sat, 16 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2016/man-reader-updated-to-1.6/</guid>
+      <description>Man Reader has been updated to version 1.6 with the permissions needed for finding all available man pages and a fix for search terms being over-written after a background update.
+Man Reader 1.6 is now available through the Mac App Store.
+Change Log:  Permissions fix when searching for available man pages. Fixed error with new search term being over-written. Sand-boxed version now works just as well as the non-sand-boxed so please switch back to this version.</description>
+    </item>
+    
+    <item>
+      <title>Man Reader 1.5</title>
+      <link>https://troz.net/post/2016/man-reader-1.5/</link>
+      <pubDate>Sun, 31 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2016/man-reader-1.5/</guid>
+      <description>Man Reader has been updated to version 1.5 with a major improvement in the way it looks for available man pages.
+Man Reader 1.5 is now available through the Mac App Store.
+Change Log:  Much improved searching for available man pages. Sand-boxed version now works just as well as the non-sand-boxed.  The main feature of this version is that it solves the previous problems with the App Store version and sand-boxing.</description>
+    </item>
+    
+    <item>
+      <title>Man Reader 1.4 Now Available</title>
+      <link>https://troz.net/post/2014/man-reader-1-4-now-available/</link>
+      <pubDate>Thu, 03 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2014/man-reader-1-4-now-available/</guid>
+      <description>Man Reader 1.4 is now available through the Mac App Store.
+The new features and fixes are:  Fix for plain text view not wrapping correctly for odd-sized fonts. Fix for HTML text view over-riding font colors that may be invisible. Search for missing entry (e.g. g++) no longer requires Enter or Return. Better automatic selection of matching entries while searching. Fix for animation warning message appearing in Console. Status display shows when man page list is being updated.</description>
+    </item>
+    
+    <item>
+      <title>Man Reader (no SB)</title>
+      <link>https://troz.net/post/2013/man-reader-no-sb/</link>
+      <pubDate>Wed, 06 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2013/man-reader-no-sb/</guid>
+      <description>These instructions are no longer valid. As of version 1.5, the App Store version of Man Reader has solved the sand-boxing issues and is now as powerful as the non-sand-boxed version.
+The non-sand-boxed version will no longer be supported or updated, so please revert to the App Store version.
+If you find that Man Reader is not working well for you due to Apple&amp;rsquo;s sandboxing restrictions, then you can download a non-sandboxed version here.</description>
+    </item>
+    
+    <item>
+      <title>Sand-Boxing Man Reader</title>
+      <link>https://troz.net/post/2013/sand-boxing-man-reader/</link>
+      <pubDate>Wed, 06 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2013/sand-boxing-man-reader/</guid>
+      <description>These instructions are no longer valid. As of version 1.5, the App Store version of Man Reader has solved the sand-boxing issues and is now as powerful as the non-sand-boxed version.
+The non-sand-boxed version will no longer be supported or updated, so please revert to the App Store version.
+As with all apps in the App Store, Man Reader is restricted by Apple&amp;rsquo;s sand-boxing policy. Sand-boxing is a great thing. It isolates apps from each other and from the system, making it far less likely that a problem app will cause wide-spread havoc.</description>
+    </item>
+    
+    <item>
+      <title>Man Reader 1.1 Released</title>
+      <link>https://troz.net/post/2012/man-reader-1-1-released/</link>
+      <pubDate>Tue, 14 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2012/man-reader-1-1-released/</guid>
+      <description>The update of Man Reader to version 1.1 has just become available through the Mac App Store. This update has a bunch of new features - thanks to everyone who made suggestions.
+As detailed in a previous post, there have been major issues getting this app approved with Apple&amp;rsquo;s new sand-boxing restrictions fully in place. But to their credit, the Apple reviewers have been unfailing helpful and polite in answering my questions and keeping me informed.</description>
+    </item>
+    
+    <item>
+      <title>Sandboxing and the Mac App Store</title>
+      <link>https://troz.net/post/2012/sandboxing-and-the-mac-app-store/</link>
+      <pubDate>Sat, 28 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2012/sandboxing-and-the-mac-app-store/</guid>
+      <description>As of June 2012, all apps submitted to the Mac App Store have to be sandboxed i.e. they have to be able to run in a limited environment where they cannot interfere with other apps or other parts of the system. While this is generally a good thing, there are problems when apps have legitimate reasons for requiring access to other resources.
+One annoyance for developers is that Apple&amp;rsquo;s apps are mostly not sandboxed.</description>
+    </item>
+    
+    <item>
+      <title>Man Reader update coming soon</title>
+      <link>https://troz.net/post/2012/man-reader-update-coming-soon/</link>
+      <pubDate>Fri, 11 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2012/man-reader-update-coming-soon/</guid>
+      <description>Man Reader launched on the Mac App Store a couple of days ago and yesterday I got an email from a purchaser who reported that Man Reader was not displaying the man pages for MacPorts, even though he had the paths set up correctly.
+I installed MacPorts to check this out and ran into the same problem. Running the command &amp;ldquo;man port&amp;rdquo; in Terminal worked fine, but &amp;ldquo;port&amp;rdquo; did not appear in Man Reader&amp;rsquo;s list.</description>
+    </item>
+    
+  </channel>
+</rss>

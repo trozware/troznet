@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Framework on TrozWare</title>
+    <link>https://troz.net/tags/framework/</link>
+    <description>Recent content in Framework on TrozWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 21 Jun 2018 14:45:59 +1000</lastBuildDate>
+    
+	<atom:link href="https://troz.net/tags/framework/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Swift Strings Helper</title>
+      <link>https://troz.net/post/2018/swift-strings-helper/</link>
+      <pubDate>Thu, 21 Jun 2018 14:45:59 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2018/swift-strings-helper/</guid>
+      <description>&lt;p&gt;Hands up everyone who can remember how to work with Swift strings, especially when it comes to substrings and ranges? &amp;hellip;.&lt;/p&gt;
+
+&lt;p&gt;Nobody?&lt;/p&gt;
+
+&lt;p&gt;Me neither. So I decided that I would work it out once and create myself a library to make it easy for myself in the future. And then I thought that other people might like it too. So I have created my first open sourced project.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

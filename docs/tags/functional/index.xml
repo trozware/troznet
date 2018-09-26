@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Functional on TrozWare</title>
+    <link>https://troz.net/tags/functional/</link>
+    <description>Recent content in Functional on TrozWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 14 Jun 2018 14:18:53 +1000</lastBuildDate>
+    
+	<atom:link href="https://troz.net/tags/functional/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Functional Programming in Swift</title>
+      <link>https://troz.net/post/2018/functional-programming/</link>
+      <pubDate>Thu, 14 Jun 2018 14:18:53 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2018/functional-programming/</guid>
+      <description>&lt;p&gt;What is Functional Programming and how can we use it in Swift?&lt;/p&gt;
+
+&lt;p&gt;Search online for any definition of functional programming and you will find many different definitions, few of which are practically helpful. I have no claim to be an expert, but as a Swift enthusiast, this is what I have distilled out of the morass.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

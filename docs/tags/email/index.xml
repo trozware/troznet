@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Email on TrozWare</title>
+    <link>https://troz.net/tags/email/</link>
+    <description>Recent content in Email on TrozWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 25 Mar 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://troz.net/tags/email/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Email clients for Mac and iOS</title>
+      <link>https://troz.net/post/2014/email-clients-for-mac-ios/</link>
+      <pubDate>Tue, 25 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2014/email-clients-for-mac-ios/</guid>
+      <description>Some people are moving away from email, but for me, it remains the best way to communicate online. I get to keep a record of conversations and the attached files are with the text so I can always see the context.
+But I think everyone would agree that Apple have dropped the ball with Mail in OS X Mavericks, and to a lesser extent, in iOS 7.
+So I have been on a campaign lately to find an email client that suits my needs.</description>
+    </item>
+    
+  </channel>
+</rss>

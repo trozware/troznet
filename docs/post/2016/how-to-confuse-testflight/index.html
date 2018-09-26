@@ -28,7 +28,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.37.1" />
+<meta name="generator" content="Hugo 0.49" />
 
 
 <link rel="canonical" href="https://troz.net/post/2016/how-to-confuse-testflight/" />
@@ -53,23 +53,8 @@ there was a struggle.
 
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://troz.net/post/2016/how-to-confuse-testflight/" />
-
-
-
-<meta property="article:published_time" content="2016-04-24T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://troz.net/post/2016/how-to-confuse-testflight/" /><meta property="article:published_time" content="2016-04-24T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2016-04-24T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
 
 <meta itemprop="name" content="How To Confuse TestFlight">
 <meta itemprop="description" content="I ran into an unusual problem when testing my latest app: &ldquo;What Is My
@@ -81,7 +66,7 @@ there was a struggle.
 
 <meta itemprop="datePublished" content="2016-04-24T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2016-04-24T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="677">
+<meta itemprop="wordCount" content="664">
 
 
 
@@ -168,7 +153,7 @@ there was a struggle.
       <div class="post-meta">
         <span class="post-time"> 24 Apr 2016 </span>
         
-        <span class="more-meta"> 677 words </span>
+        <span class="more-meta"> 664 words </span>
         <span class="more-meta"> 4 minute read </span>
       </div>
     </header>
@@ -260,9 +245,8 @@ Utility), I was able to get the logs from my iPhone and entries like the
 following seemed to confirm this:</p>
 
 <blockquote>
-<p><code>Error Domain=LaunchServicesError Code=0 &quot;(null)&quot; UserInfo={Error=ApplicationVerificationFailed, ErrorDetail=-402620393, ErrorDescription=Failed to verify code signature of /private/var/installd/Library/Caches/com.apple.mobile.
-installd.staging/temp.2LWJ2h/extracted/Payload/What Is My Speed?.app : 0xe8008017 (A signed resource has been added, modified, or deleted.)}```
-</code></p>
+<pre><code class="language-Error">installd.staging/temp.2LWJ2h/extracted/Payload/What Is My Speed?.app : 0xe8008017 (A signed resource has been added, modified, or deleted.)}```
+</code></pre>
 </blockquote>
 
 <p>But when I got to the stage of a completely blank app still failing, I suddenly

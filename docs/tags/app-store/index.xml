@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>App Store on TrozWare</title>
+    <link>https://troz.net/tags/app-store/</link>
+    <description>Recent content in App Store on TrozWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 26 Sep 2018 16:49:43 +1000</lastBuildDate>
+    
+	<atom:link href="https://troz.net/tags/app-store/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Moving to the Dark Side</title>
+      <link>https://troz.net/post/2018/moving-to-the-dark-side/</link>
+      <pubDate>Wed, 26 Sep 2018 16:49:43 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2018/moving-to-the-dark-side/</guid>
+      <description>&lt;p&gt;With the release of macOS Mojave on 24th September 2018, I have started updating my Mac apps, mainly to enable support for dark mode if appropriate.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>App Updates</title>
+      <link>https://troz.net/post/2018/app-updates/</link>
+      <pubDate>Sat, 26 May 2018 09:22:57 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2018/app-updates/</guid>
+      <description>&lt;p&gt;Just a quick post to let you know about some recent app updates&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Blackmail Marketing</title>
+      <link>https://troz.net/post/2017/blackmail-marketing/</link>
+      <pubDate>Wed, 08 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2017/blackmail-marketing/</guid>
+      <description>I use my iPad to play games as a form of relaxation. Nearly all the games I play are puzzle apps with levels that can be played in a few minutes. Nearly all of them are free to install. So how do they make money?
+Now I would be the last person you should consult about marketing but it has always seemed to me that the best way to market your product is to convince people that it offers something they want so that they are prepared to pay for it.</description>
+    </item>
+    
+    <item>
+      <title>Retiring old apps</title>
+      <link>https://troz.net/post/2016/retiring-old-apps/</link>
+      <pubDate>Thu, 15 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2016/retiring-old-apps/</guid>
+      <description>With the release of iOS 10 and the need to update iOS apps to suit, I have decided it is time to retire some of my lesser-performing apps as it is not worth the effort required to maintain them.
+At the moment, the following iOS apps are no longer available:
+ A Knight&amp;rsquo;s Move Dice Pass Pic-a-POD Quick Score - Tennis  For the first three listed there, the Mac versions are still available:</description>
+    </item>
+    
+    <item>
+      <title>How To Confuse TestFlight</title>
+      <link>https://troz.net/post/2016/how-to-confuse-testflight/</link>
+      <pubDate>Sun, 24 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2016/how-to-confuse-testflight/</guid>
+      <description>&lt;p&gt;I ran into an unusual problem when testing my latest app: &amp;ldquo;&lt;a href=&#34;https://troz.net/what-is-my-speed/&#34;&gt;What Is My
+Speed?&lt;/a&gt;&amp;rdquo;. It is now available from the &lt;a href=&#34;https://itunes.apple.com/app/what-is-my-speed/id1091394524&#34;&gt;iTunes App Store&lt;/a&gt;, but getting
+there was a struggle.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>App Store Preview Videos</title>
+      <link>https://troz.net/post/2015/app-store-preview-videos/</link>
+      <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2015/app-store-preview-videos/</guid>
+      <description>Apple now allows app developers to add a video preview of their app when uploading to iTunes Connect. This video is shown to potential purchasers when they are looking at an app in the iTunes App Store, just like the screen shots.
+I have been working on an update to 19th Hole and since it uses a custom method for data input, I decided that a video would be really useful in this case.</description>
+    </item>
+    
+    <item>
+      <title>App Store Review Times</title>
+      <link>https://troz.net/post/2012/app-store-review-times/</link>
+      <pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2012/app-store-review-times/</guid>
+      <description>There are been a lots of stories going around about lengthening Mac App Store review times. Shiny Developments crowd-sourced data certainly backs this up although they have much more data for iOS apps than for Mac apps.
+Some people, including Lex Friedman of MacWorld and John Gruber of Daring Fireball, are suggesting that the delays are due to the rush of new apps to support the iPhone 5 and iOS 6.</description>
+    </item>
+    
+  </channel>
+</rss>

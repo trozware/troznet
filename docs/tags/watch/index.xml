@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Watch on TrozWare</title>
+    <link>https://troz.net/tags/watch/</link>
+    <description>Recent content in Watch on TrozWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 18 Feb 2018 10:19:18 +1000</lastBuildDate>
+    
+	<atom:link href="https://troz.net/tags/watch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Icon Builder 5</title>
+      <link>https://troz.net/post/2018/icon-builder-5/</link>
+      <pubDate>Sun, 18 Feb 2018 10:19:18 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2018/icon-builder-5/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;Icon Builder 5.0&lt;/a&gt; is now available from the &lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Mac App Store&lt;/a&gt;. This is a complete re-write for better compatibility with Apple&amp;rsquo;s latest icon requirements. Read on to see what I have fixed and how&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>My Year With Apple Watch</title>
+      <link>https://troz.net/post/2016/my-year-with-apple-watch/</link>
+      <pubDate>Thu, 28 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2016/my-year-with-apple-watch/</guid>
+      <description>As the Apple Watch hits its first birthday, there seems to be in increasing number of bloggers complaining about it. One (which I refuse to link to) titled &amp;ldquo;My Year of Hell With the Apple Watch&amp;rdquo;. I think the article has since been re-published with a slightly less inflammatory title, but really! Did somebody rivet the watch to his wrist? If it was so awful, why not just stop using it?</description>
+    </item>
+    
+    <item>
+      <title>Icon Builder 3.2 Released</title>
+      <link>https://troz.net/post/2016/icon-builder-32-released/</link>
+      <pubDate>Wed, 10 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2016/icon-builder-32-released/</guid>
+      <description>Icon Builder 3.2 is now available from the Mac App Store.
+ Icons for Apple Watch apps now have their alpha channel removed. Tidier folder structure for related files (iTunes Artwork files and Read Me). Updated to work with Xcode 7&amp;rsquo;s Assets.xcassets folders. Creates iPad Pro icons for Xcode 7.2 or later. Fix for Retina Macs creating double-sized images.  </description>
+    </item>
+    
+    <item>
+      <title>Possible issues with Icon Builder &amp; Watch icons</title>
+      <link>https://troz.net/post/2016/possible-issues-with-iconbuilder/</link>
+      <pubDate>Sat, 06 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2016/possible-issues-with-iconbuilder/</guid>
+      <description>It has come to my attention that there are two possible issues with Icon Builder 3.0.1 when using icons created for an Apple Watch app. Once of them is something I can fix and the other appears to be a bug in Xcode 7.2
+Update: Version 3.2 of Icon Builder is now available in the Mac App Store. This removes the alpha channel from icons for a watch app.
+The first problem is that iTines Connect now requires that the icons for an Apple Watch app include no alpha channel.</description>
+    </item>
+    
+    <item>
+      <title>Using 19th Hole on the Apple Watch</title>
+      <link>https://troz.net/post/2015/using-19th-hole-on-the-apple-watch/</link>
+      <pubDate>Sat, 12 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2015/using-19th-hole-on-the-apple-watch/</guid>
+      <description>19th Hole for iPhone and Apple Watch version 3 is now available through the iTunes App Store. This version is a complete re-write to accommodate the changes in iOS 9 and watchOS2.
+The major changes are to do with the way the iPhone and the Watch communicate. In watchOS1, all the brains of the app had to live in the iPhone, meaning that every single interaction on the Watch had to be referred back to the iPhone for processing and the result sent back to the Watch for display.</description>
+    </item>
+    
+    <item>
+      <title>Apple Watch First Impressions</title>
+      <link>https://troz.net/post/2015/apple-watch-first-impressions/</link>
+      <pubDate>Wed, 29 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2015/apple-watch-first-impressions/</guid>
+      <description>I realise that every one has written one of these posts, but given that everyone looks for and notices different things, I think it is still valid.
+My first impression was &amp;ldquo;Why does it come in such a large box?&amp;rdquo;. The courier delivered two boxes - my 38mm Apple Watch Sport and Tim&amp;rsquo;s 42mm Apple Watch Sport. They both came in long boxes, with the 42mm box significantly longer. And both boxes were heavy!</description>
+    </item>
+    
+    <item>
+      <title>Apple Watch App - Rejected, then Accepted</title>
+      <link>https://troz.net/post/2015/apple-watch-rejected-then-accepted/</link>
+      <pubDate>Sat, 11 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2015/apple-watch-rejected-then-accepted/</guid>
+      <description>As described in a previous post, about 9 days ago I submitted my first Apple Watch app for review. The app was an extension of my golf scoring app: The 19th Hole.
+I expected that App Store review times would go up dramatically once Apple had allowed developers to submit watch apps, but this proved to be incorrect. Three days after submission, the app was marked as &amp;ldquo;In Review&amp;rdquo;. This seemed to happen last thing on a Saturday, so there was no further action for two days, at which point the app was rejected, with the following details (sic):</description>
+    </item>
+    
+    <item>
+      <title>My First Apple Watch App</title>
+      <link>https://troz.net/post/2015/my-first-apple-watch-app/</link>
+      <pubDate>Thu, 02 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2015/my-first-apple-watch-app/</guid>
+      <description>I have just submitted my first Apple Watch app to the iTunes App Store. This is a scary thing to do, since I have never seen, touched or used an Apple Watch and all I had to go on was the Simulator that Apple supplies with Xcode.
+At the moment, Apple has only made a limited set of Apple Watch features available to developers, and all Apple Watch apps come tethered to an iOS app - presumably this will mainly be iPhone apps, but I wonder will we be able to connect Apple Watches to iPads?</description>
+    </item>
+    
+    <item>
+      <title>Icon Builder 3.0.1</title>
+      <link>https://troz.net/post/2015/icon-builder-3.0.1/</link>
+      <pubDate>Tue, 17 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2015/icon-builder-3.0.1/</guid>
+      <description>So why an announcement for such a minor upgrade?
+Version 3.0 got no announcement because it was not the release I wanted.
+Having downloaded the Xcode 6.2 &amp;amp; 6.3 betas, I had worked out what icons were needed to a WatchKit app. This, combined with several other changes, made me bump the version number to 3.0.
+Sadly, Apple rejected the update because it referred to pre-release products. So I pulled all mentions of WatchKit out of the interface and meta data and got 3.</description>
+    </item>
+    
+  </channel>
+</rss>

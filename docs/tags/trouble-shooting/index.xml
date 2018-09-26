@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Trouble Shooting on TrozWare</title>
+    <link>https://troz.net/tags/trouble-shooting/</link>
+    <description>Recent content in Trouble Shooting on TrozWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 28 Jul 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://troz.net/tags/trouble-shooting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sandboxing and the Mac App Store</title>
+      <link>https://troz.net/post/2012/sandboxing-and-the-mac-app-store/</link>
+      <pubDate>Sat, 28 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2012/sandboxing-and-the-mac-app-store/</guid>
+      <description>As of June 2012, all apps submitted to the Mac App Store have to be sandboxed i.e. they have to be able to run in a limited environment where they cannot interfere with other apps or other parts of the system. While this is generally a good thing, there are problems when apps have legitimate reasons for requiring access to other resources.
+One annoyance for developers is that Apple&amp;rsquo;s apps are mostly not sandboxed.</description>
+    </item>
+    
+    <item>
+      <title>Man Reader update coming soon</title>
+      <link>https://troz.net/post/2012/man-reader-update-coming-soon/</link>
+      <pubDate>Fri, 11 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2012/man-reader-update-coming-soon/</guid>
+      <description>Man Reader launched on the Mac App Store a couple of days ago and yesterday I got an email from a purchaser who reported that Man Reader was not displaying the man pages for MacPorts, even though he had the paths set up correctly.
+I installed MacPorts to check this out and ran into the same problem. Running the command &amp;ldquo;man port&amp;rdquo; in Terminal worked fine, but &amp;ldquo;port&amp;rdquo; did not appear in Man Reader&amp;rsquo;s list.</description>
+    </item>
+    
+    <item>
+      <title>Time In Words &amp; the new iPad</title>
+      <link>https://troz.net/post/2012/time-in-words-the-new-ipad/</link>
+      <pubDate>Tue, 10 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2012/time-in-words-the-new-ipad/</guid>
+      <description>The new iPad has a Retina display, meaning that the pixel density is much greater. For some apps, this is a problem as their graphics are now scaled and look pixellated. However Time In Words is very simple. It uses standard fonts and interface widgets with no images or external graphics apart from the icon. The icon may not look perfect on a new iPad, but the display itself should look really great.</description>
+    </item>
+    
+    <item>
+      <title>iPhone 4 Home Button</title>
+      <link>https://troz.net/post/2012/iphone-4-home-button/</link>
+      <pubDate>Wed, 28 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/post/2012/iphone-4-home-button/</guid>
+      <description>My iPhone 4 is now 18 months old, and it&amp;rsquo;s Home button is starting to feel the strain. These buttons have been used much more than originally intended, with the new multitasking required double-presses, not to mention access to the camera etc. So basically , it is wearing out.
+The phone is out of warranty and there is no way I am going to pay for an expensive repair when my current phone contract will expire later this year, and hopefully the iPhone 5 will be ready for me then.</description>
+    </item>
+    
+  </channel>
+</rss>
