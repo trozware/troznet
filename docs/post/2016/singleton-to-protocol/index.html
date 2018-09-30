@@ -1,177 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Singleton to Protocol - TrozWare</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-<meta name="author" content="Sarah Reichelt" />
-  <meta name="description" content="I was driving through the town of Singleton the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple&amp;rsquo;s own APIs, but seem to be increasingly frowned upon in the Swift world.
-So what is a singleton? A singleton is a class that only expects to have a single instance." />
-
-  <meta name="keywords" content="Swift, Apple, macOS, iOS, Apple Watch" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.49" />
-
-
+  
+    <title>Singleton to Protocol :: TrozWare</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content=""/>
+<meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
+<meta name="robots" content="noodp"/>
 <link rel="canonical" href="https://troz.net/post/2016/singleton-to-protocol/" />
 
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="icon" href="/favicon.ico" />
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<link rel="stylesheet" href="/assets/style.css">
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Source+Code+Pro' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/style.css">
 
 
 
 
-<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
 
 
-<meta property="og:title" content="Singleton to Protocol" />
-<meta property="og:description" content="I was driving through the town of Singleton the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple&rsquo;s own APIs, but seem to be increasingly frowned upon in the Swift world.
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Singleton to Protocol :: TrozWare — " />
+<meta name="twitter:description" content="I was driving through the town of Singleton the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple&amp;rsquo;s own APIs, but seem to be increasingly frowned upon in the Swift world.
 So what is a singleton? A singleton is a class that only expects to have a single instance." />
+<meta name="twitter:site" content="" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image" content="https://troz.net/img/default.jpg">
+
+
+<meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://troz.net/post/2016/singleton-to-protocol/" /><meta property="article:published_time" content="2016-02-26T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2016-02-26T00:00:00&#43;00:00"/>
+<meta property="og:title" content="Singleton to Protocol :: TrozWare — ">
+<meta property="og:description" content="" />
+<meta property="og:url" content="https://troz.net/post/2016/singleton-to-protocol/" />
+<meta property="og:site_name" content="Singleton to Protocol" />
+<meta property="og:image" content="https://troz.net/img/default.jpg">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
 
-<meta itemprop="name" content="Singleton to Protocol">
-<meta itemprop="description" content="I was driving through the town of Singleton the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple&rsquo;s own APIs, but seem to be increasingly frowned upon in the Swift world.
-So what is a singleton? A singleton is a class that only expects to have a single instance.">
-
-
-<meta itemprop="datePublished" content="2016-02-26T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2016-02-26T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="674">
-
-
-
-<meta itemprop="keywords" content="swift,learning swift," />
-
-
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@trozware" />
-    <meta name="twitter:title" content="TrozWare" />
-    <meta name="twitter:description" content="macOS, iOS and watchOS Developer" />
-    <meta name="twitter:url" content="http://troz.net/" />
-    <meta name="twitter:image" content="http://troz.net/icons/apple-touch-icon-152x152.png" />
+<meta property="article:published_time" content="2016-02-26 00:00:00 &#43;0000 UTC" />
 
 
 
 
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
 
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
+
 
 </head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">TrozWare</a>
+<body class="dark-theme">
+<div class="container">
+  <header class="header">
+  <span class="header__inner">
+    <a href="https://troz.net/" style="text-decoration: none;">
+  <div class="logo">
+    
+      <span class="logo__mark">></span>
+      <span class="logo__text">TrozWare</span>
+      <span class="logo__cursor"></span>
+    
   </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="/apps/">
-        <li class="mobile-menu-item">Apps</li>
-      </a><a href="/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="/tags/">
-        <li class="mobile-menu-item">Tags</li>
-      </a><a href="/contact/">
-        <li class="mobile-menu-item">Contact</li>
-      </a>
-  </ul>
-</nav>
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">TrozWare</a>
-</div>
+</a>
 
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="/">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/apps/">Apps</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/tags/">Tags</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/contact/">Contact</a>
-      </li>
-  </ul>
-</nav>
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title">Singleton to Protocol</h1>
-
-      <div class="post-meta">
-        <span class="post-time"> 26 Feb 2016 </span>
-        
-        <span class="more-meta"> 674 words </span>
-        <span class="more-meta"> 4 minute read </span>
-      </div>
-    </header>
-
-    
-    
-<div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content">
-      <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#so-what-is-a-singleton">So what is a singleton?</a></li>
-<li><a href="#and-what-s-the-problem-with-singletons">And what&rsquo;s the problem with singletons?</a></li>
-<li><a href="#what-to-use-instead">What to use instead?</a></li>
-</ul></li>
-</ul>
-</nav>
-  </div>
-</div>
-
-    
-    <div class="post-content">
+    <span class="header__right">
       
+        <nav class="menu">
+  <ul class="menu__inner">
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/apps/">Apps</a></li>
+    
+      <li><a href="/post/">Archives</a></li>
+    
+      <li><a href="/tags/">Tags</a></li>
+    
+      <li><a href="/contact/">Contact</a></li>
+    
+  </ul>
+</nav>
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>        
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="bulb-off" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="24" height="24"/>
+  <path d="M4 19C4 19.55 4.45 20 5 20H9C9.55 20 10 19.55 10 19V18H4V19ZM7 0C3.14 0 0 3.14 0 7C0 9.38 1.19 11.47 3 12.74V15C3 15.55 3.45 16 4 16H10C10.55 16 11 15.55 11 15V12.74C12.81 11.47 14 9.38 14 7C14 3.14 10.86 0 7 0ZM9.85 11.1L9 11.7V14H5V11.7L4.15 11.1C2.8 10.16 2 8.63 2 7C2 4.24 4.24 2 7 2C9.76 2 12 4.24 12 7C12 8.63 11.2 10.16 9.85 11.1Z" transform="translate(5 2)" fill="black"/>
+</svg>
+
+<svg class="bulb-on" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="24" height="24"/>
+  <path class="bulb-on__base" d="M4 19C4 19.55 4.45 20 5 20H9C9.55 20 10 19.55 10 19V18H4V19Z" transform="translate(5 2)" fill="#a9a9b3" />
+  <path class="bulb-on__glass" d="M0 7C0 3.14 3.14 0 7 0C10.86 0 14 3.14 14 7C14 9.38 12.81 11.47 11 12.74V15C11 15.55 10.55 16 10 16H4C3.45 16 3 15.55 3 15V12.74C1.19 11.47 0 9.38 0 7Z" transform="translate(5 2)" fill="#a9a9b3" />
+</svg>
+  
+      </span>
+    </span>
+  </span>
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h2 class="post-title"><a href="https://troz.net/post/2016/singleton-to-protocol/">Singleton to Protocol</a></h2>
+  <div class="post-meta">
+    <span class="post-date">
+      26 Feb 2016
+    </span>
+    <span class="more-meta"> 674 words, </span>
+    <span class="more-meta"> 4 minute read</span>
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://troz.net/tags/swift">swift</a>&nbsp;
+    
+    #<a href="https://troz.net/tags/learning-swift">learning swift</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  <div class="post-content">
+    
 
 <p>I was driving through the town of <a href="https://en.wikipedia.org/wiki/Singleton,_New_South_Wales">Singleton</a> the other day and of course, it
 got me thinking about using singletons in my apps. Singletons were a commonly
@@ -296,104 +258,60 @@ I can find a practical example of where it solves a problem.</p>
 And this article by <a href="http://matthijshollemans.com/2015/07/22/mixins-and-traits-in-swift-2/">Matthijs Hollemans</a> was invaluable to me in
 demonstrating the problems with object inheritance that are solved by protocols.</p>
 
+  </div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span class="pagination__title-h">Read other posts</span>
+      <hr />
     </div>
-
-    
-    
-<div class="post-copyright">
-  
-  <p class="copyright-item">
-    <span class="item-title">Last Modified</span>
-    <span class="item-content">26 Feb 2016</span>
-  </p>
-  
-  
-</div>
-
-
-    
-    
-
-    <footer class="post-footer">
-      <div class="post-tags">
-          
-          <a href="/tags/swift/">swift</a>
-          
-          <a href="/tags/learning-swift/">learning swift</a>
-          
-        </div>
-
+    <div class="pagination__buttons">
       
-      <nav class="post-nav">
-        
-          <a class="prev" href="/post/2016/learning-swift-generics/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Learning Swift - Generics</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        
-          <a class="next" href="/post/2016/three-rules-for-writing-better-swift/">
-            <span class="next-text nav-default">Three Rules for Writing Better Swift</span>
-            <span class="prev-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-        </div>
-        
-  
-
-  
-      </div>  
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:sarah@troz.net" class="iconfont icon-email" title="email"></a>
-      <a href="https://stackoverflow.com/users/1082632" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
-      <a href="https://twitter.com/trozware" class="iconfont icon-twitter" title="twitter"></a>
-      <a href="https://github.com/trozware" class="iconfont icon-github" title="github"></a>
-  <a href="https://troz.net/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-  <a href="https://troz.net//feed.json" type="application/json" title="JSON">
-      <img style="width: 30px; height: 30px; padding: 0 0 16px 10px;" src="https://jsonfeed.org/graphics/icon.png" alt="JSON">
-  </a>
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme -
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  <span class="copyright-year">
-    &copy;
-    
-      2012 -
-    2018
-    <span class="author">Sarah Reichelt</span>
-  </span>
-</div>
-
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
+      <a class="btn next" href="https://troz.net/post/2016/learning-swift-generics/">← Learning Swift - Generics</a>
+      
+      
+      <a class="btn previous" href="https://troz.net/post/2016/three-rules-for-writing-better-swift/">Three Rules for Writing Better Swift →</a>
+      
     </div>
   </div>
   
-<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
-<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+</div>
+
+  </div>
+
   
-<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+    <link rel="stylesheet" href="/css/footer.css">
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="social_footer">
+      <a href="mailto:sarah@troz.net"><img src="/icons/envelope.svg" /></a>
+      <a href="https://stackoverflow.com/users/1082632"><img src="/icons/stack-overflow.svg" /></a>
+      <a href="https://twitter.com/trozware"><img src="/icons/twitter.svg" /></a>
+      <a href="https://github.com/trozware"><img src="/icons/github.svg" /></a>
+      <a href="https://troz.net/index.xml"><img src="/icons/rss.svg" /></a>
+      <a href="https://troz.net//feed.json"><img src="/icons/json.png" /></a>
+    </div>
+  </div>
+
+  <div class="footer__inner">
+    <div class="copyright">
+      
+      <span>© 2012 - 2018 Sarah Reichelt</span>
+      
+      <span><a href="http://gohugo.io">Hugo</a> theme created by <a href="https://twitter.com/panr">panr</a> 2018</span>
+    </div>
+  </div>
+</footer>
 
 
+  <script src="/assets/main.js"></script>
 
+  <script src="/assets/prism.js"></script>
+
+
+  
+</div>
 
 </body>
 </html>

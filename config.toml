@@ -3,13 +3,14 @@ defaultContentLanguage = "en"
 title = "TrozWare"
 enableRobotsTXT = true
 enableEmoji = true
-theme = "even"
+theme = "hello-friend"
+# theme = "even"
 
 hasCJKLanguage = false     # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
 paginate = 10                                              # （可选）首页显示的文章条目数量，默认为10
 disqusShortname = ""      # disqus_shortname
 googleAnalytics = ""      # UA-XXXXXXXX-X
-copyright = ""            # default: author.name ↓        # 默认为下面配置的author.name ↓
+copyright = "© 2012 - 2018 Sarah Reichelt"            # default: author.name ↓        # 默认为下面配置的author.name ↓
 
 publishDir = "docs"
 
@@ -51,11 +52,12 @@ publishDir = "docs"
   debug = false             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
 
   since = "2012"            # Site creation time          # 站点建立时间
-
+  
   # site info (option)                                    # 站点信息（可选）
   logoTitle = "TrozWare"        # default: the title value    # 默认值: 上面设置的title值
   keywords = ["Swift", "Apple", "macOS", "iOS", "Apple Watch"]
   description = "macOS, iOS, watchOS developer : Swift enthusiast : Occasional blogger"
+  subtitle = ""
 
   # paginate of archives, tags and categories             # 归档、标签、分类每页显示的文章数目
   archive-paginate = 20
@@ -110,6 +112,9 @@ publishDir = "docs"
     # l-tumblr = "http://localhost:1313"
     # m-instagram = "http://localhost:1313"
     # n-rss = "list.json"
+
+  [params.logo]
+    logoText = "TrozWare"
 
 # 将下面这段配置取消注释可以使 hugo 生成 .md 文件
 # Uncomment these options to make hugo output .md files.

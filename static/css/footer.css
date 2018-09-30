@@ -1,0 +1,11 @@
+.social_footer {
+  display: flex;
+  justify-content: flex-start;
+  width: 760px;
+}
+
+.social_footer img {
+  width: 30px !important;
+  height: 30px;
+  margin: 0 20px 20px 0;
+}

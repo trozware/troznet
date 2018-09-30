@@ -1,41 +1,43 @@
-{{ define "content" -}}
+{{ define "main" -}}
 
 <link rel="stylesheet" href="/css/app_links.css">
 
-<h2 class="app_header"><a target="itunes_store" href="https://itunes.apple.com/us/developer/trozware/id477909805?mt=8">Mac Apps:</a></h2>
+<h2 class="app_header"><a target="itunes_store" href="https://itunes.apple.com/us/developer/trozware/id477909805?mt=8">Mac
+        Apps:</a></h2>
 
-{{ range .Site.Data.mac_apps}}
+<div class="posts post on-list">
+
+    {{ range .Site.Data.mac_apps}}
 
     <img src="/icons/{{ .icon }}" alt="{{ .name }}">
     <a class="app_name" href="{{ .webpage }}">{{ .name }}</a>
     <p>Version {{ .version }}, Updated: {{ .updated }}</p>
     <p>
         {{ if .app_id }}
-            <a target="itunes_store" class="mac_app_button" href="https://itunes.apple.com/app/apple-store/id{{ .app_id }}"
-            ></a>
+        <a target="itunes_store" class="mac_app_button" href="https://itunes.apple.com/app/apple-store/id{{ .app_id }}"></a>
         {{ else if .download }}
-            <a href="{{ .download }}">Download</a>
+        <a href="{{ .download }}">Download</a>
         {{ end }}
     </p>
     <hr>
-{{ end }}
+    {{ end }}
 
-<hr>
+    <hr>
 
-<h2 class="app_header"><a target="itunes_store" href="https://itunes.apple.com/us/developer/trozware/id477909805?mt=8">iOS Apps:</a></h2>
+    <h2 class="app_header"><a target="itunes_store" href="https://itunes.apple.com/us/developer/trozware/id477909805?mt=8">iOS
+            Apps:</a></h2>
 
-{{ range .Site.Data.ios_apps}}
+    {{ range .Site.Data.ios_apps}}
 
     <img src="/icons/{{ .icon }}" alt="{{ .name }}">
     <a class="app_name" href="{{ .webpage }}">{{ .name }}</a>
     <p>Version {{ .version }}, Updated: {{ .updated }}</p>
     <p>
         {{ if .app_id }}
-            <a target="itunes_store" class="ios_app_button" href="https://itunes.apple.com/app/apple-store/id{{ .app_id }}"
-            ></a>
+        <a target="itunes_store" class="ios_app_button" href="https://itunes.apple.com/app/apple-store/id{{ .app_id }}"></a>
         {{ end }}
     </p>
     <hr>
-{{ end }}
-
+    {{ end }}
+</div>
 {{- end }}
