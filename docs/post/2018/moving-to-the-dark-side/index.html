@@ -118,9 +118,9 @@
   <h2 class="post-title"><a href="https://troz.net/post/2018/moving-to-the-dark-side/">Moving to the Dark Side</a></h2>
   <div class="post-meta">
     <span class="post-date">
-      26 Sep 2018
+      01 Oct 2018
     </span>
-    <span class="more-meta"> 43 words, </span>
+    <span class="more-meta"> 155 words, </span>
     <span class="more-meta"> 1 minute read</span>
   </div>
 
@@ -139,15 +139,29 @@
   <div class="post-content">
     <p>With the release of macOS Mojave on 24th September 2018, I have started updating my Mac apps, mainly to enable support for dark mode if appropriate.</p>
 
+<p>And now I have updated this site too. Click the light bulb icon at the top right of the page to toggle between light and dark modes for this site.</p>
+
 <p></p>
 
-<p>So far (26th September 2018), I have updated <a href="https://itunes.apple.com/app/apple-store/id552293482">Icon Builder</a>, <a href="https://itunes.apple.com/app/apple-store/id509085586">World Time in Words</a> and <a href="https://itunes.apple.com/app/apple-store/id997688302">Dice Pass</a>.</p>
+<p>And with my apps, so far (1 st October 2018), I have updated <a href="https://itunes.apple.com/app/apple-store/id552293482">Icon Builder</a>, <a href="https://itunes.apple.com/app/apple-store/id509085586">World Time in Words</a>, <a href="https://itunes.apple.com/app/apple-store/id997688302">Dice Pass</a> and <a href="https://itunes.apple.com/app/apple-store/id533321133">A Knight&rsquo;s Move</a>.</p>
 
 <p><a href="/icon-builder/"><img src="/images/IconBuilder5.1.png" alt="Icon Builder 5.1" /></a></p>
 
 <p><a href="/time-in-words-for-mac/"><img src="/images/WTiW_dark.png" alt="World Time in Words 3.2" /></a></p>
 
 <p><a href="/dicepass/"><img src="/images/DicePass1.5.png" alt="Dice Pass 3.2" /></a></p>
+
+<p><a href="/knightsmove/"><img src="/images/KnightsMoveMac1.png" alt="Knights Move 1.6" /></a></p>
+
+<p>For A Knight&rsquo;s Move, I wanted to make sure the wood-look background didn&rsquo;t change, so I actually disabled dark mode.
+For any developers looking for the way to do that, I added the following chunk to the <code>applicationDidFinishLaunching(_:)</code> method:</p>
+
+<pre><code class="language-swift">    if #available(OSX 10.14, *) {
+        NSApp.appearance = NSAppearance(named: .aqua)
+    }
+</code></pre>
+
+<p>Similar code could presumably be used to change the appearance of a running app. I may add the ability to switch to my apps later.</p>
   </div>
   
   <div class="pagination">
