@@ -6,10 +6,34 @@
     <description>Recent content in App Store on TrozWare</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>© 2012 - 2018 Sarah Reichelt</copyright>
-    <lastBuildDate>Wed, 26 Sep 2018 16:49:43 +1000</lastBuildDate>
+    <lastBuildDate>Sat, 06 Oct 2018 08:29:35 +1000</lastBuildDate>
     
 	<atom:link href="https://troz.net/tags/app-store/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Moving to the Dark Side - Part 2</title>
+      <link>https://troz.net/post/2018/moving-to-the-dark-side-2/</link>
+      <pubDate>Sat, 06 Oct 2018 08:29:35 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2018/moving-to-the-dark-side-2/</guid>
+      <description>&lt;style&gt;
+  img {
+    margin: 10px auto;
+    border: 1px #bbb solid;
+    box-shadow: 3px 3px 5px 2px #ccc;
+  }
+
+  .social_footer img {
+    border: none;
+    box-shadow: none;
+  }
+&lt;/style&gt;
+
+&lt;p&gt;Now that most of my Mac apps have been updated to support macOS Mojave&amp;rsquo;s dark mode, it was time to turn my attention to this web site.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Moving to the Dark Side</title>
@@ -17,7 +41,20 @@
       <pubDate>Wed, 26 Sep 2018 16:49:43 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/moving-to-the-dark-side/</guid>
-      <description>&lt;p&gt;With the release of macOS Mojave on 24th September 2018, I have started updating my Mac apps, mainly to enable support for dark mode if appropriate.&lt;/p&gt;
+      <description>&lt;style&gt;
+  img {
+    margin: 10px auto;
+    border: 1px #bbb solid;
+    box-shadow: 3px 3px 5px 2px #ccc;
+  }
+
+  .social_footer img {
+    border: none;
+    box-shadow: none;
+  }
+&lt;/style&gt;
+
+&lt;p&gt;With the release of macOS Mojave on 24th September 2018, I have started updating my Mac apps, mainly to enable support for dark mode if appropriate.&lt;/p&gt;
 
 &lt;p&gt;And now I have updated this site too. Click the light bulb icon at the top right of the page to toggle between light and dark modes for this site.&lt;/p&gt;
 

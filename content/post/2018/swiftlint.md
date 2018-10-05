@@ -1,16 +1,16 @@
 ---
-title: "Consistent Swift Style"
+title: 'Consistent Swift Style'
 date: 2018-03-31T09:35:21+10:00
 lastmod: 2018-03-31T09:35:21+10:00
 draft: false
-description: "Why is important to style your code? How do you decide on a style? Is there a way to enforce this style?"
-tags: ["swift", "swiftlint", "lint", "style"]
+description: 'Why is important to style your code? How do you decide on a style? Is there a way to enforce this style?'
+tags: ['swift', 'swiftlint', 'lint', 'style']
 toc: true
 ---
 
-* Why is important to style your code?
-* How do you decide on a style?
-* Is there a way to enforce this style automatically?
+- Why is important to style your code?
+- How do you decide on a style?
+- Is there a way to enforce this style automatically?
 
 <!--more-->
 
@@ -157,14 +157,14 @@ As an example, look at the rules for line_length:
 
 And by making my Terminal window full width, I can see the configuration column contains `warning: 120, error: 200, ignores urls: false, ignores function declarations: false, ignores comments: false`.
 
-* The rule name (identifier) is line_length - this is what appears in the issue navigator or Terminal.
-* It is not an opt-in rule, meaning that it is enabled by default.
-* It is not correctable by autocorrect.
-* It is enabled in this configuration.
-* And then comes the configuration:
-  * a line of more than 120 characters will generate a warning
-  * a line with more than 200 characters will generate an error and stop the build
-  * this rule will not ignore URLs, function declarations or comments
+- The rule name (identifier) is line_length - this is what appears in the issue navigator or Terminal.
+- It is not an opt-in rule, meaning that it is enabled by default.
+- It is not correctable by autocorrect.
+- It is enabled in this configuration.
+- And then comes the configuration:
+  - a line of more than 120 characters will generate a warning
+  - a line with more than 200 characters will generate an error and stop the build
+  - this rule will not ignore URLs, function declarations or comments
 
 To set your own configurations, you need to create a `.swiftlint.yml` file in the same folder as your Xcode project. The leading period makes the file invisible, so you will need to create and edit it using Terminal.
 
@@ -200,20 +200,20 @@ opt_in_rules:
 function_body_length:
   - 60 # warning
   - 100 # error
-- line_length:
+line_length:
   - 150 # warning
   - 200 # error
 cyclomatic_complexity:
   ignores_case_statements: true
 ```
 
-* No rules are disabled by default.
-* `included` is blank which means it checks every folder...
-* ... except for the ones listed in the `excluded` section.
-* `opt-in-rules`: I went through the list of rules with `opt-in` equal to `yes` and enabled all I thought useful.
-* `function_body_length` - the default warning length is 40 but I allow myself 60 as that fits on my screen so I can always see the entire function without scrolling.
-* `line_length` - with a bigger screen, I lengthen both the warning and error lengths.
-* `cyclomatic_complexity` checks for functions that are getting so complex that the compiler might run into trouble. I have this on with the default warning & error limits, but I set it to ignore `case` statements as they can often trigger this without really being too complex.
+- No rules are disabled by default.
+- `included` is blank which means it checks every folder...
+- ... except for the ones listed in the `excluded` section.
+- `opt-in-rules`: I went through the list of rules with `opt-in` equal to `yes` and enabled all I thought useful.
+- `function_body_length` - the default warning length is 40 but I allow myself 60 as that fits on my screen so I can always see the entire function without scrolling.
+- `line_length` - with a bigger screen, I lengthen both the warning and error lengths.
+- `cyclomatic_complexity` checks for functions that are getting so complex that the compiler might run into trouble. I have this on with the default warning & error limits, but I set it to ignore `case` statements as they can often trigger this without really being too complex.
 
 Now that my .swiftlint.yml file is edited, doing a build uses those settings and for a new iOS project, I am now down to 2 errors and 3 warnings, all due to long lines in AppDelegate.swift.
 
@@ -244,10 +244,10 @@ Rules can also be disabled or enabled by file. Check out the [Disable rules in c
 
 For me, SwiftLint enforces a number of good habits:
 
-* Files are kept relatively short.
-* Functions are always small enough to fit on a single screen.
-* Variable names & function names cannot be too short and non-descriptive.
-* Braces, indentation and white-space are always consistent.
+- Files are kept relatively short.
+- Functions are always small enough to fit on a single screen.
+- Variable names & function names cannot be too short and non-descriptive.
+- Braces, indentation and white-space are always consistent.
 
 And sometimes the warnings make me think of a better way to do things.
 

@@ -1,7 +1,17 @@
+.footer__inner {
+  text-align: center;
+  justify-content: center;
+}
+
+.footer .copyright {
+  flex-direction: column !important;
+}
+
 .social_footer {
   display: flex;
   justify-content: flex-start;
-  width: 760px;
+  flex-direction: row !important;
+  margin: 0 auto;
 }
 
 .social_footer img {
