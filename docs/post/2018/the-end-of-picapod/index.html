@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   
-    <title>Moving to the Dark Side - Part 2 :: TrozWare</title>
+    <title>The End of Pic-a-POD :: TrozWare</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="description" content="" />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://troz.net/post/2018/moving-to-the-dark-side-2/" />
+<link rel="canonical" href="https://troz.net/post/2018/the-end-of-picapod/" />
 
 
 <link rel="stylesheet" href="/assets/style.css">
@@ -39,16 +39,16 @@
 
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Moving to the Dark Side - Part 2 :: TrozWare — ">
+<meta property="og:title" content="The End of Pic-a-POD :: TrozWare — ">
 <meta property="og:description" content="" />
-<meta property="og:url" content="https://troz.net/post/2018/moving-to-the-dark-side-2/" />
-<meta property="og:site_name" content="Moving to the Dark Side - Part 2" />
+<meta property="og:url" content="https://troz.net/post/2018/the-end-of-picapod/" />
+<meta property="og:site_name" content="The End of Pic-a-POD" />
 <meta property="og:image" content="https://troz.net/img/default.jpg">
 <meta property="og:image:width" content="2048">
 <meta property="og:image:height" content="1024">
 
 
-<meta property="article:published_time" content="2018-10-06 08:29:35 &#43;1000 AEST" />
+<meta property="article:published_time" content="2018-10-06 09:38:20 &#43;1000 AEST" />
 
 
 
@@ -115,23 +115,21 @@
   <div class="content">
     
 <div class="post">
-  <h2 class="post-title"><a href="https://troz.net/post/2018/moving-to-the-dark-side-2/">Moving to the Dark Side - Part 2</a></h2>
+  <h2 class="post-title"><a href="https://troz.net/post/2018/the-end-of-picapod/">The End of Pic-a-POD</a></h2>
   <div class="post-meta">
     <span class="post-date">
       06 Oct 2018
     </span>
-    <span class="more-meta"> 316 words, </span>
-    <span class="more-meta"> 2 minute read</span>
+    <span class="more-meta"> 567 words, </span>
+    <span class="more-meta"> 3 minute read</span>
   </div>
 
   
   <span class="post-tags">
     
+    #<a href="https://troz.net/tags/pic-a-pod">pic a pod</a>&nbsp;
+    
     #<a href="https://troz.net/tags/mac">mac</a>&nbsp;
-    
-    #<a href="https://troz.net/tags/app-store">app store</a>&nbsp;
-    
-    #<a href="https://troz.net/tags/web">web</a>&nbsp;
     
   </span>
   
@@ -139,38 +137,33 @@
   
 
   <div class="post-content">
-    <style>
-  img {
-    margin: 10px auto;
-    border: 1px #bbb solid;
-    box-shadow: 3px 3px 5px 2px #ccc;
-  }
-
-  .social_footer img {
-    border: none;
-    box-shadow: none;
-  }
-</style>
-
-<p>Now that most of my Mac apps have been updated to support macOS Mojave&rsquo;s dark mode, it was time to turn my attention to this web site.</p>
+    <p>I think I wrote the first version of <a href="https://picapod.com">Pic-a-POD</a> in 2003 and have been updating and maintaining it ever since, but the time has come to shut it down.</p>
 
 <p></p>
 
-<p>I build this site using <a href="https://gohugo.io/">Hugo</a> and up until recently I used a theme called <a href="https://github.com/olOwOlo/hugo-theme-even">Even</a> which I had been able to modify to suit my requirements. The story of how I switched to Hugo, what I wanted in a theme and how I went about, is in a <a href="/post/2017/moving-to-hugo/">post from last year</a>.</p>
+<p>I haven&rsquo;t been able to find a picture of the original version, but here is one from 2005:</p>
 
-<p>But Evan is a theme with a white background and dark text, which looked great in light mode, but rather glaring in dark mode. So it was time to head for the <a href="https://themes.gohugo.io">Hugo Themes page</a> to look for an alternative.</p>
+<p><img src="/images/POD2005.png" alt="Pic-a-POD 2005" /></p>
 
-<p>But which way to go? In my opinion, dark themes look better in Mojave&rsquo;s light mode than light themes look in dark mode, so I decided to go with a dark theme. But to my delight, I found a theme that allowed users to switch between light and dark modes: <a href="https://themes.gohugo.io/hugo-theme-hello-friend/">Hello Friend</a> by <a href="https://twitter.com/panr">panr</a>. Click the light bulb icon in the top right and the web site instantly toggles between modes.</p>
+<p>And here it is today:</p>
 
-<p><img src="/images/Dark_Light_web.png" alt="Dark and light versions of homepage" /></p>
+<p><img src="/images/POD2018.png" alt="Pic-a-POD 2018" /></p>
 
-<p>With the spread of dark mode, I would expect more web sites and themes to implement this sort of switching in the future. Thanks to <a href="https://twitter.com/panr">panr</a> for being an early adopter.</p>
+<p>It was written originally as a convenient way to download the daily picture-of-the-day from <a href="https://www.nationalgeographic.com/photography/photo-of-the-day/">National Geographic</a> and use it to set the Mac&rsquo;s Desktop Picture automatically. From there is just grew with more sites added (9 at the moment although I think there have been up to 12 at certain times).</p>
 
-<hr>
+<p>The main issue was keeping up with the site changes of the various sources. Early versions had each copy of the app interrogate the sites directly which meant that any change to the site broke the app until an update could be released. And without the App Store making updates easy to distribute, this was a problem. Later I switched to having PHP scripts on my server do the data retrieval and store the results in a database. The app then just had to request the data from my server. That way if there was a change, I could react quickly and a fix to the server-side scripts allowed all users to get the new data.</p>
 
-<p>As I said in my <a href="/post/2018/moving-to-the-dark-side/">previous post</a>, I have already updated several of my macOS apps to support dark mode. But after reading some comments on Twitter, I have updated <a href="https://itunes.apple.com/app/apple-store/id552293482">Icon Builder</a> and <a href="https://itunes.apple.com/app/apple-store/id997688302">Dice Pass</a> to allow the user to decide which mode to use. Make your choice in the Window menu as to whether these apps use whatever mode is set for the system, or select your preferred mode.</p>
+<p>As my first Objective-C app and my first app on the Mac App Store, Pic-a-POD has always held a place in my affections, and until last week, it was the one app that was always running on my Mac. So what changed? macOS Mojave&rsquo;s dynamic desktops! I turned off Pic-a-POD, and set the Desktop picture to change dynamically through the day and I loved it.</p>
 
-<p><img src="/images/SelectMode.png" alt="Select mode in Window menu" /></p>
+<p>On the server, I have kept Pic-a-POD updated regularly, adding and removing sites, fixing the scripts to accommodate changes and so on. But the desktop app has languished and has needed an update for many years now. It&rsquo;s networking is primitive and I know so much more about programming for the Mac now that looking at the code is positiviely embarrassing! But it has never been a big seller so a re-write is definitely not economically viable, it would only be for my satisfaction. And if even I am not using it any more, what is the point?</p>
+
+<p>So I have made the sad decision to shut it down. But what does this mean for users of Pic-a-POD right now?</p>
+
+<p>Firstly, it is not going away immediately. I will remove it from the App Store, but existing copies are still going to work. If any of the source sites change their data structure, I will not be monitoring this and I will not update the server-side scripts - just turn off that source and carry on with whatever still works. And finally, when the picapod.com domain name expires in 2021, I will not renew it and the app will cease to operate.</p>
+
+<p>What can you use instead? The default dynamic desktops in Mojave are great although there are only two of them, but I have bought myself an app called <a href="https://itunes.apple.com/au/app/24-hour-wallpaper/id1226087575?mt=12">24 Hour Wallpaper</a> which includes a great range of dynamic desktop pictures.</p>
+
+<p>So thank you to everyone who has used Pic-a-POD over the years and especially those of you who took the time and trouble to contact me. It has been a fun journey, but there are other apps in my future now.</p>
   </div>
   
   <div class="pagination">
@@ -180,10 +173,8 @@
     </div>
     <div class="pagination__buttons">
       
-      <a class="btn next" href="https://troz.net/post/2018/the-end-of-picapod/">← The End of Pic-a-POD</a>
       
-      
-      <a class="btn previous" href="https://troz.net/post/2018/moving-to-the-dark-side/">Moving to the Dark Side →</a>
+      <a class="btn previous" href="https://troz.net/post/2018/moving-to-the-dark-side-2/">Moving to the Dark Side - Part 2 →</a>
       
     </div>
   </div>
