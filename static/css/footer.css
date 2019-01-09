@@ -19,3 +19,50 @@
   height: 30px;
   margin: 0 20px 20px 0;
 }
+
+/* Dark theme */
+
+.dark-theme .mailtoui-modal {
+  background-color: rgba(250, 250, 250, 0.5);
+  color: #fff;
+}
+
+.dark-theme .mailtoui-modal-head {
+  background-color: #21262c;
+}
+
+.dark-theme .mailtoui-modal-title {
+  color: #fff;
+}
+
+.dark-theme .mailtoui-modal-close:hover {
+  color: #fff;
+}
+
+.dark-theme .mailtoui-modal-body {
+  background-color: #373b41;
+}
+
+.dark-theme .mailtoui-client:focus .mailtoui-label {
+  background-color: #d8dcdf;
+  color: #333;
+}
+
+.dark-theme .mailtoui-label,
+.dark-theme .mailtoui-copy-button {
+  background-color: #63676b;
+  color: #fff;
+}
+
+.dark-theme .mailtoui-label:hover,
+.dark-theme .mailtoui-label:focus,
+.dark-theme .mailtoui-copy-button:hover,
+.dark-theme .mailtoui-copy-button:focus {
+  background-color: #d8dcdf;
+  color: #333;
+}
+
+.dark-theme .mailtoui-copy-email-address {
+  background-color: #909295;
+  color: #21262c;
+}
