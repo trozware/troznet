@@ -17,11 +17,10 @@
           "Hemostasis",
           "Ossuary",
           "Will Of The Necropolis",
-          "Grip Of The Dead",
+          "Wraith Walk",
           "Bloodworms",
-          "Red Thirst"
-        ],
-        "bis": []
+          "Purgatory"
+        ]
       },
       {
         "name": "Frost",
@@ -30,150 +29,13 @@
           "Crit >= Haste >= Mastery >= Versatility"
         ],
         "talents": [
-          "Icy Talons",
+          "Cold Heart",
           "Runic Attenuation",
           "Asphyxiate",
           "Frozen Pulse",
           "Permafrost",
-          "Gathering Storm",
+          "Frostwyrms Fury",
           "Breath Of Sindragosa"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Helm Of The Raptor King",
-            "link": "https://wowhead.com/item=159422/helm-of-the-raptor-king&bonus=4779:1512:4786:4775&azerite-powers=6:347:30:13",
-            "azerite": [
-              {
-                "name": "Frozen Tempest",
-                "link": "https://wowhead.com/spell=278487"
-              },
-              {
-                "name": "Overwhelming Power",
-                "link": "https://wowhead.com/spell=266180"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4929:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Kraken Shell Pauldrons",
-            "link": "https://wowhead.com/item=159431/kraken-shell-pauldrons&bonus=4779:1512:4786:4775&azerite-powers=6:347:459:13",
-            "azerite": [
-              {
-                "name": "Frozen Tempest",
-                "link": "https://wowhead.com/spell=278487"
-              },
-              {
-                "name": "Unstable Flames",
-                "link": "https://wowhead.com/spell=279899"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Turncoats Cape",
-            "link": "https://wowhead.com/item=159293/turncoats-cape&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Ashvane Wardens Cuirass",
-            "link": "https://wowhead.com/item=159440/ashvane-wardens-cuirass&bonus=4779:1512:4786:4775&azerite-powers=6:347:459:13",
-            "azerite": [
-              {
-                "name": "Frozen Tempest",
-                "link": "https://wowhead.com/spell=278487"
-              },
-              {
-                "name": "Unstable Flames",
-                "link": "https://wowhead.com/spell=279899"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Stonefury Vambraces",
-            "link": "https://wowhead.com/item=158359/stonefury-vambraces&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Ropescored Gauntlets",
-            "link": "https://wowhead.com/item=159429/ropescored-gauntlets&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Sewer Grate Girdle",
-            "link": "https://wowhead.com/item=160215/sewer-grate-girdle&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Legplates Of The Maritime Guard",
-            "link": "https://wowhead.com/item=159411/legplates-of-the-maritime-guard&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Embellished Ritual Sabatons",
-            "link": "https://wowhead.com/item=155861/embellished-ritual-sabatons&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Charged Sandstone Band",
-            "link": "https://wowhead.com/item=158366/charged-sandstone-band&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Seal Of The City Watch",
-            "link": "https://wowhead.com/item=162542/seal-of-the-city-watch&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Gorecrusted Butchers Block",
-            "link": "https://wowhead.com/item=159616/gorecrusted-butchers-block&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Briny Barnacle",
-            "link": "https://wowhead.com/item=159619/briny-barnacle&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Cudgel Of Correctional Oversight",
-            "link": "https://wowhead.com/item=159658/cudgel-of-correctional-oversight&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Off Hand",
-            "gear": "Cudgel Of Correctional Oversight",
-            "link": "https://wowhead.com/item=159658/cudgel-of-correctional-oversight&bonus=4779:1512:4786",
-            "azerite": []
-          }
         ]
       },
       {
@@ -188,142 +50,11 @@
         "talents": [
           "Clawing Shadows",
           "Ebon Fever",
-          "Deaths Reach",
-          "Harbinger Of Doom",
-          "Wraith Walk",
-          "Pestilence",
-          "Army Of The Damned"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Greathelm Of The Putrid Path",
-            "link": "https://wowhead.com/item=159446/greathelm-of-the-putrid-path&bonus=4779:1512:4786:4775&azerite-powers=6:194:462:13",
-            "azerite": [
-              {
-                "name": "Filthy Transfusion",
-                "link": "https://wowhead.com/spell=273834"
-              },
-              {
-                "name": "Azerite Globules",
-                "link": "https://wowhead.com/spell=266936"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4929:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Skyscorcher Pauldrons",
-            "link": "https://wowhead.com/item=159415/skyscorcher-pauldrons&bonus=4779:1512:4786:4775&azerite-powers=6:504:459:13",
-            "azerite": [
-              {
-                "name": "Unstable Catalyst",
-                "link": "https://wowhead.com/spell=281514"
-              },
-              {
-                "name": "Unstable Flames",
-                "link": "https://wowhead.com/spell=279899"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Raals Bib",
-            "link": "https://wowhead.com/item=159294/raals-bib&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Breastplate Of The Vengeful",
-            "link": "https://wowhead.com/item=159448/breastplate-of-the-vengeful&bonus=4779:1512:4786:4775&azerite-powers=6:350:461:13",
-            "azerite": [
-              {
-                "name": "Cankerous Wounds",
-                "link": "https://wowhead.com/spell=278482"
-              },
-              {
-                "name": "Earthlink",
-                "link": "https://wowhead.com/spell=279926"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Shadowshroud Vambraces",
-            "link": "https://wowhead.com/item=160212/shadowshroud-vambraces&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Sharktoothknuckled Grips",
-            "link": "https://wowhead.com/item=155890/sharktoothknuckled-grips&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Sharkbait Harness Girdle",
-            "link": "https://wowhead.com/item=158360/sharkbait-harness-girdle&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Petrified Wickerplate Greaves",
-            "link": "https://wowhead.com/item=159456/petrified-wickerplate-greaves&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Fluorescent Flora Stompers",
-            "link": "https://wowhead.com/item=159436/fluorescent-flora-stompers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Ritual Binders Ring",
-            "link": "https://wowhead.com/item=159459/ritual-binders-ring&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Seal Of Questionable Loyalties",
-            "link": "https://wowhead.com/item=158314/seal-of-questionable-loyalties&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Jes Howler",
-            "link": "https://wowhead.com/item=159627/jes-howler&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Briny Barnacle",
-            "link": "https://wowhead.com/item=159619/briny-barnacle&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Getiikku Cut Of Death",
-            "link": "https://wowhead.com/item=159644/getiikku-cut-of-death&bonus=4779:1512:4786",
-            "azerite": []
-          }
+          "Asphyxiate",
+          "Soul Reaper",
+          "Spell Eater",
+          "Epidemic",
+          "Frenzy"
         ]
       }
     ]
@@ -340,150 +71,13 @@
           "Mastery"
         ],
         "talents": [
-          "Felblade",
-          "Immolation Aura",
+          "Blind Fury",
+          "Insatiable Hunger",
           "Trail Of Ruin",
-          "Desperate Instincts",
+          "Soul Rending",
           "First Blood",
           "Unleashed Power",
-          "Nemesis"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Irontide Captains Hat",
-            "link": "https://wowhead.com/item=155888/irontide-captains-hat&bonus=4779:1512:4786:4775&azerite-powers=12:159:30:13",
-            "azerite": [
-              {
-                "name": "Furious Gaze",
-                "link": "https://wowhead.com/spell=273231"
-              },
-              {
-                "name": "Overwhelming Power",
-                "link": "https://wowhead.com/spell=266180"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4932:4933:4936:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Mantle Of Fastidious Machinations",
-            "link": "https://wowhead.com/item=158304/mantle-of-fastidious-machinations&bonus=4779:1512:4786:4775&azerite-powers=12:159:461:13",
-            "azerite": [
-              {
-                "name": "Furious Gaze",
-                "link": "https://wowhead.com/spell=273231"
-              },
-              {
-                "name": "Earthlink",
-                "link": "https://wowhead.com/spell=279926"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Cloak Of Questionable Intent",
-            "link": "https://wowhead.com/item=159287/cloak-of-questionable-intent&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Spymasters Wrap",
-            "link": "https://wowhead.com/item=155860/spymasters-wrap&bonus=4779:1512:4786:4775&azerite-powers=12:126:21:13",
-            "azerite": [
-              {
-                "name": "Revolving Blades",
-                "link": "https://wowhead.com/spell=279581"
-              },
-              {
-                "name": "Elemental Whirl",
-                "link": "https://wowhead.com/spell=263984"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Sea Dogs Cuffs",
-            "link": "https://wowhead.com/item=158305/sea-dogs-cuffs&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Gloves Of Corrupted Waters",
-            "link": "https://wowhead.com/item=159321/gloves-of-corrupted-waters&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Belt Of Gleaming Determination",
-            "link": "https://wowhead.com/item=158306/belt-of-gleaming-determination&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Singeblotched Britches",
-            "link": "https://wowhead.com/item=159306/singeblotched-britches&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Mercenary Miners Boots",
-            "link": "https://wowhead.com/item=159336/mercenary-miners-boots&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Ritual Binders Ring",
-            "link": "https://wowhead.com/item=159459/ritual-binders-ring&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Seal Of The Regal Loa",
-            "link": "https://wowhead.com/item=159458/seal-of-the-regal-loa&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Galecallers Boon",
-            "link": "https://wowhead.com/item=159614/galecallers-boon&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Lustrous Golden Plumage",
-            "link": "https://wowhead.com/item=159617/lustrous-golden-plumage&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Warglaive Of The Sand Queen",
-            "link": "https://wowhead.com/item=160110/warglaive-of-the-sand-queen&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Off Hand",
-            "gear": "Warglaive Of The Sand Queen",
-            "link": "https://wowhead.com/item=160110/warglaive-of-the-sand-queen&bonus=4779:1512:4786",
-            "azerite": []
-          }
+          "Demonic"
         ]
       },
       {
@@ -500,12 +94,11 @@
           "Abyssal Strike",
           "Fallout",
           "Flame Crash",
-          "Fracture",
-          "Quickened Sigils",
+          "Feed The Demon",
+          "Concentrated Sigils",
           "Spirit Bomb",
           "Last Resort"
-        ],
-        "bis": []
+        ]
       }
     ]
   },
@@ -521,144 +114,13 @@
           "Mastery"
         ],
         "talents": [
-          "Force Of Nature",
-          "Wild Charge",
-          "Guardian Affinity",
+          "Natures",
+          "Tiger Dash",
+          "Restoration Affinity",
           "Typhoon",
           "Incarnation Chosen Of Elune",
-          "Twin Moons",
-          "Fury Of Elune"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Irontide Captains Hat",
-            "link": "https://wowhead.com/item=155888/irontide-captains-hat&bonus=4779:1512:4786:4775&azerite-powers=11:173:30:13",
-            "azerite": [
-              {
-                "name": "Power of the Moon",
-                "link": "https://wowhead.com/spell=273367"
-              },
-              {
-                "name": "Overwhelming Power",
-                "link": "https://wowhead.com/spell=266180"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4932:4933:4936:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Mantle Of Fastidious Machinations",
-            "link": "https://wowhead.com/item=158304/mantle-of-fastidious-machinations&bonus=4779:1512:4786:4775&azerite-powers=11:173:461:13",
-            "azerite": [
-              {
-                "name": "Power of the Moon",
-                "link": "https://wowhead.com/spell=273367"
-              },
-              {
-                "name": "Earthlink",
-                "link": "https://wowhead.com/spell=279926"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Cloak Of Questionable Intent",
-            "link": "https://wowhead.com/item=159287/cloak-of-questionable-intent&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Spymasters Wrap",
-            "link": "https://wowhead.com/item=155860/spymasters-wrap&bonus=4779:1512:4786:4775&azerite-powers=11:122:20:13",
-            "azerite": [
-              {
-                "name": "Streaking Stars",
-                "link": "https://wowhead.com/spell=272871"
-              },
-              {
-                "name": "Lifespeed",
-                "link": "https://wowhead.com/spell=267665"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Servoarm Bindings",
-            "link": "https://wowhead.com/item=158353/servoarm-bindings&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Underrot Grotto Tenders",
-            "link": "https://wowhead.com/item=159344/underrot-grotto-tenders&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Port Pillagers Belt",
-            "link": "https://wowhead.com/item=159309/port-pillagers-belt&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Seawalkers Pantaloons",
-            "link": "https://wowhead.com/item=159322/seawalkers-pantaloons&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Sandshined Snakeskin Sandals",
-            "link": "https://wowhead.com/item=159327/sandshined-snakeskin-sandals&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Seal Of Questionable Loyalties",
-            "link": "https://wowhead.com/item=158314/seal-of-questionable-loyalties&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Band Of The Ancient Dredger",
-            "link": "https://wowhead.com/item=159461/band-of-the-ancient-dredger&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Ignition Mages Fuse",
-            "link": "https://wowhead.com/item=159615/ignition-mages-fuse&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Conch Of Dark Whispers",
-            "link": "https://wowhead.com/item=159620/conch-of-dark-whispers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Seabreeze",
-            "link": "https://wowhead.com/item=158371/seabreeze&bonus=4779:1512:4786",
-            "azerite": []
-          }
+          "Stellar Flare",
+          "Shooting Stars"
         ]
       },
       {
@@ -669,144 +131,13 @@
           "Mastery >= Crit >= Versatility"
         ],
         "talents": [
-          "Lunar Inspiration",
+          "Sabertooth",
           "Wild Charge",
           "Balance Affinity",
-          "Typhoon",
-          "Jagged Wounds",
-          "Savage Roar",
-          "Bloodtalons"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Irontide Captains Hat",
-            "link": "https://wowhead.com/item=155888/irontide-captains-hat&bonus=4779:1512:4786:4775&azerite-powers=11:111:30:13",
-            "azerite": [
-              {
-                "name": "Blood Mist",
-                "link": "https://wowhead.com/spell=279524"
-              },
-              {
-                "name": "Overwhelming Power",
-                "link": "https://wowhead.com/spell=266180"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4932:4933:4936:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Mantle Of Fastidious Machinations",
-            "link": "https://wowhead.com/item=158304/mantle-of-fastidious-machinations&bonus=4779:1512:4786:4775&azerite-powers=11:358:461:13",
-            "azerite": [
-              {
-                "name": "Gushing Lacerations",
-                "link": "https://wowhead.com/spell=278509"
-              },
-              {
-                "name": "Earthlink",
-                "link": "https://wowhead.com/spell=279926"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Cloak Of Questionable Intent",
-            "link": "https://wowhead.com/item=159287/cloak-of-questionable-intent&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Spymasters Wrap",
-            "link": "https://wowhead.com/item=155860/spymasters-wrap&bonus=4779:1512:4786:4775&azerite-powers=11:481:20:13",
-            "azerite": [
-              {
-                "name": "Incite the Pack",
-                "link": "https://wowhead.com/spell=280410"
-              },
-              {
-                "name": "Lifespeed",
-                "link": "https://wowhead.com/spell=267665"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Servoarm Bindings",
-            "link": "https://wowhead.com/item=158353/servoarm-bindings&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Underrot Grotto Tenders",
-            "link": "https://wowhead.com/item=159344/underrot-grotto-tenders&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Port Pillagers Belt",
-            "link": "https://wowhead.com/item=159309/port-pillagers-belt&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Seawalkers Pantaloons",
-            "link": "https://wowhead.com/item=159322/seawalkers-pantaloons&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Sandshined Snakeskin Sandals",
-            "link": "https://wowhead.com/item=159327/sandshined-snakeskin-sandals&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Seal Of Questionable Loyalties",
-            "link": "https://wowhead.com/item=158314/seal-of-questionable-loyalties&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Band Of The Ancient Dredger",
-            "link": "https://wowhead.com/item=159461/band-of-the-ancient-dredger&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Galecallers Boon",
-            "link": "https://wowhead.com/item=159614/galecallers-boon&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Deadeye Spyglass",
-            "link": "https://wowhead.com/item=159623/deadeye-spyglass&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Twinstrike Polearm",
-            "link": "https://wowhead.com/item=158370/twinstrike-polearm&bonus=4779:1512:4786",
-            "azerite": []
-          }
+          "Mighty Bash",
+          "Soul Of The Forest",
+          "Brutal Slash",
+          "Moment Of Clarity"
         ]
       },
       {
@@ -819,15 +150,14 @@
           "Crit >= Haste"
         ],
         "talents": [
-          "Bristling Fur",
+          "Blood Frenzy",
           "Wild Charge",
-          "Restoration Affinity",
-          "Mighty Bash",
+          "Balance Affinity",
+          "Typhoon",
           "Soul Of The Forest",
-          "Survival Of The Fittest",
-          "Pulverize"
-        ],
-        "bis": []
+          "Guardian Of Elune",
+          "Rend And Tear"
+        ]
       },
       {
         "name": "Restoration",
@@ -839,15 +169,14 @@
           "Versatility"
         ],
         "talents": [
-          "Abundance",
-          "Renewal",
-          "Balance Affinity",
-          "Mass Entanglement",
+          "Cenarion Ward",
+          "Tiger Dash",
+          "Guardian Affinity",
+          "Typhoon",
           "Cultivation",
           "Inner Peace",
           "Flourish"
-        ],
-        "bis": []
+        ]
       }
     ]
   },
@@ -862,143 +191,12 @@
         ],
         "talents": [
           "Killer Instinct",
-          "Chimaera Shot",
+          "One With The Pack",
           "Natural Mending",
           "A Murder Of Crows",
           "Posthaste",
           "Stomp",
           "Aspect Of The Beast"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Coif Of The Court Spider",
-            "link": "https://wowhead.com/item=159358/coif-of-the-court-spider&bonus=4779:1512:4786:4775&azerite-powers=3:366:22:13",
-            "azerite": [
-              {
-                "name": "Primal Instincts",
-                "link": "https://wowhead.com/spell=279806"
-              },
-              {
-                "name": "Heed My Call",
-                "link": "https://wowhead.com/spell=263987"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4932:4933:4936:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Gaping Maw Shoulderguard",
-            "link": "https://wowhead.com/item=159352/gaping-maw-shoulderguard&bonus=4779:1512:4786:4775&azerite-powers=3:161:22:13",
-            "azerite": [
-              {
-                "name": "Haze of Rage",
-                "link": "https://wowhead.com/spell=273262"
-              },
-              {
-                "name": "Heed My Call",
-                "link": "https://wowhead.com/spell=263987"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Drape Of The Loyal Vassal",
-            "link": "https://wowhead.com/item=158375/drape-of-the-loyal-vassal&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Corrupted Hexxers Vestments",
-            "link": "https://wowhead.com/item=159370/corrupted-hexxers-vestments&bonus=4779:1512:4786:4775&azerite-powers=3:161:30:13",
-            "azerite": [
-              {
-                "name": "Haze of Rage",
-                "link": "https://wowhead.com/spell=273262"
-              },
-              {
-                "name": "Overwhelming Power",
-                "link": "https://wowhead.com/spell=266180"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Slaughterhousechain Bracers",
-            "link": "https://wowhead.com/item=159397/slaughterhousechain-bracers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Sepulchral Constructs Gloves",
-            "link": "https://wowhead.com/item=160213/sepulchral-constructs-gloves&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Shalebiter Interlinked Chain",
-            "link": "https://wowhead.com/item=159361/shalebiter-interlinked-chain&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Sea Priests Greaves",
-            "link": "https://wowhead.com/item=159359/sea-priests-greaves&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Surefoot Sabatons",
-            "link": "https://wowhead.com/item=159379/surefoot-sabatons&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Footbomb Championship Ring",
-            "link": "https://wowhead.com/item=159462/footbomb-championship-ring&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Seal Of Questionable Loyalties",
-            "link": "https://wowhead.com/item=158314/seal-of-questionable-loyalties&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Galecallers Boon",
-            "link": "https://wowhead.com/item=159614/galecallers-boon&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Lustrous Golden Plumage",
-            "link": "https://wowhead.com/item=159617/lustrous-golden-plumage&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Hallowed Ossein Longbow",
-            "link": "https://wowhead.com/item=158711/hallowed-ossein-longbow&bonus=4779:1512:4786",
-            "azerite": []
-          }
         ]
       },
       {
@@ -1009,156 +207,13 @@
           "Crit >= Mastery"
         ],
         "talents": [
-          "Serpent Sting",
+          "Master Marksman",
           "Careful Aim",
           "Natural Mending",
           "Hunters Mark",
           "Posthaste",
           "Lethal Shots",
           "Lock And Load"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Hood Of The Dark Reaper",
-            "link": "https://wowhead.com/item=159391/hood-of-the-dark-reaper&bonus=4779:1512:4786:4775&azerite-powers=3:504:21:15:86",
-            "azerite": [
-              {
-                "name": "Unstable Catalyst",
-                "link": "https://wowhead.com/spell=281514"
-              },
-              {
-                "name": "Elemental Whirl",
-                "link": "https://wowhead.com/spell=263984"
-              },
-              {
-                "name": "Resounding Protection",
-                "link": "https://wowhead.com/spell=263962"
-              },
-              {
-                "name": "Azerite Fortification",
-                "link": "https://wowhead.com/spell=268435"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4932:4933:4936:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Amalgamated Abomination Spaulders",
-            "link": "https://wowhead.com/item=159385/amalgamated-abomination-spaulders&bonus=4779:1512:4786:4775&azerite-powers=3:194:459:15:86",
-            "azerite": [
-              {
-                "name": "Filthy Transfusion",
-                "link": "https://wowhead.com/spell=273834"
-              },
-              {
-                "name": "Unstable Flames",
-                "link": "https://wowhead.com/spell=279899"
-              },
-              {
-                "name": "Resounding Protection",
-                "link": "https://wowhead.com/spell=263962"
-              },
-              {
-                "name": "Azerite Fortification",
-                "link": "https://wowhead.com/spell=268435"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Drape Of The Loyal Vassal",
-            "link": "https://wowhead.com/item=158375/drape-of-the-loyal-vassal&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Deathslavers Hauberk",
-            "link": "https://wowhead.com/item=159395/deathslavers-hauberk&bonus=4779:1512:4786:4775&azerite-powers=3:192:18:15:86",
-            "azerite": [
-              {
-                "name": "Meticulous Scheming",
-                "link": "https://wowhead.com/spell=273682"
-              },
-              {
-                "name": "Blood Siphon",
-                "link": "https://wowhead.com/spell=264108"
-              },
-              {
-                "name": "Resounding Protection",
-                "link": "https://wowhead.com/spell=263962"
-              },
-              {
-                "name": "Azerite Fortification",
-                "link": "https://wowhead.com/spell=268435"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Slaughterhousechain Bracers",
-            "link": "https://wowhead.com/item=159397/slaughterhousechain-bracers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Sepulchral Constructs Gloves",
-            "link": "https://wowhead.com/item=160213/sepulchral-constructs-gloves&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Shalebiter Interlinked Chain",
-            "link": "https://wowhead.com/item=159361/shalebiter-interlinked-chain&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Sea Priests Greaves",
-            "link": "https://wowhead.com/item=159359/sea-priests-greaves&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Surefoot Sabatons",
-            "link": "https://wowhead.com/item=159379/surefoot-sabatons&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Footbomb Championship Ring",
-            "link": "https://wowhead.com/item=159462/footbomb-championship-ring&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Seal Of Questionable Loyalties",
-            "link": "https://wowhead.com/item=158314/seal-of-questionable-loyalties&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Lustrous Golden Plumage",
-            "link": "https://wowhead.com/item=159617/lustrous-golden-plumage&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Galecallers Boon",
-            "link": "https://wowhead.com/item=159614/galecallers-boon&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Hallowed Ossein Longbow",
-            "link": "https://wowhead.com/item=158711/hallowed-ossein-longbow&bonus=4779:1512:4786",
-            "azerite": []
-          }
         ]
       },
       {
@@ -1172,155 +227,12 @@
         ],
         "talents": [
           "Alpha Predator",
-          "Butchery",
+          "Guerrilla Tactics",
           "Natural Mending",
           "Bloodseeker",
-          "Born To Be Wild",
-          "Flanking Strike",
+          "Posthaste",
+          "Tip Of The Spear",
           "Birds Of Prey"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Visage Of Bloody Horrors",
-            "link": "https://wowhead.com/item=159381/visage-of-bloody-horrors&bonus=4779:1512:4786:4775&azerite-powers=3:372:18:15:86",
-            "azerite": [
-              {
-                "name": "Wilderness Survival",
-                "link": "https://wowhead.com/spell=278532"
-              },
-              {
-                "name": "Blood Siphon",
-                "link": "https://wowhead.com/spell=264108"
-              },
-              {
-                "name": "Resounding Protection",
-                "link": "https://wowhead.com/spell=263962"
-              },
-              {
-                "name": "Azerite Fortification",
-                "link": "https://wowhead.com/spell=268435"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4932:4933:4936:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Amalgamated Abomination Spaulders",
-            "link": "https://wowhead.com/item=159385/amalgamated-abomination-spaulders&bonus=4779:1512:4786:4775&azerite-powers=3:194:459:15:86",
-            "azerite": [
-              {
-                "name": "Filthy Transfusion",
-                "link": "https://wowhead.com/spell=273834"
-              },
-              {
-                "name": "Unstable Flames",
-                "link": "https://wowhead.com/spell=279899"
-              },
-              {
-                "name": "Resounding Protection",
-                "link": "https://wowhead.com/spell=263962"
-              },
-              {
-                "name": "Azerite Fortification",
-                "link": "https://wowhead.com/spell=268435"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Cloak Of Questionable Intent",
-            "link": "https://wowhead.com/item=159287/cloak-of-questionable-intent&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Corrupted Hexxers Vestments",
-            "link": "https://wowhead.com/item=159370/corrupted-hexxers-vestments&bonus=4779:1512:4786:4775&azerite-powers=3:371:459:15:86",
-            "azerite": [
-              {
-                "name": "Blur of Talons",
-                "link": "https://wowhead.com/spell=277653"
-              },
-              {
-                "name": "Unstable Flames",
-                "link": "https://wowhead.com/spell=279899"
-              },
-              {
-                "name": "Resounding Protection",
-                "link": "https://wowhead.com/spell=263962"
-              },
-              {
-                "name": "Azerite Fortification",
-                "link": "https://wowhead.com/spell=268435"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Dread Captains Irons",
-            "link": "https://wowhead.com/item=159372/dread-captains-irons&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Water Shapers",
-            "link": "https://wowhead.com/item=159366/water-shapers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Anchor Chain Girdle",
-            "link": "https://wowhead.com/item=159386/anchor-chain-girdle&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Corpuscular Greaves",
-            "link": "https://wowhead.com/item=159384/corpuscular-greaves&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Bramble Looped Boots",
-            "link": "https://wowhead.com/item=159404/bramble-looped-boots&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Seal Of Questionable Loyalties",
-            "link": "https://wowhead.com/item=158314/seal-of-questionable-loyalties&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Band Of The Ancient Dredger",
-            "link": "https://wowhead.com/item=159461/band-of-the-ancient-dredger&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Galecallers Boon",
-            "link": "https://wowhead.com/item=159614/galecallers-boon&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Lustrous Golden Plumage",
-            "link": "https://wowhead.com/item=159617/lustrous-golden-plumage&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Twinstrike Polearm",
-            "link": "https://wowhead.com/item=158370/twinstrike-polearm&bonus=4779:1512:4786",
-            "azerite": []
-          }
         ]
       }
     ]
@@ -1336,150 +248,13 @@
           "Mastery"
         ],
         "talents": [
-          "Amplification",
+          "Rule Of Threes",
           "Shimmer",
-          "Rune Of Power",
+          "Incanters Flow",
           "Resonance",
           "Chrono Shift",
           "Touch Of The Magi",
           "Overpowered"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Headdress Of The First Empire",
-            "link": "https://wowhead.com/item=159236/headdress-of-the-first-empire&bonus=4779:1512:4786:4775&azerite-powers=8:214:30:13",
-            "azerite": [
-              {
-                "name": "Arcane Pressure",
-                "link": "https://wowhead.com/spell=274594"
-              },
-              {
-                "name": "Overwhelming Power",
-                "link": "https://wowhead.com/spell=266180"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4932:4933:4936:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Amice Of The Returned",
-            "link": "https://wowhead.com/item=159273/amice-of-the-returned&bonus=4779:1512:4786:4775&azerite-powers=8:214:30:13",
-            "azerite": [
-              {
-                "name": "Arcane Pressure",
-                "link": "https://wowhead.com/spell=274594"
-              },
-              {
-                "name": "Overwhelming Power",
-                "link": "https://wowhead.com/spell=266180"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Raals Bib",
-            "link": "https://wowhead.com/item=159294/raals-bib&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Ruffled Poet Blouse",
-            "link": "https://wowhead.com/item=158301/ruffled-poet-blouse&bonus=4779:1512:4786:4775&azerite-powers=8:214:462:13",
-            "azerite": [
-              {
-                "name": "Arcane Pressure",
-                "link": "https://wowhead.com/spell=274594"
-              },
-              {
-                "name": "Azerite Globules",
-                "link": "https://wowhead.com/spell=266936"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Wraps Of Everliving Fealty",
-            "link": "https://wowhead.com/item=158348/wraps-of-everliving-fealty&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Greasy Bacongrabbers",
-            "link": "https://wowhead.com/item=155891/greasy-bacongrabbers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Sailcloth Waistband",
-            "link": "https://wowhead.com/item=158346/sailcloth-waistband&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Wild Pyromancers Trousers",
-            "link": "https://wowhead.com/item=159277/wild-pyromancers-trousers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Sandals Of Wise Voodoo",
-            "link": "https://wowhead.com/item=159243/sandals-of-wise-voodoo&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Lord Waycrests Signet",
-            "link": "https://wowhead.com/item=158362/lord-waycrests-signet&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Band Of The Ancient Dredger",
-            "link": "https://wowhead.com/item=159461/band-of-the-ancient-dredger&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Rotcrusted Voodoo Doll",
-            "link": "https://wowhead.com/item=159624/rotcrusted-voodoo-doll&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Lady Waycrests Music Box",
-            "link": "https://wowhead.com/item=159631/lady-waycrests-music-box&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Aqmar The Tidecaller",
-            "link": "https://wowhead.com/item=159646/aqmar-the-tidecaller&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Off Hand",
-            "gear": "Aureus Vessel",
-            "link": "https://wowhead.com/item=158322/aureus-vessel&bonus=4779:1512:4786",
-            "azerite": []
-          }
         ]
       },
       {
@@ -1493,150 +268,11 @@
         "talents": [
           "Searing Touch",
           "Shimmer",
-          "Rune Of Power",
-          "Phoenix Flames",
+          "Incanters Flow",
+          "Flame On",
           "Frenetic Speed",
           "Conflagration",
           "Pyroclasm"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Stormlurkers Cowl",
-            "link": "https://wowhead.com/item=159244/stormlurkers-cowl&bonus=4779:1512:4786:4775&azerite-powers=8:377:30:86:13",
-            "azerite": [
-              {
-                "name": "Duplicative Incineration",
-                "link": "https://wowhead.com/spell=278538"
-              },
-              {
-                "name": "Overwhelming Power",
-                "link": "https://wowhead.com/spell=266180"
-              },
-              {
-                "name": "Azerite Fortification",
-                "link": "https://wowhead.com/spell=268435"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4932:4933:4936:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Mantle Of Ceremonial Ascension",
-            "link": "https://wowhead.com/item=158344/mantle-of-ceremonial-ascension&bonus=4779:1512:4786:4775&azerite-powers=8:377:21:13",
-            "azerite": [
-              {
-                "name": "Duplicative Incineration",
-                "link": "https://wowhead.com/spell=278538"
-              },
-              {
-                "name": "Elemental Whirl",
-                "link": "https://wowhead.com/spell=263984"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Parrotfeather Cloak",
-            "link": "https://wowhead.com/item=155884/parrotfeather-cloak&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Inmates Straight Robe",
-            "link": "https://wowhead.com/item=159268/inmates-straight-robe&bonus=4779:1512:4786:4775&azerite-powers=8:377:21:468:13",
-            "azerite": [
-              {
-                "name": "Duplicative Incineration",
-                "link": "https://wowhead.com/spell=278538"
-              },
-              {
-                "name": "Elemental Whirl",
-                "link": "https://wowhead.com/spell=263984"
-              },
-              {
-                "name": "Cauterizing Blink",
-                "link": "https://wowhead.com/spell=280015"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Ironkelp Wristwraps",
-            "link": "https://wowhead.com/item=159256/ironkelp-wristwraps&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Twisted Sisters Handwraps",
-            "link": "https://wowhead.com/item=159272/twisted-sisters-handwraps&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Cord Of The Pious Warder",
-            "link": "https://wowhead.com/item=159245/cord-of-the-pious-warder&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Powder Monkeys Leggings",
-            "link": "https://wowhead.com/item=159250/powder-monkeys-leggings&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Blood Warders Moccasins",
-            "link": "https://wowhead.com/item=159270/blood-warders-moccasins&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Overseers Lost Seal",
-            "link": "https://wowhead.com/item=159460/overseers-lost-seal&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Thornwoven Band",
-            "link": "https://wowhead.com/item=162548/thornwoven-band&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Vessel Of Skittering Shadows",
-            "link": "https://wowhead.com/item=159610/vessel-of-skittering-shadows&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Balefire Branch",
-            "link": "https://wowhead.com/item=159630/balefire-branch&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Seabreeze",
-            "link": "https://wowhead.com/item=158371/seabreeze&bonus=4779:1512:4786",
-            "azerite": []
-          }
         ]
       },
       {
@@ -1651,147 +287,10 @@
           "Bone Chilling",
           "Shimmer",
           "Incanters Flow",
-          "Ebonbolt",
+          "Frozen Touch",
           "Frigid Winds",
           "Splitting Ice",
-          "Glacial Spike"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Grasping Crown Of The Deep",
-            "link": "https://wowhead.com/item=159252/grasping-crown-of-the-deep&bonus=4779:1512:4786:4775&azerite-powers=8:479:30:13",
-            "azerite": [
-              {
-                "name": "Dagger in the Back",
-                "link": "https://wowhead.com/spell=280284"
-              },
-              {
-                "name": "Overwhelming Power",
-                "link": "https://wowhead.com/spell=266180"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4932:4933:4936:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Exquisitely Aerodynamic Shoulderpads",
-            "link": "https://wowhead.com/item=159232/exquisitely-aerodynamic-shoulderpads&bonus=4779:1512:4786:4775&azerite-powers=8:504:22:13",
-            "azerite": [
-              {
-                "name": "Unstable Catalyst",
-                "link": "https://wowhead.com/spell=281514"
-              },
-              {
-                "name": "Heed My Call",
-                "link": "https://wowhead.com/spell=263987"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Raals Bib",
-            "link": "https://wowhead.com/item=159294/raals-bib&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Inmates Straight Robe",
-            "link": "https://wowhead.com/item=159268/inmates-straight-robe&bonus=4779:1512:4786:4775&azerite-powers=8:479:22:13",
-            "azerite": [
-              {
-                "name": "Dagger in the Back",
-                "link": "https://wowhead.com/spell=280284"
-              },
-              {
-                "name": "Heed My Call",
-                "link": "https://wowhead.com/spell=263987"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Wraps Of Everliving Fealty",
-            "link": "https://wowhead.com/item=158348/wraps-of-everliving-fealty&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Greasy Bacongrabbers",
-            "link": "https://wowhead.com/item=155891/greasy-bacongrabbers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Sailcloth Waistband",
-            "link": "https://wowhead.com/item=158346/sailcloth-waistband&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Wild Pyromancers Trousers",
-            "link": "https://wowhead.com/item=159277/wild-pyromancers-trousers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Sandals Of Wise Voodoo",
-            "link": "https://wowhead.com/item=159243/sandals-of-wise-voodoo&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Lord Waycrests Signet",
-            "link": "https://wowhead.com/item=158362/lord-waycrests-signet&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Band Of The Ancient Dredger",
-            "link": "https://wowhead.com/item=159461/band-of-the-ancient-dredger&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Rotcrusted Voodoo Doll",
-            "link": "https://wowhead.com/item=159624/rotcrusted-voodoo-doll&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Lady Waycrests Music Box",
-            "link": "https://wowhead.com/item=159631/lady-waycrests-music-box&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Aqmar The Tidecaller",
-            "link": "https://wowhead.com/item=159646/aqmar-the-tidecaller&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Off Hand",
-            "gear": "Aureus Vessel",
-            "link": "https://wowhead.com/item=158322/aureus-vessel&bonus=4779:1512:4786",
-            "azerite": []
-          }
+          "Thermal Void"
         ]
       }
     ]
@@ -1811,14 +310,13 @@
         ],
         "talents": [
           "Eye Of The Tiger",
-          "Tigers Lust",
-          "Black Ox Brew",
+          "Chi Torpedo",
+          "Light Brewing",
           "Tiger Tail Sweep",
-          "Dampen Harm",
-          "Rushing Jade Wind",
+          "Bob And Weave",
+          "Special Delivery",
           "High Tolerance"
-        ],
-        "bis": []
+        ]
       },
       {
         "name": "Mistweaver",
@@ -1831,14 +329,13 @@
         ],
         "talents": [
           "Mist Wrap",
-          "Tigers Lust",
-          "Mana Tea",
+          "Chi Torpedo",
+          "Lifecycles",
           "Ring Of Peace",
           "Dampen Harm",
-          "Summon Jade Serpent Statue",
+          "Invoke Chiji, The Red Crane",
           "Upwelling"
-        ],
-        "bis": []
+        ]
       },
       {
         "name": "Windwalker",
@@ -1850,150 +347,13 @@
           "Haste"
         ],
         "talents": [
-          "Chi Burst",
+          "Eye Of The Tiger",
           "Tigers Lust",
           "Fist Of The White Tiger",
           "Good Karma",
-          "Dampen Harm",
+          "Inner Strength",
           "Invoke Xuen, The White Tiger",
           "Whirling Dragon Punch"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Cowl Of Fluid Machinations",
-            "link": "https://wowhead.com/item=159302/cowl-of-fluid-machinations&bonus=4779:1512:4786:4775&azerite-powers=10:384:22:13",
-            "azerite": [
-              {
-                "name": "Elusive Footwork",
-                "link": "https://wowhead.com/spell=278571"
-              },
-              {
-                "name": "Heed My Call",
-                "link": "https://wowhead.com/spell=263987"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4932:4933:4936:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Goldtasseled Epaulets",
-            "link": "https://wowhead.com/item=159299/goldtasseled-epaulets&bonus=4779:1512:4786:4775&azerite-powers=10:384:22:13",
-            "azerite": [
-              {
-                "name": "Elusive Footwork",
-                "link": "https://wowhead.com/spell=278571"
-              },
-              {
-                "name": "Heed My Call",
-                "link": "https://wowhead.com/spell=263987"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Sporecallers Shroud",
-            "link": "https://wowhead.com/item=159292/sporecallers-shroud&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Goresplattered Vest",
-            "link": "https://wowhead.com/item=159330/goresplattered-vest&bonus=4779:1512:4786:4775&azerite-powers=10:384:38:13",
-            "azerite": [
-              {
-                "name": "Elusive Footwork",
-                "link": "https://wowhead.com/spell=278571"
-              },
-              {
-                "name": "On My Way",
-                "link": "https://wowhead.com/spell=267879"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Kulas Butchering Wristwraps",
-            "link": "https://wowhead.com/item=159300/kulas-butchering-wristwraps&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Gloves Of Corrupted Waters",
-            "link": "https://wowhead.com/item=159321/gloves-of-corrupted-waters&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Belt Of Gleaming Determination",
-            "link": "https://wowhead.com/item=158306/belt-of-gleaming-determination&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Leggings Of The Galeforce Viper",
-            "link": "https://wowhead.com/item=159329/leggings-of-the-galeforce-viper&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Besiegers Deckstalkers",
-            "link": "https://wowhead.com/item=159320/besiegers-deckstalkers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Lord Waycrests Signet",
-            "link": "https://wowhead.com/item=158362/lord-waycrests-signet&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Thornwoven Band",
-            "link": "https://wowhead.com/item=162548/thornwoven-band&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Deadeye Spyglass",
-            "link": "https://wowhead.com/item=159623/deadeye-spyglass&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Lustrous Golden Plumage",
-            "link": "https://wowhead.com/item=159617/lustrous-golden-plumage&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Bilestained Crawg Tusks",
-            "link": "https://wowhead.com/item=159653/bilestained-crawg-tusks&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Off Hand",
-            "gear": "Bilestained Crawg Tusks",
-            "link": "https://wowhead.com/item=159653/bilestained-crawg-tusks&bonus=4779:1512:4786",
-            "azerite": []
-          }
         ]
       }
     ]
@@ -2017,8 +377,7 @@
           "Judgment Of Light",
           "Avenging Crusader",
           "Beacon Of Faith"
-        ],
-        "bis": []
+        ]
       },
       {
         "name": "Protection",
@@ -2030,15 +389,14 @@
           "Crit"
         ],
         "talents": [
-          "Redoubt",
-          "Bastion Of Light",
-          "Blinding Light",
-          "Cavalier",
-          "Hand Of The Protector",
-          "Aegis Of Light",
+          "Holy Shield",
+          "Crusaders Judgment",
+          "Fist Of Justice",
+          "Blessing Of Spellwarding",
+          "Final Stand",
+          "Judgment Of Light",
           "Righteous Protector"
-        ],
-        "bis": []
+        ]
       },
       {
         "name": "Retribution",
@@ -2050,143 +408,12 @@
         ],
         "talents": [
           "Zeal",
-          "Hammer Of Wrath",
+          "Blade Of Wrath",
           "Fist Of Justice",
-          "Consecration",
-          "Unbreakable Spirit",
+          "Wake Of Ashes",
+          "Cavalier",
           "Selfless Healer",
-          "Crusade"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Seabrawlers Greathelm",
-            "link": "https://wowhead.com/item=155885/seabrawlers-greathelm&bonus=4779:1512:4775:4786&azerite-powers=2:479:462:13",
-            "azerite": [
-              {
-                "name": "Dagger in the Back",
-                "link": "https://wowhead.com/spell=280284"
-              },
-              {
-                "name": "Azerite Globules",
-                "link": "https://wowhead.com/spell=266936"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4929:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Pauldrons Of The Great Unifier",
-            "link": "https://wowhead.com/item=159423/pauldrons-of-the-great-unifier&bonus=4779:1512:4775:4786&azerite-powers=2:157:22:13",
-            "azerite": [
-              {
-                "name": "Rezan's Fury",
-                "link": "https://wowhead.com/spell=273790"
-              },
-              {
-                "name": "Heed My Call",
-                "link": "https://wowhead.com/spell=263987"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Cloak Of Questionable Intent",
-            "link": "https://wowhead.com/item=159287/cloak-of-questionable-intent&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Harpooners Plate Cuirass",
-            "link": "https://wowhead.com/item=159416/harpooners-plate-cuirass&bonus=4779:1512:4775:4786&azerite-powers=2:479:21:13",
-            "azerite": [
-              {
-                "name": "Dagger in the Back",
-                "link": "https://wowhead.com/spell=280284"
-              },
-              {
-                "name": "Elemental Whirl",
-                "link": "https://wowhead.com/spell=263984"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Embalmers Steadying Bracers",
-            "link": "https://wowhead.com/item=159409/embalmers-steadying-bracers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Gauntlets Of Total Subservience",
-            "link": "https://wowhead.com/item=159421/gauntlets-of-total-subservience&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Sharkbait Harness Girdle",
-            "link": "https://wowhead.com/item=158360/sharkbait-harness-girdle&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Legplates Of Profane Sacrifice",
-            "link": "https://wowhead.com/item=159443/legplates-of-profane-sacrifice&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Sabatons Of Rampaging Elements",
-            "link": "https://wowhead.com/item=159679/sabatons-of-rampaging-elements&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Seal Of Questionable Loyalties",
-            "link": "https://wowhead.com/item=158314/seal-of-questionable-loyalties&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Band Of The Ancient Dredger",
-            "link": "https://wowhead.com/item=159461/band-of-the-ancient-dredger&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Jes Howler",
-            "link": "https://wowhead.com/item=159627/jes-howler&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Briny Barnacle",
-            "link": "https://wowhead.com/item=159619/briny-barnacle&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Getiikku Cut Of Death",
-            "link": "https://wowhead.com/item=159644/getiikku-cut-of-death&bonus=4779:1512:4786",
-            "azerite": []
-          }
+          "Divine Purpose"
         ]
       }
     ]
@@ -2203,15 +430,14 @@
           "Versatility >= Crit"
         ],
         "talents": [
-          "Castigation",
+          "Schism",
           "Angelic Feather",
-          "Mindbender",
+          "Power Word Solace",
           "Shining Force",
-          "Contrition",
+          "Sins Of The Many",
           "Halo",
           "Evangelism"
-        ],
-        "bis": []
+        ]
       },
       {
         "name": "Holy",
@@ -2226,12 +452,11 @@
           "Enlightenment",
           "Angelic Feather",
           "Cosmic Ripple",
-          "Shining Force",
+          "Censure",
           "Binding Heal",
-          "Benediction",
-          "Word Salvation"
-        ],
-        "bis": []
+          "Divine Star",
+          "Apotheosis"
+        ]
       },
       {
         "name": "Shadow",
@@ -2245,160 +470,11 @@
         "talents": [
           "Fortress Of The Mind",
           "Body And Soul",
-          "Dark Void",
+          "Twist Of Fate",
           "Last Word",
-          "Crash",
-          "Mindbender",
-          "Dark Ascension"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Grasping Crown Of The Deep",
-            "link": "https://wowhead.com/item=159252/grasping-crown-of-the-deep&bonus=4779:1512:4786:4775&azerite-powers=5:479:18:15:13",
-            "azerite": [
-              {
-                "name": "Dagger in the Back",
-                "link": "https://wowhead.com/spell=280284"
-              },
-              {
-                "name": "Blood Siphon",
-                "link": "https://wowhead.com/spell=264108"
-              },
-              {
-                "name": "Resounding Protection",
-                "link": "https://wowhead.com/spell=263962"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4929:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Exquisitely Aerodynamic Shoulderpads",
-            "link": "https://wowhead.com/item=159232/exquisitely-aerodynamic-shoulderpads&bonus=4779:1512:4786:4775&azerite-powers=5:504:31:86:13",
-            "azerite": [
-              {
-                "name": "Unstable Catalyst",
-                "link": "https://wowhead.com/spell=281514"
-              },
-              {
-                "name": "Gutripper",
-                "link": "https://wowhead.com/spell=266937"
-              },
-              {
-                "name": "Azerite Fortification",
-                "link": "https://wowhead.com/spell=268435"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Cloak Of Questionable Intent",
-            "link": "https://wowhead.com/item=159287/cloak-of-questionable-intent&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Inmates Straight Robe",
-            "link": "https://wowhead.com/item=159268/inmates-straight-robe&bonus=4779:1512:4786:4775&azerite-powers=5:479:22:472:13",
-            "azerite": [
-              {
-                "name": "Dagger in the Back",
-                "link": "https://wowhead.com/spell=280284"
-              },
-              {
-                "name": "Heed My Call",
-                "link": "https://wowhead.com/spell=263987"
-              },
-              {
-                "name": "Twist Magic",
-                "link": "https://wowhead.com/spell=280018"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Wraps Of Everliving Fealty",
-            "link": "https://wowhead.com/item=158348/wraps-of-everliving-fealty&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Handwraps Of Oscillating Polarity",
-            "link": "https://wowhead.com/item=159247/handwraps-of-oscillating-polarity&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Sailcloth Waistband",
-            "link": "https://wowhead.com/item=158346/sailcloth-waistband&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Rowdy Revelers Legwraps",
-            "link": "https://wowhead.com/item=158350/rowdy-revelers-legwraps&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Sandswept Sandals",
-            "link": "https://wowhead.com/item=159259/sandswept-sandals&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Seal Of Questionable Loyalties",
-            "link": "https://wowhead.com/item=158314/seal-of-questionable-loyalties&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Band Of The Ancient Dredger",
-            "link": "https://wowhead.com/item=159461/band-of-the-ancient-dredger&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Lady Waycrests Music Box",
-            "link": "https://wowhead.com/item=159631/lady-waycrests-music-box&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Ignition Mages Fuse",
-            "link": "https://wowhead.com/item=159615/ignition-mages-fuse&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Leaxas Thoughtpiercer",
-            "link": "https://wowhead.com/item=159652/leaxas-thoughtpiercer&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Off Hand",
-            "gear": "Rattling Jar Of Eyes",
-            "link": "https://wowhead.com/item=159668/rattling-jar-of-eyes&bonus=4779:1512:4786",
-            "azerite": []
-          }
+          "Auspicious Spirits",
+          "Lingering Insanity",
+          "Legacy Of The Void"
         ]
       }
     ]
@@ -2416,150 +492,13 @@
           "Versatility"
         ],
         "talents": [
-          "Master Poisoner",
-          "Nightstalker",
+          "Elaborate Planning",
+          "Subterfuge",
           "Vigor",
           "Cheat Death",
-          "Prey On The Weak",
+          "Iron Wire",
           "Toxic Blade",
           "Poison Bomb"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Irontide Captains Hat",
-            "link": "https://wowhead.com/item=155888/irontide-captains-hat&bonus=4779:1512:4786:4775&azerite-powers=4:181:30:13",
-            "azerite": [
-              {
-                "name": "Twist the Knife",
-                "link": "https://wowhead.com/spell=273488"
-              },
-              {
-                "name": "Overwhelming Power",
-                "link": "https://wowhead.com/spell=266180"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4932:4933:4936:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Mantle Of Fastidious Machinations",
-            "link": "https://wowhead.com/item=158304/mantle-of-fastidious-machinations&bonus=4779:1512:4786:4775&azerite-powers=4:181:461:13",
-            "azerite": [
-              {
-                "name": "Twist the Knife",
-                "link": "https://wowhead.com/spell=273488"
-              },
-              {
-                "name": "Earthlink",
-                "link": "https://wowhead.com/spell=279926"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Cloak Of Questionable Intent",
-            "link": "https://wowhead.com/item=159287/cloak-of-questionable-intent&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Spymasters Wrap",
-            "link": "https://wowhead.com/item=155860/spymasters-wrap&bonus=4779:1512:4786:4775&azerite-powers=4:481:461:13",
-            "azerite": [
-              {
-                "name": "Incite the Pack",
-                "link": "https://wowhead.com/spell=280410"
-              },
-              {
-                "name": "Earthlink",
-                "link": "https://wowhead.com/spell=279926"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Servoarm Bindings",
-            "link": "https://wowhead.com/item=158353/servoarm-bindings&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Underrot Grotto Tenders",
-            "link": "https://wowhead.com/item=159344/underrot-grotto-tenders&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Port Pillagers Belt",
-            "link": "https://wowhead.com/item=159309/port-pillagers-belt&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Seawalkers Pantaloons",
-            "link": "https://wowhead.com/item=159322/seawalkers-pantaloons&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Sandshined Snakeskin Sandals",
-            "link": "https://wowhead.com/item=159327/sandshined-snakeskin-sandals&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Seal Of Questionable Loyalties",
-            "link": "https://wowhead.com/item=158314/seal-of-questionable-loyalties&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Band Of The Ancient Dredger",
-            "link": "https://wowhead.com/item=159461/band-of-the-ancient-dredger&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Galecallers Boon",
-            "link": "https://wowhead.com/item=159614/galecallers-boon&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Deadeye Spyglass",
-            "link": "https://wowhead.com/item=159623/deadeye-spyglass&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Howlis Crystal Shiv",
-            "link": "https://wowhead.com/item=159131/howlis-crystal-shiv&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Off Hand",
-            "gear": "Howlis Crystal Shiv",
-            "link": "https://wowhead.com/item=159131/howlis-crystal-shiv&bonus=4779:1512:4786",
-            "azerite": []
-          }
         ]
       },
       {
@@ -2571,150 +510,13 @@
           "Crit >= Mastery"
         ],
         "talents": [
-          "Quick Draw",
-          "Hit And Run",
+          "Weaponmaster",
+          "Acrobatic Strikes",
           "Vigor",
           "Cheat Death",
-          "Prey On The Weak",
-          "Alacrity",
+          "Dirty Tricks",
+          "Slice And Dice",
           "Killing Spree"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Irontide Captains Hat",
-            "link": "https://wowhead.com/item=155888/irontide-captains-hat&bonus=4779:1512:4786:4775&azerite-powers=4:479:30:13",
-            "azerite": [
-              {
-                "name": "Dagger in the Back",
-                "link": "https://wowhead.com/spell=280284"
-              },
-              {
-                "name": "Overwhelming Power",
-                "link": "https://wowhead.com/spell=266180"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4932:4933:4936:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Mantle Of Fastidious Machinations",
-            "link": "https://wowhead.com/item=158304/mantle-of-fastidious-machinations&bonus=4779:1512:4786:4775&azerite-powers=4:410:461:13",
-            "azerite": [
-              {
-                "name": "Paradise Lost",
-                "link": "https://wowhead.com/spell=278675"
-              },
-              {
-                "name": "Earthlink",
-                "link": "https://wowhead.com/spell=279926"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Cloak Of Questionable Intent",
-            "link": "https://wowhead.com/item=159287/cloak-of-questionable-intent&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Spymasters Wrap",
-            "link": "https://wowhead.com/item=155860/spymasters-wrap&bonus=4779:1512:4786:4775&azerite-powers=4:180:461:13",
-            "azerite": [
-              {
-                "name": "Storm of Steel",
-                "link": "https://wowhead.com/spell=273452"
-              },
-              {
-                "name": "Earthlink",
-                "link": "https://wowhead.com/spell=279926"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Sea Dogs Cuffs",
-            "link": "https://wowhead.com/item=158305/sea-dogs-cuffs&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Gloves Of Corrupted Waters",
-            "link": "https://wowhead.com/item=159321/gloves-of-corrupted-waters&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Belt Of Gleaming Determination",
-            "link": "https://wowhead.com/item=158306/belt-of-gleaming-determination&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Singeblotched Britches",
-            "link": "https://wowhead.com/item=159306/singeblotched-britches&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Mercenary Miners Boots",
-            "link": "https://wowhead.com/item=159336/mercenary-miners-boots&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Ritual Binders Ring",
-            "link": "https://wowhead.com/item=159459/ritual-binders-ring&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Seal Of The Regal Loa",
-            "link": "https://wowhead.com/item=159458/seal-of-the-regal-loa&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Galecallers Boon",
-            "link": "https://wowhead.com/item=159614/galecallers-boon&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Lustrous Golden Plumage",
-            "link": "https://wowhead.com/item=159617/lustrous-golden-plumage&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Soulcharmers Bludgeon",
-            "link": "https://wowhead.com/item=159661/soulcharmers-bludgeon&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Off Hand",
-            "gear": "Soulcharmers Bludgeon",
-            "link": "https://wowhead.com/item=159661/soulcharmers-bludgeon&bonus=4779:1512:4786",
-            "azerite": []
-          }
         ]
       },
       {
@@ -2726,150 +528,13 @@
           "Crit"
         ],
         "talents": [
-          "Find Weakness",
-          "Nightstalker",
-          "Marked For Death",
+          "Weaponmaster",
+          "Shadow Focus",
+          "Deeper Stratagem",
           "Cheat Death",
           "Prey On The Weak",
-          "Dark Shadow",
+          "Enveloping Shadows",
           "Master Of Shadows"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Irontide Captains Hat",
-            "link": "https://wowhead.com/item=155888/irontide-captains-hat&bonus=4779:1512:4786:4775&azerite-powers=4:479:30:13",
-            "azerite": [
-              {
-                "name": "Dagger in the Back",
-                "link": "https://wowhead.com/spell=280284"
-              },
-              {
-                "name": "Overwhelming Power",
-                "link": "https://wowhead.com/spell=266180"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4932:4933:4936:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Mantle Of Fastidious Machinations",
-            "link": "https://wowhead.com/item=158304/mantle-of-fastidious-machinations&bonus=4779:1512:4786:4775&azerite-powers=4:240:461:13",
-            "azerite": [
-              {
-                "name": "Blade In The Shadows",
-                "link": "https://wowhead.com/spell=275896"
-              },
-              {
-                "name": "Earthlink",
-                "link": "https://wowhead.com/spell=279926"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Parrotfeather Cloak",
-            "link": "https://wowhead.com/item=155884/parrotfeather-cloak&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Spymasters Wrap",
-            "link": "https://wowhead.com/item=155860/spymasters-wrap&bonus=4779:1512:4786:4775&azerite-powers=4:414:461:13",
-            "azerite": [
-              {
-                "name": "Inevitability",
-                "link": "https://wowhead.com/spell=278683"
-              },
-              {
-                "name": "Earthlink",
-                "link": "https://wowhead.com/spell=279926"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Blood Elders Bindings",
-            "link": "https://wowhead.com/item=159324/blood-elders-bindings&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Corrosive Handlers Gloves",
-            "link": "https://wowhead.com/item=159305/corrosive-handlers-gloves&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Unscrupulous Geologists Belt",
-            "link": "https://wowhead.com/item=159725/unscrupulous-geologists-belt&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Shambling Berserkers Leggings",
-            "link": "https://wowhead.com/item=155869/shambling-berserkers-leggings&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Kraggs Rigging Scalers",
-            "link": "https://wowhead.com/item=155862/kraggs-rigging-scalers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Murky Cerulean Signet",
-            "link": "https://wowhead.com/item=158318/murky-cerulean-signet&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Seal Of The City Watch",
-            "link": "https://wowhead.com/item=162542/seal-of-the-city-watch&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Deadeye Spyglass",
-            "link": "https://wowhead.com/item=159623/deadeye-spyglass&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Azerokks Resonating Heart",
-            "link": "https://wowhead.com/item=159612/azerokks-resonating-heart&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Heartpiercing Stalactite",
-            "link": "https://wowhead.com/item=159134/heartpiercing-stalactite&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Off Hand",
-            "gear": "Heartpiercing Stalactite",
-            "link": "https://wowhead.com/item=159134/heartpiercing-stalactite&bonus=4779:1512:4786",
-            "azerite": []
-          }
         ]
       }
     ]
@@ -2885,162 +550,13 @@
           "Haste >= Versatility >= Mastery"
         ],
         "talents": [
-          "Exposed Elements",
-          "Totem Mastery",
+          "Earthen Rage",
+          "Aftershock",
           "Spirit Wolf",
-          "High Voltage",
+          "Master Of The Elements",
           "Natures Guardian",
-          "Primal Elementalist",
+          "Surge Of Power",
           "Unlimited Power"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Visage Of Bloody Horrors",
-            "link": "https://wowhead.com/item=159381/visage-of-bloody-horrors&bonus=4779:1512:4786:4775&azerite-powers=7:457:21:14:13",
-            "azerite": [
-              {
-                "name": "Igneous Potential",
-                "link": "https://wowhead.com/spell=279829"
-              },
-              {
-                "name": "Elemental Whirl",
-                "link": "https://wowhead.com/spell=263984"
-              },
-              {
-                "name": "Longstrider",
-                "link": "https://wowhead.com/spell=268594"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4929:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Hookbarbed Spaulders",
-            "link": "https://wowhead.com/item=159376/hookbarbed-spaulders&bonus=4819:1512:4786:4775&azerite-powers=7:479:21:474:13",
-            "azerite": [
-              {
-                "name": "Dagger in the Back",
-                "link": "https://wowhead.com/spell=280284"
-              },
-              {
-                "name": "Elemental Whirl",
-                "link": "https://wowhead.com/spell=263984"
-              },
-              {
-                "name": "Pack Spirit",
-                "link": "https://wowhead.com/spell=280021"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Cloak Of Questionable Intent",
-            "link": "https://wowhead.com/item=159287/cloak-of-questionable-intent&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Corrupted Hexxers Vestments",
-            "link": "https://wowhead.com/item=159370/corrupted-hexxers-vestments&bonus=4819:1512:4786:4775&azerite-powers=7:457:21:474:13",
-            "azerite": [
-              {
-                "name": "Igneous Potential",
-                "link": "https://wowhead.com/spell=279829"
-              },
-              {
-                "name": "Elemental Whirl",
-                "link": "https://wowhead.com/spell=263984"
-              },
-              {
-                "name": "Pack Spirit",
-                "link": "https://wowhead.com/spell=280021"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Raouls Barrelhook Bracers",
-            "link": "https://wowhead.com/item=159356/raouls-barrelhook-bracers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Water Shapers",
-            "link": "https://wowhead.com/item=159366/water-shapers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Waistguard Of Sanguine Fervor",
-            "link": "https://wowhead.com/item=159402/waistguard-of-sanguine-fervor&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Chemical Blasters Legguards",
-            "link": "https://wowhead.com/item=158341/chemical-blasters-legguards&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Souldrifting Sabatons",
-            "link": "https://wowhead.com/item=158308/souldrifting-sabatons&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Ritual Binders Ring",
-            "link": "https://wowhead.com/item=159459/ritual-binders-ring&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Seal Of Questionable Loyalties",
-            "link": "https://wowhead.com/item=158314/seal-of-questionable-loyalties&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Lady Waycrests Music Box",
-            "link": "https://wowhead.com/item=159631/lady-waycrests-music-box&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Rotcrusted Voodoo Doll",
-            "link": "https://wowhead.com/item=159624/rotcrusted-voodoo-doll&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Galvanized Stormcrusher",
-            "link": "https://wowhead.com/item=158369/galvanized-stormcrusher&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Off Hand",
-            "gear": "G04W4Y Crowd Repeller",
-            "link": "https://wowhead.com/item=159663/g04w4y-crowd-repeller&bonus=4779:1512:4786",
-            "azerite": []
-          }
         ]
       },
       {
@@ -3054,149 +570,12 @@
         ],
         "talents": [
           "Lightning Shield",
-          "Landslide",
+          "Forceful Winds",
           "Spirit Wolf",
           "Searing Assault",
-          "Wind Rush Totem",
-          "Sundering",
-          "Earthen Spike"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Coif Of The Court Spider",
-            "link": "https://wowhead.com/item=159358/coif-of-the-court-spider&bonus=4779:1512:4786:4775&azerite-powers=7:157:30:13",
-            "azerite": [
-              {
-                "name": "Rezan's Fury",
-                "link": "https://wowhead.com/spell=273790"
-              },
-              {
-                "name": "Overwhelming Power",
-                "link": "https://wowhead.com/spell=266180"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4932:4933:4936:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Hookbarbed Spaulders",
-            "link": "https://wowhead.com/item=159376/hookbarbed-spaulders&bonus=4779:1512:4786:4775&azerite-powers=7:479:462:13",
-            "azerite": [
-              {
-                "name": "Dagger in the Back",
-                "link": "https://wowhead.com/spell=280284"
-              },
-              {
-                "name": "Azerite Globules",
-                "link": "https://wowhead.com/spell=266936"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Cloak Of Questionable Intent",
-            "link": "https://wowhead.com/item=159287/cloak-of-questionable-intent&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Corrupted Hexxers Vestments",
-            "link": "https://wowhead.com/item=159370/corrupted-hexxers-vestments&bonus=4779:1512:4786:4775&azerite-powers=7:482:30:13",
-            "azerite": [
-              {
-                "name": "Thunderous Blast",
-                "link": "https://wowhead.com/spell=280380"
-              },
-              {
-                "name": "Overwhelming Power",
-                "link": "https://wowhead.com/spell=266180"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Raouls Barrelhook Bracers",
-            "link": "https://wowhead.com/item=159356/raouls-barrelhook-bracers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Water Shapers",
-            "link": "https://wowhead.com/item=159366/water-shapers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Anchor Chain Girdle",
-            "link": "https://wowhead.com/item=159386/anchor-chain-girdle&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Chemical Blasters Legguards",
-            "link": "https://wowhead.com/item=158341/chemical-blasters-legguards&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Bramble Looped Boots",
-            "link": "https://wowhead.com/item=159404/bramble-looped-boots&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Seal Of Questionable Loyalties",
-            "link": "https://wowhead.com/item=158314/seal-of-questionable-loyalties&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Ritual Binders Ring",
-            "link": "https://wowhead.com/item=159459/ritual-binders-ring&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Galecallers Boon",
-            "link": "https://wowhead.com/item=159614/galecallers-boon&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Deadeye Spyglass",
-            "link": "https://wowhead.com/item=159623/deadeye-spyglass&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Bilestained Crawg Tusks",
-            "link": "https://wowhead.com/item=159653/bilestained-crawg-tusks&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Off Hand",
-            "gear": "Bilestained Crawg Tusks",
-            "link": "https://wowhead.com/item=159653/bilestained-crawg-tusks&bonus=4779:1512:4786",
-            "azerite": []
-          }
+          "Natures Guardian",
+          "Crashing Storm",
+          "Elemental Spirits"
         ]
       },
       {
@@ -3213,10 +592,9 @@
           "Spirit Wolf",
           "Ancestral Vigor",
           "Natures Guardian",
-          "Downpour",
+          "Flash Flood",
           "High Tide"
-        ],
-        "bis": []
+        ]
       }
     ]
   },
@@ -3233,298 +611,30 @@
         ],
         "talents": [
           "Deathbolt",
-          "Writhe In Agony",
-          "Dark Pact",
-          "Vile Taint",
+          "Absolute Corruption",
+          "Burning Rush",
+          "Phantom Singularity",
           "Demonic Circle",
-          "Shadow Embrace",
-          "Creeping Death"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Grasping Crown Of The Deep",
-            "link": "https://wowhead.com/item=159252/grasping-crown-of-the-deep&bonus=4779:1512:4786:4775&azerite-powers=9:123:18:13",
-            "azerite": [
-              {
-                "name": "Wracking Brilliance",
-                "link": "https://wowhead.com/spell=272891"
-              },
-              {
-                "name": "Blood Siphon",
-                "link": "https://wowhead.com/spell=264108"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4929:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Amice Of The Returned",
-            "link": "https://wowhead.com/item=159273/amice-of-the-returned&bonus=4779:1512:4786:4775&azerite-powers=9:230:459:13",
-            "azerite": [
-              {
-                "name": "Cascading Calamity",
-                "link": "https://wowhead.com/spell=275372"
-              },
-              {
-                "name": "Unstable Flames",
-                "link": "https://wowhead.com/spell=279899"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Drape Of The Loyal Vassal",
-            "link": "https://wowhead.com/item=158375/drape-of-the-loyal-vassal&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Loa Betrayers Vestments",
-            "link": "https://wowhead.com/item=159233/loa-betrayers-vestments&bonus=4779:1512:4786:4775&azerite-powers=9:123:461:13",
-            "azerite": [
-              {
-                "name": "Wracking Brilliance",
-                "link": "https://wowhead.com/spell=272891"
-              },
-              {
-                "name": "Earthlink",
-                "link": "https://wowhead.com/spell=279926"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Ironkelp Wristwraps",
-            "link": "https://wowhead.com/item=159256/ironkelp-wristwraps&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Mine Rats Handwarmers",
-            "link": "https://wowhead.com/item=159231/mine-rats-handwarmers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Ouroborial Sash",
-            "link": "https://wowhead.com/item=159255/ouroborial-sash&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Bloodstained Sous Chef Pants",
-            "link": "https://wowhead.com/item=159285/bloodstained-sous-chef-pants&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Deranged Alchemists Slippers",
-            "link": "https://wowhead.com/item=159235/deranged-alchemists-slippers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Footbomb Championship Ring",
-            "link": "https://wowhead.com/item=159462/footbomb-championship-ring&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Loop Of Pulsing Veins",
-            "link": "https://wowhead.com/item=159463/loop-of-pulsing-veins&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Conch Of Dark Whispers",
-            "link": "https://wowhead.com/item=159620/conch-of-dark-whispers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Lady Waycrests Music Box",
-            "link": "https://wowhead.com/item=159631/lady-waycrests-music-box&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Staff Of The Lightning Serpent",
-            "link": "https://wowhead.com/item=159636/staff-of-the-lightning-serpent&bonus=4779:1512:4786",
-            "azerite": []
-          }
+          "Haunt",
+          "Dark Soul Misery"
         ]
       },
       {
         "name": "Demonology",
         "priorities": [
           "Intellect",
-          "Mastery",
           "Haste",
-          "Crit >= Versatility"
+          "Crit = Mastery",
+          "Versatility"
         ],
         "talents": [
           "Dreadlash",
-          "Doom",
-          "Dark Pact",
+          "Demonic Calling",
+          "Burning Rush",
           "Soul Strike",
           "Demonic Circle",
-          "Grimoire Felguard",
+          "Inner Demons",
           "Sacrificed Souls"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Stormlurkers Cowl",
-            "link": "https://wowhead.com/item=159244/stormlurkers-cowl&bonus=4779:1512:4786:4775&azerite-powers=9:13:30:428",
-            "azerite": [
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              },
-              {
-                "name": "Overwhelming Power",
-                "link": "https://wowhead.com/spell=266180"
-              },
-              {
-                "name": "Demonic Meteor",
-                "link": "https://wowhead.com/spell=278737"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4929:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Amice Of The Returned",
-            "link": "https://wowhead.com/item=159273/amice-of-the-returned&bonus=4779:1512:4786:4775&azerite-powers=9:13:30:458",
-            "azerite": [
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              },
-              {
-                "name": "Overwhelming Power",
-                "link": "https://wowhead.com/spell=266180"
-              },
-              {
-                "name": "Supreme Commander",
-                "link": "https://wowhead.com/spell=279878"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Cloak Of Questionable Intent",
-            "link": "https://wowhead.com/item=159287/cloak-of-questionable-intent&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Robes Of The Reborn Serpent",
-            "link": "https://wowhead.com/item=159257/robes-of-the-reborn-serpent&bonus=4779:1512:4786:4775&azerite-powers=9:13:30:458",
-            "azerite": [
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              },
-              {
-                "name": "Overwhelming Power",
-                "link": "https://wowhead.com/spell=266180"
-              },
-              {
-                "name": "Supreme Commander",
-                "link": "https://wowhead.com/spell=279878"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Wraps Of Everliving Fealty",
-            "link": "https://wowhead.com/item=158348/wraps-of-everliving-fealty&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Clawslit Brawlers Handwraps",
-            "link": "https://wowhead.com/item=159266/clawslit-brawlers-handwraps&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Sailcloth Waistband",
-            "link": "https://wowhead.com/item=158346/sailcloth-waistband&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Rowdy Revelers Legwraps",
-            "link": "https://wowhead.com/item=158350/rowdy-revelers-legwraps&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Sandswept Sandals",
-            "link": "https://wowhead.com/item=159259/sandswept-sandals&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Seal Of Questionable Loyalties",
-            "link": "https://wowhead.com/item=158314/seal-of-questionable-loyalties&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Band Of The Ancient Dredger",
-            "link": "https://wowhead.com/item=159461/band-of-the-ancient-dredger&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Lady Waycrests Music Box",
-            "link": "https://wowhead.com/item=159631/lady-waycrests-music-box&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Conch Of Dark Whispers",
-            "link": "https://wowhead.com/item=159620/conch-of-dark-whispers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Wand Of Zealous Purification",
-            "link": "https://wowhead.com/item=158321/wand-of-zealous-purification&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Off Hand",
-            "gear": "Rattling Jar Of Eyes",
-            "link": "https://wowhead.com/item=159668/rattling-jar-of-eyes&bonus=4779:1512:4786",
-            "azerite": []
-          }
         ]
       },
       {
@@ -3538,142 +648,11 @@
         "talents": [
           "Flashover",
           "Reverse Entropy",
-          "Dark Pact",
-          "Fire And Brimstone",
+          "Demon Skin",
+          "Cataclysm",
           "Demonic Circle",
-          "Grimoire Of Supremacy",
-          "Dark Soul Instability"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Soulfuel Headdress",
-            "link": "https://wowhead.com/item=159279/soulfuel-headdress&bonus=4779:1512:4786:4775&azerite-powers=9:432:22:13",
-            "azerite": [
-              {
-                "name": "Chaotic Inferno",
-                "link": "https://wowhead.com/spell=278748"
-              },
-              {
-                "name": "Heed My Call",
-                "link": "https://wowhead.com/spell=263987"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4929:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Pauldrons Of Vile Corruption",
-            "link": "https://wowhead.com/item=159267/pauldrons-of-vile-corruption&bonus=4779:1512:4786:4775&azerite-powers=9:444:459:13",
-            "azerite": [
-              {
-                "name": "Crashing Chaos",
-                "link": "https://wowhead.com/spell=277644"
-              },
-              {
-                "name": "Unstable Flames",
-                "link": "https://wowhead.com/spell=279899"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Drape Of The Loyal Vassal",
-            "link": "https://wowhead.com/item=158375/drape-of-the-loyal-vassal&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Petticoat Of The Selfstylized Azerite Baron",
-            "link": "https://wowhead.com/item=158349/petticoat-of-the-selfstylized-azerite-baron&bonus=4779:1512:4786:4775&azerite-powers=9:444:18:13",
-            "azerite": [
-              {
-                "name": "Crashing Chaos",
-                "link": "https://wowhead.com/spell=277644"
-              },
-              {
-                "name": "Blood Siphon",
-                "link": "https://wowhead.com/spell=264108"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Ironkelp Wristwraps",
-            "link": "https://wowhead.com/item=159256/ironkelp-wristwraps&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Mine Rats Handwarmers",
-            "link": "https://wowhead.com/item=159231/mine-rats-handwarmers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Ouroborial Sash",
-            "link": "https://wowhead.com/item=159255/ouroborial-sash&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Bloodstained Sous Chef Pants",
-            "link": "https://wowhead.com/item=159285/bloodstained-sous-chef-pants&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Deranged Alchemists Slippers",
-            "link": "https://wowhead.com/item=159235/deranged-alchemists-slippers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Footbomb Championship Ring",
-            "link": "https://wowhead.com/item=159462/footbomb-championship-ring&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Loop Of Pulsing Veins",
-            "link": "https://wowhead.com/item=159463/loop-of-pulsing-veins&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Conch Of Dark Whispers",
-            "link": "https://wowhead.com/item=159620/conch-of-dark-whispers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Lady Waycrests Music Box",
-            "link": "https://wowhead.com/item=159631/lady-waycrests-music-box&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Staff Of The Lightning Serpent",
-            "link": "https://wowhead.com/item=159636/staff-of-the-lightning-serpent&bonus=4779:1512:4786",
-            "azerite": []
-          }
+          "Roaring Blaze",
+          "Channel Demonfire"
         ]
       }
     ]
@@ -3691,144 +670,13 @@
           "Mastery"
         ],
         "talents": [
-          "Skullsplitter",
+          "Sudden Death",
           "Double Time",
-          "Rend",
+          "Massacre",
           "Bounding Stride",
           "Warbreaker",
           "In For The Kill",
           "Anger Management"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Soulspun Casque",
-            "link": "https://wowhead.com/item=155866/soulspun-casque&bonus=4779:1512:4786:4775&azerite-powers=1:174:30:13",
-            "azerite": [
-              {
-                "name": "Gathering Storm",
-                "link": "https://wowhead.com/spell=273409"
-              },
-              {
-                "name": "Overwhelming Power",
-                "link": "https://wowhead.com/spell=266180"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4932:4933:4936:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Lockjaw Shoulderplate",
-            "link": "https://wowhead.com/item=159407/lockjaw-shoulderplate&bonus=4779:1512:4786:4775&azerite-powers=1:174:21:13",
-            "azerite": [
-              {
-                "name": "Gathering Storm",
-                "link": "https://wowhead.com/spell=273409"
-              },
-              {
-                "name": "Elemental Whirl",
-                "link": "https://wowhead.com/spell=263984"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Cloak Of Questionable Intent",
-            "link": "https://wowhead.com/item=159287/cloak-of-questionable-intent&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Chestguard Of The Deep Denizen",
-            "link": "https://wowhead.com/item=159408/chestguard-of-the-deep-denizen&bonus=4779:1512:4786:4775&azerite-powers=1:195:20:13",
-            "azerite": [
-              {
-                "name": "Secrets of the Deep",
-                "link": "https://wowhead.com/spell=273829"
-              },
-              {
-                "name": "Lifespeed",
-                "link": "https://wowhead.com/spell=267665"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Embalmers Steadying Bracers",
-            "link": "https://wowhead.com/item=159409/embalmers-steadying-bracers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Sharktoothknuckled Grips",
-            "link": "https://wowhead.com/item=155890/sharktoothknuckled-grips&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Belt Of The Unrelenting Gale",
-            "link": "https://wowhead.com/item=159426/belt-of-the-unrelenting-gale&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Legplates Of Profane Sacrifice",
-            "link": "https://wowhead.com/item=159443/legplates-of-profane-sacrifice&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Sabatons Of Rampaging Elements",
-            "link": "https://wowhead.com/item=159679/sabatons-of-rampaging-elements&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Band Of The Ancient Dredger",
-            "link": "https://wowhead.com/item=159461/band-of-the-ancient-dredger&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Seal Of Questionable Loyalties",
-            "link": "https://wowhead.com/item=158314/seal-of-questionable-loyalties&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Gorecrusted Butchers Block",
-            "link": "https://wowhead.com/item=159616/gorecrusted-butchers-block&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Rezans Gleaming Eye",
-            "link": "https://wowhead.com/item=158712/rezans-gleaming-eye&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Jeweled Sharksplitter",
-            "link": "https://wowhead.com/item=159634/jeweled-sharksplitter&bonus=4779:1512:4786",
-            "azerite": []
-          }
         ]
       },
       {
@@ -3843,148 +691,11 @@
         "talents": [
           "Endless Rage",
           "Double Time",
-          "Furious Slash",
+          "Sudden Death",
           "Bounding Stride",
           "Carnage",
           "Dragon Roar",
-          "Anger Management"
-        ],
-        "bis": [
-          {
-            "slot": "Head",
-            "gear": "Helm Of Abyssal Malevolence",
-            "link": "https://wowhead.com/item=159430/helm-of-abyssal-malevolence&bonus=4779:1512:4786:4775&azerite-powers=1:437:30:13",
-            "azerite": [
-              {
-                "name": "Simmering Rage",
-                "link": "https://wowhead.com/spell=278757"
-              },
-              {
-                "name": "Overwhelming Power",
-                "link": "https://wowhead.com/spell=266180"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Neck",
-            "gear": "Heart Of Azeroth",
-            "link": "https://wowhead.com/item=158075/heart-of-azeroth&bonus=4932:4933:4936:1524",
-            "azerite": []
-          },
-          {
-            "slot": "Shoulders",
-            "gear": "Lockjaw Shoulderplate",
-            "link": "https://wowhead.com/item=159407/lockjaw-shoulderplate&bonus=4779:1512:4786:4775&azerite-powers=1:437:21:13",
-            "azerite": [
-              {
-                "name": "Simmering Rage",
-                "link": "https://wowhead.com/spell=278757"
-              },
-              {
-                "name": "Elemental Whirl",
-                "link": "https://wowhead.com/spell=263984"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Back",
-            "gear": "Drape Of The Loyal Vassal",
-            "link": "https://wowhead.com/item=158375/drape-of-the-loyal-vassal&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Chest",
-            "gear": "Breastplate Of Arterial Protection",
-            "link": "https://wowhead.com/item=159432/breastplate-of-arterial-protection&bonus=4779:1512:4786:4775&azerite-powers=1:437:22:13",
-            "azerite": [
-              {
-                "name": "Simmering Rage",
-                "link": "https://wowhead.com/spell=278757"
-              },
-              {
-                "name": "Heed My Call",
-                "link": "https://wowhead.com/spell=263987"
-              },
-              {
-                "name": "Azerite Empowered",
-                "link": "https://wowhead.com/spell=263978"
-              }
-            ]
-          },
-          {
-            "slot": "Wrist",
-            "gear": "Stonefury Vambraces",
-            "link": "https://wowhead.com/item=158359/stonefury-vambraces&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Hands",
-            "gear": "Fangproof Gauntlets",
-            "link": "https://wowhead.com/item=159437/fangproof-gauntlets&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Waist",
-            "gear": "Girdle Of Pestilent Purification",
-            "link": "https://wowhead.com/item=159418/girdle-of-pestilent-purification&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Legs",
-            "gear": "Sharkwater Waders",
-            "link": "https://wowhead.com/item=158361/sharkwater-waders&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Feet",
-            "gear": "Ballast Sinkers",
-            "link": "https://wowhead.com/item=159428/ballast-sinkers&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 1",
-            "gear": "Loop Of Pulsing Veins",
-            "link": "https://wowhead.com/item=159463/loop-of-pulsing-veins&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Ring 2",
-            "gear": "Seal Of Questionable Loyalties",
-            "link": "https://wowhead.com/item=158314/seal-of-questionable-loyalties&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 1",
-            "gear": "Briny Barnacle",
-            "link": "https://wowhead.com/item=159619/briny-barnacle&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Trinket 2",
-            "gear": "Rezans Gleaming Eye",
-            "link": "https://wowhead.com/item=158712/rezans-gleaming-eye&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Weapon",
-            "gear": "Getiikku Cut Of Death",
-            "link": "https://wowhead.com/item=159644/getiikku-cut-of-death&bonus=4779:1512:4786",
-            "azerite": []
-          },
-          {
-            "slot": "Off Hand",
-            "gear": "Getiikku Cut Of Death",
-            "link": "https://wowhead.com/item=159644/getiikku-cut-of-death&bonus=4779:1512:4786",
-            "azerite": []
-          }
+          "Reckless Abandon"
         ]
       },
       {
@@ -3997,15 +708,14 @@
           "Crit"
         ],
         "talents": [
-          "Punish",
+          "Into The Fray",
           "Bounding Stride",
           "Unstoppable Force",
           "Bolster",
           "Rumbling Earth",
           "Booming Voice",
           "Anger Management"
-        ],
-        "bis": []
+        ]
       }
     ]
   }
