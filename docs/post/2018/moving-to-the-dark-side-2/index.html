@@ -128,7 +128,7 @@
     <span class="post-date">
       06 Oct 2018
     </span>
-    <span class="more-meta"> 316 words, </span>
+    <span class="more-meta"> 325 words, </span>
     <span class="more-meta"> 2 minute read</span>
   </div>
 
@@ -150,8 +150,16 @@
     <style>
   img {
     margin: 10px auto;
-    border: 1px #bbb solid;
-    box-shadow: 3px 3px 5px 2px #ccc;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
   }
 
   .social_footer img {
@@ -161,8 +169,6 @@
 </style>
 
 <p>Now that most of my Mac apps have been updated to support macOS Mojave&rsquo;s dark mode, it was time to turn my attention to this web site.</p>
-
-<p></p>
 
 <p>I build this site using <a href="https://gohugo.io/">Hugo</a> and up until recently I used a theme called <a href="https://github.com/olOwOlo/hugo-theme-even">Even</a> which I had been able to modify to suit my requirements. The story of how I switched to Hugo, what I wanted in a theme and how I went about, is in a <a href="/post/2017/moving-to-hugo/">post from last year</a>.</p>
 
@@ -225,13 +231,22 @@
   </div>
 </footer>
 
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
 
-  <script src="/assets/main.js"></script>
-
-  <script src="/assets/prism.js"></script>
-
-
+ 
 <script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink();
+  });
+</script>
+
   
 </div>
 

@@ -148,8 +148,6 @@
   <div class="post-content">
     <p>Its been a long time since the last update to Time In Words for iOS but after prompting by Apple (<em>update or we will remove it from the App Store</em>), I finally did it. I was never really happy with the last design of Time in Words for iOS, particularly for the iPad, so this was a good opportunity to do a complete re-design, bringing the app more into alignment with its Mac counterpart. And it got a new name to match its new direction and is now called World Time in Words.</p>
 
-<p></p>
-
 <p><a href="http://itunes.apple.com/app/time-in-words/id498403851">World Time in Words v 5.0</a> is available from the App Store.</p>
 
 <hr />
@@ -217,13 +215,22 @@
   </div>
 </footer>
 
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
 
-  <script src="/assets/main.js"></script>
-
-  <script src="/assets/prism.js"></script>
-
-
+ 
 <script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink();
+  });
+</script>
+
   
 </div>
 

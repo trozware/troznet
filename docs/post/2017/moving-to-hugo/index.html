@@ -155,8 +155,6 @@ removed <a href="https://jekyllrb.com" title="Jekyll">Jekyll</a> which is the si
 re-installed Jekyll but found that it had been updated from version 2 to version
 3.</p>
 
-<p></p>
-
 <hr />
 
 <h2 id="jekyll-problems">Jekyll Problems</h2>
@@ -400,13 +398,22 @@ investigating Twitter cards, search &amp; JSON Feed.</p>
   </div>
 </footer>
 
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
 
-  <script src="/assets/main.js"></script>
-
-  <script src="/assets/prism.js"></script>
-
-
+ 
 <script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink();
+  });
+</script>
+
   
 </div>
 

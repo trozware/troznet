@@ -155,8 +155,6 @@
 <li>Is there a way to enforce this style automatically?</li>
 </ul>
 
-<p></p>
-
 <h2 id="what-is-style-in-swift">What is style in Swift?</h2>
 
 <p>Style applies to writing in any programming language and refers to the way you structure your code.</p>
@@ -440,13 +438,22 @@ cyclomatic_complexity:
   </div>
 </footer>
 
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
 
-  <script src="/assets/main.js"></script>
-
-  <script src="/assets/prism.js"></script>
-
-
+ 
 <script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink();
+  });
+</script>
+
   
 </div>
 

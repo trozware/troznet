@@ -162,8 +162,6 @@ JSON into Swift classes or structs. Searching for &ldquo;swift json library&rdqu
 <a href="https://github.com/search?q=swift+json+library">GitHub</a> discovers <s>77</s> 86 repositories. So why are there so many? And
 what has Swift 4 done to <em>sherlock</em> them all?</p>
 
-<p></p>
-
 <p>The problem has always been converting loosely typed JSON to strictly typed
 Swift which involves a lot of type casting, checking, optionals etc. Swift has
 always provided access to the Objective-C methods for converting JSON to and
@@ -809,13 +807,22 @@ to Decodable to transform the JSON data into your data structure.</p>
   </div>
 </footer>
 
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
 
-  <script src="/assets/main.js"></script>
-
-  <script src="/assets/prism.js"></script>
-
-
+ 
 <script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink();
+  });
+</script>
+
   
 </div>
 

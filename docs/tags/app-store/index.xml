@@ -20,8 +20,16 @@
       <description>&lt;style&gt;
   img {
     margin: 10px auto;
-    border: 1px #bbb solid;
-    box-shadow: 3px 3px 5px 2px #ccc;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
   }
 
   .social_footer img {
@@ -30,9 +38,7 @@
   }
 &lt;/style&gt;
 
-&lt;p&gt;Now that most of my Mac apps have been updated to support macOS Mojave&amp;rsquo;s dark mode, it was time to turn my attention to this web site.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Now that most of my Mac apps have been updated to support macOS Mojave&amp;rsquo;s dark mode, it was time to turn my attention to this web site.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -44,8 +50,16 @@
       <description>&lt;style&gt;
   img {
     margin: 10px auto;
-    border: 1px #bbb solid;
-    box-shadow: 3px 3px 5px 2px #ccc;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
   }
 
   .social_footer img {
@@ -56,9 +70,7 @@
 
 &lt;p&gt;With the release of macOS Mojave on 24th September 2018, I have started updating my Mac apps, mainly to enable support for dark mode if appropriate.&lt;/p&gt;
 
-&lt;p&gt;And now I have updated this site too. Click the light bulb icon at the top right of the page to toggle between light and dark modes for this site.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;And now I have updated this site too. Click the light bulb icon at the top right of the page to toggle between light and dark modes for this site.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -67,9 +79,7 @@
       <pubDate>Sat, 26 May 2018 09:22:57 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/app-updates/</guid>
-      <description>&lt;p&gt;Just a quick post to let you know about some recent app updates&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Just a quick post to let you know about some recent app updates&amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -101,9 +111,7 @@ At the moment, the following iOS apps are no longer available:
       <guid>https://troz.net/post/2016/how-to-confuse-testflight/</guid>
       <description>&lt;p&gt;I ran into an unusual problem when testing my latest app: &amp;ldquo;&lt;a href=&#34;https://troz.net/what-is-my-speed/&#34;&gt;What Is My
 Speed?&lt;/a&gt;&amp;rdquo;. It is now available from the &lt;a href=&#34;https://itunes.apple.com/app/what-is-my-speed/id1091394524&#34;&gt;iTunes App Store&lt;/a&gt;, but getting
-there was a struggle.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+there was a struggle.&lt;/p&gt;</description>
     </item>
     
     <item>

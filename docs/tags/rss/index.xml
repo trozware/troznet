@@ -21,9 +21,7 @@
 alternative to RSS. TrozWare has had an XML RSS feed for years, but I don&amp;rsquo;t
 think anyone ever uses it (I certainly don&amp;rsquo;t), so today I have replaced it with
 a JSON feed, which you can access through the
-&lt;a class=&#34;fa fa-rss&#34; href=&#34;https://troz.net/feed.json&#34;&gt;&lt;/a&gt; button at the top of every page.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;a class=&#34;fa fa-rss&#34; href=&#34;https://troz.net/feed.json&#34;&gt;&lt;/a&gt; button at the top of every page.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -151,8 +151,6 @@
   <div class="post-content">
     <p>Just a quick post to let you know about some recent app updates&hellip;</p>
 
-<p></p>
-
 <h2 id="man-reader">Man Reader</h2>
 
 <p><a href="http://itunes.apple.com/app/man-reader/id522583774?mt=12">Man Reader v 1.10</a> was released on 11 May 2018.</p>
@@ -235,13 +233,22 @@
   </div>
 </footer>
 
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
 
-  <script src="/assets/main.js"></script>
-
-  <script src="/assets/prism.js"></script>
-
-
+ 
 <script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink();
+  });
+</script>
+
   
 </div>
 

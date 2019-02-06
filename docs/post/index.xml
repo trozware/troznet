@@ -6,10 +6,42 @@
     <description>Recent content in Posts on TrozWare</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
-    <lastBuildDate>Sat, 06 Oct 2018 09:38:20 +1000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Feb 2019 19:48:51 +1000</lastBuildDate>
     
 	<atom:link href="https://troz.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Learning Swift  - Tuples</title>
+      <link>https://troz.net/post/2019/learning-swift-tuples/</link>
+      <pubDate>Sun, 03 Feb 2019 19:48:51 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2019/learning-swift-tuples/</guid>
+      <description>&lt;style&gt;
+  img {
+    margin: 10px auto;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .social_footer img {
+    border: none;
+    box-shadow: none;
+  }
+&lt;/style&gt;
+
+&lt;p&gt;I sometimes like to focus on aspects of the Swift language that get less publicity, but that I think are really useful without adding a lot of complexity. This time I am looking at tuples.&lt;/p&gt;
+
+&lt;p&gt;There are many different ways of collecting data together in Swift, but for small amounts of transitory data, I find tuples to be an extremely convenient data structure.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>The End of Pic-a-POD</title>
@@ -17,9 +49,7 @@
       <pubDate>Sat, 06 Oct 2018 09:38:20 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/the-end-of-picapod/</guid>
-      <description>&lt;p&gt;I think I wrote the first version of &lt;a href=&#34;https://picapod.com&#34;&gt;Pic-a-POD&lt;/a&gt; in 2003 and have been updating and maintaining it ever since, but the time has come to shut it down.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I think I wrote the first version of &lt;a href=&#34;https://picapod.com&#34;&gt;Pic-a-POD&lt;/a&gt; in 2003 and have been updating and maintaining it ever since, but the time has come to shut it down.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -31,8 +61,16 @@
       <description>&lt;style&gt;
   img {
     margin: 10px auto;
-    border: 1px #bbb solid;
-    box-shadow: 3px 3px 5px 2px #ccc;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
   }
 
   .social_footer img {
@@ -41,9 +79,7 @@
   }
 &lt;/style&gt;
 
-&lt;p&gt;Now that most of my Mac apps have been updated to support macOS Mojave&amp;rsquo;s dark mode, it was time to turn my attention to this web site.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Now that most of my Mac apps have been updated to support macOS Mojave&amp;rsquo;s dark mode, it was time to turn my attention to this web site.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -55,8 +91,16 @@
       <description>&lt;style&gt;
   img {
     margin: 10px auto;
-    border: 1px #bbb solid;
-    box-shadow: 3px 3px 5px 2px #ccc;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
   }
 
   .social_footer img {
@@ -67,9 +111,7 @@
 
 &lt;p&gt;With the release of macOS Mojave on 24th September 2018, I have started updating my Mac apps, mainly to enable support for dark mode if appropriate.&lt;/p&gt;
 
-&lt;p&gt;And now I have updated this site too. Click the light bulb icon at the top right of the page to toggle between light and dark modes for this site.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;And now I have updated this site too. Click the light bulb icon at the top right of the page to toggle between light and dark modes for this site.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -82,9 +124,7 @@
 
 &lt;p&gt;Nobody?&lt;/p&gt;
 
-&lt;p&gt;Me neither. So I decided that I would work it out once and create myself a library to make it easy for myself in the future. And then I thought that other people might like it too. So I have created my first open sourced project.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Me neither. So I decided that I would work it out once and create myself a library to make it easy for myself in the future. And then I thought that other people might like it too. So I have created my first open sourced project.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -95,9 +135,7 @@
       <guid>https://troz.net/post/2018/functional-programming/</guid>
       <description>&lt;p&gt;What is Functional Programming and how can we use it in Swift?&lt;/p&gt;
 
-&lt;p&gt;Search online for any definition of functional programming and you will find many different definitions, few of which are practically helpful. I have no claim to be an expert, but as a Swift enthusiast, this is what I have distilled out of the morass.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Search online for any definition of functional programming and you will find many different definitions, few of which are practically helpful. I have no claim to be an expert, but as a Swift enthusiast, this is what I have distilled out of the morass.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -106,9 +144,7 @@
       <pubDate>Thu, 14 Jun 2018 10:41:46 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/world-time-in-words-ios-update/</guid>
-      <description>&lt;p&gt;Its been a long time since the last update to Time In Words for iOS but after prompting by Apple (&lt;em&gt;update or we will remove it from the App Store&lt;/em&gt;), I finally did it. I was never really happy with the last design of Time in Words for iOS, particularly for the iPad, so this was a good opportunity to do a complete re-design, bringing the app more into alignment with its Mac counterpart. And it got a new name to match its new direction and is now called World Time in Words.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Its been a long time since the last update to Time In Words for iOS but after prompting by Apple (&lt;em&gt;update or we will remove it from the App Store&lt;/em&gt;), I finally did it. I was never really happy with the last design of Time in Words for iOS, particularly for the iPad, so this was a good opportunity to do a complete re-design, bringing the app more into alignment with its Mac counterpart. And it got a new name to match its new direction and is now called World Time in Words.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -117,9 +153,7 @@
       <pubDate>Sat, 26 May 2018 09:51:56 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/privacy-policy/</guid>
-      <description>&lt;p&gt;TL;DR: I don&amp;rsquo;t track you either on my web site or through my apps. If you want to contact me, please do so but I will not initiate any contacts.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;TL;DR: I don&amp;rsquo;t track you either on my web site or through my apps. If you want to contact me, please do so but I will not initiate any contacts.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -128,9 +162,7 @@
       <pubDate>Sat, 26 May 2018 09:22:57 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/app-updates/</guid>
-      <description>&lt;p&gt;Just a quick post to let you know about some recent app updates&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Just a quick post to let you know about some recent app updates&amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -143,9 +175,7 @@
 &lt;li&gt;Why is important to style your code?&lt;/li&gt;
 &lt;li&gt;How do you decide on a style?&lt;/li&gt;
 &lt;li&gt;Is there a way to enforce this style automatically?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -154,9 +184,7 @@
       <pubDate>Sun, 18 Feb 2018 10:19:18 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/icon-builder-5/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;Icon Builder 5.0&lt;/a&gt; is now available from the &lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Mac App Store&lt;/a&gt;. This is a complete re-write for better compatibility with Apple&amp;rsquo;s latest icon requirements. Read on to see what I have fixed and how&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;Icon Builder 5.0&lt;/a&gt; is now available from the &lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Mac App Store&lt;/a&gt;. This is a complete re-write for better compatibility with Apple&amp;rsquo;s latest icon requirements. Read on to see what I have fixed and how&amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -165,9 +193,7 @@
       <pubDate>Fri, 05 Jan 2018 11:33:35 +1000</pubDate>
       
       <guid>https://troz.net/ncss2018/</guid>
-      <description>&lt;p&gt;I gave a Masterclass on Swift at the NCSS Summer School 2018 in the University of Sydney on 9th January 2018. This post contains useful links for use in relation to the material covered during my class.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I gave a Masterclass on Swift at the NCSS Summer School 2018 in the University of Sydney on 9th January 2018. This post contains useful links for use in relation to the material covered during my class.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -180,9 +206,7 @@
 
 &lt;p&gt;&lt;a href=&#34;https://itunes.apple.com/us/app/mark-time/id1305580742?mt=8&#34;&gt;Mark Time&lt;/a&gt; is an application for Celestial Navigation that solves the
 problem of how to take an accurate time reading to go with each sextant
-sighting. Here is how it was developed&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+sighting. Here is how it was developed&amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -195,9 +219,7 @@ sighting. Here is how it was developed&amp;hellip;&lt;/p&gt;
 to update the Swift code to version 4. However installing High Sierra had
 removed &lt;a href=&#34;https://jekyllrb.com&#34; title=&#34;Jekyll&#34;&gt;Jekyll&lt;/a&gt; which is the site generator that I had been using. I
 re-installed Jekyll but found that it had been updated from version 2 to version
-3.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+3.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -219,9 +241,7 @@ re-installed Jekyll but found that it had been updated from version 2 to version
 internet, there has always been a lot of interest in Swift libraries to parse
 JSON into Swift classes or structs. Searching for &amp;ldquo;swift json library&amp;rdquo; on
 &lt;a href=&#34;https://github.com/search?q=swift+json+library&#34;&gt;GitHub&lt;/a&gt; discovers &lt;s&gt;77&lt;/s&gt; 86 repositories. So why are there so many? And
-what has Swift 4 done to &lt;em&gt;sherlock&lt;/em&gt; them all?&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+what has Swift 4 done to &lt;em&gt;sherlock&lt;/em&gt; them all?&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -243,9 +263,7 @@ what has Swift 4 done to &lt;em&gt;sherlock&lt;/em&gt; them all?&lt;/p&gt;
 alternative to RSS. TrozWare has had an XML RSS feed for years, but I don&amp;rsquo;t
 think anyone ever uses it (I certainly don&amp;rsquo;t), so today I have replaced it with
 a JSON feed, which you can access through the
-&lt;a class=&#34;fa fa-rss&#34; href=&#34;https://troz.net/feed.json&#34;&gt;&lt;/a&gt; button at the top of every page.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;a class=&#34;fa fa-rss&#34; href=&#34;https://troz.net/feed.json&#34;&gt;&lt;/a&gt; button at the top of every page.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -265,9 +283,7 @@ Now I would be the last person you should consult about marketing but it has alw
       
       <guid>https://troz.net/ncss2017/</guid>
       <description>&lt;p&gt;I gave a Masterclass on Swift at the NCSS Summer School 2017 in Sydney on 8th
-January 2017. This post contains useful links for use during and after my class.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+January 2017. This post contains useful links for use during and after my class.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -404,9 +420,7 @@ What is a Set? A Set is an un-ordered collection of unique items.</description>
       <guid>https://troz.net/post/2016/how-to-confuse-testflight/</guid>
       <description>&lt;p&gt;I ran into an unusual problem when testing my latest app: &amp;ldquo;&lt;a href=&#34;https://troz.net/what-is-my-speed/&#34;&gt;What Is My
 Speed?&lt;/a&gt;&amp;rdquo;. It is now available from the &lt;a href=&#34;https://itunes.apple.com/app/what-is-my-speed/id1091394524&#34;&gt;iTunes App Store&lt;/a&gt;, but getting
-there was a struggle.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+there was a struggle.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -436,7 +450,10 @@ Classes are the building blocks of object-oriented programming but structs as pr
       <pubDate>Sat, 12 Mar 2016 14:24:00 +1000</pubDate>
       
       <guid>https://troz.net/post/2016/learning-swift-optionals/</guid>
-      <description>&lt;p&gt;&lt;/p&gt;</description>
+      <description>Today I plan to discuss optionals since they were a feature of Swift that I found difficult to grasp at first.
+What is an optional in Swift? An optional is a variable of a specified type that can also be nil.
+Why does this matter? In Objective-C, any object type could be nil. If you declared a variable like this:
+NSString *myString;  then myString was set to nil by default.</description>
     </item>
     
     <item>
@@ -483,9 +500,7 @@ So what is a singleton? A singleton is a class that only expects to have a singl
 &lt;li&gt;Allow the compiler to infer types.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Read on for more details&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Read on for more details&amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>

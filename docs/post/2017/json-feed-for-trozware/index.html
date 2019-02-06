@@ -153,8 +153,6 @@ think anyone ever uses it (I certainly don&rsquo;t), so today I have replaced it
 a JSON feed, which you can access through the
 <a class="fa fa-rss" href="/feed.json"></a> button at the top of every page.</p>
 
-<p></p>
-
 <p>I am sure many JSON Feed viewers will appear soon, but the only one I know about
 so far is at <a href="http://json-feed-viewer.herokuapp.com">http://json-feed-viewer.herokuapp.com</a>. As soon as this update
 to my site goes live, I will apply to have TrozWare added to the list of sites
@@ -236,13 +234,22 @@ buttons at the top of the pages, but you can access it manually.</p>
   </div>
 </footer>
 
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
 
-  <script src="/assets/main.js"></script>
-
-  <script src="/assets/prism.js"></script>
-
-
+ 
 <script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink();
+  });
+</script>
+
   
 </div>
 

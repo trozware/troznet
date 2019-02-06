@@ -153,8 +153,6 @@
 
 <p>Read on for more details&hellip;</p>
 
-<p></p>
-
 <h2 id="1-do-not-use">1. Do not use !</h2>
 
 <p>Swift uses optionals for values that can be nil. To use an optional value, you
@@ -286,13 +284,22 @@ more rules in a separate post.</p>
   </div>
 </footer>
 
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
 
-  <script src="/assets/main.js"></script>
-
-  <script src="/assets/prism.js"></script>
-
-
+ 
 <script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink();
+  });
+</script>
+
   
 </div>
 

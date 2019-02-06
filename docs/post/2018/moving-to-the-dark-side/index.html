@@ -128,7 +128,7 @@
     <span class="post-date">
       01 Oct 2018
     </span>
-    <span class="more-meta"> 179 words, </span>
+    <span class="more-meta"> 188 words, </span>
     <span class="more-meta"> 1 minute read</span>
   </div>
 
@@ -148,8 +148,16 @@
     <style>
   img {
     margin: 10px auto;
-    border: 1px #bbb solid;
-    box-shadow: 3px 3px 5px 2px #ccc;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
   }
 
   .social_footer img {
@@ -161,8 +169,6 @@
 <p>With the release of macOS Mojave on 24th September 2018, I have started updating my Mac apps, mainly to enable support for dark mode if appropriate.</p>
 
 <p>And now I have updated this site too. Click the light bulb icon at the top right of the page to toggle between light and dark modes for this site.</p>
-
-<p></p>
 
 <p>And with my apps, so far (1 st October 2018), I have updated <a href="https://itunes.apple.com/app/apple-store/id552293482">Icon Builder</a>, <a href="https://itunes.apple.com/app/apple-store/id509085586">World Time in Words</a>, <a href="https://itunes.apple.com/app/apple-store/id997688302">Dice Pass</a> and <a href="https://itunes.apple.com/app/apple-store/id533321133">A Knight&rsquo;s Move</a>.</p>
 
@@ -229,13 +235,22 @@ For any developers looking for the way to do that, I added the following chunk t
   </div>
 </footer>
 
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
 
-  <script src="/assets/main.js"></script>
-
-  <script src="/assets/prism.js"></script>
-
-
+ 
 <script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink();
+  });
+</script>
+
   
 </div>
 

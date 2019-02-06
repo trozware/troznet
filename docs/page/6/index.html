@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.49" />
+	<meta name="generator" content="Hugo 0.54.0" />
   
     <title>TrozWare</title>
   
@@ -129,6 +129,34 @@
     
 <div class="posts">
   
+  
+  <div class="post on-list">
+    <h1 class="post-title"><a href="https://troz.net/post/2015/time-in-words-4.0/">Time In Words 4.0</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        15 Apr 2015
+      </span>
+      <span class="more-meta"> 783 words, </span>
+      <span class="more-meta"> 4 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="https://troz.net/tags/time-in-words">time in words</a>&nbsp;
+      
+      #<a href="https://troz.net/tags/ios">ios</a>&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      Time In Words for iOS started off as a fun gimmick, emulating the Qlocktwo type of time display where the relevant words are highlighted in some way to spell out the time as a sentence. This very quickly evolved into what I hoped would be more useful app, still showing the original display, but also providing the current time &amp; date as complete sentences. Then I added time conversions and discovered the real power and utility of writing out times as words.
+    </div>
+    <div><a class="read-more button" href="/post/2015/time-in-words-4.0/">Read more →</a></div>
+  </div>
   
   <div class="post on-list">
     <h1 class="post-title"><a href="https://troz.net/post/2015/apple-watch-rejected-then-accepted/">Apple Watch App - Rejected, then Accepted</a></h1>
@@ -415,38 +443,6 @@ The new features and fixes are:  Fix for plain text view not wrapping correctly 
     <div><a class="read-more button" href="/post/2014/man-reader-1-4-now-available/">Read more →</a></div>
   </div>
   
-  <div class="post on-list">
-    <h1 class="post-title"><a href="https://troz.net/post/2014/email-clients-for-mac-ios/">Email clients for Mac and iOS</a></h1>
-    <div class="post-meta">
-      <span class="post-date">
-        25 Mar 2014
-      </span>
-      <span class="more-meta"> 462 words, </span>
-      <span class="more-meta"> 3 minute read</span>
-    </div>
-
-    
-    <span class="post-tags">
-      
-      #<a href="https://troz.net/tags/email">email</a>&nbsp;
-      
-      #<a href="https://troz.net/tags/mac">mac</a>&nbsp;
-      
-      #<a href="https://troz.net/tags/ios">ios</a>&nbsp;
-      
-    </span>
-    
-
-    
-
-    <div class="post-content">
-      Some people are moving away from email, but for me, it remains the best way to communicate online. I get to keep a record of conversations and the attached files are with the text so I can always see the context.
-But I think everyone would agree that Apple have dropped the ball with Mail in OS X Mavericks, and to a lesser extent, in iOS 7.
-So I have been on a campaign lately to find an email client that suits my needs.
-    </div>
-    <div><a class="read-more button" href="/post/2014/email-clients-for-mac-ios/">Read more →</a></div>
-  </div>
-  
   <div class="pagination">
   <div class="pagination__buttons">
     
@@ -486,13 +482,22 @@ So I have been on a campaign lately to find an email client that suits my needs.
   </div>
 </footer>
 
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
 
-  <script src="/assets/main.js"></script>
-
-  <script src="/assets/prism.js"></script>
-
-
+ 
 <script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink();
+  });
+</script>
+
   
 </div>
 

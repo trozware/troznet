@@ -143,8 +143,6 @@
 problem of how to take an accurate time reading to go with each sextant
 sighting. Here is how it was developed&hellip;</p>
 
-<p></p>
-
 <hr />
 
 <p>A day in the life of a software developer - &ldquo;it would be great if there was an
@@ -306,13 +304,22 @@ process for a new app - things have certainly changed!</p>
   </div>
 </footer>
 
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
 
-  <script src="/assets/main.js"></script>
-
-  <script src="/assets/prism.js"></script>
-
-
+ 
 <script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink();
+  });
+</script>
+
   
 </div>
 

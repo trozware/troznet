@@ -17,9 +17,7 @@
       <pubDate>Sat, 06 Oct 2018 09:38:20 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/the-end-of-picapod/</guid>
-      <description>&lt;p&gt;I think I wrote the first version of &lt;a href=&#34;https://picapod.com&#34;&gt;Pic-a-POD&lt;/a&gt; in 2003 and have been updating and maintaining it ever since, but the time has come to shut it down.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I think I wrote the first version of &lt;a href=&#34;https://picapod.com&#34;&gt;Pic-a-POD&lt;/a&gt; in 2003 and have been updating and maintaining it ever since, but the time has come to shut it down.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -31,8 +29,16 @@
       <description>&lt;style&gt;
   img {
     margin: 10px auto;
-    border: 1px #bbb solid;
-    box-shadow: 3px 3px 5px 2px #ccc;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
   }
 
   .social_footer img {
@@ -41,9 +47,7 @@
   }
 &lt;/style&gt;
 
-&lt;p&gt;Now that most of my Mac apps have been updated to support macOS Mojave&amp;rsquo;s dark mode, it was time to turn my attention to this web site.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Now that most of my Mac apps have been updated to support macOS Mojave&amp;rsquo;s dark mode, it was time to turn my attention to this web site.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -55,8 +59,16 @@
       <description>&lt;style&gt;
   img {
     margin: 10px auto;
-    border: 1px #bbb solid;
-    box-shadow: 3px 3px 5px 2px #ccc;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
   }
 
   .social_footer img {
@@ -67,9 +79,7 @@
 
 &lt;p&gt;With the release of macOS Mojave on 24th September 2018, I have started updating my Mac apps, mainly to enable support for dark mode if appropriate.&lt;/p&gt;
 
-&lt;p&gt;And now I have updated this site too. Click the light bulb icon at the top right of the page to toggle between light and dark modes for this site.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;And now I have updated this site too. Click the light bulb icon at the top right of the page to toggle between light and dark modes for this site.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -78,9 +88,7 @@
       <pubDate>Sat, 26 May 2018 09:22:57 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/app-updates/</guid>
-      <description>&lt;p&gt;Just a quick post to let you know about some recent app updates&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Just a quick post to let you know about some recent app updates&amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -89,9 +97,7 @@
       <pubDate>Sun, 18 Feb 2018 10:19:18 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/icon-builder-5/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;Icon Builder 5.0&lt;/a&gt; is now available from the &lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Mac App Store&lt;/a&gt;. This is a complete re-write for better compatibility with Apple&amp;rsquo;s latest icon requirements. Read on to see what I have fixed and how&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;Icon Builder 5.0&lt;/a&gt; is now available from the &lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Mac App Store&lt;/a&gt;. This is a complete re-write for better compatibility with Apple&amp;rsquo;s latest icon requirements. Read on to see what I have fixed and how&amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>

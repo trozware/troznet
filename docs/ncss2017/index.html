@@ -148,8 +148,6 @@
     <p>I gave a Masterclass on Swift at the NCSS Summer School 2017 in Sydney on 8th
 January 2017. This post contains useful links for use during and after my class.</p>
 
-<p></p>
-
 <ul>
 <li><a href="https://swiftlang.ng.bluemix.net/#/repl">IBM Swift Sandbox</a></li>
 </ul>
@@ -246,13 +244,22 @@ January 2017. This post contains useful links for use during and after my class.
   </div>
 </footer>
 
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
 
-  <script src="/assets/main.js"></script>
-
-  <script src="/assets/prism.js"></script>
-
-
+ 
 <script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink();
+  });
+</script>
+
   
 </div>
 

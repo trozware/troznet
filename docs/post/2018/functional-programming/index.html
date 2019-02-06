@@ -151,8 +151,6 @@
 
 <p>Search online for any definition of functional programming and you will find many different definitions, few of which are practically helpful. I have no claim to be an expert, but as a Swift enthusiast, this is what I have distilled out of the morass.</p>
 
-<p></p>
-
 <h2 id="what-is-functional-programming">What is Functional Programming?</h2>
 
 <p>Without providing a concrete definition, here are what I see as the 3 main goals of functional programming:</p>
@@ -578,13 +576,22 @@ let checkedNames = checkPlayerNamesUsingFunction(names: allNames)
   </div>
 </footer>
 
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
 
-  <script src="/assets/main.js"></script>
-
-  <script src="/assets/prism.js"></script>
-
-
+ 
 <script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink();
+  });
+</script>
+
   
 </div>
 

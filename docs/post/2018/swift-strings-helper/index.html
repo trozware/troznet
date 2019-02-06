@@ -153,8 +153,6 @@
 
 <p>Me neither. So I decided that I would work it out once and create myself a library to make it easy for myself in the future. And then I thought that other people might like it too. So I have created my first open sourced project.</p>
 
-<p></p>
-
 <h2 id="strings-in-swift">Strings in Swift</h2>
 
 <p>Swift&rsquo;s string handling is amazing. It is truly Unicode-compliant, so a Swift <code>String</code> doesn&rsquo;t care whether your string is made up of basic alphanumerics, accented characters, or emojis that might be composed of several different emojis joined together.</p>
@@ -308,13 +306,22 @@ let subStr = startingString.sub(from: &quot;abc&quot;, upTo: &quot;xyz&quot;)
   </div>
 </footer>
 
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
 
-  <script src="/assets/main.js"></script>
-
-  <script src="/assets/prism.js"></script>
-
-
+ 
 <script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink();
+  });
+</script>
+
   
 </div>
 

@@ -17,7 +17,10 @@
       <pubDate>Sat, 12 Mar 2016 14:24:00 +1000</pubDate>
       
       <guid>https://troz.net/post/2016/learning-swift-optionals/</guid>
-      <description>&lt;p&gt;&lt;/p&gt;</description>
+      <description>Today I plan to discuss optionals since they were a feature of Swift that I found difficult to grasp at first.
+What is an optional in Swift? An optional is a variable of a specified type that can also be nil.
+Why does this matter? In Objective-C, any object type could be nil. If you declared a variable like this:
+NSString *myString;  then myString was set to nil by default.</description>
     </item>
     
   </channel>

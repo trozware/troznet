@@ -147,8 +147,6 @@
   <div class="post-content">
     <p>I think I wrote the first version of <a href="https://picapod.com">Pic-a-POD</a> in 2003 and have been updating and maintaining it ever since, but the time has come to shut it down.</p>
 
-<p></p>
-
 <p>I haven&rsquo;t been able to find a picture of the original version, but here is one from 2005:</p>
 
 <p><img src="/images/POD2005.png" alt="Pic-a-POD 2005" /></p>
@@ -180,6 +178,8 @@
       <hr />
     </div>
     <div class="pagination__buttons">
+      
+      <a class="btn next" href="https://troz.net/post/2019/learning-swift-tuples/">← Learning Swift  - Tuples</a>
       
       
       <a class="btn previous" href="https://troz.net/post/2018/moving-to-the-dark-side-2/">Moving to the Dark Side - Part 2 →</a>
@@ -216,13 +216,22 @@
   </div>
 </footer>
 
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
 
-  <script src="/assets/main.js"></script>
-
-  <script src="/assets/prism.js"></script>
-
-
+ 
 <script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink();
+  });
+</script>
+
   
 </div>
 

@@ -20,8 +20,16 @@
       <description>&lt;style&gt;
   img {
     margin: 10px auto;
-    border: 1px #bbb solid;
-    box-shadow: 3px 3px 5px 2px #ccc;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
   }
 
   .social_footer img {
@@ -30,9 +38,7 @@
   }
 &lt;/style&gt;
 
-&lt;p&gt;Now that most of my Mac apps have been updated to support macOS Mojave&amp;rsquo;s dark mode, it was time to turn my attention to this web site.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Now that most of my Mac apps have been updated to support macOS Mojave&amp;rsquo;s dark mode, it was time to turn my attention to this web site.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -45,9 +51,7 @@
 to update the Swift code to version 4. However installing High Sierra had
 removed &lt;a href=&#34;https://jekyllrb.com&#34; title=&#34;Jekyll&#34;&gt;Jekyll&lt;/a&gt; which is the site generator that I had been using. I
 re-installed Jekyll but found that it had been updated from version 2 to version
-3.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+3.&lt;/p&gt;</description>
     </item>
     
     <item>

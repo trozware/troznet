@@ -147,8 +147,6 @@
   <div class="post-content">
     <p>TL;DR: I don&rsquo;t track you either on my web site or through my apps. If you want to contact me, please do so but I will not initiate any contacts.</p>
 
-<p></p>
-
 <p>As anyone who gets email would realise by now, the EU has introduced a <a href="https://www.eugdpr.org">General Data Protection Regulation</a> designed to enhance online privacy. You will have been getting lots of emails announcing new privacy policies or asking you to opt-in to existing arrangements.</p>
 
 <p>So here is my version of those emails (which you will not get by email because I do not store any user data):</p>
@@ -211,13 +209,22 @@
   </div>
 </footer>
 
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
 
-  <script src="/assets/main.js"></script>
-
-  <script src="/assets/prism.js"></script>
-
-
+ 
 <script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink();
+  });
+</script>
+
   
 </div>
 

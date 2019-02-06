@@ -147,8 +147,6 @@
   <div class="post-content">
     <p>I gave a Masterclass on Swift at the NCSS Summer School 2018 in the University of Sydney on 9th January 2018. This post contains useful links for use in relation to the material covered during my class.</p>
 
-<p></p>
-
 <hr />
 
 <h3 id="online-sandboxes">Online Sandboxes</h3>
@@ -238,13 +236,22 @@
   </div>
 </footer>
 
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
 
-  <script src="/assets/main.js"></script>
-
-  <script src="/assets/prism.js"></script>
-
-
+ 
 <script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink();
+  });
+</script>
+
   
 </div>
 

@@ -7,10 +7,10 @@
         "priorities": [
           "Stamina",
           "Strength",
-          "Haste",
           "Versatility",
-          "Mastery",
-          "Crit"
+          "Haste",
+          "Crit",
+          "Mastery"
         ],
         "talents": [
           "Blooddrinker",
@@ -26,7 +26,10 @@
         "name": "Frost",
         "priorities": [
           "Strength",
-          "Crit >= Haste >= Mastery >= Versatility"
+          "Mastery",
+          "Crit",
+          "Versatility",
+          "Haste"
         ],
         "talents": [
           "Cold Heart",
@@ -42,10 +45,9 @@
         "name": "Unholy",
         "priorities": [
           "Strength",
-          "Mastery",
-          "Crit",
           "Haste",
-          "Versatility"
+          "Crit = Versatility",
+          "Mastery"
         ],
         "talents": [
           "Clawing Shadows",
@@ -66,8 +68,8 @@
         "name": "Havoc",
         "priorities": [
           "Agility",
-          "Haste >= Versatility",
-          "Crit",
+          "Versatility",
+          "Crit = Haste",
           "Mastery"
         ],
         "talents": [
@@ -110,8 +112,9 @@
         "priorities": [
           "Intellect",
           "Haste",
-          "Crit >= Versatility",
-          "Mastery"
+          "Mastery",
+          "Crit",
+          "Versatility"
         ],
         "talents": [
           "Natures",
@@ -126,9 +129,11 @@
       {
         "name": "Feral",
         "priorities": [
-          "Agility",
+          "Crit",
+          "Mastery",
           "Haste",
-          "Mastery >= Crit >= Versatility"
+          "Agility",
+          "Versatility"
         ],
         "talents": [
           "Sabertooth",
@@ -147,7 +152,8 @@
           "Agility",
           "Mastery",
           "Versatility",
-          "Crit >= Haste"
+          "Haste",
+          "Crit"
         ],
         "talents": [
           "Blood Frenzy",
@@ -187,7 +193,10 @@
         "name": "Beast Mastery",
         "priorities": [
           "Agility",
-          "Haste >= Crit >= Versatility >= Mastery"
+          "Haste",
+          "Crit",
+          "Mastery",
+          "Versatility"
         ],
         "talents": [
           "Killer Instinct",
@@ -203,8 +212,10 @@
         "name": "Marksmanship",
         "priorities": [
           "Agility",
-          "Haste = Versatility",
-          "Crit >= Mastery"
+          "Mastery",
+          "Haste",
+          "Crit",
+          "Versatility"
         ],
         "talents": [
           "Master Marksman",
@@ -221,8 +232,8 @@
         "priorities": [
           "Agility",
           "Haste",
-          "Versatility",
           "Crit",
+          "Versatility",
           "Mastery"
         ],
         "talents": [
@@ -244,8 +255,10 @@
         "name": "Arcane",
         "priorities": [
           "Intellect",
-          "Versatility >= Crit >= Haste",
-          "Mastery"
+          "Crit",
+          "Haste",
+          "Mastery",
+          "Versatility"
         ],
         "talents": [
           "Rule Of Threes",
@@ -261,9 +274,10 @@
         "name": "Fire",
         "priorities": [
           "Intellect",
-          "Crit",
           "Mastery",
-          "Versatility >= Haste"
+          "Versatility",
+          "Haste",
+          "Crit"
         ],
         "talents": [
           "Searing Touch",
@@ -279,9 +293,9 @@
         "name": "Frost",
         "priorities": [
           "Intellect",
-          "Crit",
-          "Haste",
-          "Versatility >= Mastery"
+          "Mastery >= Crit",
+          "Versatility",
+          "Haste"
         ],
         "talents": [
           "Bone Chilling",
@@ -303,8 +317,7 @@
         "priorities": [
           "Stamina",
           "Agility",
-          "Crit",
-          "Versatility",
+          "Crit = Versatility",
           "Mastery",
           "Haste"
         ],
@@ -366,8 +379,9 @@
         "priorities": [
           "Intellect",
           "Crit",
-          "Mastery >= Versatility",
-          "Haste"
+          "Haste",
+          "Versatility",
+          "Mastery"
         ],
         "talents": [
           "Bestow Faith",
@@ -385,7 +399,8 @@
           "Stamina",
           "Strength",
           "Haste",
-          "Versatility >= Mastery",
+          "Mastery",
+          "Versatility",
           "Crit"
         ],
         "talents": [
@@ -403,8 +418,7 @@
         "priorities": [
           "Strength",
           "Haste",
-          "Crit >= Versatility",
-          "Mastery"
+          "Crit = Mastery = Versatility"
         ],
         "talents": [
           "Zeal",
@@ -426,8 +440,7 @@
         "priorities": [
           "Intellect",
           "Haste",
-          "Mastery",
-          "Versatility >= Crit"
+          "Crit = Mastery = Versatility"
         ],
         "talents": [
           "Schism",
@@ -443,10 +456,9 @@
         "name": "Holy",
         "priorities": [
           "Intellect",
-          "Mastery",
-          "Crit",
-          "Haste",
-          "Versatility"
+          "Crit = Mastery",
+          "Versatility",
+          "Haste"
         ],
         "talents": [
           "Enlightenment",
@@ -462,10 +474,9 @@
         "name": "Shadow",
         "priorities": [
           "Intellect",
-          "Haste",
-          "Crit",
-          "Versatility",
-          "Mastery"
+          "Crit = Haste",
+          "Mastery",
+          "Versatility"
         ],
         "talents": [
           "Fortress Of The Mind",
@@ -505,9 +516,10 @@
         "name": "Outlaw",
         "priorities": [
           "Agility",
-          "Versatility",
+          "Crit",
           "Haste",
-          "Crit >= Mastery"
+          "Versatility",
+          "Mastery"
         ],
         "talents": [
           "Weaponmaster",
@@ -523,9 +535,10 @@
         "name": "Subtlety",
         "priorities": [
           "Agility",
-          "Haste",
-          "Mastery >= Versatility",
-          "Crit"
+          "Crit",
+          "Versatility",
+          "Mastery",
+          "Haste"
         ],
         "talents": [
           "Weaponmaster",
@@ -547,7 +560,9 @@
         "priorities": [
           "Intellect",
           "Crit",
-          "Haste >= Versatility >= Mastery"
+          "Haste",
+          "Versatility",
+          "Mastery"
         ],
         "talents": [
           "Earthen Rage",
@@ -562,11 +577,11 @@
       {
         "name": "Enhancement",
         "priorities": [
-          "Agility",
           "Haste",
+          "Mastery",
           "Crit",
           "Versatility",
-          "Mastery"
+          "Agility"
         ],
         "talents": [
           "Lightning Shield",
@@ -584,7 +599,7 @@
           "Intellect",
           "Crit",
           "Versatility",
-          "Haste >= Mastery"
+          "Mastery = Haste"
         ],
         "talents": [
           "Torrent",
@@ -605,9 +620,9 @@
         "name": "Affliction",
         "priorities": [
           "Intellect",
-          "Mastery = Haste",
-          "Crit",
-          "Versatility"
+          "Mastery",
+          "Haste",
+          "Crit = Versatility"
         ],
         "talents": [
           "Deathbolt",
@@ -641,9 +656,9 @@
         "name": "Destruction",
         "priorities": [
           "Intellect",
-          "Haste >= Crit",
-          "Versatility",
-          "Mastery"
+          "Haste",
+          "Crit = Mastery",
+          "Versatility"
         ],
         "talents": [
           "Flashover",
@@ -663,11 +678,11 @@
       {
         "name": "Arms",
         "priorities": [
-          "Strength",
-          "Crit",
           "Haste",
-          "Versatility",
-          "Mastery"
+          "Crit",
+          "Strength",
+          "Mastery",
+          "Versatility"
         ],
         "talents": [
           "Sudden Death",
@@ -683,10 +698,10 @@
         "name": "Fury",
         "priorities": [
           "Strength",
-          "Crit",
           "Haste",
+          "Mastery",
           "Versatility",
-          "Mastery"
+          "Crit"
         ],
         "talents": [
           "Endless Rage",
@@ -704,7 +719,8 @@
           "Stamina",
           "Strength",
           "Haste",
-          "Mastery >= Versatility",
+          "Versatility",
+          "Mastery",
           "Crit"
         ],
         "talents": [

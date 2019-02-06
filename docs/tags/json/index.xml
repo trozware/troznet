@@ -30,9 +30,7 @@
 internet, there has always been a lot of interest in Swift libraries to parse
 JSON into Swift classes or structs. Searching for &amp;ldquo;swift json library&amp;rdquo; on
 &lt;a href=&#34;https://github.com/search?q=swift+json+library&#34;&gt;GitHub&lt;/a&gt; discovers &lt;s&gt;77&lt;/s&gt; 86 repositories. So why are there so many? And
-what has Swift 4 done to &lt;em&gt;sherlock&lt;/em&gt; them all?&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+what has Swift 4 done to &lt;em&gt;sherlock&lt;/em&gt; them all?&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -45,9 +43,7 @@ what has Swift 4 done to &lt;em&gt;sherlock&lt;/em&gt; them all?&lt;/p&gt;
 alternative to RSS. TrozWare has had an XML RSS feed for years, but I don&amp;rsquo;t
 think anyone ever uses it (I certainly don&amp;rsquo;t), so today I have replaced it with
 a JSON feed, which you can access through the
-&lt;a class=&#34;fa fa-rss&#34; href=&#34;https://troz.net/feed.json&#34;&gt;&lt;/a&gt; button at the top of every page.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;a class=&#34;fa fa-rss&#34; href=&#34;https://troz.net/feed.json&#34;&gt;&lt;/a&gt; button at the top of every page.&lt;/p&gt;</description>
     </item>
     
   </channel>

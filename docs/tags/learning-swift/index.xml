@@ -6,10 +6,42 @@
     <description>Recent content in Learning Swift on TrozWare</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
-    <lastBuildDate>Thu, 14 Jun 2018 14:18:53 +1000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Feb 2019 19:48:51 +1000</lastBuildDate>
     
 	<atom:link href="https://troz.net/tags/learning-swift/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Learning Swift  - Tuples</title>
+      <link>https://troz.net/post/2019/learning-swift-tuples/</link>
+      <pubDate>Sun, 03 Feb 2019 19:48:51 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2019/learning-swift-tuples/</guid>
+      <description>&lt;style&gt;
+  img {
+    margin: 10px auto;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .social_footer img {
+    border: none;
+    box-shadow: none;
+  }
+&lt;/style&gt;
+
+&lt;p&gt;I sometimes like to focus on aspects of the Swift language that get less publicity, but that I think are really useful without adding a lot of complexity. This time I am looking at tuples.&lt;/p&gt;
+
+&lt;p&gt;There are many different ways of collecting data together in Swift, but for small amounts of transitory data, I find tuples to be an extremely convenient data structure.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Functional Programming in Swift</title>
@@ -19,9 +51,7 @@
       <guid>https://troz.net/post/2018/functional-programming/</guid>
       <description>&lt;p&gt;What is Functional Programming and how can we use it in Swift?&lt;/p&gt;
 
-&lt;p&gt;Search online for any definition of functional programming and you will find many different definitions, few of which are practically helpful. I have no claim to be an expert, but as a Swift enthusiast, this is what I have distilled out of the morass.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Search online for any definition of functional programming and you will find many different definitions, few of which are practically helpful. I have no claim to be an expert, but as a Swift enthusiast, this is what I have distilled out of the morass.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -43,9 +73,7 @@
 internet, there has always been a lot of interest in Swift libraries to parse
 JSON into Swift classes or structs. Searching for &amp;ldquo;swift json library&amp;rdquo; on
 &lt;a href=&#34;https://github.com/search?q=swift+json+library&#34;&gt;GitHub&lt;/a&gt; discovers &lt;s&gt;77&lt;/s&gt; 86 repositories. So why are there so many? And
-what has Swift 4 done to &lt;em&gt;sherlock&lt;/em&gt; them all?&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+what has Swift 4 done to &lt;em&gt;sherlock&lt;/em&gt; them all?&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -75,7 +103,10 @@ Classes are the building blocks of object-oriented programming but structs as pr
       <pubDate>Sat, 12 Mar 2016 14:24:00 +1000</pubDate>
       
       <guid>https://troz.net/post/2016/learning-swift-optionals/</guid>
-      <description>&lt;p&gt;&lt;/p&gt;</description>
+      <description>Today I plan to discuss optionals since they were a feature of Swift that I found difficult to grasp at first.
+What is an optional in Swift? An optional is a variable of a specified type that can also be nil.
+Why does this matter? In Objective-C, any object type could be nil. If you declared a variable like this:
+NSString *myString;  then myString was set to nil by default.</description>
     </item>
     
     <item>
@@ -122,9 +153,7 @@ So what is a singleton? A singleton is a class that only expects to have a singl
 &lt;li&gt;Allow the compiler to infer types.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Read on for more details&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Read on for more details&amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
