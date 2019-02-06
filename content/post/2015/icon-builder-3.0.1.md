@@ -47,5 +47,5 @@ Xcode 6.2 release.
 * iTunesArtwork@2x file now saved as a JPG to avoid iTunes Connect errors.
 * Removed CarPlay icon - Xcode sometimes gave errors when this was included.
 
-[1]: http://troz.net/icon-builder/
+[1]: https://troz.net/icon-builder/
 [2]: https://itunes.apple.com/us/app/icon-builder/id552293482?mt=12&uo=4

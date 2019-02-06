@@ -18,7 +18,7 @@ a JSON feed, which you can access through the
 I am sure many JSON Feed viewers will appear soon, but the only one I know about
 so far is at [http://json-feed-viewer.herokuapp.com][8]. As soon as this update
 to my site goes live, I will apply to have TrozWare added to the list of sites
-on this page. Meanwhile, you can paste in the URL: `http://troz.net/feed.json`.
+on this page. Meanwhile, you can paste in the URL: `https://troz.net/feed.json`.
 
 This site is constructed using Jekyll, so I am very grateful to Niclas Darville
 for his very easy to follow [guide][3]. However it is still well worth reading

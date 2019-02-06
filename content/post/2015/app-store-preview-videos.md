@@ -81,6 +81,6 @@ how to enter the score data for a hole of golf using [19th Hole][1]:
 	Your browser does not support the video tag.
 </video>
 
-[1]: http://troz.net/19th-hole/
+[1]: https://troz.net/19th-hole/
 [2]: https://github.com/toddreed/Touchpose
 [3]: https://handbrake.fr
