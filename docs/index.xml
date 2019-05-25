@@ -493,8 +493,7 @@ there was a struggle.&lt;/p&gt;</description>
       <pubDate>Sun, 17 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/what-is-my-speed/</guid>
-      <description>img { display: block; margin-left: auto; margin-right: auto }  &amp;ldquo;What Is My Speed?&amp;rdquo; is available now from the iTunes App Store for iPhone and Apple Watch.
-If you read my recent blog post on Road Trip Apps you will have realised that I was working on an app to fill a gap that I discovered in our road trip app arsenal. So here it is: &amp;ldquo;What Is My Speed?</description>
+      <description>What Is My Speed? allows you to track your speed on your iPhone or Apple Watch while driving, bicycling, running or walking. See your course and altitude at all times. Set the speed limit to trigger warnings where appropriate.</description>
     </item>
     
     <item>
@@ -524,10 +523,7 @@ Classes are the building blocks of object-oriented programming but structs as pr
       <pubDate>Sat, 12 Mar 2016 14:24:00 +1000</pubDate>
       
       <guid>https://troz.net/post/2016/learning-swift-optionals/</guid>
-      <description>Today I plan to discuss optionals since they were a feature of Swift that I found difficult to grasp at first.
-What is an optional in Swift? An optional is a variable of a specified type that can also be nil.
-Why does this matter? In Objective-C, any object type could be nil. If you declared a variable like this:
-NSString *myString;  then myString was set to nil by default.</description>
+      <description></description>
     </item>
     
     <item>

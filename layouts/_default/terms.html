@@ -1,0 +1,24 @@
+{{ define "main" }}
+{{ $name := .Data.Plural -}}
+{{ $terms := .Data.Terms.Alphabetical -}}
+{{ $length := len $terms -}}
+
+<div class="posts post on-list">
+  <div>
+    <h3>
+      {{ if eq $length 0 }}
+      {{ 0 }}
+      {{ else }}
+      {{ $length}}
+      {{ end }}
+      tags in total
+    </h3>
+    <div class="post-meta">
+      {{ range $key, $value := $terms }}
+      <a class="more-meta" href="{{ $name | urlize | relURL }}/{{ $value.Term | urlize }}/">
+        {{ $value.Term | humanize | lower }}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

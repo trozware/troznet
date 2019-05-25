@@ -1,0 +1,34 @@
+{{ define "main"}}
+{{- $lang := .Site.Data.even.default }}
+{{- $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate") }}
+
+<div class="posts post on-list">
+  <section id="archive" class="archive">
+
+    {{- range $index, $element := $paginator.Pages -}}
+    {{- $thisYear := $element.Date.Format "2006" }}
+    {{- $lastElement := $index | add -1 | index $paginator.Pages }}
+    {{ if or (eq $index 0) ( ne ($lastElement.Date.Format "2006") $thisYear ) }}
+    <div class="collection-title">
+      <h2 class="archive-year">{{ $thisYear }}</h2>
+    </div>
+    {{- end }}
+
+    <div class="post-meta">
+      <span class="post_date">
+        {{ $element.Lastmod.Format "02 Jan" }}
+      </span>
+      <span class="more-meta">
+        <a href="{{ $element.URL }}" class="archive-post-link">
+          {{ .Title }}
+        </a>
+      </span>
+    </div>
+    {{- end -}}
+
+    <!-- pagination -->
+    {{ partial "pagination.html" . }}
+  </section>
+</div>
+
+{{ end }}

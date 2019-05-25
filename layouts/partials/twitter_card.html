@@ -1,0 +1,21 @@
+{{ if .Page.Params.ios_app_id }}
+    <meta name="twitter:card" content="app" />
+    <meta name="twitter:site" content="@trozware" />
+    <meta name="twitter:description" content="{{ .Page.Params.ios_app_desc }}">
+    <meta name="twitter:app:name:iphone" content="{{ .Page.Params.ios_app_name }}">
+    <meta name="twitter:app:id:iphone" content="{{ .Page.Params.ios_app_id }}">
+{{ else if .Page.Params.mac_app_name }}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@trozware" />
+    <meta name="twitter:title" content="{{ .Page.Params.mac_app_name }}" />
+    <meta name="twitter:description" content="{{ .Page.Params.mac_app_desc }}" />
+    <meta name="twitter:url" content="{{ .Page.URL | absURL }}" />
+    <meta name="twitter:image" content="{{ .Page.Params.mac_app_image | absURL }}" />
+{{ else }}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@trozware" />
+    <meta name="twitter:title" content="TrozWare" />
+    <meta name="twitter:description" content="macOS, iOS and watchOS Developer" />
+    <meta name="twitter:url" content="https://troz.net/" />
+    <meta name="twitter:image" content="https://troz.net/icons/apple-touch-icon-152x152.png" />
+{{ end }}

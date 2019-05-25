@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="/css/footer.css" />
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="social_footer">
+      <a id="email-Link" class="mailtoui" href="mailto:sarah@troz.net"
+        ><img src="/icons/envelope.svg"
+      /></a>
+      <a href="https://stackoverflow.com/users/1082632"
+        ><img src="/icons/stack-overflow.svg"
+      /></a>
+      <a href="https://twitter.com/trozware"><img src="/icons/twitter.svg"/></a>
+      <a href="https://github.com/trozware"><img src="/icons/github.svg"/></a>
+      <a href="https://troz.net//feed.json"><img src="/icons/json.png"/></a>
+    </div>
+  </div>
+
+  <div class="footer__inner">
+    <div class="copyright">
+      {{ if .Site.Copyright }}
+      <span>{{ .Site.Copyright| safeHTML }}</span>
+      {{ end }}
+      <span
+        ><a href="http://gohugo.io">Hugo</a> theme created by
+        <a href="https://twitter.com/panr">panr</a> 2018</span
+      >
+    </div>
+  </div>
+</footer>
+
+{{ partial "inject.script.html" . }}
