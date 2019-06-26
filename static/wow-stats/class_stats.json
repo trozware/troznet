@@ -67,9 +67,9 @@
       {
         "name": "Havoc",
         "priorities": [
-          "Agility",
           "Versatility",
           "Crit = Haste",
+          "Agility",
           "Mastery"
         ],
         "talents": [
@@ -118,7 +118,7 @@
         ],
         "talents": [
           "Natures",
-          "Tiger Dash",
+          "Wild Charge",
           "Restoration Affinity",
           "Typhoon",
           "Incarnation Chosen Of Elune",
@@ -224,7 +224,7 @@
           "Hunters Mark",
           "Posthaste",
           "Lethal Shots",
-          "Lock And Load"
+          "Calling The Shots"
         ]
       },
       {
@@ -464,17 +464,17 @@
           "Enlightenment",
           "Angelic Feather",
           "Cosmic Ripple",
-          "Censure",
-          "Binding Heal",
-          "Divine Star",
-          "Apotheosis"
+          "Shining Force",
+          "Circle Of Healing",
+          "Halo",
+          "Word Salvation"
         ]
       },
       {
         "name": "Shadow",
         "priorities": [
-          "Intellect",
           "Crit = Haste",
+          "Intellect",
           "Mastery",
           "Versatility"
         ],
@@ -643,7 +643,7 @@
           "Versatility"
         ],
         "talents": [
-          "Dreadlash",
+          "Demonic Strength",
           "Demonic Calling",
           "Burning Rush",
           "Soul Strike",
@@ -655,9 +655,9 @@
       {
         "name": "Destruction",
         "priorities": [
+          "Mastery >= Haste",
+          "Crit",
           "Intellect",
-          "Haste",
-          "Crit = Mastery",
           "Versatility"
         ],
         "talents": [
