@@ -6,10 +6,26 @@
     <description>Recent content on TrozWare</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
-    <lastBuildDate>Sun, 03 Feb 2019 19:48:51 +1000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Aug 2019 15:00:05 +1000</lastBuildDate>
     
 	<atom:link href="https://troz.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SwiftUI First Thoughts</title>
+      <link>https://troz.net/post/2019/swiftui_first-thoughts/</link>
+      <pubDate>Sun, 18 Aug 2019 15:00:05 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2019/swiftui_first-thoughts/</guid>
+      <description>&lt;style&gt;
+  img {
+    margin: 10px auto;
+  }
+&lt;/style&gt;
+
+
+&lt;p&gt;At WWDC 2019, Apple surprised us all by announcing a completely new declarative UI framework called &lt;a href=&#34;https://developer.apple.com/xcode/swiftui/&#34;&gt;SwiftUI&lt;/a&gt;. Quoting snippets from the Apple announcements, &amp;ldquo;SwiftUI is an innovative, exceptionally simple way to build user interfaces across all Apple platforms with the power of Swift&amp;rdquo; and &amp;ldquo;SwiftUI uses a declarative syntax so you can simply state what your user interface should do.&amp;rdquo; But what does this mean and should we all adopt it now?&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Learning Swift  - Tuples</title>
