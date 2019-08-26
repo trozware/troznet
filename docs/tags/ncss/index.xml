@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ncss on TrozWare</title>
     <link>https://troz.net/tags/ncss/</link>
@@ -8,27 +8,122 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Fri, 05 Jan 2018 11:33:35 +1000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/ncss/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/ncss/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>NCSS 2018</title>
-      <link>https://troz.net/ncss2018/</link>
-      <pubDate>Fri, 05 Jan 2018 11:33:35 +1000</pubDate>
+<title>NCSS 2018</title>
+<link>https://troz.net/ncss2018/</link>
+<pubDate>Fri, 05 Jan 2018 11:33:35 +1000</pubDate>
       
       <guid>https://troz.net/ncss2018/</guid>
-      <description>&lt;p&gt;I gave a Masterclass on Swift at the NCSS Summer School 2018 in the University of Sydney on 9th January 2018. This post contains useful links for use in relation to the material covered during my class.&lt;/p&gt;</description>
-    </item>
+<description>&lt;p&gt;I gave a Masterclass on Swift at the NCSS Summer School 2018 in the University of Sydney on 9th January 2018. This post contains useful links for use in relation to the material covered during my class.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;online-sandboxes&#34;&gt;Online Sandboxes&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://eval.weheartswift.com/eval/playground/swift-sandbox&#34;&gt;We ❤️ Swift Sandbox&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://swiftlang.ng.bluemix.net/#/repl&#34;&gt;IBM Swift Sandbox&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;resources&#34;&gt;Resources&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://gist.github.com/trozware/bc582b9a49feb7bbd3adce8ea049c9d3&#34;&gt;Gist of Code Samples&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/trozware/ncss2018/blob/master/Presentation.pdf&#34;&gt;Slides from Presentation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;contact-details&#34;&gt;Contact Details&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Email: &lt;a href=&#34;mailto:sarah@troz.net?subject=NCSS%202018&#34;&gt;sarah@troz.net&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Twitter: &lt;a href=&#34;https://twitter.com/trozware&#34;&gt;@trozware&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;useful-links&#34;&gt;Useful Links&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://itunes.apple.com/au/book/swift-programming-language/id881256329?mt=11&#34;&gt;The Swift Programming Language&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://swift.org&#34;&gt;Swift.org&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.raywenderlich.com/132258/top-5-ios-swift-newsletters&#34;&gt;Newsletters&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.raywenderlich.com/category/swift&#34;&gt;Tutorials&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+</item>
     
     <item>
-      <title>NCSS 2017</title>
-      <link>https://troz.net/ncss2017/</link>
-      <pubDate>Fri, 06 Jan 2017 00:00:00 +0000</pubDate>
+<title>NCSS 2017</title>
+<link>https://troz.net/ncss2017/</link>
+<pubDate>Fri, 06 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/ncss2017/</guid>
-      <description>&lt;p&gt;I gave a Masterclass on Swift at the NCSS Summer School 2017 in Sydney on 8th
-January 2017. This post contains useful links for use during and after my class.&lt;/p&gt;</description>
-    </item>
+<description>&lt;p&gt;I gave a Masterclass on Swift at the NCSS Summer School 2017 in Sydney on 8th
+January 2017. This post contains useful links for use during and after my class.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://swiftlang.ng.bluemix.net/#/repl&#34;&gt;IBM Swift Sandbox&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;sandbox-code-samples&#34;&gt;Sandbox Code Samples&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://swiftlang.ng.bluemix.net/#/repl/58670662da20a814737c3562&#34;&gt;Strings&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://swiftlang.ng.bluemix.net/#/repl/5868463fb5619f13e0a940af&#34;&gt;Optionals&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://swiftlang.ng.bluemix.net/#/repl/5868954cb5619f13e0a940bd&#34;&gt;Functions&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://swiftlang.ng.bluemix.net/#/repl/5866f31fda20a814737c353b&#34;&gt;Closures&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://swiftlang.ng.bluemix.net/#/repl/5866f48bda20a814737c353c&#34;&gt;Objects&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://swiftlang.ng.bluemix.net/#/repl/5866ed80da20a814737c3538&#34;&gt;Protocols&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://swiftlang.ng.bluemix.net/#/repl/5866fc4dda20a814737c3557&#34;&gt;Generics&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;contact-details&#34;&gt;Contact Details:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Email: &lt;a href=&#34;mailto:sarah@troz.net?subject=NCSS%202017&#34;&gt;sarah@troz.net&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Twitter: &lt;a href=&#34;https://twitter.com/trozware&#34;&gt;@trozware&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Slides:
+&lt;a href=&#34;https://www.dropbox.com/s/09r19my3d6jk5jt/NCSS%202017%20Swift%20MC.pdf?dl=0&#34;&gt;NCSS 2017 Swift MC.pdf&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;useful-links&#34;&gt;Useful Links:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://itunes.apple.com/au/book/swift-programming-language/id881256329?mt=11&#34;&gt;The Swift Programming Language&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://swift.org&#34;&gt;Swift.org&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.raywenderlich.com/132258/top-5-ios-swift-newsletters&#34;&gt;Newsletters&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.raywenderlich.com&#34;&gt;Tutorials&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+</item>
     
   </channel>
 </rss>

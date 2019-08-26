@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>app store on TrozWare</title>
     <link>https://troz.net/tags/app-store/</link>
@@ -8,16 +8,16 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Sat, 06 Oct 2018 08:29:35 +1000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/app-store/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/app-store/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Moving to the Dark Side - Part 2</title>
-      <link>https://troz.net/post/2018/moving-to-the-dark-side-2/</link>
-      <pubDate>Sat, 06 Oct 2018 08:29:35 +1000</pubDate>
+<title>Moving to the Dark Side - Part 2</title>
+<link>https://troz.net/post/2018/moving-to-the-dark-side-2/</link>
+<pubDate>Sat, 06 Oct 2018 08:29:35 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/moving-to-the-dark-side-2/</guid>
-      <description>&lt;style&gt;
+<description>&lt;style&gt;
   img {
     margin: 10px auto;
     border: 0.5rem #dfe7f0 solid;
@@ -38,16 +38,32 @@
   }
 &lt;/style&gt;
 
-&lt;p&gt;Now that most of my Mac apps have been updated to support macOS Mojave&amp;rsquo;s dark mode, it was time to turn my attention to this web site.&lt;/p&gt;</description>
-    </item>
+&lt;p&gt;Now that most of my Mac apps have been updated to support macOS Mojave&amp;rsquo;s dark mode, it was time to turn my attention to this web site.&lt;/p&gt;
+
+&lt;p&gt;I build this site using &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; and up until recently I used a theme called &lt;a href=&#34;https://github.com/olOwOlo/hugo-theme-even&#34;&gt;Even&lt;/a&gt; which I had been able to modify to suit my requirements. The story of how I switched to Hugo, what I wanted in a theme and how I went about, is in a &lt;a href=&#34;https://troz.net/post/2017/moving-to-hugo/&#34;&gt;post from last year&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;But Evan is a theme with a white background and dark text, which looked great in light mode, but rather glaring in dark mode. So it was time to head for the &lt;a href=&#34;https://themes.gohugo.io&#34;&gt;Hugo Themes page&lt;/a&gt; to look for an alternative.&lt;/p&gt;
+
+&lt;p&gt;But which way to go? In my opinion, dark themes look better in Mojave&amp;rsquo;s light mode than light themes look in dark mode, so I decided to go with a dark theme. But to my delight, I found a theme that allowed users to switch between light and dark modes: &lt;a href=&#34;https://themes.gohugo.io/hugo-theme-hello-friend/&#34;&gt;Hello Friend&lt;/a&gt; by &lt;a href=&#34;https://twitter.com/panr&#34;&gt;panr&lt;/a&gt;. Click the light bulb icon in the top right and the web site instantly toggles between modes.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Dark_Light_web.png&#34; alt=&#34;Dark and light versions of homepage&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;With the spread of dark mode, I would expect more web sites and themes to implement this sort of switching in the future. Thanks to &lt;a href=&#34;https://twitter.com/panr&#34;&gt;panr&lt;/a&gt; for being an early adopter.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;As I said in my &lt;a href=&#34;https://troz.net/post/2018/moving-to-the-dark-side/&#34;&gt;previous post&lt;/a&gt;, I have already updated several of my macOS apps to support dark mode. But after reading some comments on Twitter, I have updated &lt;a href=&#34;https://itunes.apple.com/app/apple-store/id552293482&#34;&gt;Icon Builder&lt;/a&gt; and &lt;a href=&#34;https://itunes.apple.com/app/apple-store/id997688302&#34;&gt;Dice Pass&lt;/a&gt; to allow the user to decide which mode to use. Make your choice in the Window menu as to whether these apps use whatever mode is set for the system, or select your preferred mode.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/SelectMode.png&#34; alt=&#34;Select mode in Window menu&#34; /&gt;&lt;/p&gt;</description>
+</item>
     
     <item>
-      <title>Moving to the Dark Side</title>
-      <link>https://troz.net/post/2018/moving-to-the-dark-side/</link>
-      <pubDate>Wed, 26 Sep 2018 16:49:43 +1000</pubDate>
+<title>Moving to the Dark Side</title>
+<link>https://troz.net/post/2018/moving-to-the-dark-side/</link>
+<pubDate>Wed, 26 Sep 2018 16:49:43 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/moving-to-the-dark-side/</guid>
-      <description>&lt;style&gt;
+<description>&lt;style&gt;
   img {
     margin: 10px auto;
     border: 0.5rem #dfe7f0 solid;
@@ -70,69 +86,481 @@
 
 &lt;p&gt;With the release of macOS Mojave on 24th September 2018, I have started updating my Mac apps, mainly to enable support for dark mode if appropriate.&lt;/p&gt;
 
-&lt;p&gt;And now I have updated this site too. Click the light bulb icon at the top right of the page to toggle between light and dark modes for this site.&lt;/p&gt;</description>
-    </item>
+&lt;p&gt;And now I have updated this site too. Click the light bulb icon at the top right of the page to toggle between light and dark modes for this site.&lt;/p&gt;
+
+&lt;p&gt;And with my apps, so far (1 st October 2018), I have updated &lt;a href=&#34;https://itunes.apple.com/app/apple-store/id552293482&#34;&gt;Icon Builder&lt;/a&gt;, &lt;a href=&#34;https://itunes.apple.com/app/apple-store/id509085586&#34;&gt;World Time in Words&lt;/a&gt;, &lt;a href=&#34;https://itunes.apple.com/app/apple-store/id997688302&#34;&gt;Dice Pass&lt;/a&gt; and &lt;a href=&#34;https://itunes.apple.com/app/apple-store/id533321133&#34;&gt;A Knight&amp;rsquo;s Move&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;&lt;img src=&#34;https://troz.net/images/IconBuilder5.1.png&#34; alt=&#34;Icon Builder 5.1&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/time-in-words-for-mac/&#34;&gt;&lt;img src=&#34;https://troz.net/images/WTiW_dark.png&#34; alt=&#34;World Time in Words 3.2&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/dicepass/&#34;&gt;&lt;img src=&#34;https://troz.net/images/DicePass1.5.png&#34; alt=&#34;Dice Pass 3.2&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/knightsmove/&#34;&gt;&lt;img src=&#34;https://troz.net/images/KnightsMoveMac1.png&#34; alt=&#34;Knights Move 1.6&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;For A Knight&amp;rsquo;s Move, I wanted to make sure the wood-look background didn&amp;rsquo;t change, so I actually disabled dark mode.
+For any developers looking for the way to do that, I added the following chunk to the &lt;code&gt;applicationDidFinishLaunching(_:)&lt;/code&gt; method:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;    if #available(OSX 10.14, *) {
+        NSApp.appearance = NSAppearance(named: .aqua)
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Similar code could presumably be used to change the appearance of a running app. I may add the ability to switch to my apps later.&lt;/p&gt;</description>
+</item>
     
     <item>
-      <title>App Updates</title>
-      <link>https://troz.net/post/2018/app-updates/</link>
-      <pubDate>Sat, 26 May 2018 09:22:57 +1000</pubDate>
+<title>App Updates</title>
+<link>https://troz.net/post/2018/app-updates/</link>
+<pubDate>Sat, 26 May 2018 09:22:57 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/app-updates/</guid>
-      <description>&lt;p&gt;Just a quick post to let you know about some recent app updates&amp;hellip;&lt;/p&gt;</description>
-    </item>
+<description>&lt;p&gt;Just a quick post to let you know about some recent app updates&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;man-reader&#34;&gt;Man Reader&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/man-reader/id522583774?mt=12&#34;&gt;Man Reader v 1.10&lt;/a&gt; was released on 11 May 2018.&lt;/p&gt;
+
+&lt;p&gt;I had to update &lt;a href=&#34;https://troz.net/manreader/&#34;&gt;Man Reader&lt;/a&gt; in November 2017 because of a really strange &amp;ldquo;feature&amp;rdquo; that arrived with macOS High Sierra. Man Reader displays the man pages as HTML which allows the tabs and internal links to work using anchor tags. These had worked for years, but under High Sierra, they just stopped working.&lt;/p&gt;
+
+&lt;p&gt;I eventually discovered that it was because I was loading the text directly into the WebView using:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objectivec&#34;&gt;[self.web.mainFrame loadHTMLString:manText baseURL:nil];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With no baseURL, the anchor links were all defaulting to &lt;code&gt;about:blank&lt;/code&gt; and going nowhere. The solution was to save the text to a temporary file and then load using:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objectivec&#34;&gt;NSURLRequest *request = [NSURLRequest requestWithURL: tempFile];
+[self.web.mainFrame loadRequest: request];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Needless to say, this took me ages to work out, including a lengthy excursion into using &lt;code&gt;WKWebView&lt;/code&gt; to see if the more modern web view would solve the problem.&lt;/p&gt;
+
+&lt;p&gt;The second update (May 2018) was in response to a crash report from a user. I had great difficulty tracking this one down and even now, I cannot see how it can have happened, but it was in relation to the utility apps that are displayed in the toolbar.&lt;/p&gt;
+
+&lt;p&gt;For each app, Man Reader checks to see if the app bundle exists, then it checks for a bundle identifier. It appears that this can come back as nil which I had not realised. And trying to insert an item with a identifier of &lt;code&gt;nil&lt;/code&gt; into the toolbar caused a crash.&lt;/p&gt;
+
+&lt;p&gt;As you can see from the code, ManReader is written in Objective-C. Going back to Objective-C from Swift is painful! And I know that this crash could not have happened if the app had been written in Swift as the identifier would have been an optional and I would have been forced to check that it was not nil before using.&lt;/p&gt;
+
+&lt;p&gt;On the plus side, Objective-C apps are tiny in comparison to Swift apps. And the Mac App Store review process set a new record for me. I submitted the app at 10:58 am and it was on sale at 12:03 pm the same day - 66 minutes from start to finish.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;sequenza-vii&#34;&gt;Sequenza VII&lt;/h2&gt;
+
+&lt;p&gt;The other app that I updated recently is &lt;a href=&#34;https://itunes.apple.com/us/app/sequenza-vii/id730234638?mt=8&amp;amp;uo=4&#34;&gt;Sequenza VII&lt;/a&gt;. Version 1.2 was released on 23 April 2018.&lt;/p&gt;
+
+&lt;p&gt;This is an app with a very limited audience - specifically oboe players who want to learn to play Berio&amp;rsquo;s weird music. However Apple sent me a notice saying that as it hadn&amp;rsquo;t been updated for ages, it would be removed from the store within 30 days unless I did something.&lt;/p&gt;
+
+&lt;p&gt;Updating it to use the iPhone X display was surprisingly difficult. I set the minimum system version to 11.0 and changed the storyboards to use the latest Xcode but the horns on either side of the notch were still being left blank. In the end, the trick I found was to create a new Launch storyboard - that seemed to fool the system into re-considering all the layouts.&lt;/p&gt;</description>
+</item>
     
     <item>
-      <title>Blackmail Marketing</title>
-      <link>https://troz.net/post/2017/blackmail-marketing/</link>
-      <pubDate>Wed, 08 Mar 2017 00:00:00 +0000</pubDate>
+<title>Blackmail Marketing</title>
+<link>https://troz.net/post/2017/blackmail-marketing/</link>
+<pubDate>Wed, 08 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2017/blackmail-marketing/</guid>
-      <description>I use my iPad to play games as a form of relaxation. Nearly all the games I play are puzzle apps with levels that can be played in a few minutes. Nearly all of them are free to install. So how do they make money?
-Now I would be the last person you should consult about marketing but it has always seemed to me that the best way to market your product is to convince people that it offers something they want so that they are prepared to pay for it.</description>
-    </item>
+<description>&lt;p&gt;I use my iPad to play games as a form of relaxation. Nearly all the games I play
+are puzzle apps with levels that can be played in a few minutes. Nearly all of
+them are free to install. So how do they make money?&lt;/p&gt;
+
+&lt;p&gt;Now I would be the last person you should consult about marketing but it has
+always seemed to me that the best way to market your product is to convince
+people that it offers something they want so that they are prepared to pay for
+it.&lt;/p&gt;
+
+&lt;p&gt;This is not the currently favored approach for mobile apps - at least certainly
+not for games. No, the theory at the moment is to cause so much frustration and
+annoyance that people give you money to make it stop. Blackmail marketing.&lt;/p&gt;
+
+&lt;p&gt;A frequently used method is showing ads, sometimes just banner ads but more
+often full screen video ads that run for up to 30 seconds. If you interrupt the
+ad, you don&amp;rsquo;t get the reward.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Every goal reached triggers an ad.&lt;/li&gt;
+&lt;li&gt;Quitting and resuming the app triggers an ad.&lt;/li&gt;
+&lt;li&gt;Wanting to play another level triggers an ad.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The theory is that you get so annoyed with this that you pay money to disable
+the ads.&lt;/p&gt;
+
+&lt;p&gt;The other common tactic is the delay. A tower defence game needs you to build a
+tower? OK, that will take 12 hours real time and you can&amp;rsquo;t proceed until it&amp;rsquo;s
+finished. Or you can spend 12 gems which are sold as an in-app purchase. Maybe
+you can only play 3 levels and then you need to recharge: again, pay up or wait.
+You keep dying on that level? You&amp;rsquo;re out of lives. Pay up or wait until
+tomorrow. These delays are completely artificial. They have nothing to do with
+game play but are solely designed to infuriate you enough to get you to pay.&lt;/p&gt;
+
+&lt;p&gt;So when, and perhaps more importantly why, did mobile app marketing become so
+negative? What happened to making your customers happy? Do unhappy customers
+spend more?&lt;/p&gt;
+
+&lt;p&gt;Financially, it appears that irritating your users is a successful strategy.
+Nearly all the top grossing games in the App Store are &amp;ldquo;free to play&amp;rdquo; in that
+the initial download costs nothing. But these big studios are raking in enormous
+sums of money, so many people are persuaded to spend significant money by these
+infuriating schemes.&lt;/p&gt;
+
+&lt;p&gt;A large part of this must be due to the various App Stores driving prices to the
+bottom. Gone are the days when the price of a mobile app was other than risible.
+So app developers have four choices:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Do it as a hobby or learning exercise.&lt;/li&gt;
+&lt;li&gt;Distribute apps as a form of self–promotion for other work.&lt;/li&gt;
+&lt;li&gt;Work for someone who pays you a real wage to develop apps.&lt;/li&gt;
+&lt;li&gt;Join the blackmailers.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So how does this relate to indy developers like me? I care about my users and
+want them to be happy.&lt;/p&gt;
+
+&lt;p&gt;I have tried several different approaches to app distribution:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Totally free gets by far the most downloads but is economically ridiculous
+unless the app adds value to your business in some other way.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;A tip jar gets you nothing.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;In-app purchases (in my limited experience) make less than selling the app
+up-front for a small price.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Banner ads with no method of forcing people to watch them generate almost no
+revenue.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So that leaves me with where I am today - selling apps for a few dollars and
+nothing more. Happily, I have found that Mac users are more prepared to pay a
+few dollars for an app, so I have shut down many of my iOS apps and am
+concentrating on the Mac app market.&lt;/p&gt;
+
+&lt;p&gt;Am I letting my principles stand in the way of mobile app profits? Should I just
+join the gang and start blackmailing my customers? If so, what form should this
+take?&lt;/p&gt;
+
+&lt;p&gt;At the moment, I am considering banner ads on the screen with an in-app purchase
+to disable them entirely. I read a suggestion for a less invasive method of
+doing this by creating your own ads for your other apps. This might be what I
+end up doing.&lt;/p&gt;
+
+&lt;p&gt;I would welcome any suggestions, advice or comments. Please join the discussion
+below or contact me using one of the links at the top of the page.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Retiring old apps</title>
-      <link>https://troz.net/post/2016/retiring-old-apps/</link>
-      <pubDate>Thu, 15 Sep 2016 00:00:00 +0000</pubDate>
+<title>Retiring old apps</title>
+<link>https://troz.net/post/2016/retiring-old-apps/</link>
+<pubDate>Thu, 15 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/retiring-old-apps/</guid>
-      <description>With the release of iOS 10 and the need to update iOS apps to suit, I have decided it is time to retire some of my lesser-performing apps as it is not worth the effort required to maintain them.
-At the moment, the following iOS apps are no longer available:
- A Knight&amp;rsquo;s Move Dice Pass Pic-a-POD Quick Score - Tennis  For the first three listed there, the Mac versions are still available:</description>
-    </item>
+<description>&lt;p&gt;With the release of iOS 10 and the need to update iOS apps to suit, I have
+decided it is time to retire some of my lesser-performing apps as it is not
+worth the effort required to maintain them.&lt;/p&gt;
+
+&lt;p&gt;At the moment, the following iOS apps are no longer available:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A Knight&amp;rsquo;s Move&lt;/li&gt;
+&lt;li&gt;Dice Pass&lt;/li&gt;
+&lt;li&gt;Pic-a-POD&lt;/li&gt;
+&lt;li&gt;Quick Score - Tennis&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For the first three listed there, the Mac versions are still available:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://itunes.apple.com/app/a-knights-move/id533321133&#34;&gt;A Knight&amp;rsquo;s Move for Mac&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://itunes.apple.com/app/dice-pass/id997688302&#34;&gt;Dice Pass for Mac&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://itunes.apple.com/app/pic-a-pod/id477909802&#34;&gt;Pic-a-POD for Mac&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you bought any of these apps and would like a promo code for the Mac version,
+send me a screen shot of the app running on your iPhone or iPad and I will send
+you a code.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>How To Confuse TestFlight</title>
-      <link>https://troz.net/post/2016/how-to-confuse-testflight/</link>
-      <pubDate>Sun, 24 Apr 2016 00:00:00 +0000</pubDate>
+<title>How To Confuse TestFlight</title>
+<link>https://troz.net/post/2016/how-to-confuse-testflight/</link>
+<pubDate>Sun, 24 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/how-to-confuse-testflight/</guid>
-      <description>&lt;p&gt;I ran into an unusual problem when testing my latest app: &amp;ldquo;&lt;a href=&#34;https://troz.net/what-is-my-speed/&#34;&gt;What Is My
+<description>&lt;p&gt;I ran into an unusual problem when testing my latest app: &amp;ldquo;&lt;a href=&#34;https://troz.net/what-is-my-speed/&#34;&gt;What Is My
 Speed?&lt;/a&gt;&amp;rdquo;. It is now available from the &lt;a href=&#34;https://itunes.apple.com/app/what-is-my-speed/id1091394524&#34;&gt;iTunes App Store&lt;/a&gt;, but getting
-there was a struggle.&lt;/p&gt;</description>
-    </item>
+there was a struggle.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;#tldr&#34;&gt;TL;DR&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Xcode is terrible at renaming projects, so it is a really good idea to have
+worked out your app&amp;rsquo;s name before starting. I would even recommend creating an
+app ID in your Apple Developer account and registering the app name in iTunes
+Connect. Only once you get to iTunes Connect will the name be checked for
+uniqueness. Searching the App Stores is not enough as it does not cover
+un-released apps or apps that are not available in your country.&lt;/p&gt;
+
+&lt;p&gt;So I set up my app. I was hoping for &amp;ldquo;What&amp;rsquo;s My Speed?&amp;rdquo; but was happy with &amp;ldquo;What
+Is My Speed?&amp;ldquo;.&lt;/p&gt;
+
+&lt;p&gt;Next step was to create the project in Xcode which I did using the app name and
+manually entering the bundle identifier that I had registered at Apple
+Developer. Xcode accepted the name without any warnings and created the default
+targets using that name.&lt;/p&gt;
+
+&lt;p&gt;In the default unit testing file, the module was defined like this:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt; @testable &lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;What&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Is_My_Speed&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;which made me think that Xcode was quite happy to have parsed the app name as
+required to replace any unwanted characters to suit.&lt;/p&gt;
+
+&lt;p&gt;The app was built, passed all unit tests, profiled, analyzed, tested on real
+devices as well as the simulators and uploaded to TestFlight.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;BARRRPPPP!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/TestFlight_error.png&#34; alt=&#34;This app cannot be installed&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;What?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;(I forgot to take a screenshot but found a similar one online. Thanks &lt;a href=&#34;https://www.simpletechs.net/apps/easy-fix-for-testflight-problem-after-restoring-from-backup/&#34;&gt;Simple
+Techs&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I have had experience with TestFlight&amp;rsquo;s oddities in the past, so I incremented
+the build number and tried again, thinking that maybe there had been a
+processing issue. Same result.&lt;/p&gt;
+
+&lt;p&gt;This started a very frustrating 24 hours as I ran through all the possibilities
+I could think of or find suggested on the net. Due to disastrous Australian
+internet speeds, especially uploads, each attempt took from 40 - 120 minutes.
+About 5 minutes to implement the next idea, 25 minutes upload time, then the
+rest waiting for Apple to process the app so I could try again.&lt;/p&gt;
+
+&lt;p&gt;Here is what I tried:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Uploaded a fresh build.&lt;/li&gt;
+&lt;li&gt;Removed Bitcode.&lt;/li&gt;
+&lt;li&gt;Fixed the code signing identity which was set to iOS Developer for some
+reason.&lt;/li&gt;
+&lt;li&gt;Manually specified the provisioning profiles for all three components (iPhone
+app, WatchKit app, WatchKit Extension).&lt;/li&gt;
+&lt;li&gt;Manually selected the code signing identity for the provisioning profiles.&lt;/li&gt;
+&lt;li&gt;Uploaded using Application Loader instead of Xcode.&lt;/li&gt;
+&lt;li&gt;Removed third-party framework.&lt;/li&gt;
+&lt;li&gt;Removed WatchKit app.&lt;/li&gt;
+&lt;li&gt;Revoked my distribution profile, re-created it and updated all provisioning
+profiles.&lt;/li&gt;
+&lt;li&gt;Created a completely blank project with same app name and bundle identifier.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;As you can see from this list, I thought it was a code signing or profile error.
+Using &lt;a href=&#34;https://itunes.apple.com/app/apple-configurator-2/id1037126344&#34;&gt;Apple Configurator 2&lt;/a&gt; (the modern version of iPhone Configuration
+Utility), I was able to get the logs from my iPhone and entries like the
+following seemed to confirm this:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code class=&#34;language-Error&#34;&gt;installd.staging/temp.2LWJ2h/extracted/Payload/What Is My Speed?.app : 0xe8008017 (A signed resource has been added, modified, or deleted.)}```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;But when I got to the stage of a completely blank app still failing, I suddenly
+thought of the question mark. With the benefit of my preamble to this post, you
+all probably got there long before I did, but I got there in the end.&lt;/p&gt;
+
+&lt;p&gt;The solution was to remove the question mark from the names of the targets in
+Xcode. I had to fix up the module names in my unit testing files, but apart from
+that, there were no changes. After this I was able to upload the complete app to
+TestFlight and install it on my iPhone.&lt;/p&gt;
+
+&lt;p&gt;It is possible that it was the Product Names that were the issue, rather than
+the target name as in Build Settings, Product Name is set to be &lt;code&gt;$(TARGET_NAME)&lt;/code&gt;
+by default but I didn&amp;rsquo;t test that. Maybe next time&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;a name=&#34;tldr&#34;&gt;TL;DR&lt;/a&gt; Do not put any unusual characters in your target names.
+Alphanumerics and spaces are OK, but I am not sure about anything else.&lt;/p&gt;</description>
+</item>
     
     <item>
-      <title>App Store Preview Videos</title>
-      <link>https://troz.net/post/2015/app-store-preview-videos/</link>
-      <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
+<title>App Store Preview Videos</title>
+<link>https://troz.net/post/2015/app-store-preview-videos/</link>
+<pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2015/app-store-preview-videos/</guid>
-      <description>Apple now allows app developers to add a video preview of their app when uploading to iTunes Connect. This video is shown to potential purchasers when they are looking at an app in the iTunes App Store, just like the screen shots.
-I have been working on an update to 19th Hole and since it uses a custom method for data input, I decided that a video would be really useful in this case.</description>
-    </item>
+<description>&lt;p&gt;Apple now allows app developers to add a video preview of their app when
+uploading to iTunes Connect. This video is shown to potential purchasers when
+they are looking at an app in the iTunes App Store, just like the screen shots.&lt;/p&gt;
+
+&lt;p&gt;I have been working on an update to &lt;a href=&#34;https://troz.net/19th-hole/&#34;&gt;19th Hole&lt;/a&gt; and since it uses a custom
+method for data input, I decided that a video would be really useful in this
+case.&lt;/p&gt;
+
+&lt;p&gt;The first step was to work out how to record video from my iPhone. In OS X
+Yosemite (10.10), this can be done using QuickTime Player. Connect your device
+to your Mac using a Lightning cable (I think it has to be a Lightning cable -
+the old cables will not work). Open up QuickTime Player and choose &amp;ldquo;New Movie
+Recording&amp;rdquo; from the File menu. By default this shows input from the Mac&amp;rsquo;s
+FaceTime camera, but just to the right of the red Record button, there is a down
+arrow that shows a popup menu. Click this and you can select your iPhone as the
+Camera. Since I wanted the sound effects included, I also selected my iPhone as
+the Microphone, but if you want to provide a voice-over or sound-track, you
+might want to change this.&lt;/p&gt;
+
+&lt;p&gt;That handles the technical side of recording, but I needed a way to show where I
+was tapping and pressing on the iPhone screen. After some searching, I found
+&lt;a href=&#34;https://github.com/toddreed/Touchpose&#34;&gt;Touchpose&lt;/a&gt; which was exactly what I wanted. Since it requires changing the
+main.m file, as well as changes to the app delegate, I created a branch in my
+app&amp;rsquo;s git repository so that I could apply these changes temporarily, but save
+them for next time. The only alternation I made to the default settings was to
+change the color of the cursor indicator to suit the color scheme of my app. And
+since this was a temporary change, I set it to show the cursor indicator all the
+time, not just when the screen was mirrored. All the details are shown in the
+sample project.&lt;/p&gt;
+
+&lt;p&gt;Next step was to actually record a session. After my first attempt (which lasted
+about 67 seconds), I checked the Apple specs and found that the video could not
+be longer than 30 seconds. So I re-thought what I wanted to include and tried
+again. It took a few tries to get what I wanted, but finally I ended up with a
+.mov file that was 26 seconds long.&lt;/p&gt;
+
+&lt;p&gt;On to iTunes Connect where I had the new version of the app set up already with
+its screen shots. Since I have an iPhone 6, the video was only suited for the
+4.7 inch section. So I dragged it into the drop zone and waited. No good - the
+video frame rate was too high. It has to be 30 fps or less. QuickTime Player had
+made a video that was 50 fps.&lt;/p&gt;
+
+&lt;p&gt;The app I usually turn to for any video conversion needs is &lt;a href=&#34;https://handbrake.fr&#34;&gt;Handbrake&lt;/a&gt;. So I
+ran the app through Handbrake, specifying a frame rate of 30. This converted the
+video to .mp4 instead of .mov, but it was 30 fps. It wasn&amp;rsquo;t until I tried to
+upload it to iTunes Connect that I realised Handbrake had cropped the video from
+750 x 1334 to 750 x 1330. After searching through the settings, I found where I
+needed to turn on custom clipping and set it to 0 so that the original
+dimensions were preserved. But iTunes Connect still didn&amp;rsquo;t like it, although
+this time the error message was un-informative.&lt;/p&gt;
+
+&lt;p&gt;Eventually, the brains trust on the other side of the room suggested iMovie. Not
+only that, but he found that once the original had been dragged into iMovie, the
+share options included an &amp;ldquo;App Preview&amp;rdquo; setting. This gave us a .mov file of the
+correct dimensions and the correct frame rate which iTunes Connect accepted.&lt;/p&gt;
+
+&lt;p&gt;iTunes Connect that allowed me to select the poster frame for the video and save
+the changes to the app meta data. At that point, it showed a notice saying that
+the app preview was being processed which could take up to 24 hours. It appears
+that the processing has been finished, as that notice has disappeared.&lt;/p&gt;
+
+&lt;p&gt;For the next stage, I ned to wait until the app gets reviewed and hopefully
+approved. Then it will be interesting to see how the video looks in the iTunes
+App Store.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;As a reward for reading this post, here is a pre-release of the video, showing
+how to enter the score data for a hole of golf using &lt;a href=&#34;https://troz.net/19th-hole/&#34;&gt;19th Hole&lt;/a&gt;:&lt;/p&gt;
+
+&lt;video controls poster=&#34;/images/19thHole-scoring-web.png&#34;&gt;
+  &lt;source src=&#34;https://troz.net/images/19thHole-scoring-web.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+</description>
+</item>
     
     <item>
-      <title>App Store Review Times</title>
-      <link>https://troz.net/post/2012/app-store-review-times/</link>
-      <pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
+<title>App Store Review Times</title>
+<link>https://troz.net/post/2012/app-store-review-times/</link>
+<pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/app-store-review-times/</guid>
-      <description>There are been a lots of stories going around about lengthening Mac App Store review times. Shiny Developments crowd-sourced data certainly backs this up although they have much more data for iOS apps than for Mac apps.
-Some people, including Lex Friedman of MacWorld and John Gruber of Daring Fireball, are suggesting that the delays are due to the rush of new apps to support the iPhone 5 and iOS 6.</description>
-    </item>
+<description>&lt;p&gt;There are been a lots of stories going around about lengthening Mac App Store
+review times.
+&lt;a href=&#34;http://reviewtimes.shinydevelopment.com&#34; target=&#34;_blank&#34;&gt;Shiny
+Developments&lt;/a&gt; crowd-sourced data certainly backs this up although they have
+much more data for iOS apps than for Mac apps.&lt;/p&gt;
+
+&lt;p&gt;Some people, including
+&lt;a href=&#34;http://www.macworld.com/article/2011430/developers-stymied-by-mac-app-store-approval-delays.html&#34; target=&#34;_blank&#34;&gt;Lex
+Friedman of MacWorld&lt;/a&gt; and
+&lt;a href=&#34;http://daringfireball.net/linked/2012/10/09/app-store-delays&#34; target=&#34;_blank&#34;&gt;John
+Gruber of Daring Fireball&lt;/a&gt;, are suggesting that the delays are due to the
+rush of new apps to support the iPhone 5 and iOS 6. This implies that there is
+only one set of review staff and that a large proportion of them have been moved
+from Mac to iOS apps.&lt;/p&gt;
+
+&lt;p&gt;I think this is an incorrect analysis. The slowdown started before iOS 6 and
+before the iPhone 5. I think it started in June when Apple started to enforce
+Mac sandboxing.&lt;/p&gt;
+
+&lt;p&gt;As discussed in a &lt;a href=&#34;https://troz.net/sandboxing-and-the-mac-app-store/&#34;&gt;previous post&lt;/a&gt;, I have had a lot of trouble getting Man
+Reader to be sandbox-compatible leading to many rejections. One problem was that
+I had implemented sand-boxing before the deadline, but with some temporary
+entitlements to allow read-only access to required system files. This
+entitlement was approved initially, but after one rejection, an Apple reviewer
+told me that they had been approving all requested entitlements before the
+deadline, but now were actually reviewing them all.&lt;/p&gt;
+
+&lt;p&gt;To me, this seems like a rather silly thing to have done which has now returned
+to haunt them. Instead of allowing developers time to get used to the
+restrictions, Apple reviewers allowed developers to think that their apps were
+sandbox-complient already. Then Apple was faced with the enormous task of
+re-checking all the entitlements that they had previously allowed without
+checking. This was unfair to developers and has only created extra work for the
+reviewers.&lt;/p&gt;
+
+&lt;p&gt;Here is a table showing the recent review times for my Mac apps:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;App&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Process&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Review days&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Dates&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Time In Words&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;update&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;22&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Sept 22 - Oct 14&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Icns Maker&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;new app&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;24&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Aug 5 - Aug 29&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;A Knight&amp;rsquo;s Move&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;update&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;26&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Sept 6 - Oct 2&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Icon Builder&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;new app&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;33&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Aug 22 - Sept 24&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br&gt;
+I have not included Man Reader as it was rejected too many times to be a valid data point.&lt;/p&gt;
+
+&lt;p&gt;By comparison, when I submitted an update to A Knight&amp;rsquo;s Move for iOS in October,
+it was passed in only 8 days.&lt;/p&gt;
+</description>
+</item>
     
   </channel>
 </rss>

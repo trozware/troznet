@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>email on TrozWare</title>
     <link>https://troz.net/tags/email/</link>
@@ -8,19 +8,78 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Tue, 25 Mar 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/email/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/email/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Email clients for Mac and iOS</title>
-      <link>https://troz.net/post/2014/email-clients-for-mac-ios/</link>
-      <pubDate>Tue, 25 Mar 2014 00:00:00 +0000</pubDate>
+<title>Email clients for Mac and iOS</title>
+<link>https://troz.net/post/2014/email-clients-for-mac-ios/</link>
+<pubDate>Tue, 25 Mar 2014 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2014/email-clients-for-mac-ios/</guid>
-      <description>Some people are moving away from email, but for me, it remains the best way to communicate online. I get to keep a record of conversations and the attached files are with the text so I can always see the context.
-But I think everyone would agree that Apple have dropped the ball with Mail in OS X Mavericks, and to a lesser extent, in iOS 7.
-So I have been on a campaign lately to find an email client that suits my needs.</description>
-    </item>
+<description>&lt;p&gt;Some people are moving away from email, but for me, it remains the best way to
+communicate online. I get to keep a record of conversations and the attached
+files are with the text so I can always see the context.&lt;/p&gt;
+
+&lt;p&gt;But I think everyone would agree that Apple have dropped the ball with Mail in
+OS X Mavericks, and to a lesser extent, in iOS 7.&lt;/p&gt;
+
+&lt;p&gt;So I have been on a campaign lately to find an email client that suits my needs.
+I don&amp;rsquo;t feel that I have found the perfect answer yet, but I am getting there.&lt;/p&gt;
+
+&lt;p&gt;The first step was to work out what I really needed in an email client:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;support for IMAP accounts and Gmail accounts&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;line-height: 1.5;&#34;&gt;unified inbox - all accounts shown
+together&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;conversation threading&lt;/li&gt;
+&lt;li&gt;support for POP accounts (optional)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;On the Mac, I have narrowed it down to two clients that I am swapping between
+every few days: &lt;a href=&#34;https://www.uniboxapp.com&#34; target=&#34;_blank&#34;&gt;Unibox&lt;/a&gt;
+and &lt;a href=&#34;http://airmailapp.com&#34; target=&#34;_blank&#34;&gt;Airmail&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Unibox is different in the way it displays your emails. It is much more focussed
+on people and conversations, so the side bar shows all the people who you have
+sent emails to or received emails from, grouped by date. I really like the
+merging of incoming &amp;amp; outgoing emails, but it can be a bit weird if you delete
+the latest email from someone who then disappears from sight.&lt;/p&gt;
+
+&lt;p&gt;Emails are grouped by a single person, not by conversation. There is a button on
+appropriate emails to toggle conversation view for that particular thread, but
+it doesn&amp;rsquo;t stick.&lt;/p&gt;
+
+&lt;p&gt;In order to show a conversation, they truncate emails in the main part of the
+window and show a &amp;ldquo;More&amp;rdquo; button at the bottom of the email to expand it. This
+was annoying, but in the latest beta, it performs much better, so you are not
+continually tapping this to see a long email.&lt;/p&gt;
+
+&lt;p&gt;Airmail has a more conventional display. Threading and the layout of threaded
+emails are both very nice. There are multiple view options, which I find can get
+a bit messy looking, so I prefer the &amp;ldquo;Minimized View&amp;rdquo; setting. Airmail also does
+POP accounts which is a plus.&lt;/p&gt;
+
+&lt;p&gt;The main reason I keep going back to Unibox is the unification. I have grown to
+like having sent and received messages all in the same window without having to
+go and find them somewhere else.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;On the iPad, I am currently using
+&lt;a href=&#34;http://www.getboxer.com&#34; target=&#34;_blank&#34;&gt;Boxer&lt;/a&gt; and have tried
+numerous others. &lt;a href=&#34;http://www.moltoapp.com/&#34; target=&#34;_blank&#34;&gt;Molto&lt;/a&gt;
+was quite good and the interface was fun, but it would only use landscape mode
+and like to be able to swap. Boxer is not great in portrait mode, but it does
+work.&lt;/p&gt;
+
+&lt;p&gt;So the jury is still out for iPad email clients, but on the Mac, I am leaning
+towards Unibox.&lt;/p&gt;
+</description>
+</item>
     
   </channel>
 </rss>

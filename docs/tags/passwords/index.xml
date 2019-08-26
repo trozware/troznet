@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>passwords on TrozWare</title>
     <link>https://troz.net/tags/passwords/</link>
@@ -8,18 +8,51 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Sat, 17 Sep 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/passwords/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/passwords/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Dice Pass Updated</title>
-      <link>https://troz.net/post/2016/dice-pass-updated/</link>
-      <pubDate>Sat, 17 Sep 2016 00:00:00 +0000</pubDate>
+<title>Dice Pass Updated</title>
+<link>https://troz.net/post/2016/dice-pass-updated/</link>
+<pubDate>Sat, 17 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/dice-pass-updated/</guid>
-      <description>Dice Pass 1.1 is now available from the Mac App Store.
-What does Dice Pass do? Dice Pass is a utility to app to generate random passphrases based on the Diceware system. Diceware uses a table of pre-defined words, each assigned a 5 digit code number containing the digits 1 to 6. The official way to generate a phrase is to roll 5 dice for each word you want in your passphrase and then consult the words table to find the matching word.</description>
-    </item>
+<description>
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/dicepass/&#34;&gt;Dice Pass 1.1&lt;/a&gt; is now available from the &lt;a href=&#34;https://itunes.apple.com/app/dice-pass/id997688302&#34;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-does-dice-pass-do&#34;&gt;What does Dice Pass do?&lt;/h2&gt;
+
+&lt;p&gt;Dice Pass is a utility to app to generate random passphrases based on the
+&lt;a href=&#34;http://world.std.com/~reinhold/diceware.html&#34;&gt;Diceware&lt;/a&gt; system. Diceware uses a table of pre-defined words, each assigned
+a 5 digit code number containing the digits 1 to 6. The official way to generate
+a phrase is to roll 5 dice for each word you want in your passphrase and then
+consult the words table to find the matching word.&lt;/p&gt;
+
+&lt;p&gt;The resulting phrase uses real words or common abbreviations so it is easier to
+remember than a random collection of characters. At the same time, the random
+selection of words makes the generated passphrase much more secure as it avoids
+the human tendency to pick words with personal meaning.&lt;/p&gt;
+
+&lt;p&gt;Dice Pass allows you to select the number of words in your passphrase,
+re-generate the entire passphrase any time, re-roll a single word in your
+passphrase or set the dice rolls manually for maximum security and randomness.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-s-new-in-version-1-1&#34;&gt;What&amp;rsquo;s New in Version 1.1:&lt;/h2&gt;
+
+&lt;p&gt;You can now select from three word lists in the Word Lists menu:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;original Diceware list&lt;/li&gt;
+&lt;li&gt;Beale list (fewer Americanisms and obscure words)&lt;/li&gt;
+&lt;li&gt;Diceware 8k list (a list of words that is a whole power of two in length)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can also import your own word list if you prefer.&lt;/p&gt;
+
+&lt;p&gt;Dice Pass 1.1 is compatible with macOS Sierra.&lt;/p&gt;
+</description>
+</item>
     
   </channel>
 </rss>

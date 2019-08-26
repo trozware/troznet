@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ios on TrozWare</title>
     <link>https://troz.net/tags/ios/</link>
@@ -8,237 +8,1543 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Sat, 26 May 2018 09:22:57 +1000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/ios/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>App Updates</title>
-      <link>https://troz.net/post/2018/app-updates/</link>
-      <pubDate>Sat, 26 May 2018 09:22:57 +1000</pubDate>
+<title>App Updates</title>
+<link>https://troz.net/post/2018/app-updates/</link>
+<pubDate>Sat, 26 May 2018 09:22:57 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/app-updates/</guid>
-      <description>&lt;p&gt;Just a quick post to let you know about some recent app updates&amp;hellip;&lt;/p&gt;</description>
-    </item>
+<description>&lt;p&gt;Just a quick post to let you know about some recent app updates&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;man-reader&#34;&gt;Man Reader&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/man-reader/id522583774?mt=12&#34;&gt;Man Reader v 1.10&lt;/a&gt; was released on 11 May 2018.&lt;/p&gt;
+
+&lt;p&gt;I had to update &lt;a href=&#34;https://troz.net/manreader/&#34;&gt;Man Reader&lt;/a&gt; in November 2017 because of a really strange &amp;ldquo;feature&amp;rdquo; that arrived with macOS High Sierra. Man Reader displays the man pages as HTML which allows the tabs and internal links to work using anchor tags. These had worked for years, but under High Sierra, they just stopped working.&lt;/p&gt;
+
+&lt;p&gt;I eventually discovered that it was because I was loading the text directly into the WebView using:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objectivec&#34;&gt;[self.web.mainFrame loadHTMLString:manText baseURL:nil];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With no baseURL, the anchor links were all defaulting to &lt;code&gt;about:blank&lt;/code&gt; and going nowhere. The solution was to save the text to a temporary file and then load using:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objectivec&#34;&gt;NSURLRequest *request = [NSURLRequest requestWithURL: tempFile];
+[self.web.mainFrame loadRequest: request];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Needless to say, this took me ages to work out, including a lengthy excursion into using &lt;code&gt;WKWebView&lt;/code&gt; to see if the more modern web view would solve the problem.&lt;/p&gt;
+
+&lt;p&gt;The second update (May 2018) was in response to a crash report from a user. I had great difficulty tracking this one down and even now, I cannot see how it can have happened, but it was in relation to the utility apps that are displayed in the toolbar.&lt;/p&gt;
+
+&lt;p&gt;For each app, Man Reader checks to see if the app bundle exists, then it checks for a bundle identifier. It appears that this can come back as nil which I had not realised. And trying to insert an item with a identifier of &lt;code&gt;nil&lt;/code&gt; into the toolbar caused a crash.&lt;/p&gt;
+
+&lt;p&gt;As you can see from the code, ManReader is written in Objective-C. Going back to Objective-C from Swift is painful! And I know that this crash could not have happened if the app had been written in Swift as the identifier would have been an optional and I would have been forced to check that it was not nil before using.&lt;/p&gt;
+
+&lt;p&gt;On the plus side, Objective-C apps are tiny in comparison to Swift apps. And the Mac App Store review process set a new record for me. I submitted the app at 10:58 am and it was on sale at 12:03 pm the same day - 66 minutes from start to finish.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;sequenza-vii&#34;&gt;Sequenza VII&lt;/h2&gt;
+
+&lt;p&gt;The other app that I updated recently is &lt;a href=&#34;https://itunes.apple.com/us/app/sequenza-vii/id730234638?mt=8&amp;amp;uo=4&#34;&gt;Sequenza VII&lt;/a&gt;. Version 1.2 was released on 23 April 2018.&lt;/p&gt;
+
+&lt;p&gt;This is an app with a very limited audience - specifically oboe players who want to learn to play Berio&amp;rsquo;s weird music. However Apple sent me a notice saying that as it hadn&amp;rsquo;t been updated for ages, it would be removed from the store within 30 days unless I did something.&lt;/p&gt;
+
+&lt;p&gt;Updating it to use the iPhone X display was surprisingly difficult. I set the minimum system version to 11.0 and changed the storyboards to use the latest Xcode but the horns on either side of the notch were still being left blank. In the end, the trick I found was to create a new Launch storyboard - that seemed to fool the system into re-considering all the layouts.&lt;/p&gt;</description>
+</item>
     
     <item>
-      <title>Icon Builder 5</title>
-      <link>https://troz.net/post/2018/icon-builder-5/</link>
-      <pubDate>Sun, 18 Feb 2018 10:19:18 +1000</pubDate>
+<title>Icon Builder 5</title>
+<link>https://troz.net/post/2018/icon-builder-5/</link>
+<pubDate>Sun, 18 Feb 2018 10:19:18 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/icon-builder-5/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;Icon Builder 5.0&lt;/a&gt; is now available from the &lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Mac App Store&lt;/a&gt;. This is a complete re-write for better compatibility with Apple&amp;rsquo;s latest icon requirements. Read on to see what I have fixed and how&amp;hellip;&lt;/p&gt;</description>
-    </item>
+<description>&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;Icon Builder 5.0&lt;/a&gt; is now available from the &lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Mac App Store&lt;/a&gt;. This is a complete re-write for better compatibility with Apple&amp;rsquo;s latest icon requirements. Read on to see what I have fixed and how&amp;hellip;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;problems&#34;&gt;Problems&lt;/h2&gt;
+
+&lt;p&gt;When I came to create a new iOS app recently, I found out that Icon Builder had fallen behind Apple&amp;rsquo;s requirements in three ways:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The 1024 x 1024 marketing icon is now supposed to be inside the app&amp;rsquo;s icon set.&lt;/li&gt;
+&lt;li&gt;Icon files must have their color profile set to sRGB (P3 is also valid for iOS apps).&lt;/li&gt;
+&lt;li&gt;iOS icon files must have no transparent pixels and the alpha channel must be removed from the files.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;When I set to work fixing these problems I soon ran into issues with the existing version of Icon Builder which was created 6 years ago.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It was written in Objective-C which I am increasingly finding difficult and un-safe to write.&lt;/li&gt;
+&lt;li&gt;The app was written when I was very much a beginner in Mac apps and this is obvious from the code&amp;hellip;&lt;/li&gt;
+&lt;li&gt;There was a lot of legacy code left over from previous changes and extensions.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So I decided that the most interesting thing to do would be to start almost from scratch and re-write the app in Swift using better techniques.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-re-write&#34;&gt;The Re-write&lt;/h2&gt;
+
+&lt;p&gt;Now instead of the Massive View Controller, I have a larger set of small files, each with their own responsibility. Enums and structs dictate the various requirements for the different devices or app types. Other structs deal with creating the images, the folder management and writing out the files. An NSImage extension handles the resizing and reformatting of the images. This is now an app that I would not be ashamed to show anyone, except perhaps for the need to add more unit tests.&lt;/p&gt;
+
+&lt;h2 id=&#34;adding-a-color-profile&#34;&gt;Adding a color profile&lt;/h2&gt;
+
+&lt;p&gt;But then we get to the new features needed. Adding the 1024x1024 icon to the app icon set was easy, especially after the re-factoring. But what about the color profile?&lt;/p&gt;
+
+&lt;p&gt;This was not as easy as I expected - there is no built in command to apply a profile but here is the solution that I finally found:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;extension NSImage {
+
+  func convertImageTo_sRGB() throws -&amp;gt; Data {
+      guard let colorSpace = CGColorSpace(name: CGColorSpace.sRGB),
+          let cgi = self.cgImage(forProposedRect: nil,
+                                 context: nil,
+                                 hints: nil) else {
+                                  throw ImageError.cantMakeCgImage
+      }
+
+      let ci = CIImage(cgImage: cgi)
+
+      guard let pngData = CIContext().pngRepresentation(of: ci,
+                                                        format: kCIFormatRGBA8,
+                                                        colorSpace: colorSpace) else {
+          throw ImageError.cantConvertToPng
+      }
+      return pngData
+  }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This takes the NSImage and converts it to a CGImage, first checking that the appropriate color space exists.&lt;/li&gt;
+&lt;li&gt;Then it uses the Core Graphics CGImage to create a Core Image CIImage.&lt;/li&gt;
+&lt;li&gt;There is a new API in macOS 10.13 to extract the png data from a CIImage while assigning a color profile.&lt;/li&gt;
+&lt;li&gt;This Data can then be written directly to a file and there you have a PNG with an attached color profile.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;transparency&#34;&gt;Transparency&lt;/h2&gt;
+
+&lt;p&gt;Now problems 1 &amp;amp; 2 have been solved. Problem 3 was the most difficult. It turned out to be a two-part problem because an image file can have no transparent pixels but still have an alpha channel in the file data.&lt;/p&gt;
+
+&lt;p&gt;At first, I thought maybe I could just circumvent the whole problem by converting the images to JPEGs which have no transparency or alpha channel. Using the code above, I just changed it to getting the &lt;code&gt;jpegRepresentation&lt;/code&gt; instead and saving with a .jpg file extension.&lt;/p&gt;
+
+&lt;p&gt;While this solved the alpha channel problem, the transparent parts of the icon just went black which was a not a good look.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Transparent-Jpeg.png&#34; alt=&#34;Transparent image converted to JPEG&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;For anyone horrified at my use of force-unwrapping, I never do this in a production app but in a playground, it makes the code shorter and it doesn&amp;rsquo;t really matter if I get a crash there.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;converting-transparent-pixels-to-white&#34;&gt;Converting transparent pixels to white&lt;/h3&gt;
+
+&lt;p&gt;So the first step must be to set the transparent parts of the image to another color. Searching for solutions online, most of the ones I came up with were very slow (processing each pixel) or so complicated that I didn&amp;rsquo;t understand them, and I hate just copy-pasting code that I don&amp;rsquo;t understand at all.&lt;/p&gt;
+
+&lt;p&gt;But eventually I found something that I morphed into this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;extension NSImage {
+
+    func makeAlphaWhite() -&amp;gt; NSImage {
+        guard let imageData = self.tiffRepresentation,
+            let imageRep = NSBitmapImageRep(data: imageData),
+            let jpegData = imageRep.representation(using: .jpeg, properties: [
+                NSBitmapImageRep.PropertyKey.compressionFactor: NSNumber(value: 1.0)
+                ]),
+            let jpegImage = NSImage(data: jpegData) else {
+                return image
+        }
+        return jpegImage
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It used basically the same trick of converting the image into a JPEG but doing it this way via &lt;code&gt;NSBitmapImageRep&lt;/code&gt; turned the transparent pixels white instead of black. And as you can see, this gave a much better looking image:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/MakeAlphaWhite.png&#34; alt=&#34;Transparent portions converted to white&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now I was able to continue with my plans to have JPEGs rule the world! This worked really well in my early tests but then I came to try a Stickers app and the icons didn’t work. I couldn&amp;rsquo;t even drag them in manually! Back to the Apple docs and I see that icons must be PNGs.&lt;/p&gt;
+
+&lt;p&gt;When I changed the transparent pixels to white, added the color space and then saved the PNG data, I got an image that looked correct but the file still contained an alpha channel. So I had to come up with a method that re-wrote the PNG data in such a way that it never contained any alpha data at all.&lt;/p&gt;
+
+&lt;h3 id=&#34;removing-the-alpha-channel&#34;&gt;Removing the alpha channel&lt;/h3&gt;
+
+&lt;p&gt;Graphics experts are probably groaning aloud by now, but I did eventually arrive at a solution, however hacky:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;extension NSImage {
+
+    func convertImageTo_sRGB_noAlpha() throws -&amp;gt; Data {
+        guard let colorSpace = CGColorSpace(name: CGColorSpace.sRGB),
+            let cgi = self.cgImage(forProposedRect: nil,
+                                   context: nil,
+                                   hints: nil) else {
+                                    throw ImageError.cantMakeCgImage
+        }
+
+        let ci = CIImage(cgImage: cgi)
+        guard let jpgData = CIContext().jpegRepresentation(of: ci,
+                                                           colorSpace: colorSpace) else {
+            throw ImageError.cantConvertToJpg
+        }
+        guard let jpegImage = NSImage(data: jpgData) else {
+            throw ImageError.cantConvertToJpgImage
+        }
+        let pngData = try jpegImage.convertImageTo_sRGB()
+        return pngData
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Take the image &lt;strong&gt;after&lt;/strong&gt; changing the transparent pixels to white.&lt;/li&gt;
+&lt;li&gt;Convert it to JPEG data with the required color space.&lt;/li&gt;
+&lt;li&gt;Convert the JPEG data back to an image - this will contain &lt;strong&gt;NO&lt;/strong&gt; alpha data.&lt;/li&gt;
+&lt;li&gt;Use the original routine to convert this JPEG into PNG data with the correct color space.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Running this in the playground looks like this:
+&lt;img src=&#34;https://troz.net/images/TransparentPng.png&#34; alt=&#34;Creating non-transparent PNG in playground&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And as you can see from the file info, it results in a file with the correctly assigned color profile and no alpha channel:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/FileInfo.png&#34; alt=&#34;Final result file info&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The double shuffle sounds time-consuming and in-efficient but it really doesn&amp;rsquo;t take long. In my tests, by far the longest part of creating an icon set is opening the file dialog.&lt;/p&gt;
+
+&lt;h2 id=&#34;future-plans&#34;&gt;Future plans&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Add more unit tests.&lt;/li&gt;
+&lt;li&gt;Work out how to replace the transparent pixels with a selected color.&lt;/li&gt;
+&lt;li&gt;Offer better cropping and image positioning options.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+
+&lt;p&gt;For resizing and cropping images, I use &lt;a href=&#34;https://mattgemmell.com/imagecrop-source-code/&#34;&gt;Matt Gemmell&amp;rsquo;s NSImage+MGCropExtensions&lt;/a&gt; and for further reading, I recommend Apple&amp;rsquo;s Human Interface Guidelines concerning app icons for &lt;a href=&#34;https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/app-icon/&#34;&gt;iOS&lt;/a&gt; and &lt;a href=&#34;https://developer.apple.com/macos/human-interface-guidelines/icons-and-images/app-icon/&#34;&gt;macOS&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note: here is Australia we use the spelling &lt;strong&gt;colour&lt;/strong&gt; but for consistency with the code samples, I have used &lt;strong&gt;color&lt;/strong&gt; throughout the text.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+</item>
     
     <item>
-      <title>Podcasting</title>
-      <link>https://troz.net/post/2016/podcasting/</link>
-      <pubDate>Tue, 11 Oct 2016 00:00:00 +0000</pubDate>
+<title>Podcasting</title>
+<link>https://troz.net/post/2016/podcasting/</link>
+<pubDate>Tue, 11 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/podcasting/</guid>
-      <description>I have recently started what I hope will be a weekly podcast with my friend and colleague, Jerry Daniels. Each podcast will be about 30 minutes in length.
-We will discuss Macs, iPhones, iPads, macOS, iOS, programming and anything tech-related that we find interesting. I hope you will find it entertaining and informative, so please join us.
-We are using ZCast which has an iPhone app that makes it super easy to get together and record our chats.</description>
-    </item>
+<description>&lt;p&gt;I have recently started what I hope will be a weekly podcast with my friend and
+colleague, &lt;a href=&#34;https://twitter.com/jerrydaniels&#34;&gt;Jerry Daniels&lt;/a&gt;. Each podcast will be about 30 minutes in length.&lt;/p&gt;
+
+&lt;p&gt;We will discuss Macs, iPhones, iPads, macOS, iOS, programming and anything
+tech-related that we find interesting. I hope you will find it entertaining and
+informative, so please join us.&lt;/p&gt;
+
+&lt;p&gt;We are using &lt;a href=&#34;https://zcast.co/zcasts&#34;&gt;ZCast&lt;/a&gt; which has an iPhone app that makes it super easy to get
+together and record our chats. It doesn&amp;rsquo;t allow any post-processing, but really
+lowers the barrier to entry into the world of podcasting.&lt;/p&gt;
+
+&lt;p&gt;If you get the &lt;a href=&#34;https://itunes.apple.com/app/zcast-podcast-from-your-phone!/id1041586670&#34;&gt;ZCast app for iPhone&lt;/a&gt;, go to the ZCasters tab and search for
+&amp;ldquo;Trozware&amp;rdquo; or &amp;ldquo;Jerry Daniels&amp;rdquo; to find all our podcasts. Or use these links to
+listen in your browser.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://zcast.co/j/ZyB8yK4z86&#34;&gt;The new macOS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zcast.co/j/ewQe6x6E4d&#34;&gt;Hands-on with iPhone 7&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zcast.co/j/A9zvLAAEa3&#34;&gt;Hands on iOS 10&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Since the first one was recorded using my name instead of my &lt;a href=&#34;https://twitter.com/trozware&#34;&gt;@trozware&lt;/a&gt;
+Twitter account, I will embed it here as it will not show up if you search for
+&amp;ldquo;Trozware&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;&lt;IFRAME src=&#39;https://zcast.co/embedded/ZyB8yK4z86&#39; width=&#39;350&#39; height=&#39;500&#39; STYLE=&#39;width: 350; height: 500; border: none;&#39; scrolling=&#39;auto&#39;&gt;&lt;/IFRAME&gt;&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Retiring old apps</title>
-      <link>https://troz.net/post/2016/retiring-old-apps/</link>
-      <pubDate>Thu, 15 Sep 2016 00:00:00 +0000</pubDate>
+<title>Retiring old apps</title>
+<link>https://troz.net/post/2016/retiring-old-apps/</link>
+<pubDate>Thu, 15 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/retiring-old-apps/</guid>
-      <description>With the release of iOS 10 and the need to update iOS apps to suit, I have decided it is time to retire some of my lesser-performing apps as it is not worth the effort required to maintain them.
-At the moment, the following iOS apps are no longer available:
- A Knight&amp;rsquo;s Move Dice Pass Pic-a-POD Quick Score - Tennis  For the first three listed there, the Mac versions are still available:</description>
-    </item>
+<description>&lt;p&gt;With the release of iOS 10 and the need to update iOS apps to suit, I have
+decided it is time to retire some of my lesser-performing apps as it is not
+worth the effort required to maintain them.&lt;/p&gt;
+
+&lt;p&gt;At the moment, the following iOS apps are no longer available:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A Knight&amp;rsquo;s Move&lt;/li&gt;
+&lt;li&gt;Dice Pass&lt;/li&gt;
+&lt;li&gt;Pic-a-POD&lt;/li&gt;
+&lt;li&gt;Quick Score - Tennis&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For the first three listed there, the Mac versions are still available:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://itunes.apple.com/app/a-knights-move/id533321133&#34;&gt;A Knight&amp;rsquo;s Move for Mac&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://itunes.apple.com/app/dice-pass/id997688302&#34;&gt;Dice Pass for Mac&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://itunes.apple.com/app/pic-a-pod/id477909802&#34;&gt;Pic-a-POD for Mac&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you bought any of these apps and would like a promo code for the Mac version,
+send me a screen shot of the app running on your iPhone or iPad and I will send
+you a code.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>19th Hole Golf Scorer 3.1</title>
-      <link>https://troz.net/post/2016/19th-hole-golf-scorer-3.1/</link>
-      <pubDate>Sat, 07 May 2016 00:00:00 +0000</pubDate>
+<title>19th Hole Golf Scorer 3.1</title>
+<link>https://troz.net/post/2016/19th-hole-golf-scorer-3.1/</link>
+<pubDate>Sat, 07 May 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/19th-hole-golf-scorer-3.1/</guid>
-      <description>One of the problems with using 19th Hole on the Apple Watch is making the app show every time you raise your wrist. My solution to this was to go into Settings (either on my iPhone through the Watch app, or directly on the watch) and change it to &amp;ldquo;Resume Last Activity&amp;rdquo; on wrist raise. This worked fine but as I usually prefer the watch face to show on wrist raise, I had to keep setting and re-setting this which was a pain.</description>
-    </item>
+<description>&lt;p&gt;One of the problems with using 19th Hole on the Apple Watch is making the app
+show every time you raise your wrist. My solution to this was to go into
+Settings (either on my iPhone through the Watch app, or directly on the watch)
+and change it to &amp;ldquo;Resume Last Activity&amp;rdquo; on wrist raise. This worked fine but as
+I usually prefer the watch face to show on wrist raise, I had to keep setting
+and re-setting this which was a pain.&lt;/p&gt;
+
+&lt;p&gt;But last week I noticed the fine print when changing this setting. In this
+screen shot from the Watch app on my iPhone, you can see that &amp;ldquo;session-based
+apps&amp;rdquo; and &amp;ldquo;some third-party workout apps&amp;rdquo; will over-ride the &amp;ldquo;Show Watch Face&amp;rdquo;
+setting.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/WakeScreen.jpg&#34; alt=&#34;Wrist raise settings&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I started to research this and found that if an app starts a &amp;ldquo;workout session&amp;rdquo;,
+then it will become the active app until the session is ended or some other app
+starts a session. So I got to work and added a workout session to the 19th
+Hole&amp;rsquo;s Apple Watch app.&lt;/p&gt;
+
+&lt;p&gt;When you start scoring a round on the Apple Watch, you will see this dialog
+asking if you would like to start a workout:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Watch-workout.png&#34; alt=&#34;Start workout dialog&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The workout will be stopped automatically when you have scored the last hole.
+You can also use a force-press on the scoring screen to turn the workout off or
+on at any time.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Watch_end_workout.png&#34; alt=&#34;Stop workout&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This should make the app much more usable as an Apple Watch app, so happy
+golfing :-)&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Road Trip Apps</title>
-      <link>https://troz.net/post/2016/road-trip-apps/</link>
-      <pubDate>Thu, 07 Apr 2016 00:00:00 +0000</pubDate>
+<title>Road Trip Apps</title>
+<link>https://troz.net/post/2016/road-trip-apps/</link>
+<pubDate>Thu, 07 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/road-trip-apps/</guid>
-      <description>Over the past few months, we have done two long road trips: one approximately 4,000 km and the other about 1,800 km. These gave us the chance to try out various apps for navigation and travel information. We live in Queensland, Australia and some of these comments may be country-specific.
-Navigation The basic navigation came down to three apps:
- Apple Maps Google Maps Metroview (Australia and New Zealand only)  Each has their strengths and weaknesses:</description>
-    </item>
+<description>
+
+&lt;p&gt;Over the past few months, we have done two long road trips: one approximately
+4,000 km and the other about 1,800 km. These gave us the chance to try out
+various apps for navigation and travel information. We live in Queensland,
+Australia and some of these comments may be country-specific.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;navigation&#34;&gt;Navigation&lt;/h2&gt;
+
+&lt;p&gt;The basic navigation came down to three apps:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.apple.com/ios/maps/&#34;&gt;Apple Maps&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://itunes.apple.com/app/google-maps-real-time-navigation/id585027354&#34;&gt;Google Maps&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://itunes.apple.com/au/app/metroview-gps-navigation/id370753892&#34;&gt;Metroview&lt;/a&gt; (Australia and New Zealand only)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Each has their strengths and weaknesses:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Apple Maps is by far the most beautiful and easy to read. It integrates
+perfectly with Contacts (as you would expect). Turn-by-turn directions were
+mostly excellent. The biggest downside is that it does not allow you to
+specify a route avoiding tolls.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Google Maps allows you to plot a route avoiding tolls&amp;hellip; if you can find the
+setting. Its traffic reporting is by far the best and it would offer suggested
+changes of routes during the trip to get around traffic. The interface is
+confusing at times. Turn-by-turn directions were good, although I would have
+preferred an Australian voice option.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Metroview has all the maps downloaded which saves on data connection costs and
+handles bad connectivity areas better. Its best feature is notification of
+speed limits and alerts if you go over the limit, although it gets confused
+when on over or under-passes. Another very useful feature is the display of
+lanes when approaching highway exits, so you could tell which lane to be in.
+Apparently the voice guidance is now more natural but we didn&amp;rsquo;t try this. The
+display is messy and cluttered compared to the others.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We ended up with the following sequence:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Apple Maps for the bulk of the trip.&lt;/li&gt;
+&lt;li&gt;Google Maps &amp;amp; Metroview (on 2 separate iPhones) in the metropolitan areas and
+when about to take a highway exit.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Even then it was amusing to see the apps panic when you took a new road and the
+apps assumed you had left the road and were heading through the bush! And at one
+point there was a large and official sign saying &amp;ldquo;Ignore GPS - do not take this
+turn&amp;rdquo; and sure enough, both Apple Maps and Google Maps wanted us to turn down a
+little country lane instead of keeping to the highway.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;speed-display&#34;&gt;Speed Display:&lt;/h2&gt;
+
+&lt;p&gt;Apart from the basic navigation apps, we tried a couple of speed display apps.
+There are a lot of HUD speed apps out there that project the data on the the
+windscreen but they had two problems:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;They only worked when it was dark. As soon as the sun got up, they became
+invisible.&lt;/li&gt;
+&lt;li&gt;They required you to place your iPhone flat on the dashboard so even if they
+had worked during the day, the iPhone would have got far too hot and
+shut-down. (We have a mount that holds our iPhones in front of the air vents
+to avoid this over-heating problem. Any mount that sticks to the windscreen
+itself leaves the iPhone too exposed to the sun.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;One we stuck with (in non-HUD mode) was &lt;a href=&#34;https://itunes.apple.com/app/speedometer-+-hud-digital/id375318117&#34;&gt;Speedometer + HUD&lt;/a&gt;. This had a clear
+display with a few flaws:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;When moving from 99 kph to 100 kph, the display was not re-arranged for 3
+digits. Moving from 101 down to 100 fixed it, but as 100 kph is the standard
+speed limit, this was a frequent annoyance.&lt;/li&gt;
+&lt;li&gt;Adjusting the speed limit was too fiddly and difficult even for the passenger.
+It would have been impossible for the driver.&lt;/li&gt;
+&lt;li&gt;It only works in landscape mode which does not always suit the car mounts - we
+ended up perching the 2nd iPhone on the unused ashtray.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We also tried &lt;a href=&#34;https://itunes.apple.com/app/talking-hud-voice-prompt-speedometer/id873194479&#34;&gt;Talking HUD&lt;/a&gt; but didn&amp;rsquo;t like it. It worked solely in HUD mode,
+so was only useful at night or very early morning. It had voice prompts to tell
+you when to change gear but in an automatic car, they were just a distraction
+and it was not obvious how to turn them off.&lt;/p&gt;
+
+&lt;p&gt;But overall, we found having a speed display app as well as a navigation app to
+be the best combination. The audible alerts when you went over speed were very
+useful when over-taking or getting up to speed as you could get the information
+without having to take your eyes off the road.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;future-app-plans&#34;&gt;Future App Plans:&lt;/h2&gt;
+
+&lt;p&gt;Having determined that a speed display app is really useful, but not finding one
+that suited us perfectly, the obvious next step was to design my own. I wanted
+it to have the following features:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;clean display, visible in all light conditions&lt;/li&gt;
+&lt;li&gt;easily settable speed limit&lt;/li&gt;
+&lt;li&gt;audible and visual over-speed warnings&lt;/li&gt;
+&lt;li&gt;no HUD mode&lt;/li&gt;
+&lt;li&gt;Apple Watch component for when you only had a single iPhone and it was
+navigating but you still wanted a speed display&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So watch this space for further news of my up-coming app&amp;hellip;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;update&#34;&gt;Update&lt;/h2&gt;
+
+&lt;p&gt;&amp;ldquo;&lt;a href=&#34;https://troz.net/what-is-my-speed/&#34;&gt;What Is My Speed?&lt;/a&gt;&amp;rdquo; is available now from the &lt;a href=&#34;https://itunes.apple.com/app/what-is-my-speed/id1091394524&#34;&gt;iTunes App Store&lt;/a&gt; for
+iPhone and Apple Watch.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Icon Builder 3.2 Released</title>
-      <link>https://troz.net/post/2016/icon-builder-32-released/</link>
-      <pubDate>Wed, 10 Feb 2016 00:00:00 +0000</pubDate>
+<title>Icon Builder 3.2 Released</title>
+<link>https://troz.net/post/2016/icon-builder-32-released/</link>
+<pubDate>Wed, 10 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/icon-builder-32-released/</guid>
-      <description>Icon Builder 3.2 is now available from the Mac App Store.
- Icons for Apple Watch apps now have their alpha channel removed. Tidier folder structure for related files (iTunes Artwork files and Read Me). Updated to work with Xcode 7&amp;rsquo;s Assets.xcassets folders. Creates iPad Pro icons for Xcode 7.2 or later. Fix for Retina Macs creating double-sized images.  </description>
-    </item>
+<description>&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Icon Builder 3.2&lt;/a&gt; is now available from the Mac App Store.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Icons for Apple Watch apps now have their alpha channel removed.&lt;/li&gt;
+&lt;li&gt;Tidier folder structure for related files (iTunes Artwork files and Read Me).&lt;/li&gt;
+&lt;li&gt;Updated to work with Xcode 7&amp;rsquo;s Assets.xcassets folders.&lt;/li&gt;
+&lt;li&gt;Creates iPad Pro icons for Xcode 7.2 or later.&lt;/li&gt;
+&lt;li&gt;Fix for Retina Macs creating double-sized images.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+</item>
     
     <item>
-      <title>Apple Watch First Impressions</title>
-      <link>https://troz.net/post/2015/apple-watch-first-impressions/</link>
-      <pubDate>Wed, 29 Apr 2015 00:00:00 +0000</pubDate>
+<title>Apple Watch First Impressions</title>
+<link>https://troz.net/post/2015/apple-watch-first-impressions/</link>
+<pubDate>Wed, 29 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2015/apple-watch-first-impressions/</guid>
-      <description>I realise that every one has written one of these posts, but given that everyone looks for and notices different things, I think it is still valid.
-My first impression was &amp;ldquo;Why does it come in such a large box?&amp;rdquo;. The courier delivered two boxes - my 38mm Apple Watch Sport and Tim&amp;rsquo;s 42mm Apple Watch Sport. They both came in long boxes, with the 42mm box significantly longer. And both boxes were heavy!</description>
-    </item>
+<description>
+
+&lt;p&gt;I realise that every one has written one of these posts, but given that everyone
+looks for and notices different things, I think it is still valid.&lt;/p&gt;
+
+&lt;p&gt;My first impression was &amp;ldquo;Why does it come in such a large box?&amp;rdquo;. The courier
+delivered two boxes - my 38mm Apple Watch Sport and Tim&amp;rsquo;s 42mm Apple Watch
+Sport. They both came in long boxes, with the 42mm box significantly longer. And
+both boxes were heavy!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;un-boxing&#34;&gt;Un-boxing:&lt;/h3&gt;
+
+&lt;p&gt;Opening them was a typical Apple experience: pull the tag to open the external
+cardboard box, lift out the white internal box. This opens to reveal the watch
+with the default strap attached (short for 38mm, long for 42mm). Lift the watch
+out and pull the tags to remove the plastic protective coating. (On a side note,
+it drives me crazy when people leave this coating on devices, but I can&amp;rsquo;t see
+this happening on the watch.) Underneath there is a sleeve containing the other
+half watch strap so you can swap from long to short. My family tells me that
+this also includes a user guide, but I didn’t read that - typical Apple user&amp;hellip;
+Under the sleeve is the power block and charging cable. The charging puck is
+larger than I expected and the cable is very long. Having removed all the
+components, the packaging is still quite heavy, so I guess Apple just wanted to
+make sure that no watches were damaged in transit and that it felt like a
+quality product.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;pairing&#34;&gt;Pairing&lt;/h3&gt;
+
+&lt;p&gt;Pairing my watch to my iPhone was amazingly slick. After selecting my language,
+the watch displayed a sort of nebula pattern. On the iPhone, I launched the
+Apple Watch app, selected the pairing option and pointed the phone camera at the
+watch display. This did the pairing. Then I waited while all the relevant apps
+transferred their Apple Watch components to the watch and I was ready to start
+using it.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;the-watch&#34;&gt;The Watch:&lt;/h3&gt;
+
+&lt;p&gt;The watch comes with the modular watch face showing by default. This is a
+digital time read-out with various &amp;lsquo;complications&amp;rsquo;. Force-touch the watch face
+to change it - this takes a surprisingly strong touch. Then you can swipe
+sideways to select a watch style. Once you have a style selected, some of them
+offer further customisations: select how much detail is shown, choose what extra
+information to display, adjust colors.&lt;/p&gt;
+
+&lt;p&gt;This is a lot of fun and I am still changing mine very frequently. The good
+thing is that your customisations are stored, so if you set up the utility watch
+face in a particular way, then swap to the modular and configure it, when you go
+back to utility, your previous settings are all still there.&lt;/p&gt;
+
+&lt;p&gt;The screen is gorgeous - very crisp and easy to read.&lt;/p&gt;
+
+&lt;p&gt;Twisting your wrist to show the time works well most of the time. There is a
+delay that I would estimate at about half a second, presumably to avoid false
+positives triggering unnecessary displays. If you are holding your wrist at an
+unusual angle e.g. showing the watch to someone, this twist will not always
+work, but tapping the screen will display the watch face instantly.&lt;/p&gt;
+
+&lt;p&gt;Tapping on a complication will take you to the relevant parent app e.g. tapping
+the current temperature will open the Weather app.&lt;/p&gt;
+
+&lt;p&gt;A minor quibble is that the phases of the moon are displayed from a northern
+hemisphere point of view and do not match what we actually see here in
+Australia.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;battery-life&#34;&gt;Battery Life:&lt;/h3&gt;
+
+&lt;p&gt;This is a complete non-issue. On my first day with the watch, the battery was at
+70% when I first turned it on. As you can imagine, usage was very intense that
+first day and I got to 8%. Since then, the battery level has only got down to 40
+-50% over a day and it recharges to 100% within 2 hours. Tim&amp;rsquo;s 42mm model gets
+slightly better battery life as expected.&lt;/p&gt;
+
+&lt;p&gt;I started off having the battery indicator as one of the &amp;lsquo;complications&amp;rsquo; on my
+watch face, but now I just ignore it.&lt;/p&gt;
+
+&lt;p&gt;And the battery life of my iPhone has improved remarkably due to so many quick
+transactions being done through the watch instead.&lt;/p&gt;
+
+&lt;p&gt;I did have a charging problem one night. I woke up and checked the time and
+realised that the watch was quite warm to the touch. I checked the battery level
+which was actually lower than when I had put it on the charger. I took it off
+the charger for a few hours, then put it back and all was well.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;notifications&#34;&gt;Notifications&lt;/h3&gt;
+
+&lt;p&gt;Here is where you need to be careful. I had turned off most notifications on my
+phone before getting the watch, so I have not been inconvenienced, in fact I
+have been able to re-enable many notifications as they are no longer so
+intrusive.&lt;/p&gt;
+
+&lt;p&gt;At first we thought some notifications were not getting through to the watch,
+then we found out that if your iPhone is awake and un-locked, notifications are
+not passed on to the watch. So drop the time until sleep on your phone to the
+minimum which saves your phone battery and makes sure you receive most
+notifications on the watch.&lt;/p&gt;
+
+&lt;p&gt;If you want to stop any apps sending notifications through to the watch, this is
+easily set in the iPhone&amp;rsquo;s Apple Watch app.&lt;/p&gt;
+
+&lt;p&gt;I have noticed there is a bit of a delay. I hear an email or message arriving on
+my phone and it can be half a minute before it gets to my watch.&lt;/p&gt;
+
+&lt;p&gt;Once you get a notification, you can tap it to go to the parent app, swipe up to
+process it in some way depending on the type of notification, or swipe to the
+left to see a button that will clear the notification. If you want to get rid of
+all your notifications at once, do a force-touch on the notifications screen to
+get the option to clear them all.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;glances&#34;&gt;Glances&lt;/h3&gt;
+
+&lt;p&gt;Glances are designed to be one screen indicators giving you important
+information as quickly as possible. From there, you can decide whether to go to
+the parent app or not. These are accessed by swiping up from the bottom of the
+screen when looking at the watch face.&lt;/p&gt;
+
+&lt;p&gt;I found that the most important thing here was to reduce the number of glances
+shown, since they are displayed sequentially. If you have 20 glances installed,
+you have to swipe at least 20 times to see them all. So go to the Apple Watch
+app on your iPhone and turn off the glances you do not find essential.&lt;/p&gt;
+
+&lt;p&gt;The first glance in the sequence is essential though as it allows you to toggle
+airplane mode, do not disturb and silent mode. It also has a button that can
+make your iPhone make a sound to help you locate it. Hold this button down to
+make the iPhone flash come on as well.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;activity&#34;&gt;Activity&lt;/h3&gt;
+
+&lt;p&gt;Here I have to confess to my first disappointment. The activity app tracks three
+things: Move, Exercise and Stand. When you first start the watch, you tell it
+your age, sex, weight and height. It computes a suggested daily move goal for
+you which you can adjust at any time. Then it tracks your daily activities and
+shows how well you are doing in relation to your goal. For exercise and standing
+the goals are 30 minutes exercise and standing for at least one minute in an
+hour 12 times though the day.&lt;/p&gt;
+
+&lt;p&gt;The move tracking seems to be fine. I am not sure what metrics it uses, but on
+more active days, the numbers go up.&lt;/p&gt;
+
+&lt;p&gt;The exercise one doesn&amp;rsquo;t work for me. We went for a walk and when we returned,
+Tim&amp;rsquo;s watch showed 25 minutes exercise and mine showed 1 minute. We had walked
+the same distance at the same speed, as confirmed by the pedometer. Subsequent
+tests revealed that I don&amp;rsquo;t swing my arms enough when walking to trigger what
+ever sensor this is using. I can&amp;rsquo;t quite see why it ignores the pedometer
+completely, but hopefully this can be fixed by a software update. For now, I
+just ignore this circle.&lt;/p&gt;
+
+&lt;p&gt;Standing is another issue since I use a standing desk, so I stand for many hours
+each day. Even when standing, I get my hourly reminders to stand. However I use
+this as a trigger to make me to move about for a minute, so I suppose that is
+still useful.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;communications&#34;&gt;Communications&lt;/h3&gt;
+
+&lt;p&gt;The various forms of communication are a real strength of the watch. With Tim &amp;amp;
+I both having watches, we can phone, message (audio or text) and use the new
+Digital Touch to send sketches, taps or heart beats. While it feels a bit weird
+to be talking to your wrist, this works really well and the sound quality is
+amazing for such a small device. If you need more privacy, it is very easy to
+transfer a phone call back to your phone.&lt;/p&gt;
+
+&lt;p&gt;Oddly, the watch does not appear to offer FaceTime but always uses standard
+phone calls.&lt;/p&gt;
+
+&lt;p&gt;Messages are where the watch excels. If you get a message with a question, the
+watch can suggest possible answers so you just have to tap a button. Even
+without this, there is a set of pre-defined answers which you can edit in the
+Apple Watch app on your iPhone. And you can also use dictation or the new
+animated emojis. Dictation seems a lot better on the watch than it ever was
+before on the phone. And even if dictation is not transcribed perfectly, you can
+send the message as an audio recording instead of text.&lt;/p&gt;
+
+&lt;p&gt;When recording, tap the Done button as soon as you have finished speaking. The
+inclination is to wait for the text to be processed, but the recording carries
+on, so stop the recording and let the text processing finish in its own time.&lt;/p&gt;
+
+&lt;p&gt;The animated emojis work when you send them to other devices as they appear as
+GIFs. You can choose from 3 sets: faces, hands and hearts. Once you have swiped
+to select a set, use the crown to scroll between the options. You can also swipe
+further to get to the standard emojis.&lt;/p&gt;
+
+&lt;p&gt;Digital Touch works between watches only. It is a fun gimmick and I can imagine
+us developing a set of key codes or sketches, but neither of us can draw very
+well, so the sketches are very rough. The heart beat is amusing, but the tapping
+is surprisingly effective as an attention-getter.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;summary&#34;&gt;Summary&lt;/h3&gt;
+
+&lt;p&gt;I think this is the start of a new way of interacting with our technology in a
+way that is both closer to us and less intrusive. I am loving the watch so far
+and can&amp;rsquo;t wait to see where it goes from here.&lt;/p&gt;
+
+&lt;hr /&gt;
+</description>
+</item>
     
     <item>
-      <title>Time In Words 4.0</title>
-      <link>https://troz.net/post/2015/time-in-words-4.0/</link>
-      <pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
+<title>Time In Words 4.0</title>
+<link>https://troz.net/post/2015/time-in-words-4.0/</link>
+<pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2015/time-in-words-4.0/</guid>
-      <description>Time In Words for iOS started off as a fun gimmick, emulating the Qlocktwo type of time display where the relevant words are highlighted in some way to spell out the time as a sentence. This very quickly evolved into what I hoped would be more useful app, still showing the original display, but also providing the current time &amp;amp; date as complete sentences. Then I added time conversions and discovered the real power and utility of writing out times as words.</description>
-    </item>
+<description>&lt;p&gt;&lt;a href=&#34;https://troz.net/time-in-words/&#34;&gt;Time In Words&lt;/a&gt; for iOS started off as a fun gimmick, emulating the
+&lt;a href=&#34;http://www.qlocktwo.com/&#34;&gt;Qlocktwo&lt;/a&gt; type of time display where the relevant words are highlighted in
+some way to spell out the time as a sentence. This very quickly evolved into
+what I hoped would be more useful app, still showing the original display, but
+also providing the current time &amp;amp; date as complete sentences. Then I added time
+conversions and discovered the real power and utility of writing out times as
+words.&lt;/p&gt;
+
+&lt;p&gt;When it comes to converting times, I doubt there are many people in the world
+who haven&amp;rsquo;t had problems.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Is that morning or afternoon for them?&lt;/li&gt;
+&lt;li&gt;Are they in tomorrow, today or yesterday?&lt;/li&gt;
+&lt;li&gt;What if they are using daylight-savings?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Having the time written out removes all ambiguity. As an example, Time In Words
+currently reports very clearly:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In Los Angeles, it is nine minutes to ten on Tuesday evening (daylight-savings
+time).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;When writing &lt;a href=&#34;https://troz.net/time-in-words-for-mac/&#34;&gt;Time In Words for Mac&lt;/a&gt;, I focussed immediately on the time zone
+conversion facilities, and provided a menu bar app that can display as many time
+zones as you like (although more than will show on a single screen would
+probably get annoying).&lt;/p&gt;
+
+&lt;p&gt;So when I decided to do a complete re-write of Time In Words for iOS, the
+obvious move was to emulate the Mac version and allow for as many time zones as
+the user wants, instead of the current 2 or 4 (iPhone or iPad). So I discarded
+the Qlocktwo display and the separate date display which used a similar
+mechanic. I kept the display that shows the current date and time, but every
+display after that shows the time in a different time zone. The time zones can
+be changed and re-ordered, so the ones you need most are the fastest to get to
+once the app opens.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;One new feature (again taken from the Mac version), is the ability to calculate
+&amp;ldquo;What time will it be&amp;hellip;&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/TiW_what_time.png&#34; alt=&#34;What time&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You dial in your local date and time to see what time that will be in your
+selected zone. And if you want to calculate the other way around, tap the &amp;ldquo;Swap
+time zones&amp;rdquo; button.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The main impetus for a re-write was the Apple Watch. I thought this would be a
+perfect app for the watch as it could use the Apple Watch&amp;rsquo;s superb time-keeping
+in conjunction with my text generation, to add a significant level of usability
+to the Apple Watch as regards time zone conversions.&lt;/p&gt;
+
+&lt;p&gt;Sadly, Apple disagrees…&lt;/p&gt;
+
+&lt;p&gt;I completed the app and submitted it to the App Store for review. The review
+process seems to be very fast at the moment and the app moved into review only
+one day later. And there it stuck for 3 days. This was very odd. My experience
+is that once an app gets into review, it only takes a few hours, if that. For
+&lt;a href=&#34;https://troz.net/19th-hole/&#34;&gt;19th Hole&lt;/a&gt; - my other app with an Apple Watch component, the review process
+took 30 hours. But 3 days!&lt;/p&gt;
+
+&lt;p&gt;Then I got a phone call from Apple where a very polite person explained to me
+that although this was not mentioned in any of the documentation, the marketing
+people had decided that no apps were to be allowed on the watch if they told the
+time.&lt;/p&gt;
+
+&lt;p&gt;I offered to remove the initial screen telling the local time, so the app would
+not actually supply the current time but only the time conversions, but that was
+not acceptable either.&lt;/p&gt;
+
+&lt;p&gt;Then I tried appealing the rejection. My hopes were not high, but I didn&amp;rsquo;t see
+any harm in asking. I again offered to remove the local time display and
+emphasised the accessibility advantages of displaying times in this manner.
+Another day, another phone call, another polite Apple person saying no.&lt;/p&gt;
+
+&lt;p&gt;So now I have re-submitted the app for review without the Apple Watch component,
+which is a shame. I am hoping that after some months they will review this
+policy and allow me to try again, but who knows.&lt;/p&gt;
+
+&lt;p&gt;So you can see what you are missing, here are a couple of screen shots from the
+watch app showing my local time, plus one time zone:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Watch_1.png&#34; alt=&#34;Local time&#34; /&gt;
+&lt;span class=&#34;float_right&#34;&gt;&lt;img src=&#34;https://troz.net/images/Watch_2.png&#34; alt=&#34;Converted time&#34; /&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;One more minor point. People who actually look at version numbers may wonder why
+I have gone from version 2.5 to version 4.0. When I was working on version 2.5,
+I considered making it version 3.0 and then changed my mind. However by that
+time I had already created a version 3.0 in iTunesConnect, so I was not able to
+use 3.0 again this time. This version was such a big change that I wanted it to
+be a .0 release, so that meant going to version 4.0&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>My First Apple Watch App</title>
-      <link>https://troz.net/post/2015/my-first-apple-watch-app/</link>
-      <pubDate>Thu, 02 Apr 2015 00:00:00 +0000</pubDate>
+<title>My First Apple Watch App</title>
+<link>https://troz.net/post/2015/my-first-apple-watch-app/</link>
+<pubDate>Thu, 02 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2015/my-first-apple-watch-app/</guid>
-      <description>I have just submitted my first Apple Watch app to the iTunes App Store. This is a scary thing to do, since I have never seen, touched or used an Apple Watch and all I had to go on was the Simulator that Apple supplies with Xcode.
-At the moment, Apple has only made a limited set of Apple Watch features available to developers, and all Apple Watch apps come tethered to an iOS app - presumably this will mainly be iPhone apps, but I wonder will we be able to connect Apple Watches to iPads?</description>
-    </item>
+<description>&lt;p&gt;I have just submitted my first Apple Watch app to the iTunes App Store. This is
+a scary thing to do, since I have never seen, touched or used an Apple Watch and
+all I had to go on was the Simulator that Apple supplies with Xcode.&lt;/p&gt;
+
+&lt;p&gt;At the moment, Apple has only made a limited set of Apple Watch features
+available to developers, and all Apple Watch apps come tethered to an iOS app -
+presumably this will mainly be iPhone apps, but I wonder will we be able to
+connect Apple Watches to iPads? Anyway, it made sense to extend one of my
+existing apps to use the Apple Watch instead of starting from scratch.&lt;/p&gt;
+
+&lt;p&gt;Of my &lt;a href=&#34;https://troz.net/apps-ios/&#34;&gt;iOS apps&lt;/a&gt;, I decided that &lt;a href=&#34;https://troz.net/19th-hole/&#34;&gt;The 19th Hole&lt;/a&gt;, my golf scoring app,
+would be well suited to the Apple Watch. The problem with using the iPhone
+version to score is that you have to keep pulling your iPhone in and out of your
+golf bag, sometimes in the rain, sometimes in bright sunlight. Being able to
+enter the scores on your wrist sounds like a big improvement. We know that the
+Apple Watch is at least somewhat water-resistant, but we are yet to see how well
+it performs in bright sunlight, however I would expect that Apple has put
+considerable effort into this.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Once I decided to write an Apple Watch app, the first step was to learn how. I
+read all Apple&amp;rsquo;s published documents to get a feel for what was possible and
+what user-interface objects would be available. I find online courses very
+helpful and by far the best Apple Watch course that I found was &lt;a href=&#34;http://www.raywenderlich.com/video-tutorials#watchkit&#34;&gt;Ray
+Wenderlich&amp;rsquo;s WatchKit video tutorial series&lt;/a&gt;. The instructors were very clear
+and explained how the layout and sizing of objects works on the Apple Watch, as
+well as how to set up and move between views and how to communicate from the
+Watch back to the iPhone. The layout section of the course was particularly
+valuable as no other course I found even mentioned this, although it is crucial
+to the interface design and allowing for the two sizes of watch.&lt;/p&gt;
+
+&lt;p&gt;I had released an update to &lt;a href=&#34;https://troz.net/19th-hole/&#34;&gt;The 19th Hole&lt;/a&gt; recently in preparation for this.
+I wanted to have squashed the bugs and updated the interface, so the only
+changes needed would be the WatchKit ones.&lt;/p&gt;
+
+&lt;p&gt;The first step in adding a WatchKit app to your existing app is to create a new
+target in the Xcode project. Choosing WatchKit actually adds two new targets:
+the WatchKit Extension which lives on the iPhone and supplies the code for the
+Watch, and the WatchKit App which lives on the Watch and provides the interface.&lt;/p&gt;
+
+&lt;p&gt;I decided to use a paged interface with one page per hole. Each of these pages
+has a table, with one row per player. A slider with plus &amp;amp; minus buttons lets
+you enter the score for each player and the total score for each player is also
+displayed.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/19thHole-Watch2.png&#34; alt=&#34;Data entry&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Apart from this data entry view, I have a splash screen which shows you the
+current round as set up on the iPhone and a final summary screen showing
+everyone&amp;rsquo;s totals.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/19thHole-Watch1.png&#34; alt=&#34;Splash screen&#34; /&gt;
+&lt;img src=&#34;https://troz.net/images/19thHole-Watch3.png&#34; alt=&#34;Summary&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;These images are taken from the Apple Watch simulator running in 42mm mode.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The biggest programming problem was getting the communications working beween
+the two devices. The 19th Hole uses Core Data for all data storage. My first
+attempt shared this data between the two apps, allowing both to read and update
+the database. This almost worked, but if both apps were open, then changes in
+one device did not get across to the other. It seemed that the data was cached
+and I was unable to find a way to force either app to update every time.&lt;/p&gt;
+
+&lt;p&gt;My next attempt kept all the data in the iPhone app and had the WatchKit
+extension ask for whatever data it needed and send changes to the iPhone app.
+This worked much better and I was able to get live updates between the two
+devices.&lt;/p&gt;
+
+&lt;p&gt;The other issue is the fact that I have never seen, touched or used an Apple
+Watch. This means that I had to guess a lot of things:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;how well will it perform?&lt;/li&gt;
+&lt;li&gt;will the icon look OK?&lt;/li&gt;
+&lt;li&gt;are the controls large enough to use?&lt;/li&gt;
+&lt;li&gt;will the text be large enough to read?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;My main philosophy was to keep the Watch app as simple as possible and use the
+standard interface elements, font sizes etc. Hopefully that will work.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The final step was submitting the app to iTunes Connect for review. It was not
+clear to me how to do this, so I logged into iTunes Connect, created a new
+version and entered the meta-data. I couldn&amp;rsquo;t see anywhere to say anything about
+the Watch. I archived the main iOS app as usual and validated it with the Store.
+I had a few things to fix up, but I got the build submitted.&lt;/p&gt;
+
+&lt;p&gt;Back to iTunes Connect and once the uploaded build had been processed, I was
+able to select it and click &amp;ldquo;Submit for Review&amp;rdquo;. At this point, the page
+reported an error and showed me a new section where I could upload the Apple
+Watch icon and screen shots.&lt;/p&gt;
+
+&lt;p&gt;I had been unsure how the icon would look when made round, but it looks OK on
+the iTunes Connect page. How it will look on a tiny watch screen remains to be
+seen. Anyway, once I had my icon and screen shots uploaded, I was able to
+proceed to the next step. But then I got a message saying that the app could not
+be processed - no explanation. Thankfully, I had seen some developers on Twitter
+reporting this, and somebody said that the solution was to remove the alpha
+channel from your screen shots. Sorry for not giving credit here - I forget who
+said this, but it worked, so thank you whoever you are.&lt;/p&gt;
+
+&lt;p&gt;So now my app is waiting for review and who knows how long that will take.
+According to &lt;a href=&#34;http://appreviewtimes.com&#34;&gt;App Review Times&lt;/a&gt;, the current estimate is 8 days, but the
+trend is heading upwards. I would expect that to blow out in the next few weeks
+as developers try to get their apps ready for the Apple Watch release date of
+April 24th.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Icon Builder 3.0.1</title>
-      <link>https://troz.net/post/2015/icon-builder-3.0.1/</link>
-      <pubDate>Tue, 17 Mar 2015 00:00:00 +0000</pubDate>
+<title>Icon Builder 3.0.1</title>
+<link>https://troz.net/post/2015/icon-builder-3.0.1/</link>
+<pubDate>Tue, 17 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2015/icon-builder-3.0.1/</guid>
-      <description>So why an announcement for such a minor upgrade?
-Version 3.0 got no announcement because it was not the release I wanted.
-Having downloaded the Xcode 6.2 &amp;amp; 6.3 betas, I had worked out what icons were needed to a WatchKit app. This, combined with several other changes, made me bump the version number to 3.0.
-Sadly, Apple rejected the update because it referred to pre-release products. So I pulled all mentions of WatchKit out of the interface and meta data and got 3.</description>
-    </item>
+<description>
+
+&lt;p&gt;So why an announcement for such a minor upgrade?&lt;/p&gt;
+
+&lt;p&gt;Version 3.0 got no announcement because it was not the release I wanted.&lt;/p&gt;
+
+&lt;p&gt;Having downloaded the Xcode 6.2 &amp;amp; 6.3 betas, I had worked out what icons were
+needed to a WatchKit app. This, combined with several other changes, made me
+bump the version number to 3.0.&lt;/p&gt;
+
+&lt;p&gt;Sadly, Apple rejected the update because it referred to pre-release products. So
+I pulled all mentions of WatchKit out of the interface and meta data and got 3.0
+released.&lt;/p&gt;
+
+&lt;p&gt;After the Apple keynote on March 9th, I re-enabled the WatchKit portions of the
+app and re-submitted to the App Store, hoping that with the WatchKit SDK now
+part of the official Xcode release, Apple&amp;rsquo;s reviewers would allow it to get
+through this time.&lt;/p&gt;
+
+&lt;p&gt;This worked - in fact the app was reviewed and accepted within 6 days - so now
+Icon Builder adds WatchKit to its list of supported platforms.&lt;/p&gt;
+
+&lt;p&gt;Actually, Apple may have done me a favour in rejecting the first one as they
+changed the specifications for the icons slightly between Xcode 6.2 beta and
+Xcode 6.2 release.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;Icon Builder page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://itunes.apple.com/us/app/icon-builder/id552293482?mt=12&amp;amp;uo=4&#34;&gt;Mac App Store link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;what-s-new-in-version-3&#34;&gt;What’s New in version 3?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Support for WatchKit app icons (version 3.0.1)&lt;/li&gt;
+&lt;li&gt;Simplified interface: removed display of smaller icons.&lt;/li&gt;
+&lt;li&gt;Fix for @3x images not being saved when you selected iOS 6 support.&lt;/li&gt;
+&lt;li&gt;iTunesArtwork@2x file now saved as a JPG to avoid iTunes Connect errors.&lt;/li&gt;
+&lt;li&gt;Removed CarPlay icon - Xcode sometimes gave errors when this was included.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+</item>
     
     <item>
-      <title>App Store Preview Videos</title>
-      <link>https://troz.net/post/2015/app-store-preview-videos/</link>
-      <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
+<title>App Store Preview Videos</title>
+<link>https://troz.net/post/2015/app-store-preview-videos/</link>
+<pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2015/app-store-preview-videos/</guid>
-      <description>Apple now allows app developers to add a video preview of their app when uploading to iTunes Connect. This video is shown to potential purchasers when they are looking at an app in the iTunes App Store, just like the screen shots.
-I have been working on an update to 19th Hole and since it uses a custom method for data input, I decided that a video would be really useful in this case.</description>
-    </item>
+<description>&lt;p&gt;Apple now allows app developers to add a video preview of their app when
+uploading to iTunes Connect. This video is shown to potential purchasers when
+they are looking at an app in the iTunes App Store, just like the screen shots.&lt;/p&gt;
+
+&lt;p&gt;I have been working on an update to &lt;a href=&#34;https://troz.net/19th-hole/&#34;&gt;19th Hole&lt;/a&gt; and since it uses a custom
+method for data input, I decided that a video would be really useful in this
+case.&lt;/p&gt;
+
+&lt;p&gt;The first step was to work out how to record video from my iPhone. In OS X
+Yosemite (10.10), this can be done using QuickTime Player. Connect your device
+to your Mac using a Lightning cable (I think it has to be a Lightning cable -
+the old cables will not work). Open up QuickTime Player and choose &amp;ldquo;New Movie
+Recording&amp;rdquo; from the File menu. By default this shows input from the Mac&amp;rsquo;s
+FaceTime camera, but just to the right of the red Record button, there is a down
+arrow that shows a popup menu. Click this and you can select your iPhone as the
+Camera. Since I wanted the sound effects included, I also selected my iPhone as
+the Microphone, but if you want to provide a voice-over or sound-track, you
+might want to change this.&lt;/p&gt;
+
+&lt;p&gt;That handles the technical side of recording, but I needed a way to show where I
+was tapping and pressing on the iPhone screen. After some searching, I found
+&lt;a href=&#34;https://github.com/toddreed/Touchpose&#34;&gt;Touchpose&lt;/a&gt; which was exactly what I wanted. Since it requires changing the
+main.m file, as well as changes to the app delegate, I created a branch in my
+app&amp;rsquo;s git repository so that I could apply these changes temporarily, but save
+them for next time. The only alternation I made to the default settings was to
+change the color of the cursor indicator to suit the color scheme of my app. And
+since this was a temporary change, I set it to show the cursor indicator all the
+time, not just when the screen was mirrored. All the details are shown in the
+sample project.&lt;/p&gt;
+
+&lt;p&gt;Next step was to actually record a session. After my first attempt (which lasted
+about 67 seconds), I checked the Apple specs and found that the video could not
+be longer than 30 seconds. So I re-thought what I wanted to include and tried
+again. It took a few tries to get what I wanted, but finally I ended up with a
+.mov file that was 26 seconds long.&lt;/p&gt;
+
+&lt;p&gt;On to iTunes Connect where I had the new version of the app set up already with
+its screen shots. Since I have an iPhone 6, the video was only suited for the
+4.7 inch section. So I dragged it into the drop zone and waited. No good - the
+video frame rate was too high. It has to be 30 fps or less. QuickTime Player had
+made a video that was 50 fps.&lt;/p&gt;
+
+&lt;p&gt;The app I usually turn to for any video conversion needs is &lt;a href=&#34;https://handbrake.fr&#34;&gt;Handbrake&lt;/a&gt;. So I
+ran the app through Handbrake, specifying a frame rate of 30. This converted the
+video to .mp4 instead of .mov, but it was 30 fps. It wasn&amp;rsquo;t until I tried to
+upload it to iTunes Connect that I realised Handbrake had cropped the video from
+750 x 1334 to 750 x 1330. After searching through the settings, I found where I
+needed to turn on custom clipping and set it to 0 so that the original
+dimensions were preserved. But iTunes Connect still didn&amp;rsquo;t like it, although
+this time the error message was un-informative.&lt;/p&gt;
+
+&lt;p&gt;Eventually, the brains trust on the other side of the room suggested iMovie. Not
+only that, but he found that once the original had been dragged into iMovie, the
+share options included an &amp;ldquo;App Preview&amp;rdquo; setting. This gave us a .mov file of the
+correct dimensions and the correct frame rate which iTunes Connect accepted.&lt;/p&gt;
+
+&lt;p&gt;iTunes Connect that allowed me to select the poster frame for the video and save
+the changes to the app meta data. At that point, it showed a notice saying that
+the app preview was being processed which could take up to 24 hours. It appears
+that the processing has been finished, as that notice has disappeared.&lt;/p&gt;
+
+&lt;p&gt;For the next stage, I ned to wait until the app gets reviewed and hopefully
+approved. Then it will be interesting to see how the video looks in the iTunes
+App Store.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;As a reward for reading this post, here is a pre-release of the video, showing
+how to enter the score data for a hole of golf using &lt;a href=&#34;https://troz.net/19th-hole/&#34;&gt;19th Hole&lt;/a&gt;:&lt;/p&gt;
+
+&lt;video controls poster=&#34;/images/19thHole-scoring-web.png&#34;&gt;
+  &lt;source src=&#34;https://troz.net/images/19thHole-scoring-web.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+</description>
+</item>
     
     <item>
-      <title>Email clients for Mac and iOS</title>
-      <link>https://troz.net/post/2014/email-clients-for-mac-ios/</link>
-      <pubDate>Tue, 25 Mar 2014 00:00:00 +0000</pubDate>
+<title>Email clients for Mac and iOS</title>
+<link>https://troz.net/post/2014/email-clients-for-mac-ios/</link>
+<pubDate>Tue, 25 Mar 2014 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2014/email-clients-for-mac-ios/</guid>
-      <description>Some people are moving away from email, but for me, it remains the best way to communicate online. I get to keep a record of conversations and the attached files are with the text so I can always see the context.
-But I think everyone would agree that Apple have dropped the ball with Mail in OS X Mavericks, and to a lesser extent, in iOS 7.
-So I have been on a campaign lately to find an email client that suits my needs.</description>
-    </item>
+<description>&lt;p&gt;Some people are moving away from email, but for me, it remains the best way to
+communicate online. I get to keep a record of conversations and the attached
+files are with the text so I can always see the context.&lt;/p&gt;
+
+&lt;p&gt;But I think everyone would agree that Apple have dropped the ball with Mail in
+OS X Mavericks, and to a lesser extent, in iOS 7.&lt;/p&gt;
+
+&lt;p&gt;So I have been on a campaign lately to find an email client that suits my needs.
+I don&amp;rsquo;t feel that I have found the perfect answer yet, but I am getting there.&lt;/p&gt;
+
+&lt;p&gt;The first step was to work out what I really needed in an email client:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;support for IMAP accounts and Gmail accounts&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;line-height: 1.5;&#34;&gt;unified inbox - all accounts shown
+together&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;conversation threading&lt;/li&gt;
+&lt;li&gt;support for POP accounts (optional)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;On the Mac, I have narrowed it down to two clients that I am swapping between
+every few days: &lt;a href=&#34;https://www.uniboxapp.com&#34; target=&#34;_blank&#34;&gt;Unibox&lt;/a&gt;
+and &lt;a href=&#34;http://airmailapp.com&#34; target=&#34;_blank&#34;&gt;Airmail&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Unibox is different in the way it displays your emails. It is much more focussed
+on people and conversations, so the side bar shows all the people who you have
+sent emails to or received emails from, grouped by date. I really like the
+merging of incoming &amp;amp; outgoing emails, but it can be a bit weird if you delete
+the latest email from someone who then disappears from sight.&lt;/p&gt;
+
+&lt;p&gt;Emails are grouped by a single person, not by conversation. There is a button on
+appropriate emails to toggle conversation view for that particular thread, but
+it doesn&amp;rsquo;t stick.&lt;/p&gt;
+
+&lt;p&gt;In order to show a conversation, they truncate emails in the main part of the
+window and show a &amp;ldquo;More&amp;rdquo; button at the bottom of the email to expand it. This
+was annoying, but in the latest beta, it performs much better, so you are not
+continually tapping this to see a long email.&lt;/p&gt;
+
+&lt;p&gt;Airmail has a more conventional display. Threading and the layout of threaded
+emails are both very nice. There are multiple view options, which I find can get
+a bit messy looking, so I prefer the &amp;ldquo;Minimized View&amp;rdquo; setting. Airmail also does
+POP accounts which is a plus.&lt;/p&gt;
+
+&lt;p&gt;The main reason I keep going back to Unibox is the unification. I have grown to
+like having sent and received messages all in the same window without having to
+go and find them somewhere else.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;On the iPad, I am currently using
+&lt;a href=&#34;http://www.getboxer.com&#34; target=&#34;_blank&#34;&gt;Boxer&lt;/a&gt; and have tried
+numerous others. &lt;a href=&#34;http://www.moltoapp.com/&#34; target=&#34;_blank&#34;&gt;Molto&lt;/a&gt;
+was quite good and the interface was fun, but it would only use landscape mode
+and like to be able to swap. Boxer is not great in portrait mode, but it does
+work.&lt;/p&gt;
+
+&lt;p&gt;So the jury is still out for iPad email clients, but on the Mac, I am leaning
+towards Unibox.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Berio Sequenza VII</title>
-      <link>https://troz.net/post/2013/berio-sequenza-vii/</link>
-      <pubDate>Thu, 07 Nov 2013 00:00:00 +0000</pubDate>
+<title>Berio Sequenza VII</title>
+<link>https://troz.net/post/2013/berio-sequenza-vii/</link>
+<pubDate>Thu, 07 Nov 2013 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2013/berio-sequenza-vii/</guid>
-      <description>So my latest app is way outside my usual sphere but that&amp;rsquo;s what happens when family decide that what you do might actually be useful!
-My son is an oboist and he is currently learning Berio&amp;rsquo;s Sequenza VII for Oboe. This is a weird piece without a standard time signature. Instead each line has 13 bars with each bar being allocated a certain time span in actual seconds. As can easily be imagined, this makes learning and practicing this piece more of a mathematical exercise than a musical one.</description>
-    </item>
+<description>&lt;p&gt;So my latest app is way outside my usual sphere but that&amp;rsquo;s what happens when
+family decide that what you do might actually be useful!&lt;/p&gt;
+
+&lt;p&gt;My son is an oboist and he is currently learning Berio&amp;rsquo;s Sequenza VII for Oboe.
+This is a weird piece without a standard time signature. Instead each line has
+13 bars with each bar being allocated a certain time span in actual seconds. As
+can easily be imagined, this makes learning and practicing this piece more of a
+mathematical exercise than a musical one.&lt;/p&gt;
+
+&lt;p&gt;So I wrote him an app to sound out the end of each bar. Once he and his teacher
+used it, a few more features crept in and now I think it will be of great
+assistance to any student or teacher trying to work on this piece.&lt;/p&gt;
+
+&lt;p&gt;While I doubt that many oboists frequent this web site, it anyone who does can
+pass this on to any oboist, I would be very grateful, and I think the oboist
+would be too!&lt;/p&gt;
+
+&lt;p&gt;The app is available through the
+&lt;a href=&#34;https://itunes.apple.com/us/app/sequenza-vii/id730234638?mt=8&amp;uo=4&#34; target=&#34;_blank&#34;&gt;iTunes
+App Store&lt;/a&gt;.&lt;br /&gt;
+More details are on &lt;a href=&#34;https://troz.net/berio/&#34; title=&#34;Berio’s Sequenza VII&#34;&gt;this page&lt;/a&gt;.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Icon Builder &amp; iOS 7</title>
-      <link>https://troz.net/post/2013/icon-builder-ios-7/</link>
-      <pubDate>Mon, 23 Sep 2013 00:00:00 +0000</pubDate>
+<title>Icon Builder &amp; iOS 7</title>
+<link>https://troz.net/post/2013/icon-builder-ios-7/</link>
+<pubDate>Mon, 23 Sep 2013 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2013/icon-builder-ios-7/</guid>
-      <description>Icon Builder 1.2 was released on 18 September 2013.
-It was an update with 2 new functions:
- The ability to create images to suit an Xcode 5 assets library The ability to create icons with the required sizes for IOS 7 apps.  Knowing that iOS 7 apps can only be built using Xcode 5, I linked the switch for these 2 abilities in a single check box.
-The problem was not really that they were in a single checkbox but that I had labelled it badly, so it was not obvious that this was what needed to be checked to create iOS 7 sized icon files.</description>
-    </item>
+<description>&lt;p&gt;Icon Builder 1.2 was released on 18 September 2013.&lt;br /&gt;
+It was an update with 2 new functions:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The ability to create images to suit an Xcode 5 assets library&lt;/li&gt;
+&lt;li&gt;The ability to create icons with the required sizes for IOS 7 apps.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Knowing that iOS 7 apps can only be built using Xcode 5, I linked the switch for
+these 2 abilities in a single check box.&lt;br /&gt;
+The problem was not really that they were in a single checkbox but that I had labelled
+it badly, so it was not obvious that this was what needed to be checked to create
+iOS 7 sized icon files.&lt;/p&gt;
+
+&lt;p&gt;After some feedback from early users, it became clear to me that this was not
+enough. So 1.2.1 is now waiting for Apple&amp;rsquo;s approval.&lt;br /&gt;
+The changes in this version are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;More informative labelling of the checkbox.&lt;/li&gt;
+&lt;li&gt;The checkbox is checked by default is Xcode 5 is installed&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;While waiting for the new version to be approved, please be aware that iOS 7
+icon sizes will only be generated if you select &amp;ldquo;Check Assets (for Xcode 5.x or
+later)&amp;rdquo;&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Icon apps updated</title>
-      <link>https://troz.net/post/2013/icon-apps-updated/</link>
-      <pubDate>Thu, 19 Sep 2013 00:00:00 +0000</pubDate>
+<title>Icon apps updated</title>
+<link>https://troz.net/post/2013/icon-apps-updated/</link>
+<pubDate>Thu, 19 Sep 2013 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2013/icon-apps-updated/</guid>
-      <description>Icns Maker and Icon Builder have both just been updated to support Xcode 5.
-Icon Builder is a Mac app that takes your images and creates all the required icon files for use in your iOS apps.
-It now supports Xcode 5&amp;rsquo;s image assets folders and if you are using Xcode 5, it will create the icon sizes required for iOS 7 app.
-Icns Maker is a Mac app that takes your images and creates icons for use in your Mac apps.</description>
-    </item>
+<description>&lt;p&gt;&lt;a href=&#34;https://itunes.apple.com/au/app/icns-maker/id550942266?mt=12&#34; target=&#34;_blank&#34;&gt;Icns
+Maker&lt;/a&gt; and
+&lt;a href=&#34;https://itunes.apple.com/au/app/icon-builder/id552293482?mt=12&#34; target=&#34;_blank&#34;&gt;Icon
+Builder&lt;/a&gt; have both just been updated to support Xcode 5.&lt;/p&gt;
+
+&lt;p&gt;Icon Builder is a Mac app that takes your images and creates all the required
+icon files for use in your iOS apps.&lt;br /&gt;
+It now supports Xcode 5&amp;rsquo;s image assets folders and if you are using Xcode 5, it will
+create the icon sizes required for iOS 7 app.&lt;/p&gt;
+
+&lt;p&gt;Icns Maker is a Mac app that takes your images and creates icons for use in your
+Mac apps.&lt;br /&gt;
+For Xcode 4 or earlier, it creates a .icns file.&lt;br /&gt;
+For Xcode 5, it creates a folder of images for use in your project&amp;rsquo;s image
+assets folder.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Icon Makers &amp; Retina Macs</title>
-      <link>https://troz.net/post/2013/icon-makers-retina-macs/</link>
-      <pubDate>Mon, 14 Jan 2013 00:00:00 +0000</pubDate>
+<title>Icon Makers &amp; Retina Macs</title>
+<link>https://troz.net/post/2013/icon-makers-retina-macs/</link>
+<pubDate>Mon, 14 Jan 2013 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2013/icon-makers-retina-macs/</guid>
-      <description>Icns Maker which makes an icns icon file for Mac apps, and Icon Builder which makes the suite of png files needed for iOS apps, are both compatible with the Retina MacBook Pro.
-However it was recently brought to my attention (thanks Cameron), that when running on a Retina MBP, all the icon files were exactly twice as large as they should be. The Icon.png file which supplies the main app icon for iPhone apps should be 57 pixels by 57 pixels.</description>
-    </item>
+<description>&lt;p&gt;Icns Maker which makes an icns icon file for Mac apps, and Icon Builder which
+makes the suite of png files needed for iOS apps, are both compatible with the
+Retina MacBook Pro.&lt;/p&gt;
+
+&lt;p&gt;However it was recently brought to my attention (thanks Cameron), that when
+running on a Retina MBP, all the icon files were exactly twice as large as they
+should be. The Icon.png file which supplies the main app icon for iPhone apps
+should be 57 pixels by 57 pixels. Using Icon Builder on a Retina MBP produced an
+Icon.png file that was 114 x 114 pixels.&lt;/p&gt;
+
+&lt;p&gt;I have now worked out how to persuade the Retina Mac that when I ask for an
+image size, I actually want that size, not the size that OS X thinks would look
+better. Updates to these 2 apps will be submitted to the App Store for approval
+later today which will solve the problem.&lt;/p&gt;
+
+&lt;p&gt;In the meantime, there is a work-around for Retina MBP users: force the app to
+run in low resolution mode.&lt;/p&gt;
+
+&lt;p&gt;In Finder, open your Applications folder and select the app (this works for both
+Icns Maker and Icon Builder). Press Command-I or choose Get Info from the File
+menu which will open a window like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Selecting low resolution mode&#34; src=&#34;https://troz.net/images/LowRes.png&#34; width=&#34;379&#34; height=&#34;952&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Check the checkbox labelled &amp;ldquo;Open in Low Resolution&amp;rdquo;. Next time the app is
+opened, it will ignore the Retina options and use standard resolution only. This
+will create icon files with the correct sizes. However text may look slightly
+fuzzy.&lt;/p&gt;
+
+&lt;p&gt;When the updates to these apps become available, make sure you go back and
+un-check this setting to return to Retina mode.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>App Store Review Times</title>
-      <link>https://troz.net/post/2012/app-store-review-times/</link>
-      <pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
+<title>App Store Review Times</title>
+<link>https://troz.net/post/2012/app-store-review-times/</link>
+<pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/app-store-review-times/</guid>
-      <description>There are been a lots of stories going around about lengthening Mac App Store review times. Shiny Developments crowd-sourced data certainly backs this up although they have much more data for iOS apps than for Mac apps.
-Some people, including Lex Friedman of MacWorld and John Gruber of Daring Fireball, are suggesting that the delays are due to the rush of new apps to support the iPhone 5 and iOS 6.</description>
-    </item>
+<description>&lt;p&gt;There are been a lots of stories going around about lengthening Mac App Store
+review times.
+&lt;a href=&#34;http://reviewtimes.shinydevelopment.com&#34; target=&#34;_blank&#34;&gt;Shiny
+Developments&lt;/a&gt; crowd-sourced data certainly backs this up although they have
+much more data for iOS apps than for Mac apps.&lt;/p&gt;
+
+&lt;p&gt;Some people, including
+&lt;a href=&#34;http://www.macworld.com/article/2011430/developers-stymied-by-mac-app-store-approval-delays.html&#34; target=&#34;_blank&#34;&gt;Lex
+Friedman of MacWorld&lt;/a&gt; and
+&lt;a href=&#34;http://daringfireball.net/linked/2012/10/09/app-store-delays&#34; target=&#34;_blank&#34;&gt;John
+Gruber of Daring Fireball&lt;/a&gt;, are suggesting that the delays are due to the
+rush of new apps to support the iPhone 5 and iOS 6. This implies that there is
+only one set of review staff and that a large proportion of them have been moved
+from Mac to iOS apps.&lt;/p&gt;
+
+&lt;p&gt;I think this is an incorrect analysis. The slowdown started before iOS 6 and
+before the iPhone 5. I think it started in June when Apple started to enforce
+Mac sandboxing.&lt;/p&gt;
+
+&lt;p&gt;As discussed in a &lt;a href=&#34;https://troz.net/sandboxing-and-the-mac-app-store/&#34;&gt;previous post&lt;/a&gt;, I have had a lot of trouble getting Man
+Reader to be sandbox-compatible leading to many rejections. One problem was that
+I had implemented sand-boxing before the deadline, but with some temporary
+entitlements to allow read-only access to required system files. This
+entitlement was approved initially, but after one rejection, an Apple reviewer
+told me that they had been approving all requested entitlements before the
+deadline, but now were actually reviewing them all.&lt;/p&gt;
+
+&lt;p&gt;To me, this seems like a rather silly thing to have done which has now returned
+to haunt them. Instead of allowing developers time to get used to the
+restrictions, Apple reviewers allowed developers to think that their apps were
+sandbox-complient already. Then Apple was faced with the enormous task of
+re-checking all the entitlements that they had previously allowed without
+checking. This was unfair to developers and has only created extra work for the
+reviewers.&lt;/p&gt;
+
+&lt;p&gt;Here is a table showing the recent review times for my Mac apps:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;App&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Process&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Review days&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Dates&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Time In Words&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;update&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;22&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Sept 22 - Oct 14&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Icns Maker&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;new app&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;24&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Aug 5 - Aug 29&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;A Knight&amp;rsquo;s Move&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;update&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;26&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Sept 6 - Oct 2&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Icon Builder&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;new app&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;33&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Aug 22 - Sept 24&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br&gt;
+I have not included Man Reader as it was rejected too many times to be a valid data point.&lt;/p&gt;
+
+&lt;p&gt;By comparison, when I submitted an update to A Knight&amp;rsquo;s Move for iOS in October,
+it was passed in only 8 days.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Icon makers for Mac &amp; iOS apps</title>
-      <link>https://troz.net/post/2012/icon-makers-for-mac-ios-apps/</link>
-      <pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
+<title>Icon makers for Mac &amp; iOS apps</title>
+<link>https://troz.net/post/2012/icon-makers-for-mac-ios-apps/</link>
+<pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/icon-makers-for-mac-ios-apps/</guid>
-      <description>Announcing two new apps for creating icons for with Mac or iOS projects:
-Icns Maker helps you convert a single image into a .icns file in two steps.
-Icon Builder creates all the files needed to set up your icons for any iOS project.
-Creating icon files for Mac apps: In versions of Xcode before 4.4, Apple provided an app called “Icon Composer”. It allowed you to drag images into a window and export a .</description>
-    </item>
+<description>
+
+&lt;p&gt;Announcing two new apps for creating icons for with Mac or iOS projects:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/icns-maker/&#34; title=&#34;Icns Maker&#34;&gt;Icns Maker&lt;/a&gt; helps you convert a single image into a .icns file in two
+steps.&lt;br /&gt;
+&lt;a href=&#34;https://troz.net/icon-builder/&#34; title=&#34;Icon Builder&#34;&gt;Icon Builder&lt;/a&gt; creates all the files needed to set up your icons for any iOS project.&lt;/p&gt;
+
+&lt;h2 id=&#34;creating-icon-files-for-mac-apps&#34;&gt;Creating icon files for Mac apps:&lt;/h2&gt;
+
+&lt;p&gt;In versions of Xcode before 4.4, Apple provided an app called “Icon Composer”.
+It allowed you to drag images into a window and export a .icns file for use in
+your Mac apps. With Xcode 4.4, Apple has changed the way icons are handled for
+Mac apps and “Icon Composer” is no longer supplied.&lt;/p&gt;
+
+&lt;p&gt;The Xcode docs describe the process you need to go through to make a .icns file:
+create a suite of image files of the correct size and with the correct file
+names, bundle them into a specially named folder and then use Terminal to stitch
+them together.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/icns-maker/&#34; title=&#34;Icns Maker&#34;&gt;Icns Maker&lt;/a&gt; does all this for you in two easy steps.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Drag in an image file (preferably 1024x1024 but 512x512 will also work).&lt;/li&gt;
+&lt;li&gt;Click a button.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;There are more options available for fine-tuning your icons allowing you to
+select different images for the various sizes, but this is all that is needed
+for basic operation.&lt;/p&gt;
+
+&lt;p&gt;Icns Maker is available from the
+&lt;a href=&#34;http://itunes.apple.com/app/icns-maker/id550942266?mt=12&amp;uo=4&#34; target=&#34;_blank&#34;&gt;Mac
+App Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;creating-icon-files-for-ios-apps&#34;&gt;Creating icon files for iOS apps:&lt;/h2&gt;
+
+&lt;p&gt;Icons for iOS apps are not bundled into a single file like a Mac .icns file. You
+add various .png images to your project. Depending on the devices supported by
+your app, you will need many different sizes of icon file. There are some icons
+for iPad only, some for iPhone / iPod Touch only and others required for any
+device. Additionally, you will need larger versions of each image to support
+Retina displays.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34; title=&#34;Icon Builder&#34;&gt;Icon Builder&lt;/a&gt; is a Mac app that does all this for you. As with Icns Maker,
+you just drag your image into the app and click a button. You can also select
+which devices your icon needs to suit and use different images for the different
+sizes if you want finer control.&lt;/p&gt;
+
+&lt;p&gt;When the app creates your icon files, it generates a ReadMe file with the
+information needed for installing these files in your project, including
+information to copy &amp;amp; paste directly into your Info.plist file.&lt;/p&gt;
+
+&lt;p&gt;Icon Builder is available from the
+&lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482?mt=12&#34; target=&#34;_blank&#34;&gt;Mac
+App Store&lt;/a&gt;.&lt;br /&gt;
+Note that although this app builds icon files for iOS app, it runs on a Mac.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;naming&#34;&gt;Naming&lt;/h2&gt;
+
+&lt;p&gt;Originally these apps were named in a consistent manner: Mac Icon Builder and
+iOS Icon Builder. However both these names were rejected by Apple - you are not
+allowed to use the words &amp;ldquo;Mac&amp;rdquo; or &amp;ldquo;iOS&amp;rdquo; in any app name sold through the Mac App
+Store.&lt;/p&gt;
+
+&lt;p&gt;Then I tried Icns Maker and Icon Maker. Icns Maker was approved, but there is
+already an app called Icon Maker, so I went with Icon Builder. But by that time
+Icns Maker had already been released, so there was no way to make the names more
+consistent.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Updating apps for iPhone 5</title>
-      <link>https://troz.net/post/2012/updating-apps-for-iphone-5/</link>
-      <pubDate>Mon, 24 Sep 2012 00:00:00 +0000</pubDate>
+<title>Updating apps for iPhone 5</title>
+<link>https://troz.net/post/2012/updating-apps-for-iphone-5/</link>
+<pubDate>Mon, 24 Sep 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/updating-apps-for-iphone-5/</guid>
-      <description>I have started work updating my iOS apps to fill the larger screen of an iPhone
- My iPhone 5 is on order - I missed out on the first shipment, but hopefully it won&amp;rsquo;t be too long. Meanwhile, I will just test in the iPhone Simulator and hope this is OK.  But it was a puzzle to me how to get an app to fill the longer screen. I have the latest Xcode and the latest Simulator which allows you to specify what screen size iPhone to simulate.</description>
-    </item>
+<description>&lt;p&gt;I have started work updating my iOS apps to fill the larger screen of an iPhone&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;My iPhone 5 is on order - I missed out on the first shipment, but hopefully
+it won&amp;rsquo;t be too long. Meanwhile, I will just test in the iPhone Simulator and
+hope this is OK.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;But it was a puzzle to me how to get an app to fill the longer screen. I have
+the latest Xcode and the latest Simulator which allows you to specify what
+screen size iPhone to simulate. So I re-built an app and nothing changed - it
+showing black strips top &amp;amp; bottom and left my app at the old size.&lt;/p&gt;
+
+&lt;p&gt;After trying many different things and reading a lot of the new sections of the
+Apple developer documentation, I finally found the answer online:&lt;/p&gt;
+
+&lt;p style=&#34;padding-left: 30px;&#34;&gt;
+  &lt;strong&gt;If you want your app to fill the 4&#34; screen, you must provide&lt;/strong&gt;&lt;br /&gt; &lt;strong&gt; a new launch image file called &#34;Default-568h@2x.png&#34;.&lt;/strong&gt;&lt;br /&gt; &lt;strong&gt; This image must be exactly 640 x 1136 pixels.&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Apparently the system uses the presence or absence of this file this to detect
+whether your app supports the longer iPhone.&lt;/p&gt;
+
+&lt;p&gt;I read that Xcode is supposed to warn you of the consequences if this file is
+missing, but in my case, when I opened my project, Xcode helpfully used the old
+launch image in its place. It showed a warning icon that the image was the wrong
+size, but nothing else.&lt;/p&gt;
+
+&lt;p&gt;The next problem was how to create this file. I use screen shots, but until the
+app worked in the correct format, I wasn&amp;rsquo;t going to be able to get the screen
+shot. So I made it a 2 step process: first I duplicated the original launch
+image, renamed it and resized it. It looked wrong but this was irrelevant - it
+was enough to get the app working in the correct format. Once I had the app
+working, I was able to take a screen shot and create the final launch image.&lt;/p&gt;
+
+&lt;p&gt;Once you have the app working in 2 sizes, you have to do more work with the
+layout, either using springs &amp;amp; struts or using the modern auto-layout feature. I
+find auto-layout confusing, but it is obviously more powerful and the way of the
+future, so I am trying to work it out. I found a good tutorial at
+&lt;a href=&#34;http://www.raywenderlich.com/20881/beginning-auto-layout-part-1-of-2&#34; target=&#34;_blank&#34;&gt;Ray
+Wenderlich&amp;rsquo;s site&lt;/a&gt;. While directed at iOS 6, it also applies to Mac apps.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Time In Words &amp; the new iPad</title>
-      <link>https://troz.net/post/2012/time-in-words-the-new-ipad/</link>
-      <pubDate>Tue, 10 Apr 2012 00:00:00 +0000</pubDate>
+<title>Time In Words &amp; the new iPad</title>
+<link>https://troz.net/post/2012/time-in-words-the-new-ipad/</link>
+<pubDate>Tue, 10 Apr 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/time-in-words-the-new-ipad/</guid>
-      <description>The new iPad has a Retina display, meaning that the pixel density is much greater. For some apps, this is a problem as their graphics are now scaled and look pixellated. However Time In Words is very simple. It uses standard fonts and interface widgets with no images or external graphics apart from the icon. The icon may not look perfect on a new iPad, but the display itself should look really great.</description>
-    </item>
+<description>&lt;p&gt;The new iPad has a Retina display, meaning that the pixel density is much
+greater. For some apps, this is a problem as their graphics are now scaled and
+look pixellated. However Time In Words is very simple. It uses standard fonts
+and interface widgets with no images or external graphics apart from the icon.
+The icon may not look perfect on a new iPad, but the display itself should look
+really great.&lt;/p&gt;
+
+&lt;p&gt;I had a report from one user that Time In Words will not work at all on his new
+iPad. Unfortunately, the email address supplied did not work, so I was unable to
+contact this person directly. If you are reading this, please contact me again.&lt;/p&gt;
+
+&lt;p&gt;The person having the problem did not specify exactly what the problem was, so I
+don&amp;rsquo;t know if the app will not start, or if it is not displaying correctly, or
+if it is showing the wrong times or what.&lt;/p&gt;
+
+&lt;p&gt;However I suggested two things to try, and I will list them now in case anyone
+else is having issues:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Try deleting the app from your iPad and then re-installing from the App
+Store.&lt;/li&gt;
+&lt;li&gt;Do a complete reboot of your iPad in case it is running low on memory.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Hopefully one or both of these ideas will solve any problems. They are both good
+general tricks to try with any problem app.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Time In Words available in the App Store</title>
-      <link>https://troz.net/post/2012/time-in-words-available-in-the-app-store/</link>
-      <pubDate>Thu, 09 Feb 2012 00:00:00 +0000</pubDate>
+<title>Time In Words available in the App Store</title>
+<link>https://troz.net/post/2012/time-in-words-available-in-the-app-store/</link>
+<pubDate>Thu, 09 Feb 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/time-in-words-available-in-the-app-store/</guid>
-      <description>Time In Words is now available at the App Store.
-Time In Words is a clock and calendar app that takes you out of the digital era and back to when saying “quarter to seven” or “five past two” was accurate enough.
+<description>&lt;p&gt;Time In Words is now available at the App Store.&lt;/p&gt;
 
-Check out the Time In Words web page for more info and screen shots.</description>
-    </item>
+&lt;p&gt;Time In Words is a clock and calendar app that takes you out of the digital era
+and back to when saying “quarter to seven” or “five past two” was accurate
+enough.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/time-in-words/id498403851&#34;&gt;&lt;img title=&#34;App Store link&#34; src=&#34;https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_appstore-lrg.png&#34; alt=&#34;App Store link&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Check out the &lt;a href=&#34;https://troz.net/time-in-words/&#34;&gt;Time In Words web page&lt;/a&gt; for more info and screen shots.&lt;/p&gt;
+</description>
+</item>
     
   </channel>
 </rss>

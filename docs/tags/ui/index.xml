@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ui on TrozWare</title>
     <link>https://troz.net/tags/ui/</link>
@@ -8,48 +8,228 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Mon, 24 Sep 2012 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/ui/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/ui/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Updating apps for iPhone 5</title>
-      <link>https://troz.net/post/2012/updating-apps-for-iphone-5/</link>
-      <pubDate>Mon, 24 Sep 2012 00:00:00 +0000</pubDate>
+<title>Updating apps for iPhone 5</title>
+<link>https://troz.net/post/2012/updating-apps-for-iphone-5/</link>
+<pubDate>Mon, 24 Sep 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/updating-apps-for-iphone-5/</guid>
-      <description>I have started work updating my iOS apps to fill the larger screen of an iPhone
- My iPhone 5 is on order - I missed out on the first shipment, but hopefully it won&amp;rsquo;t be too long. Meanwhile, I will just test in the iPhone Simulator and hope this is OK.  But it was a puzzle to me how to get an app to fill the longer screen. I have the latest Xcode and the latest Simulator which allows you to specify what screen size iPhone to simulate.</description>
-    </item>
+<description>&lt;p&gt;I have started work updating my iOS apps to fill the larger screen of an iPhone&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;My iPhone 5 is on order - I missed out on the first shipment, but hopefully
+it won&amp;rsquo;t be too long. Meanwhile, I will just test in the iPhone Simulator and
+hope this is OK.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;But it was a puzzle to me how to get an app to fill the longer screen. I have
+the latest Xcode and the latest Simulator which allows you to specify what
+screen size iPhone to simulate. So I re-built an app and nothing changed - it
+showing black strips top &amp;amp; bottom and left my app at the old size.&lt;/p&gt;
+
+&lt;p&gt;After trying many different things and reading a lot of the new sections of the
+Apple developer documentation, I finally found the answer online:&lt;/p&gt;
+
+&lt;p style=&#34;padding-left: 30px;&#34;&gt;
+  &lt;strong&gt;If you want your app to fill the 4&#34; screen, you must provide&lt;/strong&gt;&lt;br /&gt; &lt;strong&gt; a new launch image file called &#34;Default-568h@2x.png&#34;.&lt;/strong&gt;&lt;br /&gt; &lt;strong&gt; This image must be exactly 640 x 1136 pixels.&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Apparently the system uses the presence or absence of this file this to detect
+whether your app supports the longer iPhone.&lt;/p&gt;
+
+&lt;p&gt;I read that Xcode is supposed to warn you of the consequences if this file is
+missing, but in my case, when I opened my project, Xcode helpfully used the old
+launch image in its place. It showed a warning icon that the image was the wrong
+size, but nothing else.&lt;/p&gt;
+
+&lt;p&gt;The next problem was how to create this file. I use screen shots, but until the
+app worked in the correct format, I wasn&amp;rsquo;t going to be able to get the screen
+shot. So I made it a 2 step process: first I duplicated the original launch
+image, renamed it and resized it. It looked wrong but this was irrelevant - it
+was enough to get the app working in the correct format. Once I had the app
+working, I was able to take a screen shot and create the final launch image.&lt;/p&gt;
+
+&lt;p&gt;Once you have the app working in 2 sizes, you have to do more work with the
+layout, either using springs &amp;amp; struts or using the modern auto-layout feature. I
+find auto-layout confusing, but it is obviously more powerful and the way of the
+future, so I am trying to work it out. I found a good tutorial at
+&lt;a href=&#34;http://www.raywenderlich.com/20881/beginning-auto-layout-part-1-of-2&#34; target=&#34;_blank&#34;&gt;Ray
+Wenderlich&amp;rsquo;s site&lt;/a&gt;. While directed at iOS 6, it also applies to Mac apps.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>iPhone 4 Home Button</title>
-      <link>https://troz.net/post/2012/iphone-4-home-button/</link>
-      <pubDate>Wed, 28 Mar 2012 00:00:00 +0000</pubDate>
+<title>iPhone 4 Home Button</title>
+<link>https://troz.net/post/2012/iphone-4-home-button/</link>
+<pubDate>Wed, 28 Mar 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/iphone-4-home-button/</guid>
-      <description>My iPhone 4 is now 18 months old, and it&amp;rsquo;s Home button is starting to feel the strain. These buttons have been used much more than originally intended, with the new multitasking required double-presses, not to mention access to the camera etc. So basically , it is wearing out.
-The phone is out of warranty and there is no way I am going to pay for an expensive repair when my current phone contract will expire later this year, and hopefully the iPhone 5 will be ready for me then.</description>
-    </item>
+<description>&lt;p&gt;My iPhone 4 is now 18 months old, and it&amp;rsquo;s Home button is starting to feel the
+strain. These buttons have been used much more than originally intended, with
+the new multitasking required double-presses, not to mention access to the
+camera etc. So basically , it is wearing out.&lt;/p&gt;
+
+&lt;p&gt;The phone is out of warranty and there is no way I am going to pay for an
+expensive repair when my current phone contract will expire later this year, and
+hopefully the iPhone 5 will be ready for me then. And a cheap repair or DIY is
+too risky.&lt;/p&gt;
+
+&lt;p&gt;I saw a post comparing the physical structure of the home buttons on iPhone 4 &amp;amp;
+4S. Unfortunately I cannot find the link now, but it showed that the actual
+hardware has been made a lot more robust since the iPhone 4 was released, so
+this should only be a short term issue.&lt;/p&gt;
+
+&lt;p&gt;I read a article suggesting the use of WD-40 for a mis-behaving Home button.
+This is a TERRIBLE idea! Do not spray a penetrating oil into your expensive
+electronic device. For starters, it don&amp;rsquo;t believe it is a friction problem - I
+think the mechanism is just wearing out.&lt;/p&gt;
+
+&lt;p&gt;Some people recommend recalibrating the Home button as shown in this post from
+&lt;a href=&#34;http://www.idownloadblog.com/2011/12/22/recalibrate-home-button-responsive/&#34;&gt;idownloadblog.com&lt;/a&gt;. I am a bit sceptical about this. I tried it, but I can&amp;rsquo;t
+see that it did anything. Maybe if your problem is software rather than
+hardware, then it will do some good. Anyway, unlike the WD-40 trick, it can&amp;rsquo;t do
+any harm.&lt;/p&gt;
+
+&lt;p&gt;Finally, on to the workaround. If your iPhone button is really unreliable, but
+you are not ready to repair or upgrade, then you can use the Accessibility tools
+to get a software Home button on the screen.&lt;/p&gt;
+
+&lt;p&gt;Go to Settings - General - Accessibility. Scroll down to &amp;ldquo;Physical &amp;amp; Motor&amp;rdquo;.
+Turn on AssistiveTouch.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/images/HomeButton1.png&#34;&gt;&lt;img title=&#34;AssistiveTouch settings&#34; src=&#34;https://troz.net/images/HomeButton1-small.png&#34; alt=&#34;AssistiveTouch settings&#34; width=&#34;200&#34; height=&#34;300&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;When you back out of Settings, you will see a white blob somewhere on your
+screen. This can be dragged to any location around the edge of the screen, so
+you can always move it out of the way in any app.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/images/HomeButton2.png&#34;&gt;&lt;img title=&#34;The White Blob&#34; src=&#34;https://troz.net/images/HomeButton2-small.png&#34; alt=&#34;The White Blob&#34; width=&#34;200&#34; height=&#34;300&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Tapping on the white blob gives you an overlay view with four options, one of
+which is Home. Tapping this is exactly the same as pressing the physical Home
+button. So with this and the power button, you can do everything, even if the
+Home button stops working completely.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/images/HomeButton3.png&#34;&gt;&lt;img title=&#34;AssistiveTouch panel open&#34; src=&#34;https://troz.net/images/HomeButton3-small.png&#34; alt=&#34;AssistiveTouch panel open&#34; width=&#34;200&#34; height=&#34;300&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Thanks to Tom at our local Apple Store (Robina, Queensland, Australia) for this
+tip.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Interface options for selecting time zones</title>
-      <link>https://troz.net/post/2012/interface-options-for-selecting-time-zones/</link>
-      <pubDate>Sat, 25 Feb 2012 00:00:00 +0000</pubDate>
+<title>Interface options for selecting time zones</title>
+<link>https://troz.net/post/2012/interface-options-for-selecting-time-zones/</link>
+<pubDate>Sat, 25 Feb 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/interface-options-for-selecting-time-zones/</guid>
-      <description>As part of the design for [Time In Words for Mac][1], I had to work out the interface for selecting time zones. With [Time In Word for iOS][2], I used picker wheels which are excellent for selecting hierarchical data. On the Mac, there is no such thing as the iOS picker wheel and so I had to consider what to use instead.
-When you ask the system (Mac or iOS) for the available time zones, you get a list of names like this:</description>
-    </item>
+<description>&lt;p&gt;As part of the design for [Time In Words for Mac][1], I had to work out the
+interface for selecting time zones. With [Time In Word for iOS][2], I used
+picker wheels which are excellent for selecting hierarchical data. On the Mac,
+there is no such thing as the iOS picker wheel and so I had to consider what to
+use instead.&lt;/p&gt;
+
+&lt;p&gt;When you ask the system (Mac or iOS) for the available time zones, you get a
+list of names like this:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Africa/Abidjan&lt;br /&gt;
+Africa/Accra&lt;br /&gt;
+&amp;hellip;&lt;br /&gt;
+America/Cayman&lt;br /&gt;
+America/Chicago&lt;br /&gt;
+&amp;hellip;&lt;br /&gt;
+Europe/Riga&lt;br /&gt;
+Europe/Rome&lt;br /&gt;
+etc.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This seems obviously designed for a hierarchical display with the major regions
+as a first selection, filtering down to the cities in that region, making
+selection a two-step process. With the picker wheel in iOS, that is what I did.
+The first wheel selects the region which then populates the second wheel with
+the relevant city names. It makes it quick and easy to select a zone.&lt;/p&gt;
+
+&lt;p&gt;I always prefer to use standard user interface objects because people are
+familiar with them, they automatically update with the system, and there is much
+less chance of the App Store rejecting the app. So I scrolled through the
+available Mac options and came to NSBrowser. This is basically what Finder uses
+when in column mode.&lt;/p&gt;
+
+&lt;p&gt;I created an NSBrowser object, worked out a way to populate it and tested. It
+was incredibly slow! The list of regions appeared when the window opened, and
+that was no problem. Then I clicked a region and the first set of city names
+appeared instantly. But subsequent selections took about 3 seconds to appear.&lt;/p&gt;
+
+&lt;p&gt;I added some timing tests and my data gathering was taking about 20
+milliseconds. The log thought the browser had updated within about 100
+milliseconds, so I guess the rest of the time was some redraw issue.&lt;/p&gt;
+
+&lt;p&gt;Apple provides a large number of sample projects so I downloaded one that used
+NSBrowser. It seemed fast and responsive, so I duplicated it&amp;rsquo;s different method
+of assembling the data and tried again. No luck - it was as slow as before.&lt;/p&gt;
+
+&lt;p&gt;I am sure that if I kept at it, I would eventually work out what was causing the
+bottleneck and make NSBrowser work - after all, Finder is responsive enough,
+even if not great. But in the end, I decided that the advantages to using this
+form of interface didn&amp;rsquo;t justify the time spent, so I went with a simple table
+and a search field.&lt;/p&gt;
+
+&lt;p&gt;It is fast to populate, responsive to searches and didn&amp;rsquo;t take long to set up.
+So I am happy, although still perplexed about NSBrowser. It is on my to-do list
+of things I want to work out one day.&lt;/p&gt;
+
+&lt;p&gt;[1]: /time-in-words-for-mac/ [2]: /time-in-words/&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Scroll bars in Mac OX 10.6 and 10.7</title>
-      <link>https://troz.net/post/2012/scroll-bars-in-mac-ox-10-6-and-10-7/</link>
-      <pubDate>Sat, 25 Feb 2012 00:00:00 +0000</pubDate>
+<title>Scroll bars in Mac OX 10.6 and 10.7</title>
+<link>https://troz.net/post/2012/scroll-bars-in-mac-ox-10-6-and-10-7/</link>
+<pubDate>Sat, 25 Feb 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/scroll-bars-in-mac-ox-10-6-and-10-7/</guid>
-      <description>With the introduction of OS X 10.7 (Lion), Apple removed the obvious scroll bars from windows and replaced them with a much more subtle scroll indicator, that only appears when you are actually scrolling. This was designed to match the iOS scrolling, as was the swap of scroll direction which makes much more sense if you use a trackpad.
-With the upcoming Time In Words for Mac, I have a Preferences window to allow selection of time zones to display in the menu.</description>
-    </item>
+<description>&lt;p&gt;With the introduction of OS X 10.7 (Lion), Apple removed the obvious scroll bars
+from windows and replaced them with a much more subtle scroll indicator, that
+only appears when you are actually scrolling. This was designed to match the iOS
+scrolling, as was the swap of scroll direction which makes much more sense if
+you use a trackpad.&lt;/p&gt;
+
+&lt;p&gt;With the upcoming &lt;a href=&#34;https://troz.net/time-in-words-for-mac/&#34;&gt;Time In Words for Mac&lt;/a&gt;, I have a Preferences window to
+allow selection of time zones to display in the menu. The app will be compatible
+with 10.6 or later. Under 10.6, the scrollbars are always visible and this is
+what the Preferences display looks like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img title=&#34;Preferences 10.6&#34; src=&#34;https://troz.net/images/TiW-Prefs-10.6.png&#34; alt=&#34;Preferences 10.6&#34; width=&#34;550&#34; height=&#34;272&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This may change, but the basic layout is there. As you can see, I have a
+3-column table listing all the available time zones, with the final column right
+justified.&lt;/p&gt;
+
+&lt;p&gt;Under 10.7, this doesn&amp;rsquo;t quite work:&lt;/p&gt;
+
+&lt;p&gt;&lt;img title=&#34;Preferences 10.7&#34; src=&#34;https://troz.net/images/TiW-Prefs-10.7.png&#34; alt=&#34;Preferences 10.7&#34; width=&#34;550&#34; height=&#34;272&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I had to grab this screen shot quickly after swiping the trackpad, but you can
+see the problem. When not scrolling, the scroll indicator is hidden and the
+right column is fully visible, but when dragging the scroll indicator appears on
+top of the right-justified entries in that column.&lt;/p&gt;
+
+&lt;p&gt;So now I am not quite sure what to do. Here are the options I have considered:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Left or centre-justify the text in the final column.&lt;/li&gt;
+&lt;li&gt;Add some spacing at the end of each line so that the scroll indicator appears
+in blank space.&lt;/li&gt;
+&lt;li&gt;Put up with it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I will have to experiment with various options and see what I can do.&lt;/p&gt;
+</description>
+</item>
     
   </channel>
 </rss>

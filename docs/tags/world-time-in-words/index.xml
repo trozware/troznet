@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>world time in words on TrozWare</title>
     <link>https://troz.net/tags/world-time-in-words/</link>
@@ -8,17 +8,39 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Thu, 14 Jun 2018 10:41:46 +1000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/world-time-in-words/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/world-time-in-words/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>World Time in Words iOS Update</title>
-      <link>https://troz.net/post/2018/world-time-in-words-ios-update/</link>
-      <pubDate>Thu, 14 Jun 2018 10:41:46 +1000</pubDate>
+<title>World Time in Words iOS Update</title>
+<link>https://troz.net/post/2018/world-time-in-words-ios-update/</link>
+<pubDate>Thu, 14 Jun 2018 10:41:46 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/world-time-in-words-ios-update/</guid>
-      <description>&lt;p&gt;Its been a long time since the last update to Time In Words for iOS but after prompting by Apple (&lt;em&gt;update or we will remove it from the App Store&lt;/em&gt;), I finally did it. I was never really happy with the last design of Time in Words for iOS, particularly for the iPad, so this was a good opportunity to do a complete re-design, bringing the app more into alignment with its Mac counterpart. And it got a new name to match its new direction and is now called World Time in Words.&lt;/p&gt;</description>
-    </item>
+<description>&lt;p&gt;Its been a long time since the last update to Time In Words for iOS but after prompting by Apple (&lt;em&gt;update or we will remove it from the App Store&lt;/em&gt;), I finally did it. I was never really happy with the last design of Time in Words for iOS, particularly for the iPad, so this was a good opportunity to do a complete re-design, bringing the app more into alignment with its Mac counterpart. And it got a new name to match its new direction and is now called World Time in Words.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/time-in-words/id498403851&#34;&gt;World Time in Words v 5.0&lt;/a&gt; is available from the App Store.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;In 2015, I released &lt;a href=&#34;https://troz.net/post/2015/time-in-words-4.0/&#34;&gt;Time In Words v 4.0&lt;/a&gt; for iOS. This was a big change as I had dropped the original QlockTwo concept and switched the emphasis to world time conversions that would be easy to read and understand. This bit worked out well, but the paging interface was not a great success - it made it too tedious to find the zone you were interested in.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://troz.net/time-in-words-for-mac/&#34;&gt;Mac version&lt;/a&gt; is a menu bar app that shows the selected time zones as separate menu items. iOS apps don&amp;rsquo;t have menus, but the closest thing to this is a table, so that is what I went with.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/WTiW-iOS.jpg&#34; alt=&#34;Basic display&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As before, you can add, remove or re-order the time zones and the top three zones can be shown in your Today widgets.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/WTiW-iOS-1.jpg&#34; alt=&#34;Edit zones&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/WTiW-iOS-4.jpg&#34; alt=&#34;Today widget&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;But the feature that I use most in the Mac app is &amp;ldquo;What time will it be when&amp;hellip;&amp;rdquo;. In the iOS app, for reasons of space, the button is labelled &amp;ldquo;What time will it be?&amp;rdquo; but the functionality is the same: drag the slider to adjust the hour in your local time zone and see what that hour will be in your selected world zones. This is incredibly useful when you have family, friends and colleagues all over the world and really don&amp;rsquo;t want to call them at the wrong time of day.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/WTiW-iOS-2.jpg&#34; alt=&#34;What time will it be&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The iPad version of the app is identical at this stage, but I am thinking of adjusting the interface so as to take advantage of the increased real estate. If other work doesn&amp;rsquo;t get in the way, this may happen&amp;hellip;&lt;/p&gt;</description>
+</item>
     
   </channel>
 </rss>

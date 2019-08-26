@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mac on TrozWare</title>
     <link>https://troz.net/tags/mac/</link>
@@ -8,25 +8,49 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Sat, 06 Oct 2018 09:38:20 +1000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>The End of Pic-a-POD</title>
-      <link>https://troz.net/post/2018/the-end-of-picapod/</link>
-      <pubDate>Sat, 06 Oct 2018 09:38:20 +1000</pubDate>
+<title>The End of Pic-a-POD</title>
+<link>https://troz.net/post/2018/the-end-of-picapod/</link>
+<pubDate>Sat, 06 Oct 2018 09:38:20 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/the-end-of-picapod/</guid>
-      <description>&lt;p&gt;I think I wrote the first version of &lt;a href=&#34;https://picapod.com&#34;&gt;Pic-a-POD&lt;/a&gt; in 2003 and have been updating and maintaining it ever since, but the time has come to shut it down.&lt;/p&gt;</description>
-    </item>
+<description>&lt;p&gt;I think I wrote the first version of &lt;a href=&#34;https://picapod.com&#34;&gt;Pic-a-POD&lt;/a&gt; in 2003 and have been updating and maintaining it ever since, but the time has come to shut it down.&lt;/p&gt;
+
+&lt;p&gt;I haven&amp;rsquo;t been able to find a picture of the original version, but here is one from 2005:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/POD2005.png&#34; alt=&#34;Pic-a-POD 2005&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And here it is today:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/POD2018.png&#34; alt=&#34;Pic-a-POD 2018&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It was written originally as a convenient way to download the daily picture-of-the-day from &lt;a href=&#34;https://www.nationalgeographic.com/photography/photo-of-the-day/&#34;&gt;National Geographic&lt;/a&gt; and use it to set the Mac&amp;rsquo;s Desktop Picture automatically. From there is just grew with more sites added (9 at the moment although I think there have been up to 12 at certain times).&lt;/p&gt;
+
+&lt;p&gt;The main issue was keeping up with the site changes of the various sources. Early versions had each copy of the app interrogate the sites directly which meant that any change to the site broke the app until an update could be released. And without the App Store making updates easy to distribute, this was a problem. Later I switched to having PHP scripts on my server do the data retrieval and store the results in a database. The app then just had to request the data from my server. That way if there was a change, I could react quickly and a fix to the server-side scripts allowed all users to get the new data.&lt;/p&gt;
+
+&lt;p&gt;As my first Objective-C app and my first app on the Mac App Store, Pic-a-POD has always held a place in my affections, and until last week, it was the one app that was always running on my Mac. So what changed? macOS Mojave&amp;rsquo;s dynamic desktops! I turned off Pic-a-POD, and set the Desktop picture to change dynamically through the day and I loved it.&lt;/p&gt;
+
+&lt;p&gt;On the server, I have kept Pic-a-POD updated regularly, adding and removing sites, fixing the scripts to accommodate changes and so on. But the desktop app has languished and has needed an update for many years now. It&amp;rsquo;s networking is primitive and I know so much more about programming for the Mac now that looking at the code is positiviely embarrassing! But it has never been a big seller so a re-write is definitely not economically viable, it would only be for my satisfaction. And if even I am not using it any more, what is the point?&lt;/p&gt;
+
+&lt;p&gt;So I have made the sad decision to shut it down. But what does this mean for users of Pic-a-POD right now?&lt;/p&gt;
+
+&lt;p&gt;Firstly, it is not going away immediately. I will remove it from the App Store, but existing copies are still going to work. If any of the source sites change their data structure, I will not be monitoring this and I will not update the server-side scripts - just turn off that source and carry on with whatever still works. And finally, when the picapod.com domain name expires in 2021, I will not renew it and the app will cease to operate.&lt;/p&gt;
+
+&lt;p&gt;What can you use instead? The default dynamic desktops in Mojave are great although there are only two of them, but I have bought myself an app called &lt;a href=&#34;https://itunes.apple.com/au/app/24-hour-wallpaper/id1226087575?mt=12&#34;&gt;24 Hour Wallpaper&lt;/a&gt; which includes a great range of dynamic desktop pictures.&lt;/p&gt;
+
+&lt;p&gt;So thank you to everyone who has used Pic-a-POD over the years and especially those of you who took the time and trouble to contact me. It has been a fun journey, but there are other apps in my future now.&lt;/p&gt;</description>
+</item>
     
     <item>
-      <title>Moving to the Dark Side - Part 2</title>
-      <link>https://troz.net/post/2018/moving-to-the-dark-side-2/</link>
-      <pubDate>Sat, 06 Oct 2018 08:29:35 +1000</pubDate>
+<title>Moving to the Dark Side - Part 2</title>
+<link>https://troz.net/post/2018/moving-to-the-dark-side-2/</link>
+<pubDate>Sat, 06 Oct 2018 08:29:35 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/moving-to-the-dark-side-2/</guid>
-      <description>&lt;style&gt;
+<description>&lt;style&gt;
   img {
     margin: 10px auto;
     border: 0.5rem #dfe7f0 solid;
@@ -47,16 +71,32 @@
   }
 &lt;/style&gt;
 
-&lt;p&gt;Now that most of my Mac apps have been updated to support macOS Mojave&amp;rsquo;s dark mode, it was time to turn my attention to this web site.&lt;/p&gt;</description>
-    </item>
+&lt;p&gt;Now that most of my Mac apps have been updated to support macOS Mojave&amp;rsquo;s dark mode, it was time to turn my attention to this web site.&lt;/p&gt;
+
+&lt;p&gt;I build this site using &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; and up until recently I used a theme called &lt;a href=&#34;https://github.com/olOwOlo/hugo-theme-even&#34;&gt;Even&lt;/a&gt; which I had been able to modify to suit my requirements. The story of how I switched to Hugo, what I wanted in a theme and how I went about, is in a &lt;a href=&#34;https://troz.net/post/2017/moving-to-hugo/&#34;&gt;post from last year&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;But Evan is a theme with a white background and dark text, which looked great in light mode, but rather glaring in dark mode. So it was time to head for the &lt;a href=&#34;https://themes.gohugo.io&#34;&gt;Hugo Themes page&lt;/a&gt; to look for an alternative.&lt;/p&gt;
+
+&lt;p&gt;But which way to go? In my opinion, dark themes look better in Mojave&amp;rsquo;s light mode than light themes look in dark mode, so I decided to go with a dark theme. But to my delight, I found a theme that allowed users to switch between light and dark modes: &lt;a href=&#34;https://themes.gohugo.io/hugo-theme-hello-friend/&#34;&gt;Hello Friend&lt;/a&gt; by &lt;a href=&#34;https://twitter.com/panr&#34;&gt;panr&lt;/a&gt;. Click the light bulb icon in the top right and the web site instantly toggles between modes.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Dark_Light_web.png&#34; alt=&#34;Dark and light versions of homepage&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;With the spread of dark mode, I would expect more web sites and themes to implement this sort of switching in the future. Thanks to &lt;a href=&#34;https://twitter.com/panr&#34;&gt;panr&lt;/a&gt; for being an early adopter.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;As I said in my &lt;a href=&#34;https://troz.net/post/2018/moving-to-the-dark-side/&#34;&gt;previous post&lt;/a&gt;, I have already updated several of my macOS apps to support dark mode. But after reading some comments on Twitter, I have updated &lt;a href=&#34;https://itunes.apple.com/app/apple-store/id552293482&#34;&gt;Icon Builder&lt;/a&gt; and &lt;a href=&#34;https://itunes.apple.com/app/apple-store/id997688302&#34;&gt;Dice Pass&lt;/a&gt; to allow the user to decide which mode to use. Make your choice in the Window menu as to whether these apps use whatever mode is set for the system, or select your preferred mode.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/SelectMode.png&#34; alt=&#34;Select mode in Window menu&#34; /&gt;&lt;/p&gt;</description>
+</item>
     
     <item>
-      <title>Moving to the Dark Side</title>
-      <link>https://troz.net/post/2018/moving-to-the-dark-side/</link>
-      <pubDate>Wed, 26 Sep 2018 16:49:43 +1000</pubDate>
+<title>Moving to the Dark Side</title>
+<link>https://troz.net/post/2018/moving-to-the-dark-side/</link>
+<pubDate>Wed, 26 Sep 2018 16:49:43 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/moving-to-the-dark-side/</guid>
-      <description>&lt;style&gt;
+<description>&lt;style&gt;
   img {
     margin: 10px auto;
     border: 0.5rem #dfe7f0 solid;
@@ -79,404 +119,1915 @@
 
 &lt;p&gt;With the release of macOS Mojave on 24th September 2018, I have started updating my Mac apps, mainly to enable support for dark mode if appropriate.&lt;/p&gt;
 
-&lt;p&gt;And now I have updated this site too. Click the light bulb icon at the top right of the page to toggle between light and dark modes for this site.&lt;/p&gt;</description>
-    </item>
+&lt;p&gt;And now I have updated this site too. Click the light bulb icon at the top right of the page to toggle between light and dark modes for this site.&lt;/p&gt;
+
+&lt;p&gt;And with my apps, so far (1 st October 2018), I have updated &lt;a href=&#34;https://itunes.apple.com/app/apple-store/id552293482&#34;&gt;Icon Builder&lt;/a&gt;, &lt;a href=&#34;https://itunes.apple.com/app/apple-store/id509085586&#34;&gt;World Time in Words&lt;/a&gt;, &lt;a href=&#34;https://itunes.apple.com/app/apple-store/id997688302&#34;&gt;Dice Pass&lt;/a&gt; and &lt;a href=&#34;https://itunes.apple.com/app/apple-store/id533321133&#34;&gt;A Knight&amp;rsquo;s Move&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;&lt;img src=&#34;https://troz.net/images/IconBuilder5.1.png&#34; alt=&#34;Icon Builder 5.1&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/time-in-words-for-mac/&#34;&gt;&lt;img src=&#34;https://troz.net/images/WTiW_dark.png&#34; alt=&#34;World Time in Words 3.2&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/dicepass/&#34;&gt;&lt;img src=&#34;https://troz.net/images/DicePass1.5.png&#34; alt=&#34;Dice Pass 3.2&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/knightsmove/&#34;&gt;&lt;img src=&#34;https://troz.net/images/KnightsMoveMac1.png&#34; alt=&#34;Knights Move 1.6&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;For A Knight&amp;rsquo;s Move, I wanted to make sure the wood-look background didn&amp;rsquo;t change, so I actually disabled dark mode.
+For any developers looking for the way to do that, I added the following chunk to the &lt;code&gt;applicationDidFinishLaunching(_:)&lt;/code&gt; method:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;    if #available(OSX 10.14, *) {
+        NSApp.appearance = NSAppearance(named: .aqua)
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Similar code could presumably be used to change the appearance of a running app. I may add the ability to switch to my apps later.&lt;/p&gt;</description>
+</item>
     
     <item>
-      <title>App Updates</title>
-      <link>https://troz.net/post/2018/app-updates/</link>
-      <pubDate>Sat, 26 May 2018 09:22:57 +1000</pubDate>
+<title>App Updates</title>
+<link>https://troz.net/post/2018/app-updates/</link>
+<pubDate>Sat, 26 May 2018 09:22:57 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/app-updates/</guid>
-      <description>&lt;p&gt;Just a quick post to let you know about some recent app updates&amp;hellip;&lt;/p&gt;</description>
-    </item>
+<description>&lt;p&gt;Just a quick post to let you know about some recent app updates&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;man-reader&#34;&gt;Man Reader&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/man-reader/id522583774?mt=12&#34;&gt;Man Reader v 1.10&lt;/a&gt; was released on 11 May 2018.&lt;/p&gt;
+
+&lt;p&gt;I had to update &lt;a href=&#34;https://troz.net/manreader/&#34;&gt;Man Reader&lt;/a&gt; in November 2017 because of a really strange &amp;ldquo;feature&amp;rdquo; that arrived with macOS High Sierra. Man Reader displays the man pages as HTML which allows the tabs and internal links to work using anchor tags. These had worked for years, but under High Sierra, they just stopped working.&lt;/p&gt;
+
+&lt;p&gt;I eventually discovered that it was because I was loading the text directly into the WebView using:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objectivec&#34;&gt;[self.web.mainFrame loadHTMLString:manText baseURL:nil];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With no baseURL, the anchor links were all defaulting to &lt;code&gt;about:blank&lt;/code&gt; and going nowhere. The solution was to save the text to a temporary file and then load using:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objectivec&#34;&gt;NSURLRequest *request = [NSURLRequest requestWithURL: tempFile];
+[self.web.mainFrame loadRequest: request];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Needless to say, this took me ages to work out, including a lengthy excursion into using &lt;code&gt;WKWebView&lt;/code&gt; to see if the more modern web view would solve the problem.&lt;/p&gt;
+
+&lt;p&gt;The second update (May 2018) was in response to a crash report from a user. I had great difficulty tracking this one down and even now, I cannot see how it can have happened, but it was in relation to the utility apps that are displayed in the toolbar.&lt;/p&gt;
+
+&lt;p&gt;For each app, Man Reader checks to see if the app bundle exists, then it checks for a bundle identifier. It appears that this can come back as nil which I had not realised. And trying to insert an item with a identifier of &lt;code&gt;nil&lt;/code&gt; into the toolbar caused a crash.&lt;/p&gt;
+
+&lt;p&gt;As you can see from the code, ManReader is written in Objective-C. Going back to Objective-C from Swift is painful! And I know that this crash could not have happened if the app had been written in Swift as the identifier would have been an optional and I would have been forced to check that it was not nil before using.&lt;/p&gt;
+
+&lt;p&gt;On the plus side, Objective-C apps are tiny in comparison to Swift apps. And the Mac App Store review process set a new record for me. I submitted the app at 10:58 am and it was on sale at 12:03 pm the same day - 66 minutes from start to finish.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;sequenza-vii&#34;&gt;Sequenza VII&lt;/h2&gt;
+
+&lt;p&gt;The other app that I updated recently is &lt;a href=&#34;https://itunes.apple.com/us/app/sequenza-vii/id730234638?mt=8&amp;amp;uo=4&#34;&gt;Sequenza VII&lt;/a&gt;. Version 1.2 was released on 23 April 2018.&lt;/p&gt;
+
+&lt;p&gt;This is an app with a very limited audience - specifically oboe players who want to learn to play Berio&amp;rsquo;s weird music. However Apple sent me a notice saying that as it hadn&amp;rsquo;t been updated for ages, it would be removed from the store within 30 days unless I did something.&lt;/p&gt;
+
+&lt;p&gt;Updating it to use the iPhone X display was surprisingly difficult. I set the minimum system version to 11.0 and changed the storyboards to use the latest Xcode but the horns on either side of the notch were still being left blank. In the end, the trick I found was to create a new Launch storyboard - that seemed to fool the system into re-considering all the layouts.&lt;/p&gt;</description>
+</item>
     
     <item>
-      <title>Icon Builder 5</title>
-      <link>https://troz.net/post/2018/icon-builder-5/</link>
-      <pubDate>Sun, 18 Feb 2018 10:19:18 +1000</pubDate>
+<title>Icon Builder 5</title>
+<link>https://troz.net/post/2018/icon-builder-5/</link>
+<pubDate>Sun, 18 Feb 2018 10:19:18 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/icon-builder-5/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;Icon Builder 5.0&lt;/a&gt; is now available from the &lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Mac App Store&lt;/a&gt;. This is a complete re-write for better compatibility with Apple&amp;rsquo;s latest icon requirements. Read on to see what I have fixed and how&amp;hellip;&lt;/p&gt;</description>
-    </item>
+<description>&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;Icon Builder 5.0&lt;/a&gt; is now available from the &lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Mac App Store&lt;/a&gt;. This is a complete re-write for better compatibility with Apple&amp;rsquo;s latest icon requirements. Read on to see what I have fixed and how&amp;hellip;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;problems&#34;&gt;Problems&lt;/h2&gt;
+
+&lt;p&gt;When I came to create a new iOS app recently, I found out that Icon Builder had fallen behind Apple&amp;rsquo;s requirements in three ways:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The 1024 x 1024 marketing icon is now supposed to be inside the app&amp;rsquo;s icon set.&lt;/li&gt;
+&lt;li&gt;Icon files must have their color profile set to sRGB (P3 is also valid for iOS apps).&lt;/li&gt;
+&lt;li&gt;iOS icon files must have no transparent pixels and the alpha channel must be removed from the files.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;When I set to work fixing these problems I soon ran into issues with the existing version of Icon Builder which was created 6 years ago.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It was written in Objective-C which I am increasingly finding difficult and un-safe to write.&lt;/li&gt;
+&lt;li&gt;The app was written when I was very much a beginner in Mac apps and this is obvious from the code&amp;hellip;&lt;/li&gt;
+&lt;li&gt;There was a lot of legacy code left over from previous changes and extensions.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So I decided that the most interesting thing to do would be to start almost from scratch and re-write the app in Swift using better techniques.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-re-write&#34;&gt;The Re-write&lt;/h2&gt;
+
+&lt;p&gt;Now instead of the Massive View Controller, I have a larger set of small files, each with their own responsibility. Enums and structs dictate the various requirements for the different devices or app types. Other structs deal with creating the images, the folder management and writing out the files. An NSImage extension handles the resizing and reformatting of the images. This is now an app that I would not be ashamed to show anyone, except perhaps for the need to add more unit tests.&lt;/p&gt;
+
+&lt;h2 id=&#34;adding-a-color-profile&#34;&gt;Adding a color profile&lt;/h2&gt;
+
+&lt;p&gt;But then we get to the new features needed. Adding the 1024x1024 icon to the app icon set was easy, especially after the re-factoring. But what about the color profile?&lt;/p&gt;
+
+&lt;p&gt;This was not as easy as I expected - there is no built in command to apply a profile but here is the solution that I finally found:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;extension NSImage {
+
+  func convertImageTo_sRGB() throws -&amp;gt; Data {
+      guard let colorSpace = CGColorSpace(name: CGColorSpace.sRGB),
+          let cgi = self.cgImage(forProposedRect: nil,
+                                 context: nil,
+                                 hints: nil) else {
+                                  throw ImageError.cantMakeCgImage
+      }
+
+      let ci = CIImage(cgImage: cgi)
+
+      guard let pngData = CIContext().pngRepresentation(of: ci,
+                                                        format: kCIFormatRGBA8,
+                                                        colorSpace: colorSpace) else {
+          throw ImageError.cantConvertToPng
+      }
+      return pngData
+  }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This takes the NSImage and converts it to a CGImage, first checking that the appropriate color space exists.&lt;/li&gt;
+&lt;li&gt;Then it uses the Core Graphics CGImage to create a Core Image CIImage.&lt;/li&gt;
+&lt;li&gt;There is a new API in macOS 10.13 to extract the png data from a CIImage while assigning a color profile.&lt;/li&gt;
+&lt;li&gt;This Data can then be written directly to a file and there you have a PNG with an attached color profile.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;transparency&#34;&gt;Transparency&lt;/h2&gt;
+
+&lt;p&gt;Now problems 1 &amp;amp; 2 have been solved. Problem 3 was the most difficult. It turned out to be a two-part problem because an image file can have no transparent pixels but still have an alpha channel in the file data.&lt;/p&gt;
+
+&lt;p&gt;At first, I thought maybe I could just circumvent the whole problem by converting the images to JPEGs which have no transparency or alpha channel. Using the code above, I just changed it to getting the &lt;code&gt;jpegRepresentation&lt;/code&gt; instead and saving with a .jpg file extension.&lt;/p&gt;
+
+&lt;p&gt;While this solved the alpha channel problem, the transparent parts of the icon just went black which was a not a good look.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Transparent-Jpeg.png&#34; alt=&#34;Transparent image converted to JPEG&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;For anyone horrified at my use of force-unwrapping, I never do this in a production app but in a playground, it makes the code shorter and it doesn&amp;rsquo;t really matter if I get a crash there.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;converting-transparent-pixels-to-white&#34;&gt;Converting transparent pixels to white&lt;/h3&gt;
+
+&lt;p&gt;So the first step must be to set the transparent parts of the image to another color. Searching for solutions online, most of the ones I came up with were very slow (processing each pixel) or so complicated that I didn&amp;rsquo;t understand them, and I hate just copy-pasting code that I don&amp;rsquo;t understand at all.&lt;/p&gt;
+
+&lt;p&gt;But eventually I found something that I morphed into this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;extension NSImage {
+
+    func makeAlphaWhite() -&amp;gt; NSImage {
+        guard let imageData = self.tiffRepresentation,
+            let imageRep = NSBitmapImageRep(data: imageData),
+            let jpegData = imageRep.representation(using: .jpeg, properties: [
+                NSBitmapImageRep.PropertyKey.compressionFactor: NSNumber(value: 1.0)
+                ]),
+            let jpegImage = NSImage(data: jpegData) else {
+                return image
+        }
+        return jpegImage
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It used basically the same trick of converting the image into a JPEG but doing it this way via &lt;code&gt;NSBitmapImageRep&lt;/code&gt; turned the transparent pixels white instead of black. And as you can see, this gave a much better looking image:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/MakeAlphaWhite.png&#34; alt=&#34;Transparent portions converted to white&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now I was able to continue with my plans to have JPEGs rule the world! This worked really well in my early tests but then I came to try a Stickers app and the icons didn’t work. I couldn&amp;rsquo;t even drag them in manually! Back to the Apple docs and I see that icons must be PNGs.&lt;/p&gt;
+
+&lt;p&gt;When I changed the transparent pixels to white, added the color space and then saved the PNG data, I got an image that looked correct but the file still contained an alpha channel. So I had to come up with a method that re-wrote the PNG data in such a way that it never contained any alpha data at all.&lt;/p&gt;
+
+&lt;h3 id=&#34;removing-the-alpha-channel&#34;&gt;Removing the alpha channel&lt;/h3&gt;
+
+&lt;p&gt;Graphics experts are probably groaning aloud by now, but I did eventually arrive at a solution, however hacky:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;extension NSImage {
+
+    func convertImageTo_sRGB_noAlpha() throws -&amp;gt; Data {
+        guard let colorSpace = CGColorSpace(name: CGColorSpace.sRGB),
+            let cgi = self.cgImage(forProposedRect: nil,
+                                   context: nil,
+                                   hints: nil) else {
+                                    throw ImageError.cantMakeCgImage
+        }
+
+        let ci = CIImage(cgImage: cgi)
+        guard let jpgData = CIContext().jpegRepresentation(of: ci,
+                                                           colorSpace: colorSpace) else {
+            throw ImageError.cantConvertToJpg
+        }
+        guard let jpegImage = NSImage(data: jpgData) else {
+            throw ImageError.cantConvertToJpgImage
+        }
+        let pngData = try jpegImage.convertImageTo_sRGB()
+        return pngData
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Take the image &lt;strong&gt;after&lt;/strong&gt; changing the transparent pixels to white.&lt;/li&gt;
+&lt;li&gt;Convert it to JPEG data with the required color space.&lt;/li&gt;
+&lt;li&gt;Convert the JPEG data back to an image - this will contain &lt;strong&gt;NO&lt;/strong&gt; alpha data.&lt;/li&gt;
+&lt;li&gt;Use the original routine to convert this JPEG into PNG data with the correct color space.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Running this in the playground looks like this:
+&lt;img src=&#34;https://troz.net/images/TransparentPng.png&#34; alt=&#34;Creating non-transparent PNG in playground&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And as you can see from the file info, it results in a file with the correctly assigned color profile and no alpha channel:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/FileInfo.png&#34; alt=&#34;Final result file info&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The double shuffle sounds time-consuming and in-efficient but it really doesn&amp;rsquo;t take long. In my tests, by far the longest part of creating an icon set is opening the file dialog.&lt;/p&gt;
+
+&lt;h2 id=&#34;future-plans&#34;&gt;Future plans&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Add more unit tests.&lt;/li&gt;
+&lt;li&gt;Work out how to replace the transparent pixels with a selected color.&lt;/li&gt;
+&lt;li&gt;Offer better cropping and image positioning options.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+
+&lt;p&gt;For resizing and cropping images, I use &lt;a href=&#34;https://mattgemmell.com/imagecrop-source-code/&#34;&gt;Matt Gemmell&amp;rsquo;s NSImage+MGCropExtensions&lt;/a&gt; and for further reading, I recommend Apple&amp;rsquo;s Human Interface Guidelines concerning app icons for &lt;a href=&#34;https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/app-icon/&#34;&gt;iOS&lt;/a&gt; and &lt;a href=&#34;https://developer.apple.com/macos/human-interface-guidelines/icons-and-images/app-icon/&#34;&gt;macOS&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note: here is Australia we use the spelling &lt;strong&gt;colour&lt;/strong&gt; but for consistency with the code samples, I have used &lt;strong&gt;color&lt;/strong&gt; throughout the text.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+</item>
     
     <item>
-      <title>Looking for beta testers</title>
-      <link>https://troz.net/post/2016/looking-for-beta-testers/</link>
-      <pubDate>Thu, 17 Nov 2016 00:00:00 +0000</pubDate>
+<title>Looking for beta testers</title>
+<link>https://troz.net/post/2016/looking-for-beta-testers/</link>
+<pubDate>Thu, 17 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/looking-for-beta-testers/</guid>
-      <description>I am looking for beta testers for my latest Mac app: Work.
-Work is a project organizer app for developers, designers, students or any professional who works with multiple projects involving files &amp;amp; folders, web pages, email addresses and lists of tasks. Click the link above for more information and help for getting started.
-Work requires macOS 10.12 or OS X 10.11.
-If you would like to test this app, please contact me, giving details of your Mac and operating system.</description>
-    </item>
+<description>&lt;p&gt;I am looking for beta testers for my latest Mac app: &lt;strong&gt;&lt;a href=&#34;https://troz.net/work/&#34;&gt;Work&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Work&lt;/strong&gt; is a project organizer app for developers, designers, students or any
+professional who works with multiple projects involving files &amp;amp; folders, web
+pages, email addresses and lists of tasks. Click the link above for more
+information and help for getting started.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Work&lt;/strong&gt; requires macOS 10.12 or OS X 10.11.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you would like to test this app, please &lt;a href=&#34;mailto:work@troz.net?subject=Work%20beta%20test&#34;&gt;contact me&lt;/a&gt;, giving details of
+your Mac and operating system. The easiest way to do this is to select &lt;strong&gt;About
+This Mac&lt;/strong&gt; in the Apple menu and send me a screen shot of the window that
+appears.&lt;/p&gt;
+
+&lt;p&gt;All beta testers will receive a free license to Work when it is released. If you
+report a legitimate bug or provide valuable feed-back, you will also receive a
+free license to your choice of one of my &lt;a href=&#34;https://troz.net/apps/&#34;&gt;other apps&lt;/a&gt;.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Another Man Reader Update...</title>
-      <link>https://troz.net/post/2016/another-man-reader-update/</link>
-      <pubDate>Sat, 05 Nov 2016 00:00:00 +0000</pubDate>
+<title>Another Man Reader Update...</title>
+<link>https://troz.net/post/2016/another-man-reader-update/</link>
+<pubDate>Sat, 05 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/another-man-reader-update/</guid>
-      <description>A quick update to Man Reader to version 1.8 is now available through the Mac App Store.
-The main reason for this version was that Man Reader was not previously detecting man pages installed by third-party IDEs in the Applications folder. There was also an issue with Man Reader failing to display the text of the previously selected man page on app launch.
- More complete search for man pages, including in third-party IDEs.</description>
-    </item>
+<description>&lt;p&gt;A quick update to &lt;a href=&#34;https://troz.net/manreader/&#34;&gt;Man Reader&lt;/a&gt; to version 1.8 is now available through the
+&lt;a href=&#34;http://itunes.apple.com/app/man-reader/id522583774?mt=12&#34;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The main reason for this version was that Man Reader was not previously
+detecting man pages installed by third-party IDEs in the Applications folder.
+There was also an issue with Man Reader failing to display the text of the
+previously selected man page on app launch.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;More complete search for man pages, including in third-party IDEs.&lt;/li&gt;
+&lt;li&gt;Fix for glitch when displaying previously selected page on launch.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+</item>
     
     <item>
-      <title>Man Reader Update</title>
-      <link>https://troz.net/post/2016/man-reader-update/</link>
-      <pubDate>Wed, 12 Oct 2016 00:00:00 +0000</pubDate>
+<title>Man Reader Update</title>
+<link>https://troz.net/post/2016/man-reader-update/</link>
+<pubDate>Wed, 12 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/man-reader-update/</guid>
-      <description>Man Reader has just been updated to version 1.7 and is available through the Mac App Store.
-The main reason for this update was to make the app work well with macOS Sierra, as I found that version 1.6 was sometimes crashing on launch. While doing this, the update was rejected by the App Store reviewers because it crashed on OS X 10.10. Since I no longer have a Mac running 10.</description>
-    </item>
+<description>&lt;p&gt;&lt;a href=&#34;https://troz.net/manreader/&#34;&gt;Man Reader&lt;/a&gt; has just been updated to version 1.7 and is available through
+the &lt;a href=&#34;http://itunes.apple.com/app/man-reader/id522583774?mt=12&#34;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The main reason for this update was to make the app work well with macOS Sierra,
+as I found that version 1.6 was sometimes crashing on launch. While doing this,
+the update was rejected by the App Store reviewers because it crashed on OS X
+10.10. Since I no longer have a Mac running 10.10, I decided to set the minimum
+supported system version to OS X 10.11. If you need support for older versions,
+you should still be able to download version 1.6 which will work back to 10.7.&lt;/p&gt;
+
+&lt;p&gt;I also took the opportunity to fix some graphical issues, dealing with different
+color schemes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The man page list now shows alternating colors even when not using the default
+scheme.&lt;/li&gt;
+&lt;li&gt;When scrolling the man pages past the top or the bottom with a non-white
+background, you should no longer see white blocks top &amp;amp; bottom.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+</item>
     
     <item>
-      <title>Podcasting</title>
-      <link>https://troz.net/post/2016/podcasting/</link>
-      <pubDate>Tue, 11 Oct 2016 00:00:00 +0000</pubDate>
+<title>Podcasting</title>
+<link>https://troz.net/post/2016/podcasting/</link>
+<pubDate>Tue, 11 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/podcasting/</guid>
-      <description>I have recently started what I hope will be a weekly podcast with my friend and colleague, Jerry Daniels. Each podcast will be about 30 minutes in length.
-We will discuss Macs, iPhones, iPads, macOS, iOS, programming and anything tech-related that we find interesting. I hope you will find it entertaining and informative, so please join us.
-We are using ZCast which has an iPhone app that makes it super easy to get together and record our chats.</description>
-    </item>
+<description>&lt;p&gt;I have recently started what I hope will be a weekly podcast with my friend and
+colleague, &lt;a href=&#34;https://twitter.com/jerrydaniels&#34;&gt;Jerry Daniels&lt;/a&gt;. Each podcast will be about 30 minutes in length.&lt;/p&gt;
+
+&lt;p&gt;We will discuss Macs, iPhones, iPads, macOS, iOS, programming and anything
+tech-related that we find interesting. I hope you will find it entertaining and
+informative, so please join us.&lt;/p&gt;
+
+&lt;p&gt;We are using &lt;a href=&#34;https://zcast.co/zcasts&#34;&gt;ZCast&lt;/a&gt; which has an iPhone app that makes it super easy to get
+together and record our chats. It doesn&amp;rsquo;t allow any post-processing, but really
+lowers the barrier to entry into the world of podcasting.&lt;/p&gt;
+
+&lt;p&gt;If you get the &lt;a href=&#34;https://itunes.apple.com/app/zcast-podcast-from-your-phone!/id1041586670&#34;&gt;ZCast app for iPhone&lt;/a&gt;, go to the ZCasters tab and search for
+&amp;ldquo;Trozware&amp;rdquo; or &amp;ldquo;Jerry Daniels&amp;rdquo; to find all our podcasts. Or use these links to
+listen in your browser.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://zcast.co/j/ZyB8yK4z86&#34;&gt;The new macOS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zcast.co/j/ewQe6x6E4d&#34;&gt;Hands-on with iPhone 7&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zcast.co/j/A9zvLAAEa3&#34;&gt;Hands on iOS 10&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Since the first one was recorded using my name instead of my &lt;a href=&#34;https://twitter.com/trozware&#34;&gt;@trozware&lt;/a&gt;
+Twitter account, I will embed it here as it will not show up if you search for
+&amp;ldquo;Trozware&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;&lt;IFRAME src=&#39;https://zcast.co/embedded/ZyB8yK4z86&#39; width=&#39;350&#39; height=&#39;500&#39; STYLE=&#39;width: 350; height: 500; border: none;&#39; scrolling=&#39;auto&#39;&gt;&lt;/IFRAME&gt;&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Dice Pass Updated</title>
-      <link>https://troz.net/post/2016/dice-pass-updated/</link>
-      <pubDate>Sat, 17 Sep 2016 00:00:00 +0000</pubDate>
+<title>Dice Pass Updated</title>
+<link>https://troz.net/post/2016/dice-pass-updated/</link>
+<pubDate>Sat, 17 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/dice-pass-updated/</guid>
-      <description>Dice Pass 1.1 is now available from the Mac App Store.
-What does Dice Pass do? Dice Pass is a utility to app to generate random passphrases based on the Diceware system. Diceware uses a table of pre-defined words, each assigned a 5 digit code number containing the digits 1 to 6. The official way to generate a phrase is to roll 5 dice for each word you want in your passphrase and then consult the words table to find the matching word.</description>
-    </item>
+<description>
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/dicepass/&#34;&gt;Dice Pass 1.1&lt;/a&gt; is now available from the &lt;a href=&#34;https://itunes.apple.com/app/dice-pass/id997688302&#34;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-does-dice-pass-do&#34;&gt;What does Dice Pass do?&lt;/h2&gt;
+
+&lt;p&gt;Dice Pass is a utility to app to generate random passphrases based on the
+&lt;a href=&#34;http://world.std.com/~reinhold/diceware.html&#34;&gt;Diceware&lt;/a&gt; system. Diceware uses a table of pre-defined words, each assigned
+a 5 digit code number containing the digits 1 to 6. The official way to generate
+a phrase is to roll 5 dice for each word you want in your passphrase and then
+consult the words table to find the matching word.&lt;/p&gt;
+
+&lt;p&gt;The resulting phrase uses real words or common abbreviations so it is easier to
+remember than a random collection of characters. At the same time, the random
+selection of words makes the generated passphrase much more secure as it avoids
+the human tendency to pick words with personal meaning.&lt;/p&gt;
+
+&lt;p&gt;Dice Pass allows you to select the number of words in your passphrase,
+re-generate the entire passphrase any time, re-roll a single word in your
+passphrase or set the dice rolls manually for maximum security and randomness.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-s-new-in-version-1-1&#34;&gt;What&amp;rsquo;s New in Version 1.1:&lt;/h2&gt;
+
+&lt;p&gt;You can now select from three word lists in the Word Lists menu:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;original Diceware list&lt;/li&gt;
+&lt;li&gt;Beale list (fewer Americanisms and obscure words)&lt;/li&gt;
+&lt;li&gt;Diceware 8k list (a list of words that is a whole power of two in length)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can also import your own word list if you prefer.&lt;/p&gt;
+
+&lt;p&gt;Dice Pass 1.1 is compatible with macOS Sierra.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>How much work does Icon Builder save you?</title>
-      <link>https://troz.net/post/2016/how-much-work-does-icon-builder-save-you/</link>
-      <pubDate>Sat, 17 Sep 2016 00:00:00 +0000</pubDate>
+<title>How much work does Icon Builder save you?</title>
+<link>https://troz.net/post/2016/how-much-work-does-icon-builder-save-you/</link>
+<pubDate>Sat, 17 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/how-much-work-does-icon-builder-save-you/</guid>
-      <description>Icon Builder is a Mac app that takes a single image file and creates all the different image sizes that you need to make a set of icons for your app: Mac, iPhone, iPad, iOS Universal or Apple Watch.
-Version 4, released 16 September 2016 is available through the Mac App Store.
-What&amp;rsquo;s New in Version 4:  Added support for iMessage apps and Sticker Pack apps. Added support for creating Mac .</description>
-    </item>
+<description>
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;Icon Builder&lt;/a&gt; is a Mac app that takes a single image file and creates all
+the different image sizes that you need to make a set of icons for your app:
+Mac, iPhone, iPad, iOS Universal or Apple Watch.&lt;/p&gt;
+
+&lt;p&gt;Version 4, released 16 September 2016 is available through the &lt;a href=&#34;https://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Mac App
+Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-s-new-in-version-4&#34;&gt;What&amp;rsquo;s New in Version 4:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Added support for iMessage apps and Sticker Pack apps.&lt;/li&gt;
+&lt;li&gt;Added support for creating Mac .icns files.&lt;/li&gt;
+&lt;li&gt;Better removal of alpha channel for Apple Watch icons.&lt;/li&gt;
+&lt;li&gt;Clearer usage instructions in ReadMe files.&lt;/li&gt;
+&lt;li&gt;iTunes Artwork folders will no longer be over-written with the latest image
+files.&lt;/li&gt;
+&lt;li&gt;Supports macOS Sierra and Xcode 8&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/IconBuilder.png&#34; alt=&#34;Icon Builder&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;While working on version 4 and accommodating all these new icon sets (and
+wishing I had the time to re-write the app in Swift&amp;hellip;), I counted up all the
+icon files that Icon Builder makes for each app type:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;App Type&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Number of Icons&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Mac&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;iPhone&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;iPhone supporting pre iOS 7&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;11&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;iPad&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;9&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;iPad supporting pre iOS 7&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;13&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;iOS Universal&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;14&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;iOS Universal supporting pre iOS 7&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;20&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Apple Watch (also requires iOS app icons)&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Sticker Pack app&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;11&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;iMessages app&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;14&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;iMessages app Messages extension&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;So as you can see, Icon Builder is doing a lot of work for you. It also names
+all the icon files using the expected format, stores them in an concept folder,
+creates the JSON file that identifies them all to Xcode and optionally installs
+them in your Xcode project automatically. That’s a lot of value for dragging in
+an icon and clicking a button!&lt;/p&gt;
+
+&lt;p&gt;So next time your designer sends you the twentieth tweaked icon for the day,
+don&amp;rsquo;t get mad. Just drop it into Icon Builder and sit back while it does all the
+work. (No need to tell the designer that&amp;hellip;)&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Man Reader updated to 1.6</title>
-      <link>https://troz.net/post/2016/man-reader-updated-to-1.6/</link>
-      <pubDate>Sat, 16 Jul 2016 00:00:00 +0000</pubDate>
+<title>Man Reader updated to 1.6</title>
+<link>https://troz.net/post/2016/man-reader-updated-to-1.6/</link>
+<pubDate>Sat, 16 Jul 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/man-reader-updated-to-1.6/</guid>
-      <description>Man Reader has been updated to version 1.6 with the permissions needed for finding all available man pages and a fix for search terms being over-written after a background update.
-Man Reader 1.6 is now available through the Mac App Store.
-Change Log:  Permissions fix when searching for available man pages. Fixed error with new search term being over-written. Sand-boxed version now works just as well as the non-sand-boxed so please switch back to this version.</description>
-    </item>
+<description>
+
+&lt;p&gt;Man Reader has been updated to version 1.6 with the permissions needed for
+finding all available man pages and a fix for search terms being over-written
+after a background update.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/manreader/&#34;&gt;Man Reader 1.6&lt;/a&gt; is now available through the &lt;a href=&#34;http://itunes.apple.com/app/man-reader/id522583774?mt=12&#34;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;change-log&#34;&gt;Change Log:&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Permissions fix when searching for available man pages.&lt;/li&gt;
+&lt;li&gt;Fixed error with new search term being over-written.&lt;/li&gt;
+&lt;li&gt;Sand-boxed version now works just as well as the non-sand-boxed so please
+switch back to this version.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This version fixes a problem with sand-boxing permissions potentially not
+allowing access to all the installed man pages on your system. This should now
+be fixed but if you discover any man pages that are available through Terminal
+but not through Man Read, please &lt;a href=&#34;mailto:sarah@troz.net?subject=Man%20Reader%20not%20detecting%20some%20man%20pages&#34;&gt;email me the details&lt;/a&gt; and help me make Man
+Reader better.&lt;/p&gt;
+
+&lt;p&gt;There was also an issue with a previous search being restored after a background
+update, even if a new search term had been entered. This has been fixed.&lt;/p&gt;
+
+&lt;p&gt;If you previously had downloaded the Man Reader (no SB) version of the app from
+this site, please revert to the App Store version which you would have needed to
+have bought in order to use the downloaded app. If you bought the app from
+Paddle, &lt;a href=&#34;mailto:sarah@troz.net?subject=Man%20Reader%20transfer%20to%20App%20Store&#34;&gt;contact me&lt;/a&gt; and I will transfer you to the App Store version.
+Neither of these other versions will be supported or updated any more.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Dice Pass Mac Update</title>
-      <link>https://troz.net/post/2016/dice-pass-mac-update/</link>
-      <pubDate>Sun, 03 Jul 2016 00:00:00 +0000</pubDate>
+<title>Dice Pass Mac Update</title>
+<link>https://troz.net/post/2016/dice-pass-mac-update/</link>
+<pubDate>Sun, 03 Jul 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/dice-pass-mac-update/</guid>
-      <description>I recently got an email from someone who had purchased Dice Pass for Mac from the Mac App Store but had been unable to get it to run. This person was using OS X 10.9.3.
-I checked the App Store specifications and it showed that 10.9 was the minimum system requirement, so it should have worked. But going back to my Xcode project, I found that it was set to a minimum of OS X 10.</description>
-    </item>
+<description>&lt;p&gt;I recently got an email from someone who had purchased &lt;a href=&#34;https://troz.net/dicepass/&#34;&gt;Dice Pass&lt;/a&gt; for Mac
+from the &lt;a href=&#34;https://itunes.apple.com/app/dice-pass/id997688302&#34;&gt;Mac App Store&lt;/a&gt; but had been unable to get it to run. This person
+was using OS X 10.9.3.&lt;/p&gt;
+
+&lt;p&gt;I checked the App Store specifications and it showed that 10.9 was the minimum
+system requirement, so it should have worked. But going back to my Xcode
+project, I found that it was set to a minimum of OS X 10.10.&lt;/p&gt;
+
+&lt;p&gt;I tried to re-compile for OS X 10.9 but this failed as the app uses several
+features that are not available prior to 10.10.&lt;/p&gt;
+
+&lt;p&gt;The minimum system version as displayed in the App Store is supposedly deduced
+automatically by the App Store servers from the app&amp;rsquo;s binary. Somehow this was
+incorrect in the App Store, so some people may have bought that app and found
+that it did not work despite them having what was listed as a compatible system.&lt;/p&gt;
+
+&lt;p&gt;If you bought Dice Pass for OS X 10.9 and are unable to run it, I have two
+possible solutions for you:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Upgrade your operating system to at least 10.10.&lt;/li&gt;
+&lt;li&gt;Ask Apple for a refund since it was their error that caused you to buy an app
+that you cannot run.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I have updated the app in the App Store changing nothing but the version number
+and it is now showing the correct minimum system requirement. My apologies if
+you have been inconvenienced by this error.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Icon Builder 3.2 Released</title>
-      <link>https://troz.net/post/2016/icon-builder-32-released/</link>
-      <pubDate>Wed, 10 Feb 2016 00:00:00 +0000</pubDate>
+<title>Icon Builder 3.2 Released</title>
+<link>https://troz.net/post/2016/icon-builder-32-released/</link>
+<pubDate>Wed, 10 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/icon-builder-32-released/</guid>
-      <description>Icon Builder 3.2 is now available from the Mac App Store.
- Icons for Apple Watch apps now have their alpha channel removed. Tidier folder structure for related files (iTunes Artwork files and Read Me). Updated to work with Xcode 7&amp;rsquo;s Assets.xcassets folders. Creates iPad Pro icons for Xcode 7.2 or later. Fix for Retina Macs creating double-sized images.  </description>
-    </item>
+<description>&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Icon Builder 3.2&lt;/a&gt; is now available from the Mac App Store.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Icons for Apple Watch apps now have their alpha channel removed.&lt;/li&gt;
+&lt;li&gt;Tidier folder structure for related files (iTunes Artwork files and Read Me).&lt;/li&gt;
+&lt;li&gt;Updated to work with Xcode 7&amp;rsquo;s Assets.xcassets folders.&lt;/li&gt;
+&lt;li&gt;Creates iPad Pro icons for Xcode 7.2 or later.&lt;/li&gt;
+&lt;li&gt;Fix for Retina Macs creating double-sized images.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+</item>
     
     <item>
-      <title>Man Reader 1.5</title>
-      <link>https://troz.net/post/2016/man-reader-1.5/</link>
-      <pubDate>Sun, 31 Jan 2016 00:00:00 +0000</pubDate>
+<title>Man Reader 1.5</title>
+<link>https://troz.net/post/2016/man-reader-1.5/</link>
+<pubDate>Sun, 31 Jan 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/man-reader-1.5/</guid>
-      <description>Man Reader has been updated to version 1.5 with a major improvement in the way it looks for available man pages.
-Man Reader 1.5 is now available through the Mac App Store.
-Change Log:  Much improved searching for available man pages. Sand-boxed version now works just as well as the non-sand-boxed.  The main feature of this version is that it solves the previous problems with the App Store version and sand-boxing.</description>
-    </item>
+<description>
+
+&lt;p&gt;Man Reader has been updated to version 1.5 with a major improvement in the way
+it looks for available man pages.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/manreader/&#34;&gt;Man Reader 1.5&lt;/a&gt; is now available through the &lt;a href=&#34;http://itunes.apple.com/app/man-reader/id522583774?mt=12&#34;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;change-log&#34;&gt;Change Log:&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Much improved searching for available man pages.&lt;/li&gt;
+&lt;li&gt;Sand-boxed version now works just as well as the non-sand-boxed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The main feature of this version is that it solves the previous problems with
+the App Store version and sand-boxing. This was restricting the number of man
+pages listed in Man Reader so I had to release a non-sand-boxed version of the
+app to allow for full functionality.&lt;/p&gt;
+
+&lt;p&gt;However I discovered that although this gave better results, it was still
+missing a lot of man pages. Version 1.5 now queries the man page files in a
+completely different way which is listing many more man pages.&lt;/p&gt;
+
+&lt;p&gt;If you previously had downloaded the Man Reader (no SB) version of the app from
+this site, please revert to the App Store version which you would have needed to
+have bought in order to use the downloaded app. If you bought the app from
+Paddle, &lt;a href=&#34;mailto:sarah@troz.net?subject=Man%20Reader%20transfer%20to%20App%20Store&#34;&gt;contact me&lt;/a&gt; and I will transfer you to the App Store version.
+Neither of these other versions will be supported or updated any more.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Dice Pass for Mac</title>
-      <link>https://troz.net/post/2015/dice-pass-for-mac/</link>
-      <pubDate>Sat, 30 May 2015 00:00:00 +0000</pubDate>
+<title>Dice Pass for Mac</title>
+<link>https://troz.net/post/2015/dice-pass-for-mac/</link>
+<pubDate>Sat, 30 May 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2015/dice-pass-for-mac/</guid>
-      <description>We live in a world of passwords and passphrases and there is a constant struggle between having a secure and a memorable password. As a result, many of us re-use passwords even though we know this is a bad idea.
-XKCD had a wonderful comic that illustrated the theory of using a passphrase composed of words that are easy to remember but with a combination that made the passphrase very hard to guess.</description>
-    </item>
+<description>&lt;p&gt;We live in a world of passwords and passphrases and there is a constant struggle
+between having a secure and a memorable password. As a result, many of us re-use
+passwords even though we know this is a bad idea.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://xkcd.com/936/&#34;&gt;XKCD&lt;/a&gt; had a wonderful comic that illustrated the theory of using a
+passphrase composed of words that are easy to remember but with a combination
+that made the passphrase very hard to guess. However even when deciding to use a
+passphrase like this, it is not easy for us humans to avoid using words that
+have meaning for us, particularly when it is something we really need to
+remember.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://world.std.com/~reinhold/diceware.html&#34;&gt;Diceware&lt;/a&gt; was developed to solve this problem. You have a set of 5 dice and
+a list of words assigned to each possible dice roll for 11111 to 66666. You roll
+the five dice and get the matching word from the list. Repeat this for the
+number of words you want to use in your passphrase and you have a random phrase
+that is hopefully still memorable.&lt;/p&gt;
+
+&lt;p&gt;But this sounds like a lot of effort and not something you are likely to do when
+faced by a password entry field on a web page. So &lt;a href=&#34;https://troz.net/dicepass/&#34;&gt;Dice Pass&lt;/a&gt; was written to
+do the work for you quickly and easily.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/DicePass_Mac.png&#34; alt=&#34;Dice Pass for Mac&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Select the number of words you want in your passphrase and see the phrase
+immediately. Keep clicking the &amp;ldquo;Generate New Phrase&amp;rdquo; button until you get a
+phrase you like. If you feel that the computer is not to be trusted when
+generating a random number for the dice rolls, use your real dice and click the
+dice to change them to the roll you got. If you get a passphrase that is good
+except for one or two words, use the Re-Roll button beside those words to get a
+new roll for just that word.&lt;/p&gt;
+
+&lt;p&gt;Dice Pass is available from the &lt;a href=&#34;https://itunes.apple.com/app/dice-pass/id997688302?mt=12&amp;amp;uo=4&#34;&gt;Mac App Store&lt;/a&gt; now.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Icon Builder 3.0.1</title>
-      <link>https://troz.net/post/2015/icon-builder-3.0.1/</link>
-      <pubDate>Tue, 17 Mar 2015 00:00:00 +0000</pubDate>
+<title>Icon Builder 3.0.1</title>
+<link>https://troz.net/post/2015/icon-builder-3.0.1/</link>
+<pubDate>Tue, 17 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2015/icon-builder-3.0.1/</guid>
-      <description>So why an announcement for such a minor upgrade?
-Version 3.0 got no announcement because it was not the release I wanted.
-Having downloaded the Xcode 6.2 &amp;amp; 6.3 betas, I had worked out what icons were needed to a WatchKit app. This, combined with several other changes, made me bump the version number to 3.0.
-Sadly, Apple rejected the update because it referred to pre-release products. So I pulled all mentions of WatchKit out of the interface and meta data and got 3.</description>
-    </item>
+<description>
+
+&lt;p&gt;So why an announcement for such a minor upgrade?&lt;/p&gt;
+
+&lt;p&gt;Version 3.0 got no announcement because it was not the release I wanted.&lt;/p&gt;
+
+&lt;p&gt;Having downloaded the Xcode 6.2 &amp;amp; 6.3 betas, I had worked out what icons were
+needed to a WatchKit app. This, combined with several other changes, made me
+bump the version number to 3.0.&lt;/p&gt;
+
+&lt;p&gt;Sadly, Apple rejected the update because it referred to pre-release products. So
+I pulled all mentions of WatchKit out of the interface and meta data and got 3.0
+released.&lt;/p&gt;
+
+&lt;p&gt;After the Apple keynote on March 9th, I re-enabled the WatchKit portions of the
+app and re-submitted to the App Store, hoping that with the WatchKit SDK now
+part of the official Xcode release, Apple&amp;rsquo;s reviewers would allow it to get
+through this time.&lt;/p&gt;
+
+&lt;p&gt;This worked - in fact the app was reviewed and accepted within 6 days - so now
+Icon Builder adds WatchKit to its list of supported platforms.&lt;/p&gt;
+
+&lt;p&gt;Actually, Apple may have done me a favour in rejecting the first one as they
+changed the specifications for the icons slightly between Xcode 6.2 beta and
+Xcode 6.2 release.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;Icon Builder page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://itunes.apple.com/us/app/icon-builder/id552293482?mt=12&amp;amp;uo=4&#34;&gt;Mac App Store link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;what-s-new-in-version-3&#34;&gt;What’s New in version 3?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Support for WatchKit app icons (version 3.0.1)&lt;/li&gt;
+&lt;li&gt;Simplified interface: removed display of smaller icons.&lt;/li&gt;
+&lt;li&gt;Fix for @3x images not being saved when you selected iOS 6 support.&lt;/li&gt;
+&lt;li&gt;iTunesArtwork@2x file now saved as a JPG to avoid iTunes Connect errors.&lt;/li&gt;
+&lt;li&gt;Removed CarPlay icon - Xcode sometimes gave errors when this was included.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+</item>
     
     <item>
-      <title>Man Reader 1.4 Now Available</title>
-      <link>https://troz.net/post/2014/man-reader-1-4-now-available/</link>
-      <pubDate>Thu, 03 Apr 2014 00:00:00 +0000</pubDate>
+<title>Man Reader 1.4 Now Available</title>
+<link>https://troz.net/post/2014/man-reader-1-4-now-available/</link>
+<pubDate>Thu, 03 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2014/man-reader-1-4-now-available/</guid>
-      <description>Man Reader 1.4 is now available through the Mac App Store.
-The new features and fixes are:  Fix for plain text view not wrapping correctly for odd-sized fonts. Fix for HTML text view over-riding font colors that may be invisible. Search for missing entry (e.g. g++) no longer requires Enter or Return. Better automatic selection of matching entries while searching. Fix for animation warning message appearing in Console. Status display shows when man page list is being updated.</description>
-    </item>
+<description>
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/manreader/&#34;&gt;Man Reader 1.4&lt;/a&gt; is now available through the &lt;a href=&#34;http://itunes.apple.com/app/man-reader/id522583774?mt=12&#34;&gt;Mac App Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&#34;the-new-features-and-fixes-are&#34;&gt;The new features and fixes are:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Fix for plain text view not wrapping correctly for odd-sized fonts.&lt;/li&gt;
+&lt;li&gt;Fix for HTML text view over-riding font colors that may be invisible.&lt;/li&gt;
+&lt;li&gt;Search for missing entry (e.g. g++) no longer requires Enter or Return.&lt;/li&gt;
+&lt;li&gt;Better automatic selection of matching entries while searching.&lt;/li&gt;
+&lt;li&gt;Fix for animation warning message appearing in Console.&lt;/li&gt;
+&lt;li&gt;Status display shows when man page list is being updated.&lt;/li&gt;
+&lt;li&gt;Searching inside a page now allows a minimum of 2 characters (was 3), so
+flags&lt;br /&gt;
+e.g. ‘-b’ do not need to be escaped.&lt;/li&gt;
+&lt;li&gt;Fixed path for Network Utility in tool bar (moved in OS X 10.9).&lt;/li&gt;
+&lt;li&gt;More information available about the effects of sand-boxing for this app.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+</item>
     
     <item>
-      <title>Email clients for Mac and iOS</title>
-      <link>https://troz.net/post/2014/email-clients-for-mac-ios/</link>
-      <pubDate>Tue, 25 Mar 2014 00:00:00 +0000</pubDate>
+<title>Email clients for Mac and iOS</title>
+<link>https://troz.net/post/2014/email-clients-for-mac-ios/</link>
+<pubDate>Tue, 25 Mar 2014 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2014/email-clients-for-mac-ios/</guid>
-      <description>Some people are moving away from email, but for me, it remains the best way to communicate online. I get to keep a record of conversations and the attached files are with the text so I can always see the context.
-But I think everyone would agree that Apple have dropped the ball with Mail in OS X Mavericks, and to a lesser extent, in iOS 7.
-So I have been on a campaign lately to find an email client that suits my needs.</description>
-    </item>
+<description>&lt;p&gt;Some people are moving away from email, but for me, it remains the best way to
+communicate online. I get to keep a record of conversations and the attached
+files are with the text so I can always see the context.&lt;/p&gt;
+
+&lt;p&gt;But I think everyone would agree that Apple have dropped the ball with Mail in
+OS X Mavericks, and to a lesser extent, in iOS 7.&lt;/p&gt;
+
+&lt;p&gt;So I have been on a campaign lately to find an email client that suits my needs.
+I don&amp;rsquo;t feel that I have found the perfect answer yet, but I am getting there.&lt;/p&gt;
+
+&lt;p&gt;The first step was to work out what I really needed in an email client:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;support for IMAP accounts and Gmail accounts&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;line-height: 1.5;&#34;&gt;unified inbox - all accounts shown
+together&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;conversation threading&lt;/li&gt;
+&lt;li&gt;support for POP accounts (optional)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;On the Mac, I have narrowed it down to two clients that I am swapping between
+every few days: &lt;a href=&#34;https://www.uniboxapp.com&#34; target=&#34;_blank&#34;&gt;Unibox&lt;/a&gt;
+and &lt;a href=&#34;http://airmailapp.com&#34; target=&#34;_blank&#34;&gt;Airmail&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Unibox is different in the way it displays your emails. It is much more focussed
+on people and conversations, so the side bar shows all the people who you have
+sent emails to or received emails from, grouped by date. I really like the
+merging of incoming &amp;amp; outgoing emails, but it can be a bit weird if you delete
+the latest email from someone who then disappears from sight.&lt;/p&gt;
+
+&lt;p&gt;Emails are grouped by a single person, not by conversation. There is a button on
+appropriate emails to toggle conversation view for that particular thread, but
+it doesn&amp;rsquo;t stick.&lt;/p&gt;
+
+&lt;p&gt;In order to show a conversation, they truncate emails in the main part of the
+window and show a &amp;ldquo;More&amp;rdquo; button at the bottom of the email to expand it. This
+was annoying, but in the latest beta, it performs much better, so you are not
+continually tapping this to see a long email.&lt;/p&gt;
+
+&lt;p&gt;Airmail has a more conventional display. Threading and the layout of threaded
+emails are both very nice. There are multiple view options, which I find can get
+a bit messy looking, so I prefer the &amp;ldquo;Minimized View&amp;rdquo; setting. Airmail also does
+POP accounts which is a plus.&lt;/p&gt;
+
+&lt;p&gt;The main reason I keep going back to Unibox is the unification. I have grown to
+like having sent and received messages all in the same window without having to
+go and find them somewhere else.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;On the iPad, I am currently using
+&lt;a href=&#34;http://www.getboxer.com&#34; target=&#34;_blank&#34;&gt;Boxer&lt;/a&gt; and have tried
+numerous others. &lt;a href=&#34;http://www.moltoapp.com/&#34; target=&#34;_blank&#34;&gt;Molto&lt;/a&gt;
+was quite good and the interface was fun, but it would only use landscape mode
+and like to be able to swap. Boxer is not great in portrait mode, but it does
+work.&lt;/p&gt;
+
+&lt;p&gt;So the jury is still out for iPad email clients, but on the Mac, I am leaning
+towards Unibox.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Icon Builder &amp; iOS 7</title>
-      <link>https://troz.net/post/2013/icon-builder-ios-7/</link>
-      <pubDate>Mon, 23 Sep 2013 00:00:00 +0000</pubDate>
+<title>Icon Builder &amp; iOS 7</title>
+<link>https://troz.net/post/2013/icon-builder-ios-7/</link>
+<pubDate>Mon, 23 Sep 2013 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2013/icon-builder-ios-7/</guid>
-      <description>Icon Builder 1.2 was released on 18 September 2013.
-It was an update with 2 new functions:
- The ability to create images to suit an Xcode 5 assets library The ability to create icons with the required sizes for IOS 7 apps.  Knowing that iOS 7 apps can only be built using Xcode 5, I linked the switch for these 2 abilities in a single check box.
-The problem was not really that they were in a single checkbox but that I had labelled it badly, so it was not obvious that this was what needed to be checked to create iOS 7 sized icon files.</description>
-    </item>
+<description>&lt;p&gt;Icon Builder 1.2 was released on 18 September 2013.&lt;br /&gt;
+It was an update with 2 new functions:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The ability to create images to suit an Xcode 5 assets library&lt;/li&gt;
+&lt;li&gt;The ability to create icons with the required sizes for IOS 7 apps.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Knowing that iOS 7 apps can only be built using Xcode 5, I linked the switch for
+these 2 abilities in a single check box.&lt;br /&gt;
+The problem was not really that they were in a single checkbox but that I had labelled
+it badly, so it was not obvious that this was what needed to be checked to create
+iOS 7 sized icon files.&lt;/p&gt;
+
+&lt;p&gt;After some feedback from early users, it became clear to me that this was not
+enough. So 1.2.1 is now waiting for Apple&amp;rsquo;s approval.&lt;br /&gt;
+The changes in this version are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;More informative labelling of the checkbox.&lt;/li&gt;
+&lt;li&gt;The checkbox is checked by default is Xcode 5 is installed&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;While waiting for the new version to be approved, please be aware that iOS 7
+icon sizes will only be generated if you select &amp;ldquo;Check Assets (for Xcode 5.x or
+later)&amp;rdquo;&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Icon apps updated</title>
-      <link>https://troz.net/post/2013/icon-apps-updated/</link>
-      <pubDate>Thu, 19 Sep 2013 00:00:00 +0000</pubDate>
+<title>Icon apps updated</title>
+<link>https://troz.net/post/2013/icon-apps-updated/</link>
+<pubDate>Thu, 19 Sep 2013 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2013/icon-apps-updated/</guid>
-      <description>Icns Maker and Icon Builder have both just been updated to support Xcode 5.
-Icon Builder is a Mac app that takes your images and creates all the required icon files for use in your iOS apps.
-It now supports Xcode 5&amp;rsquo;s image assets folders and if you are using Xcode 5, it will create the icon sizes required for iOS 7 app.
-Icns Maker is a Mac app that takes your images and creates icons for use in your Mac apps.</description>
-    </item>
+<description>&lt;p&gt;&lt;a href=&#34;https://itunes.apple.com/au/app/icns-maker/id550942266?mt=12&#34; target=&#34;_blank&#34;&gt;Icns
+Maker&lt;/a&gt; and
+&lt;a href=&#34;https://itunes.apple.com/au/app/icon-builder/id552293482?mt=12&#34; target=&#34;_blank&#34;&gt;Icon
+Builder&lt;/a&gt; have both just been updated to support Xcode 5.&lt;/p&gt;
+
+&lt;p&gt;Icon Builder is a Mac app that takes your images and creates all the required
+icon files for use in your iOS apps.&lt;br /&gt;
+It now supports Xcode 5&amp;rsquo;s image assets folders and if you are using Xcode 5, it will
+create the icon sizes required for iOS 7 app.&lt;/p&gt;
+
+&lt;p&gt;Icns Maker is a Mac app that takes your images and creates icons for use in your
+Mac apps.&lt;br /&gt;
+For Xcode 4 or earlier, it creates a .icns file.&lt;br /&gt;
+For Xcode 5, it creates a folder of images for use in your project&amp;rsquo;s image
+assets folder.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>A Knight&#39;s Move 1.3</title>
-      <link>https://troz.net/post/2013/a-knights-move-1-3/</link>
-      <pubDate>Wed, 27 Feb 2013 00:00:00 +0000</pubDate>
+<title>A Knight&#39;s Move 1.3</title>
+<link>https://troz.net/post/2013/a-knights-move-1-3/</link>
+<pubDate>Wed, 27 Feb 2013 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2013/a-knights-move-1-3/</guid>
-      <description>UPDATE: September 2016 - A Knight&amp;rsquo;s Move for iOS is no longer available.
-A Knight&amp;rsquo;s Move for Mac is still supported.
-A Knight&amp;rsquo;s Move has been updated to version 1.3. The Mac version is available through the Mac App Store.
-Three new level packs:  Eight by Eight Bishops Rule Castles  Eight by Eight has every puzzle set in a chessboard sized grid with more conventional placing of pieces.</description>
-    </item>
+<description>
+
+&lt;p&gt;&lt;strong&gt;UPDATE:&lt;/strong&gt; September 2016 - A Knight&amp;rsquo;s Move for iOS is no longer available.&lt;br&gt;
+&lt;a href=&#34;https://troz.net/knightsmove/&#34;&gt;A Knight&amp;rsquo;s Move for Mac&lt;/a&gt; is still supported.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;A Knight&amp;rsquo;s Move has been updated to version 1.3. The Mac version is available
+through the
+&lt;a href=&#34;https://itunes.apple.com/app/a-knights-move/id533321133?mt=12&#34; target=&#34;_blank&#34;&gt;Mac
+App Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;three-new-level-packs&#34;&gt;Three new level packs:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Eight by Eight&lt;/li&gt;
+&lt;li&gt;Bishops Rule&lt;/li&gt;
+&lt;li&gt;Castles&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Eight by Eight has every puzzle set in a chessboard sized grid with more
+conventional placing of pieces.&lt;br /&gt;
+Bishops Rule has at least one Bishop in every puzzle.&lt;br /&gt;
+Castles has a Castle or Rook in every puzzle and is suited to players who would
+like more of a challenge.&lt;/p&gt;
+
+&lt;h2 id=&#34;new-feature&#34;&gt;New feature:&lt;/h2&gt;
+
+&lt;p&gt;When your knight has been taken, you have the option to undo the last move so
+you can try again without losing the moves you have already made.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Undo Last Move&#34; src=&#34;https://troz.net/images/KM-UndoLast.png&#34; /&gt;&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Man Reader (no SB)</title>
-      <link>https://troz.net/post/2013/man-reader-no-sb/</link>
-      <pubDate>Wed, 06 Feb 2013 00:00:00 +0000</pubDate>
+<title>Man Reader (no SB)</title>
+<link>https://troz.net/post/2013/man-reader-no-sb/</link>
+<pubDate>Wed, 06 Feb 2013 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2013/man-reader-no-sb/</guid>
-      <description>These instructions are no longer valid. As of version 1.5, the App Store version of Man Reader has solved the sand-boxing issues and is now as powerful as the non-sand-boxed version.
-The non-sand-boxed version will no longer be supported or updated, so please revert to the App Store version.
-If you find that Man Reader is not working well for you due to Apple&amp;rsquo;s sandboxing restrictions, then you can download a non-sandboxed version here.</description>
-    </item>
+<description>
+
+&lt;p&gt;These instructions are no longer valid. As of version 1.5, the App Store version
+of Man Reader has solved the sand-boxing issues and is now as powerful as the
+non-sand-boxed version.&lt;/p&gt;
+
+&lt;p&gt;The non-sand-boxed version will no longer be supported or updated, so please
+revert to the App Store version.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you find that Man Reader is not working well for you due to Apple&amp;rsquo;s
+sandboxing restrictions, then you can download a non-sandboxed version here. To
+find out more about this, including how to test if you are affected, read the
+&lt;a href=&#34;https://troz.net/manreader-sandbox/&#34;&gt;Sand-Boxing Man Reader&lt;/a&gt; page.&lt;/p&gt;
+
+&lt;p&gt;The non-sandboxed version will only work if you have the App Store version of
+Man Reader already installed.&lt;/p&gt;
+
+&lt;p&gt;When you run &amp;lsquo;Man Reader (no SB)&amp;rsquo; for the first time, it will check to see if
+you have a valid installation of &amp;lsquo;Man Reader&amp;rsquo; that you have purchased from the
+App Store.&lt;br /&gt;
+If you do not, &amp;lsquo;Man Reader (no SB)&amp;rsquo; will offer to take you to the App Store and then
+quit.&lt;/p&gt;
+
+&lt;p&gt;If you already own the App Store version of Man Reader and &amp;lsquo;Man Reader (no SB)&amp;rsquo;
+has started once, you can delete the App Store version and &amp;lsquo;Man Reader (no SB)&amp;rsquo;
+will keep working.&lt;/p&gt;
+
+&lt;p&gt;To install &amp;lsquo;Man Reader (no SB)&amp;rsquo;, click the download link below. This will
+download &amp;lsquo;ManReader-noSB.zip&amp;rsquo;. Double-click on this file to un-zip it, and then
+move the &amp;lsquo;Man Reader (no SB).app&amp;rsquo; into your Applications folder and use as
+normal. Do not delete the App Store version of Man Reader until &amp;lsquo;Man Reader (no
+SB)&amp;rsquo; has been run at least once.&lt;/p&gt;
+
+&lt;h2 id=&#34;del-download-man-reader-no-sb-del-2&#34;&gt;&lt;a href=&#34;#&#34;&gt;&lt;del&gt;Download Man Reader (no SB)&lt;/del&gt;&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;I found out today (thanks Ron) that under OS X 10.10.3 the security settings no
+longer allow the downloaded version of Man Reader (no SB) to run, despite the
+fact that I have signed it with my Apple Developer ID. OS X gives a very
+un-helpful dialog reporting that the app is damaged. In fact the app is fine,
+but being blocked by the security settings. The solution as shown at
+&lt;a href=&#34;http://www.tech-recipes.com/rx/45404/mac-downloaded-app-is-damaged-and-cant-be-opened-error-solved/&#34;&gt;TechRecipes&lt;/a&gt; is to change your security system preferences to allow
+downloaded apps from anywhere. You only need to do this temporarily as after you
+have run the app once you can set this setting back to whatever you had before.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Sand-Boxing Man Reader</title>
-      <link>https://troz.net/post/2013/sand-boxing-man-reader/</link>
-      <pubDate>Wed, 06 Feb 2013 00:00:00 +0000</pubDate>
+<title>Sand-Boxing Man Reader</title>
+<link>https://troz.net/post/2013/sand-boxing-man-reader/</link>
+<pubDate>Wed, 06 Feb 2013 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2013/sand-boxing-man-reader/</guid>
-      <description>These instructions are no longer valid. As of version 1.5, the App Store version of Man Reader has solved the sand-boxing issues and is now as powerful as the non-sand-boxed version.
-The non-sand-boxed version will no longer be supported or updated, so please revert to the App Store version.
-As with all apps in the App Store, Man Reader is restricted by Apple&amp;rsquo;s sand-boxing policy. Sand-boxing is a great thing. It isolates apps from each other and from the system, making it far less likely that a problem app will cause wide-spread havoc.</description>
-    </item>
+<description>&lt;p&gt;These instructions are no longer valid. As of version 1.5, the App Store version
+of Man Reader has solved the sand-boxing issues and is now as powerful as the
+non-sand-boxed version.&lt;/p&gt;
+
+&lt;p&gt;The non-sand-boxed version will no longer be supported or updated, so please
+revert to the App Store version.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;As with all apps in the App Store, &lt;a href=&#34;https://troz.net/manreader/&#34;&gt;Man Reader&lt;/a&gt; is restricted by Apple&amp;rsquo;s
+sand-boxing policy. Sand-boxing is a great thing. It isolates apps from each
+other and from the system, making it far less likely that a problem app will
+cause wide-spread havoc. However for an app like Man Reader, this can lead to a
+drop in functionality.&lt;/p&gt;
+
+&lt;p&gt;Due to the permissions limitations of sand-boxing, Man Reader can only search
+defined paths on your system drive e.g. /usr/, /opt/&lt;br /&gt;
+This is where the default man pages are all stored, but if you install other software
+(Xcode is a good example), then Man Reader may not be able to list all the available
+man pages on your system.&lt;/p&gt;
+
+&lt;p&gt;To tell if Man Reader is missing man pages, copy &amp;amp; paste the following command
+into the Terminal app:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;whatis . &amp;gt;&amp;gt; ~/Desktop/whatis.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Man Reader runs this command internally when it starts, but the Terminal app is
+not sand-boxed and so can access everything.&lt;br /&gt;
+Running this command will create a text file on your desktop with a list of all available
+man pages on your system. Open it in a text editor that can show the number of lines
+in a file. &lt;a href=&#34;http://www.barebones.com/products/textwrangler/&#34;&gt;TextWrangler from Bare Bones Software&lt;/a&gt; is a good free editor that
+will do this.&lt;/p&gt;
+
+&lt;p&gt;To check what man pages ManReader can read, go to Finder and select &amp;lsquo;Go to
+Folder&amp;hellip;&amp;rdquo; from the Go menu. Paste in the following path:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/Library/Containers/net.troz.Man-Reader/Data/Library/Application Support/Man Reader/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You will see two files: open the one called &amp;lsquo;ManReader.raw&amp;rsquo; in your text editor.
+This is the result of Man Reader running the whatis command. Compare the number
+of lines in the two files. Don&amp;rsquo;t worry about the order of the items in the file
+as that may vary, you are only concerned with the total number of lines in each.&lt;/p&gt;
+
+&lt;p&gt;There may be one or two lines more in the whatis.txt file but if there is a big
+difference, then you are being sand-boxed&amp;hellip;&lt;br /&gt;
+As an example, on my system, the whatis.txt file contains 8954 lines and the ManReader.raw
+file contains 2320 lines!&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;If you are affected by this or think that you might be, I now have a
+solution - actually two possible solutions:&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;If you have already bought Man Reader from the App Store, then you can
+&lt;a href=&#34;#&#34;&gt;download a non-sandboxed version&lt;/a&gt;. This will only work if you have the App
+Store version of the app installed.&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;If you do not already own a copy of Man Reader, and want to buy it
+un-sandboxed, then you can now &lt;a href=&#34;#&#34;&gt;buy it directly&lt;/a&gt;.&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;Please &lt;a href=&#34;mailto:sarah@troz.net?subject=Man%20Reader%20and%20Sand-Boxing&#34;&gt;contact me&lt;/a&gt; if you have any issues with this.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Icns Maker &amp; Icon Builder updated</title>
-      <link>https://troz.net/post/2013/icns-maker-icon-builder-updated/</link>
-      <pubDate>Sat, 19 Jan 2013 00:00:00 +0000</pubDate>
+<title>Icns Maker &amp; Icon Builder updated</title>
+<link>https://troz.net/post/2013/icns-maker-icon-builder-updated/</link>
+<pubDate>Sat, 19 Jan 2013 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2013/icns-maker-icon-builder-updated/</guid>
-      <description>January 18th 2013:
-Both of the icon building apps have now been updated to fix a but that made incorrect icon sizes when running on a Retina MacBook Pro.
-Icns Maker uses your image to create an icns file for Mac apps.
+<description>&lt;p&gt;January 18th 2013:&lt;/p&gt;
 
-Icon Builder uses your image to create the suite of icon files needed for iOS apps.</description>
-    </item>
+&lt;p&gt;Both of the icon building apps have now been updated to fix a but that made
+incorrect icon sizes when running on a Retina MacBook Pro.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/icns-maker/&#34; title=&#34;Icns Maker&#34;&gt; Icns Maker&lt;/a&gt; uses your image to create an icns file for Mac apps.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/icns-maker/id550942266?mt=12&amp;uo=4&#34; target=&#34;itunes_store&#34;&gt;&lt;img style=&#34;border: 0;&#34; alt=&#34;Icns Maker - TrozWare&#34; src=&#34;http://r.mzstatic.com/images/web/linkmaker/badge_macappstore-lrg.gif&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34; title=&#34;Icon Builder&#34;&gt;Icon Builder&lt;/a&gt; uses your image to create the suite of icon files needed for
+iOS apps.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482?mt=12&amp;uo=4&#34; target=&#34;itunes_store&#34;&gt;&lt;img style=&#34;border: 0;&#34; alt=&#34;Icon Builder - TrozWare&#34; src=&#34;http://r.mzstatic.com/images/web/linkmaker/badge_macappstore-lrg.gif&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Icon Makers &amp; Retina Macs</title>
-      <link>https://troz.net/post/2013/icon-makers-retina-macs/</link>
-      <pubDate>Mon, 14 Jan 2013 00:00:00 +0000</pubDate>
+<title>Icon Makers &amp; Retina Macs</title>
+<link>https://troz.net/post/2013/icon-makers-retina-macs/</link>
+<pubDate>Mon, 14 Jan 2013 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2013/icon-makers-retina-macs/</guid>
-      <description>Icns Maker which makes an icns icon file for Mac apps, and Icon Builder which makes the suite of png files needed for iOS apps, are both compatible with the Retina MacBook Pro.
-However it was recently brought to my attention (thanks Cameron), that when running on a Retina MBP, all the icon files were exactly twice as large as they should be. The Icon.png file which supplies the main app icon for iPhone apps should be 57 pixels by 57 pixels.</description>
-    </item>
+<description>&lt;p&gt;Icns Maker which makes an icns icon file for Mac apps, and Icon Builder which
+makes the suite of png files needed for iOS apps, are both compatible with the
+Retina MacBook Pro.&lt;/p&gt;
+
+&lt;p&gt;However it was recently brought to my attention (thanks Cameron), that when
+running on a Retina MBP, all the icon files were exactly twice as large as they
+should be. The Icon.png file which supplies the main app icon for iPhone apps
+should be 57 pixels by 57 pixels. Using Icon Builder on a Retina MBP produced an
+Icon.png file that was 114 x 114 pixels.&lt;/p&gt;
+
+&lt;p&gt;I have now worked out how to persuade the Retina Mac that when I ask for an
+image size, I actually want that size, not the size that OS X thinks would look
+better. Updates to these 2 apps will be submitted to the App Store for approval
+later today which will solve the problem.&lt;/p&gt;
+
+&lt;p&gt;In the meantime, there is a work-around for Retina MBP users: force the app to
+run in low resolution mode.&lt;/p&gt;
+
+&lt;p&gt;In Finder, open your Applications folder and select the app (this works for both
+Icns Maker and Icon Builder). Press Command-I or choose Get Info from the File
+menu which will open a window like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Selecting low resolution mode&#34; src=&#34;https://troz.net/images/LowRes.png&#34; width=&#34;379&#34; height=&#34;952&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Check the checkbox labelled &amp;ldquo;Open in Low Resolution&amp;rdquo;. Next time the app is
+opened, it will ignore the Retina options and use standard resolution only. This
+will create icon files with the correct sizes. However text may look slightly
+fuzzy.&lt;/p&gt;
+
+&lt;p&gt;When the updates to these apps become available, make sure you go back and
+un-check this setting to return to Retina mode.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>App Store Review Times</title>
-      <link>https://troz.net/post/2012/app-store-review-times/</link>
-      <pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
+<title>App Store Review Times</title>
+<link>https://troz.net/post/2012/app-store-review-times/</link>
+<pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/app-store-review-times/</guid>
-      <description>There are been a lots of stories going around about lengthening Mac App Store review times. Shiny Developments crowd-sourced data certainly backs this up although they have much more data for iOS apps than for Mac apps.
-Some people, including Lex Friedman of MacWorld and John Gruber of Daring Fireball, are suggesting that the delays are due to the rush of new apps to support the iPhone 5 and iOS 6.</description>
-    </item>
+<description>&lt;p&gt;There are been a lots of stories going around about lengthening Mac App Store
+review times.
+&lt;a href=&#34;http://reviewtimes.shinydevelopment.com&#34; target=&#34;_blank&#34;&gt;Shiny
+Developments&lt;/a&gt; crowd-sourced data certainly backs this up although they have
+much more data for iOS apps than for Mac apps.&lt;/p&gt;
+
+&lt;p&gt;Some people, including
+&lt;a href=&#34;http://www.macworld.com/article/2011430/developers-stymied-by-mac-app-store-approval-delays.html&#34; target=&#34;_blank&#34;&gt;Lex
+Friedman of MacWorld&lt;/a&gt; and
+&lt;a href=&#34;http://daringfireball.net/linked/2012/10/09/app-store-delays&#34; target=&#34;_blank&#34;&gt;John
+Gruber of Daring Fireball&lt;/a&gt;, are suggesting that the delays are due to the
+rush of new apps to support the iPhone 5 and iOS 6. This implies that there is
+only one set of review staff and that a large proportion of them have been moved
+from Mac to iOS apps.&lt;/p&gt;
+
+&lt;p&gt;I think this is an incorrect analysis. The slowdown started before iOS 6 and
+before the iPhone 5. I think it started in June when Apple started to enforce
+Mac sandboxing.&lt;/p&gt;
+
+&lt;p&gt;As discussed in a &lt;a href=&#34;https://troz.net/sandboxing-and-the-mac-app-store/&#34;&gt;previous post&lt;/a&gt;, I have had a lot of trouble getting Man
+Reader to be sandbox-compatible leading to many rejections. One problem was that
+I had implemented sand-boxing before the deadline, but with some temporary
+entitlements to allow read-only access to required system files. This
+entitlement was approved initially, but after one rejection, an Apple reviewer
+told me that they had been approving all requested entitlements before the
+deadline, but now were actually reviewing them all.&lt;/p&gt;
+
+&lt;p&gt;To me, this seems like a rather silly thing to have done which has now returned
+to haunt them. Instead of allowing developers time to get used to the
+restrictions, Apple reviewers allowed developers to think that their apps were
+sandbox-complient already. Then Apple was faced with the enormous task of
+re-checking all the entitlements that they had previously allowed without
+checking. This was unfair to developers and has only created extra work for the
+reviewers.&lt;/p&gt;
+
+&lt;p&gt;Here is a table showing the recent review times for my Mac apps:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;App&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Process&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Review days&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Dates&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Time In Words&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;update&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;22&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Sept 22 - Oct 14&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Icns Maker&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;new app&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;24&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Aug 5 - Aug 29&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;A Knight&amp;rsquo;s Move&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;update&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;26&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Sept 6 - Oct 2&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Icon Builder&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;new app&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;33&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Aug 22 - Sept 24&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br&gt;
+I have not included Man Reader as it was rejected too many times to be a valid data point.&lt;/p&gt;
+
+&lt;p&gt;By comparison, when I submitted an update to A Knight&amp;rsquo;s Move for iOS in October,
+it was passed in only 8 days.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Icon makers for Mac &amp; iOS apps</title>
-      <link>https://troz.net/post/2012/icon-makers-for-mac-ios-apps/</link>
-      <pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
+<title>Icon makers for Mac &amp; iOS apps</title>
+<link>https://troz.net/post/2012/icon-makers-for-mac-ios-apps/</link>
+<pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/icon-makers-for-mac-ios-apps/</guid>
-      <description>Announcing two new apps for creating icons for with Mac or iOS projects:
-Icns Maker helps you convert a single image into a .icns file in two steps.
-Icon Builder creates all the files needed to set up your icons for any iOS project.
-Creating icon files for Mac apps: In versions of Xcode before 4.4, Apple provided an app called “Icon Composer”. It allowed you to drag images into a window and export a .</description>
-    </item>
+<description>
+
+&lt;p&gt;Announcing two new apps for creating icons for with Mac or iOS projects:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/icns-maker/&#34; title=&#34;Icns Maker&#34;&gt;Icns Maker&lt;/a&gt; helps you convert a single image into a .icns file in two
+steps.&lt;br /&gt;
+&lt;a href=&#34;https://troz.net/icon-builder/&#34; title=&#34;Icon Builder&#34;&gt;Icon Builder&lt;/a&gt; creates all the files needed to set up your icons for any iOS project.&lt;/p&gt;
+
+&lt;h2 id=&#34;creating-icon-files-for-mac-apps&#34;&gt;Creating icon files for Mac apps:&lt;/h2&gt;
+
+&lt;p&gt;In versions of Xcode before 4.4, Apple provided an app called “Icon Composer”.
+It allowed you to drag images into a window and export a .icns file for use in
+your Mac apps. With Xcode 4.4, Apple has changed the way icons are handled for
+Mac apps and “Icon Composer” is no longer supplied.&lt;/p&gt;
+
+&lt;p&gt;The Xcode docs describe the process you need to go through to make a .icns file:
+create a suite of image files of the correct size and with the correct file
+names, bundle them into a specially named folder and then use Terminal to stitch
+them together.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/icns-maker/&#34; title=&#34;Icns Maker&#34;&gt;Icns Maker&lt;/a&gt; does all this for you in two easy steps.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Drag in an image file (preferably 1024x1024 but 512x512 will also work).&lt;/li&gt;
+&lt;li&gt;Click a button.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;There are more options available for fine-tuning your icons allowing you to
+select different images for the various sizes, but this is all that is needed
+for basic operation.&lt;/p&gt;
+
+&lt;p&gt;Icns Maker is available from the
+&lt;a href=&#34;http://itunes.apple.com/app/icns-maker/id550942266?mt=12&amp;uo=4&#34; target=&#34;_blank&#34;&gt;Mac
+App Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;creating-icon-files-for-ios-apps&#34;&gt;Creating icon files for iOS apps:&lt;/h2&gt;
+
+&lt;p&gt;Icons for iOS apps are not bundled into a single file like a Mac .icns file. You
+add various .png images to your project. Depending on the devices supported by
+your app, you will need many different sizes of icon file. There are some icons
+for iPad only, some for iPhone / iPod Touch only and others required for any
+device. Additionally, you will need larger versions of each image to support
+Retina displays.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34; title=&#34;Icon Builder&#34;&gt;Icon Builder&lt;/a&gt; is a Mac app that does all this for you. As with Icns Maker,
+you just drag your image into the app and click a button. You can also select
+which devices your icon needs to suit and use different images for the different
+sizes if you want finer control.&lt;/p&gt;
+
+&lt;p&gt;When the app creates your icon files, it generates a ReadMe file with the
+information needed for installing these files in your project, including
+information to copy &amp;amp; paste directly into your Info.plist file.&lt;/p&gt;
+
+&lt;p&gt;Icon Builder is available from the
+&lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482?mt=12&#34; target=&#34;_blank&#34;&gt;Mac
+App Store&lt;/a&gt;.&lt;br /&gt;
+Note that although this app builds icon files for iOS app, it runs on a Mac.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;naming&#34;&gt;Naming&lt;/h2&gt;
+
+&lt;p&gt;Originally these apps were named in a consistent manner: Mac Icon Builder and
+iOS Icon Builder. However both these names were rejected by Apple - you are not
+allowed to use the words &amp;ldquo;Mac&amp;rdquo; or &amp;ldquo;iOS&amp;rdquo; in any app name sold through the Mac App
+Store.&lt;/p&gt;
+
+&lt;p&gt;Then I tried Icns Maker and Icon Maker. Icns Maker was approved, but there is
+already an app called Icon Maker, so I went with Icon Builder. But by that time
+Icns Maker had already been released, so there was no way to make the names more
+consistent.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Man Reader 1.1 Released</title>
-      <link>https://troz.net/post/2012/man-reader-1-1-released/</link>
-      <pubDate>Tue, 14 Aug 2012 00:00:00 +0000</pubDate>
+<title>Man Reader 1.1 Released</title>
+<link>https://troz.net/post/2012/man-reader-1-1-released/</link>
+<pubDate>Tue, 14 Aug 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/man-reader-1-1-released/</guid>
-      <description>The update of Man Reader to version 1.1 has just become available through the Mac App Store. This update has a bunch of new features - thanks to everyone who made suggestions.
-As detailed in a previous post, there have been major issues getting this app approved with Apple&amp;rsquo;s new sand-boxing restrictions fully in place. But to their credit, the Apple reviewers have been unfailing helpful and polite in answering my questions and keeping me informed.</description>
-    </item>
+<description>&lt;p&gt;The update of &lt;a href=&#34;https://troz.net/manreader/&#34; title=&#34;Man Reader&#34;&gt;Man Reader&lt;/a&gt; to version 1.1 has just become available through
+the Mac App Store. This update has a bunch of &lt;a href=&#34;https://troz.net/manreader/#new_features&#34;&gt;new features&lt;/a&gt; - thanks to
+everyone who made suggestions.&lt;/p&gt;
+
+&lt;p&gt;As detailed in a &lt;a href=&#34;https://troz.net/sandboxing-and-the-mac-app-store/&#34;&gt;previous post&lt;/a&gt;, there have been major issues getting this
+app approved with Apple&amp;rsquo;s new sand-boxing restrictions fully in place. But to
+their credit, the Apple reviewers have been unfailing helpful and polite in
+answering my questions and keeping me informed.&lt;/p&gt;
+
+&lt;p&gt;I hope everyone finds the new features useful. Please &lt;a href=&#34;mailto:sarah@troz.net?subject=Man%20Reader&#34;&gt;keep the suggestions
+coming in&lt;/a&gt; to make this app even better!&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Sandboxing and the Mac App Store</title>
-      <link>https://troz.net/post/2012/sandboxing-and-the-mac-app-store/</link>
-      <pubDate>Sat, 28 Jul 2012 00:00:00 +0000</pubDate>
+<title>Sandboxing and the Mac App Store</title>
+<link>https://troz.net/post/2012/sandboxing-and-the-mac-app-store/</link>
+<pubDate>Sat, 28 Jul 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/sandboxing-and-the-mac-app-store/</guid>
-      <description>As of June 2012, all apps submitted to the Mac App Store have to be sandboxed i.e. they have to be able to run in a limited environment where they cannot interfere with other apps or other parts of the system. While this is generally a good thing, there are problems when apps have legitimate reasons for requiring access to other resources.
-One annoyance for developers is that Apple&amp;rsquo;s apps are mostly not sandboxed.</description>
-    </item>
+<description>&lt;p&gt;As of June 2012, all apps submitted to the Mac App Store have to be sandboxed
+i.e. they have to be able to run in a limited environment where they cannot
+interfere with other apps or other parts of the system. While this is generally
+a good thing, there are problems when apps have legitimate reasons for requiring
+access to other resources.&lt;/p&gt;
+
+&lt;p&gt;One annoyance for developers is that Apple&amp;rsquo;s apps are mostly not sandboxed. To
+check what apps you have installed that are sandboxed, open up Activity Monitor
+(in Applications/Utilities). In the View menu, check that Sandbox is checked in
+the Columns submenu. Then you can sort by clicking on the Sandbox title and work
+out which apps are already sandboxed. Mail, Preview and Text Edit are now
+sandboxed and so is the new Reminders app, but as far as I can tell, no other
+Apple apps are. This causes two problems: firstly it is not fair to other
+developers if Apple is enforcing a standard which only they are allowed to
+break. Secondly, if Apple developers had to follow the same rules as everyone
+else, then maybe the system would evolve to become more usable for everyone.&lt;/p&gt;
+
+&lt;p&gt;In the Apple developer documentation about sandboxing, there is a section headed
+&amp;ldquo;Determine Whether Your App Is Suitable for Sandboxing&amp;rdquo;. Here they list numerous
+reasons why any app might not work in the sandbox. But the Mac App Store now
+makes sandboxing compulsory, so what to do with apps that are not suitable?&lt;/p&gt;
+
+&lt;p&gt;Some resources can be requested when building the app: access to various folders
+(Pictures, Music, Downloads etc), access to Address Book and Calendar data,
+printing facilities, networking etc. Beyond the specified list of entitlements
+that can be requested, developers can also apply for &amp;ldquo;temporary entitlements&amp;rdquo;
+which, if granted, will unlock access to other parts of the operating system.
+However these are subject to the whims of app reviewers and will be re-assessed
+with every update. Apple has also made it clear that they are intended as a
+transition feature and will not be available for ever.&lt;/p&gt;
+
+&lt;p&gt;This has lead to a recent spate of popular apps leaving the App Store.
+&lt;a href=&#34;http://www.marco.org/2012/07/26/mac-app-store-future&#34; target=&#34;_blank&#34;&gt;Marco
+Arment&lt;/a&gt; has discussed this problem with an emphasis on the issue of lack of
+confidence in buying from the App Store. If you cannot be sure that an app you
+buy will remain in the App Store, then you are less likely to buy it there.&lt;/p&gt;
+
+&lt;p&gt;I have run into direct issues with sandboxing already. With
+&lt;a href=&#34;http://www.picapod.com/&#34; target=&#34;_blank&#34;&gt;Pic-a-POD&lt;/a&gt;, I used to have
+links to the Desktop and Screen Saver panes in System Preferences. These used
+AppleScripts which required a temporary entitlement to send an AppleEvent. The
+app was rejected because of this, so I had to modify this feature - it now just
+takes you to the relevant section of System Prefs, but not directly to either
+Desktop or Screen Saver. However Pic-a-POD&amp;rsquo;s help, which runs in Apple&amp;rsquo;s Help
+Viewer app, contains exactly the same AppleScripts and so is allowed to access
+these preference panes directly. Try working out the logic of that one!&lt;/p&gt;
+
+&lt;p&gt;I have more serious problems with
+&lt;a title=&#34;Man Reader&#34; href=&#34;https://troz.net/manreader/&#34; target=&#34;_blank&#34;&gt;Man Reader&lt;/a&gt;. Man
+Reader displays a list of the man pages on your system. Depending on the tools
+you have installed, these pages may be in a variety of locations. The shell
+command that detects them first reads a config file and then checks the folders
+listed in that config file. All it needs is read-only access. With the first
+sandboxed version, I asked for a temporary entitlement to give me read-only
+access to the startup disk. This was granted, but I have since been informed
+that all requested entitlements were granted before the App Store cut-off date.
+This may have been meant to be helpful, but it was not useful to allow access
+that would later be removed without any warning.&lt;/p&gt;
+
+&lt;p&gt;The current version of Man Reader waiting for approval asks for read-only access
+to the config file directly and then to every folder listed in that config file.
+If approved, this should be able to access all the man pages on a system. I have
+no idea whether these entitlements will be granted, but if not, then I will have
+to remove Man Reader from the App Store. It would be wrong to continue to sell
+an app that only functioned in a limited manner, even though the App Store is
+far and away my best form of marketing.&lt;/p&gt;
+
+&lt;p&gt;So what do I suggest Apple does? I think they need to allow apps that are not
+sand-boxed. However these apps could come with a warning before installation. In
+Mountain Lion, the new security feature called Gatekeeper allows you to specify
+the level of security you want when installing apps. Currently the options are
+to allow apps downloaded from:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Mac App Store&lt;/li&gt;
+&lt;li&gt;Mac App Store and identified developers&lt;/li&gt;
+&lt;li&gt;Anywhere&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;They could split the first option in two and allow&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Mac App Store sandboxed&lt;/li&gt;
+&lt;li&gt;Mac App Store any&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;One further wrinkle is iCloud. Apple is encouraging users and developers towards
+iCloud data storage and sharing. But only apps in the App Store are allowed to
+use iCloud.&lt;/p&gt;
+
+&lt;p&gt;So it will be interesting to see how this plays out. Obviously Apple is not
+going to care if a tiny developer like me leaves the App Store, but if enough
+high-profile developers leave, then there will surely be some consideration
+given to the problem.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Update to Time In Words screen saver</title>
-      <link>https://troz.net/post/2012/update-to-time-in-words-screen-saver/</link>
-      <pubDate>Fri, 27 Jul 2012 00:00:00 +0000</pubDate>
+<title>Update to Time In Words screen saver</title>
+<link>https://troz.net/post/2012/update-to-time-in-words-screen-saver/</link>
+<pubDate>Fri, 27 Jul 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/update-to-time-in-words-screen-saver/</guid>
-      <description>Time In Words screen saver has just been updated to version 1.1 and is now fully compatible with Mountain Lion. It is free to use and can be downloaded here.
-The basic screen saver worked before, but searching for an alternative time zone would crash System Preferences. That is now fixed.
-The screen saver also shows a thumbnail image when in Mountain Lion and is code-signed with my developer ID for compatibility with Mountain Lion&amp;rsquo;s Gatekeeper.</description>
-    </item>
+<description>&lt;p&gt;&lt;a href=&#34;https://troz.net/time-in-words-screen-saver-for-mac/&#34; title=&#34;Time In Words Screen Saver for Mac&#34;&gt;Time In Words screen saver&lt;/a&gt; has just been updated to version 1.1 and is now
+fully compatible with Mountain Lion. It is free to use and can be
+&lt;a href=&#34;https://troz.net/screensaver/TimeInWords-ScreenSaver.zip&#34;&gt;downloaded&lt;/a&gt; here.&lt;/p&gt;
+
+&lt;p&gt;The basic screen saver worked before, but searching for an alternative time zone
+would crash System Preferences. That is now fixed.&lt;/p&gt;
+
+&lt;p&gt;The screen saver also shows a thumbnail image when in Mountain Lion and is
+code-signed with my developer ID for compatibility with Mountain Lion&amp;rsquo;s
+Gatekeeper.&lt;/p&gt;
+
+&lt;p&gt;The current version is compatible with 10.8 and 10.7. It may work in 10.6 but I
+cannot be sure. If anyone tries it, please let me know.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>A Knight&#39;s Move Released</title>
-      <link>https://troz.net/post/2012/a-knights-move-released/</link>
-      <pubDate>Mon, 09 Jul 2012 00:00:00 +0000</pubDate>
+<title>A Knight&#39;s Move Released</title>
+<link>https://troz.net/post/2012/a-knights-move-released/</link>
+<pubDate>Mon, 09 Jul 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/a-knights-move-released/</guid>
-      <description>UPDATE: September 2016 - A Knight&amp;rsquo;s Move for iOS is no longer available.
-A Knight&amp;rsquo;s Move for Mac is still supported.
-&amp;ldquo;A Knight&amp;rsquo;s Move&amp;rdquo; is a fun, addictive and simple puzzle game based on the movements of chess pieces. Your goal is to move your white knight across a board to a target square using the same movements as a knight in chess. Pawns may block your way, while enemy bishops, castles, knights and the queen may try to stop you.</description>
-    </item>
+<description>&lt;p&gt;&lt;strong&gt;UPDATE:&lt;/strong&gt; September 2016 - A Knight&amp;rsquo;s Move for iOS is no longer available.&lt;br&gt;
+&lt;a href=&#34;https://troz.net/knightsmove/&#34;&gt;A Knight&amp;rsquo;s Move for Mac&lt;/a&gt; is still supported.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&amp;ldquo;A Knight&amp;rsquo;s Move&amp;rdquo; is a fun, addictive and simple puzzle game based on the
+movements of chess pieces. Your goal is to move your white knight across a board
+to a target square using the same movements as a knight in chess. Pawns may
+block your way, while enemy bishops, castles, knights and the queen may try to
+stop you.&lt;/p&gt;
+
+&lt;p&gt;The game is available for iPad, iPhone and iPod Touch from the iTunes Store and
+requires iOS 5.0 or later. The Mac version is available from the Mac App Store
+and requires OS X 10.7 or later.&lt;/p&gt;
+
+&lt;p&gt;Perfect for when you have a few minutes to relax, like on the train to work,
+during your lunch break or during a boring lecture or class (Kids: don&amp;rsquo;t take
+advice from randoms, but you can turn the sound FX off. Just sayin&amp;rsquo;), &amp;ldquo;A
+Knight&amp;rsquo;s Move&amp;rdquo; will keep you coming back for &amp;ldquo;Just One More Go&amp;rdquo;!&lt;/p&gt;
+
+&lt;p&gt;Once you have played the tutorial pack, you can move on to the other puzzle
+packs. Each pack comes with 25 more puzzles and there are many different packs
+allowing you to select easy puzzles, challenging puzzles or variety packs, some
+with themes.&lt;/p&gt;
+
+&lt;p&gt;See more about &amp;ldquo;A Knight&amp;rsquo;s Move&amp;rdquo; at the &lt;a href=&#34;https://troz.net/knightsmove/&#34;&gt;Knight&amp;rsquo;s Move web page&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Get the game from the
+&lt;a href=&#34;http://itunes.apple.com/app/a-knights-move/id533321133&#34; target=&#34;_blank&#34;&gt;Mac
+App Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img title=&#34;Tutorial puzzle on iPhone&#34; src=&#34;https://troz.net/images/Tutorial-500.png&#34; alt=&#34;Tutorial puzzle on iPhone&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;Tutorial puzzle on iPhone&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/images/PeskyPawns.png&#34;&gt;&lt;img title=&#34;Pesky Pawns - one of the more difficult puzzles on Mac.&#34; src=&#34;https://troz.net/images/PeskyPawns-600.png&#34; alt=&#34;Pesky Pawns - one of the more difficult puzzles on Mac.&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Pesky Pawns - one of the more difficult puzzles on Mac.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Easy access to the Library folder</title>
-      <link>https://troz.net/post/2012/easy-access-to-the-library-folder/</link>
-      <pubDate>Wed, 16 May 2012 00:00:00 +0000</pubDate>
+<title>Easy access to the Library folder</title>
+<link>https://troz.net/post/2012/easy-access-to-the-library-folder/</link>
+<pubDate>Wed, 16 May 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/easy-access-to-the-library-folder/</guid>
-      <description>In Mac OS X 10.7 (Lion), Apple decided to make it more difficult to access your Library folder, presumably to stop people doing stuff that made apps crash. But as a developer, I need access to my Library folder a lot. I need to check that preferences are being saved correctly. If I have an app that uses the Application Support folder, then I need to be able to check it.</description>
-    </item>
+<description>&lt;p&gt;In Mac OS X 10.7 (Lion), Apple decided to make it more difficult to access your
+Library folder, presumably to stop people doing stuff that made apps crash. But
+as a developer, I need access to my Library folder a lot. I need to check that
+preferences are being saved correctly. If I have an app that uses the
+Application Support folder, then I need to be able to check it. And for
+sand-boxed apps, they keep all their data in the Containers folder inside the
+Library.&lt;/p&gt;
+
+&lt;p&gt;You can easily get to the Library folder by holding down the Option key while
+choosing the Go menu in Finder. This adds Library to the menu and you can get to
+the folder that way. But this is not as convenient as single-click access from a
+Finder window, so here is my preferred method.&lt;/p&gt;
+
+&lt;p&gt;Use the Option key and the Finder&amp;rsquo;s Go menu to get the Library folder open in a
+Finder window. Switch this window to column view, which will display the Library
+folder (slightly greyed out) in the first column. Drag this Library folder to
+the side bar of your Finder window. Now it is there all the time, in every
+Finder window that is showing the side bar.&lt;/p&gt;
+
+&lt;p&gt;I have read about various Terminal tricks to get the Library to show up, but
+every system update seems to turn it off again. This technique doesn&amp;rsquo;t involve
+anything except the Finder&amp;rsquo;s side bar preferences and so far (I&amp;rsquo;m now up to
+10.7.4), it hasn&amp;rsquo;t needed to be reset after any update.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Man Reader update coming soon</title>
-      <link>https://troz.net/post/2012/man-reader-update-coming-soon/</link>
-      <pubDate>Fri, 11 May 2012 00:00:00 +0000</pubDate>
+<title>Man Reader update coming soon</title>
+<link>https://troz.net/post/2012/man-reader-update-coming-soon/</link>
+<pubDate>Fri, 11 May 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/man-reader-update-coming-soon/</guid>
-      <description>Man Reader launched on the Mac App Store a couple of days ago and yesterday I got an email from a purchaser who reported that Man Reader was not displaying the man pages for MacPorts, even though he had the paths set up correctly.
-I installed MacPorts to check this out and ran into the same problem. Running the command &amp;ldquo;man port&amp;rdquo; in Terminal worked fine, but &amp;ldquo;port&amp;rdquo; did not appear in Man Reader&amp;rsquo;s list.</description>
-    </item>
+<description>&lt;p&gt;Man Reader launched on the Mac App Store a couple of days ago and yesterday I
+got an email from a purchaser who reported that Man Reader was not displaying
+the man pages for MacPorts, even though he had the paths set up correctly.&lt;/p&gt;
+
+&lt;p&gt;I installed MacPorts to check this out and ran into the same problem. Running
+the command &amp;ldquo;man port&amp;rdquo; in Terminal worked fine, but &amp;ldquo;port&amp;rdquo; did not appear in Man
+Reader&amp;rsquo;s list.&lt;/p&gt;
+
+&lt;p&gt;Man Reader uses the &amp;ldquo;apropos&amp;rdquo; command to list all available man pages, so I
+tested it next. When I found that it was not listing &amp;ldquo;port&amp;rdquo; either, I thought I
+had discovered the problem. OS X offers two commands for searching for man
+pages: apropos &amp;amp; whatis. The database files used by these commands are updated
+weekly by one of the periodic system commands. I manually ran this update
+command using:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo /etc/periodic/weekly/320.whatis
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This did part of the job, as the apropos command when used in Terminal now
+contained the MacPorts man pages. However Man Reader still did not show these
+man pages.&lt;/p&gt;
+
+&lt;p&gt;Reverting to the Console log, I found that this was a sand-boxing problem. The
+Mac OS X sand-box was preventing access to the man.conf file (which tells where
+to look for man pages), and the whatis database file containing the new data. I
+assume that without access to these files, the default locations for man pages
+were still searched, but no non-standard locations were being searched.&lt;/p&gt;
+
+&lt;p&gt;I have just submitted an update to the App Store that still uses sand-boxing but
+requests temporary read-only access to the file system to read these files. If
+Apple rejects this, then I will release a version without sand-boxing.&lt;/p&gt;
+
+&lt;p&gt;Either way, you can be assured that the matter is being dealt with and the next
+update, whether sand-boxed or not, will allow access to all man pages.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Pic-a-POD 2.0.4 for Mac</title>
-      <link>https://troz.net/post/2012/pic-a-pod-2-0-4-for-mac/</link>
-      <pubDate>Fri, 11 May 2012 00:00:00 +0000</pubDate>
+<title>Pic-a-POD 2.0.4 for Mac</title>
+<link>https://troz.net/post/2012/pic-a-pod-2-0-4-for-mac/</link>
+<pubDate>Fri, 11 May 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/pic-a-pod-2-0-4-for-mac/</guid>
-      <description> The latest update for Pic-a-POD for Mac is now available through the Mac App Store.
-Bug fix:  selecting an iPhoto pic from the Recent Desktops menu now works correctly.  New features:  Better indication of downloads and when large pics are not yet available Direct link to App Store in Help menu - please rate or review.  </description>
-    </item>
+<description>
+
+&lt;p&gt;The latest update for &lt;a href=&#34;http://www.picapod.com/&#34;&gt;Pic-a-POD for Mac&lt;/a&gt; is now available through the
+&lt;a href=&#34;http://itunes.apple.com/app/pic-a-pod/id477909802?mt=12&amp;uo=4&#34; target=&#34;_blank&#34;&gt;Mac
+App Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;bug-fix&#34;&gt;Bug fix:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;selecting an iPhoto pic from the Recent Desktops menu now works correctly.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;new-features&#34;&gt;New features:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Better indication of downloads and when large pics are not yet available&lt;/li&gt;
+&lt;li&gt;Direct link to App Store in Help menu - please rate or review.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+</item>
     
     <item>
-      <title>Making a Mac Screen Saver</title>
-      <link>https://troz.net/post/2012/making-a-mac-screen-saver/</link>
-      <pubDate>Wed, 09 May 2012 00:00:00 +0000</pubDate>
+<title>Making a Mac Screen Saver</title>
+<link>https://troz.net/post/2012/making-a-mac-screen-saver/</link>
+<pubDate>Wed, 09 May 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/making-a-mac-screen-saver/</guid>
-      <description>Having just completed the my first screen saver for Mac - the Time In Words Screen Saver, I thought I would share some of the experiences. I am using OS X Lion (10.7) and Xcode 4.3.2
-The first thing is to create a new project in Xcode using the Screen Saver template:
+<description>&lt;p&gt;Having just completed the my first screen saver for Mac - the &lt;a href=&#34;https://troz.net/time-in-words-screen-saver-for-mac/&#34; title=&#34;Time In Words Screen Saver for Mac&#34;&gt;Time In Words
+Screen Saver&lt;/a&gt;, I thought I would share some of the experiences. I am using OS
+X Lion (10.7) and Xcode 4.3.2&lt;/p&gt;
 
-Xcode sets up a project for you with everything you need for a screen saver module. Start editing the ScreenSaverView.</description>
-    </item>
+&lt;p&gt;The first thing is to create a new project in Xcode using the Screen Saver
+template:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/images/ScreenSaverTemplate.png&#34;&gt;&lt;img title=&#34;Xcode Screen Saver Template&#34; src=&#34;https://troz.net/images/ScreenSaverTemplate-441x300.png&#34; alt=&#34;Xcode Screen Saver Template&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Xcode sets up a project for you with everything you need for a screen saver
+module. Start editing the ScreenSaverView.m file. The most important method here
+is animateOneFrame.&lt;/p&gt;
+
+&lt;p&gt;This is called every time the animation time interval elapses. This interval is
+set in &lt;code&gt;initWithFrame:isPreview:&lt;/code&gt;. I have seen some debate online as to whether
+the drawing should be done in the &lt;code&gt;animateOneFrame&lt;/code&gt; method or in the &lt;code&gt;drawRect&lt;/code&gt;
+method. I chose to use &lt;code&gt;animateOneFrame&lt;/code&gt; because they are both called when the
+screen saver starts which can lead to an unpleasant flicker.&lt;/p&gt;
+
+&lt;p&gt;Now it is up to you to decide what to show in the &lt;code&gt;animateOneFrame&lt;/code&gt; method. For
+Time In Words, I assembled the data as a string, created a dictionary of text
+attributes, calculated the location where I wanted to show the text and used
+&lt;code&gt;drawAtPoint:withAttributes:&lt;/code&gt; to display it.&lt;/p&gt;
+
+&lt;p&gt;There are a couple of important tricks when working out locations: firstly, you
+will need to know the bounds of the screen saver area. This will vary depending
+on the monitor, screen size or whether the screen saver is appearing in the
+preview window in System Preferences. The screen saver view has a method that
+does this work for you.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objectivec&#34;&gt;NSRect viewBounds = [self bounds];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The next trick is that you are most likely going to need some random numbers.
+Again, the screen saver framework supplies these to you in several forms. I used
+&lt;code&gt;SSRandomFloatBetween&lt;/code&gt; but there are others. Check the documentation.&lt;/p&gt;
+
+&lt;p&gt;I ran into an oddity in System Preferences that made testing a bit tedious. I
+built the screen saver module and double-clicked on it to install into System
+Preferences. That worked fine, but when I made some changes and repeated the
+process, the original screen saver was still in place. I found that I had to
+quit System Preferences each time. Deleting the old version of the screen saver
+was not necessary, but quitting the System Prefs app was essential.&lt;/p&gt;
+
+&lt;p&gt;So that gives the basic screen saver module but with no options. Adding options
+is not difficult, but as always, there are a few things that are not obvious on
+first glance.&lt;/p&gt;
+
+&lt;p&gt;Add a xib file to your project: I used a window template. Then change the
+window&amp;rsquo;s class to NSPanel and configure it as shown:&lt;/p&gt;
+
+&lt;p&gt;&lt;img title=&#34;NSPanel Settings&#34; src=&#34;https://troz.net/images/PanelSettings.png&#34; alt=&#34;NSPanel Settings&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Set the File&amp;rsquo;s Owner class to the class of your Screen Saver view. In your
+ScreenSaverView.h file, declare a property for this new panel. e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objectivec&#34;&gt; @property (assign) IBOutlet NSPanel *optionsPanel;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;@synthesize this in the ScreenSaverView.m file. In the xib file, connect the
+panel to this outlet.&lt;/p&gt;
+
+&lt;p&gt;Now go back to ScreenSaverView.m and add the following code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objectivec&#34;&gt;* (BOOL)hasConfigureSheet { return YES; }
+
+* (NSWindow *)configureSheet { if (!self.optionsPanel) { [NSBundle
+  loadNibNamed:@&amp;quot;Options&amp;quot; owner:self]; } return self.optionsPanel; }
+
+- (IBAction)closeConfig:(id)sender { [[NSApplication sharedApplication]
+  endSheet:self.optionsPanel]; }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;hasConfigureSheet&lt;/code&gt; and &lt;code&gt;configureSheet&lt;/code&gt; stubs are already there for you,
+but you can replace them with these versions.&lt;/p&gt;
+
+&lt;p&gt;Go back to the xib file and drag in a button to close the options panel. Connect
+it to the &lt;code&gt;closeConfig:&lt;/code&gt; action.&lt;/p&gt;
+
+&lt;p&gt;Save everything, build, install in System Preferences and test. Firstly, the
+&amp;ldquo;Options&amp;hellip;&amp;rdquo; button should be enabled. Clicking it should open your panel as a
+sheet, and when you click your button, the panel should close.&lt;/p&gt;
+
+&lt;p&gt;If that doesn&amp;rsquo;t work, check the class assignments, the connections, the settings
+for the NSPanel and the code in that order.&lt;/p&gt;
+
+&lt;p&gt;Once the panel is opening and closing as required, you need to add the ability
+to store and retrieve the settings. Instead of using NSUserDefaults as you would
+in a standard Mac app, there is a special class call ScreenSaverDefaults for
+screen savers. It needs a unique module name, so I used the bundle identifier.
+For my Time In Words screen saver, this is
+&amp;ldquo;net.troz.Time-In-Words-Screen-Saver&amp;rdquo;. I defined a constant to hold this as a
+string, so I could use it anywhere I needed.&lt;/p&gt;
+
+&lt;p&gt;In the &lt;code&gt;initWithFrame:isPreview:&lt;/code&gt; method, I got a reference to the screen saver
+defaults for my screen saver and registered the defaults. I am never very sure
+about the need to do this, but it is supposed to be a good practice.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objectivec&#34;&gt;ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
+[defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
+  @&amp;quot;NO&amp;quot;, @&amp;quot;UseAlternativeZone&amp;quot;, @&amp;quot;&amp;quot;,
+  @&amp;quot;AlternativeZoneName&amp;quot;, nil]
+];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Using them is exactly the same as using NSUserDefaults:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objectivec&#34;&gt;// Reading
+ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
+BOOL useAlternativeZone = [defaults boolForKey:@&amp;quot;UseAlternativeZone&amp;quot;];
+NSString *alternativeZoneName = [defaults objectForKey:@&amp;quot;AlternativeZoneName&amp;quot;];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objectivec&#34;&gt;// Writing
+ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:kModuleName]; [defaults setBool:useAlternative forKey:@&amp;quot;UseAlternativeZone&amp;quot;];
+[defaults setObject:alternativeZoneName forKey:@&amp;quot;AlternativeZoneName&amp;quot;];
+[defaults synchronize];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;One last thing: if you want to distribute the screen saver, you will want to
+create an archive, possibly code-signing with your Apple developer ID to allow
+for Mountain Lion&amp;rsquo;s up-coming Gatekeeper security system. I code-signed the
+project and built an archive, but when I clicked &amp;ldquo;Distribute&amp;rdquo; in the Organizer,
+the only appropriate options was &amp;ldquo;Save Built Products&amp;rdquo;. I selected this option
+and ended up with a series of folders inside folders, with the screen saver
+module in about the fifth folder down. I don&amp;rsquo;t know why the module gets
+distributed like this, but I pulled it out of the folders and it worked fine.&lt;/p&gt;
+
+&lt;p&gt;And that&amp;rsquo;s about it. A lot of this stuff is online or in Apple&amp;rsquo;s documentation,
+but there are enough oddities to make it worthwhile gathering together all that
+I learnt while making this screen saver.&lt;/p&gt;
+
+&lt;p&gt;Click this icon to download the screen saver:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/screensaver/TimeInWords-ScreenSaver.zip&#34;&gt;&lt;img src=&#34;https://troz.net/images/ScreenSaverIcon128.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Time In Words Screen Saver</title>
-      <link>https://troz.net/time-in-words-screen-saver-for-mac/</link>
-      <pubDate>Mon, 07 May 2012 00:00:00 +0000</pubDate>
+<title>Time In Words Screen Saver</title>
+<link>https://troz.net/time-in-words-screen-saver-for-mac/</link>
+<pubDate>Mon, 07 May 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/time-in-words-screen-saver-for-mac/</guid>
-      <description>The latest member of the Time In Words suite of apps is a screen saver module for Macs.
-Version 1.2 updated January 2013: compatible with Lion (OS X 10.7), Mountain Lion (OS X 10.8), Mavericks (OS X 10.9) &amp;amp; Yosemite (OS X 10.10).
-Download Time In Words Screen Saver
-Like Time In Words for iOS and World Time In Words for Mac, it displays the time and date in plain words which are easy to read and comprehend.</description>
-    </item>
+<description>&lt;p&gt;The latest member of the Time In Words suite of apps is a screen saver module
+for Macs.&lt;br /&gt;
+Version 1.2 updated January 2013: compatible with Lion (OS X 10.7), Mountain Lion
+(OS X 10.8), Mavericks (OS X 10.9) &amp;amp; Yosemite (OS X 10.10).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/ScreenSaverIcon128.png&#34; alt=&#34;Time In Words Screen Saver Download&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/screensaver/TimeInWords-ScreenSaver.zip&#34;&gt;Download Time In Words Screen Saver&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Like &lt;a href=&#34;https://troz.net/time-in-words/&#34; title=&#34;Time In Words&#34;&gt;Time In Words for iOS&lt;/a&gt; and &lt;a href=&#34;https://troz.net/time-in-words-for-mac/&#34; title=&#34;Worlds Time In Words for Mac&#34;&gt;World Time In Words for Mac&lt;/a&gt;, it
+displays the time and date in plain words which are easy to read and comprehend.
+While it only shows a single time and date, this can be configured to show your
+local time &amp;amp; date or any available time zone. Since the App Store does not have
+a section for screen savers, the &lt;a href=&#34;https://troz.net/screensaver/TimeInWords-ScreenSaver.zip&#34;&gt;Time In Words screen saver&lt;/a&gt; is available as
+a direct download from my site. Click the link or the icon above to download the
+screen saver as a zip file. If the zip file does not open automatically,
+double-click the file to unzip it. Then double-click the &amp;ldquo;Time In Words Screen
+Saver.saver&amp;rdquo; file to install the screen saver in your System Preferences. You
+will be asked whether you want to install it for the current user only or for
+all users. Selecting &amp;ldquo;All Users&amp;rdquo; will require you to enter your password, so I
+recommend just installing for the current user.&lt;/p&gt;
+
+&lt;p&gt;Scroll to the &amp;ldquo;Other&amp;rdquo; section of the list of screen savers and click &amp;ldquo;Time In
+Words Screen Saver&amp;rdquo; to activate it. Sometimes the installation leaves the screen
+saver selected but not active. If this is the case, select another screen saver
+and then click back on Time In Words.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/images/ScreenSaver1.png&#34;&gt;&lt;img src=&#34;https://troz.net/images/ScreenSaver1-small.png&#34; alt=&#34;Time In Words Screen Saver&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;By default, your local time &amp;amp; date will be displayed. To select a different time
+zone, click the &amp;ldquo;Screen Saver Options…&amp;rdquo; button to display the following:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/images/ScreenSaver2.png&#34;&gt;&lt;img src=&#34;https://troz.net/images/ScreenSaver2-small.png&#34; alt=&#34;Time In Words Screen Saver Options&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Click the &amp;ldquo;Show Alternate Time&amp;rdquo; radio button to enable the time zone list. As
+with Time In Words for Mac, you can type part of a city name in the search field
+to find a zone quickly. Select the zone you want to use and click &amp;ldquo;OK&amp;rdquo;. The
+preview will switch to showing your newly selected time zone.&lt;/p&gt;
+
+&lt;p&gt;For anyone interested in the source code, here is a download link: &lt;a href=&#34;https://troz.net/screensaver/TimeInWordsScreenSaverXcode.zip&#34;&gt;Time In
+Words Screen Saver Xcode project&lt;/a&gt;. This was written using Xcode 4.x so is
+rather out-dated by now, but may prove useful to others wishing to start writing
+their own screen savers.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Time In Words for Mac now available</title>
-      <link>https://troz.net/post/2012/time-in-words-for-mac-now-available/</link>
-      <pubDate>Tue, 20 Mar 2012 00:00:00 +0000</pubDate>
+<title>Time In Words for Mac now available</title>
+<link>https://troz.net/post/2012/time-in-words-for-mac-now-available/</link>
+<pubDate>Tue, 20 Mar 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/time-in-words-for-mac-now-available/</guid>
-      <description>Time In Words for Mac has just been approved and is now available for free from the Mac App Store.
-For more details, check out the Time In Words for Mac web page.</description>
-    </item>
+<description>&lt;p&gt;Time In Words for Mac has just been approved and is now available for free from
+the
+&lt;a href=&#34;http://itunes.apple.com/au/app/time-in-words/id509085586?mt=12&#34; target=&#34;_blank&#34;&gt;Mac
+App Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For more details, check out the &lt;a href=&#34;https://troz.net/time-in-words-for-mac/&#34;&gt;Time In Words for Mac&lt;/a&gt; web page.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Interface options for selecting time zones</title>
-      <link>https://troz.net/post/2012/interface-options-for-selecting-time-zones/</link>
-      <pubDate>Sat, 25 Feb 2012 00:00:00 +0000</pubDate>
+<title>Interface options for selecting time zones</title>
+<link>https://troz.net/post/2012/interface-options-for-selecting-time-zones/</link>
+<pubDate>Sat, 25 Feb 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/interface-options-for-selecting-time-zones/</guid>
-      <description>As part of the design for [Time In Words for Mac][1], I had to work out the interface for selecting time zones. With [Time In Word for iOS][2], I used picker wheels which are excellent for selecting hierarchical data. On the Mac, there is no such thing as the iOS picker wheel and so I had to consider what to use instead.
-When you ask the system (Mac or iOS) for the available time zones, you get a list of names like this:</description>
-    </item>
+<description>&lt;p&gt;As part of the design for [Time In Words for Mac][1], I had to work out the
+interface for selecting time zones. With [Time In Word for iOS][2], I used
+picker wheels which are excellent for selecting hierarchical data. On the Mac,
+there is no such thing as the iOS picker wheel and so I had to consider what to
+use instead.&lt;/p&gt;
+
+&lt;p&gt;When you ask the system (Mac or iOS) for the available time zones, you get a
+list of names like this:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Africa/Abidjan&lt;br /&gt;
+Africa/Accra&lt;br /&gt;
+&amp;hellip;&lt;br /&gt;
+America/Cayman&lt;br /&gt;
+America/Chicago&lt;br /&gt;
+&amp;hellip;&lt;br /&gt;
+Europe/Riga&lt;br /&gt;
+Europe/Rome&lt;br /&gt;
+etc.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This seems obviously designed for a hierarchical display with the major regions
+as a first selection, filtering down to the cities in that region, making
+selection a two-step process. With the picker wheel in iOS, that is what I did.
+The first wheel selects the region which then populates the second wheel with
+the relevant city names. It makes it quick and easy to select a zone.&lt;/p&gt;
+
+&lt;p&gt;I always prefer to use standard user interface objects because people are
+familiar with them, they automatically update with the system, and there is much
+less chance of the App Store rejecting the app. So I scrolled through the
+available Mac options and came to NSBrowser. This is basically what Finder uses
+when in column mode.&lt;/p&gt;
+
+&lt;p&gt;I created an NSBrowser object, worked out a way to populate it and tested. It
+was incredibly slow! The list of regions appeared when the window opened, and
+that was no problem. Then I clicked a region and the first set of city names
+appeared instantly. But subsequent selections took about 3 seconds to appear.&lt;/p&gt;
+
+&lt;p&gt;I added some timing tests and my data gathering was taking about 20
+milliseconds. The log thought the browser had updated within about 100
+milliseconds, so I guess the rest of the time was some redraw issue.&lt;/p&gt;
+
+&lt;p&gt;Apple provides a large number of sample projects so I downloaded one that used
+NSBrowser. It seemed fast and responsive, so I duplicated it&amp;rsquo;s different method
+of assembling the data and tried again. No luck - it was as slow as before.&lt;/p&gt;
+
+&lt;p&gt;I am sure that if I kept at it, I would eventually work out what was causing the
+bottleneck and make NSBrowser work - after all, Finder is responsive enough,
+even if not great. But in the end, I decided that the advantages to using this
+form of interface didn&amp;rsquo;t justify the time spent, so I went with a simple table
+and a search field.&lt;/p&gt;
+
+&lt;p&gt;It is fast to populate, responsive to searches and didn&amp;rsquo;t take long to set up.
+So I am happy, although still perplexed about NSBrowser. It is on my to-do list
+of things I want to work out one day.&lt;/p&gt;
+
+&lt;p&gt;[1]: /time-in-words-for-mac/ [2]: /time-in-words/&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Scroll bars in Mac OX 10.6 and 10.7</title>
-      <link>https://troz.net/post/2012/scroll-bars-in-mac-ox-10-6-and-10-7/</link>
-      <pubDate>Sat, 25 Feb 2012 00:00:00 +0000</pubDate>
+<title>Scroll bars in Mac OX 10.6 and 10.7</title>
+<link>https://troz.net/post/2012/scroll-bars-in-mac-ox-10-6-and-10-7/</link>
+<pubDate>Sat, 25 Feb 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/scroll-bars-in-mac-ox-10-6-and-10-7/</guid>
-      <description>With the introduction of OS X 10.7 (Lion), Apple removed the obvious scroll bars from windows and replaced them with a much more subtle scroll indicator, that only appears when you are actually scrolling. This was designed to match the iOS scrolling, as was the swap of scroll direction which makes much more sense if you use a trackpad.
-With the upcoming Time In Words for Mac, I have a Preferences window to allow selection of time zones to display in the menu.</description>
-    </item>
+<description>&lt;p&gt;With the introduction of OS X 10.7 (Lion), Apple removed the obvious scroll bars
+from windows and replaced them with a much more subtle scroll indicator, that
+only appears when you are actually scrolling. This was designed to match the iOS
+scrolling, as was the swap of scroll direction which makes much more sense if
+you use a trackpad.&lt;/p&gt;
+
+&lt;p&gt;With the upcoming &lt;a href=&#34;https://troz.net/time-in-words-for-mac/&#34;&gt;Time In Words for Mac&lt;/a&gt;, I have a Preferences window to
+allow selection of time zones to display in the menu. The app will be compatible
+with 10.6 or later. Under 10.6, the scrollbars are always visible and this is
+what the Preferences display looks like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img title=&#34;Preferences 10.6&#34; src=&#34;https://troz.net/images/TiW-Prefs-10.6.png&#34; alt=&#34;Preferences 10.6&#34; width=&#34;550&#34; height=&#34;272&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This may change, but the basic layout is there. As you can see, I have a
+3-column table listing all the available time zones, with the final column right
+justified.&lt;/p&gt;
+
+&lt;p&gt;Under 10.7, this doesn&amp;rsquo;t quite work:&lt;/p&gt;
+
+&lt;p&gt;&lt;img title=&#34;Preferences 10.7&#34; src=&#34;https://troz.net/images/TiW-Prefs-10.7.png&#34; alt=&#34;Preferences 10.7&#34; width=&#34;550&#34; height=&#34;272&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I had to grab this screen shot quickly after swiping the trackpad, but you can
+see the problem. When not scrolling, the scroll indicator is hidden and the
+right column is fully visible, but when dragging the scroll indicator appears on
+top of the right-justified entries in that column.&lt;/p&gt;
+
+&lt;p&gt;So now I am not quite sure what to do. Here are the options I have considered:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Left or centre-justify the text in the final column.&lt;/li&gt;
+&lt;li&gt;Add some spacing at the end of each line so that the scroll indicator appears
+in blank space.&lt;/li&gt;
+&lt;li&gt;Put up with it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I will have to experiment with various options and see what I can do.&lt;/p&gt;
+</description>
+</item>
     
   </channel>
 </rss>

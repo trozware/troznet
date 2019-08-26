@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>privacy on TrozWare</title>
     <link>https://troz.net/tags/privacy/</link>
@@ -8,17 +8,34 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Sat, 26 May 2018 09:51:56 +1000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/privacy/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/privacy/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Privacy Policy</title>
-      <link>https://troz.net/post/2018/privacy-policy/</link>
-      <pubDate>Sat, 26 May 2018 09:51:56 +1000</pubDate>
+<title>Privacy Policy</title>
+<link>https://troz.net/post/2018/privacy-policy/</link>
+<pubDate>Sat, 26 May 2018 09:51:56 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/privacy-policy/</guid>
-      <description>&lt;p&gt;TL;DR: I don&amp;rsquo;t track you either on my web site or through my apps. If you want to contact me, please do so but I will not initiate any contacts.&lt;/p&gt;</description>
-    </item>
+<description>&lt;p&gt;TL;DR: I don&amp;rsquo;t track you either on my web site or through my apps. If you want to contact me, please do so but I will not initiate any contacts.&lt;/p&gt;
+
+&lt;p&gt;As anyone who gets email would realise by now, the EU has introduced a &lt;a href=&#34;https://www.eugdpr.org&#34;&gt;General Data Protection Regulation&lt;/a&gt; designed to enhance online privacy. You will have been getting lots of emails announcing new privacy policies or asking you to opt-in to existing arrangements.&lt;/p&gt;
+
+&lt;p&gt;So here is my version of those emails (which you will not get by email because I do not store any user data):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;None of my apps store data off your device.&lt;/li&gt;
+&lt;li&gt;I do not have any user data except for data specifically sent to me via web forms, direct email or in-app email.&lt;/li&gt;
+&lt;li&gt;If you have signed up to beta test one of my apps, you did give me your email address. No tests are currently on-going, but please contact me if you would rather I removed you from any future beta tests.&lt;/li&gt;
+&lt;li&gt;My web sites are now totally free of trackers and analytics software.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Most of my apps have a &amp;ldquo;Contact the Developer&amp;rdquo; button that creates an email that I will answer. If you do not want me to have your name and email address, do not use these buttons.&lt;/p&gt;
+
+&lt;p&gt;My web site has a &lt;a href=&#34;http://localhost:1313/contact/&#34;&gt;contact page&lt;/a&gt; - if you use it, I will see your name and email address and I will respond. Again, if you do not want me to have this data, do not use this page.&lt;/p&gt;
+
+&lt;p&gt;Since I no longer have any analytics, I would really appreciate hearing if you find any of my posts useful or interesting.&lt;/p&gt;</description>
+</item>
     
   </channel>
 </rss>

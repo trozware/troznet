@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>framework on TrozWare</title>
     <link>https://troz.net/tags/framework/</link>
@@ -8,21 +8,129 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Thu, 21 Jun 2018 14:45:59 +1000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/framework/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/framework/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Swift Strings Helper</title>
-      <link>https://troz.net/post/2018/swift-strings-helper/</link>
-      <pubDate>Thu, 21 Jun 2018 14:45:59 +1000</pubDate>
+<title>Swift Strings Helper</title>
+<link>https://troz.net/post/2018/swift-strings-helper/</link>
+<pubDate>Thu, 21 Jun 2018 14:45:59 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/swift-strings-helper/</guid>
-      <description>&lt;p&gt;Hands up everyone who can remember how to work with Swift strings, especially when it comes to substrings and ranges? &amp;hellip;.&lt;/p&gt;
+<description>&lt;p&gt;Hands up everyone who can remember how to work with Swift strings, especially when it comes to substrings and ranges? &amp;hellip;.&lt;/p&gt;
 
 &lt;p&gt;Nobody?&lt;/p&gt;
 
-&lt;p&gt;Me neither. So I decided that I would work it out once and create myself a library to make it easy for myself in the future. And then I thought that other people might like it too. So I have created my first open sourced project.&lt;/p&gt;</description>
-    </item>
+&lt;p&gt;Me neither. So I decided that I would work it out once and create myself a library to make it easy for myself in the future. And then I thought that other people might like it too. So I have created my first open sourced project.&lt;/p&gt;
+
+&lt;h2 id=&#34;strings-in-swift&#34;&gt;Strings in Swift&lt;/h2&gt;
+
+&lt;p&gt;Swift&amp;rsquo;s string handling is amazing. It is truly Unicode-compliant, so a Swift &lt;code&gt;String&lt;/code&gt; doesn&amp;rsquo;t care whether your string is made up of basic alphanumerics, accented characters, or emojis that might be composed of several different emojis joined together.&lt;/p&gt;
+
+&lt;p&gt;But this power comes at a price, and every version of Swift has changed the way we interact with strings, seemingly making it more and more confusing for the poor programmers trying to stay current. I have got to the stage where each year I read up on the new String features and then promptly forget them. For every use, I have to go back and search how to do what should be simple.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-problems&#34;&gt;The Problems&lt;/h2&gt;
+
+&lt;p&gt;To my mind, there are two main problems: indexes and substrings.&lt;/p&gt;
+
+&lt;p&gt;In most languages, you can get the n-th character of a string, but not in Swift. In Swift, you have to ask the string for its startIndex (or endIndex), then use an offset to adjust that index by a certain number to give you a &lt;code&gt;String.Index&lt;/code&gt;. Do much the same to get a second index and then you can grab the string between those two indices.&lt;/p&gt;
+
+&lt;p&gt;To get a sub-string from the 7th up to the 11th character of a string, this is what you have to do:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;let str = &amp;quot;Hello, playground&amp;quot;
+
+let subStart = str.index(str.startIndex, offsetBy: 7)
+let subEnd = str.index(str.startIndex, offsetBy: 11)
+
+let subStr = str[subStart ..&amp;lt; subEnd]       // &amp;quot;play&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Splitting the lines up like that at least helps to show what is happening, but then you see abominations like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;let sub = str[str.index(str.startIndex, offsetBy: 7)..&amp;lt;str.index(str.startIndex, offsetBy: 11)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And how anyone is supposed to read that, I really do not know.&lt;/p&gt;
+
+&lt;p&gt;And now here is the kicker: the results (&lt;code&gt;subStr&lt;/code&gt; and &lt;code&gt;sub&lt;/code&gt; in the examples above) are not of type &lt;code&gt;String&lt;/code&gt;! They are of type &lt;code&gt;Substring&lt;/code&gt; so when you go to use them, they don&amp;rsquo;t work as expected.&lt;/p&gt;
+
+&lt;p&gt;I guess there are cases for using &lt;code&gt;Substring&lt;/code&gt; but I always just end up casting to &lt;code&gt;String&lt;/code&gt; to solve this, but only after the compiler has choked on what I thought was a &lt;code&gt;String&lt;/code&gt; all along.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-solution&#34;&gt;The Solution&lt;/h2&gt;
+
+&lt;p&gt;To make my life easier, I worked out all the ways that I wanted to be able to split up strings. Basically just two ways: by character number or by substring. Swift already has a &lt;code&gt;substring&lt;/code&gt; method but it uses &lt;code&gt;String.Index&lt;/code&gt; as shown above. To avoid confusion, I named my functions all &lt;code&gt;sub&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;But now I can do the following to split strings by character number:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;let subStr = startingString.sub(from: 9)
+let subStr = startingString.sub(from: -3)
+
+let subStr = startingString.sub(upTo: 4)
+let subStr = startingString.sub(upTo: -3)
+
+let subStr = startingString.sub(from: 3, upTo: 7)
+let subStr = startingString.sub(from: 3, upTo: -5)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Negative numbers count back from the end of the string. And they all return &lt;code&gt;String&lt;/code&gt; objects!&lt;/p&gt;
+
+&lt;p&gt;Or to split strings by their own sub-strings, I can do this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;let subStr = startingString.sub(from: &amp;quot;abc&amp;quot;)
+
+let subStr = startingString.sub(upTo: &amp;quot;xyz&amp;quot;)
+
+let subStr = startingString.sub(from: &amp;quot;abc&amp;quot;, upTo: &amp;quot;xyz&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;extras&#34;&gt;Extras&lt;/h2&gt;
+
+&lt;p&gt;Once I had created a string helper library, I started thinking about all the other string utilities that would be useful. So I started adding all sorts of facilities:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Computed properties:
+
+&lt;ul&gt;
+&lt;li&gt;length (why should the length of a string be called count - that makes no sense)&lt;/li&gt;
+&lt;li&gt;words&lt;/li&gt;
+&lt;li&gt;lines&lt;/li&gt;
+&lt;li&gt;word count&lt;/li&gt;
+&lt;li&gt;line count&lt;/li&gt;
+&lt;li&gt;title case&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Encoding:
+
+&lt;ul&gt;
+&lt;li&gt;URL encoding &amp;amp; decoding for queries or forms&lt;/li&gt;
+&lt;li&gt;base64 encoding &amp;amp; decoding&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Trim:
+
+&lt;ul&gt;
+&lt;li&gt;trim&lt;/li&gt;
+&lt;li&gt;trim left&lt;/li&gt;
+&lt;li&gt;trim right&lt;/li&gt;
+&lt;li&gt;trim using extra characters&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Pad:
+
+&lt;ul&gt;
+&lt;li&gt;pad left&lt;/li&gt;
+&lt;li&gt;pad right&lt;/li&gt;
+&lt;li&gt;with default space or specified other character&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That&amp;rsquo;s as far as I have got so far, but I am hoping for some community involvement that will expand or edit this library to make it more broadly applicable.&lt;/p&gt;
+
+&lt;h2 id=&#34;open-source&#34;&gt;Open Source&lt;/h2&gt;
+
+&lt;p&gt;I have never created an open source project before and I have rarely contributed to open source. But I have now published this library on GitHub under an MIT license. Please check it out at &lt;a href=&#34;https://github.com/trozware/swift-strings-helper&#34;&gt;https://github.com/trozware/swift-strings-helper&lt;/a&gt;. The GitHub repo contains an Xcode project with all the source files, plus the targets to build frameworks for macOS or iOS, and a playground as documentation and to test it all out.&lt;/p&gt;
+
+&lt;p&gt;I would love to get as many stars as possible and it would be fantastic if anyone wanted to log an issue or contribute directly. As someone who finds the whole open source world rather intimidating, I would like to assure everyone that there will be no flaming and no shooting down of ANY ideas. I look forward to hearing from you.&lt;/p&gt;
+
+&lt;p&gt;I am sure there are other Swift libraries out there dedicated to solving the same problems, but I hope that mine can prove useful to some. And if you just want to use it without contributing, feel free. The usage instructions are all in the ReadMe on the GitHub page.&lt;/p&gt;</description>
+</item>
     
   </channel>
 </rss>

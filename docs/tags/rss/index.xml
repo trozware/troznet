@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>rss on TrozWare</title>
     <link>https://troz.net/tags/rss/</link>
@@ -8,21 +8,57 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Sat, 20 May 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/rss/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/rss/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>JSON Feed for TrozWare</title>
-      <link>https://troz.net/post/2017/json-feed-for-trozware/</link>
-      <pubDate>Sat, 20 May 2017 00:00:00 +0000</pubDate>
+<title>JSON Feed for TrozWare</title>
+<link>https://troz.net/post/2017/json-feed-for-trozware/</link>
+<pubDate>Sat, 20 May 2017 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2017/json-feed-for-trozware/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://jsonfeed.org/2017/05/17/announcing_json_feed&#34;&gt;jsonfeed.org&lt;/a&gt; has announced a new format for web site feeds, designed as an
+<description>&lt;p&gt;&lt;a href=&#34;https://jsonfeed.org/2017/05/17/announcing_json_feed&#34;&gt;jsonfeed.org&lt;/a&gt; has announced a new format for web site feeds, designed as an
 alternative to RSS. TrozWare has had an XML RSS feed for years, but I don&amp;rsquo;t
 think anyone ever uses it (I certainly don&amp;rsquo;t), so today I have replaced it with
 a JSON feed, which you can access through the
-&lt;a class=&#34;fa fa-rss&#34; href=&#34;https://troz.net/feed.json&#34;&gt;&lt;/a&gt; button at the top of every page.&lt;/p&gt;</description>
-    </item>
+&lt;a class=&#34;fa fa-rss&#34; href=&#34;https://troz.net/feed.json&#34;&gt;&lt;/a&gt; button at the top of every page.&lt;/p&gt;
+
+&lt;p&gt;I am sure many JSON Feed viewers will appear soon, but the only one I know about
+so far is at &lt;a href=&#34;http://json-feed-viewer.herokuapp.com&#34;&gt;http://json-feed-viewer.herokuapp.com&lt;/a&gt;. As soon as this update
+to my site goes live, I will apply to have TrozWare added to the list of sites
+on this page. Meanwhile, you can paste in the URL: &lt;code&gt;https://troz.net/feed.json&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This site is constructed using Jekyll, so I am very grateful to Niclas Darville
+for his very easy to follow &lt;a href=&#34;https://ndarville.com/blog/2017/05/19/json-feed-for-jekyll/&#34;&gt;guide&lt;/a&gt;. However it is still well worth reading
+through the &lt;a href=&#34;https://jsonfeed.org/version/1&#34;&gt;official specs&lt;/a&gt; to see what else you want to add, or if you want
+to remove anything. I had to tweak a few settings to make it work for my
+configuration, and I added some more objects, but Niclas got me off to a flying
+start.&lt;/p&gt;
+
+&lt;p&gt;Two things to watch out for:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Make sure your feed is producing valid JSON (I had an extra comma that was
+breaking it&amp;hellip;).&lt;/li&gt;
+&lt;li&gt;As third-party apps &amp;amp; sites may be displaying your content, you need to make
+sure that you are not using relative URLs for images and internal links. I
+was using relative image URLs like &lt;code&gt;/images/WorkHelp1.png&lt;/code&gt; but that showed a
+broken link in the feed viewer, so I have changed all such links to
+&lt;code&gt;/images/WorkHelp1.png&lt;/code&gt;. Hopefully that will work correctly on my local test
+server as well as when published. &lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://jsonfeed.org/graphics/icon.png&#34; alt=&#34;JSON Feed icon&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;JSON Feed offers a nice icon which I would have liked to use, but I could not
+work out a way to make it play nicely with the existing icons on my pages which
+all use &lt;a href=&#34;http://fontawesome.io&#34;&gt;Font Awesome&lt;/a&gt; icons. So I ended up just using the existing Feed
+icon. Hopefully Font Awesome will soon add a JSON Feed icon to their already
+impressive list.&lt;/p&gt;
+
+&lt;p&gt;If anyone still wants to use the &lt;a href=&#34;https://troz.net/index.xml&#34;&gt;RSS feed&lt;/a&gt;, it is no longer linked to the
+buttons at the top of the pages, but you can access it manually.&lt;/p&gt;</description>
+</item>
     
   </channel>
 </rss>

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>sand-box on TrozWare</title>
     <link>https://troz.net/tags/sand-box/</link>
@@ -8,40 +8,235 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Wed, 06 Feb 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/sand-box/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/sand-box/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Man Reader (no SB)</title>
-      <link>https://troz.net/post/2013/man-reader-no-sb/</link>
-      <pubDate>Wed, 06 Feb 2013 00:00:00 +0000</pubDate>
+<title>Man Reader (no SB)</title>
+<link>https://troz.net/post/2013/man-reader-no-sb/</link>
+<pubDate>Wed, 06 Feb 2013 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2013/man-reader-no-sb/</guid>
-      <description>These instructions are no longer valid. As of version 1.5, the App Store version of Man Reader has solved the sand-boxing issues and is now as powerful as the non-sand-boxed version.
-The non-sand-boxed version will no longer be supported or updated, so please revert to the App Store version.
-If you find that Man Reader is not working well for you due to Apple&amp;rsquo;s sandboxing restrictions, then you can download a non-sandboxed version here.</description>
-    </item>
+<description>
+
+&lt;p&gt;These instructions are no longer valid. As of version 1.5, the App Store version
+of Man Reader has solved the sand-boxing issues and is now as powerful as the
+non-sand-boxed version.&lt;/p&gt;
+
+&lt;p&gt;The non-sand-boxed version will no longer be supported or updated, so please
+revert to the App Store version.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you find that Man Reader is not working well for you due to Apple&amp;rsquo;s
+sandboxing restrictions, then you can download a non-sandboxed version here. To
+find out more about this, including how to test if you are affected, read the
+&lt;a href=&#34;https://troz.net/manreader-sandbox/&#34;&gt;Sand-Boxing Man Reader&lt;/a&gt; page.&lt;/p&gt;
+
+&lt;p&gt;The non-sandboxed version will only work if you have the App Store version of
+Man Reader already installed.&lt;/p&gt;
+
+&lt;p&gt;When you run &amp;lsquo;Man Reader (no SB)&amp;rsquo; for the first time, it will check to see if
+you have a valid installation of &amp;lsquo;Man Reader&amp;rsquo; that you have purchased from the
+App Store.&lt;br /&gt;
+If you do not, &amp;lsquo;Man Reader (no SB)&amp;rsquo; will offer to take you to the App Store and then
+quit.&lt;/p&gt;
+
+&lt;p&gt;If you already own the App Store version of Man Reader and &amp;lsquo;Man Reader (no SB)&amp;rsquo;
+has started once, you can delete the App Store version and &amp;lsquo;Man Reader (no SB)&amp;rsquo;
+will keep working.&lt;/p&gt;
+
+&lt;p&gt;To install &amp;lsquo;Man Reader (no SB)&amp;rsquo;, click the download link below. This will
+download &amp;lsquo;ManReader-noSB.zip&amp;rsquo;. Double-click on this file to un-zip it, and then
+move the &amp;lsquo;Man Reader (no SB).app&amp;rsquo; into your Applications folder and use as
+normal. Do not delete the App Store version of Man Reader until &amp;lsquo;Man Reader (no
+SB)&amp;rsquo; has been run at least once.&lt;/p&gt;
+
+&lt;h2 id=&#34;del-download-man-reader-no-sb-del-2&#34;&gt;&lt;a href=&#34;#&#34;&gt;&lt;del&gt;Download Man Reader (no SB)&lt;/del&gt;&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;I found out today (thanks Ron) that under OS X 10.10.3 the security settings no
+longer allow the downloaded version of Man Reader (no SB) to run, despite the
+fact that I have signed it with my Apple Developer ID. OS X gives a very
+un-helpful dialog reporting that the app is damaged. In fact the app is fine,
+but being blocked by the security settings. The solution as shown at
+&lt;a href=&#34;http://www.tech-recipes.com/rx/45404/mac-downloaded-app-is-damaged-and-cant-be-opened-error-solved/&#34;&gt;TechRecipes&lt;/a&gt; is to change your security system preferences to allow
+downloaded apps from anywhere. You only need to do this temporarily as after you
+have run the app once you can set this setting back to whatever you had before.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Sand-Boxing Man Reader</title>
-      <link>https://troz.net/post/2013/sand-boxing-man-reader/</link>
-      <pubDate>Wed, 06 Feb 2013 00:00:00 +0000</pubDate>
+<title>Sand-Boxing Man Reader</title>
+<link>https://troz.net/post/2013/sand-boxing-man-reader/</link>
+<pubDate>Wed, 06 Feb 2013 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2013/sand-boxing-man-reader/</guid>
-      <description>These instructions are no longer valid. As of version 1.5, the App Store version of Man Reader has solved the sand-boxing issues and is now as powerful as the non-sand-boxed version.
-The non-sand-boxed version will no longer be supported or updated, so please revert to the App Store version.
-As with all apps in the App Store, Man Reader is restricted by Apple&amp;rsquo;s sand-boxing policy. Sand-boxing is a great thing. It isolates apps from each other and from the system, making it far less likely that a problem app will cause wide-spread havoc.</description>
-    </item>
+<description>&lt;p&gt;These instructions are no longer valid. As of version 1.5, the App Store version
+of Man Reader has solved the sand-boxing issues and is now as powerful as the
+non-sand-boxed version.&lt;/p&gt;
+
+&lt;p&gt;The non-sand-boxed version will no longer be supported or updated, so please
+revert to the App Store version.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;As with all apps in the App Store, &lt;a href=&#34;https://troz.net/manreader/&#34;&gt;Man Reader&lt;/a&gt; is restricted by Apple&amp;rsquo;s
+sand-boxing policy. Sand-boxing is a great thing. It isolates apps from each
+other and from the system, making it far less likely that a problem app will
+cause wide-spread havoc. However for an app like Man Reader, this can lead to a
+drop in functionality.&lt;/p&gt;
+
+&lt;p&gt;Due to the permissions limitations of sand-boxing, Man Reader can only search
+defined paths on your system drive e.g. /usr/, /opt/&lt;br /&gt;
+This is where the default man pages are all stored, but if you install other software
+(Xcode is a good example), then Man Reader may not be able to list all the available
+man pages on your system.&lt;/p&gt;
+
+&lt;p&gt;To tell if Man Reader is missing man pages, copy &amp;amp; paste the following command
+into the Terminal app:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;whatis . &amp;gt;&amp;gt; ~/Desktop/whatis.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Man Reader runs this command internally when it starts, but the Terminal app is
+not sand-boxed and so can access everything.&lt;br /&gt;
+Running this command will create a text file on your desktop with a list of all available
+man pages on your system. Open it in a text editor that can show the number of lines
+in a file. &lt;a href=&#34;http://www.barebones.com/products/textwrangler/&#34;&gt;TextWrangler from Bare Bones Software&lt;/a&gt; is a good free editor that
+will do this.&lt;/p&gt;
+
+&lt;p&gt;To check what man pages ManReader can read, go to Finder and select &amp;lsquo;Go to
+Folder&amp;hellip;&amp;rdquo; from the Go menu. Paste in the following path:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/Library/Containers/net.troz.Man-Reader/Data/Library/Application Support/Man Reader/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You will see two files: open the one called &amp;lsquo;ManReader.raw&amp;rsquo; in your text editor.
+This is the result of Man Reader running the whatis command. Compare the number
+of lines in the two files. Don&amp;rsquo;t worry about the order of the items in the file
+as that may vary, you are only concerned with the total number of lines in each.&lt;/p&gt;
+
+&lt;p&gt;There may be one or two lines more in the whatis.txt file but if there is a big
+difference, then you are being sand-boxed&amp;hellip;&lt;br /&gt;
+As an example, on my system, the whatis.txt file contains 8954 lines and the ManReader.raw
+file contains 2320 lines!&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;If you are affected by this or think that you might be, I now have a
+solution - actually two possible solutions:&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;If you have already bought Man Reader from the App Store, then you can
+&lt;a href=&#34;#&#34;&gt;download a non-sandboxed version&lt;/a&gt;. This will only work if you have the App
+Store version of the app installed.&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;If you do not already own a copy of Man Reader, and want to buy it
+un-sandboxed, then you can now &lt;a href=&#34;#&#34;&gt;buy it directly&lt;/a&gt;.&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;Please &lt;a href=&#34;mailto:sarah@troz.net?subject=Man%20Reader%20and%20Sand-Boxing&#34;&gt;contact me&lt;/a&gt; if you have any issues with this.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Sandboxing and the Mac App Store</title>
-      <link>https://troz.net/post/2012/sandboxing-and-the-mac-app-store/</link>
-      <pubDate>Sat, 28 Jul 2012 00:00:00 +0000</pubDate>
+<title>Sandboxing and the Mac App Store</title>
+<link>https://troz.net/post/2012/sandboxing-and-the-mac-app-store/</link>
+<pubDate>Sat, 28 Jul 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/sandboxing-and-the-mac-app-store/</guid>
-      <description>As of June 2012, all apps submitted to the Mac App Store have to be sandboxed i.e. they have to be able to run in a limited environment where they cannot interfere with other apps or other parts of the system. While this is generally a good thing, there are problems when apps have legitimate reasons for requiring access to other resources.
-One annoyance for developers is that Apple&amp;rsquo;s apps are mostly not sandboxed.</description>
-    </item>
+<description>&lt;p&gt;As of June 2012, all apps submitted to the Mac App Store have to be sandboxed
+i.e. they have to be able to run in a limited environment where they cannot
+interfere with other apps or other parts of the system. While this is generally
+a good thing, there are problems when apps have legitimate reasons for requiring
+access to other resources.&lt;/p&gt;
+
+&lt;p&gt;One annoyance for developers is that Apple&amp;rsquo;s apps are mostly not sandboxed. To
+check what apps you have installed that are sandboxed, open up Activity Monitor
+(in Applications/Utilities). In the View menu, check that Sandbox is checked in
+the Columns submenu. Then you can sort by clicking on the Sandbox title and work
+out which apps are already sandboxed. Mail, Preview and Text Edit are now
+sandboxed and so is the new Reminders app, but as far as I can tell, no other
+Apple apps are. This causes two problems: firstly it is not fair to other
+developers if Apple is enforcing a standard which only they are allowed to
+break. Secondly, if Apple developers had to follow the same rules as everyone
+else, then maybe the system would evolve to become more usable for everyone.&lt;/p&gt;
+
+&lt;p&gt;In the Apple developer documentation about sandboxing, there is a section headed
+&amp;ldquo;Determine Whether Your App Is Suitable for Sandboxing&amp;rdquo;. Here they list numerous
+reasons why any app might not work in the sandbox. But the Mac App Store now
+makes sandboxing compulsory, so what to do with apps that are not suitable?&lt;/p&gt;
+
+&lt;p&gt;Some resources can be requested when building the app: access to various folders
+(Pictures, Music, Downloads etc), access to Address Book and Calendar data,
+printing facilities, networking etc. Beyond the specified list of entitlements
+that can be requested, developers can also apply for &amp;ldquo;temporary entitlements&amp;rdquo;
+which, if granted, will unlock access to other parts of the operating system.
+However these are subject to the whims of app reviewers and will be re-assessed
+with every update. Apple has also made it clear that they are intended as a
+transition feature and will not be available for ever.&lt;/p&gt;
+
+&lt;p&gt;This has lead to a recent spate of popular apps leaving the App Store.
+&lt;a href=&#34;http://www.marco.org/2012/07/26/mac-app-store-future&#34; target=&#34;_blank&#34;&gt;Marco
+Arment&lt;/a&gt; has discussed this problem with an emphasis on the issue of lack of
+confidence in buying from the App Store. If you cannot be sure that an app you
+buy will remain in the App Store, then you are less likely to buy it there.&lt;/p&gt;
+
+&lt;p&gt;I have run into direct issues with sandboxing already. With
+&lt;a href=&#34;http://www.picapod.com/&#34; target=&#34;_blank&#34;&gt;Pic-a-POD&lt;/a&gt;, I used to have
+links to the Desktop and Screen Saver panes in System Preferences. These used
+AppleScripts which required a temporary entitlement to send an AppleEvent. The
+app was rejected because of this, so I had to modify this feature - it now just
+takes you to the relevant section of System Prefs, but not directly to either
+Desktop or Screen Saver. However Pic-a-POD&amp;rsquo;s help, which runs in Apple&amp;rsquo;s Help
+Viewer app, contains exactly the same AppleScripts and so is allowed to access
+these preference panes directly. Try working out the logic of that one!&lt;/p&gt;
+
+&lt;p&gt;I have more serious problems with
+&lt;a title=&#34;Man Reader&#34; href=&#34;https://troz.net/manreader/&#34; target=&#34;_blank&#34;&gt;Man Reader&lt;/a&gt;. Man
+Reader displays a list of the man pages on your system. Depending on the tools
+you have installed, these pages may be in a variety of locations. The shell
+command that detects them first reads a config file and then checks the folders
+listed in that config file. All it needs is read-only access. With the first
+sandboxed version, I asked for a temporary entitlement to give me read-only
+access to the startup disk. This was granted, but I have since been informed
+that all requested entitlements were granted before the App Store cut-off date.
+This may have been meant to be helpful, but it was not useful to allow access
+that would later be removed without any warning.&lt;/p&gt;
+
+&lt;p&gt;The current version of Man Reader waiting for approval asks for read-only access
+to the config file directly and then to every folder listed in that config file.
+If approved, this should be able to access all the man pages on a system. I have
+no idea whether these entitlements will be granted, but if not, then I will have
+to remove Man Reader from the App Store. It would be wrong to continue to sell
+an app that only functioned in a limited manner, even though the App Store is
+far and away my best form of marketing.&lt;/p&gt;
+
+&lt;p&gt;So what do I suggest Apple does? I think they need to allow apps that are not
+sand-boxed. However these apps could come with a warning before installation. In
+Mountain Lion, the new security feature called Gatekeeper allows you to specify
+the level of security you want when installing apps. Currently the options are
+to allow apps downloaded from:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Mac App Store&lt;/li&gt;
+&lt;li&gt;Mac App Store and identified developers&lt;/li&gt;
+&lt;li&gt;Anywhere&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;They could split the first option in two and allow&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Mac App Store sandboxed&lt;/li&gt;
+&lt;li&gt;Mac App Store any&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;One further wrinkle is iCloud. Apple is encouraging users and developers towards
+iCloud data storage and sharing. But only apps in the App Store are allowed to
+use iCloud.&lt;/p&gt;
+
+&lt;p&gt;So it will be interesting to see how this plays out. Obviously Apple is not
+going to care if a tiny developer like me leaves the App Store, but if enough
+high-profile developers leave, then there will surely be some consideration
+given to the problem.&lt;/p&gt;
+</description>
+</item>
     
   </channel>
 </rss>

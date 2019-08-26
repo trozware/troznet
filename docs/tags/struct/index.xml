@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>struct on TrozWare</title>
     <link>https://troz.net/tags/struct/</link>
@@ -8,18 +8,205 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Wed, 30 Mar 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/struct/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/struct/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Structs vs Classes</title>
-      <link>https://troz.net/post/2016/structs-vs-classes/</link>
-      <pubDate>Wed, 30 Mar 2016 00:00:00 +0000</pubDate>
+<title>Structs vs Classes</title>
+<link>https://troz.net/post/2016/structs-vs-classes/</link>
+<pubDate>Wed, 30 Mar 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/structs-vs-classes/</guid>
-      <description>One of the big debates among Swift developers is when to use structs and when to use classes.
-Classes are the building blocks of object-oriented programming but structs as provided by Swift are newly powerful. Structs have been around in C-based languages for a long time, but Swift has made them more powerful and given them more features so that they are almost indistinguishable from classes. So what are the differences and which one should you use?</description>
-    </item>
+<description>
+
+&lt;p&gt;One of the big debates among Swift developers is when to use &lt;code&gt;structs&lt;/code&gt; and when
+to use &lt;code&gt;classes&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Classes are the building blocks of object-oriented programming
+but structs as provided by Swift are newly powerful. Structs have been around in
+C-based languages for a long time, but Swift has made them more powerful and
+given them more features so that they are almost indistinguishable from classes.
+So what are the differences and which one should you use?&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;where-they-are-the-same&#34;&gt;Where they are the same?&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;both can define initializers&lt;/li&gt;
+&lt;li&gt;both can define properties&lt;/li&gt;
+&lt;li&gt;both can define methods&lt;/li&gt;
+&lt;li&gt;both can conform to protocols&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;where-they-are-different&#34;&gt;Where they are different?&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;classes can inherit from other classes&lt;/li&gt;
+&lt;li&gt;structs cannot inherit from other structs&lt;/li&gt;
+&lt;li&gt;classes are reference types&lt;/li&gt;
+&lt;li&gt;structs are value types&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The reference type vs value type difference is where things really get
+interesting. Have a look at this example of a class with a single property:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;class PersonClass {
+    var name: String
+
+    init(name: String) {
+        self.name = name
+    }
+}
+
+var personA = PersonClass(name: &amp;quot;Woody&amp;quot;)
+personA.name // Woody
+
+var personB = personA
+personB.name = &amp;quot;Buzz&amp;quot;
+personB.name // Buzz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That looks like standard stuff, but what do you think &lt;code&gt;personA&lt;/code&gt;&amp;rsquo;s name is now?
+If you guessed &amp;ldquo;Buzz&amp;rdquo; then you win a prize! &lt;em&gt;(No, not a real prize - pat
+yourself on the back.)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;This is because when we created the &lt;code&gt;personB&lt;/code&gt; variable and assigned &lt;code&gt;personA&lt;/code&gt; to
+it, we did not assign the &lt;strong&gt;VALUE&lt;/strong&gt; of &lt;code&gt;personA&lt;/code&gt;, we assigned a &lt;strong&gt;REFERENCE&lt;/strong&gt; to
+&lt;code&gt;personA&lt;/code&gt; - actually the address in memory of &lt;code&gt;personA&lt;/code&gt; rather than the data
+inside.&lt;/p&gt;
+
+&lt;p&gt;So now we have two objects and they are both looking at the same spot in memory
+for their data. This means that changing the name of &lt;code&gt;personB&lt;/code&gt; changed the name
+of &lt;code&gt;personA&lt;/code&gt; as well.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s try the same thing with a struct:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;struct PersonStruct {
+  var name: String
+}
+
+var personC = PersonStruct(name: &amp;quot;Rex&amp;quot;)
+personC.name // Rex
+
+var personD = personC
+personD.name = &amp;quot;Hamm&amp;quot;
+personD.name // Hamm
+
+personC.name // Rex
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This time, because we are using a struct, when we assign &lt;code&gt;personC&lt;/code&gt; to the new
+&lt;code&gt;personD&lt;/code&gt; variable, we are actually making a copy of &lt;code&gt;personC&lt;/code&gt; and setting the
+values of &lt;code&gt;personD&lt;/code&gt; to this new copy. So now we can change &lt;code&gt;personD&lt;/code&gt; without
+messing with &lt;code&gt;personC&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Note that I did not have a define an &lt;code&gt;init&lt;/code&gt; for the struct because it creates
+one automatically. You can still add one yourself if you want to do anything
+different, but you do not have to.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;At first glance, you may think that you should now use structs all the time to
+avoid these unintended consequences, but it isn&amp;rsquo;t quite as simple as that.
+Sometimes a class is still the best thing to use.&lt;/p&gt;
+
+&lt;p&gt;The inheritance capabilities of classes can make your decision simple: if you
+need to create a button and want to start by sub-classing UIButton or NSButton,
+then your button must be a class, not a struct. This will apply to most user
+interface objects.&lt;/p&gt;
+
+&lt;p&gt;Apple really wants us to use structs and in the Swift standard libraries, a very
+high percentage of the objects are structs. But structs are especially well
+suited to a certain subset of objects.&lt;/p&gt;
+
+&lt;p&gt;The best explanation that I have found of when to use a struct is the &lt;a href=&#34;http://faq.sealedabstract.com/structs_or_classes/#an-alternative-hypothesis&#34;&gt;Jeff Trick&lt;/a&gt;. Reduced down, the rule is:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;If you can overload == to compare two instances of your object, use a struct.
+&lt;br&gt; If this doesn&amp;rsquo;t make sense, use a class.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So use structs for your things: Person, Shape, Brick, Cat. &lt;br&gt; Use classes for
+everything else.&lt;/p&gt;
+
+&lt;p&gt;I would add one caveat: don&amp;rsquo;t fight the compiler. If using a struct is giving
+lots of errors and warnings, change to a class.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;A logical consequence of this is that all structs should conform to the
+&lt;a href=&#34;http://swiftdoc.org/v2.2/protocol/Equatable/&#34;&gt;Equatable&lt;/a&gt; protocol.&lt;/p&gt;
+
+&lt;p&gt;Extending &lt;code&gt;PersonStruct&lt;/code&gt; to make it conform just requires a single function:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;extension PersonStruct: Equatable {
+  static func == (lhs: PersonStruct, rhs: PersonStruct) -&amp;gt; Bool {
+    return lhs.name == rhs.name
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Since this struct only has one property, we can say that two instances of this
+struct are equal if the names are equal.&lt;/p&gt;
+
+&lt;p&gt;Testing this, we can see:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;var personC = PersonStruct(name: &amp;quot;Rex&amp;quot;)
+var personD = personC
+personD.name = &amp;quot;Hamm&amp;quot;
+
+personC == personD // false
+
+let personE = PersonStruct(name: &amp;quot;Rex&amp;quot;)
+personC == personE // true
+personC != personE // false
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Conveniently, providing an &lt;code&gt;==&lt;/code&gt; function effectively gives us a &lt;code&gt;!=&lt;/code&gt; function
+for free as you can see from the last example.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;There is one final point I would like to make about struct and that concerns
+mutating functions. Look at what happens if we include a function that changes
+the &lt;code&gt;name&lt;/code&gt; property in the struct:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/mutating.png&#34; alt=&#34;Mutating error&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Fix-it is very helpfully pointing out that the method needs to be marked as
+&lt;code&gt;mutating&lt;/code&gt; for this to work and is showing where this should go. Accepting the
+suggestion will get rid of the error and then the name can be changed using this
+method.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;struct PersonStruct: Equatable {
+    var name: String
+
+    mutating func changeName(to newName: String) {
+        if !newName.isEmpty {
+            name = newName
+        }
+    }
+}
+
+var personC = PersonStruct(name: &amp;quot;Woody&amp;quot;)
+personC.name // Woody
+
+personC.changeName(to: &amp;quot;Sid&amp;quot;)
+personC.name // Sid
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;There is no problem about using &lt;code&gt;mutating&lt;/code&gt; and it will not have the unintended
+consequences of using classes. Despite the scary name, a mutating function
+actually returns a new copy of the struct.&lt;/p&gt;
+
+&lt;p&gt;The problem arises if you have many nested structs and the mutating has to
+spread through the list. So don&amp;rsquo;t nest your structs - at least not more than two
+deep!&lt;/p&gt;
+</description>
+</item>
     
   </channel>
 </rss>

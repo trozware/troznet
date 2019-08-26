@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>scoring on TrozWare</title>
     <link>https://troz.net/tags/scoring/</link>
@@ -8,17 +8,49 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Sat, 07 May 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/scoring/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/scoring/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>19th Hole Golf Scorer 3.1</title>
-      <link>https://troz.net/post/2016/19th-hole-golf-scorer-3.1/</link>
-      <pubDate>Sat, 07 May 2016 00:00:00 +0000</pubDate>
+<title>19th Hole Golf Scorer 3.1</title>
+<link>https://troz.net/post/2016/19th-hole-golf-scorer-3.1/</link>
+<pubDate>Sat, 07 May 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/19th-hole-golf-scorer-3.1/</guid>
-      <description>One of the problems with using 19th Hole on the Apple Watch is making the app show every time you raise your wrist. My solution to this was to go into Settings (either on my iPhone through the Watch app, or directly on the watch) and change it to &amp;ldquo;Resume Last Activity&amp;rdquo; on wrist raise. This worked fine but as I usually prefer the watch face to show on wrist raise, I had to keep setting and re-setting this which was a pain.</description>
-    </item>
+<description>&lt;p&gt;One of the problems with using 19th Hole on the Apple Watch is making the app
+show every time you raise your wrist. My solution to this was to go into
+Settings (either on my iPhone through the Watch app, or directly on the watch)
+and change it to &amp;ldquo;Resume Last Activity&amp;rdquo; on wrist raise. This worked fine but as
+I usually prefer the watch face to show on wrist raise, I had to keep setting
+and re-setting this which was a pain.&lt;/p&gt;
+
+&lt;p&gt;But last week I noticed the fine print when changing this setting. In this
+screen shot from the Watch app on my iPhone, you can see that &amp;ldquo;session-based
+apps&amp;rdquo; and &amp;ldquo;some third-party workout apps&amp;rdquo; will over-ride the &amp;ldquo;Show Watch Face&amp;rdquo;
+setting.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/WakeScreen.jpg&#34; alt=&#34;Wrist raise settings&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I started to research this and found that if an app starts a &amp;ldquo;workout session&amp;rdquo;,
+then it will become the active app until the session is ended or some other app
+starts a session. So I got to work and added a workout session to the 19th
+Hole&amp;rsquo;s Apple Watch app.&lt;/p&gt;
+
+&lt;p&gt;When you start scoring a round on the Apple Watch, you will see this dialog
+asking if you would like to start a workout:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Watch-workout.png&#34; alt=&#34;Start workout dialog&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The workout will be stopped automatically when you have scored the last hole.
+You can also use a force-press on the scoring screen to turn the workout off or
+on at any time.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Watch_end_workout.png&#34; alt=&#34;Stop workout&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This should make the app much more usable as an Apple Watch app, so happy
+golfing :-)&lt;/p&gt;
+</description>
+</item>
     
   </channel>
 </rss>

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>trouble-shooting on TrozWare</title>
     <link>https://troz.net/tags/trouble-shooting/</link>
@@ -8,47 +8,248 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Sat, 28 Jul 2012 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/trouble-shooting/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/trouble-shooting/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Sandboxing and the Mac App Store</title>
-      <link>https://troz.net/post/2012/sandboxing-and-the-mac-app-store/</link>
-      <pubDate>Sat, 28 Jul 2012 00:00:00 +0000</pubDate>
+<title>Sandboxing and the Mac App Store</title>
+<link>https://troz.net/post/2012/sandboxing-and-the-mac-app-store/</link>
+<pubDate>Sat, 28 Jul 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/sandboxing-and-the-mac-app-store/</guid>
-      <description>As of June 2012, all apps submitted to the Mac App Store have to be sandboxed i.e. they have to be able to run in a limited environment where they cannot interfere with other apps or other parts of the system. While this is generally a good thing, there are problems when apps have legitimate reasons for requiring access to other resources.
-One annoyance for developers is that Apple&amp;rsquo;s apps are mostly not sandboxed.</description>
-    </item>
+<description>&lt;p&gt;As of June 2012, all apps submitted to the Mac App Store have to be sandboxed
+i.e. they have to be able to run in a limited environment where they cannot
+interfere with other apps or other parts of the system. While this is generally
+a good thing, there are problems when apps have legitimate reasons for requiring
+access to other resources.&lt;/p&gt;
+
+&lt;p&gt;One annoyance for developers is that Apple&amp;rsquo;s apps are mostly not sandboxed. To
+check what apps you have installed that are sandboxed, open up Activity Monitor
+(in Applications/Utilities). In the View menu, check that Sandbox is checked in
+the Columns submenu. Then you can sort by clicking on the Sandbox title and work
+out which apps are already sandboxed. Mail, Preview and Text Edit are now
+sandboxed and so is the new Reminders app, but as far as I can tell, no other
+Apple apps are. This causes two problems: firstly it is not fair to other
+developers if Apple is enforcing a standard which only they are allowed to
+break. Secondly, if Apple developers had to follow the same rules as everyone
+else, then maybe the system would evolve to become more usable for everyone.&lt;/p&gt;
+
+&lt;p&gt;In the Apple developer documentation about sandboxing, there is a section headed
+&amp;ldquo;Determine Whether Your App Is Suitable for Sandboxing&amp;rdquo;. Here they list numerous
+reasons why any app might not work in the sandbox. But the Mac App Store now
+makes sandboxing compulsory, so what to do with apps that are not suitable?&lt;/p&gt;
+
+&lt;p&gt;Some resources can be requested when building the app: access to various folders
+(Pictures, Music, Downloads etc), access to Address Book and Calendar data,
+printing facilities, networking etc. Beyond the specified list of entitlements
+that can be requested, developers can also apply for &amp;ldquo;temporary entitlements&amp;rdquo;
+which, if granted, will unlock access to other parts of the operating system.
+However these are subject to the whims of app reviewers and will be re-assessed
+with every update. Apple has also made it clear that they are intended as a
+transition feature and will not be available for ever.&lt;/p&gt;
+
+&lt;p&gt;This has lead to a recent spate of popular apps leaving the App Store.
+&lt;a href=&#34;http://www.marco.org/2012/07/26/mac-app-store-future&#34; target=&#34;_blank&#34;&gt;Marco
+Arment&lt;/a&gt; has discussed this problem with an emphasis on the issue of lack of
+confidence in buying from the App Store. If you cannot be sure that an app you
+buy will remain in the App Store, then you are less likely to buy it there.&lt;/p&gt;
+
+&lt;p&gt;I have run into direct issues with sandboxing already. With
+&lt;a href=&#34;http://www.picapod.com/&#34; target=&#34;_blank&#34;&gt;Pic-a-POD&lt;/a&gt;, I used to have
+links to the Desktop and Screen Saver panes in System Preferences. These used
+AppleScripts which required a temporary entitlement to send an AppleEvent. The
+app was rejected because of this, so I had to modify this feature - it now just
+takes you to the relevant section of System Prefs, but not directly to either
+Desktop or Screen Saver. However Pic-a-POD&amp;rsquo;s help, which runs in Apple&amp;rsquo;s Help
+Viewer app, contains exactly the same AppleScripts and so is allowed to access
+these preference panes directly. Try working out the logic of that one!&lt;/p&gt;
+
+&lt;p&gt;I have more serious problems with
+&lt;a title=&#34;Man Reader&#34; href=&#34;https://troz.net/manreader/&#34; target=&#34;_blank&#34;&gt;Man Reader&lt;/a&gt;. Man
+Reader displays a list of the man pages on your system. Depending on the tools
+you have installed, these pages may be in a variety of locations. The shell
+command that detects them first reads a config file and then checks the folders
+listed in that config file. All it needs is read-only access. With the first
+sandboxed version, I asked for a temporary entitlement to give me read-only
+access to the startup disk. This was granted, but I have since been informed
+that all requested entitlements were granted before the App Store cut-off date.
+This may have been meant to be helpful, but it was not useful to allow access
+that would later be removed without any warning.&lt;/p&gt;
+
+&lt;p&gt;The current version of Man Reader waiting for approval asks for read-only access
+to the config file directly and then to every folder listed in that config file.
+If approved, this should be able to access all the man pages on a system. I have
+no idea whether these entitlements will be granted, but if not, then I will have
+to remove Man Reader from the App Store. It would be wrong to continue to sell
+an app that only functioned in a limited manner, even though the App Store is
+far and away my best form of marketing.&lt;/p&gt;
+
+&lt;p&gt;So what do I suggest Apple does? I think they need to allow apps that are not
+sand-boxed. However these apps could come with a warning before installation. In
+Mountain Lion, the new security feature called Gatekeeper allows you to specify
+the level of security you want when installing apps. Currently the options are
+to allow apps downloaded from:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Mac App Store&lt;/li&gt;
+&lt;li&gt;Mac App Store and identified developers&lt;/li&gt;
+&lt;li&gt;Anywhere&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;They could split the first option in two and allow&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Mac App Store sandboxed&lt;/li&gt;
+&lt;li&gt;Mac App Store any&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;One further wrinkle is iCloud. Apple is encouraging users and developers towards
+iCloud data storage and sharing. But only apps in the App Store are allowed to
+use iCloud.&lt;/p&gt;
+
+&lt;p&gt;So it will be interesting to see how this plays out. Obviously Apple is not
+going to care if a tiny developer like me leaves the App Store, but if enough
+high-profile developers leave, then there will surely be some consideration
+given to the problem.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Man Reader update coming soon</title>
-      <link>https://troz.net/post/2012/man-reader-update-coming-soon/</link>
-      <pubDate>Fri, 11 May 2012 00:00:00 +0000</pubDate>
+<title>Man Reader update coming soon</title>
+<link>https://troz.net/post/2012/man-reader-update-coming-soon/</link>
+<pubDate>Fri, 11 May 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/man-reader-update-coming-soon/</guid>
-      <description>Man Reader launched on the Mac App Store a couple of days ago and yesterday I got an email from a purchaser who reported that Man Reader was not displaying the man pages for MacPorts, even though he had the paths set up correctly.
-I installed MacPorts to check this out and ran into the same problem. Running the command &amp;ldquo;man port&amp;rdquo; in Terminal worked fine, but &amp;ldquo;port&amp;rdquo; did not appear in Man Reader&amp;rsquo;s list.</description>
-    </item>
+<description>&lt;p&gt;Man Reader launched on the Mac App Store a couple of days ago and yesterday I
+got an email from a purchaser who reported that Man Reader was not displaying
+the man pages for MacPorts, even though he had the paths set up correctly.&lt;/p&gt;
+
+&lt;p&gt;I installed MacPorts to check this out and ran into the same problem. Running
+the command &amp;ldquo;man port&amp;rdquo; in Terminal worked fine, but &amp;ldquo;port&amp;rdquo; did not appear in Man
+Reader&amp;rsquo;s list.&lt;/p&gt;
+
+&lt;p&gt;Man Reader uses the &amp;ldquo;apropos&amp;rdquo; command to list all available man pages, so I
+tested it next. When I found that it was not listing &amp;ldquo;port&amp;rdquo; either, I thought I
+had discovered the problem. OS X offers two commands for searching for man
+pages: apropos &amp;amp; whatis. The database files used by these commands are updated
+weekly by one of the periodic system commands. I manually ran this update
+command using:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo /etc/periodic/weekly/320.whatis
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This did part of the job, as the apropos command when used in Terminal now
+contained the MacPorts man pages. However Man Reader still did not show these
+man pages.&lt;/p&gt;
+
+&lt;p&gt;Reverting to the Console log, I found that this was a sand-boxing problem. The
+Mac OS X sand-box was preventing access to the man.conf file (which tells where
+to look for man pages), and the whatis database file containing the new data. I
+assume that without access to these files, the default locations for man pages
+were still searched, but no non-standard locations were being searched.&lt;/p&gt;
+
+&lt;p&gt;I have just submitted an update to the App Store that still uses sand-boxing but
+requests temporary read-only access to the file system to read these files. If
+Apple rejects this, then I will release a version without sand-boxing.&lt;/p&gt;
+
+&lt;p&gt;Either way, you can be assured that the matter is being dealt with and the next
+update, whether sand-boxed or not, will allow access to all man pages.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Time In Words &amp; the new iPad</title>
-      <link>https://troz.net/post/2012/time-in-words-the-new-ipad/</link>
-      <pubDate>Tue, 10 Apr 2012 00:00:00 +0000</pubDate>
+<title>Time In Words &amp; the new iPad</title>
+<link>https://troz.net/post/2012/time-in-words-the-new-ipad/</link>
+<pubDate>Tue, 10 Apr 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/time-in-words-the-new-ipad/</guid>
-      <description>The new iPad has a Retina display, meaning that the pixel density is much greater. For some apps, this is a problem as their graphics are now scaled and look pixellated. However Time In Words is very simple. It uses standard fonts and interface widgets with no images or external graphics apart from the icon. The icon may not look perfect on a new iPad, but the display itself should look really great.</description>
-    </item>
+<description>&lt;p&gt;The new iPad has a Retina display, meaning that the pixel density is much
+greater. For some apps, this is a problem as their graphics are now scaled and
+look pixellated. However Time In Words is very simple. It uses standard fonts
+and interface widgets with no images or external graphics apart from the icon.
+The icon may not look perfect on a new iPad, but the display itself should look
+really great.&lt;/p&gt;
+
+&lt;p&gt;I had a report from one user that Time In Words will not work at all on his new
+iPad. Unfortunately, the email address supplied did not work, so I was unable to
+contact this person directly. If you are reading this, please contact me again.&lt;/p&gt;
+
+&lt;p&gt;The person having the problem did not specify exactly what the problem was, so I
+don&amp;rsquo;t know if the app will not start, or if it is not displaying correctly, or
+if it is showing the wrong times or what.&lt;/p&gt;
+
+&lt;p&gt;However I suggested two things to try, and I will list them now in case anyone
+else is having issues:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Try deleting the app from your iPad and then re-installing from the App
+Store.&lt;/li&gt;
+&lt;li&gt;Do a complete reboot of your iPad in case it is running low on memory.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Hopefully one or both of these ideas will solve any problems. They are both good
+general tricks to try with any problem app.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>iPhone 4 Home Button</title>
-      <link>https://troz.net/post/2012/iphone-4-home-button/</link>
-      <pubDate>Wed, 28 Mar 2012 00:00:00 +0000</pubDate>
+<title>iPhone 4 Home Button</title>
+<link>https://troz.net/post/2012/iphone-4-home-button/</link>
+<pubDate>Wed, 28 Mar 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/iphone-4-home-button/</guid>
-      <description>My iPhone 4 is now 18 months old, and it&amp;rsquo;s Home button is starting to feel the strain. These buttons have been used much more than originally intended, with the new multitasking required double-presses, not to mention access to the camera etc. So basically , it is wearing out.
-The phone is out of warranty and there is no way I am going to pay for an expensive repair when my current phone contract will expire later this year, and hopefully the iPhone 5 will be ready for me then.</description>
-    </item>
+<description>&lt;p&gt;My iPhone 4 is now 18 months old, and it&amp;rsquo;s Home button is starting to feel the
+strain. These buttons have been used much more than originally intended, with
+the new multitasking required double-presses, not to mention access to the
+camera etc. So basically , it is wearing out.&lt;/p&gt;
+
+&lt;p&gt;The phone is out of warranty and there is no way I am going to pay for an
+expensive repair when my current phone contract will expire later this year, and
+hopefully the iPhone 5 will be ready for me then. And a cheap repair or DIY is
+too risky.&lt;/p&gt;
+
+&lt;p&gt;I saw a post comparing the physical structure of the home buttons on iPhone 4 &amp;amp;
+4S. Unfortunately I cannot find the link now, but it showed that the actual
+hardware has been made a lot more robust since the iPhone 4 was released, so
+this should only be a short term issue.&lt;/p&gt;
+
+&lt;p&gt;I read a article suggesting the use of WD-40 for a mis-behaving Home button.
+This is a TERRIBLE idea! Do not spray a penetrating oil into your expensive
+electronic device. For starters, it don&amp;rsquo;t believe it is a friction problem - I
+think the mechanism is just wearing out.&lt;/p&gt;
+
+&lt;p&gt;Some people recommend recalibrating the Home button as shown in this post from
+&lt;a href=&#34;http://www.idownloadblog.com/2011/12/22/recalibrate-home-button-responsive/&#34;&gt;idownloadblog.com&lt;/a&gt;. I am a bit sceptical about this. I tried it, but I can&amp;rsquo;t
+see that it did anything. Maybe if your problem is software rather than
+hardware, then it will do some good. Anyway, unlike the WD-40 trick, it can&amp;rsquo;t do
+any harm.&lt;/p&gt;
+
+&lt;p&gt;Finally, on to the workaround. If your iPhone button is really unreliable, but
+you are not ready to repair or upgrade, then you can use the Accessibility tools
+to get a software Home button on the screen.&lt;/p&gt;
+
+&lt;p&gt;Go to Settings - General - Accessibility. Scroll down to &amp;ldquo;Physical &amp;amp; Motor&amp;rdquo;.
+Turn on AssistiveTouch.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/images/HomeButton1.png&#34;&gt;&lt;img title=&#34;AssistiveTouch settings&#34; src=&#34;https://troz.net/images/HomeButton1-small.png&#34; alt=&#34;AssistiveTouch settings&#34; width=&#34;200&#34; height=&#34;300&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;When you back out of Settings, you will see a white blob somewhere on your
+screen. This can be dragged to any location around the edge of the screen, so
+you can always move it out of the way in any app.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/images/HomeButton2.png&#34;&gt;&lt;img title=&#34;The White Blob&#34; src=&#34;https://troz.net/images/HomeButton2-small.png&#34; alt=&#34;The White Blob&#34; width=&#34;200&#34; height=&#34;300&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Tapping on the white blob gives you an overlay view with four options, one of
+which is Home. Tapping this is exactly the same as pressing the physical Home
+button. So with this and the power button, you can do everything, even if the
+Home button stops working completely.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/images/HomeButton3.png&#34;&gt;&lt;img title=&#34;AssistiveTouch panel open&#34; src=&#34;https://troz.net/images/HomeButton3-small.png&#34; alt=&#34;AssistiveTouch panel open&#34; width=&#34;200&#34; height=&#34;300&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Thanks to Tom at our local Apple Store (Robina, Queensland, Australia) for this
+tip.&lt;/p&gt;
+</description>
+</item>
     
   </channel>
 </rss>

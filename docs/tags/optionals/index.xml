@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>optionals on TrozWare</title>
     <link>https://troz.net/tags/optionals/</link>
@@ -8,17 +8,266 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Sat, 12 Mar 2016 14:24:00 +1000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/optionals/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/optionals/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Learning Swift - Optionals</title>
-      <link>https://troz.net/post/2016/learning-swift-optionals/</link>
-      <pubDate>Sat, 12 Mar 2016 14:24:00 +1000</pubDate>
+<title>Learning Swift - Optionals</title>
+<link>https://troz.net/post/2016/learning-swift-optionals/</link>
+<pubDate>Sat, 12 Mar 2016 14:24:00 +1000</pubDate>
       
       <guid>https://troz.net/post/2016/learning-swift-optionals/</guid>
-      <description></description>
-    </item>
+<description>&lt;p&gt;Today I plan to discuss optionals since they were a feature of Swift that I
+found difficult to grasp at first.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-is-an-optional-in-swift&#34;&gt;What is an optional in Swift?&lt;/h2&gt;
+
+&lt;p&gt;An optional is a variable of a specified type that can also be nil.&lt;/p&gt;
+
+&lt;h2 id=&#34;why-does-this-matter&#34;&gt;Why does this matter?&lt;/h2&gt;
+
+&lt;p&gt;In Objective-C, any object type could be nil. If you declared a variable like
+this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objectivec&#34;&gt;NSString *myString;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;then &lt;code&gt;myString&lt;/code&gt; was set to nil by default.&lt;/p&gt;
+
+&lt;p&gt;But this could cause issues, especially as Objective-C does not complain if you
+send a message to nil. This could lead to bugs that were very difficult to track
+down.&lt;/p&gt;
+
+&lt;p&gt;The other big use for nil is when returning from a function which has found no
+appropriate data to return. The classic example is when looking for the index of
+an element in an array. What should be returned if the element is not found in
+the array?&lt;/p&gt;
+
+&lt;p&gt;Some languages return -1, Objective-C uses &lt;code&gt;NSNotFound&lt;/code&gt;, but you have to know
+what each language is going to do. The more logical answer is nil. However if
+your function is expected to return an integer, then it cannot return nil
+because nil is not an integer.&lt;/p&gt;
+
+&lt;p&gt;This is where optionals come in: if the function is expected to return an
+optional integer, it can return with an integer with the index of the matching
+element, or it can return nil if the element was not found. This is much clearer
+and less prone to error.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;how-does-swift-handle-optionals&#34;&gt;How does Swift handle optionals?&lt;/h2&gt;
+
+&lt;p&gt;One of the first things that struck me about Swift was how clean the code
+looked, without so many non-alphanumeric characters scattered around. Gone were
+all the:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;* ; [ ]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But instead, Swift code sprouted:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;! ?
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What were these?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The key to understanding optionals is to realise that when you declare an
+optional variable of a certain type, you are actually declaring a box that can
+hold a variable of that type or can hold nil.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you grasp that concept, it all becomes much more obvious.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;var optionalInteger: Int?
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The ? indicates that this is an optional variable. It does not have to be
+initialised as it is already set to nil which is valid for an optional variable.
+Without the ? this would require initialisation as it would not be valid for it
+to be nil.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;setting-an-optional&#34;&gt;Setting an optional&lt;/h2&gt;
+
+&lt;p&gt;Setting the value of an optional variable is just the same as any other
+variable:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;optionalInteger = 3
+optionalInteger = 42
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;getting-an-optional&#34;&gt;Getting an optional&lt;/h2&gt;
+
+&lt;p&gt;The difference arises when you need to get the data out of the optional variable
+in order to use it. This process is called un-wrapping and it means to get the
+variable value out of the &amp;lsquo;box&amp;rsquo; it is stored it.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-most-obvious-way-is-to-use&#34;&gt;The most obvious way is to use !&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;let newInteger = optionalInteger!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;DO NOT DO THIS!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This is called forced-unwrapping and assumes that the optional variable is not
+nil. If the optional is nil, this will crash. In Xcode, when you connect
+interface elements from your storyboard to a Swift file, Xcode will use ! like
+this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;@IBOutlet weak var startButton: UIButton!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I have to assume Xcode knows what it is doing and the button will be available
+when needed, but you should not use ! - it is un-safe. By using it, you are
+vowing to the compiler that when it gets to that point, the optional value will
+not be nil. There are much better and safer ways of doing that.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;use-if-let&#34;&gt;Use &amp;lsquo;if let&amp;rsquo;&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func doubleNumber(_ optionalInteger: Int?) -&amp;gt; Int? {
+    if let integerValue = optionalInteger {
+        // integerValue is not an optional
+        // and is guaranteed to contain an Int
+        return integerValue * 2
+    }
+
+    // no integer found in the optional,
+    // so return nil to indicate failure
+    return nil
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;use-guard&#34;&gt;Use guard&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func doubleNumber(_ optionalInteger: Int?) -&amp;gt; Int? {
+    guard let integerValue = optionalInteger else {
+        // get out quickly,
+        // returning nil to indicate failure
+        return nil
+    }
+
+    // integerValue is not an optional
+    // and is guaranteed to contain an Int
+    return integerValue * 2
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;These two alternatives (&lt;code&gt;if let&lt;/code&gt; &amp;amp; &lt;code&gt;guard&lt;/code&gt;) do the same job but in opposite
+ways. In both cases, they perform a conditional un-wrapping that may or may not
+give a valid result. &lt;code&gt;if let&lt;/code&gt; checks if it is OK to proceed. &lt;code&gt;guard&lt;/code&gt; checks to
+see if it is NOT OK to proceed. Which you use is really a matter of personal
+preference and working out what is more logical in each case.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;guard&lt;/code&gt; statement is really good for checking data early in a process and
+making a quick exit it something is wrong. The &lt;code&gt;if let&lt;/code&gt; construct encloses your
+success code inside a block and can sometimes leave the failure code a long way
+from the check which can make it less obvious. The other potential issue with
+&lt;code&gt;if let&lt;/code&gt; is the &amp;ldquo;pyramid of doom&amp;rdquo; common in early Swift code as demonstrated in
+this rather contrived example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func isValidAddressBookEntry(firstName: String?,
+                             lastName: String?,
+                             emailAddress: String?,
+                             phoneNumber: String?) -&amp;gt; Bool {
+        if let validFirstName = firstName {
+            if let validLastName = lastName {
+                if let validEmail = emailAddress {
+                    if let validPhone = phoneNumber {
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Thankfully, Swift now allows us to chain both &lt;code&gt;if let&lt;/code&gt; and &lt;code&gt;guard&lt;/code&gt; statements.
+Here is the previous example re-factored to use &lt;code&gt;if let&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func isValidAddressBookEntrySwift2(firstName: String?,
+                                   lastName: String?,
+                                   emailAddress: String?,
+                                   phoneNumber: String?) -&amp;gt; Bool {
+      if let validFirstName = firstName,
+          let validLastName = lastName,
+          let validEmail = emailAddress,
+          let validPhone = phoneNumber {
+          return true
+      }
+      return false
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And here is the same function but using &lt;code&gt;guard&lt;/code&gt; which allows the inputs to be checked immediately and the function exited if the u=inputs are not valid. For a short function like this, the change is not really significant, but if the function does a lot of processing of the input data, checking first and getting out as soon as possible is more efficient.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func isValidAddressBookEntryUsingGuard(firstName: String?,
+                                       lastName: String?,
+                                       emailAddress: String?,
+                                       phoneNumber: String?) -&amp;gt; Bool {
+    guard
+        let validFirstName = firstName,
+        let validLastName = lastName,
+        let validEmail = emailAddress,
+        let validPhone = phoneNumber else {
+            return false
+    }
+
+    return true
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;use-optional-chaining&#34;&gt;Use optional chaining&lt;/h3&gt;
+
+&lt;p&gt;The final way to deal with optionals safely is to use optional chaining:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;struct SocialMediaAccounts {
+    var facebook: Person?
+    var twitter: Person?
+}
+
+struct Person {
+    var firstName: String?
+    var lastName: String?
+    var handle: String?
+}
+
+var socialMedia: SocialMediaAccounts?
+socialMedia = SocialMediaAccounts()
+var twitterAccount = Person()
+
+socialMedia?.twitter = twitterAccount
+let twitterHandle = socialMedia?.twitter?.handle
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this example, we have defined a &lt;code&gt;SocialMediaAccounts&lt;/code&gt; struct that holds
+optional &lt;code&gt;Person&lt;/code&gt; structs for the various social media outlets. The
+&lt;code&gt;socialMedia&lt;/code&gt; variable is defined as an optional and then created. A
+&lt;code&gt;twitterAccount&lt;/code&gt; variable of type &lt;code&gt;Person&lt;/code&gt; is also created but contains no data
+at the moment.&lt;/p&gt;
+
+&lt;p&gt;When assigning the &lt;code&gt;twitterAccount&lt;/code&gt; to the &lt;code&gt;socialMedia.twitter&lt;/code&gt; property, a ?
+is inserted which checks to see that &lt;code&gt;socialMedia&lt;/code&gt; is not nil. If it is nil,
+then execution of that line stops at the ? and nothing bad will happen.&lt;/p&gt;
+
+&lt;p&gt;In the same way, when trying to read back the twitter handle, we chained
+together 2 optionals with ?&amp;rsquo;s. If either &lt;code&gt;socialMedia&lt;/code&gt; or &lt;code&gt;socialMedia.twitter&lt;/code&gt;
+is nil, that line will not complete. Again this is perfectly safe and the app
+will not crash.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;All the examples in this article are available in a &lt;a href=&#34;https://github.com/trozware/optionals&#34;&gt;Swift playground&lt;/a&gt; which
+has been updated to Swift 4 syntax.&lt;/p&gt;</description>
+</item>
     
   </channel>
 </rss>

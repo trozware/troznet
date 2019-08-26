@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>apps on TrozWare</title>
     <link>https://troz.net/tags/apps/</link>
@@ -8,40 +8,115 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Sat, 26 May 2018 09:22:57 +1000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/apps/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/apps/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>App Updates</title>
-      <link>https://troz.net/post/2018/app-updates/</link>
-      <pubDate>Sat, 26 May 2018 09:22:57 +1000</pubDate>
+<title>App Updates</title>
+<link>https://troz.net/post/2018/app-updates/</link>
+<pubDate>Sat, 26 May 2018 09:22:57 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/app-updates/</guid>
-      <description>&lt;p&gt;Just a quick post to let you know about some recent app updates&amp;hellip;&lt;/p&gt;</description>
-    </item>
+<description>&lt;p&gt;Just a quick post to let you know about some recent app updates&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;man-reader&#34;&gt;Man Reader&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/man-reader/id522583774?mt=12&#34;&gt;Man Reader v 1.10&lt;/a&gt; was released on 11 May 2018.&lt;/p&gt;
+
+&lt;p&gt;I had to update &lt;a href=&#34;https://troz.net/manreader/&#34;&gt;Man Reader&lt;/a&gt; in November 2017 because of a really strange &amp;ldquo;feature&amp;rdquo; that arrived with macOS High Sierra. Man Reader displays the man pages as HTML which allows the tabs and internal links to work using anchor tags. These had worked for years, but under High Sierra, they just stopped working.&lt;/p&gt;
+
+&lt;p&gt;I eventually discovered that it was because I was loading the text directly into the WebView using:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objectivec&#34;&gt;[self.web.mainFrame loadHTMLString:manText baseURL:nil];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With no baseURL, the anchor links were all defaulting to &lt;code&gt;about:blank&lt;/code&gt; and going nowhere. The solution was to save the text to a temporary file and then load using:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objectivec&#34;&gt;NSURLRequest *request = [NSURLRequest requestWithURL: tempFile];
+[self.web.mainFrame loadRequest: request];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Needless to say, this took me ages to work out, including a lengthy excursion into using &lt;code&gt;WKWebView&lt;/code&gt; to see if the more modern web view would solve the problem.&lt;/p&gt;
+
+&lt;p&gt;The second update (May 2018) was in response to a crash report from a user. I had great difficulty tracking this one down and even now, I cannot see how it can have happened, but it was in relation to the utility apps that are displayed in the toolbar.&lt;/p&gt;
+
+&lt;p&gt;For each app, Man Reader checks to see if the app bundle exists, then it checks for a bundle identifier. It appears that this can come back as nil which I had not realised. And trying to insert an item with a identifier of &lt;code&gt;nil&lt;/code&gt; into the toolbar caused a crash.&lt;/p&gt;
+
+&lt;p&gt;As you can see from the code, ManReader is written in Objective-C. Going back to Objective-C from Swift is painful! And I know that this crash could not have happened if the app had been written in Swift as the identifier would have been an optional and I would have been forced to check that it was not nil before using.&lt;/p&gt;
+
+&lt;p&gt;On the plus side, Objective-C apps are tiny in comparison to Swift apps. And the Mac App Store review process set a new record for me. I submitted the app at 10:58 am and it was on sale at 12:03 pm the same day - 66 minutes from start to finish.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;sequenza-vii&#34;&gt;Sequenza VII&lt;/h2&gt;
+
+&lt;p&gt;The other app that I updated recently is &lt;a href=&#34;https://itunes.apple.com/us/app/sequenza-vii/id730234638?mt=8&amp;amp;uo=4&#34;&gt;Sequenza VII&lt;/a&gt;. Version 1.2 was released on 23 April 2018.&lt;/p&gt;
+
+&lt;p&gt;This is an app with a very limited audience - specifically oboe players who want to learn to play Berio&amp;rsquo;s weird music. However Apple sent me a notice saying that as it hadn&amp;rsquo;t been updated for ages, it would be removed from the store within 30 days unless I did something.&lt;/p&gt;
+
+&lt;p&gt;Updating it to use the iPhone X display was surprisingly difficult. I set the minimum system version to 11.0 and changed the storyboards to use the latest Xcode but the horns on either side of the notch were still being left blank. In the end, the trick I found was to create a new Launch storyboard - that seemed to fool the system into re-considering all the layouts.&lt;/p&gt;</description>
+</item>
     
     <item>
-      <title>Looking for beta testers</title>
-      <link>https://troz.net/post/2016/looking-for-beta-testers/</link>
-      <pubDate>Thu, 17 Nov 2016 00:00:00 +0000</pubDate>
+<title>Looking for beta testers</title>
+<link>https://troz.net/post/2016/looking-for-beta-testers/</link>
+<pubDate>Thu, 17 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/looking-for-beta-testers/</guid>
-      <description>I am looking for beta testers for my latest Mac app: Work.
-Work is a project organizer app for developers, designers, students or any professional who works with multiple projects involving files &amp;amp; folders, web pages, email addresses and lists of tasks. Click the link above for more information and help for getting started.
-Work requires macOS 10.12 or OS X 10.11.
-If you would like to test this app, please contact me, giving details of your Mac and operating system.</description>
-    </item>
+<description>&lt;p&gt;I am looking for beta testers for my latest Mac app: &lt;strong&gt;&lt;a href=&#34;https://troz.net/work/&#34;&gt;Work&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Work&lt;/strong&gt; is a project organizer app for developers, designers, students or any
+professional who works with multiple projects involving files &amp;amp; folders, web
+pages, email addresses and lists of tasks. Click the link above for more
+information and help for getting started.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Work&lt;/strong&gt; requires macOS 10.12 or OS X 10.11.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you would like to test this app, please &lt;a href=&#34;mailto:work@troz.net?subject=Work%20beta%20test&#34;&gt;contact me&lt;/a&gt;, giving details of
+your Mac and operating system. The easiest way to do this is to select &lt;strong&gt;About
+This Mac&lt;/strong&gt; in the Apple menu and send me a screen shot of the window that
+appears.&lt;/p&gt;
+
+&lt;p&gt;All beta testers will receive a free license to Work when it is released. If you
+report a legitimate bug or provide valuable feed-back, you will also receive a
+free license to your choice of one of my &lt;a href=&#34;https://troz.net/apps/&#34;&gt;other apps&lt;/a&gt;.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Retiring old apps</title>
-      <link>https://troz.net/post/2016/retiring-old-apps/</link>
-      <pubDate>Thu, 15 Sep 2016 00:00:00 +0000</pubDate>
+<title>Retiring old apps</title>
+<link>https://troz.net/post/2016/retiring-old-apps/</link>
+<pubDate>Thu, 15 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/retiring-old-apps/</guid>
-      <description>With the release of iOS 10 and the need to update iOS apps to suit, I have decided it is time to retire some of my lesser-performing apps as it is not worth the effort required to maintain them.
-At the moment, the following iOS apps are no longer available:
- A Knight&amp;rsquo;s Move Dice Pass Pic-a-POD Quick Score - Tennis  For the first three listed there, the Mac versions are still available:</description>
-    </item>
+<description>&lt;p&gt;With the release of iOS 10 and the need to update iOS apps to suit, I have
+decided it is time to retire some of my lesser-performing apps as it is not
+worth the effort required to maintain them.&lt;/p&gt;
+
+&lt;p&gt;At the moment, the following iOS apps are no longer available:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A Knight&amp;rsquo;s Move&lt;/li&gt;
+&lt;li&gt;Dice Pass&lt;/li&gt;
+&lt;li&gt;Pic-a-POD&lt;/li&gt;
+&lt;li&gt;Quick Score - Tennis&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For the first three listed there, the Mac versions are still available:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://itunes.apple.com/app/a-knights-move/id533321133&#34;&gt;A Knight&amp;rsquo;s Move for Mac&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://itunes.apple.com/app/dice-pass/id997688302&#34;&gt;Dice Pass for Mac&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://itunes.apple.com/app/pic-a-pod/id477909802&#34;&gt;Pic-a-POD for Mac&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you bought any of these apps and would like a promo code for the Mac version,
+send me a screen shot of the app running on your iPhone or iPad and I will send
+you a code.&lt;/p&gt;
+</description>
+</item>
     
   </channel>
 </rss>

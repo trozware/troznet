@@ -5,7 +5,22 @@
   <url>
     <loc>https://troz.net/post/</loc>
     <lastmod>2019-08-18T15:00:05+10:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/swift/</loc>
+    <lastmod>2019-08-18T15:00:05+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/swiftui/</loc>
+    <lastmod>2019-08-18T15:00:05+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -18,25 +33,22 @@
   <url>
     <loc>https://troz.net/tags/</loc>
     <lastmod>2019-08-18T15:00:05+10:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/</loc>
     <lastmod>2019-08-18T15:00:05+10:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://troz.net/tags/swift/</loc>
-    <lastmod>2019-08-18T15:00:05+10:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/tags/swiftui/</loc>
-    <lastmod>2019-08-18T15:00:05+10:00</lastmod>
-    <priority>0</priority>
+    <loc>https://troz.net/tags/learning-swift/</loc>
+    <lastmod>2019-02-06T16:49:24+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -47,14 +59,22 @@
   </url>
   
   <url>
-    <loc>https://troz.net/tags/learning-swift/</loc>
-    <lastmod>2019-02-06T16:49:24+10:00</lastmod>
-    <priority>0</priority>
+    <loc>https://troz.net/thanks/</loc>
+    <lastmod>2019-01-16T10:59:13+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://troz.net/thanks/</loc>
-    <lastmod>2019-01-16T10:59:13+10:00</lastmod>
+    <loc>https://troz.net/tags/mac/</loc>
+    <lastmod>2018-10-06T09:38:20+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/pic-a-pod/</loc>
+    <lastmod>2018-10-06T09:38:20+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -67,15 +87,10 @@
   </url>
   
   <url>
-    <loc>https://troz.net/tags/mac/</loc>
-    <lastmod>2018-10-06T09:38:20+10:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/tags/pic-a-pod/</loc>
-    <lastmod>2018-10-06T09:38:20+10:00</lastmod>
-    <priority>0</priority>
+    <loc>https://troz.net/tags/app-store/</loc>
+    <lastmod>2018-10-06T08:29:35+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -86,20 +101,29 @@
   </url>
   
   <url>
-    <loc>https://troz.net/tags/app-store/</loc>
-    <lastmod>2018-10-06T08:29:35+10:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://troz.net/tags/web/</loc>
     <lastmod>2018-10-06T08:29:35+10:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/post/2018/moving-to-the-dark-side/</loc>
     <lastmod>2018-10-01T15:01:32+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/framework/</loc>
+    <lastmod>2018-06-21T14:45:59+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/library/</loc>
+    <lastmod>2018-06-21T14:45:59+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -112,15 +136,10 @@
   </url>
   
   <url>
-    <loc>https://troz.net/tags/framework/</loc>
-    <lastmod>2018-06-21T14:45:59+10:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/tags/library/</loc>
-    <lastmod>2018-06-21T14:45:59+10:00</lastmod>
-    <priority>0</priority>
+    <loc>https://troz.net/tags/functional/</loc>
+    <lastmod>2018-06-14T14:18:53+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -131,9 +150,24 @@
   </url>
   
   <url>
-    <loc>https://troz.net/tags/functional/</loc>
-    <lastmod>2018-06-14T14:18:53+10:00</lastmod>
-    <priority>0</priority>
+    <loc>https://troz.net/tags/time/</loc>
+    <lastmod>2018-06-14T10:41:46+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/time-in-words/</loc>
+    <lastmod>2018-06-14T10:41:46+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/world-time-in-words/</loc>
+    <lastmod>2018-06-14T10:41:46+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -144,31 +178,7 @@
   </url>
   
   <url>
-    <loc>https://troz.net/tags/time/</loc>
-    <lastmod>2018-06-14T10:41:46+10:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/tags/time-in-words/</loc>
-    <lastmod>2018-06-14T10:41:46+10:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/tags/world-time-in-words/</loc>
-    <lastmod>2018-06-14T10:41:46+10:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://troz.net/tags/gdpr/</loc>
-    <lastmod>2018-05-26T09:51:56+10:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/post/2018/privacy-policy/</loc>
     <lastmod>2018-05-26T09:51:56+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -177,7 +187,15 @@
   <url>
     <loc>https://troz.net/tags/privacy/</loc>
     <lastmod>2018-05-26T09:51:56+10:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/post/2018/privacy-policy/</loc>
+    <lastmod>2018-05-26T09:51:56+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -190,19 +208,22 @@
   <url>
     <loc>https://troz.net/tags/apps/</loc>
     <lastmod>2018-05-26T09:22:57+10:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/tags/ios/</loc>
     <lastmod>2018-05-26T09:22:57+10:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/app/</loc>
     <lastmod>2018-06-14T10:38:20+10:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -222,19 +243,29 @@
   <url>
     <loc>https://troz.net/tags/lint/</loc>
     <lastmod>2018-03-31T09:35:21+10:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/tags/style/</loc>
     <lastmod>2018-03-31T09:35:21+10:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/tags/swiftlint/</loc>
     <lastmod>2018-03-31T09:35:21+10:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/apple-watch/</loc>
+    <lastmod>2018-02-18T10:19:18+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -245,26 +276,15 @@
   </url>
   
   <url>
-    <loc>https://troz.net/tags/apple-watch/</loc>
-    <lastmod>2018-02-18T10:19:18+10:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://troz.net/tags/icons/</loc>
     <lastmod>2018-02-18T10:19:18+10:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/tags/watch/</loc>
     <lastmod>2018-02-18T10:19:18+10:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/ncss2018/</loc>
-    <lastmod>2018-01-05T11:33:35+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -272,7 +292,15 @@
   <url>
     <loc>https://troz.net/tags/ncss/</loc>
     <lastmod>2018-01-05T11:33:35+10:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/ncss2018/</loc>
+    <lastmod>2018-01-05T11:33:35+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -290,28 +318,31 @@
   </url>
   
   <url>
-    <loc>https://troz.net/post/2017/moving-to-hugo/</loc>
+    <loc>https://troz.net/tags/blog/</loc>
     <lastmod>2017-11-29T17:42:57+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://troz.net/tags/blog/</loc>
-    <lastmod>2017-11-29T17:42:57+10:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://troz.net/tags/hugo/</loc>
     <lastmod>2017-11-29T17:42:57+10:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/tags/jekyll/</loc>
     <lastmod>2017-11-29T17:42:57+10:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/post/2017/moving-to-hugo/</loc>
+    <lastmod>2017-11-29T17:42:57+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -329,6 +360,13 @@
   </url>
   
   <url>
+    <loc>https://troz.net/tags/json/</loc>
+    <lastmod>2017-06-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://troz.net/post/2017/json-parsing-in-swift-4/</loc>
     <lastmod>2017-06-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -336,9 +374,10 @@
   </url>
   
   <url>
-    <loc>https://troz.net/tags/json/</loc>
-    <lastmod>2017-06-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://troz.net/tags/ipad/</loc>
+    <lastmod>2017-06-17T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -346,12 +385,6 @@
     <lastmod>2017-06-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/tags/ipad/</loc>
-    <lastmod>2017-06-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -364,13 +397,15 @@
   <url>
     <loc>https://troz.net/tags/rss/</loc>
     <lastmod>2017-05-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/tags/trozware/</loc>
     <lastmod>2017-05-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -388,6 +423,13 @@
   </url>
   
   <url>
+    <loc>https://troz.net/tags/beta/</loc>
+    <lastmod>2016-11-17T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://troz.net/post/2016/looking-for-beta-testers/</loc>
     <lastmod>2016-11-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -395,21 +437,17 @@
   </url>
   
   <url>
-    <loc>https://troz.net/tags/beta/</loc>
-    <lastmod>2016-11-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://troz.net/tags/productivity/</loc>
     <lastmod>2016-11-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/tags/work/</loc>
     <lastmod>2016-11-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -429,12 +467,20 @@
   <url>
     <loc>https://troz.net/tags/man-reader/</loc>
     <lastmod>2016-11-05T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/post/2016/man-reader-update/</loc>
     <lastmod>2016-10-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/iphone/</loc>
+    <lastmod>2016-10-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -447,9 +493,10 @@
   </url>
   
   <url>
-    <loc>https://troz.net/tags/iphone/</loc>
-    <lastmod>2016-10-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://troz.net/tags/dice/</loc>
+    <lastmod>2016-09-17T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -467,15 +514,10 @@
   </url>
   
   <url>
-    <loc>https://troz.net/tags/dice/</loc>
-    <lastmod>2016-09-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://troz.net/tags/passwords/</loc>
     <lastmod>2016-09-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -502,7 +544,8 @@
   <url>
     <loc>https://troz.net/tags/password/</loc>
     <lastmod>2016-07-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -522,13 +565,15 @@
   <url>
     <loc>https://troz.net/tags/golf/</loc>
     <lastmod>2016-05-07T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/tags/scoring/</loc>
     <lastmod>2016-05-07T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -548,13 +593,15 @@
   <url>
     <loc>https://troz.net/tags/testflight/</loc>
     <lastmod>2016-04-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/tags/xcode/</loc>
     <lastmod>2016-04-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -574,12 +621,6 @@
   <url>
     <loc>https://troz.net/tags/travel/</loc>
     <lastmod>2016-04-07T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/post/2016/structs-vs-classes/</loc>
-    <lastmod>2018-01-03T19:53:00+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -587,19 +628,29 @@
   <url>
     <loc>https://troz.net/tags/class/</loc>
     <lastmod>2018-01-03T19:53:00+10:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/tags/oop/</loc>
     <lastmod>2018-01-03T19:53:00+10:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/tags/struct/</loc>
     <lastmod>2018-01-03T19:53:00+10:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/post/2016/structs-vs-classes/</loc>
+    <lastmod>2018-01-03T19:53:00+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -612,7 +663,8 @@
   <url>
     <loc>https://troz.net/tags/optionals/</loc>
     <lastmod>2018-01-03T19:09:00+10:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -688,13 +740,15 @@
   <url>
     <loc>https://troz.net/tags/support/</loc>
     <lastmod>2016-02-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/tags/twitter/</loc>
     <lastmod>2016-02-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -761,6 +815,13 @@
   </url>
   
   <url>
+    <loc>https://troz.net/tags/livecode/</loc>
+    <lastmod>2015-03-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://troz.net/post/2015/livecode-stacks/</loc>
     <lastmod>2015-03-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -768,15 +829,10 @@
   </url>
   
   <url>
-    <loc>https://troz.net/tags/livecode/</loc>
-    <lastmod>2015-03-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://troz.net/tags/revolution/</loc>
     <lastmod>2015-03-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -808,16 +864,17 @@
   </url>
   
   <url>
-    <loc>https://troz.net/post/2015/workflow-for-writing-a-post/</loc>
+    <loc>https://troz.net/tags/markdown/</loc>
     <lastmod>2015-03-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://troz.net/tags/markdown/</loc>
+    <loc>https://troz.net/post/2015/workflow-for-writing-a-post/</loc>
     <lastmod>2015-03-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -842,16 +899,17 @@
   </url>
   
   <url>
-    <loc>https://troz.net/post/2014/email-clients-for-mac-ios/</loc>
+    <loc>https://troz.net/tags/email/</loc>
     <lastmod>2014-03-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://troz.net/tags/email/</loc>
+    <loc>https://troz.net/post/2014/email-clients-for-mac-ios/</loc>
     <lastmod>2014-03-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -864,7 +922,8 @@
   <url>
     <loc>https://troz.net/tags/music/</loc>
     <lastmod>2013-11-07T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -905,13 +964,15 @@
   <url>
     <loc>https://troz.net/tags/chess/</loc>
     <lastmod>2013-02-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/tags/knights-move/</loc>
     <lastmod>2013-02-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -922,16 +983,17 @@
   </url>
   
   <url>
-    <loc>https://troz.net/post/2013/sand-boxing-man-reader/</loc>
+    <loc>https://troz.net/tags/sand-box/</loc>
     <lastmod>2013-02-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://troz.net/tags/sand-box/</loc>
+    <loc>https://troz.net/post/2013/sand-boxing-man-reader/</loc>
     <lastmod>2013-02-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -977,22 +1039,24 @@
   </url>
   
   <url>
-    <loc>https://troz.net/post/2012/updating-apps-for-iphone-5/</loc>
+    <loc>https://troz.net/tags/operating-systems/</loc>
     <lastmod>2012-09-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://troz.net/tags/operating-systems/</loc>
+    <loc>https://troz.net/tags/ui/</loc>
     <lastmod>2012-09-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://troz.net/tags/ui/</loc>
+    <loc>https://troz.net/post/2012/updating-apps-for-iphone-5/</loc>
     <lastmod>2012-09-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -1019,12 +1083,6 @@
   <url>
     <loc>https://troz.net/tags/trouble-shooting/</loc>
     <lastmod>2012-07-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/post/2012/update-to-time-in-words-screen-saver/</loc>
-    <lastmod>2012-07-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1032,7 +1090,15 @@
   <url>
     <loc>https://troz.net/tags/screen-saver/</loc>
     <lastmod>2012-07-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/post/2012/update-to-time-in-words-screen-saver/</loc>
+    <lastmod>2012-07-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -1156,7 +1222,8 @@
   
   <url>
     <loc>https://troz.net/categories/</loc>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
 </urlset>

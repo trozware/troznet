@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apps on TrozWare</title>
     <link>https://troz.net/app/</link>
@@ -8,163 +8,1135 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Sat, 31 Mar 2018 11:43:03 +1000</lastBuildDate>
     
-	<atom:link href="https://troz.net/app/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/app/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Wow Stats</title>
-      <link>https://troz.net/wow-stats/</link>
-      <pubDate>Sat, 31 Mar 2018 11:43:03 +1000</pubDate>
+<title>Wow Stats</title>
+<link>https://troz.net/wow-stats/</link>
+<pubDate>Sat, 31 Mar 2018 11:43:03 +1000</pubDate>
       
       <guid>https://troz.net/wow-stats/</guid>
-      <description>WoW Stats Do you play World of Warcraft? Have you ever agonised over a new piece of gear - are those stats better or worse for my class and specialization?
-Is your computer festooned with sticky notes reminding you that your prot pally needs haste over mastery but the enhancement shaman needs agility?
-Get rid of the notes and use the WoW Stats app instead.
+<description>
 
-Data comes from Noxxic and is updated automatically with each new patch.</description>
-    </item>
+&lt;h1 id=&#34;wow-stats&#34;&gt;WoW Stats&lt;/h1&gt;
+
+&lt;h3 id=&#34;do-you-play-world-of-warcraft-4&#34;&gt;Do you play &lt;a href=&#34;https://worldofwarcraft.com/&#34;&gt;World of Warcraft&lt;/a&gt;?&lt;/h3&gt;
+
+&lt;p&gt;Have you ever agonised over a new piece of gear - are those stats better or worse for my class and specialization?&lt;/p&gt;
+
+&lt;p&gt;Is your computer festooned with sticky notes reminding you that your prot pally needs haste over mastery but the enhancement shaman needs agility?&lt;/p&gt;
+
+&lt;p&gt;Get rid of the notes and use the &lt;a href=&#34;https://itunes.apple.com/app/wow-stats/id1364247768&#34;&gt;WoW Stats&lt;/a&gt; app instead.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://itunes.apple.com/app/wow-stats/id1364247768&#34;&gt;&lt;img src=&#34;https://troz.net/icons/wow-stats128.png&#34; alt=&#34;WoW Stats in the App Store&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Data comes from &lt;a href=&#34;http://www.noxxic.com/wow/&#34;&gt;Noxxic&lt;/a&gt; and is updated automatically with each new patch.&lt;/p&gt;
+
+&lt;p&gt;And you can follow the direct links to the pages for your class and spec on &lt;a href=&#34;http://www.noxxic.com/wow/&#34;&gt;Noxxic&lt;/a&gt; or &lt;a href=&#34;https://www.icy-veins.com/wow/&#34;&gt;Icy Veins&lt;/a&gt; for more info from within the app.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/images/wow-stats.png&#34;&gt;&lt;img src=&#34;https://troz.net/images/wow-stats-small.png&#34; alt=&#34;WoW Stats&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Click for a larger image&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Yes, my main is a Beast Master Hunter - Axelady on Khaz&amp;rsquo;goroth if anyone wants to say hello. And if you have to ask why a hunter is called Axelady, you haven&amp;rsquo;t been a hunter for as long as I have!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Axe.png&#34; alt=&#34;Axelady&#34; /&gt;&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Marktime</title>
-      <link>https://troz.net/marktime/</link>
-      <pubDate>Sun, 26 Nov 2017 14:48:53 +1000</pubDate>
+<title>Marktime</title>
+<link>https://troz.net/marktime/</link>
+<pubDate>Sun, 26 Nov 2017 14:48:53 +1000</pubDate>
       
       <guid>https://troz.net/marktime/</guid>
-      <description>&lt;style&gt;img {width: 300px; } &lt;/style&gt;
+<description>&lt;style&gt;img {width: 300px; } &lt;/style&gt;
 
 &lt;p&gt;Mark Time is now available now from the &lt;a href=&#34;https://itunes.apple.com/us/app/mark-time/id1305580742?mt=8&#34;&gt;iTunes App Store&lt;/a&gt; for iPhone and
-iPad as an assistant for celestial navigators.&lt;/p&gt;</description>
-    </item>
+iPad as an assistant for celestial navigators.&lt;/p&gt;
+
+&lt;p&gt;Mark Time is an application for Celestial Navigation that solves the problem of
+how to take an accurate time reading to go with each sextant sighting.&lt;/p&gt;
+
+&lt;p&gt;By simply tapping the screen you can record the exact time UTC as you take your
+sight, so you have no chance of making an error with the conversion, and this
+time is stored in one of five registers.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/MarkTime1.png&#34; alt=&#34;Mark Time&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Very useful when you have an assistant, and ideal for taking readings when you
+are on your own.&lt;/p&gt;
+
+&lt;p&gt;As you record a time you hear a confirmation sound and feel a vibration, so
+there is no need even to look at the screen. In addition the actual latitude and
+longitude at each time can be accessed later to verify your calculations. These
+options are all configurable in Settings to suit your own preferences.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/MarkTime2.png&#34; alt=&#34;Mark Time&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Location permissions:&lt;/strong&gt; On startup, the app will request permission to access
+your location. This is how the latitude and longitude data is gathered to
+provide this data if you wish.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Support:&lt;/strong&gt; If you have any questions about this app, please use the Contact
+link above to get in touch.&lt;/p&gt;</description>
+</item>
     
     <item>
-      <title>Work</title>
-      <link>https://troz.net/work/</link>
-      <pubDate>Wed, 16 Nov 2016 00:00:00 +0000</pubDate>
+<title>Work</title>
+<link>https://troz.net/work/</link>
+<pubDate>Wed, 16 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/work/</guid>
-      <description>Work is a project organizer app for developers, designers, students or any professional who works with multiple projects involving files &amp;amp; folders, web pages, email addresses and lists of tasks.
-Work requires macOS 10.12 or OS X 10.11 and will be available from the Mac App Store soon.
-We all know what it is like to be in the middle of a project or rushing to complete an assignment&amp;hellip;
-We have files scattered all over the place, email addresses of team members or clients, web pages with specifications or useful information, tasks scribbled on sticky notes or scraps of paper.</description>
-    </item>
+<description>&lt;p&gt;&lt;strong&gt;Work&lt;/strong&gt; is a project organizer app for developers, designers, students or any
+professional who works with multiple projects involving files &amp;amp; folders, web
+pages, email addresses and lists of tasks.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Work&lt;/strong&gt; requires macOS 10.12 or OS X 10.11 and will be available from the Mac
+App Store soon.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;We all know what it is like to be in the middle of a project or rushing to
+complete an assignment&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;We have files scattered all over the place, email addresses of team members or
+clients, web pages with specifications or useful information, tasks scribbled on
+sticky notes or scraps of paper.&lt;/p&gt;
+
+&lt;p&gt;Wouldn&amp;rsquo;t it be better if there was one place where you could have quick and easy
+access to all these items, but without having to change the way you work? With
+the &lt;strong&gt;Work&lt;/strong&gt; app, you can regain control - the app helps you get to what you
+want so you save time.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Here is the project document you will see when you select &lt;strong&gt;Work Help&lt;/strong&gt; from the
+&lt;strong&gt;Help&lt;/strong&gt; menu:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/WorkHelp1.png&#34; alt=&#34;Work&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It gathers together some useful links to information about &lt;strong&gt;Work&lt;/strong&gt; and my other
+apps or to allow you to contact me. In &lt;strong&gt;Work&lt;/strong&gt; documents for my apps, I
+assemble the project files I need to open, images, web page addresses etc. My
+most frequently used links are starred so I can focus on them whenever I want a
+shorter list.&lt;/p&gt;
+
+&lt;p&gt;Drag files or folders into the window to link them to your &lt;strong&gt;Work&lt;/strong&gt; document.
+Copy a web address or email address and use &lt;strong&gt;Add Web/Email&lt;/strong&gt; to quickly create
+a new link entry with the copied address.&lt;/p&gt;
+
+&lt;p&gt;Switching to &lt;strong&gt;Tasks&lt;/strong&gt; mode allows you to focus on your tasks list. Tasks can be
+grouped, re-ordered and marked as complete. Use the &lt;strong&gt;View&lt;/strong&gt; menu to hide
+completed tasks if you want a more compact list. Use the &lt;strong&gt;Edit&lt;/strong&gt; menu or the
+toolbar buttons to edit groups - this allows you to create your own custom
+groupings.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/WorkHelp2.png&#34; alt=&#34;Work - Tasks&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Work&lt;/strong&gt; doesn&amp;rsquo;t move or rename any of your files - it merely links all these
+things together for fast, convenient and searchable access. It even tracks files
+or folders if you move them later.&lt;/p&gt;
+
+&lt;p&gt;Make a &lt;strong&gt;Work&lt;/strong&gt; document for every project, drag in the relevant files or
+folders, add web page addresses and email addresses, make your own task lists.&lt;/p&gt;
+
+&lt;p&gt;Create groups to gather items together, adjust the display to view only the
+entries you want, use quick look to get a fast glimpse of files or web pages.&lt;/p&gt;
+
+&lt;p&gt;Work also supports the Touch Bar on the new MacBook Pros:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Work_TB.png&#34; alt=&#34;Work - TouchBar&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Select &lt;strong&gt;Work Help&lt;/strong&gt; from the &lt;strong&gt;Help&lt;/strong&gt; menu to see the special &lt;strong&gt;Work&lt;/strong&gt; document
+pictured above. Use the links to keep in touch and step through the sequence of
+tasks to learn the basics of using the app.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>What Is My Speed?</title>
-      <link>https://troz.net/what-is-my-speed/</link>
-      <pubDate>Sun, 17 Apr 2016 00:00:00 +0000</pubDate>
+<title>What Is My Speed?</title>
+<link>https://troz.net/what-is-my-speed/</link>
+<pubDate>Sun, 17 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/what-is-my-speed/</guid>
-      <description>What Is My Speed? allows you to track your speed on your iPhone or Apple Watch while driving, bicycling, running or walking. See your course and altitude at all times. Set the speed limit to trigger warnings where appropriate.</description>
-    </item>
+<description>&lt;style&gt;
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+&lt;/style&gt;
+
+&lt;p&gt;&amp;ldquo;What Is My Speed?&amp;rdquo; is available now from the &lt;a href=&#34;https://itunes.apple.com/app/what-is-my-speed/id1091394524&#34;&gt;iTunes App Store&lt;/a&gt; for iPhone
+and Apple Watch.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/speed_1.png&#34; alt=&#34;What Is My Speed? - iPhone&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you read my recent blog post on &lt;a href=&#34;https://troz.net/post/2016-04-07-road-trip-apps/&#34;&gt;Road Trip Apps&lt;/a&gt; you will have realised
+that I was working on an app to fill a gap that I discovered in our road trip
+app arsenal. So here it is: &amp;ldquo;What Is My Speed?&amp;rdquo; for iPhone &amp;amp; Apple Watch.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Track your speed on your iPhone or Apple Watch while driving, bicycling, running
+or walking. See your course and altitude at all times.&lt;/p&gt;
+
+&lt;p&gt;Optionally set a speed limit and get audible warnings on your iPhone when you
+exceed it. Reduce the speed limit to zero or extend it over the maximum to turn
+off speed limit warnings.&lt;/p&gt;
+
+&lt;p&gt;Designed for easy viewing in all light conditions and with very accessible
+swiping to change the speed limit quickly and easily.&lt;/p&gt;
+
+&lt;p&gt;If you want more detailed information, tap the info button to see a complete
+list of available data about your current location. &lt;em&gt;Altitude and floor data may
+not always be available but will be displayed whenever possible.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/speed_2.png&#34; alt=&#34;What Is My Speed? details - iPhone&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Your current iPhone settings are used to set the default units for speed and
+altitude, but these are easily changed after tapping the info button.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;To monitor your speed on your Apple Watch, you need to start the app on your
+iPhone, but then it does not have to remain in the foreground. However speed
+limit warnings will only be given when the iPhone app is active.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/speed_watch_1.png&#34; alt=&#34;What Is My Speed? Apple Watch&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To adjust the speed limit, swipe from side to side. The speed limit indicator
+will expand for easier viewing and the speed limit will increase or decrease.
+Tap again to shrink the speed limit indicator or leave it for a few seconds and
+it will shrink automatically. You can also swipe up or down with two fingers to
+adjust the screen brightness for maximum visibility.&lt;/p&gt;
+
+&lt;p&gt;Tap the &amp;ldquo;?&amp;rdquo; button on the main screen to be reminded of the available swipes.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/speed_3.png&#34; alt=&#34;What Is My Speed? adjust speed limit - iPhone&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Location permissions:&lt;/strong&gt; On startup, the app will request permission to access
+your location. This is how the speed, course and altitude data is gathered so is
+essential for the app to operate. If you have an Apple Watch with the app
+installed, the app will continue to track your speed while in the background so
+that the data can be sent to your watch. If you do not have an Apple Watch or
+the app is not installed on the watch, your speed will only ever be tracked when
+the app is the current foreground app.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Dice Pass</title>
-      <link>https://troz.net/dicepass/</link>
-      <pubDate>Fri, 29 May 2015 00:00:00 +0000</pubDate>
+<title>Dice Pass</title>
+<link>https://troz.net/dicepass/</link>
+<pubDate>Fri, 29 May 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/dicepass/</guid>
-      <description>Dice Pass is available from the Mac App Store and version 3.2 (released 26th September 2018) supports macOS Mojave&amp;rsquo;s dark mode.
-Dice Pass is a utility to app to generate random passphrases based on the Diceware system. Diceware uses a table of pre-defined words, each assigned a 5 digit code number containing the digits 1 to 6. The official way to generate a phrase is to roll 5 dice for each word you want in your passphrase and then consult the words table to find the matching word.</description>
-    </item>
+<description>
+
+&lt;p&gt;Dice Pass is available from the &lt;a href=&#34;https://itunes.apple.com/us/app/dice-pass/id997688302&#34;&gt;Mac App Store&lt;/a&gt; and version 3.2 (released 26th September 2018) supports macOS Mojave&amp;rsquo;s dark mode.&lt;/p&gt;
+
+&lt;p&gt;Dice Pass is a utility to app to generate random passphrases based on the
+&lt;a href=&#34;http://world.std.com/~reinhold/diceware.html&#34;&gt;Diceware system&lt;/a&gt;. Diceware uses a table of pre-defined words, each assigned
+a 5 digit code number containing the digits 1 to 6. The official way to generate
+a phrase is to roll 5 dice for each word you want in your passphrase and then
+consult the words table to find the matching word.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/DicePass_Mac.png&#34; alt=&#34;Dice Pass for Mac&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The resulting phrase uses real words or common abbreviations, so it is easier to
+remember than a random collection of characters. At the same time, the random
+selection of words makes the generated passphrase much more secure as it avoids
+the human tendency to pick words with personal meaning.&lt;/p&gt;
+
+&lt;p&gt;The Diceware system was invented by Arnold Reinhold. This utility is not
+associated with or supported by Arnold Reinhold in any way, but uses his
+techniques with thanks. For more information about Diceware, have a look at the
+&lt;a href=&#34;http://world.std.com/%7Ereinhold/dicewarefaq.html&#34;&gt;Diceware Passphrase FAQ page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The default word list used in this app is a variation compiled by &lt;a href=&#34;http://world.std.com/~reinhold/beale.wordlist.asc&#34;&gt;Alan
+Beale&lt;/a&gt; that removes some of the more obscure words. But you can select the
+original Diceware word list or the Diceware 8k word list fromt rh Word List menu
+if you prefer to use something different. You can also provide your own word
+list file if you prefer.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;f-a-q&#34;&gt;F.A.Q.&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;How many words should I use in my passphrase?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Arnold Reinhold recommends 6 words. He used to suggest that 5 was sufficient for
+most needs, but as of 2014 has increased this to 6. See the Diceware Passphrase
+FAQ page for more details. (Link above.)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How often can I re-generate the passphrase?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;As often as you like. Keep clicking until you get a phrase that you can
+remember. If you get a phrase where most of the words are good but you would
+like to change one or two, you can click &amp;rsquo;Re-Roll&amp;rsquo; on individual words to change
+them.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Is there a way to check the strength of my passphrase?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;There are many password strength checkers on the internet and three of these are
+listed below. But always be careful when pasting your passphrase into a web
+page.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Online password strength checkers:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://rumkin.com/tools/password/passchk.php&#34;&gt;Rumkin.com Strength Test&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://howsecureismypassword.net&#34;&gt;How Secure Is My Password?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.passwordmeter.com&#34;&gt;The Password Meter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Some of the words in the phrase are not complete words.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The theory is that shorter words or abbreviations are easier to remember than
+long ones, without compromising security. But if you get a word you don&amp;rsquo;t like
+or think that you will not be able to remember, just re-roll that word.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What if I want to roll the dice myself?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Dice Pass allows you to tap on the 5 dice to set the numbers needed for each
+word manually. Each time you tap the number will go up be one, wrapping from 6
+back to 1. The app will then look up the word table for you and show the new
+word.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;When the phrase gets too long I can&amp;rsquo;t see all the words.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The &amp;ldquo;Copy&amp;rdquo; button will copy the complete passphrase even if it is not all
+visible. You can also scroll by clicking and dragging along the passphrase.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Does my passphrase get saved by the app or transmitted over the internet?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;No. The app saves no data except for basic preferences (window positioning &amp;amp;
+size, preferred word list etc.). There is never any data sent over the network
+and the app will work perfectly if you disconnect your computer before using.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What are those 3 buttons: #, A and 1?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Some sites may require a passphrase that contains a mix of character types.
+These buttons will insert a special character, change the start of one word to
+uppercase, or insert a number. Tap the button again to undo the change. Again,
+these characters are chosen using the dice roll system and the special
+characters are selected and positioned using the method and data suggested by
+Arnold Reinhold.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;I thought there was a version of Dice Pass for iOS!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;There was, but with the need to update apps to support iOS 10, I decided to drop
+support for some under-performing iOS apps. If you bought the iOS version and
+would like to switch to the Mac, send me a screen shot of the app running on
+your iPhone or iPad and I will send you a free promo code for the Mac version.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>19th Hole</title>
-      <link>https://troz.net/19th-hole/</link>
-      <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
+<title>19th Hole</title>
+<link>https://troz.net/19th-hole/</link>
+<pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/19th-hole/</guid>
-      <description>19th Hole is the golf scoring app for everyone, and it is available from the iTunes App Store.
-Whether you are playing for the club championship, having a weekend round with friends or playing pitch&amp;rsquo;n&amp;rsquo;putt with the kids, 19th Hole makes it easy to keep score.
-Designed for fast, accurate score keeping with a color scheme chosen for optimal outdoor viewing, 19th Hole uses a simple setup process and an intuitive, gesture-based score entry system.</description>
-    </item>
+<description>
+
+&lt;p&gt;19th Hole is the golf scoring app for everyone, and it is available from the
+&lt;a href=&#34;https://itunes.apple.com/us/app/the-19th-hole/id871686159?mt=8&amp;uo=4&#34; target=&#34;itunes_store&#34;&gt;iTunes
+App Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Whether you are playing for the club championship, having a weekend round with
+friends or playing pitch&amp;rsquo;n&amp;rsquo;putt with the kids, 19th Hole makes it easy to keep
+score.&lt;/p&gt;
+
+&lt;p&gt;Designed for fast, accurate score keeping with a color scheme chosen for optimal
+outdoor viewing, 19th Hole uses a simple setup process and an intuitive,
+gesture-based score entry system. During and after the round, you can see totals
+and results using various methods: total strokes, total putts, match play (Irish
+match play for more than 2 players) &amp;amp; Stableford.&lt;/p&gt;
+
+&lt;p&gt;19th Hole now includes an Apple Watch app so strokes can be entered quickly and
+easily using the watch to avoid having to pull your iPhone out of your bag.&lt;/p&gt;
+
+&lt;p&gt;When you have finished, you can archive the score card for future reference and
+email the completed card to your fellow players.&lt;/p&gt;
+
+&lt;h2 id=&#34;scoring-a-round-is-very-simple&#34;&gt;Scoring a round is very simple:&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Select a course - the last played course is pre-selected.&lt;/li&gt;
+&lt;li&gt;Select the players - the last set of players is pre-selected.&lt;/li&gt;
+&lt;li&gt;Tap &amp;lsquo;Start Round&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;Optionally enter the players&amp;rsquo; handicaps - the last used handicaps are
+pre-selected.&lt;/li&gt;
+&lt;li&gt;After each hole, enter the strokes played by each person, on your iPhone or
+Apple Watch.&lt;/li&gt;
+&lt;li&gt;You can also record putts and various other statistics (iPhone only).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/19-1_4-500.png&#34; alt=&#34;Scoring&#34; /&gt;
+&lt;br&gt;iPhone&lt;/p&gt;
+
+&lt;p&gt;&lt;img title=&#34;Watch Scoring&#34; alt=&#34;Watch Scoring&#34; src=&#34;https://troz.net/images/19thHole-Watch-v3.jpg&#34; /&gt;
+&lt;br&gt;Apple Watch&lt;/p&gt;
+
+&lt;p&gt;Courses only need to be entered once and are then saved for future use.&lt;br /&gt;
+Enter the course name, number of holes and select the tees in use. For each hole,
+enter the par, index/handicap, and the distance from each tee.&lt;/p&gt;
+
+&lt;p&gt;If you are in a hurry to start the round, enter the name of the course and the
+number of holes. The rest of the data can be entered for each hole as you play,
+or can be edited later.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/19-3_4-500.png&#34; alt=&#34;Adding a course&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Players can be selected from your Contacts or entered manually. Add email
+addresses so the completed cards can be emailed after the round. Choose an icon
+for each player. If a player was selected from Contacts, you can use the photo
+assigned in the Contacts app.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/19-4_4-500.png&#34; alt=&#34;Adding a player&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;gesture-controlled&#34;&gt;Gesture-controlled:&lt;/h2&gt;
+
+&lt;p&gt;All scores are entered using a special number button that you tap, then drag
+your finger up or down the screen to raise or lower the number.&lt;/p&gt;
+
+&lt;p&gt;Hold your finger down on the number, then move it up or down to change the
+number displayed. To make it easier to see what you are doing, hold your finger
+down on the number, then first drag to one side before dragging up or down. Play
+the video below to see how this works.&lt;/p&gt;
+
+&lt;video controls poster=&#34;/images/19thHole-scoring-web.png&#34;&gt;
+  &lt;source src=&#34;https://troz.net/images/19thHole-scoring-web.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
+
+&lt;p&gt;&lt;br&gt;
+To change hole, swipe left or right in the lower half of the screen, below the line. Swiping back from hole 1 allows you to change the handicaps. Swiping on from the last hole takes you to Notes where you can record any interesting events during this round.&lt;/p&gt;
+
+&lt;p&gt;During a round, cumulative statistics are shown at the bottom of the screen.&lt;br /&gt;
+For a more complete score card, you can swipe downwards in the middle of the screen.&lt;/p&gt;
+
+&lt;p&gt;Tap on the hole details at the top of the screen to edit that data.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/19-5_4-500.png&#34; alt=&#34;Gestures&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;after-the-game&#34;&gt;After the game:&lt;/h2&gt;
+
+&lt;p&gt;While relaxing at &amp;ldquo;The 19th Hole&amp;rdquo; after the game, you can check the scores and
+swipe back and forth between holes to see what happened during the round.&lt;/p&gt;
+
+&lt;p&gt;Once you are sure the scores are correct, tap the &amp;ldquo;Action&amp;rdquo; button in the top
+right. You can add some notes to the round at this point or archive the round so
+that the completed score card is saved on your iPhone. After this, you will not
+be able to make any further changes.&lt;/p&gt;
+
+&lt;p&gt;Completed rounds are listed when you tap &amp;ldquo;See Old Cards&amp;rdquo; with the most recent at
+the top. Tap one to see the complete score card for that round. Tap &amp;ldquo;Strokes&amp;rdquo;,
+&amp;ldquo;Putts&amp;rdquo; or &amp;ldquo;Stableford&amp;rdquo; to change what is shown for each hole. The summary is
+shown at the bottom.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/19-2_4-500.png&#34; alt=&#34;Final Score Card&#34; /&gt;&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>World Time In Words</title>
-      <link>https://troz.net/world-time-in-words/</link>
-      <pubDate>Tue, 10 Feb 2015 00:00:00 +0000</pubDate>
+<title>World Time In Words</title>
+<link>https://troz.net/world-time-in-words/</link>
+<pubDate>Tue, 10 Feb 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/world-time-in-words/</guid>
-      <description>World Time In Words version 3.0 is now available in the Mac App Store.
-With version 3.0 of this app, I have changed the name to &amp;ldquo;World Time In Words&amp;rdquo;. This is to reflect what I feel to be the most useful feature of this app: the ability to convert between time zones.
-It has two other new features:
- The time shown in the menu bar can now be set to use 24-hour time.</description>
-    </item>
+<description>&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/au/app/time-in-words/id509085586?mt=8&#34; target=&#34;_blank&#34;&gt;World
+Time In Words version 3.0&lt;/a&gt; is now available in the Mac App Store.&lt;/p&gt;
+
+&lt;p&gt;With version 3.0 of this app, I have changed the name to &amp;ldquo;World Time In Words&amp;rdquo;.
+This is to reflect what I feel to be the most useful feature of this app: the
+ability to convert between time zones.&lt;/p&gt;
+
+&lt;p&gt;It has two other new features:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The time shown in the menu bar can now be set to use 24-hour time. Go to
+Preferences to change this.&lt;/li&gt;
+&lt;li&gt;If you temporarily need to see the time in digital format, hold down Option
+when opening the menu.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;And there is one other thing in this version that I am almost too embarrassed to
+mention: after using this app for about two years, it was finally pointed out to
+me that the 3rd of every month was being shown as the &amp;ldquo;3th&amp;rdquo;. Oh dear - it was a
+copy-paste error but I should I found it a long time ago.&lt;/p&gt;
+
+&lt;p&gt;As always, please let me know if you have any suggestions for future versions.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Berio&#39;s Sequenza VII</title>
-      <link>https://troz.net/berio/</link>
-      <pubDate>Wed, 06 Nov 2013 00:00:00 +0000</pubDate>
+<title>Berio&#39;s Sequenza VII</title>
+<link>https://troz.net/berio/</link>
+<pubDate>Wed, 06 Nov 2013 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/berio/</guid>
-      <description>Luciano Berio wrote a series of Sequenzas for various instruments with Sequenza VII being the one for oboe.
-Preparing this work creates some unique problems for the oboist as Berio did not adhere to any time signature that could be indicated by a metronome. Instead, each line consists of 13 bars (measures) with each bar&amp;rsquo;s length specified in exact seconds.
-When my son (an oboist currently studying in Melbourne, Australia) started trying to learn this piece, it occurred to him that having an iOS app developer in the family could be of some assistance.</description>
-    </item>
+<description>&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Luciano_Berio&#34; target=&#34;itunes_store&#34;&gt;Luciano
+Berio&lt;/a&gt; wrote a series of Sequenzas for various instruments with Sequenza VII
+being the one for oboe.&lt;br /&gt;
+&lt;img src=&#34;https://troz.net/images/Berio_icon.png&#34; alt=&#34;Sequenza VII icon&#34; width=&#34;86&#34; height=&#34;86&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Preparing this work creates some unique problems for the oboist as Berio did not
+adhere to any time signature that could be indicated by a metronome. Instead,
+each line consists of
+&lt;a href=&#34;http://www.nuoboe.com/berio/html/factsheet.html&#34; target=&#34;itunes_store&#34;&gt;13
+bars (measures) with each bar&amp;rsquo;s length specified in exact seconds&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;When my son (an oboist currently studying in Melbourne, Australia) started
+trying to learn this piece, it occurred to him that having an iOS app developer
+in the family could be of some assistance. So with instructions from him and
+with suggestions from other oboists, I have developed the
+&lt;a href=&#34;https://itunes.apple.com/us/app/sequenza-vii/id730234638?mt=8&amp;uo=4&#34; target=&#34;itunes_store&#34;&gt;Berio
+Sequenza VII app for iPhone or iPod Touch&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Berio_2-500.png&#34; alt=&#34;Berio&#39;s Sequenza VII&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;With the default settings it will count the bar lengths, using metronome-like
+sounds to mark the starts of bars and lines. The player who needs to practice a
+specific bar can easily set the app to start at that bar and even to repeat that
+bar length continuously.&lt;/p&gt;
+
+&lt;p&gt;Tapping the &amp;ldquo;i&amp;rdquo; button at the bottom right of the screen takes you to the more
+advanced options.&lt;/p&gt;
+
+&lt;p&gt;The &amp;ldquo;Settings&amp;rdquo; section deals primarily with the B4 drone that is supposed to
+accompany the performance of this piece. While in an actual performance, the
+dynamics of this drone would vary, for this practice app it remains at a
+constant volume as specified by you. The volume can be set to a percentage of
+the iPhone&amp;rsquo;s current volume setting. If it is still too quiet, plug your iPhone
+into a speaker or use some sort of physical amplification. If you prefer to play
+with an A other than 440 Hz, that can be adjusted. And finally, the wave form
+used to generate this drone sound can be switched between a sine wave or a
+triangle wave. Disclaimer: excessive use of this drone may cause loss of
+friends!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Berio_3-500.png&#34; alt=&#34;Settings&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The Settings page also includes an option to slow down the times for practice.
+At 100% speed, bar 1 on each line will last for 3 seconds. The speed can be
+reduced to allow each bar to last longer, for use during the learning process.&lt;/p&gt;
+
+&lt;p&gt;The &amp;ldquo;Bars &amp;amp; Sounds&amp;rdquo; section allows you to customise the various options marking
+the start of each new bar. You can specify the number of seconds &amp;amp; the sound
+used to count you in after tapping the Start button. You can also select which
+of the metronome sounds to use to mark the start of each bar, making the first
+bar of each line use a different sound if you prefer. Finally, in case you are
+playing so loudly that you are unable to hear the iPhone, you can set the screen
+to flash a different color at the start of each new bar.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Berio_4-500.png&#34; alt=&#34;Bars &amp; Sounds&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Jacqueline Leclair wrote a
+&lt;a href=&#34;http://www.nuoboe.com/berio/index.html&#34; target=&#34;_blank&#34;&gt;supplementary
+edition&lt;/a&gt; of this work in 2000 using traditional time signatures in a way that
+almost exactly duplicates the original timings. This app is designed for use
+with the original score using Berio&amp;rsquo;s real time bar lengths.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Icon Builder</title>
-      <link>https://troz.net/icon-builder/</link>
-      <pubDate>Mon, 01 Oct 2012 00:00:00 +0000</pubDate>
+<title>Icon Builder</title>
+<link>https://troz.net/icon-builder/</link>
+<pubDate>Mon, 01 Oct 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/icon-builder/</guid>
-      <description>Icon Builder 5.1 is available from the Mac App Store. Updated 26th September 2018 to support macOS Mojave dark mode and with extra icons needed for Apple Watch Series 4.
-Make and install a set of icons for an iOS, Mac or Apple Watch app in 3 steps: 1: Drag an image into the window.
-2: Choose the device family you are building for: iOS Universal, iPhone, iPad, Apple Watch, Mac, Sticker Pack or iMessage.</description>
-    </item>
+<description>
+
+&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482?mt=12&#34;&gt;Icon Builder 5.1&lt;/a&gt; is available from the Mac App Store. Updated 26th September 2018 to support macOS Mojave dark mode and with extra icons needed for Apple Watch Series 4.&lt;/p&gt;
+
+&lt;h2 id=&#34;make-and-install-a-set-of-icons-for-an-ios-mac-or-apple-watch-app-in-3-steps&#34;&gt;Make and install a set of icons for an iOS, Mac or Apple Watch app in 3 steps:&lt;/h2&gt;
+
+&lt;p&gt;1: Drag an image into the window.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/IconBuilder1.png&#34; alt=&#34;Make an icon set in 3 steps&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2: Choose the device family you are building for: iOS Universal, iPhone, iPad, Apple Watch, Mac, Sticker Pack or iMessage.&lt;/p&gt;
+
+&lt;p&gt;3: Click &amp;ldquo;Create icon assets&amp;rdquo; and select the folder containing your Xcode project.&lt;/p&gt;
+
+&lt;p&gt;Icon Builder will create an AppIcon set inside the &amp;ldquo;Assets.xcassets&amp;rdquo; folder for
+that project.
+The icons are immediately ready for use in your project with no installation necessary.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;why-is-this-necessary&#34;&gt;Why is this necessary?&lt;/h2&gt;
+
+&lt;p&gt;Depending on the devices supported by your app, you will need many different sizes of icon file. There are some icons for iPad only, some for iPhone / iPod Touch only and others required for any iOS device. Mac apps use completely different icon sizes. Apple Watch apps need a completely different set of icons and now with iOS 10, Messages apps and Sticker apps require even more - 2 different icon sets for Messages app. Additionally, you will need larger versions of each image to support Retina displays.&lt;/p&gt;
+
+&lt;p&gt;These icons must be in PNG format, with the color space set to sRGB (or P3 for iOS apps, but Icon Builder always uses sRGB) and for iOS apps, with no transparency and with alpha channel in the image files.&lt;/p&gt;
+
+&lt;p&gt;Your Xcode project contains a special folder called “Assets.xcassets” which contains all the image files used in your project, including the app icons. Icon Builder will install the icon files into your “Assets.xcassets” folder automatically and the icons are immediately ready for use in your project with no installation necessary.&lt;/p&gt;
+
+&lt;p&gt;Icon Builder still allows you to create the old-style .icns file if required by selecting “Mac icns” in the device family popup menu. This can be useful for other development environments or when making icons for documents in your Mac app.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;You will get the best results if you start with a 1024 x 1024 image.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;using-the-icon-images&#34;&gt;Using the icon images:&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/IconBuilder2.png&#34; alt=&#34;Using the icons&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Icon Builder creates all the required image files in a folder called “AppIcon.appiconset”, “AppIcon-Watch.appiconset” or “iMessage App Icon.stickersiconset” inside the “Assets.xcassets” folder for your project. If you already have images stored in an appiconset folder, Icon Builder will not over-write them, but will add a new folder e.g. “AppIcon-1.appiconset”. You can then switch between AppIcon sets in the project settings for your target app.&lt;/p&gt;
+
+&lt;p&gt;If you prefer to add the icon files manually, select a folder that does not contain a .xcodeproj file and the icon sets will be saved directly to that folder. You can then drag the iconset folder manually into “Assets.xcassets” in your Xcode project.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;what-s-new-in-version-5&#34;&gt;What&amp;rsquo;s New in version 5?&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Icon images have the correct sRGB color profile attached.&lt;/li&gt;
+&lt;li&gt;For iOS icons, transparency is replaced by white and the alpha channel is removed from the image file.&lt;/li&gt;
+&lt;li&gt;The icons created match the latest Apple guidelines.&lt;/li&gt;
+&lt;li&gt;The app has been completely re-written in Swift to use the latest macOS APIs so only supports macOS 10.13.x or later.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;faq&#34;&gt;FAQ&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;I thought there were only 2 steps before - why are there 3 now?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The 2 step process gave you a folder of image files. You then had to install them manually. So really, there were always three steps, but the app was not helping you with step 3. By adding a third step asking you to locate your project folder, I was able to make the app install the icons for you automatically. So the app is doing step 3 for you.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;What if I want to install the icon files myself?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;When asked to select a folder to save the icons, select a folder that does not contain a .xcodeproj file. Icon Builder will save all the files, but not install them into an Assets.xcassets or Images.xcassets folder automatically.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;What image types can I use?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Any image type compatible with QuickTime, including JPEG, PNG, TIFF, GIF, PDF, PSD, BMP.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Does Icon Builder create icons for use in Mac apps?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Yes. Mac apps use image assets just like iOS apps, but with different image sizes. Select &amp;ldquo;Mac App&amp;rdquo; in the Device popup to create icons for a Mac app.&lt;/li&gt;
+&lt;li&gt;Icon Builder still allows you to create the old-style .icns file if required by selecting &amp;ldquo;Mac icns file&amp;rdquo; in the Device popup menu. This can be useful for other development environments or when making icons for documents in your Mac app.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;What is the difference between Mac App Icon and Mac icns file?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;Mac AppIcon&amp;rdquo; will create the modern AppIcon set of images for inclusion in your Assets.xcassets.&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Mac icns file&amp;rdquo; will create an old style .icns file with all the image sizes embedded into a single file. Open the file in Preview to see the contents.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Does Icon Builder create icons for use in Watch Kit apps?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Yes. Select &amp;ldquo;Apple Watch&amp;rdquo; from the Device popup. Create a WatchKit target in your iOS project if necessary. When you are choosing the location to save the icons, select the folder containing the main .xcodeproj file. Icon Builder will find the WatchKit App folder and save the icons to the WatchKit App&amp;#39;s Assets.xcassets folder. The icon set will be called AppIcon-Watch to help you distinguish between sets when allocating them to your apps.&lt;/li&gt;
+&lt;li&gt;When the WatchKit icons have been made, Icon Builder will ask you if you want to use the same image to create the icons for the parent iOS app. Unless you want a different icon for the parent app, select the parent app device at this point to create the second set.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Does Icon Builder create icons for use in iMessage apps and Sticker Pack apps?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Yes. Select &amp;ldquo;Sticker Pack App&amp;rdquo; or &amp;ldquo;iMessage App&amp;rdquo; from the Device popup. When you are choosing the location to save the icons, select the folder containing the main .xcodeproj file and Icon Builder will create the icon sets accordingly.&lt;/li&gt;
+&lt;li&gt;iMessage apps require two sets: one for the Messages extension and one for the parent iOS app. When the iMessage icons have been made, Icon Builder will ask you if you want to use the same image to create the icons for the parent iOS app. Unless you want a different icon for the parent app, select the parent app device at this point to create the second set.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Why is my starting image re-sized for a Sticker Pack app or iMessage app?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;For Mac, iOS and Apple Watch apps, all the icons are square. For Sticker Pack apps and iMessage apps, most (but not all) of the icons are letterbox-shaped. Icon Builder displays your starting image in letterbox format when you choose &amp;ldquo;Sticker Pack App&amp;rdquo; &amp;ldquo;iMessage App&amp;rdquo; so that you can see how it will look.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;When I choose any iOS app type, my starting image loses its transparent background!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Apple requires that iOS icons have no transparency so Icon Builder displays the image like that so you can confirm the look. If you do not like the default change, edit the image to remove the transparency before using Icon Builder.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;What versions of macOS and Xcode do I need?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This app requires macOS 10.13 as it uses the latest APIs to manipulate images.&lt;/li&gt;
+&lt;li&gt;Xcode 9 is the latest version, but Xcode 8 will probably work.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;I don&amp;rsquo;t use Xcode, I use an alternative IDE. Can I still use the icons created by this app?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Yes, you can save the icon set to a folder and install the icons manually in the IDE of your choice. If your IDE requires a .icns file, select &amp;ldquo;Mac icns file&amp;rdquo; from the device popup.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;What if my starting image is the wrong size?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;If your image is not the correct size, it will be cropped or expanded when you drag it in.&lt;/li&gt;
+&lt;li&gt;It will then be resized to create all the required image sizes.&lt;/li&gt;
+&lt;li&gt;If this does not give the result you want, resize or crop the image before dropping it into Icon Builder.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;How do I start again with a blank slate?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Choose &amp;ldquo;New&amp;rdquo; from the File menu, or press Command-N.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Do I have to drag images into the app?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;No, you can copy &amp;amp; paste an image file, or an image.&lt;/li&gt;
+&lt;li&gt;Or choose &amp;ldquo;Open Image&amp;hellip;&amp;rdquo; from the File menu, or press Command-O.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;How can I delete the icons from my project?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Select &amp;ldquo;Assets.xcassets&amp;rdquo; in the project navigator.&lt;/li&gt;
+&lt;li&gt;In the next sidebar, you will see a list of the asset sets in your project.&lt;/li&gt;
+&lt;li&gt;Select the one you want to delete (e.g. AppIcon, AppIcon-1, AppIcon-Watch) and press the Delete key.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;I have an old project with no &amp;ldquo;Assets.xcassets&amp;rdquo; - how do I add that?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Select the project at the top of the Project Navigator.&lt;/li&gt;
+&lt;li&gt;Make sure you are editing the target and go to the General tab.&lt;/li&gt;
+&lt;li&gt;In the &amp;ldquo;App Icons&amp;rdquo; section, click the &amp;ldquo;Use Asset Catalog&amp;rdquo; button.&lt;/li&gt;
+&lt;li&gt;The &amp;ldquo;Assets.xcassets&amp;rdquo; folder will be created and any existing icons will be migrated to the new structure.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;What if I want to use the images from a Mac .icns file?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Drag it in just like any image file. However the largest image in an .icns bundle is 512 x 512, so you may want to create a larger version.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Why are there files with @2x and @3x in the names?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;These are for high-resolution displays. iOS knows it needs a certain image size, but if the device has a Retina display, the system will look for an @2x file so it can squeeze twice as many pixels in and make it look sharp. For the larger or more recent iPhones, the system will use the @3x files if they are available.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;I use Pixelmator. Can I drag my pxm files into Icon Builder?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;No. Pixelmator&amp;rsquo;s pxm files cannot be used directly. Export them as png files first.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;I’m a programmer, not a graphic designer. How do I make icon images?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;One easy way to create basic shapes with gradients, text, added images etc. is to use Keynote. I presume PowerPoint has the same sort of abilities.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+</item>
     
     <item>
-      <title>A Knight&#39;s Move</title>
-      <link>https://troz.net/knightsmove/</link>
-      <pubDate>Sun, 08 Jul 2012 00:00:00 +0000</pubDate>
+<title>A Knight&#39;s Move</title>
+<link>https://troz.net/knightsmove/</link>
+<pubDate>Sun, 08 Jul 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/knightsmove/</guid>
-      <description>A Knight&amp;rsquo;s Move is a puzzle game where you have to move your knight across a board to a target square using the same movements as a knight in chess. Pawns may block your way, while enemy bishops, castles, knights and the queen may try to stop you.
-UPDATE: Version 1.3 for Mac now available.
- Available from the Mac App Store for OS X 10.7 or later  Get from the starting position to the target in the shortest possible number of moves.</description>
-    </item>
+<description>
+
+&lt;p&gt;A Knight&amp;rsquo;s Move is a puzzle game where you have to move your knight across a
+board to a target square using the same movements as a knight in chess. Pawns
+may block your way, while enemy bishops, castles, knights and the queen may try
+to stop you.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;UPDATE&lt;/strong&gt;: &lt;a href=&#34;http://itunes.apple.com/app/a-knights-move/id533321133&#34;&gt;Version 1.3 for Mac now available&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Available from the &lt;a href=&#34;http://itunes.apple.com/app/a-knights-move/id533321133&#34;&gt;Mac App Store&lt;/a&gt; for OS X 10.7 or later&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/KnightsMoveMac1.png&#34; alt=&#34;A Knight&#39;s Move for Mac&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Get from the starting position to the target in the shortest possible number of
+moves. Score stars based on the moves taken. If you need help, take a one star
+penalty to show all possible moves. If you really get stuck, after several tries
+the Cheat button allows you to see a solution, although that will cost you all
+your stars.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/KnightsMoveMac2.png&#34; alt=&#34;A Knight&#39;s Move for Mac&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Choose your preferred board and chess pieces.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/KM-Prefs.png&#34; alt=&#34;A Knight&#39;s Move Preferences&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;faq&#34;&gt;FAQ&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; Does the time I take to solve a puzzle count against me?&lt;br /&gt;
+**A. **No - the number of stars you get depends solely on the number of moves taken.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; Are there any penalties for using Undo or Restart?&lt;br /&gt;
+**A. **No - both Undo and Restart wind back the number of moves, so are not counted
+towards your final number of moves.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; What are the best techniques for solving a large puzzle?&lt;br /&gt;
+&lt;strong&gt;A.&lt;/strong&gt; Sometimes it is easier to work backwards. Work out which squares get you to
+the target safely and see if you can work out how to get to one of them. Another
+technique is to check all the possible moves and see how many can be eliminated because
+of danger or because they don&amp;rsquo;t lead anywhere except back to where you started. Just
+remember that trying and failing doesn&amp;rsquo;t count against you, so give it a go.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; What if I need help with a puzzle?&lt;br /&gt;
+&lt;strong&gt;A.&lt;/strong&gt; The first way to get help is to turn on &amp;ldquo;Show Moves&amp;rdquo;. This puts green circles
+on any square that your White Knight can reach next move. It does not indicate whether
+these squares are safe, but just shows you all legal moves. This option costs you
+a one star penalty but you can always do the puzzle again to try for three stars.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; What if I think a puzzle is completely impossible?&lt;br /&gt;
+&lt;strong&gt;A.&lt;/strong&gt; All the puzzles have at least one solution. If you have tried and tried, using
+Restart or being captured at least 5 times, the Cheat button will become available.
+Using the Cheat button will show you a possible solution but will mean that you can
+never get any stars for that puzzle.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; You&amp;rsquo;re kidding, right? No stars… ever… just because I cheated?&lt;br /&gt;
+&lt;strong&gt;A.&lt;/strong&gt; OK, I&amp;rsquo;m kidding, but the way out of this is deliberately hidden and inconvenient.
+If you go to Settings or Preferences, you can reset all the game scores which clears
+all records of stars won so far, allowing you to restart completely. If you reset
+the scores three times in a row, this will also clear all records of cheating.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; I think I solved a puzzle in fewer moves than the minimum moves shown.&lt;br /&gt;
+&lt;strong&gt;A.&lt;/strong&gt; Great! Please take a screen shot of the puzzle and annotate it to show your
+moves. Email it in to sarah@troz.net so that I can edit the puzzle for the next update.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Man Reader</title>
-      <link>https://troz.net/manreader/</link>
-      <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
+<title>Man Reader</title>
+<link>https://troz.net/manreader/</link>
+<pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/manreader/</guid>
-      <description>Man Reader is a utility app for reading macOS&amp;rsquo;s man pages. Man Reader allows quick, convenient and easy access to the man pages on your system, useful for programmers, system administrators and tweakers.
+<description>
 
- Buy Man Reader from the Mac App Store  Man pages are available for the Unix commands used mostly in Terminal or when shell scripting. These man pages are normally displayed in Terminal using the &amp;ldquo;man&amp;rdquo; command e.</description>
-    </item>
+&lt;p&gt;Man Reader is a utility app for reading macOS&amp;rsquo;s man pages. Man Reader allows
+quick, convenient and easy access to the man pages on your system, useful for
+programmers, system administrators and tweakers.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/images/MR_Start.png&#34;&gt;&lt;img src=&#34;https://troz.net/images/MR_Start_small.png&#34; alt=&#34;MR&#34; title=&#34;Man Reader&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://itunes.apple.com/app/man-reader/id522583774?mt=12&#34;&gt;Buy Man Reader from the Mac App Store&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Man pages are available for the Unix commands used mostly in Terminal or when
+shell scripting. These man pages are normally displayed in Terminal using the
+&amp;ldquo;man&amp;rdquo; command e.g. &amp;ldquo;man man&amp;rdquo; gives you the man page for the man command.&lt;/p&gt;
+
+&lt;p&gt;However there are problems with this: the man page is displayed to you in your
+Terminal window page by page and when you have got to the bottom, you have to
+know to press &amp;lsquo;q&amp;rsquo; to get out of the man page display, at which point it
+disappears completely. Hope you have a good memory!&lt;/p&gt;
+
+&lt;p&gt;There are various tricks to get around this: opening it in a separate window,
+piping it to Preview as a PDF, listing it as a single page etc, but none of
+these are really convenient, which is why I wrote Man Reader. Basically, I
+reckon that if I want a utility, then there must be other people who would want
+the same thing.&lt;/p&gt;
+
+&lt;p&gt;Man Reader assembles a list of the commands with available man pages on your
+system - this will vary according to what developer tools you have installed.
+These commands are listed for you and you can click on any one to display the
+man page for that command.&lt;/p&gt;
+
+&lt;h2 id=&#34;man-reader-features&#34;&gt;Man Reader Features:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;List of all available man pages on your system.&lt;/li&gt;
+&lt;li&gt;Show only a section of the pages.&lt;/li&gt;
+&lt;li&gt;Search for a man page by name.&lt;/li&gt;
+&lt;li&gt;Display man page in text or HTML (different pages look best in different
+formats).&lt;/li&gt;
+&lt;li&gt;Step back &amp;amp; forward through recently viewed man pages.&lt;/li&gt;
+&lt;li&gt;Live links to &amp;lsquo;See Also&amp;rsquo; entries.&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;Sticky notes&amp;rsquo; at the side to jump to sub-sections in a page.&lt;/li&gt;
+&lt;li&gt;Choose a font and size for the display.&lt;/li&gt;
+&lt;li&gt;Convenient buttons in the toolbar allow quick access to commonly used
+utilities.&lt;/li&gt;
+&lt;li&gt;Sand-boxed for OS X Lion &amp;amp; later.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;man-reader-version-1-8-changes-23-oct-2016&#34;&gt;Man Reader version 1.8 changes (23 Oct 2016):&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;More complete search for man pages, including in third-party IDEs.&lt;/li&gt;
+&lt;li&gt;Fix for glitch when displaying previously selected page on launch.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;man-reader-version-1-7-changes-10-oct-2016&#34;&gt;Man Reader version 1.7 changes (10 Oct 2016):&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Updated for macOS Sierra.&lt;/li&gt;
+&lt;li&gt;List of pages now uses alternating colors even if not using the defaults.&lt;/li&gt;
+&lt;li&gt;Minimum supported system version raised to 10.11.&lt;/li&gt;
+&lt;li&gt;Minor display glitches fixed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;man-reader-version-1-6-changes-13-jul-2016&#34;&gt;Man Reader version 1.6 changes (13 Jul 2016):&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Much improved searching for available man pages, including permissions fix for
+some pages.&lt;/li&gt;
+&lt;li&gt;Fixed error with new search term being over-written.&lt;/li&gt;
+&lt;li&gt;Sand-boxed version now works just as well as the non-sand-boxed so please
+switch back to this version.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;man-reader-version-1-5-changes&#34;&gt;Man Reader version 1.5 changes:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Much improved searching for available man pages.&lt;/li&gt;
+&lt;li&gt;Sand-boxed version now works just as well as the non-sand-boxed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;man-reader-version-1-4-changes&#34;&gt;Man Reader version 1.4 changes:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Fix for plain text view not wrapping correctly for odd-sized fonts.&lt;/li&gt;
+&lt;li&gt;Fix for HTML text view over-riding font colors that may be invisible.&lt;/li&gt;
+&lt;li&gt;Search for missing entry (e.g. g++) no longer requires Enter or Return.&lt;/li&gt;
+&lt;li&gt;Better automatic selection of matching entries while searching.&lt;/li&gt;
+&lt;li&gt;Fix for animation warning message appearing in Console.&lt;/li&gt;
+&lt;li&gt;Status display shows when man page list is being updated.&lt;/li&gt;
+&lt;li&gt;Searching inside a page now allows a minimum of 2 characters (was 3), so flags
+e.g. &amp;lsquo;-b&amp;rsquo; do not need to be escaped.&lt;/li&gt;
+&lt;li&gt;Fixed path for Network Utility in tool bar (moved in OS X 10.9).&lt;/li&gt;
+&lt;li&gt;More information available about the effects of sand-boxing for this app.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;man-reader-version-1-3-changes&#34;&gt;Man Reader version 1.3 changes:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Better formatting of plain text to allow for HTML entities.&lt;/li&gt;
+&lt;li&gt;Fix for font in some HTML pages getting bigger &amp;amp; bigger.&lt;/li&gt;
+&lt;li&gt;Failed search for page will search for a matching man page anyway.&lt;/li&gt;
+&lt;li&gt;Editable apps in toolbar (see Preferences &amp;amp; View menu).&lt;/li&gt;
+&lt;li&gt;Fixed bug when setting custom colors for marker tabs.&lt;/li&gt;
+&lt;li&gt;Changed shortcuts for Find (see Edit menu).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;man-reader-version-1-2-changes&#34;&gt;Man Reader version 1.2 changes:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Customizable colors for text, background, links, found text.&lt;/li&gt;
+&lt;li&gt;Searching for text within pages marks all matches.&lt;/li&gt;
+&lt;li&gt;Pages will adjust line width to suit window size, even in plain text mode.&lt;/li&gt;
+&lt;li&gt;If a search only results in a single page, press Return to display it.&lt;/li&gt;
+&lt;li&gt;More man pages should be located on your system.&lt;/li&gt;
+&lt;li&gt;Fix for bug where app did not always remember full screen setting.&lt;/li&gt;
+&lt;li&gt;Fix for bug where some pages were being added to the history list twice.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;man-reader-version-1-1-changes&#34;&gt;Man Reader version 1.1 changes:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Search for text within a man page.&lt;/li&gt;
+&lt;li&gt;Bookmark frequently visited pages.&lt;/li&gt;
+&lt;li&gt;Search man page list using &amp;ldquo;Starts with&amp;rdquo; or &amp;ldquo;Contains&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Preferences for the marker tabs: choose a pre-made color set or design your
+own.&lt;/li&gt;
+&lt;li&gt;Full screen mode now supported.&lt;/li&gt;
+&lt;li&gt;Custom toolbar configurations now saved &amp;amp; restored correctly.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you have any problems with Man Reader, any suggestions for future versions or
+encounter any bugs, please &lt;a href=&#34;mailto:sarah@troz.net?subject=Man%20Reader&#34;&gt;contact me&lt;/a&gt;.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Time In Words Screen Saver</title>
-      <link>https://troz.net/time-in-words-screen-saver-for-mac/</link>
-      <pubDate>Mon, 07 May 2012 00:00:00 +0000</pubDate>
+<title>Time In Words Screen Saver</title>
+<link>https://troz.net/time-in-words-screen-saver-for-mac/</link>
+<pubDate>Mon, 07 May 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/time-in-words-screen-saver-for-mac/</guid>
-      <description>The latest member of the Time In Words suite of apps is a screen saver module for Macs.
-Version 1.2 updated January 2013: compatible with Lion (OS X 10.7), Mountain Lion (OS X 10.8), Mavericks (OS X 10.9) &amp;amp; Yosemite (OS X 10.10).
-Download Time In Words Screen Saver
-Like Time In Words for iOS and World Time In Words for Mac, it displays the time and date in plain words which are easy to read and comprehend.</description>
-    </item>
+<description>&lt;p&gt;The latest member of the Time In Words suite of apps is a screen saver module
+for Macs.&lt;br /&gt;
+Version 1.2 updated January 2013: compatible with Lion (OS X 10.7), Mountain Lion
+(OS X 10.8), Mavericks (OS X 10.9) &amp;amp; Yosemite (OS X 10.10).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/ScreenSaverIcon128.png&#34; alt=&#34;Time In Words Screen Saver Download&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/screensaver/TimeInWords-ScreenSaver.zip&#34;&gt;Download Time In Words Screen Saver&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Like &lt;a href=&#34;https://troz.net/time-in-words/&#34; title=&#34;Time In Words&#34;&gt;Time In Words for iOS&lt;/a&gt; and &lt;a href=&#34;https://troz.net/time-in-words-for-mac/&#34; title=&#34;Worlds Time In Words for Mac&#34;&gt;World Time In Words for Mac&lt;/a&gt;, it
+displays the time and date in plain words which are easy to read and comprehend.
+While it only shows a single time and date, this can be configured to show your
+local time &amp;amp; date or any available time zone. Since the App Store does not have
+a section for screen savers, the &lt;a href=&#34;https://troz.net/screensaver/TimeInWords-ScreenSaver.zip&#34;&gt;Time In Words screen saver&lt;/a&gt; is available as
+a direct download from my site. Click the link or the icon above to download the
+screen saver as a zip file. If the zip file does not open automatically,
+double-click the file to unzip it. Then double-click the &amp;ldquo;Time In Words Screen
+Saver.saver&amp;rdquo; file to install the screen saver in your System Preferences. You
+will be asked whether you want to install it for the current user only or for
+all users. Selecting &amp;ldquo;All Users&amp;rdquo; will require you to enter your password, so I
+recommend just installing for the current user.&lt;/p&gt;
+
+&lt;p&gt;Scroll to the &amp;ldquo;Other&amp;rdquo; section of the list of screen savers and click &amp;ldquo;Time In
+Words Screen Saver&amp;rdquo; to activate it. Sometimes the installation leaves the screen
+saver selected but not active. If this is the case, select another screen saver
+and then click back on Time In Words.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/images/ScreenSaver1.png&#34;&gt;&lt;img src=&#34;https://troz.net/images/ScreenSaver1-small.png&#34; alt=&#34;Time In Words Screen Saver&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;By default, your local time &amp;amp; date will be displayed. To select a different time
+zone, click the &amp;ldquo;Screen Saver Options…&amp;rdquo; button to display the following:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/images/ScreenSaver2.png&#34;&gt;&lt;img src=&#34;https://troz.net/images/ScreenSaver2-small.png&#34; alt=&#34;Time In Words Screen Saver Options&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Click the &amp;ldquo;Show Alternate Time&amp;rdquo; radio button to enable the time zone list. As
+with Time In Words for Mac, you can type part of a city name in the search field
+to find a zone quickly. Select the zone you want to use and click &amp;ldquo;OK&amp;rdquo;. The
+preview will switch to showing your newly selected time zone.&lt;/p&gt;
+
+&lt;p&gt;For anyone interested in the source code, here is a download link: &lt;a href=&#34;https://troz.net/screensaver/TimeInWordsScreenSaverXcode.zip&#34;&gt;Time In
+Words Screen Saver Xcode project&lt;/a&gt;. This was written using Xcode 4.x so is
+rather out-dated by now, but may prove useful to others wishing to start writing
+their own screen savers.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>World Time In Words for Mac</title>
-      <link>https://troz.net/time-in-words-for-mac/</link>
-      <pubDate>Mon, 19 Mar 2012 00:00:00 +0000</pubDate>
+<title>World Time In Words for Mac</title>
+<link>https://troz.net/time-in-words-for-mac/</link>
+<pubDate>Mon, 19 Mar 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/time-in-words-for-mac/</guid>
-      <description>World Time In Words for Mac version 3.2 is now available through the Mac App Store. This version adds support for macOS Mojave dark mode.
-Version 3 changed the name from &amp;ldquo;Time In Words&amp;rdquo; to &amp;ldquo;World Time In Words&amp;rdquo; as an acknowledgment that the major feature of this app is converting time between different time zones. This update adds the ability to show digital time if you need greater accuracy - just hold down Option as you open the menu.</description>
-    </item>
+<description>&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/au/app/time-in-words/id509085586?mt=8&#34; target=&#34;_blank&#34;&gt;World
+Time In Words for Mac&lt;/a&gt; version 3.2 is now available through the Mac App
+Store. This version adds support for macOS Mojave dark mode.&lt;/p&gt;
+
+&lt;p&gt;Version 3 changed the name from &amp;ldquo;Time In Words&amp;rdquo; to &amp;ldquo;World Time In
+Words&amp;rdquo; as an acknowledgment that the major feature of this app is converting
+time between different time zones. This update adds the ability to show digital
+time if you need greater accuracy - just hold down Option as you open the menu.
+I have also added the ability to show 24-hour time in the menu bar.&lt;/p&gt;
+
+&lt;p&gt;World Time In Words runs as a menu bar utility app that displays your current
+time and date in words. Optionally, it can be set to display a number of time
+zones, in plain English so it is always clear which day is being referred
+to. It shows the time in words in your menu bar all the time if you like, and
+now offers a convenient way to work out what the time will be in other zones at
+a specified local time.&lt;/p&gt;
+
+&lt;p&gt;The first time you run the World Time In Words app, it will appear in your menu
+bar and pop down a menu that looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/WTiW-web-1.png&#34; alt=&#34;World Time In Words starting menu&#34; width=&#34;257&#34; height=&#34;257&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Selecting Preferences&amp;hellip; will take you to a window like
+this&lt;img src=&#34;https://troz.net/images/WTiW-web-2.png&#34; alt=&#34;World Time In Words Preferences&#34; width=&#34;562&#34; height=&#34;398&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&#34;text-align: center;&#34;&gt;Type in part of a city name in the search area
+to find that city and its time zone. Drag or double-click a line in the table on
+the right to move a time zone to the list on the left, which shows the time
+zones that will appear in the menu. Drag a line out of the list on the left to
+remove a zone, or double-click the unwanted line. Drag and drop to re-arrange
+the zones in the selected list.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you have selected some time zones, your menu may look like
+this:&lt;img src=&#34;https://troz.net/images/WTiW-web-3.png&#34; alt=&#34;World Time In Words menu with added time zones&#34; width=&#34;280&#34; height=&#34;667&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&#34;text-align: center;&#34;&gt;Note that the menu will indicate which time
+zones are currently in daylight savings time.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Version 3.0 adds the ability to see all the time digitally if you have a
+temporary need for greater accuracy. Hold down the Option key as you click in
+the menu title and the menu will appear like this:&lt;br /&gt;
+&lt;img src=&#34;https://troz.net/images/WTiW-web-6.png&#34; alt=&#34;World Time In Words digital option&#34; width=&#34;262&#34; height=&#34;521&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To specify what will be displayed in the menu bar, you can toggle &amp;ldquo;Show time in
+words as menu title&amp;rdquo;. If this is checked, you have two other methods for
+adjusting what you will see. Select your preferred accuracy: &amp;ldquo;To closest 5
+minutes&amp;rdquo; or &amp;ldquo;Precise&amp;rdquo;. Use the popup menu to select a time &amp;amp; date format to show
+in the menu bar. You can also choose 24 hour time for the menu title if you
+prefer.&lt;br /&gt;
+&lt;img src=&#34;https://troz.net/images/WTiW-web-4.png&#34; alt=&#34;Menu bar time &amp; date formats&#34; width=&#34;561&#34; height=&#34;396&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To see what time it will be in your selected time zones at various hours during
+your day, choose &amp;ldquo;What time will it be when&amp;hellip;&amp;rdquo; from the menu. Move the slider
+to different hours in your local zone and read what the corresponding time will
+be in your preferred time zones.&lt;br /&gt;
+&lt;img src=&#34;https://troz.net/images/WTiW-web-5.png&#34; alt=&#34;What time will it be when...&#34; width=&#34;514&#34; height=&#34;435&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you want to make World Time In Words start automatically whenever you log in
+to your Mac, check the &amp;ldquo;Auto start&amp;hellip;&amp;rdquo; checkbox. This uses Apple&amp;rsquo;s new methods
+of adding sandboxed items to the login startup list which has two consequences:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;World Time In Words will not show up in your Login Items if you go to System
+Preferences&lt;/li&gt;
+&lt;li&gt;The auto-start will only work if the app is installed in your Applications
+folder.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;While I do not think the second item is a problem, since the App Store
+automatically installs into your Applications folder, I disagree with the policy
+enforced in the first item. It means that if you wish to un-install World Time
+In Words, you should ensure that you have turned off &amp;ldquo;Auto start&amp;hellip;&amp;rdquo; first, as
+there is no easy way to do this from outside the app.&lt;/p&gt;
+
+&lt;p&gt;However, World Time In Words is sandboxed, so it&amp;rsquo;s data and settings are kept in
+their own container and isolated from other apps for better security.&lt;/p&gt;
+
+&lt;p&gt;If you are having any problems with World Time In Words, or you have any
+suggestions for future improvements, please &lt;a href=&#34;mailto:sarah@troz.net?subject=World%20Time%20In%20Words%20-%20Mac&#34;&gt;email me&lt;/a&gt;.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>World Time In Words for iOS</title>
-      <link>https://troz.net/time-in-words/</link>
-      <pubDate>Wed, 08 Feb 2012 00:00:00 +0000</pubDate>
+<title>World Time In Words for iOS</title>
+<link>https://troz.net/time-in-words/</link>
+<pubDate>Wed, 08 Feb 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/time-in-words/</guid>
-      <description>World Time In Words is a clock and time converter app that takes you away from numbers and shows you the time as a complete sentence. No more worrying about whether it is morning or evening or whether it is yesterday, today or tomorrow in some other part of the world.
-Do you plan on phoning an overseas friend in the middle of the night? How about scheduling an online meeting with people in different time zones?</description>
-    </item>
+<description>&lt;p&gt;World Time In Words is a clock and time converter app that takes you away from numbers and shows you the time as a complete sentence. No more worrying about whether it is morning or evening or whether it is yesterday, today or tomorrow in some other part of the world.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/WTiW-iOS.jpg&#34; alt=&#34;Basic display&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Do you plan on phoning an overseas friend in the middle of the night? How about scheduling an online meeting with people in different time zones? Or even checking what time the next big keynote will start in your time?&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/time-in-words/id498403851&#34;&gt;World Time In Words v 5.0&lt;/a&gt; is now available from the App Store.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Set up World Time In Words up with all the time zones you need to check. Scroll through the list to see the local time in each of your selected zones shown as a sentence. This is easier to comprehend and much less prone to error.&lt;/p&gt;
+
+&lt;p&gt;If you need to plan a meeting or phone call, tap &amp;ldquo;What time will it be…&amp;rdquo;. Use the slider to adjust the hour in your local zone and the corresponding hour in your selected world zones will appear.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/WTiW-iOS-2.jpg&#34; alt=&#34;What time will it be&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Tap the &amp;ldquo;+&amp;rdquo; button to add or delete time zones.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/WTiW-iOS-1.jpg&#34; alt=&#34;Edit zones&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Your top three selected time zones can also be added to your Notification Centre as a widget. Click Edit and drag to change the order of time zones in the table to decide which ones appear. Then swipe to your widgets page, scroll to the bottom and click the Edit button to add the Time in Words widget.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/WTiW-iOS-4.jpg&#34; alt=&#34;Today widget&#34; /&gt;&lt;/p&gt;
+</description>
+</item>
     
   </channel>
 </rss>

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>password on TrozWare</title>
     <link>https://troz.net/tags/password/</link>
@@ -8,28 +8,86 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Sun, 03 Jul 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/password/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/password/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Dice Pass Mac Update</title>
-      <link>https://troz.net/post/2016/dice-pass-mac-update/</link>
-      <pubDate>Sun, 03 Jul 2016 00:00:00 +0000</pubDate>
+<title>Dice Pass Mac Update</title>
+<link>https://troz.net/post/2016/dice-pass-mac-update/</link>
+<pubDate>Sun, 03 Jul 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/dice-pass-mac-update/</guid>
-      <description>I recently got an email from someone who had purchased Dice Pass for Mac from the Mac App Store but had been unable to get it to run. This person was using OS X 10.9.3.
-I checked the App Store specifications and it showed that 10.9 was the minimum system requirement, so it should have worked. But going back to my Xcode project, I found that it was set to a minimum of OS X 10.</description>
-    </item>
+<description>&lt;p&gt;I recently got an email from someone who had purchased &lt;a href=&#34;https://troz.net/dicepass/&#34;&gt;Dice Pass&lt;/a&gt; for Mac
+from the &lt;a href=&#34;https://itunes.apple.com/app/dice-pass/id997688302&#34;&gt;Mac App Store&lt;/a&gt; but had been unable to get it to run. This person
+was using OS X 10.9.3.&lt;/p&gt;
+
+&lt;p&gt;I checked the App Store specifications and it showed that 10.9 was the minimum
+system requirement, so it should have worked. But going back to my Xcode
+project, I found that it was set to a minimum of OS X 10.10.&lt;/p&gt;
+
+&lt;p&gt;I tried to re-compile for OS X 10.9 but this failed as the app uses several
+features that are not available prior to 10.10.&lt;/p&gt;
+
+&lt;p&gt;The minimum system version as displayed in the App Store is supposedly deduced
+automatically by the App Store servers from the app&amp;rsquo;s binary. Somehow this was
+incorrect in the App Store, so some people may have bought that app and found
+that it did not work despite them having what was listed as a compatible system.&lt;/p&gt;
+
+&lt;p&gt;If you bought Dice Pass for OS X 10.9 and are unable to run it, I have two
+possible solutions for you:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Upgrade your operating system to at least 10.10.&lt;/li&gt;
+&lt;li&gt;Ask Apple for a refund since it was their error that caused you to buy an app
+that you cannot run.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I have updated the app in the App Store changing nothing but the version number
+and it is now showing the correct minimum system requirement. My apologies if
+you have been inconvenienced by this error.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Dice Pass for Mac</title>
-      <link>https://troz.net/post/2015/dice-pass-for-mac/</link>
-      <pubDate>Sat, 30 May 2015 00:00:00 +0000</pubDate>
+<title>Dice Pass for Mac</title>
+<link>https://troz.net/post/2015/dice-pass-for-mac/</link>
+<pubDate>Sat, 30 May 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2015/dice-pass-for-mac/</guid>
-      <description>We live in a world of passwords and passphrases and there is a constant struggle between having a secure and a memorable password. As a result, many of us re-use passwords even though we know this is a bad idea.
-XKCD had a wonderful comic that illustrated the theory of using a passphrase composed of words that are easy to remember but with a combination that made the passphrase very hard to guess.</description>
-    </item>
+<description>&lt;p&gt;We live in a world of passwords and passphrases and there is a constant struggle
+between having a secure and a memorable password. As a result, many of us re-use
+passwords even though we know this is a bad idea.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://xkcd.com/936/&#34;&gt;XKCD&lt;/a&gt; had a wonderful comic that illustrated the theory of using a
+passphrase composed of words that are easy to remember but with a combination
+that made the passphrase very hard to guess. However even when deciding to use a
+passphrase like this, it is not easy for us humans to avoid using words that
+have meaning for us, particularly when it is something we really need to
+remember.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://world.std.com/~reinhold/diceware.html&#34;&gt;Diceware&lt;/a&gt; was developed to solve this problem. You have a set of 5 dice and
+a list of words assigned to each possible dice roll for 11111 to 66666. You roll
+the five dice and get the matching word from the list. Repeat this for the
+number of words you want to use in your passphrase and you have a random phrase
+that is hopefully still memorable.&lt;/p&gt;
+
+&lt;p&gt;But this sounds like a lot of effort and not something you are likely to do when
+faced by a password entry field on a web page. So &lt;a href=&#34;https://troz.net/dicepass/&#34;&gt;Dice Pass&lt;/a&gt; was written to
+do the work for you quickly and easily.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/DicePass_Mac.png&#34; alt=&#34;Dice Pass for Mac&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Select the number of words you want in your passphrase and see the phrase
+immediately. Keep clicking the &amp;ldquo;Generate New Phrase&amp;rdquo; button until you get a
+phrase you like. If you feel that the computer is not to be trusted when
+generating a random number for the dice rolls, use your real dice and click the
+dice to change them to the roll you got. If you get a passphrase that is good
+except for one or two words, use the Re-Roll button beside those words to get a
+new roll for just that word.&lt;/p&gt;
+
+&lt;p&gt;Dice Pass is available from the &lt;a href=&#34;https://itunes.apple.com/app/dice-pass/id997688302?mt=12&amp;amp;uo=4&#34;&gt;Mac App Store&lt;/a&gt; now.&lt;/p&gt;
+</description>
+</item>
     
   </channel>
 </rss>

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>pic-a-pod on TrozWare</title>
     <link>https://troz.net/tags/pic-a-pod/</link>
@@ -8,27 +8,68 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Sat, 06 Oct 2018 09:38:20 +1000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/pic-a-pod/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/pic-a-pod/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>The End of Pic-a-POD</title>
-      <link>https://troz.net/post/2018/the-end-of-picapod/</link>
-      <pubDate>Sat, 06 Oct 2018 09:38:20 +1000</pubDate>
+<title>The End of Pic-a-POD</title>
+<link>https://troz.net/post/2018/the-end-of-picapod/</link>
+<pubDate>Sat, 06 Oct 2018 09:38:20 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/the-end-of-picapod/</guid>
-      <description>&lt;p&gt;I think I wrote the first version of &lt;a href=&#34;https://picapod.com&#34;&gt;Pic-a-POD&lt;/a&gt; in 2003 and have been updating and maintaining it ever since, but the time has come to shut it down.&lt;/p&gt;</description>
-    </item>
+<description>&lt;p&gt;I think I wrote the first version of &lt;a href=&#34;https://picapod.com&#34;&gt;Pic-a-POD&lt;/a&gt; in 2003 and have been updating and maintaining it ever since, but the time has come to shut it down.&lt;/p&gt;
+
+&lt;p&gt;I haven&amp;rsquo;t been able to find a picture of the original version, but here is one from 2005:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/POD2005.png&#34; alt=&#34;Pic-a-POD 2005&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And here it is today:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/POD2018.png&#34; alt=&#34;Pic-a-POD 2018&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It was written originally as a convenient way to download the daily picture-of-the-day from &lt;a href=&#34;https://www.nationalgeographic.com/photography/photo-of-the-day/&#34;&gt;National Geographic&lt;/a&gt; and use it to set the Mac&amp;rsquo;s Desktop Picture automatically. From there is just grew with more sites added (9 at the moment although I think there have been up to 12 at certain times).&lt;/p&gt;
+
+&lt;p&gt;The main issue was keeping up with the site changes of the various sources. Early versions had each copy of the app interrogate the sites directly which meant that any change to the site broke the app until an update could be released. And without the App Store making updates easy to distribute, this was a problem. Later I switched to having PHP scripts on my server do the data retrieval and store the results in a database. The app then just had to request the data from my server. That way if there was a change, I could react quickly and a fix to the server-side scripts allowed all users to get the new data.&lt;/p&gt;
+
+&lt;p&gt;As my first Objective-C app and my first app on the Mac App Store, Pic-a-POD has always held a place in my affections, and until last week, it was the one app that was always running on my Mac. So what changed? macOS Mojave&amp;rsquo;s dynamic desktops! I turned off Pic-a-POD, and set the Desktop picture to change dynamically through the day and I loved it.&lt;/p&gt;
+
+&lt;p&gt;On the server, I have kept Pic-a-POD updated regularly, adding and removing sites, fixing the scripts to accommodate changes and so on. But the desktop app has languished and has needed an update for many years now. It&amp;rsquo;s networking is primitive and I know so much more about programming for the Mac now that looking at the code is positiviely embarrassing! But it has never been a big seller so a re-write is definitely not economically viable, it would only be for my satisfaction. And if even I am not using it any more, what is the point?&lt;/p&gt;
+
+&lt;p&gt;So I have made the sad decision to shut it down. But what does this mean for users of Pic-a-POD right now?&lt;/p&gt;
+
+&lt;p&gt;Firstly, it is not going away immediately. I will remove it from the App Store, but existing copies are still going to work. If any of the source sites change their data structure, I will not be monitoring this and I will not update the server-side scripts - just turn off that source and carry on with whatever still works. And finally, when the picapod.com domain name expires in 2021, I will not renew it and the app will cease to operate.&lt;/p&gt;
+
+&lt;p&gt;What can you use instead? The default dynamic desktops in Mojave are great although there are only two of them, but I have bought myself an app called &lt;a href=&#34;https://itunes.apple.com/au/app/24-hour-wallpaper/id1226087575?mt=12&#34;&gt;24 Hour Wallpaper&lt;/a&gt; which includes a great range of dynamic desktop pictures.&lt;/p&gt;
+
+&lt;p&gt;So thank you to everyone who has used Pic-a-POD over the years and especially those of you who took the time and trouble to contact me. It has been a fun journey, but there are other apps in my future now.&lt;/p&gt;</description>
+</item>
     
     <item>
-      <title>Pic-a-POD 2.0.4 for Mac</title>
-      <link>https://troz.net/post/2012/pic-a-pod-2-0-4-for-mac/</link>
-      <pubDate>Fri, 11 May 2012 00:00:00 +0000</pubDate>
+<title>Pic-a-POD 2.0.4 for Mac</title>
+<link>https://troz.net/post/2012/pic-a-pod-2-0-4-for-mac/</link>
+<pubDate>Fri, 11 May 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/pic-a-pod-2-0-4-for-mac/</guid>
-      <description> The latest update for Pic-a-POD for Mac is now available through the Mac App Store.
-Bug fix:  selecting an iPhoto pic from the Recent Desktops menu now works correctly.  New features:  Better indication of downloads and when large pics are not yet available Direct link to App Store in Help menu - please rate or review.  </description>
-    </item>
+<description>
+
+&lt;p&gt;The latest update for &lt;a href=&#34;http://www.picapod.com/&#34;&gt;Pic-a-POD for Mac&lt;/a&gt; is now available through the
+&lt;a href=&#34;http://itunes.apple.com/app/pic-a-pod/id477909802?mt=12&amp;uo=4&#34; target=&#34;_blank&#34;&gt;Mac
+App Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;bug-fix&#34;&gt;Bug fix:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;selecting an iPhoto pic from the Recent Desktops menu now works correctly.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;new-features&#34;&gt;New features:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Better indication of downloads and when large pics are not yet available&lt;/li&gt;
+&lt;li&gt;Direct link to App Store in Help menu - please rate or review.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+</item>
     
   </channel>
 </rss>

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>testflight on TrozWare</title>
     <link>https://troz.net/tags/testflight/</link>
@@ -8,19 +8,109 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Sun, 24 Apr 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/testflight/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/testflight/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>How To Confuse TestFlight</title>
-      <link>https://troz.net/post/2016/how-to-confuse-testflight/</link>
-      <pubDate>Sun, 24 Apr 2016 00:00:00 +0000</pubDate>
+<title>How To Confuse TestFlight</title>
+<link>https://troz.net/post/2016/how-to-confuse-testflight/</link>
+<pubDate>Sun, 24 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/how-to-confuse-testflight/</guid>
-      <description>&lt;p&gt;I ran into an unusual problem when testing my latest app: &amp;ldquo;&lt;a href=&#34;https://troz.net/what-is-my-speed/&#34;&gt;What Is My
+<description>&lt;p&gt;I ran into an unusual problem when testing my latest app: &amp;ldquo;&lt;a href=&#34;https://troz.net/what-is-my-speed/&#34;&gt;What Is My
 Speed?&lt;/a&gt;&amp;rdquo;. It is now available from the &lt;a href=&#34;https://itunes.apple.com/app/what-is-my-speed/id1091394524&#34;&gt;iTunes App Store&lt;/a&gt;, but getting
-there was a struggle.&lt;/p&gt;</description>
-    </item>
+there was a struggle.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;#tldr&#34;&gt;TL;DR&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Xcode is terrible at renaming projects, so it is a really good idea to have
+worked out your app&amp;rsquo;s name before starting. I would even recommend creating an
+app ID in your Apple Developer account and registering the app name in iTunes
+Connect. Only once you get to iTunes Connect will the name be checked for
+uniqueness. Searching the App Stores is not enough as it does not cover
+un-released apps or apps that are not available in your country.&lt;/p&gt;
+
+&lt;p&gt;So I set up my app. I was hoping for &amp;ldquo;What&amp;rsquo;s My Speed?&amp;rdquo; but was happy with &amp;ldquo;What
+Is My Speed?&amp;ldquo;.&lt;/p&gt;
+
+&lt;p&gt;Next step was to create the project in Xcode which I did using the app name and
+manually entering the bundle identifier that I had registered at Apple
+Developer. Xcode accepted the name without any warnings and created the default
+targets using that name.&lt;/p&gt;
+
+&lt;p&gt;In the default unit testing file, the module was defined like this:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt; @testable &lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;What&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Is_My_Speed&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;which made me think that Xcode was quite happy to have parsed the app name as
+required to replace any unwanted characters to suit.&lt;/p&gt;
+
+&lt;p&gt;The app was built, passed all unit tests, profiled, analyzed, tested on real
+devices as well as the simulators and uploaded to TestFlight.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;BARRRPPPP!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/TestFlight_error.png&#34; alt=&#34;This app cannot be installed&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;What?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;(I forgot to take a screenshot but found a similar one online. Thanks &lt;a href=&#34;https://www.simpletechs.net/apps/easy-fix-for-testflight-problem-after-restoring-from-backup/&#34;&gt;Simple
+Techs&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I have had experience with TestFlight&amp;rsquo;s oddities in the past, so I incremented
+the build number and tried again, thinking that maybe there had been a
+processing issue. Same result.&lt;/p&gt;
+
+&lt;p&gt;This started a very frustrating 24 hours as I ran through all the possibilities
+I could think of or find suggested on the net. Due to disastrous Australian
+internet speeds, especially uploads, each attempt took from 40 - 120 minutes.
+About 5 minutes to implement the next idea, 25 minutes upload time, then the
+rest waiting for Apple to process the app so I could try again.&lt;/p&gt;
+
+&lt;p&gt;Here is what I tried:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Uploaded a fresh build.&lt;/li&gt;
+&lt;li&gt;Removed Bitcode.&lt;/li&gt;
+&lt;li&gt;Fixed the code signing identity which was set to iOS Developer for some
+reason.&lt;/li&gt;
+&lt;li&gt;Manually specified the provisioning profiles for all three components (iPhone
+app, WatchKit app, WatchKit Extension).&lt;/li&gt;
+&lt;li&gt;Manually selected the code signing identity for the provisioning profiles.&lt;/li&gt;
+&lt;li&gt;Uploaded using Application Loader instead of Xcode.&lt;/li&gt;
+&lt;li&gt;Removed third-party framework.&lt;/li&gt;
+&lt;li&gt;Removed WatchKit app.&lt;/li&gt;
+&lt;li&gt;Revoked my distribution profile, re-created it and updated all provisioning
+profiles.&lt;/li&gt;
+&lt;li&gt;Created a completely blank project with same app name and bundle identifier.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;As you can see from this list, I thought it was a code signing or profile error.
+Using &lt;a href=&#34;https://itunes.apple.com/app/apple-configurator-2/id1037126344&#34;&gt;Apple Configurator 2&lt;/a&gt; (the modern version of iPhone Configuration
+Utility), I was able to get the logs from my iPhone and entries like the
+following seemed to confirm this:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code class=&#34;language-Error&#34;&gt;installd.staging/temp.2LWJ2h/extracted/Payload/What Is My Speed?.app : 0xe8008017 (A signed resource has been added, modified, or deleted.)}```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;But when I got to the stage of a completely blank app still failing, I suddenly
+thought of the question mark. With the benefit of my preamble to this post, you
+all probably got there long before I did, but I got there in the end.&lt;/p&gt;
+
+&lt;p&gt;The solution was to remove the question mark from the names of the targets in
+Xcode. I had to fix up the module names in my unit testing files, but apart from
+that, there were no changes. After this I was able to upload the complete app to
+TestFlight and install it on my iPhone.&lt;/p&gt;
+
+&lt;p&gt;It is possible that it was the Product Names that were the issue, rather than
+the target name as in Build Settings, Product Name is set to be &lt;code&gt;$(TARGET_NAME)&lt;/code&gt;
+by default but I didn&amp;rsquo;t test that. Maybe next time&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;a name=&#34;tldr&#34;&gt;TL;DR&lt;/a&gt; Do not put any unusual characters in your target names.
+Alphanumerics and spaces are OK, but I am not sure about anything else.&lt;/p&gt;</description>
+</item>
     
   </channel>
 </rss>

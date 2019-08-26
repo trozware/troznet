@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>icons on TrozWare</title>
     <link>https://troz.net/tags/icons/</link>
@@ -8,120 +8,638 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Sun, 18 Feb 2018 10:19:18 +1000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/icons/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/icons/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Icon Builder 5</title>
-      <link>https://troz.net/post/2018/icon-builder-5/</link>
-      <pubDate>Sun, 18 Feb 2018 10:19:18 +1000</pubDate>
+<title>Icon Builder 5</title>
+<link>https://troz.net/post/2018/icon-builder-5/</link>
+<pubDate>Sun, 18 Feb 2018 10:19:18 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/icon-builder-5/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;Icon Builder 5.0&lt;/a&gt; is now available from the &lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Mac App Store&lt;/a&gt;. This is a complete re-write for better compatibility with Apple&amp;rsquo;s latest icon requirements. Read on to see what I have fixed and how&amp;hellip;&lt;/p&gt;</description>
-    </item>
+<description>&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;Icon Builder 5.0&lt;/a&gt; is now available from the &lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Mac App Store&lt;/a&gt;. This is a complete re-write for better compatibility with Apple&amp;rsquo;s latest icon requirements. Read on to see what I have fixed and how&amp;hellip;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;problems&#34;&gt;Problems&lt;/h2&gt;
+
+&lt;p&gt;When I came to create a new iOS app recently, I found out that Icon Builder had fallen behind Apple&amp;rsquo;s requirements in three ways:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The 1024 x 1024 marketing icon is now supposed to be inside the app&amp;rsquo;s icon set.&lt;/li&gt;
+&lt;li&gt;Icon files must have their color profile set to sRGB (P3 is also valid for iOS apps).&lt;/li&gt;
+&lt;li&gt;iOS icon files must have no transparent pixels and the alpha channel must be removed from the files.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;When I set to work fixing these problems I soon ran into issues with the existing version of Icon Builder which was created 6 years ago.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It was written in Objective-C which I am increasingly finding difficult and un-safe to write.&lt;/li&gt;
+&lt;li&gt;The app was written when I was very much a beginner in Mac apps and this is obvious from the code&amp;hellip;&lt;/li&gt;
+&lt;li&gt;There was a lot of legacy code left over from previous changes and extensions.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So I decided that the most interesting thing to do would be to start almost from scratch and re-write the app in Swift using better techniques.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-re-write&#34;&gt;The Re-write&lt;/h2&gt;
+
+&lt;p&gt;Now instead of the Massive View Controller, I have a larger set of small files, each with their own responsibility. Enums and structs dictate the various requirements for the different devices or app types. Other structs deal with creating the images, the folder management and writing out the files. An NSImage extension handles the resizing and reformatting of the images. This is now an app that I would not be ashamed to show anyone, except perhaps for the need to add more unit tests.&lt;/p&gt;
+
+&lt;h2 id=&#34;adding-a-color-profile&#34;&gt;Adding a color profile&lt;/h2&gt;
+
+&lt;p&gt;But then we get to the new features needed. Adding the 1024x1024 icon to the app icon set was easy, especially after the re-factoring. But what about the color profile?&lt;/p&gt;
+
+&lt;p&gt;This was not as easy as I expected - there is no built in command to apply a profile but here is the solution that I finally found:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;extension NSImage {
+
+  func convertImageTo_sRGB() throws -&amp;gt; Data {
+      guard let colorSpace = CGColorSpace(name: CGColorSpace.sRGB),
+          let cgi = self.cgImage(forProposedRect: nil,
+                                 context: nil,
+                                 hints: nil) else {
+                                  throw ImageError.cantMakeCgImage
+      }
+
+      let ci = CIImage(cgImage: cgi)
+
+      guard let pngData = CIContext().pngRepresentation(of: ci,
+                                                        format: kCIFormatRGBA8,
+                                                        colorSpace: colorSpace) else {
+          throw ImageError.cantConvertToPng
+      }
+      return pngData
+  }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This takes the NSImage and converts it to a CGImage, first checking that the appropriate color space exists.&lt;/li&gt;
+&lt;li&gt;Then it uses the Core Graphics CGImage to create a Core Image CIImage.&lt;/li&gt;
+&lt;li&gt;There is a new API in macOS 10.13 to extract the png data from a CIImage while assigning a color profile.&lt;/li&gt;
+&lt;li&gt;This Data can then be written directly to a file and there you have a PNG with an attached color profile.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;transparency&#34;&gt;Transparency&lt;/h2&gt;
+
+&lt;p&gt;Now problems 1 &amp;amp; 2 have been solved. Problem 3 was the most difficult. It turned out to be a two-part problem because an image file can have no transparent pixels but still have an alpha channel in the file data.&lt;/p&gt;
+
+&lt;p&gt;At first, I thought maybe I could just circumvent the whole problem by converting the images to JPEGs which have no transparency or alpha channel. Using the code above, I just changed it to getting the &lt;code&gt;jpegRepresentation&lt;/code&gt; instead and saving with a .jpg file extension.&lt;/p&gt;
+
+&lt;p&gt;While this solved the alpha channel problem, the transparent parts of the icon just went black which was a not a good look.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Transparent-Jpeg.png&#34; alt=&#34;Transparent image converted to JPEG&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;For anyone horrified at my use of force-unwrapping, I never do this in a production app but in a playground, it makes the code shorter and it doesn&amp;rsquo;t really matter if I get a crash there.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;converting-transparent-pixels-to-white&#34;&gt;Converting transparent pixels to white&lt;/h3&gt;
+
+&lt;p&gt;So the first step must be to set the transparent parts of the image to another color. Searching for solutions online, most of the ones I came up with were very slow (processing each pixel) or so complicated that I didn&amp;rsquo;t understand them, and I hate just copy-pasting code that I don&amp;rsquo;t understand at all.&lt;/p&gt;
+
+&lt;p&gt;But eventually I found something that I morphed into this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;extension NSImage {
+
+    func makeAlphaWhite() -&amp;gt; NSImage {
+        guard let imageData = self.tiffRepresentation,
+            let imageRep = NSBitmapImageRep(data: imageData),
+            let jpegData = imageRep.representation(using: .jpeg, properties: [
+                NSBitmapImageRep.PropertyKey.compressionFactor: NSNumber(value: 1.0)
+                ]),
+            let jpegImage = NSImage(data: jpegData) else {
+                return image
+        }
+        return jpegImage
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It used basically the same trick of converting the image into a JPEG but doing it this way via &lt;code&gt;NSBitmapImageRep&lt;/code&gt; turned the transparent pixels white instead of black. And as you can see, this gave a much better looking image:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/MakeAlphaWhite.png&#34; alt=&#34;Transparent portions converted to white&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now I was able to continue with my plans to have JPEGs rule the world! This worked really well in my early tests but then I came to try a Stickers app and the icons didn’t work. I couldn&amp;rsquo;t even drag them in manually! Back to the Apple docs and I see that icons must be PNGs.&lt;/p&gt;
+
+&lt;p&gt;When I changed the transparent pixels to white, added the color space and then saved the PNG data, I got an image that looked correct but the file still contained an alpha channel. So I had to come up with a method that re-wrote the PNG data in such a way that it never contained any alpha data at all.&lt;/p&gt;
+
+&lt;h3 id=&#34;removing-the-alpha-channel&#34;&gt;Removing the alpha channel&lt;/h3&gt;
+
+&lt;p&gt;Graphics experts are probably groaning aloud by now, but I did eventually arrive at a solution, however hacky:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;extension NSImage {
+
+    func convertImageTo_sRGB_noAlpha() throws -&amp;gt; Data {
+        guard let colorSpace = CGColorSpace(name: CGColorSpace.sRGB),
+            let cgi = self.cgImage(forProposedRect: nil,
+                                   context: nil,
+                                   hints: nil) else {
+                                    throw ImageError.cantMakeCgImage
+        }
+
+        let ci = CIImage(cgImage: cgi)
+        guard let jpgData = CIContext().jpegRepresentation(of: ci,
+                                                           colorSpace: colorSpace) else {
+            throw ImageError.cantConvertToJpg
+        }
+        guard let jpegImage = NSImage(data: jpgData) else {
+            throw ImageError.cantConvertToJpgImage
+        }
+        let pngData = try jpegImage.convertImageTo_sRGB()
+        return pngData
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Take the image &lt;strong&gt;after&lt;/strong&gt; changing the transparent pixels to white.&lt;/li&gt;
+&lt;li&gt;Convert it to JPEG data with the required color space.&lt;/li&gt;
+&lt;li&gt;Convert the JPEG data back to an image - this will contain &lt;strong&gt;NO&lt;/strong&gt; alpha data.&lt;/li&gt;
+&lt;li&gt;Use the original routine to convert this JPEG into PNG data with the correct color space.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Running this in the playground looks like this:
+&lt;img src=&#34;https://troz.net/images/TransparentPng.png&#34; alt=&#34;Creating non-transparent PNG in playground&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And as you can see from the file info, it results in a file with the correctly assigned color profile and no alpha channel:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/FileInfo.png&#34; alt=&#34;Final result file info&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The double shuffle sounds time-consuming and in-efficient but it really doesn&amp;rsquo;t take long. In my tests, by far the longest part of creating an icon set is opening the file dialog.&lt;/p&gt;
+
+&lt;h2 id=&#34;future-plans&#34;&gt;Future plans&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Add more unit tests.&lt;/li&gt;
+&lt;li&gt;Work out how to replace the transparent pixels with a selected color.&lt;/li&gt;
+&lt;li&gt;Offer better cropping and image positioning options.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+
+&lt;p&gt;For resizing and cropping images, I use &lt;a href=&#34;https://mattgemmell.com/imagecrop-source-code/&#34;&gt;Matt Gemmell&amp;rsquo;s NSImage+MGCropExtensions&lt;/a&gt; and for further reading, I recommend Apple&amp;rsquo;s Human Interface Guidelines concerning app icons for &lt;a href=&#34;https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/app-icon/&#34;&gt;iOS&lt;/a&gt; and &lt;a href=&#34;https://developer.apple.com/macos/human-interface-guidelines/icons-and-images/app-icon/&#34;&gt;macOS&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note: here is Australia we use the spelling &lt;strong&gt;colour&lt;/strong&gt; but for consistency with the code samples, I have used &lt;strong&gt;color&lt;/strong&gt; throughout the text.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+</item>
     
     <item>
-      <title>How much work does Icon Builder save you?</title>
-      <link>https://troz.net/post/2016/how-much-work-does-icon-builder-save-you/</link>
-      <pubDate>Sat, 17 Sep 2016 00:00:00 +0000</pubDate>
+<title>How much work does Icon Builder save you?</title>
+<link>https://troz.net/post/2016/how-much-work-does-icon-builder-save-you/</link>
+<pubDate>Sat, 17 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/how-much-work-does-icon-builder-save-you/</guid>
-      <description>Icon Builder is a Mac app that takes a single image file and creates all the different image sizes that you need to make a set of icons for your app: Mac, iPhone, iPad, iOS Universal or Apple Watch.
-Version 4, released 16 September 2016 is available through the Mac App Store.
-What&amp;rsquo;s New in Version 4:  Added support for iMessage apps and Sticker Pack apps. Added support for creating Mac .</description>
-    </item>
+<description>
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;Icon Builder&lt;/a&gt; is a Mac app that takes a single image file and creates all
+the different image sizes that you need to make a set of icons for your app:
+Mac, iPhone, iPad, iOS Universal or Apple Watch.&lt;/p&gt;
+
+&lt;p&gt;Version 4, released 16 September 2016 is available through the &lt;a href=&#34;https://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Mac App
+Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-s-new-in-version-4&#34;&gt;What&amp;rsquo;s New in Version 4:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Added support for iMessage apps and Sticker Pack apps.&lt;/li&gt;
+&lt;li&gt;Added support for creating Mac .icns files.&lt;/li&gt;
+&lt;li&gt;Better removal of alpha channel for Apple Watch icons.&lt;/li&gt;
+&lt;li&gt;Clearer usage instructions in ReadMe files.&lt;/li&gt;
+&lt;li&gt;iTunes Artwork folders will no longer be over-written with the latest image
+files.&lt;/li&gt;
+&lt;li&gt;Supports macOS Sierra and Xcode 8&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/IconBuilder.png&#34; alt=&#34;Icon Builder&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;While working on version 4 and accommodating all these new icon sets (and
+wishing I had the time to re-write the app in Swift&amp;hellip;), I counted up all the
+icon files that Icon Builder makes for each app type:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;App Type&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Number of Icons&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Mac&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;iPhone&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;iPhone supporting pre iOS 7&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;11&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;iPad&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;9&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;iPad supporting pre iOS 7&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;13&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;iOS Universal&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;14&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;iOS Universal supporting pre iOS 7&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;20&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Apple Watch (also requires iOS app icons)&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Sticker Pack app&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;11&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;iMessages app&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;14&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;iMessages app Messages extension&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;So as you can see, Icon Builder is doing a lot of work for you. It also names
+all the icon files using the expected format, stores them in an concept folder,
+creates the JSON file that identifies them all to Xcode and optionally installs
+them in your Xcode project automatically. That’s a lot of value for dragging in
+an icon and clicking a button!&lt;/p&gt;
+
+&lt;p&gt;So next time your designer sends you the twentieth tweaked icon for the day,
+don&amp;rsquo;t get mad. Just drop it into Icon Builder and sit back while it does all the
+work. (No need to tell the designer that&amp;hellip;)&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Icon Builder 3.2 Released</title>
-      <link>https://troz.net/post/2016/icon-builder-32-released/</link>
-      <pubDate>Wed, 10 Feb 2016 00:00:00 +0000</pubDate>
+<title>Icon Builder 3.2 Released</title>
+<link>https://troz.net/post/2016/icon-builder-32-released/</link>
+<pubDate>Wed, 10 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/icon-builder-32-released/</guid>
-      <description>Icon Builder 3.2 is now available from the Mac App Store.
- Icons for Apple Watch apps now have their alpha channel removed. Tidier folder structure for related files (iTunes Artwork files and Read Me). Updated to work with Xcode 7&amp;rsquo;s Assets.xcassets folders. Creates iPad Pro icons for Xcode 7.2 or later. Fix for Retina Macs creating double-sized images.  </description>
-    </item>
+<description>&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Icon Builder 3.2&lt;/a&gt; is now available from the Mac App Store.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Icons for Apple Watch apps now have their alpha channel removed.&lt;/li&gt;
+&lt;li&gt;Tidier folder structure for related files (iTunes Artwork files and Read Me).&lt;/li&gt;
+&lt;li&gt;Updated to work with Xcode 7&amp;rsquo;s Assets.xcassets folders.&lt;/li&gt;
+&lt;li&gt;Creates iPad Pro icons for Xcode 7.2 or later.&lt;/li&gt;
+&lt;li&gt;Fix for Retina Macs creating double-sized images.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+</item>
     
     <item>
-      <title>Possible issues with Icon Builder &amp; Watch icons</title>
-      <link>https://troz.net/post/2016/possible-issues-with-iconbuilder/</link>
-      <pubDate>Sat, 06 Feb 2016 00:00:00 +0000</pubDate>
+<title>Possible issues with Icon Builder &amp; Watch icons</title>
+<link>https://troz.net/post/2016/possible-issues-with-iconbuilder/</link>
+<pubDate>Sat, 06 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/possible-issues-with-iconbuilder/</guid>
-      <description>It has come to my attention that there are two possible issues with Icon Builder 3.0.1 when using icons created for an Apple Watch app. Once of them is something I can fix and the other appears to be a bug in Xcode 7.2
-Update: Version 3.2 of Icon Builder is now available in the Mac App Store. This removes the alpha channel from icons for a watch app.
-The first problem is that iTines Connect now requires that the icons for an Apple Watch app include no alpha channel.</description>
-    </item>
+<description>&lt;p&gt;It has come to my attention that there are two possible issues with Icon Builder
+3.0.1 when using icons created for an Apple Watch app. Once of them is something
+I can fix and the other appears to be a bug in Xcode 7.2&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; Version 3.2 of Icon Builder is now available in the &lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Mac App
+Store&lt;/a&gt;. This removes the alpha channel from icons for a watch app.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The first problem is that iTines Connect now requires that the icons for an
+Apple Watch app include no alpha channel. This is becoming an increasing trend
+with it first having applied to the large icon file you upload directly to
+iTunes Connect, then to screen shots. I expect it to extend to iOS app icons
+soon, but hopefully Mac app icons can continue to include transparency.&lt;/p&gt;
+
+&lt;p&gt;With Apple Watch icons, you are supposed to create a set of square icons and
+watchOS or iTunesConnect applies the rounding mask. Presumably this is more
+complicated if the icon contains an alpha channel even if there are no
+transparent pixels. If your Watch app icons contain an alpha channel, you will
+see errors like this after uploading your app to iTunes Connect:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Invalid Icon - The watch application &amp;lsquo;AppName.app/Watch/AppName WatchKit
+App.app&amp;rsquo; contains an icon file &amp;lsquo;AppName.app/Watch/AppName WatchKit
+App.app/AppIcon-Watch24x24@2x.png&amp;rsquo; with an alpha channel. Icons should not
+have an alpha channel.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;You will probably get this error message for every icon size in the Watch app (8
+in total). Until I release a new version of Icon Builder that allows for this
+this, I suggest you use this &lt;a href=&#34;https://www.cocoacontrols.com/controls/alpha-channel-remover&#34;&gt;Alpha Channel Remover app&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In your Xcode project, go to WatchKit App Assets.xcassets, select the AppIcon
+set, right-click and choose &amp;ldquo;Show in Finder&amp;rdquo;. A folder will open containing
+eight .png files and one .json file. Drag &amp;amp; drop the .png files into the Alpha
+Channel Remover window and click the &amp;ldquo;Remove Alpha Channel&amp;rdquo; button. This will
+replace all those image files with new versions without alpha channels. To
+confirm this, select any of the images and press Command-I to get info. In the
+More Info section, you will see &amp;ldquo;Alpha channel: No&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;You can now submit your app again, but that only solves one of the issues.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The other problem is that you will get a warning about the 44x44@2x.png icon
+file.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Invalid Icon Name - The watch application &amp;lsquo;AppName.app/Watch/AppName WatchKit
+App.app&amp;rsquo; contains an invalid icon file name &amp;lsquo;AppName.app/Watch/AppName
+WatchKit App.app/AppIcon-Watch44x44@2x.png&amp;rsquo;. Make sure that icon file names
+follow the pattern&lt;br&gt; &amp;ldquo;&lt;code&gt;*&amp;lt;dimension&amp;gt;@&amp;lt;scale&amp;gt;x.png&lt;/code&gt;&amp;rdquo; and they match the
+required dimensions. Please visit &lt;a href=&#34;https://developer.apple.com/watchkit/&#34;&gt;https://developer.apple.com/watchkit/&lt;/a&gt; for
+more information.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As you can see in the error message, the icon name (which is set by Xcode) does
+conform to the required pattern, and the image is the correct size. This appears
+to be a &lt;a href=&#34;http://www.openradar.me/23801324&#34;&gt;bug in Xcode 7.2&lt;/a&gt; but does not stop you from submitting your app as
+it is only a warning and not an error. Presumably this will be fixed in later
+version of Xcode. I am running Xcode 7.2.1 and still see this warning.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Icon Builder 3.0.1</title>
-      <link>https://troz.net/post/2015/icon-builder-3.0.1/</link>
-      <pubDate>Tue, 17 Mar 2015 00:00:00 +0000</pubDate>
+<title>Icon Builder 3.0.1</title>
+<link>https://troz.net/post/2015/icon-builder-3.0.1/</link>
+<pubDate>Tue, 17 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2015/icon-builder-3.0.1/</guid>
-      <description>So why an announcement for such a minor upgrade?
-Version 3.0 got no announcement because it was not the release I wanted.
-Having downloaded the Xcode 6.2 &amp;amp; 6.3 betas, I had worked out what icons were needed to a WatchKit app. This, combined with several other changes, made me bump the version number to 3.0.
-Sadly, Apple rejected the update because it referred to pre-release products. So I pulled all mentions of WatchKit out of the interface and meta data and got 3.</description>
-    </item>
+<description>
+
+&lt;p&gt;So why an announcement for such a minor upgrade?&lt;/p&gt;
+
+&lt;p&gt;Version 3.0 got no announcement because it was not the release I wanted.&lt;/p&gt;
+
+&lt;p&gt;Having downloaded the Xcode 6.2 &amp;amp; 6.3 betas, I had worked out what icons were
+needed to a WatchKit app. This, combined with several other changes, made me
+bump the version number to 3.0.&lt;/p&gt;
+
+&lt;p&gt;Sadly, Apple rejected the update because it referred to pre-release products. So
+I pulled all mentions of WatchKit out of the interface and meta data and got 3.0
+released.&lt;/p&gt;
+
+&lt;p&gt;After the Apple keynote on March 9th, I re-enabled the WatchKit portions of the
+app and re-submitted to the App Store, hoping that with the WatchKit SDK now
+part of the official Xcode release, Apple&amp;rsquo;s reviewers would allow it to get
+through this time.&lt;/p&gt;
+
+&lt;p&gt;This worked - in fact the app was reviewed and accepted within 6 days - so now
+Icon Builder adds WatchKit to its list of supported platforms.&lt;/p&gt;
+
+&lt;p&gt;Actually, Apple may have done me a favour in rejecting the first one as they
+changed the specifications for the icons slightly between Xcode 6.2 beta and
+Xcode 6.2 release.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;Icon Builder page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://itunes.apple.com/us/app/icon-builder/id552293482?mt=12&amp;amp;uo=4&#34;&gt;Mac App Store link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;what-s-new-in-version-3&#34;&gt;What’s New in version 3?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Support for WatchKit app icons (version 3.0.1)&lt;/li&gt;
+&lt;li&gt;Simplified interface: removed display of smaller icons.&lt;/li&gt;
+&lt;li&gt;Fix for @3x images not being saved when you selected iOS 6 support.&lt;/li&gt;
+&lt;li&gt;iTunesArtwork@2x file now saved as a JPG to avoid iTunes Connect errors.&lt;/li&gt;
+&lt;li&gt;Removed CarPlay icon - Xcode sometimes gave errors when this was included.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+</item>
     
     <item>
-      <title>Icon Builder &amp; iOS 7</title>
-      <link>https://troz.net/post/2013/icon-builder-ios-7/</link>
-      <pubDate>Mon, 23 Sep 2013 00:00:00 +0000</pubDate>
+<title>Icon Builder &amp; iOS 7</title>
+<link>https://troz.net/post/2013/icon-builder-ios-7/</link>
+<pubDate>Mon, 23 Sep 2013 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2013/icon-builder-ios-7/</guid>
-      <description>Icon Builder 1.2 was released on 18 September 2013.
-It was an update with 2 new functions:
- The ability to create images to suit an Xcode 5 assets library The ability to create icons with the required sizes for IOS 7 apps.  Knowing that iOS 7 apps can only be built using Xcode 5, I linked the switch for these 2 abilities in a single check box.
-The problem was not really that they were in a single checkbox but that I had labelled it badly, so it was not obvious that this was what needed to be checked to create iOS 7 sized icon files.</description>
-    </item>
+<description>&lt;p&gt;Icon Builder 1.2 was released on 18 September 2013.&lt;br /&gt;
+It was an update with 2 new functions:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The ability to create images to suit an Xcode 5 assets library&lt;/li&gt;
+&lt;li&gt;The ability to create icons with the required sizes for IOS 7 apps.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Knowing that iOS 7 apps can only be built using Xcode 5, I linked the switch for
+these 2 abilities in a single check box.&lt;br /&gt;
+The problem was not really that they were in a single checkbox but that I had labelled
+it badly, so it was not obvious that this was what needed to be checked to create
+iOS 7 sized icon files.&lt;/p&gt;
+
+&lt;p&gt;After some feedback from early users, it became clear to me that this was not
+enough. So 1.2.1 is now waiting for Apple&amp;rsquo;s approval.&lt;br /&gt;
+The changes in this version are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;More informative labelling of the checkbox.&lt;/li&gt;
+&lt;li&gt;The checkbox is checked by default is Xcode 5 is installed&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;While waiting for the new version to be approved, please be aware that iOS 7
+icon sizes will only be generated if you select &amp;ldquo;Check Assets (for Xcode 5.x or
+later)&amp;rdquo;&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Icon apps updated</title>
-      <link>https://troz.net/post/2013/icon-apps-updated/</link>
-      <pubDate>Thu, 19 Sep 2013 00:00:00 +0000</pubDate>
+<title>Icon apps updated</title>
+<link>https://troz.net/post/2013/icon-apps-updated/</link>
+<pubDate>Thu, 19 Sep 2013 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2013/icon-apps-updated/</guid>
-      <description>Icns Maker and Icon Builder have both just been updated to support Xcode 5.
-Icon Builder is a Mac app that takes your images and creates all the required icon files for use in your iOS apps.
-It now supports Xcode 5&amp;rsquo;s image assets folders and if you are using Xcode 5, it will create the icon sizes required for iOS 7 app.
-Icns Maker is a Mac app that takes your images and creates icons for use in your Mac apps.</description>
-    </item>
+<description>&lt;p&gt;&lt;a href=&#34;https://itunes.apple.com/au/app/icns-maker/id550942266?mt=12&#34; target=&#34;_blank&#34;&gt;Icns
+Maker&lt;/a&gt; and
+&lt;a href=&#34;https://itunes.apple.com/au/app/icon-builder/id552293482?mt=12&#34; target=&#34;_blank&#34;&gt;Icon
+Builder&lt;/a&gt; have both just been updated to support Xcode 5.&lt;/p&gt;
+
+&lt;p&gt;Icon Builder is a Mac app that takes your images and creates all the required
+icon files for use in your iOS apps.&lt;br /&gt;
+It now supports Xcode 5&amp;rsquo;s image assets folders and if you are using Xcode 5, it will
+create the icon sizes required for iOS 7 app.&lt;/p&gt;
+
+&lt;p&gt;Icns Maker is a Mac app that takes your images and creates icons for use in your
+Mac apps.&lt;br /&gt;
+For Xcode 4 or earlier, it creates a .icns file.&lt;br /&gt;
+For Xcode 5, it creates a folder of images for use in your project&amp;rsquo;s image
+assets folder.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Icns Maker &amp; Icon Builder updated</title>
-      <link>https://troz.net/post/2013/icns-maker-icon-builder-updated/</link>
-      <pubDate>Sat, 19 Jan 2013 00:00:00 +0000</pubDate>
+<title>Icns Maker &amp; Icon Builder updated</title>
+<link>https://troz.net/post/2013/icns-maker-icon-builder-updated/</link>
+<pubDate>Sat, 19 Jan 2013 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2013/icns-maker-icon-builder-updated/</guid>
-      <description>January 18th 2013:
-Both of the icon building apps have now been updated to fix a but that made incorrect icon sizes when running on a Retina MacBook Pro.
-Icns Maker uses your image to create an icns file for Mac apps.
+<description>&lt;p&gt;January 18th 2013:&lt;/p&gt;
 
-Icon Builder uses your image to create the suite of icon files needed for iOS apps.</description>
-    </item>
+&lt;p&gt;Both of the icon building apps have now been updated to fix a but that made
+incorrect icon sizes when running on a Retina MacBook Pro.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/icns-maker/&#34; title=&#34;Icns Maker&#34;&gt; Icns Maker&lt;/a&gt; uses your image to create an icns file for Mac apps.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/icns-maker/id550942266?mt=12&amp;uo=4&#34; target=&#34;itunes_store&#34;&gt;&lt;img style=&#34;border: 0;&#34; alt=&#34;Icns Maker - TrozWare&#34; src=&#34;http://r.mzstatic.com/images/web/linkmaker/badge_macappstore-lrg.gif&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34; title=&#34;Icon Builder&#34;&gt;Icon Builder&lt;/a&gt; uses your image to create the suite of icon files needed for
+iOS apps.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482?mt=12&amp;uo=4&#34; target=&#34;itunes_store&#34;&gt;&lt;img style=&#34;border: 0;&#34; alt=&#34;Icon Builder - TrozWare&#34; src=&#34;http://r.mzstatic.com/images/web/linkmaker/badge_macappstore-lrg.gif&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Icon Makers &amp; Retina Macs</title>
-      <link>https://troz.net/post/2013/icon-makers-retina-macs/</link>
-      <pubDate>Mon, 14 Jan 2013 00:00:00 +0000</pubDate>
+<title>Icon Makers &amp; Retina Macs</title>
+<link>https://troz.net/post/2013/icon-makers-retina-macs/</link>
+<pubDate>Mon, 14 Jan 2013 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2013/icon-makers-retina-macs/</guid>
-      <description>Icns Maker which makes an icns icon file for Mac apps, and Icon Builder which makes the suite of png files needed for iOS apps, are both compatible with the Retina MacBook Pro.
-However it was recently brought to my attention (thanks Cameron), that when running on a Retina MBP, all the icon files were exactly twice as large as they should be. The Icon.png file which supplies the main app icon for iPhone apps should be 57 pixels by 57 pixels.</description>
-    </item>
+<description>&lt;p&gt;Icns Maker which makes an icns icon file for Mac apps, and Icon Builder which
+makes the suite of png files needed for iOS apps, are both compatible with the
+Retina MacBook Pro.&lt;/p&gt;
+
+&lt;p&gt;However it was recently brought to my attention (thanks Cameron), that when
+running on a Retina MBP, all the icon files were exactly twice as large as they
+should be. The Icon.png file which supplies the main app icon for iPhone apps
+should be 57 pixels by 57 pixels. Using Icon Builder on a Retina MBP produced an
+Icon.png file that was 114 x 114 pixels.&lt;/p&gt;
+
+&lt;p&gt;I have now worked out how to persuade the Retina Mac that when I ask for an
+image size, I actually want that size, not the size that OS X thinks would look
+better. Updates to these 2 apps will be submitted to the App Store for approval
+later today which will solve the problem.&lt;/p&gt;
+
+&lt;p&gt;In the meantime, there is a work-around for Retina MBP users: force the app to
+run in low resolution mode.&lt;/p&gt;
+
+&lt;p&gt;In Finder, open your Applications folder and select the app (this works for both
+Icns Maker and Icon Builder). Press Command-I or choose Get Info from the File
+menu which will open a window like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Selecting low resolution mode&#34; src=&#34;https://troz.net/images/LowRes.png&#34; width=&#34;379&#34; height=&#34;952&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Check the checkbox labelled &amp;ldquo;Open in Low Resolution&amp;rdquo;. Next time the app is
+opened, it will ignore the Retina options and use standard resolution only. This
+will create icon files with the correct sizes. However text may look slightly
+fuzzy.&lt;/p&gt;
+
+&lt;p&gt;When the updates to these apps become available, make sure you go back and
+un-check this setting to return to Retina mode.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Icon makers for Mac &amp; iOS apps</title>
-      <link>https://troz.net/post/2012/icon-makers-for-mac-ios-apps/</link>
-      <pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
+<title>Icon makers for Mac &amp; iOS apps</title>
+<link>https://troz.net/post/2012/icon-makers-for-mac-ios-apps/</link>
+<pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/icon-makers-for-mac-ios-apps/</guid>
-      <description>Announcing two new apps for creating icons for with Mac or iOS projects:
-Icns Maker helps you convert a single image into a .icns file in two steps.
-Icon Builder creates all the files needed to set up your icons for any iOS project.
-Creating icon files for Mac apps: In versions of Xcode before 4.4, Apple provided an app called “Icon Composer”. It allowed you to drag images into a window and export a .</description>
-    </item>
+<description>
+
+&lt;p&gt;Announcing two new apps for creating icons for with Mac or iOS projects:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/icns-maker/&#34; title=&#34;Icns Maker&#34;&gt;Icns Maker&lt;/a&gt; helps you convert a single image into a .icns file in two
+steps.&lt;br /&gt;
+&lt;a href=&#34;https://troz.net/icon-builder/&#34; title=&#34;Icon Builder&#34;&gt;Icon Builder&lt;/a&gt; creates all the files needed to set up your icons for any iOS project.&lt;/p&gt;
+
+&lt;h2 id=&#34;creating-icon-files-for-mac-apps&#34;&gt;Creating icon files for Mac apps:&lt;/h2&gt;
+
+&lt;p&gt;In versions of Xcode before 4.4, Apple provided an app called “Icon Composer”.
+It allowed you to drag images into a window and export a .icns file for use in
+your Mac apps. With Xcode 4.4, Apple has changed the way icons are handled for
+Mac apps and “Icon Composer” is no longer supplied.&lt;/p&gt;
+
+&lt;p&gt;The Xcode docs describe the process you need to go through to make a .icns file:
+create a suite of image files of the correct size and with the correct file
+names, bundle them into a specially named folder and then use Terminal to stitch
+them together.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/icns-maker/&#34; title=&#34;Icns Maker&#34;&gt;Icns Maker&lt;/a&gt; does all this for you in two easy steps.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Drag in an image file (preferably 1024x1024 but 512x512 will also work).&lt;/li&gt;
+&lt;li&gt;Click a button.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;There are more options available for fine-tuning your icons allowing you to
+select different images for the various sizes, but this is all that is needed
+for basic operation.&lt;/p&gt;
+
+&lt;p&gt;Icns Maker is available from the
+&lt;a href=&#34;http://itunes.apple.com/app/icns-maker/id550942266?mt=12&amp;uo=4&#34; target=&#34;_blank&#34;&gt;Mac
+App Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;creating-icon-files-for-ios-apps&#34;&gt;Creating icon files for iOS apps:&lt;/h2&gt;
+
+&lt;p&gt;Icons for iOS apps are not bundled into a single file like a Mac .icns file. You
+add various .png images to your project. Depending on the devices supported by
+your app, you will need many different sizes of icon file. There are some icons
+for iPad only, some for iPhone / iPod Touch only and others required for any
+device. Additionally, you will need larger versions of each image to support
+Retina displays.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34; title=&#34;Icon Builder&#34;&gt;Icon Builder&lt;/a&gt; is a Mac app that does all this for you. As with Icns Maker,
+you just drag your image into the app and click a button. You can also select
+which devices your icon needs to suit and use different images for the different
+sizes if you want finer control.&lt;/p&gt;
+
+&lt;p&gt;When the app creates your icon files, it generates a ReadMe file with the
+information needed for installing these files in your project, including
+information to copy &amp;amp; paste directly into your Info.plist file.&lt;/p&gt;
+
+&lt;p&gt;Icon Builder is available from the
+&lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482?mt=12&#34; target=&#34;_blank&#34;&gt;Mac
+App Store&lt;/a&gt;.&lt;br /&gt;
+Note that although this app builds icon files for iOS app, it runs on a Mac.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;naming&#34;&gt;Naming&lt;/h2&gt;
+
+&lt;p&gt;Originally these apps were named in a consistent manner: Mac Icon Builder and
+iOS Icon Builder. However both these names were rejected by Apple - you are not
+allowed to use the words &amp;ldquo;Mac&amp;rdquo; or &amp;ldquo;iOS&amp;rdquo; in any app name sold through the Mac App
+Store.&lt;/p&gt;
+
+&lt;p&gt;Then I tried Icns Maker and Icon Maker. Icns Maker was approved, but there is
+already an app called Icon Maker, so I went with Icon Builder. But by that time
+Icns Maker had already been released, so there was no way to make the names more
+consistent.&lt;/p&gt;
+</description>
+</item>
     
   </channel>
 </rss>

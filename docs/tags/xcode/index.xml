@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>xcode on TrozWare</title>
     <link>https://troz.net/tags/xcode/</link>
@@ -8,52 +8,328 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Sun, 24 Apr 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/xcode/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/xcode/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>How To Confuse TestFlight</title>
-      <link>https://troz.net/post/2016/how-to-confuse-testflight/</link>
-      <pubDate>Sun, 24 Apr 2016 00:00:00 +0000</pubDate>
+<title>How To Confuse TestFlight</title>
+<link>https://troz.net/post/2016/how-to-confuse-testflight/</link>
+<pubDate>Sun, 24 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/how-to-confuse-testflight/</guid>
-      <description>&lt;p&gt;I ran into an unusual problem when testing my latest app: &amp;ldquo;&lt;a href=&#34;https://troz.net/what-is-my-speed/&#34;&gt;What Is My
+<description>&lt;p&gt;I ran into an unusual problem when testing my latest app: &amp;ldquo;&lt;a href=&#34;https://troz.net/what-is-my-speed/&#34;&gt;What Is My
 Speed?&lt;/a&gt;&amp;rdquo;. It is now available from the &lt;a href=&#34;https://itunes.apple.com/app/what-is-my-speed/id1091394524&#34;&gt;iTunes App Store&lt;/a&gt;, but getting
-there was a struggle.&lt;/p&gt;</description>
-    </item>
+there was a struggle.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;#tldr&#34;&gt;TL;DR&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Xcode is terrible at renaming projects, so it is a really good idea to have
+worked out your app&amp;rsquo;s name before starting. I would even recommend creating an
+app ID in your Apple Developer account and registering the app name in iTunes
+Connect. Only once you get to iTunes Connect will the name be checked for
+uniqueness. Searching the App Stores is not enough as it does not cover
+un-released apps or apps that are not available in your country.&lt;/p&gt;
+
+&lt;p&gt;So I set up my app. I was hoping for &amp;ldquo;What&amp;rsquo;s My Speed?&amp;rdquo; but was happy with &amp;ldquo;What
+Is My Speed?&amp;ldquo;.&lt;/p&gt;
+
+&lt;p&gt;Next step was to create the project in Xcode which I did using the app name and
+manually entering the bundle identifier that I had registered at Apple
+Developer. Xcode accepted the name without any warnings and created the default
+targets using that name.&lt;/p&gt;
+
+&lt;p&gt;In the default unit testing file, the module was defined like this:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt; @testable &lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;What&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Is_My_Speed&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;which made me think that Xcode was quite happy to have parsed the app name as
+required to replace any unwanted characters to suit.&lt;/p&gt;
+
+&lt;p&gt;The app was built, passed all unit tests, profiled, analyzed, tested on real
+devices as well as the simulators and uploaded to TestFlight.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;BARRRPPPP!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/TestFlight_error.png&#34; alt=&#34;This app cannot be installed&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;What?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;(I forgot to take a screenshot but found a similar one online. Thanks &lt;a href=&#34;https://www.simpletechs.net/apps/easy-fix-for-testflight-problem-after-restoring-from-backup/&#34;&gt;Simple
+Techs&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I have had experience with TestFlight&amp;rsquo;s oddities in the past, so I incremented
+the build number and tried again, thinking that maybe there had been a
+processing issue. Same result.&lt;/p&gt;
+
+&lt;p&gt;This started a very frustrating 24 hours as I ran through all the possibilities
+I could think of or find suggested on the net. Due to disastrous Australian
+internet speeds, especially uploads, each attempt took from 40 - 120 minutes.
+About 5 minutes to implement the next idea, 25 minutes upload time, then the
+rest waiting for Apple to process the app so I could try again.&lt;/p&gt;
+
+&lt;p&gt;Here is what I tried:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Uploaded a fresh build.&lt;/li&gt;
+&lt;li&gt;Removed Bitcode.&lt;/li&gt;
+&lt;li&gt;Fixed the code signing identity which was set to iOS Developer for some
+reason.&lt;/li&gt;
+&lt;li&gt;Manually specified the provisioning profiles for all three components (iPhone
+app, WatchKit app, WatchKit Extension).&lt;/li&gt;
+&lt;li&gt;Manually selected the code signing identity for the provisioning profiles.&lt;/li&gt;
+&lt;li&gt;Uploaded using Application Loader instead of Xcode.&lt;/li&gt;
+&lt;li&gt;Removed third-party framework.&lt;/li&gt;
+&lt;li&gt;Removed WatchKit app.&lt;/li&gt;
+&lt;li&gt;Revoked my distribution profile, re-created it and updated all provisioning
+profiles.&lt;/li&gt;
+&lt;li&gt;Created a completely blank project with same app name and bundle identifier.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;As you can see from this list, I thought it was a code signing or profile error.
+Using &lt;a href=&#34;https://itunes.apple.com/app/apple-configurator-2/id1037126344&#34;&gt;Apple Configurator 2&lt;/a&gt; (the modern version of iPhone Configuration
+Utility), I was able to get the logs from my iPhone and entries like the
+following seemed to confirm this:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code class=&#34;language-Error&#34;&gt;installd.staging/temp.2LWJ2h/extracted/Payload/What Is My Speed?.app : 0xe8008017 (A signed resource has been added, modified, or deleted.)}```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;But when I got to the stage of a completely blank app still failing, I suddenly
+thought of the question mark. With the benefit of my preamble to this post, you
+all probably got there long before I did, but I got there in the end.&lt;/p&gt;
+
+&lt;p&gt;The solution was to remove the question mark from the names of the targets in
+Xcode. I had to fix up the module names in my unit testing files, but apart from
+that, there were no changes. After this I was able to upload the complete app to
+TestFlight and install it on my iPhone.&lt;/p&gt;
+
+&lt;p&gt;It is possible that it was the Product Names that were the issue, rather than
+the target name as in Build Settings, Product Name is set to be &lt;code&gt;$(TARGET_NAME)&lt;/code&gt;
+by default but I didn&amp;rsquo;t test that. Maybe next time&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;a name=&#34;tldr&#34;&gt;TL;DR&lt;/a&gt; Do not put any unusual characters in your target names.
+Alphanumerics and spaces are OK, but I am not sure about anything else.&lt;/p&gt;</description>
+</item>
     
     <item>
-      <title>Configuring Xcode</title>
-      <link>https://troz.net/post/2016/configuring-xcode/</link>
-      <pubDate>Wed, 17 Feb 2016 00:00:00 +0000</pubDate>
+<title>Configuring Xcode</title>
+<link>https://troz.net/post/2016/configuring-xcode/</link>
+<pubDate>Wed, 17 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/configuring-xcode/</guid>
-      <description>While not strictly a part of my Learning Swift series, today I thought I would discuss some of the ways to configure and use Xcode to be a more productive and comfortable programmer.
-1. Editor color themes and fonts: Step through the supplied themes and find the best one for you. Then click the &amp;lsquo;+&amp;rsquo; button at the bottom of the list and duplicate the selected theme. Now you can tweak it to suit you.</description>
-    </item>
+<description>
+
+&lt;p&gt;While not strictly a part of my Learning Swift series, today I thought I would
+discuss some of the ways to configure and use Xcode to be a more productive and
+comfortable programmer.&lt;/p&gt;
+
+&lt;h2 id=&#34;1-editor-color-themes-and-fonts&#34;&gt;1. Editor color themes and fonts:&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/XcodeFontPrefs.png&#34; alt=&#34;Editor&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Step through the supplied themes and find the best one for you. Then click the
+&amp;lsquo;+&amp;rsquo; button at the bottom of the list and duplicate the selected theme. Now you
+can tweak it to suit you. Each text category can have its own font and size, but
+you can make multiple selections in order to do a bulk change. don&amp;rsquo;t forget to
+check out the Console section too - I dislike the default bold text for many of
+the console reports, so always change that.&lt;/p&gt;
+
+&lt;p&gt;An editing font should be mono-spaced i.e. every character should take up
+exactly the same width on the screen. This makes your code look neater and
+neater code is easier to read when you come back to it. I also much prefer a
+sans-serif font, but that is a matter of preference.&lt;/p&gt;
+
+&lt;p&gt;Menlo is the font used by Xcode as a default, but there are many other options
+either in the default installation of OS X or as free downloads. I change every
+now and then just to keep things interesting, but my current selection is &lt;a href=&#34;https://github.com/tonsky/FiraCode&#34;&gt;Fira
+Code&lt;/a&gt;. I love the way it merges two character symbols into a single
+character for faster comprehension.&lt;/p&gt;
+
+&lt;p&gt;My other favourites are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/adobe-fonts/source-code-pro&#34;&gt;Source Code Pro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/chrissimpkins/hack&#34;&gt;Hack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/mozilla/Fira&#34;&gt;Fira&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.fontsquirrel.com/fonts/Inconsolata&#34;&gt;Inconsolata&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Look for a font that makes it easy to distinguish the digit &amp;lsquo;1&amp;rsquo; from a lowercase
+&amp;lsquo;l&amp;rsquo; and where the digit &amp;lsquo;0&amp;rsquo; is different to the &amp;lsquo;O&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;To install and use a new font, download the files and then double-click a TTF or
+OTF font file to install it in FontBook. Once the font is installed, you may
+need to restart Xcode in order to make it available.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;2-add-ons&#34;&gt;2. Add-ons:&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; Xcode 8 has removed the ability to run any plugins or to use
+Alcatraz, so this sectrion is no longer valid. Instead Apple is offering offical
+support for Xcode Source Editor Extensions, so they are the way of the future.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;3-documentation&#34;&gt;3. Documentation:&lt;/h2&gt;
+
+&lt;p&gt;Xcode has excellent documentation, but unless you specifically download it, this
+will all be accessed online. If you have a bad or non-existent connection, this
+can be annoying. Go to Xcode&amp;rsquo;s Preferences -&amp;gt; Downloads and download all the
+document sets you are interested in. They are quite large, but having them local
+will be a big bonus.&lt;/p&gt;
+
+&lt;p&gt;The other tool I use for documentation is &lt;a href=&#34;https://kapeli.com/dash&#34;&gt;Dash&lt;/a&gt;. It supports many languages
+and is not just for use in Xcode. I found the Xcode integration plugin was not
+very useful as it conflicted with other useful behaviours. So I set up a global
+shortcut in System Preferences to search Dash for the selected text. This is
+much faster than Xcode&amp;rsquo;s built-in documentation.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Dash.png&#34; alt=&#34;Dash&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;4-other-preferences&#34;&gt;4. Other preferences:&lt;/h2&gt;
+
+&lt;p&gt;Go through the preference panes in Xcode&amp;rsquo;s preferences and tweak to suit your
+style or your group&amp;rsquo;s preferred style.&lt;/p&gt;
+
+&lt;p&gt;General and Text Editing are important. Text Editing has a second tab for
+Indentation which is easy to miss. Indentation styles seem to cause a lot of
+heated debate, so make sure you check this out.&lt;/p&gt;
+
+&lt;p&gt;Accounts is vital if you are publishing to the App Stores and also makes it easy
+to transfer all your develop information from one computer to another.&lt;/p&gt;
+
+&lt;p&gt;Fonts &amp;amp; Colors and Downloads are discussed above.&lt;/p&gt;
+
+&lt;p&gt;I tend to leave the others set to the defaults.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Possible issues with Icon Builder &amp; Watch icons</title>
-      <link>https://troz.net/post/2016/possible-issues-with-iconbuilder/</link>
-      <pubDate>Sat, 06 Feb 2016 00:00:00 +0000</pubDate>
+<title>Possible issues with Icon Builder &amp; Watch icons</title>
+<link>https://troz.net/post/2016/possible-issues-with-iconbuilder/</link>
+<pubDate>Sat, 06 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/possible-issues-with-iconbuilder/</guid>
-      <description>It has come to my attention that there are two possible issues with Icon Builder 3.0.1 when using icons created for an Apple Watch app. Once of them is something I can fix and the other appears to be a bug in Xcode 7.2
-Update: Version 3.2 of Icon Builder is now available in the Mac App Store. This removes the alpha channel from icons for a watch app.
-The first problem is that iTines Connect now requires that the icons for an Apple Watch app include no alpha channel.</description>
-    </item>
+<description>&lt;p&gt;It has come to my attention that there are two possible issues with Icon Builder
+3.0.1 when using icons created for an Apple Watch app. Once of them is something
+I can fix and the other appears to be a bug in Xcode 7.2&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; Version 3.2 of Icon Builder is now available in the &lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Mac App
+Store&lt;/a&gt;. This removes the alpha channel from icons for a watch app.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The first problem is that iTines Connect now requires that the icons for an
+Apple Watch app include no alpha channel. This is becoming an increasing trend
+with it first having applied to the large icon file you upload directly to
+iTunes Connect, then to screen shots. I expect it to extend to iOS app icons
+soon, but hopefully Mac app icons can continue to include transparency.&lt;/p&gt;
+
+&lt;p&gt;With Apple Watch icons, you are supposed to create a set of square icons and
+watchOS or iTunesConnect applies the rounding mask. Presumably this is more
+complicated if the icon contains an alpha channel even if there are no
+transparent pixels. If your Watch app icons contain an alpha channel, you will
+see errors like this after uploading your app to iTunes Connect:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Invalid Icon - The watch application &amp;lsquo;AppName.app/Watch/AppName WatchKit
+App.app&amp;rsquo; contains an icon file &amp;lsquo;AppName.app/Watch/AppName WatchKit
+App.app/AppIcon-Watch24x24@2x.png&amp;rsquo; with an alpha channel. Icons should not
+have an alpha channel.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;You will probably get this error message for every icon size in the Watch app (8
+in total). Until I release a new version of Icon Builder that allows for this
+this, I suggest you use this &lt;a href=&#34;https://www.cocoacontrols.com/controls/alpha-channel-remover&#34;&gt;Alpha Channel Remover app&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In your Xcode project, go to WatchKit App Assets.xcassets, select the AppIcon
+set, right-click and choose &amp;ldquo;Show in Finder&amp;rdquo;. A folder will open containing
+eight .png files and one .json file. Drag &amp;amp; drop the .png files into the Alpha
+Channel Remover window and click the &amp;ldquo;Remove Alpha Channel&amp;rdquo; button. This will
+replace all those image files with new versions without alpha channels. To
+confirm this, select any of the images and press Command-I to get info. In the
+More Info section, you will see &amp;ldquo;Alpha channel: No&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;You can now submit your app again, but that only solves one of the issues.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The other problem is that you will get a warning about the 44x44@2x.png icon
+file.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Invalid Icon Name - The watch application &amp;lsquo;AppName.app/Watch/AppName WatchKit
+App.app&amp;rsquo; contains an invalid icon file name &amp;lsquo;AppName.app/Watch/AppName
+WatchKit App.app/AppIcon-Watch44x44@2x.png&amp;rsquo;. Make sure that icon file names
+follow the pattern&lt;br&gt; &amp;ldquo;&lt;code&gt;*&amp;lt;dimension&amp;gt;@&amp;lt;scale&amp;gt;x.png&lt;/code&gt;&amp;rdquo; and they match the
+required dimensions. Please visit &lt;a href=&#34;https://developer.apple.com/watchkit/&#34;&gt;https://developer.apple.com/watchkit/&lt;/a&gt; for
+more information.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As you can see in the error message, the icon name (which is set by Xcode) does
+conform to the required pattern, and the image is the correct size. This appears
+to be a &lt;a href=&#34;http://www.openradar.me/23801324&#34;&gt;bug in Xcode 7.2&lt;/a&gt; but does not stop you from submitting your app as
+it is only a warning and not an error. Presumably this will be fixed in later
+version of Xcode. I am running Xcode 7.2.1 and still see this warning.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Icon Builder 3.0.1</title>
-      <link>https://troz.net/post/2015/icon-builder-3.0.1/</link>
-      <pubDate>Tue, 17 Mar 2015 00:00:00 +0000</pubDate>
+<title>Icon Builder 3.0.1</title>
+<link>https://troz.net/post/2015/icon-builder-3.0.1/</link>
+<pubDate>Tue, 17 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2015/icon-builder-3.0.1/</guid>
-      <description>So why an announcement for such a minor upgrade?
-Version 3.0 got no announcement because it was not the release I wanted.
-Having downloaded the Xcode 6.2 &amp;amp; 6.3 betas, I had worked out what icons were needed to a WatchKit app. This, combined with several other changes, made me bump the version number to 3.0.
-Sadly, Apple rejected the update because it referred to pre-release products. So I pulled all mentions of WatchKit out of the interface and meta data and got 3.</description>
-    </item>
+<description>
+
+&lt;p&gt;So why an announcement for such a minor upgrade?&lt;/p&gt;
+
+&lt;p&gt;Version 3.0 got no announcement because it was not the release I wanted.&lt;/p&gt;
+
+&lt;p&gt;Having downloaded the Xcode 6.2 &amp;amp; 6.3 betas, I had worked out what icons were
+needed to a WatchKit app. This, combined with several other changes, made me
+bump the version number to 3.0.&lt;/p&gt;
+
+&lt;p&gt;Sadly, Apple rejected the update because it referred to pre-release products. So
+I pulled all mentions of WatchKit out of the interface and meta data and got 3.0
+released.&lt;/p&gt;
+
+&lt;p&gt;After the Apple keynote on March 9th, I re-enabled the WatchKit portions of the
+app and re-submitted to the App Store, hoping that with the WatchKit SDK now
+part of the official Xcode release, Apple&amp;rsquo;s reviewers would allow it to get
+through this time.&lt;/p&gt;
+
+&lt;p&gt;This worked - in fact the app was reviewed and accepted within 6 days - so now
+Icon Builder adds WatchKit to its list of supported platforms.&lt;/p&gt;
+
+&lt;p&gt;Actually, Apple may have done me a favour in rejecting the first one as they
+changed the specifications for the icons slightly between Xcode 6.2 beta and
+Xcode 6.2 release.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;Icon Builder page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://itunes.apple.com/us/app/icon-builder/id552293482?mt=12&amp;amp;uo=4&#34;&gt;Mac App Store link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;what-s-new-in-version-3&#34;&gt;What’s New in version 3?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Support for WatchKit app icons (version 3.0.1)&lt;/li&gt;
+&lt;li&gt;Simplified interface: removed display of smaller icons.&lt;/li&gt;
+&lt;li&gt;Fix for @3x images not being saved when you selected iOS 6 support.&lt;/li&gt;
+&lt;li&gt;iTunesArtwork@2x file now saved as a JPG to avoid iTunes Connect errors.&lt;/li&gt;
+&lt;li&gt;Removed CarPlay icon - Xcode sometimes gave errors when this was included.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+</item>
     
   </channel>
 </rss>

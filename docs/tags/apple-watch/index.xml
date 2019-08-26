@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>apple watch on TrozWare</title>
     <link>https://troz.net/tags/apple-watch/</link>
@@ -8,89 +8,886 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Sun, 18 Feb 2018 10:19:18 +1000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/apple-watch/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/apple-watch/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Icon Builder 5</title>
-      <link>https://troz.net/post/2018/icon-builder-5/</link>
-      <pubDate>Sun, 18 Feb 2018 10:19:18 +1000</pubDate>
+<title>Icon Builder 5</title>
+<link>https://troz.net/post/2018/icon-builder-5/</link>
+<pubDate>Sun, 18 Feb 2018 10:19:18 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/icon-builder-5/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;Icon Builder 5.0&lt;/a&gt; is now available from the &lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Mac App Store&lt;/a&gt;. This is a complete re-write for better compatibility with Apple&amp;rsquo;s latest icon requirements. Read on to see what I have fixed and how&amp;hellip;&lt;/p&gt;</description>
-    </item>
+<description>&lt;p&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;Icon Builder 5.0&lt;/a&gt; is now available from the &lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Mac App Store&lt;/a&gt;. This is a complete re-write for better compatibility with Apple&amp;rsquo;s latest icon requirements. Read on to see what I have fixed and how&amp;hellip;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;problems&#34;&gt;Problems&lt;/h2&gt;
+
+&lt;p&gt;When I came to create a new iOS app recently, I found out that Icon Builder had fallen behind Apple&amp;rsquo;s requirements in three ways:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The 1024 x 1024 marketing icon is now supposed to be inside the app&amp;rsquo;s icon set.&lt;/li&gt;
+&lt;li&gt;Icon files must have their color profile set to sRGB (P3 is also valid for iOS apps).&lt;/li&gt;
+&lt;li&gt;iOS icon files must have no transparent pixels and the alpha channel must be removed from the files.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;When I set to work fixing these problems I soon ran into issues with the existing version of Icon Builder which was created 6 years ago.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It was written in Objective-C which I am increasingly finding difficult and un-safe to write.&lt;/li&gt;
+&lt;li&gt;The app was written when I was very much a beginner in Mac apps and this is obvious from the code&amp;hellip;&lt;/li&gt;
+&lt;li&gt;There was a lot of legacy code left over from previous changes and extensions.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So I decided that the most interesting thing to do would be to start almost from scratch and re-write the app in Swift using better techniques.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-re-write&#34;&gt;The Re-write&lt;/h2&gt;
+
+&lt;p&gt;Now instead of the Massive View Controller, I have a larger set of small files, each with their own responsibility. Enums and structs dictate the various requirements for the different devices or app types. Other structs deal with creating the images, the folder management and writing out the files. An NSImage extension handles the resizing and reformatting of the images. This is now an app that I would not be ashamed to show anyone, except perhaps for the need to add more unit tests.&lt;/p&gt;
+
+&lt;h2 id=&#34;adding-a-color-profile&#34;&gt;Adding a color profile&lt;/h2&gt;
+
+&lt;p&gt;But then we get to the new features needed. Adding the 1024x1024 icon to the app icon set was easy, especially after the re-factoring. But what about the color profile?&lt;/p&gt;
+
+&lt;p&gt;This was not as easy as I expected - there is no built in command to apply a profile but here is the solution that I finally found:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;extension NSImage {
+
+  func convertImageTo_sRGB() throws -&amp;gt; Data {
+      guard let colorSpace = CGColorSpace(name: CGColorSpace.sRGB),
+          let cgi = self.cgImage(forProposedRect: nil,
+                                 context: nil,
+                                 hints: nil) else {
+                                  throw ImageError.cantMakeCgImage
+      }
+
+      let ci = CIImage(cgImage: cgi)
+
+      guard let pngData = CIContext().pngRepresentation(of: ci,
+                                                        format: kCIFormatRGBA8,
+                                                        colorSpace: colorSpace) else {
+          throw ImageError.cantConvertToPng
+      }
+      return pngData
+  }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This takes the NSImage and converts it to a CGImage, first checking that the appropriate color space exists.&lt;/li&gt;
+&lt;li&gt;Then it uses the Core Graphics CGImage to create a Core Image CIImage.&lt;/li&gt;
+&lt;li&gt;There is a new API in macOS 10.13 to extract the png data from a CIImage while assigning a color profile.&lt;/li&gt;
+&lt;li&gt;This Data can then be written directly to a file and there you have a PNG with an attached color profile.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;transparency&#34;&gt;Transparency&lt;/h2&gt;
+
+&lt;p&gt;Now problems 1 &amp;amp; 2 have been solved. Problem 3 was the most difficult. It turned out to be a two-part problem because an image file can have no transparent pixels but still have an alpha channel in the file data.&lt;/p&gt;
+
+&lt;p&gt;At first, I thought maybe I could just circumvent the whole problem by converting the images to JPEGs which have no transparency or alpha channel. Using the code above, I just changed it to getting the &lt;code&gt;jpegRepresentation&lt;/code&gt; instead and saving with a .jpg file extension.&lt;/p&gt;
+
+&lt;p&gt;While this solved the alpha channel problem, the transparent parts of the icon just went black which was a not a good look.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Transparent-Jpeg.png&#34; alt=&#34;Transparent image converted to JPEG&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;For anyone horrified at my use of force-unwrapping, I never do this in a production app but in a playground, it makes the code shorter and it doesn&amp;rsquo;t really matter if I get a crash there.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;converting-transparent-pixels-to-white&#34;&gt;Converting transparent pixels to white&lt;/h3&gt;
+
+&lt;p&gt;So the first step must be to set the transparent parts of the image to another color. Searching for solutions online, most of the ones I came up with were very slow (processing each pixel) or so complicated that I didn&amp;rsquo;t understand them, and I hate just copy-pasting code that I don&amp;rsquo;t understand at all.&lt;/p&gt;
+
+&lt;p&gt;But eventually I found something that I morphed into this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;extension NSImage {
+
+    func makeAlphaWhite() -&amp;gt; NSImage {
+        guard let imageData = self.tiffRepresentation,
+            let imageRep = NSBitmapImageRep(data: imageData),
+            let jpegData = imageRep.representation(using: .jpeg, properties: [
+                NSBitmapImageRep.PropertyKey.compressionFactor: NSNumber(value: 1.0)
+                ]),
+            let jpegImage = NSImage(data: jpegData) else {
+                return image
+        }
+        return jpegImage
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It used basically the same trick of converting the image into a JPEG but doing it this way via &lt;code&gt;NSBitmapImageRep&lt;/code&gt; turned the transparent pixels white instead of black. And as you can see, this gave a much better looking image:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/MakeAlphaWhite.png&#34; alt=&#34;Transparent portions converted to white&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now I was able to continue with my plans to have JPEGs rule the world! This worked really well in my early tests but then I came to try a Stickers app and the icons didn’t work. I couldn&amp;rsquo;t even drag them in manually! Back to the Apple docs and I see that icons must be PNGs.&lt;/p&gt;
+
+&lt;p&gt;When I changed the transparent pixels to white, added the color space and then saved the PNG data, I got an image that looked correct but the file still contained an alpha channel. So I had to come up with a method that re-wrote the PNG data in such a way that it never contained any alpha data at all.&lt;/p&gt;
+
+&lt;h3 id=&#34;removing-the-alpha-channel&#34;&gt;Removing the alpha channel&lt;/h3&gt;
+
+&lt;p&gt;Graphics experts are probably groaning aloud by now, but I did eventually arrive at a solution, however hacky:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;extension NSImage {
+
+    func convertImageTo_sRGB_noAlpha() throws -&amp;gt; Data {
+        guard let colorSpace = CGColorSpace(name: CGColorSpace.sRGB),
+            let cgi = self.cgImage(forProposedRect: nil,
+                                   context: nil,
+                                   hints: nil) else {
+                                    throw ImageError.cantMakeCgImage
+        }
+
+        let ci = CIImage(cgImage: cgi)
+        guard let jpgData = CIContext().jpegRepresentation(of: ci,
+                                                           colorSpace: colorSpace) else {
+            throw ImageError.cantConvertToJpg
+        }
+        guard let jpegImage = NSImage(data: jpgData) else {
+            throw ImageError.cantConvertToJpgImage
+        }
+        let pngData = try jpegImage.convertImageTo_sRGB()
+        return pngData
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Take the image &lt;strong&gt;after&lt;/strong&gt; changing the transparent pixels to white.&lt;/li&gt;
+&lt;li&gt;Convert it to JPEG data with the required color space.&lt;/li&gt;
+&lt;li&gt;Convert the JPEG data back to an image - this will contain &lt;strong&gt;NO&lt;/strong&gt; alpha data.&lt;/li&gt;
+&lt;li&gt;Use the original routine to convert this JPEG into PNG data with the correct color space.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Running this in the playground looks like this:
+&lt;img src=&#34;https://troz.net/images/TransparentPng.png&#34; alt=&#34;Creating non-transparent PNG in playground&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And as you can see from the file info, it results in a file with the correctly assigned color profile and no alpha channel:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/FileInfo.png&#34; alt=&#34;Final result file info&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The double shuffle sounds time-consuming and in-efficient but it really doesn&amp;rsquo;t take long. In my tests, by far the longest part of creating an icon set is opening the file dialog.&lt;/p&gt;
+
+&lt;h2 id=&#34;future-plans&#34;&gt;Future plans&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Add more unit tests.&lt;/li&gt;
+&lt;li&gt;Work out how to replace the transparent pixels with a selected color.&lt;/li&gt;
+&lt;li&gt;Offer better cropping and image positioning options.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+
+&lt;p&gt;For resizing and cropping images, I use &lt;a href=&#34;https://mattgemmell.com/imagecrop-source-code/&#34;&gt;Matt Gemmell&amp;rsquo;s NSImage+MGCropExtensions&lt;/a&gt; and for further reading, I recommend Apple&amp;rsquo;s Human Interface Guidelines concerning app icons for &lt;a href=&#34;https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/app-icon/&#34;&gt;iOS&lt;/a&gt; and &lt;a href=&#34;https://developer.apple.com/macos/human-interface-guidelines/icons-and-images/app-icon/&#34;&gt;macOS&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note: here is Australia we use the spelling &lt;strong&gt;colour&lt;/strong&gt; but for consistency with the code samples, I have used &lt;strong&gt;color&lt;/strong&gt; throughout the text.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+</item>
     
     <item>
-      <title>My Year With Apple Watch</title>
-      <link>https://troz.net/post/2016/my-year-with-apple-watch/</link>
-      <pubDate>Thu, 28 Apr 2016 00:00:00 +0000</pubDate>
+<title>My Year With Apple Watch</title>
+<link>https://troz.net/post/2016/my-year-with-apple-watch/</link>
+<pubDate>Thu, 28 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/my-year-with-apple-watch/</guid>
-      <description>As the Apple Watch hits its first birthday, there seems to be in increasing number of bloggers complaining about it. One (which I refuse to link to) titled &amp;ldquo;My Year of Hell With the Apple Watch&amp;rdquo;. I think the article has since been re-published with a slightly less inflammatory title, but really! Did somebody rivet the watch to his wrist? If it was so awful, why not just stop using it?</description>
-    </item>
+<description>
+
+&lt;p&gt;As the Apple Watch hits its first birthday, there seems to be in increasing
+number of bloggers complaining about it. One (which I refuse to link to) titled
+&amp;ldquo;My Year of Hell With the Apple Watch&amp;rdquo;. I think the article has since been
+re-published with a slightly less inflammatory title, but really! Did somebody
+rivet the watch to his wrist? If it was so awful, why not just stop using it?&lt;/p&gt;
+
+&lt;p&gt;I am a watch nerd and have always loved watches and having one on me. I liked
+watches with features and even had a calculator watch at one point although as a
+woman with skinny wrists, I found it constantly annoying that watch makers put
+all the gadgets into man-sized watches so I was left with the choice of no
+features or a watch that looked stupidly large on my wrist.&lt;/p&gt;
+
+&lt;p&gt;A few years ago I stopped wearing a watch. I can&amp;rsquo;t remember now why I did it -
+maybe my watch strap broke and it wasn&amp;rsquo;t important enough to get a new one. I
+always had my iPhone to give me the time.&lt;/p&gt;
+
+&lt;p&gt;But I ordered three Apple Watches as soon as they were available and myself,
+husband and eldest son have been using them ever since.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;here-are-what-i-consider-to-be-the-best-features-of-the-apple-watch&#34;&gt;Here are what I consider to be the best features of the Apple Watch:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Accuracy&lt;/strong&gt;: It is a fantastically accurate time-piece. Not enough people
+give this credit, but we have always been used to clocks and watches that were
+inherently inaccurate. Having a device on my wrist that I &lt;strong&gt;know&lt;/strong&gt; to be
+perfectly accurate is an amazing thing.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Notifications&lt;/strong&gt;: this takes a bit of work to get right and with every new
+app, you need to assess whether to have its notifications appear on your
+wrist. But the wonderful thing is knowing that you haven&amp;rsquo;t missed anything and
+being able to glance at your wrist when a notification arrives and tell -
+unobtrusively - whether this is something that needs immediate attention. And
+the ability to respond instantly to messages and emails with just a couple of
+taps is amazingly useful.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Customisable watch faces&lt;/strong&gt;: depending on what I am doing, I need quick
+access to different pieces of information. When travelling, I can set up a
+watch face with multiple time zones. When working, I need a timer. When on
+holiday, I prefer one of the more relaxing but less detailed watch faces.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Activity&lt;/strong&gt;: I am not the world&amp;rsquo;s most active person so I find the three
+rings to be a really good motivator. In fact I just had to stop typing and run
+up &amp;amp; down the stairs to get another notch to the blue ring. The goals are not
+out of my reach, so I like trying to fill in the rings every day.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Voice commands&lt;/strong&gt;: being able to send a text message completely by voice when
+driving or when my hands are busy is fantastic. Starting a timer, doing unit
+conversions and navigating are things I do frequently by voice.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Excellent battery life&lt;/strong&gt;: I started off having the battery life complication
+always visible, but it very quickly became apparent that this was unnecessary.
+Right now I have been wearing the watch for about 11 hours and the battery is
+at 74%. And charging is so fast that if I did run it down, a 30 minute charge
+would get me through most of a day.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;The Milanese Loop&lt;/strong&gt;: best watch band ever.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are other good features, but I think those are my favourites.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;so-what-don-t-i-like&#34;&gt;So what don&amp;rsquo;t I like?&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Third-party apps are still a problem&lt;/strong&gt;. I know. I have published three
+myself and sometimes they just doesn&amp;rsquo;t happen. However this appears to vary a
+lot. Some people say they can never get apps to run, even Apple&amp;rsquo;s apps. Others
+say they work but with a long delay. My watch seems to be better than the
+average but it is still an issue.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Sketches don&amp;rsquo;t always get through or can take ages&lt;/strong&gt;. We thought it would be
+a lot of fun to send each other little sketches and so it is, despite our
+total lack of any artistic skills. But it loses a bit of impact when you have
+to send a message 20 minutes later asking if the sketch has arrived.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;The exercise tracking seems to be a bit erratic&lt;/strong&gt;. If my husband and I go
+for a walk together, he comes back with 25 minutes of exercise and I only have
+7 minutes. Am I not going fast enough? Are my arms not swinging enough? If it
+is very hot and my wrist gets sweaty, I seem to get better numbers - is this
+because my heart is beating faster or the capillaries closer to the surface
+have expanded? Or is the watch picking up a better signal that way? Either
+way, I still like the activity circles, but the green ring frustrates me a
+bit.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;and-what-would-i-like-to-see-in-watch-2-watchos-3&#34;&gt;And what would I like to see in Watch 2 / watchOS 3?&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Some sort of always-on display of the time.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;A speaker to allow Siri to talk back to me and to play audio.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;FaceTime audio calls.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Better support for third-party apps - perhaps open up some private APIs?&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Allow developers to create watch faces or apps that told the time.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Allow developers to say that an app should stay as the frontmost app once
+opened.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;will-i-buy-watch-2&#34;&gt;Will I buy Watch 2?&lt;/h2&gt;
+
+&lt;p&gt;At this stage I would say no. We bought the bottom-of-the-line Sport models
+because with version 1.0 of anything, you don&amp;rsquo;t want to spend so much that
+upgrading is ruled out. However these watches are still going great and a lot of
+the improvements I am looking for will be in software not hardware.&lt;/p&gt;
+
+&lt;p&gt;But 14 months ago, I was waiting for Apple to announce the iWatch as we all
+thought it would be called, and saying that I didn&amp;rsquo;t think I would get one. The
+feature list convinced me and I have been delighted with it. So if Watch 2 comes
+up with some killer feature that matters to me, then I might have to
+re-consider&amp;hellip;&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Icon Builder 3.2 Released</title>
-      <link>https://troz.net/post/2016/icon-builder-32-released/</link>
-      <pubDate>Wed, 10 Feb 2016 00:00:00 +0000</pubDate>
+<title>Icon Builder 3.2 Released</title>
+<link>https://troz.net/post/2016/icon-builder-32-released/</link>
+<pubDate>Wed, 10 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/icon-builder-32-released/</guid>
-      <description>Icon Builder 3.2 is now available from the Mac App Store.
- Icons for Apple Watch apps now have their alpha channel removed. Tidier folder structure for related files (iTunes Artwork files and Read Me). Updated to work with Xcode 7&amp;rsquo;s Assets.xcassets folders. Creates iPad Pro icons for Xcode 7.2 or later. Fix for Retina Macs creating double-sized images.  </description>
-    </item>
+<description>&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Icon Builder 3.2&lt;/a&gt; is now available from the Mac App Store.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Icons for Apple Watch apps now have their alpha channel removed.&lt;/li&gt;
+&lt;li&gt;Tidier folder structure for related files (iTunes Artwork files and Read Me).&lt;/li&gt;
+&lt;li&gt;Updated to work with Xcode 7&amp;rsquo;s Assets.xcassets folders.&lt;/li&gt;
+&lt;li&gt;Creates iPad Pro icons for Xcode 7.2 or later.&lt;/li&gt;
+&lt;li&gt;Fix for Retina Macs creating double-sized images.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+</item>
     
     <item>
-      <title>Possible issues with Icon Builder &amp; Watch icons</title>
-      <link>https://troz.net/post/2016/possible-issues-with-iconbuilder/</link>
-      <pubDate>Sat, 06 Feb 2016 00:00:00 +0000</pubDate>
+<title>Possible issues with Icon Builder &amp; Watch icons</title>
+<link>https://troz.net/post/2016/possible-issues-with-iconbuilder/</link>
+<pubDate>Sat, 06 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/possible-issues-with-iconbuilder/</guid>
-      <description>It has come to my attention that there are two possible issues with Icon Builder 3.0.1 when using icons created for an Apple Watch app. Once of them is something I can fix and the other appears to be a bug in Xcode 7.2
-Update: Version 3.2 of Icon Builder is now available in the Mac App Store. This removes the alpha channel from icons for a watch app.
-The first problem is that iTines Connect now requires that the icons for an Apple Watch app include no alpha channel.</description>
-    </item>
+<description>&lt;p&gt;It has come to my attention that there are two possible issues with Icon Builder
+3.0.1 when using icons created for an Apple Watch app. Once of them is something
+I can fix and the other appears to be a bug in Xcode 7.2&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; Version 3.2 of Icon Builder is now available in the &lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482&#34;&gt;Mac App
+Store&lt;/a&gt;. This removes the alpha channel from icons for a watch app.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The first problem is that iTines Connect now requires that the icons for an
+Apple Watch app include no alpha channel. This is becoming an increasing trend
+with it first having applied to the large icon file you upload directly to
+iTunes Connect, then to screen shots. I expect it to extend to iOS app icons
+soon, but hopefully Mac app icons can continue to include transparency.&lt;/p&gt;
+
+&lt;p&gt;With Apple Watch icons, you are supposed to create a set of square icons and
+watchOS or iTunesConnect applies the rounding mask. Presumably this is more
+complicated if the icon contains an alpha channel even if there are no
+transparent pixels. If your Watch app icons contain an alpha channel, you will
+see errors like this after uploading your app to iTunes Connect:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Invalid Icon - The watch application &amp;lsquo;AppName.app/Watch/AppName WatchKit
+App.app&amp;rsquo; contains an icon file &amp;lsquo;AppName.app/Watch/AppName WatchKit
+App.app/AppIcon-Watch24x24@2x.png&amp;rsquo; with an alpha channel. Icons should not
+have an alpha channel.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;You will probably get this error message for every icon size in the Watch app (8
+in total). Until I release a new version of Icon Builder that allows for this
+this, I suggest you use this &lt;a href=&#34;https://www.cocoacontrols.com/controls/alpha-channel-remover&#34;&gt;Alpha Channel Remover app&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In your Xcode project, go to WatchKit App Assets.xcassets, select the AppIcon
+set, right-click and choose &amp;ldquo;Show in Finder&amp;rdquo;. A folder will open containing
+eight .png files and one .json file. Drag &amp;amp; drop the .png files into the Alpha
+Channel Remover window and click the &amp;ldquo;Remove Alpha Channel&amp;rdquo; button. This will
+replace all those image files with new versions without alpha channels. To
+confirm this, select any of the images and press Command-I to get info. In the
+More Info section, you will see &amp;ldquo;Alpha channel: No&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;You can now submit your app again, but that only solves one of the issues.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The other problem is that you will get a warning about the 44x44@2x.png icon
+file.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Invalid Icon Name - The watch application &amp;lsquo;AppName.app/Watch/AppName WatchKit
+App.app&amp;rsquo; contains an invalid icon file name &amp;lsquo;AppName.app/Watch/AppName
+WatchKit App.app/AppIcon-Watch44x44@2x.png&amp;rsquo;. Make sure that icon file names
+follow the pattern&lt;br&gt; &amp;ldquo;&lt;code&gt;*&amp;lt;dimension&amp;gt;@&amp;lt;scale&amp;gt;x.png&lt;/code&gt;&amp;rdquo; and they match the
+required dimensions. Please visit &lt;a href=&#34;https://developer.apple.com/watchkit/&#34;&gt;https://developer.apple.com/watchkit/&lt;/a&gt; for
+more information.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As you can see in the error message, the icon name (which is set by Xcode) does
+conform to the required pattern, and the image is the correct size. This appears
+to be a &lt;a href=&#34;http://www.openradar.me/23801324&#34;&gt;bug in Xcode 7.2&lt;/a&gt; but does not stop you from submitting your app as
+it is only a warning and not an error. Presumably this will be fixed in later
+version of Xcode. I am running Xcode 7.2.1 and still see this warning.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Apple Watch First Impressions</title>
-      <link>https://troz.net/post/2015/apple-watch-first-impressions/</link>
-      <pubDate>Wed, 29 Apr 2015 00:00:00 +0000</pubDate>
+<title>Apple Watch First Impressions</title>
+<link>https://troz.net/post/2015/apple-watch-first-impressions/</link>
+<pubDate>Wed, 29 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2015/apple-watch-first-impressions/</guid>
-      <description>I realise that every one has written one of these posts, but given that everyone looks for and notices different things, I think it is still valid.
-My first impression was &amp;ldquo;Why does it come in such a large box?&amp;rdquo;. The courier delivered two boxes - my 38mm Apple Watch Sport and Tim&amp;rsquo;s 42mm Apple Watch Sport. They both came in long boxes, with the 42mm box significantly longer. And both boxes were heavy!</description>
-    </item>
+<description>
+
+&lt;p&gt;I realise that every one has written one of these posts, but given that everyone
+looks for and notices different things, I think it is still valid.&lt;/p&gt;
+
+&lt;p&gt;My first impression was &amp;ldquo;Why does it come in such a large box?&amp;rdquo;. The courier
+delivered two boxes - my 38mm Apple Watch Sport and Tim&amp;rsquo;s 42mm Apple Watch
+Sport. They both came in long boxes, with the 42mm box significantly longer. And
+both boxes were heavy!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;un-boxing&#34;&gt;Un-boxing:&lt;/h3&gt;
+
+&lt;p&gt;Opening them was a typical Apple experience: pull the tag to open the external
+cardboard box, lift out the white internal box. This opens to reveal the watch
+with the default strap attached (short for 38mm, long for 42mm). Lift the watch
+out and pull the tags to remove the plastic protective coating. (On a side note,
+it drives me crazy when people leave this coating on devices, but I can&amp;rsquo;t see
+this happening on the watch.) Underneath there is a sleeve containing the other
+half watch strap so you can swap from long to short. My family tells me that
+this also includes a user guide, but I didn’t read that - typical Apple user&amp;hellip;
+Under the sleeve is the power block and charging cable. The charging puck is
+larger than I expected and the cable is very long. Having removed all the
+components, the packaging is still quite heavy, so I guess Apple just wanted to
+make sure that no watches were damaged in transit and that it felt like a
+quality product.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;pairing&#34;&gt;Pairing&lt;/h3&gt;
+
+&lt;p&gt;Pairing my watch to my iPhone was amazingly slick. After selecting my language,
+the watch displayed a sort of nebula pattern. On the iPhone, I launched the
+Apple Watch app, selected the pairing option and pointed the phone camera at the
+watch display. This did the pairing. Then I waited while all the relevant apps
+transferred their Apple Watch components to the watch and I was ready to start
+using it.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;the-watch&#34;&gt;The Watch:&lt;/h3&gt;
+
+&lt;p&gt;The watch comes with the modular watch face showing by default. This is a
+digital time read-out with various &amp;lsquo;complications&amp;rsquo;. Force-touch the watch face
+to change it - this takes a surprisingly strong touch. Then you can swipe
+sideways to select a watch style. Once you have a style selected, some of them
+offer further customisations: select how much detail is shown, choose what extra
+information to display, adjust colors.&lt;/p&gt;
+
+&lt;p&gt;This is a lot of fun and I am still changing mine very frequently. The good
+thing is that your customisations are stored, so if you set up the utility watch
+face in a particular way, then swap to the modular and configure it, when you go
+back to utility, your previous settings are all still there.&lt;/p&gt;
+
+&lt;p&gt;The screen is gorgeous - very crisp and easy to read.&lt;/p&gt;
+
+&lt;p&gt;Twisting your wrist to show the time works well most of the time. There is a
+delay that I would estimate at about half a second, presumably to avoid false
+positives triggering unnecessary displays. If you are holding your wrist at an
+unusual angle e.g. showing the watch to someone, this twist will not always
+work, but tapping the screen will display the watch face instantly.&lt;/p&gt;
+
+&lt;p&gt;Tapping on a complication will take you to the relevant parent app e.g. tapping
+the current temperature will open the Weather app.&lt;/p&gt;
+
+&lt;p&gt;A minor quibble is that the phases of the moon are displayed from a northern
+hemisphere point of view and do not match what we actually see here in
+Australia.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;battery-life&#34;&gt;Battery Life:&lt;/h3&gt;
+
+&lt;p&gt;This is a complete non-issue. On my first day with the watch, the battery was at
+70% when I first turned it on. As you can imagine, usage was very intense that
+first day and I got to 8%. Since then, the battery level has only got down to 40
+-50% over a day and it recharges to 100% within 2 hours. Tim&amp;rsquo;s 42mm model gets
+slightly better battery life as expected.&lt;/p&gt;
+
+&lt;p&gt;I started off having the battery indicator as one of the &amp;lsquo;complications&amp;rsquo; on my
+watch face, but now I just ignore it.&lt;/p&gt;
+
+&lt;p&gt;And the battery life of my iPhone has improved remarkably due to so many quick
+transactions being done through the watch instead.&lt;/p&gt;
+
+&lt;p&gt;I did have a charging problem one night. I woke up and checked the time and
+realised that the watch was quite warm to the touch. I checked the battery level
+which was actually lower than when I had put it on the charger. I took it off
+the charger for a few hours, then put it back and all was well.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;notifications&#34;&gt;Notifications&lt;/h3&gt;
+
+&lt;p&gt;Here is where you need to be careful. I had turned off most notifications on my
+phone before getting the watch, so I have not been inconvenienced, in fact I
+have been able to re-enable many notifications as they are no longer so
+intrusive.&lt;/p&gt;
+
+&lt;p&gt;At first we thought some notifications were not getting through to the watch,
+then we found out that if your iPhone is awake and un-locked, notifications are
+not passed on to the watch. So drop the time until sleep on your phone to the
+minimum which saves your phone battery and makes sure you receive most
+notifications on the watch.&lt;/p&gt;
+
+&lt;p&gt;If you want to stop any apps sending notifications through to the watch, this is
+easily set in the iPhone&amp;rsquo;s Apple Watch app.&lt;/p&gt;
+
+&lt;p&gt;I have noticed there is a bit of a delay. I hear an email or message arriving on
+my phone and it can be half a minute before it gets to my watch.&lt;/p&gt;
+
+&lt;p&gt;Once you get a notification, you can tap it to go to the parent app, swipe up to
+process it in some way depending on the type of notification, or swipe to the
+left to see a button that will clear the notification. If you want to get rid of
+all your notifications at once, do a force-touch on the notifications screen to
+get the option to clear them all.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;glances&#34;&gt;Glances&lt;/h3&gt;
+
+&lt;p&gt;Glances are designed to be one screen indicators giving you important
+information as quickly as possible. From there, you can decide whether to go to
+the parent app or not. These are accessed by swiping up from the bottom of the
+screen when looking at the watch face.&lt;/p&gt;
+
+&lt;p&gt;I found that the most important thing here was to reduce the number of glances
+shown, since they are displayed sequentially. If you have 20 glances installed,
+you have to swipe at least 20 times to see them all. So go to the Apple Watch
+app on your iPhone and turn off the glances you do not find essential.&lt;/p&gt;
+
+&lt;p&gt;The first glance in the sequence is essential though as it allows you to toggle
+airplane mode, do not disturb and silent mode. It also has a button that can
+make your iPhone make a sound to help you locate it. Hold this button down to
+make the iPhone flash come on as well.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;activity&#34;&gt;Activity&lt;/h3&gt;
+
+&lt;p&gt;Here I have to confess to my first disappointment. The activity app tracks three
+things: Move, Exercise and Stand. When you first start the watch, you tell it
+your age, sex, weight and height. It computes a suggested daily move goal for
+you which you can adjust at any time. Then it tracks your daily activities and
+shows how well you are doing in relation to your goal. For exercise and standing
+the goals are 30 minutes exercise and standing for at least one minute in an
+hour 12 times though the day.&lt;/p&gt;
+
+&lt;p&gt;The move tracking seems to be fine. I am not sure what metrics it uses, but on
+more active days, the numbers go up.&lt;/p&gt;
+
+&lt;p&gt;The exercise one doesn&amp;rsquo;t work for me. We went for a walk and when we returned,
+Tim&amp;rsquo;s watch showed 25 minutes exercise and mine showed 1 minute. We had walked
+the same distance at the same speed, as confirmed by the pedometer. Subsequent
+tests revealed that I don&amp;rsquo;t swing my arms enough when walking to trigger what
+ever sensor this is using. I can&amp;rsquo;t quite see why it ignores the pedometer
+completely, but hopefully this can be fixed by a software update. For now, I
+just ignore this circle.&lt;/p&gt;
+
+&lt;p&gt;Standing is another issue since I use a standing desk, so I stand for many hours
+each day. Even when standing, I get my hourly reminders to stand. However I use
+this as a trigger to make me to move about for a minute, so I suppose that is
+still useful.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;communications&#34;&gt;Communications&lt;/h3&gt;
+
+&lt;p&gt;The various forms of communication are a real strength of the watch. With Tim &amp;amp;
+I both having watches, we can phone, message (audio or text) and use the new
+Digital Touch to send sketches, taps or heart beats. While it feels a bit weird
+to be talking to your wrist, this works really well and the sound quality is
+amazing for such a small device. If you need more privacy, it is very easy to
+transfer a phone call back to your phone.&lt;/p&gt;
+
+&lt;p&gt;Oddly, the watch does not appear to offer FaceTime but always uses standard
+phone calls.&lt;/p&gt;
+
+&lt;p&gt;Messages are where the watch excels. If you get a message with a question, the
+watch can suggest possible answers so you just have to tap a button. Even
+without this, there is a set of pre-defined answers which you can edit in the
+Apple Watch app on your iPhone. And you can also use dictation or the new
+animated emojis. Dictation seems a lot better on the watch than it ever was
+before on the phone. And even if dictation is not transcribed perfectly, you can
+send the message as an audio recording instead of text.&lt;/p&gt;
+
+&lt;p&gt;When recording, tap the Done button as soon as you have finished speaking. The
+inclination is to wait for the text to be processed, but the recording carries
+on, so stop the recording and let the text processing finish in its own time.&lt;/p&gt;
+
+&lt;p&gt;The animated emojis work when you send them to other devices as they appear as
+GIFs. You can choose from 3 sets: faces, hands and hearts. Once you have swiped
+to select a set, use the crown to scroll between the options. You can also swipe
+further to get to the standard emojis.&lt;/p&gt;
+
+&lt;p&gt;Digital Touch works between watches only. It is a fun gimmick and I can imagine
+us developing a set of key codes or sketches, but neither of us can draw very
+well, so the sketches are very rough. The heart beat is amusing, but the tapping
+is surprisingly effective as an attention-getter.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;summary&#34;&gt;Summary&lt;/h3&gt;
+
+&lt;p&gt;I think this is the start of a new way of interacting with our technology in a
+way that is both closer to us and less intrusive. I am loving the watch so far
+and can&amp;rsquo;t wait to see where it goes from here.&lt;/p&gt;
+
+&lt;hr /&gt;
+</description>
+</item>
     
     <item>
-      <title>Apple Watch App - Rejected, then Accepted</title>
-      <link>https://troz.net/post/2015/apple-watch-rejected-then-accepted/</link>
-      <pubDate>Sat, 11 Apr 2015 00:00:00 +0000</pubDate>
+<title>Apple Watch App - Rejected, then Accepted</title>
+<link>https://troz.net/post/2015/apple-watch-rejected-then-accepted/</link>
+<pubDate>Sat, 11 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2015/apple-watch-rejected-then-accepted/</guid>
-      <description>As described in a previous post, about 9 days ago I submitted my first Apple Watch app for review. The app was an extension of my golf scoring app: The 19th Hole.
-I expected that App Store review times would go up dramatically once Apple had allowed developers to submit watch apps, but this proved to be incorrect. Three days after submission, the app was marked as &amp;ldquo;In Review&amp;rdquo;. This seemed to happen last thing on a Saturday, so there was no further action for two days, at which point the app was rejected, with the following details (sic):</description>
-    </item>
+<description>&lt;p&gt;As described in a &lt;a href=&#34;https://troz.net/post/2015-04-02-my-first-apple-watch-app/&#34;&gt;previous post&lt;/a&gt;, about 9 days ago I submitted my first
+Apple Watch app for review. The app was an extension of my golf scoring app:
+&lt;a href=&#34;https://troz.net/19th-hole/&#34;&gt;The 19th Hole&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I expected that App Store review times would go up dramatically once Apple had
+allowed developers to submit watch apps, but this proved to be incorrect. Three
+days after submission, the app was marked as &amp;ldquo;In Review&amp;rdquo;. This seemed to happen
+last thing on a Saturday, so there was no further action for two days, at which
+point the app was rejected, with the following details (sic):&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;We noticed an issue in your app that contributes to a lower quality user
+experience than Apple users expect. Specifically,&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;while using the Apple Watch app with the phone app is in the background mode
+(display off), the new data entry on the Watch App does not refresh
+accordingly until the phone app is turn back on.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So it appeared that the communication between the watch and the phone, which
+worked perfectly on the simulators, did not work at all on the actual devices.
+This is the problem with developing for a device that you do not have.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;After some research, it appears that the problem is with the phone not operating
+correctly in background mode. Apple provides for communications from the watch
+to the phone. The phone can respond, but only the watch can initiate a
+connection. I guess this makes sense since every watch will be paired with a
+phone but the reverse will not always be true.&lt;/p&gt;
+
+&lt;p&gt;To talk to the phone, the watch uses this function:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func openParentApplication(_ userInfo: [NSObject : AnyObject],
+  reply reply: (([NSObject : AnyObject]!, NSError!) -&amp;gt; Void)?) -&amp;gt; Bool
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The phone listens for messages in this event handler:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func application(_ application: UIApplication,
+  handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?,
+  reply reply: (([NSObject : AnyObject]!) -&amp;gt; Void)!)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The name of the WatchKit function is slightly misleading as it does open the
+parent application, but only in the background. Then the parent app is supposed
+to do whatever tasks are called for in the handleWatchKitExtensionRequest
+function, and return any required data using the supplied reply() function.&lt;/p&gt;
+
+&lt;p&gt;So far, so good, and it all worked perfectly in the simulator. But it appears
+that although this call wakes the iPhone app, it does not stay awake long enough
+to do anything. Many thanks to Brian at &lt;a href=&#34;http://www.fiveminutewatchkit.com/blog/2015/3/11/one-weird-trick-to-fix-openparentapplicationreply&#34;&gt;Five Minute WatchKit&lt;/a&gt; who pointed
+out the way to make this work. Firstly, you create a dummy background task
+guaranteed to keep the iPhone app awake for 2 seconds. Then you perform your own
+work, using another background task. When that is finished, the phone can send
+the response and end the real background task. The dummy task will time out by
+itself after 2 seconds.&lt;/p&gt;
+
+&lt;p&gt;For my needs, I could probably reduce the 2 seconds considerably, but since this
+is a problem I am unable to test, I decided just to go with Brian&amp;rsquo;s suggestion
+as it is.&lt;/p&gt;
+
+&lt;p&gt;I re-submitted the app the same day it was rejected, and two days later it was
+back in review. The review process took longer than usual, but about 30 hours
+later, the app was marked &amp;ldquo;Pending an Apple Release&amp;rdquo;. I assumed this meant that
+Apple would release all WatchKit apps on 24th April when the watches shipped,
+but the following day the app was reported as &amp;ldquo;Pending Developer Release&amp;rdquo; (I had
+set it to release manually). Now I have told iTunesConnect to release the app
+and it is &amp;ldquo;Processing for App Store&amp;rdquo;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;On a related note, the start of pre-ordering for the Apple Watch was scheduled
+for a very civilised 5:01 pm here in eastern Australia. I had three watches all
+lined up in my Favorites in the Apple Store app, ready for ordering. When the
+store became live (at about 5:03 pm), I could not work out how to order all
+three in a single operation, so had to place these orders one at a time. I got
+the first two ordered for the soonest possible delivery, but by the time I got
+to the third (about 3 minutes later), I had missed out and it will ship in 4 to
+6 weeks!&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>My First Apple Watch App</title>
-      <link>https://troz.net/post/2015/my-first-apple-watch-app/</link>
-      <pubDate>Thu, 02 Apr 2015 00:00:00 +0000</pubDate>
+<title>My First Apple Watch App</title>
+<link>https://troz.net/post/2015/my-first-apple-watch-app/</link>
+<pubDate>Thu, 02 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2015/my-first-apple-watch-app/</guid>
-      <description>I have just submitted my first Apple Watch app to the iTunes App Store. This is a scary thing to do, since I have never seen, touched or used an Apple Watch and all I had to go on was the Simulator that Apple supplies with Xcode.
-At the moment, Apple has only made a limited set of Apple Watch features available to developers, and all Apple Watch apps come tethered to an iOS app - presumably this will mainly be iPhone apps, but I wonder will we be able to connect Apple Watches to iPads?</description>
-    </item>
+<description>&lt;p&gt;I have just submitted my first Apple Watch app to the iTunes App Store. This is
+a scary thing to do, since I have never seen, touched or used an Apple Watch and
+all I had to go on was the Simulator that Apple supplies with Xcode.&lt;/p&gt;
+
+&lt;p&gt;At the moment, Apple has only made a limited set of Apple Watch features
+available to developers, and all Apple Watch apps come tethered to an iOS app -
+presumably this will mainly be iPhone apps, but I wonder will we be able to
+connect Apple Watches to iPads? Anyway, it made sense to extend one of my
+existing apps to use the Apple Watch instead of starting from scratch.&lt;/p&gt;
+
+&lt;p&gt;Of my &lt;a href=&#34;https://troz.net/apps-ios/&#34;&gt;iOS apps&lt;/a&gt;, I decided that &lt;a href=&#34;https://troz.net/19th-hole/&#34;&gt;The 19th Hole&lt;/a&gt;, my golf scoring app,
+would be well suited to the Apple Watch. The problem with using the iPhone
+version to score is that you have to keep pulling your iPhone in and out of your
+golf bag, sometimes in the rain, sometimes in bright sunlight. Being able to
+enter the scores on your wrist sounds like a big improvement. We know that the
+Apple Watch is at least somewhat water-resistant, but we are yet to see how well
+it performs in bright sunlight, however I would expect that Apple has put
+considerable effort into this.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Once I decided to write an Apple Watch app, the first step was to learn how. I
+read all Apple&amp;rsquo;s published documents to get a feel for what was possible and
+what user-interface objects would be available. I find online courses very
+helpful and by far the best Apple Watch course that I found was &lt;a href=&#34;http://www.raywenderlich.com/video-tutorials#watchkit&#34;&gt;Ray
+Wenderlich&amp;rsquo;s WatchKit video tutorial series&lt;/a&gt;. The instructors were very clear
+and explained how the layout and sizing of objects works on the Apple Watch, as
+well as how to set up and move between views and how to communicate from the
+Watch back to the iPhone. The layout section of the course was particularly
+valuable as no other course I found even mentioned this, although it is crucial
+to the interface design and allowing for the two sizes of watch.&lt;/p&gt;
+
+&lt;p&gt;I had released an update to &lt;a href=&#34;https://troz.net/19th-hole/&#34;&gt;The 19th Hole&lt;/a&gt; recently in preparation for this.
+I wanted to have squashed the bugs and updated the interface, so the only
+changes needed would be the WatchKit ones.&lt;/p&gt;
+
+&lt;p&gt;The first step in adding a WatchKit app to your existing app is to create a new
+target in the Xcode project. Choosing WatchKit actually adds two new targets:
+the WatchKit Extension which lives on the iPhone and supplies the code for the
+Watch, and the WatchKit App which lives on the Watch and provides the interface.&lt;/p&gt;
+
+&lt;p&gt;I decided to use a paged interface with one page per hole. Each of these pages
+has a table, with one row per player. A slider with plus &amp;amp; minus buttons lets
+you enter the score for each player and the total score for each player is also
+displayed.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/19thHole-Watch2.png&#34; alt=&#34;Data entry&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Apart from this data entry view, I have a splash screen which shows you the
+current round as set up on the iPhone and a final summary screen showing
+everyone&amp;rsquo;s totals.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/19thHole-Watch1.png&#34; alt=&#34;Splash screen&#34; /&gt;
+&lt;img src=&#34;https://troz.net/images/19thHole-Watch3.png&#34; alt=&#34;Summary&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;These images are taken from the Apple Watch simulator running in 42mm mode.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The biggest programming problem was getting the communications working beween
+the two devices. The 19th Hole uses Core Data for all data storage. My first
+attempt shared this data between the two apps, allowing both to read and update
+the database. This almost worked, but if both apps were open, then changes in
+one device did not get across to the other. It seemed that the data was cached
+and I was unable to find a way to force either app to update every time.&lt;/p&gt;
+
+&lt;p&gt;My next attempt kept all the data in the iPhone app and had the WatchKit
+extension ask for whatever data it needed and send changes to the iPhone app.
+This worked much better and I was able to get live updates between the two
+devices.&lt;/p&gt;
+
+&lt;p&gt;The other issue is the fact that I have never seen, touched or used an Apple
+Watch. This means that I had to guess a lot of things:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;how well will it perform?&lt;/li&gt;
+&lt;li&gt;will the icon look OK?&lt;/li&gt;
+&lt;li&gt;are the controls large enough to use?&lt;/li&gt;
+&lt;li&gt;will the text be large enough to read?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;My main philosophy was to keep the Watch app as simple as possible and use the
+standard interface elements, font sizes etc. Hopefully that will work.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The final step was submitting the app to iTunes Connect for review. It was not
+clear to me how to do this, so I logged into iTunes Connect, created a new
+version and entered the meta-data. I couldn&amp;rsquo;t see anywhere to say anything about
+the Watch. I archived the main iOS app as usual and validated it with the Store.
+I had a few things to fix up, but I got the build submitted.&lt;/p&gt;
+
+&lt;p&gt;Back to iTunes Connect and once the uploaded build had been processed, I was
+able to select it and click &amp;ldquo;Submit for Review&amp;rdquo;. At this point, the page
+reported an error and showed me a new section where I could upload the Apple
+Watch icon and screen shots.&lt;/p&gt;
+
+&lt;p&gt;I had been unsure how the icon would look when made round, but it looks OK on
+the iTunes Connect page. How it will look on a tiny watch screen remains to be
+seen. Anyway, once I had my icon and screen shots uploaded, I was able to
+proceed to the next step. But then I got a message saying that the app could not
+be processed - no explanation. Thankfully, I had seen some developers on Twitter
+reporting this, and somebody said that the solution was to remove the alpha
+channel from your screen shots. Sorry for not giving credit here - I forget who
+said this, but it worked, so thank you whoever you are.&lt;/p&gt;
+
+&lt;p&gt;So now my app is waiting for review and who knows how long that will take.
+According to &lt;a href=&#34;http://appreviewtimes.com&#34;&gt;App Review Times&lt;/a&gt;, the current estimate is 8 days, but the
+trend is heading upwards. I would expect that to blow out in the next few weeks
+as developers try to get their apps ready for the Apple Watch release date of
+April 24th.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Icon Builder 3.0.1</title>
-      <link>https://troz.net/post/2015/icon-builder-3.0.1/</link>
-      <pubDate>Tue, 17 Mar 2015 00:00:00 +0000</pubDate>
+<title>Icon Builder 3.0.1</title>
+<link>https://troz.net/post/2015/icon-builder-3.0.1/</link>
+<pubDate>Tue, 17 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2015/icon-builder-3.0.1/</guid>
-      <description>So why an announcement for such a minor upgrade?
-Version 3.0 got no announcement because it was not the release I wanted.
-Having downloaded the Xcode 6.2 &amp;amp; 6.3 betas, I had worked out what icons were needed to a WatchKit app. This, combined with several other changes, made me bump the version number to 3.0.
-Sadly, Apple rejected the update because it referred to pre-release products. So I pulled all mentions of WatchKit out of the interface and meta data and got 3.</description>
-    </item>
+<description>
+
+&lt;p&gt;So why an announcement for such a minor upgrade?&lt;/p&gt;
+
+&lt;p&gt;Version 3.0 got no announcement because it was not the release I wanted.&lt;/p&gt;
+
+&lt;p&gt;Having downloaded the Xcode 6.2 &amp;amp; 6.3 betas, I had worked out what icons were
+needed to a WatchKit app. This, combined with several other changes, made me
+bump the version number to 3.0.&lt;/p&gt;
+
+&lt;p&gt;Sadly, Apple rejected the update because it referred to pre-release products. So
+I pulled all mentions of WatchKit out of the interface and meta data and got 3.0
+released.&lt;/p&gt;
+
+&lt;p&gt;After the Apple keynote on March 9th, I re-enabled the WatchKit portions of the
+app and re-submitted to the App Store, hoping that with the WatchKit SDK now
+part of the official Xcode release, Apple&amp;rsquo;s reviewers would allow it to get
+through this time.&lt;/p&gt;
+
+&lt;p&gt;This worked - in fact the app was reviewed and accepted within 6 days - so now
+Icon Builder adds WatchKit to its list of supported platforms.&lt;/p&gt;
+
+&lt;p&gt;Actually, Apple may have done me a favour in rejecting the first one as they
+changed the specifications for the icons slightly between Xcode 6.2 beta and
+Xcode 6.2 release.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://troz.net/icon-builder/&#34;&gt;Icon Builder page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://itunes.apple.com/us/app/icon-builder/id552293482?mt=12&amp;amp;uo=4&#34;&gt;Mac App Store link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;what-s-new-in-version-3&#34;&gt;What’s New in version 3?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Support for WatchKit app icons (version 3.0.1)&lt;/li&gt;
+&lt;li&gt;Simplified interface: removed display of smaller icons.&lt;/li&gt;
+&lt;li&gt;Fix for @3x images not being saved when you selected iOS 6 support.&lt;/li&gt;
+&lt;li&gt;iTunesArtwork@2x file now saved as a JPG to avoid iTunes Connect errors.&lt;/li&gt;
+&lt;li&gt;Removed CarPlay icon - Xcode sometimes gave errors when this was included.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+</item>
     
   </channel>
 </rss>

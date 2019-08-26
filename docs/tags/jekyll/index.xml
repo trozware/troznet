@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>jekyll on TrozWare</title>
     <link>https://troz.net/tags/jekyll/</link>
@@ -8,52 +8,608 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Wed, 29 Nov 2017 17:42:57 +1000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Moving to Hugo</title>
-      <link>https://troz.net/post/2017/moving-to-hugo/</link>
-      <pubDate>Wed, 29 Nov 2017 17:42:57 +1000</pubDate>
+<title>Moving to Hugo</title>
+<link>https://troz.net/post/2017/moving-to-hugo/</link>
+<pubDate>Wed, 29 Nov 2017 17:42:57 +1000</pubDate>
       
       <guid>https://troz.net/post/2017/moving-to-hugo/</guid>
-      <description>&lt;p&gt;Yesterday, I came to update my blog: I had a new post in draft form and I wanted
+<description>&lt;p&gt;Yesterday, I came to update my blog: I had a new post in draft form and I wanted
 to update the Swift code to version 4. However installing High Sierra had
 removed &lt;a href=&#34;https://jekyllrb.com&#34; title=&#34;Jekyll&#34;&gt;Jekyll&lt;/a&gt; which is the site generator that I had been using. I
 re-installed Jekyll but found that it had been updated from version 2 to version
-3.&lt;/p&gt;</description>
-    </item>
+3.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;jekyll-problems&#34;&gt;Jekyll Problems&lt;/h2&gt;
+
+&lt;p&gt;Then my problems started: missing dependencies due to the basic Jekyll install
+no longer including certain features, and then syntax errors due to changes in
+the way things are done, particularly to do with pagination.&lt;/p&gt;
+
+&lt;p&gt;I tried to fix this myself, then thought that maybe the theme I was using had
+already solved these issues so I tried re-installing that. It wanted to add
+about 25 more gems and then failed to install - sigh - spend some time rolling
+that back&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;At this point I decided that if Jekyll was going to cause me a lot of trouble,
+it might be worth looking at an alternative.&lt;/p&gt;
+
+&lt;p&gt;My main criteria were the ability to import my Jekyll site and the ability to
+host on &lt;a href=&#34;https://pages.github.com/&#34; title=&#34;GitHub Pages&#34;&gt;GitHub Pages&lt;/a&gt;. After checking out the options, I decided to have a
+look at &lt;a href=&#34;https://gohugo.io&#34; title=&#34;Hugo&#34;&gt;Hugo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;moving-to-hugo&#34;&gt;Moving to Hugo&lt;/h2&gt;
+
+&lt;p&gt;One of the most lauded features of Hugo is speed. I had found with Jekyll that
+when I saved an edited page, it took about 5 seconds before the edits could be
+reloaded into the browser. Hugo is supposedly fast and does auto reloads.&lt;/p&gt;
+
+&lt;p&gt;Following the &lt;a href=&#34;https://gohugo.io/getting-started/quick-start/&#34; title=&#34;Hugo Quick Start&#34;&gt;Quick Start&lt;/a&gt; guide, I installed Hugo. Importing my Jekyll site
+worked easily and so fast I wasn&amp;rsquo;t sure anything had happened, transferring my
+posts to &lt;code&gt;contents/posts&lt;/code&gt; and my other files (status pages, images etc.) to
+&lt;code&gt;static&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Then the main exercise appeared to be choosing a theme which would provide not
+only the visuals but the capabilities of the site.&lt;/p&gt;
+
+&lt;p&gt;So I drew up a list of demands for any theme I chose:&lt;/p&gt;
+
+&lt;h3 id=&#34;must-have-features&#34;&gt;Must Have Features&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Responsive&lt;/li&gt;
+&lt;li&gt;Blog style:
+
+&lt;ul&gt;
+&lt;li&gt;front page with recent posts&lt;/li&gt;
+&lt;li&gt;tags&lt;/li&gt;
+&lt;li&gt;archive page&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Written using Markdown&lt;/li&gt;
+&lt;li&gt;Static pages for apps listing, about, contact etc.&lt;/li&gt;
+&lt;li&gt;Syntax highlighting&lt;/li&gt;
+&lt;li&gt;Social links&lt;/li&gt;
+&lt;li&gt;Google Analytics&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;would-be-nice-features&#34;&gt;Would Be Nice Features&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Disqus commenting&lt;/li&gt;
+&lt;li&gt;Twitter cards&lt;/li&gt;
+&lt;li&gt;JSON Feed&lt;/li&gt;
+&lt;li&gt;Searching within the site&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The Hugo themes page &lt;a href=&#34;https://themes.gohugo.io&#34;&gt;https://themes.gohugo.io&lt;/a&gt; has themes listed by capabilities,
+but no way that I could see to combine a selection of capabilities.&lt;/p&gt;
+
+&lt;p&gt;Some of the features like Google Analytics or Disqus comments, I could probably
+add myself using templates from theme that did include them, if the template I
+chose did not.&lt;/p&gt;
+
+&lt;p&gt;Conveniently, nearly all these seem to come with an exampleSite folder that
+contains the configuration info.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;configuring-a-theme&#34;&gt;Configuring a Theme&lt;/h2&gt;
+
+&lt;p&gt;After testing out several alternatives, I decided to go with &lt;a href=&#34;https://github.com/olOwOlo/hugo-theme-even&#34; title=&#34;Even&#34;&gt;Even&lt;/a&gt; - at
+least to start with. I installed the theme and copied the contents of the
+example &lt;code&gt;config.toml&lt;/code&gt; to my own &lt;code&gt;config.toml&lt;/code&gt; file and started configuring.&lt;/p&gt;
+
+&lt;p&gt;I wasn&amp;rsquo;t happy with some of the fonts, but soon worked out how to change the CSS
+in the theme and then re-build it to apply the changes. And I changed the theme
+colour from the default red to &amp;ldquo;Cobalt Blue&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;Most of the other changes were done using the &lt;code&gt;config.toml&lt;/code&gt; file. I was able to
+set up menus, configure the social media links I wanted to show, set date
+formats, set the number of items to show per page and so on.&lt;/p&gt;
+
+&lt;p&gt;I had a couple of more static pages that I wanted to show, so I added their
+Markdown files to the content folder.&lt;/p&gt;
+
+&lt;p&gt;One nice feature which I had missed in Jekyll (or at least the way I had it set
+up) was the ability to separate blog posts from more static web pages. Each of
+my apps has an information/support page that does not accept comments and
+doesn&amp;rsquo;t need to be listed in the Archives. By moving these Markdown files from
+&lt;code&gt;contents/posts&lt;/code&gt; to &lt;code&gt;contents/pages&lt;/code&gt;, I was able to achieve this.&lt;/p&gt;
+
+&lt;p&gt;Adding Google Analytics and Disqus commenting was as easy as entering my IDs in
+the relevant places in the &lt;code&gt;config.toml&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;p&gt;I had to do some editing of my imported posts from Jekyll - mainly getting rid
+of references to &lt;code&gt;{{ site.url }}&lt;/code&gt; so that images and internal links would work.
+And sometimes I just needed to re-save a file to make Hugo re-evaluate it (there
+is probably a command to force a complete re-build if I looked for it.)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;working-out-the-structure&#34;&gt;Working out the Structure&lt;/h2&gt;
+
+&lt;p&gt;One thing that I was puzzled by was what templates the various pages are
+generated from.&lt;/p&gt;
+
+&lt;p&gt;The main page is easy enough as the theme folder has a layouts folder with an
+&lt;code&gt;index.html&lt;/code&gt; file containing the templating. When a post is displayed, that
+looks like it comes from &lt;code&gt;layouts/posts/single.html&lt;/code&gt; while
+&lt;code&gt;layouts/posts/summary.html&lt;/code&gt; contains the templating for each entry in the index
+page.&lt;/p&gt;
+
+&lt;p&gt;But clicking on the Archives link in the me takes me to &lt;a href=&#34;https://troz.net/post/&#34;&gt;https://troz.net/post/&lt;/a&gt;
+and there is no &lt;code&gt;post.html&lt;/code&gt; file in layouts. There is a &lt;code&gt;post&lt;/code&gt; folder, but it
+contains the &lt;code&gt;single.html&lt;/code&gt; &amp;amp; &lt;code&gt;summary.html&lt;/code&gt; files described already.&lt;/p&gt;
+
+&lt;p&gt;Delving ever deeper, &lt;code&gt;layouts/_default/section.html&lt;/code&gt; appears to contains the
+Archives page template. But how does that relate to the &lt;a href=&#34;https://troz.net/post/&#34;&gt;https://troz.net/post/&lt;/a&gt;
+link? And the Tags template is in &lt;code&gt;layouts/_default/terms.html&lt;/code&gt; but appears in
+&lt;a href=&#34;https://troz.net/tags/&#34;&gt;https://troz.net/tags/&lt;/a&gt;. Checking the Hugo documentation for creating a theme, I
+find the information I need. Hugo has a selection of file paths that it checks
+for such templates, and these file paths match some of those. So now I know
+where to go to customise further.&lt;/p&gt;
+
+&lt;p&gt;One feature that I really like about the Even theme is the ability to have a
+table of contents displayed beside each blog post if your page is wide enough.
+It takes the headers in the post and uses them to make the table. I may need to
+add or edit the headers in some posts, but I really like this feature.&lt;/p&gt;
+
+&lt;p&gt;And if you want a laugh, test out the 404 page - here is a &lt;a href=&#34;https://troz.net/bad-link/&#34; title=&#34;404&#34;&gt;bad link&lt;/a&gt; - which
+generates a random text emoji each time!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;publishing&#34;&gt;Publishing&lt;/h2&gt;
+
+&lt;p&gt;I wanted to use my existing GitHub Pages setup, so I replaced the site files in
+my local repository with the new Hugo site files. I generated the static site
+files using &lt;code&gt;hugo&lt;/code&gt; in Terminal, then pushed the pages to GitHub. All I had to do
+then was change the settings so that GitHub Pages knew my site was coming from
+the &lt;code&gt;docs&lt;/code&gt; folder and I was live with the new site.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;final-thoughts&#34;&gt;Final Thoughts&lt;/h2&gt;
+
+&lt;p&gt;So how am I going with my check list?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Responsive - ALMOST, not Hugo&amp;rsquo;s fault&lt;/li&gt;
+&lt;li&gt;Blog style - YES&lt;/li&gt;
+&lt;li&gt;Written using Markdown - YES&lt;/li&gt;
+&lt;li&gt;Static pages for apps listing, about, contact etc. - YES&lt;/li&gt;
+&lt;li&gt;Syntax highlighting - YES&lt;/li&gt;
+&lt;li&gt;Social links - YES&lt;/li&gt;
+&lt;li&gt;Google Analytics - YES&lt;/li&gt;
+&lt;li&gt;Disqus commenting - YES&lt;/li&gt;
+&lt;li&gt;Twitter cards - NO&lt;/li&gt;
+&lt;li&gt;JSON Feed - NO&lt;/li&gt;
+&lt;li&gt;Searching within the site - NO&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The Hugo generated pages are all responsive and look great on my iPhone, but my
+old static page for listing my apps does not look good, so I need to re-design
+that.&lt;/p&gt;
+
+&lt;p&gt;Twitter cards - I have found some articles on how to set that up, so it is
+possible, but I haven&amp;rsquo;t done it yet.&lt;/p&gt;
+
+&lt;p&gt;JSON Feed is not working. There are themes that apparently have this, but I
+haven&amp;rsquo;t yet worked out how to implement it - hopefully later.&lt;/p&gt;
+
+&lt;p&gt;In-site search - this was something I was able to get in my old WordPress site,
+but not in Jekyll. There are Hugo themes listed that support search, but they
+seem to just give a link to Google or DuckDuckGo. Maybe this can be edited to
+restrict it to the site, but I dislike using such searches, so I will not add a
+search unless it works internally. One theme I found uses &lt;a href=&#34;https://www.algolia.com&#34; title=&#34;Algolia&#34;&gt;Algolia&lt;/a&gt; to search
+the site, so I will investigate that.&lt;/p&gt;
+
+&lt;p&gt;Overall, I am impressed. The transition was relatively easy, especially
+considering that I didn&amp;rsquo;t take the time to learn anything about Hugo first, but
+just blundered in and tried to work it out on the fly.&lt;/p&gt;
+
+&lt;p&gt;The speed of generating pages and the live reload while developing make Hugo a
+pleasure to work with. Now all I have to do is write some interesting posts&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;And I want to tidy up the URLs, headers and tags for the older pages as well as
+investigating Twitter cards, search &amp;amp; JSON Feed.&lt;/p&gt;</description>
+</item>
     
     <item>
-      <title>Posting from my new iPad</title>
-      <link>https://troz.net/post/2017/posting-from-my-new-ipad/</link>
-      <pubDate>Sat, 17 Jun 2017 00:00:00 +0000</pubDate>
+<title>Posting from my new iPad</title>
+<link>https://troz.net/post/2017/posting-from-my-new-ipad/</link>
+<pubDate>Sat, 17 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2017/posting-from-my-new-ipad/</guid>
-      <description>Last week I got a 10.5” iPad Pro. I have had an iPad ever since the original release, but I have to confess to mainly using it for content consumption rather than creation. Since I am usually close to a Mac anyway, there didn’t seem a lot of point. But now that iOS 11 is really addressing the issue of making the iPad a &amp;ldquo;pro&amp;rdquo; device, I decided to give it a try.</description>
-    </item>
+<description>
+
+&lt;p&gt;Last week I got a 10.5” iPad Pro. I have had an iPad ever since the original
+release, but I have to confess to mainly using it for content consumption rather
+than creation. Since I am usually close to a Mac anyway, there didn’t seem a lot
+of point. But now that iOS 11 is really addressing the issue of making the iPad
+a &amp;ldquo;pro&amp;rdquo; device, I decided to give it a try.&lt;/p&gt;
+
+&lt;p&gt;So here I am, sitting in an armchair with my iPad on my lap, writing this post
+and working out the details as I go. Any typos are due to the cat trying to
+compete with the iPad for space on my lap!&lt;/p&gt;
+
+&lt;h2 id=&#34;ipad&#34;&gt;iPad&lt;/h2&gt;
+
+&lt;p&gt;As already mentioned, I have a new iPad Pro. I also have an Apple Pencil which I
+use for taking notes. I do not have a keyboard, so I am using the on-screen
+keyboard right now.&lt;/p&gt;
+
+&lt;p&gt;I don’t usually install beta versions of operating systems, but iOS 11 is a huge
+part of making the iPad more professional, so I have installed it. As you would
+expect, there are a few issues (apps quitting, layout issues especially when
+rotating) but so far I am loving it.&lt;/p&gt;
+
+&lt;h2 id=&#34;writing&#34;&gt;Writing&lt;/h2&gt;
+
+&lt;p&gt;My site is published on &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt; using &lt;a href=&#34;http://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; with all the posts
+and pages written in Markdown. One key feature is that every post or page
+requires a chunk of &amp;ldquo;front matter&amp;rdquo; that must be formatted correctly for the
+Jekyll parser to interpret it and create the static content. After a bit of
+research, it looked like &lt;a href=&#34;http://omz-software.com/editorial/&#34;&gt;Editorial&lt;/a&gt; was going to be the best option for an
+editor app. I moved my site files to Dropbox, linked my Dropbox account to
+Editorial and I was ready to start writing.&lt;/p&gt;
+
+&lt;p&gt;I didn’t want to create the front matter manually for each post. On my Mac I
+have a text expander snippet that handles that but copying from &lt;a href=&#34;http://mattgemmell.com/using-the-ipad-for-blogging-with-jekyll/&#34;&gt;Matt Gemell’s
+post&lt;/a&gt; on the topic, I created an Editorial workflow to create a new post. As
+a side-note, Matt has a series of posts on using an iPad which I have found very
+useful and inspirational.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Workflow.jpeg&#34; alt=&#34;Editorial workflow&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Text entry and editing is a task that I have always felt was too difficult in
+iOS, particularly when it came to selecting text and moving the cursor. However
+there are now several improvements. As with iOS 10, a two-fingered press on the
+keyboard transforms it into a trackpad for moving the cursor. If you already
+have text selected, this moves the selection handles. The new iOS 11 keyboard
+has a really nice feature for entering non-alphabetic characters. The keys now
+show a small grey character above the main character. Drag down on the key to
+move the small character into the main key and type it. For example, drag down
+on the h key to type (.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/keyboard-drag.png&#34; alt=&#34;Keyboard drag&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Editorial has its own editing helpers. There is an additional toolbar above the
+keyboard with a tab key as well as frequently used Markdown modifiers. And
+swiping across this toolbar moves the cursor. This is a much slower move than
+when using the keyboard as a trackpad so might be better for more precise
+movements.&lt;/p&gt;
+
+&lt;h3 id=&#34;adding-links&#34;&gt;Adding Links:&lt;/h3&gt;
+
+&lt;p&gt;I have referenced a few sites now, so I guess it is time to work out how to link
+to them. I always use Markdown’s referenced link method, with the links
+collected at the foot of the document, so that is what I plan to do here. To set
+text as a link, I selected it and used the Editorial toolbar to type an opening
+square bracket which surrounded the selection in square brackets. Then I moved
+the cursor to after the closing bracket and typed another opening square
+bracket. This auto-closed and I was able to type a number which will be the
+reference.&lt;/p&gt;
+
+&lt;p&gt;Next step is to find the relevant URLs - drag &amp;amp; drop with multi-tasking to the
+rescue! Swipe up from the bottom of the screen to see the new Dock. This also
+makes the keyboard disappear. Hold down on the Safari icon until you grab it,
+then drag it up into the Editorial window. Now it is open as an overlay.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/safari-overlay.png&#34; alt=&#34;Safari as overlay&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;At this point, I have several options:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Swiping from the left or right of the overlay window lets me position it to
+the right or left of the screen, still as an overlay.&lt;/li&gt;
+&lt;li&gt;Dragging from the bar at the top of the overlap allows me to convert to split
+screen mode, and I can then drag the divider to adjust the ratios.&lt;/li&gt;
+&lt;li&gt;Swiping all the way to the right disappears the overlay, but swiping back from
+the right edge returns it. Since I want to copy and paste some links, this
+looks like the best option right now.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This swiping conflicts slightly with Editorial&amp;rsquo;s swiping from the side to see a
+preview. Swipe from off the edge for the overlap and from well inside the edge
+for preview.&lt;/p&gt;
+
+&lt;p&gt;And here my plans come crashing down. I can drag from Safari&amp;rsquo;s address bar into
+the Editorial document, but the drop doesn’t take. I guess I need an update to
+Editorial for this to work. But I can still use the old style copy and paste to
+get the links.&lt;/p&gt;
+
+&lt;h3 id=&#34;images&#34;&gt;Images&lt;/h3&gt;
+
+&lt;p&gt;So now I have my links, but I want to insert a few images. I used iOS 11’s new
+screen shot abilities. Press the usual home button &amp;amp; power button combination to
+take a screen shot and it appears as a small picture in the bottom left of the
+screen. Tap it to start editing: markup, crop etc. Then I used the sharing
+button to save the picture to Dropbox, putting it inside the images folder in my
+web site folder.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/screenshot.jpeg&#34; alt=&#34;Editing a screenshot&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I want to insert an image link but I have just worked out that I saved this
+Markdown file in the root folder instead of the _posts folder. I can’t see a way
+to move it from inside Editorial, so I will swap to the Dropbox app to move the
+file - be right back&amp;hellip; (I see now how I could have done this in Editorial.)&lt;/p&gt;
+
+&lt;p&gt;Ok, this file is in the right place and the images are in the right folder, so
+how to add an image link? Checking back at previous posts, I see that the format
+I use for inserting an image is: &lt;code&gt;![Alt text][#]&lt;/code&gt; and the reference at the foot
+of the page is like&lt;code&gt;[#]: /images/image_name.jpg&lt;/code&gt; but I don’t want to have to
+remember that every time, so I think it is time for some snippets. Tapping the
+lightning icon on the Editorial keyboard lets me edit and create snippets, so I
+have made one for the image link and one for the image reference. Time to scroll
+back up the page and try them out.&lt;/p&gt;
+
+&lt;p&gt;I opened the Dropbox app in an overlay so that I could find the file names for
+the images I just saved, then I created the links. The images don’t appear in
+the preview but that is expected because Jekyll has not parsed the addresses.
+Looking at the information about the images in Dropbox, I see that they are far
+too big. I need a way to resize them. The screen shot editor doesn’t have a way
+to resize apart from cropping, at least not in this beta.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://workflow.is/&#34;&gt;Workflow&lt;/a&gt; is another Pro level app that I have never really used, but it
+seems that it might do the job. I tried a few workflows to edit the size of an
+image from a Dropbox file and save it back, but they although they appeared to
+complete, the image file remained the same size. So then I went to the Workflow
+Gallery and found a workflow called Quick Resize Screenshot. When editing a
+screen shot, I can use the sharing button to run the workflow and then I can
+save the smaller images to Dropbox for use in the page. For the large images
+that I have already saved, I will resize them on my Mac before publishing.&lt;/p&gt;
+
+&lt;h2 id=&#34;publishing&#34;&gt;Publishing&lt;/h2&gt;
+
+&lt;p&gt;This brings me to the final step - publishing the changes to GitHub Pages.
+Jekyll is a system that creates static web pages from the Markdown and other
+files. on my Mac, I run the &lt;code&gt;jekyll build&lt;/code&gt; command in Terminal and the pages are
+created or re-generated as required. Then I use &lt;code&gt;git&lt;/code&gt; to commit my changes and
+push them to GitHub which serves them.&lt;/p&gt;
+
+&lt;p&gt;There appear to be Editorial workflows written in Python that use the GitHub
+APIs to upload files, but this wouldn’t work well for me. Because of the
+structure of my site, many different pages need to be re-generated when I
+publish a new post, so I will keep the publishing phase on my Mac. However there
+is no need to make it any more difficult than necessary, so I have written a
+shell script to do the work.&lt;/p&gt;
+
+&lt;p&gt;The script takes an optional commit message parameter, builds the site, commits
+changes and pushes then to GitHub. I have only tested this when no files had
+changed, so this post will be the first real test. Shell scripting is outside my
+comfort zone, so we will have to see how that works.&lt;/p&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;So now I have a workflow on my iPad that uses Editorial, Dropbox and Workflow.
+This allows me to do 100% of the writing task. Then I have a single shell script
+on my Mac that does the publishing part. I can edit and create posts anywhere. I
+can easily use split screen or screen overlays to add links. iOS 11 makes
+creating and annotating screen shots very easy.&lt;/p&gt;
+
+&lt;p&gt;I am hoping for an update to Editorial that will allow it to accept drag &amp;amp; drop.
+The ability to resize screen shots before saving them would also be really
+useful.&lt;/p&gt;
+
+&lt;p&gt;Sometimes my posts are more code-based and need access to Xcode and in those
+cases, I will stick to my Mac, especially considering Xcode’s new ability to
+connect directly to GitHub which will make it great for publishing Swift
+playgrounds. But for more narrative-style posts like this one, I will use my
+iPad and see how I can improve my workflow and expand my tool set.&lt;/p&gt;
+
+&lt;p&gt;It feels good to be using the iPad as a content creation device at last.&lt;/p&gt;
+
+&lt;h2 id=&#34;extra-notes-from-a-mac&#34;&gt;Extra Notes from a Mac:&lt;/h2&gt;
+
+&lt;p&gt;Since this was my first time writing a blog post using an iPad and this
+workflow, I decided that I should test the results before publishing, so I
+switched back to the Mac and in Terminal, ran &lt;code&gt;jekyll serve&lt;/code&gt; so that I could see
+the results. There were a few issues mainly to do with the formatting of the
+front matter. The three dashes at the top &amp;amp; bottom of the front matter had
+become munged into an emdash plus a dash, so that didn’t work. Jekyll is also
+fussy about the spaces in the tag &amp;amp; summary lines and it doesn&amp;rsquo;t handle
+non-alphanumerics in the summary text.&lt;/p&gt;
+
+&lt;p&gt;I also used the Mac to shrink some of the images that I had saved before working
+out how to reduce the size of screen shots.&lt;/p&gt;
+
+&lt;p&gt;So I need to check the structure of the front matter workflow before next time,
+but this post is ready to go with only minor editing on the Mac side. Now to
+test my shell script&amp;hellip;&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Testing automation</title>
-      <link>https://troz.net/post/2015/testing-automation/</link>
-      <pubDate>Thu, 12 Mar 2015 00:00:00 +0000</pubDate>
+<title>Testing automation</title>
+<link>https://troz.net/post/2015/testing-automation/</link>
+<pubDate>Thu, 12 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2015/testing-automation/</guid>
-      <description>Today I am experimenting with automating post generation.
-Firstly, there is the structure of the post Markdown document, which really boils down to the file name and the header.
-I have set up a macro in Typinator so that I just type the title of the post in a text document. I copy that title to the clipboard and type the shortcut. The header is then created with the title and the formatted permalink.</description>
-    </item>
+<description>&lt;p&gt;Today I am experimenting with automating post generation.&lt;/p&gt;
+
+&lt;p&gt;Firstly, there is the structure of the post Markdown document, which really
+boils down to the file name and the header.&lt;/p&gt;
+
+&lt;p&gt;I have set up a macro in &lt;a href=&#34;http://www.ergonis.com/products/typinator/&#34;&gt;Typinator&lt;/a&gt; so that I just type the title of the
+post in a text document. I copy that title to the clipboard and type the
+shortcut. The header is then created with the title and the formatted permalink.&lt;/p&gt;
+
+&lt;p&gt;To save the document, I use another Typinator snippet to convert the title
+(still in the clipboard) to lower case and to replace the spaces in the title
+with dashes.&lt;/p&gt;
+
+&lt;p&gt;For starting the local Jekyll server, I have turned to an &lt;a href=&#34;http://www.alfredapp.com&#34;&gt;Alfred&lt;/a&gt; workflow.
+I have two actions in the workflow. One opens Terminal, cd&amp;rsquo;s to my site folder
+and runs the command to start the local Jekyll server. The second opens my
+default browser to the local Jekyll test address.&lt;/p&gt;
+
+&lt;p&gt;Both these actions happen simultaneously so the browser usually fails until
+refreshed. The server is left running in Terminal so I can shut it down when
+finished testing.&lt;/p&gt;
+
+&lt;p&gt;After writing the post, the final stage is to publish, so I need to work out the
+commands for doing a git commit and push. Then I should be able to automate
+those tasks.&lt;/p&gt;
+
+&lt;p&gt;Testing the git commands using Terminal, I have come up with the following
+sequence:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git add .
+git commit -a -m &amp;quot;Commit message here&amp;quot;
+git push
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The commit message could be the title of the post, so I need a way to construct
+the command and then execute it. Typinator is good at text manipulation, so I
+constructed another macro that takes the clipboard, uses it as the commit
+message and performs the git commands. This gave a good commit message, but the
+actual commit failed, so that was no use.&lt;/p&gt;
+
+&lt;p&gt;So then I went back to Alfred and created a workflow there with a series of
+Terminal commands to perform the actions above. This only allows a generic
+commit message, but it works as expected.&lt;/p&gt;
+
+&lt;p&gt;So there is still room for improvement, but with a set of macros, I can automate
+a lot of the standard text entry, which is always good for reducing errors.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The sequence now is:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Open the text editor and type the title of the post.&lt;/li&gt;
+&lt;li&gt;Cut this into the clipboard.&lt;/li&gt;
+&lt;li&gt;Run the Typinator macro to fill in the post header.&lt;/li&gt;
+&lt;li&gt;Save the post file, using the Typinator macro to construct the file name.&lt;/li&gt;
+&lt;li&gt;Write the post, then use an Alfred workflow to test it locally.&lt;/li&gt;
+&lt;li&gt;When ready, use an Alfred workflow to publish.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+</description>
+</item>
     
     <item>
-      <title>Workflow for writing a post</title>
-      <link>https://troz.net/post/2015/workflow-for-writing-a-post/</link>
-      <pubDate>Tue, 10 Mar 2015 00:00:00 +0000</pubDate>
+<title>Workflow for writing a post</title>
+<link>https://troz.net/post/2015/workflow-for-writing-a-post/</link>
+<pubDate>Tue, 10 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2015/workflow-for-writing-a-post/</guid>
-      <description>So here is where I need to get used to Jekyll and how things are done. I will end up automating this when I am sure of the process, but for now, I am just going to work my way through it.
- Start up the local Jekyll server:
- I opened Terminal and used cd to get to the folder containing my site. Next I started the Jekyll server locally using jekyll serve.</description>
-    </item>
+<description>&lt;p&gt;So here is where I need to get used to Jekyll and how things are done. I will
+end up automating this when I am sure of the process, but for now, I am just
+going to work my way through it.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Start up the local Jekyll server:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I opened Terminal and used &lt;code&gt;cd&lt;/code&gt; to get to the folder containing my site.&lt;/li&gt;
+&lt;li&gt;Next I started the Jekyll server locally using &lt;code&gt;jekyll serve&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;This gave me the address of the local server - in my case
+&lt;code&gt;http://127.0.0.1:4000/&lt;/code&gt; - so I went there in my browser to see the default
+page.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;My goal is to write a new blog post (this one in fact).&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;For advice on creating a new post, I went to the &lt;a href=&#34;http://jekyllrb.com/docs/posts/&#34;&gt;Jekyll docs&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Jekyll needs the file name to be a specific format which includes the date
+and title.&lt;/li&gt;
+&lt;li&gt;Looking in the &lt;code&gt;_posts&lt;/code&gt; folder of the site folder, I see the previous post
+file is titled &lt;code&gt;2015-03-08-new-site-for-trozware.md&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;As it is now 10th March 2015, I am saving this file as:
+&lt;code&gt;2015-03-10-workflow-for-writing-a-post.md&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Saving at this point shows a Jekyll error in the Terminal, but the next
+stage will fix that.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Front matter:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Jekyll specifies that each file must have a &lt;a href=&#34;http://jekyllrb.com/docs/frontmatter/&#34;&gt;front matter block&lt;/a&gt; in a
+certain format.&lt;/li&gt;
+&lt;li&gt;The header has certain essential parameters and then more optional ones.&lt;/li&gt;
+&lt;li&gt;My site was imported from WordPress, so the older posts contain several
+header parameters that may not be necessary any more.&lt;/li&gt;
+&lt;li&gt;Look at the screen shot below to see what I have in this post file:&lt;/li&gt;
+&lt;li&gt;After saving, I see this entry in my Terminal:&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Regenerating: 1 file(s) changed at 2015-03-10 13:50:40 ...done in 0.421789
+seconds.&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Now I can see the title and the start of the post on my first page and when
+clicking on it, I can see all the text.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Adding an image:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This is not really necessary for this post, but I wanted to document it as
+part of the workflow.&lt;/li&gt;
+&lt;li&gt;I wanted to show the front matter and start of this post, so I took a
+screen shot of the top of my editor window.&lt;/li&gt;
+&lt;li&gt;Then I renamed the image file and moved it into the &lt;code&gt;images&lt;/code&gt; folder of my
+site.&lt;/li&gt;
+&lt;li&gt;Now to embed the image using this Markdown: &lt;code&gt;![Post header][2]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;As you can see, I prefer to group all links (images &amp;amp; URLs) at the end of
+the document and keep the body of the text as clean as possible.&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;https://troz.net/images/post_header.png&#34; alt=&#34;Post header&#34; /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Proofing:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Now that I have the text of my post, I need to proof-read it from the local
+Jekyll server.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;jekyll serve&lt;/code&gt; command running in Terminal keeps the pages up-to-date
+as you edit, but you will need to refresh your page in the browser manually
+to check your changes.&lt;/li&gt;
+&lt;li&gt;And I have found that if you make a major change to the site e.g. a CSS
+file or a config file, then it is best to stop the Jekyll server and start
+it again to make it re-build all the files.&lt;/li&gt;
+&lt;li&gt;To be completely sure, stop the server and run &lt;code&gt;jekyll build&lt;/code&gt; in Terminal
+although this may only do what &lt;code&gt;jekyll serve&lt;/code&gt; does on startup anyway.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Publishing:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Now it is time to publish.&lt;/li&gt;
+&lt;li&gt;As I am using GitHub Pages to host, the site files are all part of a single
+Git repository.&lt;/li&gt;
+&lt;li&gt;And as I understand it, the data &lt;strong&gt;must&lt;/strong&gt; be in the &lt;code&gt;master&lt;/code&gt; branch.&lt;/li&gt;
+&lt;li&gt;Opening up the GitHub client, I see that my repository has a bunch of
+changes: - the file I am working on - the image I inserted - feed.xml -
+index.html files for each page&lt;/li&gt;
+&lt;li&gt;This is as expected, since all pages are pre-generated when using Jekyll,
+so pages of posts must be re-rendered when a new post is added to the top.&lt;/li&gt;
+&lt;li&gt;Note that several of the files appear twice: once from where they are
+edited and once from the _site folder which serves them.&lt;/li&gt;
+&lt;li&gt;Just two simple steps now, using the GitHub client: 1. Commit 2. Sync&lt;/li&gt;
+&lt;li&gt;And that&amp;rsquo;s it. My new post is online and ready for reading.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Summary:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This was my first post after the one I wrote when setting up, so the first
+real post.&lt;/li&gt;
+&lt;li&gt;While there appear to be a lot of steps, none of them are difficult.&lt;/li&gt;
+&lt;li&gt;But I do have 4 apps running to do it: 1. TextWrangler for editing 1.
+Terminal to run the local Jekyll server 1. Safari to check the finished
+post 1. GitHub to commit and upload&lt;/li&gt;
+&lt;li&gt;Automating this is an obvious next step, so stay tuned&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+</item>
     
   </channel>
 </rss>

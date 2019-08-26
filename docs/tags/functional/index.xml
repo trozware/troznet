@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>functional on TrozWare</title>
     <link>https://troz.net/tags/functional/</link>
@@ -8,19 +8,399 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Thu, 14 Jun 2018 14:18:53 +1000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/functional/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/functional/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Functional Programming in Swift</title>
-      <link>https://troz.net/post/2018/functional-programming/</link>
-      <pubDate>Thu, 14 Jun 2018 14:18:53 +1000</pubDate>
+<title>Functional Programming in Swift</title>
+<link>https://troz.net/post/2018/functional-programming/</link>
+<pubDate>Thu, 14 Jun 2018 14:18:53 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/functional-programming/</guid>
-      <description>&lt;p&gt;What is Functional Programming and how can we use it in Swift?&lt;/p&gt;
+<description>&lt;p&gt;What is Functional Programming and how can we use it in Swift?&lt;/p&gt;
 
-&lt;p&gt;Search online for any definition of functional programming and you will find many different definitions, few of which are practically helpful. I have no claim to be an expert, but as a Swift enthusiast, this is what I have distilled out of the morass.&lt;/p&gt;</description>
-    </item>
+&lt;p&gt;Search online for any definition of functional programming and you will find many different definitions, few of which are practically helpful. I have no claim to be an expert, but as a Swift enthusiast, this is what I have distilled out of the morass.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-is-functional-programming&#34;&gt;What is Functional Programming?&lt;/h2&gt;
+
+&lt;p&gt;Without providing a concrete definition, here are what I see as the 3 main goals of functional programming:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;use pure functions where possible&lt;/li&gt;
+&lt;li&gt;avoid mutability where possible&lt;/li&gt;
+&lt;li&gt;use functions as the basic building blocks&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So let&amp;rsquo;s go through those one by one and see how they fit into the Swift language.&lt;/p&gt;
+
+&lt;h2 id=&#34;functional-programming-in-swift&#34;&gt;Functional Programming in Swift&lt;/h2&gt;
+
+&lt;p&gt;You can &lt;a href=&#34;https://github.com/trozware/functional-programming&#34;&gt;download a playground containing all these examples from GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;pure-functions&#34;&gt;Pure functions&lt;/h3&gt;
+
+&lt;p&gt;A function is considered pure if it will always produce the same result for the same input, regardless of where it is and what calls it.&lt;/p&gt;
+
+&lt;p&gt;Imagine you are writing a role-playing game and for a given fight, you need to be able to calculate the damage per second caused by a character.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;class DamageDealer {
+
+    var damageDone: Int = 0
+    var timeTaken: TimeInterval = 0
+
+    func damagePerSecond() -&amp;gt; Double {
+        if timeTaken == 0 {
+            return 0
+        }
+        let dps = Double(damageDone) / timeTaken
+        if dps &amp;lt; 0 {
+            return 0
+        }
+        return dps
+    }
+
+}
+
+let mage = DamageDealer()
+mage.damageDone = 32
+mage.timeTaken = 10
+
+mage.damagePerSecond()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;damagePerSecond&lt;/code&gt; function takes no parameters but uses the properties of its containing object. This works in this class, but there are 3 big problems:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The function is not transportable - you cannot copy it into another class as it is totally dependent on the structure of the properties in the containing class.&lt;/li&gt;
+&lt;li&gt;When calling the function, it is not clear what data it is going to use.&lt;/li&gt;
+&lt;li&gt;This function is difficult to test as calling the function with the same parameters (none) will produce different results depending on the setup.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So for a version that uses a pure function, we could replace &lt;code&gt;damagePerSecond()&lt;/code&gt; with this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func damagePerSecondPure(damage: Int, time: TimeInterval) -&amp;gt; Double {
+    if time == 0 {
+        return 0
+    }
+    let dps = Double(damage) / time
+    if dps &amp;lt; 0 {
+        return 0
+    }
+    return dps
+}
+
+mage.damagePerSecondPure(damage: mage.damageDone, time: mage.timeTaken)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Calling the function is now more verbose, but reading the call gives you much more information about what is going to happen. Testing is easy, and the function is completely self-contained so can be copied into any class or struct.&lt;/p&gt;
+
+&lt;h3 id=&#34;avoid-mutability&#34;&gt;Avoid mutability&lt;/h3&gt;
+
+&lt;p&gt;This one has become the poster child of Swift Functional Programming as Swift provides some very convenient ways to avoid mutability.&lt;/p&gt;
+
+&lt;p&gt;The first is &lt;code&gt;let&lt;/code&gt; versus &lt;code&gt;var&lt;/code&gt;. My rule is always to start defining any variable/constant with &lt;code&gt;let&lt;/code&gt; and only changing to &lt;code&gt;var&lt;/code&gt; if the compiler raises an error. In the current versions of Xcode, it will give a warning if you use &lt;code&gt;var&lt;/code&gt; unnecessarily which is great, but I still stick to using &lt;code&gt;let&lt;/code&gt; first.&lt;/p&gt;
+
+&lt;p&gt;The most powerful way Swift lets us avoid mutability with Functional Programming is with &lt;code&gt;map&lt;/code&gt;, &lt;code&gt;filter&lt;/code&gt; and &lt;code&gt;reduce&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h4 id=&#34;filter&#34;&gt;Filter&lt;/h4&gt;
+
+&lt;p&gt;Consider this function that checks possible player names:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func checkPlayerNames(names: [String]) -&amp;gt; [String] {
+    var validNames: [String] = []
+
+    for name in names {
+        if name.count &amp;gt; 3 &amp;amp;&amp;amp; !name.contains(&amp;quot; &amp;quot;) {
+            validNames.append(name)
+        }
+    }
+
+    return validNames
+}
+
+let allNames = [ &amp;quot;Woody&amp;quot;, &amp;quot;Rex&amp;quot;, &amp;quot;Slinky&amp;quot;, &amp;quot;Buzz Lightyear&amp;quot;, &amp;quot;Hamm&amp;quot; ]
+let checkedNames = checkPlayerNames(names: allNames)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Only names with more than 3 characters and no spaces are considered valid. So this function creates an empty array and then loops through each member of the supplied array and appends any valid names to the new array before returning it.&lt;/p&gt;
+
+&lt;p&gt;This function is a pure function and it works as expected. But the &lt;code&gt;validNames&lt;/code&gt; array is mutable and there is no need for it to be.&lt;/p&gt;
+
+&lt;p&gt;Converting this to avoid mutability, we get:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func checkPlayerNamesUsingFilter(names: [String]) -&amp;gt; [String] {
+    let validNames = names.filter { name in
+        name.count &amp;gt; 3 &amp;amp;&amp;amp; !name.contains(&amp;quot; &amp;quot;)
+    }
+    return validNames
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Inside the &lt;code&gt;filter&lt;/code&gt; closure delimited by the curly braces after the word &lt;code&gt;filter&lt;/code&gt;, (more about closures below), the element in the array being evaluated is stored in the &lt;code&gt;name&lt;/code&gt; constant. The checks are done and this implicitly returns a &lt;code&gt;Bool&lt;/code&gt; - true if the checks pass, false if they do not. If the closure returns true, the name is valid and will be part of the validNames array.&lt;/p&gt;
+
+&lt;p&gt;And if you really want to be concise:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func checkPlayerNamesUsingFilterShort(names: [String]) -&amp;gt; [String] {
+    return names.filter { $0.count &amp;gt; 3 &amp;amp;&amp;amp; !$0.contains(&amp;quot; &amp;quot;) }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I recommend the first method even if it is a bit more verbose. Storing the result in a constant before returning it makes debugging much easier. Using $0 instead of using a named parameter is convenient, but I prefer not to do this unless the closure is very simple.&lt;/p&gt;
+
+&lt;h4 id=&#34;map&#34;&gt;Map&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;filter&lt;/code&gt; takes an array of objects and returns a sub-array containing every element which returned true for the checks inside the filter body.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;map&lt;/code&gt; changes the elements in an array and can return an array of the same type or an array of different types.&lt;/p&gt;
+
+&lt;p&gt;Here is a function to square every integer in an array in the old style, using a mutable array to accumulate the result:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func squareNumbers(_ numbers: [Int]) -&amp;gt; [Int] {
+    var squares: [Int] = []
+
+    for number in numbers {
+        squares.append(number * number)
+    }
+
+    return squares
+}
+
+let numbers = [ 1, 2, 3, 4, 5, 6 ]
+squareNumbers(numbers)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And doing the same thing using &lt;code&gt;map&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func squareNumbersUsingMap(_ numbers: [Int]) -&amp;gt; [Int] {
+    let squares = numbers.map { $0 * $0 }
+    return squares
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this case, the type of the data did not change: integers went in, integers came out.
+But &lt;code&gt;map&lt;/code&gt; can change the type as well.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func squareRoots(_ numbers: [Int]) -&amp;gt; [Double] {
+    let roots = numbers.map { number in
+        sqrt(Double(number))
+    }
+    return roots
+}
+
+squareRoots(numbers)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And there is a final twist to &lt;code&gt;map&lt;/code&gt; that used to be called &lt;code&gt;flatMap&lt;/code&gt; but is now called &lt;code&gt;compactMap&lt;/code&gt; and that allows us to get rid of optionals as we map through an array.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func convertStringsToInts(_ strings: [String]) -&amp;gt; [Int] {
+    let ints = strings.compactMap { return Int($0) }
+    return ints
+}
+
+let strings = [ &amp;quot;1&amp;quot;, &amp;quot;two&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;0.34&amp;quot;, &amp;quot;65&amp;quot;, &amp;quot;-93&amp;quot;, &amp;quot;4e8&amp;quot; ]
+convertStringsToInts(strings)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The conversion of &lt;code&gt;String&lt;/code&gt; to &lt;code&gt;Int&lt;/code&gt; may fail and so returns an optional. If this function had used &lt;code&gt;map&lt;/code&gt; instead of &lt;code&gt;compactMap&lt;/code&gt;, the result would have been an array of optional Ints: &lt;code&gt;[Int?]&lt;/code&gt;. By using &lt;code&gt;compactMap&lt;/code&gt;, every &lt;code&gt;nil&lt;/code&gt; value was dropped and only valid integers are included.&lt;/p&gt;
+
+&lt;h4 id=&#34;reduce&#34;&gt;Reduce&lt;/h4&gt;
+
+&lt;p&gt;The final tool in the immutability toolbox is &lt;code&gt;reduce&lt;/code&gt; and this is one that took me a while to wrap my head around.&lt;/p&gt;
+
+&lt;p&gt;Imagine that you wanted to add up all the integers in an array. Here is a way to do it using a mutable variable and a loop:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func sumNumbers(_ numbers: [Int]) -&amp;gt; Int {
+    var total = 0
+
+    for num in numbers {
+        total += num
+    }
+
+    return total
+}
+
+let numbers = [ 1, 2, 3, 4, 5, 6 ]
+sumNumbers(numbers)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I can&amp;rsquo;t use &lt;code&gt;filter&lt;/code&gt; or &lt;code&gt;map&lt;/code&gt; here because I want to end up with a single value after applying some logic to every item in the array. So here is where I use &lt;code&gt;reduce&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func sumNumbersUsingReduce(_ numbers: [Int]) -&amp;gt; Int {
+
+    let total = numbers.reduce(0) { (cumulativeTotal, nextValue) in
+        return cumulativeTotal + nextValue
+    }
+    return total
+}
+
+sumNumbersUsingReduce(numbers)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;reduce&lt;/code&gt; function takes 2 parameters. The first is the starting value - in this case it is zero. The second paramter is a function (I am using a closure) this in turn takes 2 parameters and here is where it gets complicated. Inside the closure function, the 2 parameters are the current result and the next value from the loop. And what you return from this closure is going to be the new cumulative value which will either be fed back into the loop, or returned as the final result. The first time through the loop, the first parameter will be the initial value as set in the reduce function call.&lt;/p&gt;
+
+&lt;p&gt;To see how this happens, here is a version sprinkled with &lt;code&gt;print&lt;/code&gt; statements showing what happens each time through the loop:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func sumNumbersReduceDebug(_ numbers: [Int]) -&amp;gt; Int {
+    let total = numbers.reduce(0) { (cumulativeTotal, nextValue) in
+        print(&amp;quot;cumulativeTotal = \(cumulativeTotal)&amp;quot;)
+        print(&amp;quot;nextValue = \(nextValue)&amp;quot;)
+        print(&amp;quot;about to return \(cumulativeTotal) + \(nextValue) = \(cumulativeTotal + nextValue) which will become the next culmulative or the final value&amp;quot;)
+
+        return cumulativeTotal + nextValue
+    }
+    print(&amp;quot;final result = \(total)&amp;quot;)
+    return total
+}
+
+let shortNumbers = [ 5, 3, 8 ]
+
+sumNumbersReduceDebug(shortNumbers)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This produces a log showing:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;cumulativeTotal = 0
+nextValue = 5
+about to return 0 + 5 = 5 which will become the next culmulative or the final value
+cumulativeTotal = 5
+nextValue = 3
+about to return 5 + 3 = 8 which will become the next culmulative or the final value
+cumulativeTotal = 8
+nextValue = 8
+about to return 8 + 8 = 16 which will become the next culmulative or the final value
+final result = 16
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;using-functions-as-building-blocks&#34;&gt;Using functions as building blocks&lt;/h3&gt;
+
+&lt;p&gt;This one is more a matter of style than of any particular programming technique. Basically, keep each function small and break your code into small chunks with obvious naming. This makes your code easier to read, test and debug and it beomes vastly more reusable.&lt;/p&gt;
+
+&lt;p&gt;Consider this totally made-up function:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func configureDisplay(for userId: String?) {
+    guard let userId = userId else {
+        showLoginScreen()
+        return
+    }
+
+    displayUserData(for: userId)
+    let userType = getPermissions(for: userId)
+
+    populateMenus(for: userType)
+    loadInitialData(for: userId)
+
+    playSound(.welcome)
+}
+
+configureDisplay(for: &amp;quot;abc123&amp;quot;)
+configureDisplay(for: nil)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Is it easy to read?
+Can you work out what it does? Now imagine all that functionality in a single huge function - would that be as good to use?&lt;/p&gt;
+
+&lt;p&gt;As a way of encouraging shorter functions, which leads inevitably to this sort of structured code, I strongly recommend using SwiftLint to check your code. I wrote a &lt;a href=&#34;https://troz.net/post/2018/swiftlint/&#34;&gt;post about this&lt;/a&gt; a while ago which you might find useful.&lt;/p&gt;
+
+&lt;h4 id=&#34;naming&#34;&gt;Naming&lt;/h4&gt;
+
+&lt;p&gt;The other key thing to mention and it is a point that Apple makes very strongly, is to name your functions and their parameters so as to make them as readable as possible from the calling site. You write a function once, but you most likely call it multiple times, so it is the calling site that needs to be really easy to read.&lt;/p&gt;
+
+&lt;p&gt;Returning to the game example, here is a dummy function to show damage caused to a target:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func displayDamage(damage: Int, target: String) {}
+
+displayDamage(damage: 31, target: &amp;quot;Ogre&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;There is nothing really wrong with the function, but calling it is a bit clunky and doesn&amp;rsquo;t read well with the repeated use of the word &amp;lsquo;damage&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;What about this version?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func display(damage: Int, doneTo target: String) {}
+
+display(damage: 42, doneTo: &amp;quot;Wolf&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;There are no repeated words in the caller and by using two labels for the second parameter, the calling site can read almost like a sentence, but inside the function, &lt;code&gt;target&lt;/code&gt; is still a more logical name.&lt;/p&gt;
+
+&lt;p&gt;A third alternative is to use an un-named parameter if the naming logic is implicit in the function name itself:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func displayDamage(_ damage: Int, doneTo target: String) {}
+
+displayDamage(12, doneTo: &amp;quot;Orc&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;closures&#34;&gt;Closures&lt;/h2&gt;
+
+&lt;p&gt;As promised above, a very quick explanation of closures, which really deserve their own post&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;In Swift, as in many languages, functions can be passed as parameters to other functions. As an example, I have set up 2 functions to perform a simple calculation on a given integer:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func cube(_ number: Int) -&amp;gt; Int {
+    return number * number * number
+}
+cube(3)
+
+func square(_ number: Int) -&amp;gt; Int {
+    return number * number
+}
+square(3)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now imagine that you wanted to create a more general function that could call either one of these functions with any number:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func doCalculation(_ number: Int, calculation: (Int) -&amp;gt; Int) -&amp;gt; Int {
+    return calculation(number)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;doCalculation&lt;/code&gt; takes 2 parameters. The first one is easy - it is just an integer. The second one is weird! For every parameter of a function, you have to supply the type of that parameter. Usually this is quite straight-forward: Int, String, MyCustomClass etc. But what is the &lt;code&gt;type&lt;/code&gt; of a function? Option-clicking on the word &lt;code&gt;cube&lt;/code&gt; in my function definition, I see this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/FunctionType.png&#34; alt=&#34;Function type&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And ignoring the parameter labels, this basically provides the function type: Int inside parentheses for the input, then the arrow, then Int again for the return type. So the type definition for the &lt;code&gt;cube&lt;/code&gt; function is &lt;code&gt;(Int) -&amp;gt; Int&lt;/code&gt;. And when I define the type for the calculation parameter in the &lt;code&gt;doCalculation&lt;/code&gt; function, this is exactly what I put. The last part of the function definition is specifiying the overall return type as an Int.&lt;/p&gt;
+
+&lt;p&gt;Using the &lt;code&gt;cube&lt;/code&gt; and &lt;code&gt;square&lt;/code&gt; functions inside &lt;code&gt;doCalculation&lt;/code&gt; works like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;doCalculation(7, calculation: square)
+doCalculation(4, calculation: cube)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But what if I didn&amp;rsquo;t want to define all the functions I might call in advance? Then I can send the function body to the &lt;code&gt;doCalculation&lt;/code&gt; function instead of using a pre-built function. This way of using a function inside another function is referred to as a closure.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;doCalculation(6, calculation: { number in
+    return number * 12
+})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;doCalculation&lt;/code&gt; function in unchanged, but instead of passing it a reference to a function, I am directly passing it the instructions it should use to get the result. As with any function, the instructions are contained within a set of curly braces. The input to this function is listed after the opening curly brace followed by the keyword &lt;code&gt;in&lt;/code&gt;. Then the function body does whatever it needs to and returns the result.&lt;/p&gt;
+
+&lt;p&gt;You may have heard the term &lt;code&gt;trailing closure&lt;/code&gt;. This refers to a function where the last parameter is a function. If that function is called using a closure, there is a short-hand way of writing this, omitting the closure&amp;rsquo;s parameter name and moving the closing parenthesis to before the opening curly brace.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;doCalculation(16) { number in
+    return number % 3
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With the &lt;code&gt;filter&lt;/code&gt;, &lt;code&gt;map&lt;/code&gt; and &lt;code&gt;reduce&lt;/code&gt; functions I showed above, this is the way their logic was supplied but here is how the filter example would look without using a closure:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func checkName(_ name: String) -&amp;gt; Bool {
+    return name.count &amp;gt; 3 &amp;amp;&amp;amp; !name.contains(&amp;quot; &amp;quot;)
+}
+
+func checkPlayerNamesUsingFunction(names: [String]) -&amp;gt; [String] {
+    let validNames = names.filter(checkName)
+    return validNames
+}
+
+let allNames = [ &amp;quot;Woody&amp;quot;, &amp;quot;Rex&amp;quot;, &amp;quot;Slinky&amp;quot;, &amp;quot;Buzz Lightyear&amp;quot;, &amp;quot;Hamm&amp;quot; ]
+let checkedNames = checkPlayerNamesUsingFunction(names: allNames)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Which methods you use are up to you - they all work. If you have a function that will be called in many different places, maybe it makes more sense to define it once and pass around a reference to that function. If not, a closure has the advantage that it keeps everything together. There is more to closures, particularly to do with variable scope, but I think this post has gone on long enough already&amp;hellip;. maybe next time.&lt;/p&gt;</description>
+</item>
     
   </channel>
 </rss>

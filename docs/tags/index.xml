@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on TrozWare</title>
     <link>https://troz.net/tags/</link>
@@ -8,566 +8,566 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Sun, 18 Aug 2019 15:00:05 +1000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>swift</title>
-      <link>https://troz.net/tags/swift/</link>
-      <pubDate>Sun, 18 Aug 2019 15:00:05 +1000</pubDate>
+<title>swift</title>
+<link>https://troz.net/tags/swift/</link>
+<pubDate>Sun, 18 Aug 2019 15:00:05 +1000</pubDate>
       
       <guid>https://troz.net/tags/swift/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>swiftui</title>
-      <link>https://troz.net/tags/swiftui/</link>
-      <pubDate>Sun, 18 Aug 2019 15:00:05 +1000</pubDate>
+<title>swiftui</title>
+<link>https://troz.net/tags/swiftui/</link>
+<pubDate>Sun, 18 Aug 2019 15:00:05 +1000</pubDate>
       
       <guid>https://troz.net/tags/swiftui/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>learning swift</title>
-      <link>https://troz.net/tags/learning-swift/</link>
-      <pubDate>Sun, 03 Feb 2019 19:48:51 +1000</pubDate>
+<title>learning swift</title>
+<link>https://troz.net/tags/learning-swift/</link>
+<pubDate>Sun, 03 Feb 2019 19:48:51 +1000</pubDate>
       
       <guid>https://troz.net/tags/learning-swift/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>mac</title>
-      <link>https://troz.net/tags/mac/</link>
-      <pubDate>Sat, 06 Oct 2018 09:38:20 +1000</pubDate>
+<title>mac</title>
+<link>https://troz.net/tags/mac/</link>
+<pubDate>Sat, 06 Oct 2018 09:38:20 +1000</pubDate>
       
       <guid>https://troz.net/tags/mac/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>pic-a-pod</title>
-      <link>https://troz.net/tags/pic-a-pod/</link>
-      <pubDate>Sat, 06 Oct 2018 09:38:20 +1000</pubDate>
+<title>pic-a-pod</title>
+<link>https://troz.net/tags/pic-a-pod/</link>
+<pubDate>Sat, 06 Oct 2018 09:38:20 +1000</pubDate>
       
       <guid>https://troz.net/tags/pic-a-pod/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>app store</title>
-      <link>https://troz.net/tags/app-store/</link>
-      <pubDate>Sat, 06 Oct 2018 08:29:35 +1000</pubDate>
+<title>app store</title>
+<link>https://troz.net/tags/app-store/</link>
+<pubDate>Sat, 06 Oct 2018 08:29:35 +1000</pubDate>
       
       <guid>https://troz.net/tags/app-store/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>web</title>
-      <link>https://troz.net/tags/web/</link>
-      <pubDate>Sat, 06 Oct 2018 08:29:35 +1000</pubDate>
+<title>web</title>
+<link>https://troz.net/tags/web/</link>
+<pubDate>Sat, 06 Oct 2018 08:29:35 +1000</pubDate>
       
       <guid>https://troz.net/tags/web/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>framework</title>
-      <link>https://troz.net/tags/framework/</link>
-      <pubDate>Thu, 21 Jun 2018 14:45:59 +1000</pubDate>
+<title>framework</title>
+<link>https://troz.net/tags/framework/</link>
+<pubDate>Thu, 21 Jun 2018 14:45:59 +1000</pubDate>
       
       <guid>https://troz.net/tags/framework/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>library</title>
-      <link>https://troz.net/tags/library/</link>
-      <pubDate>Thu, 21 Jun 2018 14:45:59 +1000</pubDate>
+<title>library</title>
+<link>https://troz.net/tags/library/</link>
+<pubDate>Thu, 21 Jun 2018 14:45:59 +1000</pubDate>
       
       <guid>https://troz.net/tags/library/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>functional</title>
-      <link>https://troz.net/tags/functional/</link>
-      <pubDate>Thu, 14 Jun 2018 14:18:53 +1000</pubDate>
+<title>functional</title>
+<link>https://troz.net/tags/functional/</link>
+<pubDate>Thu, 14 Jun 2018 14:18:53 +1000</pubDate>
       
       <guid>https://troz.net/tags/functional/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>time</title>
-      <link>https://troz.net/tags/time/</link>
-      <pubDate>Thu, 14 Jun 2018 10:41:46 +1000</pubDate>
+<title>time</title>
+<link>https://troz.net/tags/time/</link>
+<pubDate>Thu, 14 Jun 2018 10:41:46 +1000</pubDate>
       
       <guid>https://troz.net/tags/time/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>time in words</title>
-      <link>https://troz.net/tags/time-in-words/</link>
-      <pubDate>Thu, 14 Jun 2018 10:41:46 +1000</pubDate>
+<title>time in words</title>
+<link>https://troz.net/tags/time-in-words/</link>
+<pubDate>Thu, 14 Jun 2018 10:41:46 +1000</pubDate>
       
       <guid>https://troz.net/tags/time-in-words/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>world time in words</title>
-      <link>https://troz.net/tags/world-time-in-words/</link>
-      <pubDate>Thu, 14 Jun 2018 10:41:46 +1000</pubDate>
+<title>world time in words</title>
+<link>https://troz.net/tags/world-time-in-words/</link>
+<pubDate>Thu, 14 Jun 2018 10:41:46 +1000</pubDate>
       
       <guid>https://troz.net/tags/world-time-in-words/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>GDPR</title>
-      <link>https://troz.net/tags/gdpr/</link>
-      <pubDate>Sat, 26 May 2018 09:51:56 +1000</pubDate>
+<title>GDPR</title>
+<link>https://troz.net/tags/gdpr/</link>
+<pubDate>Sat, 26 May 2018 09:51:56 +1000</pubDate>
       
       <guid>https://troz.net/tags/gdpr/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>privacy</title>
-      <link>https://troz.net/tags/privacy/</link>
-      <pubDate>Sat, 26 May 2018 09:51:56 +1000</pubDate>
+<title>privacy</title>
+<link>https://troz.net/tags/privacy/</link>
+<pubDate>Sat, 26 May 2018 09:51:56 +1000</pubDate>
       
       <guid>https://troz.net/tags/privacy/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>apps</title>
-      <link>https://troz.net/tags/apps/</link>
-      <pubDate>Sat, 26 May 2018 09:22:57 +1000</pubDate>
+<title>apps</title>
+<link>https://troz.net/tags/apps/</link>
+<pubDate>Sat, 26 May 2018 09:22:57 +1000</pubDate>
       
       <guid>https://troz.net/tags/apps/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>ios</title>
-      <link>https://troz.net/tags/ios/</link>
-      <pubDate>Sat, 26 May 2018 09:22:57 +1000</pubDate>
+<title>ios</title>
+<link>https://troz.net/tags/ios/</link>
+<pubDate>Sat, 26 May 2018 09:22:57 +1000</pubDate>
       
       <guid>https://troz.net/tags/ios/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>lint</title>
-      <link>https://troz.net/tags/lint/</link>
-      <pubDate>Sat, 31 Mar 2018 09:35:21 +1000</pubDate>
+<title>lint</title>
+<link>https://troz.net/tags/lint/</link>
+<pubDate>Sat, 31 Mar 2018 09:35:21 +1000</pubDate>
       
       <guid>https://troz.net/tags/lint/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>style</title>
-      <link>https://troz.net/tags/style/</link>
-      <pubDate>Sat, 31 Mar 2018 09:35:21 +1000</pubDate>
+<title>style</title>
+<link>https://troz.net/tags/style/</link>
+<pubDate>Sat, 31 Mar 2018 09:35:21 +1000</pubDate>
       
       <guid>https://troz.net/tags/style/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>swiftlint</title>
-      <link>https://troz.net/tags/swiftlint/</link>
-      <pubDate>Sat, 31 Mar 2018 09:35:21 +1000</pubDate>
+<title>swiftlint</title>
+<link>https://troz.net/tags/swiftlint/</link>
+<pubDate>Sat, 31 Mar 2018 09:35:21 +1000</pubDate>
       
       <guid>https://troz.net/tags/swiftlint/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>apple watch</title>
-      <link>https://troz.net/tags/apple-watch/</link>
-      <pubDate>Sun, 18 Feb 2018 10:19:18 +1000</pubDate>
+<title>apple watch</title>
+<link>https://troz.net/tags/apple-watch/</link>
+<pubDate>Sun, 18 Feb 2018 10:19:18 +1000</pubDate>
       
       <guid>https://troz.net/tags/apple-watch/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>icons</title>
-      <link>https://troz.net/tags/icons/</link>
-      <pubDate>Sun, 18 Feb 2018 10:19:18 +1000</pubDate>
+<title>icons</title>
+<link>https://troz.net/tags/icons/</link>
+<pubDate>Sun, 18 Feb 2018 10:19:18 +1000</pubDate>
       
       <guid>https://troz.net/tags/icons/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>watch</title>
-      <link>https://troz.net/tags/watch/</link>
-      <pubDate>Sun, 18 Feb 2018 10:19:18 +1000</pubDate>
+<title>watch</title>
+<link>https://troz.net/tags/watch/</link>
+<pubDate>Sun, 18 Feb 2018 10:19:18 +1000</pubDate>
       
       <guid>https://troz.net/tags/watch/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>ncss</title>
-      <link>https://troz.net/tags/ncss/</link>
-      <pubDate>Fri, 05 Jan 2018 11:33:35 +1000</pubDate>
+<title>ncss</title>
+<link>https://troz.net/tags/ncss/</link>
+<pubDate>Fri, 05 Jan 2018 11:33:35 +1000</pubDate>
       
       <guid>https://troz.net/tags/ncss/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>blog</title>
-      <link>https://troz.net/tags/blog/</link>
-      <pubDate>Wed, 29 Nov 2017 17:42:57 +1000</pubDate>
+<title>blog</title>
+<link>https://troz.net/tags/blog/</link>
+<pubDate>Wed, 29 Nov 2017 17:42:57 +1000</pubDate>
       
       <guid>https://troz.net/tags/blog/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>hugo</title>
-      <link>https://troz.net/tags/hugo/</link>
-      <pubDate>Wed, 29 Nov 2017 17:42:57 +1000</pubDate>
+<title>hugo</title>
+<link>https://troz.net/tags/hugo/</link>
+<pubDate>Wed, 29 Nov 2017 17:42:57 +1000</pubDate>
       
       <guid>https://troz.net/tags/hugo/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>jekyll</title>
-      <link>https://troz.net/tags/jekyll/</link>
-      <pubDate>Wed, 29 Nov 2017 17:42:57 +1000</pubDate>
+<title>jekyll</title>
+<link>https://troz.net/tags/jekyll/</link>
+<pubDate>Wed, 29 Nov 2017 17:42:57 +1000</pubDate>
       
       <guid>https://troz.net/tags/jekyll/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>json</title>
-      <link>https://troz.net/tags/json/</link>
-      <pubDate>Sun, 18 Jun 2017 00:00:00 +0000</pubDate>
+<title>json</title>
+<link>https://troz.net/tags/json/</link>
+<pubDate>Sun, 18 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/json/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>ipad</title>
-      <link>https://troz.net/tags/ipad/</link>
-      <pubDate>Sat, 17 Jun 2017 00:00:00 +0000</pubDate>
+<title>ipad</title>
+<link>https://troz.net/tags/ipad/</link>
+<pubDate>Sat, 17 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/ipad/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>rss</title>
-      <link>https://troz.net/tags/rss/</link>
-      <pubDate>Sat, 20 May 2017 00:00:00 +0000</pubDate>
+<title>rss</title>
+<link>https://troz.net/tags/rss/</link>
+<pubDate>Sat, 20 May 2017 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/rss/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>trozware</title>
-      <link>https://troz.net/tags/trozware/</link>
-      <pubDate>Sat, 20 May 2017 00:00:00 +0000</pubDate>
+<title>trozware</title>
+<link>https://troz.net/tags/trozware/</link>
+<pubDate>Sat, 20 May 2017 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/trozware/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>beta</title>
-      <link>https://troz.net/tags/beta/</link>
-      <pubDate>Thu, 17 Nov 2016 00:00:00 +0000</pubDate>
+<title>beta</title>
+<link>https://troz.net/tags/beta/</link>
+<pubDate>Thu, 17 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/beta/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>productivity</title>
-      <link>https://troz.net/tags/productivity/</link>
-      <pubDate>Thu, 17 Nov 2016 00:00:00 +0000</pubDate>
+<title>productivity</title>
+<link>https://troz.net/tags/productivity/</link>
+<pubDate>Thu, 17 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/productivity/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>work</title>
-      <link>https://troz.net/tags/work/</link>
-      <pubDate>Thu, 17 Nov 2016 00:00:00 +0000</pubDate>
+<title>work</title>
+<link>https://troz.net/tags/work/</link>
+<pubDate>Thu, 17 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/work/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>man reader</title>
-      <link>https://troz.net/tags/man-reader/</link>
-      <pubDate>Sat, 05 Nov 2016 00:00:00 +0000</pubDate>
+<title>man reader</title>
+<link>https://troz.net/tags/man-reader/</link>
+<pubDate>Sat, 05 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/man-reader/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>iphone</title>
-      <link>https://troz.net/tags/iphone/</link>
-      <pubDate>Tue, 11 Oct 2016 00:00:00 +0000</pubDate>
+<title>iphone</title>
+<link>https://troz.net/tags/iphone/</link>
+<pubDate>Tue, 11 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/iphone/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>dice</title>
-      <link>https://troz.net/tags/dice/</link>
-      <pubDate>Sat, 17 Sep 2016 00:00:00 +0000</pubDate>
+<title>dice</title>
+<link>https://troz.net/tags/dice/</link>
+<pubDate>Sat, 17 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/dice/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>passwords</title>
-      <link>https://troz.net/tags/passwords/</link>
-      <pubDate>Sat, 17 Sep 2016 00:00:00 +0000</pubDate>
+<title>passwords</title>
+<link>https://troz.net/tags/passwords/</link>
+<pubDate>Sat, 17 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/passwords/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>password</title>
-      <link>https://troz.net/tags/password/</link>
-      <pubDate>Sun, 03 Jul 2016 00:00:00 +0000</pubDate>
+<title>password</title>
+<link>https://troz.net/tags/password/</link>
+<pubDate>Sun, 03 Jul 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/password/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>golf</title>
-      <link>https://troz.net/tags/golf/</link>
-      <pubDate>Sat, 07 May 2016 00:00:00 +0000</pubDate>
+<title>golf</title>
+<link>https://troz.net/tags/golf/</link>
+<pubDate>Sat, 07 May 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/golf/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>scoring</title>
-      <link>https://troz.net/tags/scoring/</link>
-      <pubDate>Sat, 07 May 2016 00:00:00 +0000</pubDate>
+<title>scoring</title>
+<link>https://troz.net/tags/scoring/</link>
+<pubDate>Sat, 07 May 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/scoring/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>testflight</title>
-      <link>https://troz.net/tags/testflight/</link>
-      <pubDate>Sun, 24 Apr 2016 00:00:00 +0000</pubDate>
+<title>testflight</title>
+<link>https://troz.net/tags/testflight/</link>
+<pubDate>Sun, 24 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/testflight/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>xcode</title>
-      <link>https://troz.net/tags/xcode/</link>
-      <pubDate>Sun, 24 Apr 2016 00:00:00 +0000</pubDate>
+<title>xcode</title>
+<link>https://troz.net/tags/xcode/</link>
+<pubDate>Sun, 24 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/xcode/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>travel</title>
-      <link>https://troz.net/tags/travel/</link>
-      <pubDate>Thu, 07 Apr 2016 00:00:00 +0000</pubDate>
+<title>travel</title>
+<link>https://troz.net/tags/travel/</link>
+<pubDate>Thu, 07 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/travel/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>class</title>
-      <link>https://troz.net/tags/class/</link>
-      <pubDate>Wed, 30 Mar 2016 00:00:00 +0000</pubDate>
+<title>class</title>
+<link>https://troz.net/tags/class/</link>
+<pubDate>Wed, 30 Mar 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/class/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>oop</title>
-      <link>https://troz.net/tags/oop/</link>
-      <pubDate>Wed, 30 Mar 2016 00:00:00 +0000</pubDate>
+<title>oop</title>
+<link>https://troz.net/tags/oop/</link>
+<pubDate>Wed, 30 Mar 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/oop/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>struct</title>
-      <link>https://troz.net/tags/struct/</link>
-      <pubDate>Wed, 30 Mar 2016 00:00:00 +0000</pubDate>
+<title>struct</title>
+<link>https://troz.net/tags/struct/</link>
+<pubDate>Wed, 30 Mar 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/struct/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>optionals</title>
-      <link>https://troz.net/tags/optionals/</link>
-      <pubDate>Sat, 12 Mar 2016 14:24:00 +1000</pubDate>
+<title>optionals</title>
+<link>https://troz.net/tags/optionals/</link>
+<pubDate>Sat, 12 Mar 2016 14:24:00 +1000</pubDate>
       
       <guid>https://troz.net/tags/optionals/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>support</title>
-      <link>https://troz.net/tags/support/</link>
-      <pubDate>Tue, 09 Feb 2016 00:00:00 +0000</pubDate>
+<title>support</title>
+<link>https://troz.net/tags/support/</link>
+<pubDate>Tue, 09 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/support/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>twitter</title>
-      <link>https://troz.net/tags/twitter/</link>
-      <pubDate>Tue, 09 Feb 2016 00:00:00 +0000</pubDate>
+<title>twitter</title>
+<link>https://troz.net/tags/twitter/</link>
+<pubDate>Tue, 09 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/twitter/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>livecode</title>
-      <link>https://troz.net/tags/livecode/</link>
-      <pubDate>Wed, 18 Mar 2015 00:00:00 +0000</pubDate>
+<title>livecode</title>
+<link>https://troz.net/tags/livecode/</link>
+<pubDate>Wed, 18 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/livecode/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>revolution</title>
-      <link>https://troz.net/tags/revolution/</link>
-      <pubDate>Wed, 18 Mar 2015 00:00:00 +0000</pubDate>
+<title>revolution</title>
+<link>https://troz.net/tags/revolution/</link>
+<pubDate>Wed, 18 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/revolution/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>markdown</title>
-      <link>https://troz.net/tags/markdown/</link>
-      <pubDate>Tue, 10 Mar 2015 00:00:00 +0000</pubDate>
+<title>markdown</title>
+<link>https://troz.net/tags/markdown/</link>
+<pubDate>Tue, 10 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/markdown/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>email</title>
-      <link>https://troz.net/tags/email/</link>
-      <pubDate>Tue, 25 Mar 2014 00:00:00 +0000</pubDate>
+<title>email</title>
+<link>https://troz.net/tags/email/</link>
+<pubDate>Tue, 25 Mar 2014 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/email/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>music</title>
-      <link>https://troz.net/tags/music/</link>
-      <pubDate>Thu, 07 Nov 2013 00:00:00 +0000</pubDate>
+<title>music</title>
+<link>https://troz.net/tags/music/</link>
+<pubDate>Thu, 07 Nov 2013 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/music/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>chess</title>
-      <link>https://troz.net/tags/chess/</link>
-      <pubDate>Wed, 27 Feb 2013 00:00:00 +0000</pubDate>
+<title>chess</title>
+<link>https://troz.net/tags/chess/</link>
+<pubDate>Wed, 27 Feb 2013 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/chess/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>knight&#39;s move</title>
-      <link>https://troz.net/tags/knights-move/</link>
-      <pubDate>Wed, 27 Feb 2013 00:00:00 +0000</pubDate>
+<title>knight&#39;s move</title>
+<link>https://troz.net/tags/knights-move/</link>
+<pubDate>Wed, 27 Feb 2013 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/knights-move/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>sand-box</title>
-      <link>https://troz.net/tags/sand-box/</link>
-      <pubDate>Wed, 06 Feb 2013 00:00:00 +0000</pubDate>
+<title>sand-box</title>
+<link>https://troz.net/tags/sand-box/</link>
+<pubDate>Wed, 06 Feb 2013 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/sand-box/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>operating systems</title>
-      <link>https://troz.net/tags/operating-systems/</link>
-      <pubDate>Mon, 24 Sep 2012 00:00:00 +0000</pubDate>
+<title>operating systems</title>
+<link>https://troz.net/tags/operating-systems/</link>
+<pubDate>Mon, 24 Sep 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/operating-systems/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>ui</title>
-      <link>https://troz.net/tags/ui/</link>
-      <pubDate>Mon, 24 Sep 2012 00:00:00 +0000</pubDate>
+<title>ui</title>
+<link>https://troz.net/tags/ui/</link>
+<pubDate>Mon, 24 Sep 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/ui/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>trouble-shooting</title>
-      <link>https://troz.net/tags/trouble-shooting/</link>
-      <pubDate>Sat, 28 Jul 2012 00:00:00 +0000</pubDate>
+<title>trouble-shooting</title>
+<link>https://troz.net/tags/trouble-shooting/</link>
+<pubDate>Sat, 28 Jul 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/trouble-shooting/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>screen saver</title>
-      <link>https://troz.net/tags/screen-saver/</link>
-      <pubDate>Fri, 27 Jul 2012 00:00:00 +0000</pubDate>
+<title>screen saver</title>
+<link>https://troz.net/tags/screen-saver/</link>
+<pubDate>Fri, 27 Jul 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/tags/screen-saver/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
   </channel>
 </rss>

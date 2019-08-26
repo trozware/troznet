@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>time in words on TrozWare</title>
     <link>https://troz.net/tags/time-in-words/</link>
@@ -8,102 +8,500 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Thu, 14 Jun 2018 10:41:46 +1000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/time-in-words/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/time-in-words/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>World Time in Words iOS Update</title>
-      <link>https://troz.net/post/2018/world-time-in-words-ios-update/</link>
-      <pubDate>Thu, 14 Jun 2018 10:41:46 +1000</pubDate>
+<title>World Time in Words iOS Update</title>
+<link>https://troz.net/post/2018/world-time-in-words-ios-update/</link>
+<pubDate>Thu, 14 Jun 2018 10:41:46 +1000</pubDate>
       
       <guid>https://troz.net/post/2018/world-time-in-words-ios-update/</guid>
-      <description>&lt;p&gt;Its been a long time since the last update to Time In Words for iOS but after prompting by Apple (&lt;em&gt;update or we will remove it from the App Store&lt;/em&gt;), I finally did it. I was never really happy with the last design of Time in Words for iOS, particularly for the iPad, so this was a good opportunity to do a complete re-design, bringing the app more into alignment with its Mac counterpart. And it got a new name to match its new direction and is now called World Time in Words.&lt;/p&gt;</description>
-    </item>
+<description>&lt;p&gt;Its been a long time since the last update to Time In Words for iOS but after prompting by Apple (&lt;em&gt;update or we will remove it from the App Store&lt;/em&gt;), I finally did it. I was never really happy with the last design of Time in Words for iOS, particularly for the iPad, so this was a good opportunity to do a complete re-design, bringing the app more into alignment with its Mac counterpart. And it got a new name to match its new direction and is now called World Time in Words.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/time-in-words/id498403851&#34;&gt;World Time in Words v 5.0&lt;/a&gt; is available from the App Store.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;In 2015, I released &lt;a href=&#34;https://troz.net/post/2015/time-in-words-4.0/&#34;&gt;Time In Words v 4.0&lt;/a&gt; for iOS. This was a big change as I had dropped the original QlockTwo concept and switched the emphasis to world time conversions that would be easy to read and understand. This bit worked out well, but the paging interface was not a great success - it made it too tedious to find the zone you were interested in.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://troz.net/time-in-words-for-mac/&#34;&gt;Mac version&lt;/a&gt; is a menu bar app that shows the selected time zones as separate menu items. iOS apps don&amp;rsquo;t have menus, but the closest thing to this is a table, so that is what I went with.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/WTiW-iOS.jpg&#34; alt=&#34;Basic display&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As before, you can add, remove or re-order the time zones and the top three zones can be shown in your Today widgets.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/WTiW-iOS-1.jpg&#34; alt=&#34;Edit zones&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/WTiW-iOS-4.jpg&#34; alt=&#34;Today widget&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;But the feature that I use most in the Mac app is &amp;ldquo;What time will it be when&amp;hellip;&amp;rdquo;. In the iOS app, for reasons of space, the button is labelled &amp;ldquo;What time will it be?&amp;rdquo; but the functionality is the same: drag the slider to adjust the hour in your local time zone and see what that hour will be in your selected world zones. This is incredibly useful when you have family, friends and colleagues all over the world and really don&amp;rsquo;t want to call them at the wrong time of day.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/WTiW-iOS-2.jpg&#34; alt=&#34;What time will it be&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The iPad version of the app is identical at this stage, but I am thinking of adjusting the interface so as to take advantage of the increased real estate. If other work doesn&amp;rsquo;t get in the way, this may happen&amp;hellip;&lt;/p&gt;</description>
+</item>
     
     <item>
-      <title>Time In Words 4.0</title>
-      <link>https://troz.net/post/2015/time-in-words-4.0/</link>
-      <pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
+<title>Time In Words 4.0</title>
+<link>https://troz.net/post/2015/time-in-words-4.0/</link>
+<pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2015/time-in-words-4.0/</guid>
-      <description>Time In Words for iOS started off as a fun gimmick, emulating the Qlocktwo type of time display where the relevant words are highlighted in some way to spell out the time as a sentence. This very quickly evolved into what I hoped would be more useful app, still showing the original display, but also providing the current time &amp;amp; date as complete sentences. Then I added time conversions and discovered the real power and utility of writing out times as words.</description>
-    </item>
+<description>&lt;p&gt;&lt;a href=&#34;https://troz.net/time-in-words/&#34;&gt;Time In Words&lt;/a&gt; for iOS started off as a fun gimmick, emulating the
+&lt;a href=&#34;http://www.qlocktwo.com/&#34;&gt;Qlocktwo&lt;/a&gt; type of time display where the relevant words are highlighted in
+some way to spell out the time as a sentence. This very quickly evolved into
+what I hoped would be more useful app, still showing the original display, but
+also providing the current time &amp;amp; date as complete sentences. Then I added time
+conversions and discovered the real power and utility of writing out times as
+words.&lt;/p&gt;
+
+&lt;p&gt;When it comes to converting times, I doubt there are many people in the world
+who haven&amp;rsquo;t had problems.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Is that morning or afternoon for them?&lt;/li&gt;
+&lt;li&gt;Are they in tomorrow, today or yesterday?&lt;/li&gt;
+&lt;li&gt;What if they are using daylight-savings?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Having the time written out removes all ambiguity. As an example, Time In Words
+currently reports very clearly:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In Los Angeles, it is nine minutes to ten on Tuesday evening (daylight-savings
+time).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;When writing &lt;a href=&#34;https://troz.net/time-in-words-for-mac/&#34;&gt;Time In Words for Mac&lt;/a&gt;, I focussed immediately on the time zone
+conversion facilities, and provided a menu bar app that can display as many time
+zones as you like (although more than will show on a single screen would
+probably get annoying).&lt;/p&gt;
+
+&lt;p&gt;So when I decided to do a complete re-write of Time In Words for iOS, the
+obvious move was to emulate the Mac version and allow for as many time zones as
+the user wants, instead of the current 2 or 4 (iPhone or iPad). So I discarded
+the Qlocktwo display and the separate date display which used a similar
+mechanic. I kept the display that shows the current date and time, but every
+display after that shows the time in a different time zone. The time zones can
+be changed and re-ordered, so the ones you need most are the fastest to get to
+once the app opens.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;One new feature (again taken from the Mac version), is the ability to calculate
+&amp;ldquo;What time will it be&amp;hellip;&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/TiW_what_time.png&#34; alt=&#34;What time&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You dial in your local date and time to see what time that will be in your
+selected zone. And if you want to calculate the other way around, tap the &amp;ldquo;Swap
+time zones&amp;rdquo; button.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The main impetus for a re-write was the Apple Watch. I thought this would be a
+perfect app for the watch as it could use the Apple Watch&amp;rsquo;s superb time-keeping
+in conjunction with my text generation, to add a significant level of usability
+to the Apple Watch as regards time zone conversions.&lt;/p&gt;
+
+&lt;p&gt;Sadly, Apple disagrees…&lt;/p&gt;
+
+&lt;p&gt;I completed the app and submitted it to the App Store for review. The review
+process seems to be very fast at the moment and the app moved into review only
+one day later. And there it stuck for 3 days. This was very odd. My experience
+is that once an app gets into review, it only takes a few hours, if that. For
+&lt;a href=&#34;https://troz.net/19th-hole/&#34;&gt;19th Hole&lt;/a&gt; - my other app with an Apple Watch component, the review process
+took 30 hours. But 3 days!&lt;/p&gt;
+
+&lt;p&gt;Then I got a phone call from Apple where a very polite person explained to me
+that although this was not mentioned in any of the documentation, the marketing
+people had decided that no apps were to be allowed on the watch if they told the
+time.&lt;/p&gt;
+
+&lt;p&gt;I offered to remove the initial screen telling the local time, so the app would
+not actually supply the current time but only the time conversions, but that was
+not acceptable either.&lt;/p&gt;
+
+&lt;p&gt;Then I tried appealing the rejection. My hopes were not high, but I didn&amp;rsquo;t see
+any harm in asking. I again offered to remove the local time display and
+emphasised the accessibility advantages of displaying times in this manner.
+Another day, another phone call, another polite Apple person saying no.&lt;/p&gt;
+
+&lt;p&gt;So now I have re-submitted the app for review without the Apple Watch component,
+which is a shame. I am hoping that after some months they will review this
+policy and allow me to try again, but who knows.&lt;/p&gt;
+
+&lt;p&gt;So you can see what you are missing, here are a couple of screen shots from the
+watch app showing my local time, plus one time zone:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Watch_1.png&#34; alt=&#34;Local time&#34; /&gt;
+&lt;span class=&#34;float_right&#34;&gt;&lt;img src=&#34;https://troz.net/images/Watch_2.png&#34; alt=&#34;Converted time&#34; /&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;One more minor point. People who actually look at version numbers may wonder why
+I have gone from version 2.5 to version 4.0. When I was working on version 2.5,
+I considered making it version 3.0 and then changed my mind. However by that
+time I had already created a version 3.0 in iTunesConnect, so I was not able to
+use 3.0 again this time. This version was such a big change that I wanted it to
+be a .0 release, so that meant going to version 4.0&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Update to Time In Words screen saver</title>
-      <link>https://troz.net/post/2012/update-to-time-in-words-screen-saver/</link>
-      <pubDate>Fri, 27 Jul 2012 00:00:00 +0000</pubDate>
+<title>Update to Time In Words screen saver</title>
+<link>https://troz.net/post/2012/update-to-time-in-words-screen-saver/</link>
+<pubDate>Fri, 27 Jul 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/update-to-time-in-words-screen-saver/</guid>
-      <description>Time In Words screen saver has just been updated to version 1.1 and is now fully compatible with Mountain Lion. It is free to use and can be downloaded here.
-The basic screen saver worked before, but searching for an alternative time zone would crash System Preferences. That is now fixed.
-The screen saver also shows a thumbnail image when in Mountain Lion and is code-signed with my developer ID for compatibility with Mountain Lion&amp;rsquo;s Gatekeeper.</description>
-    </item>
+<description>&lt;p&gt;&lt;a href=&#34;https://troz.net/time-in-words-screen-saver-for-mac/&#34; title=&#34;Time In Words Screen Saver for Mac&#34;&gt;Time In Words screen saver&lt;/a&gt; has just been updated to version 1.1 and is now
+fully compatible with Mountain Lion. It is free to use and can be
+&lt;a href=&#34;https://troz.net/screensaver/TimeInWords-ScreenSaver.zip&#34;&gt;downloaded&lt;/a&gt; here.&lt;/p&gt;
+
+&lt;p&gt;The basic screen saver worked before, but searching for an alternative time zone
+would crash System Preferences. That is now fixed.&lt;/p&gt;
+
+&lt;p&gt;The screen saver also shows a thumbnail image when in Mountain Lion and is
+code-signed with my developer ID for compatibility with Mountain Lion&amp;rsquo;s
+Gatekeeper.&lt;/p&gt;
+
+&lt;p&gt;The current version is compatible with 10.8 and 10.7. It may work in 10.6 but I
+cannot be sure. If anyone tries it, please let me know.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Making a Mac Screen Saver</title>
-      <link>https://troz.net/post/2012/making-a-mac-screen-saver/</link>
-      <pubDate>Wed, 09 May 2012 00:00:00 +0000</pubDate>
+<title>Making a Mac Screen Saver</title>
+<link>https://troz.net/post/2012/making-a-mac-screen-saver/</link>
+<pubDate>Wed, 09 May 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/making-a-mac-screen-saver/</guid>
-      <description>Having just completed the my first screen saver for Mac - the Time In Words Screen Saver, I thought I would share some of the experiences. I am using OS X Lion (10.7) and Xcode 4.3.2
-The first thing is to create a new project in Xcode using the Screen Saver template:
+<description>&lt;p&gt;Having just completed the my first screen saver for Mac - the &lt;a href=&#34;https://troz.net/time-in-words-screen-saver-for-mac/&#34; title=&#34;Time In Words Screen Saver for Mac&#34;&gt;Time In Words
+Screen Saver&lt;/a&gt;, I thought I would share some of the experiences. I am using OS
+X Lion (10.7) and Xcode 4.3.2&lt;/p&gt;
 
-Xcode sets up a project for you with everything you need for a screen saver module. Start editing the ScreenSaverView.</description>
-    </item>
+&lt;p&gt;The first thing is to create a new project in Xcode using the Screen Saver
+template:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/images/ScreenSaverTemplate.png&#34;&gt;&lt;img title=&#34;Xcode Screen Saver Template&#34; src=&#34;https://troz.net/images/ScreenSaverTemplate-441x300.png&#34; alt=&#34;Xcode Screen Saver Template&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Xcode sets up a project for you with everything you need for a screen saver
+module. Start editing the ScreenSaverView.m file. The most important method here
+is animateOneFrame.&lt;/p&gt;
+
+&lt;p&gt;This is called every time the animation time interval elapses. This interval is
+set in &lt;code&gt;initWithFrame:isPreview:&lt;/code&gt;. I have seen some debate online as to whether
+the drawing should be done in the &lt;code&gt;animateOneFrame&lt;/code&gt; method or in the &lt;code&gt;drawRect&lt;/code&gt;
+method. I chose to use &lt;code&gt;animateOneFrame&lt;/code&gt; because they are both called when the
+screen saver starts which can lead to an unpleasant flicker.&lt;/p&gt;
+
+&lt;p&gt;Now it is up to you to decide what to show in the &lt;code&gt;animateOneFrame&lt;/code&gt; method. For
+Time In Words, I assembled the data as a string, created a dictionary of text
+attributes, calculated the location where I wanted to show the text and used
+&lt;code&gt;drawAtPoint:withAttributes:&lt;/code&gt; to display it.&lt;/p&gt;
+
+&lt;p&gt;There are a couple of important tricks when working out locations: firstly, you
+will need to know the bounds of the screen saver area. This will vary depending
+on the monitor, screen size or whether the screen saver is appearing in the
+preview window in System Preferences. The screen saver view has a method that
+does this work for you.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objectivec&#34;&gt;NSRect viewBounds = [self bounds];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The next trick is that you are most likely going to need some random numbers.
+Again, the screen saver framework supplies these to you in several forms. I used
+&lt;code&gt;SSRandomFloatBetween&lt;/code&gt; but there are others. Check the documentation.&lt;/p&gt;
+
+&lt;p&gt;I ran into an oddity in System Preferences that made testing a bit tedious. I
+built the screen saver module and double-clicked on it to install into System
+Preferences. That worked fine, but when I made some changes and repeated the
+process, the original screen saver was still in place. I found that I had to
+quit System Preferences each time. Deleting the old version of the screen saver
+was not necessary, but quitting the System Prefs app was essential.&lt;/p&gt;
+
+&lt;p&gt;So that gives the basic screen saver module but with no options. Adding options
+is not difficult, but as always, there are a few things that are not obvious on
+first glance.&lt;/p&gt;
+
+&lt;p&gt;Add a xib file to your project: I used a window template. Then change the
+window&amp;rsquo;s class to NSPanel and configure it as shown:&lt;/p&gt;
+
+&lt;p&gt;&lt;img title=&#34;NSPanel Settings&#34; src=&#34;https://troz.net/images/PanelSettings.png&#34; alt=&#34;NSPanel Settings&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Set the File&amp;rsquo;s Owner class to the class of your Screen Saver view. In your
+ScreenSaverView.h file, declare a property for this new panel. e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objectivec&#34;&gt; @property (assign) IBOutlet NSPanel *optionsPanel;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;@synthesize this in the ScreenSaverView.m file. In the xib file, connect the
+panel to this outlet.&lt;/p&gt;
+
+&lt;p&gt;Now go back to ScreenSaverView.m and add the following code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objectivec&#34;&gt;* (BOOL)hasConfigureSheet { return YES; }
+
+* (NSWindow *)configureSheet { if (!self.optionsPanel) { [NSBundle
+  loadNibNamed:@&amp;quot;Options&amp;quot; owner:self]; } return self.optionsPanel; }
+
+- (IBAction)closeConfig:(id)sender { [[NSApplication sharedApplication]
+  endSheet:self.optionsPanel]; }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;hasConfigureSheet&lt;/code&gt; and &lt;code&gt;configureSheet&lt;/code&gt; stubs are already there for you,
+but you can replace them with these versions.&lt;/p&gt;
+
+&lt;p&gt;Go back to the xib file and drag in a button to close the options panel. Connect
+it to the &lt;code&gt;closeConfig:&lt;/code&gt; action.&lt;/p&gt;
+
+&lt;p&gt;Save everything, build, install in System Preferences and test. Firstly, the
+&amp;ldquo;Options&amp;hellip;&amp;rdquo; button should be enabled. Clicking it should open your panel as a
+sheet, and when you click your button, the panel should close.&lt;/p&gt;
+
+&lt;p&gt;If that doesn&amp;rsquo;t work, check the class assignments, the connections, the settings
+for the NSPanel and the code in that order.&lt;/p&gt;
+
+&lt;p&gt;Once the panel is opening and closing as required, you need to add the ability
+to store and retrieve the settings. Instead of using NSUserDefaults as you would
+in a standard Mac app, there is a special class call ScreenSaverDefaults for
+screen savers. It needs a unique module name, so I used the bundle identifier.
+For my Time In Words screen saver, this is
+&amp;ldquo;net.troz.Time-In-Words-Screen-Saver&amp;rdquo;. I defined a constant to hold this as a
+string, so I could use it anywhere I needed.&lt;/p&gt;
+
+&lt;p&gt;In the &lt;code&gt;initWithFrame:isPreview:&lt;/code&gt; method, I got a reference to the screen saver
+defaults for my screen saver and registered the defaults. I am never very sure
+about the need to do this, but it is supposed to be a good practice.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objectivec&#34;&gt;ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
+[defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
+  @&amp;quot;NO&amp;quot;, @&amp;quot;UseAlternativeZone&amp;quot;, @&amp;quot;&amp;quot;,
+  @&amp;quot;AlternativeZoneName&amp;quot;, nil]
+];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Using them is exactly the same as using NSUserDefaults:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objectivec&#34;&gt;// Reading
+ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
+BOOL useAlternativeZone = [defaults boolForKey:@&amp;quot;UseAlternativeZone&amp;quot;];
+NSString *alternativeZoneName = [defaults objectForKey:@&amp;quot;AlternativeZoneName&amp;quot;];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-objectivec&#34;&gt;// Writing
+ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:kModuleName]; [defaults setBool:useAlternative forKey:@&amp;quot;UseAlternativeZone&amp;quot;];
+[defaults setObject:alternativeZoneName forKey:@&amp;quot;AlternativeZoneName&amp;quot;];
+[defaults synchronize];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;One last thing: if you want to distribute the screen saver, you will want to
+create an archive, possibly code-signing with your Apple developer ID to allow
+for Mountain Lion&amp;rsquo;s up-coming Gatekeeper security system. I code-signed the
+project and built an archive, but when I clicked &amp;ldquo;Distribute&amp;rdquo; in the Organizer,
+the only appropriate options was &amp;ldquo;Save Built Products&amp;rdquo;. I selected this option
+and ended up with a series of folders inside folders, with the screen saver
+module in about the fifth folder down. I don&amp;rsquo;t know why the module gets
+distributed like this, but I pulled it out of the folders and it worked fine.&lt;/p&gt;
+
+&lt;p&gt;And that&amp;rsquo;s about it. A lot of this stuff is online or in Apple&amp;rsquo;s documentation,
+but there are enough oddities to make it worthwhile gathering together all that
+I learnt while making this screen saver.&lt;/p&gt;
+
+&lt;p&gt;Click this icon to download the screen saver:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/screensaver/TimeInWords-ScreenSaver.zip&#34;&gt;&lt;img src=&#34;https://troz.net/images/ScreenSaverIcon128.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Time In Words Screen Saver</title>
-      <link>https://troz.net/time-in-words-screen-saver-for-mac/</link>
-      <pubDate>Mon, 07 May 2012 00:00:00 +0000</pubDate>
+<title>Time In Words Screen Saver</title>
+<link>https://troz.net/time-in-words-screen-saver-for-mac/</link>
+<pubDate>Mon, 07 May 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/time-in-words-screen-saver-for-mac/</guid>
-      <description>The latest member of the Time In Words suite of apps is a screen saver module for Macs.
-Version 1.2 updated January 2013: compatible with Lion (OS X 10.7), Mountain Lion (OS X 10.8), Mavericks (OS X 10.9) &amp;amp; Yosemite (OS X 10.10).
-Download Time In Words Screen Saver
-Like Time In Words for iOS and World Time In Words for Mac, it displays the time and date in plain words which are easy to read and comprehend.</description>
-    </item>
+<description>&lt;p&gt;The latest member of the Time In Words suite of apps is a screen saver module
+for Macs.&lt;br /&gt;
+Version 1.2 updated January 2013: compatible with Lion (OS X 10.7), Mountain Lion
+(OS X 10.8), Mavericks (OS X 10.9) &amp;amp; Yosemite (OS X 10.10).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/ScreenSaverIcon128.png&#34; alt=&#34;Time In Words Screen Saver Download&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/screensaver/TimeInWords-ScreenSaver.zip&#34;&gt;Download Time In Words Screen Saver&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Like &lt;a href=&#34;https://troz.net/time-in-words/&#34; title=&#34;Time In Words&#34;&gt;Time In Words for iOS&lt;/a&gt; and &lt;a href=&#34;https://troz.net/time-in-words-for-mac/&#34; title=&#34;Worlds Time In Words for Mac&#34;&gt;World Time In Words for Mac&lt;/a&gt;, it
+displays the time and date in plain words which are easy to read and comprehend.
+While it only shows a single time and date, this can be configured to show your
+local time &amp;amp; date or any available time zone. Since the App Store does not have
+a section for screen savers, the &lt;a href=&#34;https://troz.net/screensaver/TimeInWords-ScreenSaver.zip&#34;&gt;Time In Words screen saver&lt;/a&gt; is available as
+a direct download from my site. Click the link or the icon above to download the
+screen saver as a zip file. If the zip file does not open automatically,
+double-click the file to unzip it. Then double-click the &amp;ldquo;Time In Words Screen
+Saver.saver&amp;rdquo; file to install the screen saver in your System Preferences. You
+will be asked whether you want to install it for the current user only or for
+all users. Selecting &amp;ldquo;All Users&amp;rdquo; will require you to enter your password, so I
+recommend just installing for the current user.&lt;/p&gt;
+
+&lt;p&gt;Scroll to the &amp;ldquo;Other&amp;rdquo; section of the list of screen savers and click &amp;ldquo;Time In
+Words Screen Saver&amp;rdquo; to activate it. Sometimes the installation leaves the screen
+saver selected but not active. If this is the case, select another screen saver
+and then click back on Time In Words.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/images/ScreenSaver1.png&#34;&gt;&lt;img src=&#34;https://troz.net/images/ScreenSaver1-small.png&#34; alt=&#34;Time In Words Screen Saver&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;By default, your local time &amp;amp; date will be displayed. To select a different time
+zone, click the &amp;ldquo;Screen Saver Options…&amp;rdquo; button to display the following:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://troz.net/images/ScreenSaver2.png&#34;&gt;&lt;img src=&#34;https://troz.net/images/ScreenSaver2-small.png&#34; alt=&#34;Time In Words Screen Saver Options&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Click the &amp;ldquo;Show Alternate Time&amp;rdquo; radio button to enable the time zone list. As
+with Time In Words for Mac, you can type part of a city name in the search field
+to find a zone quickly. Select the zone you want to use and click &amp;ldquo;OK&amp;rdquo;. The
+preview will switch to showing your newly selected time zone.&lt;/p&gt;
+
+&lt;p&gt;For anyone interested in the source code, here is a download link: &lt;a href=&#34;https://troz.net/screensaver/TimeInWordsScreenSaverXcode.zip&#34;&gt;Time In
+Words Screen Saver Xcode project&lt;/a&gt;. This was written using Xcode 4.x so is
+rather out-dated by now, but may prove useful to others wishing to start writing
+their own screen savers.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Time In Words &amp; the new iPad</title>
-      <link>https://troz.net/post/2012/time-in-words-the-new-ipad/</link>
-      <pubDate>Tue, 10 Apr 2012 00:00:00 +0000</pubDate>
+<title>Time In Words &amp; the new iPad</title>
+<link>https://troz.net/post/2012/time-in-words-the-new-ipad/</link>
+<pubDate>Tue, 10 Apr 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/time-in-words-the-new-ipad/</guid>
-      <description>The new iPad has a Retina display, meaning that the pixel density is much greater. For some apps, this is a problem as their graphics are now scaled and look pixellated. However Time In Words is very simple. It uses standard fonts and interface widgets with no images or external graphics apart from the icon. The icon may not look perfect on a new iPad, but the display itself should look really great.</description>
-    </item>
+<description>&lt;p&gt;The new iPad has a Retina display, meaning that the pixel density is much
+greater. For some apps, this is a problem as their graphics are now scaled and
+look pixellated. However Time In Words is very simple. It uses standard fonts
+and interface widgets with no images or external graphics apart from the icon.
+The icon may not look perfect on a new iPad, but the display itself should look
+really great.&lt;/p&gt;
+
+&lt;p&gt;I had a report from one user that Time In Words will not work at all on his new
+iPad. Unfortunately, the email address supplied did not work, so I was unable to
+contact this person directly. If you are reading this, please contact me again.&lt;/p&gt;
+
+&lt;p&gt;The person having the problem did not specify exactly what the problem was, so I
+don&amp;rsquo;t know if the app will not start, or if it is not displaying correctly, or
+if it is showing the wrong times or what.&lt;/p&gt;
+
+&lt;p&gt;However I suggested two things to try, and I will list them now in case anyone
+else is having issues:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Try deleting the app from your iPad and then re-installing from the App
+Store.&lt;/li&gt;
+&lt;li&gt;Do a complete reboot of your iPad in case it is running low on memory.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Hopefully one or both of these ideas will solve any problems. They are both good
+general tricks to try with any problem app.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Time In Words for Mac now available</title>
-      <link>https://troz.net/post/2012/time-in-words-for-mac-now-available/</link>
-      <pubDate>Tue, 20 Mar 2012 00:00:00 +0000</pubDate>
+<title>Time In Words for Mac now available</title>
+<link>https://troz.net/post/2012/time-in-words-for-mac-now-available/</link>
+<pubDate>Tue, 20 Mar 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/time-in-words-for-mac-now-available/</guid>
-      <description>Time In Words for Mac has just been approved and is now available for free from the Mac App Store.
-For more details, check out the Time In Words for Mac web page.</description>
-    </item>
+<description>&lt;p&gt;Time In Words for Mac has just been approved and is now available for free from
+the
+&lt;a href=&#34;http://itunes.apple.com/au/app/time-in-words/id509085586?mt=12&#34; target=&#34;_blank&#34;&gt;Mac
+App Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For more details, check out the &lt;a href=&#34;https://troz.net/time-in-words-for-mac/&#34;&gt;Time In Words for Mac&lt;/a&gt; web page.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Interface options for selecting time zones</title>
-      <link>https://troz.net/post/2012/interface-options-for-selecting-time-zones/</link>
-      <pubDate>Sat, 25 Feb 2012 00:00:00 +0000</pubDate>
+<title>Interface options for selecting time zones</title>
+<link>https://troz.net/post/2012/interface-options-for-selecting-time-zones/</link>
+<pubDate>Sat, 25 Feb 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/interface-options-for-selecting-time-zones/</guid>
-      <description>As part of the design for [Time In Words for Mac][1], I had to work out the interface for selecting time zones. With [Time In Word for iOS][2], I used picker wheels which are excellent for selecting hierarchical data. On the Mac, there is no such thing as the iOS picker wheel and so I had to consider what to use instead.
-When you ask the system (Mac or iOS) for the available time zones, you get a list of names like this:</description>
-    </item>
+<description>&lt;p&gt;As part of the design for [Time In Words for Mac][1], I had to work out the
+interface for selecting time zones. With [Time In Word for iOS][2], I used
+picker wheels which are excellent for selecting hierarchical data. On the Mac,
+there is no such thing as the iOS picker wheel and so I had to consider what to
+use instead.&lt;/p&gt;
+
+&lt;p&gt;When you ask the system (Mac or iOS) for the available time zones, you get a
+list of names like this:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Africa/Abidjan&lt;br /&gt;
+Africa/Accra&lt;br /&gt;
+&amp;hellip;&lt;br /&gt;
+America/Cayman&lt;br /&gt;
+America/Chicago&lt;br /&gt;
+&amp;hellip;&lt;br /&gt;
+Europe/Riga&lt;br /&gt;
+Europe/Rome&lt;br /&gt;
+etc.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This seems obviously designed for a hierarchical display with the major regions
+as a first selection, filtering down to the cities in that region, making
+selection a two-step process. With the picker wheel in iOS, that is what I did.
+The first wheel selects the region which then populates the second wheel with
+the relevant city names. It makes it quick and easy to select a zone.&lt;/p&gt;
+
+&lt;p&gt;I always prefer to use standard user interface objects because people are
+familiar with them, they automatically update with the system, and there is much
+less chance of the App Store rejecting the app. So I scrolled through the
+available Mac options and came to NSBrowser. This is basically what Finder uses
+when in column mode.&lt;/p&gt;
+
+&lt;p&gt;I created an NSBrowser object, worked out a way to populate it and tested. It
+was incredibly slow! The list of regions appeared when the window opened, and
+that was no problem. Then I clicked a region and the first set of city names
+appeared instantly. But subsequent selections took about 3 seconds to appear.&lt;/p&gt;
+
+&lt;p&gt;I added some timing tests and my data gathering was taking about 20
+milliseconds. The log thought the browser had updated within about 100
+milliseconds, so I guess the rest of the time was some redraw issue.&lt;/p&gt;
+
+&lt;p&gt;Apple provides a large number of sample projects so I downloaded one that used
+NSBrowser. It seemed fast and responsive, so I duplicated it&amp;rsquo;s different method
+of assembling the data and tried again. No luck - it was as slow as before.&lt;/p&gt;
+
+&lt;p&gt;I am sure that if I kept at it, I would eventually work out what was causing the
+bottleneck and make NSBrowser work - after all, Finder is responsive enough,
+even if not great. But in the end, I decided that the advantages to using this
+form of interface didn&amp;rsquo;t justify the time spent, so I went with a simple table
+and a search field.&lt;/p&gt;
+
+&lt;p&gt;It is fast to populate, responsive to searches and didn&amp;rsquo;t take long to set up.
+So I am happy, although still perplexed about NSBrowser. It is on my to-do list
+of things I want to work out one day.&lt;/p&gt;
+
+&lt;p&gt;[1]: /time-in-words-for-mac/ [2]: /time-in-words/&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Time In Words available in the App Store</title>
-      <link>https://troz.net/post/2012/time-in-words-available-in-the-app-store/</link>
-      <pubDate>Thu, 09 Feb 2012 00:00:00 +0000</pubDate>
+<title>Time In Words available in the App Store</title>
+<link>https://troz.net/post/2012/time-in-words-available-in-the-app-store/</link>
+<pubDate>Thu, 09 Feb 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2012/time-in-words-available-in-the-app-store/</guid>
-      <description>Time In Words is now available at the App Store.
-Time In Words is a clock and calendar app that takes you out of the digital era and back to when saying “quarter to seven” or “five past two” was accurate enough.
+<description>&lt;p&gt;Time In Words is now available at the App Store.&lt;/p&gt;
 
-Check out the Time In Words web page for more info and screen shots.</description>
-    </item>
+&lt;p&gt;Time In Words is a clock and calendar app that takes you out of the digital era
+and back to when saying “quarter to seven” or “five past two” was accurate
+enough.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/time-in-words/id498403851&#34;&gt;&lt;img title=&#34;App Store link&#34; src=&#34;https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_appstore-lrg.png&#34; alt=&#34;App Store link&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Check out the &lt;a href=&#34;https://troz.net/time-in-words/&#34;&gt;Time In Words web page&lt;/a&gt; for more info and screen shots.&lt;/p&gt;
+</description>
+</item>
     
   </channel>
 </rss>

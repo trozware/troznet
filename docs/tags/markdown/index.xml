@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>markdown on TrozWare</title>
     <link>https://troz.net/tags/markdown/</link>
@@ -8,28 +8,230 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Tue, 10 Mar 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Workflow for writing a post</title>
-      <link>https://troz.net/post/2015/workflow-for-writing-a-post/</link>
-      <pubDate>Tue, 10 Mar 2015 00:00:00 +0000</pubDate>
+<title>Workflow for writing a post</title>
+<link>https://troz.net/post/2015/workflow-for-writing-a-post/</link>
+<pubDate>Tue, 10 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2015/workflow-for-writing-a-post/</guid>
-      <description>So here is where I need to get used to Jekyll and how things are done. I will end up automating this when I am sure of the process, but for now, I am just going to work my way through it.
- Start up the local Jekyll server:
- I opened Terminal and used cd to get to the folder containing my site. Next I started the Jekyll server locally using jekyll serve.</description>
-    </item>
+<description>&lt;p&gt;So here is where I need to get used to Jekyll and how things are done. I will
+end up automating this when I am sure of the process, but for now, I am just
+going to work my way through it.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Start up the local Jekyll server:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I opened Terminal and used &lt;code&gt;cd&lt;/code&gt; to get to the folder containing my site.&lt;/li&gt;
+&lt;li&gt;Next I started the Jekyll server locally using &lt;code&gt;jekyll serve&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;This gave me the address of the local server - in my case
+&lt;code&gt;http://127.0.0.1:4000/&lt;/code&gt; - so I went there in my browser to see the default
+page.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;My goal is to write a new blog post (this one in fact).&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;For advice on creating a new post, I went to the &lt;a href=&#34;http://jekyllrb.com/docs/posts/&#34;&gt;Jekyll docs&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Jekyll needs the file name to be a specific format which includes the date
+and title.&lt;/li&gt;
+&lt;li&gt;Looking in the &lt;code&gt;_posts&lt;/code&gt; folder of the site folder, I see the previous post
+file is titled &lt;code&gt;2015-03-08-new-site-for-trozware.md&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;As it is now 10th March 2015, I am saving this file as:
+&lt;code&gt;2015-03-10-workflow-for-writing-a-post.md&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Saving at this point shows a Jekyll error in the Terminal, but the next
+stage will fix that.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Front matter:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Jekyll specifies that each file must have a &lt;a href=&#34;http://jekyllrb.com/docs/frontmatter/&#34;&gt;front matter block&lt;/a&gt; in a
+certain format.&lt;/li&gt;
+&lt;li&gt;The header has certain essential parameters and then more optional ones.&lt;/li&gt;
+&lt;li&gt;My site was imported from WordPress, so the older posts contain several
+header parameters that may not be necessary any more.&lt;/li&gt;
+&lt;li&gt;Look at the screen shot below to see what I have in this post file:&lt;/li&gt;
+&lt;li&gt;After saving, I see this entry in my Terminal:&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Regenerating: 1 file(s) changed at 2015-03-10 13:50:40 ...done in 0.421789
+seconds.&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Now I can see the title and the start of the post on my first page and when
+clicking on it, I can see all the text.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Adding an image:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This is not really necessary for this post, but I wanted to document it as
+part of the workflow.&lt;/li&gt;
+&lt;li&gt;I wanted to show the front matter and start of this post, so I took a
+screen shot of the top of my editor window.&lt;/li&gt;
+&lt;li&gt;Then I renamed the image file and moved it into the &lt;code&gt;images&lt;/code&gt; folder of my
+site.&lt;/li&gt;
+&lt;li&gt;Now to embed the image using this Markdown: &lt;code&gt;![Post header][2]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;As you can see, I prefer to group all links (images &amp;amp; URLs) at the end of
+the document and keep the body of the text as clean as possible.&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;https://troz.net/images/post_header.png&#34; alt=&#34;Post header&#34; /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Proofing:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Now that I have the text of my post, I need to proof-read it from the local
+Jekyll server.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;jekyll serve&lt;/code&gt; command running in Terminal keeps the pages up-to-date
+as you edit, but you will need to refresh your page in the browser manually
+to check your changes.&lt;/li&gt;
+&lt;li&gt;And I have found that if you make a major change to the site e.g. a CSS
+file or a config file, then it is best to stop the Jekyll server and start
+it again to make it re-build all the files.&lt;/li&gt;
+&lt;li&gt;To be completely sure, stop the server and run &lt;code&gt;jekyll build&lt;/code&gt; in Terminal
+although this may only do what &lt;code&gt;jekyll serve&lt;/code&gt; does on startup anyway.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Publishing:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Now it is time to publish.&lt;/li&gt;
+&lt;li&gt;As I am using GitHub Pages to host, the site files are all part of a single
+Git repository.&lt;/li&gt;
+&lt;li&gt;And as I understand it, the data &lt;strong&gt;must&lt;/strong&gt; be in the &lt;code&gt;master&lt;/code&gt; branch.&lt;/li&gt;
+&lt;li&gt;Opening up the GitHub client, I see that my repository has a bunch of
+changes: - the file I am working on - the image I inserted - feed.xml -
+index.html files for each page&lt;/li&gt;
+&lt;li&gt;This is as expected, since all pages are pre-generated when using Jekyll,
+so pages of posts must be re-rendered when a new post is added to the top.&lt;/li&gt;
+&lt;li&gt;Note that several of the files appear twice: once from where they are
+edited and once from the _site folder which serves them.&lt;/li&gt;
+&lt;li&gt;Just two simple steps now, using the GitHub client: 1. Commit 2. Sync&lt;/li&gt;
+&lt;li&gt;And that&amp;rsquo;s it. My new post is online and ready for reading.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Summary:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This was my first post after the one I wrote when setting up, so the first
+real post.&lt;/li&gt;
+&lt;li&gt;While there appear to be a lot of steps, none of them are difficult.&lt;/li&gt;
+&lt;li&gt;But I do have 4 apps running to do it: 1. TextWrangler for editing 1.
+Terminal to run the local Jekyll server 1. Safari to check the finished
+post 1. GitHub to commit and upload&lt;/li&gt;
+&lt;li&gt;Automating this is an obvious next step, so stay tuned&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+</item>
     
     <item>
-      <title>Markdown</title>
-      <link>https://troz.net/post/2013/markdown/</link>
-      <pubDate>Mon, 01 Apr 2013 00:00:00 +0000</pubDate>
+<title>Markdown</title>
+<link>https://troz.net/post/2013/markdown/</link>
+<pubDate>Mon, 01 Apr 2013 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2013/markdown/</guid>
-      <description>For some time now, I have been aware of the increasing trend towards using Markdown for text editing and for creating HTML. Markdown has been on my list of &amp;ldquo;things I should learn some day&amp;rdquo; so I was interested last week to read about a new iBooks book called The MacSparky Markdown Field Guide. This was sufficient inspiration so I got the book and read through it this weekend.</description>
-    </item>
+<description>
+
+&lt;p&gt;For some time now, I have been aware of the increasing trend towards using
+Markdown for text editing and for creating HTML. Markdown has been on my list of
+&amp;ldquo;things I should learn some day&amp;rdquo; so I was interested last week to read about a
+new iBooks book called &lt;a href=&#34;http://macsparky.com/markdown&#34;&gt;The MacSparky Markdown Field Guide&lt;/a&gt;. This was
+sufficient inspiration so I got the book and read through it this weekend.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://static.squarespace.com/static/5008676d84aeae82b8acdd8c/t/5147c7a6e4b0d224b4419401/1363658669971/Markdown%20Cover%20Art%20-%20JPG.jpg?format=500w&#34; alt=&#34;The MacSparky Markdown Field Guide&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Actually, to say that I &lt;em&gt;read&lt;/em&gt; through the book is a mis-representation. The
+book was written using iBooks Author specially for the iPad and contains screen
+casts and interviews as well as text. But by the end of it, I now feel I have a
+basic understanding on Markdown and the ways in which I can use it.&lt;/p&gt;
+
+&lt;p&gt;I guess the really big thing about using Markdown is that is creates plain text
+files that are human-readable even without being converted to HTML. This makes
+them future-proof since they are not tied to a proprietary file format that may
+cease to exist at any time.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;using-markdown&#34;&gt;Using Markdown:&lt;/h2&gt;
+
+&lt;p&gt;Since this web site is a self-hosted WordPress site, my next step was to look
+for a WordPress plugin that would allow me to use Markdown to create my posts. I
+could have used a Markdown editor that had HTML export, but I wanted to try
+something that would eliminate the extra step. The first one I decide to try was
+&lt;a href=&#34;http://wordpress.org/extend/plugins/markdown-on-save-improved/&#34;&gt;Markdown on Save Improved&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;One of the main reasons for choosing this one was that it stores the posts as
+both Markdown and as HTML. This saves time when going back to edit a post,
+avoids the constant changes that creep in when converting between formats all
+the time, and makes it so that the post will still display correctly even if
+Markdown is no longer supported. The only problem I have found so far is that it
+doesn&amp;rsquo;t automatically create links &amp;amp; image links using the Markdown format, but
+uses standard &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; links instead.&lt;/p&gt;
+
+&lt;p&gt;My next stop, since I always use a Mac, was to get Brett Terpstra&amp;rsquo;s collection
+of &lt;a href=&#34;http://brettterpstra.com/projects/markdown-service-tools/&#34;&gt;Services for Markdown&lt;/a&gt;. These add a lot on convenient shortcuts: one of
+my favourites is the ability to convert inline links to references links for
+increased readability while editing.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;first-impressions&#34;&gt;First Impressions:&lt;/h2&gt;
+
+&lt;p&gt;So having written this first post in Markdown, how do I feel about it? I haven&amp;rsquo;t
+really tried anything too weird this time, but there are a few things that were
+very easy to do. Particularly in the paragraph where I was talking about links &amp;amp;
+images and wanted to include the tags as text without having it interpreted as
+HTML. All I had to do was surround the text with back-ticks.&lt;/p&gt;
+
+&lt;p&gt;Links are vastly easier to manage and edit in Markdown. I miss the ability to
+specify that links should open in a new tab - I prefer to have that setting for
+links that take you outside my web site, but the modern theories on usability
+seem to be heading towards deprecation of this feature, so I may just stop using
+it.&lt;/p&gt;
+
+&lt;p&gt;With the standard WordPress editor, I always felt that I was fighting it. I had
+to swap between the visual &amp;amp; HTML editor tabs and when I swapped tabs, things
+would sometimes change without me doing anything. So far, I feel more in control
+using Markdown and although I have lost the WYSIWYG visual editor, I no longer
+have to wade through the HTML editor to get the effect I want or to remove the
+results of a few careless clicks.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;what-next&#34;&gt;What next?&lt;/h2&gt;
+
+&lt;p&gt;Some of the things on my wish list would be solved by a better editor and some
+by more powerful syntax.&lt;/p&gt;
+
+&lt;p&gt;Editor:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Adding links &amp;amp; images using Markdown style instead of HTML&lt;/li&gt;
+&lt;li&gt;Being able to create lists
+
+&lt;ul&gt;
+&lt;li&gt;Markdown makes this very easy but this WP plugin does not support lists as
+far as I can tell&lt;/li&gt;
+&lt;li&gt;So these lists are in HTML&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Syntax:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Alignment of text &amp;amp; images&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Using a stand-alone Markdown editor would solve the editor questions, but I
+wanted to try writing this post completely in WordPress.&lt;br /&gt;
+And with the alignment, there is nothing to stop me adding CSS to the Markdown.&lt;/p&gt;
+
+&lt;p&gt;Next time, I will test out a different WordPress Markdown editor and see how
+that goes. I will also test using a standalone editor and exporting its HTML to
+create a post.&lt;/p&gt;
+</description>
+</item>
     
   </channel>
 </rss>

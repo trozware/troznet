@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>json on TrozWare</title>
     <link>https://troz.net/tags/json/</link>
@@ -8,16 +8,16 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Sun, 18 Jun 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/json/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/json/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>JSON Parsing in Swift 4</title>
-      <link>https://troz.net/post/2017/json-parsing-in-swift-4/</link>
-      <pubDate>Sun, 18 Jun 2017 00:00:00 +0000</pubDate>
+<title>JSON Parsing in Swift 4</title>
+<link>https://troz.net/post/2017/json-parsing-in-swift-4/</link>
+<pubDate>Sun, 18 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2017/json-parsing-in-swift-4/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Updated:&lt;/strong&gt; 3rd September 2017.&lt;/p&gt;
+<description>&lt;p&gt;&lt;strong&gt;Updated:&lt;/strong&gt; 3rd September 2017.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Checked syntax using Xcode 9.0 beta 6.&lt;/li&gt;
@@ -30,21 +30,657 @@
 internet, there has always been a lot of interest in Swift libraries to parse
 JSON into Swift classes or structs. Searching for &amp;ldquo;swift json library&amp;rdquo; on
 &lt;a href=&#34;https://github.com/search?q=swift+json+library&#34;&gt;GitHub&lt;/a&gt; discovers &lt;s&gt;77&lt;/s&gt; 86 repositories. So why are there so many? And
-what has Swift 4 done to &lt;em&gt;sherlock&lt;/em&gt; them all?&lt;/p&gt;</description>
-    </item>
+what has Swift 4 done to &lt;em&gt;sherlock&lt;/em&gt; them all?&lt;/p&gt;
+
+&lt;p&gt;The problem has always been converting loosely typed JSON to strictly typed
+Swift which involves a lot of type casting, checking, optionals etc. Swift has
+always provided access to the Objective-C methods for converting JSON to and
+from NSData, NSDictionary and NSArray. (These are now called Data, Dictionary
+and Array, but those labels are so universal, that I sometimes feel a more
+specific nomenclature would be useful. Have you tried doing a search for
+&amp;lsquo;Data&amp;rsquo;?)&lt;/p&gt;
+
+&lt;p&gt;For sample data, I am using &lt;a href=&#34;https://jsonplaceholder.typicode.com/users&#34;&gt;https://jsonplaceholder.typicode.com/users&lt;/a&gt; which
+returns 10 user objects in this format:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;id&amp;quot;: 1,
+  &amp;quot;name&amp;quot;: &amp;quot;Leanne Graham&amp;quot;,
+  &amp;quot;username&amp;quot;: &amp;quot;Bret&amp;quot;,
+  &amp;quot;email&amp;quot;: &amp;quot;Sincere@april.biz&amp;quot;,
+  &amp;quot;address&amp;quot;: {
+    &amp;quot;street&amp;quot;: &amp;quot;Kulas Light&amp;quot;,
+    &amp;quot;suite&amp;quot;: &amp;quot;Apt. 556&amp;quot;,
+    &amp;quot;city&amp;quot;: &amp;quot;Gwenborough&amp;quot;,
+    &amp;quot;zipcode&amp;quot;: &amp;quot;92998-3874&amp;quot;,
+    &amp;quot;geo&amp;quot;: {
+      &amp;quot;lat&amp;quot;: &amp;quot;-37.3159&amp;quot;,
+      &amp;quot;lng&amp;quot;: &amp;quot;81.1496&amp;quot;
+    }
+  },
+  &amp;quot;phone&amp;quot;: &amp;quot;1-770-736-8031 x56442&amp;quot;,
+  &amp;quot;website&amp;quot;: &amp;quot;hildegard.org&amp;quot;,
+  &amp;quot;company&amp;quot;: {
+    &amp;quot;name&amp;quot;: &amp;quot;Romaguera-Crona&amp;quot;,
+    &amp;quot;catchPhrase&amp;quot;: &amp;quot;Multi-layered client-server neural-net&amp;quot;,
+    &amp;quot;bs&amp;quot;: &amp;quot;harness real-time e-markets&amp;quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The goal will be to convert this to an instance of this matching Swift struct:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;struct User {
+    let id: Int
+    let name: String
+    let username: String
+    let email: String
+    let phone: String
+    let website: String
+    let address: Address
+    let company: Company
+
+    struct Address {
+        let street: String
+        let suite: String
+        let city: String
+        let zipcode: String
+        let geo: Coordinates
+
+        struct Coordinates {
+            let lat: Double
+            let lng: Double
+        }
+    }
+
+    struct Company {
+        let name: String
+        let catchPhrase: String
+        let bs: String
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The first thing to note is that the Swift struct (and its embedded structs) use
+multiple different types: Int, String, Double, Address, Coordinates, Company.
+The JSON data only has strings and numbers and even then, some of the numbers
+are really strings - look at the lat &amp;amp; lng entries. So converting from JSON to a
+struct and back again has always been problematic, but let&amp;rsquo;s give it a go using
+built-in Swift 3 processing with no external libraries.&lt;/p&gt;
+
+&lt;h2 id=&#34;decoding-in-swift-3&#34;&gt;Decoding in Swift 3&lt;/h2&gt;
+
+&lt;p&gt;You can insert this into a playground or &lt;a href=&#34;https://github.com/trozware/json&#34;&gt;download my playground&lt;/a&gt; and check
+out the Swift 3 JSON page:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;import Foundation
+
+let sampleDataAddress = &amp;quot;https://jsonplaceholder.typicode.com/users&amp;quot;
+let url = URL(string: sampleDataAddress)!
+let jsonData = try! Data(contentsOf: url)
+
+struct User {
+    let id: Int
+    let name: String
+    let username: String
+    let email: String
+    let phone: String
+    let website: String
+    let address: Address
+    let company: Company
+
+    init?(dict: [String: Any]) {
+        guard
+            let id = dict[&amp;quot;id&amp;quot;] as? Int,
+            let name = dict[&amp;quot;name&amp;quot;] as? String,
+            let username = dict[&amp;quot;username&amp;quot;] as? String,
+            let email = dict[&amp;quot;email&amp;quot;] as? String,
+            let phone = dict[&amp;quot;phone&amp;quot;] as? String,
+            let website = dict[&amp;quot;website&amp;quot;] as? String,
+            let addressDict = dict[&amp;quot;address&amp;quot;] as? [String: Any],
+            let address = Address(dict: addressDict),
+            let companyDict = dict[&amp;quot;company&amp;quot;] as? [String: Any],
+            let company = Company(dict: companyDict)
+            else {
+                return nil
+        }
+
+        self.id = id
+        self.name = name
+        self.username = username
+        self.email = email
+        self.phone = phone
+        self.website = website
+        self.address = address
+        self.company = company
+    }
+
+    struct Address {
+        let street: String
+        let suite: String
+        let city: String
+        let zipcode: String
+        let geo: Coordinates
+
+        init?(dict: [String: Any]) {
+            guard
+                let street = dict[&amp;quot;street&amp;quot;] as? String,
+                let suite = dict[&amp;quot;suite&amp;quot;] as? String,
+                let city = dict[&amp;quot;city&amp;quot;] as? String,
+                let zipcode = dict[&amp;quot;zipcode&amp;quot;] as? String,
+                let geoDict = dict[&amp;quot;geo&amp;quot;] as? [String: Any],
+                let geo = Coordinates(dict: geoDict) else {
+                    return nil
+            }
+
+            self.street = street
+            self.suite = suite
+            self.city = city
+            self.zipcode = zipcode
+            self.geo = geo
+        }
+
+        struct Coordinates {
+            let lat: Double
+            let lng: Double
+
+            init?(dict: [String: Any]) {
+                guard
+                    let latString = dict[&amp;quot;lat&amp;quot;] as? String,
+                    let lat = Double(latString),
+                    let lngString = dict[&amp;quot;lng&amp;quot;] as? String,
+                    let lng = Double(lngString) else {
+                        return nil
+                }
+                self.lat = lat
+                self.lng = lng
+            }
+        }
+    }
+
+    struct Company {
+        let name: String
+        let catchPhrase: String
+        let bs: String
+
+        init?(dict: [String: Any]) {
+            guard
+                let name = dict[&amp;quot;name&amp;quot;] as? String,
+                let catchPhrase = dict[&amp;quot;catchPhrase&amp;quot;] as? String,
+                let bs = dict[&amp;quot;bs&amp;quot;] as? String else {
+                    return nil
+            }
+
+            self.name = name
+            self.catchPhrase = catchPhrase
+            self.bs = bs
+        }
+    }
+}
+
+if let json = try? JSONSerialization.jsonObject(with: jsonData, options: []) {
+    if let jsonArray = json as? [[String: Any]] {
+        let users = jsonArray.flatMap {
+            User(dict: $0)
+        }
+        users.count
+        dump(users.first)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I don&amp;rsquo;t actually expect you to go through all this code in detail, but I
+included it here to make it obvious how verbose this method is.&lt;/p&gt;
+
+&lt;p&gt;The first 3 lines get the data, and I have force-unwrapped the URL and the Data
+which I would not do in a production app but which is OK while testing in a
+playground. Then there is a declaration of the Users struct with all its sub
+structs. Each one has a failable init that tries to parse the JSON dictionary
+and returns nil if the data doesn&amp;rsquo;t match, by way of a lengthy set of guard
+statements. The basic layout of each struct is the same but it is very verbose.
+And as an extra step, the lat and lng properties need to be converted from
+Strings to Doubles.&lt;/p&gt;
+
+&lt;p&gt;I have to confess that it took quite come time to get this right &amp;hellip; lots of
+guard statements to check that the data can be converted to the required types
+which meant that any typos produced an empty array. The sub-structs have to be
+extracted from the JSON as Dictionaries and then initialised by themselves.&lt;/p&gt;
+
+&lt;h2 id=&#34;decoding-in-swift-4&#34;&gt;Decoding in Swift 4&lt;/h2&gt;
+
+&lt;p&gt;So this works, and I get an array of Users objects. But it isn&amp;rsquo;t pretty and it
+takes a lot of code to do the processing. So now I am going to move on to doing
+this in Swift 4. I am using Xcode 9.0 beta 6 (9M214v) so if you have a later
+version, you may need to adapt to any changes.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;struct User: Codable {
+    let id: Int
+    let name: String
+    let username: String
+    let email: String
+    let phone: String
+    let website: String
+    let address: Address
+    let company: Company
+
+    struct Address: Codable {
+        let street: String
+        let suite: String
+        let city: String
+        let zipcode: String
+        let geo: Coordinates
+
+        struct Coordinates: Codable {
+            let lat: String
+            let lng: String
+        }
+    }
+
+    struct Company: Codable {
+        let name: String
+        let catchPhrase: String
+        let bs: String
+    }
+}
+
+let jsonDecoder = JSONDecoder()
+let users = try? jsonDecoder.decode(Array&amp;lt;User&amp;gt;.self,
+                                    from: jsonData)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ignoring the complexities of converting latitude and longitude to Doubles, I get
+vastly simpler code. I declare all the structs as conforming to the &lt;code&gt;Codable&lt;/code&gt;
+protocol and then I can remove all the init methods and just let &lt;code&gt;JSONDecoder&lt;/code&gt;
+do its magic. I just have to tell it what data type to expect - in this case an
+Array of Users. I don&amp;rsquo;t have to worry about the initial conversion of the JSON
+data to a Dictionary or looping through the elements using flatMap.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;In the playground, I used a do&amp;hellip;catch structure to check the result of the
+decode function, but I have used try? here to keep the code short.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;changing-data-types&#34;&gt;Changing data types&lt;/h2&gt;
+
+&lt;p&gt;The lat &amp;amp; lng coordinates are stored in the JSON as Strings, but need to be
+converted to Doubles for the Swift struct.&lt;/p&gt;
+
+&lt;p&gt;This requires a custom init method for the Coordinates struct to do the
+conversion from String to Double.&lt;/p&gt;
+
+&lt;p&gt;So here is the complete code for Swift 4 - again, if you don&amp;rsquo;t want to create
+your own playground, you can &lt;a href=&#34;https://github.com/trozware/json&#34;&gt;use mine&lt;/a&gt;, this time looking at the Swift 4
+JSON page:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;import Foundation
+
+let sampleDataAddress = &amp;quot;https://jsonplaceholder.typicode.com/users&amp;quot;
+let url = URL(string: sampleDataAddress)!
+let jsonData = try! Data(contentsOf: url)
+
+struct User: Codable {
+    let id: Int
+    let name: String
+    let username: String
+    let email: String
+    let phone: String
+    let website: String
+    let address: Address
+    let company: Company
+
+    struct Address: Codable {
+        let street: String
+        let suite: String
+        let city: String
+        let zipcode: String
+        let geo: Coordinates
+
+        struct Coordinates: Codable {
+            let lat: Double
+            let lng: Double
+
+            init(from decoder: Decoder) throws {
+                let values = try decoder.container(keyedBy: CodingKeys.self)
+                let latString = try values.decode(String.self, forKey: .lat)
+                let lngString = try values.decode(String.self, forKey: .lng)
+                lat = Double(latString) ?? 0
+                lng = Double(lngString) ?? 0
+            }
+        }
+    }
+
+    struct Company: Codable {
+        let name: String
+        let catchPhrase: String
+        let bs: String
+    }
+}
+
+let jsonDecoder = JSONDecoder()
+let users = try? jsonDecoder.decode(Array&amp;lt;User&amp;gt;.self, from: jsonData)
+
+users?.count
+dump(users?.first)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For comparative purposes, I counted the lines of code in each, removing the
+common boiler plate of the top of each and the two lines for displaying the
+results in the playground. I also removed the blank lines which I always use a
+lot in my code for readability but which are not relevant when comparing code
+efficiency:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Version&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Lines&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Lines if lat &amp;amp; lng are Strings&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Swift 3&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;95&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;93&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Swift 4&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;35&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;28&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;encoding&#34;&gt;Encoding&lt;/h2&gt;
+
+&lt;p&gt;Encoding back to JSON is very similar. In the Swift 3 version, I would have
+written a method for each struct that created a Dictionary and then used
+JSONSerialization to convert the Dictionary back to JSON. This is very verbose
+and tedious to write so I am not going to bother to demonstrate it here.&lt;/p&gt;
+
+&lt;p&gt;But in Swift 4, this is even easier than decoding. Add this code to the end of
+your Swift 4 JSON playground or playground page:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;if let users = users {
+    let jsonEncoder = JSONEncoder()
+    jsonEncoder.outputFormatting = .prettyPrinted
+
+    if let backToJson = try? jsonEncoder.encode(users) {
+        if let jsonString = String(data: backToJson, encoding: .utf8) {
+            print(jsonString)
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;JSONEncoder&lt;/code&gt; returns Data and I have converted that to a String for
+checking. I set JSONEncoder&amp;rsquo;s outputFormatting property to .prettyPrinted get a
+more readable String.&lt;/p&gt;
+
+&lt;p&gt;Notice how the encoded data is not quite the same as I received because the lat
+&amp;amp; lng properties are now Doubles. In a production app, if I needed to be able to
+convert back to JSON, I probably would have left them as Strings so as to enable
+data transfer in both directions. I would add computed properties to the struct
+to convert these Strings to Doubles as I needed them.&lt;/p&gt;
+
+&lt;h2 id=&#34;advanced-decoding&#34;&gt;Advanced Decoding&lt;/h2&gt;
+
+&lt;p&gt;Now that we have the basics, I want to look at three more features: changing
+property names, date handling and allowing for nulls.&lt;/p&gt;
+
+&lt;h2 id=&#34;changing-property-names&#34;&gt;Changing Property Names&lt;/h2&gt;
+
+&lt;p&gt;In these examples I used exactly the same names for the properties as were used
+in the JSON. In the Swift 3 version, it would have been easy to change the
+property names, since the data for each property was being extracted manually.
+In Swift 4, if you want the decoder to change names, you have to tell it what
+you want.&lt;/p&gt;
+
+&lt;p&gt;Make a new playground or playground page and replace the contents with this - or
+go to the Swift 4 Extras page on &lt;a href=&#34;https://github.com/trozware/json&#34;&gt;my playground&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;import Foundation
+
+let jsonString = &amp;quot;&amp;quot;&amp;quot;
+{
+&amp;quot;name1&amp;quot;: &amp;quot;Jane&amp;quot;,
+&amp;quot;name2&amp;quot;: &amp;quot;Smith&amp;quot;
+}
+&amp;quot;&amp;quot;&amp;quot;
+let jsonData = jsonString.data(using: .utf8)!
+
+struct Person: Codable {
+    let firstName: String
+    let lastName: String
+}
+
+let jsonDecoder = JSONDecoder()
+let person = try? jsonDecoder.decode(Person.self, from: jsonData)
+dump(person)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This uses the new multi-line literals in Swift 4 to assemble the JSON string
+which is amazingly useful as it allows quotes to be embedded in the string
+without having to escape them. As you can see, the JSON property names are not
+very helpful, so I want to change them in my Person struct. At the moment,
+&lt;code&gt;person&lt;/code&gt; is nil because I have not given the decoder any clues to help it
+translate the names. To do that, I have to add a CodingKeys enum to the Person
+struct and it tells the decoder what names in the JSON match up to what
+properties in the struct.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;struct Person: Codable {
+    let firstName: String
+    let lastName: String
+
+    enum CodingKeys: String, CodingKey {
+        case firstName = &amp;quot;name1&amp;quot;
+        case lastName = &amp;quot;name2&amp;quot;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And that&amp;rsquo;s all I have to do. Now the JSON is correctly converted to a Person. As
+an exercise, use JSONEncoder to get back to JSON from the Person. You will see
+that the JSON correctly names the elements using &amp;ldquo;name1&amp;rdquo; and &amp;ldquo;name2&amp;rdquo;.&lt;/p&gt;
+
+&lt;h2 id=&#34;date-handling&#34;&gt;Date Handling&lt;/h2&gt;
+
+&lt;p&gt;Next let&amp;rsquo;s look at dates - add this code to the playground:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;let jsonString2 = &amp;quot;&amp;quot;&amp;quot;
+{
+&amp;quot;name&amp;quot;: &amp;quot;My New Project&amp;quot;,
+&amp;quot;created&amp;quot;: &amp;quot;2017-06-18T06:28:25Z&amp;quot;
+}
+&amp;quot;&amp;quot;&amp;quot;
+let jsonData2 = jsonString2.data(using: .utf8)!
+
+struct Project: Codable {
+    let name: String
+    let created: Date
+}
+
+let jsonDecoder2 = JSONDecoder()
+let project = try? jsonDecoder2.decode(Project.self, from: jsonData2)
+
+dump(project)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When this runs, &lt;code&gt;project&lt;/code&gt; is nil because the decoder has no idea how to get from
+the String &amp;ldquo;2017-06-18T06:28:25Z&amp;rdquo; to a Date object. Add this line after creating
+&lt;code&gt;jsonDecoder2&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;jsonDecoder2.dateDecodingStrategy = .iso8601
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now the date can be converted and an instance of the Project struct will be
+created.&lt;/p&gt;
+
+&lt;p&gt;And to get back to the JSON, converting the Date back to ISO8601 format:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;let jsonEncoder = JSONEncoder()
+jsonEncoder.dateEncodingStrategy = .iso8601
+
+if let backToJson = try? jsonEncoder.encode(project) {
+    if let jsonString = String(data: backToJson, encoding: .utf8) {
+        print(jsonString)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a name =&#34;nulls&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;allowing-for-nulls&#34;&gt;Allowing For Nulls&lt;/h2&gt;
+
+&lt;p&gt;JSON data will often include &lt;strong&gt;null&lt;/strong&gt; where there is no value for a particular
+property name. When using JSONDecoder or JSONEncoder, this can be allowed for by
+using Optionals. If you are not clear about Optionals, have a look at my
+previous article: &lt;a href=&#34;https://troz.net/post/2016-02-12-learning-swift-optionals/&#34;&gt;Learning Swift - Optionals&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The crucial step is to declare the properties of the Swift object as optionals
+if you think they could get a null value.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;struct Role: Codable {
+    let firstName: String
+    let lastName: String
+    let nickName: String?
+}
+
+let jsonStringWithNulls = &amp;quot;&amp;quot;&amp;quot;
+[
+    {
+        &amp;quot;firstName&amp;quot;: &amp;quot;Sally&amp;quot;,
+        &amp;quot;lastName&amp;quot;: &amp;quot;Sparrow&amp;quot;,
+        &amp;quot;nickName&amp;quot;: null
+    },
+    {
+        &amp;quot;firstName&amp;quot;: &amp;quot;Doctor&amp;quot;,
+        &amp;quot;lastName&amp;quot;: &amp;quot;Who&amp;quot;,
+        &amp;quot;nickName&amp;quot;: &amp;quot;The Doctor&amp;quot;
+    }
+]
+&amp;quot;&amp;quot;&amp;quot;
+let jsonDataWithNulls = jsonStringWithNulls.data(using: .utf8)!
+
+let jsonDecoder3 = JSONDecoder()
+let roles = try? jsonDecoder3.decode(Array&amp;lt;Role&amp;gt;.self, from: jsonDataWithNulls)
+dump(roles)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this example (which you can find in the Swift 4 Extras page on &lt;a href=&#34;https://github.com/trozware/json&#34;&gt;my
+playground&lt;/a&gt;), I have declared a struct called Role with 3 String properties.
+The 3rd String - nickName - is an Optional so it may be a String or it may be
+nil.&lt;/p&gt;
+
+&lt;p&gt;The JSON contains 2 elements - one has a nickName value and the other has it as
+null. Because the matching property in the Swift struct is an optional, this
+works as expected and the nickName property for Sally Sparrow is decoded as nil.
+If you remove the question mark to make nickName non-optional, the decoding will
+fail.&lt;/p&gt;
+
+&lt;p&gt;Going back to JSON from a Swift object with optionals works much the same except
+that it does not specifically mark items as null, it just leaves them out.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;let jsonEncoder2 = JSONEncoder()
+jsonEncoder2.outputFormatting = .prettyPrinted
+
+if let backToJsonWithNulls = try? jsonEncoder2.encode(roles) {
+    if let jsonString = String(data: backToJsonWithNulls, encoding: .utf8) {
+        print(jsonString)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;property-lists&#34;&gt;Property Lists&lt;/h2&gt;
+
+&lt;p&gt;As well as JSONDecoder and JSONEncoder, Swift 4 has introduced
+PropertyListDecoder and PropertyListEncoder, so let&amp;rsquo;s take a quick look at that.&lt;/p&gt;
+
+&lt;p&gt;Add this to the bottom of the last playground as it uses the Project struct and
+data:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;let plistEncoder = PropertyListEncoder()
+plistEncoder.outputFormat = .xml
+if let plist = try? plistEncoder.encode(project) {
+    if let plistString = String(data: plist, encoding: .utf8) {
+        print(plistString)
+    }
+
+    let plistDecoder = PropertyListDecoder()
+    let project2 = try? plistDecoder.decode(Project.self, from: plist)
+
+    dump(project2)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I don&amp;rsquo;t see this is being quite as useful as the JSON Encoding &amp;amp; Decoding, but I
+mention it here for completeness.&lt;/p&gt;
+
+&lt;h2 id=&#34;codable&#34;&gt;Codable&lt;/h2&gt;
+
+&lt;p&gt;In all the Swift 4 examples above, I set the structs to conform to &lt;code&gt;Codable&lt;/code&gt;.
+Reading Apple&amp;rsquo;s docs, I see that &lt;code&gt;Codable&lt;/code&gt; is actually a typealias referring to
+2 separate protocols:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-Swift&#34;&gt;typealias Codable = Decodable &amp;amp; Encodable
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you only need to convert data one way, it will be more efficient to set your
+struct or class as confirming to only one of these protocols. For example, if
+you download JSON data from an API but never need to send it back, just conform
+to Decodable to transform the JSON data into your data structure.&lt;/p&gt;
+
+&lt;p&gt;Much more information can be found in the &lt;a href=&#34;https://developer.apple.com/documentation/swift/encoding_decoding_and_serialization&#34;&gt;Apple documentation&lt;/a&gt;.&lt;/p&gt;</description>
+</item>
     
     <item>
-      <title>JSON Feed for TrozWare</title>
-      <link>https://troz.net/post/2017/json-feed-for-trozware/</link>
-      <pubDate>Sat, 20 May 2017 00:00:00 +0000</pubDate>
+<title>JSON Feed for TrozWare</title>
+<link>https://troz.net/post/2017/json-feed-for-trozware/</link>
+<pubDate>Sat, 20 May 2017 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2017/json-feed-for-trozware/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://jsonfeed.org/2017/05/17/announcing_json_feed&#34;&gt;jsonfeed.org&lt;/a&gt; has announced a new format for web site feeds, designed as an
+<description>&lt;p&gt;&lt;a href=&#34;https://jsonfeed.org/2017/05/17/announcing_json_feed&#34;&gt;jsonfeed.org&lt;/a&gt; has announced a new format for web site feeds, designed as an
 alternative to RSS. TrozWare has had an XML RSS feed for years, but I don&amp;rsquo;t
 think anyone ever uses it (I certainly don&amp;rsquo;t), so today I have replaced it with
 a JSON feed, which you can access through the
-&lt;a class=&#34;fa fa-rss&#34; href=&#34;https://troz.net/feed.json&#34;&gt;&lt;/a&gt; button at the top of every page.&lt;/p&gt;</description>
-    </item>
+&lt;a class=&#34;fa fa-rss&#34; href=&#34;https://troz.net/feed.json&#34;&gt;&lt;/a&gt; button at the top of every page.&lt;/p&gt;
+
+&lt;p&gt;I am sure many JSON Feed viewers will appear soon, but the only one I know about
+so far is at &lt;a href=&#34;http://json-feed-viewer.herokuapp.com&#34;&gt;http://json-feed-viewer.herokuapp.com&lt;/a&gt;. As soon as this update
+to my site goes live, I will apply to have TrozWare added to the list of sites
+on this page. Meanwhile, you can paste in the URL: &lt;code&gt;https://troz.net/feed.json&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This site is constructed using Jekyll, so I am very grateful to Niclas Darville
+for his very easy to follow &lt;a href=&#34;https://ndarville.com/blog/2017/05/19/json-feed-for-jekyll/&#34;&gt;guide&lt;/a&gt;. However it is still well worth reading
+through the &lt;a href=&#34;https://jsonfeed.org/version/1&#34;&gt;official specs&lt;/a&gt; to see what else you want to add, or if you want
+to remove anything. I had to tweak a few settings to make it work for my
+configuration, and I added some more objects, but Niclas got me off to a flying
+start.&lt;/p&gt;
+
+&lt;p&gt;Two things to watch out for:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Make sure your feed is producing valid JSON (I had an extra comma that was
+breaking it&amp;hellip;).&lt;/li&gt;
+&lt;li&gt;As third-party apps &amp;amp; sites may be displaying your content, you need to make
+sure that you are not using relative URLs for images and internal links. I
+was using relative image URLs like &lt;code&gt;/images/WorkHelp1.png&lt;/code&gt; but that showed a
+broken link in the feed viewer, so I have changed all such links to
+&lt;code&gt;/images/WorkHelp1.png&lt;/code&gt;. Hopefully that will work correctly on my local test
+server as well as when published. &lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://jsonfeed.org/graphics/icon.png&#34; alt=&#34;JSON Feed icon&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;JSON Feed offers a nice icon which I would have liked to use, but I could not
+work out a way to make it play nicely with the existing icons on my pages which
+all use &lt;a href=&#34;http://fontawesome.io&#34;&gt;Font Awesome&lt;/a&gt; icons. So I ended up just using the existing Feed
+icon. Hopefully Font Awesome will soon add a JSON Feed icon to their already
+impressive list.&lt;/p&gt;
+
+&lt;p&gt;If anyone still wants to use the &lt;a href=&#34;https://troz.net/index.xml&#34;&gt;RSS feed&lt;/a&gt;, it is no longer linked to the
+buttons at the top of the pages, but you can access it manually.&lt;/p&gt;</description>
+</item>
     
   </channel>
 </rss>

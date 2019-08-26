@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>work on TrozWare</title>
     <link>https://troz.net/tags/work/</link>
@@ -8,20 +8,36 @@
     <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
     <lastBuildDate>Thu, 17 Nov 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://troz.net/tags/work/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://troz.net/tags/work/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Looking for beta testers</title>
-      <link>https://troz.net/post/2016/looking-for-beta-testers/</link>
-      <pubDate>Thu, 17 Nov 2016 00:00:00 +0000</pubDate>
+<title>Looking for beta testers</title>
+<link>https://troz.net/post/2016/looking-for-beta-testers/</link>
+<pubDate>Thu, 17 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/post/2016/looking-for-beta-testers/</guid>
-      <description>I am looking for beta testers for my latest Mac app: Work.
-Work is a project organizer app for developers, designers, students or any professional who works with multiple projects involving files &amp;amp; folders, web pages, email addresses and lists of tasks. Click the link above for more information and help for getting started.
-Work requires macOS 10.12 or OS X 10.11.
-If you would like to test this app, please contact me, giving details of your Mac and operating system.</description>
-    </item>
+<description>&lt;p&gt;I am looking for beta testers for my latest Mac app: &lt;strong&gt;&lt;a href=&#34;https://troz.net/work/&#34;&gt;Work&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Work&lt;/strong&gt; is a project organizer app for developers, designers, students or any
+professional who works with multiple projects involving files &amp;amp; folders, web
+pages, email addresses and lists of tasks. Click the link above for more
+information and help for getting started.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Work&lt;/strong&gt; requires macOS 10.12 or OS X 10.11.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you would like to test this app, please &lt;a href=&#34;mailto:work@troz.net?subject=Work%20beta%20test&#34;&gt;contact me&lt;/a&gt;, giving details of
+your Mac and operating system. The easiest way to do this is to select &lt;strong&gt;About
+This Mac&lt;/strong&gt; in the Apple menu and send me a screen shot of the window that
+appears.&lt;/p&gt;
+
+&lt;p&gt;All beta testers will receive a free license to Work when it is released. If you
+report a legitimate bug or provide valuable feed-back, you will also receive a
+free license to your choice of one of my &lt;a href=&#34;https://troz.net/apps/&#34;&gt;other apps&lt;/a&gt;.&lt;/p&gt;
+</description>
+</item>
     
   </channel>
 </rss>
