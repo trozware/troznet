@@ -9,7 +9,7 @@
     <meta name="twitter:site" content="@trozware" />
     <meta name="twitter:title" content="{{ .Page.Params.mac_app_name }}" />
     <meta name="twitter:description" content="{{ .Page.Params.mac_app_desc }}" />
-    <meta name="twitter:url" content="{{ .Page.URL | absURL }}" />
+    <meta name="twitter:url" content="{{ .Page.Permalink | absURL }}" />
     <meta name="twitter:image" content="{{ .Page.Params.mac_app_image | absURL }}" />
 {{ else }}
     <meta name="twitter:card" content="summary" />
