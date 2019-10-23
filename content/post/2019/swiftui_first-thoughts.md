@@ -3,7 +3,7 @@ title: 'SwiftUI First Thoughts'
 date: 2019-08-18T15:00:05+10:00
 lastmod: 2019-08-18T15:00:05+10:00
 draft: false
-description: ''
+description: 'Should you be using SwiftUI?'
 tags: ['swift', 'swiftui']
 toc: true
 ---

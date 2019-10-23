@@ -1,5 +1,5 @@
 {{ define "main"}}
-{{ $paginator := .Paginate (where .Site.RegularPages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate") }}
+{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate") }}
 
 <div class="posts post on-list">
   <section id="archive">
@@ -19,7 +19,6 @@
       </span>
     </div>
     {{ end }}
-
   </section>
 </div>
 {{ end }}

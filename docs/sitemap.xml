@@ -1,44 +1,51 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>https://troz.net/post/</loc>
-    <lastmod>2019-08-18T15:00:05+10:00</lastmod>
+    <lastmod>2019-09-16T08:47:57+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/tags/swift/</loc>
-    <lastmod>2019-08-18T15:00:05+10:00</lastmod>
+    <lastmod>2019-09-16T08:47:57+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/tags/swiftui/</loc>
-    <lastmod>2019-08-18T15:00:05+10:00</lastmod>
+    <lastmod>2019-09-16T08:47:57+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://troz.net/post/2019/swiftui_first-thoughts/</loc>
-    <lastmod>2019-08-18T15:00:05+10:00</lastmod>
+    <loc>https://troz.net/post/2019/swiftui-data-flow/</loc>
+    <lastmod>2019-09-16T08:47:57+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/tags/</loc>
-    <lastmod>2019-08-18T15:00:05+10:00</lastmod>
+    <lastmod>2019-09-16T08:47:57+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/</loc>
+    <lastmod>2019-09-16T08:47:57+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/post/2019/swiftui_first-thoughts/</loc>
     <lastmod>2019-08-18T15:00:05+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
