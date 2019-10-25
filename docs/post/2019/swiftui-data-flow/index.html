@@ -154,7 +154,7 @@ In this post, I intend to discuss the possibilities with examples.
     <span class="post-date">
       23 Oct 2019
     </span>
-    <span class="more-meta"> 2439 words, </span>
+    <span class="more-meta"> 2452 words, </span>
     <span class="more-meta"> 12 minute read</span>
   </div>
 
@@ -491,11 +491,11 @@ struct NumberBlock: View {
 }
 </code></pre>
 
-<p>The <code>ChildView</code> contained in this parent - the green view - has no need to access this data and so gets no <code>@EnvironmentObject</code> property. But <code>ChildView</code> contains another subview - the blue one. And this <code>GrandChildView</code> - the blue view - does need access to the <code>UserSettings</code> so it has the exact same <code>@EnvironmentObject var userSettings: UserSettings</code> property as the parent view.</p>
+<p>The <code>ChildView</code> contained in this parent - the green view - has no need to access this data and so gets no <code>@EnvironmentObject</code> property. But <code>ChildView</code> contains another subview - the blue one. And this <code>GrandChildView</code> does need access to the <code>UserSettings</code> so it has the exact same <code>@EnvironmentObject var userSettings: UserSettings</code> property as the parent view.</p>
 
-<p>If this was using <code>@ObservedObject</code>, the data would have to be passed thrugh every view in an un-broken chain, even though <code>ChildView</code> did not need this data. By using <code>@EnvironmentObject</code>, the chain can be broken, but any view that needs to, can access and mutate this data. In the example, both the yellow and the blue views display and edit the same data with updates happening in both when either button is pressed.</p>
+<p>If this was using <code>@ObservedObject</code> the data would have to be passed through every view in an un-broken chain, even though <code>ChildView</code> did not need this data. By using <code>@EnvironmentObject</code> the chain can be broken, but any view that needs to, can access and mutate this data. In the example, both the yellow and the blue views display and edit the same data with updates happening in both when either button is pressed.</p>
 
-<p>One key thing to remember about using <code>@EnvironmentObject</code> in the Canvas is that every view that uses it, or that contains a view that uses it, needs to be supplied with the <code>ObservableObject</code> in the preview using <code>.environmentObject()</code>.</p>
+<p>One key thing to remember about previewing <code>@EnvironmentObject</code> in the Canvas is that every view that uses it, or that contains a view that uses it, needs to be supplied with the <code>ObservableObject</code> in the preview using <code>.environmentObject()</code>.</p>
 
 <pre><code class="language-swift">struct NestingViews_Previews: PreviewProvider {
     static var previews: some View {
@@ -505,7 +505,7 @@ struct NumberBlock: View {
 }
 </code></pre>
 
-<p>In the app itself, only the first view to access the <code>@EnvironmentObject</code> needs it set. In this example, it is done in the <code>NavigationLink</code> that goes to the <code>NestingViews</code> example.</p>
+<p>In the app itself, only the first view to access the <code>@EnvironmentObject</code> needs it set. In this example, it is done in the <code>NavigationLink</code> that goes to the <code>NestingViews</code> example. The <code>.environmentObject</code> can be provided to the root view in the <code>SceneDelegate</code> if the root view needs it.</p>
 
 <pre><code class="language-swift">    NavigationLink(destination: NestingViews().environmentObject(UserSettings())) {
         ListContents(title: &quot;@EnvironmentObject&quot;, imageNumber: 6)

@@ -337,11 +337,11 @@ struct NumberBlock: View {
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;The &lt;code&gt;ChildView&lt;/code&gt; contained in this parent - the green view - has no need to access this data and so gets no &lt;code&gt;@EnvironmentObject&lt;/code&gt; property. But &lt;code&gt;ChildView&lt;/code&gt; contains another subview - the blue one. And this &lt;code&gt;GrandChildView&lt;/code&gt; - the blue view - does need access to the &lt;code&gt;UserSettings&lt;/code&gt; so it has the exact same &lt;code&gt;@EnvironmentObject var userSettings: UserSettings&lt;/code&gt; property as the parent view.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;ChildView&lt;/code&gt; contained in this parent - the green view - has no need to access this data and so gets no &lt;code&gt;@EnvironmentObject&lt;/code&gt; property. But &lt;code&gt;ChildView&lt;/code&gt; contains another subview - the blue one. And this &lt;code&gt;GrandChildView&lt;/code&gt; does need access to the &lt;code&gt;UserSettings&lt;/code&gt; so it has the exact same &lt;code&gt;@EnvironmentObject var userSettings: UserSettings&lt;/code&gt; property as the parent view.&lt;/p&gt;
 
-&lt;p&gt;If this was using &lt;code&gt;@ObservedObject&lt;/code&gt;, the data would have to be passed thrugh every view in an un-broken chain, even though &lt;code&gt;ChildView&lt;/code&gt; did not need this data. By using &lt;code&gt;@EnvironmentObject&lt;/code&gt;, the chain can be broken, but any view that needs to, can access and mutate this data. In the example, both the yellow and the blue views display and edit the same data with updates happening in both when either button is pressed.&lt;/p&gt;
+&lt;p&gt;If this was using &lt;code&gt;@ObservedObject&lt;/code&gt; the data would have to be passed through every view in an un-broken chain, even though &lt;code&gt;ChildView&lt;/code&gt; did not need this data. By using &lt;code&gt;@EnvironmentObject&lt;/code&gt; the chain can be broken, but any view that needs to, can access and mutate this data. In the example, both the yellow and the blue views display and edit the same data with updates happening in both when either button is pressed.&lt;/p&gt;
 
-&lt;p&gt;One key thing to remember about using &lt;code&gt;@EnvironmentObject&lt;/code&gt; in the Canvas is that every view that uses it, or that contains a view that uses it, needs to be supplied with the &lt;code&gt;ObservableObject&lt;/code&gt; in the preview using &lt;code&gt;.environmentObject()&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;One key thing to remember about previewing &lt;code&gt;@EnvironmentObject&lt;/code&gt; in the Canvas is that every view that uses it, or that contains a view that uses it, needs to be supplied with the &lt;code&gt;ObservableObject&lt;/code&gt; in the preview using &lt;code&gt;.environmentObject()&lt;/code&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;struct NestingViews_Previews: PreviewProvider {
     static var previews: some View {
@@ -351,7 +351,7 @@ struct NumberBlock: View {
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;In the app itself, only the first view to access the &lt;code&gt;@EnvironmentObject&lt;/code&gt; needs it set. In this example, it is done in the &lt;code&gt;NavigationLink&lt;/code&gt; that goes to the &lt;code&gt;NestingViews&lt;/code&gt; example.&lt;/p&gt;
+&lt;p&gt;In the app itself, only the first view to access the &lt;code&gt;@EnvironmentObject&lt;/code&gt; needs it set. In this example, it is done in the &lt;code&gt;NavigationLink&lt;/code&gt; that goes to the &lt;code&gt;NestingViews&lt;/code&gt; example. The &lt;code&gt;.environmentObject&lt;/code&gt; can be provided to the root view in the &lt;code&gt;SceneDelegate&lt;/code&gt; if the root view needs it.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;    NavigationLink(destination: NestingViews().environmentObject(UserSettings())) {
         ListContents(title: &amp;quot;@EnvironmentObject&amp;quot;, imageNumber: 6)

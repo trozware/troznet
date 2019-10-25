@@ -339,11 +339,11 @@ struct NestingViews: View {
 }
 ```
 
-The `ChildView` contained in this parent - the green view - has no need to access this data and so gets no `@EnvironmentObject` property. But `ChildView` contains another subview - the blue one. And this `GrandChildView` - the blue view - does need access to the `UserSettings` so it has the exact same `@EnvironmentObject var userSettings: UserSettings` property as the parent view.
+The `ChildView` contained in this parent - the green view - has no need to access this data and so gets no `@EnvironmentObject` property. But `ChildView` contains another subview - the blue one. And this `GrandChildView` does need access to the `UserSettings` so it has the exact same `@EnvironmentObject var userSettings: UserSettings` property as the parent view.
 
-If this was using `@ObservedObject`, the data would have to be passed thrugh every view in an un-broken chain, even though `ChildView` did not need this data. By using `@EnvironmentObject`, the chain can be broken, but any view that needs to, can access and mutate this data. In the example, both the yellow and the blue views display and edit the same data with updates happening in both when either button is pressed.
+If this was using `@ObservedObject` the data would have to be passed through every view in an un-broken chain, even though `ChildView` did not need this data. By using `@EnvironmentObject` the chain can be broken, but any view that needs to, can access and mutate this data. In the example, both the yellow and the blue views display and edit the same data with updates happening in both when either button is pressed.
 
-One key thing to remember about using `@EnvironmentObject` in the Canvas is that every view that uses it, or that contains a view that uses it, needs to be supplied with the `ObservableObject` in the preview using `.environmentObject()`.
+One key thing to remember about previewing `@EnvironmentObject` in the Canvas is that every view that uses it, or that contains a view that uses it, needs to be supplied with the `ObservableObject` in the preview using `.environmentObject()`.
 
 ```swift
 struct NestingViews_Previews: PreviewProvider {
@@ -354,7 +354,7 @@ struct NestingViews_Previews: PreviewProvider {
 }
 ```
 
-In the app itself, only the first view to access the `@EnvironmentObject` needs it set. In this example, it is done in the `NavigationLink` that goes to the `NestingViews` example.
+In the app itself, only the first view to access the `@EnvironmentObject` needs it set. In this example, it is done in the `NavigationLink` that goes to the `NestingViews` example. The `.environmentObject` can be provided to the root view in the `SceneDelegate` if the root view needs it.
 
 ```swift
     NavigationLink(destination: NestingViews().environmentObject(UserSettings())) {
