@@ -6,7 +6,7 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content=" img { margin: 10px auto; }  SwiftUI gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?
+<meta name="description" content="SwiftUI gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?
 In this post, I intend to discuss the possibilities with examples.
 "/>
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
@@ -26,7 +26,7 @@ In this post, I intend to discuss the possibilities with examples.
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="SwiftUI Data Flow :: TrozWare — " />
-<meta name="twitter:description" content=" img { margin: 10px auto; }  SwiftUI gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?
+<meta name="twitter:description" content="SwiftUI gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?
 In this post, I intend to discuss the possibilities with examples.
 " />
 <meta name="twitter:site" content="https://troz.net/" />
@@ -37,7 +37,7 @@ In this post, I intend to discuss the possibilities with examples.
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="SwiftUI Data Flow :: TrozWare — ">
-<meta property="og:description" content=" img { margin: 10px auto; }  SwiftUI gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?
+<meta property="og:description" content="SwiftUI gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?
 In this post, I intend to discuss the possibilities with examples.
 " />
 <meta property="og:url" content="https://troz.net/post/2019/swiftui-data-flow/" />
@@ -171,14 +171,7 @@ In this post, I intend to discuss the possibilities with examples.
   
 
   <div class="post-content">
-    <style>
-  img {
-    margin: 10px auto;
-  }
-</style>
-
-
-<p><a href="https://developer.apple.com/xcode/swiftui/">SwiftUI</a> gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?</p>
+    <p><a href="https://developer.apple.com/xcode/swiftui/">SwiftUI</a> gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?</p>
 
 <p>In this post, I intend to discuss the possibilities with examples.</p>
 
@@ -187,6 +180,13 @@ In this post, I intend to discuss the possibilities with examples.
 <p>I guess I could stop there, but I will be illustrating my ideas with code examples, which I hope will make things clearer. Some of the examples are rather contrived in order to make a point, but the sample code is also sprinkled with other SwiftUI examples which I hope will prove useful.</p>
 
 <p><a href="https://github.com/trozware/swiftui-data-flow/tree/master">Download the sample project from GitHub</a> and open it in Xcode. Go to ContentView.swift and make sure the Canvas is open. Click Resume to make the view appear. Then click the Live Preview button and wait for the view to become active. I recommend clicking the Pin button at the bottom left of the Canvas so that you can investigate the code samples, while still working in the main navigation.</p>
+
+<style>
+  img {
+    margin: 10px auto;
+  }
+</style>
+
 
 <h2 id="data-flow-options">Data Flow Options</h2>
 
@@ -286,13 +286,13 @@ struct NumberBlock: View {
 
 <p>The interface has been extracted into a subview called <code>NumberChooser</code> and this property has been passed to <code>NumberChooser</code> using the <code>$</code> prefix to ensure that changes to the value can come back. Inside <code>NumberChooser</code> this property is wrapped in the <code>@Binding</code> property wrapper to indicate that it is coming from another source and that changes should be returned.</p>
 
-<p><code>NumberChooser</code> itself has a subview called <code>NumberBlock</code> but it is a display view only and never mutates the value itself, so <code>stepperValue</code> is passed to this subview as a propertry only, without the <code>$</code> prefix. It will still be updated every time the data changes as it is contained by the view with the <code>@State</code> property.</p>
+<p><code>NumberChooser</code> itself has a subview called <code>NumberBlock</code> but it is a display view only and never mutates the value itself, so <code>stepperValue</code> is passed to this subview as a property only, without the <code>$</code> prefix. It will still be updated every time the data changes as it is contained by the view with the <code>@State</code> property.</p>
 
-<p><img src="/images/NumberChooser.png" alt="Number CHooser" /></p>
+<p><img src="/images/NumberChooser.png" alt="Number Chooser" /></p>
 
 <h2 id="state-binding-part-2">@State &amp; @Binding - Part 2</h2>
 
-<p>So far, the examples have used primitve data types for the @State properties, but given that <code>@State</code> properties are value types, any struct can be used. In the next example, I use a struct to hold the properties of a pizza order and use a SwiftUI Form to allow selections.</p>
+<p>So far, the examples have used primitive data types for the @State properties, but given that <code>@State</code> properties are value types, any struct can be used. In the next example, I use a struct to hold the properties of a pizza order and use a SwiftUI Form to allow selections.</p>
 
 <pre><code class="language-swift">struct PizzaView: View {
     // Using @State for a struct

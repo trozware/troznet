@@ -16,14 +16,7 @@
 <pubDate>Mon, 16 Sep 2019 08:47:57 +1000</pubDate>
       
       <guid>https://troz.net/post/2019/swiftui-data-flow/</guid>
-<description>&lt;style&gt;
-  img {
-    margin: 10px auto;
-  }
-&lt;/style&gt;
-
-
-&lt;p&gt;&lt;a href=&#34;https://developer.apple.com/xcode/swiftui/&#34;&gt;SwiftUI&lt;/a&gt; gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?&lt;/p&gt;
+<description>&lt;p&gt;&lt;a href=&#34;https://developer.apple.com/xcode/swiftui/&#34;&gt;SwiftUI&lt;/a&gt; gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?&lt;/p&gt;
 
 &lt;p&gt;In this post, I intend to discuss the possibilities with examples.&lt;/p&gt;
 
@@ -32,6 +25,13 @@
 &lt;p&gt;I guess I could stop there, but I will be illustrating my ideas with code examples, which I hope will make things clearer. Some of the examples are rather contrived in order to make a point, but the sample code is also sprinkled with other SwiftUI examples which I hope will prove useful.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/trozware/swiftui-data-flow/tree/master&#34;&gt;Download the sample project from GitHub&lt;/a&gt; and open it in Xcode. Go to ContentView.swift and make sure the Canvas is open. Click Resume to make the view appear. Then click the Live Preview button and wait for the view to become active. I recommend clicking the Pin button at the bottom left of the Canvas so that you can investigate the code samples, while still working in the main navigation.&lt;/p&gt;
+
+&lt;style&gt;
+  img {
+    margin: 10px auto;
+  }
+&lt;/style&gt;
+
 
 &lt;h2 id=&#34;data-flow-options&#34;&gt;Data Flow Options&lt;/h2&gt;
 
@@ -131,13 +131,13 @@ struct NumberBlock: View {
 
 &lt;p&gt;The interface has been extracted into a subview called &lt;code&gt;NumberChooser&lt;/code&gt; and this property has been passed to &lt;code&gt;NumberChooser&lt;/code&gt; using the &lt;code&gt;$&lt;/code&gt; prefix to ensure that changes to the value can come back. Inside &lt;code&gt;NumberChooser&lt;/code&gt; this property is wrapped in the &lt;code&gt;@Binding&lt;/code&gt; property wrapper to indicate that it is coming from another source and that changes should be returned.&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;NumberChooser&lt;/code&gt; itself has a subview called &lt;code&gt;NumberBlock&lt;/code&gt; but it is a display view only and never mutates the value itself, so &lt;code&gt;stepperValue&lt;/code&gt; is passed to this subview as a propertry only, without the &lt;code&gt;$&lt;/code&gt; prefix. It will still be updated every time the data changes as it is contained by the view with the &lt;code&gt;@State&lt;/code&gt; property.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;NumberChooser&lt;/code&gt; itself has a subview called &lt;code&gt;NumberBlock&lt;/code&gt; but it is a display view only and never mutates the value itself, so &lt;code&gt;stepperValue&lt;/code&gt; is passed to this subview as a property only, without the &lt;code&gt;$&lt;/code&gt; prefix. It will still be updated every time the data changes as it is contained by the view with the &lt;code&gt;@State&lt;/code&gt; property.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://troz.net/images/NumberChooser.png&#34; alt=&#34;Number CHooser&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/NumberChooser.png&#34; alt=&#34;Number Chooser&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;state-binding-part-2&#34;&gt;@State &amp;amp; @Binding - Part 2&lt;/h2&gt;
 
-&lt;p&gt;So far, the examples have used primitve data types for the @State properties, but given that &lt;code&gt;@State&lt;/code&gt; properties are value types, any struct can be used. In the next example, I use a struct to hold the properties of a pizza order and use a SwiftUI Form to allow selections.&lt;/p&gt;
+&lt;p&gt;So far, the examples have used primitive data types for the @State properties, but given that &lt;code&gt;@State&lt;/code&gt; properties are value types, any struct can be used. In the next example, I use a struct to hold the properties of a pizza order and use a SwiftUI Form to allow selections.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;struct PizzaView: View {
     // Using @State for a struct

@@ -8,8 +8,6 @@ tags: ['swift', 'swiftui']
 toc: true
 ---
 
-{{< img_center >}}
-
 [SwiftUI][1] gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?
 
 In this post, I intend to discuss the possibilities with examples.
@@ -21,6 +19,8 @@ At WWDC 2019, some Apple engineers gave a great presentation on [Data Flow Throu
 I guess I could stop there, but I will be illustrating my ideas with code examples, which I hope will make things clearer. Some of the examples are rather contrived in order to make a point, but the sample code is also sprinkled with other SwiftUI examples which I hope will prove useful.
 
 [Download the sample project from GitHub][4] and open it in Xcode. Go to ContentView.swift and make sure the Canvas is open. Click Resume to make the view appear. Then click the Live Preview button and wait for the view to become active. I recommend clicking the Pin button at the bottom left of the Canvas so that you can investigate the code samples, while still working in the main navigation.
+
+{{< img_center >}}
 
 ## Data Flow Options
 
@@ -121,13 +121,13 @@ In this example, I have declared a `stepperValue` property and marked it with `@
 
 The interface has been extracted into a subview called `NumberChooser` and this property has been passed to `NumberChooser` using the `$` prefix to ensure that changes to the value can come back. Inside `NumberChooser` this property is wrapped in the `@Binding` property wrapper to indicate that it is coming from another source and that changes should be returned.
 
-`NumberChooser` itself has a subview called `NumberBlock` but it is a display view only and never mutates the value itself, so `stepperValue` is passed to this subview as a propertry only, without the `$` prefix. It will still be updated every time the data changes as it is contained by the view with the `@State` property.
+`NumberChooser` itself has a subview called `NumberBlock` but it is a display view only and never mutates the value itself, so `stepperValue` is passed to this subview as a property only, without the `$` prefix. It will still be updated every time the data changes as it is contained by the view with the `@State` property.
 
-![Number CHooser][3i]
+![Number Chooser][3i]
 
 ## @State & @Binding - Part 2
 
-So far, the examples have used primitve data types for the @State properties, but given that `@State` properties are value types, any struct can be used. In the next example, I use a struct to hold the properties of a pizza order and use a SwiftUI Form to allow selections.
+So far, the examples have used primitive data types for the @State properties, but given that `@State` properties are value types, any struct can be used. In the next example, I use a struct to hold the properties of a pizza order and use a SwiftUI Form to allow selections.
 
 ```swift
 struct PizzaView: View {
