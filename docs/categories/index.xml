@@ -301,25 +301,21 @@ struct NumberBlock: View {
 
 &lt;p&gt;&lt;br&gt;&lt;strong&gt;Update:&lt;/strong&gt; &lt;a href=&#34;https://twitter.com/StewartLynch&#34;&gt;@StewartLynch&lt;/a&gt; contacted me to suggest a much neater way to pass the person data to the PersonDetailView by using a function to get a &lt;code&gt;Binding&amp;lt;PersonViewModel&amp;gt;&lt;/code&gt; for each &lt;code&gt;person&lt;/code&gt; being displayed. This worked perfectly and made for a much cleaner looking bit of code. Thanks Stewart.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;var body: some View {
-    List {
-        ForEach(personList.persons) { person in
-            NavigationLink(destination:
-                PersonDetailView(person: self.selectedPerson(id: person.id))
-            ) {
-                Text(&amp;quot;\(person.first) \(person.last)&amp;quot;)
-            }
-        }
-    }
-}
+&lt;p&gt;&lt;strong&gt;Update 2:&lt;/strong&gt; &lt;a href=&#34;https://twitter.com/vadimshpakovski&#34;&gt;@vadimshpakovski&lt;/a&gt; points out that creating a binding for every &lt;code&gt;person&lt;/code&gt; object is inefficient and using a function to create this binding is slow. He suggests using &lt;code&gt;onReceive&lt;/code&gt; to react to changes to &lt;code&gt;person&lt;/code&gt; and trigger an update of &lt;code&gt;personList&lt;/code&gt;. In this case, &lt;code&gt;PersonDetailView&lt;/code&gt; uses &lt;code&gt;@ObservedObject var person: PersonViewModel&lt;/code&gt;. THis works really well and feels more like how ObservableObjects should be used.&lt;/p&gt;
 
-func selectedPerson(id: UUID) -&amp;gt; Binding&amp;lt;PersonViewModel&amp;gt; {
-    guard let index = self.personList.persons.firstIndex(where: { $0.id == id }) else {
-        fatalError(&amp;quot;This person does not exist.&amp;quot;)
-    }
-    return self.$personList.persons[index]
-}
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;  ForEach(personList.persons) { person in
+      NavigationLink(destination:
+          PersonDetailView(person: person)
+              .onReceive(person.objectWillChange) { _ in
+                  self.personList.objectWillChange.send()
+              }
+      ) {
+          Text(&amp;quot;\(person.first) \(person.last)&amp;quot;)
+      }
+  }
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you want to have a look at Stewart&amp;rsquo;s solution, check out &lt;a href=&#34;https://github.com/trozware/swiftui-data-flow/tree/57f48ea28d1e987566398800e74f12e339eac231&#34;&gt;this commit on GitHub&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/PersonListView.png&#34; alt=&#34;Person List View&#34; /&gt;&lt;/p&gt;
 

@@ -1,7 +1,7 @@
 ---
 title: 'SwiftUI Data Flow'
 date: 2019-09-16T08:47:57+10:00
-lastmod: 2019-11-11T16:58:27+10:00
+lastmod: 2019-11-12T08:18:13+10:00
 draft: false
 description: 'Various ways to pass data around your SwiftUI apps.'
 tags: ['swift', 'swiftui']
@@ -302,26 +302,22 @@ ForEach(0 ..< personList.persons.count, id: \.self) { index in
 
 <br>**Update:** [@StewartLynch][5] contacted me to suggest a much neater way to pass the person data to the PersonDetailView by using a function to get a `Binding<PersonViewModel>` for each `person` being displayed. This worked perfectly and made for a much cleaner looking bit of code. Thanks Stewart.
 
-```swift
-var body: some View {
-    List {
-        ForEach(personList.persons) { person in
-            NavigationLink(destination:
-                PersonDetailView(person: self.selectedPerson(id: person.id))
-            ) {
-                Text("\(person.first) \(person.last)")
-            }
-        }
-    }
-}
+**Update 2:** [@vadimshpakovski][6] points out that creating a binding for every `person` object is inefficient and using a function to create this binding is slow. He suggests using `onReceive` to react to changes to `person` and trigger an update of `personList`. In this case, `PersonDetailView` uses `@ObservedObject var person: PersonViewModel`. THis works really well and feels more like how ObservableObjects should be used.
 
-func selectedPerson(id: UUID) -> Binding<PersonViewModel> {
-    guard let index = self.personList.persons.firstIndex(where: { $0.id == id }) else {
-        fatalError("This person does not exist.")
-    }
-    return self.$personList.persons[index]
-}
+```swift
+  ForEach(personList.persons) { person in
+      NavigationLink(destination:
+          PersonDetailView(person: person)
+              .onReceive(person.objectWillChange) { _ in
+                  self.personList.objectWillChange.send()
+              }
+      ) {
+          Text("\(person.first) \(person.last)")
+      }
+  }
 ```
+
+If you want to have a look at Stewart's solution, check out [this commit on GitHub][7].
 
 ![Person List View][6i]
 
@@ -403,6 +399,8 @@ I am sure people will develop their own theories and their own ways of using Swi
 [3]: https://next.json-generator.com
 [4]: https://github.com/trozware/swiftui-data-flow/tree/master
 [5]: https://twitter.com/StewartLynch
+[6]: https://twitter.com/vadimshpakovski
+[7]: https://github.com/trozware/swiftui-data-flow/tree/57f48ea28d1e987566398800e74f12e339eac231
 [1i]: /images/NestedViews.png
 [2i]: /images/ContentView.png
 [3i]: /images/NumberChooser.png

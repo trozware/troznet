@@ -152,9 +152,9 @@ In this post, I intend to discuss the possibilities with examples.
   <h2 class="post-title"><a href="https://troz.net/post/2019/swiftui-data-flow/">SwiftUI Data Flow</a></h2>
   <div class="post-meta">
     <span class="post-date">
-      11 Nov 2019
+      12 Nov 2019
     </span>
-    <span class="more-meta"> 2563 words, </span>
+    <span class="more-meta"> 2611 words, </span>
     <span class="more-meta"> 13 minute read</span>
   </div>
 
@@ -456,25 +456,21 @@ struct NumberBlock: View {
 
 <p><br><strong>Update:</strong> <a href="https://twitter.com/StewartLynch">@StewartLynch</a> contacted me to suggest a much neater way to pass the person data to the PersonDetailView by using a function to get a <code>Binding&lt;PersonViewModel&gt;</code> for each <code>person</code> being displayed. This worked perfectly and made for a much cleaner looking bit of code. Thanks Stewart.</p>
 
-<pre><code class="language-swift">var body: some View {
-    List {
-        ForEach(personList.persons) { person in
-            NavigationLink(destination:
-                PersonDetailView(person: self.selectedPerson(id: person.id))
-            ) {
-                Text(&quot;\(person.first) \(person.last)&quot;)
-            }
-        }
-    }
-}
+<p><strong>Update 2:</strong> <a href="https://twitter.com/vadimshpakovski">@vadimshpakovski</a> points out that creating a binding for every <code>person</code> object is inefficient and using a function to create this binding is slow. He suggests using <code>onReceive</code> to react to changes to <code>person</code> and trigger an update of <code>personList</code>. In this case, <code>PersonDetailView</code> uses <code>@ObservedObject var person: PersonViewModel</code>. THis works really well and feels more like how ObservableObjects should be used.</p>
 
-func selectedPerson(id: UUID) -&gt; Binding&lt;PersonViewModel&gt; {
-    guard let index = self.personList.persons.firstIndex(where: { $0.id == id }) else {
-        fatalError(&quot;This person does not exist.&quot;)
-    }
-    return self.$personList.persons[index]
-}
+<pre><code class="language-swift">  ForEach(personList.persons) { person in
+      NavigationLink(destination:
+          PersonDetailView(person: person)
+              .onReceive(person.objectWillChange) { _ in
+                  self.personList.objectWillChange.send()
+              }
+      ) {
+          Text(&quot;\(person.first) \(person.last)&quot;)
+      }
+  }
 </code></pre>
+
+<p>If you want to have a look at Stewart&rsquo;s solution, check out <a href="https://github.com/trozware/swiftui-data-flow/tree/57f48ea28d1e987566398800e74f12e339eac231">this commit on GitHub</a>.</p>
 
 <p><img src="/images/PersonListView.png" alt="Person List View" /></p>
 
