@@ -1,7 +1,7 @@
 ---
 title: 'SwiftUI Data Flow'
 date: 2019-09-16T08:47:57+10:00
-lastmod: 2019-10-23T18:06:44+10:00
+lastmod: 2019-11-11T16:58:27+10:00
 draft: false
 description: 'Various ways to pass data around your SwiftUI apps.'
 tags: ['swift', 'swiftui']
@@ -20,8 +20,6 @@ I guess I could stop there, but I will be illustrating my ideas with code exampl
 
 [Download the sample project from GitHub][4] and open it in Xcode. Go to ContentView.swift and make sure the Canvas is open. Click Resume to make the view appear. Then click the Live Preview button and wait for the view to become active. I recommend clicking the Pin button at the bottom left of the Canvas so that you can investigate the code samples, while still working in the main navigation.
 
-{{< img_center >}}
-
 ## Data Flow Options
 
 There are 5 ways to specify data in SwiftUI:
@@ -31,6 +29,8 @@ There are 5 ways to specify data in SwiftUI:
 - @Binding
 - ObservableObject & @ObservedObject
 - @EnvironmentObject
+
+{{< img_center >}}
 
 ![Content View][2i]
 
@@ -291,18 +291,41 @@ Trying to bind `person` with `PersonDetailView(person: $person)` gave the error 
 The solution I came up with was to switch to enumerating by index in the `ForEach` and passing a direct member of the parent list's data to the detail view. And switching the `PersonDetailView` to use `@Binding var person: PersonViewModel`.
 
 ```swift
-  ForEach(0 ..< personList.persons.count, id: \.self) { index in
-      NavigationLink(destination:
-          PersonDetailView(person: self.$personList.persons[index])
-      ) {
-          Text("\(self.personList.persons[index].first) \(self.personList.persons[index].last)")
-      }
-  }
+ForEach(0 ..< personList.persons.count, id: \.self) { index in
+    NavigationLink(destination:
+        PersonDetailView(person: self.$personList.persons[index])
+    ) {
+        Text("\(self.personList.persons[index].first) \(self.personList.persons[index].last)")
+    }
+}
+```
+
+<br>**Update:** [@StewartLynch][5] contacted me to suggest a much neater way to pass the person data to the PersonDetailView by using a function to get a `Binding<PersonViewModel>` for each `person` being displayed. This worked perfectly and made for a much cleaner looking bit of code. Thanks Stewart.
+
+```swift
+var body: some View {
+    List {
+        ForEach(personList.persons) { person in
+            NavigationLink(destination:
+                PersonDetailView(person: self.selectedPerson(id: person.id))
+            ) {
+                Text("\(person.first) \(person.last)")
+            }
+        }
+    }
+}
+
+func selectedPerson(id: UUID) -> Binding<PersonViewModel> {
+    guard let index = self.personList.persons.firstIndex(where: { $0.id == id }) else {
+        fatalError("This person does not exist.")
+    }
+    return self.$personList.persons[index]
+}
 ```
 
 ![Person List View][6i]
 
-Thanks to [JSON Generator][3] for the sample data. And if anyone has a better solution to this problem, I would love to hear it.
+Thanks to [JSON Generator][3] for the sample data. And if anyone has any other solutions to this problem, I would love to hear it. You can contact me using any of the buttons at the end of this article.
 
 ## @EnvironmentObject
 
@@ -379,6 +402,7 @@ I am sure people will develop their own theories and their own ways of using Swi
 [2]: https://developer.apple.com/videos/play/wwdc2019/226/
 [3]: https://next.json-generator.com
 [4]: https://github.com/trozware/swiftui-data-flow/tree/master
+[5]: https://twitter.com/StewartLynch
 [1i]: /images/NestedViews.png
 [2i]: /images/ContentView.png
 [3i]: /images/NumberChooser.png

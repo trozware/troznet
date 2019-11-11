@@ -152,10 +152,10 @@ In this post, I intend to discuss the possibilities with examples.
   <h2 class="post-title"><a href="https://troz.net/post/2019/swiftui-data-flow/">SwiftUI Data Flow</a></h2>
   <div class="post-meta">
     <span class="post-date">
-      23 Oct 2019
+      11 Nov 2019
     </span>
-    <span class="more-meta"> 2452 words, </span>
-    <span class="more-meta"> 12 minute read</span>
+    <span class="more-meta"> 2563 words, </span>
+    <span class="more-meta"> 13 minute read</span>
   </div>
 
   
@@ -181,13 +181,6 @@ In this post, I intend to discuss the possibilities with examples.
 
 <p><a href="https://github.com/trozware/swiftui-data-flow/tree/master">Download the sample project from GitHub</a> and open it in Xcode. Go to ContentView.swift and make sure the Canvas is open. Click Resume to make the view appear. Then click the Live Preview button and wait for the view to become active. I recommend clicking the Pin button at the bottom left of the Canvas so that you can investigate the code samples, while still working in the main navigation.</p>
 
-<style>
-  img {
-    margin: 10px auto;
-  }
-</style>
-
-
 <h2 id="data-flow-options">Data Flow Options</h2>
 
 <p>There are 5 ways to specify data in SwiftUI:</p>
@@ -199,6 +192,13 @@ In this post, I intend to discuss the possibilities with examples.
 <li>ObservableObject &amp; @ObservedObject</li>
 <li>@EnvironmentObject</li>
 </ul>
+
+<style>
+  img {
+    margin: 10px auto;
+  }
+</style>
+
 
 <p><img src="/images/ContentView.png" alt="Content View" /></p>
 
@@ -445,18 +445,40 @@ struct NumberBlock: View {
 
 <p>The solution I came up with was to switch to enumerating by index in the <code>ForEach</code> and passing a direct member of the parent list&rsquo;s data to the detail view. And switching the <code>PersonDetailView</code> to use <code>@Binding var person: PersonViewModel</code>.</p>
 
-<pre><code class="language-swift">  ForEach(0 ..&lt; personList.persons.count, id: \.self) { index in
-      NavigationLink(destination:
-          PersonDetailView(person: self.$personList.persons[index])
-      ) {
-          Text(&quot;\(self.personList.persons[index].first) \(self.personList.persons[index].last)&quot;)
-      }
-  }
+<pre><code class="language-swift">ForEach(0 ..&lt; personList.persons.count, id: \.self) { index in
+    NavigationLink(destination:
+        PersonDetailView(person: self.$personList.persons[index])
+    ) {
+        Text(&quot;\(self.personList.persons[index].first) \(self.personList.persons[index].last)&quot;)
+    }
+}
+</code></pre>
+
+<p><br><strong>Update:</strong> <a href="https://twitter.com/StewartLynch">@StewartLynch</a> contacted me to suggest a much neater way to pass the person data to the PersonDetailView by using a function to get a <code>Binding&lt;PersonViewModel&gt;</code> for each <code>person</code> being displayed. This worked perfectly and made for a much cleaner looking bit of code. Thanks Stewart.</p>
+
+<pre><code class="language-swift">var body: some View {
+    List {
+        ForEach(personList.persons) { person in
+            NavigationLink(destination:
+                PersonDetailView(person: self.selectedPerson(id: person.id))
+            ) {
+                Text(&quot;\(person.first) \(person.last)&quot;)
+            }
+        }
+    }
+}
+
+func selectedPerson(id: UUID) -&gt; Binding&lt;PersonViewModel&gt; {
+    guard let index = self.personList.persons.firstIndex(where: { $0.id == id }) else {
+        fatalError(&quot;This person does not exist.&quot;)
+    }
+    return self.$personList.persons[index]
+}
 </code></pre>
 
 <p><img src="/images/PersonListView.png" alt="Person List View" /></p>
 
-<p>Thanks to <a href="https://next.json-generator.com">JSON Generator</a> for the sample data. And if anyone has a better solution to this problem, I would love to hear it.</p>
+<p>Thanks to <a href="https://next.json-generator.com">JSON Generator</a> for the sample data. And if anyone has any other solutions to this problem, I would love to hear it. You can contact me using any of the buttons at the end of this article.</p>
 
 <h2 id="environmentobject">@EnvironmentObject</h2>
 
