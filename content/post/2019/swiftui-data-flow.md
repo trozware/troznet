@@ -16,6 +16,8 @@ If you read this article before November 18th 2019, please check out [Observable
 
 <!--more-->
 
+---
+
 At WWDC 2019, some Apple engineers gave a great presentation on [Data Flow Through SwiftUI][2] and I strongly recommend watching the video. But you need to watch it twice. First watch it so that you can get started, and then, when you feel that this is all way too complicated, watch it again and it will start to click into place. The only real difference between then and now is that BindableObject has become ObservableObject.
 
 I guess I could stop there, but I will be illustrating my ideas with code examples, which I hope will make things clearer. Some of the examples are rather contrived in order to make a point, but the sample code is also sprinkled with other SwiftUI examples which I hope will prove useful.
