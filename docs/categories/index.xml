@@ -20,6 +20,8 @@
 
 &lt;p&gt;In this post, I intend to discuss the possibilities with examples.&lt;/p&gt;
 
+&lt;p&gt;If you read this article before November 18th 2019, please check out &lt;a href=&#34;https://troz.net/post/2019/swiftui-data-flow/#observable2&#34;&gt;ObservableObject &amp;amp; @ObservedObject - Part 2&lt;/a&gt; again as it has gone through several iterations, which are all shown for comparison.&lt;/p&gt;
+
 &lt;p&gt;At WWDC 2019, some Apple engineers gave a great presentation on &lt;a href=&#34;https://developer.apple.com/videos/play/wwdc2019/226/&#34;&gt;Data Flow Through SwiftUI&lt;/a&gt; and I strongly recommend watching the video. But you need to watch it twice. First watch it so that you can get started, and then, when you feel that this is all way too complicated, watch it again and it will start to click into place. The only real difference between then and now is that BindableObject has become ObservableObject.&lt;/p&gt;
 
 &lt;p&gt;I guess I could stop there, but I will be illustrating my ideas with code examples, which I hope will make things clearer. Some of the examples are rather contrived in order to make a point, but the sample code is also sprinkled with other SwiftUI examples which I hope will prove useful.&lt;/p&gt;
@@ -61,7 +63,11 @@
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;In this example, the &lt;code&gt;greeting&lt;/code&gt; property is used in the view. &lt;code&gt;greeting&lt;/code&gt; is static, so the view does not need to monitor it for changes. This may seem like a simplistic and obvious example, but separating it out allows for localization or re-usability. The property could also have been supplied by a parent view. And it is important to remember that not everything needs to be bound to the UI in a new way.&lt;/p&gt;
+&lt;p&gt;In this example, the &lt;code&gt;greeting&lt;/code&gt; property is used in the view. &lt;code&gt;greeting&lt;/code&gt; is static, so the view does not need to monitor it for changes. This may seem like a simplistic and obvious example, but separating it out allows for localization or re-usability.&lt;/p&gt;
+
+&lt;p&gt;The property could also have been supplied by a parent view and this is a really useful feature of properties. A parent view can have some dynamic data that it can use to set properties in a subview where the subview only needs to display the data statically. This data will change as the parent view changes but the subview will not be able to change the data in the parent view.&lt;/p&gt;
+
+&lt;p&gt;And it is important to remember that not everything needs to be set up with one of these new property wrappers.&lt;/p&gt;
 
 &lt;h2 id=&#34;state&#34;&gt;@State&lt;/h2&gt;
 
@@ -86,11 +92,13 @@
 
 &lt;p&gt;&lt;code&gt;@State&lt;/code&gt; variables are always value types and are usually local to their view, so Apple recommends marking them as &lt;code&gt;private&lt;/code&gt;.&lt;/p&gt;
 
+&lt;p&gt;And unlike properties, &lt;code&gt;@State&lt;/code&gt; variables allow you to have data that is dynamic but it can still be passed to subviews as properties for display.&lt;/p&gt;
+
 &lt;h2 id=&#34;binding&#34;&gt;@Binding&lt;/h2&gt;
 
 &lt;p&gt;One problem with building SwiftUI views is that it is very easy to end up with a gigantic Pyramid of Doom as you embed views within views within views. The solution is to extract subviews, but then you need a way to pass the data to the subview.&lt;/p&gt;
 
-&lt;p&gt;This is where &lt;code&gt;@Binding&lt;/code&gt; comes in as it allows you to tell a view that a property is actually coming from a parent and changes to that property should be passed back to the parent.&lt;/p&gt;
+&lt;p&gt;This is where &lt;code&gt;@Binding&lt;/code&gt; comes in as it allows you to tell a view that the data for a property is actually coming from a parent but that the subview is allowed to change that property and that change will flow back to the parent&amp;rsquo;s data.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;struct Numbers: View {
     @State private var stepperValue = 0
@@ -129,7 +137,7 @@ struct NumberBlock: View {
 
 &lt;p&gt;In this example, I have declared a &lt;code&gt;stepperValue&lt;/code&gt; property and marked it with &lt;code&gt;@State&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;The interface has been extracted into a subview called &lt;code&gt;NumberChooser&lt;/code&gt; and this property has been passed to &lt;code&gt;NumberChooser&lt;/code&gt; using the &lt;code&gt;$&lt;/code&gt; prefix to ensure that changes to the value can come back. Inside &lt;code&gt;NumberChooser&lt;/code&gt; this property is wrapped in the &lt;code&gt;@Binding&lt;/code&gt; property wrapper to indicate that it is coming from another source and that changes should be returned.&lt;/p&gt;
+&lt;p&gt;The interface has been extracted into a subview called &lt;code&gt;NumberChooser&lt;/code&gt; and a &lt;code&gt;Binding&lt;/code&gt; to the &lt;code&gt;stepperValue&lt;/code&gt; property has been passed to &lt;code&gt;NumberChooser&lt;/code&gt; using the &lt;code&gt;$&lt;/code&gt; prefix, which will ensure that changes to the value can come back. Inside &lt;code&gt;NumberChooser&lt;/code&gt; this property is wrapped in the &lt;code&gt;@Binding&lt;/code&gt; property wrapper to indicate that it is coming from another source and that changes will be returned.&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;NumberChooser&lt;/code&gt; itself has a subview called &lt;code&gt;NumberBlock&lt;/code&gt; but it is a display view only and never mutates the value itself, so &lt;code&gt;stepperValue&lt;/code&gt; is passed to this subview as a property only, without the &lt;code&gt;$&lt;/code&gt; prefix. It will still be updated every time the data changes as it is contained by the view with the &lt;code&gt;@State&lt;/code&gt; property.&lt;/p&gt;
 
@@ -172,7 +180,7 @@ struct NumberBlock: View {
     }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;The form consists of 3 subviews - one each for selecting the pizza, size and crust. The Pizza struct holds all three properties, but each subview only needs to have a link to the single property that it controls. The Text view after the Form is to prove that all the selections come back to the parent.&lt;/p&gt;
+&lt;p&gt;The form consists of 3 subviews - one each for selecting the pizza, size and crust. The Pizza struct holds all three properties, but each subview only needs a &lt;code&gt;Binding&lt;/code&gt; to the single property that it controls. The Text view after the Form is to prove that all the selections come back to the parent.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/PizzaView.png&#34; alt=&#34;Pizza View&#34; /&gt;&lt;/p&gt;
 
@@ -230,7 +238,7 @@ struct NumberBlock: View {
 
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/ColorChooser.png&#34; alt=&#34;Color Chooser&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;observableobject-observedobject-part-2&#34;&gt;ObservableObject &amp;amp; @ObservedObject - Part 2&lt;/h2&gt;
+&lt;h2 id=&#34;a-name-observable2-observableobject-observedobject-part-2-a&#34;&gt;&lt;a name=&#34;observable2&#34;&gt;ObservableObject &amp;amp; @ObservedObject - Part 2&lt;/a&gt;&lt;/h2&gt;
 
 &lt;p&gt;This section was that one that caused me the most trouble when writing the example app. I wanted to display a list of data and have each entry link to an editable detail view with the edits flowing back to the parent list.&lt;/p&gt;
 
@@ -294,14 +302,38 @@ struct NumberBlock: View {
     NavigationLink(destination:
         PersonDetailView(person: self.$personList.persons[index])
     ) {
-        Text(&amp;quot;\(self.personList.persons[index].first) \(self.personList.persons[index].last)&amp;quot;)
+        Text(&amp;quot;\(self.personList.persons[index].first)&amp;quot;) +
+          Text(&amp;quot; \(self.personList.persons[index].last)&amp;quot;)
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;br&gt;&lt;strong&gt;Update:&lt;/strong&gt; &lt;a href=&#34;https://twitter.com/StewartLynch&#34;&gt;@StewartLynch&lt;/a&gt; contacted me to suggest a much neater way to pass the person data to the PersonDetailView by using a function to get a &lt;code&gt;Binding&amp;lt;PersonViewModel&amp;gt;&lt;/code&gt; for each &lt;code&gt;person&lt;/code&gt; being displayed. This worked perfectly and made for a much cleaner looking bit of code. Thanks Stewart.&lt;/p&gt;
+&lt;p&gt;This works but as well as being hard to read, it has one major flaw. The rows in the table are identified by their row number, rather than by anything in the data like the &lt;code&gt;person.id&lt;/code&gt;. This can really mess with how SwiftUI handles the List and how it knows which rows have changed and need to be re-rendered. It is important to identify rows by something unique to the data in each row so that SwiftUI knows that you have deleted the row with the ID &amp;ldquo;abcd-1234&amp;rdquo; and not row #7. Because if you delete row ID &amp;ldquo;abcd-1234&amp;rdquo; there is no longer a row ID &amp;ldquo;abcd-1234&amp;rdquo; but if you delete row #7, there is now a different row #7 and anything could happen.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Update 2:&lt;/strong&gt; &lt;a href=&#34;https://twitter.com/vadimshpakovski&#34;&gt;@vadimshpakovski&lt;/a&gt; points out that creating a binding for every &lt;code&gt;person&lt;/code&gt; object is inefficient and using a function to create this binding is slow. He suggests using &lt;code&gt;onReceive&lt;/code&gt; to react to changes to &lt;code&gt;person&lt;/code&gt; and trigger an update of &lt;code&gt;personList&lt;/code&gt;. In this case, &lt;code&gt;PersonDetailView&lt;/code&gt; uses &lt;code&gt;@ObservedObject var person: PersonViewModel&lt;/code&gt;. THis works really well and feels more like how ObservableObjects should be used.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;strong&gt;Update 1:&lt;/strong&gt; &lt;a href=&#34;https://twitter.com/StewartLynch&#34;&gt;@StewartLynch&lt;/a&gt; contacted me to suggest a much neater way to pass the person data to the PersonDetailView by using a function to get a &lt;code&gt;Binding&amp;lt;PersonViewModel&amp;gt;&lt;/code&gt; for each &lt;code&gt;person&lt;/code&gt; being displayed. This worked perfectly and made for a much cleaner looking bit of code. Thanks Stewart.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;ForEach(personList.persons) { person in
+    NavigationLink(destination:
+        PersonDetailView(person: self.selectedPerson(id: person.id))
+    ) {
+        Text(&amp;quot;\(person.first) \(person.last)&amp;quot;)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And outside the &lt;code&gt;body&lt;/code&gt; declaration:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func selectedPerson(id: UUID) -&amp;gt; Binding&amp;lt;PersonViewModel&amp;gt; {
+    guard let index = self.personList.persons.firstIndex(where: { $0.id == id }) else {
+        fatalError(&amp;quot;This person does not exist.&amp;quot;)
+    }
+    return self.$personList.persons[index]
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you want to have a look at Stewart&amp;rsquo;s solution, check out &lt;a href=&#34;https://github.com/trozware/swiftui-data-flow/tree/57f48ea28d1e987566398800e74f12e339eac231&#34;&gt;this commit on GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update 2:&lt;/strong&gt; &lt;a href=&#34;https://twitter.com/vadimshpakovski&#34;&gt;@vadimshpakovski&lt;/a&gt; says that creating a binding for every &lt;code&gt;person&lt;/code&gt; object is inefficient and that the function to create this binding will slow things down. He suggests using &lt;code&gt;onReceive&lt;/code&gt; to react to changes to &lt;code&gt;person&lt;/code&gt; and trigger an update of &lt;code&gt;personList&lt;/code&gt;. In this case, &lt;code&gt;PersonDetailView&lt;/code&gt; uses &lt;code&gt;@ObservedObject var person: PersonViewModel&lt;/code&gt;. This also works perfectly.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;  ForEach(personList.persons) { person in
       NavigationLink(destination:
@@ -315,15 +347,82 @@ struct NumberBlock: View {
   }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;If you want to have a look at Stewart&amp;rsquo;s solution, check out &lt;a href=&#34;https://github.com/trozware/swiftui-data-flow/tree/57f48ea28d1e987566398800e74f12e339eac231&#34;&gt;this commit on GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you want to have a look at Vadim&amp;rsquo;s&amp;rsquo;s solution, check out &lt;a href=&#34;https://github.com/trozware/swiftui-data-flow/tree/093810bab93a984292c4a7b8bf29316a830e9f50&#34;&gt;this commit on GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update 3:&lt;/strong&gt; More suggestions have come in from the community (thanks to everyone who contributed) and it has been pointed out to me that while Vadim&amp;rsquo;s solution does solve a lot of the issues, it means that the entire &lt;code&gt;ForEach&lt;/code&gt; has to be recalculated to check for changes every time a single &lt;code&gt;Person&lt;/code&gt; is edited. And it also inserts model management code into the view code, which is not great.&lt;/p&gt;
+
+&lt;p&gt;So my next attempt goes back to using &lt;code&gt;@Binding var person: PersonViewModel&lt;/code&gt; in &lt;code&gt;PersonDetailView&lt;/code&gt; but instead of &lt;code&gt;PersonListModel&lt;/code&gt; having an array of &lt;code&gt;PersonViewModels&lt;/code&gt;, it has an array of &lt;code&gt;UUIDs&lt;/code&gt; and a dictionary of &lt;code&gt;UUID: PersonListModel&lt;/code&gt;. The benefit of this is that the UUIDs can be used in the &lt;code&gt;ForEach&lt;/code&gt; as they are unique to each row, and the dictionary can be used to provide a Binding to the &lt;code&gt;person&lt;/code&gt; for each &lt;code&gt;UUID&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This removes the problem of my original solution by identifying each row uniquely, it goes back to Stewart&amp;rsquo;s solution but eliminates the potential slow function to create a binding for the matching person, and eliminates the issue of complete redraws and model management inside views from Vadim&amp;rsquo;s suggestion.&lt;/p&gt;
+
+&lt;p&gt;But it was not entirely straight-forward as getting a value from a dictionary by key returns an optional. At first I thought I could use the new &lt;code&gt;default&lt;/code&gt; syntax for dictionaries to get a non-optional value for binding but for some reason that couldn&amp;rsquo;t be used to create a &lt;code&gt;Binding&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The answer was to write an extension on Dictionary with a &lt;code&gt;subscript&lt;/code&gt; function that returns a non-optional value or gives a fatal error. Since I am in control of the data and set up every UUID with a matching PersonViewModel, this is not dangerous.&lt;/p&gt;
+
+&lt;p&gt;So here is what we have now:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;class PersonListModel: ObservableObject {
+    // Main list view model
+    // ObservableObject so that updates are detected
+
+    @Published var ids: [UUID] = []
+    @Published var persons: [UUID : PersonViewModel] = [:]
+
+    func fetchData() {
+        // get data from web ...
+
+        DispatchQueue.main.async {
+          let personViewModels = dataArray.map { PersonViewModel(with: $0) }.sorted() {
+              $0.last + $0.first &amp;lt; $1.last + $1.first
+          }
+          self.ids = personViewModels.map { $0.id }
+          self.persons = Dictionary(
+              uniqueKeysWithValues: personViewModels.map { ($0.id, $0) }
+          )
+        }
+ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The incoming data is mapped to a sorted array of &lt;code&gt;PersonViewModels&lt;/code&gt; before extracting the UUIDs and creating the dictionary. This means that the UUIDs array is in the correct sort order for use in the &lt;code&gt;ForEach&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here is the Dictionary extension:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;extension Dictionary where Key == UUID, Value == PersonViewModel {
+    subscript(unchecked key: Key) -&amp;gt; Value {
+        get {
+            guard let result = self[key] else {
+                fatalError(&amp;quot;This person does not exist.&amp;quot;)
+            }
+            return result
+        }
+        set {
+            self[key] = newValue
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And these go together to allow this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;ForEach(personList.ids, id: \.self) { id in
+    NavigationLink(
+        destination: PersonDetailView(person: self.$personList.persons[unchecked: id])
+    ) {
+        Text(&amp;quot;\(self.personList.persons[unchecked: id].first)&amp;quot;) +
+            Text(&amp;quot; \(self.personList.persons[unchecked: id].last)&amp;quot;)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/PersonListView.png&#34; alt=&#34;Person List View&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This ended up a bit more complicated than my original idea, but I think it is now &lt;em&gt;good&lt;/em&gt; SwiftUI, avoiding several problems from the earlier solutions.&lt;/p&gt;
 
 &lt;p&gt;Thanks to &lt;a href=&#34;https://next.json-generator.com&#34;&gt;JSON Generator&lt;/a&gt; for the sample data. And if anyone has any other solutions to this problem, I would love to hear it. You can contact me using any of the buttons at the end of this article.&lt;/p&gt;
 
 &lt;h2 id=&#34;environmentobject&#34;&gt;@EnvironmentObject&lt;/h2&gt;
 
-&lt;p&gt;Think of the EnvironmentObject as a piece of global state. People who have used React or any of the similar web development technologies will be familiar with the concept of global state and while we may have been conditioned to think of globals as &lt;strong&gt;A Bad Thing&lt;/strong&gt;, in this case, they seem to work well.&lt;/p&gt;
+&lt;p&gt;Think of the EnvironmentObject a piece of state that can be used by any view or any descendent of the view once it has been introduced. People who have used React or any of the similar web development technologies will be familiar with the concept of global state and this is similar to that, although not truely global.&lt;/p&gt;
 
 &lt;p&gt;You set up a class as an EnvironmentObject model exactly as you would set up an ObservableObject with the same protocol conformance and using the &lt;code&gt;@Published&lt;/code&gt; property wrapper to mark properties whose changes will trigger UI updates. Here is a very simple example with just one property.&lt;/p&gt;
 
@@ -386,7 +485,7 @@ struct NumberBlock: View {
 &lt;li&gt;Use &lt;code&gt;@Binding&lt;/code&gt; or &lt;code&gt;@ObservedObject&lt;/code&gt; to pass data to a view that can mutate it.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;And one final tip: while creating a view from scratch, use &lt;code&gt;@State&lt;/code&gt; with sample, hard-coded data. Once you have the interface you want, then put in the links to give it real data.&lt;/p&gt;
+&lt;p&gt;And one final tip: while creating a view from scratch, use &lt;code&gt;@State&lt;/code&gt; with sample, hard-coded data. Once you have the interface you want, then change it to use real data.&lt;/p&gt;
 
 &lt;p&gt;I am sure people will develop their own theories and their own ways of using SwiftUI, but those are the guidelines that I intend to follow for now. If you have different views and would like to discuss them, please contact me.&lt;/p&gt;</description>
 </item>

@@ -1,7 +1,7 @@
 ---
 title: 'SwiftUI Data Flow'
 date: 2019-09-16T08:47:57+10:00
-lastmod: 2019-11-12T08:18:13+10:00
+lastmod: 2019-11-18T16:21:05+10:00
 draft: false
 description: 'Various ways to pass data around your SwiftUI apps.'
 tags: ['swift', 'swiftui']
@@ -11,6 +11,8 @@ toc: true
 [SwiftUI][1] gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?
 
 In this post, I intend to discuss the possibilities with examples.
+
+If you read this article before November 18th 2019, please check out [ObservableObject & @ObservedObject - Part 2][9] again as it has gone through several iterations, which are all shown for comparison.
 
 <!--more-->
 
@@ -49,7 +51,11 @@ struct Property: View {
 }
 ```
 
-In this example, the `greeting` property is used in the view. `greeting` is static, so the view does not need to monitor it for changes. This may seem like a simplistic and obvious example, but separating it out allows for localization or re-usability. The property could also have been supplied by a parent view. And it is important to remember that not everything needs to be bound to the UI in a new way.
+In this example, the `greeting` property is used in the view. `greeting` is static, so the view does not need to monitor it for changes. This may seem like a simplistic and obvious example, but separating it out allows for localization or re-usability.
+
+The property could also have been supplied by a parent view and this is a really useful feature of properties. A parent view can have some dynamic data that it can use to set properties in a subview where the subview only needs to display the data statically. This data will change as the parent view changes but the subview will not be able to change the data in the parent view.
+
+And it is important to remember that not everything needs to be set up with one of these new property wrappers.
 
 ## @State
 
@@ -75,11 +81,13 @@ In this example, `toggleValue` is declared as a `Bool` with a property wrapper o
 
 `@State` variables are always value types and are usually local to their view, so Apple recommends marking them as `private`.
 
+And unlike properties, `@State` variables allow you to have data that is dynamic but it can still be passed to subviews as properties for display.
+
 ## @Binding
 
 One problem with building SwiftUI views is that it is very easy to end up with a gigantic Pyramid of Doom as you embed views within views within views. The solution is to extract subviews, but then you need a way to pass the data to the subview.
 
-This is where `@Binding` comes in as it allows you to tell a view that a property is actually coming from a parent and changes to that property should be passed back to the parent.
+This is where `@Binding` comes in as it allows you to tell a view that the data for a property is actually coming from a parent but that the subview is allowed to change that property and that change will flow back to the parent's data.
 
 ```swift
 struct Numbers: View {
@@ -119,7 +127,7 @@ struct NumberBlock: View {
 
 In this example, I have declared a `stepperValue` property and marked it with `@State`.
 
-The interface has been extracted into a subview called `NumberChooser` and this property has been passed to `NumberChooser` using the `$` prefix to ensure that changes to the value can come back. Inside `NumberChooser` this property is wrapped in the `@Binding` property wrapper to indicate that it is coming from another source and that changes should be returned.
+The interface has been extracted into a subview called `NumberChooser` and a `Binding` to the `stepperValue` property has been passed to `NumberChooser` using the `$` prefix, which will ensure that changes to the value can come back. Inside `NumberChooser` this property is wrapped in the `@Binding` property wrapper to indicate that it is coming from another source and that changes will be returned.
 
 `NumberChooser` itself has a subview called `NumberBlock` but it is a display view only and never mutates the value itself, so `stepperValue` is passed to this subview as a property only, without the `$` prefix. It will still be updated every time the data changes as it is contained by the view with the `@State` property.
 
@@ -164,7 +172,7 @@ struct PizzaNamePicker: View {
     }
 ```
 
-The form consists of 3 subviews - one each for selecting the pizza, size and crust. The Pizza struct holds all three properties, but each subview only needs to have a link to the single property that it controls. The Text view after the Form is to prove that all the selections come back to the parent.
+The form consists of 3 subviews - one each for selecting the pizza, size and crust. The Pizza struct holds all three properties, but each subview only needs a `Binding` to the single property that it controls. The Text view after the Form is to prove that all the selections come back to the parent.
 
 ![Pizza View][4i]
 
@@ -226,7 +234,7 @@ The `ColorChooser` itself uses 2 subviews and they get a reference to the `Color
 
 ![Color Chooser][5i]
 
-## ObservableObject & @ObservedObject - Part 2
+## <a name="observable2">ObservableObject & @ObservedObject - Part 2</a>
 
 This section was that one that caused me the most trouble when writing the example app. I wanted to display a list of data and have each entry link to an editable detail view with the edits flowing back to the parent list.
 
@@ -295,14 +303,40 @@ ForEach(0 ..< personList.persons.count, id: \.self) { index in
     NavigationLink(destination:
         PersonDetailView(person: self.$personList.persons[index])
     ) {
-        Text("\(self.personList.persons[index].first) \(self.personList.persons[index].last)")
+        Text("\(self.personList.persons[index].first)") +
+          Text(" \(self.personList.persons[index].last)")
     }
 }
 ```
 
-<br>**Update:** [@StewartLynch][5] contacted me to suggest a much neater way to pass the person data to the PersonDetailView by using a function to get a `Binding<PersonViewModel>` for each `person` being displayed. This worked perfectly and made for a much cleaner looking bit of code. Thanks Stewart.
+This works but as well as being hard to read, it has one major flaw. The rows in the table are identified by their row number, rather than by anything in the data like the `person.id`. This can really mess with how SwiftUI handles the List and how it knows which rows have changed and need to be re-rendered. It is important to identify rows by something unique to the data in each row so that SwiftUI knows that you have deleted the row with the ID "abcd-1234" and not row #7. Because if you delete row ID "abcd-1234" there is no longer a row ID "abcd-1234" but if you delete row #7, there is now a different row #7 and anything could happen.
 
-**Update 2:** [@vadimshpakovski][6] points out that creating a binding for every `person` object is inefficient and using a function to create this binding is slow. He suggests using `onReceive` to react to changes to `person` and trigger an update of `personList`. In this case, `PersonDetailView` uses `@ObservedObject var person: PersonViewModel`. THis works really well and feels more like how ObservableObjects should be used.
+<br>**Update 1:** [@StewartLynch][5] contacted me to suggest a much neater way to pass the person data to the PersonDetailView by using a function to get a `Binding<PersonViewModel>` for each `person` being displayed. This worked perfectly and made for a much cleaner looking bit of code. Thanks Stewart.
+
+```swift
+ForEach(personList.persons) { person in
+    NavigationLink(destination:
+        PersonDetailView(person: self.selectedPerson(id: person.id))
+    ) {
+        Text("\(person.first) \(person.last)")
+    }
+}
+```
+
+And outside the `body` declaration:
+
+```swift
+func selectedPerson(id: UUID) -> Binding<PersonViewModel> {
+    guard let index = self.personList.persons.firstIndex(where: { $0.id == id }) else {
+        fatalError("This person does not exist.")
+    }
+    return self.$personList.persons[index]
+}
+```
+
+If you want to have a look at Stewart's solution, check out [this commit on GitHub][7].
+
+**Update 2:** [@vadimshpakovski][6] says that creating a binding for every `person` object is inefficient and that the function to create this binding will slow things down. He suggests using `onReceive` to react to changes to `person` and trigger an update of `personList`. In this case, `PersonDetailView` uses `@ObservedObject var person: PersonViewModel`. This also works perfectly.
 
 ```swift
   ForEach(personList.persons) { person in
@@ -317,15 +351,85 @@ ForEach(0 ..< personList.persons.count, id: \.self) { index in
   }
 ```
 
-If you want to have a look at Stewart's solution, check out [this commit on GitHub][7].
+If you want to have a look at Vadim's's solution, check out [this commit on GitHub][8].
+
+**Update 3:** More suggestions have come in from the community (thanks to everyone who contributed) and it has been pointed out to me that while Vadim's solution does solve a lot of the issues, it means that the entire `ForEach` has to be recalculated to check for changes every time a single `Person` is edited. And it also inserts model management code into the view code, which is not great.
+
+So my next attempt goes back to using `@Binding var person: PersonViewModel` in `PersonDetailView` but instead of `PersonListModel` having an array of `PersonViewModels`, it has an array of `UUIDs` and a dictionary of `UUID: PersonListModel`. The benefit of this is that the UUIDs can be used in the `ForEach` as they are unique to each row, and the dictionary can be used to provide a Binding to the `person` for each `UUID`.
+
+This removes the problem of my original solution by identifying each row uniquely, it goes back to Stewart's solution but eliminates the potential slow function to create a binding for the matching person, and eliminates the issue of complete redraws and model management inside views from Vadim's suggestion.
+
+But it was not entirely straight-forward as getting a value from a dictionary by key returns an optional. At first I thought I could use the new `default` syntax for dictionaries to get a non-optional value for binding but for some reason that couldn't be used to create a `Binding`.
+
+The answer was to write an extension on Dictionary with a `subscript` function that returns a non-optional value or gives a fatal error. Since I am in control of the data and set up every UUID with a matching PersonViewModel, this is not dangerous.
+
+So here is what we have now:
+
+```swift
+class PersonListModel: ObservableObject {
+    // Main list view model
+    // ObservableObject so that updates are detected
+
+    @Published var ids: [UUID] = []
+    @Published var persons: [UUID : PersonViewModel] = [:]
+
+    func fetchData() {
+        // get data from web ...
+
+        DispatchQueue.main.async {
+          let personViewModels = dataArray.map { PersonViewModel(with: $0) }.sorted() {
+              $0.last + $0.first < $1.last + $1.first
+          }
+          self.ids = personViewModels.map { $0.id }
+          self.persons = Dictionary(
+              uniqueKeysWithValues: personViewModels.map { ($0.id, $0) }
+          )
+        }
+ }
+```
+
+The incoming data is mapped to a sorted array of `PersonViewModels` before extracting the UUIDs and creating the dictionary. This means that the UUIDs array is in the correct sort order for use in the `ForEach`.
+
+Here is the Dictionary extension:
+
+```swift
+extension Dictionary where Key == UUID, Value == PersonViewModel {
+    subscript(unchecked key: Key) -> Value {
+        get {
+            guard let result = self[key] else {
+                fatalError("This person does not exist.")
+            }
+            return result
+        }
+        set {
+            self[key] = newValue
+        }
+    }
+}
+```
+
+And these go together to allow this:
+
+```swift
+ForEach(personList.ids, id: \.self) { id in
+    NavigationLink(
+        destination: PersonDetailView(person: self.$personList.persons[unchecked: id])
+    ) {
+        Text("\(self.personList.persons[unchecked: id].first)") +
+            Text(" \(self.personList.persons[unchecked: id].last)")
+    }
+}
+```
 
 ![Person List View][6i]
+
+This ended up a bit more complicated than my original idea, but I think it is now _good_ SwiftUI, avoiding several problems from the earlier solutions.
 
 Thanks to [JSON Generator][3] for the sample data. And if anyone has any other solutions to this problem, I would love to hear it. You can contact me using any of the buttons at the end of this article.
 
 ## @EnvironmentObject
 
-Think of the EnvironmentObject as a piece of global state. People who have used React or any of the similar web development technologies will be familiar with the concept of global state and while we may have been conditioned to think of globals as **A Bad Thing**, in this case, they seem to work well.
+Think of the EnvironmentObject a piece of state that can be used by any view or any descendent of the view once it has been introduced. People who have used React or any of the similar web development technologies will be familiar with the concept of global state and this is similar to that, although not truely global.
 
 You set up a class as an EnvironmentObject model exactly as you would set up an ObservableObject with the same protocol conformance and using the `@Published` property wrapper to mark properties whose changes will trigger UI updates. Here is a very simple example with just one property.
 
@@ -390,7 +494,7 @@ Or What Should I Use When?
 - For data needed by a lot of views in your app, use `@EnvironmentObject`.
 - Use `@Binding` or `@ObservedObject` to pass data to a view that can mutate it.
 
-And one final tip: while creating a view from scratch, use `@State` with sample, hard-coded data. Once you have the interface you want, then put in the links to give it real data.
+And one final tip: while creating a view from scratch, use `@State` with sample, hard-coded data. Once you have the interface you want, then change it to use real data.
 
 I am sure people will develop their own theories and their own ways of using SwiftUI, but those are the guidelines that I intend to follow for now. If you have different views and would like to discuss them, please contact me.
 
@@ -401,6 +505,8 @@ I am sure people will develop their own theories and their own ways of using Swi
 [5]: https://twitter.com/StewartLynch
 [6]: https://twitter.com/vadimshpakovski
 [7]: https://github.com/trozware/swiftui-data-flow/tree/57f48ea28d1e987566398800e74f12e339eac231
+[8]: https://github.com/trozware/swiftui-data-flow/tree/093810bab93a984292c4a7b8bf29316a830e9f50
+[9]: /post/2019/swiftui-data-flow/#observable2
 [1i]: /images/NestedViews.png
 [2i]: /images/ContentView.png
 [3i]: /images/NumberChooser.png

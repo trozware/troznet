@@ -8,6 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="description" content="SwiftUI gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?
 In this post, I intend to discuss the possibilities with examples.
+If you read this article before November 18th 2019, please check out ObservableObject &amp;amp; @ObservedObject - Part 2 again as it has gone through several iterations, which are all shown for comparison.
 "/>
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
 <meta name="robots" content="noodp"/>
@@ -28,6 +29,7 @@ In this post, I intend to discuss the possibilities with examples.
 <meta name="twitter:title" content="SwiftUI Data Flow :: TrozWare — " />
 <meta name="twitter:description" content="SwiftUI gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?
 In this post, I intend to discuss the possibilities with examples.
+If you read this article before November 18th 2019, please check out ObservableObject &amp;amp; @ObservedObject - Part 2 again as it has gone through several iterations, which are all shown for comparison.
 " />
 <meta name="twitter:site" content="https://troz.net/" />
 <meta name="twitter:creator" content="" />
@@ -39,6 +41,7 @@ In this post, I intend to discuss the possibilities with examples.
 <meta property="og:title" content="SwiftUI Data Flow :: TrozWare — ">
 <meta property="og:description" content="SwiftUI gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?
 In this post, I intend to discuss the possibilities with examples.
+If you read this article before November 18th 2019, please check out ObservableObject &amp;amp; @ObservedObject - Part 2 again as it has gone through several iterations, which are all shown for comparison.
 " />
 <meta property="og:url" content="https://troz.net/post/2019/swiftui-data-flow/" />
 <meta property="og:site_name" content="SwiftUI Data Flow" />
@@ -152,10 +155,10 @@ In this post, I intend to discuss the possibilities with examples.
   <h2 class="post-title"><a href="https://troz.net/post/2019/swiftui-data-flow/">SwiftUI Data Flow</a></h2>
   <div class="post-meta">
     <span class="post-date">
-      12 Nov 2019
+      18 Nov 2019
     </span>
-    <span class="more-meta"> 2611 words, </span>
-    <span class="more-meta"> 13 minute read</span>
+    <span class="more-meta"> 3429 words, </span>
+    <span class="more-meta"> 17 minute read</span>
   </div>
 
   
@@ -174,6 +177,8 @@ In this post, I intend to discuss the possibilities with examples.
     <p><a href="https://developer.apple.com/xcode/swiftui/">SwiftUI</a> gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?</p>
 
 <p>In this post, I intend to discuss the possibilities with examples.</p>
+
+<p>If you read this article before November 18th 2019, please check out <a href="/post/2019/swiftui-data-flow/#observable2">ObservableObject &amp; @ObservedObject - Part 2</a> again as it has gone through several iterations, which are all shown for comparison.</p>
 
 <p>At WWDC 2019, some Apple engineers gave a great presentation on <a href="https://developer.apple.com/videos/play/wwdc2019/226/">Data Flow Through SwiftUI</a> and I strongly recommend watching the video. But you need to watch it twice. First watch it so that you can get started, and then, when you feel that this is all way too complicated, watch it again and it will start to click into place. The only real difference between then and now is that BindableObject has become ObservableObject.</p>
 
@@ -216,7 +221,11 @@ In this post, I intend to discuss the possibilities with examples.
 }
 </code></pre>
 
-<p>In this example, the <code>greeting</code> property is used in the view. <code>greeting</code> is static, so the view does not need to monitor it for changes. This may seem like a simplistic and obvious example, but separating it out allows for localization or re-usability. The property could also have been supplied by a parent view. And it is important to remember that not everything needs to be bound to the UI in a new way.</p>
+<p>In this example, the <code>greeting</code> property is used in the view. <code>greeting</code> is static, so the view does not need to monitor it for changes. This may seem like a simplistic and obvious example, but separating it out allows for localization or re-usability.</p>
+
+<p>The property could also have been supplied by a parent view and this is a really useful feature of properties. A parent view can have some dynamic data that it can use to set properties in a subview where the subview only needs to display the data statically. This data will change as the parent view changes but the subview will not be able to change the data in the parent view.</p>
+
+<p>And it is important to remember that not everything needs to be set up with one of these new property wrappers.</p>
 
 <h2 id="state">@State</h2>
 
@@ -241,11 +250,13 @@ In this post, I intend to discuss the possibilities with examples.
 
 <p><code>@State</code> variables are always value types and are usually local to their view, so Apple recommends marking them as <code>private</code>.</p>
 
+<p>And unlike properties, <code>@State</code> variables allow you to have data that is dynamic but it can still be passed to subviews as properties for display.</p>
+
 <h2 id="binding">@Binding</h2>
 
 <p>One problem with building SwiftUI views is that it is very easy to end up with a gigantic Pyramid of Doom as you embed views within views within views. The solution is to extract subviews, but then you need a way to pass the data to the subview.</p>
 
-<p>This is where <code>@Binding</code> comes in as it allows you to tell a view that a property is actually coming from a parent and changes to that property should be passed back to the parent.</p>
+<p>This is where <code>@Binding</code> comes in as it allows you to tell a view that the data for a property is actually coming from a parent but that the subview is allowed to change that property and that change will flow back to the parent&rsquo;s data.</p>
 
 <pre><code class="language-swift">struct Numbers: View {
     @State private var stepperValue = 0
@@ -284,7 +295,7 @@ struct NumberBlock: View {
 
 <p>In this example, I have declared a <code>stepperValue</code> property and marked it with <code>@State</code>.</p>
 
-<p>The interface has been extracted into a subview called <code>NumberChooser</code> and this property has been passed to <code>NumberChooser</code> using the <code>$</code> prefix to ensure that changes to the value can come back. Inside <code>NumberChooser</code> this property is wrapped in the <code>@Binding</code> property wrapper to indicate that it is coming from another source and that changes should be returned.</p>
+<p>The interface has been extracted into a subview called <code>NumberChooser</code> and a <code>Binding</code> to the <code>stepperValue</code> property has been passed to <code>NumberChooser</code> using the <code>$</code> prefix, which will ensure that changes to the value can come back. Inside <code>NumberChooser</code> this property is wrapped in the <code>@Binding</code> property wrapper to indicate that it is coming from another source and that changes will be returned.</p>
 
 <p><code>NumberChooser</code> itself has a subview called <code>NumberBlock</code> but it is a display view only and never mutates the value itself, so <code>stepperValue</code> is passed to this subview as a property only, without the <code>$</code> prefix. It will still be updated every time the data changes as it is contained by the view with the <code>@State</code> property.</p>
 
@@ -327,7 +338,7 @@ struct NumberBlock: View {
     }
 </code></pre>
 
-<p>The form consists of 3 subviews - one each for selecting the pizza, size and crust. The Pizza struct holds all three properties, but each subview only needs to have a link to the single property that it controls. The Text view after the Form is to prove that all the selections come back to the parent.</p>
+<p>The form consists of 3 subviews - one each for selecting the pizza, size and crust. The Pizza struct holds all three properties, but each subview only needs a <code>Binding</code> to the single property that it controls. The Text view after the Form is to prove that all the selections come back to the parent.</p>
 
 <p><img src="/images/PizzaView.png" alt="Pizza View" /></p>
 
@@ -385,7 +396,7 @@ struct NumberBlock: View {
 
 <p><img src="/images/ColorChooser.png" alt="Color Chooser" /></p>
 
-<h2 id="observableobject-observedobject-part-2">ObservableObject &amp; @ObservedObject - Part 2</h2>
+<h2 id="a-name-observable2-observableobject-observedobject-part-2-a"><a name="observable2">ObservableObject &amp; @ObservedObject - Part 2</a></h2>
 
 <p>This section was that one that caused me the most trouble when writing the example app. I wanted to display a list of data and have each entry link to an editable detail view with the edits flowing back to the parent list.</p>
 
@@ -449,14 +460,38 @@ struct NumberBlock: View {
     NavigationLink(destination:
         PersonDetailView(person: self.$personList.persons[index])
     ) {
-        Text(&quot;\(self.personList.persons[index].first) \(self.personList.persons[index].last)&quot;)
+        Text(&quot;\(self.personList.persons[index].first)&quot;) +
+          Text(&quot; \(self.personList.persons[index].last)&quot;)
     }
 }
 </code></pre>
 
-<p><br><strong>Update:</strong> <a href="https://twitter.com/StewartLynch">@StewartLynch</a> contacted me to suggest a much neater way to pass the person data to the PersonDetailView by using a function to get a <code>Binding&lt;PersonViewModel&gt;</code> for each <code>person</code> being displayed. This worked perfectly and made for a much cleaner looking bit of code. Thanks Stewart.</p>
+<p>This works but as well as being hard to read, it has one major flaw. The rows in the table are identified by their row number, rather than by anything in the data like the <code>person.id</code>. This can really mess with how SwiftUI handles the List and how it knows which rows have changed and need to be re-rendered. It is important to identify rows by something unique to the data in each row so that SwiftUI knows that you have deleted the row with the ID &ldquo;abcd-1234&rdquo; and not row #7. Because if you delete row ID &ldquo;abcd-1234&rdquo; there is no longer a row ID &ldquo;abcd-1234&rdquo; but if you delete row #7, there is now a different row #7 and anything could happen.</p>
 
-<p><strong>Update 2:</strong> <a href="https://twitter.com/vadimshpakovski">@vadimshpakovski</a> points out that creating a binding for every <code>person</code> object is inefficient and using a function to create this binding is slow. He suggests using <code>onReceive</code> to react to changes to <code>person</code> and trigger an update of <code>personList</code>. In this case, <code>PersonDetailView</code> uses <code>@ObservedObject var person: PersonViewModel</code>. THis works really well and feels more like how ObservableObjects should be used.</p>
+<p><br><strong>Update 1:</strong> <a href="https://twitter.com/StewartLynch">@StewartLynch</a> contacted me to suggest a much neater way to pass the person data to the PersonDetailView by using a function to get a <code>Binding&lt;PersonViewModel&gt;</code> for each <code>person</code> being displayed. This worked perfectly and made for a much cleaner looking bit of code. Thanks Stewart.</p>
+
+<pre><code class="language-swift">ForEach(personList.persons) { person in
+    NavigationLink(destination:
+        PersonDetailView(person: self.selectedPerson(id: person.id))
+    ) {
+        Text(&quot;\(person.first) \(person.last)&quot;)
+    }
+}
+</code></pre>
+
+<p>And outside the <code>body</code> declaration:</p>
+
+<pre><code class="language-swift">func selectedPerson(id: UUID) -&gt; Binding&lt;PersonViewModel&gt; {
+    guard let index = self.personList.persons.firstIndex(where: { $0.id == id }) else {
+        fatalError(&quot;This person does not exist.&quot;)
+    }
+    return self.$personList.persons[index]
+}
+</code></pre>
+
+<p>If you want to have a look at Stewart&rsquo;s solution, check out <a href="https://github.com/trozware/swiftui-data-flow/tree/57f48ea28d1e987566398800e74f12e339eac231">this commit on GitHub</a>.</p>
+
+<p><strong>Update 2:</strong> <a href="https://twitter.com/vadimshpakovski">@vadimshpakovski</a> says that creating a binding for every <code>person</code> object is inefficient and that the function to create this binding will slow things down. He suggests using <code>onReceive</code> to react to changes to <code>person</code> and trigger an update of <code>personList</code>. In this case, <code>PersonDetailView</code> uses <code>@ObservedObject var person: PersonViewModel</code>. This also works perfectly.</p>
 
 <pre><code class="language-swift">  ForEach(personList.persons) { person in
       NavigationLink(destination:
@@ -470,15 +505,82 @@ struct NumberBlock: View {
   }
 </code></pre>
 
-<p>If you want to have a look at Stewart&rsquo;s solution, check out <a href="https://github.com/trozware/swiftui-data-flow/tree/57f48ea28d1e987566398800e74f12e339eac231">this commit on GitHub</a>.</p>
+<p>If you want to have a look at Vadim&rsquo;s&rsquo;s solution, check out <a href="https://github.com/trozware/swiftui-data-flow/tree/093810bab93a984292c4a7b8bf29316a830e9f50">this commit on GitHub</a>.</p>
+
+<p><strong>Update 3:</strong> More suggestions have come in from the community (thanks to everyone who contributed) and it has been pointed out to me that while Vadim&rsquo;s solution does solve a lot of the issues, it means that the entire <code>ForEach</code> has to be recalculated to check for changes every time a single <code>Person</code> is edited. And it also inserts model management code into the view code, which is not great.</p>
+
+<p>So my next attempt goes back to using <code>@Binding var person: PersonViewModel</code> in <code>PersonDetailView</code> but instead of <code>PersonListModel</code> having an array of <code>PersonViewModels</code>, it has an array of <code>UUIDs</code> and a dictionary of <code>UUID: PersonListModel</code>. The benefit of this is that the UUIDs can be used in the <code>ForEach</code> as they are unique to each row, and the dictionary can be used to provide a Binding to the <code>person</code> for each <code>UUID</code>.</p>
+
+<p>This removes the problem of my original solution by identifying each row uniquely, it goes back to Stewart&rsquo;s solution but eliminates the potential slow function to create a binding for the matching person, and eliminates the issue of complete redraws and model management inside views from Vadim&rsquo;s suggestion.</p>
+
+<p>But it was not entirely straight-forward as getting a value from a dictionary by key returns an optional. At first I thought I could use the new <code>default</code> syntax for dictionaries to get a non-optional value for binding but for some reason that couldn&rsquo;t be used to create a <code>Binding</code>.</p>
+
+<p>The answer was to write an extension on Dictionary with a <code>subscript</code> function that returns a non-optional value or gives a fatal error. Since I am in control of the data and set up every UUID with a matching PersonViewModel, this is not dangerous.</p>
+
+<p>So here is what we have now:</p>
+
+<pre><code class="language-swift">class PersonListModel: ObservableObject {
+    // Main list view model
+    // ObservableObject so that updates are detected
+
+    @Published var ids: [UUID] = []
+    @Published var persons: [UUID : PersonViewModel] = [:]
+
+    func fetchData() {
+        // get data from web ...
+
+        DispatchQueue.main.async {
+          let personViewModels = dataArray.map { PersonViewModel(with: $0) }.sorted() {
+              $0.last + $0.first &lt; $1.last + $1.first
+          }
+          self.ids = personViewModels.map { $0.id }
+          self.persons = Dictionary(
+              uniqueKeysWithValues: personViewModels.map { ($0.id, $0) }
+          )
+        }
+ }
+</code></pre>
+
+<p>The incoming data is mapped to a sorted array of <code>PersonViewModels</code> before extracting the UUIDs and creating the dictionary. This means that the UUIDs array is in the correct sort order for use in the <code>ForEach</code>.</p>
+
+<p>Here is the Dictionary extension:</p>
+
+<pre><code class="language-swift">extension Dictionary where Key == UUID, Value == PersonViewModel {
+    subscript(unchecked key: Key) -&gt; Value {
+        get {
+            guard let result = self[key] else {
+                fatalError(&quot;This person does not exist.&quot;)
+            }
+            return result
+        }
+        set {
+            self[key] = newValue
+        }
+    }
+}
+</code></pre>
+
+<p>And these go together to allow this:</p>
+
+<pre><code class="language-swift">ForEach(personList.ids, id: \.self) { id in
+    NavigationLink(
+        destination: PersonDetailView(person: self.$personList.persons[unchecked: id])
+    ) {
+        Text(&quot;\(self.personList.persons[unchecked: id].first)&quot;) +
+            Text(&quot; \(self.personList.persons[unchecked: id].last)&quot;)
+    }
+}
+</code></pre>
 
 <p><img src="/images/PersonListView.png" alt="Person List View" /></p>
+
+<p>This ended up a bit more complicated than my original idea, but I think it is now <em>good</em> SwiftUI, avoiding several problems from the earlier solutions.</p>
 
 <p>Thanks to <a href="https://next.json-generator.com">JSON Generator</a> for the sample data. And if anyone has any other solutions to this problem, I would love to hear it. You can contact me using any of the buttons at the end of this article.</p>
 
 <h2 id="environmentobject">@EnvironmentObject</h2>
 
-<p>Think of the EnvironmentObject as a piece of global state. People who have used React or any of the similar web development technologies will be familiar with the concept of global state and while we may have been conditioned to think of globals as <strong>A Bad Thing</strong>, in this case, they seem to work well.</p>
+<p>Think of the EnvironmentObject a piece of state that can be used by any view or any descendent of the view once it has been introduced. People who have used React or any of the similar web development technologies will be familiar with the concept of global state and this is similar to that, although not truely global.</p>
 
 <p>You set up a class as an EnvironmentObject model exactly as you would set up an ObservableObject with the same protocol conformance and using the <code>@Published</code> property wrapper to mark properties whose changes will trigger UI updates. Here is a very simple example with just one property.</p>
 
@@ -541,7 +643,7 @@ struct NumberBlock: View {
 <li>Use <code>@Binding</code> or <code>@ObservedObject</code> to pass data to a view that can mutate it.</li>
 </ul>
 
-<p>And one final tip: while creating a view from scratch, use <code>@State</code> with sample, hard-coded data. Once you have the interface you want, then put in the links to give it real data.</p>
+<p>And one final tip: while creating a view from scratch, use <code>@State</code> with sample, hard-coded data. Once you have the interface you want, then change it to use real data.</p>
 
 <p>I am sure people will develop their own theories and their own ways of using SwiftUI, but those are the guidelines that I intend to follow for now. If you have different views and would like to discuss them, please contact me.</p>
   </div>
