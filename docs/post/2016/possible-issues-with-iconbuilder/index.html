@@ -7,8 +7,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="description" content="It has come to my attention that there are two possible issues with Icon Builder 3.0.1 when using icons created for an Apple Watch app. Once of them is something I can fix and the other appears to be a bug in Xcode 7.2
-Update: Version 3.2 of Icon Builder is now available in the Mac App Store. This removes the alpha channel from icons for a watch app.
-The first problem is that iTines Connect now requires that the icons for an Apple Watch app include no alpha channel."/>
+ Update: Version 3.2 of Icon Builder is now available in the Mac App Store. This removes the alpha channel from icons for a watch app."/>
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="https://troz.net/post/2016/possible-issues-with-iconbuilder/" />
@@ -27,8 +26,7 @@ The first problem is that iTines Connect now requires that the icons for an Appl
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Possible issues with Icon Builder &amp; Watch icons :: TrozWare — " />
 <meta name="twitter:description" content="It has come to my attention that there are two possible issues with Icon Builder 3.0.1 when using icons created for an Apple Watch app. Once of them is something I can fix and the other appears to be a bug in Xcode 7.2
-Update: Version 3.2 of Icon Builder is now available in the Mac App Store. This removes the alpha channel from icons for a watch app.
-The first problem is that iTines Connect now requires that the icons for an Apple Watch app include no alpha channel." />
+ Update: Version 3.2 of Icon Builder is now available in the Mac App Store. This removes the alpha channel from icons for a watch app." />
 <meta name="twitter:site" content="https://troz.net/" />
 <meta name="twitter:creator" content="" />
 <meta name="twitter:image" content="">
@@ -38,8 +36,7 @@ The first problem is that iTines Connect now requires that the icons for an Appl
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Possible issues with Icon Builder &amp; Watch icons :: TrozWare — ">
 <meta property="og:description" content="It has come to my attention that there are two possible issues with Icon Builder 3.0.1 when using icons created for an Apple Watch app. Once of them is something I can fix and the other appears to be a bug in Xcode 7.2
-Update: Version 3.2 of Icon Builder is now available in the Mac App Store. This removes the alpha channel from icons for a watch app.
-The first problem is that iTines Connect now requires that the icons for an Apple Watch app include no alpha channel." />
+ Update: Version 3.2 of Icon Builder is now available in the Mac App Store. This removes the alpha channel from icons for a watch app." />
 <meta property="og:url" content="https://troz.net/post/2016/possible-issues-with-iconbuilder/" />
 <meta property="og:site_name" content="Possible issues with Icon Builder &amp; Watch icons" />
 <meta property="og:image" content="">
@@ -154,7 +151,7 @@ The first problem is that iTines Connect now requires that the icons for an Appl
     <span class="post-date">
       06 Feb 2016
     </span>
-    <span class="more-meta"> 503 words, </span>
+    <span class="more-meta"> 502 words, </span>
     <span class="more-meta"> 3 minute read</span>
   </div>
 
@@ -178,37 +175,29 @@ The first problem is that iTines Connect now requires that the icons for an Appl
     <p>It has come to my attention that there are two possible issues with Icon Builder
 3.0.1 when using icons created for an Apple Watch app. Once of them is something
 I can fix and the other appears to be a bug in Xcode 7.2</p>
-
-<hr />
-
+<hr>
 <p><strong>Update:</strong> Version 3.2 of Icon Builder is now available in the <a href="http://itunes.apple.com/app/icon-builder/id552293482">Mac App
 Store</a>. This removes the alpha channel from icons for a watch app.</p>
-
-<hr />
-
+<hr>
 <p>The first problem is that iTines Connect now requires that the icons for an
 Apple Watch app include no alpha channel. This is becoming an increasing trend
 with it first having applied to the large icon file you upload directly to
 iTunes Connect, then to screen shots. I expect it to extend to iOS app icons
 soon, but hopefully Mac app icons can continue to include transparency.</p>
-
 <p>With Apple Watch icons, you are supposed to create a set of square icons and
 watchOS or iTunesConnect applies the rounding mask. Presumably this is more
 complicated if the icon contains an alpha channel even if there are no
 transparent pixels. If your Watch app icons contain an alpha channel, you will
 see errors like this after uploading your app to iTunes Connect:</p>
-
 <blockquote>
 <p>Invalid Icon - The watch application &lsquo;AppName.app/Watch/AppName WatchKit
 App.app&rsquo; contains an icon file &lsquo;AppName.app/Watch/AppName WatchKit
-App.app/AppIcon-Watch24x24@2x.png&rsquo; with an alpha channel. Icons should not
+<a href="mailto:App.app/AppIcon-Watch24x24@2x.png">App.app/AppIcon-Watch24x24@2x.png</a>&rsquo; with an alpha channel. Icons should not
 have an alpha channel.</p>
 </blockquote>
-
 <p>You will probably get this error message for every icon size in the Watch app (8
 in total). Until I release a new version of Icon Builder that allows for this
 this, I suggest you use this <a href="https://www.cocoacontrols.com/controls/alpha-channel-remover">Alpha Channel Remover app</a>.</p>
-
 <p>In your Xcode project, go to WatchKit App Assets.xcassets, select the AppIcon
 set, right-click and choose &ldquo;Show in Finder&rdquo;. A folder will open containing
 eight .png files and one .json file. Drag &amp; drop the .png files into the Alpha
@@ -216,23 +205,18 @@ Channel Remover window and click the &ldquo;Remove Alpha Channel&rdquo; button. 
 replace all those image files with new versions without alpha channels. To
 confirm this, select any of the images and press Command-I to get info. In the
 More Info section, you will see &ldquo;Alpha channel: No&rdquo;.</p>
-
 <p>You can now submit your app again, but that only solves one of the issues.</p>
-
-<hr />
-
-<p>The other problem is that you will get a warning about the 44x44@2x.png icon
+<hr>
+<p>The other problem is that you will get a warning about the <a href="mailto:44x44@2x.png">44x44@2x.png</a> icon
 file.</p>
-
 <blockquote>
 <p>Invalid Icon Name - The watch application &lsquo;AppName.app/Watch/AppName WatchKit
 App.app&rsquo; contains an invalid icon file name &lsquo;AppName.app/Watch/AppName
-WatchKit App.app/AppIcon-Watch44x44@2x.png&rsquo;. Make sure that icon file names
-follow the pattern<br> &ldquo;<code>*&lt;dimension&gt;@&lt;scale&gt;x.png</code>&rdquo; and they match the
+WatchKit <a href="mailto:App.app/AppIcon-Watch44x44@2x.png">App.app/AppIcon-Watch44x44@2x.png</a>&rsquo;. Make sure that icon file names
+follow the pattern<!-- raw HTML omitted --> &ldquo;<code>*&lt;dimension&gt;@&lt;scale&gt;x.png</code>&rdquo; and they match the
 required dimensions. Please visit <a href="https://developer.apple.com/watchkit/">https://developer.apple.com/watchkit/</a> for
 more information.</p>
 </blockquote>
-
 <p>As you can see in the error message, the icon name (which is set by Xcode) does
 conform to the required pattern, and the image is the correct size. This appears
 to be a <a href="http://www.openradar.me/23801324">bug in Xcode 7.2</a> but does not stop you from submitting your app as

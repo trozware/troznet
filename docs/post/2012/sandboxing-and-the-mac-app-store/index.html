@@ -7,7 +7,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="description" content="As of June 2012, all apps submitted to the Mac App Store have to be sandboxed i.e. they have to be able to run in a limited environment where they cannot interfere with other apps or other parts of the system. While this is generally a good thing, there are problems when apps have legitimate reasons for requiring access to other resources.
-One annoyance for developers is that Apple&amp;rsquo;s apps are mostly not sandboxed."/>
+One annoyance for developers is that Apple&#39;s apps are mostly not sandboxed."/>
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="https://troz.net/post/2012/sandboxing-and-the-mac-app-store/" />
@@ -26,7 +26,7 @@ One annoyance for developers is that Apple&amp;rsquo;s apps are mostly not sandb
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Sandboxing and the Mac App Store :: TrozWare — " />
 <meta name="twitter:description" content="As of June 2012, all apps submitted to the Mac App Store have to be sandboxed i.e. they have to be able to run in a limited environment where they cannot interfere with other apps or other parts of the system. While this is generally a good thing, there are problems when apps have legitimate reasons for requiring access to other resources.
-One annoyance for developers is that Apple&amp;rsquo;s apps are mostly not sandboxed." />
+One annoyance for developers is that Apple&#39;s apps are mostly not sandboxed." />
 <meta name="twitter:site" content="https://troz.net/" />
 <meta name="twitter:creator" content="" />
 <meta name="twitter:image" content="">
@@ -36,7 +36,7 @@ One annoyance for developers is that Apple&amp;rsquo;s apps are mostly not sandb
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Sandboxing and the Mac App Store :: TrozWare — ">
 <meta property="og:description" content="As of June 2012, all apps submitted to the Mac App Store have to be sandboxed i.e. they have to be able to run in a limited environment where they cannot interfere with other apps or other parts of the system. While this is generally a good thing, there are problems when apps have legitimate reasons for requiring access to other resources.
-One annoyance for developers is that Apple&amp;rsquo;s apps are mostly not sandboxed." />
+One annoyance for developers is that Apple&#39;s apps are mostly not sandboxed." />
 <meta property="og:url" content="https://troz.net/post/2012/sandboxing-and-the-mac-app-store/" />
 <meta property="og:site_name" content="Sandboxing and the Mac App Store" />
 <meta property="og:image" content="">
@@ -151,7 +151,7 @@ One annoyance for developers is that Apple&amp;rsquo;s apps are mostly not sandb
     <span class="post-date">
       28 Jul 2012
     </span>
-    <span class="more-meta"> 903 words, </span>
+    <span class="more-meta"> 902 words, </span>
     <span class="more-meta"> 5 minute read</span>
   </div>
 
@@ -177,8 +177,7 @@ i.e. they have to be able to run in a limited environment where they cannot
 interfere with other apps or other parts of the system. While this is generally
 a good thing, there are problems when apps have legitimate reasons for requiring
 access to other resources.</p>
-
-<p>One annoyance for developers is that Apple&rsquo;s apps are mostly not sandboxed. To
+<p>One annoyance for developers is that Apple's apps are mostly not sandboxed. To
 check what apps you have installed that are sandboxed, open up Activity Monitor
 (in Applications/Utilities). In the View menu, check that Sandbox is checked in
 the Columns submenu. Then you can sort by clicking on the Sandbox title and work
@@ -188,12 +187,10 @@ Apple apps are. This causes two problems: firstly it is not fair to other
 developers if Apple is enforcing a standard which only they are allowed to
 break. Secondly, if Apple developers had to follow the same rules as everyone
 else, then maybe the system would evolve to become more usable for everyone.</p>
-
 <p>In the Apple developer documentation about sandboxing, there is a section headed
 &ldquo;Determine Whether Your App Is Suitable for Sandboxing&rdquo;. Here they list numerous
 reasons why any app might not work in the sandbox. But the Mac App Store now
 makes sandboxing compulsory, so what to do with apps that are not suitable?</p>
-
 <p>Some resources can be requested when building the app: access to various folders
 (Pictures, Music, Downloads etc), access to Address Book and Calendar data,
 printing facilities, networking etc. Beyond the specified list of entitlements
@@ -202,25 +199,22 @@ which, if granted, will unlock access to other parts of the operating system.
 However these are subject to the whims of app reviewers and will be re-assessed
 with every update. Apple has also made it clear that they are intended as a
 transition feature and will not be available for ever.</p>
-
 <p>This has lead to a recent spate of popular apps leaving the App Store.
-<a href="http://www.marco.org/2012/07/26/mac-app-store-future" target="_blank">Marco
-Arment</a> has discussed this problem with an emphasis on the issue of lack of
+<!-- raw HTML omitted -->Marco
+Arment<!-- raw HTML omitted --> has discussed this problem with an emphasis on the issue of lack of
 confidence in buying from the App Store. If you cannot be sure that an app you
 buy will remain in the App Store, then you are less likely to buy it there.</p>
-
 <p>I have run into direct issues with sandboxing already. With
-<a href="http://www.picapod.com/" target="_blank">Pic-a-POD</a>, I used to have
+<!-- raw HTML omitted -->Pic-a-POD<!-- raw HTML omitted -->, I used to have
 links to the Desktop and Screen Saver panes in System Preferences. These used
 AppleScripts which required a temporary entitlement to send an AppleEvent. The
 app was rejected because of this, so I had to modify this feature - it now just
 takes you to the relevant section of System Prefs, but not directly to either
-Desktop or Screen Saver. However Pic-a-POD&rsquo;s help, which runs in Apple&rsquo;s Help
+Desktop or Screen Saver. However Pic-a-POD's help, which runs in Apple's Help
 Viewer app, contains exactly the same AppleScripts and so is allowed to access
 these preference panes directly. Try working out the logic of that one!</p>
-
 <p>I have more serious problems with
-<a title="Man Reader" href="/manreader/" target="_blank">Man Reader</a>. Man
+<!-- raw HTML omitted -->Man Reader<!-- raw HTML omitted -->. Man
 Reader displays a list of the man pages on your system. Depending on the tools
 you have installed, these pages may be in a variety of locations. The shell
 command that detects them first reads a config file and then checks the folders
@@ -230,7 +224,6 @@ access to the startup disk. This was granted, but I have since been informed
 that all requested entitlements were granted before the App Store cut-off date.
 This may have been meant to be helpful, but it was not useful to allow access
 that would later be removed without any warning.</p>
-
 <p>The current version of Man Reader waiting for approval asks for read-only access
 to the config file directly and then to every folder listed in that config file.
 If approved, this should be able to access all the man pages on a system. I have
@@ -238,30 +231,24 @@ no idea whether these entitlements will be granted, but if not, then I will have
 to remove Man Reader from the App Store. It would be wrong to continue to sell
 an app that only functioned in a limited manner, even though the App Store is
 far and away my best form of marketing.</p>
-
 <p>So what do I suggest Apple does? I think they need to allow apps that are not
 sand-boxed. However these apps could come with a warning before installation. In
 Mountain Lion, the new security feature called Gatekeeper allows you to specify
 the level of security you want when installing apps. Currently the options are
 to allow apps downloaded from:</p>
-
 <ul>
 <li>Mac App Store</li>
 <li>Mac App Store and identified developers</li>
 <li>Anywhere</li>
 </ul>
-
 <p>They could split the first option in two and allow</p>
-
 <ul>
 <li>Mac App Store sandboxed</li>
 <li>Mac App Store any</li>
 </ul>
-
 <p>One further wrinkle is iCloud. Apple is encouraging users and developers towards
 iCloud data storage and sharing. But only apps in the App Store are allowed to
 use iCloud.</p>
-
 <p>So it will be interesting to see how this plays out. Obviously Apple is not
 going to care if a tiny developer like me leaves the App Store, but if enough
 high-profile developers leave, then there will surely be some consideration

@@ -157,7 +157,7 @@ Me neither. So I decided that I would work it out once and create myself a libra
     <span class="post-date">
       21 Jun 2018
     </span>
-    <span class="more-meta"> 875 words, </span>
+    <span class="more-meta"> 874 words, </span>
     <span class="more-meta"> 5 minute read</span>
   </div>
 
@@ -177,78 +177,48 @@ Me neither. So I decided that I would work it out once and create myself a libra
 
   <div class="post-content">
     <p>Hands up everyone who can remember how to work with Swift strings, especially when it comes to substrings and ranges? &hellip;.</p>
-
 <p>Nobody?</p>
-
 <p>Me neither. So I decided that I would work it out once and create myself a library to make it easy for myself in the future. And then I thought that other people might like it too. So I have created my first open sourced project.</p>
-
 <h2 id="strings-in-swift">Strings in Swift</h2>
-
-<p>Swift&rsquo;s string handling is amazing. It is truly Unicode-compliant, so a Swift <code>String</code> doesn&rsquo;t care whether your string is made up of basic alphanumerics, accented characters, or emojis that might be composed of several different emojis joined together.</p>
-
+<p>Swift's string handling is amazing. It is truly Unicode-compliant, so a Swift <code>String</code> doesn't care whether your string is made up of basic alphanumerics, accented characters, or emojis that might be composed of several different emojis joined together.</p>
 <p>But this power comes at a price, and every version of Swift has changed the way we interact with strings, seemingly making it more and more confusing for the poor programmers trying to stay current. I have got to the stage where each year I read up on the new String features and then promptly forget them. For every use, I have to go back and search how to do what should be simple.</p>
-
 <h2 id="the-problems">The Problems</h2>
-
 <p>To my mind, there are two main problems: indexes and substrings.</p>
-
 <p>In most languages, you can get the n-th character of a string, but not in Swift. In Swift, you have to ask the string for its startIndex (or endIndex), then use an offset to adjust that index by a certain number to give you a <code>String.Index</code>. Do much the same to get a second index and then you can grab the string between those two indices.</p>
-
 <p>To get a sub-string from the 7th up to the 11th character of a string, this is what you have to do:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> str = <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hello, playground</span><span style="color:#e6db74">&#34;</span>
 
-<pre><code class="language-swift">let str = &quot;Hello, playground&quot;
+<span style="color:#66d9ef">let</span> subStart = str.index(str.startIndex, offsetBy: <span style="color:#ae81ff">7</span>)
+<span style="color:#66d9ef">let</span> subEnd = str.index(str.startIndex, offsetBy: <span style="color:#ae81ff">11</span>)
 
-let subStart = str.index(str.startIndex, offsetBy: 7)
-let subEnd = str.index(str.startIndex, offsetBy: 11)
-
-let subStr = str[subStart ..&lt; subEnd]       // &quot;play&quot;
-</code></pre>
-
-<p>Splitting the lines up like that at least helps to show what is happening, but then you see abominations like this:</p>
-
-<pre><code class="language-swift">let sub = str[str.index(str.startIndex, offsetBy: 7)..&lt;str.index(str.startIndex, offsetBy: 11)]
-</code></pre>
-
-<p>And how anyone is supposed to read that, I really do not know.</p>
-
-<p>And now here is the kicker: the results (<code>subStr</code> and <code>sub</code> in the examples above) are not of type <code>String</code>! They are of type <code>Substring</code> so when you go to use them, they don&rsquo;t work as expected.</p>
-
+<span style="color:#66d9ef">let</span> subStr = str[subStart ..<span style="color:#f92672">&lt;</span> subEnd]       <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">&#34;</span><span style="color:#75715e">p</span><span style="color:#75715e">l</span><span style="color:#75715e">a</span><span style="color:#75715e">y</span><span style="color:#75715e">&#34;</span>
+</code></pre></div><p>Splitting the lines up like that at least helps to show what is happening, but then you see abominations like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> sub = str[str.index(str.startIndex, offsetBy: <span style="color:#ae81ff">7</span>)..&lt;str.index(str.startIndex, offsetBy: <span style="color:#ae81ff">11</span>)]
+</code></pre></div><p>And how anyone is supposed to read that, I really do not know.</p>
+<p>And now here is the kicker: the results (<code>subStr</code> and <code>sub</code> in the examples above) are not of type <code>String</code>! They are of type <code>Substring</code> so when you go to use them, they don't work as expected.</p>
 <p>I guess there are cases for using <code>Substring</code> but I always just end up casting to <code>String</code> to solve this, but only after the compiler has choked on what I thought was a <code>String</code> all along.</p>
-
 <h2 id="the-solution">The Solution</h2>
-
 <p>To make my life easier, I worked out all the ways that I wanted to be able to split up strings. Basically just two ways: by character number or by substring. Swift already has a <code>substring</code> method but it uses <code>String.Index</code> as shown above. To avoid confusion, I named my functions all <code>sub</code>.</p>
-
 <p>But now I can do the following to split strings by character number:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> subStr = startingString.sub(from: <span style="color:#ae81ff">9</span>)
+<span style="color:#66d9ef">let</span> subStr = startingString.sub(from: <span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>)
 
-<pre><code class="language-swift">let subStr = startingString.sub(from: 9)
-let subStr = startingString.sub(from: -3)
+<span style="color:#66d9ef">let</span> subStr = startingString.sub(upTo: <span style="color:#ae81ff">4</span>)
+<span style="color:#66d9ef">let</span> subStr = startingString.sub(upTo: <span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>)
 
-let subStr = startingString.sub(upTo: 4)
-let subStr = startingString.sub(upTo: -3)
-
-let subStr = startingString.sub(from: 3, upTo: 7)
-let subStr = startingString.sub(from: 3, upTo: -5)
-</code></pre>
-
-<p>Negative numbers count back from the end of the string. And they all return <code>String</code> objects!</p>
-
+<span style="color:#66d9ef">let</span> subStr = startingString.sub(from: <span style="color:#ae81ff">3</span>, upTo: <span style="color:#ae81ff">7</span>)
+<span style="color:#66d9ef">let</span> subStr = startingString.sub(from: <span style="color:#ae81ff">3</span>, upTo: <span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>)
+</code></pre></div><p>Negative numbers count back from the end of the string. And they all return <code>String</code> objects!</p>
 <p>Or to split strings by their own sub-strings, I can do this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> subStr = startingString.sub(from: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">abc</span><span style="color:#e6db74">&#34;</span>)
 
-<pre><code class="language-swift">let subStr = startingString.sub(from: &quot;abc&quot;)
+<span style="color:#66d9ef">let</span> subStr = startingString.sub(upTo: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">xyz</span><span style="color:#e6db74">&#34;</span>)
 
-let subStr = startingString.sub(upTo: &quot;xyz&quot;)
-
-let subStr = startingString.sub(from: &quot;abc&quot;, upTo: &quot;xyz&quot;)
-</code></pre>
-
-<h2 id="extras">Extras</h2>
-
+<span style="color:#66d9ef">let</span> subStr = startingString.sub(from: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">abc</span><span style="color:#e6db74">&#34;</span>, upTo: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">xyz</span><span style="color:#e6db74">&#34;</span>)
+</code></pre></div><h2 id="extras">Extras</h2>
 <p>Once I had created a string helper library, I started thinking about all the other string utilities that would be useful. So I started adding all sorts of facilities:</p>
-
 <ul>
 <li>Computed properties:
-
 <ul>
 <li>length (why should the length of a string be called count - that makes no sense)</li>
 <li>words</li>
@@ -256,38 +226,34 @@ let subStr = startingString.sub(from: &quot;abc&quot;, upTo: &quot;xyz&quot;)
 <li>word count</li>
 <li>line count</li>
 <li>title case</li>
-</ul></li>
+</ul>
+</li>
 <li>Encoding:
-
 <ul>
 <li>URL encoding &amp; decoding for queries or forms</li>
 <li>base64 encoding &amp; decoding</li>
-</ul></li>
+</ul>
+</li>
 <li>Trim:
-
 <ul>
 <li>trim</li>
 <li>trim left</li>
 <li>trim right</li>
 <li>trim using extra characters</li>
-</ul></li>
+</ul>
+</li>
 <li>Pad:
-
 <ul>
 <li>pad left</li>
 <li>pad right</li>
 <li>with default space or specified other character</li>
-</ul></li>
 </ul>
-
-<p>That&rsquo;s as far as I have got so far, but I am hoping for some community involvement that will expand or edit this library to make it more broadly applicable.</p>
-
+</li>
+</ul>
+<p>That's as far as I have got so far, but I am hoping for some community involvement that will expand or edit this library to make it more broadly applicable.</p>
 <h2 id="open-source">Open Source</h2>
-
-<p>I have never created an open source project before and I have rarely contributed to open source. But I have now published this library on GitHub under an MIT license. Please check it out at <a href="https://github.com/trozware/swift-strings-helper">https://github.com/trozware/swift-strings-helper</a>. The GitHub repo contains an Xcode project with all the source files, plus the targets to build frameworks for macOS or iOS, and a playground as documentation and to test it all out.</p>
-
+<p>I have never created an open source project before and I have rarely contributed to open source. But I have now published this library on GitHub under an MIT license. Please check it out at <a href="https://github.com/trozware/swift-strings-helper"><a href="https://github.com/trozware/swift-strings-helper">https://github.com/trozware/swift-strings-helper</a></a>. The GitHub repo contains an Xcode project with all the source files, plus the targets to build frameworks for macOS or iOS, and a playground as documentation and to test it all out.</p>
 <p>I would love to get as many stars as possible and it would be fantastic if anyone wanted to log an issue or contribute directly. As someone who finds the whole open source world rather intimidating, I would like to assure everyone that there will be no flaming and no shooting down of ANY ideas. I look forward to hearing from you.</p>
-
 <p>I am sure there are other Swift libraries out there dedicated to solving the same problems, but I hope that mine can prove useful to some. And if you just want to use it without contributing, feel free. The usage instructions are all in the ReadMe on the GitHub page.</p>
   </div>
   

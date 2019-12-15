@@ -173,54 +173,42 @@ I expected that App Store review times would go up dramatically once Apple had a
     <p>As described in a <a href="/post/2015-04-02-my-first-apple-watch-app/">previous post</a>, about 9 days ago I submitted my first
 Apple Watch app for review. The app was an extension of my golf scoring app:
 <a href="/19th-hole/">The 19th Hole</a>.</p>
-
 <p>I expected that App Store review times would go up dramatically once Apple had
 allowed developers to submit watch apps, but this proved to be incorrect. Three
 days after submission, the app was marked as &ldquo;In Review&rdquo;. This seemed to happen
 last thing on a Saturday, so there was no further action for two days, at which
 point the app was rejected, with the following details (sic):</p>
-
 <blockquote>
 <p>We noticed an issue in your app that contributes to a lower quality user
 experience than Apple users expect. Specifically,</p>
-
+</blockquote>
+<blockquote>
 <ul>
 <li>while using the Apple Watch app with the phone app is in the background mode
 (display off), the new data entry on the Watch App does not refresh
 accordingly until the phone app is turn back on.</li>
 </ul>
 </blockquote>
-
 <p>So it appeared that the communication between the watch and the phone, which
 worked perfectly on the simulators, did not work at all on the actual devices.
 This is the problem with developing for a device that you do not have.</p>
-
-<hr />
-
+<hr>
 <p>After some research, it appears that the problem is with the phone not operating
 correctly in background mode. Apple provides for communications from the watch
 to the phone. The phone can respond, but only the watch can initiate a
 connection. I guess this makes sense since every watch will be paired with a
 phone but the reverse will not always be true.</p>
-
 <p>To talk to the phone, the watch uses this function:</p>
-
-<pre><code class="language-swift">func openParentApplication(_ userInfo: [NSObject : AnyObject],
-  reply reply: (([NSObject : AnyObject]!, NSError!) -&gt; Void)?) -&gt; Bool
-</code></pre>
-
-<p>The phone listens for messages in this event handler:</p>
-
-<pre><code class="language-swift">func application(_ application: UIApplication,
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">openParentApplication</span>(<span style="color:#66d9ef">_</span> userInfo: [NSObject : AnyObject],
+  reply reply: (([NSObject : AnyObject]<span style="color:#f92672">!</span>, NSError!) -&gt; Void)?) -&gt; Bool
+</code></pre></div><p>The phone listens for messages in this event handler:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">application</span>(<span style="color:#66d9ef">_</span> application: UIApplication,
   handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?,
-  reply reply: (([NSObject : AnyObject]!) -&gt; Void)!)
-</code></pre>
-
-<p>The name of the WatchKit function is slightly misleading as it does open the
+  reply reply: (([NSObject : AnyObject]<span style="color:#f92672">!</span>) -&gt; Void)<span style="color:#f92672">!</span>)
+</code></pre></div><p>The name of the WatchKit function is slightly misleading as it does open the
 parent application, but only in the background. Then the parent app is supposed
 to do whatever tasks are called for in the handleWatchKitExtensionRequest
 function, and return any required data using the supplied reply() function.</p>
-
 <p>So far, so good, and it all worked perfectly in the simulator. But it appears
 that although this call wakes the iPhone app, it does not stay awake long enough
 to do anything. Many thanks to Brian at <a href="http://www.fiveminutewatchkit.com/blog/2015/3/11/one-weird-trick-to-fix-openparentapplicationreply">Five Minute WatchKit</a> who pointed
@@ -229,11 +217,9 @@ guaranteed to keep the iPhone app awake for 2 seconds. Then you perform your own
 work, using another background task. When that is finished, the phone can send
 the response and end the real background task. The dummy task will time out by
 itself after 2 seconds.</p>
-
 <p>For my needs, I could probably reduce the 2 seconds considerably, but since this
-is a problem I am unable to test, I decided just to go with Brian&rsquo;s suggestion
+is a problem I am unable to test, I decided just to go with Brian's suggestion
 as it is.</p>
-
 <p>I re-submitted the app the same day it was rejected, and two days later it was
 back in review. The review process took longer than usual, but about 30 hours
 later, the app was marked &ldquo;Pending an Apple Release&rdquo;. I assumed this meant that
@@ -241,9 +227,7 @@ Apple would release all WatchKit apps on 24th April when the watches shipped,
 but the following day the app was reported as &ldquo;Pending Developer Release&rdquo; (I had
 set it to release manually). Now I have told iTunesConnect to release the app
 and it is &ldquo;Processing for App Store&rdquo;.</p>
-
-<hr />
-
+<hr>
 <p>On a related note, the start of pre-ordering for the Apple Watch was scheduled
 for a very civilised 5:01 pm here in eastern Australia. I had three watches all
 lined up in my Favorites in the Apple Store app, ready for ordering. When the

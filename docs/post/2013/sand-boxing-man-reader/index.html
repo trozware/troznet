@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="description" content="These instructions are no longer valid. As of version 1.5, the App Store version of Man Reader has solved the sand-boxing issues and is now as powerful as the non-sand-boxed version.
 The non-sand-boxed version will no longer be supported or updated, so please revert to the App Store version.
-As with all apps in the App Store, Man Reader is restricted by Apple&amp;rsquo;s sand-boxing policy. Sand-boxing is a great thing. It isolates apps from each other and from the system, making it far less likely that a problem app will cause wide-spread havoc."/>
+ As with all apps in the App Store, Man Reader is restricted by Apple&#39;s sand-boxing policy. Sand-boxing is a great thing."/>
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="https://troz.net/post/2013/sand-boxing-man-reader/" />
@@ -28,7 +28,7 @@ As with all apps in the App Store, Man Reader is restricted by Apple&amp;rsquo;s
 <meta name="twitter:title" content="Sand-Boxing Man Reader :: TrozWare — " />
 <meta name="twitter:description" content="These instructions are no longer valid. As of version 1.5, the App Store version of Man Reader has solved the sand-boxing issues and is now as powerful as the non-sand-boxed version.
 The non-sand-boxed version will no longer be supported or updated, so please revert to the App Store version.
-As with all apps in the App Store, Man Reader is restricted by Apple&amp;rsquo;s sand-boxing policy. Sand-boxing is a great thing. It isolates apps from each other and from the system, making it far less likely that a problem app will cause wide-spread havoc." />
+ As with all apps in the App Store, Man Reader is restricted by Apple&#39;s sand-boxing policy. Sand-boxing is a great thing." />
 <meta name="twitter:site" content="https://troz.net/" />
 <meta name="twitter:creator" content="" />
 <meta name="twitter:image" content="">
@@ -39,7 +39,7 @@ As with all apps in the App Store, Man Reader is restricted by Apple&amp;rsquo;s
 <meta property="og:title" content="Sand-Boxing Man Reader :: TrozWare — ">
 <meta property="og:description" content="These instructions are no longer valid. As of version 1.5, the App Store version of Man Reader has solved the sand-boxing issues and is now as powerful as the non-sand-boxed version.
 The non-sand-boxed version will no longer be supported or updated, so please revert to the App Store version.
-As with all apps in the App Store, Man Reader is restricted by Apple&amp;rsquo;s sand-boxing policy. Sand-boxing is a great thing. It isolates apps from each other and from the system, making it far less likely that a problem app will cause wide-spread havoc." />
+ As with all apps in the App Store, Man Reader is restricted by Apple&#39;s sand-boxing policy. Sand-boxing is a great thing." />
 <meta property="og:url" content="https://troz.net/post/2013/sand-boxing-man-reader/" />
 <meta property="og:site_name" content="Sand-Boxing Man Reader" />
 <meta property="og:image" content="">
@@ -154,7 +154,7 @@ As with all apps in the App Store, Man Reader is restricted by Apple&amp;rsquo;s
     <span class="post-date">
       06 Feb 2013
     </span>
-    <span class="more-meta"> 484 words, </span>
+    <span class="more-meta"> 481 words, </span>
     <span class="more-meta"> 3 minute read</span>
   </div>
 
@@ -176,63 +176,48 @@ As with all apps in the App Store, Man Reader is restricted by Apple&amp;rsquo;s
     <p>These instructions are no longer valid. As of version 1.5, the App Store version
 of Man Reader has solved the sand-boxing issues and is now as powerful as the
 non-sand-boxed version.</p>
-
 <p>The non-sand-boxed version will no longer be supported or updated, so please
 revert to the App Store version.</p>
-
-<hr />
-
-<p>As with all apps in the App Store, <a href="/manreader/">Man Reader</a> is restricted by Apple&rsquo;s
+<hr>
+<p>As with all apps in the App Store, <a href="/manreader/">Man Reader</a> is restricted by Apple's
 sand-boxing policy. Sand-boxing is a great thing. It isolates apps from each
 other and from the system, making it far less likely that a problem app will
 cause wide-spread havoc. However for an app like Man Reader, this can lead to a
 drop in functionality.</p>
-
 <p>Due to the permissions limitations of sand-boxing, Man Reader can only search
-defined paths on your system drive e.g. /usr/, /opt/<br />
+defined paths on your system drive e.g. /usr/, /opt/<br>
 This is where the default man pages are all stored, but if you install other software
 (Xcode is a good example), then Man Reader may not be able to list all the available
 man pages on your system.</p>
-
 <p>To tell if Man Reader is missing man pages, copy &amp; paste the following command
 into the Terminal app:</p>
-
 <pre><code>whatis . &gt;&gt; ~/Desktop/whatis.txt
 </code></pre>
-
 <p>Man Reader runs this command internally when it starts, but the Terminal app is
-not sand-boxed and so can access everything.<br />
+not sand-boxed and so can access everything.<br>
 Running this command will create a text file on your desktop with a list of all available
 man pages on your system. Open it in a text editor that can show the number of lines
 in a file. <a href="http://www.barebones.com/products/textwrangler/">TextWrangler from Bare Bones Software</a> is a good free editor that
 will do this.</p>
-
 <p>To check what man pages ManReader can read, go to Finder and select &lsquo;Go to
 Folder&hellip;&rdquo; from the Go menu. Paste in the following path:</p>
-
 <pre><code>~/Library/Containers/net.troz.Man-Reader/Data/Library/Application Support/Man Reader/
 </code></pre>
-
 <p>You will see two files: open the one called &lsquo;ManReader.raw&rsquo; in your text editor.
 This is the result of Man Reader running the whatis command. Compare the number
-of lines in the two files. Don&rsquo;t worry about the order of the items in the file
+of lines in the two files. Don't worry about the order of the items in the file
 as that may vary, you are only concerned with the total number of lines in each.</p>
-
 <p>There may be one or two lines more in the whatis.txt file but if there is a big
-difference, then you are being sand-boxed&hellip;<br />
+difference, then you are being sand-boxed&hellip;<br>
 As an example, on my system, the whatis.txt file contains 8954 lines and the ManReader.raw
 file contains 2320 lines!</p>
-
-<p><del>If you are affected by this or think that you might be, I now have a
-solution - actually two possible solutions:</del></p>
-
-<p><del>If you have already bought Man Reader from the App Store, then you can
+<p><!-- raw HTML omitted -->If you are affected by this or think that you might be, I now have a
+solution - actually two possible solutions:<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->If you have already bought Man Reader from the App Store, then you can
 <a href="#">download a non-sandboxed version</a>. This will only work if you have the App
-Store version of the app installed.</del></p>
-
-<p><del>If you do not already own a copy of Man Reader, and want to buy it
-un-sandboxed, then you can now <a href="#">buy it directly</a>.</del></p>
-
+Store version of the app installed.<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->If you do not already own a copy of Man Reader, and want to buy it
+un-sandboxed, then you can now <a href="#">buy it directly</a>.<!-- raw HTML omitted --></p>
 <p>Please <a href="mailto:sarah@troz.net?subject=Man%20Reader%20and%20Sand-Boxing">contact me</a> if you have any issues with this.</p>
 
   </div>

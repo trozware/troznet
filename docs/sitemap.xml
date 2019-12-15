@@ -3,42 +3,70 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://troz.net/tags/mac/</loc>
+    <lastmod>2019-12-15T17:28:20+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://troz.net/post/</loc>
-    <lastmod>2019-11-18T16:21:05+10:00</lastmod>
+    <lastmod>2019-12-15T17:28:20+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/tags/swift/</loc>
-    <lastmod>2019-11-18T16:21:05+10:00</lastmod>
+    <lastmod>2019-12-15T17:28:20+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/tags/swiftui/</loc>
-    <lastmod>2019-11-18T16:21:05+10:00</lastmod>
+    <lastmod>2019-12-15T17:28:20+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://troz.net/post/2019/swiftui-data-flow/</loc>
-    <lastmod>2019-11-18T16:21:05+10:00</lastmod>
+    <loc>https://troz.net/post/2019/swiftui-for-mac-3/</loc>
+    <lastmod>2019-12-15T17:28:20+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/tags/</loc>
-    <lastmod>2019-11-18T16:21:05+10:00</lastmod>
+    <lastmod>2019-12-15T17:28:20+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/</loc>
+    <lastmod>2019-12-15T17:28:20+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/post/2019/swiftui-for-mac-2/</loc>
+    <lastmod>2019-12-15T17:28:10+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/post/2019/swiftui-for-mac-1/</loc>
+    <lastmod>2019-12-15T17:28:00+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/post/2019/swiftui-data-flow/</loc>
     <lastmod>2019-11-18T16:21:05+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -68,13 +96,6 @@
   <url>
     <loc>https://troz.net/thanks/</loc>
     <lastmod>2019-01-16T10:59:13+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/tags/mac/</loc>
-    <lastmod>2018-10-06T09:38:20+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

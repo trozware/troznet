@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.59.0" />
+	<meta name="generator" content="Hugo 0.60.1" />
   
     <title>TrozWare</title>
   
@@ -148,14 +148,128 @@
   
   <div class="post on-list">
     <h1 class="post-title">
+      <a href="https://troz.net/post/2019/swiftui-for-mac-3/">SwiftUI for Mac - Part 3</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        15 Dec 2019
+      </span>
+      <span class="more-meta"> 1803 words, </span>
+      <span class="more-meta"> 9 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/swift/">swift</a
+      >&nbsp;
+      
+      #<a href="/tags/swiftui/">swiftui</a
+      >&nbsp;
+      
+      #<a href="/tags/mac/">mac</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>In <a href="/post/2019/swiftui-for-mac-1/">part 1 of this series</a>, I created a Mac app using SwiftUI. The app uses a Master-Detail design to list entries in an outline on the left and show details about the selected entry in the detail view on the right. In <a href="/post/2019/swiftui-for-mac-2/">part 2</a> I explored using menus, adding all the expected user interface elements and opening secondary windows.</p>
+<p>In this third and final part, I want to look at the various ways to present dialogs to the user.</p>
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2019/swiftui-for-mac-3/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2019/swiftui-for-mac-2/">SwiftUI for Mac - Part 2</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        15 Dec 2019
+      </span>
+      <span class="more-meta"> 2508 words, </span>
+      <span class="more-meta"> 12 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/swift/">swift</a
+      >&nbsp;
+      
+      #<a href="/tags/swiftui/">swiftui</a
+      >&nbsp;
+      
+      #<a href="/tags/mac/">mac</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>In <a href="/post/2019/swiftui-for-mac-1/">part 1 of this series</a>, I created a Mac app using SwiftUI. The app uses a Master-Detail design to list entries in an outline on the left and show details about the selected entry in the detail view on the right.</p>
+<p>Now it is time to explore some more of the features of a Mac app with SwiftUI.</p>
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2019/swiftui-for-mac-2/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2019/swiftui-for-mac-1/">SwiftUI for Mac - Part 1</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        15 Dec 2019
+      </span>
+      <span class="more-meta"> 1557 words, </span>
+      <span class="more-meta"> 8 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/swift/">swift</a
+      >&nbsp;
+      
+      #<a href="/tags/swiftui/">swiftui</a
+      >&nbsp;
+      
+      #<a href="/tags/mac/">mac</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>So far, nearly all the articles I have seen about SwiftUI show it being used for iOS, more particularly for iPhone.
+But SwiftUI works on all Apple's platforms, and as I am primarily a Mac developer, I decided to try out a Mac app and see what happened.</p>
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2019/swiftui-for-mac-1/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
       <a href="https://troz.net/post/2019/swiftui-data-flow/">SwiftUI Data Flow</a>
     </h1>
     <div class="post-meta">
       <span class="post-date">
         18 Nov 2019
       </span>
-      <span class="more-meta"> 3429 words, </span>
-      <span class="more-meta"> 17 minute read</span>
+      <span class="more-meta"> 3271 words, </span>
+      <span class="more-meta"> 16 minute read</span>
     </div>
 
     
@@ -174,9 +288,7 @@
 
     <div class="post-content">
       <p><a href="https://developer.apple.com/xcode/swiftui/">SwiftUI</a> gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?</p>
-
 <p>In this post, I intend to discuss the possibilities with examples.</p>
-
 <p>If you read this article before November 18th 2019, please check out <a href="/post/2019/swiftui-data-flow/#observable2">ObservableObject &amp; @ObservedObject - Part 2</a> again as it has gone through several iterations, which are all shown for comparison.</p>
     </div>
     <div>
@@ -217,7 +329,6 @@
   }
 </style>
 
-
 <p>At WWDC 2019, Apple surprised us all by announcing a completely new declarative UI framework called <a href="https://developer.apple.com/xcode/swiftui/">SwiftUI</a>. Quoting snippets from the Apple announcements, &ldquo;SwiftUI is an innovative, exceptionally simple way to build user interfaces across all Apple platforms with the power of Swift&rdquo; and &ldquo;SwiftUI uses a declarative syntax so you can simply state what your user interface should do.&rdquo; But what does this mean and should we all adopt it now?</p>
     </div>
     <div>
@@ -233,7 +344,7 @@
       <span class="post-date">
         06 Feb 2019
       </span>
-      <span class="more-meta"> 1042 words, </span>
+      <span class="more-meta"> 1021 words, </span>
       <span class="more-meta"> 5 minute read</span>
     </div>
 
@@ -272,9 +383,7 @@
     box-shadow: none;
   }
 </style>
-
 <p>I sometimes like to focus on aspects of the Swift language that get less publicity, but that I think are really useful without adding a lot of complexity. This time I am looking at tuples.</p>
-
 <p>There are many different ways of collecting data together in Swift, but for small amounts of transitory data, I find tuples to be an extremely convenient data structure.</p>
     </div>
     <div>
@@ -366,8 +475,7 @@
     box-shadow: none;
   }
 </style>
-
-<p>Now that most of my Mac apps have been updated to support macOS Mojave&rsquo;s dark mode, it was time to turn my attention to this web site.</p>
+<p>Now that most of my Mac apps have been updated to support macOS Mojave's dark mode, it was time to turn my attention to this web site.</p>
     </div>
     <div>
       <a class="read-more button" href="/post/2018/moving-to-the-dark-side-2/">Read more →</a>
@@ -421,9 +529,7 @@
     box-shadow: none;
   }
 </style>
-
 <p>With the release of macOS Mojave on 24th September 2018, I have started updating my Mac apps, mainly to enable support for dark mode if appropriate.</p>
-
 <p>And now I have updated this site too. Click the light bulb icon at the top right of the page to toggle between light and dark modes for this site.</p>
     </div>
     <div>
@@ -439,7 +545,7 @@
       <span class="post-date">
         21 Jun 2018
       </span>
-      <span class="more-meta"> 875 words, </span>
+      <span class="more-meta"> 874 words, </span>
       <span class="more-meta"> 5 minute read</span>
     </div>
 
@@ -462,123 +568,11 @@
 
     <div class="post-content">
       <p>Hands up everyone who can remember how to work with Swift strings, especially when it comes to substrings and ranges? &hellip;.</p>
-
 <p>Nobody?</p>
-
 <p>Me neither. So I decided that I would work it out once and create myself a library to make it easy for myself in the future. And then I thought that other people might like it too. So I have created my first open sourced project.</p>
     </div>
     <div>
       <a class="read-more button" href="/post/2018/swift-strings-helper/">Read more →</a>
-    </div>
-  </div>
-  
-  <div class="post on-list">
-    <h1 class="post-title">
-      <a href="https://troz.net/post/2018/functional-programming/">Functional Programming in Swift</a>
-    </h1>
-    <div class="post-meta">
-      <span class="post-date">
-        14 Jun 2018
-      </span>
-      <span class="more-meta"> 2491 words, </span>
-      <span class="more-meta"> 12 minute read</span>
-    </div>
-
-    
-    <span class="post-tags">
-      
-      #<a href="/tags/swift/">swift</a
-      >&nbsp;
-      
-      #<a href="/tags/functional/">functional</a
-      >&nbsp;
-      
-      #<a href="/tags/learning-swift/">learning swift</a
-      >&nbsp;
-      
-    </span>
-    
-
-    
-
-    <div class="post-content">
-      <p>What is Functional Programming and how can we use it in Swift?</p>
-
-<p>Search online for any definition of functional programming and you will find many different definitions, few of which are practically helpful. I have no claim to be an expert, but as a Swift enthusiast, this is what I have distilled out of the morass.</p>
-    </div>
-    <div>
-      <a class="read-more button" href="/post/2018/functional-programming/">Read more →</a>
-    </div>
-  </div>
-  
-  <div class="post on-list">
-    <h1 class="post-title">
-      <a href="https://troz.net/post/2018/world-time-in-words-ios-update/">World Time in Words iOS Update</a>
-    </h1>
-    <div class="post-meta">
-      <span class="post-date">
-        14 Jun 2018
-      </span>
-      <span class="more-meta"> 368 words, </span>
-      <span class="more-meta"> 2 minute read</span>
-    </div>
-
-    
-    <span class="post-tags">
-      
-      #<a href="/tags/time/">time</a
-      >&nbsp;
-      
-      #<a href="/tags/time-in-words/">time in words</a
-      >&nbsp;
-      
-      #<a href="/tags/world-time-in-words/">world time in words</a
-      >&nbsp;
-      
-    </span>
-    
-
-    
-
-    <div class="post-content">
-      <p>Its been a long time since the last update to Time In Words for iOS but after prompting by Apple (<em>update or we will remove it from the App Store</em>), I finally did it. I was never really happy with the last design of Time in Words for iOS, particularly for the iPad, so this was a good opportunity to do a complete re-design, bringing the app more into alignment with its Mac counterpart. And it got a new name to match its new direction and is now called World Time in Words.</p>
-    </div>
-    <div>
-      <a class="read-more button" href="/post/2018/world-time-in-words-ios-update/">Read more →</a>
-    </div>
-  </div>
-  
-  <div class="post on-list">
-    <h1 class="post-title">
-      <a href="https://troz.net/post/2018/privacy-policy/">Privacy Policy</a>
-    </h1>
-    <div class="post-meta">
-      <span class="post-date">
-        26 May 2018
-      </span>
-      <span class="more-meta"> 277 words, </span>
-      <span class="more-meta"> 2 minute read</span>
-    </div>
-
-    
-    <span class="post-tags">
-      
-      #<a href="/tags/privacy/">privacy</a
-      >&nbsp;
-      
-      #<a href="/tags/gdpr/">GDPR</a
-      >&nbsp;
-      
-    </span>
-    
-
-    
-
-    <div class="post-content">
-      <p>TL;DR: I don&rsquo;t track you either on my web site or through my apps. If you want to contact me, please do so but I will not initiate any contacts.</p>
-    </div>
-    <div>
-      <a class="read-more button" href="/post/2018/privacy-policy/">Read more →</a>
     </div>
   </div>
   
