@@ -154,7 +154,7 @@ In this third and final part, I want to look at the various ways to present dial
     <span class="post-date">
       15 Dec 2019
     </span>
-    <span class="more-meta"> 1803 words, </span>
+    <span class="more-meta"> 1839 words, </span>
     <span class="more-meta"> 9 minute read</span>
   </div>
 
@@ -187,12 +187,13 @@ In this third and final part, I want to look at the various ways to present dial
 <p>To make an Alert, I need an @State Bool which sets whether the alert is visible or not. All the button has to do is toggle that Bool. Stripping out the extra code and views, this is what I have.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">DialogsView</span>: View {
     @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> alertIsShowing = <span style="color:#66d9ef">false</span>
+    @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> dialogResult = <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Click the buttons above to test the dialogs.</span><span style="color:#e6db74">&#34;</span>
 
     <span style="color:#66d9ef">var</span> body: some View {
         Button(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Alert</span><span style="color:#e6db74">&#34;</span>) { <span style="color:#66d9ef">self</span>.alertIsShowing.toggle() }
     }
 }
-</code></pre></div><p>To configure the alert itself, I added an alert modifier to the outmost view in this view. The <code>dialogResult</code> string is a diagnostic so that I can confirm that the results of the various dialogs get passed back to the parent view.</p>
+</code></pre></div><p>To configure the alert itself, I added an alert modifier to the outmost view in this view. The <code>dialogResult</code> string is a diagnostic that I can use to confirm that the results of the various dialogs get passed back to the parent view.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  Alert(title: Text(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Alert</span><span style="color:#e6db74">&#34;</span>),
         message: Text(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">This is an alert!</span><span style="color:#e6db74">&#34;</span>),
         dismissButton: .<span style="color:#66d9ef">default</span>(Text(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">OK</span><span style="color:#e6db74">&#34;</span>)) {
@@ -292,8 +293,8 @@ In this third and final part, I want to look at the various ways to present dial
 }
 </code></pre></div><h2 id="files">Files</h2>
 <p>AppKit provides NSOpenPanel for selecting a file and NSSavePanel for saving. I will try to implement NSSavePanel to allow saving the current cat image.</p>
-<p>Since this is an AppKit control rather than a SwiftUI control, I assumed that I would need to use NSViewRepresentable like I did for the NSColorWell in part 2. But NSColorWell is a descendent of NSView but NSSavePanel is not. So I need a new idea.</p>
-<p>Rather naively, I though maybe I could just create an NSSavePanel in a function inside DialogsView and see what happened.</p>
+<p>Since this is an AppKit control rather than a SwiftUI control, I assumed that I would need to use NSViewRepresentable like I did for the NSColorWell in part 2. But while NSColorWell is a descendent of NSView, NSSavePanel is not. So I need a new idea.</p>
+<p>Rather naively, I thought maybe I could just create an NSSavePanel in a function inside DialogsView and see what happened.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">saveImage</span>() {
       <span style="color:#66d9ef">let</span> panel = NSSavePanel()
       panel.nameFieldLabel = <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Save cat image as:</span><span style="color:#e6db74">&#34;</span>
@@ -306,8 +307,8 @@ In this third and final part, I want to look at the various ways to present dial
       }
   }
 </code></pre></div><p>Crash &amp; burn&hellip; so what if I made the NSSavePanel an @State property of the View? No, that crashed even faster. Maybe SwiftUI Views don't like this sort of thing, but how about if I get the Application Delegate to handle it? What if I moved the <code>saveImage</code> method to the App Delegate and changed the calling function to access it there?</p>
-<p>Still crashed. At this stage I am beginning to wonder if I know how to use an NSSavePanel. Time to create a simple test app without SwiftUI and see what happens. Well it appears that I no longer know how to use an NSSavePanel. Code from an older project that works fine, will not work now!</p>
-<p>Guess what - it was a macOS Catalina security issue which I would have realised faster I had opened the Console. Back to the Signing &amp; Capabilities section of the target settings and this time I set File Access for User Selected File to Read/Write.</p>
+<p>Still crashed. At this stage I am beginning to wonder if I know how to use an NSSavePanel. Time to create a simple test app without SwiftUI and see what happens. Well it appears that I no longer know how to use an NSSavePanel. Code from an older project that works fine, will not work in my new sample project!</p>
+<p>Guess what - it was another macOS Catalina security issue which I would have realised faster I had opened the Console. Back to the Signing &amp; Capabilities section of the target settings and this time I set File Access for User Selected File to Read/Write.</p>
 <p>Now the NSSavePanel opens when called from DialogsView and prints the selected file URL if one is chosen.</p>
 <p>But this is all happening in DialogsView, which is a subview of DetailView. And DetailView is the view that holds the image, not DialogsView. So how can I save the image? Do I pass the URL to DetailView or pass the image to DialogsView? Or do something clever with Notifications and Subscriptions?</p>
 <p>I really don't know what is best, but I have decided to post a Notification with the URL as its object. DetailView can receive this Notification and save the image whenever it is received.</p>
@@ -340,6 +341,7 @@ In this third and final part, I want to look at the various ways to present dial
 <li>Panels: AppKit dialogs that can be called from a SwiftUI View.</li>
 </ol>
 <p>I think this time I really am finished. This article has already expanded out into a 3-part monster, so I think it is way past time that I stopped typing. I hope you have enjoyed this series. Please use any of the buttons below to contact me or use the <a href="/contact/">Contact page</a> on this site. I would love to hear from anyone who found this series useful or who had any suggestions or corrections to make.</p>
+<p>The final project is available on <a href="https://github.com/trozware/swiftui-mac">GitHub</a> if you would like to download it and take a look.</p>
   </div>
   
   <div class="pagination">

@@ -91,7 +91,7 @@ In DetailView.swift, I set up a Boolean @State property to store whether the ima
   }
 ```
 
-Once I had that Boolean property, I added two more modifiers to the image. Don't hate me for the force un-wrapping. I tried using if-let but it wouldn't compile so I check for catImage != nil before using this force-unwrap.
+Once I had that Boolean property, I added two more modifiers to the image. Don't hate me for the force un-wrapping. I tried using if-let but it wouldn't compile so I check for `catImage != nil` before using this force-unwrap.
 
 ```swift
   Image(nsImage: catImage!)
@@ -112,7 +112,7 @@ For my next challenge, I want to open a second window that I can use to show sam
 
 I had great trouble finding any documentation or examples of how to implement this, but after a lot of trial and error, here is what I got to work:
 
-1. Drag a Hosting View Controller into the storyboard and connect it to my new menu item with a segue.
+1. Drag a Hosting View Controller into the storyboard and connect it to the menu item with a segue.
 2. Set the Presentation property for the window controller to Single so that multiple copies of the window are not created.
 3. Create a new Swift file and subclass NSHostingController. Don't bother using a Cocoa class file - the template doesn't work. Use the code below, replacing SamplesView with the name of the SwiftUI view you want to display.
 
@@ -136,7 +136,7 @@ With all these in place, I was able to open and close a Samples window that was 
 
 Not all the expected user interface elements are available in SwiftUI and some of the ones that are implemented are using different names. Again this is a point at which iOS development has got all the attention, so there are conversion tables out there listing UIKit elements and their SwiftUI equivalents, but I was not able to find a similar listing for AppKit. If you find one, please let me know.
 
-Anyway, I experimented and got most of what I wanted as you can see below. The sample app on GitHub shows the SwiftUI code for these samples, but the main advice I would give is firstly to use the Object Browser to look for what is available and then to check out the styles that can be applied to the element you have chosen.
+Anyway, I experimented and got most of what I wanted as you can see below. The [sample app on GitHub][6] shows the SwiftUI code for these samples, but the main advice I would give is firstly to use the Object Browser to look for what is available and then to check out the styles that can be applied to the element you have chosen.
 
 ![UI elements][i4]
 
@@ -324,6 +324,10 @@ And that is that! I have shown how it is possible to create an entire Mac app us
 
 I am sure that there are numerous ways that this could be improved, so if you have any ideas or suggestions, please use one of the buttons below to contact me.
 
+If you want to check out the project at this stage, here is a link to the [relevant GitHub commit][5]. Or if you would prefer, here is a link to the [final version][6] of the project.
+
+---
+
 Moving on to an unplanned [part 3 of this series][4], I am going to experiment with various forms of dialog.
 
 [i1]: /images/SwiftUi-Mac-menus.png
@@ -334,3 +338,5 @@ Moving on to an unplanned [part 3 of this series][4], I am going to experiment w
 [2]: https://www.avanderlee.com/swift/property-wrappers/
 [3]: https://twitter.com/azamsharp
 [4]: /post/2019/swiftui-for-mac-3/
+[5]: https://github.com/trozware/swiftui-mac/tree/0ea77f80832e0f32e477ce89ac57d8a95f45f035
+[6]: https://github.com/trozware/swiftui-mac

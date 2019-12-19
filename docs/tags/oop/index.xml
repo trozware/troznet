@@ -31,12 +31,13 @@
 &lt;p&gt;To make an Alert, I need an @State Bool which sets whether the alert is visible or not. All the button has to do is toggle that Bool. Stripping out the extra code and views, this is what I have.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;DialogsView&lt;/span&gt;: View {
     @State &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; alertIsShowing = &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+    @State &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; dialogResult = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Click the buttons above to test the dialogs.&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
 
     &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some View {
         Button(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Alert&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;) { &lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;.alertIsShowing.toggle() }
     }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To configure the alert itself, I added an alert modifier to the outmost view in this view. The &lt;code&gt;dialogResult&lt;/code&gt; string is a diagnostic so that I can confirm that the results of the various dialogs get passed back to the parent view.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To configure the alert itself, I added an alert modifier to the outmost view in this view. The &lt;code&gt;dialogResult&lt;/code&gt; string is a diagnostic that I can use to confirm that the results of the various dialogs get passed back to the parent view.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;  Alert(title: Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Alert&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;),
         message: Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;This is an alert!&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;),
         dismissButton: .&lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt;(Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;OK&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)) {
@@ -136,8 +137,8 @@
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;files&#34;&gt;Files&lt;/h2&gt;
 &lt;p&gt;AppKit provides NSOpenPanel for selecting a file and NSSavePanel for saving. I will try to implement NSSavePanel to allow saving the current cat image.&lt;/p&gt;
-&lt;p&gt;Since this is an AppKit control rather than a SwiftUI control, I assumed that I would need to use NSViewRepresentable like I did for the NSColorWell in part 2. But NSColorWell is a descendent of NSView but NSSavePanel is not. So I need a new idea.&lt;/p&gt;
-&lt;p&gt;Rather naively, I though maybe I could just create an NSSavePanel in a function inside DialogsView and see what happened.&lt;/p&gt;
+&lt;p&gt;Since this is an AppKit control rather than a SwiftUI control, I assumed that I would need to use NSViewRepresentable like I did for the NSColorWell in part 2. But while NSColorWell is a descendent of NSView, NSSavePanel is not. So I need a new idea.&lt;/p&gt;
+&lt;p&gt;Rather naively, I thought maybe I could just create an NSSavePanel in a function inside DialogsView and see what happened.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;saveImage&lt;/span&gt;() {
       &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; panel = NSSavePanel()
       panel.nameFieldLabel = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Save cat image as:&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
@@ -150,8 +151,8 @@
       }
   }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Crash &amp;amp; burn&amp;hellip; so what if I made the NSSavePanel an @State property of the View? No, that crashed even faster. Maybe SwiftUI Views don&#39;t like this sort of thing, but how about if I get the Application Delegate to handle it? What if I moved the &lt;code&gt;saveImage&lt;/code&gt; method to the App Delegate and changed the calling function to access it there?&lt;/p&gt;
-&lt;p&gt;Still crashed. At this stage I am beginning to wonder if I know how to use an NSSavePanel. Time to create a simple test app without SwiftUI and see what happens. Well it appears that I no longer know how to use an NSSavePanel. Code from an older project that works fine, will not work now!&lt;/p&gt;
-&lt;p&gt;Guess what - it was a macOS Catalina security issue which I would have realised faster I had opened the Console. Back to the Signing &amp;amp; Capabilities section of the target settings and this time I set File Access for User Selected File to Read/Write.&lt;/p&gt;
+&lt;p&gt;Still crashed. At this stage I am beginning to wonder if I know how to use an NSSavePanel. Time to create a simple test app without SwiftUI and see what happens. Well it appears that I no longer know how to use an NSSavePanel. Code from an older project that works fine, will not work in my new sample project!&lt;/p&gt;
+&lt;p&gt;Guess what - it was another macOS Catalina security issue which I would have realised faster I had opened the Console. Back to the Signing &amp;amp; Capabilities section of the target settings and this time I set File Access for User Selected File to Read/Write.&lt;/p&gt;
 &lt;p&gt;Now the NSSavePanel opens when called from DialogsView and prints the selected file URL if one is chosen.&lt;/p&gt;
 &lt;p&gt;But this is all happening in DialogsView, which is a subview of DetailView. And DetailView is the view that holds the image, not DialogsView. So how can I save the image? Do I pass the URL to DetailView or pass the image to DialogsView? Or do something clever with Notifications and Subscriptions?&lt;/p&gt;
 &lt;p&gt;I really don&#39;t know what is best, but I have decided to post a Notification with the URL as its object. DetailView can receive this Notification and save the image whenever it is received.&lt;/p&gt;
@@ -183,7 +184,8 @@
 &lt;li&gt;Sheets: good for more complex dialogs&lt;/li&gt;
 &lt;li&gt;Panels: AppKit dialogs that can be called from a SwiftUI View.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;I think this time I really am finished. This article has already expanded out into a 3-part monster, so I think it is way past time that I stopped typing. I hope you have enjoyed this series. Please use any of the buttons below to contact me or use the &lt;a href=&#34;https://troz.net/contact/&#34;&gt;Contact page&lt;/a&gt; on this site. I would love to hear from anyone who found this series useful or who had any suggestions or corrections to make.&lt;/p&gt;</description>
+&lt;p&gt;I think this time I really am finished. This article has already expanded out into a 3-part monster, so I think it is way past time that I stopped typing. I hope you have enjoyed this series. Please use any of the buttons below to contact me or use the &lt;a href=&#34;https://troz.net/contact/&#34;&gt;Contact page&lt;/a&gt; on this site. I would love to hear from anyone who found this series useful or who had any suggestions or corrections to make.&lt;/p&gt;
+&lt;p&gt;The final project is available on &lt;a href=&#34;https://github.com/trozware/swiftui-mac&#34;&gt;GitHub&lt;/a&gt; if you would like to download it and take a look.&lt;/p&gt;</description>
 </item>
     
     <item>
@@ -245,7 +247,7 @@
         &lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;.imageIsFlipped.toggle()
     }
   }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once I had that Boolean property, I added two more modifiers to the image. Don&#39;t hate me for the force un-wrapping. I tried using if-let but it wouldn&#39;t compile so I check for catImage != nil before using this force-unwrap.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once I had that Boolean property, I added two more modifiers to the image. Don&#39;t hate me for the force un-wrapping. I tried using if-let but it wouldn&#39;t compile so I check for &lt;code&gt;catImage != nil&lt;/code&gt; before using this force-unwrap.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;  Image(nsImage: catImage!)
       .resizable()
       .aspectRatio(contentMode: .fit)
@@ -258,7 +260,7 @@
 &lt;p&gt;For my next challenge, I want to open a second window that I can use to show samples of various UI elements. As I want to open it from a menu command, my first thought was to add a Window Controller to the Main storyboard and open it that way. I replaced the default View Controller with a Hosting Controller so that I could insert my SwiftUI View into it.&lt;/p&gt;
 &lt;p&gt;I had great trouble finding any documentation or examples of how to implement this, but after a lot of trial and error, here is what I got to work:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Drag a Hosting View Controller into the storyboard and connect it to my new menu item with a segue.&lt;/li&gt;
+&lt;li&gt;Drag a Hosting View Controller into the storyboard and connect it to the menu item with a segue.&lt;/li&gt;
 &lt;li&gt;Set the Presentation property for the window controller to Single so that multiple copies of the window are not created.&lt;/li&gt;
 &lt;li&gt;Create a new Swift file and subclass NSHostingController. Don&#39;t bother using a Cocoa class file - the template doesn&#39;t work. Use the code below, replacing SamplesView with the name of the SwiftUI view you want to display.&lt;/li&gt;
 &lt;/ol&gt;
@@ -277,7 +279,7 @@
 &lt;p&gt;With all these in place, I was able to open and close a Samples window that was displaying my SwiftUI content.&lt;/p&gt;
 &lt;h2 id=&#34;user-interface-elements&#34;&gt;User Interface Elements&lt;/h2&gt;
 &lt;p&gt;Not all the expected user interface elements are available in SwiftUI and some of the ones that are implemented are using different names. Again this is a point at which iOS development has got all the attention, so there are conversion tables out there listing UIKit elements and their SwiftUI equivalents, but I was not able to find a similar listing for AppKit. If you find one, please let me know.&lt;/p&gt;
-&lt;p&gt;Anyway, I experimented and got most of what I wanted as you can see below. The sample app on GitHub shows the SwiftUI code for these samples, but the main advice I would give is firstly to use the Object Browser to look for what is available and then to check out the styles that can be applied to the element you have chosen.&lt;/p&gt;
+&lt;p&gt;Anyway, I experimented and got most of what I wanted as you can see below. The &lt;a href=&#34;https://github.com/trozware/swiftui-mac&#34;&gt;sample app on GitHub&lt;/a&gt; shows the SwiftUI code for these samples, but the main advice I would give is firstly to use the Object Browser to look for what is available and then to check out the styles that can be applied to the element you have chosen.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/SwiftUI-Mac-UI.png&#34; alt=&#34;UI elements&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Mostly, I managed to achieve what I wanted but there were a few exceptions.&lt;/p&gt;
 &lt;p&gt;Buttons were a bit odd as there are multiple button styles listed, but I found that they either all looked the same or they disappeared completely. I was not able to style a button with an image and text which is now easy to do in iOS. And I was not able to set a button as the default button and I could not work out how to set a keyboard equivalent for a button. (Setting the keyboard equivalent to Return or Enter might set it to the default style automatically.)&lt;/p&gt;
@@ -405,6 +407,8 @@
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And that is that! I have shown how it is possible to create an entire Mac app using SwiftUI.&lt;/p&gt;
 &lt;p&gt;I am sure that there are numerous ways that this could be improved, so if you have any ideas or suggestions, please use one of the buttons below to contact me.&lt;/p&gt;
+&lt;p&gt;If you want to check out the project at this stage, here is a link to the &lt;a href=&#34;https://github.com/trozware/swiftui-mac/tree/0ea77f80832e0f32e477ce89ac57d8a95f45f035&#34;&gt;relevant GitHub commit&lt;/a&gt;. Or if you would prefer, here is a link to the &lt;a href=&#34;https://github.com/trozware/swiftui-mac&#34;&gt;final version&lt;/a&gt; of the project.&lt;/p&gt;
+&lt;hr&gt;
 &lt;p&gt;Moving on to an unplanned &lt;a href=&#34;https://troz.net/post/2019/swiftui-for-mac-3/&#34;&gt;part 3 of this series&lt;/a&gt;, I am going to experiment with various forms of dialog.&lt;/p&gt;</description>
 </item>
     
@@ -519,6 +523,8 @@ But SwiftUI works on all Apple&#39;s platforms, and as I am primarily a Mac deve
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/SwiftUI-Mac-detail.png&#34; alt=&#34;Detail view&#34;&gt;&lt;/p&gt;
 &lt;p&gt;It really should have a loading image to display while the cat image is being downloaded, but to my disappointment, I found that the SF Symbols are not available to a Mac app! But I added a Text view to say &amp;ldquo;Loading&amp;hellip;&amp;quot;.&lt;/p&gt;
 &lt;p&gt;Now that I have a functioning Mac app with a Master-Detail view, the next thing is to explore some more of the challenges that will need to be solved before I can write a Mac app completely using SwiftUI.&lt;/p&gt;
+&lt;p&gt;If you want to check out the project at this stage, here is a link to the &lt;a href=&#34;https://github.com/trozware/swiftui-mac/tree/8ebeb615db81f9d7b6489a1920ebb08d07131ebb&#34;&gt;relevant GitHub commit&lt;/a&gt;. Or if you would prefer, here is a link to the &lt;a href=&#34;https://github.com/trozware/swiftui-mac&#34;&gt;final version&lt;/a&gt; of the project.&lt;/p&gt;
+&lt;hr&gt;
 &lt;p&gt;In &lt;a href=&#34;https://troz.net/post/2019/swiftui-for-mac-2/&#34;&gt;part 2 of this series&lt;/a&gt;, I will look into:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;how to interact with the menus&lt;/li&gt;

@@ -28,6 +28,7 @@ To make an Alert, I need an @State Bool which sets whether the alert is visible 
 ```swift
 struct DialogsView: View {
     @State private var alertIsShowing = false
+    @State private var dialogResult = "Click the buttons above to test the dialogs."
 
     var body: some View {
         Button("Alert") { self.alertIsShowing.toggle() }
@@ -35,7 +36,7 @@ struct DialogsView: View {
 }
 ```
 
-To configure the alert itself, I added an alert modifier to the outmost view in this view. The `dialogResult` string is a diagnostic so that I can confirm that the results of the various dialogs get passed back to the parent view.
+To configure the alert itself, I added an alert modifier to the outmost view in this view. The `dialogResult` string is a diagnostic that I can use to confirm that the results of the various dialogs get passed back to the parent view.
 
 ```swift
   Alert(title: Text("Alert"),
@@ -190,9 +191,9 @@ struct DialogsView_Previews: PreviewProvider {
 
 AppKit provides NSOpenPanel for selecting a file and NSSavePanel for saving. I will try to implement NSSavePanel to allow saving the current cat image.
 
-Since this is an AppKit control rather than a SwiftUI control, I assumed that I would need to use NSViewRepresentable like I did for the NSColorWell in part 2. But NSColorWell is a descendent of NSView but NSSavePanel is not. So I need a new idea.
+Since this is an AppKit control rather than a SwiftUI control, I assumed that I would need to use NSViewRepresentable like I did for the NSColorWell in part 2. But while NSColorWell is a descendent of NSView, NSSavePanel is not. So I need a new idea.
 
-Rather naively, I though maybe I could just create an NSSavePanel in a function inside DialogsView and see what happened.
+Rather naively, I thought maybe I could just create an NSSavePanel in a function inside DialogsView and see what happened.
 
 ```swift
   func saveImage() {
@@ -210,9 +211,9 @@ Rather naively, I though maybe I could just create an NSSavePanel in a function 
 
 Crash & burn... so what if I made the NSSavePanel an @State property of the View? No, that crashed even faster. Maybe SwiftUI Views don't like this sort of thing, but how about if I get the Application Delegate to handle it? What if I moved the `saveImage` method to the App Delegate and changed the calling function to access it there?
 
-Still crashed. At this stage I am beginning to wonder if I know how to use an NSSavePanel. Time to create a simple test app without SwiftUI and see what happens. Well it appears that I no longer know how to use an NSSavePanel. Code from an older project that works fine, will not work now!
+Still crashed. At this stage I am beginning to wonder if I know how to use an NSSavePanel. Time to create a simple test app without SwiftUI and see what happens. Well it appears that I no longer know how to use an NSSavePanel. Code from an older project that works fine, will not work in my new sample project!
 
-Guess what - it was a macOS Catalina security issue which I would have realised faster I had opened the Console. Back to the Signing & Capabilities section of the target settings and this time I set File Access for User Selected File to Read/Write.
+Guess what - it was another macOS Catalina security issue which I would have realised faster I had opened the Console. Back to the Signing & Capabilities section of the target settings and this time I set File Access for User Selected File to Read/Write.
 
 Now the NSSavePanel opens when called from DialogsView and prints the selected file URL if one is chosen.
 
@@ -258,9 +259,12 @@ And there we have it. Three types of dialogs demonstrated in a SwiftUI for Mac a
 
 I think this time I really am finished. This article has already expanded out into a 3-part monster, so I think it is way past time that I stopped typing. I hope you have enjoyed this series. Please use any of the buttons below to contact me or use the [Contact page][3] on this site. I would love to hear from anyone who found this series useful or who had any suggestions or corrections to make.
 
+The final project is available on [GitHub][4] if you would like to download it and take a look.
+
 [1]: /post/2019/swiftui-for-mac-1/
 [2]: /post/2019/swiftui-for-mac-2/
 [3]: /contact/
+[4]: https://github.com/trozware/swiftui-mac
 [i1]: /images/SwiftUI-Mac-sheet.png
 [i2]: /images/SwiftUI-Mac-sheet-data.png
 [i3]: /images/SwiftUI-Mac-alert.png

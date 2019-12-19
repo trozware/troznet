@@ -171,6 +171,10 @@ It really should have a loading image to display while the cat image is being do
 
 Now that I have a functioning Mac app with a Master-Detail view, the next thing is to explore some more of the challenges that will need to be solved before I can write a Mac app completely using SwiftUI.
 
+If you want to check out the project at this stage, here is a link to the [relevant GitHub commit][4]. Or if you would prefer, here is a link to the [final version][5] of the project.
+
+---
+
 In [part 2 of this series][3], I will look into:
 
 - how to interact with the menus
@@ -190,3 +194,5 @@ In [part 2 of this series][3], I will look into:
 [1]: https://http.cat
 [2]: https://www.hackingwithswift.com/example-code/system/how-to-decode-json-from-your-app-bundle-the-easy-way
 [3]: /post/2019/swiftui-for-mac-2/
+[4]: https://github.com/trozware/swiftui-mac/tree/8ebeb615db81f9d7b6489a1920ebb08d07131ebb
+[5]: https://github.com/trozware/swiftui-mac
