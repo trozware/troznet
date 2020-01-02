@@ -268,7 +268,7 @@ If you read this article before November 18th 2019, please check out ObservableO
 <p>The interface has been extracted into a subview called <code>NumberChooser</code> and a <code>Binding</code> to the <code>stepperValue</code> property has been passed to <code>NumberChooser</code> using the <code>$</code> prefix, which will ensure that changes to the value can come back. Inside <code>NumberChooser</code> this property is wrapped in the <code>@Binding</code> property wrapper to indicate that it is coming from another source and that changes will be returned.</p>
 <p><code>NumberChooser</code> itself has a subview called <code>NumberBlock</code> but it is a display view only and never mutates the value itself, so <code>stepperValue</code> is passed to this subview as a property only, without the <code>$</code> prefix. It will still be updated every time the data changes as it is contained by the view with the <code>@State</code> property.</p>
 <p><img src="/images/NumberChooser.png" alt="Number Chooser"></p>
-<h2 id="state--binding--part-2">@State &amp; @Binding - Part 2</h2>
+<h2 id="state--binding---part-2">@State &amp; @Binding - Part 2</h2>
 <p>So far, the examples have used primitive data types for the @State properties, but given that <code>@State</code> properties are value types, any struct can be used. In the next example, I use a struct to hold the properties of a pizza order and use a SwiftUI Form to allow selections.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">PizzaView</span>: View {
     <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">U</span><span style="color:#75715e">s</span><span style="color:#75715e">i</span><span style="color:#75715e">n</span><span style="color:#75715e">g</span><span style="color:#75715e"> </span><span style="color:#75715e">@</span><span style="color:#75715e">S</span><span style="color:#75715e">t</span><span style="color:#75715e">a</span><span style="color:#75715e">t</span><span style="color:#75715e">e</span><span style="color:#75715e"> </span><span style="color:#75715e">f</span><span style="color:#75715e">o</span><span style="color:#75715e">r</span><span style="color:#75715e"> </span><span style="color:#75715e">a</span><span style="color:#75715e"> </span><span style="color:#75715e">s</span><span style="color:#75715e">t</span><span style="color:#75715e">r</span><span style="color:#75715e">u</span><span style="color:#75715e">c</span><span style="color:#75715e">t</span>
@@ -300,7 +300,7 @@ If you read this article before November 18th 2019, please check out ObservableO
     }
 </code></pre></div><p>The form consists of 3 subviews - one each for selecting the pizza, size and crust. The Pizza struct holds all three properties, but each subview only needs a <code>Binding</code> to the single property that it controls. The Text view after the Form is to prove that all the selections come back to the parent.</p>
 <p><img src="/images/PizzaView.png" alt="Pizza View"></p>
-<h2 id="observableobject--observedobject--part-1">ObservableObject &amp; @ObservedObject - Part 1</h2>
+<h2 id="observableobject--observedobject---part-1">ObservableObject &amp; @ObservedObject - Part 1</h2>
 <p>These are used if your data model is a class and you want to use reference-based data instead of the struct's value-based system.</p>
 <p>To set up a data model to be Observable, it must conform to the <code>ObservableObject</code> protocol and any property that needs to be observed should have the <code>@Published</code> property wrapper. This makes sure that any time this property changes, all the Views that are observing the instance of this data model will be notified to perform the UI updates.</p>
 <p>For this example, I have a ColorSet class with six color components that are used to assemble two RGB colors.</p>
@@ -337,7 +337,7 @@ If you read this article before November 18th 2019, please check out ObservableO
 </code></pre></div><p>A sheet is not the ideal way of presenting a view that uses sliders for editing, but I wanted to demonstrate that changing the sliders instantly changes the value of the <code>@ObservedObject</code> for the parent view as well as for the subview. Editing the background color components shows the new background color in the back at the top of the sheet.</p>
 <p>The <code>ColorChooser</code> itself uses 2 subviews and they get a reference to the <code>ColorSet</code> in the same manner.</p>
 <p><img src="/images/ColorChooser.png" alt="Color Chooser"></p>
-<h2 id="a-nameobservable2observableobject--observedobject--part-2a"><!-- raw HTML omitted -->ObservableObject &amp; @ObservedObject - Part 2<!-- raw HTML omitted --></h2>
+<h2 id="a-nameobservable2observableobject--observedobject---part-2a"><!-- raw HTML omitted -->ObservableObject &amp; @ObservedObject - Part 2<!-- raw HTML omitted --></h2>
 <p>This section was that one that caused me the most trouble when writing the example app. I wanted to display a list of data and have each entry link to an editable detail view with the edits flowing back to the parent list.</p>
 <p>The initial display of data in a List was straight-forward and I was then able to have the list rows navigate to a detailed view for each entry. The problem was getting the edited data back to the parent List.</p>
 <p>The basic data model was an <code>ObservableObject</code> that publishes an array of <code>PersonViewModel</code> objects.</p>
@@ -564,7 +564,7 @@ If you read this article before November 18th 2019, please check out ObservableO
   <div class="footer__inner">
     <div class="copyright">
       
-      <span>© 2012 - 2019 Sarah Reichelt</span>
+      <span>© 2012 - 2020 Sarah Reichelt</span>
       
       <span
         ><a href="http://gohugo.io">Hugo</a> theme created by

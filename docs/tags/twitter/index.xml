@@ -5,7 +5,7 @@
     <link>https://troz.net/tags/twitter/</link>
     <description>Recent content in twitter on TrozWare</description>
     <generator>Hugo -- gohugo.io</generator>
-    <copyright>© 2012 - 2019 Sarah Reichelt</copyright>
+    <copyright>© 2012 - 2020 Sarah Reichelt</copyright>
     <lastBuildDate>Tue, 09 Feb 2016 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://troz.net/tags/twitter/index.xml" rel="self" type="application/rss+xml" />
@@ -634,7 +634,7 @@ But SwiftUI works on all Apple&#39;s platforms, and as I am primarily a Mac deve
 &lt;p&gt;The interface has been extracted into a subview called &lt;code&gt;NumberChooser&lt;/code&gt; and a &lt;code&gt;Binding&lt;/code&gt; to the &lt;code&gt;stepperValue&lt;/code&gt; property has been passed to &lt;code&gt;NumberChooser&lt;/code&gt; using the &lt;code&gt;$&lt;/code&gt; prefix, which will ensure that changes to the value can come back. Inside &lt;code&gt;NumberChooser&lt;/code&gt; this property is wrapped in the &lt;code&gt;@Binding&lt;/code&gt; property wrapper to indicate that it is coming from another source and that changes will be returned.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;NumberChooser&lt;/code&gt; itself has a subview called &lt;code&gt;NumberBlock&lt;/code&gt; but it is a display view only and never mutates the value itself, so &lt;code&gt;stepperValue&lt;/code&gt; is passed to this subview as a property only, without the &lt;code&gt;$&lt;/code&gt; prefix. It will still be updated every time the data changes as it is contained by the view with the &lt;code&gt;@State&lt;/code&gt; property.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/NumberChooser.png&#34; alt=&#34;Number Chooser&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;state--binding--part-2&#34;&gt;@State &amp;amp; @Binding - Part 2&lt;/h2&gt;
+&lt;h2 id=&#34;state--binding---part-2&#34;&gt;@State &amp;amp; @Binding - Part 2&lt;/h2&gt;
 &lt;p&gt;So far, the examples have used primitive data types for the @State properties, but given that &lt;code&gt;@State&lt;/code&gt; properties are value types, any struct can be used. In the next example, I use a struct to hold the properties of a pizza order and use a SwiftUI Form to allow selections.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;PizzaView&lt;/span&gt;: View {
     &lt;span style=&#34;color:#75715e&#34;&gt;//&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;U&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;g&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;@&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;S&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;a&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;a&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;u&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;t&lt;/span&gt;
@@ -666,7 +666,7 @@ But SwiftUI works on all Apple&#39;s platforms, and as I am primarily a Mac deve
     }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The form consists of 3 subviews - one each for selecting the pizza, size and crust. The Pizza struct holds all three properties, but each subview only needs a &lt;code&gt;Binding&lt;/code&gt; to the single property that it controls. The Text view after the Form is to prove that all the selections come back to the parent.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/PizzaView.png&#34; alt=&#34;Pizza View&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;observableobject--observedobject--part-1&#34;&gt;ObservableObject &amp;amp; @ObservedObject - Part 1&lt;/h2&gt;
+&lt;h2 id=&#34;observableobject--observedobject---part-1&#34;&gt;ObservableObject &amp;amp; @ObservedObject - Part 1&lt;/h2&gt;
 &lt;p&gt;These are used if your data model is a class and you want to use reference-based data instead of the struct&#39;s value-based system.&lt;/p&gt;
 &lt;p&gt;To set up a data model to be Observable, it must conform to the &lt;code&gt;ObservableObject&lt;/code&gt; protocol and any property that needs to be observed should have the &lt;code&gt;@Published&lt;/code&gt; property wrapper. This makes sure that any time this property changes, all the Views that are observing the instance of this data model will be notified to perform the UI updates.&lt;/p&gt;
 &lt;p&gt;For this example, I have a ColorSet class with six color components that are used to assemble two RGB colors.&lt;/p&gt;
@@ -703,7 +703,7 @@ But SwiftUI works on all Apple&#39;s platforms, and as I am primarily a Mac deve
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A sheet is not the ideal way of presenting a view that uses sliders for editing, but I wanted to demonstrate that changing the sliders instantly changes the value of the &lt;code&gt;@ObservedObject&lt;/code&gt; for the parent view as well as for the subview. Editing the background color components shows the new background color in the back at the top of the sheet.&lt;/p&gt;
 &lt;p&gt;The &lt;code&gt;ColorChooser&lt;/code&gt; itself uses 2 subviews and they get a reference to the &lt;code&gt;ColorSet&lt;/code&gt; in the same manner.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/ColorChooser.png&#34; alt=&#34;Color Chooser&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;a-nameobservable2observableobject--observedobject--part-2a&#34;&gt;&lt;!-- raw HTML omitted --&gt;ObservableObject &amp;amp; @ObservedObject - Part 2&lt;!-- raw HTML omitted --&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;a-nameobservable2observableobject--observedobject---part-2a&#34;&gt;&lt;!-- raw HTML omitted --&gt;ObservableObject &amp;amp; @ObservedObject - Part 2&lt;!-- raw HTML omitted --&gt;&lt;/h2&gt;
 &lt;p&gt;This section was that one that caused me the most trouble when writing the example app. I wanted to display a list of data and have each entry link to an editable detail view with the edits flowing back to the parent list.&lt;/p&gt;
 &lt;p&gt;The initial display of data in a List was straight-forward and I was then able to have the list rows navigate to a detailed view for each entry. The problem was getting the edited data back to the parent List.&lt;/p&gt;
 &lt;p&gt;The basic data model was an &lt;code&gt;ObservableObject&lt;/code&gt; that publishes an array of &lt;code&gt;PersonViewModel&lt;/code&gt; objects.&lt;/p&gt;
@@ -901,7 +901,7 @@ But SwiftUI works on all Apple&#39;s platforms, and as I am primarily a Mac deve
 &lt;p&gt;Before discussing whether to adopt SwiftUI, we need to consider Swift itself, since you cannot use SwiftUI without Swift.&lt;/p&gt;
 &lt;p&gt;The announcement of Swift at WWDC 2014 was a complete bombshell. Here in Australia, I watch the keynote every year while half asleep since it starts at 3 am. That announcement had me wide awake and bouncing out of my seat with excitement. I was an early adopter and have never regretted that decision.&lt;/p&gt;
 &lt;p&gt;Many well-respected developers have decided to ignore Swift and they have their various reasons, so let&#39;s go through the ones I have heard:&lt;/p&gt;
-&lt;h4 id=&#34;1-im-very-comfortable-and-productive-in-objectivec&#34;&gt;1. I&#39;m very comfortable and productive in Objective-C&lt;/h4&gt;
+&lt;h4 id=&#34;1-im-very-comfortable-and-productive-in-objective-c&#34;&gt;1. I&#39;m very comfortable and productive in Objective-C&lt;/h4&gt;
 &lt;p&gt;This is not a bad reason and for many people, their employer may insist on the language anyway, but this argument doesn&#39;t work for me. Firstly, I think that there is never going to be the One Perfect Language (with apologies to &lt;a href=&#34;https://oleb.net/blog/2017/06/chris-lattner-wwdc-swift-panel/#in-which-fields-would-you-like-to-see-swift-in-the-future&#34;&gt;Chris Lattner&lt;/a&gt;) so I am always open to new ideas. And personally, I love learning new languages even if I am never going to use them in production. I feel that this makes me a better programmer overall. And there are vast benefits to Swift - it is a much safer language to write it, it is easier to read and more concise to write, it is just a much more modern language.&lt;/p&gt;
 &lt;h4 id=&#34;2-swift-is-too-new-and-changes-too-much-between-versions&#34;&gt;2. Swift is too new and changes too much between versions&lt;/h4&gt;
 &lt;p&gt;Swift was new. It is now 5 years old and we are into version 5.2. Undeniably, there have been a lot of changes since 1.0 and many of them have been breaking changes. Swift 3 was especially bad in this respect. But this came with advantages too. As early adopters, we were able to influence the direction of the language. And Xcode was always pretty good about providing a converter to the next version. But either way, since Swift 4, there are supposed to be no more breaking changes, so this is an argument whose time has passed.&lt;/p&gt;
@@ -1273,7 +1273,7 @@ For any developers looking for the way to do that, I added the following chunk t
 &lt;/ul&gt;
 &lt;p&gt;That&#39;s as far as I have got so far, but I am hoping for some community involvement that will expand or edit this library to make it more broadly applicable.&lt;/p&gt;
 &lt;h2 id=&#34;open-source&#34;&gt;Open Source&lt;/h2&gt;
-&lt;p&gt;I have never created an open source project before and I have rarely contributed to open source. But I have now published this library on GitHub under an MIT license. Please check it out at &lt;a href=&#34;https://github.com/trozware/swift-strings-helper&#34;&gt;&lt;a href=&#34;https://github.com/trozware/swift-strings-helper&#34;&gt;https://github.com/trozware/swift-strings-helper&lt;/a&gt;&lt;/a&gt;. The GitHub repo contains an Xcode project with all the source files, plus the targets to build frameworks for macOS or iOS, and a playground as documentation and to test it all out.&lt;/p&gt;
+&lt;p&gt;I have never created an open source project before and I have rarely contributed to open source. But I have now published this library on GitHub under an MIT license. Please check it out at &lt;a href=&#34;https://github.com/trozware/swift-strings-helper&#34;&gt;https://github.com/trozware/swift-strings-helper&lt;/a&gt;. The GitHub repo contains an Xcode project with all the source files, plus the targets to build frameworks for macOS or iOS, and a playground as documentation and to test it all out.&lt;/p&gt;
 &lt;p&gt;I would love to get as many stars as possible and it would be fantastic if anyone wanted to log an issue or contribute directly. As someone who finds the whole open source world rather intimidating, I would like to assure everyone that there will be no flaming and no shooting down of ANY ideas. I look forward to hearing from you.&lt;/p&gt;
 &lt;p&gt;I am sure there are other Swift libraries out there dedicated to solving the same problems, but I hope that mine can prove useful to some. And if you just want to use it without contributing, feel free. The usage instructions are all in the ReadMe on the GitHub page.&lt;/p&gt;</description>
 </item>
@@ -1845,7 +1845,7 @@ cyclomatic_complexity:
 &lt;li&gt;There was a lot of legacy code left over from previous changes and extensions.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;So I decided that the most interesting thing to do would be to start almost from scratch and re-write the app in Swift using better techniques.&lt;/p&gt;
-&lt;h2 id=&#34;the-rewrite&#34;&gt;The Re-write&lt;/h2&gt;
+&lt;h2 id=&#34;the-re-write&#34;&gt;The Re-write&lt;/h2&gt;
 &lt;p&gt;Now instead of the Massive View Controller, I have a larger set of small files, each with their own responsibility. Enums and structs dictate the various requirements for the different devices or app types. Other structs deal with creating the images, the folder management and writing out the files. An NSImage extension handles the resizing and reformatting of the images. This is now an app that I would not be ashamed to show anyone, except perhaps for the need to add more unit tests.&lt;/p&gt;
 &lt;h2 id=&#34;adding-a-color-profile&#34;&gt;Adding a color profile&lt;/h2&gt;
 &lt;p&gt;But then we get to the new features needed. Adding the 1024x1024 icon to the app icon set was easy, especially after the re-factoring. But what about the color profile?&lt;/p&gt;
@@ -1983,7 +1983,7 @@ cyclomatic_complexity:
 &lt;h3 id=&#34;contact-details&#34;&gt;Contact Details&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Email: &lt;a href=&#34;mailto:sarah@troz.net?subject=NCSS%202018&#34;&gt;&lt;a href=&#34;mailto:sarah@troz.net&#34;&gt;sarah@troz.net&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Email: &lt;a href=&#34;mailto:sarah@troz.net?subject=NCSS%202018&#34;&gt;sarah@troz.net&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Twitter: &lt;a href=&#34;https://twitter.com/trozware&#34;&gt;@trozware&lt;/a&gt;&lt;/p&gt;
@@ -3027,7 +3027,7 @@ think anyone ever uses it (I certainly don&#39;t), so today I have replaced it w
 a JSON feed, which you can access through the
 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt; button at the top of every page.&lt;/p&gt;
 &lt;p&gt;I am sure many JSON Feed viewers will appear soon, but the only one I know about
-so far is at &lt;a href=&#34;http://json-feed-viewer.herokuapp.com&#34;&gt;&lt;a href=&#34;http://json-feed-viewer.herokuapp.com&#34;&gt;http://json-feed-viewer.herokuapp.com&lt;/a&gt;&lt;/a&gt;. As soon as this update
+so far is at &lt;a href=&#34;http://json-feed-viewer.herokuapp.com&#34;&gt;http://json-feed-viewer.herokuapp.com&lt;/a&gt;. As soon as this update
 to my site goes live, I will apply to have TrozWare added to the list of sites
 on this page. Meanwhile, you can paste in the URL: &lt;code&gt;https://troz.net/feed.json&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;This site is constructed using Jekyll, so I am very grateful to Niclas Darville
@@ -3183,7 +3183,7 @@ January 2017. This post contains useful links for use during and after my class.
 &lt;h2 id=&#34;contact-details&#34;&gt;Contact Details:&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Email: &lt;a href=&#34;mailto:sarah@troz.net?subject=NCSS%202017&#34;&gt;&lt;a href=&#34;mailto:sarah@troz.net&#34;&gt;sarah@troz.net&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Email: &lt;a href=&#34;mailto:sarah@troz.net?subject=NCSS%202017&#34;&gt;sarah@troz.net&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Twitter: &lt;a href=&#34;https://twitter.com/trozware&#34;&gt;@trozware&lt;/a&gt;&lt;/p&gt;
@@ -4978,7 +4978,7 @@ character for faster comprehension.&lt;/p&gt;
 OTF font file to install it in FontBook. Once the font is installed, you may
 need to restart Xcode in order to make it available.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;2-addons&#34;&gt;2. Add-ons:&lt;/h2&gt;
+&lt;h2 id=&#34;2-add-ons&#34;&gt;2. Add-ons:&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; Xcode 8 has removed the ability to run any plugins or to use
 Alcatraz, so this sectrion is no longer valid. Instead Apple is offering offical
 support for Xcode Source Editor Extensions, so they are the way of the future.&lt;/p&gt;
@@ -5497,7 +5497,7 @@ delivered two boxes - my 38mm Apple Watch Sport and Tim&#39;s 42mm Apple Watch
 Sport. They both came in long boxes, with the 42mm box significantly longer. And
 both boxes were heavy!&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;unboxing&#34;&gt;Un-boxing:&lt;/h3&gt;
+&lt;h3 id=&#34;un-boxing&#34;&gt;Un-boxing:&lt;/h3&gt;
 &lt;p&gt;Opening them was a typical Apple experience: pull the tag to open the external
 cardboard box, lift out the white internal box. This opens to reveal the watch
 with the default strap attached (short for 38mm, long for 42mm). Lift the watch
@@ -6018,7 +6018,7 @@ addresses so the completed cards can be emailed after the round. Choose an icon
 for each player. If a player was selected from Contacts, you can use the photo
 assigned in the Contacts app.&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;h2 id=&#34;gesturecontrolled&#34;&gt;Gesture-controlled:&lt;/h2&gt;
+&lt;h2 id=&#34;gesture-controlled&#34;&gt;Gesture-controlled:&lt;/h2&gt;
 &lt;p&gt;All scores are entered using a special number button that you tap, then drag
 your finger up or down the screen to raise or lower the number.&lt;/p&gt;
 &lt;p&gt;Hold your finger down on the number, then move it up or down to change the
