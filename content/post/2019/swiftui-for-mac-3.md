@@ -124,6 +124,8 @@ The parent view has an @State Boolean variable called `sheetIsShowing`. This is 
 
 When the sheet wants to close, it does not close itself. Instead it sets this variable to false. Because it is a Binding, this sets the original `sheetIsShowing` variable on the parent view to false and the parent view then closes the sheet.
 
+**UPDATE:** Look at **[Dismissing sheets][5]** in my post of extras & changes to this series for an alternative way to dismiss a sheet.
+
 ### Sheets & Data
 
 With this in place, I had the sheet opening and closing perfectly, but I was not yet passing data back & forth between the sheet and its parent view. I decide to put a TextField in the SheetView and bind its contents to the `dialogResult` property in the DetailView so that any edits appeared immediately in the DetailView. And while I am there, I might as well add some more decorations to the SheetView since it is a full View and not a restricted Alert.
@@ -265,6 +267,7 @@ The final project is available on [GitHub][4] if you would like to download it a
 [2]: /post/2019/swiftui-for-mac-2/
 [3]: /contact/
 [4]: https://github.com/trozware/swiftui-mac
+[5]: /post/2020/swiftui_for-mac-extras#dismissing-sheets
 [i1]: /images/SwiftUI-Mac-sheet.png
 [i2]: /images/SwiftUI-Mac-sheet-data.png
 [i3]: /images/SwiftUI-Mac-alert.png

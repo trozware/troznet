@@ -6,7 +6,7 @@
       {{ .Lastmod.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}
     </span>
     {{ if .Site.Params.moreMeta -}}
-    <span class="more-meta"> {{ .WordCount }} words, </span>
+    <span class="more-meta">- {{ .WordCount }} words, </span>
     <span class="more-meta"> {{ .ReadingTime }} minute read</span>
     {{- end }}
   </div>

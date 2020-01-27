@@ -154,8 +154,8 @@ Now it is time to explore some more of the features of a Mac app with SwiftUI.
     <span class="post-date">
       15 Dec 2019
     </span>
-    <span class="more-meta"> 2543 words, </span>
-    <span class="more-meta"> 12 minute read</span>
+    <span class="more-meta">- 2612 words, </span>
+    <span class="more-meta"> 13 minute read</span>
   </div>
 
   
@@ -197,7 +197,7 @@ Now it is time to explore some more of the features of a Mac app with SwiftUI.
     <span style="color:#66d9ef">@IBAction</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">systemModeSelected</span>(<span style="color:#66d9ef">_</span> sender: Any) {
         NSApp.appearance = <span style="color:#66d9ef">nil</span>
     }
-</code></pre></div><p>And since I realised that I would want to check or un-check these based on the current settings, I added IBOutlets for each of these menu items too. As a side note, I love how Xcode is now clever enough to decide whether to add an IBOutlet or an IBAction depending on where in the file you Control-drag to.</p>
+</code></pre></div><p>And since I realized that I would want to check or un-check these based on the current settings, I added IBOutlets for each of these menu items too. As a side note, I love how Xcode is now clever enough to decide whether to add an IBOutlet or an IBAction depending on where in the file you Control-drag to.</p>
 <h2 id="using-a-property-wrapper">Using a Property Wrapper</h2>
 <p>Changing mode worked perfectly in the Xcode Preview and in the built app, but the app was not storing this or displaying the current selection with a check mark in the menu.</p>
 <p>For storing the selection, I decided to try another new thing and use a UserDefaults property wrapper, based on <a href="https://www.avanderlee.com/swift/property-wrappers/">this post by Antoine van der Lee</a>.</p>
@@ -217,6 +217,7 @@ Now it is time to explore some more of the features of a Mac app with SwiftUI.
         NotificationCenter.<span style="color:#66d9ef">default</span>.post(name: .flipImage, object: <span style="color:#66d9ef">nil</span>)
     }
 </code></pre></div><p>In DetailView.swift, I set up a Boolean @State property to store whether the image was flipped or not and added an onReceive handler to toggle it. Since this is updating the UI, I made sure that it happened on the main thread, but I am not sure whether this is necessary, or whether onReceive uses the main thread automatically.</p>
+<p><strong>UPDATE:</strong> Check out <strong><a href="/post/2020/swiftui_for-mac-extras#subscribing-on-the-main-thread">Subscribing on the Main Thread</a></strong> in my post of extras &amp; changes to this series for an alternative way to make sure the updates happen on the correct thread.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> imageIsFlipped = <span style="color:#66d9ef">false</span>
 
     <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">.</span><span style="color:#75715e">.</span><span style="color:#75715e">.</span>
@@ -278,7 +279,8 @@ Now it is time to explore some more of the features of a Mac app with SwiftUI.
 }
 </code></pre></div><p>Back in my SwiftUI view, I was then able to use <code>EmbeddedColorWell</code> just like any other SwiftUI view, passing it a binding to an @State variable to set and get the selected color.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  EmbeddedColorWell(selectedColor: <span style="color:#960050;background-color:#1e0010">$</span>selectedColor)
-</code></pre></div><p>The other stumbling block that I encountered was that I had no way to close the window programmatically, in response to a button click or some other interaction. Maybe this was not the best way to open a fully SwifUI window, but it was still an interesting experiment.</p>
+</code></pre></div><p><strong>UPDATE:</strong> Be sure to read <strong><a href="/post/2020/swiftui_for-mac-extras#passing-data-back-from-appkit">Passing data back from AppKit</a></strong> in my post of extras &amp; changes to this series. This is an important fix that is needed to make this embedded control pass data back properly.</p>
+<p>The other stumbling block that I encountered was that I had no way to close the window programmatically, in response to a button click or some other interaction. Maybe this was not the best way to open a fully SwifUI window, but it was still an interesting experiment.</p>
 <p>One thing I learned while working on this project was that SwiftUI can be a bit too clever about working out what needs to be redrawn in the previews. If you edit something in an separate file to the View, you may need to force a re-build to get the updates to show.</p>
 <h2 id="communicating-between-windows">Communicating Between Windows</h2>
 <p>The last feature that I need to explore is transferring data between two windows. I tested using a <code>.sheet</code> modifier to open a dialog and that worked exactly as it would in an iOS app - I was able to pass an @Binding variable to the sheet window and any changes made to that in the sheet window flowed back to the calling view.</p>

@@ -154,7 +154,7 @@ In this third and final part, I want to look at the various ways to present dial
     <span class="post-date">
       15 Dec 2019
     </span>
-    <span class="more-meta"> 1839 words, </span>
+    <span class="more-meta">- 1862 words, </span>
     <span class="more-meta"> 9 minute read</span>
   </div>
 
@@ -245,6 +245,7 @@ In this third and final part, I want to look at the various ways to present dial
 <p><img src="/images/SwiftUI-Mac-sheet.png" alt="Sheet"></p>
 <p>The parent view has an @State Boolean variable called <code>sheetIsShowing</code>. This is bound to the alert's <code>isPresented</code> so it dictates whenever the sheet is visible. When the Sheet button is clicked, this variable is set to <code>true</code> and the sheet opens. But at the same time, a Binding to this variable is passed to the sheet. I deliberately gave this a different name, so as to make it clear which View was changing what variable.</p>
 <p>When the sheet wants to close, it does not close itself. Instead it sets this variable to false. Because it is a Binding, this sets the original <code>sheetIsShowing</code> variable on the parent view to false and the parent view then closes the sheet.</p>
+<p><strong>UPDATE:</strong> Look at <strong><a href="/post/2020/swiftui_for-mac-extras#dismissing-sheets">Dismissing sheets</a></strong> in my post of extras &amp; changes to this series for an alternative way to dismiss a sheet.</p>
 <h3 id="sheets--data">Sheets &amp; Data</h3>
 <p>With this in place, I had the sheet opening and closing perfectly, but I was not yet passing data back &amp; forth between the sheet and its parent view. I decide to put a TextField in the SheetView and bind its contents to the <code>dialogResult</code> property in the DetailView so that any edits appeared immediately in the DetailView. And while I am there, I might as well add some more decorations to the SheetView since it is a full View and not a restricted Alert.</p>
 <p>Calling the SheetView changed to this:</p>
@@ -350,6 +351,8 @@ In this third and final part, I want to look at the various ways to present dial
       <hr />
     </div>
     <div class="pagination__buttons">
+      
+      <a class="btn next" href="https://troz.net/post/2020/swiftui_for-mac-extras/">← SwiftUI for Mac Extras</a>
       
       
       <a class="btn previous" href="https://troz.net/post/2019/swiftui-for-mac-2/">SwiftUI for Mac - Part 2 →</a>

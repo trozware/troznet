@@ -11,6 +11,140 @@
     
     
     <item>
+<title>SwiftUI for Mac Extras</title>
+<link>https://troz.net/post/2020/swiftui_for-mac-extras/</link>
+<pubDate>Mon, 27 Jan 2020 11:32:57 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2020/swiftui_for-mac-extras/</guid>
+<description>&lt;p&gt;Last year, I wrote a 3 part series of articles on &lt;a href=&#34;https://troz.net/post/2019/swiftui-for-mac-1/&#34;&gt;using SwiftUI to build a Mac&lt;/a&gt; app. I would like to thank everyone who contacted me about this series. It was received very well and revealed that there is still a large amount of interest in programming for the Mac.&lt;/p&gt;
+&lt;p&gt;Some of the responses I got were pointing out different or better ways to do things, so I am going to list them here, adding to this post as I get new information. The relevant sections in the original posts will have links to the fixes suggested here, but I decided it was easier to list the changes in a separate post, rather than asking people to re-read the whole series looking for modifications.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;dismissing-sheets&#34;&gt;Dismissing sheets&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I just read your series on writing Mac apps with SwiftUI. Great stuff!
+Just wanted to add that in part 2 when dismissing sheets there are two ways to do that, one of them is the one that you figured out and the other is to have the view dismiss itself by grabbing its PresentationMode from the environment. This way you don’t need to pass presentation bindings to your sheet views.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Paul Hudson of Hacking with Swift explains how to use both methods very clearly in his article on &lt;a href=&#34;https://www.hackingwithswift.com/quick-start/swiftui/how-to-make-a-view-dismiss-itself&#34;&gt;How to make a view dismiss itself&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;My &lt;a href=&#34;https://troz.net/post/2019/swiftui-for-mac-3#sheets&#34;&gt;original technique&lt;/a&gt; passed the Boolean that triggered the sheet to appear, as a Binding to the sheet view. The sheet view could then toggle this to make the parent view dismiss it.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;  .sheet(isPresented: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;$&lt;/span&gt;sheetIsShowing) {
+      SheetView(isVisible: &lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;.&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;$&lt;/span&gt;sheetIsShowing)
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;SheetView&lt;/span&gt;: View {
+    @Binding &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; isVisible: Bool
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some View {
+        VStack {
+            Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;This is a sheet.&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)
+            Button(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;OK&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;) {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;.isVisible = &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+            }
+        }
+        .frame(width: &lt;span style=&#34;color:#ae81ff&#34;&gt;300&lt;/span&gt;, height: &lt;span style=&#34;color:#ae81ff&#34;&gt;150&lt;/span&gt;)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The presentation mode method leaves it up to the sheet to dismiss itself. The parent view shows the sheet but does not pass any binding.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;  .sheet(isPresented: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;$&lt;/span&gt;sheetIsShowing) {
+      SheetView()
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The sheet view gets an environment property that it can use to change its presentation mode, dismissing itself that way.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;SheetView&lt;/span&gt;: View {
+    @Environment(&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\&lt;/span&gt;.presentationMode) &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; presentationMode
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some View {
+        VStack {
+            Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;This is a sheet.&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)
+            Button(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;OK&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;) {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;.presentationMode.wrappedValue.dismiss()
+            }
+        }
+        .frame(width: &lt;span style=&#34;color:#ae81ff&#34;&gt;300&lt;/span&gt;, height: &lt;span style=&#34;color:#ae81ff&#34;&gt;150&lt;/span&gt;)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I guess the presentation mode method is slightly easier to understand and it leaves the caller of the sheet view less cluttered which is a good thing. But the two methods are functionally identical, so use whichever you prefer. The sample project now contains both methods, with one commented out, so you can swap the comments to test.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;subscribing-on-the-main-thread&#34;&gt;Subscribing on the Main Thread&lt;/h2&gt;
+&lt;p&gt;In &lt;a href=&#34;https://troz.net/post/2019/swiftui-for-mac-2#passing-menu-data-to-a-view&#34;&gt;part 2 of this series&lt;/a&gt;, I created a menu item caused the downloaded image to be flipped. Selecting the menu item posted a notification:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;@IBAction&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;flipImage&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;_&lt;/span&gt; sender: Any) {
+        NotificationCenter.&lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt;.post(name: .flipImage, object: &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;)
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;which the view showing the image was listening for.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; flipImageMenuItemSelected = NotificationCenter.&lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt;
+        .publisher(&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;: .flipImage)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The outermost component of the view&#39;s body used an &lt;code&gt;onReceive&lt;/code&gt; modifier to get this notification and react accordingly.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some View {
+      VStack {
+        &lt;span style=&#34;color:#75715e&#34;&gt;//&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;l&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;a&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;y&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;u&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;m&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;d&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;v&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;y&lt;/span&gt;
+      }
+      .onReceive(flipImageMenuItemSelected) { &lt;span style=&#34;color:#66d9ef&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+          DispatchQueue.main.async {
+              &lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;.imageIsFlipped.toggle()
+          }
+      }
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Since the notification was triggering a change to the UI, I made sure that this happened on the main thread.&lt;/p&gt;
+&lt;p&gt;But it was pointed out to me that it would be easier to make sure that the publisher was set up to use the main thread all the time, instead of having to specify the main queue when processing the notification.&lt;/p&gt;
+&lt;p&gt;So now the publisher is defined like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; flipImageMenuItemSelected = NotificationCenter.&lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt;
+      .publisher(&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;: .flipImage)
+      .receive(on: RunLoop.main)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And the &lt;code&gt;onReceive&lt;/code&gt; modifier can toggle the &lt;code&gt;imageIsFlipped&lt;/code&gt; flag directly, without having to worry about the thread.&lt;/p&gt;
+&lt;p&gt;This seems to me a much better solution as it sets the correct thread once when the publisher is created and makes using it much cleaner and easier.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;passing-data-back-from-appkit&#34;&gt;Passing data back from AppKit&lt;/h2&gt;
+&lt;p&gt;The previous two changes have been more a matter of style, but this one is a real error that would stop an app working as it should.&lt;/p&gt;
+&lt;p&gt;In &lt;a href=&#34;https://troz.net/post/2019/swiftui-for-mac-2#user-interface-elements&#34;&gt;the User Interface Elements section of the series&lt;/a&gt;, I used &lt;code&gt;NSViewRepresentable&lt;/code&gt; to embed a standard &lt;code&gt;NSColorWell&lt;/code&gt; in a SwiftUI view. I thought this was working properly, but then I got this email:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I noticed that the selectedColor in the EmbeddedColorWell is not being mutated and is not being used in a two-way manner. The selectedColor is initialized to NSColor.blue and used to set the color in the NSColorWell view. When the NSColorWell color is changed, it does change the color of the EmbeddedColorWell view. However, the actual @State var selectedColor value is never mutated in this process beyond the initialized value of NSColor.blue.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is in the Form tab of the UI Samples window. As suggested to me, I added a &lt;code&gt;background&lt;/code&gt; modifier to set the background of a portion of the view to the selected color. And although the NSColorWell showed newly selected colors, the background remained stubbornly blue.&lt;/p&gt;
+&lt;p&gt;The solution was to add a &lt;code&gt;Coordinator&lt;/code&gt; to the &lt;code&gt;NSViewRepresentable&lt;/code&gt; and have it subscribe to any changes in the color and update the embedded view&#39;s selected color as needed. I would not have come up with this by myself, so many thanks to the person who sent it to me.&lt;/p&gt;
+&lt;p&gt;Here is the full code for the &lt;code&gt;EmbeddedColorWell&lt;/code&gt; struct:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;EmbeddedColorWell&lt;/span&gt;: NSViewRepresentable {
+    @Binding &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; selectedColor: NSColor
+    
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Coordinator&lt;/span&gt;: NSObject {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; embedded: EmbeddedColorWell
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; subscription: AnyCancellable?
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;init&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;_&lt;/span&gt; embedded: EmbeddedColorWell) {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;.embedded = embedded
+        }
+        
+        &lt;span style=&#34;color:#75715e&#34;&gt;//&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;O&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;v&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;K&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;V&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;O&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;m&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;l&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;a&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;l&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;y&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;N&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;S&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;C&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;l&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;W&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;l&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;l&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;.&lt;/span&gt;
+        &lt;span style=&#34;color:#75715e&#34;&gt;//&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;U&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;d&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;a&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;h&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;l&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;d&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;C&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;l&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;y&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;E&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;m&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;d&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;d&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;d&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;C&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;l&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;W&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;l&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;l&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;a&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;d&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;d&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;.&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;changeColor&lt;/span&gt;(colorWell: NSColorWell) {
+            subscription = colorWell
+                .publisher(&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\&lt;/span&gt;.color, options: .new)
+                .sink { color &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+                    DispatchQueue.main.async {
+                        &lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;.embedded.selectedColor = color
+                    }
+            }
+        }
+    }
+    
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;makeCoordinator&lt;/span&gt;() -&amp;gt; EmbeddedColorWell.Coordinator {
+        Coordinator(&lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;)
+    }
+    
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;makeNSView&lt;/span&gt;(context: Context) -&amp;gt; NSColorWell {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; colorWell = NSColorWell(frame: .zero)
+        context.coordinator.changeColor(colorWell: colorWell)
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; colorWell
+    }
+    
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;updateNSView&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;_&lt;/span&gt; nsView: NSColorWell, context: Context) {
+        nsView.color = selectedColor
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In the previous section, I changed the publisher to use the main RunLoop so as to avoid having the use &lt;code&gt;DispatchQueue.main.async&lt;/code&gt;. In this instance, that did not work so well. It only updated the selected color after the mouse had been released. But using &lt;code&gt;DispatchQueue.main.async&lt;/code&gt; made the update live.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;As I explained at the start of these articles, I was documenting my explorations in using SwiftUI for a Mac app and while I hoped there would be some useful examples, this was not intended to be a definitive guide. So I am very grateful to everyone who has contributed to these updates.&lt;/p&gt;
+&lt;p&gt;If you have anything more that you would like to be included, please contact me using one of the contact buttons below or through the &lt;a href=&#34;https://troz.net/contact/&#34;&gt;Contact page&lt;/a&gt; on this site.&lt;/p&gt;
+&lt;p&gt;The edited project is available on &lt;a href=&#34;https://github.com/trozware/swiftui-mac&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</description>
+</item>
+    
+    <item>
 <title>SwiftUI for Mac - Part 3</title>
 <link>https://troz.net/post/2019/swiftui-for-mac-3/</link>
 <pubDate>Sun, 15 Dec 2019 17:28:20 +1000</pubDate>
@@ -88,6 +222,7 @@
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/SwiftUI-Mac-sheet.png&#34; alt=&#34;Sheet&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The parent view has an @State Boolean variable called &lt;code&gt;sheetIsShowing&lt;/code&gt;. This is bound to the alert&#39;s &lt;code&gt;isPresented&lt;/code&gt; so it dictates whenever the sheet is visible. When the Sheet button is clicked, this variable is set to &lt;code&gt;true&lt;/code&gt; and the sheet opens. But at the same time, a Binding to this variable is passed to the sheet. I deliberately gave this a different name, so as to make it clear which View was changing what variable.&lt;/p&gt;
 &lt;p&gt;When the sheet wants to close, it does not close itself. Instead it sets this variable to false. Because it is a Binding, this sets the original &lt;code&gt;sheetIsShowing&lt;/code&gt; variable on the parent view to false and the parent view then closes the sheet.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;UPDATE:&lt;/strong&gt; Look at &lt;strong&gt;&lt;a href=&#34;https://troz.net/post/2020/swiftui_for-mac-extras#dismissing-sheets&#34;&gt;Dismissing sheets&lt;/a&gt;&lt;/strong&gt; in my post of extras &amp;amp; changes to this series for an alternative way to dismiss a sheet.&lt;/p&gt;
 &lt;h3 id=&#34;sheets--data&#34;&gt;Sheets &amp;amp; Data&lt;/h3&gt;
 &lt;p&gt;With this in place, I had the sheet opening and closing perfectly, but I was not yet passing data back &amp;amp; forth between the sheet and its parent view. I decide to put a TextField in the SheetView and bind its contents to the &lt;code&gt;dialogResult&lt;/code&gt; property in the DetailView so that any edits appeared immediately in the DetailView. And while I am there, I might as well add some more decorations to the SheetView since it is a full View and not a restricted Alert.&lt;/p&gt;
 &lt;p&gt;Calling the SheetView changed to this:&lt;/p&gt;
@@ -217,7 +352,7 @@
     &lt;span style=&#34;color:#66d9ef&#34;&gt;@IBAction&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;systemModeSelected&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;_&lt;/span&gt; sender: Any) {
         NSApp.appearance = &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;
     }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And since I realised that I would want to check or un-check these based on the current settings, I added IBOutlets for each of these menu items too. As a side note, I love how Xcode is now clever enough to decide whether to add an IBOutlet or an IBAction depending on where in the file you Control-drag to.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And since I realized that I would want to check or un-check these based on the current settings, I added IBOutlets for each of these menu items too. As a side note, I love how Xcode is now clever enough to decide whether to add an IBOutlet or an IBAction depending on where in the file you Control-drag to.&lt;/p&gt;
 &lt;h2 id=&#34;using-a-property-wrapper&#34;&gt;Using a Property Wrapper&lt;/h2&gt;
 &lt;p&gt;Changing mode worked perfectly in the Xcode Preview and in the built app, but the app was not storing this or displaying the current selection with a check mark in the menu.&lt;/p&gt;
 &lt;p&gt;For storing the selection, I decided to try another new thing and use a UserDefaults property wrapper, based on &lt;a href=&#34;https://www.avanderlee.com/swift/property-wrappers/&#34;&gt;this post by Antoine van der Lee&lt;/a&gt;.&lt;/p&gt;
@@ -237,6 +372,7 @@
         NotificationCenter.&lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt;.post(name: .flipImage, object: &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;)
     }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In DetailView.swift, I set up a Boolean @State property to store whether the image was flipped or not and added an onReceive handler to toggle it. Since this is updating the UI, I made sure that it happened on the main thread, but I am not sure whether this is necessary, or whether onReceive uses the main thread automatically.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;UPDATE:&lt;/strong&gt; Check out &lt;strong&gt;&lt;a href=&#34;https://troz.net/post/2020/swiftui_for-mac-extras#subscribing-on-the-main-thread&#34;&gt;Subscribing on the Main Thread&lt;/a&gt;&lt;/strong&gt; in my post of extras &amp;amp; changes to this series for an alternative way to make sure the updates happen on the correct thread.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;    @State &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; imageIsFlipped = &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
 
     &lt;span style=&#34;color:#75715e&#34;&gt;//&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;.&lt;/span&gt;
@@ -298,7 +434,8 @@
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Back in my SwiftUI view, I was then able to use &lt;code&gt;EmbeddedColorWell&lt;/code&gt; just like any other SwiftUI view, passing it a binding to an @State variable to set and get the selected color.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;  EmbeddedColorWell(selectedColor: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;$&lt;/span&gt;selectedColor)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The other stumbling block that I encountered was that I had no way to close the window programmatically, in response to a button click or some other interaction. Maybe this was not the best way to open a fully SwifUI window, but it was still an interesting experiment.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;UPDATE:&lt;/strong&gt; Be sure to read &lt;strong&gt;&lt;a href=&#34;https://troz.net/post/2020/swiftui_for-mac-extras#passing-data-back-from-appkit&#34;&gt;Passing data back from AppKit&lt;/a&gt;&lt;/strong&gt; in my post of extras &amp;amp; changes to this series. This is an important fix that is needed to make this embedded control pass data back properly.&lt;/p&gt;
+&lt;p&gt;The other stumbling block that I encountered was that I had no way to close the window programmatically, in response to a button click or some other interaction. Maybe this was not the best way to open a fully SwifUI window, but it was still an interesting experiment.&lt;/p&gt;
 &lt;p&gt;One thing I learned while working on this project was that SwiftUI can be a bit too clever about working out what needs to be redrawn in the previews. If you edit something in an separate file to the View, you may need to force a re-build to get the updates to show.&lt;/p&gt;
 &lt;h2 id=&#34;communicating-between-windows&#34;&gt;Communicating Between Windows&lt;/h2&gt;
 &lt;p&gt;The last feature that I need to explore is transferring data between two windows. I tested using a &lt;code&gt;.sheet&lt;/code&gt; modifier to open a dialog and that worked exactly as it would in an iOS app - I was able to pass an @Binding variable to the sheet window and any changes made to that in the sheet window flowed back to the calling view.&lt;/p&gt;

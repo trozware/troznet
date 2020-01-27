@@ -38,7 +38,7 @@ I opened AppDelegate.swift in the Assistant Editor and Control-dragged from each
     }
 ```
 
-And since I realised that I would want to check or un-check these based on the current settings, I added IBOutlets for each of these menu items too. As a side note, I love how Xcode is now clever enough to decide whether to add an IBOutlet or an IBAction depending on where in the file you Control-drag to.
+And since I realized that I would want to check or un-check these based on the current settings, I added IBOutlets for each of these menu items too. As a side note, I love how Xcode is now clever enough to decide whether to add an IBOutlet or an IBAction depending on where in the file you Control-drag to.
 
 ## Using a Property Wrapper
 
@@ -78,6 +78,8 @@ In AppDelegate.swift, I added the IBAction for the Flip Image menu item and had 
 ```
 
 In DetailView.swift, I set up a Boolean @State property to store whether the image was flipped or not and added an onReceive handler to toggle it. Since this is updating the UI, I made sure that it happened on the main thread, but I am not sure whether this is necessary, or whether onReceive uses the main thread automatically.
+
+**UPDATE:** Check out **[Subscribing on the Main Thread][7]** in my post of extras & changes to this series for an alternative way to make sure the updates happen on the correct thread.
 
 ```swift
     @State private var imageIsFlipped = false
@@ -169,6 +171,8 @@ Back in my SwiftUI view, I was then able to use `EmbeddedColorWell` just like an
 ```swift
   EmbeddedColorWell(selectedColor: $selectedColor)
 ```
+
+**UPDATE:** Be sure to read **[Passing data back from AppKit][8]** in my post of extras & changes to this series. This is an important fix that is needed to make this embedded control pass data back properly.
 
 The other stumbling block that I encountered was that I had no way to close the window programmatically, in response to a button click or some other interaction. Maybe this was not the best way to open a fully SwifUI window, but it was still an interesting experiment.
 
@@ -340,3 +344,5 @@ Moving on to an unplanned [part 3 of this series][4], I am going to experiment w
 [4]: /post/2019/swiftui-for-mac-3/
 [5]: https://github.com/trozware/swiftui-mac/tree/0ea77f80832e0f32e477ce89ac57d8a95f45f035
 [6]: https://github.com/trozware/swiftui-mac
+[7]: /post/2020/swiftui_for-mac-extras#subscribing-on-the-main-thread
+[8]: /post/2020/swiftui_for-mac-extras#passing-data-back-from-appkit
