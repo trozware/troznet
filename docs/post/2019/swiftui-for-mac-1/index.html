@@ -6,7 +6,7 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="So far, nearly all the articles I have seen about SwiftUI show it being used for iOS, more particularly for iPhone. But SwiftUI works on all Apple&#39;s platforms, and as I am primarily a Mac developer, I decided to try out a Mac app and see what happened.
+<meta name="description" content="So far, nearly all the articles I have seen about SwiftUI show it being used for iOS, more particularly for iPhone. But SwiftUI works on all Apple&amp;rsquo;s platforms, and as I am primarily a Mac developer, I decided to try out a Mac app and see what happened.
 "/>
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
 <meta name="robots" content="noodp"/>
@@ -25,7 +25,7 @@
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="SwiftUI for Mac - Part 1 :: TrozWare — " />
-<meta name="twitter:description" content="So far, nearly all the articles I have seen about SwiftUI show it being used for iOS, more particularly for iPhone. But SwiftUI works on all Apple&#39;s platforms, and as I am primarily a Mac developer, I decided to try out a Mac app and see what happened.
+<meta name="twitter:description" content="So far, nearly all the articles I have seen about SwiftUI show it being used for iOS, more particularly for iPhone. But SwiftUI works on all Apple&amp;rsquo;s platforms, and as I am primarily a Mac developer, I decided to try out a Mac app and see what happened.
 " />
 <meta name="twitter:site" content="https://troz.net/" />
 <meta name="twitter:creator" content="" />
@@ -35,7 +35,7 @@
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="SwiftUI for Mac - Part 1 :: TrozWare — ">
-<meta property="og:description" content="So far, nearly all the articles I have seen about SwiftUI show it being used for iOS, more particularly for iPhone. But SwiftUI works on all Apple&#39;s platforms, and as I am primarily a Mac developer, I decided to try out a Mac app and see what happened.
+<meta property="og:description" content="So far, nearly all the articles I have seen about SwiftUI show it being used for iOS, more particularly for iPhone. But SwiftUI works on all Apple&amp;rsquo;s platforms, and as I am primarily a Mac developer, I decided to try out a Mac app and see what happened.
 " />
 <meta property="og:url" content="https://troz.net/post/2019/swiftui-for-mac-1/" />
 <meta property="og:site_name" content="SwiftUI for Mac - Part 1" />
@@ -171,7 +171,7 @@
 
   <div class="post-content">
     <p>So far, nearly all the articles I have seen about SwiftUI show it being used for iOS, more particularly for iPhone.
-But SwiftUI works on all Apple's platforms, and as I am primarily a Mac developer, I decided to try out a Mac app and see what happened.</p>
+But SwiftUI works on all Apple&rsquo;s platforms, and as I am primarily a Mac developer, I decided to try out a Mac app and see what happened.</p>
 <style>
   img {
     margin: 10px auto;
@@ -201,7 +201,7 @@ But SwiftUI works on all Apple's platforms, and as I am primarily a Mac develope
 <p><img src="/images/SwiftUI-Mac-signing.png" alt="Code signing"></p>
 </blockquote>
 <h2 id="laying-out-the-view">Laying out the View</h2>
-<p>Now that I have the project and I know how to preview it, it's time to work out what to display in the app. The next real app I want to work on will use a master-detail layout, so that is what I decided to try here.</p>
+<p>Now that I have the project and I know how to preview it, it&rsquo;s time to work out what to display in the app. The next real app I want to work on will use a master-detail layout, so that is what I decided to try here.</p>
 <p>Before worrying about the data, I decided to try populating the master view with a static list and using that to navigate to a detail view that was simply a Text view.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
     <span style="color:#66d9ef">var</span> body: some View {
@@ -209,7 +209,7 @@ But SwiftUI works on all Apple's platforms, and as I am primarily a Mac develope
              List {
                  ForEach(<span style="color:#ae81ff">1</span> ... <span style="color:#ae81ff">10</span>, id: <span style="color:#960050;background-color:#1e0010">\</span>.<span style="color:#66d9ef">self</span>) { index <span style="color:#66d9ef">in</span>
                      NavigationLink(destination: Text(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">\(</span>index<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)) {
-                         Text(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Link </span><span style="color:#e6db74">\(</span>index<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
+                         Text(<span style="color:#e6db74">&#34;Link </span><span style="color:#e6db74">\(</span>index<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
                      }
                  }
              }
@@ -236,9 +236,9 @@ But SwiftUI works on all Apple's platforms, and as I am primarily a Mac develope
     <span style="color:#f92672">&#34;code&#34;</span>: <span style="color:#e6db74">&#34;101&#34;</span>,
     <span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;Switching Protocols&#34;</span>
   },
-  <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span>
+  <span style="color:#960050;background-color:#1e0010">...</span>
 ]
-</code></pre></div><p>I created an HttpStatus struct with these 2 properties and I borrowed <a href="https://www.hackingwithswift.com/example-code/system/how-to-decode-json-from-your-app-bundle-the-easy-way">Paul Hudson's excellent Helper Bundle extension</a> to decode the JSON file. For a first attempt, I used the numeric codes to build the list and showed the title of the selected one in the detail view. But one of the best things about SwiftUI is that it makes it so easy to configure table rows, so it is time to create a new View to do this.</p>
+</code></pre></div><p>I created an HttpStatus struct with these 2 properties and I borrowed <a href="https://www.hackingwithswift.com/example-code/system/how-to-decode-json-from-your-app-bundle-the-easy-way">Paul Hudson&rsquo;s excellent Helper Bundle extension</a> to decode the JSON file. For a first attempt, I used the numeric codes to build the list and showed the title of the selected one in the detail view. But one of the best things about SwiftUI is that it makes it so easy to configure table rows, so it is time to create a new View to do this.</p>
 <p>After some experimentation, I had a TableRowView that I liked the look of, but the default sidebar width was too narrow and truncated the status code titles, so I added a frame modifier to the List to set a minimum and maximum width for the sidebar.</p>
 <p><img src="/images/SwiftUI-Mac-Master.png" alt="Master view"></p>
 <h2 id="outline-list">Outline List</h2>

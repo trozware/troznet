@@ -154,7 +154,7 @@ Search online for any definition of functional programming and you will find man
     <span class="post-date">
       14 Jun 2018
     </span>
-    <span class="more-meta">- 2484 words, </span>
+    <span class="more-meta">- 2488 words, </span>
     <span class="more-meta"> 12 minute read</span>
   </div>
 
@@ -182,7 +182,7 @@ Search online for any definition of functional programming and you will find man
 <li>avoid mutability where possible</li>
 <li>use functions as the basic building blocks</li>
 </ul>
-<p>So let's go through those one by one and see how they fit into the Swift language.</p>
+<p>So let&rsquo;s go through those one by one and see how they fit into the Swift language.</p>
 <h2 id="functional-programming-in-swift">Functional Programming in Swift</h2>
 <p>You can <a href="https://github.com/trozware/functional-programming">download a playground containing all these examples from GitHub</a>.</p>
 <h3 id="pure-functions">Pure functions</h3>
@@ -241,7 +241,7 @@ mage.damagePerSecondPure(damage: mage.damageDone, time: mage.timeTaken)
     <span style="color:#66d9ef">var</span> validNames: [String] = []
 
     <span style="color:#66d9ef">for</span> name <span style="color:#66d9ef">in</span> names {
-        <span style="color:#66d9ef">if</span> name.count <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>name.contains(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span>) {
+        <span style="color:#66d9ef">if</span> name.count <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>name.contains(<span style="color:#e6db74">&#34; &#34;</span>) {
             validNames.append(name)
         }
     }
@@ -249,21 +249,21 @@ mage.damagePerSecondPure(damage: mage.damageDone, time: mage.timeTaken)
     <span style="color:#66d9ef">return</span> validNames
 }
 
-<span style="color:#66d9ef">let</span> allNames = [ <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Woody</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Rex</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Slinky</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Buzz Lightyear</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hamm</span><span style="color:#e6db74">&#34;</span> ]
+<span style="color:#66d9ef">let</span> allNames = [ <span style="color:#e6db74">&#34;Woody&#34;</span>, <span style="color:#e6db74">&#34;Rex&#34;</span>, <span style="color:#e6db74">&#34;Slinky&#34;</span>, <span style="color:#e6db74">&#34;Buzz Lightyear&#34;</span>, <span style="color:#e6db74">&#34;Hamm&#34;</span> ]
 <span style="color:#66d9ef">let</span> checkedNames = checkPlayerNames(names: allNames)
 </code></pre></div><p>Only names with more than 3 characters and no spaces are considered valid. So this function creates an empty array and then loops through each member of the supplied array and appends any valid names to the new array before returning it.</p>
 <p>This function is a pure function and it works as expected. But the <code>validNames</code> array is mutable and there is no need for it to be.</p>
 <p>Converting this to avoid mutability, we get:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">checkPlayerNamesUsingFilter</span>(names: [String]) -&gt; [String] {
     <span style="color:#66d9ef">let</span> validNames = names.filter { name <span style="color:#66d9ef">in</span>
-        name.count <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>name.contains(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span>)
+        name.count <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>name.contains(<span style="color:#e6db74">&#34; &#34;</span>)
     }
     <span style="color:#66d9ef">return</span> validNames
 }
 </code></pre></div><p>Inside the <code>filter</code> closure delimited by the curly braces after the word <code>filter</code>, (more about closures below), the element in the array being evaluated is stored in the <code>name</code> constant. The checks are done and this implicitly returns a <code>Bool</code> - true if the checks pass, false if they do not. If the closure returns true, the name is valid and will be part of the validNames array.</p>
 <p>And if you really want to be concise:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">checkPlayerNamesUsingFilterShort</span>(names: [String]) -&gt; [String] {
-    <span style="color:#66d9ef">return</span> names.filter { $0.count <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>$0.contains(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span>) }
+    <span style="color:#66d9ef">return</span> names.filter { $0.count <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>$0.contains(<span style="color:#e6db74">&#34; &#34;</span>) }
 }
 </code></pre></div><p>I recommend the first method even if it is a bit more verbose. Storing the result in a constant before returning it makes debugging much easier. Using $0 instead of using a named parameter is convenient, but I prefer not to do this unless the closure is very simple.</p>
 <h4 id="map">Map</h4>
@@ -303,7 +303,7 @@ squareRoots(numbers)
     <span style="color:#66d9ef">return</span> ints
 }
 
-<span style="color:#66d9ef">let</span> strings = [ <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">1</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">two</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">0.34</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">65</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-93</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">4e8</span><span style="color:#e6db74">&#34;</span> ]
+<span style="color:#66d9ef">let</span> strings = [ <span style="color:#e6db74">&#34;1&#34;</span>, <span style="color:#e6db74">&#34;two&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#e6db74">&#34;0.34&#34;</span>, <span style="color:#e6db74">&#34;65&#34;</span>, <span style="color:#e6db74">&#34;-93&#34;</span>, <span style="color:#e6db74">&#34;4e8&#34;</span> ]
 convertStringsToInts(strings)
 </code></pre></div><p>The conversion of <code>String</code> to <code>Int</code> may fail and so returns an optional. If this function had used <code>map</code> instead of <code>compactMap</code>, the result would have been an array of optional Ints: <code>[Int?]</code>. By using <code>compactMap</code>, every <code>nil</code> value was dropped and only valid integers are included.</p>
 <h4 id="reduce">Reduce</h4>
@@ -321,7 +321,7 @@ convertStringsToInts(strings)
 
 <span style="color:#66d9ef">let</span> numbers = [ <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span> ]
 sumNumbers(numbers)
-</code></pre></div><p>I can't use <code>filter</code> or <code>map</code> here because I want to end up with a single value after applying some logic to every item in the array. So here is where I use <code>reduce</code>.</p>
+</code></pre></div><p>I can&rsquo;t use <code>filter</code> or <code>map</code> here because I want to end up with a single value after applying some logic to every item in the array. So here is where I use <code>reduce</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sumNumbersUsingReduce</span>(<span style="color:#66d9ef">_</span> numbers: [Int]) -&gt; Int {
 
     <span style="color:#66d9ef">let</span> total = numbers.reduce(<span style="color:#ae81ff">0</span>) { (cumulativeTotal, nextValue) <span style="color:#66d9ef">in</span>
@@ -335,13 +335,13 @@ sumNumbersUsingReduce(numbers)
 <p>To see how this happens, here is a version sprinkled with <code>print</code> statements showing what happens each time through the loop:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sumNumbersReduceDebug</span>(<span style="color:#66d9ef">_</span> numbers: [Int]) -&gt; Int {
     <span style="color:#66d9ef">let</span> total = numbers.reduce(<span style="color:#ae81ff">0</span>) { (cumulativeTotal, nextValue) <span style="color:#66d9ef">in</span>
-        print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">cumulativeTotal = </span><span style="color:#e6db74">\(</span>cumulativeTotal<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
-        print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">nextValue = </span><span style="color:#e6db74">\(</span>nextValue<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
-        print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">about to return </span><span style="color:#e6db74">\(</span>cumulativeTotal<span style="color:#e6db74">)</span><span style="color:#e6db74"> + </span><span style="color:#e6db74">\(</span>nextValue<span style="color:#e6db74">)</span><span style="color:#e6db74"> = </span><span style="color:#e6db74">\(</span>cumulativeTotal <span style="color:#f92672">+</span> nextValue<span style="color:#e6db74">)</span><span style="color:#e6db74"> which will become the next culmulative or the final value</span><span style="color:#e6db74">&#34;</span>)
+        print(<span style="color:#e6db74">&#34;cumulativeTotal = </span><span style="color:#e6db74">\(</span>cumulativeTotal<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
+        print(<span style="color:#e6db74">&#34;nextValue = </span><span style="color:#e6db74">\(</span>nextValue<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
+        print(<span style="color:#e6db74">&#34;about to return </span><span style="color:#e6db74">\(</span>cumulativeTotal<span style="color:#e6db74">)</span><span style="color:#e6db74"> + </span><span style="color:#e6db74">\(</span>nextValue<span style="color:#e6db74">)</span><span style="color:#e6db74"> = </span><span style="color:#e6db74">\(</span>cumulativeTotal <span style="color:#f92672">+</span> nextValue<span style="color:#e6db74">)</span><span style="color:#e6db74"> which will become the next culmulative or the final value&#34;</span>)
 
         <span style="color:#66d9ef">return</span> cumulativeTotal <span style="color:#f92672">+</span> nextValue
     }
-    print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">final result = </span><span style="color:#e6db74">\(</span>total<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
+    print(<span style="color:#e6db74">&#34;final result = </span><span style="color:#e6db74">\(</span>total<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
     <span style="color:#66d9ef">return</span> total
 }
 
@@ -377,7 +377,7 @@ final result = 16
     playSound(.welcome)
 }
 
-configureDisplay(<span style="color:#66d9ef">for</span>: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">abc123</span><span style="color:#e6db74">&#34;</span>)
+configureDisplay(<span style="color:#66d9ef">for</span>: <span style="color:#e6db74">&#34;abc123&#34;</span>)
 configureDisplay(<span style="color:#66d9ef">for</span>: <span style="color:#66d9ef">nil</span>)
 </code></pre></div><p>Is it easy to read?
 Can you work out what it does? Now imagine all that functionality in a single huge function - would that be as good to use?</p>
@@ -387,17 +387,17 @@ Can you work out what it does? Now imagine all that functionality in a single hu
 <p>Returning to the game example, here is a dummy function to show damage caused to a target:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">displayDamage</span>(damage: Int, target: String) {}
 
-displayDamage(damage: <span style="color:#ae81ff">31</span>, target: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Ogre</span><span style="color:#e6db74">&#34;</span>)
-</code></pre></div><p>There is nothing really wrong with the function, but calling it is a bit clunky and doesn't read well with the repeated use of the word &lsquo;damage&rsquo;.</p>
+displayDamage(damage: <span style="color:#ae81ff">31</span>, target: <span style="color:#e6db74">&#34;Ogre&#34;</span>)
+</code></pre></div><p>There is nothing really wrong with the function, but calling it is a bit clunky and doesn&rsquo;t read well with the repeated use of the word &lsquo;damage&rsquo;.</p>
 <p>What about this version?</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">display</span>(damage: Int, doneTo target: String) {}
 
-display(damage: <span style="color:#ae81ff">42</span>, doneTo: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Wolf</span><span style="color:#e6db74">&#34;</span>)
+display(damage: <span style="color:#ae81ff">42</span>, doneTo: <span style="color:#e6db74">&#34;Wolf&#34;</span>)
 </code></pre></div><p>There are no repeated words in the caller and by using two labels for the second parameter, the calling site can read almost like a sentence, but inside the function, <code>target</code> is still a more logical name.</p>
 <p>A third alternative is to use an un-named parameter if the naming logic is implicit in the function name itself:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">displayDamage</span>(<span style="color:#66d9ef">_</span> damage: Int, doneTo target: String) {}
 
-displayDamage(<span style="color:#ae81ff">12</span>, doneTo: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Orc</span><span style="color:#e6db74">&#34;</span>)
+displayDamage(<span style="color:#ae81ff">12</span>, doneTo: <span style="color:#e6db74">&#34;Orc&#34;</span>)
 </code></pre></div><hr>
 <h2 id="closures">Closures</h2>
 <p>As promised above, a very quick explanation of closures, which really deserve their own post&hellip;</p>
@@ -421,18 +421,18 @@ square(<span style="color:#ae81ff">3</span>)
 <p>Using the <code>cube</code> and <code>square</code> functions inside <code>doCalculation</code> works like this:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">doCalculation(<span style="color:#ae81ff">7</span>, calculation: square)
 doCalculation(<span style="color:#ae81ff">4</span>, calculation: cube)
-</code></pre></div><p>But what if I didn't want to define all the functions I might call in advance? Then I can send the function body to the <code>doCalculation</code> function instead of using a pre-built function. This way of using a function inside another function is referred to as a closure.</p>
+</code></pre></div><p>But what if I didn&rsquo;t want to define all the functions I might call in advance? Then I can send the function body to the <code>doCalculation</code> function instead of using a pre-built function. This way of using a function inside another function is referred to as a closure.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">doCalculation(<span style="color:#ae81ff">6</span>, calculation: { number <span style="color:#66d9ef">in</span>
     <span style="color:#66d9ef">return</span> number <span style="color:#f92672">*</span> <span style="color:#ae81ff">12</span>
 })
 </code></pre></div><p>The <code>doCalculation</code> function in unchanged, but instead of passing it a reference to a function, I am directly passing it the instructions it should use to get the result. As with any function, the instructions are contained within a set of curly braces. The input to this function is listed after the opening curly brace followed by the keyword <code>in</code>. Then the function body does whatever it needs to and returns the result.</p>
-<p>You may have heard the term <code>trailing closure</code>. This refers to a function where the last parameter is a function. If that function is called using a closure, there is a short-hand way of writing this, omitting the closure's parameter name and moving the closing parenthesis to before the opening curly brace.</p>
+<p>You may have heard the term <code>trailing closure</code>. This refers to a function where the last parameter is a function. If that function is called using a closure, there is a short-hand way of writing this, omitting the closure&rsquo;s parameter name and moving the closing parenthesis to before the opening curly brace.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">doCalculation(<span style="color:#ae81ff">16</span>) { number <span style="color:#66d9ef">in</span>
     <span style="color:#66d9ef">return</span> number <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span>
 }
 </code></pre></div><p>With the <code>filter</code>, <code>map</code> and <code>reduce</code> functions I showed above, this is the way their logic was supplied but here is how the filter example would look without using a closure:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">checkName</span>(<span style="color:#66d9ef">_</span> name: String) -&gt; Bool {
-    <span style="color:#66d9ef">return</span> name.count <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>name.contains(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span>)
+    <span style="color:#66d9ef">return</span> name.count <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>name.contains(<span style="color:#e6db74">&#34; &#34;</span>)
 }
 
 <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">checkPlayerNamesUsingFunction</span>(names: [String]) -&gt; [String] {
@@ -440,7 +440,7 @@ doCalculation(<span style="color:#ae81ff">4</span>, calculation: cube)
     <span style="color:#66d9ef">return</span> validNames
 }
 
-<span style="color:#66d9ef">let</span> allNames = [ <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Woody</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Rex</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Slinky</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Buzz Lightyear</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hamm</span><span style="color:#e6db74">&#34;</span> ]
+<span style="color:#66d9ef">let</span> allNames = [ <span style="color:#e6db74">&#34;Woody&#34;</span>, <span style="color:#e6db74">&#34;Rex&#34;</span>, <span style="color:#e6db74">&#34;Slinky&#34;</span>, <span style="color:#e6db74">&#34;Buzz Lightyear&#34;</span>, <span style="color:#e6db74">&#34;Hamm&#34;</span> ]
 <span style="color:#66d9ef">let</span> checkedNames = checkPlayerNamesUsingFunction(names: allNames)
 </code></pre></div><p>Which methods you use are up to you - they all work. If you have a function that will be called in many different places, maybe it makes more sense to define it once and pass around a reference to that function. If not, a closure has the advantage that it keeps everything together. There is more to closures, particularly to do with variable scope, but I think this post has gone on long enough already&hellip;. maybe next time.</p>
   </div>

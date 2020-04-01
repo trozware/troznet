@@ -151,7 +151,7 @@ Classes are the building blocks of object-oriented programming but structs as pr
     <span class="post-date">
       03 Jan 2018
     </span>
-    <span class="more-meta">- 904 words, </span>
+    <span class="more-meta">- 914 words, </span>
     <span class="more-meta"> 5 minute read</span>
   </div>
 
@@ -207,12 +207,12 @@ interesting. Have a look at this example of a class with a single property:</p>
     }
 }
 
-<span style="color:#66d9ef">var</span> personA = PersonClass(name: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Woody</span><span style="color:#e6db74">&#34;</span>)
-personA.name <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">W</span><span style="color:#75715e">o</span><span style="color:#75715e">o</span><span style="color:#75715e">d</span><span style="color:#75715e">y</span>
+<span style="color:#66d9ef">var</span> personA = PersonClass(name: <span style="color:#e6db74">&#34;Woody&#34;</span>)
+personA.name <span style="color:#75715e">// Woody</span>
 
 <span style="color:#66d9ef">var</span> personB = personA
-personB.name = <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Buzz</span><span style="color:#e6db74">&#34;</span>
-personB.name <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">B</span><span style="color:#75715e">u</span><span style="color:#75715e">z</span><span style="color:#75715e">z</span>
+personB.name = <span style="color:#e6db74">&#34;Buzz&#34;</span>
+personB.name <span style="color:#75715e">// Buzz</span>
 </code></pre></div><p>That looks like standard stuff, but what do you think <code>personA</code>'s name is now?
 If you guessed &ldquo;Buzz&rdquo; then you win a prize! <em>(No, not a real prize - pat
 yourself on the back.)</em></p>
@@ -223,19 +223,19 @@ inside.</p>
 <p>So now we have two objects and they are both looking at the same spot in memory
 for their data. This means that changing the name of <code>personB</code> changed the name
 of <code>personA</code> as well.</p>
-<p>Let's try the same thing with a struct:</p>
+<p>Let&rsquo;s try the same thing with a struct:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">PersonStruct</span> {
   <span style="color:#66d9ef">var</span> name: String
 }
 
-<span style="color:#66d9ef">var</span> personC = PersonStruct(name: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Rex</span><span style="color:#e6db74">&#34;</span>)
-personC.name <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">R</span><span style="color:#75715e">e</span><span style="color:#75715e">x</span>
+<span style="color:#66d9ef">var</span> personC = PersonStruct(name: <span style="color:#e6db74">&#34;Rex&#34;</span>)
+personC.name <span style="color:#75715e">// Rex</span>
 
 <span style="color:#66d9ef">var</span> personD = personC
-personD.name = <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hamm</span><span style="color:#e6db74">&#34;</span>
-personD.name <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">H</span><span style="color:#75715e">a</span><span style="color:#75715e">m</span><span style="color:#75715e">m</span>
+personD.name = <span style="color:#e6db74">&#34;Hamm&#34;</span>
+personD.name <span style="color:#75715e">// Hamm</span>
 
-personC.name <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">R</span><span style="color:#75715e">e</span><span style="color:#75715e">x</span>
+personC.name <span style="color:#75715e">// Rex</span>
 </code></pre></div><p>This time, because we are using a struct, when we assign <code>personC</code> to the new
 <code>personD</code> variable, we are actually making a copy of <code>personC</code> and setting the
 values of <code>personD</code> to this new copy. So now we can change <code>personD</code> without
@@ -245,7 +245,7 @@ one automatically. You can still add one yourself if you want to do anything
 different, but you do not have to.</p>
 <hr>
 <p>At first glance, you may think that you should now use structs all the time to
-avoid these unintended consequences, but it isn't quite as simple as that.
+avoid these unintended consequences, but it isn&rsquo;t quite as simple as that.
 Sometimes a class is still the best thing to use.</p>
 <p>The inheritance capabilities of classes can make your decision simple: if you
 need to create a button and want to start by sub-classing UIButton or NSButton,
@@ -257,11 +257,11 @@ suited to a certain subset of objects.</p>
 <p>The best explanation that I have found of when to use a struct is the <a href="http://faq.sealedabstract.com/structs_or_classes/#an-alternative-hypothesis">Jeff Trick</a>. Reduced down, the rule is:</p>
 <blockquote>
 <p>If you can overload == to compare two instances of your object, use a struct.
-<!-- raw HTML omitted --> If this doesn't make sense, use a class.</p>
+<!-- raw HTML omitted --> If this doesn&rsquo;t make sense, use a class.</p>
 </blockquote>
 <p>So use structs for your things: Person, Shape, Brick, Cat. <!-- raw HTML omitted --> Use classes for
 everything else.</p>
-<p>I would add one caveat: don't fight the compiler. If using a struct is giving
+<p>I would add one caveat: don&rsquo;t fight the compiler. If using a struct is giving
 lots of errors and warnings, change to a class.</p>
 <hr>
 <p>A logical consequence of this is that all structs should conform to the
@@ -275,15 +275,15 @@ lots of errors and warnings, change to a class.</p>
 </code></pre></div><p>Since this struct only has one property, we can say that two instances of this
 struct are equal if the names are equal.</p>
 <p>Testing this, we can see:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">var</span> personC = PersonStruct(name: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Rex</span><span style="color:#e6db74">&#34;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">var</span> personC = PersonStruct(name: <span style="color:#e6db74">&#34;Rex&#34;</span>)
 <span style="color:#66d9ef">var</span> personD = personC
-personD.name = <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hamm</span><span style="color:#e6db74">&#34;</span>
+personD.name = <span style="color:#e6db74">&#34;Hamm&#34;</span>
 
-personC == personD <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">f</span><span style="color:#75715e">a</span><span style="color:#75715e">l</span><span style="color:#75715e">s</span><span style="color:#75715e">e</span>
+personC == personD <span style="color:#75715e">// false</span>
 
-<span style="color:#66d9ef">let</span> personE = PersonStruct(name: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Rex</span><span style="color:#e6db74">&#34;</span>)
-personC == personE <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">t</span><span style="color:#75715e">r</span><span style="color:#75715e">u</span><span style="color:#75715e">e</span>
-personC <span style="color:#f92672">!=</span> personE <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">f</span><span style="color:#75715e">a</span><span style="color:#75715e">l</span><span style="color:#75715e">s</span><span style="color:#75715e">e</span>
+<span style="color:#66d9ef">let</span> personE = PersonStruct(name: <span style="color:#e6db74">&#34;Rex&#34;</span>)
+personC == personE <span style="color:#75715e">// true</span>
+personC <span style="color:#f92672">!=</span> personE <span style="color:#75715e">// false</span>
 </code></pre></div><p>Conveniently, providing an <code>==</code> function effectively gives us a <code>!=</code> function
 for free as you can see from the last example.</p>
 <hr>
@@ -305,16 +305,16 @@ method.</p>
     }
 }
 
-<span style="color:#66d9ef">var</span> personC = PersonStruct(name: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Woody</span><span style="color:#e6db74">&#34;</span>)
-personC.name <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">W</span><span style="color:#75715e">o</span><span style="color:#75715e">o</span><span style="color:#75715e">d</span><span style="color:#75715e">y</span>
+<span style="color:#66d9ef">var</span> personC = PersonStruct(name: <span style="color:#e6db74">&#34;Woody&#34;</span>)
+personC.name <span style="color:#75715e">// Woody</span>
 
-personC.changeName(to: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Sid</span><span style="color:#e6db74">&#34;</span>)
-personC.name <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">S</span><span style="color:#75715e">i</span><span style="color:#75715e">d</span>
+personC.changeName(to: <span style="color:#e6db74">&#34;Sid&#34;</span>)
+personC.name <span style="color:#75715e">// Sid</span>
 </code></pre></div><p>There is no problem about using <code>mutating</code> and it will not have the unintended
 consequences of using classes. Despite the scary name, a mutating function
 actually returns a new copy of the struct.</p>
 <p>The problem arises if you have many nested structs and the mutating has to
-spread through the list. So don't nest your structs - at least not more than two
+spread through the list. So don&rsquo;t nest your structs - at least not more than two
 deep!</p>
 
   </div>

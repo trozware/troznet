@@ -6,7 +6,7 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="Icon Builder 5.0 is now available from the Mac App Store. This is a complete re-write for better compatibility with Apple&#39;s latest icon requirements. Read on to see what I have fixed and how&amp;hellip;
+<meta name="description" content="Icon Builder 5.0 is now available from the Mac App Store. This is a complete re-write for better compatibility with Apple&amp;rsquo;s latest icon requirements. Read on to see what I have fixed and how&amp;hellip;
 "/>
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
 <meta name="robots" content="noodp"/>
@@ -25,7 +25,7 @@
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Icon Builder 5 :: TrozWare — " />
-<meta name="twitter:description" content="Icon Builder 5.0 is now available from the Mac App Store. This is a complete re-write for better compatibility with Apple&#39;s latest icon requirements. Read on to see what I have fixed and how&amp;hellip;
+<meta name="twitter:description" content="Icon Builder 5.0 is now available from the Mac App Store. This is a complete re-write for better compatibility with Apple&amp;rsquo;s latest icon requirements. Read on to see what I have fixed and how&amp;hellip;
 " />
 <meta name="twitter:site" content="https://troz.net/" />
 <meta name="twitter:creator" content="" />
@@ -35,7 +35,7 @@
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Icon Builder 5 :: TrozWare — ">
-<meta property="og:description" content="Icon Builder 5.0 is now available from the Mac App Store. This is a complete re-write for better compatibility with Apple&#39;s latest icon requirements. Read on to see what I have fixed and how&amp;hellip;
+<meta property="og:description" content="Icon Builder 5.0 is now available from the Mac App Store. This is a complete re-write for better compatibility with Apple&amp;rsquo;s latest icon requirements. Read on to see what I have fixed and how&amp;hellip;
 " />
 <meta property="og:url" content="https://troz.net/post/2018/icon-builder-5/" />
 <meta property="og:site_name" content="Icon Builder 5" />
@@ -174,12 +174,12 @@
   
 
   <div class="post-content">
-    <p><a href="/icon-builder/">Icon Builder 5.0</a> is now available from the <a href="http://itunes.apple.com/app/icon-builder/id552293482">Mac App Store</a>. This is a complete re-write for better compatibility with Apple's latest icon requirements. Read on to see what I have fixed and how&hellip;</p>
+    <p><a href="/icon-builder/">Icon Builder 5.0</a> is now available from the <a href="http://itunes.apple.com/app/icon-builder/id552293482">Mac App Store</a>. This is a complete re-write for better compatibility with Apple&rsquo;s latest icon requirements. Read on to see what I have fixed and how&hellip;</p>
 <hr>
 <h2 id="problems">Problems</h2>
-<p>When I came to create a new iOS app recently, I found out that Icon Builder had fallen behind Apple's requirements in three ways:</p>
+<p>When I came to create a new iOS app recently, I found out that Icon Builder had fallen behind Apple&rsquo;s requirements in three ways:</p>
 <ol>
-<li>The 1024 x 1024 marketing icon is now supposed to be inside the app's icon set.</li>
+<li>The 1024 x 1024 marketing icon is now supposed to be inside the app&rsquo;s icon set.</li>
 <li>Icon files must have their color profile set to sRGB (P3 is also valid for iOS apps).</li>
 <li>iOS icon files must have no transparent pixels and the alpha channel must be removed from the files.</li>
 </ol>
@@ -227,9 +227,9 @@
 <p>At first, I thought maybe I could just circumvent the whole problem by converting the images to JPEGs which have no transparency or alpha channel. Using the code above, I just changed it to getting the <code>jpegRepresentation</code> instead and saving with a .jpg file extension.</p>
 <p>While this solved the alpha channel problem, the transparent parts of the icon just went black which was a not a good look.</p>
 <p><img src="/images/Transparent-Jpeg.png" alt="Transparent image converted to JPEG"></p>
-<p><em>For anyone horrified at my use of force-unwrapping, I never do this in a production app but in a playground, it makes the code shorter and it doesn't really matter if I get a crash there.</em></p>
+<p><em>For anyone horrified at my use of force-unwrapping, I never do this in a production app but in a playground, it makes the code shorter and it doesn&rsquo;t really matter if I get a crash there.</em></p>
 <h3 id="converting-transparent-pixels-to-white">Converting transparent pixels to white</h3>
-<p>So the first step must be to set the transparent parts of the image to another color. Searching for solutions online, most of the ones I came up with were very slow (processing each pixel) or so complicated that I didn't understand them, and I hate just copy-pasting code that I don't understand at all.</p>
+<p>So the first step must be to set the transparent parts of the image to another color. Searching for solutions online, most of the ones I came up with were very slow (processing each pixel) or so complicated that I didn&rsquo;t understand them, and I hate just copy-pasting code that I don&rsquo;t understand at all.</p>
 <p>But eventually I found something that I morphed into this:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">NSImage</span> {
 
@@ -248,7 +248,7 @@
 }
 </code></pre></div><p>It used basically the same trick of converting the image into a JPEG but doing it this way via <code>NSBitmapImageRep</code> turned the transparent pixels white instead of black. And as you can see, this gave a much better looking image:</p>
 <p><img src="/images/MakeAlphaWhite.png" alt="Transparent portions converted to white"></p>
-<p>Now I was able to continue with my plans to have JPEGs rule the world! This worked really well in my early tests but then I came to try a Stickers app and the icons didn’t work. I couldn't even drag them in manually! Back to the Apple docs and I see that icons must be PNGs.</p>
+<p>Now I was able to continue with my plans to have JPEGs rule the world! This worked really well in my early tests but then I came to try a Stickers app and the icons didn’t work. I couldn&rsquo;t even drag them in manually! Back to the Apple docs and I see that icons must be PNGs.</p>
 <p>When I changed the transparent pixels to white, added the color space and then saved the PNG data, I got an image that looked correct but the file still contained an alpha channel. So I had to come up with a method that re-wrote the PNG data in such a way that it never contained any alpha data at all.</p>
 <h3 id="removing-the-alpha-channel">Removing the alpha channel</h3>
 <p>Graphics experts are probably groaning aloud by now, but I did eventually arrive at a solution, however hacky:</p>
@@ -285,7 +285,7 @@
 <img src="/images/TransparentPng.png" alt="Creating non-transparent PNG in playground"></p>
 <p>And as you can see from the file info, it results in a file with the correctly assigned color profile and no alpha channel:</p>
 <p><img src="/images/FileInfo.png" alt="Final result file info"></p>
-<p>The double shuffle sounds time-consuming and in-efficient but it really doesn't take long. In my tests, by far the longest part of creating an icon set is opening the file dialog.</p>
+<p>The double shuffle sounds time-consuming and in-efficient but it really doesn&rsquo;t take long. In my tests, by far the longest part of creating an icon set is opening the file dialog.</p>
 <h2 id="future-plans">Future plans</h2>
 <ul>
 <li>Add more unit tests.</li>
@@ -293,7 +293,7 @@
 <li>Offer better cropping and image positioning options.</li>
 </ul>
 <h2 id="references">References</h2>
-<p>For resizing and cropping images, I use <a href="https://mattgemmell.com/imagecrop-source-code/">Matt Gemmell's NSImage+MGCropExtensions</a> and for further reading, I recommend Apple's Human Interface Guidelines concerning app icons for <a href="https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/app-icon/">iOS</a> and <a href="https://developer.apple.com/macos/human-interface-guidelines/icons-and-images/app-icon/">macOS</a>.</p>
+<p>For resizing and cropping images, I use <a href="https://mattgemmell.com/imagecrop-source-code/">Matt Gemmell&rsquo;s NSImage+MGCropExtensions</a> and for further reading, I recommend Apple&rsquo;s Human Interface Guidelines concerning app icons for <a href="https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/app-icon/">iOS</a> and <a href="https://developer.apple.com/macos/human-interface-guidelines/icons-and-images/app-icon/">macOS</a>.</p>
 <blockquote>
 <p>Note: here is Australia we use the spelling <strong>colour</strong> but for consistency with the code samples, I have used <strong>color</strong> throughout the text.</p>
 </blockquote>

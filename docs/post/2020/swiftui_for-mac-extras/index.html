@@ -154,7 +154,7 @@ Some of the responses I got were pointing out different or better ways to do thi
     <span class="post-date">
       27 Jan 2020
     </span>
-    <span class="more-meta">- 1116 words, </span>
+    <span class="more-meta">- 1136 words, </span>
     <span class="more-meta"> 6 minute read</span>
   </div>
 
@@ -191,8 +191,8 @@ Just wanted to add that in part 2 when dismissing sheets there are two ways to d
 
     <span style="color:#66d9ef">var</span> body: some View {
         VStack {
-            Text(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">This is a sheet.</span><span style="color:#e6db74">&#34;</span>)
-            Button(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">OK</span><span style="color:#e6db74">&#34;</span>) {
+            Text(<span style="color:#e6db74">&#34;This is a sheet.&#34;</span>)
+            Button(<span style="color:#e6db74">&#34;OK&#34;</span>) {
                 <span style="color:#66d9ef">self</span>.isVisible = <span style="color:#66d9ef">false</span>
             }
         }
@@ -209,8 +209,8 @@ Just wanted to add that in part 2 when dismissing sheets there are two ways to d
 
     <span style="color:#66d9ef">var</span> body: some View {
         VStack {
-            Text(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">This is a sheet.</span><span style="color:#e6db74">&#34;</span>)
-            Button(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">OK</span><span style="color:#e6db74">&#34;</span>) {
+            Text(<span style="color:#e6db74">&#34;This is a sheet.&#34;</span>)
+            Button(<span style="color:#e6db74">&#34;OK&#34;</span>) {
                 <span style="color:#66d9ef">self</span>.presentationMode.wrappedValue.dismiss()
             }
         }
@@ -227,10 +227,10 @@ Just wanted to add that in part 2 when dismissing sheets there are two ways to d
 </code></pre></div><p>which the view showing the image was listening for.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">let</span> flipImageMenuItemSelected = NotificationCenter.<span style="color:#66d9ef">default</span>
         .publisher(<span style="color:#66d9ef">for</span>: .flipImage)
-</code></pre></div><p>The outermost component of the view's body used an <code>onReceive</code> modifier to get this notification and react accordingly.</p>
+</code></pre></div><p>The outermost component of the view&rsquo;s body used an <code>onReceive</code> modifier to get this notification and react accordingly.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  <span style="color:#66d9ef">var</span> body: some View {
       VStack {
-        <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">l</span><span style="color:#75715e">a</span><span style="color:#75715e">y</span><span style="color:#75715e">o</span><span style="color:#75715e">u</span><span style="color:#75715e">t</span><span style="color:#75715e"> </span><span style="color:#75715e">o</span><span style="color:#75715e">m</span><span style="color:#75715e">i</span><span style="color:#75715e">t</span><span style="color:#75715e">t</span><span style="color:#75715e">e</span><span style="color:#75715e">d</span><span style="color:#75715e"> </span><span style="color:#75715e">f</span><span style="color:#75715e">o</span><span style="color:#75715e">r</span><span style="color:#75715e"> </span><span style="color:#75715e">b</span><span style="color:#75715e">r</span><span style="color:#75715e">e</span><span style="color:#75715e">v</span><span style="color:#75715e">i</span><span style="color:#75715e">t</span><span style="color:#75715e">y</span>
+        <span style="color:#75715e">// layout omitted for brevity</span>
       }
       .onReceive(flipImageMenuItemSelected) { <span style="color:#66d9ef">_</span> <span style="color:#66d9ef">in</span>
           DispatchQueue.main.async {
@@ -254,7 +254,7 @@ Just wanted to add that in part 2 when dismissing sheets there are two ways to d
 <p>I noticed that the selectedColor in the EmbeddedColorWell is not being mutated and is not being used in a two-way manner. The selectedColor is initialized to NSColor.blue and used to set the color in the NSColorWell view. When the NSColorWell color is changed, it does change the color of the EmbeddedColorWell view. However, the actual @State var selectedColor value is never mutated in this process beyond the initialized value of NSColor.blue.</p>
 </blockquote>
 <p>This is in the Form tab of the UI Samples window. As suggested to me, I added a <code>background</code> modifier to set the background of a portion of the view to the selected color. And although the NSColorWell showed newly selected colors, the background remained stubbornly blue.</p>
-<p>The solution was to add a <code>Coordinator</code> to the <code>NSViewRepresentable</code> and have it subscribe to any changes in the color and update the embedded view's selected color as needed. I would not have come up with this by myself, so many thanks to the person who sent it to me.</p>
+<p>The solution was to add a <code>Coordinator</code> to the <code>NSViewRepresentable</code> and have it subscribe to any changes in the color and update the embedded view&rsquo;s selected color as needed. I would not have come up with this by myself, so many thanks to the person who sent it to me.</p>
 <p>Here is the full code for the <code>EmbeddedColorWell</code> struct:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">EmbeddedColorWell</span>: NSViewRepresentable {
     @Binding <span style="color:#66d9ef">var</span> selectedColor: NSColor
@@ -267,8 +267,8 @@ Just wanted to add that in part 2 when dismissing sheets there are two ways to d
             <span style="color:#66d9ef">self</span>.embedded = embedded
         }
         
-        <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">O</span><span style="color:#75715e">b</span><span style="color:#75715e">s</span><span style="color:#75715e">e</span><span style="color:#75715e">r</span><span style="color:#75715e">v</span><span style="color:#75715e">e</span><span style="color:#75715e"> </span><span style="color:#75715e">K</span><span style="color:#75715e">V</span><span style="color:#75715e">O</span><span style="color:#75715e"> </span><span style="color:#75715e">c</span><span style="color:#75715e">o</span><span style="color:#75715e">m</span><span style="color:#75715e">p</span><span style="color:#75715e">l</span><span style="color:#75715e">i</span><span style="color:#75715e">a</span><span style="color:#75715e">n</span><span style="color:#75715e">t</span><span style="color:#75715e"> </span><span style="color:#75715e">c</span><span style="color:#75715e">o</span><span style="color:#75715e">l</span><span style="color:#75715e">o</span><span style="color:#75715e">r</span><span style="color:#75715e"> </span><span style="color:#75715e">p</span><span style="color:#75715e">r</span><span style="color:#75715e">o</span><span style="color:#75715e">p</span><span style="color:#75715e">e</span><span style="color:#75715e">r</span><span style="color:#75715e">t</span><span style="color:#75715e">y</span><span style="color:#75715e"> </span><span style="color:#75715e">o</span><span style="color:#75715e">n</span><span style="color:#75715e"> </span><span style="color:#75715e">N</span><span style="color:#75715e">S</span><span style="color:#75715e">C</span><span style="color:#75715e">o</span><span style="color:#75715e">l</span><span style="color:#75715e">o</span><span style="color:#75715e">r</span><span style="color:#75715e">W</span><span style="color:#75715e">e</span><span style="color:#75715e">l</span><span style="color:#75715e">l</span><span style="color:#75715e"> </span><span style="color:#75715e">o</span><span style="color:#75715e">b</span><span style="color:#75715e">j</span><span style="color:#75715e">e</span><span style="color:#75715e">c</span><span style="color:#75715e">t</span><span style="color:#75715e">.</span>
-        <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">U</span><span style="color:#75715e">p</span><span style="color:#75715e">d</span><span style="color:#75715e">a</span><span style="color:#75715e">t</span><span style="color:#75715e">e</span><span style="color:#75715e"> </span><span style="color:#75715e">t</span><span style="color:#75715e">h</span><span style="color:#75715e">e</span><span style="color:#75715e"> </span><span style="color:#75715e">s</span><span style="color:#75715e">e</span><span style="color:#75715e">l</span><span style="color:#75715e">e</span><span style="color:#75715e">c</span><span style="color:#75715e">t</span><span style="color:#75715e">e</span><span style="color:#75715e">d</span><span style="color:#75715e">C</span><span style="color:#75715e">o</span><span style="color:#75715e">l</span><span style="color:#75715e">o</span><span style="color:#75715e">r</span><span style="color:#75715e"> </span><span style="color:#75715e">p</span><span style="color:#75715e">r</span><span style="color:#75715e">o</span><span style="color:#75715e">p</span><span style="color:#75715e">e</span><span style="color:#75715e">r</span><span style="color:#75715e">t</span><span style="color:#75715e">y</span><span style="color:#75715e"> </span><span style="color:#75715e">o</span><span style="color:#75715e">n</span><span style="color:#75715e"> </span><span style="color:#75715e">E</span><span style="color:#75715e">m</span><span style="color:#75715e">b</span><span style="color:#75715e">e</span><span style="color:#75715e">d</span><span style="color:#75715e">d</span><span style="color:#75715e">e</span><span style="color:#75715e">d</span><span style="color:#75715e">C</span><span style="color:#75715e">o</span><span style="color:#75715e">l</span><span style="color:#75715e">o</span><span style="color:#75715e">r</span><span style="color:#75715e">W</span><span style="color:#75715e">e</span><span style="color:#75715e">l</span><span style="color:#75715e">l</span><span style="color:#75715e"> </span><span style="color:#75715e">a</span><span style="color:#75715e">s</span><span style="color:#75715e"> </span><span style="color:#75715e">n</span><span style="color:#75715e">e</span><span style="color:#75715e">e</span><span style="color:#75715e">d</span><span style="color:#75715e">e</span><span style="color:#75715e">d</span><span style="color:#75715e">.</span>
+        <span style="color:#75715e">// Observe KVO compliant color property on NSColorWell object.</span>
+        <span style="color:#75715e">// Update the selectedColor property on EmbeddedColorWell as needed.</span>
         <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">changeColor</span>(colorWell: NSColorWell) {
             subscription = colorWell
                 .publisher(<span style="color:#66d9ef">for</span>: <span style="color:#960050;background-color:#1e0010">\</span>.color, options: .new)
@@ -307,6 +307,8 @@ Just wanted to add that in part 2 when dismissing sheets there are two ways to d
       <hr />
     </div>
     <div class="pagination__buttons">
+      
+      <a class="btn next" href="https://troz.net/post/2020/custom-fonts/">← Custom Fonts in iOS &amp; macOS apps</a>
       
       
       <a class="btn previous" href="https://troz.net/post/2019/swiftui-for-mac-3/">SwiftUI for Mac - Part 3 →</a>

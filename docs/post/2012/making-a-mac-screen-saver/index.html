@@ -213,9 +213,9 @@ was not necessary, but quitting the System Prefs app was essential.</p>
 is not difficult, but as always, there are a few things that are not obvious on
 first glance.</p>
 <p>Add a xib file to your project: I used a window template. Then change the
-window's class to NSPanel and configure it as shown:</p>
+window&rsquo;s class to NSPanel and configure it as shown:</p>
 <p><!-- raw HTML omitted --></p>
-<p>Set the File's Owner class to the class of your Screen Saver view. In your
+<p>Set the File&rsquo;s Owner class to the class of your Screen Saver view. In your
 ScreenSaverView.h file, declare a property for this new panel. e.g.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec"> <span style="color:#66d9ef">@property</span> (<span style="color:#66d9ef">assign</span>) <span style="color:#66d9ef">IBOutlet</span> NSPanel <span style="color:#f92672">*</span>optionsPanel;
 </code></pre></div><p>@synthesize this in the ScreenSaverView.m file. In the xib file, connect the
@@ -224,7 +224,7 @@ panel to this outlet.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec"><span style="color:#f92672">*</span> (<span style="color:#66d9ef">BOOL</span>)hasConfigureSheet { <span style="color:#66d9ef">return</span> YES; }
 
 <span style="color:#f92672">*</span> (NSWindow <span style="color:#f92672">*</span>)configureSheet { <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>self.optionsPanel) { [NSBundle
-  loadNibNamed:<span style="color:#e6db74">@&#34;</span><span style="color:#e6db74">Options</span><span style="color:#e6db74">&#34;</span> owner:self]; } <span style="color:#66d9ef">return</span> self.optionsPanel; }
+  loadNibNamed:<span style="color:#e6db74">@&#34;Options&#34;</span> owner:self]; } <span style="color:#66d9ef">return</span> self.optionsPanel; }
 
 <span style="color:#f92672">-</span> (<span style="color:#66d9ef">IBAction</span>)closeConfig:(<span style="color:#66d9ef">id</span>)sender { [[NSApplication sharedApplication]
   endSheet:self.optionsPanel]; }
@@ -235,7 +235,7 @@ it to the <code>closeConfig:</code> action.</p>
 <p>Save everything, build, install in System Preferences and test. Firstly, the
 &ldquo;Options&hellip;&rdquo; button should be enabled. Clicking it should open your panel as a
 sheet, and when you click your button, the panel should close.</p>
-<p>If that doesn't work, check the class assignments, the connections, the settings
+<p>If that doesn&rsquo;t work, check the class assignments, the connections, the settings
 for the NSPanel and the code in that order.</p>
 <p>Once the panel is opening and closing as required, you need to add the ability
 to store and retrieve the settings. Instead of using NSUserDefaults as you would
@@ -249,28 +249,28 @@ defaults for my screen saver and registered the defaults. I am never very sure
 about the need to do this, but it is supposed to be a good practice.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec">ScreenSaverDefaults <span style="color:#f92672">*</span>defaults <span style="color:#f92672">=</span> [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
 [defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
-  <span style="color:#e6db74">@&#34;</span><span style="color:#e6db74">NO</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">@&#34;</span><span style="color:#e6db74">UseAlternativeZone</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">@&#34;</span><span style="color:#e6db74">&#34;</span>,
-  <span style="color:#e6db74">@&#34;</span><span style="color:#e6db74">AlternativeZoneName</span><span style="color:#e6db74">&#34;</span>, nil]
+  <span style="color:#e6db74">@&#34;NO&#34;</span>, <span style="color:#e6db74">@&#34;UseAlternativeZone&#34;</span>, <span style="color:#e6db74">@&#34;&#34;</span>,
+  <span style="color:#e6db74">@&#34;AlternativeZoneName&#34;</span>, nil]
 ];
 </code></pre></div><p>Using them is exactly the same as using NSUserDefaults:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec"><span style="color:#75715e">// Reading
 </span><span style="color:#75715e"></span>ScreenSaverDefaults <span style="color:#f92672">*</span>defaults <span style="color:#f92672">=</span> [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
-<span style="color:#66d9ef">BOOL</span> useAlternativeZone <span style="color:#f92672">=</span> [defaults boolForKey:<span style="color:#e6db74">@&#34;</span><span style="color:#e6db74">UseAlternativeZone</span><span style="color:#e6db74">&#34;</span>];
-NSString <span style="color:#f92672">*</span>alternativeZoneName <span style="color:#f92672">=</span> [defaults objectForKey:<span style="color:#e6db74">@&#34;</span><span style="color:#e6db74">AlternativeZoneName</span><span style="color:#e6db74">&#34;</span>];
+<span style="color:#66d9ef">BOOL</span> useAlternativeZone <span style="color:#f92672">=</span> [defaults boolForKey:<span style="color:#e6db74">@&#34;UseAlternativeZone&#34;</span>];
+NSString <span style="color:#f92672">*</span>alternativeZoneName <span style="color:#f92672">=</span> [defaults objectForKey:<span style="color:#e6db74">@&#34;AlternativeZoneName&#34;</span>];
 </code></pre></div><p>&hellip;</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec"><span style="color:#75715e">// Writing
-</span><span style="color:#75715e"></span>ScreenSaverDefaults <span style="color:#f92672">*</span>defaults <span style="color:#f92672">=</span> [ScreenSaverDefaults defaultsForModuleWithName:kModuleName]; [defaults setBool:useAlternative forKey:<span style="color:#e6db74">@&#34;</span><span style="color:#e6db74">UseAlternativeZone</span><span style="color:#e6db74">&#34;</span>];
-[defaults setObject:alternativeZoneName forKey:<span style="color:#e6db74">@&#34;</span><span style="color:#e6db74">AlternativeZoneName</span><span style="color:#e6db74">&#34;</span>];
+</span><span style="color:#75715e"></span>ScreenSaverDefaults <span style="color:#f92672">*</span>defaults <span style="color:#f92672">=</span> [ScreenSaverDefaults defaultsForModuleWithName:kModuleName]; [defaults setBool:useAlternative forKey:<span style="color:#e6db74">@&#34;UseAlternativeZone&#34;</span>];
+[defaults setObject:alternativeZoneName forKey:<span style="color:#e6db74">@&#34;AlternativeZoneName&#34;</span>];
 [defaults synchronize];
 </code></pre></div><p>One last thing: if you want to distribute the screen saver, you will want to
 create an archive, possibly code-signing with your Apple developer ID to allow
-for Mountain Lion's up-coming Gatekeeper security system. I code-signed the
+for Mountain Lion&rsquo;s up-coming Gatekeeper security system. I code-signed the
 project and built an archive, but when I clicked &ldquo;Distribute&rdquo; in the Organizer,
 the only appropriate options was &ldquo;Save Built Products&rdquo;. I selected this option
 and ended up with a series of folders inside folders, with the screen saver
-module in about the fifth folder down. I don't know why the module gets
+module in about the fifth folder down. I don&rsquo;t know why the module gets
 distributed like this, but I pulled it out of the folders and it worked fine.</p>
-<p>And that's about it. A lot of this stuff is online or in Apple's documentation,
+<p>And that&rsquo;s about it. A lot of this stuff is online or in Apple&rsquo;s documentation,
 but there are enough oddities to make it worthwhile gathering together all that
 I learnt while making this screen saver.</p>
 <p>Click this icon to download the screen saver:</p>

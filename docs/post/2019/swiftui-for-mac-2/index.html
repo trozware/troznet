@@ -154,7 +154,7 @@ Now it is time to explore some more of the features of a Mac app with SwiftUI.
     <span class="post-date">
       15 Dec 2019
     </span>
-    <span class="more-meta">- 2612 words, </span>
+    <span class="more-meta">- 2621 words, </span>
     <span class="more-meta"> 13 minute read</span>
   </div>
 
@@ -202,16 +202,16 @@ Now it is time to explore some more of the features of a Mac app with SwiftUI.
 <p>Changing mode worked perfectly in the Xcode Preview and in the built app, but the app was not storing this or displaying the current selection with a check mark in the menu.</p>
 <p>For storing the selection, I decided to try another new thing and use a UserDefaults property wrapper, based on <a href="https://www.avanderlee.com/swift/property-wrappers/">this post by Antoine van der Lee</a>.</p>
 <p>I configured a UserDefault wrapped variable for the mode, set it whenever the menu items changed it and added a function to read it in and apply it on startup.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    @UserDefault(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">system_mode</span><span style="color:#e6db74">&#34;</span>, defaultValue: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">system</span><span style="color:#e6db74">&#34;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    @UserDefault(<span style="color:#e6db74">&#34;system_mode&#34;</span>, defaultValue: <span style="color:#e6db74">&#34;system&#34;</span>)
     <span style="color:#66d9ef">var</span> systemMode: String
 </code></pre></div><p>It would be neater to use an enum here instead of strings, but that would have required fiddling with rawValues to save the data, so for this first test, I stuck to strings.</p>
-<p>The code to toggle the checkmarks in the menu items is standard stuff and nothing particularly SwiftUI related, so I won't detail it here, but it is in the GitHub project if you are interested.</p>
+<p>The code to toggle the checkmarks in the menu items is standard stuff and nothing particularly SwiftUI related, so I won&rsquo;t detail it here, but it is in the GitHub project if you are interested.</p>
 <p><img src="/images/SwiftUI-Mac-dark.png" alt="Dark mode"></p>
 <h2 id="passing-menu-data-to-a-view">Passing menu data to a View</h2>
 <p>This worked fine and the app worked equally as well in dark or light modes, but I wanted to test how to communicate data back from the menus to the SwiftUI views.</p>
 <p>As a totally pointless but possibly amusing feature, I decided to add a menu item to flip the cat image and then work out how I could send that to the ContentView.</p>
-<p>I added the new menu item to the Format menu and as a first attempt, I tried to Control-drag from there into the ContentView. It didn't take, so I guess I need to send the message to the AppDelegate as before and then pass it on to the ContentView. I feel like this might be a good place to use a Publisher although so far I have only used the built-in ObservableObject type publishers.</p>
-<p>In this case, it would make more sense to have the DetailView respond to the menu, since it contains the image. But trying to add an @IBAction to a SwiftUI View struct gives this error: <code>Only instance methods can be declared @IBAction</code> so I am using the App Delegate instead. I feel like this is a problem I need to solve, or the AppDelegate is going to end up filled with @IBActions, but for now, let's keep going.</p>
+<p>I added the new menu item to the Format menu and as a first attempt, I tried to Control-drag from there into the ContentView. It didn&rsquo;t take, so I guess I need to send the message to the AppDelegate as before and then pass it on to the ContentView. I feel like this might be a good place to use a Publisher although so far I have only used the built-in ObservableObject type publishers.</p>
+<p>In this case, it would make more sense to have the DetailView respond to the menu, since it contains the image. But trying to add an @IBAction to a SwiftUI View struct gives this error: <code>Only instance methods can be declared @IBAction</code> so I am using the App Delegate instead. I feel like this is a problem I need to solve, or the AppDelegate is going to end up filled with @IBActions, but for now, let&rsquo;s keep going.</p>
 <p>In AppDelegate.swift, I added the IBAction for the Flip Image menu item and had it issue a Notification, after setting up an extension on Notification.Name to de-stringify the name of the notification.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">@IBAction</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">flipImage</span>(<span style="color:#66d9ef">_</span> sender: Any) {
         NotificationCenter.<span style="color:#66d9ef">default</span>.post(name: .flipImage, object: <span style="color:#66d9ef">nil</span>)
@@ -220,14 +220,14 @@ Now it is time to explore some more of the features of a Mac app with SwiftUI.
 <p><strong>UPDATE:</strong> Check out <strong><a href="/post/2020/swiftui_for-mac-extras#subscribing-on-the-main-thread">Subscribing on the Main Thread</a></strong> in my post of extras &amp; changes to this series for an alternative way to make sure the updates happen on the correct thread.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> imageIsFlipped = <span style="color:#66d9ef">false</span>
 
-    <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">.</span><span style="color:#75715e">.</span><span style="color:#75715e">.</span>
+    <span style="color:#75715e">// ...</span>
 
   .onReceive(flipImageMenuItemSelected) { <span style="color:#66d9ef">_</span> <span style="color:#66d9ef">in</span>
     DispatchQueue.main.async {
         <span style="color:#66d9ef">self</span>.imageIsFlipped.toggle()
     }
   }
-</code></pre></div><p>Once I had that Boolean property, I added two more modifiers to the image. Don't hate me for the force un-wrapping. I tried using if-let but it wouldn't compile so I check for <code>catImage != nil</code> before using this force-unwrap.</p>
+</code></pre></div><p>Once I had that Boolean property, I added two more modifiers to the image. Don&rsquo;t hate me for the force un-wrapping. I tried using if-let but it wouldn&rsquo;t compile so I check for <code>catImage != nil</code> before using this force-unwrap.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  Image(nsImage: catImage!)
       .resizable()
       .aspectRatio(contentMode: .fit)
@@ -242,7 +242,7 @@ Now it is time to explore some more of the features of a Mac app with SwiftUI.
 <ol>
 <li>Drag a Hosting View Controller into the storyboard and connect it to the menu item with a segue.</li>
 <li>Set the Presentation property for the window controller to Single so that multiple copies of the window are not created.</li>
-<li>Create a new Swift file and subclass NSHostingController. Don't bother using a Cocoa class file - the template doesn't work. Use the code below, replacing SamplesView with the name of the SwiftUI view you want to display.</li>
+<li>Create a new Swift file and subclass NSHostingController. Don&rsquo;t bother using a Cocoa class file - the template doesn&rsquo;t work. Use the code below, replacing SamplesView with the name of the SwiftUI view you want to display.</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">SwiftUI</span>
 
@@ -290,13 +290,13 @@ Now it is time to explore some more of the features of a Mac app with SwiftUI.
 <p>As usual, there was a lot of trial and error involved here, but I came up with a workable solution.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">PrefsView</span>: View {
     <span style="color:#66d9ef">var</span> body: some View {
-        Text(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hello, Prefs!</span><span style="color:#e6db74">&#34;</span>)
+        Text(<span style="color:#e6db74">&#34;Hello, Prefs!&#34;</span>)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
     <span style="color:#66d9ef">var</span> window: NSWindow!
     <span style="color:#66d9ef">init</span>() {
-        window = NSWindow.createStandardWindow(withTitle: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Preferences</span><span style="color:#e6db74">&#34;</span>,
+        window = NSWindow.createStandardWindow(withTitle: <span style="color:#e6db74">&#34;Preferences&#34;</span>,
                                                width: <span style="color:#ae81ff">300</span>,
                                                height: <span style="color:#ae81ff">100</span>)
         window.contentView = NSHostingView(rootView: <span style="color:#66d9ef">self</span>)
@@ -304,7 +304,7 @@ Now it is time to explore some more of the features of a Mac app with SwiftUI.
     }
 }
 </code></pre></div><p>For convenience and reusability, I made an extension on NSWindow that created a window with the basic properties configured, much like they are in AppDelegate. I temporarily added a Button to ContentView like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  Button(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Prefs</span><span style="color:#e6db74">&#34;</span>) {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  Button(<span style="color:#e6db74">&#34;Prefs&#34;</span>) {
       <span style="color:#66d9ef">let</span> _ = PrefsView()
   }
 </code></pre></div><p>This opened the window perfectly, but it had a problem: repeatedly clicking the button kept opening a new window instead of bringing the existing one to the front.</p>
@@ -313,13 +313,13 @@ Now it is time to explore some more of the features of a Mac app with SwiftUI.
     @State <span style="color:#66d9ef">var</span> prefsWindowDelegate = PrefsWindowDelegate()
 
     <span style="color:#66d9ef">var</span> body: some View {
-        Text(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hello, Prefs!</span><span style="color:#e6db74">&#34;</span>)
+        Text(<span style="color:#e6db74">&#34;Hello, Prefs!&#34;</span>)
           .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
     <span style="color:#66d9ef">var</span> window: NSWindow!
     <span style="color:#66d9ef">init</span>() {
-        window = NSWindow.createStandardWindow(withTitle: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Preferences</span><span style="color:#e6db74">&#34;</span>,
+        window = NSWindow.createStandardWindow(withTitle: <span style="color:#e6db74">&#34;Preferences&#34;</span>,
                                                width: <span style="color:#ae81ff">300</span>,
                                                height: <span style="color:#ae81ff">100</span>)
         window.contentView = NSHostingView(rootView: <span style="color:#66d9ef">self</span>)
@@ -347,14 +347,14 @@ Now it is time to explore some more of the features of a Mac app with SwiftUI.
             prefsView = PrefsView()
         }
     }
-</code></pre></div><p>And this gave me what I was after - a view that opened from a menu item but that knew itself whether it still had a window so could decide whether to open a new one or bring the existing one to the front. This looks a bit convoluted, but it doesn't appear to cause any memory leaks and the responsibility for the window rests on the view that uses it, which feels right to me.</p>
+</code></pre></div><p>And this gave me what I was after - a view that opened from a menu item but that knew itself whether it still had a window so could decide whether to open a new one or bring the existing one to the front. This looks a bit convoluted, but it doesn&rsquo;t appear to cause any memory leaks and the responsibility for the window rests on the view that uses it, which feels right to me.</p>
 <p>After I had this working, getting the data passing around was quite simple. I created a Prefs class to store the preference data. I wanted this data stored in UserDefaults, but since I also wanted to use an ObservableObject with the @Published property wrapper, I was not able to use the @UserDefaults property wrapper that I had used for the app mode.</p>
 <p>So instead I used @Published with a <code>didSet</code> that saved the changed data to UserDefaults. Thanks to <a href="https://twitter.com/azamsharp">@azamsharp</a> for this technique.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Prefs</span>: ObservableObject {
     @Published
-    <span style="color:#66d9ef">var</span> showCopyright: Bool = UserDefaults.standard.bool(forKey: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">showCopyright</span><span style="color:#e6db74">&#34;</span>) {
+    <span style="color:#66d9ef">var</span> showCopyright: Bool = UserDefaults.standard.bool(forKey: <span style="color:#e6db74">&#34;showCopyright&#34;</span>) {
         <span style="color:#66d9ef">didSet</span> {
-            UserDefaults.standard.<span style="color:#66d9ef">set</span>(<span style="color:#66d9ef">self</span>.showCopyright, forKey: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">showCopyright</span><span style="color:#e6db74">&#34;</span>)
+            UserDefaults.standard.<span style="color:#66d9ef">set</span>(<span style="color:#66d9ef">self</span>.showCopyright, forKey: <span style="color:#e6db74">&#34;showCopyright&#34;</span>)
         }
     }
 }
@@ -362,7 +362,7 @@ Now it is time to explore some more of the features of a Mac app with SwiftUI.
 <p>In AppDelegate.swift:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">let</span> prefs = Prefs()
 
-    <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">a</span><span style="color:#75715e">n</span><span style="color:#75715e">d</span><span style="color:#75715e"> </span><span style="color:#75715e">i</span><span style="color:#75715e">n</span><span style="color:#75715e"> </span><span style="color:#75715e">t</span><span style="color:#75715e">h</span><span style="color:#75715e">e</span><span style="color:#75715e"> </span><span style="color:#75715e">o</span><span style="color:#75715e">p</span><span style="color:#75715e">e</span><span style="color:#75715e">n</span><span style="color:#75715e">P</span><span style="color:#75715e">r</span><span style="color:#75715e">e</span><span style="color:#75715e">f</span><span style="color:#75715e">s</span><span style="color:#75715e">W</span><span style="color:#75715e">i</span><span style="color:#75715e">n</span><span style="color:#75715e">d</span><span style="color:#75715e">o</span><span style="color:#75715e">w</span><span style="color:#75715e"> </span><span style="color:#75715e">I</span><span style="color:#75715e">B</span><span style="color:#75715e">A</span><span style="color:#75715e">c</span><span style="color:#75715e">t</span><span style="color:#75715e">i</span><span style="color:#75715e">o</span><span style="color:#75715e">n</span><span style="color:#75715e">:</span>
+    <span style="color:#75715e">// and in the openPrefsWindow IBAction:</span>
     prefsView = PrefsView(prefs: prefs)
 </code></pre></div><p>In PrefsView.swift:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    @ObservedObject <span style="color:#66d9ef">var</span> prefs: Prefs
@@ -375,10 +375,10 @@ Now it is time to explore some more of the features of a Mac app with SwiftUI.
 
     <span style="color:#66d9ef">var</span> body: some View {
         Image(nsImage: catImage)
-          <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">m</span><span style="color:#75715e">o</span><span style="color:#75715e">d</span><span style="color:#75715e">i</span><span style="color:#75715e">f</span><span style="color:#75715e">i</span><span style="color:#75715e">e</span><span style="color:#75715e">r</span><span style="color:#75715e">s</span><span style="color:#75715e"> </span><span style="color:#75715e">a</span><span style="color:#75715e">s</span><span style="color:#75715e"> </span><span style="color:#75715e">b</span><span style="color:#75715e">e</span><span style="color:#75715e">f</span><span style="color:#75715e">o</span><span style="color:#75715e">r</span><span style="color:#75715e">e</span>
+          <span style="color:#75715e">// modifiers as before</span>
 
          .overlay(
-             Text(prefs.showCopyright ? <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Copyright © https://http.cat</span><span style="color:#e6db74">&#34;</span> : <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>)
+             Text(prefs.showCopyright ? <span style="color:#e6db74">&#34;Copyright © https://http.cat&#34;</span> : <span style="color:#e6db74">&#34;&#34;</span>)
                  .padding(<span style="color:#ae81ff">6</span>)
                  .font(.caption)
                  .foregroundColor(.white)

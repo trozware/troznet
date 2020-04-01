@@ -6,7 +6,7 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="I was driving through the town of Singleton the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple&#39;s own APIs, but seem to be increasingly frowned upon in the Swift world.
+<meta name="description" content="I was driving through the town of Singleton the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple&amp;rsquo;s own APIs, but seem to be increasingly frowned upon in the Swift world.
 So what is a singleton? A singleton is a class that only expects to have a single instance. Think of it as a global instance of a class."/>
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
 <meta name="robots" content="noodp"/>
@@ -25,7 +25,7 @@ So what is a singleton? A singleton is a class that only expects to have a singl
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Singleton to Protocol :: TrozWare — " />
-<meta name="twitter:description" content="I was driving through the town of Singleton the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple&#39;s own APIs, but seem to be increasingly frowned upon in the Swift world.
+<meta name="twitter:description" content="I was driving through the town of Singleton the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple&amp;rsquo;s own APIs, but seem to be increasingly frowned upon in the Swift world.
 So what is a singleton? A singleton is a class that only expects to have a single instance. Think of it as a global instance of a class." />
 <meta name="twitter:site" content="https://troz.net/" />
 <meta name="twitter:creator" content="" />
@@ -35,7 +35,7 @@ So what is a singleton? A singleton is a class that only expects to have a singl
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Singleton to Protocol :: TrozWare — ">
-<meta property="og:description" content="I was driving through the town of Singleton the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple&#39;s own APIs, but seem to be increasingly frowned upon in the Swift world.
+<meta property="og:description" content="I was driving through the town of Singleton the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple&amp;rsquo;s own APIs, but seem to be increasingly frowned upon in the Swift world.
 So what is a singleton? A singleton is a class that only expects to have a single instance. Think of it as a global instance of a class." />
 <meta property="og:url" content="https://troz.net/post/2016/singleton-to-protocol/" />
 <meta property="og:site_name" content="Singleton to Protocol" />
@@ -151,8 +151,8 @@ So what is a singleton? A singleton is a class that only expects to have a singl
     <span class="post-date">
       26 Feb 2016
     </span>
-    <span class="more-meta">- 636 words, </span>
-    <span class="more-meta"> 3 minute read</span>
+    <span class="more-meta">- 674 words, </span>
+    <span class="more-meta"> 4 minute read</span>
   </div>
 
   
@@ -170,7 +170,7 @@ So what is a singleton? A singleton is a class that only expects to have a singl
   <div class="post-content">
     <p>I was driving through the town of <a href="https://en.wikipedia.org/wiki/Singleton,_New_South_Wales">Singleton</a> the other day and of course, it
 got me thinking about using singletons in my apps. Singletons were a commonly
-used pattern in Objective-C programming and appear in many of Apple's own APIs,
+used pattern in Objective-C programming and appear in many of Apple&rsquo;s own APIs,
 but seem to be increasingly frowned upon in the Swift world.</p>
 <h2 id="so-what-is-a-singleton">So what is a singleton?</h2>
 <p>A singleton is a class that only expects to have a single instance. Think of it
@@ -184,7 +184,7 @@ FileManager.<span style="color:#66d9ef">default</span>
 URLSession.shared
 </code></pre></div><p>If you are using an object with a property name of &ldquo;shared&rdquo;, &ldquo;standard&rdquo; or
 &ldquo;default&rdquo; you can be pretty sure it is an singleton.</p>
-<h2 id="and-whats-the-problem-with-singletons">And what's the problem with singletons?</h2>
+<h2 id="and-whats-the-problem-with-singletons">And what&rsquo;s the problem with singletons?</h2>
 <p>There are probably many different opinions here but I have two thoughts about
 this:</p>
 <ol>
@@ -192,7 +192,7 @@ this:</p>
 messy and un-predictable.</li>
 <li>If they can be accessed by multiple other objects, possibly at the same time,
 then you can get conflicts. These can be handled by clever use of background
-queues, but it isn't easy.</li>
+queues, but it isn&rsquo;t easy.</li>
 </ol>
 <h2 id="what-to-use-instead">What to use instead?</h2>
 <p>As I drove, I mused on a singleton that I had implemented recently. It was a
@@ -203,8 +203,8 @@ this:</p>
     <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">let</span> sharedLogger = Logger()
 
     <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">addToLog</span>(event: String) {
-      <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">u</span><span style="color:#75715e">s</span><span style="color:#75715e">e</span><span style="color:#75715e"> </span><span style="color:#75715e">p</span><span style="color:#75715e">r</span><span style="color:#75715e">i</span><span style="color:#75715e">v</span><span style="color:#75715e">a</span><span style="color:#75715e">t</span><span style="color:#75715e">e</span><span style="color:#75715e"> </span><span style="color:#75715e">f</span><span style="color:#75715e">u</span><span style="color:#75715e">n</span><span style="color:#75715e">c</span><span style="color:#75715e">t</span><span style="color:#75715e">i</span><span style="color:#75715e">o</span><span style="color:#75715e">n</span><span style="color:#75715e">s</span><span style="color:#75715e"> </span><span style="color:#75715e">t</span><span style="color:#75715e">o</span><span style="color:#75715e"> </span><span style="color:#75715e">f</span><span style="color:#75715e">i</span><span style="color:#75715e">n</span><span style="color:#75715e">d</span><span style="color:#75715e"> </span><span style="color:#75715e">l</span><span style="color:#75715e">o</span><span style="color:#75715e">g</span><span style="color:#75715e"> </span><span style="color:#75715e">f</span><span style="color:#75715e">i</span><span style="color:#75715e">l</span><span style="color:#75715e">e</span><span style="color:#75715e"> </span><span style="color:#75715e">U</span><span style="color:#75715e">R</span><span style="color:#75715e">L</span>
-      <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">a</span><span style="color:#75715e">p</span><span style="color:#75715e">p</span><span style="color:#75715e">e</span><span style="color:#75715e">n</span><span style="color:#75715e">d</span><span style="color:#75715e"> </span><span style="color:#75715e">e</span><span style="color:#75715e">v</span><span style="color:#75715e">e</span><span style="color:#75715e">n</span><span style="color:#75715e">t</span><span style="color:#75715e"> </span><span style="color:#75715e">t</span><span style="color:#75715e">e</span><span style="color:#75715e">x</span><span style="color:#75715e">t</span><span style="color:#75715e"> </span><span style="color:#75715e">w</span><span style="color:#75715e">i</span><span style="color:#75715e">t</span><span style="color:#75715e">h</span><span style="color:#75715e"> </span><span style="color:#75715e">t</span><span style="color:#75715e">i</span><span style="color:#75715e">m</span><span style="color:#75715e">e</span><span style="color:#75715e"> </span><span style="color:#75715e">s</span><span style="color:#75715e">t</span><span style="color:#75715e">a</span><span style="color:#75715e">m</span><span style="color:#75715e">p</span>
+      <span style="color:#75715e">// use private functions to find log file URL</span>
+      <span style="color:#75715e">// append event text with time stamp</span>
     }
 
 }
@@ -220,15 +220,15 @@ needed to log events. For me, this was the break-through:</p>
 <p>As soon as I started thinking about this as a behaviour, a protocol became the
 obvious solution, so this is what I created:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">protocol</span> <span style="color:#a6e22e">Loggable</span> {
-  <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">n</span><span style="color:#75715e">o</span><span style="color:#75715e">t</span><span style="color:#75715e"> </span><span style="color:#75715e">d</span><span style="color:#75715e">e</span><span style="color:#75715e">c</span><span style="color:#75715e">l</span><span style="color:#75715e">a</span><span style="color:#75715e">r</span><span style="color:#75715e">i</span><span style="color:#75715e">n</span><span style="color:#75715e">g</span><span style="color:#75715e"> </span><span style="color:#75715e">f</span><span style="color:#75715e">u</span><span style="color:#75715e">n</span><span style="color:#75715e">c</span><span style="color:#75715e">t</span><span style="color:#75715e">i</span><span style="color:#75715e">o</span><span style="color:#75715e">n</span><span style="color:#75715e">s</span><span style="color:#75715e"> </span><span style="color:#75715e">h</span><span style="color:#75715e">e</span><span style="color:#75715e">r</span><span style="color:#75715e">e</span>
-  <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">a</span><span style="color:#75715e">s</span><span style="color:#75715e"> </span><span style="color:#75715e">t</span><span style="color:#75715e">h</span><span style="color:#75715e">e</span><span style="color:#75715e">y</span><span style="color:#75715e"> </span><span style="color:#75715e">s</span><span style="color:#75715e">h</span><span style="color:#75715e">o</span><span style="color:#75715e">u</span><span style="color:#75715e">l</span><span style="color:#75715e">d</span><span style="color:#75715e"> </span><span style="color:#75715e">N</span><span style="color:#75715e">O</span><span style="color:#75715e">T</span><span style="color:#75715e"> </span><span style="color:#75715e">b</span><span style="color:#75715e">e</span><span style="color:#75715e"> </span><span style="color:#75715e">o</span><span style="color:#75715e">v</span><span style="color:#75715e">e</span><span style="color:#75715e">r</span><span style="color:#75715e">-</span><span style="color:#75715e">w</span><span style="color:#75715e">r</span><span style="color:#75715e">i</span><span style="color:#75715e">t</span><span style="color:#75715e">t</span><span style="color:#75715e">e</span><span style="color:#75715e">n</span>
+  <span style="color:#75715e">// not declaring functions here</span>
+  <span style="color:#75715e">// as they should NOT be over-written</span>
 }
 
 <span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">Loggable</span> {
 
     <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">addToLog</span>(event: String) {
-      <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">u</span><span style="color:#75715e">s</span><span style="color:#75715e">e</span><span style="color:#75715e"> </span><span style="color:#75715e">p</span><span style="color:#75715e">r</span><span style="color:#75715e">i</span><span style="color:#75715e">v</span><span style="color:#75715e">a</span><span style="color:#75715e">t</span><span style="color:#75715e">e</span><span style="color:#75715e"> </span><span style="color:#75715e">f</span><span style="color:#75715e">u</span><span style="color:#75715e">n</span><span style="color:#75715e">c</span><span style="color:#75715e">t</span><span style="color:#75715e">i</span><span style="color:#75715e">o</span><span style="color:#75715e">n</span><span style="color:#75715e">s</span><span style="color:#75715e"> </span><span style="color:#75715e">t</span><span style="color:#75715e">o</span><span style="color:#75715e"> </span><span style="color:#75715e">f</span><span style="color:#75715e">i</span><span style="color:#75715e">n</span><span style="color:#75715e">d</span><span style="color:#75715e"> </span><span style="color:#75715e">l</span><span style="color:#75715e">o</span><span style="color:#75715e">g</span><span style="color:#75715e"> </span><span style="color:#75715e">f</span><span style="color:#75715e">i</span><span style="color:#75715e">l</span><span style="color:#75715e">e</span><span style="color:#75715e"> </span><span style="color:#75715e">U</span><span style="color:#75715e">R</span><span style="color:#75715e">L</span>
-      <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">a</span><span style="color:#75715e">p</span><span style="color:#75715e">p</span><span style="color:#75715e">e</span><span style="color:#75715e">n</span><span style="color:#75715e">d</span><span style="color:#75715e"> </span><span style="color:#75715e">e</span><span style="color:#75715e">v</span><span style="color:#75715e">e</span><span style="color:#75715e">n</span><span style="color:#75715e">t</span><span style="color:#75715e"> </span><span style="color:#75715e">t</span><span style="color:#75715e">e</span><span style="color:#75715e">x</span><span style="color:#75715e">t</span><span style="color:#75715e"> </span><span style="color:#75715e">w</span><span style="color:#75715e">i</span><span style="color:#75715e">t</span><span style="color:#75715e">h</span><span style="color:#75715e"> </span><span style="color:#75715e">t</span><span style="color:#75715e">i</span><span style="color:#75715e">m</span><span style="color:#75715e">e</span><span style="color:#75715e"> </span><span style="color:#75715e">s</span><span style="color:#75715e">t</span><span style="color:#75715e">a</span><span style="color:#75715e">m</span><span style="color:#75715e">p</span>
+      <span style="color:#75715e">// use private functions to find log file URL</span>
+      <span style="color:#75715e">// append event text with time stamp</span>
     }
 
 }
@@ -243,7 +243,7 @@ only included it in the protocol extension.</p>
 to the Loggable protocol:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>: Loggable {
   <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">doSomething</span>() {
-    addToLog(event: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">I did something!</span><span style="color:#e6db74">&#34;</span>)
+    addToLog(event: <span style="color:#e6db74">&#34;I did something!&#34;</span>)
   }
 }
 </code></pre></div><p>For my app, I knew that I would want all my NSViewControllers to be able to add

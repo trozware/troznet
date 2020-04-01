@@ -204,7 +204,7 @@ mainly numeric, the display looked terrible because the numbers in the default
 San Francisco are non-proportional. So I switched to Helvetica Neue and watched
 for dynamic font size changes manually.</p>
 <p>The iPhone X should be fine since I used the new safe area layout guides.</p>
-<p>For iPad, I didn't make a lot of UI changes since I don't expect it to be used
+<p>For iPad, I didn&rsquo;t make a lot of UI changes since I don&rsquo;t expect it to be used
 much, but the display is bigger and probably easier to read.</p>
 <p><img src="/images/MarkTime1.png" alt="Mark Time"></p>
 <h3 id="refinements">Refinements</h3>
@@ -231,12 +231,12 @@ placed <code>UIButtons</code> covering all the relevant active areas. They respo
 Down for a much faster reaction.</p>
 <p>Usually, I make a separate View Controller for preferences. This time, because
 the app needed access to the standard Settings app for Location services, I
-decided to add the app's preferences to the app's page in the Settings app. This
+decided to add the app&rsquo;s preferences to the app&rsquo;s page in the Settings app. This
 worked really well, and made the app itself smaller and simpler.</p>
 <p><img src="/images/MarkTime3.png" alt="Mark Time"></p>
 <p>In cheat mode, the location is recorded at every tap and then the info button
 beside each time shows the details. This needed to handle the permissions
-required for accessing the user's location. The latitude and longitude are shown
+required for accessing the user&rsquo;s location. The latitude and longitude are shown
 in decimal format and at first, I also showed them in DMS (degrees, minutes,
 seconds) format. I found out that for navigation calculations, they prefer to
 see degrees and decimal minutes, no seconds. And rather oddly, this is displayed

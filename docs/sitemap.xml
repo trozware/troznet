@@ -3,15 +3,50 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://troz.net/post/2020/custom-fonts/</loc>
+    <lastmod>2020-04-01T10:27:59+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/font/</loc>
+    <lastmod>2020-04-01T10:27:59+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/ios/</loc>
+    <lastmod>2020-04-01T10:27:59+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://troz.net/tags/mac/</loc>
-    <lastmod>2020-01-27T11:32:57+10:00</lastmod>
+    <lastmod>2020-04-01T10:27:59+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/macos/</loc>
+    <lastmod>2020-04-01T10:27:59+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/post/</loc>
-    <lastmod>2020-01-27T11:32:57+10:00</lastmod>
+    <lastmod>2020-04-01T10:27:59+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/</loc>
+    <lastmod>2020-04-01T10:27:59+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -32,20 +67,6 @@
   
   <url>
     <loc>https://troz.net/post/2020/swiftui_for-mac-extras/</loc>
-    <lastmod>2020-01-27T11:32:57+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/tags/</loc>
-    <lastmod>2020-01-27T11:32:57+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/</loc>
     <lastmod>2020-01-27T11:32:57+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -102,6 +123,13 @@
   
   <url>
     <loc>https://troz.net/thanks/</loc>
+    <lastmod>2019-01-16T10:59:13+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/</loc>
     <lastmod>2019-01-16T10:59:13+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -242,13 +270,6 @@
   
   <url>
     <loc>https://troz.net/tags/apps/</loc>
-    <lastmod>2018-05-26T09:22:57+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/tags/ios/</loc>
     <lastmod>2018-05-26T09:22:57+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -549,6 +570,13 @@
   </url>
   
   <url>
+    <loc>https://troz.net/tags/password/</loc>
+    <lastmod>2016-09-17T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://troz.net/tags/passwords/</loc>
     <lastmod>2016-09-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -571,13 +599,6 @@
   
   <url>
     <loc>https://troz.net/post/2016/dice-pass-mac-update/</loc>
-    <lastmod>2016-07-03T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/tags/password/</loc>
     <lastmod>2016-07-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

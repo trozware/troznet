@@ -185,7 +185,7 @@ will make sure there is a real value in that optional by the time it is needed.<
 <p><img src="/images/Playground2.png" alt="Playground crash"></p>
 <p>Instead of using ! you should use optional chaining with ? or check the value
 with <code>guard</code> or <code>if let</code> before use.</p>
-<p>One trap to beware of is with Xcode's attempts to be helpful and suggest fixes
+<p>One trap to beware of is with Xcode&rsquo;s attempts to be helpful and suggest fixes
 to problems. If you use an optional where it cannot work, Xcode will warn you
 that it is incorrect, but the suggested fix will be to insert !</p>
 <p><img src="/images/optional_fix.png" alt="Optional fix"></p>
@@ -197,7 +197,7 @@ show that you need to fix the problem properly.</p>
 Objective-C syntax for declaring a static constant, so used to fall back to
 using <code>#define</code> for global constants. Inside my objects, all instance properties
 were variables, not constants. Inside functions, it was the same.</p>
-<p>It doesn't take much imagination to work out that your apps will perform better
+<p>It doesn&rsquo;t take much imagination to work out that your apps will perform better
 and more securely if values that do not need to change are allocated as
 constants instead of variables.</p>
 <p>With Swift, this is easy as you just declare a constant using the <code>let</code> keyword
