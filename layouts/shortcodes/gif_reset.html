@@ -1,0 +1,12 @@
+<script>
+  window.onload = function (e) {
+    const imgs = document.getElementsByTagName('img')
+    for (i = 0; i < imgs.length; i++) {
+      let src = imgs[i].src
+      if (src.endsWith('.gif')) {
+        imgs[i].src = ''
+        imgs[i].src = src
+      }
+    }
+  }
+</script>

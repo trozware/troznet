@@ -3,6 +3,83 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://troz.net/tags/app-store/</loc>
+    <lastmod>2020-05-09T11:26:21+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/crosswords/</loc>
+    <lastmod>2020-05-09T11:26:21+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/ios/</loc>
+    <lastmod>2020-05-09T11:26:21+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/post/2020/name_this_app/</loc>
+    <lastmod>2020-05-09T11:26:21+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/post/</loc>
+    <lastmod>2020-05-09T11:26:21+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/puzzles/</loc>
+    <lastmod>2020-05-09T11:26:21+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/swift/</loc>
+    <lastmod>2020-05-09T11:26:21+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/swiftui/</loc>
+    <lastmod>2020-05-09T11:26:21+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/</loc>
+    <lastmod>2020-05-09T11:26:21+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/color/</loc>
+    <lastmod>2020-05-09T11:26:08+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/post/2020/swiftui-color/</loc>
+    <lastmod>2020-05-09T11:26:08+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://troz.net/post/2020/custom-fonts/</loc>
     <lastmod>2020-04-01T10:27:59+10:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -11,13 +88,6 @@
   
   <url>
     <loc>https://troz.net/tags/font/</loc>
-    <lastmod>2020-04-01T10:27:59+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/tags/ios/</loc>
     <lastmod>2020-04-01T10:27:59+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -33,34 +103,6 @@
   <url>
     <loc>https://troz.net/tags/macos/</loc>
     <lastmod>2020-04-01T10:27:59+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/post/</loc>
-    <lastmod>2020-04-01T10:27:59+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/tags/</loc>
-    <lastmod>2020-04-01T10:27:59+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/tags/swift/</loc>
-    <lastmod>2020-01-27T11:32:57+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/tags/swiftui/</loc>
-    <lastmod>2020-01-27T11:32:57+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -145,13 +187,6 @@
   <url>
     <loc>https://troz.net/post/2018/the-end-of-picapod/</loc>
     <lastmod>2018-10-06T09:38:20+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/tags/app-store/</loc>
-    <lastmod>2018-10-06T08:29:35+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -11,6 +11,313 @@
     
     
     <item>
+<title>Name This App</title>
+<link>https://troz.net/post/2020/name_this_app/</link>
+<pubDate>Sat, 09 May 2020 11:26:21 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2020/name_this_app/</guid>
+<description>&lt;p&gt;My current work in progress is an iPhone app designed to make it easier to solve crossword anagrams by emulating and improving upon an ability that was there when we used to do crosswords on paper, but is missing for digital crosswords.&lt;/p&gt;
+&lt;p&gt;But I cannot think of a clever name for the app, so please read the story and contact me with your name suggestions or if you would like to test the pre-release version of this app.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;cryptic-crosswords&#34;&gt;Cryptic Crosswords&lt;/h3&gt;
+&lt;p&gt;Programmers are basically puzzlers, and programming is the world&amp;rsquo;s best type of puzzle, but I like to start my day with a cryptic crossword. Like programming, cryptic crossword clues have their own syntax and what seems like gibberish on a first glance, can be parsed into logical parts to take you to the answer. But there are aspects of solving crosswords that were easier with pencil and paper, so I decided to write an app to help fill one of those gaps.&lt;/p&gt;
+&lt;p&gt;My crossword of choice is the &lt;a href=&#34;https://www.irishtimes.com/games/crosswords/&#34;&gt;Crosaire&lt;/a&gt; crossword from &lt;a href=&#34;https://www.irishtimes.com&#34;&gt;The Irish Times&lt;/a&gt;. A lot of newspapers have a cryptic crossword and most of them need a subscription, but the Irish Times has a crossword only subscription that I really like. Crosswords also tend to require some local knowledge, but for the Crosaire, if you remember that the Abbey and the Gate are both theatres and that Down is a county, you will have most of what you need. And as an added bonus, the crossword creator later blogs the solutions with explanations so you can learn how the clues were constructed if you are totally mystified.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;anagrams&#34;&gt;Anagrams&lt;/h3&gt;
+&lt;p&gt;Anagrams are a very popular clue type but they can be tricky to solve because our brains are too good at discerning patterns. We can recognize words using only the first and last letters if they have the correct number of letters inside. This means that asking our brains to scramble these letters into a completely different word is very difficult. In the olden days, when I used to do crosswords in the newspaper, the best method was to find a space in the margin and write the letters out in a circle which forced my brain to reconsider the options.&lt;/p&gt;
+&lt;p&gt;Here is an example from a recent Crosaire:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Users rip off revelation (8)&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The word &amp;ldquo;off&amp;rdquo; is a hint that this is an anagram, &amp;ldquo;Users rip&amp;rdquo; has the right number of letters, so the overall clue must be &amp;ldquo;revelation&amp;rdquo;. This is not a very long anagram and I think having two words makes it easier, but lets take a look at how I would solve this the old-fashioned way. (And I knew the &amp;ldquo;I&amp;rdquo; was the third last letter.)&lt;/p&gt;
+&lt;p&gt;&lt;script&gt;
+  window.onload = function (e) {
+    const imgs = document.getElementsByTagName(&#39;img&#39;)
+    for (i = 0; i &lt; imgs.length; i++) {
+      let src = imgs[i].src
+      if (src.endsWith(&#39;.gif&#39;)) {
+        imgs[i].src = &#39;&#39;
+        imgs[i].src = src
+      }
+    }
+  }
+&lt;/script&gt;
+
+&lt;style&gt;
+  img {
+    margin: 10px auto;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+    max-width: 400px;
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .social_footer img {
+    border: none;
+    box-shadow: none;
+  }
+&lt;/style&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Anagram1.gif&#34; alt=&#34;Anagram solving manually&#34;&gt;&lt;/p&gt;
+&lt;p&gt;If you watch this gif and then look at it when it stops repeating, hopefully you will be able to see that the answer is &amp;ldquo;SURPRISE&amp;rdquo;. Refresh the page if you want to start the gif looping again.&lt;/p&gt;
+&lt;p&gt;But I do crosswords on my iPad now and while I could use a notes app and my Apple Pencil to draw the letters out like I did in the GIF above, I don&amp;rsquo;t always have the Pencil with me and I want to keep looking at the crossword. So I decided that a companion iPhone app was the way that would work best for me.&lt;/p&gt;
+&lt;p&gt;There are sites and apps that offer anagram solvers, but they are just looking through a dictionary and showing you all the possibilities. To me, this feels like cheating, but I don&amp;rsquo;t have a problem with using an app to emulate the techniques I used to use with pencil and paper.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;app-design&#34;&gt;App Design&lt;/h3&gt;
+&lt;p&gt;So I planned out the basic features of the app:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;enter a word&lt;/li&gt;
+&lt;li&gt;display the letters in a circle&lt;/li&gt;
+&lt;li&gt;shuffle these letters if needed&lt;/li&gt;
+&lt;li&gt;place letters in a possible solution&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Arranging the letters in a circle was made relatively easy by using SwiftUI. I placed the letters in a ZStack so they were all piled on the one spot. Then I calculated the X &amp;amp; Y offsets needed to move each letter to the edge of a circle. This involving digging out some long-forgotten trigonometry to convert from polar coordinates to rectangular coordinates. I could calculate the radius of the letter circle based on the screen size and the angle between each letter was 360 degrees divided by the number of letters. So some quick calculations converted these two numbers into X &amp;amp; Y coordinates for each letter, and then I had my circle.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; radiansBetweenLetters: Double {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; degrees = &lt;span style=&#34;color:#ae81ff&#34;&gt;360.0&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; Double(anagramLetters.count)
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; radians = degrees &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; .pi &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;180&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; radians
+    }
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; radiusForCircle: Double {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; screenWidth = UIScreen.main.bounds.width
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; Double(screenWidth &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.35&lt;/span&gt;)
+    }
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;XoffsetForLetterAt&lt;/span&gt;(index: Int) -&amp;gt; CGFloat {
+        &lt;span style=&#34;color:#75715e&#34;&gt;// x = R cos t&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; totalRadians = radiansBetweenLetters &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; Double(index)
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; x = radiusForCircle &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; sin(totalRadians)
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; CGFloat(x)
+    }
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;YoffsetForLetterAt&lt;/span&gt;(index: Int) -&amp;gt; CGFloat {
+        &lt;span style=&#34;color:#75715e&#34;&gt;// y = R sin t&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; totalRadians = radiansBetweenLetters &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; Double(index)
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; y = radiusForCircle &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; cos(totalRadians)
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; CGFloat(y)
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The original word was converted into an array for display, so re-arranging the letters was a matter of calling &lt;code&gt;shuffle()&lt;/code&gt; on the array which automatically triggered a SwiftUI redraw.&lt;/p&gt;
+&lt;p&gt;And here is version 1 of the interface running in the SwiftUI Canvas:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/AnagramAssistv1.gif&#34; alt=&#34;Anagram app version 1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Refresh the page to see the gif play, if it has stopped.&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;a-different-type-of-anagram&#34;&gt;A Different Type of Anagram&lt;/h3&gt;
+&lt;p&gt;Now we come to a variation of the anagram clue that is very popular with the author of the Crosaire crossword. I don&amp;rsquo;t know if there is an official name, but I call them &amp;ldquo;subtraction anagrams&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Here is an example:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Creationist has no taste for what&amp;rsquo;s sarcastic (6)&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The idea here is to remove the letters in &amp;ldquo;taste&amp;rdquo; from the letters in &amp;ldquo;Creationist&amp;rdquo; and then unscramble the remaining letters to find a word that means &amp;ldquo;sarcastic&amp;rdquo;. My first attempt at this used a Trash can button that removed the letter and shortened the space for the solution, but then I decided to have a discard tray at the bottom of the screen to show what had been removed and allow replacing any letters discarded by mistake.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/AnagramDiscard.png&#34; alt=&#34;Anagram discard tray&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;After this, I added a bit of style to make it look nicer and then moved on to the next feature. If I knew some of the cross letters already, I wanted to be able to place them in the solution squares and then lock them in place. This would allow me to shuffle in letters to test and remove all the unlocked ones with a button click. So here is what the app looked like after those changes:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/AnagramLocks.gif&#34; alt=&#34;Anagram with locked letters&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Refresh the page to see the gif play, if it has stopped.&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;drag--drop&#34;&gt;Drag &amp;amp; Drop&lt;/h3&gt;
+&lt;p&gt;My next experiment was with drag &amp;amp; drop to place or discard letters. I waited until iOS 13.4 brought drag &amp;amp; drop to SwiftUI but I was not happy with the result. Firstly, there is a big lag on dragging. You have to hold your finger down on a letter for quite a while before it becomes draggable. This was so counter-intuitive that I thought it wasn&amp;rsquo;t working, but occasionally it did work and so I eventually deduced that it was a timing issue.&lt;/p&gt;
+&lt;p&gt;The second problem was solved thanks to a suggestion by &lt;a href=&#34;https://twitter.com/luisramos1337&#34;&gt;Luis Ramos&lt;/a&gt; on &lt;a href=&#34;https://twitter.com/trozware/status/1254568520295124992&#34;&gt;Twitter&lt;/a&gt;. When I dragged a letter, the drag preview image was the shuffle button from the middle of the ZStack instead of the selected letter. This was solved by moving the &lt;code&gt;onDrag&lt;/code&gt; modifier to BEFORE the &lt;code&gt;offset&lt;/code&gt; modifier (not AFTER like I said in my original response to Luis). But I was still not happy with it, so I decided to discard this idea and stick to tapping.&lt;/p&gt;
+&lt;p&gt;There was one side-effect: I wasn&amp;rsquo;t able to get the drag preview to be round - it was a square with opaque corners. As a work-around, I changed the letters to be inside squares and then decided this was a better look anyway, since it was more like what you see in a crossword.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;further-ui-enhancements&#34;&gt;Further UI Enhancements&lt;/h3&gt;
+&lt;p&gt;I installed a custom font so that it looked more like hand-writing. I wrote about &lt;a href=&#34;https://troz.net/post/2020/custom-fonts/&#34;&gt;installing custom fonts&lt;/a&gt; in a separate article, so if you are interested check that out for details on the multiple steps that you need to take to get them to work. I went through a few different fonts until I found one that I thought worked well and clearly for all the upper case letters but I settled on &lt;a href=&#34;https://www.fontspace.com/search?q=oregano&#34;&gt;Oregano&lt;/a&gt;. And then I made the app work in dark mode too:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/AnagramDarkMode.png&#34; alt=&#34;Custom font and dark mode&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The clue for this one is &lt;em&gt;&amp;ldquo;Consumables minus bacon and shellfish (6)&amp;quot;&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;animations&#34;&gt;Animations&lt;/h3&gt;
+&lt;p&gt;SwiftUI has animation built in, so I was able to add an &lt;code&gt;animation&lt;/code&gt; modifier to the various views to make the transitions look smooth. I particularly liked the way the letters re-arranged themselves around the circle when I removed or replaced a letter.&lt;/p&gt;
+&lt;p&gt;But to add something extra, I thought it would be fun if the letters all started in the middle and moved outwards to their places on the circle. The way I did this was by using a Boolean to store whether the letters had had their first draw. If not, the radius of the circle was zero, so they all piled in the middle. After a delay, this Boolean was toggled so the radius was changed to the full size and the animation modifier already applied, made the letters smoothly expand outwards.&lt;/p&gt;
+&lt;p&gt;For the letter shuffle, I did the reverse, moving the letters in, shuffling, then moving them out again.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/AnagramAnimation.gif&#34; alt=&#34;Animations&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Refresh the page to see the gif play, if it has stopped.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I also added sound effects and a slide-up sheet view with settings and help. I enjoyed using &lt;a href=&#34;https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/&#34;&gt;Apple&amp;rsquo;s SF Symbols&lt;/a&gt; to show icons for each paragraph of the help, although I may change the colour of these icons as they look at bit too much like buttons right now.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/AnagramHelp.png&#34; alt=&#34;Help &amp; Settings&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;next-steps&#34;&gt;Next Steps&lt;/h3&gt;
+&lt;p&gt;Well, I am hoping that someone will come up with a good name. I thought of &amp;ldquo;Anagram Assistant&amp;rdquo; but that doesn&amp;rsquo;t fit underneath the home screen icon and it was shortened to &amp;ldquo;Anagram&amp;rdquo;. I don&amp;rsquo;t want people to see it and think it is just one of those dictionary lookup anagram finders, so I would like something more descriptive while still being short, or at least having a short variant.&lt;/p&gt;
+&lt;p&gt;In honour of P.G.Wodehouse&amp;rsquo;s favourite crossword clue, I thought of calling it &amp;ldquo;E blank U&amp;rdquo; but that isn&amp;rsquo;t an anagram, so it doesn&amp;rsquo;t really work. For people not familiar with that reference, Wodehouse&amp;rsquo;s less quick-witted characters always get stuck on &amp;ldquo;Large flightless Australian bird, 3 letters. E blank U&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;A clever name would be good - perhaps an anagram itself? If you think of anything, please let me know on &lt;a href=&#34;https://twitter.com/trozware&#34;&gt;Twitter&lt;/a&gt;, by using the email link below or through the &lt;a href=&#34;https://troz.net/contact/&#34;&gt;Contact page&lt;/a&gt;. The namer will get full credit in the app. And use one of those methods to contact me if you would like to test the app before it is released.&lt;/p&gt;
+&lt;p&gt;Once I have a name, I can get to work on the usual secondary tasks which take so much time: App Store set up, screen shots, a support page and so on.&lt;/p&gt;
+&lt;p&gt;I haven&amp;rsquo;t tried an iPad version yet. I got stung once by testing an iPad version of an app, deciding it didn&amp;rsquo;t work well and then running into Apple&amp;rsquo;s ban on dropping a platform from a published app. This has discouraged me from iPad apps ever since, which I doubt was their intention.&lt;/p&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;And if you are curious about the solutions to the clues I used in the examples:&lt;/p&gt;
+&lt;p&gt;Users rip off revelation (8) = SURPRISE&lt;br&gt;
+Creationist has no taste for what&amp;rsquo;s sarcastic (6) = IRONIC&lt;br&gt;
+Consumables minus bacon and shellfish (6) = MUSSEL&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+</item>
+    
+    <item>
+<title>SwiftUI Color</title>
+<link>https://troz.net/post/2020/swiftui-color/</link>
+<pubDate>Sat, 09 May 2020 11:26:08 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2020/swiftui-color/</guid>
+<description>&lt;p&gt;As developers, we are used to thinking of color as a numeric way to specify a particular tint. But in SwiftUI, &lt;code&gt;Color&lt;/code&gt; - like almost everything else - is actually a &lt;code&gt;View&lt;/code&gt; in its own right. This leads us to two very interesting questions: how do we use a view to specify a color and how can we use the fact that &lt;code&gt;Color&lt;/code&gt; is &lt;code&gt;View&lt;/code&gt;?&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;specifying-a-color&#34;&gt;Specifying a Color&lt;/h2&gt;
+&lt;p&gt;To start my investigations of &lt;code&gt;Color&lt;/code&gt;, I created a new iOS single view app in Xcode. Regular followers will know that I am a passionate advocate of macOS programming, but when experimenting with SwiftUI, I prefer to use an iPhone app as the preview canvas fits very neatly into the main Xcode window.&lt;/p&gt;
+&lt;p&gt;The default &lt;code&gt;ContentView&lt;/code&gt; contains a single &lt;code&gt;Text&lt;/code&gt; view. To change the color of the text in this view, I added a modifier:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;  Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello, World!&amp;#34;&lt;/span&gt;)
+      .foregroundColor(.red)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;foregroundColor&lt;/code&gt; modifier expects a &lt;code&gt;Color&lt;/code&gt; so there was no need to tell it that the parameter is a &lt;code&gt;Color&lt;/code&gt; and I was able to use the short way of describing one of the standard colors.&lt;/p&gt;
+&lt;p&gt;Adding a background color is a bit different because a background can be any view, not just a color. So the modifier needs to specify that this is a &lt;code&gt;Color&lt;/code&gt; view, as well as setting the actual color.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;    Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello, World!&amp;#34;&lt;/span&gt;)
+        .padding()
+        .foregroundColor(.red)
+        .background(Color.yellow)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;I added the padding to make the overall size bigger so that the background color was more obvious.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Command-click on &lt;code&gt;.red&lt;/code&gt; or &lt;code&gt;.yellow&lt;/code&gt; in the code and select &amp;ldquo;Jump to Definition&amp;rdquo;. This lists the available pre-defined colors. As well a set of basic colors and a clear option, there are two extra entries: primary &amp;amp; secondary. And if you scroll back up the page a bit, you will see another one: accentColor.&lt;/p&gt;
+&lt;p&gt;Choosing one of the preset options is the easiest way to select a color. But try this:&lt;/p&gt;
+&lt;p&gt;In your code, type &lt;code&gt;let uiColor = UIColor.&lt;/code&gt; and have a look at the auto-complete suggestions that appear after you type the period. Scrolling past the various &lt;code&gt;init&lt;/code&gt; methods, you will see that &lt;code&gt;UIColor&lt;/code&gt; has a lot more options than &lt;code&gt;Color&lt;/code&gt;. There are a bunch of colors, a section of system colors and a lot of semantic colors like placeholderText, secondarySystemBackground.&lt;/p&gt;
+&lt;p&gt;Why does UIColor get these other useful looking options and Color does not?&lt;/p&gt;
+&lt;p&gt;Well, I don&amp;rsquo;t have an answer to that except that I hope they will appear over time. But in the meantime, it is easy enough to create a SwiftUI &lt;code&gt;Color&lt;/code&gt; from a &lt;code&gt;UIColor&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; backgroundColor = Color(UIColor.secondarySystemBackground)
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some View {
+      VStack {
+        Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello, World!&amp;#34;&lt;/span&gt;)
+      }
+      .background(backgroundColor)
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you know the RGB values of the color you want to use, it is possible to create a &lt;code&gt;Color&lt;/code&gt; directly by various methods like this one for setting the color using the RGB values.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; rgbColor = Color(red: &lt;span style=&#34;color:#ae81ff&#34;&gt;1.0&lt;/span&gt;, green: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.5&lt;/span&gt;, blue: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.5&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;But when you get to this stage, I strongly suggest that you start using color assets instead.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;using-color-assets&#34;&gt;Using Color Assets&lt;/h2&gt;
+&lt;p&gt;Go to Assets.xcassets and click the plus button at the bottom of the list of assets. Select &amp;ldquo;New Color Set&amp;rdquo; and you will get a new asset called &amp;ldquo;Color&amp;rdquo;. You can double-click the name to edit it to something that makes sense to you.&lt;/p&gt;
+&lt;style&gt;
+  img {
+    margin: 10px auto;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .social_footer img {
+    border: none;
+    box-shadow: none;
+  }
+&lt;/style&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/swiftui-colors-add-set.png&#34; alt=&#34;Add Color Set&#34;&gt;&lt;/p&gt;
+&lt;p&gt;While naming it after the color may seem logical, I prefer to think about the use cases for this color and set the name to something like &amp;ldquo;cardBackground&amp;rdquo; or &amp;ldquo;alertText&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;By default, your new color set will contains a single color block. Click in the color block itself and then you will be able to edit the color in the Attributes Inspector. If you click the &amp;ldquo;Content&amp;rdquo; popup, you will get access to all the system colors, and you can also select any color space and create a custom color using that color space. Click &amp;ldquo;Color Panel&amp;rdquo; to access a standard color picker if you need it. And change the input method to whatever suits the color information you have.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/swiftui-colors-set.png&#34; alt=&#34;Edit Color Set&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Modern apps need to be able to handle light and dark modes, and this is where using a color set really shines. Set the color to what you want to use for light mode and then choose &amp;ldquo;Any, Dark&amp;rdquo; from the Appearances popup menu in the Attributes Inspector.&lt;/p&gt;
+&lt;p&gt;Now your color set has two blocks and you can change the Dark one to whatever color this should be in dark mode. This feature of Color Sets is a very strong argument for using them instead of defining colors using their RGB values.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/swiftui-colors-multi-set.png&#34; alt=&#34;Light &amp; Dark Color Set&#34;&gt;&lt;/p&gt;
+&lt;p&gt;And now for the really neat part. To use any of these color sets in your code, add a modifier like &lt;code&gt;foregroundColor&lt;/code&gt; just the same as usual, but when the placeholder for the color is selected, press Shift-Command-L to bring up the Library palette and choose the Color icon at the right. You will see all your color sets there and you can insert them easily and accurately.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/swiftui-colors-use-color-set.png&#34; alt=&#34;Using a Color Set&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Here is the code for my &lt;code&gt;AlertView&lt;/code&gt; using two color sets.&lt;/p&gt;
+&lt;p&gt;Some people may object to using &amp;ldquo;magic strings&amp;rdquo; to specify the color sets but I feel that so long as the Library is used to insert the color names automatically, there is very little chance of error. But you could always make an enum or struct of color name constants and use these instead.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;AlertView&lt;/span&gt;: View {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; alertText = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Something went wrong!&amp;#34;&lt;/span&gt;
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some View {
+        Text(alertText)
+            .padding()
+            .background(Color(UIColor.secondarySystemBackground))
+            .cornerRadius(&lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt;)
+            .shadow(color: Color(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;alertShadow&amp;#34;&lt;/span&gt;), radius: &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;, x: &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, y: &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+            .foregroundColor(Color(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;alertText&amp;#34;&lt;/span&gt;))
+    }
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;AlertView_Previews&lt;/span&gt;: PreviewProvider {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; previews: some View {
+        Group {
+            AlertView().preferredColorScheme(.light)
+            AlertView().preferredColorScheme(.dark)
+        }
+        .previewLayout(.sizeThatFits)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And here is a composite image showing the two versions of the alert with the colors specified by two color sets:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/swiftui-colors-alerts.png&#34; alt=&#34;Alerts Using Color Set&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;light--dark-mode-system-colors&#34;&gt;Light &amp;amp; Dark Mode System Colors&lt;/h2&gt;
+&lt;p&gt;Color&amp;rsquo;s preset colors adapt automatically to the environment so that they work with dark mode or light mode just like your own Color Sets can.&lt;/p&gt;
+&lt;p&gt;I wrote a test view to loop through all the preset colors (except clear) and display their descriptions in their own color.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ContentView&lt;/span&gt;: View {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; standardColors: [Color] = [
+        .black, .white, .gray, .red, .green, .blue, .orange,
+        .yellow, .pink, .purple, .primary, .secondary, .accentColor
+    ]
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some View {
+        VStack(alignment: .leading) {
+            ForEach(standardColors, id: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\&lt;/span&gt;.&lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;) { color &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+                Text(color.description)
+                    .bold()
+                    .foregroundColor(color)
+            }
+            .font(.title)
+        }
+        .padding()
+    }
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ContentView_Previews&lt;/span&gt;: PreviewProvider {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; previews: some View {
+        Group {
+            ContentView().preferredColorScheme(.light)
+            ContentView().preferredColorScheme(.dark)
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The canvas shows two previews: one for light mode and one for dark mode.&lt;/p&gt;
+&lt;p&gt;If you have a color picker app (I use &lt;a href=&#34;https://github.com/Toinane/colorpicker/releases/tag/2.0.3&#34;&gt;Colorpicker&lt;/a&gt;), you can detect the RGB values in the two previews. I made the font bold to make this easier. Red is &lt;code&gt;rgb(232, 77, 61)&lt;/code&gt; in light mode but &lt;code&gt;rgb(233, 85, 69)&lt;/code&gt; in dark mode. And the others have similar modifications to make them look their best in each environment.&lt;/p&gt;
+&lt;p&gt;Take particular note of the three at the bottom of the list: primary, secondary and accentColor. These are incredibly useful when making a layout that works in both light and dark modes.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/swiftui-colors-light-dark.png&#34; alt=&#34;Color previews&#34;&gt;&lt;/p&gt;
+&lt;p&gt;When choosing a UIColor or NSColor, it is best to use the system versions, so &lt;code&gt;.systemBlue&lt;/code&gt; instead of &lt;code&gt;.blue&lt;/code&gt; as this gives the dark/light variants that we just saw. And the other semantic colors like &lt;code&gt;UIColor.secondarySystemBackground&lt;/code&gt; also have dark/light variants automatically.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;color-as-a-view&#34;&gt;Color as a View&lt;/h3&gt;
+&lt;p&gt;Now let&amp;rsquo;s consider the effect of &lt;code&gt;Color&lt;/code&gt; being a view and not just a description of a tint. Imagine you wanted to draw a colored box on the screen. Using UIKit, you would probably think of using a &lt;code&gt;UIView&lt;/code&gt;. With AppKit, maybe an &lt;code&gt;NSBox&lt;/code&gt;. Or perhaps you would have jumped straight to a Bezier path.&lt;/p&gt;
+&lt;p&gt;Create a new SwiftUI view and replace the default &lt;code&gt;Text&lt;/code&gt; with a &lt;code&gt;Color&lt;/code&gt;, like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;BoxView&lt;/span&gt;: View {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some View {
+        Color.blue
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Resume the canvas preview and you will see the color fill the preview iPhone screen, except for the safe areas top and bottom.&lt;/p&gt;
+&lt;p&gt;To make this into a box, add a &lt;code&gt;frame&lt;/code&gt; modifier with the required height and width. And now you have a box, far more easily than you could in either UIKit or AppKit.&lt;/p&gt;
+&lt;p&gt;To be honest, in SwiftUI, you would probably use a &lt;code&gt;Rectangle&lt;/code&gt; instead of a plain &lt;code&gt;Color&lt;/code&gt; if you wanted a box of a set size but it is interesting to consider how &lt;code&gt;Color&lt;/code&gt; could be made to work.&lt;/p&gt;
+&lt;p&gt;A more valuable use of &lt;code&gt;Color&lt;/code&gt; is to set the background.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;BackgroundView&lt;/span&gt;: View {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some View {
+        ZStack {
+            Color.green
+
+            Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello, green background&amp;#34;&lt;/span&gt;)
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This makes the entire background green and shows the text centered on it.&lt;/p&gt;
+&lt;p&gt;And to make the color extend into the safe areas:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;  Color.green.edgesIgnoringSafeArea(.all)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I prefer to put the &lt;code&gt;edgesIgnoringSafeArea&lt;/code&gt; modifier on the &lt;code&gt;Color&lt;/code&gt; only and not on the entire &lt;code&gt;ZStack&lt;/code&gt;. That way the other contents of the &lt;code&gt;ZStack&lt;/code&gt; will all stay inside the safe area.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;So in summary, use preset colors or color assets to set your colors. And use the &lt;code&gt;Color&lt;/code&gt; view to set a background color for a view.&lt;/p&gt;
+&lt;p&gt;I hope you found this article useful, and if you have any suggestions, corrections or improvements, please contact me using one of the links below or though the &lt;a href=&#34;https://troz.net/contact/&#34;&gt;Contact&lt;/a&gt; page.&lt;/p&gt;</description>
+</item>
+    
+    <item>
 <title>Custom Fonts in iOS &amp; macOS apps</title>
 <link>https://troz.net/post/2020/custom-fonts/</link>
 <pubDate>Wed, 01 Apr 2020 10:27:59 +1000</pubDate>
@@ -1254,6 +1561,7 @@ But SwiftUI works on all Apple&amp;rsquo;s platforms, and as I am primarily a Ma
     box-shadow: none;
   }
 &lt;/style&gt;
+
 &lt;p&gt;I sometimes like to focus on aspects of the Swift language that get less publicity, but that I think are really useful without adding a lot of complexity. This time I am looking at tuples.&lt;/p&gt;
 &lt;p&gt;There are many different ways of collecting data together in Swift, but for small amounts of transitory data, I find tuples to be an extremely convenient data structure.&lt;/p&gt;
 &lt;h2 id=&#34;what-is-a-tuple&#34;&gt;What is a Tuple?&lt;/h2&gt;
@@ -1415,6 +1723,7 @@ print(x, y, z)
     box-shadow: none;
   }
 &lt;/style&gt;
+
 &lt;p&gt;Now that most of my Mac apps have been updated to support macOS Mojave&amp;rsquo;s dark mode, it was time to turn my attention to this web site.&lt;/p&gt;
 &lt;p&gt;I build this site using &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; and up until recently I used a theme called &lt;a href=&#34;https://github.com/olOwOlo/hugo-theme-even&#34;&gt;Even&lt;/a&gt; which I had been able to modify to suit my requirements. The story of how I switched to Hugo, what I wanted in a theme and how I went about, is in a &lt;a href=&#34;https://troz.net/post/2017/moving-to-hugo/&#34;&gt;post from last year&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;But Evan is a theme with a white background and dark text, which looked great in light mode, but rather glaring in dark mode. So it was time to head for the &lt;a href=&#34;https://themes.gohugo.io&#34;&gt;Hugo Themes page&lt;/a&gt; to look for an alternative.&lt;/p&gt;
@@ -1452,6 +1761,7 @@ print(x, y, z)
     box-shadow: none;
   }
 &lt;/style&gt;
+
 &lt;p&gt;With the release of macOS Mojave on 24th September 2018, I have started updating my Mac apps, mainly to enable support for dark mode if appropriate.&lt;/p&gt;
 &lt;p&gt;And now I have updated this site too. Click the light bulb icon at the top right of the page to toggle between light and dark modes for this site.&lt;/p&gt;
 &lt;p&gt;And with my apps, so far (1 st October 2018), I have updated &lt;a href=&#34;https://itunes.apple.com/app/apple-store/id552293482&#34;&gt;Icon Builder&lt;/a&gt;, &lt;a href=&#34;https://itunes.apple.com/app/apple-store/id509085586&#34;&gt;World Time in Words&lt;/a&gt;, &lt;a href=&#34;https://itunes.apple.com/app/apple-store/id997688302&#34;&gt;Dice Pass&lt;/a&gt; and &lt;a href=&#34;https://itunes.apple.com/app/apple-store/id533321133&#34;&gt;A Knight&amp;rsquo;s Move&lt;/a&gt;.&lt;/p&gt;

@@ -66,3 +66,12 @@
   background-color: #909295;
   color: #21262c;
 }
+
+.pagination__buttons {
+  justify-content: space-between !important;
+}
+
+blockquote {
+  border-left: 0px;
+  font-style: italic;
+}
