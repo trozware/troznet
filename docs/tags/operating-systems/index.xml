@@ -315,7 +315,7 @@ Consumables minus bacon and shellfish (6) = MUSSEL&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I prefer to put the &lt;code&gt;edgesIgnoringSafeArea&lt;/code&gt; modifier on the &lt;code&gt;Color&lt;/code&gt; only and not on the entire &lt;code&gt;ZStack&lt;/code&gt;. That way the other contents of the &lt;code&gt;ZStack&lt;/code&gt; will all stay inside the safe area.&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;So in summary, use preset colors or color assets to set your colors. And use the &lt;code&gt;Color&lt;/code&gt; view to set a background color for a view.&lt;/p&gt;
-&lt;p&gt;I hope you found this article useful, and if you have any suggestions, corrections or improvements, please contact me using one of the links below or though the &lt;a href=&#34;https://troz.net/contact/&#34;&gt;Contact&lt;/a&gt; page.&lt;/p&gt;</description>
+&lt;p&gt;I hope you found this article useful, and if you have any suggestions, corrections or improvements, please contact me using one of the links below or through the &lt;a href=&#34;https://troz.net/contact/&#34;&gt;Contact&lt;/a&gt; page.&lt;/p&gt;</description>
 </item>
     
     <item>

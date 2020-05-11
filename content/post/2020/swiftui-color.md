@@ -222,7 +222,7 @@ I prefer to put the `edgesIgnoringSafeArea` modifier on the `Color` only and not
 
 So in summary, use preset colors or color assets to set your colors. And use the `Color` view to set a background color for a view.
 
-I hope you found this article useful, and if you have any suggestions, corrections or improvements, please contact me using one of the links below or though the [Contact][3] page.
+I hope you found this article useful, and if you have any suggestions, corrections or improvements, please contact me using one of the links below or through the [Contact][3] page.
 
 [i1]: /images/swiftui-colors-light-dark.png
 [i2]: /images/swiftui-colors-add-set.png

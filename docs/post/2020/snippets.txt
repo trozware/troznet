@@ -1,0 +1,8 @@
+The ternary operator is heavily used in SwiftUI and as an easy way to remember how to use it, I call it the "Yes No" operator. 
+
+Is this thing true? YES - do this, NO - do that.
+
+Replace YES with a question mark and NO with a colon and you have a valid ternary operation. And if the condition is more complex, either separate it out into a computed variable, or wrap it in parentheses to make it more readable.
+
+---
+
