@@ -1,7 +1,7 @@
 ---
 title: 'SwiftUI Snapshot Testing'
 date: 2020-05-17T18:50:09+10:00
-draft: true
+draft: false
 description: 'Using snapshot testing for SwiftUI apps'
 tags: ['swiftui', 'unit tests', 'snapshot']
 ---

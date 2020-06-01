@@ -3,6 +3,55 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://troz.net/post/</loc>
+    <lastmod>2020-05-17T18:50:09+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/snapshot/</loc>
+    <lastmod>2020-05-17T18:50:09+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/swift/</loc>
+    <lastmod>2020-05-17T18:50:09+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/swiftui/</loc>
+    <lastmod>2020-05-17T18:50:09+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/post/2020/swiftui_snapshots/</loc>
+    <lastmod>2020-05-17T18:50:09+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/</loc>
+    <lastmod>2020-05-17T18:50:09+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/unit-tests/</loc>
+    <lastmod>2020-05-17T18:50:09+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://troz.net/tags/app-store/</loc>
     <lastmod>2020-05-09T11:26:21+10:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -31,35 +80,7 @@
   </url>
   
   <url>
-    <loc>https://troz.net/post/</loc>
-    <lastmod>2020-05-09T11:26:21+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://troz.net/tags/puzzles/</loc>
-    <lastmod>2020-05-09T11:26:21+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/tags/swift/</loc>
-    <lastmod>2020-05-09T11:26:21+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/tags/swiftui/</loc>
-    <lastmod>2020-05-09T11:26:21+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/tags/</loc>
     <lastmod>2020-05-09T11:26:21+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
