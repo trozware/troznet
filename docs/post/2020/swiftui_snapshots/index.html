@@ -151,7 +151,7 @@
     <span class="post-date">
       17 May 2020
     </span>
-    <span class="more-meta">- 2250 words, </span>
+    <span class="more-meta">- 2270 words, </span>
     <span class="more-meta"> 11 minute read</span>
   </div>
 
@@ -175,7 +175,7 @@
 <h2 id="what-is-snapshot-testing">What is Snapshot Testing</h2>
 <p>Unit testing checks that when you call various functions or methods with certain inputs, you get the output you expect. I use unit tests for testing my models and the methods that change them. But this only tests the logic behind the app, it does nothing to test whether the app is displaying what it should, or whether it is responding correctly to the user&rsquo;s actions.</p>
 <p>UI testing emulates user actions by faking taps, clicks, text entry and so on and checks that labels, buttons etc are showing the correct information after these fake interactions.</p>
-<p>Snapshot testing is in between these two as it effectively takes a picture of the interface. The first time you run the test it will store an image and all subsequent test runs will check that this image has not changed and will fail if there are any differences.</p>
+<p>Snapshot testing is in between these two as it effectively takes a picture of the interface. The first time you run the test it will store an image and all subsequent test runs will check that the current interface matches this stored image. If there are any differences, the test will fail so you can decide whether to keep the new version or revert to what you had before.</p>
 <hr>
 <h2 id="how-did-i-get-started">How did I get started?</h2>
 <p>I first read about the idea of using snapshot testing for SwiftUI in a blog post by <a href="https://www.vadimbulavin.com/snapshot-testing-swiftui-views/">Vadim Bulavin</a>. He made a very good argument for this, but I found his instructions assumed more knowledge of the topic than I had at the time and so I discarded the idea after an initial attempt.</p>

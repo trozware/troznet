@@ -18,7 +18,7 @@ Unit testing checks that when you call various functions or methods with certain
 
 UI testing emulates user actions by faking taps, clicks, text entry and so on and checks that labels, buttons etc are showing the correct information after these fake interactions.
 
-Snapshot testing is in between these two as it effectively takes a picture of the interface. The first time you run the test it will store an image and all subsequent test runs will check that this image has not changed and will fail if there are any differences.
+Snapshot testing is in between these two as it effectively takes a picture of the interface. The first time you run the test it will store an image and all subsequent test runs will check that the current interface matches this stored image. If there are any differences, the test will fail so you can decide whether to keep the new version or revert to what you had before.
 
 ---
 
