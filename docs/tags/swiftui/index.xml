@@ -6,10 +6,177 @@
     <description>Recent content in swiftui on TrozWare</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>© 2012 - 2020 Sarah Reichelt</copyright>
-    <lastBuildDate>Sun, 17 May 2020 18:50:09 +1000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2020 19:40:16 +1000</lastBuildDate>
     
         <atom:link href="https://troz.net/tags/swiftui/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>SwiftUI for Mac on Big Sur</title>
+<link>https://troz.net/post/2020/swiftui_mac_big_sur/</link>
+<pubDate>Wed, 08 Jul 2020 19:40:16 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2020/swiftui_mac_big_sur/</guid>
+<description>&lt;p&gt;In December 2019, I write a &lt;a href=&#34;https://troz.net/post/2019/swiftui-for-mac-1/&#34;&gt;series of articles about using SwiftUI to build a Mac app&lt;/a&gt;. At WWDC 2020, Apple announced macOS 11 Big Sur along with Xcode 12 and a heap of new features for SwiftUI, so I decided to try creating my test app again and seeing how much had changed.&lt;/p&gt;
+&lt;p&gt;You can read the earlier articles and if you are interested, &lt;a href=&#34;https://github.com/trozware/swiftui-mac&#34;&gt;download the previous project from GitHub&lt;/a&gt;. Usually, when revisiting an old app, I would update the existing project, but this time I want to use the new SwiftUI App so I am going to start from scratch with a new app project, copying in code as required. And I plan to follow the same basic thread as I did in the previous articles. Who knows haw many parts this one will have!&lt;/p&gt;
+&lt;p&gt;For reference, I am running the beta of macOS 11 Big Sur (20A4299v) and the beta of Xcode 12 (12A6159) on a rather aged MacBook with a dodgy battery. I do not have Xcode 12 installed on my Catalina Mac, so I have no way of telling whether some of the oddities are due to Xcode or Big Sur but I will try to keep this article updated as the new betas improve things.&lt;/p&gt;
+&lt;h2 id=&#34;the-new-project&#34;&gt;The New Project&lt;/h2&gt;
+&lt;p&gt;As before, the first step was to create a new project in Xcode. I chose the macOS App template although the Multiplatform option was intriguing. When setting the options for the new app, I chose SwiftUI for the Interface, SwiftUI App for the Life Cycle and Swift (of course) for the language.&lt;/p&gt;
+&lt;p&gt;Once I had selected a save location and the project was open, I checked out the file structure. The main difference here was that there is no AppDelegate.swift file. Instead there is a file called &amp;ldquo;SwiftUI_Mac_11App.swift&amp;rdquo; where &amp;ldquo;SwiftUI_Mac_11&amp;rdquo; is the name of my app. This file is vastly simpler than the old AppDelegate but it sets up the app, the scene and the window group, with the expected ContentView as the main content.&lt;/p&gt;
+&lt;p&gt;ContentView.swift had a change too. Instead of setting the &lt;code&gt;maxWidth&lt;/code&gt; and &lt;code&gt;maxHeight&lt;/code&gt; of the view to &lt;code&gt;.infinity&lt;/code&gt;, this Content View only adds some padding to the standard &lt;code&gt;Text&lt;/code&gt; view. Time to see what happens when I run&amp;hellip;&lt;/p&gt;
+&lt;p&gt;The first run took longer than I expected (I told you it was an old MacBook) but then a very small window appeared, just big enough to show the &amp;ldquo;Hello world!&amp;rdquo; text with its padding. The app has all the expected menus although I have no idea where they are set up.&lt;/p&gt;
+&lt;p&gt;Closing the app and using the Canvas preview worked much as before, although the canvas now has additional controls including a button to add another preview and a menu to configure each preview. Oddly, running the preview and clicking &amp;ldquo;Bring Forward&amp;rdquo; displayed two app windows. I presume this is an Xcode 12 beta &amp;ldquo;feature&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;I used the attributes Inspector to edit the &lt;code&gt;Text&lt;/code&gt; view, setting text, font style and weight and color. I had read that Xcode 12 had much better auto-formatting, but when adding modifiers this way, they all ended up on a single line which was not pretty. Manually adding line feeds before each dot did give a very neat structure, so typing in modifiers will be my preferred method.&lt;/p&gt;
+&lt;h2 id=&#34;editing-the-layout&#34;&gt;Editing the Layout&lt;/h2&gt;
+&lt;p&gt;Now on to my own layout. As I did last time, I used a static list to make a &lt;code&gt;NavigationView&lt;/code&gt; for preliminary testing.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ContentView&lt;/span&gt;: View {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some View {
+        NavigationView {
+             List {
+                 ForEach(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; ... &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;, id: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\&lt;/span&gt;.&lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;) { index &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+                     NavigationLink(destination: Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;\(&lt;/span&gt;index&lt;span style=&#34;color:#e6db74&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)) {
+                         Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Link &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;\(&lt;/span&gt;index&lt;span style=&#34;color:#e6db74&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)
+                     }
+                 }
+             }
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When I ran the app or looked at it in the Canvas it looked great, but when I clicked a link in the sidebar, the window shrunk to an unusably small size. So I added a &lt;code&gt;frame&lt;/code&gt; modifier to the destination view. And I also set the &lt;code&gt;ListStyle&lt;/code&gt; to &lt;code&gt;SidebarListStyle()&lt;/code&gt; which gave the new macOS 11 full height sidebar look.&lt;/p&gt;
+&lt;p&gt;But here is where I encountered the first major difference. When I selected an item in the sidebar, the app correctly showed the detail view. But if I put the app into the background, this detail view disappeared. It literally disappeared because I was able to track that it was calling its &lt;code&gt;onDisappear&lt;/code&gt; modifier.&lt;/p&gt;
+&lt;p&gt;After a lot of testing, several days of frustration and help from &lt;a href=&#34;https://twitter.com/jsngr&#34;&gt;Jordan Singer&lt;/a&gt; with his &lt;a href=&#34;https://github.com/jordansinger/mail-swiftui-sample&#34;&gt;mail-swiftui-sample&lt;/a&gt; project, I was finally able to work this out. The difference is that the initial view has to specify what comes next as well as what it is displaying. So in the initial &lt;code&gt;NavigationView&lt;/code&gt;, I had a &lt;code&gt;List&lt;/code&gt;, but I also needed some view to show that I was going to show another view in another column. This second column view has to reserve the space for the detail view to come.&lt;/p&gt;
+&lt;p&gt;I have no idea how Jordan worked this out, but I am very grateful. What I ended up with was this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ContentView&lt;/span&gt;: View {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some View {
+        NavigationView {
+            List {
+                ForEach(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; ... &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;, id: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\&lt;/span&gt;.&lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;) { index &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+                    NavigationLink(destination:
+                                    Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;\(&lt;/span&gt;index&lt;span style=&#34;color:#e6db74&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    ) {
+                        Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Link &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;\(&lt;/span&gt;index&lt;span style=&#34;color:#e6db74&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)
+                    }
+                }
+            }
+            .listStyle(SidebarListStyle())
+
+            Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Select a link...&amp;#34;&lt;/span&gt;)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &amp;ldquo;Select a link&amp;hellip;&amp;rdquo; text is shown when there is no destination view to display. And when I click one of the entries in the sidebar, its content replaces that &lt;code&gt;Text&lt;/code&gt; view but keeps its frame.&lt;/p&gt;
+&lt;h2 id=&#34;displaying-data&#34;&gt;Displaying Data&lt;/h2&gt;
+&lt;p&gt;As with the previous app, I am displaying data from &lt;a href=&#34;https://http.cat/&#34;&gt;HTTP Cats&lt;/a&gt;. This part remains the same, so check back to the original article if you want to see how I did this. I did get warnings about the &lt;code&gt;Decodable&lt;/code&gt; data structs I was using. My normal pattern when I want data to be &lt;code&gt;Identifiable&lt;/code&gt; is to use something like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;HttpSection&lt;/span&gt;: Identifiable, Decodable {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; id = UUID()
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; headerCode: String
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; headerText: String
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; statuses: [HttpStatus]
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;But with Xcode 12, this gives an error. The error messages seem much more useful than before and they offered two suggestions. I tried what appeared to be the easier one of making the &lt;code&gt;id&lt;/code&gt; mutable, but that stopped the decoding from working, so I added a &lt;code&gt;CodingKeys&lt;/code&gt; enum to each struct to restrict the keys that would be included.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;enum&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;CodingKeys&lt;/span&gt;: String, CodingKey {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; headerCode
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; headerText
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; statuses
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When the app ran, I had a sidebar with collapsible sections. I wasn&amp;rsquo;t that happy with the default look of the section headers and the disclosure marker for the first header was positioned beside the text instead of at the right, but I do like the selected item lozenge look. I set a frame height for the section header view and that made the spacing better but the disclosure mark for the first header was still incorrectly positioned.&lt;/p&gt;
+&lt;style&gt;
+  img {
+    margin: 10px auto;
+  }
+&lt;/style&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/swiftui-mac-11-BadCollapse.png&#34; alt=&#34;Initial collapsible sections&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;Detail&lt;/code&gt; view to be displayed when a status is selected had no major changes, so I dropped in the file from the previous app, without the extra bits to do with notifications and preferences. However since SwiftUI now includes a &lt;code&gt;ProgressView&lt;/code&gt;, I swapped out my &amp;ldquo;Loading&amp;hellip;&amp;rdquo; text for a indeterminate progress twirly.&lt;/p&gt;
+&lt;h3 id=&#34;three-column-layout&#34;&gt;Three Column Layout&lt;/h3&gt;
+&lt;p&gt;Since the collapsible sidebar wasn&amp;rsquo;t looking good, I decide to try for a three column layout with the categories in the first column, the codes for the selected category in the second column and the detail view in the third column.&lt;/p&gt;
+&lt;p&gt;The way I implemented this was to have the first list only show the section headers with &lt;code&gt;NavigationLinks&lt;/code&gt; to a sub menu. To reserve the column layout, I had an empty submenu after the main list.&lt;/p&gt;
+&lt;p&gt;In the second column, I showed the sub-headers with &lt;code&gt;NavigationLinks&lt;/code&gt; to the &lt;code&gt;DetailView&lt;/code&gt;. This view reserved the space for the third column with a &lt;code&gt;Text&lt;/code&gt; view that changed its text depending on whether that submenu was displaying anything or not.&lt;/p&gt;
+&lt;p&gt;I expanded the menu items to be big and chunky, which I feel fits the new style. The only remaining problem was that with the primary list set to use &lt;code&gt;SidebarListStyle()&lt;/code&gt;, it only ever showed the first item. I had to change this to &lt;code&gt;InsetListStyle()&lt;/code&gt; to see all the items! This lost the full height sidebar effect, but I assume this is a temporary bug.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/swiftui-mac-11-ThreeColumns.png&#34; alt=&#34;Three column layout&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;menus&#34;&gt;Menus&lt;/h3&gt;
+&lt;p&gt;Now I had the layout equivalent to what I ended up with after part 1 of my original series, so it was time to explore menus, which are very different. In the old style SwiftUI apps which were wrapped in UIKit, the menus were in a storyboard that you could edit. Now you add &lt;code&gt;commands&lt;/code&gt; to the app&amp;rsquo;s &lt;code&gt;WindowGroup&lt;/code&gt; to alter the menus.&lt;/p&gt;
+&lt;p&gt;The easiest way is to add a completely new menu, but it is also possible to insert new menu items after or before certain standard menu items.&lt;/p&gt;
+&lt;p&gt;Here is how to add a new Utilities menu with three items:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;@main
+&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;SwiftUI_Mac_11App&lt;/span&gt;: App {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+        .commands {
+            CommandMenu(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Utilities&amp;#34;&lt;/span&gt;) {
+                Button(action: {}) {
+                    Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Dark mode&amp;#34;&lt;/span&gt;)
+                }
+
+                Button(action: {}) {
+                    Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Light mode&amp;#34;&lt;/span&gt;)
+                }
+
+                Button(action: {}) {
+                    Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;System mode&amp;#34;&lt;/span&gt;)
+                }
+            }
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A &lt;code&gt;CommandMenu&lt;/code&gt; adds a new menu and it is always positioned between the standard View and Window menus. To add items to an existing menu, you need to use a &lt;code&gt;CommandGroup&lt;/code&gt; and tell it where to appear. It can be &lt;code&gt;after&lt;/code&gt; or &lt;code&gt;before&lt;/code&gt; various standard menu items. Look up the docs for &lt;a href=&#34;https://developer.apple.com/documentation/swiftui/commandgroupplacement&#34;&gt;CommandGroupPlacement&lt;/a&gt; to see which items you can use as positional markers. I used &lt;code&gt;after .windowArrangement&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Weirdly, the font, color and spacing of these menu items was different to the standard menu items. I can only assume this is a bug which will be fixed. I faked the proper look with modifiers, but it didn&amp;rsquo;t feel right. This screen shot shows the default look with the three mode items being my additions to the standard Window menu.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/swiftui-mac-11-menus-bad-format.png&#34; alt=&#34;Menus with incorrect formatting&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I tried using &lt;code&gt;Labels&lt;/code&gt; to add an icon to the menu item. As I was switching between view modes, I wanted to have a checkmark before the selected menu item. This worked when first drawn, but the menus did not refresh when the data changed, so that was no use.&lt;/p&gt;
+&lt;p&gt;I also tested using &lt;code&gt;Divider()&lt;/code&gt; to get a menu separator. It worked, but the look didn&amp;rsquo;t match the standard dividers. So menus need a lot of work still&amp;hellip;&lt;/p&gt;
+&lt;p&gt;I kept the technique of having menu items publish notifications that other views could pick up. This seems to work well. I would have liked to have certain menus or menu items only appear conditionally or perhaps enable/disable conditionally, but I could not see how to do that. Since menus do not appear to update when data changes, this may not be possible right now.&lt;/p&gt;
+&lt;h3 id=&#34;preferences&#34;&gt;Preferences&lt;/h3&gt;
+&lt;p&gt;There was one place where the new app architecture was amazingly good and that was to do with preferences. In my previous attempt at this app, I had a Preferences window and it was a major exercise to stop it opening more than once. This time, it was super easy. In the App.swift file, beside the &lt;code&gt;WindowGroup&lt;/code&gt;, I added &lt;code&gt;Settings&lt;/code&gt; which contained a view which had the UI for my app&amp;rsquo;s preferences.&lt;/p&gt;
+&lt;p&gt;This caused a few errors at first, but I added a &lt;code&gt;@SceneBuilder&lt;/code&gt; property wrapper to the App&amp;rsquo;s body and that fixed the errors.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;@main
+&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;SwiftUI_Mac_11App&lt;/span&gt;: App {
+    @SceneBuilder &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+
+        Settings {
+            SettingsView()
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;These three lines of code added a Preferences menu item and hooked it up to my &lt;code&gt;SettingsView&lt;/code&gt;. This view opens in a new window when the Preferences menu item or keyboard shortcut is used and only one copy of this window ever appears.&lt;/p&gt;
+&lt;p&gt;Then on to the second brilliant thing about preferences: &lt;code&gt;#AppStorage&lt;/code&gt;. In the previous version, I used a custom property wrapper to wrap settings that I wanted saved into UserDefaults. This is now built into SwiftUI and this was all I had to do:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;    @AppStorage(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;showCopyright&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; showCopyright: Bool = &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now any time that variable was accessed, it was read from UserDefaults and every time it was changed, it was written back into UserDefaults. Instant preferences in a single line!&lt;/p&gt;
+&lt;p&gt;To pass this setting to a different view, all I had to do was give that view this same declaration. And it just worked!&lt;/p&gt;
+&lt;h3 id=&#34;opening-another-window&#34;&gt;Opening Another Window&lt;/h3&gt;
+&lt;p&gt;Last time, I tried lots of different ways using hosting controllers, storyboards etc. to open secondary windows. This time I decided to stick to using &lt;code&gt;sheet&lt;/code&gt; since it seems to be what works best for SwiftUI apps. So I added my User Interface Elements sample window as a sheet.&lt;/p&gt;
+&lt;p&gt;The view itself was reasonably similar except that last time, I used an &lt;code&gt;NSViewRepresentable&lt;/code&gt; to embed an AppKit color well into the view. This time I was able to use the new SwiftUI ColorPicker which made it much easier to get the color back into the main view. I also added the new date and time pickers.&lt;/p&gt;
+&lt;p&gt;The color picker worked really well except that there is an option to specify whether the picker should support opacity or not. I found that no matter what I chose here, I never got the option to chose a color with opacity.&lt;/p&gt;
+&lt;p&gt;The date picker was good. It showed the date numerically using my local format - DD/MM/YYY. Clicking on any of the elements popped up a calendar view. The time picker was not so easy to use. Again, it showed the time in my format e.g. 7:53 pm. But there was no graphical entry, you click on an element (hour, minute or am/pm) and type. This would be OK except that every time you type, the focus jumps back to the hour. I found this confusing.&lt;/p&gt;
+&lt;p&gt;One big improvement is the ability to apply a keyboard shortcut to a button. When I set the keyboard shortcut for the Close button to &lt;code&gt;.defaultAction&lt;/code&gt;, the button got the default appearance and was triggered by pressing the Return key.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;    Button(action: {}) {
+        Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Close&amp;#34;&lt;/span&gt;)
+    }
+    .keyboardShortcut(.defaultAction)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I was still unable to work out how to set the focus to a TextField. There are two new property wrappers to do with focus, but I understand they are not yet operational.&lt;/p&gt;
+&lt;h3 id=&#34;dialogs&#34;&gt;Dialogs&lt;/h3&gt;
+&lt;p&gt;I have already used a sheet to display the UI elements and ActionSheets are not available on macOS, so that just leaves Alerts and file dialogs. File dialogs work identically in the app although they look quite different on Big Sur. Alerts look quite different but I think they are nice. Since the app icon is a prominent part of the dialog, I added one to make it look good. I understand that different numbers of buttons will get arranged in different ways.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/swiftui-mac-11-alert.png&#34; alt=&#34;Alert dialog&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;other-improvements&#34;&gt;Other Improvements&lt;/h3&gt;
+&lt;h4 id=&#34;self&#34;&gt;Self&lt;/h4&gt;
+&lt;p&gt;Do a search for &amp;ldquo;self.&amp;rdquo; and get rid of them all. Your code will be much cleaner and easier to read and SwiftUI now understands what you mean.&lt;/p&gt;
+&lt;h4 id=&#34;navigation-titles&#34;&gt;Navigation Titles&lt;/h4&gt;
+&lt;p&gt;iOS had the concept of setting a navigation title but it didn&amp;rsquo;t really work in macOS. Now you can set the &lt;code&gt;navigationTitle&lt;/code&gt; of a view and this will be the window title.&lt;/p&gt;
+&lt;h4 id=&#34;toolbars&#34;&gt;Toolbars&lt;/h4&gt;
+&lt;p&gt;This was an aspect of macOS apps that I referred to but didn&amp;rsquo;t explore last time mainly because I assumed it would be done through the storyboard, just as with an AppKit app. Now we can add a &lt;code&gt;.toolbar&lt;/code&gt; modifier to a view and have it include &lt;code&gt;ToolbarItems&lt;/code&gt;. For the first time, we can now use &lt;a href=&#34;https://developer.apple.com/sf-symbols/&#34;&gt;SF Symbols&lt;/a&gt; in a macOS app, so that made it easy to add good looking toolbar items.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/swiftui-mac-11-toolbar.png&#34; alt=&#34;Toolbar and navigation title&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I would like to vary the toolbar according to what is being displayed, and the toolbar is also used to show the navigation title, but perhaps that is a topic for another day. There is certainly a lot to explore there.&lt;/p&gt;
+&lt;h4 id=&#34;pyramid-of-doom&#34;&gt;Pyramid of Doom&lt;/h4&gt;
+&lt;p&gt;With menus and toolbars, there is a heap of extra code added to certain views. I would love to be able to extract that into its own function or view modifier. I was able to extract the toolbar, but I am not sure how to do this with menus yet. I imagine it will need some specific sort of ViewBuilder but I think this is very necessary. Perhaps the topic for yet another article&amp;hellip;&lt;/p&gt;
+&lt;p&gt;The project is available on &lt;a href=&#34;https://github.com/trozware/swiftui-mac-11&#34;&gt;GitHub&lt;/a&gt;. As always, if you have any comments, suggestions or ideas, I would love to hear from you. Please contact me using one of the links below or through my &lt;a href=&#34;https://troz.net/contact/&#34;&gt;Contact&lt;/a&gt; page. Thanks for reading.&lt;/p&gt;</description>
+</item>
     
     <item>
 <title>SwiftUI Snapshot Testing</title>
@@ -833,7 +1000,7 @@ Just wanted to add that in part 2 when dismissing sheets there are two ways to d
         dismissButton: .&lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt;(Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;OK&amp;#34;&lt;/span&gt;)) {
           &lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;.dialogResult = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;OK clicked in Alert&amp;#34;&lt;/span&gt;
       })
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;There were a few things that tripped me up in this relatively short chunk of code. Firstly, both title and message must be Text views, not strings. If you get an error message that says &amp;ldquo;Cannot convert value of type &amp;lsquo;String&amp;rsquo; to expected argument type &amp;lsquo;Text&amp;rsquo;&amp;quot;, then you have forgotten to use a Text view.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;There were a few things that tripped me up in this relatively short chunk of code. Firstly, both title and message must be Text views, not strings. If you get an error message that says &amp;ldquo;Cannot convert value of type &amp;lsquo;String&amp;rsquo; to expected argument type &amp;lsquo;Text&amp;rsquo;&amp;rdquo;, then you have forgotten to use a Text view.&lt;/p&gt;
 &lt;p&gt;Then there is the button which auto-suggest tells me is of type Alert.Button. I couldn&amp;rsquo;t find any documentation for this, but delving into the definition for Alert, I see that there are three pre-defined button types: default, cancel or destructive. Cancel actually has two variants and will use a label appropriate to the user&amp;rsquo;s locale if no label is supplied.&lt;/p&gt;
 &lt;p&gt;Again, these buttons need a Text view as the label (if supplied) and can take an action closure, which I used to update my &lt;code&gt;dialogResult&lt;/code&gt; string.&lt;/p&gt;
 &lt;p&gt;This version showed a single &lt;code&gt;dismissButton&lt;/code&gt; but I saw that there was a variation of Alert with &lt;code&gt;primary&lt;/code&gt; and &lt;code&gt;secondary&lt;/code&gt; buttons. It was not obvious that these would also dismiss the alert dialog, but I tried anyway.&lt;/p&gt;
@@ -1238,7 +1405,7 @@ But SwiftUI works on all Apple&amp;rsquo;s platforms, and as I am primarily a Ma
 &lt;p&gt;Of course I clicked &amp;ldquo;Bring Forward&amp;rdquo; and there was my app running in a window called &amp;ldquo;Xcode Preview&amp;rdquo;. There was an app in my Dock and when I chose &amp;ldquo;Show in Finder&amp;rdquo;, I found that the app is buried deep in DerivedData. Positioning my windows so I could type in Xcode while watching this preview window, I saw that it instantly updated my view as I typed, just like an iPhone in the Canvas.&lt;/p&gt;
 &lt;p&gt;If I changed the structure of the view, the app closed and re-opened immediately with the new content. This is amazing and shows that the Xcode &amp;amp; SwiftUI teams really thought about how to use these new features in Mac apps as well as iOS.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;In Xcode 11.3, I found that I was having trouble with the previews. They would not display and above the Canvas, I got the super helpful message &amp;ldquo;Cannot preview in this file &amp;mdash; SwiftUI-Mac.app may have crashed.&amp;quot;. It turned out that this was a signing issue. If you go to the app target and look in the Signing and Capabilities section, check that Signing Certificate is not set to &amp;ldquo;Sign to Run Locally&amp;rdquo;. If it is, switch to &amp;ldquo;Development&amp;rdquo; and the previews will start working again.&lt;/p&gt;
+&lt;p&gt;In Xcode 11.3, I found that I was having trouble with the previews. They would not display and above the Canvas, I got the super helpful message &amp;ldquo;Cannot preview in this file &amp;mdash; SwiftUI-Mac.app may have crashed.&amp;rdquo;. It turned out that this was a signing issue. If you go to the app target and look in the Signing and Capabilities section, check that Signing Certificate is not set to &amp;ldquo;Sign to Run Locally&amp;rdquo;. If it is, switch to &amp;ldquo;Development&amp;rdquo; and the previews will start working again.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/SwiftUI-Mac-signing.png&#34; alt=&#34;Code signing&#34;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;laying-out-the-view&#34;&gt;Laying out the View&lt;/h2&gt;
@@ -1312,9 +1479,9 @@ But SwiftUI works on all Apple&amp;rsquo;s platforms, and as I am primarily a Ma
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/SwiftUI-Mac-outline.png&#34; alt=&#34;Outline view&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;detail-view&#34;&gt;Detail View&lt;/h2&gt;
 &lt;p&gt;Up until now, I had been using a standard Text view as the destination for my navigation. This is a really useful technique as you can build the interface gradually but have it work from the beginning. But now it was time to create a new view for the details.&lt;/p&gt;
-&lt;p&gt;I set up the view and added a method that would download the correct cat image when the view appeared but there was no image. After some digging, I realised that sand-boxed Mac apps do not allow network access by default. I went to the Signing &amp;amp; Capabilities section of the target settings and turned on &amp;ldquo;Outgoing Connections (Client)&amp;quot;. And then I had my cat pictures.&lt;/p&gt;
+&lt;p&gt;I set up the view and added a method that would download the correct cat image when the view appeared but there was no image. After some digging, I realised that sand-boxed Mac apps do not allow network access by default. I went to the Signing &amp;amp; Capabilities section of the target settings and turned on &amp;ldquo;Outgoing Connections (Client)&amp;rdquo;. And then I had my cat pictures.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/SwiftUI-Mac-detail.png&#34; alt=&#34;Detail view&#34;&gt;&lt;/p&gt;
-&lt;p&gt;It really should have a loading image to display while the cat image is being downloaded, but to my disappointment, I found that the SF Symbols are not available to a Mac app! But I added a Text view to say &amp;ldquo;Loading&amp;hellip;&amp;quot;.&lt;/p&gt;
+&lt;p&gt;It really should have a loading image to display while the cat image is being downloaded, but to my disappointment, I found that the SF Symbols are not available to a Mac app! But I added a Text view to say &amp;ldquo;Loading&amp;hellip;&amp;rdquo;.&lt;/p&gt;
 &lt;p&gt;Now that I have a functioning Mac app with a Master-Detail view, the next thing is to explore some more of the challenges that will need to be solved before I can write a Mac app completely using SwiftUI.&lt;/p&gt;
 &lt;p&gt;If you want to check out the project at this stage, here is a link to the &lt;a href=&#34;https://github.com/trozware/swiftui-mac/tree/8ebeb615db81f9d7b6489a1920ebb08d07131ebb&#34;&gt;relevant GitHub commit&lt;/a&gt;. Or if you would prefer, here is a link to the &lt;a href=&#34;https://github.com/trozware/swiftui-mac&#34;&gt;final version&lt;/a&gt; of the project.&lt;/p&gt;
 &lt;hr&gt;
@@ -1718,7 +1885,7 @@ But SwiftUI works on all Apple&amp;rsquo;s platforms, and as I am primarily a Ma
 &lt;p&gt;Interface Builder&amp;rsquo;s quirks lead to a category of programmers who felt the need to write all their interface in code. To my way of thinking, this is a huge waste of time and you still had to wrestle with Auto Layout, but without the visual clues! But if it makes them happy&amp;hellip;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://developer.apple.com/xcode/swiftui/&#34;&gt;&lt;img src=&#34;https://developer.apple.com/assets/elements/icons/swiftui/swiftui-96x96_2x.png&#34; alt=&#34;SwiftUI&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;what-is-swiftui&#34;&gt;What Is SwiftUI?&lt;/h2&gt;
-&lt;p&gt;A &amp;ldquo;declarative UI framework&amp;rdquo; - what does that mean? Basically, declarative programming is a way of specifying what a program should do, rather than specifying how to do it. A common example is making a sandwich. If you want a sandwich, you say to the sandwich maker, &amp;ldquo;Please can I have a ham, cheese and tomato sandwich&amp;rdquo;. You don&amp;rsquo;t say &amp;ldquo;Get two pieces of bread, butter both of them, cut 3 slices of ham and 2 slices of cheese&amp;hellip;&amp;quot;. They know how to make a sandwich so you only have to ask for what you want.&lt;/p&gt;
+&lt;p&gt;A &amp;ldquo;declarative UI framework&amp;rdquo; - what does that mean? Basically, declarative programming is a way of specifying what a program should do, rather than specifying how to do it. A common example is making a sandwich. If you want a sandwich, you say to the sandwich maker, &amp;ldquo;Please can I have a ham, cheese and tomato sandwich&amp;rdquo;. You don&amp;rsquo;t say &amp;ldquo;Get two pieces of bread, butter both of them, cut 3 slices of ham and 2 slices of cheese&amp;hellip;&amp;rdquo;. They know how to make a sandwich so you only have to ask for what you want.&lt;/p&gt;
 &lt;p&gt;Back in the Apple UI world, what if you want a button? Is it for an iPhone app? Then you need an UIButton with a certain type. Set its title, size, location, layout constraints. What are the default sizes for an iPhone button? What is the default font? What color should the text be? Now make a button for a tvOS app? That has to be huge! And what other settings does it have? But the thing is, iOS, macOS, tvOS etc. already &lt;strong&gt;KNOW&lt;/strong&gt; what their buttons should look like. So why not just tell the system &amp;ldquo;I want a button&amp;rdquo;? Let the system work out the details and you can get on with the cool app ideas.&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;m not going to turn this post into a SwiftUI tutorial, but I would like to thank and recommend the people that have really helped me get to grips with it, especially &lt;a href=&#34;https://www.hackingwithswift.com/articles/196/learn-swiftui-with-free-tutorials&#34;&gt;Paul Hudson of Hacking with Swift with his Learn SwiftUI tutorials&lt;/a&gt;, &lt;a href=&#34;https://www.youtube.com/user/azamsharp/videos&#34;&gt;Mohammad Azam&amp;rsquo;s great YouTube series&lt;/a&gt;, and &lt;a href=&#34;https://designcode.io/swiftui-course&#34;&gt;Meng To&amp;rsquo;s SwiftUI course at Design+Code&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The other great benefit of SwiftUI is that when used with the Combine framework, it gives you a reactive interface. There have been various third-party libraries for doing this: RxSwift, ReactiveSwift, ReactiveCocoa, Bond etc, but with Combine, Apple is baking this into the ecosystem, which makes it a lot easier to set up and means that it will stay up-to-date with the operating systems. A reactive interface is one where you can bind a UI element to a piece of data and then when the data changes, the user interface updates automatically. You can even bind both ways so that the user interface updates the data without you having to do a thing. Imagine how much boiler-plate code that can eliminate?&lt;/p&gt;
@@ -2367,7 +2534,7 @@ doCalculation(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;, calculat
 &lt;p&gt;As before, you can add, remove or re-order the time zones and the top three zones can be shown in your Today widgets.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/WTiW-iOS-1.jpg&#34; alt=&#34;Edit zones&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/WTiW-iOS-4.jpg&#34; alt=&#34;Today widget&#34;&gt;&lt;/p&gt;
-&lt;p&gt;But the feature that I use most in the Mac app is &amp;ldquo;What time will it be when&amp;hellip;&amp;quot;. In the iOS app, for reasons of space, the button is labelled &amp;ldquo;What time will it be?&amp;rdquo; but the functionality is the same: drag the slider to adjust the hour in your local time zone and see what that hour will be in your selected world zones. This is incredibly useful when you have family, friends and colleagues all over the world and really don&amp;rsquo;t want to call them at the wrong time of day.&lt;/p&gt;
+&lt;p&gt;But the feature that I use most in the Mac app is &amp;ldquo;What time will it be when&amp;hellip;&amp;rdquo;. In the iOS app, for reasons of space, the button is labelled &amp;ldquo;What time will it be?&amp;rdquo; but the functionality is the same: drag the slider to adjust the hour in your local time zone and see what that hour will be in your selected world zones. This is incredibly useful when you have family, friends and colleagues all over the world and really don&amp;rsquo;t want to call them at the wrong time of day.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/WTiW-iOS-2.jpg&#34; alt=&#34;What time will it be&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The iPad version of the app is identical at this stage, but I am thinking of adjusting the interface so as to take advantage of the increased real estate. If other work doesn&amp;rsquo;t get in the way, this may happen&amp;hellip;&lt;/p&gt;</description>
 </item>
@@ -4732,7 +4899,7 @@ re-consider&amp;hellip;&lt;/p&gt;
       
       <guid>https://troz.net/post/2016/how-to-confuse-testflight/</guid>
 <description>&lt;p&gt;I ran into an unusual problem when testing my latest app: &amp;ldquo;&lt;a href=&#34;https://troz.net/what-is-my-speed/&#34;&gt;What Is My
-Speed?&lt;/a&gt;&amp;quot;. It is now available from the &lt;a href=&#34;https://itunes.apple.com/app/what-is-my-speed/id1091394524&#34;&gt;iTunes App Store&lt;/a&gt;, but getting
+Speed?&lt;/a&gt;&amp;rdquo;. It is now available from the &lt;a href=&#34;https://itunes.apple.com/app/what-is-my-speed/id1091394524&#34;&gt;iTunes App Store&lt;/a&gt;, but getting
 there was a struggle.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;#tldr&#34;&gt;TL;DR&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Xcode is terrible at renaming projects, so it is a really good idea to have
@@ -4742,7 +4909,7 @@ Connect. Only once you get to iTunes Connect will the name be checked for
 uniqueness. Searching the App Stores is not enough as it does not cover
 un-released apps or apps that are not available in your country.&lt;/p&gt;
 &lt;p&gt;So I set up my app. I was hoping for &amp;ldquo;What&amp;rsquo;s My Speed?&amp;rdquo; but was happy with &amp;ldquo;What
-Is My Speed?&amp;quot;.&lt;/p&gt;
+Is My Speed?&amp;rdquo;.&lt;/p&gt;
 &lt;p&gt;Next step was to create the project in Xcode which I did using the app name and
 manually entering the bundle identifier that I had registered at Apple
 Developer. Xcode accepted the name without any warnings and created the default
@@ -5294,7 +5461,7 @@ at the moment.&lt;/p&gt;
 is inserted which checks to see that &lt;code&gt;socialMedia&lt;/code&gt; is not nil. If it is nil,
 then execution of that line stops at the ? and nothing bad will happen.&lt;/p&gt;
 &lt;p&gt;In the same way, when trying to read back the twitter handle, we chained
-together 2 optionals with ?&amp;lsquo;s. If either &lt;code&gt;socialMedia&lt;/code&gt; or &lt;code&gt;socialMedia.twitter&lt;/code&gt;
+together 2 optionals with ?&amp;rsquo;s. If either &lt;code&gt;socialMedia&lt;/code&gt; or &lt;code&gt;socialMedia.twitter&lt;/code&gt;
 is nil, that line will not complete. Again this is perfectly safe and the app
 will not crash.&lt;/p&gt;
 &lt;hr&gt;
@@ -5934,8 +6101,8 @@ Objective-C. In future posts of this series, I hope to enable others to cross
 that divide faster than I did.&lt;/p&gt;
 &lt;p&gt;Now when I go back to an Objective-C app, I feel like I am walking a tight-rope.
 When I use an NSArray, NSSet or NSDictionary, I think &amp;ldquo;How can I tell what sort
-of objects are in that array?&amp;quot;. When I use an object, I think &amp;ldquo;What if that
-object is nil?&amp;quot;. All of a sudden, code that appeared stable now feels random.&lt;/p&gt;
+of objects are in that array?&amp;rdquo;. When I use an object, I think &amp;ldquo;What if that
+object is nil?&amp;rdquo;. All of a sudden, code that appeared stable now feels random.&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;One of the big things that people have latched onto with Swift is that it allows
 functional programming. I plan several detailed posts on functional programming
@@ -6288,7 +6455,7 @@ your iPhone or iPad and I will send you a free promo code for the Mac version.&l
       <guid>https://troz.net/post/2015/apple-watch-first-impressions/</guid>
 <description>&lt;p&gt;I realise that every one has written one of these posts, but given that everyone
 looks for and notices different things, I think it is still valid.&lt;/p&gt;
-&lt;p&gt;My first impression was &amp;ldquo;Why does it come in such a large box?&amp;quot;. The courier
+&lt;p&gt;My first impression was &amp;ldquo;Why does it come in such a large box?&amp;rdquo;. The courier
 delivered two boxes - my 38mm Apple Watch Sport and Tim&amp;rsquo;s 42mm Apple Watch
 Sport. They both came in long boxes, with the 42mm box significantly longer. And
 both boxes were heavy!&lt;/p&gt;
@@ -7509,7 +7676,7 @@ quit.&lt;/p&gt;
 &lt;p&gt;If you already own the App Store version of Man Reader and &amp;lsquo;Man Reader (no SB)&amp;rsquo;
 has started once, you can delete the App Store version and &amp;lsquo;Man Reader (no SB)&amp;rsquo;
 will keep working.&lt;/p&gt;
-&lt;p&gt;To install &amp;lsquo;Man Reader (no SB)&#39;, click the download link below. This will
+&lt;p&gt;To install &amp;lsquo;Man Reader (no SB)&amp;rsquo;, click the download link below. This will
 download &amp;lsquo;ManReader-noSB.zip&amp;rsquo;. Double-click on this file to un-zip it, and then
 move the &amp;lsquo;Man Reader (no SB).app&amp;rsquo; into your Applications folder and use as
 normal. Do not delete the App Store version of Man Reader until &amp;lsquo;Man Reader (no
@@ -8902,7 +9069,7 @@ enough.&lt;/p&gt;
 &lt;p&gt;Do you plan on phoning an overseas friend in the middle of the night? How about scheduling an online meeting with people in different time zones? Or even checking what time the next big keynote will start in your time?&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/time-in-words/id498403851&#34;&gt;World Time In Words v 5.0&lt;/a&gt; is now available from the App Store.&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;Set up World Time In Words up with all the time zones you need to check. Scroll through the list to see the local time in each of your selected zones shown as a sentence. This is easier to comprehend and much less prone to error.&lt;/p&gt;
-&lt;p&gt;If you need to plan a meeting or phone call, tap &amp;ldquo;What time will it be…&amp;quot;. Use the slider to adjust the hour in your local zone and the corresponding hour in your selected world zones will appear.&lt;/p&gt;
+&lt;p&gt;If you need to plan a meeting or phone call, tap &amp;ldquo;What time will it be…&amp;rdquo;. Use the slider to adjust the hour in your local zone and the corresponding hour in your selected world zones will appear.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/WTiW-iOS-2.jpg&#34; alt=&#34;What time will it be&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Tap the &amp;ldquo;+&amp;rdquo; button to add or delete time zones.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/WTiW-iOS-1.jpg&#34; alt=&#34;Edit zones&#34;&gt;&lt;/p&gt;
