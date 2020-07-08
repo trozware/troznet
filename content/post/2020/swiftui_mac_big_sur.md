@@ -127,7 +127,7 @@ I expanded the menu items to be big and chunky, which I feel fits the new style.
 
 ### Menus
 
-Now I had the layout equivalent to what I ended up with after part 1 of my original series, so it was time to explore menus, which are very different. In the old style SwiftUI apps which were wrapped in UIKit, the menus were in a storyboard that you could edit. Now you add `commands` to the app's `WindowGroup` to alter the menus.
+Now I had the layout equivalent to what I ended up with after part 1 of my original series, so it was time to explore menus, which are very different. In the old style SwiftUI apps which were wrapped in AppKit, the menus were in a storyboard that you could edit. Now you add `commands` to the app's `WindowGroup` to alter the menus.
 
 The easiest way is to add a completely new menu, but it is also possible to insert new menu items after or before certain standard menu items.
 
@@ -194,7 +194,7 @@ struct SwiftUI_Mac_11App: App {
 
 These three lines of code added a Preferences menu item and hooked it up to my `SettingsView`. This view opens in a new window when the Preferences menu item or keyboard shortcut is used and only one copy of this window ever appears.
 
-Then on to the second brilliant thing about preferences: `#AppStorage`. In the previous version, I used a custom property wrapper to wrap settings that I wanted saved into UserDefaults. This is now built into SwiftUI and this was all I had to do:
+Then on to the second brilliant thing about preferences: `@AppStorage`. In the previous version, I used a custom property wrapper to wrap settings that I wanted saved into UserDefaults. This is now built into SwiftUI and this was all I had to do:
 
 ```swift
     @AppStorage("showCopyright") var showCopyright: Bool = false
@@ -235,7 +235,7 @@ I have already used a sheet to display the UI elements and ActionSheets are not 
 
 #### Self
 
-Do a search for "self." and get rid of them all. Your code will be much cleaner and easier to read and SwiftUI now understands what you mean.
+Do a search for "self." and get rid of them all. Your code will be much cleaner and easier to read and SwiftUI now understands what you mean. If you want to read more details about this change, check out [swift-evolution proposal SE-0269][11].
 
 #### Navigation Titles
 
@@ -255,6 +255,8 @@ With menus and toolbars, there is a heap of extra code added to certain views. I
 
 The project is available on [GitHub][9]. As always, if you have any comments, suggestions or ideas, I would love to hear from you. Please contact me using one of the links below or through my [Contact][10] page. Thanks for reading.
 
+Thanks to [Sungbin Jo (조성빈)][12] for proof-reading and suggestions.
+
 [1]: /post/2019/swiftui-for-mac-1/
 [2]: https://github.com/trozware/swiftui-mac
 [3]: https://http.cat/
@@ -265,6 +267,8 @@ The project is available on [GitHub][9]. As always, if you have any comments, su
 [8]: https://developer.apple.com/sf-symbols/
 [9]: https://github.com/trozware/swiftui-mac-11
 [10]: /contact/
+[11]: https://github.com/apple/swift-evolution/blob/master/proposals/0269-implicit-self-explicit-capture.md
+[12]: https://twitter.com/kb091412
 [i1]: /images/swiftui-mac-11-BadCollapse.png
 [i2]: /images/swiftui-mac-11-ThreeColumns.png
 [i3]: /images/swiftui-mac-11-menus-bad-format.png

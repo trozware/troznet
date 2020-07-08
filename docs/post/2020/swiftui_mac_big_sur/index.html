@@ -151,8 +151,8 @@
     <span class="post-date">
       08 Jul 2020
     </span>
-    <span class="more-meta">- 2766 words, </span>
-    <span class="more-meta"> 13 minute read</span>
+    <span class="more-meta">- 2790 words, </span>
+    <span class="more-meta"> 14 minute read</span>
   </div>
 
   
@@ -251,7 +251,7 @@
 <p>I expanded the menu items to be big and chunky, which I feel fits the new style. The only remaining problem was that with the primary list set to use <code>SidebarListStyle()</code>, it only ever showed the first item. I had to change this to <code>InsetListStyle()</code> to see all the items! This lost the full height sidebar effect, but I assume this is a temporary bug.</p>
 <p><img src="/images/swiftui-mac-11-ThreeColumns.png" alt="Three column layout"></p>
 <h3 id="menus">Menus</h3>
-<p>Now I had the layout equivalent to what I ended up with after part 1 of my original series, so it was time to explore menus, which are very different. In the old style SwiftUI apps which were wrapped in UIKit, the menus were in a storyboard that you could edit. Now you add <code>commands</code> to the app&rsquo;s <code>WindowGroup</code> to alter the menus.</p>
+<p>Now I had the layout equivalent to what I ended up with after part 1 of my original series, so it was time to explore menus, which are very different. In the old style SwiftUI apps which were wrapped in AppKit, the menus were in a storyboard that you could edit. Now you add <code>commands</code> to the app&rsquo;s <code>WindowGroup</code> to alter the menus.</p>
 <p>The easiest way is to add a completely new menu, but it is also possible to insert new menu items after or before certain standard menu items.</p>
 <p>Here is how to add a new Utilities menu with three items:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">@main
@@ -299,7 +299,7 @@
     }
 }
 </code></pre></div><p>These three lines of code added a Preferences menu item and hooked it up to my <code>SettingsView</code>. This view opens in a new window when the Preferences menu item or keyboard shortcut is used and only one copy of this window ever appears.</p>
-<p>Then on to the second brilliant thing about preferences: <code>#AppStorage</code>. In the previous version, I used a custom property wrapper to wrap settings that I wanted saved into UserDefaults. This is now built into SwiftUI and this was all I had to do:</p>
+<p>Then on to the second brilliant thing about preferences: <code>@AppStorage</code>. In the previous version, I used a custom property wrapper to wrap settings that I wanted saved into UserDefaults. This is now built into SwiftUI and this was all I had to do:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    @AppStorage(<span style="color:#e6db74">&#34;showCopyright&#34;</span>) <span style="color:#66d9ef">var</span> showCopyright: Bool = <span style="color:#66d9ef">false</span>
 </code></pre></div><p>Now any time that variable was accessed, it was read from UserDefaults and every time it was changed, it was written back into UserDefaults. Instant preferences in a single line!</p>
 <p>To pass this setting to a different view, all I had to do was give that view this same declaration. And it just worked!</p>
@@ -319,7 +319,7 @@
 <p><img src="/images/swiftui-mac-11-alert.png" alt="Alert dialog"></p>
 <h3 id="other-improvements">Other Improvements</h3>
 <h4 id="self">Self</h4>
-<p>Do a search for &ldquo;self.&rdquo; and get rid of them all. Your code will be much cleaner and easier to read and SwiftUI now understands what you mean.</p>
+<p>Do a search for &ldquo;self.&rdquo; and get rid of them all. Your code will be much cleaner and easier to read and SwiftUI now understands what you mean. If you want to read more details about this change, check out <a href="https://github.com/apple/swift-evolution/blob/master/proposals/0269-implicit-self-explicit-capture.md">swift-evolution proposal SE-0269</a>.</p>
 <h4 id="navigation-titles">Navigation Titles</h4>
 <p>iOS had the concept of setting a navigation title but it didn&rsquo;t really work in macOS. Now you can set the <code>navigationTitle</code> of a view and this will be the window title.</p>
 <h4 id="toolbars">Toolbars</h4>
@@ -329,6 +329,7 @@
 <h4 id="pyramid-of-doom">Pyramid of Doom</h4>
 <p>With menus and toolbars, there is a heap of extra code added to certain views. I would love to be able to extract that into its own function or view modifier. I was able to extract the toolbar, but I am not sure how to do this with menus yet. I imagine it will need some specific sort of ViewBuilder but I think this is very necessary. Perhaps the topic for yet another article&hellip;</p>
 <p>The project is available on <a href="https://github.com/trozware/swiftui-mac-11">GitHub</a>. As always, if you have any comments, suggestions or ideas, I would love to hear from you. Please contact me using one of the links below or through my <a href="/contact/">Contact</a> page. Thanks for reading.</p>
+<p>Thanks to <a href="https://twitter.com/kb091412">Sungbin Jo (조성빈)</a> for proof-reading and suggestions.</p>
   </div>
   
   <div class="pagination">

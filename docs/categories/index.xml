@@ -97,7 +97,7 @@
 &lt;p&gt;I expanded the menu items to be big and chunky, which I feel fits the new style. The only remaining problem was that with the primary list set to use &lt;code&gt;SidebarListStyle()&lt;/code&gt;, it only ever showed the first item. I had to change this to &lt;code&gt;InsetListStyle()&lt;/code&gt; to see all the items! This lost the full height sidebar effect, but I assume this is a temporary bug.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/swiftui-mac-11-ThreeColumns.png&#34; alt=&#34;Three column layout&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;menus&#34;&gt;Menus&lt;/h3&gt;
-&lt;p&gt;Now I had the layout equivalent to what I ended up with after part 1 of my original series, so it was time to explore menus, which are very different. In the old style SwiftUI apps which were wrapped in UIKit, the menus were in a storyboard that you could edit. Now you add &lt;code&gt;commands&lt;/code&gt; to the app&amp;rsquo;s &lt;code&gt;WindowGroup&lt;/code&gt; to alter the menus.&lt;/p&gt;
+&lt;p&gt;Now I had the layout equivalent to what I ended up with after part 1 of my original series, so it was time to explore menus, which are very different. In the old style SwiftUI apps which were wrapped in AppKit, the menus were in a storyboard that you could edit. Now you add &lt;code&gt;commands&lt;/code&gt; to the app&amp;rsquo;s &lt;code&gt;WindowGroup&lt;/code&gt; to alter the menus.&lt;/p&gt;
 &lt;p&gt;The easiest way is to add a completely new menu, but it is also possible to insert new menu items after or before certain standard menu items.&lt;/p&gt;
 &lt;p&gt;Here is how to add a new Utilities menu with three items:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;@main
@@ -145,7 +145,7 @@
     }
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;These three lines of code added a Preferences menu item and hooked it up to my &lt;code&gt;SettingsView&lt;/code&gt;. This view opens in a new window when the Preferences menu item or keyboard shortcut is used and only one copy of this window ever appears.&lt;/p&gt;
-&lt;p&gt;Then on to the second brilliant thing about preferences: &lt;code&gt;#AppStorage&lt;/code&gt;. In the previous version, I used a custom property wrapper to wrap settings that I wanted saved into UserDefaults. This is now built into SwiftUI and this was all I had to do:&lt;/p&gt;
+&lt;p&gt;Then on to the second brilliant thing about preferences: &lt;code&gt;@AppStorage&lt;/code&gt;. In the previous version, I used a custom property wrapper to wrap settings that I wanted saved into UserDefaults. This is now built into SwiftUI and this was all I had to do:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;    @AppStorage(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;showCopyright&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; showCopyright: Bool = &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now any time that variable was accessed, it was read from UserDefaults and every time it was changed, it was written back into UserDefaults. Instant preferences in a single line!&lt;/p&gt;
 &lt;p&gt;To pass this setting to a different view, all I had to do was give that view this same declaration. And it just worked!&lt;/p&gt;
@@ -165,7 +165,7 @@
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/swiftui-mac-11-alert.png&#34; alt=&#34;Alert dialog&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;other-improvements&#34;&gt;Other Improvements&lt;/h3&gt;
 &lt;h4 id=&#34;self&#34;&gt;Self&lt;/h4&gt;
-&lt;p&gt;Do a search for &amp;ldquo;self.&amp;rdquo; and get rid of them all. Your code will be much cleaner and easier to read and SwiftUI now understands what you mean.&lt;/p&gt;
+&lt;p&gt;Do a search for &amp;ldquo;self.&amp;rdquo; and get rid of them all. Your code will be much cleaner and easier to read and SwiftUI now understands what you mean. If you want to read more details about this change, check out &lt;a href=&#34;https://github.com/apple/swift-evolution/blob/master/proposals/0269-implicit-self-explicit-capture.md&#34;&gt;swift-evolution proposal SE-0269&lt;/a&gt;.&lt;/p&gt;
 &lt;h4 id=&#34;navigation-titles&#34;&gt;Navigation Titles&lt;/h4&gt;
 &lt;p&gt;iOS had the concept of setting a navigation title but it didn&amp;rsquo;t really work in macOS. Now you can set the &lt;code&gt;navigationTitle&lt;/code&gt; of a view and this will be the window title.&lt;/p&gt;
 &lt;h4 id=&#34;toolbars&#34;&gt;Toolbars&lt;/h4&gt;
@@ -174,7 +174,8 @@
 &lt;p&gt;I would like to vary the toolbar according to what is being displayed, and the toolbar is also used to show the navigation title, but perhaps that is a topic for another day. There is certainly a lot to explore there.&lt;/p&gt;
 &lt;h4 id=&#34;pyramid-of-doom&#34;&gt;Pyramid of Doom&lt;/h4&gt;
 &lt;p&gt;With menus and toolbars, there is a heap of extra code added to certain views. I would love to be able to extract that into its own function or view modifier. I was able to extract the toolbar, but I am not sure how to do this with menus yet. I imagine it will need some specific sort of ViewBuilder but I think this is very necessary. Perhaps the topic for yet another article&amp;hellip;&lt;/p&gt;
-&lt;p&gt;The project is available on &lt;a href=&#34;https://github.com/trozware/swiftui-mac-11&#34;&gt;GitHub&lt;/a&gt;. As always, if you have any comments, suggestions or ideas, I would love to hear from you. Please contact me using one of the links below or through my &lt;a href=&#34;https://troz.net/contact/&#34;&gt;Contact&lt;/a&gt; page. Thanks for reading.&lt;/p&gt;</description>
+&lt;p&gt;The project is available on &lt;a href=&#34;https://github.com/trozware/swiftui-mac-11&#34;&gt;GitHub&lt;/a&gt;. As always, if you have any comments, suggestions or ideas, I would love to hear from you. Please contact me using one of the links below or through my &lt;a href=&#34;https://troz.net/contact/&#34;&gt;Contact&lt;/a&gt; page. Thanks for reading.&lt;/p&gt;
+&lt;p&gt;Thanks to &lt;a href=&#34;https://twitter.com/kb091412&#34;&gt;Sungbin Jo (조성빈)&lt;/a&gt; for proof-reading and suggestions.&lt;/p&gt;</description>
 </item>
     
     <item>
