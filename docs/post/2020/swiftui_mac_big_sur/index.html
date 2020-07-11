@@ -6,7 +6,7 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="In December 2019, I write a series of articles about using SwiftUI to build a Mac app. At WWDC 2020, Apple announced macOS 11 Big Sur along with Xcode 12 and a heap of new features for SwiftUI, so I decided to try creating my test app again and seeing how much had changed.
+<meta name="description" content="In December 2019, I wrote a series of articles about using SwiftUI to build a Mac app. At WWDC 2020, Apple announced macOS 11 Big Sur along with Xcode 12 and a heap of new features for SwiftUI, so I decided to try creating my test app again and seeing how much had changed.
 "/>
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
 <meta name="robots" content="noodp"/>
@@ -25,7 +25,7 @@
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="SwiftUI for Mac on Big Sur :: TrozWare — " />
-<meta name="twitter:description" content="In December 2019, I write a series of articles about using SwiftUI to build a Mac app. At WWDC 2020, Apple announced macOS 11 Big Sur along with Xcode 12 and a heap of new features for SwiftUI, so I decided to try creating my test app again and seeing how much had changed.
+<meta name="twitter:description" content="In December 2019, I wrote a series of articles about using SwiftUI to build a Mac app. At WWDC 2020, Apple announced macOS 11 Big Sur along with Xcode 12 and a heap of new features for SwiftUI, so I decided to try creating my test app again and seeing how much had changed.
 " />
 <meta name="twitter:site" content="https://troz.net/" />
 <meta name="twitter:creator" content="" />
@@ -35,7 +35,7 @@
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="SwiftUI for Mac on Big Sur :: TrozWare — ">
-<meta property="og:description" content="In December 2019, I write a series of articles about using SwiftUI to build a Mac app. At WWDC 2020, Apple announced macOS 11 Big Sur along with Xcode 12 and a heap of new features for SwiftUI, so I decided to try creating my test app again and seeing how much had changed.
+<meta property="og:description" content="In December 2019, I wrote a series of articles about using SwiftUI to build a Mac app. At WWDC 2020, Apple announced macOS 11 Big Sur along with Xcode 12 and a heap of new features for SwiftUI, so I decided to try creating my test app again and seeing how much had changed.
 " />
 <meta property="og:url" content="https://troz.net/post/2020/swiftui_mac_big_sur/" />
 <meta property="og:site_name" content="SwiftUI for Mac on Big Sur" />
@@ -151,7 +151,7 @@
     <span class="post-date">
       08 Jul 2020
     </span>
-    <span class="more-meta">- 2790 words, </span>
+    <span class="more-meta">- 2880 words, </span>
     <span class="more-meta"> 14 minute read</span>
   </div>
 
@@ -170,9 +170,14 @@
   
 
   <div class="post-content">
-    <p>In December 2019, I write a <a href="/post/2019/swiftui-for-mac-1/">series of articles about using SwiftUI to build a Mac app</a>. At WWDC 2020, Apple announced macOS 11 Big Sur along with Xcode 12 and a heap of new features for SwiftUI, so I decided to try creating my test app again and seeing how much had changed.</p>
+    <p>In December 2019, I wrote a <a href="/post/2019/swiftui-for-mac-1/">series of articles about using SwiftUI to build a Mac app</a>. At WWDC 2020, Apple announced macOS 11 Big Sur along with Xcode 12 and a heap of new features for SwiftUI, so I decided to try creating my test app again and seeing how much had changed.</p>
 <p>You can read the earlier articles and if you are interested, <a href="https://github.com/trozware/swiftui-mac">download the previous project from GitHub</a>. Usually, when revisiting an old app, I would update the existing project, but this time I want to use the new SwiftUI App so I am going to start from scratch with a new app project, copying in code as required. And I plan to follow the same basic thread as I did in the previous articles. Who knows haw many parts this one will have!</p>
 <p>For reference, I am running the beta of macOS 11 Big Sur (20A4299v) and the beta of Xcode 12 (12A6159) on a rather aged MacBook with a dodgy battery. I do not have Xcode 12 installed on my Catalina Mac, so I have no way of telling whether some of the oddities are due to Xcode or Big Sur but I will try to keep this article updated as the new betas improve things.</p>
+<hr>
+<p><strong>Update:</strong> I have downloaded macOS Big Sur beta 2 (20A4300b) and Xcode 12 beta 2, oddly labelled in the About box as 11.5 (11E608c). I have only found one thing that needs to be changed. I had set the deployment target to 11.0 but the new Xcode does not allow this as an option and the app fails to build. Change the deployment target to 10.16 to make it work.</p>
+<p><img src="/images/Xcode_b2_error.png" alt="Xcode 12 beta 6 error"></p>
+<p>It looks like Apple is having some problems with consistency in the new version numbers in both macOS and Xcode.</p>
+<hr>
 <h2 id="the-new-project">The New Project</h2>
 <p>As before, the first step was to create a new project in Xcode. I chose the macOS App template although the Multiplatform option was intriguing. When setting the options for the new app, I chose SwiftUI for the Interface, SwiftUI App for the Life Cycle and Swift (of course) for the language.</p>
 <p>Once I had selected a save location and the project was open, I checked out the file structure. The main difference here was that there is no AppDelegate.swift file. Instead there is a file called &ldquo;SwiftUI_Mac_11App.swift&rdquo; where &ldquo;SwiftUI_Mac_11&rdquo; is the name of my app. This file is vastly simpler than the old AppDelegate but it sets up the app, the scene and the window group, with the expected ContentView as the main content.</p>
@@ -180,6 +185,7 @@
 <p>The first run took longer than I expected (I told you it was an old MacBook) but then a very small window appeared, just big enough to show the &ldquo;Hello world!&rdquo; text with its padding. The app has all the expected menus although I have no idea where they are set up.</p>
 <p>Closing the app and using the Canvas preview worked much as before, although the canvas now has additional controls including a button to add another preview and a menu to configure each preview. Oddly, running the preview and clicking &ldquo;Bring Forward&rdquo; displayed two app windows. I presume this is an Xcode 12 beta &ldquo;feature&rdquo;.</p>
 <p>I used the attributes Inspector to edit the <code>Text</code> view, setting text, font style and weight and color. I had read that Xcode 12 had much better auto-formatting, but when adding modifiers this way, they all ended up on a single line which was not pretty. Manually adding line feeds before each dot did give a very neat structure, so typing in modifiers will be my preferred method.</p>
+<hr>
 <h2 id="editing-the-layout">Editing the Layout</h2>
 <p>Now on to my own layout. As I did last time, I used a static list to make a <code>NavigationView</code> for preliminary testing.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
@@ -221,6 +227,7 @@
     }
 }
 </code></pre></div><p>The &ldquo;Select a link&hellip;&rdquo; text is shown when there is no destination view to display. And when I click one of the entries in the sidebar, its content replaces that <code>Text</code> view but keeps its frame.</p>
+<hr>
 <h2 id="displaying-data">Displaying Data</h2>
 <p>As with the previous app, I am displaying data from <a href="https://http.cat/">HTTP Cats</a>. This part remains the same, so check back to the original article if you want to see how I did this. I did get warnings about the <code>Decodable</code> data structs I was using. My normal pattern when I want data to be <code>Identifiable</code> is to use something like this:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">HttpSection</span>: Identifiable, Decodable {
@@ -244,12 +251,14 @@
 
 <p><img src="/images/swiftui-mac-11-BadCollapse.png" alt="Initial collapsible sections"></p>
 <p>The <code>Detail</code> view to be displayed when a status is selected had no major changes, so I dropped in the file from the previous app, without the extra bits to do with notifications and preferences. However since SwiftUI now includes a <code>ProgressView</code>, I swapped out my &ldquo;Loading&hellip;&rdquo; text for a indeterminate progress twirly.</p>
+<hr>
 <h3 id="three-column-layout">Three Column Layout</h3>
 <p>Since the collapsible sidebar wasn&rsquo;t looking good, I decide to try for a three column layout with the categories in the first column, the codes for the selected category in the second column and the detail view in the third column.</p>
 <p>The way I implemented this was to have the first list only show the section headers with <code>NavigationLinks</code> to a sub menu. To reserve the column layout, I had an empty submenu after the main list.</p>
 <p>In the second column, I showed the sub-headers with <code>NavigationLinks</code> to the <code>DetailView</code>. This view reserved the space for the third column with a <code>Text</code> view that changed its text depending on whether that submenu was displaying anything or not.</p>
 <p>I expanded the menu items to be big and chunky, which I feel fits the new style. The only remaining problem was that with the primary list set to use <code>SidebarListStyle()</code>, it only ever showed the first item. I had to change this to <code>InsetListStyle()</code> to see all the items! This lost the full height sidebar effect, but I assume this is a temporary bug.</p>
 <p><img src="/images/swiftui-mac-11-ThreeColumns.png" alt="Three column layout"></p>
+<hr>
 <h3 id="menus">Menus</h3>
 <p>Now I had the layout equivalent to what I ended up with after part 1 of my original series, so it was time to explore menus, which are very different. In the old style SwiftUI apps which were wrapped in AppKit, the menus were in a storyboard that you could edit. Now you add <code>commands</code> to the app&rsquo;s <code>WindowGroup</code> to alter the menus.</p>
 <p>The easiest way is to add a completely new menu, but it is also possible to insert new menu items after or before certain standard menu items.</p>
@@ -283,6 +292,7 @@
 <p>I tried using <code>Labels</code> to add an icon to the menu item. As I was switching between view modes, I wanted to have a checkmark before the selected menu item. This worked when first drawn, but the menus did not refresh when the data changed, so that was no use.</p>
 <p>I also tested using <code>Divider()</code> to get a menu separator. It worked, but the look didn&rsquo;t match the standard dividers. So menus need a lot of work still&hellip;</p>
 <p>I kept the technique of having menu items publish notifications that other views could pick up. This seems to work well. I would have liked to have certain menus or menu items only appear conditionally or perhaps enable/disable conditionally, but I could not see how to do that. Since menus do not appear to update when data changes, this may not be possible right now.</p>
+<hr>
 <h3 id="preferences">Preferences</h3>
 <p>There was one place where the new app architecture was amazingly good and that was to do with preferences. In my previous attempt at this app, I had a Preferences window and it was a major exercise to stop it opening more than once. This time, it was super easy. In the App.swift file, beside the <code>WindowGroup</code>, I added <code>Settings</code> which contained a view which had the UI for my app&rsquo;s preferences.</p>
 <p>This caused a few errors at first, but I added a <code>@SceneBuilder</code> property wrapper to the App&rsquo;s body and that fixed the errors.</p>
@@ -303,6 +313,7 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    @AppStorage(<span style="color:#e6db74">&#34;showCopyright&#34;</span>) <span style="color:#66d9ef">var</span> showCopyright: Bool = <span style="color:#66d9ef">false</span>
 </code></pre></div><p>Now any time that variable was accessed, it was read from UserDefaults and every time it was changed, it was written back into UserDefaults. Instant preferences in a single line!</p>
 <p>To pass this setting to a different view, all I had to do was give that view this same declaration. And it just worked!</p>
+<hr>
 <h3 id="opening-another-window">Opening Another Window</h3>
 <p>Last time, I tried lots of different ways using hosting controllers, storyboards etc. to open secondary windows. This time I decided to stick to using <code>sheet</code> since it seems to be what works best for SwiftUI apps. So I added my User Interface Elements sample window as a sheet.</p>
 <p>The view itself was reasonably similar except that last time, I used an <code>NSViewRepresentable</code> to embed an AppKit color well into the view. This time I was able to use the new SwiftUI ColorPicker which made it much easier to get the color back into the main view. I also added the new date and time pickers.</p>
@@ -314,9 +325,11 @@
     }
     .keyboardShortcut(.defaultAction)
 </code></pre></div><p>I was still unable to work out how to set the focus to a TextField. There are two new property wrappers to do with focus, but I understand they are not yet operational.</p>
+<hr>
 <h3 id="dialogs">Dialogs</h3>
 <p>I have already used a sheet to display the UI elements and ActionSheets are not available on macOS, so that just leaves Alerts and file dialogs. File dialogs work identically in the app although they look quite different on Big Sur. Alerts look quite different but I think they are nice. Since the app icon is a prominent part of the dialog, I added one to make it look good. I understand that different numbers of buttons will get arranged in different ways.</p>
 <p><img src="/images/swiftui-mac-11-alert.png" alt="Alert dialog"></p>
+<hr>
 <h3 id="other-improvements">Other Improvements</h3>
 <h4 id="self">Self</h4>
 <p>Do a search for &ldquo;self.&rdquo; and get rid of them all. Your code will be much cleaner and easier to read and SwiftUI now understands what you mean. If you want to read more details about this change, check out <a href="https://github.com/apple/swift-evolution/blob/master/proposals/0269-implicit-self-explicit-capture.md">swift-evolution proposal SE-0269</a>.</p>

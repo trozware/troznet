@@ -6,13 +6,23 @@ description: 'Explorations in building a Mac app in Swift on Big Sur.'
 tags: ['swift', 'swiftui', 'mac']
 ---
 
-In December 2019, I write a [series of articles about using SwiftUI to build a Mac app][1]. At WWDC 2020, Apple announced macOS 11 Big Sur along with Xcode 12 and a heap of new features for SwiftUI, so I decided to try creating my test app again and seeing how much had changed.
+In December 2019, I wrote a [series of articles about using SwiftUI to build a Mac app][1]. At WWDC 2020, Apple announced macOS 11 Big Sur along with Xcode 12 and a heap of new features for SwiftUI, so I decided to try creating my test app again and seeing how much had changed.
 
 <!--more-->
 
 You can read the earlier articles and if you are interested, [download the previous project from GitHub][2]. Usually, when revisiting an old app, I would update the existing project, but this time I want to use the new SwiftUI App so I am going to start from scratch with a new app project, copying in code as required. And I plan to follow the same basic thread as I did in the previous articles. Who knows haw many parts this one will have!
 
 For reference, I am running the beta of macOS 11 Big Sur (20A4299v) and the beta of Xcode 12 (12A6159) on a rather aged MacBook with a dodgy battery. I do not have Xcode 12 installed on my Catalina Mac, so I have no way of telling whether some of the oddities are due to Xcode or Big Sur but I will try to keep this article updated as the new betas improve things.
+
+---
+
+**Update:** I have downloaded macOS Big Sur beta 2 (20A4300b) and Xcode 12 beta 2, oddly labelled in the About box as 11.5 (11E608c). I have only found one thing that needs to be changed. I had set the deployment target to 11.0 but the new Xcode does not allow this as an option and the app fails to build. Change the deployment target to 10.16 to make it work.
+
+![Xcode 12 beta 6 error][i6]
+
+It looks like Apple is having some problems with consistency in the new version numbers in both macOS and Xcode.
+
+---
 
 ## The New Project
 
@@ -27,6 +37,8 @@ The first run took longer than I expected (I told you it was an old MacBook) but
 Closing the app and using the Canvas preview worked much as before, although the canvas now has additional controls including a button to add another preview and a menu to configure each preview. Oddly, running the preview and clicking "Bring Forward" displayed two app windows. I presume this is an Xcode 12 beta "feature".
 
 I used the attributes Inspector to edit the `Text` view, setting text, font style and weight and color. I had read that Xcode 12 had much better auto-formatting, but when adding modifiers this way, they all ended up on a single line which was not pretty. Manually adding line feeds before each dot did give a very neat structure, so typing in modifiers will be my preferred method.
+
+---
 
 ## Editing the Layout
 
@@ -82,6 +94,8 @@ struct ContentView: View {
 
 The "Select a link..." text is shown when there is no destination view to display. And when I click one of the entries in the sidebar, its content replaces that `Text` view but keeps its frame.
 
+---
+
 ## Displaying Data
 
 As with the previous app, I am displaying data from [HTTP Cats][3]. This part remains the same, so check back to the original article if you want to see how I did this. I did get warnings about the `Decodable` data structs I was using. My normal pattern when I want data to be `Identifiable` is to use something like this:
@@ -113,6 +127,8 @@ When the app ran, I had a sidebar with collapsible sections. I wasn't that happy
 
 The `Detail` view to be displayed when a status is selected had no major changes, so I dropped in the file from the previous app, without the extra bits to do with notifications and preferences. However since SwiftUI now includes a `ProgressView`, I swapped out my "Loading..." text for a indeterminate progress twirly.
 
+---
+
 ### Three Column Layout
 
 Since the collapsible sidebar wasn't looking good, I decide to try for a three column layout with the categories in the first column, the codes for the selected category in the second column and the detail view in the third column.
@@ -124,6 +140,8 @@ In the second column, I showed the sub-headers with `NavigationLinks` to the `De
 I expanded the menu items to be big and chunky, which I feel fits the new style. The only remaining problem was that with the primary list set to use `SidebarListStyle()`, it only ever showed the first item. I had to change this to `InsetListStyle()` to see all the items! This lost the full height sidebar effect, but I assume this is a temporary bug.
 
 ![Three column layout][i2]
+
+---
 
 ### Menus
 
@@ -171,6 +189,8 @@ I also tested using `Divider()` to get a menu separator. It worked, but the look
 
 I kept the technique of having menu items publish notifications that other views could pick up. This seems to work well. I would have liked to have certain menus or menu items only appear conditionally or perhaps enable/disable conditionally, but I could not see how to do that. Since menus do not appear to update when data changes, this may not be possible right now.
 
+---
+
 ### Preferences
 
 There was one place where the new app architecture was amazingly good and that was to do with preferences. In my previous attempt at this app, I had a Preferences window and it was a major exercise to stop it opening more than once. This time, it was super easy. In the App.swift file, beside the `WindowGroup`, I added `Settings` which contained a view which had the UI for my app's preferences.
@@ -204,6 +224,8 @@ Now any time that variable was accessed, it was read from UserDefaults and every
 
 To pass this setting to a different view, all I had to do was give that view this same declaration. And it just worked!
 
+---
+
 ### Opening Another Window
 
 Last time, I tried lots of different ways using hosting controllers, storyboards etc. to open secondary windows. This time I decided to stick to using `sheet` since it seems to be what works best for SwiftUI apps. So I added my User Interface Elements sample window as a sheet.
@@ -225,11 +247,15 @@ One big improvement is the ability to apply a keyboard shortcut to a button. Whe
 
 I was still unable to work out how to set the focus to a TextField. There are two new property wrappers to do with focus, but I understand they are not yet operational.
 
+---
+
 ### Dialogs
 
 I have already used a sheet to display the UI elements and ActionSheets are not available on macOS, so that just leaves Alerts and file dialogs. File dialogs work identically in the app although they look quite different on Big Sur. Alerts look quite different but I think they are nice. Since the app icon is a prominent part of the dialog, I added one to make it look good. I understand that different numbers of buttons will get arranged in different ways.
 
 ![Alert dialog][i4]
+
+---
 
 ### Other Improvements
 
@@ -274,3 +300,4 @@ Thanks to [Sungbin Jo (조성빈)][12] for proof-reading and suggestions.
 [i3]: /images/swiftui-mac-11-menus-bad-format.png
 [i4]: /images/swiftui-mac-11-alert.png
 [i5]: /images/swiftui-mac-11-toolbar.png
+[i6]: /images/Xcode_b2_error.png

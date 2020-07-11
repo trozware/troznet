@@ -8,14 +8,6 @@
     "app_id": "533321133"
   },
   {
-    "icon": "DicePass_36.png",
-    "name": "Dice Pass",
-    "webpage": "/dicepass/",
-    "version": "3.2",
-    "updated": "26 Sep 2018",
-    "app_id": "997688302"
-  },
-  {
     "icon": "iOSIconMaker36.png",
     "name": "Icon Builder",
     "webpage": "/icon-builder/",
@@ -30,21 +22,5 @@
     "version": "1.10",
     "updated": "11 May 2018",
     "app_id": "522583774"
-  },
-  {
-    "icon": "Time36.png",
-    "name": "World Time In Words",
-    "webpage": "/time-in-words-for-mac/",
-    "version": "3.2",
-    "updated": "26 Sep 2018",
-    "app_id": "509085586"
-  },
-  {
-    "icon": "ScreenSaverIcon36.png",
-    "name": "TiW Screen Saver",
-    "webpage": "/time-in-words-screen-saver-for-mac/",
-    "version": "1.2",
-    "updated": "23 Jan 2013",
-    "download": "/screensaver/TimeInWords-ScreenSaver.zip"
   }
 ]
