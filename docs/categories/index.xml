@@ -1886,7 +1886,7 @@ But SwiftUI works on all Apple&amp;rsquo;s platforms, and as I am primarily a Ma
 &lt;p&gt;OK, this one has some validity, but then again, if Swift is to rule the world, it needs to be able to do a lot of things. I love Swift, I love writing in it and I am very productive when using it. But then I see a chunk of code sprinkled with generics and unsafe pointers and I can&amp;rsquo;t make head nor tail of it. However, I think that if you are writing any standard, non-arcade-game app, you can write very good Swift using just the basics.&lt;/p&gt;
 &lt;h2 id=&#34;why-did-apple-make-swiftui&#34;&gt;Why did Apple make SwiftUI?&lt;/h2&gt;
 &lt;p&gt;Having demolished the arguments against using Swift, it&amp;rsquo;s time to move on to SwiftUI. Let&amp;rsquo;s start with the reasons why something like this had to happen.&lt;/p&gt;
-&lt;p&gt;Apple now has 5 or possibly 6 user platforms: macOS, iOS, iPadOS, tvOS, watchOS and maybe CarPlay. (I&amp;rsquo;ve never considered any CarPlay development so I have no idea how it works.) The screen sizes range from 38mm for the smallest watch to over 75&amp;rdquo; to large screen TVs (apologies for mixing my units there, but it seems that TVs have not gone metric yet). As far as user interface frameworks go, we have had AppKit, UIKit and WatchKit. AppKit is the venerable old member of this team, descended from NextStep (which is why every element name has the NS prefix) and is used to make macOS apps. UIKit was built from scratch for the iPhone and so is a lot newer and neater than AppKit, but at the same time it is more limited. It has never had to deal with the vast variability and complexity of a Mac app&amp;rsquo;s interface. WatchKit is an even more slimmed down framework with a relatively small number of interface elements.&lt;/p&gt;
+&lt;p&gt;Apple now has 5 or possibly 6 user platforms: macOS, iOS, iPadOS, tvOS, watchOS and maybe CarPlay. (I&amp;rsquo;ve never considered any CarPlay development so I have no idea how it works.) The screen sizes range from 38mm for the smallest watch to over 75&amp;quot; to large screen TVs (apologies for mixing my units there, but it seems that TVs have not gone metric yet). As far as user interface frameworks go, we have had AppKit, UIKit and WatchKit. AppKit is the venerable old member of this team, descended from NextStep (which is why every element name has the NS prefix) and is used to make macOS apps. UIKit was built from scratch for the iPhone and so is a lot newer and neater than AppKit, but at the same time it is more limited. It has never had to deal with the vast variability and complexity of a Mac app&amp;rsquo;s interface. WatchKit is an even more slimmed down framework with a relatively small number of interface elements.&lt;/p&gt;
 &lt;p&gt;Now imagine that you are trying to write a multi-platform app. You have to learn at least 3 different ways of doing everything. And there are differences that always catch me out. For example, in AppKit, to set the text in a text field, you set the field&amp;rsquo;s &lt;code&gt;stringValue&lt;/code&gt; but in iOS, you can set the field&amp;rsquo;s &lt;code&gt;text&lt;/code&gt; property. And in WatchKit, you call the &lt;code&gt;setText()&lt;/code&gt; method.&lt;/p&gt;
 &lt;p&gt;Want to change the background color of a view? UIView - no problem, set &lt;code&gt;backgroundColor&lt;/code&gt;. NSView - nope - do something weird with layers. I forget what, I have to look it up every time.&lt;/p&gt;
 &lt;p&gt;These inconsistencies are annoying, time-consuming and a huge barrier to cross-platform development. It really annoys me when I read articles or tweets that assume Swift programming = iOS programming when it is so much more. But before SwiftUI, it was not easy to jump between the platforms.&lt;/p&gt;
@@ -2736,36 +2736,36 @@ Done correcting 2 files!
 &lt;p&gt;In the Terminal, &lt;code&gt;cd&lt;/code&gt; to the folder containing your Xcode project file and run &lt;code&gt;touch .swiftlint.yml&lt;/code&gt; to create the invisible file. You can edit the file in Terminal using &lt;code&gt;nano&lt;/code&gt;, &lt;code&gt;vim&lt;/code&gt; or whatever you prefer, but you can also open it in any text editor. I prefer to use Atom so I open the file by running this command: &lt;code&gt;atom .swiftlint.yml&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;The SwiftLint ReadMe has a section about &lt;a href=&#34;https://github.com/realm/SwiftLint#configuration&#34;&gt;configuration&lt;/a&gt; which shows the format and the various general headings you can use, as well as how to configure an individual rule.&lt;/p&gt;
 &lt;p&gt;Here is my .swiftlint.yml file:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;disabled_rules&lt;/span&gt;: &lt;span style=&#34;color:#75715e&#34;&gt;# rule identifiers to exclude from running&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;included&lt;/span&gt;: &lt;span style=&#34;color:#75715e&#34;&gt;# paths to include during linting. `--path` is ignored if present. takes precendence over `excluded`.&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;excluded&lt;/span&gt;: &lt;span style=&#34;color:#75715e&#34;&gt;# paths to ignore during linting. overridden by `included`.&lt;/span&gt;
-  - Carthage
-  - Pods
-&lt;span style=&#34;color:#66d9ef&#34;&gt;opt_in_rules&lt;/span&gt;:
-  - closure_end_indentation
-  - closure_spacing
-  - contains_over_first_not_nil
-  - empty_count
-  - explicit_init
-  - fatal_error_message
-  - force_unwrapping
-  - literal_expression_end_indentation
-  - multiline_arguments
-  - multiline_parameters
-  - operator_usage_whitespace
-  - overridden_super_call
-  - private_outlet
-  - prohibited_super_call
-  - trailing_closure
-  - unneeded_parentheses_in_closure_argument
-&lt;span style=&#34;color:#66d9ef&#34;&gt;function_body_length&lt;/span&gt;:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;disabled_rules&lt;/span&gt;: &lt;span style=&#34;color:#75715e&#34;&gt;# rule identifiers to exclude from running&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;included&lt;/span&gt;: &lt;span style=&#34;color:#75715e&#34;&gt;# paths to include during linting. `--path` is ignored if present. takes precendence over `excluded`.&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;excluded&lt;/span&gt;: &lt;span style=&#34;color:#75715e&#34;&gt;# paths to ignore during linting. overridden by `included`.&lt;/span&gt;
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;Carthage&lt;/span&gt;
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;Pods&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;opt_in_rules&lt;/span&gt;:
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;closure_end_indentation&lt;/span&gt;
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;closure_spacing&lt;/span&gt;
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;contains_over_first_not_nil&lt;/span&gt;
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;empty_count&lt;/span&gt;
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;explicit_init&lt;/span&gt;
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;fatal_error_message&lt;/span&gt;
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;force_unwrapping&lt;/span&gt;
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;literal_expression_end_indentation&lt;/span&gt;
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;multiline_arguments&lt;/span&gt;
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;multiline_parameters&lt;/span&gt;
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;operator_usage_whitespace&lt;/span&gt;
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;overridden_super_call&lt;/span&gt;
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;private_outlet&lt;/span&gt;
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;prohibited_super_call&lt;/span&gt;
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;trailing_closure&lt;/span&gt;
+  - &lt;span style=&#34;color:#ae81ff&#34;&gt;unneeded_parentheses_in_closure_argument&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;function_body_length&lt;/span&gt;:
   - &lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# warning&lt;/span&gt;
   - &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# error&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;line_length&lt;/span&gt;:
+&lt;span style=&#34;color:#f92672&#34;&gt;line_length&lt;/span&gt;:
   - &lt;span style=&#34;color:#ae81ff&#34;&gt;150&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# warning&lt;/span&gt;
   - &lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# error&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;cyclomatic_complexity&lt;/span&gt;:
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;ignores_case_statements&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;cyclomatic_complexity&lt;/span&gt;:
+  &lt;span style=&#34;color:#f92672&#34;&gt;ignores_case_statements&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;No rules are disabled by default.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;included&lt;/code&gt; is blank which means it checks every folder&amp;hellip;&lt;/li&gt;
@@ -3078,7 +3078,7 @@ required for accessing the user&amp;rsquo;s location. The latitude and longitude
 in decimal format and at first, I also showed them in DMS (degrees, minutes,
 seconds) format. I found out that for navigation calculations, they prefer to
 see degrees and decimal minutes, no seconds. And rather oddly, this is displayed
-something like this: 153° 22&amp;rsquo;.84 E&lt;/p&gt;
+something like this: 153° 22&#39;.84 E&lt;/p&gt;
 &lt;p&gt;Sounds and haptics were added, configurable through Settings. The sound was a
 nice loud double-beep designed to be clearly audible to tell you when you had
 recorded a time.&lt;/p&gt;
@@ -3619,20 +3619,20 @@ efficiency:&lt;/p&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Version&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;Lines&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;Lines if lat &amp;amp; lng are Strings&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;Lines&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;Lines if lat &amp;amp; lng are Strings&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Swift 3&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;95&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;93&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;95&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;93&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Swift 4&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;35&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;28&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;35&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;28&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -4399,54 +4399,54 @@ icon files that Icon Builder makes for each app type:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;App Type&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;Number of Icons&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;App Type&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;Number of Icons&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Mac&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;10&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Mac&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;iPhone&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;8&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;iPhone&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;8&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;iPhone supporting pre iOS 7&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;11&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;iPhone supporting pre iOS 7&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;11&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;iPad&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;9&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;iPad&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;9&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;iPad supporting pre iOS 7&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;13&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;iPad supporting pre iOS 7&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;13&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;iOS Universal&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;14&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;iOS Universal&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;14&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;iOS Universal supporting pre iOS 7&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;20&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;iOS Universal supporting pre iOS 7&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;20&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Apple Watch (also requires iOS app icons)&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;8&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Apple Watch (also requires iOS app icons)&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;8&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Sticker Pack app&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;11&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Sticker Pack app&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;11&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;iMessages app&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;14&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;iMessages app&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;14&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;iMessages app Messages extension&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;9&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;iMessages app Messages extension&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;9&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -5187,7 +5187,7 @@ personA.name &lt;span style=&#34;color:#75715e&#34;&gt;// Woody&lt;/span&gt;
 &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; personB = personA
 personB.name = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Buzz&amp;#34;&lt;/span&gt;
 personB.name &lt;span style=&#34;color:#75715e&#34;&gt;// Buzz&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;That looks like standard stuff, but what do you think &lt;code&gt;personA&lt;/code&gt;&#39;s name is now?
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;That looks like standard stuff, but what do you think &lt;code&gt;personA&lt;/code&gt;&amp;rsquo;s name is now?
 If you guessed &amp;ldquo;Buzz&amp;rdquo; then you win a prize! &lt;em&gt;(No, not a real prize - pat
 yourself on the back.)&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;This is because when we created the &lt;code&gt;personB&lt;/code&gt; variable and assigned &lt;code&gt;personA&lt;/code&gt; to
@@ -6972,7 +6972,7 @@ email the completed card to your fellow players.&lt;/p&gt;
 &lt;li&gt;Select a course - the last played course is pre-selected.&lt;/li&gt;
 &lt;li&gt;Select the players - the last set of players is pre-selected.&lt;/li&gt;
 &lt;li&gt;Tap &amp;lsquo;Start Round&amp;rsquo;&lt;/li&gt;
-&lt;li&gt;Optionally enter the players&amp;rsquo; handicaps - the last used handicaps are
+&lt;li&gt;Optionally enter the players&#39; handicaps - the last used handicaps are
 pre-selected.&lt;/li&gt;
 &lt;li&gt;After each hole, enter the strokes played by each person, on your iPhone or
 Apple Watch.&lt;/li&gt;
@@ -7739,7 +7739,7 @@ man pages on your system. Open it in a text editor that can show the number of l
 in a file. &lt;a href=&#34;http://www.barebones.com/products/textwrangler/&#34;&gt;TextWrangler from Bare Bones Software&lt;/a&gt; is a good free editor that
 will do this.&lt;/p&gt;
 &lt;p&gt;To check what man pages ManReader can read, go to Finder and select &amp;lsquo;Go to
-Folder&amp;hellip;&amp;rdquo; from the Go menu. Paste in the following path:&lt;/p&gt;
+Folder&amp;hellip;&amp;quot; from the Go menu. Paste in the following path:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;~/Library/Containers/net.troz.Man-Reader/Data/Library/Application Support/Man Reader/
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You will see two files: open the one called &amp;lsquo;ManReader.raw&amp;rsquo; in your text editor.
@@ -7872,36 +7872,36 @@ reviewers.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;App&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Process&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Review days&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Dates&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;App&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Process&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Review days&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Dates&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Time In Words&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;update&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;22&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Sept 22 - Oct 14&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Time In Words&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;update&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;22&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sept 22 - Oct 14&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Icns Maker&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;new app&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;24&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Aug 5 - Aug 29&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Icns Maker&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;new app&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;24&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Aug 5 - Aug 29&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;A Knight&amp;rsquo;s Move&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;update&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;26&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Sept 6 - Oct 2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;A Knight&amp;rsquo;s Move&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;update&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;26&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sept 6 - Oct 2&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Icon Builder&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;new app&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;33&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Aug 22 - Sept 24&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Icon Builder&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;new app&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;33&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Aug 22 - Sept 24&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -7979,8 +7979,15 @@ consistent.&lt;/p&gt;
 <pubDate>Mon, 01 Oct 2012 00:00:00 +0000</pubDate>
       
       <guid>https://troz.net/icon-builder/</guid>
-<description>&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482?mt=12&#34;&gt;Icon Builder 5.1&lt;/a&gt; is available from the Mac App Store. Updated 26th September 2018 to support macOS Mojave dark mode and with extra icons needed for Apple Watch Series 4.&lt;/p&gt;
-&lt;h2 id=&#34;make-and-install-a-set-of-icons-for-an-ios-mac-or-apple-watch-app-in-3-steps&#34;&gt;Make and install a set of icons for an iOS, Mac or Apple Watch app in 3 steps:&lt;/h2&gt;
+<description>&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482?mt=12&#34;&gt;Icon Builder 5.3&lt;/a&gt; is available from the Mac App Store.&lt;/p&gt;
+
+
+&lt;a href=&#34;https://apps.apple.com/us/app/icon-builder/id552293482?mt=12&amp;amp;itsct=apps_box&amp;amp;itscg=30200&#34; style=&#34;display: inline-block; overflow: hidden; border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;&#34;&gt;&lt;img src=&#34;https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/white/en-US?size=250x83&amp;amp;releaseDate=1348531200&amp;h=9ba18831621999e36eeec13e720d5932&#34; alt=&#34;Download on the Mac App Store&#34; style=&#34;border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;&#34;&gt;&lt;/a&gt;
+
+
+&lt;p&gt;Updated 27th November 2010 with the ability to create Big Sur style macOS icons with padding and rounded corners.&lt;/p&gt;
+&lt;h2 id=&#34;make-and-install-a-set-of-icons-in-3-steps&#34;&gt;Make and install a set of icons in 3 steps:&lt;/h2&gt;
+&lt;h3 id=&#34;for-ios-mac-apple-watch-sticker-pack-or-imessages-apps&#34;&gt;For iOS, Mac, Apple Watch, Sticker Pack or iMessages apps.&lt;/h3&gt;
 &lt;p&gt;1: Drag an image into the window.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/IconBuilder1.png&#34; alt=&#34;Make an icon set in 3 steps&#34;&gt;&lt;/p&gt;
 &lt;p&gt;2: Choose the device family you are building for: iOS Universal, iPhone, iPad, Apple Watch, Mac, Sticker Pack or iMessage.&lt;/p&gt;
@@ -7990,8 +7997,17 @@ that project.
 The icons are immediately ready for use in your project with no installation necessary.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;why-is-this-necessary&#34;&gt;Why is this necessary?&lt;/h2&gt;
-&lt;p&gt;Depending on the devices supported by your app, you will need many different sizes of icon file. There are some icons for iPad only, some for iPhone / iPod Touch only and others required for any iOS device. Mac apps use completely different icon sizes. Apple Watch apps need a completely different set of icons and now with iOS 10, Messages apps and Sticker apps require even more - 2 different icon sets for Messages app. Additionally, you will need larger versions of each image to support Retina displays.&lt;/p&gt;
-&lt;p&gt;These icons must be in PNG format, with the color space set to sRGB (or P3 for iOS apps, but Icon Builder always uses sRGB) and for iOS apps, with no transparency and with alpha channel in the image files.&lt;/p&gt;
+&lt;p&gt;Depending on the devices supported by your app, you will need many
+different sizes of icon file. There are some icons for iPad only, some for
+iPhone / iPod Touch only and others required for any iOS device. Mac apps
+use completely different icon sizes. Apple Watch apps need a completely
+different set of icons and Messages apps and Sticker apps require even
+more - 2 different icon sets for Messages app. Additionally, you will need
+larger versions of each image to support Retina displays and for the App
+Stores.&lt;/p&gt;
+&lt;p&gt;These icons must be in PNG format, with the color space set to P3 or sRGB
+and for iOS apps, the images must have no transparency and the alpha
+channel must be deleted from the image files.&lt;/p&gt;
 &lt;p&gt;Your Xcode project contains a special folder called “Assets.xcassets” which contains all the image files used in your project, including the app icons. Icon Builder will install the icon files into your “Assets.xcassets” folder automatically and the icons are immediately ready for use in your project with no installation necessary.&lt;/p&gt;
 &lt;p&gt;Icon Builder still allows you to create the old-style .icns file if required by selecting “Mac icns” in the device family popup menu. This can be useful for other development environments or when making icons for documents in your Mac app.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -8005,6 +8021,7 @@ The icons are immediately ready for use in your project with no installation nec
 &lt;hr&gt;
 &lt;h2 id=&#34;whats-new-in-version-5&#34;&gt;What&amp;rsquo;s New in version 5?&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;Images can be rounded and padded for new style macOS icons.&lt;/li&gt;
 &lt;li&gt;Icon images have the correct sRGB color profile attached.&lt;/li&gt;
 &lt;li&gt;For iOS icons, transparency is replaced by white and the alpha channel is removed from the image file.&lt;/li&gt;
 &lt;li&gt;The icons created match the latest Apple guidelines.&lt;/li&gt;
@@ -8027,6 +8044,10 @@ The icons are immediately ready for use in your project with no installation nec
 &lt;p&gt;&lt;strong&gt;Does Icon Builder create icons for use in Mac apps?&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Yes. Mac apps use image assets just like iOS apps, but with different image sizes. Select &amp;ldquo;Mac App&amp;rdquo; in the Device popup to create icons for a Mac app.&lt;/li&gt;
+&lt;li&gt;If you want to create the new style of Mac icons with padding and
+rounded corners, check the &amp;ldquo;Rounded Mac App&amp;rdquo; button. This
+will look best if you leave &amp;ldquo;Fill in transparent areas&amp;rdquo;
+checked.&lt;/li&gt;
 &lt;li&gt;Icon Builder still allows you to create the old-style .icns file if required by selecting &amp;ldquo;Mac icns file&amp;rdquo; in the Device popup menu. This can be useful for other development environments or when making icons for documents in your Mac app.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;What is the difference between Mac App Icon and Mac icns file?&lt;/strong&gt;&lt;/p&gt;
@@ -8322,7 +8343,7 @@ requires iOS 5.0 or later. The Mac version is available from the Mac App Store
 and requires OS X 10.7 or later.&lt;/p&gt;
 &lt;p&gt;Perfect for when you have a few minutes to relax, like on the train to work,
 during your lunch break or during a boring lecture or class (Kids: don&amp;rsquo;t take
-advice from randoms, but you can turn the sound FX off. Just sayin&amp;rsquo;), &amp;ldquo;A
+advice from randoms, but you can turn the sound FX off. Just sayin&#39;), &amp;ldquo;A
 Knight&amp;rsquo;s Move&amp;rdquo; will keep you coming back for &amp;ldquo;Just One More Go&amp;rdquo;!&lt;/p&gt;
 &lt;p&gt;Once you have played the tutorial pack, you can move on to the other puzzle
 packs. Each pack comes with 25 more puzzles and there are many different packs

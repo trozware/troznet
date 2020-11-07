@@ -279,36 +279,36 @@ Done correcting 2 files!
 <p>In the Terminal, <code>cd</code> to the folder containing your Xcode project file and run <code>touch .swiftlint.yml</code> to create the invisible file. You can edit the file in Terminal using <code>nano</code>, <code>vim</code> or whatever you prefer, but you can also open it in any text editor. I prefer to use Atom so I open the file by running this command: <code>atom .swiftlint.yml</code>.</p>
 <p>The SwiftLint ReadMe has a section about <a href="https://github.com/realm/SwiftLint#configuration">configuration</a> which shows the format and the various general headings you can use, as well as how to configure an individual rule.</p>
 <p>Here is my .swiftlint.yml file:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#66d9ef">disabled_rules</span>: <span style="color:#75715e"># rule identifiers to exclude from running</span>
-<span style="color:#66d9ef">included</span>: <span style="color:#75715e"># paths to include during linting. `--path` is ignored if present. takes precendence over `excluded`.</span>
-<span style="color:#66d9ef">excluded</span>: <span style="color:#75715e"># paths to ignore during linting. overridden by `included`.</span>
-  - Carthage
-  - Pods
-<span style="color:#66d9ef">opt_in_rules</span>:
-  - closure_end_indentation
-  - closure_spacing
-  - contains_over_first_not_nil
-  - empty_count
-  - explicit_init
-  - fatal_error_message
-  - force_unwrapping
-  - literal_expression_end_indentation
-  - multiline_arguments
-  - multiline_parameters
-  - operator_usage_whitespace
-  - overridden_super_call
-  - private_outlet
-  - prohibited_super_call
-  - trailing_closure
-  - unneeded_parentheses_in_closure_argument
-<span style="color:#66d9ef">function_body_length</span>:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#f92672">disabled_rules</span>: <span style="color:#75715e"># rule identifiers to exclude from running</span>
+<span style="color:#f92672">included</span>: <span style="color:#75715e"># paths to include during linting. `--path` is ignored if present. takes precendence over `excluded`.</span>
+<span style="color:#f92672">excluded</span>: <span style="color:#75715e"># paths to ignore during linting. overridden by `included`.</span>
+  - <span style="color:#ae81ff">Carthage</span>
+  - <span style="color:#ae81ff">Pods</span>
+<span style="color:#f92672">opt_in_rules</span>:
+  - <span style="color:#ae81ff">closure_end_indentation</span>
+  - <span style="color:#ae81ff">closure_spacing</span>
+  - <span style="color:#ae81ff">contains_over_first_not_nil</span>
+  - <span style="color:#ae81ff">empty_count</span>
+  - <span style="color:#ae81ff">explicit_init</span>
+  - <span style="color:#ae81ff">fatal_error_message</span>
+  - <span style="color:#ae81ff">force_unwrapping</span>
+  - <span style="color:#ae81ff">literal_expression_end_indentation</span>
+  - <span style="color:#ae81ff">multiline_arguments</span>
+  - <span style="color:#ae81ff">multiline_parameters</span>
+  - <span style="color:#ae81ff">operator_usage_whitespace</span>
+  - <span style="color:#ae81ff">overridden_super_call</span>
+  - <span style="color:#ae81ff">private_outlet</span>
+  - <span style="color:#ae81ff">prohibited_super_call</span>
+  - <span style="color:#ae81ff">trailing_closure</span>
+  - <span style="color:#ae81ff">unneeded_parentheses_in_closure_argument</span>
+<span style="color:#f92672">function_body_length</span>:
   - <span style="color:#ae81ff">60</span> <span style="color:#75715e"># warning</span>
   - <span style="color:#ae81ff">100</span> <span style="color:#75715e"># error</span>
-<span style="color:#66d9ef">line_length</span>:
+<span style="color:#f92672">line_length</span>:
   - <span style="color:#ae81ff">150</span> <span style="color:#75715e"># warning</span>
   - <span style="color:#ae81ff">200</span> <span style="color:#75715e"># error</span>
-<span style="color:#66d9ef">cyclomatic_complexity</span>:
-  <span style="color:#66d9ef">ignores_case_statements</span>: <span style="color:#66d9ef">true</span>
+<span style="color:#f92672">cyclomatic_complexity</span>:
+  <span style="color:#f92672">ignores_case_statements</span>: <span style="color:#66d9ef">true</span>
 </code></pre></div><ul>
 <li>No rules are disabled by default.</li>
 <li><code>included</code> is blank which means it checks every folder&hellip;</li>

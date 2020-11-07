@@ -9,11 +9,19 @@ title: Icon Builder
 url: /icon-builder/
 ---
 
-[Icon Builder 5.1][3] is available from the Mac App Store. Updated 26th September 2018 to support macOS Mojave dark mode and with extra icons needed for Apple Watch Series 4.
+[Icon Builder 5.3][3] is available from the Mac App Store.
+
+{{< rawhtml >}}
+<a href="https://apps.apple.com/us/app/icon-builder/id552293482?mt=12&amp;itsct=apps_box&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/white/en-US?size=250x83&amp;releaseDate=1348531200&h=9ba18831621999e36eeec13e720d5932" alt="Download on the Mac App Store" style="border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;"></a>
+{{< /rawhtml >}}
+
+Updated 27th November 2010 with the ability to create Big Sur style macOS icons with padding and rounded corners.
 
 [3]: http://itunes.apple.com/app/icon-builder/id552293482?mt=12
 
-## Make and install a set of icons for an iOS, Mac or Apple Watch app in 3 steps:
+## Make and install a set of icons in 3 steps:
+
+### For iOS, Mac, Apple Watch, Sticker Pack or iMessages apps.
 
 1: Drag an image into the window.
 
@@ -33,9 +41,18 @@ The icons are immediately ready for use in your project with no installation nec
 
 ## Why is this necessary?
 
-Depending on the devices supported by your app, you will need many different sizes of icon file. There are some icons for iPad only, some for iPhone / iPod Touch only and others required for any iOS device. Mac apps use completely different icon sizes. Apple Watch apps need a completely different set of icons and now with iOS 10, Messages apps and Sticker apps require even more - 2 different icon sets for Messages app. Additionally, you will need larger versions of each image to support Retina displays.
+Depending on the devices supported by your app, you will need many
+different sizes of icon file. There are some icons for iPad only, some for
+iPhone / iPod Touch only and others required for any iOS device. Mac apps
+use completely different icon sizes. Apple Watch apps need a completely
+different set of icons and Messages apps and Sticker apps require even
+more - 2 different icon sets for Messages app. Additionally, you will need
+larger versions of each image to support Retina displays and for the App
+Stores.
 
-These icons must be in PNG format, with the color space set to sRGB (or P3 for iOS apps, but Icon Builder always uses sRGB) and for iOS apps, with no transparency and with alpha channel in the image files.
+These icons must be in PNG format, with the color space set to P3 or sRGB
+and for iOS apps, the images must have no transparency and the alpha
+channel must be deleted from the image files.
 
 Your Xcode project contains a special folder called “Assets.xcassets” which contains all the image files used in your project, including the app icons. Icon Builder will install the icon files into your “Assets.xcassets” folder automatically and the icons are immediately ready for use in your project with no installation necessary.
 
@@ -59,6 +76,7 @@ If you prefer to add the icon files manually, select a folder that does not cont
 
 ## What's New in version 5?
 
+- Images can be rounded and padded for new style macOS icons.
 - Icon images have the correct sRGB color profile attached.
 - For iOS icons, transparency is replaced by white and the alpha channel is removed from the image file.
 - The icons created match the latest Apple guidelines.
@@ -83,6 +101,10 @@ If you prefer to add the icon files manually, select a folder that does not cont
 **Does Icon Builder create icons for use in Mac apps?**
 
 - Yes. Mac apps use image assets just like iOS apps, but with different image sizes. Select "Mac App" in the Device popup to create icons for a Mac app.
+- If you want to create the new style of Mac icons with padding and
+  rounded corners, check the "Rounded Mac App" button. This
+  will look best if you leave "Fill in transparent areas"
+  checked.
 - Icon Builder still allows you to create the old-style .icns file if required by selecting "Mac icns file" in the Device popup menu. This can be useful for other development environments or when making icons for documents in your Mac app.
 
 **What is the difference between Mac App Icon and Mac icns file?**
