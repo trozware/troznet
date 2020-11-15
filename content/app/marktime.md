@@ -1,10 +1,9 @@
 ---
-title: "Marktime"
-date: 2017-11-26T14:48:53+10:00
-lastmod: 2017-11-26T14:48:53+10:00
+title: 'Marktime'
+date: 2019-02-04T14:48:53+10:00
 draft: false
 keywords: []
-description: ""
+description: ''
 tags: []
 url: /marktime/
 comment: false

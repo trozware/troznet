@@ -1,6 +1,6 @@
 ---
-title: "Wow Stats"
-date: 2018-03-31T11:43:03+10:00
+title: 'Wow Stats'
+date: 2020-10-14T11:43:03+10:00
 url: /wow-stats/
 comment: false
 toc: false

@@ -1,8 +1,9 @@
 ---
 apple-itunes-app:
-- app-id=530090451
-date: 2012-07-08T00:00:00Z
-mac_app_desc: A puzzle game where you have to move your knight across a board to a target
+  - app-id=530090451
+date: 2020-11-15T15:59:15+10:00
+mac_app_desc:
+  A puzzle game where you have to move your knight across a board to a target
   square using the same movements as a knight in chess.
 mac_app_image: /icons/KnightsMove128.png
 mac_app_name: A Knight's Move
@@ -15,9 +16,13 @@ board to a target square using the same movements as a knight in chess. Pawns
 may block your way, while enemy bishops, castles, knights and the queen may try
 to stop you.
 
-**UPDATE**: [Version 1.3 for Mac now available][1].
+[Version 1.7 for Mac now available from the Mac App Store][1].
 
-* Available from the [Mac App Store][1] for OS X 10.7 or later
+{{< rawhtml >}}
+<a href="https://apps.apple.com/us/app/a-knights-move/id533321133?mt=12&amp;itsct=apps_box&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/white/en-US?size=250x83&amp;releaseDate=1341705600&h=662bce6161434aa50ebfef20522f7e06" alt="Download on the Mac App Store" style="border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;"></a>
+{{< /rawhtml >}}
+
+Updated 15th November 2020 with native builds for Intel and Apple Silicon Macs.
 
 [1]: http://itunes.apple.com/app/a-knights-move/id533321133
 
@@ -46,10 +51,10 @@ Choose your preferred board and chess pieces.
 ## FAQ
 
 **Q.** Does the time I take to solve a puzzle count against me?\
-**A. **No - the number of stars you get depends solely on the number of moves taken.
+**A.** No - the number of stars you get depends solely on the number of moves taken.
 
 **Q.** Are there any penalties for using Undo or Restart?\
-**A. **No - both Undo and Restart wind back the number of moves, so are not counted
+**A.** No - both Undo and Restart wind back the number of moves, so are not counted
 towards your final number of moves.
 
 **Q.** What are the best techniques for solving a large puzzle?\
@@ -81,4 +86,4 @@ the scores three times in a row, this will also clear all records of cheating.
 **A.** Great! Please take a screen shot of the puzzle and annotate it to show your
 moves. Email it in to sarah@troz.net so that I can edit the puzzle for the next update.
 
-[15]: /a-knights-move-1-3/ "A Knight’s Move 1.3"
+[15]: /a-knights-move-1-3/ 'A Knight’s Move 1.3'

@@ -1,5 +1,5 @@
 ---
-date: 2012-10-01T00:00:00Z
+date: 2020-11-15T15:58:55+10:00
 mac_app_desc:
   Make and install a set of icons for an iOS, Mac or Apple Watch app in
   just 3 steps.
@@ -15,7 +15,7 @@ url: /icon-builder/
 <a href="https://apps.apple.com/us/app/icon-builder/id552293482?mt=12&amp;itsct=apps_box&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/white/en-US?size=250x83&amp;releaseDate=1348531200&h=9ba18831621999e36eeec13e720d5932" alt="Download on the Mac App Store" style="border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;"></a>
 {{< /rawhtml >}}
 
-Updated 27th November 2010 with the ability to create Big Sur style macOS icons with padding and rounded corners.
+Updated 7th November 2020 with the ability to create Big Sur style macOS icons with padding and rounded corners.
 
 [3]: http://itunes.apple.com/app/icon-builder/id552293482?mt=12
 

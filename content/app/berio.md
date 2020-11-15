@@ -1,5 +1,5 @@
 ---
-date: 2013-11-06T00:00:00Z
+date: 2018-04-23T00:00:00Z
 ios_app_desc: For oboists trying to learn Berio's Sequenza VII.
 ios_app_id: 730234638
 ios_app_name: "Berio's Sequenza VII"

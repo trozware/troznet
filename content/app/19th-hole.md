@@ -1,5 +1,5 @@
 ---
-date: 2015-03-16T00:00:00Z
+date: 2016-05-06T00:00:00Z
 title: 19th Hole
 url: /19th-hole/
 ios_app_name: 19th Hole Golf Scorer

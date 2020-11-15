@@ -6,10 +6,247 @@
     <description>Recent content on TrozWare</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>© 2012 - 2020 Sarah Reichelt</copyright>
-    <lastBuildDate>Wed, 08 Jul 2020 19:40:16 +1000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Nov 2020 15:59:15 +1000</lastBuildDate>
     
         <atom:link href="https://troz.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>A Knight&#39;s Move</title>
+<link>https://troz.net/knightsmove/</link>
+<pubDate>Sun, 15 Nov 2020 15:59:15 +1000</pubDate>
+      
+      <guid>https://troz.net/knightsmove/</guid>
+<description>&lt;p&gt;A Knight&amp;rsquo;s Move is a puzzle game where you have to move your knight across a
+board to a target square using the same movements as a knight in chess. Pawns
+may block your way, while enemy bishops, castles, knights and the queen may try
+to stop you.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/a-knights-move/id533321133&#34;&gt;Version 1.7 for Mac now available from the Mac App Store&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;a href=&#34;https://apps.apple.com/us/app/a-knights-move/id533321133?mt=12&amp;amp;itsct=apps_box&amp;amp;itscg=30200&#34; style=&#34;display: inline-block; overflow: hidden; border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;&#34;&gt;&lt;img src=&#34;https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/white/en-US?size=250x83&amp;amp;releaseDate=1341705600&amp;h=662bce6161434aa50ebfef20522f7e06&#34; alt=&#34;Download on the Mac App Store&#34; style=&#34;border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;&#34;&gt;&lt;/a&gt;
+
+
+&lt;p&gt;Updated 15th November 2020 with native builds for Intel and Apple Silicon Macs.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/KnightsMoveMac1.png&#34; alt=&#34;A Knight&amp;rsquo;s Move for Mac&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Get from the starting position to the target in the shortest possible number of
+moves. Score stars based on the moves taken. If you need help, take a one star
+penalty to show all possible moves. If you really get stuck, after several tries
+the Cheat button allows you to see a solution, although that will cost you all
+your stars.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/KnightsMoveMac2.png&#34; alt=&#34;A Knight&amp;rsquo;s Move for Mac&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Choose your preferred board and chess pieces.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/KM-Prefs.png&#34; alt=&#34;A Knight&amp;rsquo;s Move Preferences&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;faq&#34;&gt;FAQ&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; Does the time I take to solve a puzzle count against me?&lt;br&gt;
+&lt;strong&gt;A.&lt;/strong&gt; No - the number of stars you get depends solely on the number of moves taken.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; Are there any penalties for using Undo or Restart?&lt;br&gt;
+&lt;strong&gt;A.&lt;/strong&gt; No - both Undo and Restart wind back the number of moves, so are not counted
+towards your final number of moves.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; What are the best techniques for solving a large puzzle?&lt;br&gt;
+&lt;strong&gt;A.&lt;/strong&gt; Sometimes it is easier to work backwards. Work out which squares get you to
+the target safely and see if you can work out how to get to one of them. Another
+technique is to check all the possible moves and see how many can be eliminated because
+of danger or because they don&amp;rsquo;t lead anywhere except back to where you started. Just
+remember that trying and failing doesn&amp;rsquo;t count against you, so give it a go.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; What if I need help with a puzzle?&lt;br&gt;
+&lt;strong&gt;A.&lt;/strong&gt; The first way to get help is to turn on &amp;ldquo;Show Moves&amp;rdquo;. This puts green circles
+on any square that your White Knight can reach next move. It does not indicate whether
+these squares are safe, but just shows you all legal moves. This option costs you
+a one star penalty but you can always do the puzzle again to try for three stars.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; What if I think a puzzle is completely impossible?&lt;br&gt;
+&lt;strong&gt;A.&lt;/strong&gt; All the puzzles have at least one solution. If you have tried and tried, using
+Restart or being captured at least 5 times, the Cheat button will become available.
+Using the Cheat button will show you a possible solution but will mean that you can
+never get any stars for that puzzle.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; You&amp;rsquo;re kidding, right? No stars… ever… just because I cheated?&lt;br&gt;
+&lt;strong&gt;A.&lt;/strong&gt; OK, I&amp;rsquo;m kidding, but the way out of this is deliberately hidden and inconvenient.
+If you go to Settings or Preferences, you can reset all the game scores which clears
+all records of stars won so far, allowing you to restart completely. If you reset
+the scores three times in a row, this will also clear all records of cheating.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; I think I solved a puzzle in fewer moves than the minimum moves shown.&lt;br&gt;
+&lt;strong&gt;A.&lt;/strong&gt; Great! Please take a screen shot of the puzzle and annotate it to show your
+moves. Email it in to &lt;a href=&#34;mailto:sarah@troz.net&#34;&gt;sarah@troz.net&lt;/a&gt; so that I can edit the puzzle for the next update.&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
+<title>Icon Builder</title>
+<link>https://troz.net/icon-builder/</link>
+<pubDate>Sun, 15 Nov 2020 15:58:55 +1000</pubDate>
+      
+      <guid>https://troz.net/icon-builder/</guid>
+<description>&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482?mt=12&#34;&gt;Icon Builder 5.3&lt;/a&gt; is available from the Mac App Store.&lt;/p&gt;
+
+
+&lt;a href=&#34;https://apps.apple.com/us/app/icon-builder/id552293482?mt=12&amp;amp;itsct=apps_box&amp;amp;itscg=30200&#34; style=&#34;display: inline-block; overflow: hidden; border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;&#34;&gt;&lt;img src=&#34;https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/white/en-US?size=250x83&amp;amp;releaseDate=1348531200&amp;h=9ba18831621999e36eeec13e720d5932&#34; alt=&#34;Download on the Mac App Store&#34; style=&#34;border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;&#34;&gt;&lt;/a&gt;
+
+
+&lt;p&gt;Updated 7th November 2020 with the ability to create Big Sur style macOS icons with padding and rounded corners.&lt;/p&gt;
+&lt;h2 id=&#34;make-and-install-a-set-of-icons-in-3-steps&#34;&gt;Make and install a set of icons in 3 steps:&lt;/h2&gt;
+&lt;h3 id=&#34;for-ios-mac-apple-watch-sticker-pack-or-imessages-apps&#34;&gt;For iOS, Mac, Apple Watch, Sticker Pack or iMessages apps.&lt;/h3&gt;
+&lt;p&gt;1: Drag an image into the window.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/IconBuilder1.png&#34; alt=&#34;Make an icon set in 3 steps&#34;&gt;&lt;/p&gt;
+&lt;p&gt;2: Choose the device family you are building for: iOS Universal, iPhone, iPad, Apple Watch, Mac, Sticker Pack or iMessage.&lt;/p&gt;
+&lt;p&gt;3: Click &amp;ldquo;Create icon assets&amp;rdquo; and select the folder containing your Xcode project.&lt;/p&gt;
+&lt;p&gt;Icon Builder will create an AppIcon set inside the &amp;ldquo;Assets.xcassets&amp;rdquo; folder for
+that project.
+The icons are immediately ready for use in your project with no installation necessary.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;why-is-this-necessary&#34;&gt;Why is this necessary?&lt;/h2&gt;
+&lt;p&gt;Depending on the devices supported by your app, you will need many
+different sizes of icon file. There are some icons for iPad only, some for
+iPhone / iPod Touch only and others required for any iOS device. Mac apps
+use completely different icon sizes. Apple Watch apps need a completely
+different set of icons and Messages apps and Sticker apps require even
+more - 2 different icon sets for Messages app. Additionally, you will need
+larger versions of each image to support Retina displays and for the App
+Stores.&lt;/p&gt;
+&lt;p&gt;These icons must be in PNG format, with the color space set to P3 or sRGB
+and for iOS apps, the images must have no transparency and the alpha
+channel must be deleted from the image files.&lt;/p&gt;
+&lt;p&gt;Your Xcode project contains a special folder called “Assets.xcassets” which contains all the image files used in your project, including the app icons. Icon Builder will install the icon files into your “Assets.xcassets” folder automatically and the icons are immediately ready for use in your project with no installation necessary.&lt;/p&gt;
+&lt;p&gt;Icon Builder still allows you to create the old-style .icns file if required by selecting “Mac icns” in the device family popup menu. This can be useful for other development environments or when making icons for documents in your Mac app.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You will get the best results if you start with a 1024 x 1024 image.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;using-the-icon-images&#34;&gt;Using the icon images:&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/IconBuilder2.png&#34; alt=&#34;Using the icons&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Icon Builder creates all the required image files in a folder called “AppIcon.appiconset”, “AppIcon-Watch.appiconset” or “iMessage App Icon.stickersiconset” inside the “Assets.xcassets” folder for your project. If you already have images stored in an appiconset folder, Icon Builder will not over-write them, but will add a new folder e.g. “AppIcon-1.appiconset”. You can then switch between AppIcon sets in the project settings for your target app.&lt;/p&gt;
+&lt;p&gt;If you prefer to add the icon files manually, select a folder that does not contain a .xcodeproj file and the icon sets will be saved directly to that folder. You can then drag the iconset folder manually into “Assets.xcassets” in your Xcode project.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;whats-new-in-version-5&#34;&gt;What&amp;rsquo;s New in version 5?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Images can be rounded and padded for new style macOS icons.&lt;/li&gt;
+&lt;li&gt;Icon images have the correct sRGB color profile attached.&lt;/li&gt;
+&lt;li&gt;For iOS icons, transparency is replaced by white and the alpha channel is removed from the image file.&lt;/li&gt;
+&lt;li&gt;The icons created match the latest Apple guidelines.&lt;/li&gt;
+&lt;li&gt;The app has been completely re-written in Swift to use the latest macOS APIs so only supports macOS 10.13.x or later.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;faq&#34;&gt;FAQ&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;I thought there were only 2 steps before - why are there 3 now?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The 2 step process gave you a folder of image files. You then had to install them manually. So really, there were always three steps, but the app was not helping you with step 3. By adding a third step asking you to locate your project folder, I was able to make the app install the icons for you automatically. So the app is doing step 3 for you.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;What if I want to install the icon files myself?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When asked to select a folder to save the icons, select a folder that does not contain a .xcodeproj file. Icon Builder will save all the files, but not install them into an Assets.xcassets or Images.xcassets folder automatically.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;What image types can I use?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Any image type compatible with QuickTime, including JPEG, PNG, TIFF, GIF, PDF, PSD, BMP.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Does Icon Builder create icons for use in Mac apps?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Yes. Mac apps use image assets just like iOS apps, but with different image sizes. Select &amp;ldquo;Mac App&amp;rdquo; in the Device popup to create icons for a Mac app.&lt;/li&gt;
+&lt;li&gt;If you want to create the new style of Mac icons with padding and
+rounded corners, check the &amp;ldquo;Rounded Mac App&amp;rdquo; button. This
+will look best if you leave &amp;ldquo;Fill in transparent areas&amp;rdquo;
+checked.&lt;/li&gt;
+&lt;li&gt;Icon Builder still allows you to create the old-style .icns file if required by selecting &amp;ldquo;Mac icns file&amp;rdquo; in the Device popup menu. This can be useful for other development environments or when making icons for documents in your Mac app.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;What is the difference between Mac App Icon and Mac icns file?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;Mac AppIcon&amp;rdquo; will create the modern AppIcon set of images for inclusion in your Assets.xcassets.&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Mac icns file&amp;rdquo; will create an old style .icns file with all the image sizes embedded into a single file. Open the file in Preview to see the contents.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Does Icon Builder create icons for use in Watch Kit apps?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Yes. Select &amp;ldquo;Apple Watch&amp;rdquo; from the Device popup. Create a WatchKit target in your iOS project if necessary. When you are choosing the location to save the icons, select the folder containing the main .xcodeproj file. Icon Builder will find the WatchKit App folder and save the icons to the WatchKit App&#39;s Assets.xcassets folder. The icon set will be called AppIcon-Watch to help you distinguish between sets when allocating them to your apps.&lt;/li&gt;
+&lt;li&gt;When the WatchKit icons have been made, Icon Builder will ask you if you want to use the same image to create the icons for the parent iOS app. Unless you want a different icon for the parent app, select the parent app device at this point to create the second set.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Does Icon Builder create icons for use in iMessage apps and Sticker Pack apps?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Yes. Select &amp;ldquo;Sticker Pack App&amp;rdquo; or &amp;ldquo;iMessage App&amp;rdquo; from the Device popup. When you are choosing the location to save the icons, select the folder containing the main .xcodeproj file and Icon Builder will create the icon sets accordingly.&lt;/li&gt;
+&lt;li&gt;iMessage apps require two sets: one for the Messages extension and one for the parent iOS app. When the iMessage icons have been made, Icon Builder will ask you if you want to use the same image to create the icons for the parent iOS app. Unless you want a different icon for the parent app, select the parent app device at this point to create the second set.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Why is my starting image re-sized for a Sticker Pack app or iMessage app?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For Mac, iOS and Apple Watch apps, all the icons are square. For Sticker Pack apps and iMessage apps, most (but not all) of the icons are letterbox-shaped. Icon Builder displays your starting image in letterbox format when you choose &amp;ldquo;Sticker Pack App&amp;rdquo; &amp;ldquo;iMessage App&amp;rdquo; so that you can see how it will look.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;When I choose any iOS app type, my starting image loses its transparent background!&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Apple requires that iOS icons have no transparency so Icon Builder displays the image like that so you can confirm the look. If you do not like the default change, edit the image to remove the transparency before using Icon Builder.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;What versions of macOS and Xcode do I need?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;This app requires macOS 10.13 as it uses the latest APIs to manipulate images.&lt;/li&gt;
+&lt;li&gt;Xcode 9 is the latest version, but Xcode 8 will probably work.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;I don&amp;rsquo;t use Xcode, I use an alternative IDE. Can I still use the icons created by this app?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Yes, you can save the icon set to a folder and install the icons manually in the IDE of your choice. If your IDE requires a .icns file, select &amp;ldquo;Mac icns file&amp;rdquo; from the device popup.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;What if my starting image is the wrong size?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If your image is not the correct size, it will be cropped or expanded when you drag it in.&lt;/li&gt;
+&lt;li&gt;It will then be resized to create all the required image sizes.&lt;/li&gt;
+&lt;li&gt;If this does not give the result you want, resize or crop the image before dropping it into Icon Builder.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;How do I start again with a blank slate?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Choose &amp;ldquo;New&amp;rdquo; from the File menu, or press Command-N.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Do I have to drag images into the app?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;No, you can copy &amp;amp; paste an image file, or an image.&lt;/li&gt;
+&lt;li&gt;Or choose &amp;ldquo;Open Image…&amp;rdquo; from the File menu, or press Command-O.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;How can I delete the icons from my project?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Select &amp;ldquo;Assets.xcassets&amp;rdquo; in the project navigator.&lt;/li&gt;
+&lt;li&gt;In the next sidebar, you will see a list of the asset sets in your project.&lt;/li&gt;
+&lt;li&gt;Select the one you want to delete (e.g. AppIcon, AppIcon-1, AppIcon-Watch) and press the Delete key.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;I have an old project with no &amp;ldquo;Assets.xcassets&amp;rdquo; - how do I add that?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Select the project at the top of the Project Navigator.&lt;/li&gt;
+&lt;li&gt;Make sure you are editing the target and go to the General tab.&lt;/li&gt;
+&lt;li&gt;In the &amp;ldquo;App Icons&amp;rdquo; section, click the &amp;ldquo;Use Asset Catalog&amp;rdquo; button.&lt;/li&gt;
+&lt;li&gt;The &amp;ldquo;Assets.xcassets&amp;rdquo; folder will be created and any existing icons will be migrated to the new structure.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;What if I want to use the images from a Mac .icns file?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Drag it in just like any image file. However the largest image in an .icns bundle is 512 x 512, so you may want to create a larger version.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Why are there files with @2x and @3x in the names?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;These are for high-resolution displays. iOS knows it needs a certain image size, but if the device has a Retina display, the system will look for an @2x file so it can squeeze twice as many pixels in and make it look sharp. For the larger or more recent iPhones, the system will use the @3x files if they are available.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;I use Pixelmator. Can I drag my pxm files into Icon Builder?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;No. Pixelmator&amp;rsquo;s pxm files cannot be used directly. Export them as png files first.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;I’m a programmer, not a graphic designer. How do I make icon images?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;One easy way to create basic shapes with gradients, text, added images etc. is to use Keynote. I presume PowerPoint has the same sort of abilities.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+</item>
+    
+    <item>
+<title>Wow Stats</title>
+<link>https://troz.net/wow-stats/</link>
+<pubDate>Wed, 14 Oct 2020 11:43:03 +1000</pubDate>
+      
+      <guid>https://troz.net/wow-stats/</guid>
+<description>&lt;h1 id=&#34;wow-stats&#34;&gt;WoW Stats&lt;/h1&gt;
+&lt;h3 id=&#34;do-you-play-world-of-warcraft4&#34;&gt;Do you play &lt;a href=&#34;https://worldofwarcraft.com/&#34;&gt;World of Warcraft&lt;/a&gt;?&lt;/h3&gt;
+&lt;p&gt;Have you ever agonised over a new piece of gear - are those stats better or worse for my class and specialization?&lt;/p&gt;
+&lt;p&gt;Is your computer festooned with sticky notes reminding you that your prot pally needs haste over mastery but the enhancement shaman needs agility?&lt;/p&gt;
+&lt;p&gt;Get rid of the notes and use the &lt;a href=&#34;https://itunes.apple.com/app/wow-stats/id1364247768&#34;&gt;WoW Stats&lt;/a&gt; app instead.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://itunes.apple.com/app/wow-stats/id1364247768&#34;&gt;&lt;img src=&#34;https://troz.net/icons/wow-stats128.png&#34; alt=&#34;WoW Stats in the App Store&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Data comes from &lt;a href=&#34;http://www.noxxic.com/wow/&#34;&gt;Noxxic&lt;/a&gt; and is updated automatically with each new patch.&lt;/p&gt;
+&lt;p&gt;And you can follow the direct links to the pages for your class and spec on &lt;a href=&#34;http://www.noxxic.com/wow/&#34;&gt;Noxxic&lt;/a&gt; or &lt;a href=&#34;https://www.icy-veins.com/wow/&#34;&gt;Icy Veins&lt;/a&gt; for more info from within the app.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://troz.net/images/wow-stats.png&#34;&gt;&lt;img src=&#34;https://troz.net/images/wow-stats-small.png&#34; alt=&#34;WoW Stats&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Click for a larger image&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Yes, my main is a Beast Master Hunter - Axelady on Khaz&amp;rsquo;goroth if anyone wants to say hello. And if you have to ask why a hunter is called Axelady, you haven&amp;rsquo;t been a hunter for as long as I have!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Axe.png&#34; alt=&#34;Axelady&#34;&gt;&lt;/p&gt;
+</description>
+</item>
     
     <item>
 <title>SwiftUI for Mac on Big Sur</title>
@@ -1927,6 +2164,35 @@ But SwiftUI works on all Apple&amp;rsquo;s platforms, and as I am primarily a Ma
 </item>
     
     <item>
+<title>Marktime</title>
+<link>https://troz.net/marktime/</link>
+<pubDate>Mon, 04 Feb 2019 14:48:53 +1000</pubDate>
+      
+      <guid>https://troz.net/marktime/</guid>
+<description>&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Mark Time is now available now from the &lt;a href=&#34;https://itunes.apple.com/us/app/mark-time/id1305580742?mt=8&#34;&gt;iTunes App Store&lt;/a&gt; for iPhone and
+iPad as an assistant for celestial navigators.&lt;/p&gt;
+&lt;p&gt;Mark Time is an application for Celestial Navigation that solves the problem of
+how to take an accurate time reading to go with each sextant sighting.&lt;/p&gt;
+&lt;p&gt;By simply tapping the screen you can record the exact time UTC as you take your
+sight, so you have no chance of making an error with the conversion, and this
+time is stored in one of five registers.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/MarkTime1.png&#34; alt=&#34;Mark Time&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Very useful when you have an assistant, and ideal for taking readings when you
+are on your own.&lt;/p&gt;
+&lt;p&gt;As you record a time you hear a confirmation sound and feel a vibration, so
+there is no need even to look at the screen. In addition the actual latitude and
+longitude at each time can be accessed later to verify your calculations. These
+options are all configurable in Settings to suit your own preferences.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/MarkTime2.png&#34; alt=&#34;Mark Time&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Location permissions:&lt;/strong&gt; On startup, the app will request permission to access
+your location. This is how the latitude and longitude data is gathered to
+provide this data if you wish.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Support:&lt;/strong&gt; If you have any questions about this app, please use the Contact
+link above to get in touch.&lt;/p&gt;</description>
+</item>
+    
+    <item>
 <title>Learning Swift  - Tuples</title>
 <link>https://troz.net/post/2019/learning-swift-tuples/</link>
 <pubDate>Sun, 03 Feb 2019 19:48:51 +1000</pubDate>
@@ -2601,23 +2867,178 @@ doCalculation(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;, calculat
 </item>
     
     <item>
-<title>Wow Stats</title>
-<link>https://troz.net/wow-stats/</link>
-<pubDate>Sat, 31 Mar 2018 11:43:03 +1000</pubDate>
+<title>Man Reader</title>
+<link>https://troz.net/manreader/</link>
+<pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://troz.net/wow-stats/</guid>
-<description>&lt;h1 id=&#34;wow-stats&#34;&gt;WoW Stats&lt;/h1&gt;
-&lt;h3 id=&#34;do-you-play-world-of-warcraft4&#34;&gt;Do you play &lt;a href=&#34;https://worldofwarcraft.com/&#34;&gt;World of Warcraft&lt;/a&gt;?&lt;/h3&gt;
-&lt;p&gt;Have you ever agonised over a new piece of gear - are those stats better or worse for my class and specialization?&lt;/p&gt;
-&lt;p&gt;Is your computer festooned with sticky notes reminding you that your prot pally needs haste over mastery but the enhancement shaman needs agility?&lt;/p&gt;
-&lt;p&gt;Get rid of the notes and use the &lt;a href=&#34;https://itunes.apple.com/app/wow-stats/id1364247768&#34;&gt;WoW Stats&lt;/a&gt; app instead.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://itunes.apple.com/app/wow-stats/id1364247768&#34;&gt;&lt;img src=&#34;https://troz.net/icons/wow-stats128.png&#34; alt=&#34;WoW Stats in the App Store&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Data comes from &lt;a href=&#34;http://www.noxxic.com/wow/&#34;&gt;Noxxic&lt;/a&gt; and is updated automatically with each new patch.&lt;/p&gt;
-&lt;p&gt;And you can follow the direct links to the pages for your class and spec on &lt;a href=&#34;http://www.noxxic.com/wow/&#34;&gt;Noxxic&lt;/a&gt; or &lt;a href=&#34;https://www.icy-veins.com/wow/&#34;&gt;Icy Veins&lt;/a&gt; for more info from within the app.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://troz.net/images/wow-stats.png&#34;&gt;&lt;img src=&#34;https://troz.net/images/wow-stats-small.png&#34; alt=&#34;WoW Stats&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Click for a larger image&amp;hellip;&lt;/p&gt;
-&lt;p&gt;Yes, my main is a Beast Master Hunter - Axelady on Khaz&amp;rsquo;goroth if anyone wants to say hello. And if you have to ask why a hunter is called Axelady, you haven&amp;rsquo;t been a hunter for as long as I have!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Axe.png&#34; alt=&#34;Axelady&#34;&gt;&lt;/p&gt;
+      <guid>https://troz.net/manreader/</guid>
+<description>&lt;p&gt;Man Reader is a utility app for reading macOS&amp;rsquo;s man pages. Man Reader allows
+quick, convenient and easy access to the man pages on your system, useful for
+programmers, system administrators and tweakers.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://troz.net/images/MR_Start.png&#34;&gt;&lt;img src=&#34;https://troz.net/images/MR_Start_small.png&#34; alt=&#34;MR&#34; title=&#34;Man Reader&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://itunes.apple.com/app/man-reader/id522583774?mt=12&#34;&gt;Buy Man Reader from the Mac App Store&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Man pages are available for the Unix commands used mostly in Terminal or when
+shell scripting. These man pages are normally displayed in Terminal using the
+&amp;ldquo;man&amp;rdquo; command e.g. &amp;ldquo;man man&amp;rdquo; gives you the man page for the man command.&lt;/p&gt;
+&lt;p&gt;However there are problems with this: the man page is displayed to you in your
+Terminal window page by page and when you have got to the bottom, you have to
+know to press &amp;lsquo;q&amp;rsquo; to get out of the man page display, at which point it
+disappears completely. Hope you have a good memory!&lt;/p&gt;
+&lt;p&gt;There are various tricks to get around this: opening it in a separate window,
+piping it to Preview as a PDF, listing it as a single page etc, but none of
+these are really convenient, which is why I wrote Man Reader. Basically, I
+reckon that if I want a utility, then there must be other people who would want
+the same thing.&lt;/p&gt;
+&lt;p&gt;Man Reader assembles a list of the commands with available man pages on your
+system - this will vary according to what developer tools you have installed.
+These commands are listed for you and you can click on any one to display the
+man page for that command.&lt;/p&gt;
+&lt;h2 id=&#34;man-reader-features&#34;&gt;Man Reader Features:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;List of all available man pages on your system.&lt;/li&gt;
+&lt;li&gt;Show only a section of the pages.&lt;/li&gt;
+&lt;li&gt;Search for a man page by name.&lt;/li&gt;
+&lt;li&gt;Display man page in text or HTML (different pages look best in different
+formats).&lt;/li&gt;
+&lt;li&gt;Step back &amp;amp; forward through recently viewed man pages.&lt;/li&gt;
+&lt;li&gt;Live links to &amp;lsquo;See Also&amp;rsquo; entries.&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;Sticky notes&amp;rsquo; at the side to jump to sub-sections in a page.&lt;/li&gt;
+&lt;li&gt;Choose a font and size for the display.&lt;/li&gt;
+&lt;li&gt;Convenient buttons in the toolbar allow quick access to commonly used
+utilities.&lt;/li&gt;
+&lt;li&gt;Sand-boxed for OS X Lion &amp;amp; later.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;man-reader-version-18-changes-23-oct-2016&#34;&gt;Man Reader version 1.8 changes (23 Oct 2016):&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;More complete search for man pages, including in third-party IDEs.&lt;/li&gt;
+&lt;li&gt;Fix for glitch when displaying previously selected page on launch.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;man-reader-version-17-changes-10-oct-2016&#34;&gt;Man Reader version 1.7 changes (10 Oct 2016):&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Updated for macOS Sierra.&lt;/li&gt;
+&lt;li&gt;List of pages now uses alternating colors even if not using the defaults.&lt;/li&gt;
+&lt;li&gt;Minimum supported system version raised to 10.11.&lt;/li&gt;
+&lt;li&gt;Minor display glitches fixed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;man-reader-version-16-changes-13-jul-2016&#34;&gt;Man Reader version 1.6 changes (13 Jul 2016):&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Much improved searching for available man pages, including permissions fix for
+some pages.&lt;/li&gt;
+&lt;li&gt;Fixed error with new search term being over-written.&lt;/li&gt;
+&lt;li&gt;Sand-boxed version now works just as well as the non-sand-boxed so please
+switch back to this version.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;man-reader-version-15-changes&#34;&gt;Man Reader version 1.5 changes:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Much improved searching for available man pages.&lt;/li&gt;
+&lt;li&gt;Sand-boxed version now works just as well as the non-sand-boxed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;man-reader-version-14-changes&#34;&gt;Man Reader version 1.4 changes:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix for plain text view not wrapping correctly for odd-sized fonts.&lt;/li&gt;
+&lt;li&gt;Fix for HTML text view over-riding font colors that may be invisible.&lt;/li&gt;
+&lt;li&gt;Search for missing entry (e.g. g++) no longer requires Enter or Return.&lt;/li&gt;
+&lt;li&gt;Better automatic selection of matching entries while searching.&lt;/li&gt;
+&lt;li&gt;Fix for animation warning message appearing in Console.&lt;/li&gt;
+&lt;li&gt;Status display shows when man page list is being updated.&lt;/li&gt;
+&lt;li&gt;Searching inside a page now allows a minimum of 2 characters (was 3), so flags
+e.g. &amp;lsquo;-b&amp;rsquo; do not need to be escaped.&lt;/li&gt;
+&lt;li&gt;Fixed path for Network Utility in tool bar (moved in OS X 10.9).&lt;/li&gt;
+&lt;li&gt;More information available about the effects of sand-boxing for this app.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;man-reader-version-13-changes&#34;&gt;Man Reader version 1.3 changes:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Better formatting of plain text to allow for HTML entities.&lt;/li&gt;
+&lt;li&gt;Fix for font in some HTML pages getting bigger &amp;amp; bigger.&lt;/li&gt;
+&lt;li&gt;Failed search for page will search for a matching man page anyway.&lt;/li&gt;
+&lt;li&gt;Editable apps in toolbar (see Preferences &amp;amp; View menu).&lt;/li&gt;
+&lt;li&gt;Fixed bug when setting custom colors for marker tabs.&lt;/li&gt;
+&lt;li&gt;Changed shortcuts for Find (see Edit menu).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;man-reader-version-12-changes&#34;&gt;Man Reader version 1.2 changes:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Customizable colors for text, background, links, found text.&lt;/li&gt;
+&lt;li&gt;Searching for text within pages marks all matches.&lt;/li&gt;
+&lt;li&gt;Pages will adjust line width to suit window size, even in plain text mode.&lt;/li&gt;
+&lt;li&gt;If a search only results in a single page, press Return to display it.&lt;/li&gt;
+&lt;li&gt;More man pages should be located on your system.&lt;/li&gt;
+&lt;li&gt;Fix for bug where app did not always remember full screen setting.&lt;/li&gt;
+&lt;li&gt;Fix for bug where some pages were being added to the history list twice.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;man-reader-version-11-changes&#34;&gt;Man Reader version 1.1 changes:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Search for text within a man page.&lt;/li&gt;
+&lt;li&gt;Bookmark frequently visited pages.&lt;/li&gt;
+&lt;li&gt;Search man page list using &amp;ldquo;Starts with&amp;rdquo; or &amp;ldquo;Contains&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Preferences for the marker tabs: choose a pre-made color set or design your
+own.&lt;/li&gt;
+&lt;li&gt;Full screen mode now supported.&lt;/li&gt;
+&lt;li&gt;Custom toolbar configurations now saved &amp;amp; restored correctly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;If you have any problems with Man Reader, any suggestions for future versions or
+encounter any bugs, please &lt;a href=&#34;mailto:sarah@troz.net?subject=Man%20Reader&#34;&gt;contact me&lt;/a&gt;.&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
+<title>Berio&#39;s Sequenza VII</title>
+<link>https://troz.net/berio/</link>
+<pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/berio/</guid>
+<description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Luciano
+Berio&lt;!-- raw HTML omitted --&gt; wrote a series of Sequenzas for various instruments with Sequenza VII
+being the one for oboe.&lt;br&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Preparing this work creates some unique problems for the oboist as Berio did not
+adhere to any time signature that could be indicated by a metronome. Instead,
+each line consists of
+&lt;!-- raw HTML omitted --&gt;13
+bars (measures) with each bar&amp;rsquo;s length specified in exact seconds&lt;!-- raw HTML omitted --&gt;.&lt;/p&gt;
+&lt;p&gt;When my son (an oboist currently studying in Melbourne, Australia) started
+trying to learn this piece, it occurred to him that having an iOS app developer
+in the family could be of some assistance. So with instructions from him and
+with suggestions from other oboists, I have developed the
+&lt;!-- raw HTML omitted --&gt;Berio
+Sequenza VII app for iPhone or iPod Touch&lt;!-- raw HTML omitted --&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;With the default settings it will count the bar lengths, using metronome-like
+sounds to mark the starts of bars and lines. The player who needs to practice a
+specific bar can easily set the app to start at that bar and even to repeat that
+bar length continuously.&lt;/p&gt;
+&lt;p&gt;Tapping the &amp;ldquo;i&amp;rdquo; button at the bottom right of the screen takes you to the more
+advanced options.&lt;/p&gt;
+&lt;p&gt;The &amp;ldquo;Settings&amp;rdquo; section deals primarily with the B4 drone that is supposed to
+accompany the performance of this piece. While in an actual performance, the
+dynamics of this drone would vary, for this practice app it remains at a
+constant volume as specified by you. The volume can be set to a percentage of
+the iPhone&amp;rsquo;s current volume setting. If it is still too quiet, plug your iPhone
+into a speaker or use some sort of physical amplification. If you prefer to play
+with an A other than 440 Hz, that can be adjusted. And finally, the wave form
+used to generate this drone sound can be switched between a sine wave or a
+triangle wave. Disclaimer: excessive use of this drone may cause loss of
+friends!&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;The Settings page also includes an option to slow down the times for practice.
+At 100% speed, bar 1 on each line will last for 3 seconds. The speed can be
+reduced to allow each bar to last longer, for use during the learning process.&lt;/p&gt;
+&lt;p&gt;The &amp;ldquo;Bars &amp;amp; Sounds&amp;rdquo; section allows you to customise the various options marking
+the start of each new bar. You can specify the number of seconds &amp;amp; the sound
+used to count you in after tapping the Start button. You can also select which
+of the metronome sounds to use to mark the start of each bar, making the first
+bar of each line use a different sound if you prefer. Finally, in case you are
+playing so loudly that you are unable to hear the iPhone, you can set the screen
+to flash a different color at the start of each new bar.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Jacqueline Leclair wrote a
+&lt;!-- raw HTML omitted --&gt;supplementary
+edition&lt;!-- raw HTML omitted --&gt; of this work in 2000 using traditional time signatures in a way that
+almost exactly duplicates the original timings. This app is designed for use
+with the original score using Berio&amp;rsquo;s real time bar lengths.&lt;/p&gt;
 </description>
 </item>
     
@@ -3252,35 +3673,6 @@ just blundered in and tried to work it out on the fly.&lt;/p&gt;
 pleasure to work with. Now all I have to do is write some interesting posts&amp;hellip;&lt;/p&gt;
 &lt;p&gt;And I want to tidy up the URLs, headers and tags for the older pages as well as
 investigating Twitter cards, search &amp;amp; JSON Feed.&lt;/p&gt;</description>
-</item>
-    
-    <item>
-<title>Marktime</title>
-<link>https://troz.net/marktime/</link>
-<pubDate>Sun, 26 Nov 2017 14:48:53 +1000</pubDate>
-      
-      <guid>https://troz.net/marktime/</guid>
-<description>&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;Mark Time is now available now from the &lt;a href=&#34;https://itunes.apple.com/us/app/mark-time/id1305580742?mt=8&#34;&gt;iTunes App Store&lt;/a&gt; for iPhone and
-iPad as an assistant for celestial navigators.&lt;/p&gt;
-&lt;p&gt;Mark Time is an application for Celestial Navigation that solves the problem of
-how to take an accurate time reading to go with each sextant sighting.&lt;/p&gt;
-&lt;p&gt;By simply tapping the screen you can record the exact time UTC as you take your
-sight, so you have no chance of making an error with the conversion, and this
-time is stored in one of five registers.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://troz.net/images/MarkTime1.png&#34; alt=&#34;Mark Time&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Very useful when you have an assistant, and ideal for taking readings when you
-are on your own.&lt;/p&gt;
-&lt;p&gt;As you record a time you hear a confirmation sound and feel a vibration, so
-there is no need even to look at the screen. In addition the actual latitude and
-longitude at each time can be accessed later to verify your calculations. These
-options are all configurable in Settings to suit your own preferences.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://troz.net/images/MarkTime2.png&#34; alt=&#34;Mark Time&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Location permissions:&lt;/strong&gt; On startup, the app will request permission to access
-your location. This is how the latitude and longitude data is gathered to
-provide this data if you wish.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Support:&lt;/strong&gt; If you have any questions about this app, please use the Contact
-link above to get in touch.&lt;/p&gt;</description>
 </item>
     
     <item>
@@ -4771,6 +5163,82 @@ on at any time.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/Watch_end_workout.png&#34; alt=&#34;Stop workout&#34;&gt;&lt;/p&gt;
 &lt;p&gt;This should make the app much more usable as an Apple Watch app, so happy
 golfing :-)&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
+<title>19th Hole</title>
+<link>https://troz.net/19th-hole/</link>
+<pubDate>Fri, 06 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://troz.net/19th-hole/</guid>
+<description>&lt;p&gt;19th Hole is the golf scoring app for everyone, and it is available from the
+&lt;!-- raw HTML omitted --&gt;iTunes
+App Store&lt;!-- raw HTML omitted --&gt;.&lt;/p&gt;
+&lt;p&gt;Whether you are playing for the club championship, having a weekend round with
+friends or playing pitch&amp;rsquo;n&amp;rsquo;putt with the kids, 19th Hole makes it easy to keep
+score.&lt;/p&gt;
+&lt;p&gt;Designed for fast, accurate score keeping with a color scheme chosen for optimal
+outdoor viewing, 19th Hole uses a simple setup process and an intuitive,
+gesture-based score entry system. During and after the round, you can see totals
+and results using various methods: total strokes, total putts, match play (Irish
+match play for more than 2 players) &amp;amp; Stableford.&lt;/p&gt;
+&lt;p&gt;19th Hole now includes an Apple Watch app so strokes can be entered quickly and
+easily using the watch to avoid having to pull your iPhone out of your bag.&lt;/p&gt;
+&lt;p&gt;When you have finished, you can archive the score card for future reference and
+email the completed card to your fellow players.&lt;/p&gt;
+&lt;h2 id=&#34;scoring-a-round-is-very-simple&#34;&gt;Scoring a round is very simple:&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Select a course - the last played course is pre-selected.&lt;/li&gt;
+&lt;li&gt;Select the players - the last set of players is pre-selected.&lt;/li&gt;
+&lt;li&gt;Tap &amp;lsquo;Start Round&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;Optionally enter the players&#39; handicaps - the last used handicaps are
+pre-selected.&lt;/li&gt;
+&lt;li&gt;After each hole, enter the strokes played by each person, on your iPhone or
+Apple Watch.&lt;/li&gt;
+&lt;li&gt;You can also record putts and various other statistics (iPhone only).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;iPhone&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;Apple Watch&lt;/p&gt;
+&lt;p&gt;Courses only need to be entered once and are then saved for future use.&lt;br&gt;
+Enter the course name, number of holes and select the tees in use. For each hole,
+enter the par, index/handicap, and the distance from each tee.&lt;/p&gt;
+&lt;p&gt;If you are in a hurry to start the round, enter the name of the course and the
+number of holes. The rest of the data can be entered for each hole as you play,
+or can be edited later.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Players can be selected from your Contacts or entered manually. Add email
+addresses so the completed cards can be emailed after the round. Choose an icon
+for each player. If a player was selected from Contacts, you can use the photo
+assigned in the Contacts app.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;h2 id=&#34;gesture-controlled&#34;&gt;Gesture-controlled:&lt;/h2&gt;
+&lt;p&gt;All scores are entered using a special number button that you tap, then drag
+your finger up or down the screen to raise or lower the number.&lt;/p&gt;
+&lt;p&gt;Hold your finger down on the number, then move it up or down to change the
+number displayed. To make it easier to see what you are doing, hold your finger
+down on the number, then first drag to one side before dragging up or down. Play
+the video below to see how this works.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;During a round, cumulative statistics are shown at the bottom of the screen.&lt;br&gt;
+For a more complete score card, you can swipe downwards in the middle of the screen.&lt;/p&gt;
+&lt;p&gt;Tap on the hole details at the top of the screen to edit that data.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;h2 id=&#34;after-the-game&#34;&gt;After the game:&lt;/h2&gt;
+&lt;p&gt;While relaxing at &amp;ldquo;The 19th Hole&amp;rdquo; after the game, you can check the scores and
+swipe back and forth between holes to see what happened during the round.&lt;/p&gt;
+&lt;p&gt;Once you are sure the scores are correct, tap the &amp;ldquo;Action&amp;rdquo; button in the top
+right. You can add some notes to the round at this point or archive the round so
+that the completed score card is saved on your iPhone. After this, you will not
+be able to make any further changes.&lt;/p&gt;
+&lt;p&gt;Completed rounds are listed when you tap &amp;ldquo;See Old Cards&amp;rdquo; with the most recent at
+the top. Tap one to see the complete score card for that round. Tap &amp;ldquo;Strokes&amp;rdquo;,
+&amp;ldquo;Putts&amp;rdquo; or &amp;ldquo;Stableford&amp;rdquo; to change what is shown for each hole. The summary is
+shown at the bottom.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 </description>
 </item>
     
@@ -6948,82 +7416,6 @@ Xcode 6.2 release.&lt;/p&gt;
 </item>
     
     <item>
-<title>19th Hole</title>
-<link>https://troz.net/19th-hole/</link>
-<pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://troz.net/19th-hole/</guid>
-<description>&lt;p&gt;19th Hole is the golf scoring app for everyone, and it is available from the
-&lt;!-- raw HTML omitted --&gt;iTunes
-App Store&lt;!-- raw HTML omitted --&gt;.&lt;/p&gt;
-&lt;p&gt;Whether you are playing for the club championship, having a weekend round with
-friends or playing pitch&amp;rsquo;n&amp;rsquo;putt with the kids, 19th Hole makes it easy to keep
-score.&lt;/p&gt;
-&lt;p&gt;Designed for fast, accurate score keeping with a color scheme chosen for optimal
-outdoor viewing, 19th Hole uses a simple setup process and an intuitive,
-gesture-based score entry system. During and after the round, you can see totals
-and results using various methods: total strokes, total putts, match play (Irish
-match play for more than 2 players) &amp;amp; Stableford.&lt;/p&gt;
-&lt;p&gt;19th Hole now includes an Apple Watch app so strokes can be entered quickly and
-easily using the watch to avoid having to pull your iPhone out of your bag.&lt;/p&gt;
-&lt;p&gt;When you have finished, you can archive the score card for future reference and
-email the completed card to your fellow players.&lt;/p&gt;
-&lt;h2 id=&#34;scoring-a-round-is-very-simple&#34;&gt;Scoring a round is very simple:&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Select a course - the last played course is pre-selected.&lt;/li&gt;
-&lt;li&gt;Select the players - the last set of players is pre-selected.&lt;/li&gt;
-&lt;li&gt;Tap &amp;lsquo;Start Round&amp;rsquo;&lt;/li&gt;
-&lt;li&gt;Optionally enter the players&#39; handicaps - the last used handicaps are
-pre-selected.&lt;/li&gt;
-&lt;li&gt;After each hole, enter the strokes played by each person, on your iPhone or
-Apple Watch.&lt;/li&gt;
-&lt;li&gt;You can also record putts and various other statistics (iPhone only).&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;iPhone&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;Apple Watch&lt;/p&gt;
-&lt;p&gt;Courses only need to be entered once and are then saved for future use.&lt;br&gt;
-Enter the course name, number of holes and select the tees in use. For each hole,
-enter the par, index/handicap, and the distance from each tee.&lt;/p&gt;
-&lt;p&gt;If you are in a hurry to start the round, enter the name of the course and the
-number of holes. The rest of the data can be entered for each hole as you play,
-or can be edited later.&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;Players can be selected from your Contacts or entered manually. Add email
-addresses so the completed cards can be emailed after the round. Choose an icon
-for each player. If a player was selected from Contacts, you can use the photo
-assigned in the Contacts app.&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;h2 id=&#34;gesture-controlled&#34;&gt;Gesture-controlled:&lt;/h2&gt;
-&lt;p&gt;All scores are entered using a special number button that you tap, then drag
-your finger up or down the screen to raise or lower the number.&lt;/p&gt;
-&lt;p&gt;Hold your finger down on the number, then move it up or down to change the
-number displayed. To make it easier to see what you are doing, hold your finger
-down on the number, then first drag to one side before dragging up or down. Play
-the video below to see how this works.&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;During a round, cumulative statistics are shown at the bottom of the screen.&lt;br&gt;
-For a more complete score card, you can swipe downwards in the middle of the screen.&lt;/p&gt;
-&lt;p&gt;Tap on the hole details at the top of the screen to edit that data.&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;h2 id=&#34;after-the-game&#34;&gt;After the game:&lt;/h2&gt;
-&lt;p&gt;While relaxing at &amp;ldquo;The 19th Hole&amp;rdquo; after the game, you can check the scores and
-swipe back and forth between holes to see what happened during the round.&lt;/p&gt;
-&lt;p&gt;Once you are sure the scores are correct, tap the &amp;ldquo;Action&amp;rdquo; button in the top
-right. You can add some notes to the round at this point or archive the round so
-that the completed score card is saved on your iPhone. After this, you will not
-be able to make any further changes.&lt;/p&gt;
-&lt;p&gt;Completed rounds are listed when you tap &amp;ldquo;See Old Cards&amp;rdquo; with the most recent at
-the top. Tap one to see the complete score card for that round. Tap &amp;ldquo;Strokes&amp;rdquo;,
-&amp;ldquo;Putts&amp;rdquo; or &amp;ldquo;Stableford&amp;rdquo; to change what is shown for each hole. The summary is
-shown at the bottom.&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-</description>
-</item>
-    
-    <item>
 <title>App Store Preview Videos</title>
 <link>https://troz.net/post/2015/app-store-preview-videos/</link>
 <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
@@ -7436,64 +7828,6 @@ would be too!&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;iTunes
 App Store&lt;!-- raw HTML omitted --&gt;.&lt;br&gt;
 More details are on &lt;a href=&#34;https://troz.net/berio/&#34; title=&#34;Berio’s Sequenza VII&#34;&gt;this page&lt;/a&gt;.&lt;/p&gt;
-</description>
-</item>
-    
-    <item>
-<title>Berio&#39;s Sequenza VII</title>
-<link>https://troz.net/berio/</link>
-<pubDate>Wed, 06 Nov 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://troz.net/berio/</guid>
-<description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Luciano
-Berio&lt;!-- raw HTML omitted --&gt; wrote a series of Sequenzas for various instruments with Sequenza VII
-being the one for oboe.&lt;br&gt;
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;Preparing this work creates some unique problems for the oboist as Berio did not
-adhere to any time signature that could be indicated by a metronome. Instead,
-each line consists of
-&lt;!-- raw HTML omitted --&gt;13
-bars (measures) with each bar&amp;rsquo;s length specified in exact seconds&lt;!-- raw HTML omitted --&gt;.&lt;/p&gt;
-&lt;p&gt;When my son (an oboist currently studying in Melbourne, Australia) started
-trying to learn this piece, it occurred to him that having an iOS app developer
-in the family could be of some assistance. So with instructions from him and
-with suggestions from other oboists, I have developed the
-&lt;!-- raw HTML omitted --&gt;Berio
-Sequenza VII app for iPhone or iPod Touch&lt;!-- raw HTML omitted --&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;With the default settings it will count the bar lengths, using metronome-like
-sounds to mark the starts of bars and lines. The player who needs to practice a
-specific bar can easily set the app to start at that bar and even to repeat that
-bar length continuously.&lt;/p&gt;
-&lt;p&gt;Tapping the &amp;ldquo;i&amp;rdquo; button at the bottom right of the screen takes you to the more
-advanced options.&lt;/p&gt;
-&lt;p&gt;The &amp;ldquo;Settings&amp;rdquo; section deals primarily with the B4 drone that is supposed to
-accompany the performance of this piece. While in an actual performance, the
-dynamics of this drone would vary, for this practice app it remains at a
-constant volume as specified by you. The volume can be set to a percentage of
-the iPhone&amp;rsquo;s current volume setting. If it is still too quiet, plug your iPhone
-into a speaker or use some sort of physical amplification. If you prefer to play
-with an A other than 440 Hz, that can be adjusted. And finally, the wave form
-used to generate this drone sound can be switched between a sine wave or a
-triangle wave. Disclaimer: excessive use of this drone may cause loss of
-friends!&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;The Settings page also includes an option to slow down the times for practice.
-At 100% speed, bar 1 on each line will last for 3 seconds. The speed can be
-reduced to allow each bar to last longer, for use during the learning process.&lt;/p&gt;
-&lt;p&gt;The &amp;ldquo;Bars &amp;amp; Sounds&amp;rdquo; section allows you to customise the various options marking
-the start of each new bar. You can specify the number of seconds &amp;amp; the sound
-used to count you in after tapping the Start button. You can also select which
-of the metronome sounds to use to mark the start of each bar, making the first
-bar of each line use a different sound if you prefer. Finally, in case you are
-playing so loudly that you are unable to hear the iPhone, you can set the screen
-to flash a different color at the start of each new bar.&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;Jacqueline Leclair wrote a
-&lt;!-- raw HTML omitted --&gt;supplementary
-edition&lt;!-- raw HTML omitted --&gt; of this work in 2000 using traditional time signatures in a way that
-almost exactly duplicates the original timings. This app is designed for use
-with the original score using Berio&amp;rsquo;s real time bar lengths.&lt;/p&gt;
 </description>
 </item>
     
@@ -7975,162 +8309,6 @@ consistent.&lt;/p&gt;
 </item>
     
     <item>
-<title>Icon Builder</title>
-<link>https://troz.net/icon-builder/</link>
-<pubDate>Mon, 01 Oct 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://troz.net/icon-builder/</guid>
-<description>&lt;p&gt;&lt;a href=&#34;http://itunes.apple.com/app/icon-builder/id552293482?mt=12&#34;&gt;Icon Builder 5.3&lt;/a&gt; is available from the Mac App Store.&lt;/p&gt;
-
-
-&lt;a href=&#34;https://apps.apple.com/us/app/icon-builder/id552293482?mt=12&amp;amp;itsct=apps_box&amp;amp;itscg=30200&#34; style=&#34;display: inline-block; overflow: hidden; border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;&#34;&gt;&lt;img src=&#34;https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/white/en-US?size=250x83&amp;amp;releaseDate=1348531200&amp;h=9ba18831621999e36eeec13e720d5932&#34; alt=&#34;Download on the Mac App Store&#34; style=&#34;border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;&#34;&gt;&lt;/a&gt;
-
-
-&lt;p&gt;Updated 27th November 2010 with the ability to create Big Sur style macOS icons with padding and rounded corners.&lt;/p&gt;
-&lt;h2 id=&#34;make-and-install-a-set-of-icons-in-3-steps&#34;&gt;Make and install a set of icons in 3 steps:&lt;/h2&gt;
-&lt;h3 id=&#34;for-ios-mac-apple-watch-sticker-pack-or-imessages-apps&#34;&gt;For iOS, Mac, Apple Watch, Sticker Pack or iMessages apps.&lt;/h3&gt;
-&lt;p&gt;1: Drag an image into the window.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://troz.net/images/IconBuilder1.png&#34; alt=&#34;Make an icon set in 3 steps&#34;&gt;&lt;/p&gt;
-&lt;p&gt;2: Choose the device family you are building for: iOS Universal, iPhone, iPad, Apple Watch, Mac, Sticker Pack or iMessage.&lt;/p&gt;
-&lt;p&gt;3: Click &amp;ldquo;Create icon assets&amp;rdquo; and select the folder containing your Xcode project.&lt;/p&gt;
-&lt;p&gt;Icon Builder will create an AppIcon set inside the &amp;ldquo;Assets.xcassets&amp;rdquo; folder for
-that project.
-The icons are immediately ready for use in your project with no installation necessary.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;why-is-this-necessary&#34;&gt;Why is this necessary?&lt;/h2&gt;
-&lt;p&gt;Depending on the devices supported by your app, you will need many
-different sizes of icon file. There are some icons for iPad only, some for
-iPhone / iPod Touch only and others required for any iOS device. Mac apps
-use completely different icon sizes. Apple Watch apps need a completely
-different set of icons and Messages apps and Sticker apps require even
-more - 2 different icon sets for Messages app. Additionally, you will need
-larger versions of each image to support Retina displays and for the App
-Stores.&lt;/p&gt;
-&lt;p&gt;These icons must be in PNG format, with the color space set to P3 or sRGB
-and for iOS apps, the images must have no transparency and the alpha
-channel must be deleted from the image files.&lt;/p&gt;
-&lt;p&gt;Your Xcode project contains a special folder called “Assets.xcassets” which contains all the image files used in your project, including the app icons. Icon Builder will install the icon files into your “Assets.xcassets” folder automatically and the icons are immediately ready for use in your project with no installation necessary.&lt;/p&gt;
-&lt;p&gt;Icon Builder still allows you to create the old-style .icns file if required by selecting “Mac icns” in the device family popup menu. This can be useful for other development environments or when making icons for documents in your Mac app.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;You will get the best results if you start with a 1024 x 1024 image.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;using-the-icon-images&#34;&gt;Using the icon images:&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://troz.net/images/IconBuilder2.png&#34; alt=&#34;Using the icons&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Icon Builder creates all the required image files in a folder called “AppIcon.appiconset”, “AppIcon-Watch.appiconset” or “iMessage App Icon.stickersiconset” inside the “Assets.xcassets” folder for your project. If you already have images stored in an appiconset folder, Icon Builder will not over-write them, but will add a new folder e.g. “AppIcon-1.appiconset”. You can then switch between AppIcon sets in the project settings for your target app.&lt;/p&gt;
-&lt;p&gt;If you prefer to add the icon files manually, select a folder that does not contain a .xcodeproj file and the icon sets will be saved directly to that folder. You can then drag the iconset folder manually into “Assets.xcassets” in your Xcode project.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;whats-new-in-version-5&#34;&gt;What&amp;rsquo;s New in version 5?&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Images can be rounded and padded for new style macOS icons.&lt;/li&gt;
-&lt;li&gt;Icon images have the correct sRGB color profile attached.&lt;/li&gt;
-&lt;li&gt;For iOS icons, transparency is replaced by white and the alpha channel is removed from the image file.&lt;/li&gt;
-&lt;li&gt;The icons created match the latest Apple guidelines.&lt;/li&gt;
-&lt;li&gt;The app has been completely re-written in Swift to use the latest macOS APIs so only supports macOS 10.13.x or later.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;faq&#34;&gt;FAQ&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;I thought there were only 2 steps before - why are there 3 now?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The 2 step process gave you a folder of image files. You then had to install them manually. So really, there were always three steps, but the app was not helping you with step 3. By adding a third step asking you to locate your project folder, I was able to make the app install the icons for you automatically. So the app is doing step 3 for you.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;What if I want to install the icon files myself?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;When asked to select a folder to save the icons, select a folder that does not contain a .xcodeproj file. Icon Builder will save all the files, but not install them into an Assets.xcassets or Images.xcassets folder automatically.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;What image types can I use?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Any image type compatible with QuickTime, including JPEG, PNG, TIFF, GIF, PDF, PSD, BMP.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Does Icon Builder create icons for use in Mac apps?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Yes. Mac apps use image assets just like iOS apps, but with different image sizes. Select &amp;ldquo;Mac App&amp;rdquo; in the Device popup to create icons for a Mac app.&lt;/li&gt;
-&lt;li&gt;If you want to create the new style of Mac icons with padding and
-rounded corners, check the &amp;ldquo;Rounded Mac App&amp;rdquo; button. This
-will look best if you leave &amp;ldquo;Fill in transparent areas&amp;rdquo;
-checked.&lt;/li&gt;
-&lt;li&gt;Icon Builder still allows you to create the old-style .icns file if required by selecting &amp;ldquo;Mac icns file&amp;rdquo; in the Device popup menu. This can be useful for other development environments or when making icons for documents in your Mac app.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;What is the difference between Mac App Icon and Mac icns file?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&amp;ldquo;Mac AppIcon&amp;rdquo; will create the modern AppIcon set of images for inclusion in your Assets.xcassets.&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;Mac icns file&amp;rdquo; will create an old style .icns file with all the image sizes embedded into a single file. Open the file in Preview to see the contents.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Does Icon Builder create icons for use in Watch Kit apps?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Yes. Select &amp;ldquo;Apple Watch&amp;rdquo; from the Device popup. Create a WatchKit target in your iOS project if necessary. When you are choosing the location to save the icons, select the folder containing the main .xcodeproj file. Icon Builder will find the WatchKit App folder and save the icons to the WatchKit App&#39;s Assets.xcassets folder. The icon set will be called AppIcon-Watch to help you distinguish between sets when allocating them to your apps.&lt;/li&gt;
-&lt;li&gt;When the WatchKit icons have been made, Icon Builder will ask you if you want to use the same image to create the icons for the parent iOS app. Unless you want a different icon for the parent app, select the parent app device at this point to create the second set.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Does Icon Builder create icons for use in iMessage apps and Sticker Pack apps?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Yes. Select &amp;ldquo;Sticker Pack App&amp;rdquo; or &amp;ldquo;iMessage App&amp;rdquo; from the Device popup. When you are choosing the location to save the icons, select the folder containing the main .xcodeproj file and Icon Builder will create the icon sets accordingly.&lt;/li&gt;
-&lt;li&gt;iMessage apps require two sets: one for the Messages extension and one for the parent iOS app. When the iMessage icons have been made, Icon Builder will ask you if you want to use the same image to create the icons for the parent iOS app. Unless you want a different icon for the parent app, select the parent app device at this point to create the second set.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Why is my starting image re-sized for a Sticker Pack app or iMessage app?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;For Mac, iOS and Apple Watch apps, all the icons are square. For Sticker Pack apps and iMessage apps, most (but not all) of the icons are letterbox-shaped. Icon Builder displays your starting image in letterbox format when you choose &amp;ldquo;Sticker Pack App&amp;rdquo; &amp;ldquo;iMessage App&amp;rdquo; so that you can see how it will look.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;When I choose any iOS app type, my starting image loses its transparent background!&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Apple requires that iOS icons have no transparency so Icon Builder displays the image like that so you can confirm the look. If you do not like the default change, edit the image to remove the transparency before using Icon Builder.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;What versions of macOS and Xcode do I need?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;This app requires macOS 10.13 as it uses the latest APIs to manipulate images.&lt;/li&gt;
-&lt;li&gt;Xcode 9 is the latest version, but Xcode 8 will probably work.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;I don&amp;rsquo;t use Xcode, I use an alternative IDE. Can I still use the icons created by this app?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Yes, you can save the icon set to a folder and install the icons manually in the IDE of your choice. If your IDE requires a .icns file, select &amp;ldquo;Mac icns file&amp;rdquo; from the device popup.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;What if my starting image is the wrong size?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;If your image is not the correct size, it will be cropped or expanded when you drag it in.&lt;/li&gt;
-&lt;li&gt;It will then be resized to create all the required image sizes.&lt;/li&gt;
-&lt;li&gt;If this does not give the result you want, resize or crop the image before dropping it into Icon Builder.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;How do I start again with a blank slate?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Choose &amp;ldquo;New&amp;rdquo; from the File menu, or press Command-N.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Do I have to drag images into the app?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;No, you can copy &amp;amp; paste an image file, or an image.&lt;/li&gt;
-&lt;li&gt;Or choose &amp;ldquo;Open Image…&amp;rdquo; from the File menu, or press Command-O.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;How can I delete the icons from my project?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Select &amp;ldquo;Assets.xcassets&amp;rdquo; in the project navigator.&lt;/li&gt;
-&lt;li&gt;In the next sidebar, you will see a list of the asset sets in your project.&lt;/li&gt;
-&lt;li&gt;Select the one you want to delete (e.g. AppIcon, AppIcon-1, AppIcon-Watch) and press the Delete key.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;I have an old project with no &amp;ldquo;Assets.xcassets&amp;rdquo; - how do I add that?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Select the project at the top of the Project Navigator.&lt;/li&gt;
-&lt;li&gt;Make sure you are editing the target and go to the General tab.&lt;/li&gt;
-&lt;li&gt;In the &amp;ldquo;App Icons&amp;rdquo; section, click the &amp;ldquo;Use Asset Catalog&amp;rdquo; button.&lt;/li&gt;
-&lt;li&gt;The &amp;ldquo;Assets.xcassets&amp;rdquo; folder will be created and any existing icons will be migrated to the new structure.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;What if I want to use the images from a Mac .icns file?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Drag it in just like any image file. However the largest image in an .icns bundle is 512 x 512, so you may want to create a larger version.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Why are there files with @2x and @3x in the names?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;These are for high-resolution displays. iOS knows it needs a certain image size, but if the device has a Retina display, the system will look for an @2x file so it can squeeze twice as many pixels in and make it look sharp. For the larger or more recent iPhones, the system will use the @3x files if they are available.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;I use Pixelmator. Can I drag my pxm files into Icon Builder?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;No. Pixelmator&amp;rsquo;s pxm files cannot be used directly. Export them as png files first.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;I’m a programmer, not a graphic designer. How do I make icon images?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;One easy way to create basic shapes with gradients, text, added images etc. is to use Keynote. I presume PowerPoint has the same sort of abilities.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-</item>
-    
-    <item>
 <title>Updating apps for iPhone 5</title>
 <link>https://troz.net/post/2012/updating-apps-for-iphone-5/</link>
 <pubDate>Mon, 24 Sep 2012 00:00:00 +0000</pubDate>
@@ -8362,63 +8540,6 @@ App Store&lt;!-- raw HTML omitted --&gt;.&lt;/p&gt;
 </item>
     
     <item>
-<title>A Knight&#39;s Move</title>
-<link>https://troz.net/knightsmove/</link>
-<pubDate>Sun, 08 Jul 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://troz.net/knightsmove/</guid>
-<description>&lt;p&gt;A Knight&amp;rsquo;s Move is a puzzle game where you have to move your knight across a
-board to a target square using the same movements as a knight in chess. Pawns
-may block your way, while enemy bishops, castles, knights and the queen may try
-to stop you.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;UPDATE&lt;/strong&gt;: &lt;a href=&#34;http://itunes.apple.com/app/a-knights-move/id533321133&#34;&gt;Version 1.3 for Mac now available&lt;/a&gt;.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Available from the &lt;a href=&#34;http://itunes.apple.com/app/a-knights-move/id533321133&#34;&gt;Mac App Store&lt;/a&gt; for OS X 10.7 or later&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://troz.net/images/KnightsMoveMac1.png&#34; alt=&#34;A Knight&amp;rsquo;s Move for Mac&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Get from the starting position to the target in the shortest possible number of
-moves. Score stars based on the moves taken. If you need help, take a one star
-penalty to show all possible moves. If you really get stuck, after several tries
-the Cheat button allows you to see a solution, although that will cost you all
-your stars.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://troz.net/images/KnightsMoveMac2.png&#34; alt=&#34;A Knight&amp;rsquo;s Move for Mac&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Choose your preferred board and chess pieces.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://troz.net/images/KM-Prefs.png&#34; alt=&#34;A Knight&amp;rsquo;s Move Preferences&#34;&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;faq&#34;&gt;FAQ&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; Does the time I take to solve a puzzle count against me?&lt;br&gt;
-**A. **No - the number of stars you get depends solely on the number of moves taken.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; Are there any penalties for using Undo or Restart?&lt;br&gt;
-**A. **No - both Undo and Restart wind back the number of moves, so are not counted
-towards your final number of moves.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; What are the best techniques for solving a large puzzle?&lt;br&gt;
-&lt;strong&gt;A.&lt;/strong&gt; Sometimes it is easier to work backwards. Work out which squares get you to
-the target safely and see if you can work out how to get to one of them. Another
-technique is to check all the possible moves and see how many can be eliminated because
-of danger or because they don&amp;rsquo;t lead anywhere except back to where you started. Just
-remember that trying and failing doesn&amp;rsquo;t count against you, so give it a go.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; What if I need help with a puzzle?&lt;br&gt;
-&lt;strong&gt;A.&lt;/strong&gt; The first way to get help is to turn on &amp;ldquo;Show Moves&amp;rdquo;. This puts green circles
-on any square that your White Knight can reach next move. It does not indicate whether
-these squares are safe, but just shows you all legal moves. This option costs you
-a one star penalty but you can always do the puzzle again to try for three stars.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; What if I think a puzzle is completely impossible?&lt;br&gt;
-&lt;strong&gt;A.&lt;/strong&gt; All the puzzles have at least one solution. If you have tried and tried, using
-Restart or being captured at least 5 times, the Cheat button will become available.
-Using the Cheat button will show you a possible solution but will mean that you can
-never get any stars for that puzzle.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; You&amp;rsquo;re kidding, right? No stars… ever… just because I cheated?&lt;br&gt;
-&lt;strong&gt;A.&lt;/strong&gt; OK, I&amp;rsquo;m kidding, but the way out of this is deliberately hidden and inconvenient.
-If you go to Settings or Preferences, you can reset all the game scores which clears
-all records of stars won so far, allowing you to restart completely. If you reset
-the scores three times in a row, this will also clear all records of cheating.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; I think I solved a puzzle in fewer moves than the minimum moves shown.&lt;br&gt;
-&lt;strong&gt;A.&lt;/strong&gt; Great! Please take a screen shot of the puzzle and annotate it to show your
-moves. Email it in to &lt;a href=&#34;mailto:sarah@troz.net&#34;&gt;sarah@troz.net&lt;/a&gt; so that I can edit the puzzle for the next update.&lt;/p&gt;
-</description>
-</item>
-    
-    <item>
 <title>Easy access to the Library folder</title>
 <link>https://troz.net/post/2012/easy-access-to-the-library-folder/</link>
 <pubDate>Wed, 16 May 2012 00:00:00 +0000</pubDate>
@@ -8608,124 +8729,6 @@ but there are enough oddities to make it worthwhile gathering together all that
 I learnt while making this screen saver.&lt;/p&gt;
 &lt;p&gt;Click this icon to download the screen saver:&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://troz.net/screensaver/TimeInWords-ScreenSaver.zip&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;/a&gt;&lt;/p&gt;
-</description>
-</item>
-    
-    <item>
-<title>Man Reader</title>
-<link>https://troz.net/manreader/</link>
-<pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://troz.net/manreader/</guid>
-<description>&lt;p&gt;Man Reader is a utility app for reading macOS&amp;rsquo;s man pages. Man Reader allows
-quick, convenient and easy access to the man pages on your system, useful for
-programmers, system administrators and tweakers.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://troz.net/images/MR_Start.png&#34;&gt;&lt;img src=&#34;https://troz.net/images/MR_Start_small.png&#34; alt=&#34;MR&#34; title=&#34;Man Reader&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://itunes.apple.com/app/man-reader/id522583774?mt=12&#34;&gt;Buy Man Reader from the Mac App Store&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Man pages are available for the Unix commands used mostly in Terminal or when
-shell scripting. These man pages are normally displayed in Terminal using the
-&amp;ldquo;man&amp;rdquo; command e.g. &amp;ldquo;man man&amp;rdquo; gives you the man page for the man command.&lt;/p&gt;
-&lt;p&gt;However there are problems with this: the man page is displayed to you in your
-Terminal window page by page and when you have got to the bottom, you have to
-know to press &amp;lsquo;q&amp;rsquo; to get out of the man page display, at which point it
-disappears completely. Hope you have a good memory!&lt;/p&gt;
-&lt;p&gt;There are various tricks to get around this: opening it in a separate window,
-piping it to Preview as a PDF, listing it as a single page etc, but none of
-these are really convenient, which is why I wrote Man Reader. Basically, I
-reckon that if I want a utility, then there must be other people who would want
-the same thing.&lt;/p&gt;
-&lt;p&gt;Man Reader assembles a list of the commands with available man pages on your
-system - this will vary according to what developer tools you have installed.
-These commands are listed for you and you can click on any one to display the
-man page for that command.&lt;/p&gt;
-&lt;h2 id=&#34;man-reader-features&#34;&gt;Man Reader Features:&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;List of all available man pages on your system.&lt;/li&gt;
-&lt;li&gt;Show only a section of the pages.&lt;/li&gt;
-&lt;li&gt;Search for a man page by name.&lt;/li&gt;
-&lt;li&gt;Display man page in text or HTML (different pages look best in different
-formats).&lt;/li&gt;
-&lt;li&gt;Step back &amp;amp; forward through recently viewed man pages.&lt;/li&gt;
-&lt;li&gt;Live links to &amp;lsquo;See Also&amp;rsquo; entries.&lt;/li&gt;
-&lt;li&gt;&amp;lsquo;Sticky notes&amp;rsquo; at the side to jump to sub-sections in a page.&lt;/li&gt;
-&lt;li&gt;Choose a font and size for the display.&lt;/li&gt;
-&lt;li&gt;Convenient buttons in the toolbar allow quick access to commonly used
-utilities.&lt;/li&gt;
-&lt;li&gt;Sand-boxed for OS X Lion &amp;amp; later.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h4 id=&#34;man-reader-version-18-changes-23-oct-2016&#34;&gt;Man Reader version 1.8 changes (23 Oct 2016):&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;More complete search for man pages, including in third-party IDEs.&lt;/li&gt;
-&lt;li&gt;Fix for glitch when displaying previously selected page on launch.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;man-reader-version-17-changes-10-oct-2016&#34;&gt;Man Reader version 1.7 changes (10 Oct 2016):&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Updated for macOS Sierra.&lt;/li&gt;
-&lt;li&gt;List of pages now uses alternating colors even if not using the defaults.&lt;/li&gt;
-&lt;li&gt;Minimum supported system version raised to 10.11.&lt;/li&gt;
-&lt;li&gt;Minor display glitches fixed.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;man-reader-version-16-changes-13-jul-2016&#34;&gt;Man Reader version 1.6 changes (13 Jul 2016):&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Much improved searching for available man pages, including permissions fix for
-some pages.&lt;/li&gt;
-&lt;li&gt;Fixed error with new search term being over-written.&lt;/li&gt;
-&lt;li&gt;Sand-boxed version now works just as well as the non-sand-boxed so please
-switch back to this version.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;man-reader-version-15-changes&#34;&gt;Man Reader version 1.5 changes:&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Much improved searching for available man pages.&lt;/li&gt;
-&lt;li&gt;Sand-boxed version now works just as well as the non-sand-boxed.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;man-reader-version-14-changes&#34;&gt;Man Reader version 1.4 changes:&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Fix for plain text view not wrapping correctly for odd-sized fonts.&lt;/li&gt;
-&lt;li&gt;Fix for HTML text view over-riding font colors that may be invisible.&lt;/li&gt;
-&lt;li&gt;Search for missing entry (e.g. g++) no longer requires Enter or Return.&lt;/li&gt;
-&lt;li&gt;Better automatic selection of matching entries while searching.&lt;/li&gt;
-&lt;li&gt;Fix for animation warning message appearing in Console.&lt;/li&gt;
-&lt;li&gt;Status display shows when man page list is being updated.&lt;/li&gt;
-&lt;li&gt;Searching inside a page now allows a minimum of 2 characters (was 3), so flags
-e.g. &amp;lsquo;-b&amp;rsquo; do not need to be escaped.&lt;/li&gt;
-&lt;li&gt;Fixed path for Network Utility in tool bar (moved in OS X 10.9).&lt;/li&gt;
-&lt;li&gt;More information available about the effects of sand-boxing for this app.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;man-reader-version-13-changes&#34;&gt;Man Reader version 1.3 changes:&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Better formatting of plain text to allow for HTML entities.&lt;/li&gt;
-&lt;li&gt;Fix for font in some HTML pages getting bigger &amp;amp; bigger.&lt;/li&gt;
-&lt;li&gt;Failed search for page will search for a matching man page anyway.&lt;/li&gt;
-&lt;li&gt;Editable apps in toolbar (see Preferences &amp;amp; View menu).&lt;/li&gt;
-&lt;li&gt;Fixed bug when setting custom colors for marker tabs.&lt;/li&gt;
-&lt;li&gt;Changed shortcuts for Find (see Edit menu).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;man-reader-version-12-changes&#34;&gt;Man Reader version 1.2 changes:&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Customizable colors for text, background, links, found text.&lt;/li&gt;
-&lt;li&gt;Searching for text within pages marks all matches.&lt;/li&gt;
-&lt;li&gt;Pages will adjust line width to suit window size, even in plain text mode.&lt;/li&gt;
-&lt;li&gt;If a search only results in a single page, press Return to display it.&lt;/li&gt;
-&lt;li&gt;More man pages should be located on your system.&lt;/li&gt;
-&lt;li&gt;Fix for bug where app did not always remember full screen setting.&lt;/li&gt;
-&lt;li&gt;Fix for bug where some pages were being added to the history list twice.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;man-reader-version-11-changes&#34;&gt;Man Reader version 1.1 changes:&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Search for text within a man page.&lt;/li&gt;
-&lt;li&gt;Bookmark frequently visited pages.&lt;/li&gt;
-&lt;li&gt;Search man page list using &amp;ldquo;Starts with&amp;rdquo; or &amp;ldquo;Contains&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;Preferences for the marker tabs: choose a pre-made color set or design your
-own.&lt;/li&gt;
-&lt;li&gt;Full screen mode now supported.&lt;/li&gt;
-&lt;li&gt;Custom toolbar configurations now saved &amp;amp; restored correctly.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;If you have any problems with Man Reader, any suggestions for future versions or
-encounter any bugs, please &lt;a href=&#34;mailto:sarah@troz.net?subject=Man%20Reader&#34;&gt;contact me&lt;/a&gt;.&lt;/p&gt;
 </description>
 </item>
     
