@@ -3,21 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://troz.net/knightsmove/</loc>
-    <lastmod>2020-11-15T15:59:15+10:00</lastmod>
+    <loc>https://troz.net/app/</loc>
+    <lastmod>2020-11-22T16:23:09+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://troz.net/app/</loc>
-    <lastmod>2020-11-15T15:59:15+10:00</lastmod>
+    <loc>https://troz.net/crossfix/</loc>
+    <lastmod>2020-11-22T16:23:09+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://troz.net/</loc>
+    <lastmod>2020-11-22T16:23:09+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/knightsmove/</loc>
     <lastmod>2020-11-15T15:59:15+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

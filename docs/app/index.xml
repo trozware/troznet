@@ -6,10 +6,88 @@
     <description>Recent content in Apps on TrozWare</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>© 2012 - 2020 Sarah Reichelt</copyright>
-    <lastBuildDate>Sun, 15 Nov 2020 15:59:15 +1000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Nov 2020 16:23:09 +1000</lastBuildDate>
     
         <atom:link href="https://troz.net/app/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>Crossfix</title>
+<link>https://troz.net/crossfix/</link>
+<pubDate>Sun, 22 Nov 2020 16:23:09 +1000</pubDate>
+      
+      <guid>https://troz.net/crossfix/</guid>
+<description>&lt;h4 id=&#34;coming-soon-to-the-app-store&#34;&gt;Coming soon to the App Store&lt;/h4&gt;
+&lt;h2 id=&#34;crossfix&#34;&gt;Crossfix&lt;/h2&gt;
+
+
+&lt;a href=&#34;https://apps.apple.com/us/app/crossfix/id1526235954?itsct=apps_box&amp;amp;itscg=30200&#34; style=&#34;display: inline-block; overflow: hidden; border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;&#34;&gt;&lt;img src=&#34;https://tools.applemediaservices.com/api/badges/download-on-the-app-store/white/en-US?size=250x83&amp;amp;releaseDate=1522281600&amp;h=316183e4d473a49a7fc392abccb65adb&#34; alt=&#34;Download on the App Store&#34; style=&#34;border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px; margin: unset; border: unset;&#34;&gt;&lt;/a&gt;
+
+
+&lt;h2 id=&#34;crossfix-lite&#34;&gt;Crossfix Lite&lt;/h2&gt;
+
+
+&lt;a href=&#34;https://apps.apple.com/us/app/crossfix-lite/id1526236100?itsct=apps_box&amp;amp;itscg=30200&#34; style=&#34;display: inline-block; overflow: hidden; border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;&#34;&gt;&lt;img src=&#34;https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-US?size=250x83&amp;amp;releaseDate=1522281600&amp;h=316183e4d473a49a7fc392abccb65adb&#34; alt=&#34;Download on the App Store&#34; style=&#34;border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px; margin: unset; border: unset;&#34;&gt;&lt;/a&gt;
+
+
+&lt;hr&gt;
+&lt;p&gt;Programmers are basically puzzlers, and programming is the world&amp;rsquo;s best type of puzzle, but I like to start my day with a cryptic crossword. Like programming, cryptic crossword clues have their own syntax and what seems like gibberish on a first glance, can be parsed into logical parts to take you to the answer. But there are aspects of solving crosswords that were easier with pencil and paper, so I decided to write an app to help fill one of those gaps.&lt;/p&gt;
+&lt;p&gt;There are sites and apps that offer anagram solvers, but they are just looking through a dictionary and showing you all the possibilities. To me, this feels like cheating, but I don’t have a problem with using an app to emulate the techniques I used to use with pencil and paper.&lt;/p&gt;
+&lt;h3 id=&#34;anagrams&#34;&gt;Anagrams&lt;/h3&gt;
+&lt;p&gt;Anagrams are a very popular clue type but they can be tricky to solve because our brains are too good at discerning patterns. We can recognize words using only the first and last letters if they have the correct number of letters inside. This means that asking our brains to scramble these letters into a completely different word is very difficult. In the olden days, when I used to do crosswords in the newspaper, the best method was to find a space in the margin and write the letters out in a circle which forced my brain to reconsider the options. But I do crosswords on my iPad now and while I could use a notes app and my Apple Pencil to draw the letters out, I don’t always have the Pencil with me and I want to keep looking at the crossword. So I decided that a companion iPhone app was the way that would work best for me.&lt;/p&gt;
+&lt;p&gt;Look at how I use Crossfix to help me solve this clue.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Users rip off revelation (8)&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The word &amp;ldquo;off&amp;rdquo; is a hint that this is an anagram, &amp;ldquo;Users rip&amp;rdquo; has the right number of letters, so the overall clue must be &amp;ldquo;revelation&amp;rdquo;. This is not a very long anagram and I think having two words makes it easier, but even so.&lt;/p&gt;
+&lt;style&gt;
+  img {
+    margin: 10px auto;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+    max-width: 400px;
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .social_footer img {
+    border: none;
+    box-shadow: none;
+  }
+&lt;/style&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Crossfix-anagram.png&#34; alt=&#34;Anagram solving&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I knew that the third last letter was &amp;ldquo;I&amp;rdquo; so I locked that in place, then I was able to shuffle the other letters around to find the answer: SURPRISE.&lt;/p&gt;
+&lt;h3 id=&#34;a-different-type-of-anagram&#34;&gt;A Different Type of Anagram&lt;/h3&gt;
+&lt;p&gt;Now we come to a variation of the anagram clue that is very popular with some crossword creators. I don&amp;rsquo;t know if there is an official name, but I call them &amp;ldquo;subtraction anagrams&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Here is an example:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Creationist has no taste for what&amp;rsquo;s sarcastic (6)&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The idea here is to remove the letters in &amp;ldquo;taste&amp;rdquo; from the letters in &amp;ldquo;Creationist&amp;rdquo; and then unscramble the remaining letters to find a word that means &amp;ldquo;sarcastic&amp;rdquo;. This turned out to be &amp;ldquo;ironic&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Crossfix-sub-anagram.png&#34; alt=&#34;Subraction anagram solving&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;using-the-app&#34;&gt;Using the app&lt;/h3&gt;
+&lt;p&gt;Type the letters in your anagram word or words in the entry field at the top. Spell checking is turned off so you can add spaces or not, use abbreviations or anything you like. When you have all the letters in, press Return and the letters will be arranged in a circle.&lt;/p&gt;
+&lt;p&gt;Tap the arrows in the middle of the circle to shuffle the letters randomly. This can be very useful as sometimes a pattern appears.&lt;/p&gt;
+&lt;p&gt;Tap a letter square to select it and tap again to move it, either into an answer square or into the discard tray below. Tap a letter in an answer square or in the discard tray to put it back into the circle.&lt;/p&gt;
+&lt;p&gt;If you already know some of the cross letters, put them into the answer squares and tap the lock button to freeze them in place.&lt;/p&gt;
+&lt;p&gt;The up arrow button will move all the unlocked letters out of the answer squares and back into the circle. Reset starts the word again completely and Clear removes everything so you can start again with a new set of letters.&lt;/p&gt;
+&lt;p&gt;Tap the gear wheel to see some help and to configure the sound and animation settings. Swipe down to dismiss this display.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Crossfix-settings.png&#34; alt=&#34;Settings&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;which-version-to-get&#34;&gt;Which Version to Get&lt;/h3&gt;
+&lt;p&gt;I have published two version of this app on the App Store: &lt;a href=&#34;https://itunes.apple.com/app/crossfix/id1526235954&#34;&gt;Crossfix&lt;/a&gt; and &lt;a href=&#34;https://itunes.apple.com/app/crossfix-lite/id1526236100&#34;&gt;Crossfix Lite&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Crossfix Lite is free, but you are limited to solving three anagrams per day.
+Crossfix is a paid app that allows unlimited solves.&lt;/p&gt;
+&lt;p&gt;Try out Crossfix Lite and then pay for Crossfix if you need more solves or if you would like to support the development of this app.&lt;/p&gt;
+&lt;p&gt;You may be wondering why I chose to release two apps instead of using in-app purchases to unlock the full version and there is one big reason: family sharing. I share a family account and it has always really annoyed me that direct app purchases are shared, but in-app purchases are not. So if I used IAPs and more than one member of your family wanted to use the app, you would have to pay twice, which seems unfair. I have deliberately chosen to have two distinct apps so as to allow family members to share all the features of the full app with a single purchase.&lt;/p&gt;
+</description>
+</item>
     
     <item>
 <title>A Knight&#39;s Move</title>
@@ -233,8 +311,7 @@ checked.&lt;/li&gt;
 <pubDate>Wed, 14 Oct 2020 11:43:03 +1000</pubDate>
       
       <guid>https://troz.net/wow-stats/</guid>
-<description>&lt;h1 id=&#34;wow-stats&#34;&gt;WoW Stats&lt;/h1&gt;
-&lt;h3 id=&#34;do-you-play-world-of-warcraft4&#34;&gt;Do you play &lt;a href=&#34;https://worldofwarcraft.com/&#34;&gt;World of Warcraft&lt;/a&gt;?&lt;/h3&gt;
+<description>&lt;h3 id=&#34;do-you-play-world-of-warcraft4&#34;&gt;Do you play &lt;a href=&#34;https://worldofwarcraft.com/&#34;&gt;World of Warcraft&lt;/a&gt;?&lt;/h3&gt;
 &lt;p&gt;Have you ever agonised over a new piece of gear - are those stats better or worse for my class and specialization?&lt;/p&gt;
 &lt;p&gt;Is your computer festooned with sticky notes reminding you that your prot pally needs haste over mastery but the enhancement shaman needs agility?&lt;/p&gt;
 &lt;p&gt;Get rid of the notes and use the &lt;a href=&#34;https://itunes.apple.com/app/wow-stats/id1364247768&#34;&gt;WoW Stats&lt;/a&gt; app instead.&lt;/p&gt;

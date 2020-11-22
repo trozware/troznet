@@ -9,8 +9,6 @@ ios_app_name: WoW Stats
 ios_app_desc: WoW Stats is a utility app for World of Warcraft players that gives them fast and easy access to the recommended stat priorities for each class and spec.
 ---
 
-# WoW Stats
-
 ### Do you play [World of Warcraft][4]?
 
 Have you ever agonised over a new piece of gear - are those stats better or worse for my class and specialization?
