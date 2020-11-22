@@ -1,8 +1,8 @@
 ---
 title: 'Crossfix'
 date: 2020-11-23T08:59:45+10:00
-draft: true
-description: 'Crossfix is an iPhone app for helping solve anagrams in croswords.'
+draft: false
+description: 'Crossfix is an iPhone app for helping solve anagrams in crosswords, particularly cryptic crosswords.'
 tags: ['app store', 'ios', 'crosswords', 'puzzles']
 ---
 

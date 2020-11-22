@@ -6,7 +6,7 @@ comment: false
 toc: false
 ios_app_id: 1526235954
 ios_app_name: Crossfix
-ios_app_desc: Crossfix is an iPhone app for helping solve anagrams in croswords.
+ios_app_desc: Crossfix is an iPhone app for helping solve anagrams in crosswords, particularly cryptic crosswords.
 ---
 
 #### Coming soon to the App Store

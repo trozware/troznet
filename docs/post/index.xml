@@ -6,10 +6,45 @@
     <description>Recent content in Posts on TrozWare</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>© 2012 - 2020 Sarah Reichelt</copyright>
-    <lastBuildDate>Wed, 08 Jul 2020 19:40:16 +1000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2020 08:59:45 +1000</lastBuildDate>
     
         <atom:link href="https://troz.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>Crossfix</title>
+<link>https://troz.net/post/2020/crossfix/</link>
+<pubDate>Mon, 23 Nov 2020 08:59:45 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2020/crossfix/</guid>
+<description>&lt;p&gt;I have just released &lt;a href=&#34;https://itunes.apple.com/app/crossfix/id1526235954&#34;&gt;Crossfix&lt;/a&gt; and &lt;a href=&#34;https://itunes.apple.com/app/crossfix-lite/id1526236100&#34;&gt;Crossfix Lite&lt;/a&gt; for iPhone. They are both the same anagram assistant solver for crosswords, particularly cryptic crosswords. The Lite version is free but limits you to three solves per day. The full version is unlimited with no ads, no recurring subscriptions and works with family sharing.&lt;/p&gt;
+&lt;style&gt;
+  img {
+    margin: 10px auto;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+    max-width: 400px;
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .social_footer img {
+    border: none;
+    box-shadow: none;
+  }
+&lt;/style&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Crossfix-anagram.png&#34; alt=&#34;Anagram solving&#34;&gt;&lt;/p&gt;
+&lt;p&gt;For more details, check out the app page at &lt;a href=&#34;https://troz.net/crossfix/&#34;&gt;https://troz/net/crossfix/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;And if you are interested in the back story and the development process, have a look at &lt;a href=&#34;https://troz.net/post/2020/name_this_app/&#34;&gt;Name This App&lt;/a&gt;. Thanks to everyone who suggested a name, and special thanks to Jerry who came up with the winning entry.&lt;/p&gt;
+&lt;p&gt;This is the first app that I have published that is 100% SwiftUI, although as I started it several months ago, it still uses the old App Delegate life cycle.&lt;/p&gt;</description>
+</item>
     
     <item>
 <title>Crossfix</title>

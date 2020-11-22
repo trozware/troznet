@@ -11,6 +11,14 @@
     "items" : [
     {
         "title" : "Crossfix",
+        "date_published" : "2020-11-23T08:59:45+10:00",
+        "date_modified" : "2020-11-23T08:59:45+10:00",
+        "id" : "https://troz.net/post/2020/crossfix/",
+        "url" : "https://troz.net/post/2020/crossfix/",
+        "content_html" : "\u003cp\u003eI have just released \u003ca href=\"https://itunes.apple.com/app/crossfix/id1526235954\"\u003eCrossfix\u003c/a\u003e and \u003ca href=\"https://itunes.apple.com/app/crossfix-lite/id1526236100\"\u003eCrossfix Lite\u003c/a\u003e for iPhone. They are both the same anagram assistant solver for crosswords, particularly cryptic crosswords. The Lite version is free but limits you to three solves per day. The full version is unlimited with no ads, no recurring subscriptions and works with family sharing.\u003c/p\u003e\n\u003cstyle\u003e\n  img {\n    margin: 10px auto;\n    border: 0.5rem #dfe7f0 solid;\n    border-radius: 0.5rem;\n     \n    max-width: 400px;\n  }\n\n  .dark-theme img {\n    margin: 10px auto;\n    border: 0.5rem #4a4d50 solid;\n    border-radius: 0.5rem;\n     \n  }\n\n  .social_footer img {\n    border: none;\n    box-shadow: none;\n  }\n\u003c/style\u003e\n\n\u003cp\u003e\u003cimg src=\"/images/Crossfix-anagram.png\" alt=\"Anagram solving\"\u003e\u003c/p\u003e\n\u003cp\u003eFor more details, check out the app page at \u003ca href=\"/crossfix/\"\u003ehttps://troz/net/crossfix/\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eAnd if you are interested in the back story and the development process, have a look at \u003ca href=\"/post/2020/name_this_app/\"\u003eName This App\u003c/a\u003e. Thanks to everyone who suggested a name, and special thanks to Jerry who came up with the winning entry.\u003c/p\u003e\n\u003cp\u003eThis is the first app that I have published that is 100% SwiftUI, although as I started it several months ago, it still uses the old App Delegate life cycle.\u003c/p\u003e"
+    },
+    {
+        "title" : "Crossfix",
         "date_published" : "2020-11-22T16:23:09+10:00",
         "date_modified" : "2020-11-22T16:23:09+10:00",
         "id" : "https://troz.net/crossfix/",
