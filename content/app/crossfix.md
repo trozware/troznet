@@ -9,7 +9,7 @@ ios_app_name: Crossfix
 ios_app_desc: Crossfix is an iPhone app for helping solve anagrams in crosswords, particularly cryptic crosswords.
 ---
 
-#### Coming soon to the App Store
+#### Now available on the App Store for iPhones. Also works on Apple Silicon Macs.
 
 ## Crossfix
 
