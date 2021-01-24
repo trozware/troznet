@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>SwifUI Mac Menus :: TrozWare</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="With the option to create apps using the SwiftUI App life cycle, we get a new way to set up menus in Mac apps. This post will explore some of the ways to do this as well as look at the default menu groups that Apple gives us.
+"/>
+<meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://troz.net/post/2021/swiftui_mac_menus/" />
+
+
+<link rel="stylesheet" href="https://troz.net/assets/style.css">
+
+
+<link rel="stylesheet" href="https://troz.net/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://troz.net/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="SwifUI Mac Menus :: TrozWare — " />
+<meta name="twitter:description" content="With the option to create apps using the SwiftUI App life cycle, we get a new way to set up menus in Mac apps. This post will explore some of the ways to do this as well as look at the default menu groups that Apple gives us.
+" />
+<meta name="twitter:site" content="https://troz.net/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="SwifUI Mac Menus :: TrozWare — ">
+<meta property="og:description" content="With the option to create apps using the SwiftUI App life cycle, we get a new way to set up menus in Mac apps. This post will explore some of the ways to do this as well as look at the default menu groups that Apple gives us.
+" />
+<meta property="og:url" content="https://troz.net/post/2021/swiftui_mac_menus/" />
+<meta property="og:site_name" content="SwifUI Mac Menus" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2021-01-24 15:24:17 &#43;1000 AEST" />
+
+
+
+
+
+
+
+
+
+</head>
+<body class="dark-theme">
+<div class="container">
+  <header class="header">
+  <span class="header__inner">
+    <a href="https://troz.net/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">TrozWare</span>
+    <span class="logo__cursor" style="width: 2px"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/apps/">Apps</a></li>
+        
+      
+        
+          <li><a href="/post/">Archives</a></li>
+        
+      
+        
+          <li><a href="/tags/">Tags</a></li>
+        
+      
+        
+          <li><a href="/contact/">Contact</a></li>
+        
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/">Home</a></li>
+      
+    
+      
+        <li><a href="/apps/">Apps</a></li>
+      
+    
+      
+        <li><a href="/post/">Archives</a></li>
+      
+    
+      
+        <li><a href="/tags/">Tags</a></li>
+      
+    
+      
+        <li><a href="/contact/">Contact</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h2 class="post-title"><a href="https://troz.net/post/2021/swiftui_mac_menus/">SwifUI Mac Menus</a></h2>
+  <div class="post-meta">
+    <span class="post-date">
+      24 Jan 2021
+    </span>
+    <span class="more-meta">- 1436 words, </span>
+    <span class="more-meta"> 7 minute read</span>
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://troz.net/tags/swift">swift</a>&nbsp;
+    
+    #<a href="https://troz.net/tags/swiftui">swiftui</a>&nbsp;
+    
+    #<a href="https://troz.net/tags/mac">mac</a>&nbsp;
+    
+    #<a href="https://troz.net/tags/menus">menus</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  <div class="post-content">
+    <p>With the option to create apps using the <strong>SwiftUI App</strong> life cycle, we get a new way to set up menus in Mac apps. This post will explore some of the ways to do this as well as look at the default menu groups that Apple gives us.</p>
+<hr>
+<p>When you create a new Mac app, the standard menu items are included for you. Using the <code>commands</code> modifier on the <code>WindowGroup</code> allows you to add new menus, add new menu items and to replace or remove existing menu items.</p>
+<h2 id="adding-a-new-menu">Adding a New Menu</h2>
+<p>To add a completely new menu, you can use <code>CommandMenu</code>, supplying it with a title and the contents to display.</p>
+<p>After starting this process, the App.swift file looks like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">@main
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">MenuSamplesApp</span>: App {
+	<span style="color:#66d9ef">var</span> body: some Scene {
+		WindowGroup {
+			ContentView()
+		}
+		.commands {
+			CommandMenu(<span style="color:#e6db74">&#34;Custom Menu&#34;</span>) {
+				<span style="color:#75715e">// no contents yet</span>
+			}
+		}
+	}
+}
+</code></pre></div><p>So what can be put inside the menu? We are used to only being allowed to use <code>NSMenuItems</code> but with SwiftUI there are no such things. It turns out that you can put quite a few SwiftUI views into a menu.</p>
+<p>The most obvious is a <code>Button</code> with an action which appears like any standard menu item.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">CommandMenu(<span style="color:#e6db74">&#34;Custom Menu&#34;</span>) {
+	Button(action: {
+		print(<span style="color:#e6db74">&#34;Menu Button selected&#34;</span>)
+	}, label: {
+		Text(<span style="color:#e6db74">&#34;Menu Button&#34;</span>)
+	})
+}
+</code></pre></div><p>I have found that the easiest way to pass this selection on to other views is via a notification. Buttons can be disabled and enabled just as usual.</p>
+<p>The contents of the button will usually be a <code>Text</code> view, but it can include an <code>Image</code> view if you want to use an SFSymbol or any other image in the menu.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">Button(action: {}, label: {
+	Image(systemName: <span style="color:#e6db74">&#34;clock&#34;</span>)
+	Text(<span style="color:#e6db74">&#34;Date &amp; Time&#34;</span>)
+})
+</code></pre></div><p>Apart from Buttons, there are several other SwiftUI Views that work in a menu. A very common use case in a menu is to have a switchable boolean setting that is displayed with a leading check mark if it is on.</p>
+<p>This can be done using a <code>Toggle</code> view.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">Toggle(isOn: <span style="color:#960050;background-color:#1e0010">$</span>toggleSetting, label: {
+	Text(<span style="color:#e6db74">&#34;Toggle&#34;</span>)
+})
+</code></pre></div><p>I created a variable to hold the setting using <code>@State</code> but <code>@AppStorage</code> would be better if this setting needed to persist between launches. To respond to changes, you can use an <code>onChange</code> modifier.</p>
+<p>This demonstrates one of the huge strengths of SwiftUI&rsquo;s declarative approach. You tell the compile you want a <code>Toggle</code> and it is automatically structured to fit the place and platform where it is being used.</p>
+<p>A <code>Picker</code> is a good choice for allowing a single selection from multiple options. This makes a sub menu with check marks.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">Picker(<span style="color:#e6db74">&#34;Appearance&#34;</span>, selection: <span style="color:#960050;background-color:#1e0010">$</span>pickerChoice) {
+	Text(<span style="color:#e6db74">&#34;Dark&#34;</span>).tag(<span style="color:#e6db74">&#34;dark&#34;</span>)
+	Text(<span style="color:#e6db74">&#34;Light&#34;</span>).tag(<span style="color:#e6db74">&#34;light&#34;</span>)
+	Text(<span style="color:#e6db74">&#34;System&#34;</span>).tag(<span style="color:#e6db74">&#34;system&#34;</span>)
+}
+</code></pre></div><p>To make a sub-menu with standard menu items like buttons, use <code>Menu</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">Menu(<span style="color:#e6db74">&#34;Sub Menu&#34;</span>) {
+	Button(action: {}, label: {
+		Text(<span style="color:#e6db74">&#34;Sub Item 1&#34;</span>)
+	})
+	Button(action: {}, label: {
+		Text(<span style="color:#e6db74">&#34;Sub Item 2&#34;</span>)
+	})
+	Button(action: {}, label: {
+		Text(<span style="color:#e6db74">&#34;Sub Item 3&#34;</span>)
+	})
+}
+</code></pre></div><p>Menu items are often best split up with a separator and this is done in SwiftUI by adding a <code>Divider()</code>.</p>
+<p>If you try a UI element in a menu and it doesn&rsquo;t work, it tends to show as disabled text and doesn&rsquo;t break the menu, so experiment. I was surprised to find that <code>Link</code> does not work in a menu.</p>
+<hr>
+<h2 id="editing-existing-menus">Editing Existing Menus</h2>
+<p>I have covered creating a new menu, but what about adding new items to an existing menu?</p>
+<p>In this case, use <code>CommandGroup</code> instead of <code>CommandMenu</code>. The difference is that instead of setting a title for the menu, you give it a placement option with a reference to an existing standard menu item.</p>
+<p>Still inside the <code>commands</code> contents, start typing <code>CommandGroup</code> to see three options:</p>
+<ul>
+<li><code>CommandGroup(after:, addition:)</code></li>
+<li><code>CommandGroup(before:, addition:)</code></li>
+<li><code>CommandGroup(replacing:, addition:)</code></li>
+</ul>
+<p>In each case, the first parameter is a <code>CommandGroupPlacement</code> that specifies one of a limited range of standard menu items.</p>
+<style>
+  img {
+    margin: 10px auto;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .social_footer img {
+    border: none;
+    box-shadow: none;
+  }
+</style>
+
+<p><img src="/images/CommandGroupPlacement.png" alt="CommandGroupPlacement"></p>
+<p>The options for the menu items inside a <code>CommandGroup</code> are just the same as when creating your own menu.</p>
+<h3 id="removing-a-standard-menu-item">Removing a Standard Menu Item</h3>
+<p>If you really want to get rid of one of the default menu items (or groups of items), you can use <code>CommandGroupPlacement</code> and replace the existing one with an <code>EmptyView()</code>. This is probably not a great idea as regards the Human Interface Guidelines but it is an option if you need it.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">CommandGroup(replacing: CommandGroupPlacement.appVisibility) {
+	EmptyView()
+}
+</code></pre></div><p>You can also replace an existing menu item with your own version if you want to be able to respond to it in a more custom way. I can imagine doing this for the Help menu item as I do not like using Apple&rsquo;s Help system and prefer to direct users elsewhere.</p>
+<hr>
+<h2 id="preset-menu-groups">Preset Menu Groups</h2>
+<p>If you watched my <a href="https://backtomac.org">Back to the Mac</a> talk called <a href="https://www.youtube.com/watch?v=hus2LksB3O4">Build a Mac app inside 30 minutes using nothing but SwiftUI</a>, you will have seen who I used a rather clunky function to dive into AppKit in order to stop the sidebar disappearing completely and permanently.</p>
+<p>If you haven&rsquo;t watched it yet, go and take a look - I&rsquo;ll wait… If you made it this far, I assume you are a Mac app fan like me and I think you will enjoy the talk as it demonstrated a lot of SwiftUI Mac app techniques.</p>
+<p>Since I recorded that video, I found out that Apple provides preset menu groups for dealing with certain things and one of them is for sidebars. My clunky solution is still useful if you want to have a toolbar button, but I think I would include the menu group as well.</p>
+<p>There are five present Commands groups provided by Apple, four of which are useful and the fifth has a purpose that escapes me.</p>
+<ul>
+<li><code>SidebarCommands()</code></li>
+<li><code>ToolbarCommands()</code></li>
+</ul>
+<p>Inserting both these into your <code>commands</code> will expand the default View menu, so that it goes from this:</p>
+<p><img src="/images/BasicViewMenu.png" alt="BasicViewMenu"></p>
+<p>To this:</p>
+<p><img src="/images/SidebarToolbarMenu.png" alt="SidebarToolbarMenu"></p>
+<p>You do not need to include both, but it was easier to show in one screen shot instead of two.</p>
+<p>If your app allows any serious text editing, you are going to want to use:</p>
+<ul>
+<li><code>TextEditingCommands()</code></li>
+</ul>
+<p>Which changes the default Edit menu from this:</p>
+<p><img src="/images/BasicEditMenu.png" alt="BasicEditMenu"></p>
+<p>To this:</p>
+<p><img src="/images/TextEditingMenu.png" alt="TextEditingMenu"></p>
+<p>And if you need your users to be able to format text, including:</p>
+<ul>
+<li><code>TextFormattingCommands()</code></li>
+</ul>
+<p>adds in a Format menu.</p>
+<p><img src="/images/TextFormattingMenu.png" alt="TextFormattingMenu"></p>
+<p>And finally, there is <code>EmptyCommands()</code> which does nothing and has no obvious use.</p>
+<p>These are used like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">.commands {
+	SidebarCommands()
+	ToolbarCommands()
+	TextEditingCommands()
+	TextFormattingCommands()
+}
+</code></pre></div><hr>
+<h2 id="using-a-separate-file">Using a Separate File</h2>
+<p>If you are adding a lot of menus, you are probably starting to feel that your App.swift file is getting a bit crowded. You can separate out these menu commands into one or more separate files, so long as they are contained in a struct that conforms to the <code>Commands</code> protocol and which has a <code>body</code> that also conforms to <code>Commands</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">MenuCommands</span>: Commands {
+	@Binding <span style="color:#66d9ef">var</span> toggleSetting: Bool
+
+	<span style="color:#66d9ef">var</span> body: some Commands {
+		CommandMenu(<span style="color:#e6db74">&#34;Custom Menu&#34;</span>) {
+			Button(action: {
+				print(<span style="color:#e6db74">&#34;Menu Button selected&#34;</span>)
+			}, label: {
+				Text(<span style="color:#e6db74">&#34;Menu Button&#34;</span>)
+			})
+
+			Divider()
+
+			Toggle(isOn: <span style="color:#960050;background-color:#1e0010">$</span>toggleSetting, label: {
+				Text(<span style="color:#e6db74">&#34;Toggle&#34;</span>)
+			})
+		}
+	}
+}
+</code></pre></div><p>This struct cannot have its own data or you will get lots of warnings, but it can have bindings to data from its parent. Insert a call to this struct, and any others you have created, in the <code>commands</code> modifier, just like for the Apple presets.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">@State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> toggleSetting = <span style="color:#66d9ef">true</span>
+
+<span style="color:#75715e">// ...</span>
+
+.commands {
+	MenuCommands(toggleSetting: <span style="color:#960050;background-color:#1e0010">$</span>toggleSetting)
+	SidebarCommands()
+}
+</code></pre></div><hr>
+<h2 id="bonus-credits">Bonus: Credits</h2>
+<p>Every Mac app has an &ldquo;About …&rdquo; menu item which brings up a simple dialog box with basic app information: icon, app name and version number. These will always appear but there is an easy way to add more information underneath this info and it can include formatted text and links.</p>
+<p>Create a new file called <code>Credits.rtf</code> - the New File dialog has a Rich Text File option. Anything in a file with this exact name will be shown below the standard information in the About box.</p>
+<p>Xcode&rsquo;s RTF editor is not great, but it is good enough for this. There are some basic formatting tools above the text editor, but you can also right-click on text to get more options, including Font and Color panels.</p>
+<p>To insert a web link, go to the Editor menu and select Add Link…</p>
+<hr>
+<p>Well that&rsquo;s it. A quick round-up of the ways to use menus in your SwiftIU Mac apps. I hope you found it useful. If you have any suggestions, comments, corrections or improvements, please contact me using one of the links below or through the <a href="/contact/">Contact</a> page.</p>
+  </div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      
+      <a class="btn previous" href="https://troz.net/post/2019/swiftui-data-flow/">SwiftUI Data Flow →</a>
+      
+    </div>
+  </div>
+  
+</div>
+
+  </div>
+
+  
+    <link rel="stylesheet" href="/css/footer.css" />
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="social_footer">
+      <a id="email-Link" class="mailtoui" href="mailto:sarah@troz.net"
+        ><img src="/icons/envelope.svg"
+      /></a>
+      <a href="https://stackoverflow.com/users/1082632"
+        ><img src="/icons/stack-overflow.svg"
+      /></a>
+      <a href="https://twitter.com/trozware"><img src="/icons/twitter.svg"/></a>
+      <a href="https://github.com/trozware"><img src="/icons/github.svg"/></a>
+      <a href="https://troz.net/index.xml"><img src="/icons/rss.svg"/></a>
+      <a href="https://troz.net/feed.json"><img src="/icons/json.png"/></a>
+
+      <a href="https://dev.to/trozware">
+        <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" 
+        alt="TrozWare's DEV Profile" 
+        style="height: 37px; margin-top: -3px" height="40" width="40">
+      </a>
+    </div>
+  </div>
+
+  <div class="footer__inner">
+    <div class="copyright">
+      
+      <span>© 2012 - 2020 Sarah Reichelt</span>
+      
+      <span
+        ><a href="http://gohugo.io">Hugo</a> theme created by
+        <a href="https://twitter.com/panr">panr</a> 2018</span
+      >
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink()
+  })
+</script>
+
+
+  
+</div>
+
+</body>
+</html>

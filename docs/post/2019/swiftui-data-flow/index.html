@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="description" content="SwiftUI gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?
 In this post, I intend to discuss the possibilities with examples.
-If you read this article before November 18th 2019, please check out ObservableObject &amp;amp; @ObservedObject - Part 2 again as it has gone through several iterations, which are all shown for comparison.
+Update - January 2021: I think the information in this post is still all valid except for one change. When you are initializing an ObservableObject, you should use @StateObject instead of @ObservedObject. Your views can receive objects that are owned by other views as @ObservedObject or @EnvironmentObject but the owner of the data should always create the data object with @StateObject.
 "/>
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
 <meta name="robots" content="noodp"/>
@@ -29,7 +29,7 @@ If you read this article before November 18th 2019, please check out ObservableO
 <meta name="twitter:title" content="SwiftUI Data Flow :: TrozWare — " />
 <meta name="twitter:description" content="SwiftUI gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?
 In this post, I intend to discuss the possibilities with examples.
-If you read this article before November 18th 2019, please check out ObservableObject &amp;amp; @ObservedObject - Part 2 again as it has gone through several iterations, which are all shown for comparison.
+Update - January 2021: I think the information in this post is still all valid except for one change. When you are initializing an ObservableObject, you should use @StateObject instead of @ObservedObject. Your views can receive objects that are owned by other views as @ObservedObject or @EnvironmentObject but the owner of the data should always create the data object with @StateObject.
 " />
 <meta name="twitter:site" content="https://troz.net/" />
 <meta name="twitter:creator" content="" />
@@ -41,7 +41,7 @@ If you read this article before November 18th 2019, please check out ObservableO
 <meta property="og:title" content="SwiftUI Data Flow :: TrozWare — ">
 <meta property="og:description" content="SwiftUI gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?
 In this post, I intend to discuss the possibilities with examples.
-If you read this article before November 18th 2019, please check out ObservableObject &amp;amp; @ObservedObject - Part 2 again as it has gone through several iterations, which are all shown for comparison.
+Update - January 2021: I think the information in this post is still all valid except for one change. When you are initializing an ObservableObject, you should use @StateObject instead of @ObservedObject. Your views can receive objects that are owned by other views as @ObservedObject or @EnvironmentObject but the owner of the data should always create the data object with @StateObject.
 " />
 <meta property="og:url" content="https://troz.net/post/2019/swiftui-data-flow/" />
 <meta property="og:site_name" content="SwiftUI Data Flow" />
@@ -49,7 +49,7 @@ If you read this article before November 18th 2019, please check out ObservableO
 <meta property="og:image:width" content="2048">
 <meta property="og:image:height" content="1024">
 
-<meta property="article:published_time" content="2019-09-16 08:47:57 &#43;1000 AEST" />
+<meta property="article:published_time" content="2021-01-24 15:17:14 &#43;1000 AEST" />
 
 
 
@@ -155,9 +155,9 @@ If you read this article before November 18th 2019, please check out ObservableO
   <h2 class="post-title"><a href="https://troz.net/post/2019/swiftui-data-flow/">SwiftUI Data Flow</a></h2>
   <div class="post-meta">
     <span class="post-date">
-      18 Nov 2019
+      24 Jan 2021
     </span>
-    <span class="more-meta">- 3426 words, </span>
+    <span class="more-meta">- 3509 words, </span>
     <span class="more-meta"> 17 minute read</span>
   </div>
 
@@ -176,6 +176,10 @@ If you read this article before November 18th 2019, please check out ObservableO
   <div class="post-content">
     <p><a href="https://developer.apple.com/xcode/swiftui/">SwiftUI</a> gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?</p>
 <p>In this post, I intend to discuss the possibilities with examples.</p>
+<p><strong>Update - January 2021:</strong> I think the information in this post is still all valid except for one change. When you are initializing an ObservableObject, you should use <code>@StateObject</code> instead of <code>@ObservedObject</code>. Your views can receive objects that are owned by other views as <code>@ObservedObject</code> or <code>@EnvironmentObject</code> but the owner of the data should always create the data object with <code>@StateObject</code>.</p>
+<hr>
+<p>For a great diagram showing what data object type to use where, check out this image from <a href="https://twitter.com/chriseidhof/status/1280433133813456896">Chris Edihof</a> - thanks Chris!</p>
+<p><img src="/images/dataflow.png" alt="Data flow"></p>
 <p>If you read this article before November 18th 2019, please check out <a href="/post/2019/swiftui-data-flow/#observable2">ObservableObject &amp; @ObservedObject - Part 2</a> again as it has gone through several iterations, which are all shown for comparison.</p>
 <hr>
 <p>At WWDC 2019, some Apple engineers gave a great presentation on <a href="https://developer.apple.com/videos/play/wwdc2019/226/">Data Flow Through SwiftUI</a> and I strongly recommend watching the video. But you need to watch it twice. First watch it so that you can get started, and then, when you feel that this is all way too complicated, watch it again and it will start to click into place. The only real difference between then and now is that BindableObject has become ObservableObject.</p>
@@ -524,10 +528,10 @@ If you read this article before November 18th 2019, please check out ObservableO
     </div>
     <div class="pagination__buttons">
       
-      <a class="btn next" href="https://troz.net/post/2019/swiftui-for-mac-1/">← SwiftUI for Mac - Part 1</a>
+      <a class="btn next" href="https://troz.net/post/2021/swiftui_mac_menus/">← SwifUI Mac Menus</a>
       
       
-      <a class="btn previous" href="https://troz.net/post/2019/swiftui_first-thoughts/">SwiftUI First Thoughts →</a>
+      <a class="btn previous" href="https://troz.net/post/2020/crossfix/">Crossfix →</a>
       
     </div>
   </div>

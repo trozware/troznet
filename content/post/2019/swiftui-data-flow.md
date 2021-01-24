@@ -1,7 +1,8 @@
 ---
 title: 'SwiftUI Data Flow'
-date: 2019-09-16T08:47:57+10:00
-lastmod: 2019-11-18T16:21:05+10:00
+date: 2021-01-24T15:17:14+10:00
+originaldate: 2019-09-16T08:47:57+10:00
+lastmod: 2021-01-24T15:17:14+10:00
 draft: false
 description: 'Various ways to pass data around your SwiftUI apps.'
 tags: ['swift', 'swiftui']
@@ -12,9 +13,17 @@ toc: true
 
 In this post, I intend to discuss the possibilities with examples.
 
-If you read this article before November 18th 2019, please check out [ObservableObject & @ObservedObject - Part 2][9] again as it has gone through several iterations, which are all shown for comparison.
+**Update - January 2021:** I think the information in this post is still all valid except for one change. When you are initializing an ObservableObject, you should use `@StateObject` instead of `@ObservedObject`. Your views can receive objects that are owned by other views as `@ObservedObject` or `@EnvironmentObject` but the owner of the data should always create the data object with `@StateObject`.
 
 <!--more-->
+
+---
+
+For a great diagram showing what data object type to use where, check out this image from [Chris Edihof][10] - thanks Chris!
+
+![Data flow][8i]
+
+If you read this article before November 18th 2019, please check out [ObservableObject & @ObservedObject - Part 2][9] again as it has gone through several iterations, which are all shown for comparison.
 
 ---
 
@@ -509,6 +518,7 @@ I am sure people will develop their own theories and their own ways of using Swi
 [7]: https://github.com/trozware/swiftui-data-flow/tree/57f48ea28d1e987566398800e74f12e339eac231
 [8]: https://github.com/trozware/swiftui-data-flow/tree/093810bab93a984292c4a7b8bf29316a830e9f50
 [9]: /post/2019/swiftui-data-flow/#observable2
+[10]: https://twitter.com/chriseidhof/status/1280433133813456896
 [1i]: /images/NestedViews.png
 [2i]: /images/ContentView.png
 [3i]: /images/NumberChooser.png
@@ -516,3 +526,4 @@ I am sure people will develop their own theories and their own ways of using Swi
 [5i]: /images/ColorChooser.png
 [6i]: /images/PersonListView.png
 [7i]: /images/Toggle.png
+[8i]: /images/dataflow.png
