@@ -3,6 +3,62 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://troz.net/tags/apple/</loc>
+    <lastmod>2021-02-04T18:57:21+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/apple-silicon/</loc>
+    <lastmod>2021-02-04T18:57:21+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/dtk/</loc>
+    <lastmod>2021-02-04T18:57:21+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/m1/</loc>
+    <lastmod>2021-02-04T18:57:21+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/post/</loc>
+    <lastmod>2021-02-04T18:57:21+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/tags/</loc>
+    <lastmod>2021-02-04T18:57:21+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/post/2021/apple_dtk_gamble/</loc>
+    <lastmod>2021-02-04T18:57:21+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://troz.net/</loc>
+    <lastmod>2021-02-04T18:57:21+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://troz.net/tags/mac/</loc>
     <lastmod>2021-01-24T15:24:17+10:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -11,13 +67,6 @@
   
   <url>
     <loc>https://troz.net/tags/menus/</loc>
-    <lastmod>2021-01-24T15:24:17+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/post/</loc>
     <lastmod>2021-01-24T15:24:17+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -39,20 +88,6 @@
   
   <url>
     <loc>https://troz.net/post/2021/swiftui_mac_menus/</loc>
-    <lastmod>2021-01-24T15:24:17+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/tags/</loc>
-    <lastmod>2021-01-24T15:24:17+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://troz.net/</loc>
     <lastmod>2021-01-24T15:24:17+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

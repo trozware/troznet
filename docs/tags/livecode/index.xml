@@ -12,6 +12,45 @@
     
     
     <item>
+<title>The Apple DTK Gamble</title>
+<link>https://troz.net/post/2021/apple_dtk_gamble/</link>
+<pubDate>Thu, 04 Feb 2021 18:57:21 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2021/apple_dtk_gamble/</guid>
+<description>&lt;p&gt;So I gambled…&lt;/p&gt;
+&lt;p&gt;I hoped Apple would do the right thing by developers who paid for access to the Developer Transition Kit (DTK) to get the first Apple Silicon Macs, but I was wrong and I lost.&lt;/p&gt;
+&lt;p&gt;I paid Apple AU $779 for a year’s lease on a DTK which was effectively a Mac mini with an iPad CPU.
+I also had to buy a monitor to use with it.&lt;/p&gt;
+&lt;p&gt;That was in June 2020.&lt;/p&gt;
+&lt;p&gt;In November 2020, the M1 was released which made the A14Z based DTK totally irrelevant for testing or development, so the lease effectively only lasted for 5 months. At that I was luckier than many devs as a lot of these DTK machines started failing at around the 4 month mark.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I kept Apple’s secrets.&lt;/li&gt;
+&lt;li&gt;I tested their hardware and software.&lt;/li&gt;
+&lt;li&gt;I filed bug reports, a couple of which even got acknowledged.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And in return, I get asked to send back the DTK some months early for which I will get the princely reward of US $200 credit.&lt;/p&gt;
+&lt;p&gt;When Apple switched over to Intel CPUs, they gave the DTK buyers a free computer when they returned the DTK, but of course Apple wasn&amp;rsquo;t a trillion dollar company back then so they could afford to be generous. (How does one indicate heavy sarcasm in text?)&lt;/p&gt;
+&lt;p&gt;I don’t want a laptop, I want a desktop Mac, so there is nothing to spend my $200 credit on yet, but as a final sting in the tail, Apple has decreed that the credit expires at the end of May 2021. There is no guarantee that there will be desktop Mac to buy before then. Only Apple knows that and they have made me cynical enough to consider that they might decide not to release any new Macs until after these credits expire.&lt;/p&gt;
+&lt;p&gt;I realize that Apple made no commitment to do anything after the DTK program was over, but history indicated they would.&lt;/p&gt;
+&lt;p&gt;The smallness of the credit and the short time limit on it seem unnecessarily petty and punitive, especially when the people they are punishing are the ones that add so much value to the Apple platforms.&lt;/p&gt;
+&lt;p&gt;Assuming I have to get a laptop, I will want a high-powered one as it will have to be able to run Xcode. Apple&amp;rsquo;s flagship developer tool is famously demanding.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;In the US, the one I want costs US $1,899&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Here in Australia, it is AU $2,899 - 1.53 times the US price.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The US$200 credit will use the exchange rate at 23 December 2020, which for USD - AUD was 1.3218 which is significantly lower than the ratio in Apple’s pricing between the two countries.&lt;/p&gt;
+&lt;p&gt;This means that I will get AU $264.36 for my credit, which is 9% of the cost of the computer to replace it, even though that is not the computer I actually want.&lt;/p&gt;
+&lt;p&gt;Financially, I would have been much better off waiting until the M1s were released. But Apple needed the early machines tested, so they suckered us in and then slapped us in the face.&lt;/p&gt;
+&lt;p&gt;I wonder how Tim Cook and the others can stand up again and again and say that they value their developers. Does that not make them feel ashamed? Or maybe they struggle not to laugh while saying it?&lt;/p&gt;
+&lt;p&gt;Thanks Apple.&lt;/p&gt;
+&lt;p&gt;And good luck finding suckers to test your next round of new hardware.&lt;/p&gt;</description>
+</item>
+    
+    <item>
 <title>SwifUI Mac Menus</title>
 <link>https://troz.net/post/2021/swiftui_mac_menus/</link>
 <pubDate>Sun, 24 Jan 2021 15:24:17 +1000</pubDate>
