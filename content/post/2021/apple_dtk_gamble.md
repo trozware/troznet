@@ -10,7 +10,13 @@ So I gambled…
 
 I hoped Apple would do the right thing by developers who paid for access to the Developer Transition Kit (DTK) to get the first Apple Silicon Macs, but I was wrong and I lost.
 
+> **UPDATE - 6 Feb 2020:** Apple has responded to feedback from me and other disgruntled developers and so I didn't lose as much as I thought. Apple is now giving US $500 credit, which is what developers in the US paid for the DTK, and they are extending the time limit to the end of the year. I am quite certain they will release a desktop M1 Mac before then, so I will get credit for most of the cost of the DTK (after exchange rate losses) and I will be able to use the credit towards a Mac that I want.
+>
+> Thanks Apple for listening and reacting.
+
 <!--more-->
+
+---
 
 I paid Apple AU $779 for a year’s lease on a DTK which was effectively a Mac mini with an iPad CPU.
 I also had to buy a monitor to use with it.

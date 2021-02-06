@@ -1,434 +1,139 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  
-    <title>Learning Swift - Sets :: TrozWare</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="Sets are the forgotten collection type in many languages, including Swift. I think most developers use Arrays without really considering the advantages of using a Set but they have some amazingly useful features that should make them a part of any progammer&amp;rsquo;s toolkit.
+<!doctype html><html lang=en><head><title>Learning Swift - Sets :: TrozWare</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=description content="Sets are the forgotten collection type in many languages, including Swift. I think most developers use Arrays without really considering the advantages of using a Set but they have some amazingly useful features that should make them a part of any progammer&amp;rsquo;s toolkit.
 If you want to follow along with a playground, you can download it here.
-What is a Set? A Set is an un-ordered collection of unique items. That&amp;rsquo;s it - nothing more than that."/>
-<meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
-<meta name="robots" content="noodp"/>
-<link rel="canonical" href="https://troz.net/post/2016/learning-swift-sets/" />
-
-
-<link rel="stylesheet" href="https://troz.net/assets/style.css">
-
-
-<link rel="stylesheet" href="https://troz.net/style.css">
-
-
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="https://troz.net/img/favicon.png">
-
-
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Learning Swift - Sets :: TrozWare — " />
-<meta name="twitter:description" content="Sets are the forgotten collection type in many languages, including Swift. I think most developers use Arrays without really considering the advantages of using a Set but they have some amazingly useful features that should make them a part of any progammer&amp;rsquo;s toolkit.
+What is a Set? A Set is an un-ordered collection of unique items. That&amp;rsquo;s it - nothing more than that."><meta name=keywords content="[Swift Apple macOS iOS Apple Watch]"><meta name=robots content="noodp"><link rel=canonical href=https://troz.net/post/2016/learning-swift-sets/><link rel=stylesheet href=https://troz.net/assets/style.css><link rel=stylesheet href=https://troz.net/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=https://troz.net/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=https://troz.net/img/favicon.png><meta name=twitter:card content="summary"><meta name=twitter:title content="Learning Swift - Sets :: TrozWare —"><meta name=twitter:description content="Sets are the forgotten collection type in many languages, including Swift. I think most developers use Arrays without really considering the advantages of using a Set but they have some amazingly useful features that should make them a part of any progammer&amp;rsquo;s toolkit.
 If you want to follow along with a playground, you can download it here.
-What is a Set? A Set is an un-ordered collection of unique items. That&amp;rsquo;s it - nothing more than that." />
-<meta name="twitter:site" content="https://troz.net/" />
-<meta name="twitter:creator" content="" />
-<meta name="twitter:image" content="">
-
-
-<meta property="og:locale" content="en" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="Learning Swift - Sets :: TrozWare — ">
-<meta property="og:description" content="Sets are the forgotten collection type in many languages, including Swift. I think most developers use Arrays without really considering the advantages of using a Set but they have some amazingly useful features that should make them a part of any progammer&amp;rsquo;s toolkit.
+What is a Set? A Set is an un-ordered collection of unique items. That&amp;rsquo;s it - nothing more than that."><meta name=twitter:site content="https://troz.net/"><meta name=twitter:creator content><meta name=twitter:image content><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="og:title" content="Learning Swift - Sets :: TrozWare —"><meta property="og:description" content="Sets are the forgotten collection type in many languages, including Swift. I think most developers use Arrays without really considering the advantages of using a Set but they have some amazingly useful features that should make them a part of any progammer&amp;rsquo;s toolkit.
 If you want to follow along with a playground, you can download it here.
-What is a Set? A Set is an un-ordered collection of unique items. That&amp;rsquo;s it - nothing more than that." />
-<meta property="og:url" content="https://troz.net/post/2016/learning-swift-sets/" />
-<meta property="og:site_name" content="Learning Swift - Sets" />
-<meta property="og:image" content="">
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-
-<meta property="article:published_time" content="2016-05-28 00:00:00 &#43;0000 UTC" />
-
-
-
-
-
-
-
-
-
-</head>
-<body class="dark-theme">
-<div class="container">
-  <header class="header">
-  <span class="header__inner">
-    <a href="https://troz.net/" class="logo" style="text-decoration: none;">
-  
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
-</svg>
-</span>
-    <span class="logo__text">TrozWare</span>
-    <span class="logo__cursor" style="width: 2px"></span>
-  
-</a>
-
-    <span class="header__right">
-      
-        <nav class="menu">
-  <ul class="menu__inner menu__inner--desktop">
-    
-      
-        
-          <li><a href="/">Home</a></li>
-        
-      
-        
-          <li><a href="/apps/">Apps</a></li>
-        
-      
-        
-          <li><a href="/post/">Archives</a></li>
-        
-      
-        
-          <li><a href="/tags/">Tags</a></li>
-        
-      
-        
-          <li><a href="/contact/">Contact</a></li>
-        
-      
-    
-  </ul>
-
-  <ul class="menu__inner menu__inner--mobile">
-    
-      
-        <li><a href="/">Home</a></li>
-      
-    
-      
-        <li><a href="/apps/">Apps</a></li>
-      
-    
-      
-        <li><a href="/post/">Archives</a></li>
-      
-    
-      
-        <li><a href="/tags/">Tags</a></li>
-      
-    
-      
-        <li><a href="/contact/">Contact</a></li>
-      
-    
-  </ul>
-</nav>
-
-        <span class="menu-trigger">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-          </svg>
-        </span>
-      
-      <span class="theme-toggle">
-        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
-  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
-</svg>
-
-      </span>
-    </span>
-  </span>
-</header>
-
-
-  <div class="content">
-    
-<div class="post">
-  <h2 class="post-title"><a href="https://troz.net/post/2016/learning-swift-sets/">Learning Swift - Sets</a></h2>
-  <div class="post-meta">
-    <span class="post-date">
-      03 Jan 2018
-    </span>
-    <span class="more-meta">- 1200 words, </span>
-    <span class="more-meta"> 6 minute read</span>
-  </div>
-
-  
-  <span class="post-tags">
-    
-    #<a href="https://troz.net/tags/swift">swift</a>&nbsp;
-    
-    #<a href="https://troz.net/tags/learning-swift">learning swift</a>&nbsp;
-    
-  </span>
-  
-
-  
-
-  <div class="post-content">
-    <p>Sets are the forgotten collection type in many languages, including Swift. I
+What is a Set? A Set is an un-ordered collection of unique items. That&amp;rsquo;s it - nothing more than that."><meta property="og:url" content="https://troz.net/post/2016/learning-swift-sets/"><meta property="og:site_name" content="Learning Swift - Sets"><meta property="og:image" content><meta property="og:image:width" content="2048"><meta property="og:image:height" content="1024"><meta property="article:published_time" content="2016-05-28 00:00:00 +0000 UTC"></head><body class=dark-theme><div class=container><header class=header><span class=header__inner><a href=https://troz.net/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44"><polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/></svg></span><span class=logo__text>TrozWare</span>
+<span class=logo__cursor style=width:2px></span></a><span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/>Home</a></li><li><a href=/apps/>Apps</a></li><li><a href=/post/>Archives</a></li><li><a href=/tags/>Tags</a></li><li><a href=/contact/>Contact</a></li></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/>Home</a></li><li><a href=/apps/>Apps</a></li><li><a href=/post/>Archives</a></li><li><a href=/tags/>Tags</a></li><li><a href=/contact/>Contact</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41C32.4934 41 41 32.4934 41 22 41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h2 class=post-title><a href=https://troz.net/post/2016/learning-swift-sets/>Learning Swift - Sets</a></h2><div class=post-meta><span class=post-date>03 Jan 2018</span>
+<span class=more-meta>- 1200 words,</span>
+<span class=more-meta>6 minute read</span></div><span class=post-tags>#<a href=https://troz.net/tags/swift>swift</a>&nbsp;
+#<a href=https://troz.net/tags/learning-swift>learning swift</a>&nbsp;</span><div class=post-content><p>Sets are the forgotten collection type in many languages, including Swift. I
 think most developers use Arrays without really considering the advantages of
 using a Set but they have some amazingly useful features that should make them a
-part of any progammer&rsquo;s toolkit.</p>
-<p>If you want to follow along with a playground, you can download it <a href="https://github.com/trozware/sets">here</a>.</p>
-<h2 id="what-is-a-set">What is a Set?</h2>
-<p><strong>A Set is an un-ordered collection of unique items.</strong> That&rsquo;s it - nothing more
+part of any progammer&rsquo;s toolkit.</p><p>If you want to follow along with a playground, you can download it <a href=https://github.com/trozware/sets>here</a>.</p><h2 id=what-is-a-set>What is a Set?</h2><p><strong>A Set is an un-ordered collection of unique items.</strong> That&rsquo;s it - nothing more
 than that. So it is very similar to an Array, but it is not indexed like an
-Array and it cannot contain more than one of each entry.</p>
-<h2 id="creating-a-set">Creating a Set</h2>
-<p>Creating a Set is as easy as creating an Array:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">var</span> myArray = [<span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;hamster&#34;</span>, <span style="color:#e6db74">&#34;dog&#34;</span>]
-<span style="color:#66d9ef">var</span> mySet: Set = [<span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;hamster&#34;</span>, <span style="color:#e6db74">&#34;dog&#34;</span>]
+Array and it cannot contain more than one of each entry.</p><h2 id=creating-a-set>Creating a Set</h2><p>Creating a Set is as easy as creating an Array:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#66d9ef>var</span> myArray = [<span style=color:#e6db74>&#34;dog&#34;</span>, <span style=color:#e6db74>&#34;cat&#34;</span>, <span style=color:#e6db74>&#34;hamster&#34;</span>, <span style=color:#e6db74>&#34;dog&#34;</span>]
+<span style=color:#66d9ef>var</span> mySet: Set = [<span style=color:#e6db74>&#34;dog&#34;</span>, <span style=color:#e6db74>&#34;cat&#34;</span>, <span style=color:#e6db74>&#34;hamster&#34;</span>, <span style=color:#e6db74>&#34;dog&#34;</span>]
 </code></pre></div><p>If you are running these commands in a playground, notice that the differences
-between the 2 results:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">[<span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;hamster&#34;</span>, <span style="color:#e6db74">&#34;dog&#34;</span>]    <span style="color:#75715e">// myArray</span>
-{<span style="color:#e6db74">&#34;hamster&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;dog&#34;</span>}           <span style="color:#75715e">// mySet</span>
-</code></pre></div><ol>
-<li>The Array is shown wrapped in square brackets, the Set is shown wrapped in
+between the 2 results:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift>[<span style=color:#e6db74>&#34;dog&#34;</span>, <span style=color:#e6db74>&#34;cat&#34;</span>, <span style=color:#e6db74>&#34;hamster&#34;</span>, <span style=color:#e6db74>&#34;dog&#34;</span>]    <span style=color:#75715e>// myArray</span>
+{<span style=color:#e6db74>&#34;hamster&#34;</span>, <span style=color:#e6db74>&#34;cat&#34;</span>, <span style=color:#e6db74>&#34;dog&#34;</span>}           <span style=color:#75715e>// mySet</span>
+</code></pre></div><ol><li>The Array is shown wrapped in square brackets, the Set is shown wrapped in
 curly braces. This is just a visual clue and doesn&rsquo;t really mean anything.
-You cannot initialize a set using curly braces.</li>
-<li>All the supplied elements of the Array are listed, but the Set has removed
+You cannot initialize a set using curly braces.</li><li>All the supplied elements of the Array are listed, but the Set has removed
 the duplicate &ldquo;dog&rdquo; element. This did not cause an error or warning, it just
-happened quietly.</li>
-</ol>
-<p>When initializing a Set, you must add <code>: Set</code> to distinguish it from an array
+happened quietly.</li></ol><p>When initializing a Set, you must add <code>: Set</code> to distinguish it from an array
 initialization. In the example above, I did not specify the data type of the
 elements in the Set as the Swift compiler was able to infer this from the
 contents. But if initializing an empty array, the data type must be specified.
 To check how to do this, I option-clicked on <code>mySet</code> to see what the Swift
-compiler thought it was.</p>
-<p><img src="/images/set_types.png" alt="Sets"></p>
-<p>So mySet is actually <code>Set&lt;String&gt;</code>. This means that to create an empty Set, you
-need to use something like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">var</span> emptySetOfStrings: Set&lt;String&gt; = [] <span style="color:#66d9ef">var</span>
+compiler thought it was.</p><p><img src=/images/set_types.png alt=Sets></p><p>So mySet is actually <code>Set&lt;String></code>. This means that to create an empty Set, you
+need to use something like this:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#66d9ef>var</span> emptySetOfStrings: Set&lt;String&gt; = [] <span style=color:#66d9ef>var</span>
 emptySetOfInts: Set&lt;Int&gt; = []
-</code></pre></div><h2 id="adding-and-removing-elements">Adding and removing elements</h2>
-<p>If you have been using an Array to store unique values, then you have probably
-written code like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">if</span> <span style="color:#f92672">!</span>myArray.contains(<span style="color:#e6db74">&#34;cat&#34;</span>) {
-  myArray.append(<span style="color:#e6db74">&#34;cat&#34;</span>)
+</code></pre></div><h2 id=adding-and-removing-elements>Adding and removing elements</h2><p>If you have been using an Array to store unique values, then you have probably
+written code like this:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#66d9ef>if</span> <span style=color:#f92672>!</span>myArray.contains(<span style=color:#e6db74>&#34;cat&#34;</span>) {
+  myArray.append(<span style=color:#e6db74>&#34;cat&#34;</span>)
 }
 </code></pre></div><p>With Sets, you don&rsquo;t have to care. Just use <code>insert()</code> and let the Set work out
-whether to add the item or not.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">mySet.insert(<span style="color:#e6db74">&#34;goldfish&#34;</span>)
-<span style="color:#75715e">// goldfish added: {&#34;hamster&#34;, &#34;cat&#34;, &#34;dog&#34;, &#34;goldfish&#34;}</span>
-mySet.insert(<span style="color:#e6db74">&#34;dog&#34;</span>)
-<span style="color:#75715e">// dog already there: {&#34;hamster&#34;, &#34;cat&#34;, &#34;dog&#34;, &#34;goldfish&#34;}</span>
+whether to add the item or not.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift>mySet.insert(<span style=color:#e6db74>&#34;goldfish&#34;</span>)
+<span style=color:#75715e>// goldfish added: {&#34;hamster&#34;, &#34;cat&#34;, &#34;dog&#34;, &#34;goldfish&#34;}</span>
+mySet.insert(<span style=color:#e6db74>&#34;dog&#34;</span>)
+<span style=color:#75715e>// dog already there: {&#34;hamster&#34;, &#34;cat&#34;, &#34;dog&#34;, &#34;goldfish&#34;}</span>
 </code></pre></div><p>Removing elements is also easier than in Arrays. For an Array, you first have to
-find the index of the element and remove it by index:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#75715e">// myArray.remove(&#34;hamster&#34;) // will not compile</span>
-<span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> index = myArray.index(of: <span style="color:#e6db74">&#34;hamster&#34;</span>) {
+find the index of the element and remove it by index:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#75715e>// myArray.remove(&#34;hamster&#34;) // will not compile</span>
+<span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> index = myArray.index(of: <span style=color:#e6db74>&#34;hamster&#34;</span>) {
   myArray.remove(at: index)
 }
 </code></pre></div><p>But in a Set, you can remove any element easily and trying to remove an element
-that doesn&rsquo;t exist will fail without an error.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">mySet.remove(<span style="color:#e6db74">&#34;hamster&#34;</span>)   <span style="color:#75715e">// returns &#34;hamster&#34;</span>
-mySet.remove(<span style="color:#e6db74">&#34;canary&#34;</span>)    <span style="color:#75715e">// returns nil</span>
-</code></pre></div><h2 id="converting-between-sets-and-arrays">Converting between Sets and Arrays</h2>
-<p>Sometimes you need to be able to switch between the two. My most recent example
+that doesn&rsquo;t exist will fail without an error.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift>mySet.remove(<span style=color:#e6db74>&#34;hamster&#34;</span>)   <span style=color:#75715e>// returns &#34;hamster&#34;</span>
+mySet.remove(<span style=color:#e6db74>&#34;canary&#34;</span>)    <span style=color:#75715e>// returns nil</span>
+</code></pre></div><h2 id=converting-between-sets-and-arrays>Converting between Sets and Arrays</h2><p>Sometimes you need to be able to switch between the two. My most recent example
 was when I wanted to store data from a Set in a plist. Sets are not property
 list types but Arrays are, so I converted the Set to an Array before storing it
 in the plist. When reading the data in from the plist, I converted it back to a
-Set.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> myArrayAsSet = Set(myArray)
-<span style="color:#66d9ef">let</span> mySetAsArray = Array(mySet)
+Set.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#66d9ef>let</span> myArrayAsSet = Set(myArray)
+<span style=color:#66d9ef>let</span> mySetAsArray = Array(mySet)
 </code></pre></div><p>One useful side-effect of these easy conversions is the ability to &lsquo;unique&rsquo; an
 Array in a single line. This may be inefficient for large arrays, but works very
 well for small ones. Just be careful if the order of the elements is important
-as you cannot guarantee the order of elements in a Set.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> myArrayUniqued = Array(Set(myArray))
-<span style="color:#75715e">// [&#34;cat&#34;, &#34;dog&#34;]</span>
-</code></pre></div><h2 id="iterating-over-elements-in-a-set">Iterating over elements in a Set</h2>
-<p>As with an Array, you can use a <code>for element in set</code> structure, or you can use
-<code>enumerated()</code>. But you cannot subscript a Set.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">for</span> animal <span style="color:#66d9ef">in</span> mySet {
+as you cannot guarantee the order of elements in a Set.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#66d9ef>let</span> myArrayUniqued = Array(Set(myArray))
+<span style=color:#75715e>// [&#34;cat&#34;, &#34;dog&#34;]</span>
+</code></pre></div><h2 id=iterating-over-elements-in-a-set>Iterating over elements in a Set</h2><p>As with an Array, you can use a <code>for element in set</code> structure, or you can use
+<code>enumerated()</code>. But you cannot subscript a Set.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#66d9ef>for</span> animal <span style=color:#66d9ef>in</span> mySet {
   print(animal)
 }
 
-<span style="color:#66d9ef">for</span> (index, animal) <span style="color:#66d9ef">in</span> mySet.enumerated() {
-  print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">\(</span>index<span style="color:#e6db74">)</span><span style="color:#e6db74"> = </span><span style="color:#e6db74">\(</span>animal<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
+<span style=color:#66d9ef>for</span> (index, animal) <span style=color:#66d9ef>in</span> mySet.enumerated() {
+  print(<span style=color:#e6db74>&#34;</span><span style=color:#e6db74>\(</span>index<span style=color:#e6db74>)</span><span style=color:#e6db74> = </span><span style=color:#e6db74>\(</span>animal<span style=color:#e6db74>)</span><span style=color:#e6db74>&#34;</span>)
 }
 
-<span style="color:#75715e">// will not compile</span>
-<span style="color:#75715e">// for index in 0 ..&lt; mySet.count {</span>
-<span style="color:#75715e">//   print(&#34;\(index) = \(mySet[index])&#34;)</span>
-<span style="color:#75715e">// }</span>
-</code></pre></div><hr>
-<h2 id="where-sets-get-really-interesting">Where Sets get really interesting</h2>
-<p>Remember in school when you learnt about Venn diagrams with pretty interlocking
+<span style=color:#75715e>// will not compile</span>
+<span style=color:#75715e>// for index in 0 ..&lt; mySet.count {</span>
+<span style=color:#75715e>//   print(&#34;\(index) = \(mySet[index])&#34;)</span>
+<span style=color:#75715e>// }</span>
+</code></pre></div><hr><h2 id=where-sets-get-really-interesting>Where Sets get really interesting</h2><p>Remember in school when you learnt about Venn diagrams with pretty interlocking
 circles? Sets can do the same things, although you will have to do your own
-pretty drawings :-)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> set1: Set = [<span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
-<span style="color:#66d9ef">let</span> set2: Set = [<span style="color:#e6db74">&#34;cow&#34;</span>, <span style="color:#e6db74">&#34;horse&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
+pretty drawings :-)</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#66d9ef>let</span> set1: Set = [<span style=color:#e6db74>&#34;dog&#34;</span>, <span style=color:#e6db74>&#34;cat&#34;</span>, <span style=color:#e6db74>&#34;pig&#34;</span>]
+<span style=color:#66d9ef>let</span> set2: Set = [<span style=color:#e6db74>&#34;cow&#34;</span>, <span style=color:#e6db74>&#34;horse&#34;</span>, <span style=color:#e6db74>&#34;pig&#34;</span>]
 
-<span style="color:#66d9ef">let</span> intersect = set1.intersection(set2)
-<span style="color:#75715e">// {&#34;pig&#34;}</span>
+<span style=color:#66d9ef>let</span> intersect = set1.intersection(set2)
+<span style=color:#75715e>// {&#34;pig&#34;}</span>
 
-<span style="color:#66d9ef">let</span> subtract = set1.subtracting(set2)
-<span style="color:#75715e">// {&#34;cat&#34;, &#34;dog&#34;}</span>
+<span style=color:#66d9ef>let</span> subtract = set1.subtracting(set2)
+<span style=color:#75715e>// {&#34;cat&#34;, &#34;dog&#34;}</span>
 
-<span style="color:#66d9ef">let</span> union = set1.union(set2)
-<span style="color:#75715e">// {&#34;pig&#34;, &#34;cat&#34;, &#34;dog&#34;, &#34;cow&#34; &#34;horse&#34;}</span>
+<span style=color:#66d9ef>let</span> union = set1.union(set2)
+<span style=color:#75715e>// {&#34;pig&#34;, &#34;cat&#34;, &#34;dog&#34;, &#34;cow&#34; &#34;horse&#34;}</span>
 
-<span style="color:#66d9ef">let</span> xor = set1.symmetricDifference(set2)
-<span style="color:#75715e">// {&#34;cat&#34;, &#34;dog&#34;, &#34;cow&#34;, &#34;horse&#34;}</span>
+<span style=color:#66d9ef>let</span> xor = set1.symmetricDifference(set2)
+<span style=color:#75715e>// {&#34;cat&#34;, &#34;dog&#34;, &#34;cow&#34;, &#34;horse&#34;}</span>
 </code></pre></div><p>In the code example above, we have two Sets of animals, with one animal in
-common.</p>
-<ul>
-<li><code>intersection()</code> lists the elements in common.</li>
-<li><code>subtracting()</code> lists the elements in one Set after removing all elements that
-are in the other.</li>
-<li><code>union()</code> joins all the elements without duplicates.</li>
-<li><code>symmetricDifference()</code> lists the elements that are in one or other of the
-Sets but not in both. (Swift 3 renamed this function from <code>exclusiveOr()</code>)</li>
-</ul>
-<p>Here is my best attempt at a pretty drawing to show how these go together:</p>
-<p><img src="/images/sets_1.png" alt="Sets"></p>
-<hr>
-<p>The next fun trick is working out sub-sets, super-sets and disjoint sets.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> set1: Set = [<span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
-<span style="color:#66d9ef">let</span> set2: Set = [<span style="color:#e6db74">&#34;cow&#34;</span>, <span style="color:#e6db74">&#34;horse&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
+common.</p><ul><li><code>intersection()</code> lists the elements in common.</li><li><code>subtracting()</code> lists the elements in one Set after removing all elements that
+are in the other.</li><li><code>union()</code> joins all the elements without duplicates.</li><li><code>symmetricDifference()</code> lists the elements that are in one or other of the
+Sets but not in both. (Swift 3 renamed this function from <code>exclusiveOr()</code>)</li></ul><p>Here is my best attempt at a pretty drawing to show how these go together:</p><p><img src=/images/sets_1.png alt=Sets></p><hr><p>The next fun trick is working out sub-sets, super-sets and disjoint sets.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#66d9ef>let</span> set1: Set = [<span style=color:#e6db74>&#34;dog&#34;</span>, <span style=color:#e6db74>&#34;cat&#34;</span>, <span style=color:#e6db74>&#34;pig&#34;</span>]
+<span style=color:#66d9ef>let</span> set2: Set = [<span style=color:#e6db74>&#34;cow&#34;</span>, <span style=color:#e6db74>&#34;horse&#34;</span>, <span style=color:#e6db74>&#34;pig&#34;</span>]
 
-<span style="color:#66d9ef">let</span> smallSet: Set = [<span style="color:#e6db74">&#34;pig&#34;</span>, <span style="color:#e6db74">&#34;cow&#34;</span>]
+<span style=color:#66d9ef>let</span> smallSet: Set = [<span style=color:#e6db74>&#34;pig&#34;</span>, <span style=color:#e6db74>&#34;cow&#34;</span>]
 
-smallSet.isSubset(of: set1)   <span style="color:#75715e">// false</span>
-smallSet.isSubset(of: set2)   <span style="color:#75715e">// true</span>
+smallSet.isSubset(of: set1)   <span style=color:#75715e>// false</span>
+smallSet.isSubset(of: set2)   <span style=color:#75715e>// true</span>
 </code></pre></div><p><code>smallSet</code> is <strong>not</strong> a subset of <code>set1</code> because it contains an element that is
 not in <code>set1</code>. <code>smallSet</code> <strong>is</strong> a subset of <code>set2</code> because every element in
-<code>smallSet</code> is also in <code>set2</code>.</p>
-<p><img src="/images/sets_2.png" alt="Sets"></p>
-<p>If you want to get technical, a Set should not be considered a subset of an
+<code>smallSet</code> is also in <code>set2</code>.</p><p><img src=/images/sets_2.png alt=Sets></p><p>If you want to get technical, a Set should not be considered a subset of an
 identical Set. The default <code>isSubset(of:)</code> allows this, but you can use
-<code>isStrictSubset(of:)</code> if you prefer.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">set1.isSubset(of: set1)         <span style="color:#75715e">// true</span>
-set1.isStrictSubset(of: set1)   <span style="color:#75715e">// false</span>
+<code>isStrictSubset(of:)</code> if you prefer.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift>set1.isSubset(of: set1)         <span style=color:#75715e>// true</span>
+set1.isStrictSubset(of: set1)   <span style=color:#75715e>// false</span>
 </code></pre></div><p>Superset works just the same but in reverse so the diagram above explains it
-too:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> set1: Set = [<span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
-<span style="color:#66d9ef">let</span> set2: Set = [<span style="color:#e6db74">&#34;cow&#34;</span>, <span style="color:#e6db74">&#34;horse&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
+too:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#66d9ef>let</span> set1: Set = [<span style=color:#e6db74>&#34;dog&#34;</span>, <span style=color:#e6db74>&#34;cat&#34;</span>, <span style=color:#e6db74>&#34;pig&#34;</span>]
+<span style=color:#66d9ef>let</span> set2: Set = [<span style=color:#e6db74>&#34;cow&#34;</span>, <span style=color:#e6db74>&#34;horse&#34;</span>, <span style=color:#e6db74>&#34;pig&#34;</span>]
 
-<span style="color:#66d9ef">let</span> smallSet: Set = [<span style="color:#e6db74">&#34;pig&#34;</span>, <span style="color:#e6db74">&#34;cow&#34;</span>]
+<span style=color:#66d9ef>let</span> smallSet: Set = [<span style=color:#e6db74>&#34;pig&#34;</span>, <span style=color:#e6db74>&#34;cow&#34;</span>]
 
-set1.isSuperset(of: smallSet)       <span style="color:#75715e">// false</span>
-set2.isSuperset(of: smallSet)       <span style="color:#75715e">// true</span>
+set1.isSuperset(of: smallSet)       <span style=color:#75715e>// false</span>
+set2.isSuperset(of: smallSet)       <span style=color:#75715e>// true</span>
 
-set1.isSuperset(of: set1)           <span style="color:#75715e">// true</span>
-set1.isStrictSuperset(of: set1)     <span style="color:#75715e">// false</span>
+set1.isSuperset(of: set1)           <span style=color:#75715e>// true</span>
+set1.isStrictSuperset(of: set1)     <span style=color:#75715e>// false</span>
 </code></pre></div><p><code>set1</code> is <strong>not</strong> a superset of <code>smallSet</code> because it does not contain every
 element in <code>smallSet</code>. <code>set2</code> <strong>is</strong> a superset of <code>smallSet</code> because every
-element in <code>smallSet</code> is also in <code>set2</code>.</p>
-<p>The <code>isSuperset(of:)</code> and <code>isStrictSuperset(of:)</code> functions allow or reject
-identical sets.</p>
-<p>The final comparison tool that might be useful is <code>isDisjoint(with:)</code> which
+element in <code>smallSet</code> is also in <code>set2</code>.</p><p>The <code>isSuperset(of:)</code> and <code>isStrictSuperset(of:)</code> functions allow or reject
+identical sets.</p><p>The final comparison tool that might be useful is <code>isDisjoint(with:)</code> which
 returns true only if the two Sets have no elements in common i.e. if there is no
-overlap in the circles.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> set1: Set = [<span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
-<span style="color:#66d9ef">let</span> set2: Set = [<span style="color:#e6db74">&#34;cow&#34;</span>, <span style="color:#e6db74">&#34;horse&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
+overlap in the circles.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#66d9ef>let</span> set1: Set = [<span style=color:#e6db74>&#34;dog&#34;</span>, <span style=color:#e6db74>&#34;cat&#34;</span>, <span style=color:#e6db74>&#34;pig&#34;</span>]
+<span style=color:#66d9ef>let</span> set2: Set = [<span style=color:#e6db74>&#34;cow&#34;</span>, <span style=color:#e6db74>&#34;horse&#34;</span>, <span style=color:#e6db74>&#34;pig&#34;</span>]
 
-<span style="color:#66d9ef">let</span> otherSet: Set = [<span style="color:#e6db74">&#34;duck&#34;</span>, <span style="color:#e6db74">&#34;chicken&#34;</span>]
+<span style=color:#66d9ef>let</span> otherSet: Set = [<span style=color:#e6db74>&#34;duck&#34;</span>, <span style=color:#e6db74>&#34;chicken&#34;</span>]
 
-set1.isDisjoint(with: set2)       <span style="color:#75715e">// false</span>
-set1.isDisjoint(with: otherSet)   <span style="color:#75715e">// true</span>
+set1.isDisjoint(with: set2)       <span style=color:#75715e>// false</span>
+set1.isDisjoint(with: otherSet)   <span style=color:#75715e>// true</span>
 </code></pre></div><p>&ldquo;pig&rdquo; occurs in both <code>set1</code> and <code>set2</code> so they are <strong>not</strong> disjoint. <code>otherSet</code>
-and <code>set1</code> have no matching entries so they <strong>are</strong> disjoint.</p>
-<hr>
-<h2 id="when-should-you-use-a-set">When should you use a Set?</h2>
-<ol>
-<li>If you want the elements to be unique.</li>
-<li>If you want easy methods of comparing the contents of different collections.</li>
-<li>If you want to be able to remove elements easily.</li>
-</ol>
-<h2 id="when-should-you-not-use-a-set">When should you not use a Set?</h2>
-<ol>
-<li>If you need the collection to be able to hold multiples of an element.</li>
-<li>If the order of the collection is important.</li>
-</ol>
-<hr>
-<p>For more details on Sets, check out <a href="http://swiftdoc.org/v2.2/type/Set/">SwiftDoc.org</a>.</p>
-
-  </div>
-  
-  <div class="pagination">
-    <div class="pagination__title">
-      <span class="pagination__title-h">Read other posts</span>
-      <hr />
-    </div>
-    <div class="pagination__buttons">
-      
-      <a class="btn next" href="https://troz.net/post/2016/dice-pass-mac-update/">← Dice Pass Mac Update</a>
-      
-      
-      <a class="btn previous" href="https://troz.net/post/2016/19th-hole-golf-scorer-3.1/">19th Hole Golf Scorer 3.1 →</a>
-      
-    </div>
-  </div>
-  
-</div>
-
-  </div>
-
-  
-    <link rel="stylesheet" href="/css/footer.css" />
-
-<footer class="footer">
-  <div class="footer__inner">
-    <div class="social_footer">
-      <a id="email-Link" class="mailtoui" href="mailto:sarah@troz.net"
-        ><img src="/icons/envelope.svg"
-      /></a>
-      <a href="https://stackoverflow.com/users/1082632"
-        ><img src="/icons/stack-overflow.svg"
-      /></a>
-      <a href="https://twitter.com/trozware"><img src="/icons/twitter.svg"/></a>
-      <a href="https://github.com/trozware"><img src="/icons/github.svg"/></a>
-      <a href="https://troz.net/index.xml"><img src="/icons/rss.svg"/></a>
-      <a href="https://troz.net/feed.json"><img src="/icons/json.png"/></a>
-
-      <a href="https://dev.to/trozware">
-        <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" 
-        alt="TrozWare's DEV Profile" 
-        style="height: 37px; margin-top: -3px" height="40" width="40">
-      </a>
-    </div>
-  </div>
-
-  <div class="footer__inner">
-    <div class="copyright">
-      
-      <span>© 2012 - 2020 Sarah Reichelt</span>
-      
-      <span
-        ><a href="http://gohugo.io">Hugo</a> theme created by
-        <a href="https://twitter.com/panr">panr</a> 2018</span
-      >
-    </div>
-  </div>
-</footer>
-
-<script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
-
-
-<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
-<script src="/quicklink.js"></script>
-
-<script>
-  window.addEventListener('load', () => {
-    quicklink()
-  })
-</script>
-
-
-  
-</div>
-
-</body>
-</html>
+and <code>set1</code> have no matching entries so they <strong>are</strong> disjoint.</p><hr><h2 id=when-should-you-use-a-set>When should you use a Set?</h2><ol><li>If you want the elements to be unique.</li><li>If you want easy methods of comparing the contents of different collections.</li><li>If you want to be able to remove elements easily.</li></ol><h2 id=when-should-you-not-use-a-set>When should you not use a Set?</h2><ol><li>If you need the collection to be able to hold multiples of an element.</li><li>If the order of the collection is important.</li></ol><hr><p>For more details on Sets, check out <a href=http://swiftdoc.org/v2.2/type/Set/>SwiftDoc.org</a>.</p></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><a class="btn next" href=https://troz.net/post/2016/dice-pass-mac-update/>← Dice Pass Mac Update</a>
+<a class="btn previous" href=https://troz.net/post/2016/19th-hole-golf-scorer-3.1/>19th Hole Golf Scorer 3.1 →</a></div></div></div></div><link rel=stylesheet href=/css/footer.css><footer class=footer><div class=footer__inner><div class=social_footer><a id=email-Link class=mailtoui href=mailto:sarah@troz.net><img src=/icons/envelope.svg></a>
+<a href=https://stackoverflow.com/users/1082632><img src=/icons/stack-overflow.svg></a>
+<a href=https://twitter.com/trozware><img src=/icons/twitter.svg></a>
+<a href=https://github.com/trozware><img src=/icons/github.svg></a>
+<a href=https://troz.net/index.xml><img src=/icons/rss.svg></a>
+<a href=https://troz.net/feed.json><img src=/icons/json.png></a>
+<a href=https://dev.to/trozware><img src=https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg alt="TrozWare's DEV Profile" style=height:37px;margin-top:-3px height=40 width=40></a></div></div><div class=footer__inner><div class=copyright><span>© 2012 - 2020 Sarah Reichelt</span>
+<span><a href=http://gohugo.io>Hugo</a> theme created by
+<a href=https://twitter.com/panr>panr</a> 2018</span></div></div></footer><script src=/assets/main.js></script><script src=/assets/prism.js></script><script src=https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js></script><script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script><script src=/quicklink.js></script><script>window.addEventListener('load',()=>{quicklink()})</script></div></body></html>

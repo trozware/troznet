@@ -1,325 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  
-    <title>Time In Words 4.0 :: TrozWare</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="Time In Words for iOS started off as a fun gimmick, emulating the Qlocktwo type of time display where the relevant words are highlighted in some way to spell out the time as a sentence. This very quickly evolved into what I hoped would be more useful app, still showing the original display, but also providing the current time &amp;amp; date as complete sentences. Then I added time conversions and discovered the real power and utility of writing out times as words."/>
-<meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
-<meta name="robots" content="noodp"/>
-<link rel="canonical" href="https://troz.net/post/2015/time-in-words-4.0/" />
-
-
-<link rel="stylesheet" href="https://troz.net/assets/style.css">
-
-
-<link rel="stylesheet" href="https://troz.net/style.css">
-
-
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="https://troz.net/img/favicon.png">
-
-
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Time In Words 4.0 :: TrozWare — " />
-<meta name="twitter:description" content="Time In Words for iOS started off as a fun gimmick, emulating the Qlocktwo type of time display where the relevant words are highlighted in some way to spell out the time as a sentence. This very quickly evolved into what I hoped would be more useful app, still showing the original display, but also providing the current time &amp;amp; date as complete sentences. Then I added time conversions and discovered the real power and utility of writing out times as words." />
-<meta name="twitter:site" content="https://troz.net/" />
-<meta name="twitter:creator" content="" />
-<meta name="twitter:image" content="">
-
-
-<meta property="og:locale" content="en" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="Time In Words 4.0 :: TrozWare — ">
-<meta property="og:description" content="Time In Words for iOS started off as a fun gimmick, emulating the Qlocktwo type of time display where the relevant words are highlighted in some way to spell out the time as a sentence. This very quickly evolved into what I hoped would be more useful app, still showing the original display, but also providing the current time &amp;amp; date as complete sentences. Then I added time conversions and discovered the real power and utility of writing out times as words." />
-<meta property="og:url" content="https://troz.net/post/2015/time-in-words-4.0/" />
-<meta property="og:site_name" content="Time In Words 4.0" />
-<meta property="og:image" content="">
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-
-<meta property="article:published_time" content="2015-04-15 00:00:00 &#43;0000 UTC" />
-
-
-
-
-
-
-
-
-
-</head>
-<body class="dark-theme">
-<div class="container">
-  <header class="header">
-  <span class="header__inner">
-    <a href="https://troz.net/" class="logo" style="text-decoration: none;">
-  
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
-</svg>
-</span>
-    <span class="logo__text">TrozWare</span>
-    <span class="logo__cursor" style="width: 2px"></span>
-  
-</a>
-
-    <span class="header__right">
-      
-        <nav class="menu">
-  <ul class="menu__inner menu__inner--desktop">
-    
-      
-        
-          <li><a href="/">Home</a></li>
-        
-      
-        
-          <li><a href="/apps/">Apps</a></li>
-        
-      
-        
-          <li><a href="/post/">Archives</a></li>
-        
-      
-        
-          <li><a href="/tags/">Tags</a></li>
-        
-      
-        
-          <li><a href="/contact/">Contact</a></li>
-        
-      
-    
-  </ul>
-
-  <ul class="menu__inner menu__inner--mobile">
-    
-      
-        <li><a href="/">Home</a></li>
-      
-    
-      
-        <li><a href="/apps/">Apps</a></li>
-      
-    
-      
-        <li><a href="/post/">Archives</a></li>
-      
-    
-      
-        <li><a href="/tags/">Tags</a></li>
-      
-    
-      
-        <li><a href="/contact/">Contact</a></li>
-      
-    
-  </ul>
-</nav>
-
-        <span class="menu-trigger">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-          </svg>
-        </span>
-      
-      <span class="theme-toggle">
-        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
-  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
-</svg>
-
-      </span>
-    </span>
-  </span>
-</header>
-
-
-  <div class="content">
-    
-<div class="post">
-  <h2 class="post-title"><a href="https://troz.net/post/2015/time-in-words-4.0/">Time In Words 4.0</a></h2>
-  <div class="post-meta">
-    <span class="post-date">
-      15 Apr 2015
-    </span>
-    <span class="more-meta">- 783 words, </span>
-    <span class="more-meta"> 4 minute read</span>
-  </div>
-
-  
-  <span class="post-tags">
-    
-    #<a href="https://troz.net/tags/time-in-words">time in words</a>&nbsp;
-    
-    #<a href="https://troz.net/tags/ios">ios</a>&nbsp;
-    
-  </span>
-  
-
-  
-
-  <div class="post-content">
-    <p><a href="/time-in-words/">Time In Words</a> for iOS started off as a fun gimmick, emulating the
-<a href="http://www.qlocktwo.com/">Qlocktwo</a> type of time display where the relevant words are highlighted in
+<!doctype html><html lang=en><head><title>Time In Words 4.0 :: TrozWare</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=description content="Time In Words for iOS started off as a fun gimmick, emulating the Qlocktwo type of time display where the relevant words are highlighted in some way to spell out the time as a sentence. This very quickly evolved into what I hoped would be more useful app, still showing the original display, but also providing the current time &amp;amp; date as complete sentences. Then I added time conversions and discovered the real power and utility of writing out times as words."><meta name=keywords content="[Swift Apple macOS iOS Apple Watch]"><meta name=robots content="noodp"><link rel=canonical href=https://troz.net/post/2015/time-in-words-4.0/><link rel=stylesheet href=https://troz.net/assets/style.css><link rel=stylesheet href=https://troz.net/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=https://troz.net/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=https://troz.net/img/favicon.png><meta name=twitter:card content="summary"><meta name=twitter:title content="Time In Words 4.0 :: TrozWare —"><meta name=twitter:description content="Time In Words for iOS started off as a fun gimmick, emulating the Qlocktwo type of time display where the relevant words are highlighted in some way to spell out the time as a sentence. This very quickly evolved into what I hoped would be more useful app, still showing the original display, but also providing the current time &amp;amp; date as complete sentences. Then I added time conversions and discovered the real power and utility of writing out times as words."><meta name=twitter:site content="https://troz.net/"><meta name=twitter:creator content><meta name=twitter:image content><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="og:title" content="Time In Words 4.0 :: TrozWare —"><meta property="og:description" content="Time In Words for iOS started off as a fun gimmick, emulating the Qlocktwo type of time display where the relevant words are highlighted in some way to spell out the time as a sentence. This very quickly evolved into what I hoped would be more useful app, still showing the original display, but also providing the current time &amp;amp; date as complete sentences. Then I added time conversions and discovered the real power and utility of writing out times as words."><meta property="og:url" content="https://troz.net/post/2015/time-in-words-4.0/"><meta property="og:site_name" content="Time In Words 4.0"><meta property="og:image" content><meta property="og:image:width" content="2048"><meta property="og:image:height" content="1024"><meta property="article:published_time" content="2015-04-15 00:00:00 +0000 UTC"></head><body class=dark-theme><div class=container><header class=header><span class=header__inner><a href=https://troz.net/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44"><polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/></svg></span><span class=logo__text>TrozWare</span>
+<span class=logo__cursor style=width:2px></span></a><span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/>Home</a></li><li><a href=/apps/>Apps</a></li><li><a href=/post/>Archives</a></li><li><a href=/tags/>Tags</a></li><li><a href=/contact/>Contact</a></li></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/>Home</a></li><li><a href=/apps/>Apps</a></li><li><a href=/post/>Archives</a></li><li><a href=/tags/>Tags</a></li><li><a href=/contact/>Contact</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41C32.4934 41 41 32.4934 41 22 41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h2 class=post-title><a href=https://troz.net/post/2015/time-in-words-4.0/>Time In Words 4.0</a></h2><div class=post-meta><span class=post-date>15 Apr 2015</span>
+<span class=more-meta>- 783 words,</span>
+<span class=more-meta>4 minute read</span></div><span class=post-tags>#<a href=https://troz.net/tags/time-in-words>time in words</a>&nbsp;
+#<a href=https://troz.net/tags/ios>ios</a>&nbsp;</span><div class=post-content><p><a href=/time-in-words/>Time In Words</a> for iOS started off as a fun gimmick, emulating the
+<a href=http://www.qlocktwo.com/>Qlocktwo</a> type of time display where the relevant words are highlighted in
 some way to spell out the time as a sentence. This very quickly evolved into
 what I hoped would be more useful app, still showing the original display, but
-also providing the current time &amp; date as complete sentences. Then I added time
+also providing the current time & date as complete sentences. Then I added time
 conversions and discovered the real power and utility of writing out times as
-words.</p>
-<p>When it comes to converting times, I doubt there are many people in the world
-who haven&rsquo;t had problems.</p>
-<ul>
-<li>Is that morning or afternoon for them?</li>
-<li>Are they in tomorrow, today or yesterday?</li>
-<li>What if they are using daylight-savings?</li>
-</ul>
-<p>Having the time written out removes all ambiguity. As an example, Time In Words
-currently reports very clearly:</p>
-<blockquote>
-<p>In Los Angeles, it is nine minutes to ten on Tuesday evening (daylight-savings
-time).</p>
-</blockquote>
-<p>When writing <a href="/time-in-words-for-mac/">Time In Words for Mac</a>, I focussed immediately on the time zone
+words.</p><p>When it comes to converting times, I doubt there are many people in the world
+who haven&rsquo;t had problems.</p><ul><li>Is that morning or afternoon for them?</li><li>Are they in tomorrow, today or yesterday?</li><li>What if they are using daylight-savings?</li></ul><p>Having the time written out removes all ambiguity. As an example, Time In Words
+currently reports very clearly:</p><blockquote><p>In Los Angeles, it is nine minutes to ten on Tuesday evening (daylight-savings
+time).</p></blockquote><p>When writing <a href=/time-in-words-for-mac/>Time In Words for Mac</a>, I focussed immediately on the time zone
 conversion facilities, and provided a menu bar app that can display as many time
 zones as you like (although more than will show on a single screen would
-probably get annoying).</p>
-<p>So when I decided to do a complete re-write of Time In Words for iOS, the
+probably get annoying).</p><p>So when I decided to do a complete re-write of Time In Words for iOS, the
 obvious move was to emulate the Mac version and allow for as many time zones as
 the user wants, instead of the current 2 or 4 (iPhone or iPad). So I discarded
 the Qlocktwo display and the separate date display which used a similar
 mechanic. I kept the display that shows the current date and time, but every
 display after that shows the time in a different time zone. The time zones can
 be changed and re-ordered, so the ones you need most are the fastest to get to
-once the app opens.</p>
-<hr>
-<p>One new feature (again taken from the Mac version), is the ability to calculate
-&ldquo;What time will it be&hellip;&rdquo;</p>
-<p><img src="/images/TiW_what_time.png" alt="What time"></p>
-<p>You dial in your local date and time to see what time that will be in your
+once the app opens.</p><hr><p>One new feature (again taken from the Mac version), is the ability to calculate
+&ldquo;What time will it be&mldr;&rdquo;</p><p><img src=/images/TiW_what_time.png alt="What time"></p><p>You dial in your local date and time to see what time that will be in your
 selected zone. And if you want to calculate the other way around, tap the &ldquo;Swap
-time zones&rdquo; button.</p>
-<hr>
-<p>The main impetus for a re-write was the Apple Watch. I thought this would be a
+time zones&rdquo; button.</p><hr><p>The main impetus for a re-write was the Apple Watch. I thought this would be a
 perfect app for the watch as it could use the Apple Watch&rsquo;s superb time-keeping
 in conjunction with my text generation, to add a significant level of usability
-to the Apple Watch as regards time zone conversions.</p>
-<p>Sadly, Apple disagrees…</p>
-<p>I completed the app and submitted it to the App Store for review. The review
+to the Apple Watch as regards time zone conversions.</p><p>Sadly, Apple disagrees…</p><p>I completed the app and submitted it to the App Store for review. The review
 process seems to be very fast at the moment and the app moved into review only
 one day later. And there it stuck for 3 days. This was very odd. My experience
 is that once an app gets into review, it only takes a few hours, if that. For
-<a href="/19th-hole/">19th Hole</a> - my other app with an Apple Watch component, the review process
-took 30 hours. But 3 days!</p>
-<p>Then I got a phone call from Apple where a very polite person explained to me
+<a href=/19th-hole/>19th Hole</a> - my other app with an Apple Watch component, the review process
+took 30 hours. But 3 days!</p><p>Then I got a phone call from Apple where a very polite person explained to me
 that although this was not mentioned in any of the documentation, the marketing
 people had decided that no apps were to be allowed on the watch if they told the
-time.</p>
-<p>I offered to remove the initial screen telling the local time, so the app would
+time.</p><p>I offered to remove the initial screen telling the local time, so the app would
 not actually supply the current time but only the time conversions, but that was
-not acceptable either.</p>
-<p>Then I tried appealing the rejection. My hopes were not high, but I didn&rsquo;t see
+not acceptable either.</p><p>Then I tried appealing the rejection. My hopes were not high, but I didn&rsquo;t see
 any harm in asking. I again offered to remove the local time display and
 emphasised the accessibility advantages of displaying times in this manner.
-Another day, another phone call, another polite Apple person saying no.</p>
-<p>So now I have re-submitted the app for review without the Apple Watch component,
+Another day, another phone call, another polite Apple person saying no.</p><p>So now I have re-submitted the app for review without the Apple Watch component,
 which is a shame. I am hoping that after some months they will review this
-policy and allow me to try again, but who knows.</p>
-<p>So you can see what you are missing, here are a couple of screen shots from the
-watch app showing my local time, plus one time zone:</p>
-<p><img src="/images/Watch_1.png" alt="Local time">
-<!-- raw HTML omitted --><img src="/images/Watch_2.png" alt="Converted time"><!-- raw HTML omitted --></p>
-<hr>
-<p>One more minor point. People who actually look at version numbers may wonder why
+policy and allow me to try again, but who knows.</p><p>So you can see what you are missing, here are a couple of screen shots from the
+watch app showing my local time, plus one time zone:</p><p><img src=/images/Watch_1.png alt="Local time">
+<img src=/images/Watch_2.png alt="Converted time"></p><hr><p>One more minor point. People who actually look at version numbers may wonder why
 I have gone from version 2.5 to version 4.0. When I was working on version 2.5,
 I considered making it version 3.0 and then changed my mind. However by that
 time I had already created a version 3.0 in iTunesConnect, so I was not able to
 use 3.0 again this time. This version was such a big change that I wanted it to
-be a .0 release, so that meant going to version 4.0</p>
-
-  </div>
-  
-  <div class="pagination">
-    <div class="pagination__title">
-      <span class="pagination__title-h">Read other posts</span>
-      <hr />
-    </div>
-    <div class="pagination__buttons">
-      
-      <a class="btn next" href="https://troz.net/post/2015/apple-watch-first-impressions/">← Apple Watch First Impressions</a>
-      
-      
-      <a class="btn previous" href="https://troz.net/post/2015/apple-watch-rejected-then-accepted/">Apple Watch App - Rejected, then Accepted →</a>
-      
-    </div>
-  </div>
-  
-</div>
-
-  </div>
-
-  
-    <link rel="stylesheet" href="/css/footer.css" />
-
-<footer class="footer">
-  <div class="footer__inner">
-    <div class="social_footer">
-      <a id="email-Link" class="mailtoui" href="mailto:sarah@troz.net"
-        ><img src="/icons/envelope.svg"
-      /></a>
-      <a href="https://stackoverflow.com/users/1082632"
-        ><img src="/icons/stack-overflow.svg"
-      /></a>
-      <a href="https://twitter.com/trozware"><img src="/icons/twitter.svg"/></a>
-      <a href="https://github.com/trozware"><img src="/icons/github.svg"/></a>
-      <a href="https://troz.net/index.xml"><img src="/icons/rss.svg"/></a>
-      <a href="https://troz.net/feed.json"><img src="/icons/json.png"/></a>
-
-      <a href="https://dev.to/trozware">
-        <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" 
-        alt="TrozWare's DEV Profile" 
-        style="height: 37px; margin-top: -3px" height="40" width="40">
-      </a>
-    </div>
-  </div>
-
-  <div class="footer__inner">
-    <div class="copyright">
-      
-      <span>© 2012 - 2020 Sarah Reichelt</span>
-      
-      <span
-        ><a href="http://gohugo.io">Hugo</a> theme created by
-        <a href="https://twitter.com/panr">panr</a> 2018</span
-      >
-    </div>
-  </div>
-</footer>
-
-<script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
-
-
-<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
-<script src="/quicklink.js"></script>
-
-<script>
-  window.addEventListener('load', () => {
-    quicklink()
-  })
-</script>
-
-
-  
-</div>
-
-</body>
-</html>
+be a .0 release, so that meant going to version 4.0</p></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><a class="btn next" href=https://troz.net/post/2015/apple-watch-first-impressions/>← Apple Watch First Impressions</a>
+<a class="btn previous" href=https://troz.net/post/2015/apple-watch-rejected-then-accepted/>Apple Watch App - Rejected, then Accepted →</a></div></div></div></div><link rel=stylesheet href=/css/footer.css><footer class=footer><div class=footer__inner><div class=social_footer><a id=email-Link class=mailtoui href=mailto:sarah@troz.net><img src=/icons/envelope.svg></a>
+<a href=https://stackoverflow.com/users/1082632><img src=/icons/stack-overflow.svg></a>
+<a href=https://twitter.com/trozware><img src=/icons/twitter.svg></a>
+<a href=https://github.com/trozware><img src=/icons/github.svg></a>
+<a href=https://troz.net/index.xml><img src=/icons/rss.svg></a>
+<a href=https://troz.net/feed.json><img src=/icons/json.png></a>
+<a href=https://dev.to/trozware><img src=https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg alt="TrozWare's DEV Profile" style=height:37px;margin-top:-3px height=40 width=40></a></div></div><div class=footer__inner><div class=copyright><span>© 2012 - 2020 Sarah Reichelt</span>
+<span><a href=http://gohugo.io>Hugo</a> theme created by
+<a href=https://twitter.com/panr>panr</a> 2018</span></div></div></footer><script src=/assets/main.js></script><script src=/assets/prism.js></script><script src=https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js></script><script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script><script src=/quicklink.js></script><script>window.addEventListener('load',()=>{quicklink()})</script></div></body></html>

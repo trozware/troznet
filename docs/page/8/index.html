@@ -1,609 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta name="generator" content="Hugo 0.80.0" />
-  
-    <title>TrozWare</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content=""/>
-<meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
-<meta name="robots" content="noodp"/>
-<link rel="canonical" href="https://troz.net/" />
-
-
-<link rel="stylesheet" href="https://troz.net/assets/style.css">
-
-
-<link rel="stylesheet" href="https://troz.net/style.css">
-
-
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="https://troz.net/img/favicon.png">
-
-
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="TrozWare — " />
-<meta name="twitter:description" content="" />
-<meta name="twitter:site" content="https://troz.net/" />
-<meta name="twitter:creator" content="" />
-<meta name="twitter:image" content="">
-
-
-<meta property="og:locale" content="en" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="TrozWare — ">
-<meta property="og:description" content="" />
-<meta property="og:url" content="https://troz.net/" />
-<meta property="og:site_name" content="TrozWare" />
-<meta property="og:image" content="">
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-
-
-
-
-
-
-
-
-
-
-
-</head>
-<body class="dark-theme">
-<div class="container">
-  <header class="header">
-  <span class="header__inner">
-    <a href="https://troz.net/" class="logo" style="text-decoration: none;">
-  
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
-</svg>
-</span>
-    <span class="logo__text">TrozWare</span>
-    <span class="logo__cursor" style="width: 2px"></span>
-  
-</a>
-
-    <span class="header__right">
-      
-        <nav class="menu">
-  <ul class="menu__inner menu__inner--desktop">
-    
-      
-        
-          <li><a href="/">Home</a></li>
-        
-      
-        
-          <li><a href="/apps/">Apps</a></li>
-        
-      
-        
-          <li><a href="/post/">Archives</a></li>
-        
-      
-        
-          <li><a href="/tags/">Tags</a></li>
-        
-      
-        
-          <li><a href="/contact/">Contact</a></li>
-        
-      
-    
-  </ul>
-
-  <ul class="menu__inner menu__inner--mobile">
-    
-      
-        <li><a href="/">Home</a></li>
-      
-    
-      
-        <li><a href="/apps/">Apps</a></li>
-      
-    
-      
-        <li><a href="/post/">Archives</a></li>
-      
-    
-      
-        <li><a href="/tags/">Tags</a></li>
-      
-    
-      
-        <li><a href="/contact/">Contact</a></li>
-      
-    
-  </ul>
-</nav>
-
-        <span class="menu-trigger">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-          </svg>
-        </span>
-      
-      <span class="theme-toggle">
-        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
-  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
-</svg>
-
-      </span>
-    </span>
-  </span>
-</header>
-
-
-  <div class="content">
-    
-<div class="posts">
-  
-  
-  <div class="post on-list">
-    <h1 class="post-title">
-      <a href="https://troz.net/post/2015/testing-automation/">Testing automation</a>
-    </h1>
-    <div class="post-meta">
-      <span class="post-date">
-        12 Mar 2015
-      </span>
-      <span class="more-meta">- 435 words, </span>
-      <span class="more-meta"> 3 minute read</span>
-    </div>
-
-    
-    <span class="post-tags">
-      
-      #<a href="/tags/jekyll/">jekyll</a
-      >&nbsp;
-      
-      #<a href="/tags/web/">web</a
-      >&nbsp;
-      
-      #<a href="/tags/blog/">blog</a
-      >&nbsp;
-      
-    </span>
-    
-
-    
-
-    <div class="post-content">
-      Today I am experimenting with automating post generation.
+<!doctype html><html lang=en><head><meta name=generator content="Hugo 0.80.0"><title>TrozWare</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=description content><meta name=keywords content="[Swift Apple macOS iOS Apple Watch]"><meta name=robots content="noodp"><link rel=canonical href=https://troz.net/><link rel=stylesheet href=https://troz.net/assets/style.css><link rel=stylesheet href=https://troz.net/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=https://troz.net/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=https://troz.net/img/favicon.png><meta name=twitter:card content="summary"><meta name=twitter:title content="TrozWare —"><meta name=twitter:description content><meta name=twitter:site content="https://troz.net/"><meta name=twitter:creator content><meta name=twitter:image content><meta property="og:locale" content="en"><meta property="og:type" content="website"><meta property="og:title" content="TrozWare —"><meta property="og:description" content><meta property="og:url" content="https://troz.net/"><meta property="og:site_name" content="TrozWare"><meta property="og:image" content><meta property="og:image:width" content="2048"><meta property="og:image:height" content="1024"></head><body class=dark-theme><div class=container><header class=header><span class=header__inner><a href=https://troz.net/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44"><polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/></svg></span><span class=logo__text>TrozWare</span>
+<span class=logo__cursor style=width:2px></span></a><span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/>Home</a></li><li><a href=/apps/>Apps</a></li><li><a href=/post/>Archives</a></li><li><a href=/tags/>Tags</a></li><li><a href=/contact/>Contact</a></li></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/>Home</a></li><li><a href=/apps/>Apps</a></li><li><a href=/post/>Archives</a></li><li><a href=/tags/>Tags</a></li><li><a href=/contact/>Contact</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41C32.4934 41 41 32.4934 41 22 41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=posts><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2015/testing-automation/>Testing automation</a></h1><div class=post-meta><span class=post-date>12 Mar 2015</span>
+<span class=more-meta>- 435 words,</span>
+<span class=more-meta>3 minute read</span></div><span class=post-tags>#<a href=/tags/jekyll/>jekyll</a>&nbsp;
+#<a href=/tags/web/>web</a>&nbsp;
+#<a href=/tags/blog/>blog</a>&nbsp;</span><div class=post-content>Today I am experimenting with automating post generation.
 Firstly, there is the structure of the post Markdown document, which really boils down to the file name and the header.
-I have set up a macro in Typinator so that I just type the title of the post in a text document. I copy that title to the clipboard and type the shortcut. The header is then created with the title and the formatted permalink.
-    </div>
-    <div>
-      <a class="read-more button" href="/post/2015/testing-automation/">Read more →</a>
-    </div>
-  </div>
-  
-  <div class="post on-list">
-    <h1 class="post-title">
-      <a href="https://troz.net/post/2015/workflow-for-writing-a-post/">Workflow for writing a post</a>
-    </h1>
-    <div class="post-meta">
-      <span class="post-date">
-        10 Mar 2015
-      </span>
-      <span class="more-meta">- 750 words, </span>
-      <span class="more-meta"> 4 minute read</span>
-    </div>
-
-    
-    <span class="post-tags">
-      
-      #<a href="/tags/jekyll/">jekyll</a
-      >&nbsp;
-      
-      #<a href="/tags/markdown/">markdown</a
-      >&nbsp;
-      
-      #<a href="/tags/web/">web</a
-      >&nbsp;
-      
-      #<a href="/tags/blog/">blog</a
-      >&nbsp;
-      
-    </span>
-    
-
-    
-
-    <div class="post-content">
-      So here is where I need to get used to Jekyll and how things are done. I will end up automating this when I am sure of the process, but for now, I am just going to work my way through it.
-  Start up the local Jekyll server:
- I opened Terminal and used cd to get to the folder containing my site. Next I started the Jekyll server locally using jekyll serve.
-    </div>
-    <div>
-      <a class="read-more button" href="/post/2015/workflow-for-writing-a-post/">Read more →</a>
-    </div>
-  </div>
-  
-  <div class="post on-list">
-    <h1 class="post-title">
-      <a href="https://troz.net/post/2015/new-site-for-trozware/">New Site for TrozWare</a>
-    </h1>
-    <div class="post-meta">
-      <span class="post-date">
-        08 Mar 2015
-      </span>
-      <span class="more-meta">- 401 words, </span>
-      <span class="more-meta"> 2 minute read</span>
-    </div>
-
-    
-    <span class="post-tags">
-      
-      #<a href="/tags/trozware/">trozware</a
-      >&nbsp;
-      
-      #<a href="/tags/web/">web</a
-      >&nbsp;
-      
-    </span>
-    
-
-    
-
-    <div class="post-content">
-      Welcome to TrozWare&rsquo;s new site. It appears that I am not alone in deciding to move away from WordPress. WordPress is great - easy to set up and with lots of cool themes to allow customisation of your site. But it is slow, especially if (like me) you are running on a low-cost shared server.
-I had been reading about Jekyll, so I decide to give it a go and also host my site on GitHub, taking advantage of their faster servers.
-    </div>
-    <div>
-      <a class="read-more button" href="/post/2015/new-site-for-trozware/">Read more →</a>
-    </div>
-  </div>
-  
-  <div class="post on-list">
-    <h1 class="post-title">
-      <a href="https://troz.net/post/2014/man-reader-1-4-now-available/">Man Reader 1.4 Now Available</a>
-    </h1>
-    <div class="post-meta">
-      <span class="post-date">
-        03 Apr 2014
-      </span>
-      <span class="more-meta">- 125 words, </span>
-      <span class="more-meta"> 1 minute read</span>
-    </div>
-
-    
-    <span class="post-tags">
-      
-      #<a href="/tags/man-reader/">man reader</a
-      >&nbsp;
-      
-      #<a href="/tags/mac/">mac</a
-      >&nbsp;
-      
-    </span>
-    
-
-    
-
-    <div class="post-content">
-      Man Reader 1.4 is now available through the Mac App Store.
-The new features and fixes are:  Fix for plain text view not wrapping correctly for odd-sized fonts. Fix for HTML text view over-riding font colors that may be invisible. Search for missing entry (e.g. g++) no longer requires Enter or Return. Better automatic selection of matching entries while searching. Fix for animation warning message appearing in Console. Status display shows when man page list is being updated.
-    </div>
-    <div>
-      <a class="read-more button" href="/post/2014/man-reader-1-4-now-available/">Read more →</a>
-    </div>
-  </div>
-  
-  <div class="post on-list">
-    <h1 class="post-title">
-      <a href="https://troz.net/post/2014/email-clients-for-mac-ios/">Email clients for Mac and iOS</a>
-    </h1>
-    <div class="post-meta">
-      <span class="post-date">
-        25 Mar 2014
-      </span>
-      <span class="more-meta">- 457 words, </span>
-      <span class="more-meta"> 3 minute read</span>
-    </div>
-
-    
-    <span class="post-tags">
-      
-      #<a href="/tags/email/">email</a
-      >&nbsp;
-      
-      #<a href="/tags/mac/">mac</a
-      >&nbsp;
-      
-      #<a href="/tags/ios/">ios</a
-      >&nbsp;
-      
-    </span>
-    
-
-    
-
-    <div class="post-content">
-      Some people are moving away from email, but for me, it remains the best way to communicate online. I get to keep a record of conversations and the attached files are with the text so I can always see the context.
+I have set up a macro in Typinator so that I just type the title of the post in a text document. I copy that title to the clipboard and type the shortcut. The header is then created with the title and the formatted permalink.</div><div><a class="read-more button" href=/post/2015/testing-automation/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2015/workflow-for-writing-a-post/>Workflow for writing a post</a></h1><div class=post-meta><span class=post-date>10 Mar 2015</span>
+<span class=more-meta>- 750 words,</span>
+<span class=more-meta>4 minute read</span></div><span class=post-tags>#<a href=/tags/jekyll/>jekyll</a>&nbsp;
+#<a href=/tags/markdown/>markdown</a>&nbsp;
+#<a href=/tags/web/>web</a>&nbsp;
+#<a href=/tags/blog/>blog</a>&nbsp;</span><div class=post-content>So here is where I need to get used to Jekyll and how things are done. I will end up automating this when I am sure of the process, but for now, I am just going to work my way through it.
+Start up the local Jekyll server:
+I opened Terminal and used cd to get to the folder containing my site. Next I started the Jekyll server locally using jekyll serve.</div><div><a class="read-more button" href=/post/2015/workflow-for-writing-a-post/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2015/new-site-for-trozware/>New Site for TrozWare</a></h1><div class=post-meta><span class=post-date>08 Mar 2015</span>
+<span class=more-meta>- 401 words,</span>
+<span class=more-meta>2 minute read</span></div><span class=post-tags>#<a href=/tags/trozware/>trozware</a>&nbsp;
+#<a href=/tags/web/>web</a>&nbsp;</span><div class=post-content>Welcome to TrozWare&rsquo;s new site. It appears that I am not alone in deciding to move away from WordPress. WordPress is great - easy to set up and with lots of cool themes to allow customisation of your site. But it is slow, especially if (like me) you are running on a low-cost shared server.
+I had been reading about Jekyll, so I decide to give it a go and also host my site on GitHub, taking advantage of their faster servers.</div><div><a class="read-more button" href=/post/2015/new-site-for-trozware/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2014/man-reader-1-4-now-available/>Man Reader 1.4 Now Available</a></h1><div class=post-meta><span class=post-date>03 Apr 2014</span>
+<span class=more-meta>- 125 words,</span>
+<span class=more-meta>1 minute read</span></div><span class=post-tags>#<a href=/tags/man-reader/>man reader</a>&nbsp;
+#<a href=/tags/mac/>mac</a>&nbsp;</span><div class=post-content>Man Reader 1.4 is now available through the Mac App Store.
+The new features and fixes are: Fix for plain text view not wrapping correctly for odd-sized fonts. Fix for HTML text view over-riding font colors that may be invisible. Search for missing entry (e.g. g++) no longer requires Enter or Return. Better automatic selection of matching entries while searching. Fix for animation warning message appearing in Console. Status display shows when man page list is being updated.</div><div><a class="read-more button" href=/post/2014/man-reader-1-4-now-available/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2014/email-clients-for-mac-ios/>Email clients for Mac and iOS</a></h1><div class=post-meta><span class=post-date>25 Mar 2014</span>
+<span class=more-meta>- 457 words,</span>
+<span class=more-meta>3 minute read</span></div><span class=post-tags>#<a href=/tags/email/>email</a>&nbsp;
+#<a href=/tags/mac/>mac</a>&nbsp;
+#<a href=/tags/ios/>ios</a>&nbsp;</span><div class=post-content>Some people are moving away from email, but for me, it remains the best way to communicate online. I get to keep a record of conversations and the attached files are with the text so I can always see the context.
 But I think everyone would agree that Apple have dropped the ball with Mail in OS X Mavericks, and to a lesser extent, in iOS 7.
-So I have been on a campaign lately to find an email client that suits my needs.
-    </div>
-    <div>
-      <a class="read-more button" href="/post/2014/email-clients-for-mac-ios/">Read more →</a>
-    </div>
-  </div>
-  
-  <div class="post on-list">
-    <h1 class="post-title">
-      <a href="https://troz.net/post/2013/berio-sequenza-vii/">Berio Sequenza VII</a>
-    </h1>
-    <div class="post-meta">
-      <span class="post-date">
-        07 Nov 2013
-      </span>
-      <span class="more-meta">- 186 words, </span>
-      <span class="more-meta"> 1 minute read</span>
-    </div>
-
-    
-    <span class="post-tags">
-      
-      #<a href="/tags/music/">music</a
-      >&nbsp;
-      
-      #<a href="/tags/ios/">ios</a
-      >&nbsp;
-      
-    </span>
-    
-
-    
-
-    <div class="post-content">
-      So my latest app is way outside my usual sphere but that&rsquo;s what happens when family decide that what you do might actually be useful!
-My son is an oboist and he is currently learning Berio&rsquo;s Sequenza VII for Oboe. This is a weird piece without a standard time signature. Instead each line has 13 bars with each bar being allocated a certain time span in actual seconds. As can easily be imagined, this makes learning and practicing this piece more of a mathematical exercise than a musical one.
-    </div>
-    <div>
-      <a class="read-more button" href="/post/2013/berio-sequenza-vii/">Read more →</a>
-    </div>
-  </div>
-  
-  <div class="post on-list">
-    <h1 class="post-title">
-      <a href="https://troz.net/post/2013/icon-builder-ios-7/">Icon Builder &amp; iOS 7</a>
-    </h1>
-    <div class="post-meta">
-      <span class="post-date">
-        23 Sep 2013
-      </span>
-      <span class="more-meta">- 184 words, </span>
-      <span class="more-meta"> 1 minute read</span>
-    </div>
-
-    
-    <span class="post-tags">
-      
-      #<a href="/tags/icons/">icons</a
-      >&nbsp;
-      
-      #<a href="/tags/mac/">mac</a
-      >&nbsp;
-      
-      #<a href="/tags/ios/">ios</a
-      >&nbsp;
-      
-    </span>
-    
-
-    
-
-    <div class="post-content">
-      Icon Builder 1.2 was released on 18 September 2013.
+So I have been on a campaign lately to find an email client that suits my needs.</div><div><a class="read-more button" href=/post/2014/email-clients-for-mac-ios/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2013/berio-sequenza-vii/>Berio Sequenza VII</a></h1><div class=post-meta><span class=post-date>07 Nov 2013</span>
+<span class=more-meta>- 186 words,</span>
+<span class=more-meta>1 minute read</span></div><span class=post-tags>#<a href=/tags/music/>music</a>&nbsp;
+#<a href=/tags/ios/>ios</a>&nbsp;</span><div class=post-content>So my latest app is way outside my usual sphere but that&rsquo;s what happens when family decide that what you do might actually be useful!
+My son is an oboist and he is currently learning Berio&rsquo;s Sequenza VII for Oboe. This is a weird piece without a standard time signature. Instead each line has 13 bars with each bar being allocated a certain time span in actual seconds. As can easily be imagined, this makes learning and practicing this piece more of a mathematical exercise than a musical one.</div><div><a class="read-more button" href=/post/2013/berio-sequenza-vii/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2013/icon-builder-ios-7/>Icon Builder & iOS 7</a></h1><div class=post-meta><span class=post-date>23 Sep 2013</span>
+<span class=more-meta>- 184 words,</span>
+<span class=more-meta>1 minute read</span></div><span class=post-tags>#<a href=/tags/icons/>icons</a>&nbsp;
+#<a href=/tags/mac/>mac</a>&nbsp;
+#<a href=/tags/ios/>ios</a>&nbsp;</span><div class=post-content>Icon Builder 1.2 was released on 18 September 2013.
 It was an update with 2 new functions:
- The ability to create images to suit an Xcode 5 assets library The ability to create icons with the required sizes for IOS 7 apps.  Knowing that iOS 7 apps can only be built using Xcode 5, I linked the switch for these 2 abilities in a single check box.
-The problem was not really that they were in a single checkbox but that I had labelled it badly, so it was not obvious that this was what needed to be checked to create iOS 7 sized icon files.
-    </div>
-    <div>
-      <a class="read-more button" href="/post/2013/icon-builder-ios-7/">Read more →</a>
-    </div>
-  </div>
-  
-  <div class="post on-list">
-    <h1 class="post-title">
-      <a href="https://troz.net/post/2013/icon-apps-updated/">Icon apps updated</a>
-    </h1>
-    <div class="post-meta">
-      <span class="post-date">
-        19 Sep 2013
-      </span>
-      <span class="more-meta">- 107 words, </span>
-      <span class="more-meta"> 1 minute read</span>
-    </div>
-
-    
-    <span class="post-tags">
-      
-      #<a href="/tags/icons/">icons</a
-      >&nbsp;
-      
-      #<a href="/tags/mac/">mac</a
-      >&nbsp;
-      
-      #<a href="/tags/ios/">ios</a
-      >&nbsp;
-      
-    </span>
-    
-
-    
-
-    <div class="post-content">
-      Icns Makerand Icon Builderhave both just been updated to support Xcode 5.
+The ability to create images to suit an Xcode 5 assets library The ability to create icons with the required sizes for IOS 7 apps. Knowing that iOS 7 apps can only be built using Xcode 5, I linked the switch for these 2 abilities in a single check box.
+The problem was not really that they were in a single checkbox but that I had labelled it badly, so it was not obvious that this was what needed to be checked to create iOS 7 sized icon files.</div><div><a class="read-more button" href=/post/2013/icon-builder-ios-7/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2013/icon-apps-updated/>Icon apps updated</a></h1><div class=post-meta><span class=post-date>19 Sep 2013</span>
+<span class=more-meta>- 107 words,</span>
+<span class=more-meta>1 minute read</span></div><span class=post-tags>#<a href=/tags/icons/>icons</a>&nbsp;
+#<a href=/tags/mac/>mac</a>&nbsp;
+#<a href=/tags/ios/>ios</a>&nbsp;</span><div class=post-content>Icns Makerand Icon Builderhave both just been updated to support Xcode 5.
 Icon Builder is a Mac app that takes your images and creates all the required icon files for use in your iOS apps.
 It now supports Xcode 5&rsquo;s image assets folders and if you are using Xcode 5, it will create the icon sizes required for iOS 7 app.
-Icns Maker is a Mac app that takes your images and creates icons for use in your Mac apps.
-    </div>
-    <div>
-      <a class="read-more button" href="/post/2013/icon-apps-updated/">Read more →</a>
-    </div>
-  </div>
-  
-  <div class="post on-list">
-    <h1 class="post-title">
-      <a href="https://troz.net/post/2013/markdown/">Markdown</a>
-    </h1>
-    <div class="post-meta">
-      <span class="post-date">
-        01 Apr 2013
-      </span>
-      <span class="more-meta">- 734 words, </span>
-      <span class="more-meta"> 4 minute read</span>
-    </div>
-
-    
-    <span class="post-tags">
-      
-      #<a href="/tags/markdown/">markdown</a
-      >&nbsp;
-      
-    </span>
-    
-
-    
-
-    <div class="post-content">
-      For some time now, I have been aware of the increasing trend towards using Markdown for text editing and for creating HTML. Markdown has been on my list of &ldquo;things I should learn some day&rdquo; so I was interested last week to read about a new iBooks book called The MacSparky Markdown Field Guide. This was sufficient inspiration so I got the book and read through it this weekend.
-Actually, to say that I read through the book is a mis-representation.
-    </div>
-    <div>
-      <a class="read-more button" href="/post/2013/markdown/">Read more →</a>
-    </div>
-  </div>
-  
-  <div class="post on-list">
-    <h1 class="post-title">
-      <a href="https://troz.net/post/2013/a-knights-move-1-3/">A Knight&rsquo;s Move 1.3</a>
-    </h1>
-    <div class="post-meta">
-      <span class="post-date">
-        27 Feb 2013
-      </span>
-      <span class="more-meta">- 128 words, </span>
-      <span class="more-meta"> 1 minute read</span>
-    </div>
-
-    
-    <span class="post-tags">
-      
-      #<a href="/tags/knights-move/">knight&#39;s move</a
-      >&nbsp;
-      
-      #<a href="/tags/chess/">chess</a
-      >&nbsp;
-      
-      #<a href="/tags/mac/">mac</a
-      >&nbsp;
-      
-    </span>
-    
-
-    
-
-    <div class="post-content">
-      UPDATE: September 2016 - A Knight&rsquo;s Move for iOS is no longer available.A Knight&rsquo;s Move for Mac is still supported.
- A Knight&rsquo;s Move has been updated to version 1.3. The Mac version is available through the Mac App Store.
-Three new level packs:  Eight by Eight Bishops Rule Castles  Eight by Eight has every puzzle set in a chessboard sized grid with more conventional placing of pieces.
-    </div>
-    <div>
-      <a class="read-more button" href="/post/2013/a-knights-move-1-3/">Read more →</a>
-    </div>
-  </div>
-  
-  <div class="pagination">
-  <div class="pagination__buttons">
-    
-      <span class="button previous">
-        <a href="/page/7/">
-          <span class="button__icon">←</span>
-          <span class="button__text">Newer posts</span>
-        </a>
-      </span>
-    
-    
-      <span class="button next">
-        <a href="/page/9/">
-          <span class="button__text">Older posts</span>
-          <span class="button__icon">→</span>
-        </a>
-      </span>
-    
-  </div>
-</div>
-
-</div>
-
-  </div>
-
-  
-    <link rel="stylesheet" href="/css/footer.css" />
-
-<footer class="footer">
-  <div class="footer__inner">
-    <div class="social_footer">
-      <a id="email-Link" class="mailtoui" href="mailto:sarah@troz.net"
-        ><img src="/icons/envelope.svg"
-      /></a>
-      <a href="https://stackoverflow.com/users/1082632"
-        ><img src="/icons/stack-overflow.svg"
-      /></a>
-      <a href="https://twitter.com/trozware"><img src="/icons/twitter.svg"/></a>
-      <a href="https://github.com/trozware"><img src="/icons/github.svg"/></a>
-      <a href="https://troz.net/index.xml"><img src="/icons/rss.svg"/></a>
-      <a href="https://troz.net/feed.json"><img src="/icons/json.png"/></a>
-
-      <a href="https://dev.to/trozware">
-        <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" 
-        alt="TrozWare's DEV Profile" 
-        style="height: 37px; margin-top: -3px" height="40" width="40">
-      </a>
-    </div>
-  </div>
-
-  <div class="footer__inner">
-    <div class="copyright">
-      
-      <span>© 2012 - 2020 Sarah Reichelt</span>
-      
-      <span
-        ><a href="http://gohugo.io">Hugo</a> theme created by
-        <a href="https://twitter.com/panr">panr</a> 2018</span
-      >
-    </div>
-  </div>
-</footer>
-
-<script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
-
-
-<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
-<script src="/quicklink.js"></script>
-
-<script>
-  window.addEventListener('load', () => {
-    quicklink()
-  })
-</script>
-
-
-  
-</div>
-
-</body>
-</html>
+Icns Maker is a Mac app that takes your images and creates icons for use in your Mac apps.</div><div><a class="read-more button" href=/post/2013/icon-apps-updated/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2013/markdown/>Markdown</a></h1><div class=post-meta><span class=post-date>01 Apr 2013</span>
+<span class=more-meta>- 734 words,</span>
+<span class=more-meta>4 minute read</span></div><span class=post-tags>#<a href=/tags/markdown/>markdown</a>&nbsp;</span><div class=post-content>For some time now, I have been aware of the increasing trend towards using Markdown for text editing and for creating HTML. Markdown has been on my list of &ldquo;things I should learn some day&rdquo; so I was interested last week to read about a new iBooks book called The MacSparky Markdown Field Guide. This was sufficient inspiration so I got the book and read through it this weekend.
+Actually, to say that I read through the book is a mis-representation.</div><div><a class="read-more button" href=/post/2013/markdown/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2013/a-knights-move-1-3/>A Knight&rsquo;s Move 1.3</a></h1><div class=post-meta><span class=post-date>27 Feb 2013</span>
+<span class=more-meta>- 128 words,</span>
+<span class=more-meta>1 minute read</span></div><span class=post-tags>#<a href=/tags/knights-move/>knight's move</a>&nbsp;
+#<a href=/tags/chess/>chess</a>&nbsp;
+#<a href=/tags/mac/>mac</a>&nbsp;</span><div class=post-content>UPDATE: September 2016 - A Knight&rsquo;s Move for iOS is no longer available.A Knight&rsquo;s Move for Mac is still supported.
+A Knight&rsquo;s Move has been updated to version 1.3. The Mac version is available through the Mac App Store.
+Three new level packs: Eight by Eight Bishops Rule Castles Eight by Eight has every puzzle set in a chessboard sized grid with more conventional placing of pieces.</div><div><a class="read-more button" href=/post/2013/a-knights-move-1-3/>Read more →</a></div></div><div class=pagination><div class=pagination__buttons><span class="button previous"><a href=/page/7/><span class=button__icon>←</span>
+<span class=button__text>Newer posts</span></a></span>
+<span class="button next"><a href=/page/9/><span class=button__text>Older posts</span>
+<span class=button__icon>→</span></a></span></div></div></div></div><link rel=stylesheet href=/css/footer.css><footer class=footer><div class=footer__inner><div class=social_footer><a id=email-Link class=mailtoui href=mailto:sarah@troz.net><img src=/icons/envelope.svg></a>
+<a href=https://stackoverflow.com/users/1082632><img src=/icons/stack-overflow.svg></a>
+<a href=https://twitter.com/trozware><img src=/icons/twitter.svg></a>
+<a href=https://github.com/trozware><img src=/icons/github.svg></a>
+<a href=https://troz.net/index.xml><img src=/icons/rss.svg></a>
+<a href=https://troz.net/feed.json><img src=/icons/json.png></a>
+<a href=https://dev.to/trozware><img src=https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg alt="TrozWare's DEV Profile" style=height:37px;margin-top:-3px height=40 width=40></a></div></div><div class=footer__inner><div class=copyright><span>© 2012 - 2020 Sarah Reichelt</span>
+<span><a href=http://gohugo.io>Hugo</a> theme created by
+<a href=https://twitter.com/panr>panr</a> 2018</span></div></div></footer><script src=/assets/main.js></script><script src=/assets/prism.js></script><script src=https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js></script><script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script><script src=/quicklink.js></script><script>window.addEventListener('load',()=>{quicklink()})</script></div></body></html>
