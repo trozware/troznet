@@ -1,71 +1,391 @@
-<!doctype html><html lang=en><head><title>Custom Fonts in iOS & macOS apps :: TrozWare</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=description content="As a rule, I prefer to use fonts that come pre-installed with the system. That means that your interface is already familiar to users, you get dynamic font sizing and if Apple updates the fonts, you get the updates without doing anything.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Custom Fonts in iOS &amp; macOS apps :: TrozWare</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="As a rule, I prefer to use fonts that come pre-installed with the system. That means that your interface is already familiar to users, you get dynamic font sizing and if Apple updates the fonts, you get the updates without doing anything.
 But sometimes, you really need to use a different font in your apps, and as the process of getting a custom font to display in your app can be confusing and tedious, I thought I would go through the steps for both iOS and macOS apps.
-I probably should have published this on a different day, but it is not a joke&amp;hellip;. really."><meta name=keywords content="[Swift Apple macOS iOS Apple Watch]"><meta name=robots content="noodp"><link rel=canonical href=https://troz.net/post/2020/custom-fonts/><link rel=stylesheet href=https://troz.net/assets/style.css><link rel=stylesheet href=https://troz.net/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=https://troz.net/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=https://troz.net/img/favicon.png><meta name=twitter:card content="summary"><meta name=twitter:title content="Custom Fonts in iOS & macOS apps :: TrozWare —"><meta name=twitter:description content="As a rule, I prefer to use fonts that come pre-installed with the system. That means that your interface is already familiar to users, you get dynamic font sizing and if Apple updates the fonts, you get the updates without doing anything.
+I probably should have published this on a different day, but it is not a joke&amp;hellip;. really.
+"/>
+<meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://troz.net/post/2020/custom-fonts/" />
+
+
+<link rel="stylesheet" href="https://troz.net/assets/style.css">
+
+
+<link rel="stylesheet" href="https://troz.net/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://troz.net/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Custom Fonts in iOS &amp; macOS apps :: TrozWare — " />
+<meta name="twitter:description" content="As a rule, I prefer to use fonts that come pre-installed with the system. That means that your interface is already familiar to users, you get dynamic font sizing and if Apple updates the fonts, you get the updates without doing anything.
 But sometimes, you really need to use a different font in your apps, and as the process of getting a custom font to display in your app can be confusing and tedious, I thought I would go through the steps for both iOS and macOS apps.
-I probably should have published this on a different day, but it is not a joke&amp;hellip;. really."><meta name=twitter:site content="https://troz.net/"><meta name=twitter:creator content><meta name=twitter:image content><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="og:title" content="Custom Fonts in iOS & macOS apps :: TrozWare —"><meta property="og:description" content="As a rule, I prefer to use fonts that come pre-installed with the system. That means that your interface is already familiar to users, you get dynamic font sizing and if Apple updates the fonts, you get the updates without doing anything.
+I probably should have published this on a different day, but it is not a joke&amp;hellip;. really.
+" />
+<meta name="twitter:site" content="https://troz.net/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Custom Fonts in iOS &amp; macOS apps :: TrozWare — ">
+<meta property="og:description" content="As a rule, I prefer to use fonts that come pre-installed with the system. That means that your interface is already familiar to users, you get dynamic font sizing and if Apple updates the fonts, you get the updates without doing anything.
 But sometimes, you really need to use a different font in your apps, and as the process of getting a custom font to display in your app can be confusing and tedious, I thought I would go through the steps for both iOS and macOS apps.
-I probably should have published this on a different day, but it is not a joke&amp;hellip;. really."><meta property="og:url" content="https://troz.net/post/2020/custom-fonts/"><meta property="og:site_name" content="Custom Fonts in iOS & macOS apps"><meta property="og:image" content><meta property="og:image:width" content="2048"><meta property="og:image:height" content="1024"><meta property="article:published_time" content="2020-04-01 10:27:59 +1000 AEST"></head><body class=dark-theme><div class=container><header class=header><span class=header__inner><a href=https://troz.net/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44"><polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/></svg></span><span class=logo__text>TrozWare</span>
-<span class=logo__cursor style=width:2px></span></a><span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/>Home</a></li><li><a href=/apps/>Apps</a></li><li><a href=/post/>Archives</a></li><li><a href=/tags/>Tags</a></li><li><a href=/contact/>Contact</a></li></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/>Home</a></li><li><a href=/apps/>Apps</a></li><li><a href=/post/>Archives</a></li><li><a href=/tags/>Tags</a></li><li><a href=/contact/>Contact</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41C32.4934 41 41 32.4934 41 22 41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h2 class=post-title><a href=https://troz.net/post/2020/custom-fonts/>Custom Fonts in iOS & macOS apps</a></h2><div class=post-meta><span class=post-date>01 Apr 2020</span>
-<span class=more-meta>- 1328 words,</span>
-<span class=more-meta>7 minute read</span></div><span class=post-tags>#<a href=https://troz.net/tags/font>font</a>&nbsp;
-#<a href=https://troz.net/tags/macos>macos</a>&nbsp;
-#<a href=https://troz.net/tags/ios>ios</a>&nbsp;</span><div class=post-content><p>As a rule, I prefer to use fonts that come pre-installed with the system. That means that your interface is already familiar to users, you get dynamic font sizing and if Apple updates the fonts, you get the updates without doing anything.</p><p>But sometimes, you really need to use a different font in your apps, and as the process of getting a custom font to display in your app can be confusing and tedious, I thought I would go through the steps for both iOS and macOS apps.</p><p>I probably should have published this on a different day, but it is not a joke&mldr;. really.</p><hr><h2 id=getting-a-font-file>Getting a Font File</h2><p>The first thing is to find a suitable font and make sure that the license for that font matches your use. I wanted a font that looked like it was hand-written, so I went to fontspace and searched the <a href=https://www.fontspace.com/category/handwriting>hand-writing category</a> there.</p><p><img src=/images/SelectFont1.png alt=Fonts></p><p>Since I wanted to use this in a paid app, I checked the &ldquo;Commercial-use&rdquo; button to limit the search. The one I chose was called &ldquo;<a href=https://www.fontspace.com/get/family/4yyjn>Painting With Chocolate</a>&rdquo; by &ldquo;Make mooze&rdquo;</p><p><img src=/images/SelectFont2.png alt="Download font"></p><p>I downloaded the font and un-zipped the file which gave me a single file called &ldquo;Paintingwithchocolate-K5mo.ttf&rdquo;. You can use either &ldquo;.ttf&rdquo; or &ldquo;.otf&rdquo; font files.</p><hr><h2 id=using-the-font-in-an-ios-app>Using the Font in an iOS App</h2><p>Now to use the font, first in an iOS app. Boot up Xcode and create a new SwiftUI project for iOS.</p><p>Once the project is open, drag the font file into the Project Navigator. At this stage there are 2 crucial settings:</p><ul><li>Check &ldquo;Copy files if needed&rdquo;.</li><li>Check your app in the &ldquo;Add to targets&rdquo; section.</li></ul><p><img src=/images/AddFontToProject.png alt="Add font to project"></p><blockquote><p><em>In one of my tests, the file stayed in the Downloads folder even after checking &ldquo;Copy files&rdquo;, so I deleted the reference, manually moved the font file to my project folder and added it again.</em></p></blockquote><p>Now the font file is in the project but there is still more work to do.</p><p>Select the font file in the Project Navigator. Press Return as if you are going to edit the name. Select the complete file name, <strong>including the file extension</strong> and copy it.</p><p><img src=/images/CopyFontName.png alt="Copy font file name"></p><p>Now go to the Info.plist file. Right-click in the blank space below the existing entries and select &ldquo;Add Row&rdquo; from the popup menu. In the box that appears, start typing &ldquo;Font&rdquo; using an upper-case &ldquo;F&rdquo;. When you see &ldquo;Fonts provided by application&rdquo;, select that.</p><p>This entry is an array. Click the disclosure triangle to the left and you should see &ldquo;Item 0&rdquo; appear. Paste the name of your font file, including the file extension, into the value for &ldquo;Item 0&rdquo;.</p><p><img src=/images/FontsProvided.png alt="Setting Info.plist entry"></p><p>Your app now has a font file and knows to make it available. But you aren&rsquo;t finished yet.</p><p>To use a custom font, you need to know its exact name. In SwiftUI, the code will be something like this:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift>  Text(<span style=color:#e6db74>&#34;Hello, World!&#34;</span>)
-      .font(.custom(<span style=color:#e6db74>&#34;Font-Name-Goes-Here&#34;</span>, size: <span style=color:#ae81ff>14</span>))
-</code></pre></div><p>But the exact name is not always obvious and is rarely the file name. So the best thing to do is to ask the app what fonts it now has available. This will also act as confirmation that the font file is being included correctly in your project.</p><p>To get the app to list all its fonts, I used this:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>ContentView</span>: View {
-    <span style=color:#66d9ef>var</span> body: some View {
-        Text(<span style=color:#e6db74>&#34;Hello, World!&#34;</span>)
-            .onAppear { <span style=color:#66d9ef>self</span>.listInstalledFonts() }
+I probably should have published this on a different day, but it is not a joke&amp;hellip;. really.
+" />
+<meta property="og:url" content="https://troz.net/post/2020/custom-fonts/" />
+<meta property="og:site_name" content="Custom Fonts in iOS &amp; macOS apps" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2020-04-01 10:27:59 &#43;1000 AEST" />
+
+
+
+
+
+
+
+
+
+</head>
+<body class="dark-theme">
+<div class="container">
+  <header class="header">
+  <span class="header__inner">
+    <a href="https://troz.net/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">TrozWare</span>
+    <span class="logo__cursor" style="width: 2px"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/apps/">Apps</a></li>
+        
+      
+        
+          <li><a href="/post/">Archives</a></li>
+        
+      
+        
+          <li><a href="/tags/">Tags</a></li>
+        
+      
+        
+          <li><a href="/contact/">Contact</a></li>
+        
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/">Home</a></li>
+      
+    
+      
+        <li><a href="/apps/">Apps</a></li>
+      
+    
+      
+        <li><a href="/post/">Archives</a></li>
+      
+    
+      
+        <li><a href="/tags/">Tags</a></li>
+      
+    
+      
+        <li><a href="/contact/">Contact</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h2 class="post-title"><a href="https://troz.net/post/2020/custom-fonts/">Custom Fonts in iOS &amp; macOS apps</a></h2>
+  <div class="post-meta">
+    <span class="post-date">
+      01 Apr 2020
+    </span>
+    <span class="more-meta">- 1328 words, </span>
+    <span class="more-meta"> 7 minute read</span>
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://troz.net/tags/font">font</a>&nbsp;
+    
+    #<a href="https://troz.net/tags/macos">macos</a>&nbsp;
+    
+    #<a href="https://troz.net/tags/ios">ios</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  <div class="post-content">
+    <p>As a rule, I prefer to use fonts that come pre-installed with the system. That means that your interface is already familiar to users, you get dynamic font sizing and if Apple updates the fonts, you get the updates without doing anything.</p>
+<p>But sometimes, you really need to use a different font in your apps, and as the process of getting a custom font to display in your app can be confusing and tedious, I thought I would go through the steps for both iOS and macOS apps.</p>
+<p>I probably should have published this on a different day, but it is not a joke&hellip;. really.</p>
+<hr>
+<h2 id="getting-a-font-file">Getting a Font File</h2>
+<p>The first thing is to find a suitable font and make sure that the license for that font matches your use. I wanted a font that looked like it was hand-written, so I went to fontspace and searched the <a href="https://www.fontspace.com/category/handwriting">hand-writing category</a> there.</p>
+<p><img src="/images/SelectFont1.png" alt="Fonts"></p>
+<p>Since I wanted to use this in a paid app, I checked the &ldquo;Commercial-use&rdquo; button to limit the search. The one I chose was called &ldquo;<a href="https://www.fontspace.com/get/family/4yyjn">Painting With Chocolate</a>&rdquo; by &ldquo;Make mooze&rdquo;</p>
+<p><img src="/images/SelectFont2.png" alt="Download font"></p>
+<p>I downloaded the font and un-zipped the file which gave me a single file called &ldquo;Paintingwithchocolate-K5mo.ttf&rdquo;. You can use either &ldquo;.ttf&rdquo; or &ldquo;.otf&rdquo; font files.</p>
+<hr>
+<h2 id="using-the-font-in-an-ios-app">Using the Font in an iOS App</h2>
+<p>Now to use the font, first in an iOS app. Boot up Xcode and create a new SwiftUI project for iOS.</p>
+<p>Once the project is open, drag the font file into the Project Navigator. At this stage there are 2 crucial settings:</p>
+<ul>
+<li>Check &ldquo;Copy files if needed&rdquo;.</li>
+<li>Check your app in the &ldquo;Add to targets&rdquo; section.</li>
+</ul>
+<p><img src="/images/AddFontToProject.png" alt="Add font to project"></p>
+<blockquote>
+<p><em>In one of my tests, the file stayed in the Downloads folder even after checking &ldquo;Copy files&rdquo;, so I deleted the reference, manually moved the font file to my project folder and added it again.</em></p>
+</blockquote>
+<p>Now the font file is in the project but there is still more work to do.</p>
+<p>Select the font file in the Project Navigator. Press Return as if you are going to edit the name. Select the complete file name, <strong>including the file extension</strong> and copy it.</p>
+<p><img src="/images/CopyFontName.png" alt="Copy font file name"></p>
+<p>Now go to the Info.plist file. Right-click in the blank space below the existing entries and select &ldquo;Add Row&rdquo; from the popup menu. In the box that appears, start typing &ldquo;Font&rdquo; using an upper-case &ldquo;F&rdquo;. When you see &ldquo;Fonts provided by application&rdquo;, select that.</p>
+<p>This entry is an array. Click the disclosure triangle to the left and you should see &ldquo;Item 0&rdquo; appear. Paste the name of your font file, including the file extension, into the value for &ldquo;Item 0&rdquo;.</p>
+<p><img src="/images/FontsProvided.png" alt="Setting Info.plist entry"></p>
+<p>Your app now has a font file and knows to make it available. But you aren&rsquo;t finished yet.</p>
+<p>To use a custom font, you need to know its exact name. In SwiftUI, the code will be something like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  Text(<span style="color:#e6db74">&#34;Hello, World!&#34;</span>)
+      .font(.custom(<span style="color:#e6db74">&#34;Font-Name-Goes-Here&#34;</span>, size: <span style="color:#ae81ff">14</span>))
+</code></pre></div><p>But the exact name is not always obvious and is rarely the file name. So the best thing to do is to ask the app what fonts it now has available. This will also act as confirmation that the font file is being included correctly in your project.</p>
+<p>To get the app to list all its fonts, I used this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
+    <span style="color:#66d9ef">var</span> body: some View {
+        Text(<span style="color:#e6db74">&#34;Hello, World!&#34;</span>)
+            .onAppear { <span style="color:#66d9ef">self</span>.listInstalledFonts() }
     }
 
-    <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>listInstalledFonts</span>() {
-        <span style=color:#66d9ef>let</span> fontFamilies = UIFont.familyNames.sorted()
-        <span style=color:#66d9ef>for</span> family <span style=color:#66d9ef>in</span> fontFamilies {
+    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">listInstalledFonts</span>() {
+        <span style="color:#66d9ef">let</span> fontFamilies = UIFont.familyNames.sorted()
+        <span style="color:#66d9ef">for</span> family <span style="color:#66d9ef">in</span> fontFamilies {
             print(family)
-            <span style=color:#66d9ef>for</span> font <span style=color:#66d9ef>in</span> UIFont.fontNames(forFamilyName: family).sorted() {
-                print(<span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\t</span><span style=color:#e6db74>\(</span>font<span style=color:#e6db74>)</span><span style=color:#e6db74>&#34;</span>)
+            <span style="color:#66d9ef">for</span> font <span style="color:#66d9ef">in</span> UIFont.fontNames(forFamilyName: family).sorted() {
+                print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">\(</span>font<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
             }
         }
     }
 }
-</code></pre></div><p>You can run the app in the Simulator or use &ldquo;Debug Preview&rdquo; to make this show up in the console, but once you have the list, scroll through in until you find the font you just added. The headers are the names of font families and the indented entries are the font names themselves.</p><p><img src=/images/FontsList-iOS.png alt="List of Fonts"></p><p>This time I found that the name of the font was quite obvious: &ldquo;PaintingWithChocolate&rdquo; but this is not always the case. And if the font has any variants, you will need to use the complete name e.g. &ldquo;Optima-ExtraBlack&rdquo;</p><p>With the name of the font, you are finally able to use it in the app, like this:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>ContentView</span>: View {
-    <span style=color:#66d9ef>var</span> body: some View {
-        Text(<span style=color:#e6db74>&#34;Hello, World!&#34;</span>)
-            .font(.custom(<span style=color:#e6db74>&#34;PaintingWithChocolate&#34;</span>, size: <span style=color:#ae81ff>40</span>))
+</code></pre></div><p>You can run the app in the Simulator or use &ldquo;Debug Preview&rdquo; to make this show up in the console, but once you have the list, scroll through in until you find the font you just added. The headers are the names of font families and the indented entries are the font names themselves.</p>
+<p><img src="/images/FontsList-iOS.png" alt="List of Fonts"></p>
+<p>This time I found that the name of the font was quite obvious: &ldquo;PaintingWithChocolate&rdquo; but this is not always the case. And if the font has any variants, you will need to use the complete name e.g. &ldquo;Optima-ExtraBlack&rdquo;</p>
+<p>With the name of the font, you are finally able to use it in the app, like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
+    <span style="color:#66d9ef">var</span> body: some View {
+        Text(<span style="color:#e6db74">&#34;Hello, World!&#34;</span>)
+            .font(.custom(<span style="color:#e6db74">&#34;PaintingWithChocolate&#34;</span>, size: <span style="color:#ae81ff">40</span>))
     }
 }
-</code></pre></div><p><img src=/images/FontUsed-iOS.png alt="Font in use - iOS"></p><hr><h2 id=using-the-font-in-a-mac-app>Using the Font in a Mac App</h2><p>The process for a Mac app is mostly the same.</p><p>Install the font file in your project as before, making sure to copy the file into the project and to add it to the app target.</p><p>For a Mac app, you do not need to specify the font file name in your Info.plist file. Instead, you have to tell the Info.plist where to look for custom fonts in your project directory.</p><p>Open your Info.plist, right-click in the blank space below the existing entries and select &ldquo;Add Row&rdquo; from the popup menu. Start typing &ldquo;Application&rdquo; using an upper-case &ldquo;A&rdquo;. When you see &ldquo;Application fonts resource path&rdquo;, select that and enter a period as the value. A period or full-stop tells Xcode that you mean the current directory but even if you have your fonts in a sub-directory, this seems to work.</p><p><img src=/images/AppFontPath.png alt="Application Font Path"></p><p>You do not need to set &ldquo;Fonts provided by application&rdquo; for a Mac app, although if I had a problem, I would set it as I feel that this is something that Apple may add at some stage.</p><p>While I was using the same font for both apps and so already had the exact name, you may still need to check the list of installed fonts in a Mac app. The function for doing that is quite different:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift>  <span style=color:#66d9ef>func</span> <span style=color:#a6e22e>listInstalledFonts</span>() {
-      <span style=color:#66d9ef>let</span> fontFamilies = NSFontManager.shared.availableFontFamilies.sorted()
-      <span style=color:#66d9ef>for</span> family <span style=color:#66d9ef>in</span> fontFamilies {
+</code></pre></div><p><img src="/images/FontUsed-iOS.png" alt="Font in use - iOS"></p>
+<hr>
+<h2 id="using-the-font-in-a-mac-app">Using the Font in a Mac App</h2>
+<p>The process for a Mac app is mostly the same.</p>
+<p>Install the font file in your project as before, making sure to copy the file into the project and to add it to the app target.</p>
+<p>For a Mac app, you do not need to specify the font file name in your Info.plist file. Instead, you have to tell the Info.plist where to look for custom fonts in your project directory.</p>
+<p>Open your Info.plist, right-click in the blank space below the existing entries and select &ldquo;Add Row&rdquo; from the popup menu. Start typing &ldquo;Application&rdquo; using an upper-case &ldquo;A&rdquo;. When you see &ldquo;Application fonts resource path&rdquo;, select that and enter a period as the value. A period or full-stop tells Xcode that you mean the current directory but even if you have your fonts in a sub-directory, this seems to work.</p>
+<p><img src="/images/AppFontPath.png" alt="Application Font Path"></p>
+<p>You do not need to set &ldquo;Fonts provided by application&rdquo; for a Mac app, although if I had a problem, I would set it as I feel that this is something that Apple may add at some stage.</p>
+<p>While I was using the same font for both apps and so already had the exact name, you may still need to check the list of installed fonts in a Mac app. The function for doing that is quite different:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">listInstalledFonts</span>() {
+      <span style="color:#66d9ef">let</span> fontFamilies = NSFontManager.shared.availableFontFamilies.sorted()
+      <span style="color:#66d9ef">for</span> family <span style="color:#66d9ef">in</span> fontFamilies {
           print(family)
-          <span style=color:#66d9ef>let</span> familyFonts = NSFontManager.shared.availableMembers(ofFontFamily: family)
-          <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> fonts = familyFonts {
-              <span style=color:#66d9ef>for</span> font <span style=color:#66d9ef>in</span> fonts {
-                print(<span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\t</span><span style=color:#e6db74>\(</span>font<span style=color:#e6db74>)</span><span style=color:#e6db74>&#34;</span>)
+          <span style="color:#66d9ef">let</span> familyFonts = NSFontManager.shared.availableMembers(ofFontFamily: family)
+          <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> fonts = familyFonts {
+              <span style="color:#66d9ef">for</span> font <span style="color:#66d9ef">in</span> fonts {
+                print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">\(</span>font<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
               }
           }
       }
   }
-</code></pre></div><p>The format of the print-out is different too, but you can see where I have selected the exact name to use.</p><p><img src=/images/FontList-Mac.png alt="List of Fonts - Mac"></p><p>Then the SwiftUI code for using the font was just the same:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>ContentView</span>: View {
-    <span style=color:#66d9ef>var</span> body: some View {
-        Text(<span style=color:#e6db74>&#34;Hello, World!&#34;</span>)
-            .font(.custom(<span style=color:#e6db74>&#34;PaintingWithChocolate&#34;</span>, size: <span style=color:#ae81ff>60</span>))
+</code></pre></div><p>The format of the print-out is different too, but you can see where I have selected the exact name to use.</p>
+<p><img src="/images/FontList-Mac.png" alt="List of Fonts - Mac"></p>
+<p>Then the SwiftUI code for using the font was just the same:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
+    <span style="color:#66d9ef">var</span> body: some View {
+        Text(<span style="color:#e6db74">&#34;Hello, World!&#34;</span>)
+            .font(.custom(<span style="color:#e6db74">&#34;PaintingWithChocolate&#34;</span>, size: <span style="color:#ae81ff">60</span>))
             .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
-</code></pre></div><p><img src=/images/FontUsed-Mac.png alt="Font in use in Mac app"></p><hr><h2 id=storyboard-apps>Storyboard apps</h2><p>The examples above were both SwiftUI projects, but these techniques work much the same in a storyboard project.</p><p>Follow the same steps to install the font and configure the Info.plist file and use the same functions to list the installed files.</p><p>To use the fonts, if you are using a storyboard in an iOS project, select &ldquo;Custom&rdquo; in the font picker and then you will be able to see your custom font listed if it is installed correctly. I could not work out how to get the custom font appearing in this menu for a macOS app.</p><p>To apply the font programmatically, you can use something like this:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift>    <span style=color:#75715e>// iOS</span>
-    fontLabel.font = UIFont(name: <span style=color:#e6db74>&#34;PaintingWithChocolate&#34;</span>, size: <span style=color:#ae81ff>36</span>)
+</code></pre></div><p><img src="/images/FontUsed-Mac.png" alt="Font in use in Mac app"></p>
+<hr>
+<h2 id="storyboard-apps">Storyboard apps</h2>
+<p>The examples above were both SwiftUI projects, but these techniques work much the same in a storyboard project.</p>
+<p>Follow the same steps to install the font and configure the Info.plist file and use the same functions to list the installed files.</p>
+<p>To use the fonts, if you are using a storyboard in an iOS project, select &ldquo;Custom&rdquo; in the font picker and then you will be able to see your custom font listed if it is installed correctly. I could not work out how to get the custom font appearing in this menu for a macOS app.</p>
+<p>To apply the font programmatically, you can use something like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#75715e">// iOS</span>
+    fontLabel.font = UIFont(name: <span style="color:#e6db74">&#34;PaintingWithChocolate&#34;</span>, size: <span style="color:#ae81ff">36</span>)
 
-    <span style=color:#75715e>// macOS</span>
-    fontLabel.font = NSFont(name: <span style=color:#e6db74>&#34;PaintingWithChocolate&#34;</span>, size: <span style=color:#ae81ff>24</span>)
-</code></pre></div><hr><h2 id=trouble-shooting>Trouble-shooting</h2><p>If you have gone through these steps and the font still isn&rsquo;t working, here are a few things to check:</p><ol><li><p>Is the font file&rsquo;s target membership set to the app?
-<img src=/images/FontFileTargetSet.png alt="File target Set"></p></li><li><p>Is the font file being included in the &ldquo;Copy Bundle Resources&rdquo; build phase? If not, drag it in manually from the Project Navigator.
-<img src=/images/FontInCopyBundleResources.png alt="Copy Bundle Resources"></p></li><li><p>iOS Info.plist - is there a typo in the &ldquo;Fonts provided by application&rdquo; setting? Copy the file name and paste it in directly rather than trying to re-type it.</p></li><li><p>macOS Info.plist- have you put a single period &ldquo;.&rdquo; in the &ldquo;Application fonts resource path&rdquo; setting?</p></li><li><p>Run the font name listing utility - does the font show up there?</p></li><li><p>Have you used the font name EXACTLY as shown in the font listing? Copy & paste it from the font list.</p></li></ol><hr><p>Having struggled with various of these steps myself recently, I thought it was worth documenting it. I am sure that future me will be grateful, but hopefully others will find it useful also.</p><p>If you have any suggestions, corrections or improvements, please contact me using one of the links below or though the <a href=/contact/>Contact</a> page.</p></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><a class="btn next" href=https://troz.net/post/2020/swiftui-color/>← SwiftUI Color</a>
-<a class="btn previous" href=https://troz.net/post/2020/swiftui_for-mac-extras/>SwiftUI for Mac Extras →</a></div></div></div></div><link rel=stylesheet href=/css/footer.css><footer class=footer><div class=footer__inner><div class=social_footer><a id=email-Link class=mailtoui href=mailto:sarah@troz.net><img src=/icons/envelope.svg></a>
-<a href=https://stackoverflow.com/users/1082632><img src=/icons/stack-overflow.svg></a>
-<a href=https://twitter.com/trozware><img src=/icons/twitter.svg></a>
-<a href=https://github.com/trozware><img src=/icons/github.svg></a>
-<a href=https://troz.net/index.xml><img src=/icons/rss.svg></a>
-<a href=https://troz.net/feed.json><img src=/icons/json.png></a>
-<a href=https://dev.to/trozware><img src=https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg alt="TrozWare's DEV Profile" style=height:37px;margin-top:-3px height=40 width=40></a></div></div><div class=footer__inner><div class=copyright><span>© 2012 - 2020 Sarah Reichelt</span>
-<span><a href=http://gohugo.io>Hugo</a> theme created by
-<a href=https://twitter.com/panr>panr</a> 2018</span></div></div></footer><script src=/assets/main.js></script><script src=/assets/prism.js></script><script src=https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js></script><script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script><script src=/quicklink.js></script><script>window.addEventListener('load',()=>{quicklink()})</script></div></body></html>
+    <span style="color:#75715e">// macOS</span>
+    fontLabel.font = NSFont(name: <span style="color:#e6db74">&#34;PaintingWithChocolate&#34;</span>, size: <span style="color:#ae81ff">24</span>)
+</code></pre></div><hr>
+<h2 id="trouble-shooting">Trouble-shooting</h2>
+<p>If you have gone through these steps and the font still isn&rsquo;t working, here are a few things to check:</p>
+<ol>
+<li>
+<p>Is the font file&rsquo;s target membership set to the app?
+<img src="/images/FontFileTargetSet.png" alt="File target Set"></p>
+</li>
+<li>
+<p>Is the font file being included in the &ldquo;Copy Bundle Resources&rdquo; build phase? If not, drag it in manually from the Project Navigator.
+<img src="/images/FontInCopyBundleResources.png" alt="Copy Bundle Resources"></p>
+</li>
+<li>
+<p>iOS Info.plist - is there a typo in the &ldquo;Fonts provided by application&rdquo; setting? Copy the file name and paste it in directly rather than trying to re-type it.</p>
+</li>
+<li>
+<p>macOS Info.plist- have you put a single period &ldquo;.&rdquo; in the &ldquo;Application fonts resource path&rdquo; setting?</p>
+</li>
+<li>
+<p>Run the font name listing utility - does the font show up there?</p>
+</li>
+<li>
+<p>Have you used the font name EXACTLY as shown in the font listing? Copy &amp; paste it from the font list.</p>
+</li>
+</ol>
+<hr>
+<p>Having struggled with various of these steps myself recently, I thought it was worth documenting it. I am sure that future me will be grateful, but hopefully others will find it useful also.</p>
+<p>If you have any suggestions, corrections or improvements, please contact me using one of the links below or though the <a href="/contact/">Contact</a> page.</p>
+  </div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <a class="btn next" href="https://troz.net/post/2020/swiftui-color/">← SwiftUI Color</a>
+      
+      
+      <a class="btn previous" href="https://troz.net/post/2020/swiftui_for-mac-extras/">SwiftUI for Mac Extras →</a>
+      
+    </div>
+  </div>
+  
+</div>
+
+  </div>
+
+  
+    <link rel="stylesheet" href="/css/footer.css" />
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="social_footer">
+      <a id="email-Link" class="mailtoui" href="mailto:sarah@troz.net"
+        ><img src="/icons/envelope.svg"
+      /></a>
+      <a href="https://stackoverflow.com/users/1082632"
+        ><img src="/icons/stack-overflow.svg"
+      /></a>
+      <a href="https://twitter.com/trozware"><img src="/icons/twitter.svg"/></a>
+      <a href="https://github.com/trozware"><img src="/icons/github.svg"/></a>
+      <a href="https://troz.net/index.xml"><img src="/icons/rss.svg"/></a>
+      <a href="https://troz.net/feed.json"><img src="/icons/json.png"/></a>
+
+      <a href="https://dev.to/trozware">
+        <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" 
+        alt="TrozWare's DEV Profile" 
+        style="height: 37px; margin-top: -3px" height="40" width="40">
+      </a>
+    </div>
+  </div>
+
+  <div class="footer__inner">
+    <div class="copyright">
+      
+      <span>© 2012 - 2020 Sarah Reichelt</span>
+      
+      <span
+        ><a href="http://gohugo.io">Hugo</a> theme created by
+        <a href="https://twitter.com/panr">panr</a> 2018</span
+      >
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink()
+  })
+</script>
+
+
+  
+</div>
+
+</body>
+</html>

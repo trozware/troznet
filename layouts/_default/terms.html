@@ -3,6 +3,8 @@
 {{ $terms := .Data.Terms.Alphabetical -}}
 {{ $length := len $terms -}}
 
+{{ partial "search.html" . }}
+
 <div class="posts post on-list">
   <div>
     <h3>

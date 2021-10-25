@@ -1,80 +1,345 @@
-<!doctype html><html lang=en><head><title>My First Apple Watch App :: TrozWare</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=description content="I have just submitted my first Apple Watch app to the iTunes App Store. This is a scary thing to do, since I have never seen, touched or used an Apple Watch and all I had to go on was the Simulator that Apple supplies with Xcode.
-At the moment, Apple has only made a limited set of Apple Watch features available to developers, and all Apple Watch apps come tethered to an iOS app - presumably this will mainly be iPhone apps, but I wonder will we be able to connect Apple Watches to iPads?"><meta name=keywords content="[Swift Apple macOS iOS Apple Watch]"><meta name=robots content="noodp"><link rel=canonical href=https://troz.net/post/2015/my-first-apple-watch-app/><link rel=stylesheet href=https://troz.net/assets/style.css><link rel=stylesheet href=https://troz.net/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=https://troz.net/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=https://troz.net/img/favicon.png><meta name=twitter:card content="summary"><meta name=twitter:title content="My First Apple Watch App :: TrozWare —"><meta name=twitter:description content="I have just submitted my first Apple Watch app to the iTunes App Store. This is a scary thing to do, since I have never seen, touched or used an Apple Watch and all I had to go on was the Simulator that Apple supplies with Xcode.
-At the moment, Apple has only made a limited set of Apple Watch features available to developers, and all Apple Watch apps come tethered to an iOS app - presumably this will mainly be iPhone apps, but I wonder will we be able to connect Apple Watches to iPads?"><meta name=twitter:site content="https://troz.net/"><meta name=twitter:creator content><meta name=twitter:image content><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="og:title" content="My First Apple Watch App :: TrozWare —"><meta property="og:description" content="I have just submitted my first Apple Watch app to the iTunes App Store. This is a scary thing to do, since I have never seen, touched or used an Apple Watch and all I had to go on was the Simulator that Apple supplies with Xcode.
-At the moment, Apple has only made a limited set of Apple Watch features available to developers, and all Apple Watch apps come tethered to an iOS app - presumably this will mainly be iPhone apps, but I wonder will we be able to connect Apple Watches to iPads?"><meta property="og:url" content="https://troz.net/post/2015/my-first-apple-watch-app/"><meta property="og:site_name" content="My First Apple Watch App"><meta property="og:image" content><meta property="og:image:width" content="2048"><meta property="og:image:height" content="1024"><meta property="article:published_time" content="2015-04-02 00:00:00 +0000 UTC"></head><body class=dark-theme><div class=container><header class=header><span class=header__inner><a href=https://troz.net/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44"><polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/></svg></span><span class=logo__text>TrozWare</span>
-<span class=logo__cursor style=width:2px></span></a><span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/>Home</a></li><li><a href=/apps/>Apps</a></li><li><a href=/post/>Archives</a></li><li><a href=/tags/>Tags</a></li><li><a href=/contact/>Contact</a></li></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/>Home</a></li><li><a href=/apps/>Apps</a></li><li><a href=/post/>Archives</a></li><li><a href=/tags/>Tags</a></li><li><a href=/contact/>Contact</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41C32.4934 41 41 32.4934 41 22 41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h2 class=post-title><a href=https://troz.net/post/2015/my-first-apple-watch-app/>My First Apple Watch App</a></h2><div class=post-meta><span class=post-date>02 Apr 2015</span>
-<span class=more-meta>- 1053 words,</span>
-<span class=more-meta>5 minute read</span></div><span class=post-tags>#<a href=https://troz.net/tags/apple-watch>apple watch</a>&nbsp;
-#<a href=https://troz.net/tags/watch>watch</a>&nbsp;
-#<a href=https://troz.net/tags/ios>ios</a>&nbsp;
-#<a href=https://troz.net/tags/golf>golf</a>&nbsp;</span><div class=post-content><p>I have just submitted my first Apple Watch app to the iTunes App Store. This is
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>My First Apple Watch App :: TrozWare</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="I have just submitted my first Apple Watch app to the iTunes App Store. This is a scary thing to do, since I have never seen, touched or used an Apple Watch and all I had to go on was the Simulator that Apple supplies with Xcode.
+At the moment, Apple has only made a limited set of Apple Watch features available to developers, and all Apple Watch apps come tethered to an iOS app - presumably this will mainly be iPhone apps, but I wonder will we be able to connect Apple Watches to iPads?"/>
+<meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://troz.net/post/2015/my-first-apple-watch-app/" />
+
+
+<link rel="stylesheet" href="https://troz.net/assets/style.css">
+
+
+<link rel="stylesheet" href="https://troz.net/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://troz.net/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="My First Apple Watch App :: TrozWare — " />
+<meta name="twitter:description" content="I have just submitted my first Apple Watch app to the iTunes App Store. This is a scary thing to do, since I have never seen, touched or used an Apple Watch and all I had to go on was the Simulator that Apple supplies with Xcode.
+At the moment, Apple has only made a limited set of Apple Watch features available to developers, and all Apple Watch apps come tethered to an iOS app - presumably this will mainly be iPhone apps, but I wonder will we be able to connect Apple Watches to iPads?" />
+<meta name="twitter:site" content="https://troz.net/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="My First Apple Watch App :: TrozWare — ">
+<meta property="og:description" content="I have just submitted my first Apple Watch app to the iTunes App Store. This is a scary thing to do, since I have never seen, touched or used an Apple Watch and all I had to go on was the Simulator that Apple supplies with Xcode.
+At the moment, Apple has only made a limited set of Apple Watch features available to developers, and all Apple Watch apps come tethered to an iOS app - presumably this will mainly be iPhone apps, but I wonder will we be able to connect Apple Watches to iPads?" />
+<meta property="og:url" content="https://troz.net/post/2015/my-first-apple-watch-app/" />
+<meta property="og:site_name" content="My First Apple Watch App" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2015-04-02 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+</head>
+<body class="dark-theme">
+<div class="container">
+  <header class="header">
+  <span class="header__inner">
+    <a href="https://troz.net/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">TrozWare</span>
+    <span class="logo__cursor" style="width: 2px"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/apps/">Apps</a></li>
+        
+      
+        
+          <li><a href="/post/">Archives</a></li>
+        
+      
+        
+          <li><a href="/tags/">Tags</a></li>
+        
+      
+        
+          <li><a href="/contact/">Contact</a></li>
+        
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/">Home</a></li>
+      
+    
+      
+        <li><a href="/apps/">Apps</a></li>
+      
+    
+      
+        <li><a href="/post/">Archives</a></li>
+      
+    
+      
+        <li><a href="/tags/">Tags</a></li>
+      
+    
+      
+        <li><a href="/contact/">Contact</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h2 class="post-title"><a href="https://troz.net/post/2015/my-first-apple-watch-app/">My First Apple Watch App</a></h2>
+  <div class="post-meta">
+    <span class="post-date">
+      02 Apr 2015
+    </span>
+    <span class="more-meta">- 1053 words, </span>
+    <span class="more-meta"> 5 minute read</span>
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://troz.net/tags/apple-watch">apple watch</a>&nbsp;
+    
+    #<a href="https://troz.net/tags/watch">watch</a>&nbsp;
+    
+    #<a href="https://troz.net/tags/ios">ios</a>&nbsp;
+    
+    #<a href="https://troz.net/tags/golf">golf</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  <div class="post-content">
+    <p>I have just submitted my first Apple Watch app to the iTunes App Store. This is
 a scary thing to do, since I have never seen, touched or used an Apple Watch and
-all I had to go on was the Simulator that Apple supplies with Xcode.</p><p>At the moment, Apple has only made a limited set of Apple Watch features
+all I had to go on was the Simulator that Apple supplies with Xcode.</p>
+<p>At the moment, Apple has only made a limited set of Apple Watch features
 available to developers, and all Apple Watch apps come tethered to an iOS app -
 presumably this will mainly be iPhone apps, but I wonder will we be able to
 connect Apple Watches to iPads? Anyway, it made sense to extend one of my
-existing apps to use the Apple Watch instead of starting from scratch.</p><p>Of my <a href=/apps-ios/>iOS apps</a>, I decided that <a href=/19th-hole/>The 19th Hole</a>, my golf scoring app,
+existing apps to use the Apple Watch instead of starting from scratch.</p>
+<p>Of my <a href="/apps-ios/">iOS apps</a>, I decided that <a href="/19th-hole/">The 19th Hole</a>, my golf scoring app,
 would be well suited to the Apple Watch. The problem with using the iPhone
 version to score is that you have to keep pulling your iPhone in and out of your
 golf bag, sometimes in the rain, sometimes in bright sunlight. Being able to
 enter the scores on your wrist sounds like a big improvement. We know that the
 Apple Watch is at least somewhat water-resistant, but we are yet to see how well
 it performs in bright sunlight, however I would expect that Apple has put
-considerable effort into this.</p><hr><p>Once I decided to write an Apple Watch app, the first step was to learn how. I
+considerable effort into this.</p>
+<hr>
+<p>Once I decided to write an Apple Watch app, the first step was to learn how. I
 read all Apple&rsquo;s published documents to get a feel for what was possible and
 what user-interface objects would be available. I find online courses very
-helpful and by far the best Apple Watch course that I found was <a href=http://www.raywenderlich.com/video-tutorials#watchkit>Ray
+helpful and by far the best Apple Watch course that I found was <a href="http://www.raywenderlich.com/video-tutorials#watchkit">Ray
 Wenderlich&rsquo;s WatchKit video tutorial series</a>. The instructors were very clear
 and explained how the layout and sizing of objects works on the Apple Watch, as
 well as how to set up and move between views and how to communicate from the
 Watch back to the iPhone. The layout section of the course was particularly
 valuable as no other course I found even mentioned this, although it is crucial
-to the interface design and allowing for the two sizes of watch.</p><p>I had released an update to <a href=/19th-hole/>The 19th Hole</a> recently in preparation for this.
+to the interface design and allowing for the two sizes of watch.</p>
+<p>I had released an update to <a href="/19th-hole/">The 19th Hole</a> recently in preparation for this.
 I wanted to have squashed the bugs and updated the interface, so the only
-changes needed would be the WatchKit ones.</p><p>The first step in adding a WatchKit app to your existing app is to create a new
+changes needed would be the WatchKit ones.</p>
+<p>The first step in adding a WatchKit app to your existing app is to create a new
 target in the Xcode project. Choosing WatchKit actually adds two new targets:
 the WatchKit Extension which lives on the iPhone and supplies the code for the
-Watch, and the WatchKit App which lives on the Watch and provides the interface.</p><p>I decided to use a paged interface with one page per hole. Each of these pages
-has a table, with one row per player. A slider with plus & minus buttons lets
+Watch, and the WatchKit App which lives on the Watch and provides the interface.</p>
+<p>I decided to use a paged interface with one page per hole. Each of these pages
+has a table, with one row per player. A slider with plus &amp; minus buttons lets
 you enter the score for each player and the total score for each player is also
-displayed.</p><p><img src=/images/19thHole-Watch2.png alt="Data entry"></p><p>Apart from this data entry view, I have a splash screen which shows you the
+displayed.</p>
+<p><img src="/images/19thHole-Watch2.png" alt="Data entry"></p>
+<p>Apart from this data entry view, I have a splash screen which shows you the
 current round as set up on the iPhone and a final summary screen showing
-everyone&rsquo;s totals.</p><p><img src=/images/19thHole-Watch1.png alt="Splash screen">
-<img src=/images/19thHole-Watch3.png alt=Summary></p><p>These images are taken from the Apple Watch simulator running in 42mm mode.</p><hr><p>The biggest programming problem was getting the communications working beween
+everyone&rsquo;s totals.</p>
+<p><img src="/images/19thHole-Watch1.png" alt="Splash screen">
+<img src="/images/19thHole-Watch3.png" alt="Summary"></p>
+<p>These images are taken from the Apple Watch simulator running in 42mm mode.</p>
+<hr>
+<p>The biggest programming problem was getting the communications working beween
 the two devices. The 19th Hole uses Core Data for all data storage. My first
 attempt shared this data between the two apps, allowing both to read and update
 the database. This almost worked, but if both apps were open, then changes in
 one device did not get across to the other. It seemed that the data was cached
-and I was unable to find a way to force either app to update every time.</p><p>My next attempt kept all the data in the iPhone app and had the WatchKit
+and I was unable to find a way to force either app to update every time.</p>
+<p>My next attempt kept all the data in the iPhone app and had the WatchKit
 extension ask for whatever data it needed and send changes to the iPhone app.
 This worked much better and I was able to get live updates between the two
-devices.</p><p>The other issue is the fact that I have never seen, touched or used an Apple
-Watch. This means that I had to guess a lot of things:</p><ul><li>how well will it perform?</li><li>will the icon look OK?</li><li>are the controls large enough to use?</li><li>will the text be large enough to read?</li></ul><p>My main philosophy was to keep the Watch app as simple as possible and use the
-standard interface elements, font sizes etc. Hopefully that will work.</p><hr><p>The final step was submitting the app to iTunes Connect for review. It was not
+devices.</p>
+<p>The other issue is the fact that I have never seen, touched or used an Apple
+Watch. This means that I had to guess a lot of things:</p>
+<ul>
+<li>how well will it perform?</li>
+<li>will the icon look OK?</li>
+<li>are the controls large enough to use?</li>
+<li>will the text be large enough to read?</li>
+</ul>
+<p>My main philosophy was to keep the Watch app as simple as possible and use the
+standard interface elements, font sizes etc. Hopefully that will work.</p>
+<hr>
+<p>The final step was submitting the app to iTunes Connect for review. It was not
 clear to me how to do this, so I logged into iTunes Connect, created a new
 version and entered the meta-data. I couldn&rsquo;t see anywhere to say anything about
 the Watch. I archived the main iOS app as usual and validated it with the Store.
-I had a few things to fix up, but I got the build submitted.</p><p>Back to iTunes Connect and once the uploaded build had been processed, I was
+I had a few things to fix up, but I got the build submitted.</p>
+<p>Back to iTunes Connect and once the uploaded build had been processed, I was
 able to select it and click &ldquo;Submit for Review&rdquo;. At this point, the page
 reported an error and showed me a new section where I could upload the Apple
-Watch icon and screen shots.</p><p>I had been unsure how the icon would look when made round, but it looks OK on
+Watch icon and screen shots.</p>
+<p>I had been unsure how the icon would look when made round, but it looks OK on
 the iTunes Connect page. How it will look on a tiny watch screen remains to be
 seen. Anyway, once I had my icon and screen shots uploaded, I was able to
 proceed to the next step. But then I got a message saying that the app could not
 be processed - no explanation. Thankfully, I had seen some developers on Twitter
 reporting this, and somebody said that the solution was to remove the alpha
 channel from your screen shots. Sorry for not giving credit here - I forget who
-said this, but it worked, so thank you whoever you are.</p><p>So now my app is waiting for review and who knows how long that will take.
-According to <a href=http://appreviewtimes.com>App Review Times</a>, the current estimate is 8 days, but the
+said this, but it worked, so thank you whoever you are.</p>
+<p>So now my app is waiting for review and who knows how long that will take.
+According to <a href="http://appreviewtimes.com">App Review Times</a>, the current estimate is 8 days, but the
 trend is heading upwards. I would expect that to blow out in the next few weeks
 as developers try to get their apps ready for the Apple Watch release date of
-April 24th.</p></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><a class="btn next" href=https://troz.net/post/2015/apple-watch-rejected-then-accepted/>← Apple Watch App - Rejected, then Accepted</a>
-<a class="btn previous" href=https://troz.net/post/2015/livecode-stacks/>LiveCode stacks →</a></div></div></div></div><link rel=stylesheet href=/css/footer.css><footer class=footer><div class=footer__inner><div class=social_footer><a id=email-Link class=mailtoui href=mailto:sarah@troz.net><img src=/icons/envelope.svg></a>
-<a href=https://stackoverflow.com/users/1082632><img src=/icons/stack-overflow.svg></a>
-<a href=https://twitter.com/trozware><img src=/icons/twitter.svg></a>
-<a href=https://github.com/trozware><img src=/icons/github.svg></a>
-<a href=https://troz.net/index.xml><img src=/icons/rss.svg></a>
-<a href=https://troz.net/feed.json><img src=/icons/json.png></a>
-<a href=https://dev.to/trozware><img src=https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg alt="TrozWare's DEV Profile" style=height:37px;margin-top:-3px height=40 width=40></a></div></div><div class=footer__inner><div class=copyright><span>© 2012 - 2020 Sarah Reichelt</span>
-<span><a href=http://gohugo.io>Hugo</a> theme created by
-<a href=https://twitter.com/panr>panr</a> 2018</span></div></div></footer><script src=/assets/main.js></script><script src=/assets/prism.js></script><script src=https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js></script><script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script><script src=/quicklink.js></script><script>window.addEventListener('load',()=>{quicklink()})</script></div></body></html>
+April 24th.</p>
+
+  </div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <a class="btn next" href="https://troz.net/post/2015/apple-watch-rejected-then-accepted/">← Apple Watch App - Rejected, then Accepted</a>
+      
+      
+      <a class="btn previous" href="https://troz.net/post/2015/livecode-stacks/">LiveCode stacks →</a>
+      
+    </div>
+  </div>
+  
+</div>
+
+  </div>
+
+  
+    <link rel="stylesheet" href="/css/footer.css" />
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="social_footer">
+      <a id="email-Link" class="mailtoui" href="mailto:sarah@troz.net"
+        ><img src="/icons/envelope.svg"
+      /></a>
+      <a href="https://stackoverflow.com/users/1082632"
+        ><img src="/icons/stack-overflow.svg"
+      /></a>
+      <a href="https://twitter.com/trozware"><img src="/icons/twitter.svg"/></a>
+      <a href="https://github.com/trozware"><img src="/icons/github.svg"/></a>
+      <a href="https://troz.net/index.xml"><img src="/icons/rss.svg"/></a>
+      <a href="https://troz.net/feed.json"><img src="/icons/json.png"/></a>
+
+      <a href="https://dev.to/trozware">
+        <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" 
+        alt="TrozWare's DEV Profile" 
+        style="height: 37px; margin-top: -3px" height="40" width="40">
+      </a>
+    </div>
+  </div>
+
+  <div class="footer__inner">
+    <div class="copyright">
+      
+      <span>© 2012 - 2020 Sarah Reichelt</span>
+      
+      <span
+        ><a href="http://gohugo.io">Hugo</a> theme created by
+        <a href="https://twitter.com/panr">panr</a> 2018</span
+      >
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink()
+  })
+</script>
+
+
+  
+</div>
+
+</body>
+</html>

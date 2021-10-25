@@ -1,152 +1,431 @@
-<!doctype html><html lang=en><head><title>Learning Swift - Optionals :: TrozWare</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=description content><meta name=keywords content="[Swift Apple macOS iOS Apple Watch]"><meta name=robots content="noodp"><link rel=canonical href=https://troz.net/post/2016/learning-swift-optionals/><link rel=stylesheet href=https://troz.net/assets/style.css><link rel=stylesheet href=https://troz.net/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=https://troz.net/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=https://troz.net/img/favicon.png><meta name=twitter:card content="summary"><meta name=twitter:title content="Learning Swift - Optionals :: TrozWare —"><meta name=twitter:description content><meta name=twitter:site content="https://troz.net/"><meta name=twitter:creator content><meta name=twitter:image content><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="og:title" content="Learning Swift - Optionals :: TrozWare —"><meta property="og:description" content><meta property="og:url" content="https://troz.net/post/2016/learning-swift-optionals/"><meta property="og:site_name" content="Learning Swift - Optionals"><meta property="og:image" content><meta property="og:image:width" content="2048"><meta property="og:image:height" content="1024"><meta property="article:published_time" content="2016-03-12 14:24:00 +1000 AEST"></head><body class=dark-theme><div class=container><header class=header><span class=header__inner><a href=https://troz.net/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44"><polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/></svg></span><span class=logo__text>TrozWare</span>
-<span class=logo__cursor style=width:2px></span></a><span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/>Home</a></li><li><a href=/apps/>Apps</a></li><li><a href=/post/>Archives</a></li><li><a href=/tags/>Tags</a></li><li><a href=/contact/>Contact</a></li></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/>Home</a></li><li><a href=/apps/>Apps</a></li><li><a href=/post/>Archives</a></li><li><a href=/tags/>Tags</a></li><li><a href=/contact/>Contact</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41C32.4934 41 41 32.4934 41 22 41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h2 class=post-title><a href=https://troz.net/post/2016/learning-swift-optionals/>Learning Swift - Optionals</a></h2><div class=post-meta><span class=post-date>03 Jan 2018</span>
-<span class=more-meta>- 1236 words,</span>
-<span class=more-meta>6 minute read</span></div><span class=post-tags>#<a href=https://troz.net/tags/swift>swift</a>&nbsp;
-#<a href=https://troz.net/tags/learning-swift>learning swift</a>&nbsp;
-#<a href=https://troz.net/tags/optionals>optionals</a>&nbsp;</span><div class=post-content><p>Today I plan to discuss optionals since they were a feature of Swift that I
-found difficult to grasp at first.</p><h2 id=what-is-an-optional-in-swift>What is an optional in Swift?</h2><p>An optional is a variable of a specified type that can also be nil.</p><h2 id=why-does-this-matter>Why does this matter?</h2><p>In Objective-C, any object type could be nil. If you declared a variable like
-this:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-objectivec data-lang=objectivec>NSString <span style=color:#f92672>*</span>myString;
-</code></pre></div><p>then <code>myString</code> was set to nil by default.</p><p>But this could cause issues, especially as Objective-C does not complain if you
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Learning Swift - Optionals :: TrozWare</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content=""/>
+<meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://troz.net/post/2016/learning-swift-optionals/" />
+
+
+<link rel="stylesheet" href="https://troz.net/assets/style.css">
+
+
+<link rel="stylesheet" href="https://troz.net/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://troz.net/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Learning Swift - Optionals :: TrozWare — " />
+<meta name="twitter:description" content="" />
+<meta name="twitter:site" content="https://troz.net/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Learning Swift - Optionals :: TrozWare — ">
+<meta property="og:description" content="" />
+<meta property="og:url" content="https://troz.net/post/2016/learning-swift-optionals/" />
+<meta property="og:site_name" content="Learning Swift - Optionals" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2016-03-12 14:24:00 &#43;1000 AEST" />
+
+
+
+
+
+
+
+
+
+</head>
+<body class="dark-theme">
+<div class="container">
+  <header class="header">
+  <span class="header__inner">
+    <a href="https://troz.net/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">TrozWare</span>
+    <span class="logo__cursor" style="width: 2px"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/apps/">Apps</a></li>
+        
+      
+        
+          <li><a href="/post/">Archives</a></li>
+        
+      
+        
+          <li><a href="/tags/">Tags</a></li>
+        
+      
+        
+          <li><a href="/contact/">Contact</a></li>
+        
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/">Home</a></li>
+      
+    
+      
+        <li><a href="/apps/">Apps</a></li>
+      
+    
+      
+        <li><a href="/post/">Archives</a></li>
+      
+    
+      
+        <li><a href="/tags/">Tags</a></li>
+      
+    
+      
+        <li><a href="/contact/">Contact</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h2 class="post-title"><a href="https://troz.net/post/2016/learning-swift-optionals/">Learning Swift - Optionals</a></h2>
+  <div class="post-meta">
+    <span class="post-date">
+      03 Jan 2018
+    </span>
+    <span class="more-meta">- 1236 words, </span>
+    <span class="more-meta"> 6 minute read</span>
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://troz.net/tags/swift">swift</a>&nbsp;
+    
+    #<a href="https://troz.net/tags/learning-swift">learning swift</a>&nbsp;
+    
+    #<a href="https://troz.net/tags/optionals">optionals</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  <div class="post-content">
+    <p>Today I plan to discuss optionals since they were a feature of Swift that I
+found difficult to grasp at first.</p>
+<h2 id="what-is-an-optional-in-swift">What is an optional in Swift?</h2>
+<p>An optional is a variable of a specified type that can also be nil.</p>
+<h2 id="why-does-this-matter">Why does this matter?</h2>
+<p>In Objective-C, any object type could be nil. If you declared a variable like
+this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec">NSString <span style="color:#f92672">*</span>myString;
+</code></pre></div><p>then <code>myString</code> was set to nil by default.</p>
+<p>But this could cause issues, especially as Objective-C does not complain if you
 send a message to nil. This could lead to bugs that were very difficult to track
-down.</p><p>The other big use for nil is when returning from a function which has found no
+down.</p>
+<p>The other big use for nil is when returning from a function which has found no
 appropriate data to return. The classic example is when looking for the index of
 an element in an array. What should be returned if the element is not found in
-the array?</p><p>Some languages return -1, Objective-C uses <code>NSNotFound</code>, but you have to know
+the array?</p>
+<p>Some languages return -1, Objective-C uses <code>NSNotFound</code>, but you have to know
 what each language is going to do. The more logical answer is nil. However if
 your function is expected to return an integer, then it cannot return nil
-because nil is not an integer.</p><p>This is where optionals come in: if the function is expected to return an
+because nil is not an integer.</p>
+<p>This is where optionals come in: if the function is expected to return an
 optional integer, it can return with an integer with the index of the matching
 element, or it can return nil if the element was not found. This is much clearer
-and less prone to error.</p><hr><h2 id=how-does-swift-handle-optionals>How does Swift handle optionals?</h2><p>One of the first things that struck me about Swift was how clean the code
+and less prone to error.</p>
+<hr>
+<h2 id="how-does-swift-handle-optionals">How does Swift handle optionals?</h2>
+<p>One of the first things that struck me about Swift was how clean the code
 looked, without so many non-alphanumeric characters scattered around. Gone were
-all the:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#f92672>*</span> ; [ ]
-</code></pre></div><p>But instead, Swift code sprouted:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#f92672>!</span> ?
-</code></pre></div><p>What were these?</p><p><strong>The key to understanding optionals is to realise that when you declare an
+all the:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#f92672">*</span> ; [ ]
+</code></pre></div><p>But instead, Swift code sprouted:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#f92672">!</span> ?
+</code></pre></div><p>What were these?</p>
+<p><strong>The key to understanding optionals is to realise that when you declare an
 optional variable of a certain type, you are actually declaring a box that can
-hold a variable of that type or can hold nil.</strong></p><p>Once you grasp that concept, it all becomes much more obvious.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#66d9ef>var</span> optionalInteger: Int?
+hold a variable of that type or can hold nil.</strong></p>
+<p>Once you grasp that concept, it all becomes much more obvious.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">var</span> optionalInteger: Int?
 </code></pre></div><p>The ? indicates that this is an optional variable. It does not have to be
 initialised as it is already set to nil which is valid for an optional variable.
 Without the ? this would require initialisation as it would not be valid for it
-to be nil.</p><hr><h2 id=setting-an-optional>Setting an optional</h2><p>Setting the value of an optional variable is just the same as any other
-variable:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift>optionalInteger = <span style=color:#ae81ff>3</span>
-optionalInteger = <span style=color:#ae81ff>42</span>
-</code></pre></div><hr><h2 id=getting-an-optional>Getting an optional</h2><p>The difference arises when you need to get the data out of the optional variable
+to be nil.</p>
+<hr>
+<h2 id="setting-an-optional">Setting an optional</h2>
+<p>Setting the value of an optional variable is just the same as any other
+variable:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">optionalInteger = <span style="color:#ae81ff">3</span>
+optionalInteger = <span style="color:#ae81ff">42</span>
+</code></pre></div><hr>
+<h2 id="getting-an-optional">Getting an optional</h2>
+<p>The difference arises when you need to get the data out of the optional variable
 in order to use it. This process is called un-wrapping and it means to get the
-variable value out of the &lsquo;box&rsquo; it is stored it.</p><h3 id=the-most-obvious-way-is-to-use->The most obvious way is to use !</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#66d9ef>let</span> newInteger = optionalInteger!
-</code></pre></div><p><strong>DO NOT DO THIS!</strong></p><p>This is called forced-unwrapping and assumes that the optional variable is not
+variable value out of the &lsquo;box&rsquo; it is stored it.</p>
+<h3 id="the-most-obvious-way-is-to-use-">The most obvious way is to use !</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> newInteger = optionalInteger!
+</code></pre></div><p><strong>DO NOT DO THIS!</strong></p>
+<p>This is called forced-unwrapping and assumes that the optional variable is not
 nil. If the optional is nil, this will crash. In Xcode, when you connect
 interface elements from your storyboard to a Swift file, Xcode will use ! like
-this:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#66d9ef>@IBOutlet</span> <span style=color:#66d9ef>weak</span> <span style=color:#66d9ef>var</span> startButton: UIButton!
+this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">@IBOutlet</span> <span style="color:#66d9ef">weak</span> <span style="color:#66d9ef">var</span> startButton: UIButton!
 </code></pre></div><p>I have to assume Xcode knows what it is doing and the button will be available
 when needed, but you should not use ! - it is un-safe. By using it, you are
 vowing to the compiler that when it gets to that point, the optional value will
-not be nil. There are much better and safer ways of doing that.</p><hr><h3 id=use-if-let>Use &lsquo;if let&rsquo;</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>doubleNumber</span>(<span style=color:#66d9ef>_</span> optionalInteger: Int?) -&gt; Int? {
-    <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> integerValue = optionalInteger {
-        <span style=color:#75715e>// integerValue is not an optional</span>
-        <span style=color:#75715e>// and is guaranteed to contain an Int</span>
-        <span style=color:#66d9ef>return</span> integerValue <span style=color:#f92672>*</span> <span style=color:#ae81ff>2</span>
+not be nil. There are much better and safer ways of doing that.</p>
+<hr>
+<h3 id="use-if-let">Use &lsquo;if let&rsquo;</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">doubleNumber</span>(<span style="color:#66d9ef">_</span> optionalInteger: Int?) -&gt; Int? {
+    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> integerValue = optionalInteger {
+        <span style="color:#75715e">// integerValue is not an optional</span>
+        <span style="color:#75715e">// and is guaranteed to contain an Int</span>
+        <span style="color:#66d9ef">return</span> integerValue <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>
     }
 
-    <span style=color:#75715e>// no integer found in the optional,</span>
-    <span style=color:#75715e>// so return nil to indicate failure</span>
-    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>nil</span>
+    <span style="color:#75715e">// no integer found in the optional,</span>
+    <span style="color:#75715e">// so return nil to indicate failure</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
 }
-</code></pre></div><hr><h3 id=use-guard>Use guard</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>doubleNumber</span>(<span style=color:#66d9ef>_</span> optionalInteger: Int?) -&gt; Int? {
-    <span style=color:#66d9ef>guard</span> <span style=color:#66d9ef>let</span> integerValue = optionalInteger <span style=color:#66d9ef>else</span> {
-        <span style=color:#75715e>// get out quickly,</span>
-        <span style=color:#75715e>// returning nil to indicate failure</span>
-        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>nil</span>
+</code></pre></div><hr>
+<h3 id="use-guard">Use guard</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">doubleNumber</span>(<span style="color:#66d9ef">_</span> optionalInteger: Int?) -&gt; Int? {
+    <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> integerValue = optionalInteger <span style="color:#66d9ef">else</span> {
+        <span style="color:#75715e">// get out quickly,</span>
+        <span style="color:#75715e">// returning nil to indicate failure</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
     }
 
-    <span style=color:#75715e>// integerValue is not an optional</span>
-    <span style=color:#75715e>// and is guaranteed to contain an Int</span>
-    <span style=color:#66d9ef>return</span> integerValue <span style=color:#f92672>*</span> <span style=color:#ae81ff>2</span>
+    <span style="color:#75715e">// integerValue is not an optional</span>
+    <span style="color:#75715e">// and is guaranteed to contain an Int</span>
+    <span style="color:#66d9ef">return</span> integerValue <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>
 }
-</code></pre></div><p>These two alternatives (<code>if let</code> & <code>guard</code>) do the same job but in opposite
+</code></pre></div><p>These two alternatives (<code>if let</code> &amp; <code>guard</code>) do the same job but in opposite
 ways. In both cases, they perform a conditional un-wrapping that may or may not
 give a valid result. <code>if let</code> checks if it is OK to proceed. <code>guard</code> checks to
 see if it is NOT OK to proceed. Which you use is really a matter of personal
-preference and working out what is more logical in each case.</p><p>The <code>guard</code> statement is really good for checking data early in a process and
+preference and working out what is more logical in each case.</p>
+<p>The <code>guard</code> statement is really good for checking data early in a process and
 making a quick exit it something is wrong. The <code>if let</code> construct encloses your
 success code inside a block and can sometimes leave the failure code a long way
 from the check which can make it less obvious. The other potential issue with
 <code>if let</code> is the &ldquo;pyramid of doom&rdquo; common in early Swift code as demonstrated in
-this rather contrived example:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>isValidAddressBookEntry</span>(firstName: String?,
+this rather contrived example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isValidAddressBookEntry</span>(firstName: String?,
                              lastName: String?,
                              emailAddress: String?,
                              phoneNumber: String?) -&gt; Bool {
-        <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> validFirstName = firstName {
-            <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> validLastName = lastName {
-                <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> validEmail = emailAddress {
-                    <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> validPhone = phoneNumber {
-                        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>true</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> validFirstName = firstName {
+            <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> validLastName = lastName {
+                <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> validEmail = emailAddress {
+                    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> validPhone = phoneNumber {
+                        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
                     }
                 }
             }
         }
-        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>false</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
 }
 </code></pre></div><p>Thankfully, Swift now allows us to chain both <code>if let</code> and <code>guard</code> statements.
-Here is the previous example re-factored to use <code>if let</code>:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>isValidAddressBookEntrySwift2</span>(firstName: String?,
+Here is the previous example re-factored to use <code>if let</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isValidAddressBookEntrySwift2</span>(firstName: String?,
                                    lastName: String?,
                                    emailAddress: String?,
                                    phoneNumber: String?) -&gt; Bool {
-      <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>let</span> validFirstName = firstName,
-          <span style=color:#66d9ef>let</span> validLastName = lastName,
-          <span style=color:#66d9ef>let</span> validEmail = emailAddress,
-          <span style=color:#66d9ef>let</span> validPhone = phoneNumber {
-          <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>true</span>
+      <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> validFirstName = firstName,
+          <span style="color:#66d9ef">let</span> validLastName = lastName,
+          <span style="color:#66d9ef">let</span> validEmail = emailAddress,
+          <span style="color:#66d9ef">let</span> validPhone = phoneNumber {
+          <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
       }
-      <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>false</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
 }
-</code></pre></div><p>And here is the same function but using <code>guard</code> which allows the inputs to be checked immediately and the function exited if the u=inputs are not valid. For a short function like this, the change is not really significant, but if the function does a lot of processing of the input data, checking first and getting out as soon as possible is more efficient.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>isValidAddressBookEntryUsingGuard</span>(firstName: String?,
+</code></pre></div><p>And here is the same function but using <code>guard</code> which allows the inputs to be checked immediately and the function exited if the u=inputs are not valid. For a short function like this, the change is not really significant, but if the function does a lot of processing of the input data, checking first and getting out as soon as possible is more efficient.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isValidAddressBookEntryUsingGuard</span>(firstName: String?,
                                        lastName: String?,
                                        emailAddress: String?,
                                        phoneNumber: String?) -&gt; Bool {
-    <span style=color:#66d9ef>guard</span>
-        <span style=color:#66d9ef>let</span> validFirstName = firstName,
-        <span style=color:#66d9ef>let</span> validLastName = lastName,
-        <span style=color:#66d9ef>let</span> validEmail = emailAddress,
-        <span style=color:#66d9ef>let</span> validPhone = phoneNumber <span style=color:#66d9ef>else</span> {
-            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>false</span>
+    <span style="color:#66d9ef">guard</span>
+        <span style="color:#66d9ef">let</span> validFirstName = firstName,
+        <span style="color:#66d9ef">let</span> validLastName = lastName,
+        <span style="color:#66d9ef">let</span> validEmail = emailAddress,
+        <span style="color:#66d9ef">let</span> validPhone = phoneNumber <span style="color:#66d9ef">else</span> {
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
     }
 
-    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>true</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
 }
-</code></pre></div><hr><h3 id=use-optional-chaining>Use optional chaining</h3><p>The final way to deal with optionals safely is to use optional chaining:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-swift data-lang=swift><span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>SocialMediaAccounts</span> {
-    <span style=color:#66d9ef>var</span> facebook: Person?
-    <span style=color:#66d9ef>var</span> twitter: Person?
-}
-
-<span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>Person</span> {
-    <span style=color:#66d9ef>var</span> firstName: String?
-    <span style=color:#66d9ef>var</span> lastName: String?
-    <span style=color:#66d9ef>var</span> handle: String?
+</code></pre></div><hr>
+<h3 id="use-optional-chaining">Use optional chaining</h3>
+<p>The final way to deal with optionals safely is to use optional chaining:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SocialMediaAccounts</span> {
+    <span style="color:#66d9ef">var</span> facebook: Person?
+    <span style="color:#66d9ef">var</span> twitter: Person?
 }
 
-<span style=color:#66d9ef>var</span> socialMedia: SocialMediaAccounts?
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Person</span> {
+    <span style="color:#66d9ef">var</span> firstName: String?
+    <span style="color:#66d9ef">var</span> lastName: String?
+    <span style="color:#66d9ef">var</span> handle: String?
+}
+
+<span style="color:#66d9ef">var</span> socialMedia: SocialMediaAccounts?
 socialMedia = SocialMediaAccounts()
-<span style=color:#66d9ef>var</span> twitterAccount = Person()
+<span style="color:#66d9ef">var</span> twitterAccount = Person()
 
 socialMedia?.twitter = twitterAccount
-<span style=color:#66d9ef>let</span> twitterHandle = socialMedia?.twitter?.handle
+<span style="color:#66d9ef">let</span> twitterHandle = socialMedia?.twitter?.handle
 </code></pre></div><p>In this example, we have defined a <code>SocialMediaAccounts</code> struct that holds
 optional <code>Person</code> structs for the various social media outlets. The
 <code>socialMedia</code> variable is defined as an optional and then created. A
 <code>twitterAccount</code> variable of type <code>Person</code> is also created but contains no data
-at the moment.</p><p>When assigning the <code>twitterAccount</code> to the <code>socialMedia.twitter</code> property, a ?
+at the moment.</p>
+<p>When assigning the <code>twitterAccount</code> to the <code>socialMedia.twitter</code> property, a ?
 is inserted which checks to see that <code>socialMedia</code> is not nil. If it is nil,
-then execution of that line stops at the ? and nothing bad will happen.</p><p>In the same way, when trying to read back the twitter handle, we chained
+then execution of that line stops at the ? and nothing bad will happen.</p>
+<p>In the same way, when trying to read back the twitter handle, we chained
 together 2 optionals with ?&rsquo;s. If either <code>socialMedia</code> or <code>socialMedia.twitter</code>
 is nil, that line will not complete. Again this is perfectly safe and the app
-will not crash.</p><hr><p>All the examples in this article are available in a <a href=https://github.com/trozware/optionals>Swift playground</a> which
-has been updated to Swift 4 syntax.</p></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><a class="btn next" href=https://troz.net/post/2016/structs-vs-classes/>← Structs vs Classes</a>
-<a class="btn previous" href=https://troz.net/post/2016/learning-swift-for-loops/>Learning Swift - For-Loops →</a></div></div></div></div><link rel=stylesheet href=/css/footer.css><footer class=footer><div class=footer__inner><div class=social_footer><a id=email-Link class=mailtoui href=mailto:sarah@troz.net><img src=/icons/envelope.svg></a>
-<a href=https://stackoverflow.com/users/1082632><img src=/icons/stack-overflow.svg></a>
-<a href=https://twitter.com/trozware><img src=/icons/twitter.svg></a>
-<a href=https://github.com/trozware><img src=/icons/github.svg></a>
-<a href=https://troz.net/index.xml><img src=/icons/rss.svg></a>
-<a href=https://troz.net/feed.json><img src=/icons/json.png></a>
-<a href=https://dev.to/trozware><img src=https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg alt="TrozWare's DEV Profile" style=height:37px;margin-top:-3px height=40 width=40></a></div></div><div class=footer__inner><div class=copyright><span>© 2012 - 2020 Sarah Reichelt</span>
-<span><a href=http://gohugo.io>Hugo</a> theme created by
-<a href=https://twitter.com/panr>panr</a> 2018</span></div></div></footer><script src=/assets/main.js></script><script src=/assets/prism.js></script><script src=https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js></script><script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script><script src=/quicklink.js></script><script>window.addEventListener('load',()=>{quicklink()})</script></div></body></html>
+will not crash.</p>
+<hr>
+<p>All the examples in this article are available in a <a href="https://github.com/trozware/optionals">Swift playground</a> which
+has been updated to Swift 4 syntax.</p>
+  </div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <a class="btn next" href="https://troz.net/post/2016/structs-vs-classes/">← Structs vs Classes</a>
+      
+      
+      <a class="btn previous" href="https://troz.net/post/2016/learning-swift-for-loops/">Learning Swift - For-Loops →</a>
+      
+    </div>
+  </div>
+  
+</div>
+
+  </div>
+
+  
+    <link rel="stylesheet" href="/css/footer.css" />
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="social_footer">
+      <a id="email-Link" class="mailtoui" href="mailto:sarah@troz.net"
+        ><img src="/icons/envelope.svg"
+      /></a>
+      <a href="https://stackoverflow.com/users/1082632"
+        ><img src="/icons/stack-overflow.svg"
+      /></a>
+      <a href="https://twitter.com/trozware"><img src="/icons/twitter.svg"/></a>
+      <a href="https://github.com/trozware"><img src="/icons/github.svg"/></a>
+      <a href="https://troz.net/index.xml"><img src="/icons/rss.svg"/></a>
+      <a href="https://troz.net/feed.json"><img src="/icons/json.png"/></a>
+
+      <a href="https://dev.to/trozware">
+        <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" 
+        alt="TrozWare's DEV Profile" 
+        style="height: 37px; margin-top: -3px" height="40" width="40">
+      </a>
+    </div>
+  </div>
+
+  <div class="footer__inner">
+    <div class="copyright">
+      
+      <span>© 2012 - 2020 Sarah Reichelt</span>
+      
+      <span
+        ><a href="http://gohugo.io">Hugo</a> theme created by
+        <a href="https://twitter.com/panr">panr</a> 2018</span
+      >
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink()
+  })
+</script>
+
+
+  
+</div>
+
+</body>
+</html>

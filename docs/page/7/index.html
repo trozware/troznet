@@ -1,65 +1,615 @@
-<!doctype html><html lang=en><head><meta name=generator content="Hugo 0.80.0"><title>TrozWare</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=description content><meta name=keywords content="[Swift Apple macOS iOS Apple Watch]"><meta name=robots content="noodp"><link rel=canonical href=https://troz.net/><link rel=stylesheet href=https://troz.net/assets/style.css><link rel=stylesheet href=https://troz.net/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=https://troz.net/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=https://troz.net/img/favicon.png><meta name=twitter:card content="summary"><meta name=twitter:title content="TrozWare —"><meta name=twitter:description content><meta name=twitter:site content="https://troz.net/"><meta name=twitter:creator content><meta name=twitter:image content><meta property="og:locale" content="en"><meta property="og:type" content="website"><meta property="og:title" content="TrozWare —"><meta property="og:description" content><meta property="og:url" content="https://troz.net/"><meta property="og:site_name" content="TrozWare"><meta property="og:image" content><meta property="og:image:width" content="2048"><meta property="og:image:height" content="1024"></head><body class=dark-theme><div class=container><header class=header><span class=header__inner><a href=https://troz.net/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44"><polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/></svg></span><span class=logo__text>TrozWare</span>
-<span class=logo__cursor style=width:2px></span></a><span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/>Home</a></li><li><a href=/apps/>Apps</a></li><li><a href=/post/>Archives</a></li><li><a href=/tags/>Tags</a></li><li><a href=/contact/>Contact</a></li></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/>Home</a></li><li><a href=/apps/>Apps</a></li><li><a href=/post/>Archives</a></li><li><a href=/tags/>Tags</a></li><li><a href=/contact/>Contact</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41C32.4934 41 41 32.4934 41 22 41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=posts><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2016/man-reader-1.5/>Man Reader 1.5</a></h1><div class=post-meta><span class=post-date>31 Jan 2016</span>
-<span class=more-meta>- 207 words,</span>
-<span class=more-meta>1 minute read</span></div><span class=post-tags>#<a href=/tags/man-reader/>man reader</a>&nbsp;
-#<a href=/tags/mac/>mac</a>&nbsp;</span><div class=post-content>Man Reader has been updated to version 1.5 with a major improvement in the way it looks for available man pages.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="generator" content="Hugo 0.83.1" />
+  
+    <title>TrozWare</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content=""/>
+<meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://troz.net/" />
+
+
+<link rel="stylesheet" href="https://troz.net/assets/style.css">
+
+
+<link rel="stylesheet" href="https://troz.net/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://troz.net/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="TrozWare — " />
+<meta name="twitter:description" content="" />
+<meta name="twitter:site" content="https://troz.net/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="TrozWare — ">
+<meta property="og:description" content="" />
+<meta property="og:url" content="https://troz.net/" />
+<meta property="og:site_name" content="TrozWare" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="dark-theme">
+<div class="container">
+  <header class="header">
+  <span class="header__inner">
+    <a href="https://troz.net/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">TrozWare</span>
+    <span class="logo__cursor" style="width: 2px"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/apps/">Apps</a></li>
+        
+      
+        
+          <li><a href="/post/">Archives</a></li>
+        
+      
+        
+          <li><a href="/tags/">Tags</a></li>
+        
+      
+        
+          <li><a href="/contact/">Contact</a></li>
+        
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/">Home</a></li>
+      
+    
+      
+        <li><a href="/apps/">Apps</a></li>
+      
+    
+      
+        <li><a href="/post/">Archives</a></li>
+      
+    
+      
+        <li><a href="/tags/">Tags</a></li>
+      
+    
+      
+        <li><a href="/contact/">Contact</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+  <div class="content">
+    
+<div class="posts">
+  
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2016/man-reader-1.5/">Man Reader 1.5</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        31 Jan 2016
+      </span>
+      <span class="more-meta">- 207 words, </span>
+      <span class="more-meta"> 1 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/man-reader/">man reader</a
+      >&nbsp;
+      
+      #<a href="/tags/mac/">mac</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      Man Reader has been updated to version 1.5 with a major improvement in the way it looks for available man pages.
 Man Reader 1.5 is now available through the Mac App Store.
-Change Log: Much improved searching for available man pages. Sand-boxed version now works just as well as the non-sand-boxed. The main feature of this version is that it solves the previous problems with the App Store version and sand-boxing.</div><div><a class="read-more button" href=/post/2016/man-reader-1.5/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2015/using-19th-hole-on-the-apple-watch/>Using 19th Hole on the Apple Watch</a></h1><div class=post-meta><span class=post-date>12 Dec 2015</span>
-<span class=more-meta>- 461 words,</span>
-<span class=more-meta>3 minute read</span></div><span class=post-tags>#<a href=/tags/golf/>golf</a>&nbsp;
-#<a href=/tags/watch/>watch</a>&nbsp;</span><div class=post-content>19th Hole for iPhone and Apple Watch version 3 is now available through the iTunes App Store. This version is a complete re-write to accommodate the changes in iOS 9 and watchOS2.
-The major changes are to do with the way the iPhone and the Watch communicate. In watchOS1, all the brains of the app had to live in the iPhone, meaning that every single interaction on the Watch had to be referred back to the iPhone for processing and the result sent back to the Watch for display.</div><div><a class="read-more button" href=/post/2015/using-19th-hole-on-the-apple-watch/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2015/dice-pass-for-mac/>Dice Pass for Mac</a></h1><div class=post-meta><span class=post-date>30 May 2015</span>
-<span class=more-meta>- 322 words,</span>
-<span class=more-meta>2 minute read</span></div><span class=post-tags>#<a href=/tags/mac/>mac</a>&nbsp;
-#<a href=/tags/password/>password</a>&nbsp;
-#<a href=/tags/dice/>dice</a>&nbsp;</span><div class=post-content>We live in a world of passwords and passphrases and there is a constant struggle between having a secure and a memorable password. As a result, many of us re-use passwords even though we know this is a bad idea.
-XKCD had a wonderful comic that illustrated the theory of using a passphrase composed of words that are easy to remember but with a combination that made the passphrase very hard to guess.</div><div><a class="read-more button" href=/post/2015/dice-pass-for-mac/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2015/apple-watch-first-impressions/>Apple Watch First Impressions</a></h1><div class=post-meta><span class=post-date>29 Apr 2015</span>
-<span class=more-meta>- 1801 words,</span>
-<span class=more-meta>9 minute read</span></div><span class=post-tags>#<a href=/tags/apple-watch/>apple watch</a>&nbsp;
-#<a href=/tags/watch/>watch</a>&nbsp;
-#<a href=/tags/ios/>ios</a>&nbsp;
-#<a href=/tags/iphone/>iphone</a>&nbsp;</span><div class=post-content>I realise that every one has written one of these posts, but given that everyone looks for and notices different things, I think it is still valid.
-My first impression was &ldquo;Why does it come in such a large box?&rdquo;. The courier delivered two boxes - my 38mm Apple Watch Sport and Tim&rsquo;s 42mm Apple Watch Sport. They both came in long boxes, with the 42mm box significantly longer. And both boxes were heavy!</div><div><a class="read-more button" href=/post/2015/apple-watch-first-impressions/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2015/time-in-words-4.0/>Time In Words 4.0</a></h1><div class=post-meta><span class=post-date>15 Apr 2015</span>
-<span class=more-meta>- 783 words,</span>
-<span class=more-meta>4 minute read</span></div><span class=post-tags>#<a href=/tags/time-in-words/>time in words</a>&nbsp;
-#<a href=/tags/ios/>ios</a>&nbsp;</span><div class=post-content>Time In Words for iOS started off as a fun gimmick, emulating the Qlocktwo type of time display where the relevant words are highlighted in some way to spell out the time as a sentence. This very quickly evolved into what I hoped would be more useful app, still showing the original display, but also providing the current time & date as complete sentences. Then I added time conversions and discovered the real power and utility of writing out times as words.</div><div><a class="read-more button" href=/post/2015/time-in-words-4.0/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2015/apple-watch-rejected-then-accepted/>Apple Watch App - Rejected, then Accepted</a></h1><div class=post-meta><span class=post-date>11 Apr 2015</span>
-<span class=more-meta>- 699 words,</span>
-<span class=more-meta>4 minute read</span></div><span class=post-tags>#<a href=/tags/apple-watch/>apple watch</a>&nbsp;
-#<a href=/tags/watch/>watch</a>&nbsp;
-#<a href=/tags/golf/>golf</a>&nbsp;</span><div class=post-content>As described in a previous post, about 9 days ago I submitted my first Apple Watch app for review. The app was an extension of my golf scoring app: The 19th Hole.
-I expected that App Store review times would go up dramatically once Apple had allowed developers to submit watch apps, but this proved to be incorrect. Three days after submission, the app was marked as &ldquo;In Review&rdquo;. This seemed to happen last thing on a Saturday, so there was no further action for two days, at which point the app was rejected, with the following details (sic):</div><div><a class="read-more button" href=/post/2015/apple-watch-rejected-then-accepted/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2015/my-first-apple-watch-app/>My First Apple Watch App</a></h1><div class=post-meta><span class=post-date>02 Apr 2015</span>
-<span class=more-meta>- 1053 words,</span>
-<span class=more-meta>5 minute read</span></div><span class=post-tags>#<a href=/tags/apple-watch/>apple watch</a>&nbsp;
-#<a href=/tags/watch/>watch</a>&nbsp;
-#<a href=/tags/ios/>ios</a>&nbsp;
-#<a href=/tags/golf/>golf</a>&nbsp;</span><div class=post-content>I have just submitted my first Apple Watch app to the iTunes App Store. This is a scary thing to do, since I have never seen, touched or used an Apple Watch and all I had to go on was the Simulator that Apple supplies with Xcode.
-At the moment, Apple has only made a limited set of Apple Watch features available to developers, and all Apple Watch apps come tethered to an iOS app - presumably this will mainly be iPhone apps, but I wonder will we be able to connect Apple Watches to iPads?</div><div><a class="read-more button" href=/post/2015/my-first-apple-watch-app/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2015/livecode-stacks/>LiveCode stacks</a></h1><div class=post-meta><span class=post-date>18 Mar 2015</span>
-<span class=more-meta>- 180 words,</span>
-<span class=more-meta>1 minute read</span></div><span class=post-tags>#<a href=/tags/livecode/>livecode</a>&nbsp;
-#<a href=/tags/revolution/>revolution</a>&nbsp;</span><div class=post-content>When I converted my site to Jekyll & GitHub, one of the things I left behind was a collection of LiveCode (Revolution) stacks. For many years I was active in the Revolution community before going in other directions and over that time, I built up a small library of stacks that I released into the public domain.
-LiveCode is a cross-platform rapid development environment. There is an open source community edition available for anyone wishing to get started.</div><div><a class="read-more button" href=/post/2015/livecode-stacks/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2015/icon-builder-3.0.1/>Icon Builder 3.0.1</a></h1><div class=post-meta><span class=post-date>17 Mar 2015</span>
-<span class=more-meta>- 249 words,</span>
-<span class=more-meta>2 minute read</span></div><span class=post-tags>#<a href=/tags/icons/>icons</a>&nbsp;
-#<a href=/tags/mac/>mac</a>&nbsp;
-#<a href=/tags/ios/>ios</a>&nbsp;
-#<a href=/tags/apple-watch/>apple watch</a>&nbsp;
-#<a href=/tags/watch/>watch</a>&nbsp;
-#<a href=/tags/xcode/>xcode</a>&nbsp;</span><div class=post-content>So why an announcement for such a minor upgrade?
+Change Log:  Much improved searching for available man pages. Sand-boxed version now works just as well as the non-sand-boxed.  The main feature of this version is that it solves the previous problems with the App Store version and sand-boxing.
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2016/man-reader-1.5/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2015/using-19th-hole-on-the-apple-watch/">Using 19th Hole on the Apple Watch</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        12 Dec 2015
+      </span>
+      <span class="more-meta">- 461 words, </span>
+      <span class="more-meta"> 3 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/golf/">golf</a
+      >&nbsp;
+      
+      #<a href="/tags/watch/">watch</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      19th Hole for iPhone and Apple Watch version 3 is now available through the iTunes App Store. This version is a complete re-write to accommodate the changes in iOS 9 and watchOS2.
+The major changes are to do with the way the iPhone and the Watch communicate. In watchOS1, all the brains of the app had to live in the iPhone, meaning that every single interaction on the Watch had to be referred back to the iPhone for processing and the result sent back to the Watch for display.
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2015/using-19th-hole-on-the-apple-watch/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2015/dice-pass-for-mac/">Dice Pass for Mac</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        30 May 2015
+      </span>
+      <span class="more-meta">- 322 words, </span>
+      <span class="more-meta"> 2 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/mac/">mac</a
+      >&nbsp;
+      
+      #<a href="/tags/password/">password</a
+      >&nbsp;
+      
+      #<a href="/tags/dice/">dice</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      We live in a world of passwords and passphrases and there is a constant struggle between having a secure and a memorable password. As a result, many of us re-use passwords even though we know this is a bad idea.
+XKCD had a wonderful comic that illustrated the theory of using a passphrase composed of words that are easy to remember but with a combination that made the passphrase very hard to guess.
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2015/dice-pass-for-mac/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2015/apple-watch-first-impressions/">Apple Watch First Impressions</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        29 Apr 2015
+      </span>
+      <span class="more-meta">- 1801 words, </span>
+      <span class="more-meta"> 9 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/apple-watch/">apple watch</a
+      >&nbsp;
+      
+      #<a href="/tags/watch/">watch</a
+      >&nbsp;
+      
+      #<a href="/tags/ios/">ios</a
+      >&nbsp;
+      
+      #<a href="/tags/iphone/">iphone</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      I realise that every one has written one of these posts, but given that everyone looks for and notices different things, I think it is still valid.
+My first impression was &ldquo;Why does it come in such a large box?&rdquo;. The courier delivered two boxes - my 38mm Apple Watch Sport and Tim&rsquo;s 42mm Apple Watch Sport. They both came in long boxes, with the 42mm box significantly longer. And both boxes were heavy!
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2015/apple-watch-first-impressions/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2015/time-in-words-4.0/">Time In Words 4.0</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        15 Apr 2015
+      </span>
+      <span class="more-meta">- 783 words, </span>
+      <span class="more-meta"> 4 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/time-in-words/">time in words</a
+      >&nbsp;
+      
+      #<a href="/tags/ios/">ios</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      Time In Words for iOS started off as a fun gimmick, emulating the Qlocktwo type of time display where the relevant words are highlighted in some way to spell out the time as a sentence. This very quickly evolved into what I hoped would be more useful app, still showing the original display, but also providing the current time &amp; date as complete sentences. Then I added time conversions and discovered the real power and utility of writing out times as words.
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2015/time-in-words-4.0/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2015/apple-watch-rejected-then-accepted/">Apple Watch App - Rejected, then Accepted</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        11 Apr 2015
+      </span>
+      <span class="more-meta">- 699 words, </span>
+      <span class="more-meta"> 4 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/apple-watch/">apple watch</a
+      >&nbsp;
+      
+      #<a href="/tags/watch/">watch</a
+      >&nbsp;
+      
+      #<a href="/tags/golf/">golf</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      As described in a previous post, about 9 days ago I submitted my first Apple Watch app for review. The app was an extension of my golf scoring app: The 19th Hole.
+I expected that App Store review times would go up dramatically once Apple had allowed developers to submit watch apps, but this proved to be incorrect. Three days after submission, the app was marked as &ldquo;In Review&rdquo;. This seemed to happen last thing on a Saturday, so there was no further action for two days, at which point the app was rejected, with the following details (sic):
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2015/apple-watch-rejected-then-accepted/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2015/my-first-apple-watch-app/">My First Apple Watch App</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        02 Apr 2015
+      </span>
+      <span class="more-meta">- 1053 words, </span>
+      <span class="more-meta"> 5 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/apple-watch/">apple watch</a
+      >&nbsp;
+      
+      #<a href="/tags/watch/">watch</a
+      >&nbsp;
+      
+      #<a href="/tags/ios/">ios</a
+      >&nbsp;
+      
+      #<a href="/tags/golf/">golf</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      I have just submitted my first Apple Watch app to the iTunes App Store. This is a scary thing to do, since I have never seen, touched or used an Apple Watch and all I had to go on was the Simulator that Apple supplies with Xcode.
+At the moment, Apple has only made a limited set of Apple Watch features available to developers, and all Apple Watch apps come tethered to an iOS app - presumably this will mainly be iPhone apps, but I wonder will we be able to connect Apple Watches to iPads?
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2015/my-first-apple-watch-app/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2015/livecode-stacks/">LiveCode stacks</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        18 Mar 2015
+      </span>
+      <span class="more-meta">- 180 words, </span>
+      <span class="more-meta"> 1 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/livecode/">livecode</a
+      >&nbsp;
+      
+      #<a href="/tags/revolution/">revolution</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      When I converted my site to Jekyll &amp; GitHub, one of the things I left behind was a collection of LiveCode (Revolution) stacks. For many years I was active in the Revolution community before going in other directions and over that time, I built up a small library of stacks that I released into the public domain.
+LiveCode is a cross-platform rapid development environment. There is an open source community edition available for anyone wishing to get started.
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2015/livecode-stacks/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2015/icon-builder-3.0.1/">Icon Builder 3.0.1</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        17 Mar 2015
+      </span>
+      <span class="more-meta">- 249 words, </span>
+      <span class="more-meta"> 2 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/icons/">icons</a
+      >&nbsp;
+      
+      #<a href="/tags/mac/">mac</a
+      >&nbsp;
+      
+      #<a href="/tags/ios/">ios</a
+      >&nbsp;
+      
+      #<a href="/tags/apple-watch/">apple watch</a
+      >&nbsp;
+      
+      #<a href="/tags/watch/">watch</a
+      >&nbsp;
+      
+      #<a href="/tags/xcode/">xcode</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      So why an announcement for such a minor upgrade?
 Version 3.0 got no announcement because it was not the release I wanted.
-Having downloaded the Xcode 6.2 & 6.3 betas, I had worked out what icons were needed to a WatchKit app. This, combined with several other changes, made me bump the version number to 3.0.
-Sadly, Apple rejected the update because it referred to pre-release products. So I pulled all mentions of WatchKit out of the interface and meta data and got 3.</div><div><a class="read-more button" href=/post/2015/icon-builder-3.0.1/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2015/app-store-preview-videos/>App Store Preview Videos</a></h1><div class=post-meta><span class=post-date>16 Mar 2015</span>
-<span class=more-meta>- 770 words,</span>
-<span class=more-meta>4 minute read</span></div><span class=post-tags>#<a href=/tags/app-store/>app store</a>&nbsp;
-#<a href=/tags/ios/>ios</a>&nbsp;</span><div class=post-content>Apple now allows app developers to add a video preview of their app when uploading to iTunes Connect. This video is shown to potential purchasers when they are looking at an app in the iTunes App Store, just like the screen shots.
-I have been working on an update to 19th Hole and since it uses a custom method for data input, I decided that a video would be really useful in this case.</div><div><a class="read-more button" href=/post/2015/app-store-preview-videos/>Read more →</a></div></div><div class=pagination><div class=pagination__buttons><span class="button previous"><a href=/page/6/><span class=button__icon>←</span>
-<span class=button__text>Newer posts</span></a></span>
-<span class="button next"><a href=/page/8/><span class=button__text>Older posts</span>
-<span class=button__icon>→</span></a></span></div></div></div></div><link rel=stylesheet href=/css/footer.css><footer class=footer><div class=footer__inner><div class=social_footer><a id=email-Link class=mailtoui href=mailto:sarah@troz.net><img src=/icons/envelope.svg></a>
-<a href=https://stackoverflow.com/users/1082632><img src=/icons/stack-overflow.svg></a>
-<a href=https://twitter.com/trozware><img src=/icons/twitter.svg></a>
-<a href=https://github.com/trozware><img src=/icons/github.svg></a>
-<a href=https://troz.net/index.xml><img src=/icons/rss.svg></a>
-<a href=https://troz.net/feed.json><img src=/icons/json.png></a>
-<a href=https://dev.to/trozware><img src=https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg alt="TrozWare's DEV Profile" style=height:37px;margin-top:-3px height=40 width=40></a></div></div><div class=footer__inner><div class=copyright><span>© 2012 - 2020 Sarah Reichelt</span>
-<span><a href=http://gohugo.io>Hugo</a> theme created by
-<a href=https://twitter.com/panr>panr</a> 2018</span></div></div></footer><script src=/assets/main.js></script><script src=/assets/prism.js></script><script src=https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js></script><script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script><script src=/quicklink.js></script><script>window.addEventListener('load',()=>{quicklink()})</script></div></body></html>
+Having downloaded the Xcode 6.2 &amp; 6.3 betas, I had worked out what icons were needed to a WatchKit app. This, combined with several other changes, made me bump the version number to 3.0.
+Sadly, Apple rejected the update because it referred to pre-release products. So I pulled all mentions of WatchKit out of the interface and meta data and got 3.
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2015/icon-builder-3.0.1/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2015/app-store-preview-videos/">App Store Preview Videos</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        16 Mar 2015
+      </span>
+      <span class="more-meta">- 770 words, </span>
+      <span class="more-meta"> 4 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/app-store/">app store</a
+      >&nbsp;
+      
+      #<a href="/tags/ios/">ios</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      Apple now allows app developers to add a video preview of their app when uploading to iTunes Connect. This video is shown to potential purchasers when they are looking at an app in the iTunes App Store, just like the screen shots.
+I have been working on an update to 19th Hole and since it uses a custom method for data input, I decided that a video would be really useful in this case.
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2015/app-store-preview-videos/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="pagination">
+  <div class="pagination__buttons">
+    
+      <span class="button previous">
+        <a href="/page/6/">
+          <span class="button__icon">←</span>
+          <span class="button__text">Newer posts</span>
+        </a>
+      </span>
+    
+    
+      <span class="button next">
+        <a href="/page/8/">
+          <span class="button__text">Older posts</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+    
+  </div>
+</div>
+
+</div>
+
+  </div>
+
+  
+    <link rel="stylesheet" href="/css/footer.css" />
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="social_footer">
+      <a id="email-Link" class="mailtoui" href="mailto:sarah@troz.net"
+        ><img src="/icons/envelope.svg"
+      /></a>
+      <a href="https://stackoverflow.com/users/1082632"
+        ><img src="/icons/stack-overflow.svg"
+      /></a>
+      <a href="https://twitter.com/trozware"><img src="/icons/twitter.svg"/></a>
+      <a href="https://github.com/trozware"><img src="/icons/github.svg"/></a>
+      <a href="https://troz.net/index.xml"><img src="/icons/rss.svg"/></a>
+      <a href="https://troz.net/feed.json"><img src="/icons/json.png"/></a>
+
+      <a href="https://dev.to/trozware">
+        <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" 
+        alt="TrozWare's DEV Profile" 
+        style="height: 37px; margin-top: -3px" height="40" width="40">
+      </a>
+    </div>
+  </div>
+
+  <div class="footer__inner">
+    <div class="copyright">
+      
+      <span>© 2012 - 2020 Sarah Reichelt</span>
+      
+      <span
+        ><a href="http://gohugo.io">Hugo</a> theme created by
+        <a href="https://twitter.com/panr">panr</a> 2018</span
+      >
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink()
+  })
+</script>
+
+
+  
+</div>
+
+</body>
+</html>

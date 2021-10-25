@@ -2,6 +2,8 @@
 {{- $lang := .Site.Data.even.default }}
 {{- $paginator := .Paginate (where .Site.RegularPages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate") }}
 
+{{ partial "search.html" . }}
+
 <div class="posts post on-list">
   <section id="archive" class="archive">
 

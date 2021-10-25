@@ -1,0 +1,17 @@
+form {
+  display: flex;
+}
+
+input {
+  margin-right: 10px;
+  font-size: 1rem;
+  padding: 4px;
+  height: 36px;
+  border: 1px solid rgba(1,1,1,0.3);
+  border-radius: 6px;
+}
+
+.search_button {
+  font-size: 1rem;
+  margin-top: -1px;
+}

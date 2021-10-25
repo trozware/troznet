@@ -1,42 +1,314 @@
-<!doctype html><html lang=en><head><title>Three Rules for Writing Better Swift :: TrozWare</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=description content="Do not use !. Use let, not var. Allow the compiler to infer types.  Read on for more details&amp;hellip;"><meta name=keywords content="[Swift Apple macOS iOS Apple Watch]"><meta name=robots content="noodp"><link rel=canonical href=https://troz.net/post/2016/three-rules-for-writing-better-swift/><link rel=stylesheet href=https://troz.net/assets/style.css><link rel=stylesheet href=https://troz.net/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=https://troz.net/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=https://troz.net/img/favicon.png><meta name=twitter:card content="summary"><meta name=twitter:title content="Three Rules for Writing Better Swift :: TrozWare —"><meta name=twitter:description content="Do not use !. Use let, not var. Allow the compiler to infer types.  Read on for more details&amp;hellip;"><meta name=twitter:site content="https://troz.net/"><meta name=twitter:creator content><meta name=twitter:image content><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="og:title" content="Three Rules for Writing Better Swift :: TrozWare —"><meta property="og:description" content="Do not use !. Use let, not var. Allow the compiler to infer types.  Read on for more details&amp;hellip;"><meta property="og:url" content="https://troz.net/post/2016/three-rules-for-writing-better-swift/"><meta property="og:site_name" content="Three Rules for Writing Better Swift"><meta property="og:image" content><meta property="og:image:width" content="2048"><meta property="og:image:height" content="1024"><meta property="article:published_time" content="2016-02-24 00:00:00 +0000 UTC"></head><body class=dark-theme><div class=container><header class=header><span class=header__inner><a href=https://troz.net/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44"><polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/></svg></span><span class=logo__text>TrozWare</span>
-<span class=logo__cursor style=width:2px></span></a><span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/>Home</a></li><li><a href=/apps/>Apps</a></li><li><a href=/post/>Archives</a></li><li><a href=/tags/>Tags</a></li><li><a href=/contact/>Contact</a></li></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/>Home</a></li><li><a href=/apps/>Apps</a></li><li><a href=/post/>Archives</a></li><li><a href=/tags/>Tags</a></li><li><a href=/contact/>Contact</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41C32.4934 41 41 32.4934 41 22 41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h2 class=post-title><a href=https://troz.net/post/2016/three-rules-for-writing-better-swift/>Three Rules for Writing Better Swift</a></h2><div class=post-meta><span class=post-date>24 Feb 2016</span>
-<span class=more-meta>- 643 words,</span>
-<span class=more-meta>4 minute read</span></div><span class=post-tags>#<a href=https://troz.net/tags/swift>swift</a>&nbsp;
-#<a href=https://troz.net/tags/learning-swift>learning swift</a>&nbsp;</span><div class=post-content><ol><li>Do not use !.</li><li>Use let, not var.</li><li>Allow the compiler to infer types.</li></ol><p>Read on for more details&mldr;</p><h2 id=1-do-not-use->1. Do not use !</h2><p>Swift uses optionals for values that can be nil. To use an optional value, you
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Three Rules for Writing Better Swift :: TrozWare</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content=" Do not use !. Use let, not var. Allow the compiler to infer types.  Read on for more details&amp;hellip;
+"/>
+<meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://troz.net/post/2016/three-rules-for-writing-better-swift/" />
+
+
+<link rel="stylesheet" href="https://troz.net/assets/style.css">
+
+
+<link rel="stylesheet" href="https://troz.net/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://troz.net/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Three Rules for Writing Better Swift :: TrozWare — " />
+<meta name="twitter:description" content=" Do not use !. Use let, not var. Allow the compiler to infer types.  Read on for more details&amp;hellip;
+" />
+<meta name="twitter:site" content="https://troz.net/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Three Rules for Writing Better Swift :: TrozWare — ">
+<meta property="og:description" content=" Do not use !. Use let, not var. Allow the compiler to infer types.  Read on for more details&amp;hellip;
+" />
+<meta property="og:url" content="https://troz.net/post/2016/three-rules-for-writing-better-swift/" />
+<meta property="og:site_name" content="Three Rules for Writing Better Swift" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2016-02-24 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+</head>
+<body class="dark-theme">
+<div class="container">
+  <header class="header">
+  <span class="header__inner">
+    <a href="https://troz.net/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">TrozWare</span>
+    <span class="logo__cursor" style="width: 2px"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/apps/">Apps</a></li>
+        
+      
+        
+          <li><a href="/post/">Archives</a></li>
+        
+      
+        
+          <li><a href="/tags/">Tags</a></li>
+        
+      
+        
+          <li><a href="/contact/">Contact</a></li>
+        
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/">Home</a></li>
+      
+    
+      
+        <li><a href="/apps/">Apps</a></li>
+      
+    
+      
+        <li><a href="/post/">Archives</a></li>
+      
+    
+      
+        <li><a href="/tags/">Tags</a></li>
+      
+    
+      
+        <li><a href="/contact/">Contact</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h2 class="post-title"><a href="https://troz.net/post/2016/three-rules-for-writing-better-swift/">Three Rules for Writing Better Swift</a></h2>
+  <div class="post-meta">
+    <span class="post-date">
+      24 Feb 2016
+    </span>
+    <span class="more-meta">- 643 words, </span>
+    <span class="more-meta"> 4 minute read</span>
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://troz.net/tags/swift">swift</a>&nbsp;
+    
+    #<a href="https://troz.net/tags/learning-swift">learning swift</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  <div class="post-content">
+    <ol>
+<li>Do not use !.</li>
+<li>Use let, not var.</li>
+<li>Allow the compiler to infer types.</li>
+</ol>
+<p>Read on for more details&hellip;</p>
+<h2 id="1-do-not-use-">1. Do not use !</h2>
+<p>Swift uses optionals for values that can be nil. To use an optional value, you
 need to &ldquo;un-wrap&rdquo; it first, which means getting the actual value out, assuming
-that the value exists and the optional is not actually nil.</p><p><a href=/post/2016-02-12-learning-swift-optionals/>Optionals</a> are the subject of a complete post by themselves, but for now, I
+that the value exists and the optional is not actually nil.</p>
+<p><a href="/post/2016-02-12-learning-swift-optionals/">Optionals</a> are the subject of a complete post by themselves, but for now, I
 will just say this: When you use ! you are <strong>promising</strong> the compiler that you
-will make sure there is a real value in that optional by the time it is needed.</p><p>If this is not the case, your app will crash as shown in this playground:</p><p><img src=/images/Playground2.png alt="Playground crash"></p><p>Instead of using ! you should use optional chaining with ? or check the value
-with <code>guard</code> or <code>if let</code> before use.</p><p>One trap to beware of is with Xcode&rsquo;s attempts to be helpful and suggest fixes
+will make sure there is a real value in that optional by the time it is needed.</p>
+<p>If this is not the case, your app will crash as shown in this playground:</p>
+<p><img src="/images/Playground2.png" alt="Playground crash"></p>
+<p>Instead of using ! you should use optional chaining with ? or check the value
+with <code>guard</code> or <code>if let</code> before use.</p>
+<p>One trap to beware of is with Xcode&rsquo;s attempts to be helpful and suggest fixes
 to problems. If you use an optional where it cannot work, Xcode will warn you
-that it is incorrect, but the suggested fix will be to insert !</p><p><img src=/images/optional_fix.png alt="Optional fix"></p><p>When you see this, do not accept the suggested fix, but use it as a warning to
-show that you need to fix the problem properly.</p><hr><h2 id=2-use-let-not-var>2. Use let, not var</h2><p>Using constants in C-based languages is a pain. I could never remember the
+that it is incorrect, but the suggested fix will be to insert !</p>
+<p><img src="/images/optional_fix.png" alt="Optional fix"></p>
+<p>When you see this, do not accept the suggested fix, but use it as a warning to
+show that you need to fix the problem properly.</p>
+<hr>
+<h2 id="2-use-let-not-var">2. Use let, not var</h2>
+<p>Using constants in C-based languages is a pain. I could never remember the
 Objective-C syntax for declaring a static constant, so used to fall back to
 using <code>#define</code> for global constants. Inside my objects, all instance properties
-were variables, not constants. Inside functions, it was the same.</p><p>It doesn&rsquo;t take much imagination to work out that your apps will perform better
+were variables, not constants. Inside functions, it was the same.</p>
+<p>It doesn&rsquo;t take much imagination to work out that your apps will perform better
 and more securely if values that do not need to change are allocated as
-constants instead of variables.</p><p>With Swift, this is easy as you just declare a constant using the <code>let</code> keyword
+constants instead of variables.</p>
+<p>With Swift, this is easy as you just declare a constant using the <code>let</code> keyword
 and declare variables using <code>var</code>. The Swift compiler will now warn you if you
 have used <code>var</code> where <code>let</code> would do, but I prefer to declare everything using
 <code>let</code> and only change to <code>var</code> when this causes an error as shown in this
-playground example:</p><p><img src=/images/Playground3.png alt="Playground let error"></p><hr><h2 id=3-allow-the-compiler-to-infer-types>3. Allow the compiler to infer types</h2><p>With Objective-C and many other languages, you have to tell the compiler exactly
+playground example:</p>
+<p><img src="/images/Playground3.png" alt="Playground let error"></p>
+<hr>
+<h2 id="3-allow-the-compiler-to-infer-types">3. Allow the compiler to infer types</h2>
+<p>With Objective-C and many other languages, you have to tell the compiler exactly
 what each variable is going to be: a string, an integer, an object of a certain
-type.</p><p>With Swift, the compiler is clever enough to work this out for you, which can
-make your code much cleaner looking and easy to read.</p><p>There are a few exceptions to this rule which are shown in the playground below:</p><p>Lines 3 - 6 are allowing the Swift compiler to decide what the type is and it is
-choosing valid types: Int, Double, String and UIView.</p><p>Line 8 is a case where we do not want the default type, which would be Double so
-we need to tell the compiler that this one really should be a CGFloat.</p><p>Lines 10 & 11 both deal with an array of Ints. In line 10, the values are
+type.</p>
+<p>With Swift, the compiler is clever enough to work this out for you, which can
+make your code much cleaner looking and easy to read.</p>
+<p>There are a few exceptions to this rule which are shown in the playground below:</p>
+<p>Lines 3 - 6 are allowing the Swift compiler to decide what the type is and it is
+choosing valid types: Int, Double, String and UIView.</p>
+<p>Line 8 is a case where we do not want the default type, which would be Double so
+we need to tell the compiler that this one really should be a CGFloat.</p>
+<p>Lines 10 &amp; 11 both deal with an array of Ints. In line 10, the values are
 supplied so the type of the array can be inferred. In the second case, the array
-is initially empty, so the type needs to be specified in the declaration.</p><p>Lines 13 and 14 are the same but with dictionaries instead of arrays.</p><p>In each case, it would have been valid Swift to specify the type but why bother?
+is initially empty, so the type needs to be specified in the declaration.</p>
+<p>Lines 13 and 14 are the same but with dictionaries instead of arrays.</p>
+<p>In each case, it would have been valid Swift to specify the type but why bother?
 The more text you enter , the more change of mistake and it leaves your code
-looking cluttered.</p><p>If you ever need to check what type has been assigned to a constant or variable,
-Option-click on it in Xcode and you willl get a popup telling you what it is.</p><p><img src=/images/Playground4.png alt="Playground types"></p><hr><p>This was going to be five rules, but then I got a bit too verbose so will add
-more rules in a separate post.</p></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><a class="btn next" href=https://troz.net/post/2016/singleton-to-protocol/>← Singleton to Protocol</a>
-<a class="btn previous" href=https://troz.net/post/2016/configuring-xcode/>Configuring Xcode →</a></div></div></div></div><link rel=stylesheet href=/css/footer.css><footer class=footer><div class=footer__inner><div class=social_footer><a id=email-Link class=mailtoui href=mailto:sarah@troz.net><img src=/icons/envelope.svg></a>
-<a href=https://stackoverflow.com/users/1082632><img src=/icons/stack-overflow.svg></a>
-<a href=https://twitter.com/trozware><img src=/icons/twitter.svg></a>
-<a href=https://github.com/trozware><img src=/icons/github.svg></a>
-<a href=https://troz.net/index.xml><img src=/icons/rss.svg></a>
-<a href=https://troz.net/feed.json><img src=/icons/json.png></a>
-<a href=https://dev.to/trozware><img src=https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg alt="TrozWare's DEV Profile" style=height:37px;margin-top:-3px height=40 width=40></a></div></div><div class=footer__inner><div class=copyright><span>© 2012 - 2020 Sarah Reichelt</span>
-<span><a href=http://gohugo.io>Hugo</a> theme created by
-<a href=https://twitter.com/panr>panr</a> 2018</span></div></div></footer><script src=/assets/main.js></script><script src=/assets/prism.js></script><script src=https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js></script><script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script><script src=/quicklink.js></script><script>window.addEventListener('load',()=>{quicklink()})</script></div></body></html>
+looking cluttered.</p>
+<p>If you ever need to check what type has been assigned to a constant or variable,
+Option-click on it in Xcode and you willl get a popup telling you what it is.</p>
+<p><img src="/images/Playground4.png" alt="Playground types"></p>
+<hr>
+<p>This was going to be five rules, but then I got a bit too verbose so will add
+more rules in a separate post.</p>
+  </div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <a class="btn next" href="https://troz.net/post/2016/singleton-to-protocol/">← Singleton to Protocol</a>
+      
+      
+      <a class="btn previous" href="https://troz.net/post/2016/configuring-xcode/">Configuring Xcode →</a>
+      
+    </div>
+  </div>
+  
+</div>
+
+  </div>
+
+  
+    <link rel="stylesheet" href="/css/footer.css" />
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="social_footer">
+      <a id="email-Link" class="mailtoui" href="mailto:sarah@troz.net"
+        ><img src="/icons/envelope.svg"
+      /></a>
+      <a href="https://stackoverflow.com/users/1082632"
+        ><img src="/icons/stack-overflow.svg"
+      /></a>
+      <a href="https://twitter.com/trozware"><img src="/icons/twitter.svg"/></a>
+      <a href="https://github.com/trozware"><img src="/icons/github.svg"/></a>
+      <a href="https://troz.net/index.xml"><img src="/icons/rss.svg"/></a>
+      <a href="https://troz.net/feed.json"><img src="/icons/json.png"/></a>
+
+      <a href="https://dev.to/trozware">
+        <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" 
+        alt="TrozWare's DEV Profile" 
+        style="height: 37px; margin-top: -3px" height="40" width="40">
+      </a>
+    </div>
+  </div>
+
+  <div class="footer__inner">
+    <div class="copyright">
+      
+      <span>© 2012 - 2020 Sarah Reichelt</span>
+      
+      <span
+        ><a href="http://gohugo.io">Hugo</a> theme created by
+        <a href="https://twitter.com/panr">panr</a> 2018</span
+      >
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink()
+  })
+</script>
+
+
+  
+</div>
+
+</body>
+</html>

@@ -1,61 +1,610 @@
-<!doctype html><html lang=en><head><meta name=generator content="Hugo 0.80.0"><title>TrozWare</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=description content><meta name=keywords content="[Swift Apple macOS iOS Apple Watch]"><meta name=robots content="noodp"><link rel=canonical href=https://troz.net/><link rel=stylesheet href=https://troz.net/assets/style.css><link rel=stylesheet href=https://troz.net/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=https://troz.net/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=https://troz.net/img/favicon.png><meta name=twitter:card content="summary"><meta name=twitter:title content="TrozWare —"><meta name=twitter:description content><meta name=twitter:site content="https://troz.net/"><meta name=twitter:creator content><meta name=twitter:image content><meta property="og:locale" content="en"><meta property="og:type" content="website"><meta property="og:title" content="TrozWare —"><meta property="og:description" content><meta property="og:url" content="https://troz.net/"><meta property="og:site_name" content="TrozWare"><meta property="og:image" content><meta property="og:image:width" content="2048"><meta property="og:image:height" content="1024"></head><body class=dark-theme><div class=container><header class=header><span class=header__inner><a href=https://troz.net/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44"><polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/></svg></span><span class=logo__text>TrozWare</span>
-<span class=logo__cursor style=width:2px></span></a><span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/>Home</a></li><li><a href=/apps/>Apps</a></li><li><a href=/post/>Archives</a></li><li><a href=/tags/>Tags</a></li><li><a href=/contact/>Contact</a></li></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/>Home</a></li><li><a href=/apps/>Apps</a></li><li><a href=/post/>Archives</a></li><li><a href=/tags/>Tags</a></li><li><a href=/contact/>Contact</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41C32.4934 41 41 32.4934 41 22 41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=posts><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2016/learning-swift-generics/>Learning Swift - Generics</a></h1><div class=post-meta><span class=post-date>29 Feb 2016</span>
-<span class=more-meta>- 1061 words,</span>
-<span class=more-meta>5 minute read</span></div><span class=post-tags>#<a href=/tags/swift/>swift</a>&nbsp;
-#<a href=/tags/learning-swift/>learning swift</a>&nbsp;</span><div class=post-content>One of the nice things about Swift is how clean your code looks. A lot of the weird characters that pepper the code of other languages has been eliminated: No more semi-colons, asterisks etc.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="generator" content="Hugo 0.83.1" />
+  
+    <title>TrozWare</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content=""/>
+<meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://troz.net/" />
+
+
+<link rel="stylesheet" href="https://troz.net/assets/style.css">
+
+
+<link rel="stylesheet" href="https://troz.net/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://troz.net/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="TrozWare — " />
+<meta name="twitter:description" content="" />
+<meta name="twitter:site" content="https://troz.net/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="TrozWare — ">
+<meta property="og:description" content="" />
+<meta property="og:url" content="https://troz.net/" />
+<meta property="og:site_name" content="TrozWare" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="dark-theme">
+<div class="container">
+  <header class="header">
+  <span class="header__inner">
+    <a href="https://troz.net/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">TrozWare</span>
+    <span class="logo__cursor" style="width: 2px"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/apps/">Apps</a></li>
+        
+      
+        
+          <li><a href="/post/">Archives</a></li>
+        
+      
+        
+          <li><a href="/tags/">Tags</a></li>
+        
+      
+        
+          <li><a href="/contact/">Contact</a></li>
+        
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/">Home</a></li>
+      
+    
+      
+        <li><a href="/apps/">Apps</a></li>
+      
+    
+      
+        <li><a href="/post/">Archives</a></li>
+      
+    
+      
+        <li><a href="/tags/">Tags</a></li>
+      
+    
+      
+        <li><a href="/contact/">Contact</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+  <div class="content">
+    
+<div class="posts">
+  
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2016/learning-swift-generics/">Learning Swift - Generics</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        29 Feb 2016
+      </span>
+      <span class="more-meta">- 1061 words, </span>
+      <span class="more-meta"> 5 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/swift/">swift</a
+      >&nbsp;
+      
+      #<a href="/tags/learning-swift/">learning swift</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      One of the nice things about Swift is how clean your code looks. A lot of the weird characters that pepper the code of other languages has been eliminated: No more semi-colons, asterisks etc.
 But then you are reading somebody else&rsquo;s code and you find these angle brackets all over the place and they don&rsquo;t seem to make sense.
 What does this mean?
-func mid&lt;T: Comparable>(array: [T]) -> T It looks like it is a function to find the middle element in an array, but what is &lt;T: Comparable> or [T] or even just T?</div><div><a class="read-more button" href=/post/2016/learning-swift-generics/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2016/singleton-to-protocol/>Singleton to Protocol</a></h1><div class=post-meta><span class=post-date>26 Feb 2016</span>
-<span class=more-meta>- 674 words,</span>
-<span class=more-meta>4 minute read</span></div><span class=post-tags>#<a href=/tags/swift/>swift</a>&nbsp;
-#<a href=/tags/learning-swift/>learning swift</a>&nbsp;</span><div class=post-content>I was driving through the town of Singleton the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple&rsquo;s own APIs, but seem to be increasingly frowned upon in the Swift world.
-So what is a singleton? A singleton is a class that only expects to have a single instance. Think of it as a global instance of a class.</div><div><a class="read-more button" href=/post/2016/singleton-to-protocol/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2016/three-rules-for-writing-better-swift/>Three Rules for Writing Better Swift</a></h1><div class=post-meta><span class=post-date>24 Feb 2016</span>
-<span class=more-meta>- 643 words,</span>
-<span class=more-meta>4 minute read</span></div><span class=post-tags>#<a href=/tags/swift/>swift</a>&nbsp;
-#<a href=/tags/learning-swift/>learning swift</a>&nbsp;</span><div class=post-content><ol><li>Do not use !.</li><li>Use let, not var.</li><li>Allow the compiler to infer types.</li></ol><p>Read on for more details&mldr;</p></div><div><a class="read-more button" href=/post/2016/three-rules-for-writing-better-swift/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2016/configuring-xcode/>Configuring Xcode</a></h1><div class=post-meta><span class=post-date>17 Feb 2016</span>
-<span class=more-meta>- 584 words,</span>
-<span class=more-meta>3 minute read</span></div><span class=post-tags>#<a href=/tags/xcode/>xcode</a>&nbsp;
-#<a href=/tags/learning-swift/>learning swift</a>&nbsp;</span><div class=post-content>While not strictly a part of my Learning Swift series, today I thought I would discuss some of the ways to configure and use Xcode to be a more productive and comfortable programmer.
-1. Editor color themes and fonts: Step through the supplied themes and find the best one for you. Then click the &lsquo;+&rsquo; button at the bottom of the list and duplicate the selected theme. Now you can tweak it to suit you.</div><div><a class="read-more button" href=/post/2016/configuring-xcode/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2016/how-do-i-start-to-learn-swift/>How do I start to learn Swift?</a></h1><div class=post-meta><span class=post-date>16 Feb 2016</span>
-<span class=more-meta>- 485 words,</span>
-<span class=more-meta>3 minute read</span></div><span class=post-tags>#<a href=/tags/swift/>swift</a>&nbsp;
-#<a href=/tags/learning-swift/>learning swift</a>&nbsp;</span><div class=post-content>The first thing to do is to download the latest version of Apple&rsquo;s Swift Programming Language book from the iBooks Store.
-You can just read this book, especially the first section: &ldquo;A Swift Tour&rdquo;, but you will get more out of it if you follow along with the playground. There is a link to download the playground from the book which you can use directly if you are reading using iBooks on the Mac.</div><div><a class="read-more button" href=/post/2016/how-do-i-start-to-learn-swift/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2016/icon-builder-32-released/>Icon Builder 3.2 Released</a></h1><div class=post-meta><span class=post-date>10 Feb 2016</span>
-<span class=more-meta>- 58 words,</span>
-<span class=more-meta>1 minute read</span></div><span class=post-tags>#<a href=/tags/icons/>icons</a>&nbsp;
-#<a href=/tags/mac/>mac</a>&nbsp;
-#<a href=/tags/ios/>ios</a>&nbsp;
-#<a href=/tags/apple-watch/>apple watch</a>&nbsp;
-#<a href=/tags/watch/>watch</a>&nbsp;</span><div class=post-content>Icon Builder 3.2 is now available from the Mac App Store.
-Icons for Apple Watch apps now have their alpha channel removed. Tidier folder structure for related files (iTunes Artwork files and Read Me). Updated to work with Xcode 7&rsquo;s Assets.xcassets folders. Creates iPad Pro icons for Xcode 7.2 or later. Fix for Retina Macs creating double-sized images.</div><div><a class="read-more button" href=/post/2016/icon-builder-32-released/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2016/why-is-swift-so-great/>Why is Swift so great?</a></h1><div class=post-meta><span class=post-date>10 Feb 2016</span>
-<span class=more-meta>- 564 words,</span>
-<span class=more-meta>3 minute read</span></div><span class=post-tags>#<a href=/tags/swift/>swift</a>&nbsp;
-#<a href=/tags/learning-swift/>learning swift</a>&nbsp;</span><div class=post-content>Firstly, I can give you the technical answer, as published by Apple:
-Swift is a new programming language for iOS, OS X, watchOS, and tvOS apps that builds on the best of C and Objective-C, without the constraints of C compatibility. Swift adopts safe programming patterns and adds modern features to make programming easier, more flexible, and more fun. Swift’s clean slate, backed by the mature and much-loved Cocoa and Cocoa Touch frameworks, is an opportunity to reimagine how software development works.</div><div><a class="read-more button" href=/post/2016/why-is-swift-so-great/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2016/learning-swift-an-introduction/>Learning Swift - An Introduction</a></h1><div class=post-meta><span class=post-date>09 Feb 2016</span>
-<span class=more-meta>- 499 words,</span>
-<span class=more-meta>3 minute read</span></div><span class=post-tags>#<a href=/tags/swift/>swift</a>&nbsp;
-#<a href=/tags/learning-swift/>learning swift</a>&nbsp;</span><div class=post-content>Welcome to Learning Swift. This is the first post in what I hope will be an extensive series dealing with the Swift language. Here are some of the questions I hope to answer:
-Should I learn Swift? Why? Why is Swift so great? How should I start learning Swift? I already know Objective-C - how do I convert? After that, I am planning a series of posts discussing the major differences of Swift from the view point of an Objective-C programmer and the aspects of Swift that I found difficult to grasp.</div><div><a class="read-more button" href=/post/2016/learning-swift-an-introduction/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2016/new-twitter-account/>New Twitter account</a></h1><div class=post-meta><span class=post-date>09 Feb 2016</span>
-<span class=more-meta>- 51 words,</span>
-<span class=more-meta>1 minute read</span></div><span class=post-tags>#<a href=/tags/twitter/>twitter</a>&nbsp;
-#<a href=/tags/support/>support</a>&nbsp;
-#<a href=/tags/swift/>swift</a>&nbsp;
-#<a href=/tags/learning-swift/>learning swift</a>&nbsp;</span><div class=post-content>I have started a new Twitter account so that I can provide rapid support to users of my apps. Please contact me @trozware if you have any questions, suggestions, bug reports or would just like to chat.
-I will also be using this account to promote my new Learning Swift series.</div><div><a class="read-more button" href=/post/2016/new-twitter-account/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2016/possible-issues-with-iconbuilder/>Possible issues with Icon Builder & Watch icons</a></h1><div class=post-meta><span class=post-date>06 Feb 2016</span>
-<span class=more-meta>- 502 words,</span>
-<span class=more-meta>3 minute read</span></div><span class=post-tags>#<a href=/tags/icons/>icons</a>&nbsp;
-#<a href=/tags/apple-watch/>apple watch</a>&nbsp;
-#<a href=/tags/watch/>watch</a>&nbsp;
-#<a href=/tags/xcode/>xcode</a>&nbsp;</span><div class=post-content>It has come to my attention that there are two possible issues with Icon Builder 3.0.1 when using icons created for an Apple Watch app. Once of them is something I can fix and the other appears to be a bug in Xcode 7.2
-Update: Version 3.2 of Icon Builder is now available in the Mac App Store. This removes the alpha channel from icons for a watch app.</div><div><a class="read-more button" href=/post/2016/possible-issues-with-iconbuilder/>Read more →</a></div></div><div class=pagination><div class=pagination__buttons><span class="button previous"><a href=/page/5/><span class=button__icon>←</span>
-<span class=button__text>Newer posts</span></a></span>
-<span class="button next"><a href=/page/7/><span class=button__text>Older posts</span>
-<span class=button__icon>→</span></a></span></div></div></div></div><link rel=stylesheet href=/css/footer.css><footer class=footer><div class=footer__inner><div class=social_footer><a id=email-Link class=mailtoui href=mailto:sarah@troz.net><img src=/icons/envelope.svg></a>
-<a href=https://stackoverflow.com/users/1082632><img src=/icons/stack-overflow.svg></a>
-<a href=https://twitter.com/trozware><img src=/icons/twitter.svg></a>
-<a href=https://github.com/trozware><img src=/icons/github.svg></a>
-<a href=https://troz.net/index.xml><img src=/icons/rss.svg></a>
-<a href=https://troz.net/feed.json><img src=/icons/json.png></a>
-<a href=https://dev.to/trozware><img src=https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg alt="TrozWare's DEV Profile" style=height:37px;margin-top:-3px height=40 width=40></a></div></div><div class=footer__inner><div class=copyright><span>© 2012 - 2020 Sarah Reichelt</span>
-<span><a href=http://gohugo.io>Hugo</a> theme created by
-<a href=https://twitter.com/panr>panr</a> 2018</span></div></div></footer><script src=/assets/main.js></script><script src=/assets/prism.js></script><script src=https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js></script><script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script><script src=/quicklink.js></script><script>window.addEventListener('load',()=>{quicklink()})</script></div></body></html>
+func mid&lt;T: Comparable&gt;(array: [T]) -&gt; T It looks like it is a function to find the middle element in an array, but what is &lt;T: Comparable&gt; or [T] or even just T?
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2016/learning-swift-generics/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2016/singleton-to-protocol/">Singleton to Protocol</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        26 Feb 2016
+      </span>
+      <span class="more-meta">- 674 words, </span>
+      <span class="more-meta"> 4 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/swift/">swift</a
+      >&nbsp;
+      
+      #<a href="/tags/learning-swift/">learning swift</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      I was driving through the town of Singleton the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple&rsquo;s own APIs, but seem to be increasingly frowned upon in the Swift world.
+So what is a singleton? A singleton is a class that only expects to have a single instance. Think of it as a global instance of a class.
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2016/singleton-to-protocol/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2016/three-rules-for-writing-better-swift/">Three Rules for Writing Better Swift</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        24 Feb 2016
+      </span>
+      <span class="more-meta">- 643 words, </span>
+      <span class="more-meta"> 4 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/swift/">swift</a
+      >&nbsp;
+      
+      #<a href="/tags/learning-swift/">learning swift</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      <ol>
+<li>Do not use !.</li>
+<li>Use let, not var.</li>
+<li>Allow the compiler to infer types.</li>
+</ol>
+<p>Read on for more details&hellip;</p>
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2016/three-rules-for-writing-better-swift/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2016/configuring-xcode/">Configuring Xcode</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        17 Feb 2016
+      </span>
+      <span class="more-meta">- 584 words, </span>
+      <span class="more-meta"> 3 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/xcode/">xcode</a
+      >&nbsp;
+      
+      #<a href="/tags/learning-swift/">learning swift</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      While not strictly a part of my Learning Swift series, today I thought I would discuss some of the ways to configure and use Xcode to be a more productive and comfortable programmer.
+1. Editor color themes and fonts: Step through the supplied themes and find the best one for you. Then click the &lsquo;+&rsquo; button at the bottom of the list and duplicate the selected theme. Now you can tweak it to suit you.
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2016/configuring-xcode/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2016/how-do-i-start-to-learn-swift/">How do I start to learn Swift?</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        16 Feb 2016
+      </span>
+      <span class="more-meta">- 485 words, </span>
+      <span class="more-meta"> 3 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/swift/">swift</a
+      >&nbsp;
+      
+      #<a href="/tags/learning-swift/">learning swift</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      The first thing to do is to download the latest version of Apple&rsquo;s Swift Programming Language book from the iBooks Store.
+You can just read this book, especially the first section: &ldquo;A Swift Tour&rdquo;, but you will get more out of it if you follow along with the playground. There is a link to download the playground from the book which you can use directly if you are reading using iBooks on the Mac.
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2016/how-do-i-start-to-learn-swift/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2016/icon-builder-32-released/">Icon Builder 3.2 Released</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        10 Feb 2016
+      </span>
+      <span class="more-meta">- 58 words, </span>
+      <span class="more-meta"> 1 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/icons/">icons</a
+      >&nbsp;
+      
+      #<a href="/tags/mac/">mac</a
+      >&nbsp;
+      
+      #<a href="/tags/ios/">ios</a
+      >&nbsp;
+      
+      #<a href="/tags/apple-watch/">apple watch</a
+      >&nbsp;
+      
+      #<a href="/tags/watch/">watch</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      Icon Builder 3.2 is now available from the Mac App Store.
+ Icons for Apple Watch apps now have their alpha channel removed. Tidier folder structure for related files (iTunes Artwork files and Read Me). Updated to work with Xcode 7&rsquo;s Assets.xcassets folders. Creates iPad Pro icons for Xcode 7.2 or later. Fix for Retina Macs creating double-sized images.  
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2016/icon-builder-32-released/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2016/why-is-swift-so-great/">Why is Swift so great?</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        10 Feb 2016
+      </span>
+      <span class="more-meta">- 564 words, </span>
+      <span class="more-meta"> 3 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/swift/">swift</a
+      >&nbsp;
+      
+      #<a href="/tags/learning-swift/">learning swift</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      Firstly, I can give you the technical answer, as published by Apple:
+ Swift is a new programming language for iOS, OS X, watchOS, and tvOS apps that builds on the best of C and Objective-C, without the constraints of C compatibility. Swift adopts safe programming patterns and adds modern features to make programming easier, more flexible, and more fun. Swift’s clean slate, backed by the mature and much-loved Cocoa and Cocoa Touch frameworks, is an opportunity to reimagine how software development works.
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2016/why-is-swift-so-great/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2016/learning-swift-an-introduction/">Learning Swift - An Introduction</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        09 Feb 2016
+      </span>
+      <span class="more-meta">- 499 words, </span>
+      <span class="more-meta"> 3 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/swift/">swift</a
+      >&nbsp;
+      
+      #<a href="/tags/learning-swift/">learning swift</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      Welcome to Learning Swift. This is the first post in what I hope will be an extensive series dealing with the Swift language. Here are some of the questions I hope to answer:
+ Should I learn Swift? Why? Why is Swift so great? How should I start learning Swift? I already know Objective-C - how do I convert?  After that, I am planning a series of posts discussing the major differences of Swift from the view point of an Objective-C programmer and the aspects of Swift that I found difficult to grasp.
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2016/learning-swift-an-introduction/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2016/new-twitter-account/">New Twitter account</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        09 Feb 2016
+      </span>
+      <span class="more-meta">- 51 words, </span>
+      <span class="more-meta"> 1 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/twitter/">twitter</a
+      >&nbsp;
+      
+      #<a href="/tags/support/">support</a
+      >&nbsp;
+      
+      #<a href="/tags/swift/">swift</a
+      >&nbsp;
+      
+      #<a href="/tags/learning-swift/">learning swift</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      I have started a new Twitter account so that I can provide rapid support to users of my apps. Please contact me @trozware if you have any questions, suggestions, bug reports or would just like to chat.
+I will also be using this account to promote my new Learning Swift series.
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2016/new-twitter-account/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2016/possible-issues-with-iconbuilder/">Possible issues with Icon Builder &amp; Watch icons</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        06 Feb 2016
+      </span>
+      <span class="more-meta">- 502 words, </span>
+      <span class="more-meta"> 3 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/icons/">icons</a
+      >&nbsp;
+      
+      #<a href="/tags/apple-watch/">apple watch</a
+      >&nbsp;
+      
+      #<a href="/tags/watch/">watch</a
+      >&nbsp;
+      
+      #<a href="/tags/xcode/">xcode</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      It has come to my attention that there are two possible issues with Icon Builder 3.0.1 when using icons created for an Apple Watch app. Once of them is something I can fix and the other appears to be a bug in Xcode 7.2
+ Update: Version 3.2 of Icon Builder is now available in the Mac App Store. This removes the alpha channel from icons for a watch app.
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2016/possible-issues-with-iconbuilder/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="pagination">
+  <div class="pagination__buttons">
+    
+      <span class="button previous">
+        <a href="/page/5/">
+          <span class="button__icon">←</span>
+          <span class="button__text">Newer posts</span>
+        </a>
+      </span>
+    
+    
+      <span class="button next">
+        <a href="/page/7/">
+          <span class="button__text">Older posts</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+    
+  </div>
+</div>
+
+</div>
+
+  </div>
+
+  
+    <link rel="stylesheet" href="/css/footer.css" />
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="social_footer">
+      <a id="email-Link" class="mailtoui" href="mailto:sarah@troz.net"
+        ><img src="/icons/envelope.svg"
+      /></a>
+      <a href="https://stackoverflow.com/users/1082632"
+        ><img src="/icons/stack-overflow.svg"
+      /></a>
+      <a href="https://twitter.com/trozware"><img src="/icons/twitter.svg"/></a>
+      <a href="https://github.com/trozware"><img src="/icons/github.svg"/></a>
+      <a href="https://troz.net/index.xml"><img src="/icons/rss.svg"/></a>
+      <a href="https://troz.net/feed.json"><img src="/icons/json.png"/></a>
+
+      <a href="https://dev.to/trozware">
+        <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" 
+        alt="TrozWare's DEV Profile" 
+        style="height: 37px; margin-top: -3px" height="40" width="40">
+      </a>
+    </div>
+  </div>
+
+  <div class="footer__inner">
+    <div class="copyright">
+      
+      <span>© 2012 - 2020 Sarah Reichelt</span>
+      
+      <span
+        ><a href="http://gohugo.io">Hugo</a> theme created by
+        <a href="https://twitter.com/panr">panr</a> 2018</span
+      >
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink()
+  })
+</script>
+
+
+  
+</div>
+
+</body>
+</html>

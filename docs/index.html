@@ -1,55 +1,619 @@
-<!doctype html><html lang=en><head><meta name=generator content="Hugo 0.80.0"><title>TrozWare</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=description content><meta name=keywords content="[Swift Apple macOS iOS Apple Watch]"><meta name=robots content="noodp"><link rel=canonical href=https://troz.net/><link rel=stylesheet href=https://troz.net/assets/style.css><link rel=stylesheet href=https://troz.net/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=https://troz.net/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=https://troz.net/img/favicon.png><meta name=twitter:card content="summary"><meta name=twitter:title content="TrozWare —"><meta name=twitter:description content><meta name=twitter:site content="https://troz.net/"><meta name=twitter:creator content><meta name=twitter:image content><meta property="og:locale" content="en"><meta property="og:type" content="website"><meta property="og:title" content="TrozWare —"><meta property="og:description" content><meta property="og:url" content="https://troz.net/"><meta property="og:site_name" content="TrozWare"><meta property="og:image" content><meta property="og:image:width" content="2048"><meta property="og:image:height" content="1024"></head><body class=dark-theme><div class=container><header class=header><span class=header__inner><a href=https://troz.net/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44"><polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/></svg></span><span class=logo__text>TrozWare</span>
-<span class=logo__cursor style=width:2px></span></a><span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/>Home</a></li><li><a href=/apps/>Apps</a></li><li><a href=/post/>Archives</a></li><li><a href=/tags/>Tags</a></li><li><a href=/contact/>Contact</a></li></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/>Home</a></li><li><a href=/apps/>Apps</a></li><li><a href=/post/>Archives</a></li><li><a href=/tags/>Tags</a></li><li><a href=/contact/>Contact</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41C32.4934 41 41 32.4934 41 22 41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=posts><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2021/apple_dtk_gamble/>The Apple DTK Gamble</a></h1><div class=post-meta><span class=post-date>04 Feb 2021</span>
-<span class=more-meta>- 673 words,</span>
-<span class=more-meta>4 minute read</span></div><span class=post-tags>#<a href=/tags/apple/>apple</a>&nbsp;
-#<a href=/tags/m1/>m1</a>&nbsp;
-#<a href=/tags/dtk/>dtk</a>&nbsp;
-#<a href=/tags/apple-silicon/>apple silicon</a>&nbsp;</span><div class=post-content><p>So I gambled…</p><p>I hoped Apple would do the right thing by developers who paid for access to the Developer Transition Kit (DTK) to get the first Apple Silicon Macs, but I was wrong and I lost.</p><blockquote><p><strong>UPDATE - 6 Feb 2020:</strong> Apple has responded to feedback from me and other disgruntled developers and so I didn&rsquo;t lose as much as I thought. Apple is now giving US $500 credit, which is what developers in the US paid for the DTK, and they are extending the time limit to the end of the year. I am quite certain they will release a desktop M1 Mac before then, so I will get credit for most of the cost of the DTK (after exchange rate losses) and I will be able to use the credit towards a Mac that I want.</p><p>Thanks Apple for listening and reacting.</p></blockquote></div><div><a class="read-more button" href=/post/2021/apple_dtk_gamble/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2021/swiftui_mac_menus/>SwifUI Mac Menus</a></h1><div class=post-meta><span class=post-date>24 Jan 2021</span>
-<span class=more-meta>- 1436 words,</span>
-<span class=more-meta>7 minute read</span></div><span class=post-tags>#<a href=/tags/swift/>swift</a>&nbsp;
-#<a href=/tags/swiftui/>swiftui</a>&nbsp;
-#<a href=/tags/mac/>mac</a>&nbsp;
-#<a href=/tags/menus/>menus</a>&nbsp;</span><div class=post-content><p>With the option to create apps using the <strong>SwiftUI App</strong> life cycle, we get a new way to set up menus in Mac apps. This post will explore some of the ways to do this as well as look at the default menu groups that Apple gives us.</p></div><div><a class="read-more button" href=/post/2021/swiftui_mac_menus/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2019/swiftui-data-flow/>SwiftUI Data Flow</a></h1><div class=post-meta><span class=post-date>24 Jan 2021</span>
-<span class=more-meta>- 3509 words,</span>
-<span class=more-meta>17 minute read</span></div><span class=post-tags>#<a href=/tags/swift/>swift</a>&nbsp;
-#<a href=/tags/swiftui/>swiftui</a>&nbsp;</span><div class=post-content><p><a href=https://developer.apple.com/xcode/swiftui/>SwiftUI</a> gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?</p><p>In this post, I intend to discuss the possibilities with examples.</p><p><strong>Update - January 2021:</strong> I think the information in this post is still all valid except for one change. When you are initializing an ObservableObject, you should use <code>@StateObject</code> instead of <code>@ObservedObject</code>. Your views can receive objects that are owned by other views as <code>@ObservedObject</code> or <code>@EnvironmentObject</code> but the owner of the data should always create the data object with <code>@StateObject</code>.</p></div><div><a class="read-more button" href=/post/2019/swiftui-data-flow/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2020/crossfix/>Crossfix</a></h1><div class=post-meta><span class=post-date>23 Nov 2020</span>
-<span class=more-meta>- 166 words,</span>
-<span class=more-meta>1 minute read</span></div><span class=post-tags>#<a href=/tags/app-store/>app store</a>&nbsp;
-#<a href=/tags/ios/>ios</a>&nbsp;
-#<a href=/tags/crosswords/>crosswords</a>&nbsp;
-#<a href=/tags/puzzles/>puzzles</a>&nbsp;</span><div class=post-content><p>I have just released <a href=https://itunes.apple.com/app/crossfix/id1526235954>Crossfix</a> and <a href=https://itunes.apple.com/app/crossfix-lite/id1526236100>Crossfix Lite</a> for iPhone. They are both the same anagram assistant solver for crosswords, particularly cryptic crosswords. The Lite version is free but limits you to three solves per day. The full version is unlimited with no ads, no recurring subscriptions and works with family sharing.</p></div><div><a class="read-more button" href=/post/2020/crossfix/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2020/swiftui_mac_big_sur/>SwiftUI for Mac on Big Sur</a></h1><div class=post-meta><span class=post-date>08 Jul 2020</span>
-<span class=more-meta>- 2880 words,</span>
-<span class=more-meta>14 minute read</span></div><span class=post-tags>#<a href=/tags/swift/>swift</a>&nbsp;
-#<a href=/tags/swiftui/>swiftui</a>&nbsp;
-#<a href=/tags/mac/>mac</a>&nbsp;</span><div class=post-content><p>In December 2019, I wrote a <a href=/post/2019/swiftui-for-mac-1/>series of articles about using SwiftUI to build a Mac app</a>. At WWDC 2020, Apple announced macOS 11 Big Sur along with Xcode 12 and a heap of new features for SwiftUI, so I decided to try creating my test app again and seeing how much had changed.</p></div><div><a class="read-more button" href=/post/2020/swiftui_mac_big_sur/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2020/swiftui_snapshots/>SwiftUI Snapshot Testing</a></h1><div class=post-meta><span class=post-date>17 May 2020</span>
-<span class=more-meta>- 2270 words,</span>
-<span class=more-meta>11 minute read</span></div><span class=post-tags>#<a href=/tags/swiftui/>swiftui</a>&nbsp;
-#<a href=/tags/unit-tests/>unit tests</a>&nbsp;
-#<a href=/tags/snapshot/>snapshot</a>&nbsp;</span><div class=post-content><p>Snapshot testing is a technique that has been very popular in the web development world and it seems like a great way to test SwiftUI user interfaces. I read about snapshot tests in a recent blog post and was intrigued, but I had some difficulty getting it to work, so when I finally succeeded, I decided to share my experiences in the hope that others will find them useful.</p></div><div><a class="read-more button" href=/post/2020/swiftui_snapshots/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2020/name_this_app/>Name This App</a></h1><div class=post-meta><span class=post-date>09 May 2020</span>
-<span class=more-meta>- 2011 words,</span>
-<span class=more-meta>10 minute read</span></div><span class=post-tags>#<a href=/tags/app-store/>app store</a>&nbsp;
-#<a href=/tags/swiftui/>swiftui</a>&nbsp;
-#<a href=/tags/ios/>ios</a>&nbsp;
-#<a href=/tags/crosswords/>crosswords</a>&nbsp;
-#<a href=/tags/puzzles/>puzzles</a>&nbsp;</span><div class=post-content><p>My current work in progress is an iPhone app designed to make it easier to solve crossword anagrams by emulating and improving upon an ability that was there when we used to do crosswords on paper, but is missing for digital crosswords.</p><p>But I cannot think of a clever name for the app, so please read the story and contact me with your name suggestions or if you would like to test the pre-release version of this app.</p></div><div><a class="read-more button" href=/post/2020/name_this_app/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2020/swiftui-color/>SwiftUI Color</a></h1><div class=post-meta><span class=post-date>09 May 2020</span>
-<span class=more-meta>- 1575 words,</span>
-<span class=more-meta>8 minute read</span></div><span class=post-tags>#<a href=/tags/swift/>swift</a>&nbsp;
-#<a href=/tags/swiftui/>swiftui</a>&nbsp;
-#<a href=/tags/color/>color</a>&nbsp;</span><div class=post-content><p>As developers, we are used to thinking of color as a numeric way to specify a particular tint. But in SwiftUI, <code>Color</code> - like almost everything else - is actually a <code>View</code> in its own right. This leads us to two very interesting questions: how do we use a view to specify a color and how can we use the fact that <code>Color</code> is <code>View</code>?</p></div><div><a class="read-more button" href=/post/2020/swiftui-color/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2020/custom-fonts/>Custom Fonts in iOS & macOS apps</a></h1><div class=post-meta><span class=post-date>01 Apr 2020</span>
-<span class=more-meta>- 1328 words,</span>
-<span class=more-meta>7 minute read</span></div><span class=post-tags>#<a href=/tags/font/>font</a>&nbsp;
-#<a href=/tags/macos/>macos</a>&nbsp;
-#<a href=/tags/ios/>ios</a>&nbsp;</span><div class=post-content><p>As a rule, I prefer to use fonts that come pre-installed with the system. That means that your interface is already familiar to users, you get dynamic font sizing and if Apple updates the fonts, you get the updates without doing anything.</p><p>But sometimes, you really need to use a different font in your apps, and as the process of getting a custom font to display in your app can be confusing and tedious, I thought I would go through the steps for both iOS and macOS apps.</p><p>I probably should have published this on a different day, but it is not a joke&mldr;. really.</p></div><div><a class="read-more button" href=/post/2020/custom-fonts/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=https://troz.net/post/2020/swiftui_for-mac-extras/>SwiftUI for Mac Extras</a></h1><div class=post-meta><span class=post-date>27 Jan 2020</span>
-<span class=more-meta>- 1136 words,</span>
-<span class=more-meta>6 minute read</span></div><span class=post-tags>#<a href=/tags/swift/>swift</a>&nbsp;
-#<a href=/tags/swiftui/>swiftui</a>&nbsp;
-#<a href=/tags/mac/>mac</a>&nbsp;</span><div class=post-content><p>Last year, I wrote a 3 part series of articles on <a href=/post/2019/swiftui-for-mac-1/>using SwiftUI to build a Mac</a> app. I would like to thank everyone who contacted me about this series. It was received very well and revealed that there is still a large amount of interest in programming for the Mac.</p><p>Some of the responses I got were pointing out different or better ways to do things, so I am going to list them here, adding to this post as I get new information. The relevant sections in the original posts will have links to the fixes suggested here, but I decided it was easier to list the changes in a separate post, rather than asking people to re-read the whole series looking for modifications.</p></div><div><a class="read-more button" href=/post/2020/swiftui_for-mac-extras/>Read more →</a></div></div><div class=pagination><div class=pagination__buttons><span class="button next"><a href=/page/2/><span class=button__text>Older posts</span>
-<span class=button__icon>→</span></a></span></div></div></div></div><link rel=stylesheet href=/css/footer.css><footer class=footer><div class=footer__inner><div class=social_footer><a id=email-Link class=mailtoui href=mailto:sarah@troz.net><img src=/icons/envelope.svg></a>
-<a href=https://stackoverflow.com/users/1082632><img src=/icons/stack-overflow.svg></a>
-<a href=https://twitter.com/trozware><img src=/icons/twitter.svg></a>
-<a href=https://github.com/trozware><img src=/icons/github.svg></a>
-<a href=https://troz.net/index.xml><img src=/icons/rss.svg></a>
-<a href=https://troz.net/feed.json><img src=/icons/json.png></a>
-<a href=https://dev.to/trozware><img src=https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg alt="TrozWare's DEV Profile" style=height:37px;margin-top:-3px height=40 width=40></a></div></div><div class=footer__inner><div class=copyright><span>© 2012 - 2020 Sarah Reichelt</span>
-<span><a href=http://gohugo.io>Hugo</a> theme created by
-<a href=https://twitter.com/panr>panr</a> 2018</span></div></div></footer><script src=/assets/main.js></script><script src=/assets/prism.js></script><script src=https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js></script><script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script><script src=/quicklink.js></script><script>window.addEventListener('load',()=>{quicklink()})</script></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="generator" content="Hugo 0.83.1" />
+  
+    <title>TrozWare</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content=""/>
+<meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://troz.net/" />
+
+
+<link rel="stylesheet" href="https://troz.net/assets/style.css">
+
+
+<link rel="stylesheet" href="https://troz.net/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://troz.net/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="TrozWare — " />
+<meta name="twitter:description" content="" />
+<meta name="twitter:site" content="https://troz.net/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="TrozWare — ">
+<meta property="og:description" content="" />
+<meta property="og:url" content="https://troz.net/" />
+<meta property="og:site_name" content="TrozWare" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="dark-theme">
+<div class="container">
+  <header class="header">
+  <span class="header__inner">
+    <a href="https://troz.net/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">TrozWare</span>
+    <span class="logo__cursor" style="width: 2px"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/apps/">Apps</a></li>
+        
+      
+        
+          <li><a href="/post/">Archives</a></li>
+        
+      
+        
+          <li><a href="/tags/">Tags</a></li>
+        
+      
+        
+          <li><a href="/contact/">Contact</a></li>
+        
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/">Home</a></li>
+      
+    
+      
+        <li><a href="/apps/">Apps</a></li>
+      
+    
+      
+        <li><a href="/post/">Archives</a></li>
+      
+    
+      
+        <li><a href="/tags/">Tags</a></li>
+      
+    
+      
+        <li><a href="/contact/">Contact</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+  <div class="content">
+    
+<div class="posts">
+  
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2021/apple_dtk_gamble/">The Apple DTK Gamble</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        04 Feb 2021
+      </span>
+      <span class="more-meta">- 673 words, </span>
+      <span class="more-meta"> 4 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/apple/">apple</a
+      >&nbsp;
+      
+      #<a href="/tags/m1/">m1</a
+      >&nbsp;
+      
+      #<a href="/tags/dtk/">dtk</a
+      >&nbsp;
+      
+      #<a href="/tags/apple-silicon/">apple silicon</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>So I gambled…</p>
+<p>I hoped Apple would do the right thing by developers who paid for access to the Developer Transition Kit (DTK) to get the first Apple Silicon Macs, but I was wrong and I lost.</p>
+<blockquote>
+<p><strong>UPDATE - 6 Feb 2020:</strong> Apple has responded to feedback from me and other disgruntled developers and so I didn&rsquo;t lose as much as I thought. Apple is now giving US $500 credit, which is what developers in the US paid for the DTK, and they are extending the time limit to the end of the year. I am quite certain they will release a desktop M1 Mac before then, so I will get credit for most of the cost of the DTK (after exchange rate losses) and I will be able to use the credit towards a Mac that I want.</p>
+<p>Thanks Apple for listening and reacting.</p>
+</blockquote>
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2021/apple_dtk_gamble/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2021/swiftui_mac_menus/">SwifUI Mac Menus</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        24 Jan 2021
+      </span>
+      <span class="more-meta">- 1436 words, </span>
+      <span class="more-meta"> 7 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/swift/">swift</a
+      >&nbsp;
+      
+      #<a href="/tags/swiftui/">swiftui</a
+      >&nbsp;
+      
+      #<a href="/tags/mac/">mac</a
+      >&nbsp;
+      
+      #<a href="/tags/menus/">menus</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>With the option to create apps using the <strong>SwiftUI App</strong> life cycle, we get a new way to set up menus in Mac apps. This post will explore some of the ways to do this as well as look at the default menu groups that Apple gives us.</p>
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2021/swiftui_mac_menus/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2019/swiftui-data-flow/">SwiftUI Data Flow</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        24 Jan 2021
+      </span>
+      <span class="more-meta">- 3509 words, </span>
+      <span class="more-meta"> 17 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/swift/">swift</a
+      >&nbsp;
+      
+      #<a href="/tags/swiftui/">swiftui</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      <p><a href="https://developer.apple.com/xcode/swiftui/">SwiftUI</a> gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?</p>
+<p>In this post, I intend to discuss the possibilities with examples.</p>
+<p><strong>Update - January 2021:</strong> I think the information in this post is still all valid except for one change. When you are initializing an ObservableObject, you should use <code>@StateObject</code> instead of <code>@ObservedObject</code>. Your views can receive objects that are owned by other views as <code>@ObservedObject</code> or <code>@EnvironmentObject</code> but the owner of the data should always create the data object with <code>@StateObject</code>.</p>
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2019/swiftui-data-flow/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2020/crossfix/">Crossfix</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        23 Nov 2020
+      </span>
+      <span class="more-meta">- 166 words, </span>
+      <span class="more-meta"> 1 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/app-store/">app store</a
+      >&nbsp;
+      
+      #<a href="/tags/ios/">ios</a
+      >&nbsp;
+      
+      #<a href="/tags/crosswords/">crosswords</a
+      >&nbsp;
+      
+      #<a href="/tags/puzzles/">puzzles</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>I have just released <a href="https://itunes.apple.com/app/crossfix/id1526235954">Crossfix</a> and <a href="https://itunes.apple.com/app/crossfix-lite/id1526236100">Crossfix Lite</a> for iPhone. They are both the same anagram assistant solver for crosswords, particularly cryptic crosswords. The Lite version is free but limits you to three solves per day. The full version is unlimited with no ads, no recurring subscriptions and works with family sharing.</p>
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2020/crossfix/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2020/swiftui_mac_big_sur/">SwiftUI for Mac on Big Sur</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        08 Jul 2020
+      </span>
+      <span class="more-meta">- 2880 words, </span>
+      <span class="more-meta"> 14 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/swift/">swift</a
+      >&nbsp;
+      
+      #<a href="/tags/swiftui/">swiftui</a
+      >&nbsp;
+      
+      #<a href="/tags/mac/">mac</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>In December 2019, I wrote a <a href="/post/2019/swiftui-for-mac-1/">series of articles about using SwiftUI to build a Mac app</a>. At WWDC 2020, Apple announced macOS 11 Big Sur along with Xcode 12 and a heap of new features for SwiftUI, so I decided to try creating my test app again and seeing how much had changed.</p>
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2020/swiftui_mac_big_sur/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2020/swiftui_snapshots/">SwiftUI Snapshot Testing</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        17 May 2020
+      </span>
+      <span class="more-meta">- 2270 words, </span>
+      <span class="more-meta"> 11 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/swiftui/">swiftui</a
+      >&nbsp;
+      
+      #<a href="/tags/unit-tests/">unit tests</a
+      >&nbsp;
+      
+      #<a href="/tags/snapshot/">snapshot</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>Snapshot testing is a technique that has been very popular in the web development world and it seems like a great way to test SwiftUI user interfaces. I read about snapshot tests in a recent blog post and was intrigued, but I had some difficulty getting it to work, so when I finally succeeded, I decided to share my experiences in the hope that others will find them useful.</p>
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2020/swiftui_snapshots/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2020/name_this_app/">Name This App</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        09 May 2020
+      </span>
+      <span class="more-meta">- 2011 words, </span>
+      <span class="more-meta"> 10 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/app-store/">app store</a
+      >&nbsp;
+      
+      #<a href="/tags/swiftui/">swiftui</a
+      >&nbsp;
+      
+      #<a href="/tags/ios/">ios</a
+      >&nbsp;
+      
+      #<a href="/tags/crosswords/">crosswords</a
+      >&nbsp;
+      
+      #<a href="/tags/puzzles/">puzzles</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>My current work in progress is an iPhone app designed to make it easier to solve crossword anagrams by emulating and improving upon an ability that was there when we used to do crosswords on paper, but is missing for digital crosswords.</p>
+<p>But I cannot think of a clever name for the app, so please read the story and contact me with your name suggestions or if you would like to test the pre-release version of this app.</p>
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2020/name_this_app/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2020/swiftui-color/">SwiftUI Color</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        09 May 2020
+      </span>
+      <span class="more-meta">- 1575 words, </span>
+      <span class="more-meta"> 8 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/swift/">swift</a
+      >&nbsp;
+      
+      #<a href="/tags/swiftui/">swiftui</a
+      >&nbsp;
+      
+      #<a href="/tags/color/">color</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>As developers, we are used to thinking of color as a numeric way to specify a particular tint. But in SwiftUI, <code>Color</code> - like almost everything else - is actually a <code>View</code> in its own right. This leads us to two very interesting questions: how do we use a view to specify a color and how can we use the fact that <code>Color</code> is <code>View</code>?</p>
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2020/swiftui-color/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2020/custom-fonts/">Custom Fonts in iOS &amp; macOS apps</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        01 Apr 2020
+      </span>
+      <span class="more-meta">- 1328 words, </span>
+      <span class="more-meta"> 7 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/font/">font</a
+      >&nbsp;
+      
+      #<a href="/tags/macos/">macos</a
+      >&nbsp;
+      
+      #<a href="/tags/ios/">ios</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>As a rule, I prefer to use fonts that come pre-installed with the system. That means that your interface is already familiar to users, you get dynamic font sizing and if Apple updates the fonts, you get the updates without doing anything.</p>
+<p>But sometimes, you really need to use a different font in your apps, and as the process of getting a custom font to display in your app can be confusing and tedious, I thought I would go through the steps for both iOS and macOS apps.</p>
+<p>I probably should have published this on a different day, but it is not a joke&hellip;. really.</p>
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2020/custom-fonts/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://troz.net/post/2020/swiftui_for-mac-extras/">SwiftUI for Mac Extras</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        27 Jan 2020
+      </span>
+      <span class="more-meta">- 1136 words, </span>
+      <span class="more-meta"> 6 minute read</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="/tags/swift/">swift</a
+      >&nbsp;
+      
+      #<a href="/tags/swiftui/">swiftui</a
+      >&nbsp;
+      
+      #<a href="/tags/mac/">mac</a
+      >&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>Last year, I wrote a 3 part series of articles on <a href="/post/2019/swiftui-for-mac-1/">using SwiftUI to build a Mac</a> app. I would like to thank everyone who contacted me about this series. It was received very well and revealed that there is still a large amount of interest in programming for the Mac.</p>
+<p>Some of the responses I got were pointing out different or better ways to do things, so I am going to list them here, adding to this post as I get new information. The relevant sections in the original posts will have links to the fixes suggested here, but I decided it was easier to list the changes in a separate post, rather than asking people to re-read the whole series looking for modifications.</p>
+    </div>
+    <div>
+      <a class="read-more button" href="/post/2020/swiftui_for-mac-extras/">Read more →</a>
+    </div>
+  </div>
+  
+  <div class="pagination">
+  <div class="pagination__buttons">
+    
+    
+      <span class="button next">
+        <a href="/page/2/">
+          <span class="button__text">Older posts</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+    
+  </div>
+</div>
+
+</div>
+
+  </div>
+
+  
+    <link rel="stylesheet" href="/css/footer.css" />
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="social_footer">
+      <a id="email-Link" class="mailtoui" href="mailto:sarah@troz.net"
+        ><img src="/icons/envelope.svg"
+      /></a>
+      <a href="https://stackoverflow.com/users/1082632"
+        ><img src="/icons/stack-overflow.svg"
+      /></a>
+      <a href="https://twitter.com/trozware"><img src="/icons/twitter.svg"/></a>
+      <a href="https://github.com/trozware"><img src="/icons/github.svg"/></a>
+      <a href="https://troz.net/index.xml"><img src="/icons/rss.svg"/></a>
+      <a href="https://troz.net/feed.json"><img src="/icons/json.png"/></a>
+
+      <a href="https://dev.to/trozware">
+        <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" 
+        alt="TrozWare's DEV Profile" 
+        style="height: 37px; margin-top: -3px" height="40" width="40">
+      </a>
+    </div>
+  </div>
+
+  <div class="footer__inner">
+    <div class="copyright">
+      
+      <span>© 2012 - 2020 Sarah Reichelt</span>
+      
+      <span
+        ><a href="http://gohugo.io">Hugo</a> theme created by
+        <a href="https://twitter.com/panr">panr</a> 2018</span
+      >
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink()
+  })
+</script>
+
+
+  
+</div>
+
+</body>
+</html>
