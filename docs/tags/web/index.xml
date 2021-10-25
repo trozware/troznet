@@ -6,10 +6,24 @@
     <description>Recent content in web on TrozWare</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>© 2012 - 2020 Sarah Reichelt</copyright>
-    <lastBuildDate>Sat, 06 Oct 2018 08:29:35 +1000</lastBuildDate>
+    <lastBuildDate>Mon, 25 Oct 2021 09:57:12 +1000</lastBuildDate>
     
         <atom:link href="https://troz.net/tags/web/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>Site Search</title>
+<link>https://troz.net/post/2021/site_search/</link>
+<pubDate>Mon, 25 Oct 2021 09:57:12 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2021/site_search/</guid>
+<description>&lt;p&gt;Not much action on the site lately as I work on other projects. But I have finally got around to adding a search option to the site.&lt;/p&gt;
+&lt;p&gt;I use &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; as a static site generator, which is great but Hugo doesn&amp;rsquo;t come with any search facility.&lt;/p&gt;
+&lt;p&gt;Today, I read an article by Jesse Squires on &lt;a href=&#34;https://www.jessesquires.com/blog/2018/02/25/replacing-google-with-duckduckgo/&#34;&gt;Replacing Google Search with DuckDuckGo&lt;/a&gt; and while I had already switched to using &lt;a href=&#34;https://duckduckgo.com&#34;&gt;DuckDuckGo&lt;/a&gt; for my own web searching, I had not considered it for my site search.&lt;/p&gt;
+&lt;p&gt;It isn&amp;rsquo;t as good as an in-built search page, which I have considered setting up using &lt;a href=&#34;https://www.algolia.com&#34;&gt;Algolia&lt;/a&gt;, but that requires a lot of setup and I never got round to it. This search takes you out of my site and into a DuckDuckGo page, but it limits the search options to the troz.net domain.&lt;/p&gt;
+&lt;p&gt;To access the search, go to either the &lt;a href=&#34;https://troz.net/post/&#34;&gt;Archives&lt;/a&gt; or the &lt;a href=&#34;https://troz.net/tags/&#34;&gt;Tags&lt;/a&gt; page, and use the search field at the top of the page.&lt;/p&gt;
+&lt;p&gt;As a side note, if you are using DuckDuckGo as your regular search engine, read up about their &lt;a href=&#34;https://duckduckgo.com/bang&#34;&gt;!bangs&lt;/a&gt;. These are quick and easy ways to target your search. you can prefix your search with &lt;code&gt;!so&lt;/code&gt; to search Stack Overflow, or &lt;code&gt;!i&lt;/code&gt; to search for images. Search the &lt;a href=&#34;https://duckduckgo.com/bang&#34;&gt;!bangs&lt;/a&gt; page to find the ones that are useful to you.&lt;/p&gt;</description>
+</item>
     
     <item>
 <title>The Apple DTK Gamble</title>
