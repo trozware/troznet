@@ -1,34 +1,26 @@
 [
   {
-    "icon": "19th_36.png",
-    "name": "19th Hole Golf Scorer",
-    "webpage": "/19th-hole/",
-    "version": "3.1",
-    "updated": "06 May 2016",
-    "app_id": "871686159"
-  },
-  {
     "icon": "Berio_36.png",
     "name": "Berio's Sequenza VII",
     "webpage": "/berio/",
-    "version": "1.2",
-    "updated": "23 Apr 2018",
+    "version": "1.3",
+    "updated": "13 May 2021",
     "app_id": "730234638"
   },
   {
     "icon": "Crossfix36.png",
     "name": "Crossfix",
     "webpage": "/crossfix/",
-    "version": "1.0",
-    "updated": "22 Nov 2020",
+    "version": "1.0.1",
+    "updated": "30 Nov 2020",
     "app_id": "1526235954"
   },
   {
     "icon": "CrossfixLite36.png",
     "name": "Crossfix Lite",
     "webpage": "/crossfix/",
-    "version": "1.0",
-    "updated": "22 Nov 2020",
+    "version": "1.0.1",
+    "updated": "30 Nov 2020",
     "app_id": "1526236100"
   },
   {
@@ -43,16 +35,16 @@
     "icon": "Speed_36.jpeg",
     "name": "What Is My Speed?",
     "webpage": "/what-is-my-speed/",
-    "version": "1.0",
-    "updated": "22 Apr 2016",
+    "version": "2.0",
+    "updated": "4 Jun 2021",
     "app_id": "1091394524"
   },
   {
     "icon": "wow-stats36.png",
-    "name": "WoW Stats",
+    "name": "Stats for WoW",
     "webpage": "/wow-stats/",
-    "version": "1.7.0",
-    "updated": "14 Oct 2020",
+    "version": "1.8.0",
+    "updated": "14 Dec 2021",
     "app_id": "1364247768"
   }
 ]

@@ -8,15 +8,17 @@
         "priorities": [
           "Stamina",
           "Strength",
-          "Versatility >= Haste",
-          "Crit >= Mastery"
+          "Versatility",
+          "Haste",
+          "Crit",
+          "Mastery"
         ],
         "talents": [
-          "Blooddrinker",
+          "Heartbreaker",
           "Hemostasis",
           "Relish in Blood",
           "Will of the Necropolis",
-          "Grip of the Dead",
+          "Wraith Walk",
           "Bloodworms",
           "Purgatory"
         ]
@@ -25,36 +27,40 @@
         "name": "Frost",
         "web": "/wow/frost-death-knight/",
         "priorities": [
-          "Crit = Mastery",
-          "Haste >= Versatility >= Strength"
+          "Strength",
+          "Crit",
+          "Mastery",
+          "Versatility",
+          "Haste"
         ],
         "talents": [
           "Cold Heart",
-          "Murderous Efficiency",
-          "",
-          "Frozen Pulse",
-          "",
+          "Runic Attenuation",
+          "Asphyxiate",
+          "Avalanche",
+          "Wraith Walk",
           "Gathering Storm",
-          "Icecap"
+          "Obliteration"
         ]
       },
       {
         "name": "Unholy",
         "web": "/wow/unholy-death-knight/",
         "priorities": [
-          "Haste = Mastery",
-          "Crit",
+          "Strength",
+          "Haste",
           "Versatility",
-          "Strength"
+          "Crit",
+          "Mastery"
         ],
         "talents": [
           "All Will Serve",
           "Unholy Blight",
-          "",
+          "Asphyxiate",
           "Soul Reaper",
-     	  "",
+          "Wraith Walk",
           "Unholy Pact",
-          "Army of the Damned"
+          "Unholy Assault"
         ]
       }
     ]
@@ -67,16 +73,18 @@
         "web": "/wow/havoc-demon-hunter/",
         "priorities": [
           "Agility",
-          "Versatility >= Crit >= Haste",
-          "Mastery"
+          "Versatility",
+          "Mastery",
+          "Haste",
+          "Crit"
         ],
         "talents": [
-          "Blind Fury",
-          "Burning Hatred",
+          "Demonic Appetite",
+          "Insatiable Hunger",
           "Unbound Chaos",
-          "",
+          "Soul Rending",
           "First Blood",
-          "",
+          "Master of the Glaive",
           "Demonic"
         ]
       },
@@ -84,7 +92,9 @@
         "name": "Vengeance",
         "web": "/wow/vengeance-demon-hunter/",
         "priorities": [
-          "Agility >= Haste >= Versatility",
+          "Agility",
+          "Haste",
+          "Versatility",
           "Mastery",
           "Crit"
         ],
@@ -108,17 +118,19 @@
         "web": "/wow/balance-druid/",
         "priorities": [
           "Intellect",
-          "Crit = Haste",
-          "Mastery = Versatility"
+          "Haste",
+          "Mastery",
+          "Versatility",
+          "Crit"
         ],
         "talents": [
           "Nature's Balance",
           "Wild Charge",
           "Restoration Affinity",
-          "Heart of the Wild",
-          "Incarnation: Chosen of Elune",
-          "Stellar Flare",
-          "New Moon"
+          "Mighty Bash",
+          "Soul of the Forest",
+          "Stellar Drift",
+          "Solstice"
         ]
       },
       {
@@ -126,36 +138,39 @@
         "web": "/wow/feral-druid/",
         "priorities": [
           "Agility",
-          "Crit",
           "Mastery",
-          "Haste = Versatility"
+          "Crit",
+          "Haste",
+          "Versatility"
         ],
         "talents": [
-          "Sabertooth",
-          "Wild Charge",
-          "Balance Affinity",
+          "Predator",
+          "Tiger Dash",
+          "Restoration Affinity",
           "Mighty Bash",
           "Soul of the Forest",
-          "Brutal Slash",
-          "Bloodtalons"
+          "Primal Wrath",
+          "Feral Frenzy"
         ]
       },
       {
         "name": "Guardian",
         "web": "/wow/guardian-druid/",
         "priorities": [
-          "Stamina >= Agility",
+          "Stamina",
+          "Agility",
           "Versatility",
           "Mastery",
-          "Haste >= Crit"
+          "Haste",
+          "Crit"
         ],
         "talents": [
-          "Bristling Fur",
-          "Renewal",
+          "Brambles",
+          "Wild Charge",
           "Restoration Affinity",
           "Heart of the Wild",
-          "Incarnation: Guardian of Ursoc",
-          "Earthwarden",
+          "Galactic Guardian",
+          "Survival of the Fittest",
           "Tooth and Claw"
         ]
       },
@@ -164,15 +179,18 @@
         "web": "/wow/restoration-druid/",
         "priorities": [
           "Intellect",
-          "Mastery >= Haste >= Crit >= Versatility"
+          "Mastery",
+          "Haste",
+          "Crit",
+          "Versatility"
         ],
         "talents": [
           "Cenarion Ward",
-          "",
+          "Wild Charge",
           "Feral Affinity",
           "Heart of the Wild",
-          "Cultivation",
-          "Spring Blossoms",
+          "Soul of the Forest",
+          "Overgrowth",
           "Photosynthesis"
         ]
       }
@@ -186,16 +204,19 @@
         "web": "/wow/beast-mastery-hunter/",
         "priorities": [
           "Agility",
-          "Crit >= Haste >= Mastery >= Versatility"
+          "Versatility",
+          "Haste",
+          "Crit",
+          "Mastery"
         ],
         "talents": [
-          "Animal Companion",
+          "Killer Instinct",
           "Scent of Blood",
           "Trailblazer",
-          "Thrill of the Hunt",
+          "A Murder of Crows",
           "Posthaste",
-          "Stomp",
-          "Killer Cobra"
+          "Barrage/Stomp",
+          "Aspect of the Beast"
         ]
       },
       {
@@ -203,18 +224,19 @@
         "web": "/wow/marksmanship-hunter/",
         "priorities": [
           "Agility",
-          "Crit",
-          "Mastery >= Versatility",
-          "Haste"
+          "Mastery",
+          "Haste",
+          "Versatility",
+          "Crit"
         ],
         "talents": [
           "Master Marksman",
-          "Careful Aim",
-          "Natural Mending",
-          "Steady Focus",
+          "Barrage/Careful Aim",
+          "Trailblazer",
+          "Chimaera Shot",
           "Posthaste",
           "Double Tap",
-          "Lock and Load"
+          "Volley"
         ]
       },
       {
@@ -222,18 +244,18 @@
         "web": "/wow/survival-hunter/",
         "priorities": [
           "Agility",
-          "Haste",
-          "Crit",
           "Versatility",
-          "Mastery"
+          "Mastery",
+          "Haste",
+          "Crit"
         ],
         "talents": [
-          "Alpha Predator",
+          "Terms of Engagement/Alpha Predator",
           "Guerrilla Tactics",
-          "Natural Mending",
+          "Trailblazer",
           "Bloodseeker",
-          "Born To Be Wild",
-          "Mongoose Bite",
+          "Posthaste",
+          "Flanking Strike",
           "Wildfire Infusion"
         ]
       }
@@ -247,17 +269,19 @@
         "web": "/wow/arcane-mage/",
         "priorities": [
           "Intellect",
-          "Mastery >= Crit",
-          "Versatility >= Haste"
+          "Mastery",
+          "Versatility",
+          "Crit",
+          "Haste"
         ],
         "talents": [
           "Amplification",
           "Shimmer",
-          "Rune of Power",
+          "Incanter's Flow",
           "Arcane Echo",
           "Chrono Shift",
           "Arcane Orb",
-          "Overpowered"
+          "Enlightened"
         ]
       },
       {
@@ -265,14 +289,15 @@
         "web": "/wow/fire-mage/",
         "priorities": [
           "Intellect",
+          "Versatility",
+          "Mastery",
           "Haste",
-          "Mastery = Versatility",
           "Crit"
         ],
         "talents": [
           "Searing Touch",
           "Shimmer",
-          "Rune of Power",
+          "Incanter's Flow",
           "Flame On",
           "Frenetic Speed",
           "Conflagration",
@@ -286,13 +311,14 @@
           "Intellect",
           "Crit",
           "Haste",
-          "Versatility >= Mastery"
+          "Versatility",
+          "Mastery"
         ],
         "talents": [
-          "Lonely Winter",
+          "Lonely Winter/Bone Chilling",
           "Shimmer",
-          "Rune of Power",
-          "Chain Reaction",
+          "Incanter's Flow",
+          "Frozen Touch",
           "Frigid Winds",
           "Splitting Ice",
           "Thermal Void"
@@ -307,16 +333,19 @@
         "name": "Brewmaster",
         "web": "/wow/brewmaster-monk/",
         "priorities": [
-          "Versatility >= Crit",
-          "Mastery >= Haste >= Agility"
+          "Versatility",
+          "Crit",
+          "Mastery",
+          "Haste",
+          "Agility"
         ],
         "talents": [
-          "Eye of the Tiger",
-          "Tiger's Lust",
-          "Light Brewing",
-          "Ring of Peace",
-          "Bob and Weave",
-          "Rushing Jade Wind",
+          "Chi Burst",
+          "Chi Torpedo/Tiger's Lust",
+          "Spitfire/Black Ox Brew",
+          "Summon Black Ox Statue",
+          "Healing Elixir",
+          "Rushing Jade Wind/Exploding Keg",
           "High Tolerance"
         ]
       },
@@ -331,13 +360,13 @@
           "Mastery"
         ],
         "talents": [
-          "Mist Wrap",
-          "Tiger's Lust",
-          "Lifecycles",
+          "Chi Burst",
+          "Chi Torpedo",
+          "Spirit of the Crane",
           "Ring of Peace",
-          "Diffuse Magic",
-          "Summon Jade Serpent Statue",
-          "Rising Mist"
+          "Dampen Harm",
+          "Invoke Chi-Ji, the Red Crane",
+          "Focused Thunder"
         ]
       },
       {
@@ -345,17 +374,19 @@
         "web": "/wow/windwalker-monk/",
         "priorities": [
           "Agility",
+          "Crit",
           "Versatility",
-          "Mastery >= Crit",
-          "Haste"
+          "Mastery",
+          "Haste",
+          "Stamina"
         ],
         "talents": [
-          "Chi Wave",
-          "Tiger's Lust",
+          "Chi Burst",
+          "Celerity",
           "Fist of the White Tiger",
-          "Ring of Peace",
-          "Diffuse Magic",
-          "Dance of Chi-Ji",
+          "Good Karma",
+          "Inner Strength",
+          "Hit Combo/Dance of Chi-Ji",
           "Whirling Dragon Punch"
         ]
       }
@@ -368,13 +399,17 @@
         "name": "Holy",
         "web": "/wow/holy-paladin/",
         "priorities": [
-          "Intellect >= Haste >= Mastery >= Versatility >= Crit"
+          "Intellect",
+          "Haste",
+          "Mastery",
+          "Versatility",
+          "Crit"
         ],
         "talents": [
           "Crusader's Might",
           "Holy Prism",
-          "",
-          "Rule of Law",
+          "Fist of Justice",
+          "Cavalier",
           "Holy Avenger",
           "Sanctified Wrath",
           "Glimmer of Light"
@@ -386,16 +421,17 @@
         "priorities": [
           "Strength",
           "Haste",
-          "Mastery = Versatility",
+          "Versatility",
+          "Mastery",
           "Crit"
         ],
         "talents": [
-          "Holy Shield",
-          "Crusader's Judgment",
-          "Blinding Light",
-          "Blessing of Spellwarding",
+          "Holy Shield/Blessed Hammer",
+          "First Avenger/Crusader's Judgment",
+          "Fist of Justice",
+          "Cavalier",
           "Divine Purpose",
-          "Judgment of Light",
+          "Consecrated Ground",
           "Sanctified Wrath"
         ]
       },
@@ -404,16 +440,18 @@
         "web": "/wow/retribution-paladin/",
         "priorities": [
           "Strength",
-          "Crit >= Versatility",
-          "Haste >= Mastery"
+          "Haste",
+          "Crit",
+          "Versatility",
+          "Mastery"
         ],
         "talents": [
           "Execution Sentence",
           "Blade of Wrath",
-          "",
-          "",
-          "Seraphim",
-          "",
+          "Repentance",
+          "Cavalier",
+          "Divine Purpose",
+          "Healing Hands",
           "Final Reckoning"
         ]
       }
@@ -428,7 +466,9 @@
         "priorities": [
           "Intellect",
           "Haste",
-          "Crit >= Mastery = Versatility"
+          "Crit",
+          "Versatility",
+          "Mastery"
         ],
         "talents": [
           "Schism",
@@ -437,7 +477,7 @@
           "Shining Force",
           "Sins of the Many",
           "Purge the Wicked",
-          "Evangelism"
+          "Lenience"
         ]
       },
       {
@@ -445,17 +485,19 @@
         "web": "/wow/holy-priest/",
         "priorities": [
           "Intellect",
-          "Haste >= Crit = Versatility",
+          "Haste",
+          "Versatility",
+          "Crit",
           "Mastery"
         ],
         "talents": [
-          "Enlightenment",
+          "Trail of Light",
           "Angelic Feather",
-          "Cosmic Ripple",
-          "Shining Force",
-          "Prayer Circle",
-          "Halo",
-          "Holy Word: Salvation"
+          "Guardian Angel",
+          "Censure",
+          "Surge of Light",
+          "Divine Star",
+          "Apotheosis"
         ]
       },
       {
@@ -463,19 +505,19 @@
         "web": "/wow/shadow-priest/",
         "priorities": [
           "Intellect",
-          "Haste",
           "Mastery",
           "Crit",
+          "Haste",
           "Versatility"
         ],
         "talents": [
-          "Unfurling Darkness",
+          "Death and Madness",
           "Body and Soul",
-          "Twist of Fate",
+          "Misery/Searing Nightmare",
           "Psychic Horror",
-          "Auspicious Spirits",
-          "Mindbender",
-          "Ancient Madness"
+          "Shadow Crash",
+          "Void Torrent",
+          "Surrender to Madness/Ancient Madness"
         ]
       }
     ]
@@ -488,17 +530,17 @@
         "web": "/wow/assassination-rogue/",
         "priorities": [
           "Agility",
-          "Versatility",
           "Crit",
-          "Mastery",
-          "Haste"
+          "Haste",
+          "Versatility",
+          "Mastery"
         ],
         "talents": [
-          "Elaborate Planning",
+          "Blindside/Master Poisoner",
           "Subterfuge",
-          "Vigor",
-          "",
-          "",
+          "Marked for Death",
+          "Leeching Poison",
+          "Internal Bleeding",
           "Alacrity",
           "Poison Bomb"
         ]
@@ -508,17 +550,17 @@
         "web": "/wow/outlaw-rogue/",
         "priorities": [
           "Agility",
-          "Versatility",
           "Crit",
-          "Mastery",
-          "Haste"
+          "Haste",
+          "Versatility",
+          "Mastery"
         ],
         "talents": [
           "Quick Draw",
-          "Acrobatic Strikes",
-          "Vigor",
-          "",
-          "",
+          "Hit and Run/Retractable Hook",
+          "Marked for Death",
+          "Iron Stomach",
+          "Prey on the Weak",
           "Alacrity",
           "Blade Rush"
         ]
@@ -528,18 +570,19 @@
         "web": "/wow/subtlety-rogue/",
         "priorities": [
           "Agility",
-          "Mastery = Versatility",
+          "Versatility",
           "Crit",
-          "Haste"
+          "Haste",
+          "Mastery"
         ],
         "talents": [
           "Weaponmaster",
-          "Nightstalker",
-          "Deeper Stratagem",
-          "",
-          "",
+          "Subterfuge",
+          "Marked for Death",
+          "Soothing Darkness",
+          "Night Terrors",
           "Enveloping Shadows",
-          "Master of Shadows"
+          "Secret Technique"
         ]
       }
     ]
@@ -552,16 +595,18 @@
         "web": "/wow/elemental-shaman/",
         "priorities": [
           "Intellect",
-          "Crit = Haste = Versatility",
+          "Versatility",
+          "Haste",
+          "Crit",
           "Mastery"
         ],
         "talents": [
-          "Echo of the Elements",
-          "Echoing Shock",
-          "",
-          "Master of the Elements",
-          "",
-          "Icefury",
+          "Earthen Rage",
+          "Aftershock/Echoing Shock",
+          "Earth Shield",
+          "Master of the Elements/Liquid Magma Totem",
+          "Nature's Guardian/Ancestral Guidance",
+          "Primal Elementalist/Icefury",
           "Stormkeeper"
         ]
       },
@@ -569,17 +614,18 @@
         "name": "Enhancement",
         "web": "/wow/enhancement-shaman/",
         "priorities": [
-          "Haste",
-          "Crit >= Versatility",
+          "Agility",
+          "Versatility",
           "Mastery",
-          "Agility"
+          "Crit",
+          "Haste"
         ],
         "talents": [
           "Lashing Flames",
           "Stormflurry",
-          "",
-          "Elemental Assault",
-          "",
+          "Spirit Wolf",
+          "Hailstorm",
+          "Nature's Guardian/Feral Lunge",
           "Sundering",
           "Ascendance"
         ]
@@ -589,17 +635,19 @@
         "web": "/wow/restoration-shaman/",
         "priorities": [
           "Intellect",
-          "Crit = Versatility",
-          "Haste = Mastery"
+          "Versatility",
+          "Crit",
+          "Mastery",
+          "Haste"
         ],
         "talents": [
-          "Undulation",
+          "Torrent",
           "Echo of the Elements",
-          "Static Charge",
+          "Spirit Wolf",
           "Earthen Wall Totem",
-          "Graceful Spirit",
-          "Cloudburst Totem",
-          "High Tide"
+          "Nature's Guardian",
+          "Flash Flood",
+          "Ascendance"
         ]
       }
     ]
@@ -612,17 +660,19 @@
         "web": "/wow/affliction-warlock/",
         "priorities": [
           "Intellect",
-          "Haste >= Mastery",
-          "Crit >= Versatility"
+          "Haste",
+          "Versatility",
+          "Mastery",
+          "Crit"
         ],
         "talents": [
-          "Drain Soul",
-          "Siphon Life",
+          "Nightfall",
+          "Absolute Corruption",
           "Burning Rush",
-          "Vile Taint",
+          "Phantom Singularity",
           "Mortal Coil",
           "Haunt",
-          "Dark Soul: Misery"
+          "Soul Conduit"
         ]
       },
       {
@@ -631,16 +681,18 @@
         "priorities": [
           "Intellect",
           "Haste",
-          "Crit = Mastery",
-          "Versatility"
+          "Crit",
+          "Mastery",
+          "Versatility",
+          "Stamina"
         ],
         "talents": [
-          "Demonic Strength",
+          "Bilescourge Bombers",
           "Demonic Calling",
-          "",
-          "Summon Vilefiend",
-          "",
-          "Grimoire: Felguard",
+          "Burning Rush",
+          "Soul Strike",
+          "Mortal Coil",
+          "Inner Demons",
           "Demonic Consumption"
         ]
       },
@@ -649,17 +701,19 @@
         "web": "/wow/destruction-warlock/",
         "priorities": [
           "Intellect",
-          "Haste = Mastery >= Crit",
-          "Versatility"
+          "Mastery",
+          "Crit",
+          "Versatility",
+          "Haste"
         ],
         "talents": [
-          "Flashover",
-          "Reverse Entropy",
+          "Soul Fire",
+          "Shadowburn",
           "Burning Rush",
-          "Cataclysm",
-          "Howl of Terror",
+          "Fire and Brimstone",
+          "Mortal Coil",
           "Rain of Chaos",
-          "Dark Soul: Instability"
+          "Channel Demonfire"
         ]
       }
     ]
@@ -671,36 +725,40 @@
         "name": "Arms",
         "web": "/wow/arms-warrior/",
         "priorities": [
-          "Haste >= Crit",
-          "Versatility >= Mastery",
-          "Strength"
+          "Strength",
+          "Haste",
+          "Crit",
+          "Versatility",
+          "Mastery"
         ],
         "talents": [
-          "Skullsplitter",
+          "War Machine",
           "Double Time",
           "Fervor of Battle",
-          "Defensive Stance",
-          "Warbreaker",
-          "In For The Kill",
-          "Anger Management"
+          "Bounding Stride",
+          "Cleave",
+          "In For The Kill?",
+          "Dreadnaught"
         ]
       },
       {
         "name": "Fury",
         "web": "/wow/fury-warrior/",
         "priorities": [
+          "Strength",
+          "Mastery",
           "Crit",
-          "Mastery >= Haste >= Versatility",
-          "Strength"
+          "Versatility",
+          "Haste"
         ],
         "talents": [
-          "Sudden Death",
+          "Fresh Meat",
           "Double Time",
-          "Frenzy",
-          "Warpaint",
+          "Onslaught",
+          "Bounding Stride",
           "Frothing Berserker",
-          "Dragon Roar",
-          "Siegebreaker"
+          "Dragon Roar/Bladestorm",
+          "Anger Management/Reckless Abandon"
         ]
       },
       {
@@ -708,18 +766,19 @@
         "web": "/wow/protection-warrior/",
         "priorities": [
           "Haste",
-          "Crit = Versatility",
+          "Versatility",
+          "Crit",
           "Mastery",
           "Strength"
         ],
         "talents": [
-          "Devastator",
-          "Storm Bolt",
+          "War Machine/Devastator",
+          "Double Time",
           "Dragon Roar",
-          "Crackling Thunder",
+          "Bounding Stride",
           "Indomitable",
-          "Ravager",
-          "Bolster"
+          "Into the Fray/Ravager",
+          "Anger Management/Bolster"
         ]
       }
     ]

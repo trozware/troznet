@@ -1,11 +1,12 @@
 ---
 date: 2012-05-07T00:00:00Z
 tags:
-- mac
-- time in words
-- screen saver
+  - mac
+  - time in words
+  - screen saver
 title: Time In Words Screen Saver
 url: /time-in-words-screen-saver-for-mac/
+draft: true
 ---
 
 The latest member of the Time In Words suite of apps is a screen saver module
@@ -61,7 +62,7 @@ Words Screen Saver Xcode project][10]. This was written using Xcode 4.x so is
 rather out-dated by now, but may prove useful to others wishing to start writing
 their own screen savers.
 
-[7]: /time-in-words/ "Time In Words"
-[8]: /time-in-words-for-mac/ "Worlds Time In Words for Mac"
+[7]: /time-in-words/ 'Time In Words'
+[8]: /time-in-words-for-mac/ 'Worlds Time In Words for Mac'
 [9]: /screensaver/TimeInWords-ScreenSaver.zip
 [10]: /screensaver/TimeInWordsScreenSaverXcode.zip

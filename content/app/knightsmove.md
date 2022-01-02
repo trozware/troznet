@@ -9,6 +9,7 @@ mac_app_image: /icons/KnightsMove128.png
 mac_app_name: A Knight's Move
 title: A Knight's Move
 url: /knightsmove/
+draft: true
 ---
 
 A Knight's Move is a puzzle game where you have to move your knight across a

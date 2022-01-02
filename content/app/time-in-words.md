@@ -6,6 +6,7 @@ ios_app_id: 498403851
 ios_app_name: World Time In Words
 title: World Time In Words for iOS
 url: /time-in-words/
+draft: true
 ---
 
 World Time In Words is a clock and time converter app that takes you away from numbers and shows you the time as a complete sentence. No more worrying about whether it is morning or evening or whether it is yesterday, today or tomorrow in some other part of the world.

@@ -22,11 +22,11 @@ and Apple Watch.
 
 If you read my recent blog post on [Road Trip Apps][6] you will have realised
 that I was working on an app to fill a gap that I discovered in our road trip
-app arsenal. So here it is: "What Is My Speed?" for iPhone & Apple Watch.
+app arsenal. So here it is: "What Is My Speed?" for iPhone.
 
 ---
 
-Track your speed on your iPhone or Apple Watch while driving, bicycling, running
+Track your speed on your iPhone while driving, bicycling, running
 or walking. See your course and altitude at all times.
 
 Optionally set a speed limit and get audible warnings on your iPhone when you
@@ -47,17 +47,10 @@ altitude, but these are easily changed after tapping the info button.
 
 ---
 
-To monitor your speed on your Apple Watch, you need to start the app on your
-iPhone, but then it does not have to remain in the foreground. However speed
-limit warnings will only be given when the iPhone app is active.
-
-![What Is My Speed? Apple Watch][4]
-
 To adjust the speed limit, swipe from side to side. The speed limit indicator
 will expand for easier viewing and the speed limit will increase or decrease.
 Tap again to shrink the speed limit indicator or leave it for a few seconds and
-it will shrink automatically. You can also swipe up or down with two fingers to
-adjust the screen brightness for maximum visibility.
+it will shrink automatically.
 
 Tap the "?" button on the main screen to be reminded of the available swipes.
 
@@ -67,15 +60,11 @@ Tap the "?" button on the main screen to be reminded of the available swipes.
 
 **Location permissions:** On startup, the app will request permission to access
 your location. This is how the speed, course and altitude data is gathered so is
-essential for the app to operate. If you have an Apple Watch with the app
-installed, the app will continue to track your speed while in the background so
-that the data can be sent to your watch. If you do not have an Apple Watch or
-the app is not installed on the watch, your speed will only ever be tracked when
+essential for the app to operate. Your location will only ever be tracked when
 the app is the current foreground app.
 
 [1]: https://itunes.apple.com/app/what-is-my-speed/id1091394524
 [2]: /images/speed_1.png
 [3]: /images/speed_2.png
-[4]: /images/speed_watch_1.png
 [5]: /images/speed_3.png
 [6]: /post/2016-04-07-road-trip-apps/

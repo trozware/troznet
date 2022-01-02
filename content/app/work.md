@@ -1,12 +1,14 @@
 ---
 date: 2016-11-16T00:00:00Z
-mac_app_desc: A project organizer for developers, designers, students or any professional
+mac_app_desc:
+  A project organizer for developers, designers, students or any professional
   who works with multiple projects involving files & folders, web pages, email addresses
   and lists of tasks.
 mac_app_image: /icons/Work128.png
 mac_app_name: Work
 title: Work
 url: /work/
+draft: true
 ---
 
 **Work** is a project organizer app for developers, designers, students or any

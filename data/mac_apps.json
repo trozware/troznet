@@ -1,26 +1,10 @@
 [
   {
-    "icon": "Knights36.png",
-    "name": "A Knight's Move",
-    "webpage": "/knightsmove/",
-    "version": "1.7",
-    "updated": "15 Nov 2020",
-    "app_id": "533321133"
-  },
-  {
-    "icon": "iOSIconMaker36.png",
-    "name": "Icon Builder",
-    "webpage": "/icon-builder/",
-    "version": "5.3",
-    "updated": "7 Nov 2020",
-    "app_id": "552293482"
-  },
-  {
     "icon": "ManReader36.png",
     "name": "Man Reader",
     "webpage": "/manreader/",
-    "version": "1.10",
-    "updated": "11 May 2018",
+    "version": "1.13",
+    "updated": "26 May 2021",
     "app_id": "522583774"
   }
 ]

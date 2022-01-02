@@ -5,6 +5,7 @@ url: /19th-hole/
 ios_app_name: 19th Hole Golf Scorer
 ios_app_id: 871686159
 ios_app_desc: The golf scoring app for everyone, for iPhone and Apple Watch.
+draft: true
 ---
 
 19th Hole is the golf scoring app for everyone, and it is available from the

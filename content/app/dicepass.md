@@ -7,6 +7,7 @@ mac_app_image: /icons/DicePass128.png
 mac_app_name: Dice Pass
 title: Dice Pass
 url: /dicepass/
+draft: true
 ---
 
 Dice Pass is available from the [Mac App Store][0] and version 3.2 (released 26th September 2018) supports macOS Mojave's dark mode.

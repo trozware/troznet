@@ -7,6 +7,7 @@ mac_app_image: /icons/IconBuilder128.png
 mac_app_name: Icon Builder
 title: Icon Builder
 url: /icon-builder/
+draft: true
 ---
 
 [Icon Builder 5.3][3] is available from the Mac App Store.

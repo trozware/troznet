@@ -7,6 +7,7 @@ mac_app_image: /icons/TimeInWords128.png
 mac_app_name: World Time In Words
 title: World Time In Words for Mac
 url: /time-in-words-for-mac/
+draft: true
 ---
 
 <a href="http://itunes.apple.com/au/app/time-in-words/id509085586?mt=8" target="_blank">World

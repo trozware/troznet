@@ -1,12 +1,12 @@
 ---
-title: 'Wow Stats'
+title: 'Stats for WoW'
 date: 2020-10-14T11:43:03+10:00
 url: /wow-stats/
 comment: false
 toc: false
 ios_app_id: 1364247768
-ios_app_name: WoW Stats
-ios_app_desc: WoW Stats is a utility app for World of Warcraft players that gives them fast and easy access to the recommended stat priorities for each class and spec.
+ios_app_name: Stats for WoW
+ios_app_desc: Stats for WoW is a utility app for World of Warcraft players that gives them fast and easy access to the recommended stat priorities for each class and spec.
 ---
 
 ### Do you play [World of Warcraft][4]?
@@ -15,15 +15,15 @@ Have you ever agonised over a new piece of gear - are those stats better or wors
 
 Is your computer festooned with sticky notes reminding you that your prot pally needs haste over mastery but the enhancement shaman needs agility?
 
-Get rid of the notes and use the [WoW Stats][3] app instead.
+Get rid of the notes and use the [Stats for WoW][3] app instead.
 
-[![WoW Stats in the App Store][5]][3]
+[![Stats for WoW in the App Store][5]][3]
 
-Data comes from [Noxxic][1] and is updated automatically with each new patch.
+Data comes from [Noxxic][1] and [Icy Veins][2] and is updated automatically with each new patch.
 
 And you can follow the direct links to the pages for your class and spec on [Noxxic][1] or [Icy Veins][2] for more info from within the app.
 
-[![WoW Stats][6]][7]
+[![Stats for WoW][6]][7]
 
 Click for a larger image...
 
