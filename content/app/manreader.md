@@ -52,6 +52,26 @@ man page for that command.
 
 ---
 
+#### Man Reader version 1.13 changes (26 May 2021):
+
+- Add missing links for non-standard man pages.
+
+#### Man Reader version 1.12 changes (17 May 2021):
+
+- Fixes issues with crashing on first run and with dark mode over-riding the user preferences.
+
+#### Man Reader version 1.11 changes (16 May 2021):
+
+- I am working on a major update to Man Reader, but this is taking longer than expected due to other commitments, so this is an interim release to fix some of the UI problems with the current version.
+
+#### Man Reader version 1.10 changes (11 May 2018):
+
+- Fix for possible crash if toolbar apps are not available.
+
+#### Man Reader version 1.9 changes (27 Nov 2017):
+
+- Fix for High Sierra problem where page navigation had stopped working.
+
 #### Man Reader version 1.8 changes (23 Oct 2016):
 
 - More complete search for man pages, including in third-party IDEs.
