@@ -1,52 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  
-    <title>SwiftUI for Mac Extras :: TrozWare</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="Last year, I wrote a 3 part series of articles on using SwiftUI to build a Mac app. I would like to thank everyone who contacted me about this series. It was received very well and revealed that there is still a large amount of interest in programming for the Mac.
+  <head>
+    
+      <title>
+        SwiftUI for Mac Extras ::
+        TrozWare
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Last year, I wrote a 3 part series of articles on using SwiftUI to build a Mac app. I would like to thank everyone who contacted me about this series. It was received very well and revealed that there is still a large amount of interest in programming for the Mac.
 Some of the responses I got were pointing out different or better ways to do things, so I am going to list them here, adding to this post as I get new information. The relevant sections in the original posts will have links to the fixes suggested here, but I decided it was easier to list the changes in a separate post, rather than asking people to re-read the whole series looking for modifications.
-"/>
-<meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
-<meta name="robots" content="noodp"/>
+"
+/>
+<meta
+  name="keywords"
+  content="[Swift Apple macOS iOS Apple Watch]"
+/>
+<meta name="robots" content="noodp" />
 <link rel="canonical" href="https://troz.net/post/2020/swiftui_for-mac-extras/" />
 
 
-<link rel="stylesheet" href="https://troz.net/assets/style.css">
 
 
-<link rel="stylesheet" href="https://troz.net/style.css">
+
+<link rel="stylesheet" href="https://troz.net/assets/style.css" />
+
+<link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="https://troz.net/img/favicon.png">
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
 
 
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="SwiftUI for Mac Extras :: TrozWare — " />
+<link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SwiftUI for Mac Extras"/>
 <meta name="twitter:description" content="Last year, I wrote a 3 part series of articles on using SwiftUI to build a Mac app. I would like to thank everyone who contacted me about this series. It was received very well and revealed that there is still a large amount of interest in programming for the Mac.
-Some of the responses I got were pointing out different or better ways to do things, so I am going to list them here, adding to this post as I get new information. The relevant sections in the original posts will have links to the fixes suggested here, but I decided it was easier to list the changes in a separate post, rather than asking people to re-read the whole series looking for modifications.
-" />
-<meta name="twitter:site" content="https://troz.net/" />
-<meta name="twitter:creator" content="" />
-<meta name="twitter:image" content="">
+Some of the responses I got were pointing out different or better ways to do things, so I am going to list them here, adding to this post as I get new information. The relevant sections in the original posts will have links to the fixes suggested here, but I decided it was easier to list the changes in a separate post, rather than asking people to re-read the whole series looking for modifications."/>
 
 
-<meta property="og:locale" content="en" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="SwiftUI for Mac Extras :: TrozWare — ">
+
+<meta property="og:title" content="SwiftUI for Mac Extras" />
 <meta property="og:description" content="Last year, I wrote a 3 part series of articles on using SwiftUI to build a Mac app. I would like to thank everyone who contacted me about this series. It was received very well and revealed that there is still a large amount of interest in programming for the Mac.
-Some of the responses I got were pointing out different or better ways to do things, so I am going to list them here, adding to this post as I get new information. The relevant sections in the original posts will have links to the fixes suggested here, but I decided it was easier to list the changes in a separate post, rather than asking people to re-read the whole series looking for modifications.
-" />
-<meta property="og:url" content="https://troz.net/post/2020/swiftui_for-mac-extras/" />
-<meta property="og:site_name" content="SwiftUI for Mac Extras" />
-<meta property="og:image" content="">
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-
-<meta property="article:published_time" content="2020-01-27 11:32:57 &#43;1000 AEST" />
+Some of the responses I got were pointing out different or better ways to do things, so I am going to list them here, adding to this post as I get new information. The relevant sections in the original posts will have links to the fixes suggested here, but I decided it was easier to list the changes in a separate post, rather than asking people to re-read the whole series looking for modifications." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troz.net/post/2020/swiftui_for-mac-extras/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-01-27T11:32:57+10:00" />
+<meta property="article:modified_time" content="2020-01-27T11:32:57+10:00" />
 
 
 
@@ -54,21 +68,25 @@ Some of the responses I got were pointing out different or better ways to do thi
 
 
 
-
-
-</head>
-<body class="dark-theme">
-<div class="container">
-  <header class="header">
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
   <span class="header__inner">
-    <a href="https://troz.net/" class="logo" style="text-decoration: none;">
+    <a
+  href="https://troz.net/"
+  class="logo"
+  style="text-decoration: none;"
+>
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
 </svg>
 </span>
-    <span class="logo__text">TrozWare</span>
-    <span class="logo__cursor" style="width: 2px"></span>
+    <span class="logo__text"
+      >TrozWare</span
+    >
+    <span class="logo__cursor"></span>
   
 </a>
 
@@ -128,16 +146,25 @@ Some of the responses I got were pointing out different or better ways to do thi
 
         <span class="menu-trigger">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
           </svg>
         </span>
       
       <span class="theme-toggle">
-        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
 </svg>
 
       </span>
@@ -146,8 +173,8 @@ Some of the responses I got were pointing out different or better ways to do thi
 </header>
 
 
-  <div class="content">
-    
+      <div class="content">
+        
 <div class="post">
   <h2 class="post-title"><a href="https://troz.net/post/2020/swiftui_for-mac-extras/">SwiftUI for Mac Extras</a></h2>
   <div class="post-meta">
@@ -183,10 +210,10 @@ Just wanted to add that in part 2 when dismissing sheets there are two ways to d
 </blockquote>
 <p>Paul Hudson of Hacking with Swift explains how to use both methods very clearly in his article on <a href="https://www.hackingwithswift.com/quick-start/swiftui/how-to-make-a-view-dismiss-itself">How to make a view dismiss itself</a>.</p>
 <p>My <a href="/post/2019/swiftui-for-mac-3#sheets">original technique</a> passed the Boolean that triggered the sheet to appear, as a Binding to the sheet view. The sheet view could then toggle this to make the parent view dismiss it.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  .sheet(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  .sheet(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing) {
       SheetView(isVisible: <span style="color:#66d9ef">self</span>.<span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing)
   }
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SheetView</span>: View {
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SheetView</span>: View {
     @Binding <span style="color:#66d9ef">var</span> isVisible: Bool
 
     <span style="color:#66d9ef">var</span> body: some View {
@@ -200,11 +227,11 @@ Just wanted to add that in part 2 when dismissing sheets there are two ways to d
     }
 }
 </code></pre></div><p>The presentation mode method leaves it up to the sheet to dismiss itself. The parent view shows the sheet but does not pass any binding.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  .sheet(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  .sheet(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing) {
       SheetView()
   }
 </code></pre></div><p>The sheet view gets an environment property that it can use to change its presentation mode, dismissing itself that way.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SheetView</span>: View {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SheetView</span>: View {
     @Environment(<span style="color:#960050;background-color:#1e0010">\</span>.presentationMode) <span style="color:#66d9ef">var</span> presentationMode
 
     <span style="color:#66d9ef">var</span> body: some View {
@@ -221,14 +248,14 @@ Just wanted to add that in part 2 when dismissing sheets there are two ways to d
 <hr>
 <h2 id="subscribing-on-the-main-thread">Subscribing on the Main Thread</h2>
 <p>In <a href="/post/2019/swiftui-for-mac-2#passing-menu-data-to-a-view">part 2 of this series</a>, I created a menu item caused the downloaded image to be flipped. Selecting the menu item posted a notification:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">@IBAction</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">flipImage</span>(<span style="color:#66d9ef">_</span> sender: Any) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">@IBAction</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">flipImage</span>(<span style="color:#66d9ef">_</span> sender: Any) {
         NotificationCenter.<span style="color:#66d9ef">default</span>.post(name: .flipImage, object: <span style="color:#66d9ef">nil</span>)
     }
 </code></pre></div><p>which the view showing the image was listening for.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">let</span> flipImageMenuItemSelected = NotificationCenter.<span style="color:#66d9ef">default</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">let</span> flipImageMenuItemSelected = NotificationCenter.<span style="color:#66d9ef">default</span>
         .publisher(<span style="color:#66d9ef">for</span>: .flipImage)
 </code></pre></div><p>The outermost component of the view&rsquo;s body used an <code>onReceive</code> modifier to get this notification and react accordingly.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  <span style="color:#66d9ef">var</span> body: some View {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  <span style="color:#66d9ef">var</span> body: some View {
       VStack {
         <span style="color:#75715e">// layout omitted for brevity</span>
       }
@@ -241,7 +268,7 @@ Just wanted to add that in part 2 when dismissing sheets there are two ways to d
 </code></pre></div><p>Since the notification was triggering a change to the UI, I made sure that this happened on the main thread.</p>
 <p>But it was pointed out to me that it would be easier to make sure that the publisher was set up to use the main thread all the time, instead of having to specify the main queue when processing the notification.</p>
 <p>So now the publisher is defined like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">let</span> flipImageMenuItemSelected = NotificationCenter.<span style="color:#66d9ef">default</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">let</span> flipImageMenuItemSelected = NotificationCenter.<span style="color:#66d9ef">default</span>
       .publisher(<span style="color:#66d9ef">for</span>: .flipImage)
       .receive(on: RunLoop.main)
 </code></pre></div><p>And the <code>onReceive</code> modifier can toggle the <code>imageIsFlipped</code> flag directly, without having to worry about the thread.</p>
@@ -256,7 +283,7 @@ Just wanted to add that in part 2 when dismissing sheets there are two ways to d
 <p>This is in the Form tab of the UI Samples window. As suggested to me, I added a <code>background</code> modifier to set the background of a portion of the view to the selected color. And although the NSColorWell showed newly selected colors, the background remained stubbornly blue.</p>
 <p>The solution was to add a <code>Coordinator</code> to the <code>NSViewRepresentable</code> and have it subscribe to any changes in the color and update the embedded view&rsquo;s selected color as needed. I would not have come up with this by myself, so many thanks to the person who sent it to me.</p>
 <p>Here is the full code for the <code>EmbeddedColorWell</code> struct:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">EmbeddedColorWell</span>: NSViewRepresentable {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">EmbeddedColorWell</span>: NSViewRepresentable {
     @Binding <span style="color:#66d9ef">var</span> selectedColor: NSColor
     
     <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Coordinator</span>: NSObject {
@@ -318,10 +345,10 @@ Just wanted to add that in part 2 when dismissing sheets there are two ways to d
   
 </div>
 
-  </div>
+      </div>
 
-  
-    <link rel="stylesheet" href="/css/footer.css" />
+      
+        <link rel="stylesheet" href="/css/footer.css" />
 
 <footer class="footer">
   <div class="footer__inner">
@@ -375,8 +402,9 @@ Just wanted to add that in part 2 when dismissing sheets there are two ways to d
 </script>
 
 
-  
-</div>
+      
+    </div>
 
-</body>
+    
+  </body>
 </html>

@@ -1,52 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  
-    <title>SwiftUI for Mac - Part 3 :: TrozWare</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="In part 1 of this series, I created a Mac app using SwiftUI. The app uses a Master-Detail design to list entries in an outline on the left and show details about the selected entry in the detail view on the right. In part 2 I explored using menus, adding all the expected user interface elements and opening secondary windows.
+  <head>
+    
+      <title>
+        SwiftUI for Mac - Part 3 ::
+        TrozWare
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="In part 1 of this series, I created a Mac app using SwiftUI. The app uses a Master-Detail design to list entries in an outline on the left and show details about the selected entry in the detail view on the right. In part 2 I explored using menus, adding all the expected user interface elements and opening secondary windows.
 In this third and final part, I want to look at the various ways to present dialogs to the user.
-"/>
-<meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
-<meta name="robots" content="noodp"/>
+"
+/>
+<meta
+  name="keywords"
+  content="[Swift Apple macOS iOS Apple Watch]"
+/>
+<meta name="robots" content="noodp" />
 <link rel="canonical" href="https://troz.net/post/2019/swiftui-for-mac-3/" />
 
 
-<link rel="stylesheet" href="https://troz.net/assets/style.css">
 
 
-<link rel="stylesheet" href="https://troz.net/style.css">
+
+<link rel="stylesheet" href="https://troz.net/assets/style.css" />
+
+<link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="https://troz.net/img/favicon.png">
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
 
 
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="SwiftUI for Mac - Part 3 :: TrozWare — " />
-<meta name="twitter:description" content="In part 1 of this series, I created a Mac app using SwiftUI. The app uses a Master-Detail design to list entries in an outline on the left and show details about the selected entry in the detail view on the right. In part 2 I explored using menus, adding all the expected user interface elements and opening secondary windows.
-In this third and final part, I want to look at the various ways to present dialogs to the user.
-" />
-<meta name="twitter:site" content="https://troz.net/" />
-<meta name="twitter:creator" content="" />
-<meta name="twitter:image" content="">
+<link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
-<meta property="og:locale" content="en" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SwiftUI for Mac - Part 3"/>
+<meta name="twitter:description" content="Explorations in building a Mac app in Swift."/>
+
+
+
+<meta property="og:title" content="SwiftUI for Mac - Part 3" />
+<meta property="og:description" content="Explorations in building a Mac app in Swift." />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="SwiftUI for Mac - Part 3 :: TrozWare — ">
-<meta property="og:description" content="In part 1 of this series, I created a Mac app using SwiftUI. The app uses a Master-Detail design to list entries in an outline on the left and show details about the selected entry in the detail view on the right. In part 2 I explored using menus, adding all the expected user interface elements and opening secondary windows.
-In this third and final part, I want to look at the various ways to present dialogs to the user.
-" />
-<meta property="og:url" content="https://troz.net/post/2019/swiftui-for-mac-3/" />
-<meta property="og:site_name" content="SwiftUI for Mac - Part 3" />
-<meta property="og:image" content="">
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-
-<meta property="article:published_time" content="2019-12-15 17:28:20 &#43;1000 AEST" />
+<meta property="og:url" content="https://troz.net/post/2019/swiftui-for-mac-3/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-12-15T17:28:20+10:00" />
+<meta property="article:modified_time" content="2019-12-15T17:28:20+10:00" />
 
 
 
@@ -54,21 +66,25 @@ In this third and final part, I want to look at the various ways to present dial
 
 
 
-
-
-</head>
-<body class="dark-theme">
-<div class="container">
-  <header class="header">
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
   <span class="header__inner">
-    <a href="https://troz.net/" class="logo" style="text-decoration: none;">
+    <a
+  href="https://troz.net/"
+  class="logo"
+  style="text-decoration: none;"
+>
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
 </svg>
 </span>
-    <span class="logo__text">TrozWare</span>
-    <span class="logo__cursor" style="width: 2px"></span>
+    <span class="logo__text"
+      >TrozWare</span
+    >
+    <span class="logo__cursor"></span>
   
 </a>
 
@@ -128,16 +144,25 @@ In this third and final part, I want to look at the various ways to present dial
 
         <span class="menu-trigger">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
           </svg>
         </span>
       
       <span class="theme-toggle">
-        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
 </svg>
 
       </span>
@@ -146,8 +171,8 @@ In this third and final part, I want to look at the various ways to present dial
 </header>
 
 
-  <div class="content">
-    
+      <div class="content">
+        
 <div class="post">
   <h2 class="post-title"><a href="https://troz.net/post/2019/swiftui-for-mac-3/">SwiftUI for Mac - Part 3</a></h2>
   <div class="post-meta">
@@ -185,7 +210,7 @@ In this third and final part, I want to look at the various ways to present dial
 <p>So the first thing to do is add a footer to the DetailView to trigger each of these. I am going to separate this out into a new subview for neatness.</p>
 <h2 id="alert">Alert</h2>
 <p>To make an Alert, I need an @State Bool which sets whether the alert is visible or not. All the button has to do is toggle that Bool. Stripping out the extra code and views, this is what I have.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">DialogsView</span>: View {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">DialogsView</span>: View {
     @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> alertIsShowing = <span style="color:#66d9ef">false</span>
     @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> dialogResult = <span style="color:#e6db74">&#34;Click the buttons above to test the dialogs.&#34;</span>
 
@@ -194,7 +219,7 @@ In this third and final part, I want to look at the various ways to present dial
     }
 }
 </code></pre></div><p>To configure the alert itself, I added an alert modifier to the outmost view in this view. The <code>dialogResult</code> string is a diagnostic that I can use to confirm that the results of the various dialogs get passed back to the parent view.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  Alert(title: Text(<span style="color:#e6db74">&#34;Alert&#34;</span>),
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  Alert(title: Text(<span style="color:#e6db74">&#34;Alert&#34;</span>),
         message: Text(<span style="color:#e6db74">&#34;This is an alert!&#34;</span>),
         dismissButton: .<span style="color:#66d9ef">default</span>(Text(<span style="color:#e6db74">&#34;OK&#34;</span>)) {
           <span style="color:#66d9ef">self</span>.dialogResult = <span style="color:#e6db74">&#34;OK clicked in Alert&#34;</span>
@@ -203,7 +228,7 @@ In this third and final part, I want to look at the various ways to present dial
 <p>Then there is the button which auto-suggest tells me is of type Alert.Button. I couldn&rsquo;t find any documentation for this, but delving into the definition for Alert, I see that there are three pre-defined button types: default, cancel or destructive. Cancel actually has two variants and will use a label appropriate to the user&rsquo;s locale if no label is supplied.</p>
 <p>Again, these buttons need a Text view as the label (if supplied) and can take an action closure, which I used to update my <code>dialogResult</code> string.</p>
 <p>This version showed a single <code>dismissButton</code> but I saw that there was a variation of Alert with <code>primary</code> and <code>secondary</code> buttons. It was not obvious that these would also dismiss the alert dialog, but I tried anyway.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  Alert(title: Text(<span style="color:#e6db74">&#34;Alert&#34;</span>),
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  Alert(title: Text(<span style="color:#e6db74">&#34;Alert&#34;</span>),
         message: Text(<span style="color:#e6db74">&#34;This is an alert!&#34;</span>),
         primaryButton: .<span style="color:#66d9ef">default</span>(Text(<span style="color:#e6db74">&#34;OK&#34;</span>), action: {
           <span style="color:#66d9ef">self</span>.dialogResult = <span style="color:#e6db74">&#34;OK clicked in Alert&#34;</span>
@@ -219,16 +244,16 @@ In this third and final part, I want to look at the various ways to present dial
 <h2 id="sheets">Sheets</h2>
 <p>While Alerts have a very fixed structure, sheets allow us to put any SwiftUI view into a sheet dialog.</p>
 <p>So I added another Bool for the Sheet button to toggle, and added this sheet modifier. SheetView right now is simply a TextView.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  .sheet(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  .sheet(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing) {
       SheetView()
   }
 </code></pre></div><p>This didn&rsquo;t work so well. It showed the sheet, but the sheet was tiny - only the size of the Text view it contained. And I had no way of dismissing it&hellip;</p>
 <p>The size problem was solved by setting a frame on the Text view in SheetView.</p>
 <p>The trick to dismissing the sheet is to pass it a Binding to the Bool that triggered it to open in the first place. If a button in the sheet sets this Bool back to false, the parent view will hide the sheet. That sounds confusing, but it works.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  .sheet(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  .sheet(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing) {
       SheetView(isVisible: <span style="color:#66d9ef">self</span>.<span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing)
   }
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SheetView</span>: View {
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SheetView</span>: View {
     @Binding <span style="color:#66d9ef">var</span> isVisible: Bool
 
     <span style="color:#66d9ef">var</span> body: some View {
@@ -249,11 +274,11 @@ In this third and final part, I want to look at the various ways to present dial
 <h3 id="sheets--data">Sheets &amp; Data</h3>
 <p>With this in place, I had the sheet opening and closing perfectly, but I was not yet passing data back &amp; forth between the sheet and its parent view. I decide to put a TextField in the SheetView and bind its contents to the <code>dialogResult</code> property in the DetailView so that any edits appeared immediately in the DetailView. And while I am there, I might as well add some more decorations to the SheetView since it is a full View and not a restricted Alert.</p>
 <p>Calling the SheetView changed to this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  .sheet(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  .sheet(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing) {
       SheetView(isVisible: <span style="color:#66d9ef">self</span>.<span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing, enteredText: <span style="color:#66d9ef">self</span>.<span style="color:#960050;background-color:#1e0010">$</span>dialogResult)
   }
 </code></pre></div><p>And the SheetView itself (not all the interface is listed here for brevity):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SheetView</span>: View {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SheetView</span>: View {
     @Binding <span style="color:#66d9ef">var</span> isVisible: Bool
     @Binding <span style="color:#66d9ef">var</span> enteredText: String
 
@@ -286,7 +311,7 @@ In this third and final part, I want to look at the various ways to present dial
 <p>I only had two issues with this now. I was not able to get the focus into the TextField automatically when the sheet opened and I was not able to assign keyboard shortcuts to the Cancel and OK buttons so that they could be operated without a mouse. And as I mentioned in the previous part, I was not able to make the OK button take on the default styling.</p>
 <p>One useful technique that I developed: the SheetView is in the DialogsView.swift file instead of in its own SwiftUI file. It would probably be a good idea to separate it out but I didn&rsquo;t which meant that it had no Canvas preview to look at while I was laying it out.</p>
 <p>So I edited the PreviewProvider like this, so that I could change the comments to switch it between showing the DialogsView and showing the SheetView.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">DialogsView_Previews</span>: PreviewProvider {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">DialogsView_Previews</span>: PreviewProvider {
     <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">var</span> previews: some View {
         <span style="color:#75715e">// DialogsView()</span>
         SheetView(isVisible: .constant(<span style="color:#66d9ef">true</span>), enteredText: .constant(<span style="color:#e6db74">&#34;&#34;</span>))
@@ -296,7 +321,7 @@ In this third and final part, I want to look at the various ways to present dial
 <p>AppKit provides NSOpenPanel for selecting a file and NSSavePanel for saving. I will try to implement NSSavePanel to allow saving the current cat image.</p>
 <p>Since this is an AppKit control rather than a SwiftUI control, I assumed that I would need to use NSViewRepresentable like I did for the NSColorWell in part 2. But while NSColorWell is a descendent of NSView, NSSavePanel is not. So I need a new idea.</p>
 <p>Rather naively, I thought maybe I could just create an NSSavePanel in a function inside DialogsView and see what happened.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">saveImage</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">saveImage</span>() {
       <span style="color:#66d9ef">let</span> panel = NSSavePanel()
       panel.nameFieldLabel = <span style="color:#e6db74">&#34;Save cat image as:&#34;</span>
       panel.nameFieldStringValue = <span style="color:#e6db74">&#34;cat.jpg&#34;</span>
@@ -314,9 +339,9 @@ In this third and final part, I want to look at the various ways to present dial
 <p>But this is all happening in DialogsView, which is a subview of DetailView. And DetailView is the view that holds the image, not DialogsView. So how can I save the image? Do I pass the URL to DetailView or pass the image to DialogsView? Or do something clever with Notifications and Subscriptions?</p>
 <p>I really don&rsquo;t know what is best, but I have decided to post a Notification with the URL as its object. DetailView can receive this Notification and save the image whenever it is received.</p>
 <p>So I replaced the <code>print</code> line in the <code>saveImage()</code> method with:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  NotificationCenter.<span style="color:#66d9ef">default</span>.post(name: .saveImage, object: fileUrl)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  NotificationCenter.<span style="color:#66d9ef">default</span>.post(name: .saveImage, object: fileUrl)
 </code></pre></div><p>And in DetailView, I set up the publisher:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">let</span> saveImageUrlSelected = NotificationCenter.<span style="color:#66d9ef">default</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">let</span> saveImageUrlSelected = NotificationCenter.<span style="color:#66d9ef">default</span>
          .publisher(<span style="color:#66d9ef">for</span>: .saveImage)
 
     <span style="color:#66d9ef">var</span> body: some View {
@@ -362,10 +387,10 @@ In this third and final part, I want to look at the various ways to present dial
   
 </div>
 
-  </div>
+      </div>
 
-  
-    <link rel="stylesheet" href="/css/footer.css" />
+      
+        <link rel="stylesheet" href="/css/footer.css" />
 
 <footer class="footer">
   <div class="footer__inner">
@@ -419,8 +444,9 @@ In this third and final part, I want to look at the various ways to present dial
 </script>
 
 
-  
-</div>
+      
+    </div>
 
-</body>
+    
+  </body>
 </html>

@@ -1,49 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  
-    <title>SwiftUI for Mac on Big Sur :: TrozWare</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="In December 2019, I wrote a series of articles about using SwiftUI to build a Mac app. At WWDC 2020, Apple announced macOS 11 Big Sur along with Xcode 12 and a heap of new features for SwiftUI, so I decided to try creating my test app again and seeing how much had changed.
-"/>
-<meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
-<meta name="robots" content="noodp"/>
+  <head>
+    
+      <title>
+        SwiftUI for Mac on Big Sur ::
+        TrozWare
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="In December 2019, I wrote a series of articles about using SwiftUI to build a Mac app. At WWDC 2020, Apple announced macOS 11 Big Sur along with Xcode 12 and a heap of new features for SwiftUI, so I decided to try creating my test app again and seeing how much had changed.
+"
+/>
+<meta
+  name="keywords"
+  content="[Swift Apple macOS iOS Apple Watch]"
+/>
+<meta name="robots" content="noodp" />
 <link rel="canonical" href="https://troz.net/post/2020/swiftui_mac_big_sur/" />
 
 
-<link rel="stylesheet" href="https://troz.net/assets/style.css">
 
 
-<link rel="stylesheet" href="https://troz.net/style.css">
+
+<link rel="stylesheet" href="https://troz.net/assets/style.css" />
+
+<link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="https://troz.net/img/favicon.png">
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
 
 
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="SwiftUI for Mac on Big Sur :: TrozWare — " />
-<meta name="twitter:description" content="In December 2019, I wrote a series of articles about using SwiftUI to build a Mac app. At WWDC 2020, Apple announced macOS 11 Big Sur along with Xcode 12 and a heap of new features for SwiftUI, so I decided to try creating my test app again and seeing how much had changed.
-" />
-<meta name="twitter:site" content="https://troz.net/" />
-<meta name="twitter:creator" content="" />
-<meta name="twitter:image" content="">
+<link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
-<meta property="og:locale" content="en" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SwiftUI for Mac on Big Sur"/>
+<meta name="twitter:description" content="Explorations in building a Mac app in Swift on Big Sur."/>
+
+
+
+<meta property="og:title" content="SwiftUI for Mac on Big Sur" />
+<meta property="og:description" content="Explorations in building a Mac app in Swift on Big Sur." />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="SwiftUI for Mac on Big Sur :: TrozWare — ">
-<meta property="og:description" content="In December 2019, I wrote a series of articles about using SwiftUI to build a Mac app. At WWDC 2020, Apple announced macOS 11 Big Sur along with Xcode 12 and a heap of new features for SwiftUI, so I decided to try creating my test app again and seeing how much had changed.
-" />
-<meta property="og:url" content="https://troz.net/post/2020/swiftui_mac_big_sur/" />
-<meta property="og:site_name" content="SwiftUI for Mac on Big Sur" />
-<meta property="og:image" content="">
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-
-<meta property="article:published_time" content="2020-07-08 19:40:16 &#43;1000 AEST" />
+<meta property="og:url" content="https://troz.net/post/2020/swiftui_mac_big_sur/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-07-08T19:40:16+10:00" />
+<meta property="article:modified_time" content="2020-07-08T19:40:16+10:00" />
 
 
 
@@ -51,21 +65,25 @@
 
 
 
-
-
-</head>
-<body class="dark-theme">
-<div class="container">
-  <header class="header">
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
   <span class="header__inner">
-    <a href="https://troz.net/" class="logo" style="text-decoration: none;">
+    <a
+  href="https://troz.net/"
+  class="logo"
+  style="text-decoration: none;"
+>
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
 </svg>
 </span>
-    <span class="logo__text">TrozWare</span>
-    <span class="logo__cursor" style="width: 2px"></span>
+    <span class="logo__text"
+      >TrozWare</span
+    >
+    <span class="logo__cursor"></span>
   
 </a>
 
@@ -125,16 +143,25 @@
 
         <span class="menu-trigger">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
           </svg>
         </span>
       
       <span class="theme-toggle">
-        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
 </svg>
 
       </span>
@@ -143,8 +170,8 @@
 </header>
 
 
-  <div class="content">
-    
+      <div class="content">
+        
 <div class="post">
   <h2 class="post-title"><a href="https://troz.net/post/2020/swiftui_mac_big_sur/">SwiftUI for Mac on Big Sur</a></h2>
   <div class="post-meta">
@@ -188,7 +215,7 @@
 <hr>
 <h2 id="editing-the-layout">Editing the Layout</h2>
 <p>Now on to my own layout. As I did last time, I used a static list to make a <code>NavigationView</code> for preliminary testing.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
     <span style="color:#66d9ef">var</span> body: some View {
         NavigationView {
              List {
@@ -205,7 +232,7 @@
 <p>But here is where I encountered the first major difference. When I selected an item in the sidebar, the app correctly showed the detail view. But if I put the app into the background, this detail view disappeared. It literally disappeared because I was able to track that it was calling its <code>onDisappear</code> modifier.</p>
 <p>After a lot of testing, several days of frustration and help from <a href="https://twitter.com/jsngr">Jordan Singer</a> with his <a href="https://github.com/jordansinger/mail-swiftui-sample">mail-swiftui-sample</a> project, I was finally able to work this out. The difference is that the initial view has to specify what comes next as well as what it is displaying. So in the initial <code>NavigationView</code>, I had a <code>List</code>, but I also needed some view to show that I was going to show another view in another column. This second column view has to reserve the space for the detail view to come.</p>
 <p>I have no idea how Jordan worked this out, but I am very grateful. What I ended up with was this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
     <span style="color:#66d9ef">var</span> body: some View {
         NavigationView {
             List {
@@ -230,14 +257,14 @@
 <hr>
 <h2 id="displaying-data">Displaying Data</h2>
 <p>As with the previous app, I am displaying data from <a href="https://http.cat/">HTTP Cats</a>. This part remains the same, so check back to the original article if you want to see how I did this. I did get warnings about the <code>Decodable</code> data structs I was using. My normal pattern when I want data to be <code>Identifiable</code> is to use something like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">HttpSection</span>: Identifiable, Decodable {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">HttpSection</span>: Identifiable, Decodable {
     <span style="color:#66d9ef">let</span> id = UUID()
     <span style="color:#66d9ef">let</span> headerCode: String
     <span style="color:#66d9ef">let</span> headerText: String
     <span style="color:#66d9ef">let</span> statuses: [HttpStatus]
 }
 </code></pre></div><p>But with Xcode 12, this gives an error. The error messages seem much more useful than before and they offered two suggestions. I tried what appeared to be the easier one of making the <code>id</code> mutable, but that stopped the decoding from working, so I added a <code>CodingKeys</code> enum to each struct to restrict the keys that would be included.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">CodingKeys</span>: String, CodingKey {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">CodingKeys</span>: String, CodingKey {
     <span style="color:#66d9ef">case</span> headerCode
     <span style="color:#66d9ef">case</span> headerText
     <span style="color:#66d9ef">case</span> statuses
@@ -263,7 +290,7 @@
 <p>Now I had the layout equivalent to what I ended up with after part 1 of my original series, so it was time to explore menus, which are very different. In the old style SwiftUI apps which were wrapped in AppKit, the menus were in a storyboard that you could edit. Now you add <code>commands</code> to the app&rsquo;s <code>WindowGroup</code> to alter the menus.</p>
 <p>The easiest way is to add a completely new menu, but it is also possible to insert new menu items after or before certain standard menu items.</p>
 <p>Here is how to add a new Utilities menu with three items:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">@main
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">@main
 <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SwiftUI_Mac_11App</span>: App {
     <span style="color:#66d9ef">var</span> body: some Scene {
         WindowGroup {
@@ -296,7 +323,7 @@
 <h3 id="preferences">Preferences</h3>
 <p>There was one place where the new app architecture was amazingly good and that was to do with preferences. In my previous attempt at this app, I had a Preferences window and it was a major exercise to stop it opening more than once. This time, it was super easy. In the App.swift file, beside the <code>WindowGroup</code>, I added <code>Settings</code> which contained a view which had the UI for my app&rsquo;s preferences.</p>
 <p>This caused a few errors at first, but I added a <code>@SceneBuilder</code> property wrapper to the App&rsquo;s body and that fixed the errors.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">@main
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">@main
 <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SwiftUI_Mac_11App</span>: App {
     @SceneBuilder <span style="color:#66d9ef">var</span> body: some Scene {
         WindowGroup {
@@ -310,7 +337,7 @@
 }
 </code></pre></div><p>These three lines of code added a Preferences menu item and hooked it up to my <code>SettingsView</code>. This view opens in a new window when the Preferences menu item or keyboard shortcut is used and only one copy of this window ever appears.</p>
 <p>Then on to the second brilliant thing about preferences: <code>@AppStorage</code>. In the previous version, I used a custom property wrapper to wrap settings that I wanted saved into UserDefaults. This is now built into SwiftUI and this was all I had to do:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    @AppStorage(<span style="color:#e6db74">&#34;showCopyright&#34;</span>) <span style="color:#66d9ef">var</span> showCopyright: Bool = <span style="color:#66d9ef">false</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    @AppStorage(<span style="color:#e6db74">&#34;showCopyright&#34;</span>) <span style="color:#66d9ef">var</span> showCopyright: Bool = <span style="color:#66d9ef">false</span>
 </code></pre></div><p>Now any time that variable was accessed, it was read from UserDefaults and every time it was changed, it was written back into UserDefaults. Instant preferences in a single line!</p>
 <p>To pass this setting to a different view, all I had to do was give that view this same declaration. And it just worked!</p>
 <hr>
@@ -320,7 +347,7 @@
 <p>The color picker worked really well except that there is an option to specify whether the picker should support opacity or not. I found that no matter what I chose here, I never got the option to chose a color with opacity.</p>
 <p>The date picker was good. It showed the date numerically using my local format - DD/MM/YYY. Clicking on any of the elements popped up a calendar view. The time picker was not so easy to use. Again, it showed the time in my format e.g. 7:53 pm. But there was no graphical entry, you click on an element (hour, minute or am/pm) and type. This would be OK except that every time you type, the focus jumps back to the hour. I found this confusing.</p>
 <p>One big improvement is the ability to apply a keyboard shortcut to a button. When I set the keyboard shortcut for the Close button to <code>.defaultAction</code>, the button got the default appearance and was triggered by pressing the Return key.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    Button(action: {}) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    Button(action: {}) {
         Text(<span style="color:#e6db74">&#34;Close&#34;</span>)
     }
     .keyboardShortcut(.defaultAction)
@@ -362,10 +389,10 @@
   
 </div>
 
-  </div>
+      </div>
 
-  
-    <link rel="stylesheet" href="/css/footer.css" />
+      
+        <link rel="stylesheet" href="/css/footer.css" />
 
 <footer class="footer">
   <div class="footer__inner">
@@ -419,8 +446,9 @@
 </script>
 
 
-  
-</div>
+      
+    </div>
 
-</body>
+    
+  </body>
 </html>

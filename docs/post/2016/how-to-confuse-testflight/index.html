@@ -1,49 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  
-    <title>How To Confuse TestFlight :: TrozWare</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="I ran into an unusual problem when testing my latest app: &amp;ldquo;What Is My Speed?&amp;rdquo;. It is now available from the iTunes App Store, but getting there was a struggle.
-"/>
-<meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
-<meta name="robots" content="noodp"/>
+  <head>
+    
+      <title>
+        How To Confuse TestFlight ::
+        TrozWare
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="I ran into an unusual problem when testing my latest app: &amp;ldquo;What Is My Speed?&amp;rdquo;. It is now available from the iTunes App Store, but getting there was a struggle.
+"
+/>
+<meta
+  name="keywords"
+  content="[Swift Apple macOS iOS Apple Watch]"
+/>
+<meta name="robots" content="noodp" />
 <link rel="canonical" href="https://troz.net/post/2016/how-to-confuse-testflight/" />
 
 
-<link rel="stylesheet" href="https://troz.net/assets/style.css">
 
 
-<link rel="stylesheet" href="https://troz.net/style.css">
+
+<link rel="stylesheet" href="https://troz.net/assets/style.css" />
+
+<link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="https://troz.net/img/favicon.png">
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
 
 
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="How To Confuse TestFlight :: TrozWare — " />
-<meta name="twitter:description" content="I ran into an unusual problem when testing my latest app: &amp;ldquo;What Is My Speed?&amp;rdquo;. It is now available from the iTunes App Store, but getting there was a struggle.
-" />
-<meta name="twitter:site" content="https://troz.net/" />
-<meta name="twitter:creator" content="" />
-<meta name="twitter:image" content="">
+<link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
-<meta property="og:locale" content="en" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How To Confuse TestFlight"/>
+<meta name="twitter:description" content="I ran into an unusual problem when testing my latest app: &ldquo;What Is My
+Speed?&rdquo;. It is now available from the iTunes App Store, but getting
+there was a struggle."/>
+
+
+
+<meta property="og:title" content="How To Confuse TestFlight" />
+<meta property="og:description" content="I ran into an unusual problem when testing my latest app: &ldquo;What Is My
+Speed?&rdquo;. It is now available from the iTunes App Store, but getting
+there was a struggle." />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="How To Confuse TestFlight :: TrozWare — ">
-<meta property="og:description" content="I ran into an unusual problem when testing my latest app: &amp;ldquo;What Is My Speed?&amp;rdquo;. It is now available from the iTunes App Store, but getting there was a struggle.
-" />
-<meta property="og:url" content="https://troz.net/post/2016/how-to-confuse-testflight/" />
-<meta property="og:site_name" content="How To Confuse TestFlight" />
-<meta property="og:image" content="">
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-
-<meta property="article:published_time" content="2016-04-24 00:00:00 &#43;0000 UTC" />
+<meta property="og:url" content="https://troz.net/post/2016/how-to-confuse-testflight/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-04-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-04-24T00:00:00+00:00" />
 
 
 
@@ -51,21 +69,25 @@
 
 
 
-
-
-</head>
-<body class="dark-theme">
-<div class="container">
-  <header class="header">
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
   <span class="header__inner">
-    <a href="https://troz.net/" class="logo" style="text-decoration: none;">
+    <a
+  href="https://troz.net/"
+  class="logo"
+  style="text-decoration: none;"
+>
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
 </svg>
 </span>
-    <span class="logo__text">TrozWare</span>
-    <span class="logo__cursor" style="width: 2px"></span>
+    <span class="logo__text"
+      >TrozWare</span
+    >
+    <span class="logo__cursor"></span>
   
 </a>
 
@@ -125,16 +147,25 @@
 
         <span class="menu-trigger">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
           </svg>
         </span>
       
       <span class="theme-toggle">
-        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
 </svg>
 
       </span>
@@ -143,8 +174,8 @@
 </header>
 
 
-  <div class="content">
-    
+      <div class="content">
+        
 <div class="post">
   <h2 class="post-title"><a href="https://troz.net/post/2016/how-to-confuse-testflight/">How To Confuse TestFlight</a></h2>
   <div class="post-meta">
@@ -187,7 +218,7 @@ manually entering the bundle identifier that I had registered at Apple
 Developer. Xcode accepted the name without any warnings and created the default
 targets using that name.</p>
 <p>In the default unit testing file, the module was defined like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"> @testable <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">What</span><span style="color:#f92672">*</span><span style="color:#a6e22e">Is_My_Speed</span><span style="color:#f92672">*</span> </code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"> @testable <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">What</span><span style="color:#f92672">*</span><span style="color:#a6e22e">Is_My_Speed</span><span style="color:#f92672">*</span> </code></pre></div>
 <p>which made me think that Xcode was quite happy to have parsed the app name as
 required to replace any unwanted characters to suit.</p>
 <p>The app was built, passed all unit tests, profiled, analyzed, tested on real
@@ -226,7 +257,7 @@ Using <a href="https://itunes.apple.com/app/apple-configurator-2/id1037126344">A
 Utility), I was able to get the logs from my iPhone and entries like the
 following seemed to confirm this:</p>
 <blockquote>
-<pre><code class="language-Error" data-lang="Error">installd.staging/temp.2LWJ2h/extracted/Payload/What Is My Speed?.app : 0xe8008017 (A signed resource has been added, modified, or deleted.)}```
+<pre tabindex="0"><code class="language-Error" data-lang="Error">installd.staging/temp.2LWJ2h/extracted/Payload/What Is My Speed?.app : 0xe8008017 (A signed resource has been added, modified, or deleted.)}```
 </code></pre></blockquote>
 <p>But when I got to the stage of a completely blank app still failing, I suddenly
 thought of the question mark. With the benefit of my preamble to this post, you
@@ -259,10 +290,10 @@ Alphanumerics and spaces are OK, but I am not sure about anything else.</p>
   
 </div>
 
-  </div>
+      </div>
 
-  
-    <link rel="stylesheet" href="/css/footer.css" />
+      
+        <link rel="stylesheet" href="/css/footer.css" />
 
 <footer class="footer">
   <div class="footer__inner">
@@ -316,8 +347,9 @@ Alphanumerics and spaces are OK, but I am not sure about anything else.</p>
 </script>
 
 
-  
-</div>
+      
+    </div>
 
-</body>
+    
+  </body>
 </html>

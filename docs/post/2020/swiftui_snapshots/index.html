@@ -1,49 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  
-    <title>SwiftUI Snapshot Testing :: TrozWare</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="Snapshot testing is a technique that has been very popular in the web development world and it seems like a great way to test SwiftUI user interfaces. I read about snapshot tests in a recent blog post and was intrigued, but I had some difficulty getting it to work, so when I finally succeeded, I decided to share my experiences in the hope that others will find them useful.
-"/>
-<meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
-<meta name="robots" content="noodp"/>
+  <head>
+    
+      <title>
+        SwiftUI Snapshot Testing ::
+        TrozWare
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Snapshot testing is a technique that has been very popular in the web development world and it seems like a great way to test SwiftUI user interfaces. I read about snapshot tests in a recent blog post and was intrigued, but I had some difficulty getting it to work, so when I finally succeeded, I decided to share my experiences in the hope that others will find them useful.
+"
+/>
+<meta
+  name="keywords"
+  content="[Swift Apple macOS iOS Apple Watch]"
+/>
+<meta name="robots" content="noodp" />
 <link rel="canonical" href="https://troz.net/post/2020/swiftui_snapshots/" />
 
 
-<link rel="stylesheet" href="https://troz.net/assets/style.css">
 
 
-<link rel="stylesheet" href="https://troz.net/style.css">
+
+<link rel="stylesheet" href="https://troz.net/assets/style.css" />
+
+<link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="https://troz.net/img/favicon.png">
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
 
 
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="SwiftUI Snapshot Testing :: TrozWare — " />
-<meta name="twitter:description" content="Snapshot testing is a technique that has been very popular in the web development world and it seems like a great way to test SwiftUI user interfaces. I read about snapshot tests in a recent blog post and was intrigued, but I had some difficulty getting it to work, so when I finally succeeded, I decided to share my experiences in the hope that others will find them useful.
-" />
-<meta name="twitter:site" content="https://troz.net/" />
-<meta name="twitter:creator" content="" />
-<meta name="twitter:image" content="">
+<link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
-<meta property="og:locale" content="en" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SwiftUI Snapshot Testing"/>
+<meta name="twitter:description" content="Using snapshot testing for SwiftUI apps"/>
+
+
+
+<meta property="og:title" content="SwiftUI Snapshot Testing" />
+<meta property="og:description" content="Using snapshot testing for SwiftUI apps" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="SwiftUI Snapshot Testing :: TrozWare — ">
-<meta property="og:description" content="Snapshot testing is a technique that has been very popular in the web development world and it seems like a great way to test SwiftUI user interfaces. I read about snapshot tests in a recent blog post and was intrigued, but I had some difficulty getting it to work, so when I finally succeeded, I decided to share my experiences in the hope that others will find them useful.
-" />
-<meta property="og:url" content="https://troz.net/post/2020/swiftui_snapshots/" />
-<meta property="og:site_name" content="SwiftUI Snapshot Testing" />
-<meta property="og:image" content="">
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-
-<meta property="article:published_time" content="2020-05-17 18:50:09 &#43;1000 AEST" />
+<meta property="og:url" content="https://troz.net/post/2020/swiftui_snapshots/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-05-17T18:50:09+10:00" />
+<meta property="article:modified_time" content="2020-05-17T18:50:09+10:00" />
 
 
 
@@ -51,21 +65,25 @@
 
 
 
-
-
-</head>
-<body class="dark-theme">
-<div class="container">
-  <header class="header">
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
   <span class="header__inner">
-    <a href="https://troz.net/" class="logo" style="text-decoration: none;">
+    <a
+  href="https://troz.net/"
+  class="logo"
+  style="text-decoration: none;"
+>
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
 </svg>
 </span>
-    <span class="logo__text">TrozWare</span>
-    <span class="logo__cursor" style="width: 2px"></span>
+    <span class="logo__text"
+      >TrozWare</span
+    >
+    <span class="logo__cursor"></span>
   
 </a>
 
@@ -125,16 +143,25 @@
 
         <span class="menu-trigger">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
           </svg>
         </span>
       
       <span class="theme-toggle">
-        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
 </svg>
 
       </span>
@@ -143,8 +170,8 @@
 </header>
 
 
-  <div class="content">
-    
+      <div class="content">
+        
 <div class="post">
   <h2 class="post-title"><a href="https://troz.net/post/2020/swiftui_snapshots/">SwiftUI Snapshot Testing</a></h2>
   <div class="post-meta">
@@ -186,7 +213,7 @@
 <p>First off, I created a single view iOS app using SwiftUI making sure to check &ldquo;Include Unit Tests&rdquo;, but not &ldquo;Include UI Tests&rdquo;. I created a simple view so I had something to test.</p>
 <p>If you want to use this on an app that does not already have a unit tests target, go to the project settings, click the + button to add a new target and choose a Unit Testing Bundle.</p>
 <p>Next step was to import the snapshot testing library using Swift Package Manager. Go to File &gt; Swift Packages &gt; Add Package Dependency. Paste in the URL below and click Next.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">https://github.com/pointfreeco/swift-snapshot-testing
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">https://github.com/pointfreeco/swift-snapshot-testing
 </code></pre></div><p>I accepted the default versioning suggestions on the next pane.</p>
 <p><img src="/images/Snapshot-AddPackage.png" alt="Adding the snapshot package"></p>
 <p>On the final pane, it is important to select the correct target for this package. Select the app&rsquo;s test target, not the app itself and not the UI test target if you have one. I made this mistake on my first try as I assumed that snapshot testing would be part of UI testing but it is actually part of unit testing.</p>
@@ -195,7 +222,7 @@
 <h2 id="writing-a-snapshot-test">Writing a Snapshot Test</h2>
 <p>Now I added a new Unit Test Case Class file to the tests target in my app. I had to import SwiftUI and SnapshotTesting into this test file as well as declaring the app as a testable import. The easiest way to do this is to copy the <code>@testable import</code> heading from the sample test file to make sure it is exactly right. The import needs to match the name of your app module.</p>
 <p>Finally it&rsquo;s time to write the first snapshot test:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">XCTest</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">XCTest</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">SnapshotTesting</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">SwiftUI</span>
 @testable <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Snapshots</span>
@@ -210,7 +237,7 @@
 }
 </code></pre></div><p>This uses the snapshot library&rsquo;s <code>assertSnapshot</code> method to save the content view as an image. But unfortunately, this doesn&rsquo;t work. The problem is that the second parameter is a Snapshotting strategy that can convert various UI elements into some form of data or image. But the library doesn&rsquo;t know what a SwiftUI View is, so it needs a way to convert the view into something that can be recognized by the snapshotter.</p>
 <p>I added this extension to SwiftUI&rsquo;s View that wraps the SwiftUI View in a UIHostingController. It returns this as a UIViewController which is a valid input for a snapshotter and can be converted to an image.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">SwiftUI</span>.View {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">SwiftUI</span>.View {
     <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">toVC</span>() -&gt; UIViewController {
         <span style="color:#66d9ef">let</span> vc = UIHostingController(rootView: <span style="color:#66d9ef">self</span>)
         vc.view.frame = UIScreen.main.bounds
@@ -218,7 +245,7 @@
     }
 }
 </code></pre></div><p>Now my first test became:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">testDefaultAppearance</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">testDefaultAppearance</span>() {
         <span style="color:#66d9ef">let</span> contentView = ContentView()
         assertSnapshot(matching: contentView.toVC(), <span style="color:#66d9ef">as</span>: .image)
     }
@@ -238,7 +265,7 @@
 <p>And I was then able to compare the 2 images, using the path to the failing image from the error message.</p>
 <p><img src="/images/Snapshot-TestResults.png" alt="Test results: success and failure"></p>
 <p>Once I had confirmed that the new image was what I wanted and not a result of error, either feline or human, I set the test to <code>record</code> a new result so that the new version became the official test version.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">testDefaultAppearance</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">testDefaultAppearance</span>() {
         <span style="color:#66d9ef">let</span> contentView = ContentView()
 
         record = <span style="color:#66d9ef">true</span>
@@ -250,7 +277,7 @@
 <p>In SwiftUI, the UI displayed is a function of state, so changing state properties changes the UI. This is what makes snapshot testing really good for SwiftUI apps as you can change the state programmatically and confirm that this is reflected in the UI.</p>
 <p>So having proved that the snapshot tests worked, I decided to move on and test it with my new <a href="/post/2020/name_this_app/">anagram assistant app</a>. This is quite a simple app that has a single <code>AppState</code> class that holds all the program data.</p>
 <p>So I was able to write a suite of tests that changed the state in various ways and then snap-shotted the UI with that state. Here are a couple of examples:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">testEmptyContentView</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">testEmptyContentView</span>() {
         <span style="color:#66d9ef">let</span> contentView = ContentView()
         assertSnapshot(matching: contentView.toVC(), <span style="color:#66d9ef">as</span>: .image)
     }
@@ -270,7 +297,7 @@
     }
 </code></pre></div><p>This worked really well with only one slight problem. As the state arranges the <code>availableLetters</code> array randomly for display, I had to add a <code>sort</code> to make sure they always displayed in the same order and made the tests repeatable.</p>
 <p>And as a bonus, I was able to test a screen in dark mode with this test which sets the <code>colorScheme</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">testDarkMode</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">testDarkMode</span>() {
         <span style="color:#66d9ef">var</span> contentView = ContentView()
         contentView.appState = sampleAppState()
 
@@ -282,7 +309,7 @@
 <h2 id="accessibility-tests">Accessibility Tests</h2>
 <p>iOS supports dynamic type and if your app uses standard font styles, it will adopt these dynamic sizes automatically. I can&rsquo;t find the link right now, but I remember reading an article that said nearly half of all iPhone users change the default text size, setting it either smaller or larger.</p>
 <p>With snapshot testing, it is quick and easy to get a view of how you app looks with different font sizes. Here is my test function for taking a snapshot of every possible font size variation.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">testDynamicFonts</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">testDynamicFonts</span>() {
         <span style="color:#66d9ef">var</span> contentView = ContentView()
         contentView.appState = sampleAppState()
 
@@ -293,7 +320,7 @@
         }
     }
 </code></pre></div><p>For the settings screen, I decided that smaller fonts were not a problem, but I wanted to check the two largest options, so I used this test function:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">testSettingsScreen</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">testSettingsScreen</span>() {
         <span style="color:#66d9ef">let</span> settingsView = SettingsView()
         assertSnapshot(matching: settingsView.toVC(), <span style="color:#66d9ef">as</span>: .image)
 
@@ -318,7 +345,7 @@
 <p>You knew you weren&rsquo;t going to get through this without me going on about Mac apps&hellip;</p>
 <p>Snapshot tests for a Mac app work well, with one caveat.</p>
 <p>First I had to change the Swift.View extension so that it returned an NSViewController instead of a UIViewController.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">SwiftUI</span>.View {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">SwiftUI</span>.View {
     <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">toVC</span>() -&gt; NSViewController {
         <span style="color:#66d9ef">let</span> vc = NSHostingController(rootView: <span style="color:#66d9ef">self</span>)
         vc.view.frame = CGRect(x: <span style="color:#ae81ff">0</span>, y: <span style="color:#ae81ff">0</span>, width: <span style="color:#ae81ff">1024</span>, height: <span style="color:#ae81ff">768</span>)
@@ -344,7 +371,7 @@
 <p>I ended up with this setup function that ran before my snapshot test suite:</p>
 </li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setUp</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setUp</span>() {
         <span style="color:#66d9ef">let</span> device = UIDevice.current.name
         <span style="color:#66d9ef">if</span> device <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;iPhone SE (2nd generation)&#34;</span> {
             fatalError(<span style="color:#e6db74">&#34;Switch to using iPhone SE (2nd generation) for these tests.&#34;</span>)
@@ -390,10 +417,10 @@
   
 </div>
 
-  </div>
+      </div>
 
-  
-    <link rel="stylesheet" href="/css/footer.css" />
+      
+        <link rel="stylesheet" href="/css/footer.css" />
 
 <footer class="footer">
   <div class="footer__inner">
@@ -447,8 +474,9 @@
 </script>
 
 
-  
-</div>
+      
+    </div>
 
-</body>
+    
+  </body>
 </html>

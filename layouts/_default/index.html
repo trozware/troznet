@@ -1,0 +1,45 @@
+{{ define "main" }}
+
+<link rel="stylesheet" href="/css/header.css">
+
+<div class="posts">
+  {{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") }}
+  {{ range $paginator.Pages }}
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+    </h1>
+    <div class="post-meta">
+      <span class="post-date">
+        {{ .Lastmod.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}
+      </span>
+      {{ if .Site.Params.moreMeta -}}
+      <span class="more-meta">- {{ .WordCount }} words, </span>
+      <span class="more-meta"> {{ .ReadingTime }} minute read</span>
+      {{- end }}
+    </div>
+
+    {{ if .Params.tags }}
+    <span class="post-tags">
+      {{ range.Params.tags }}
+      #<a href="/tags/{{ . | urlize }}/">{{ . }}</a
+      >&nbsp;
+      {{ end }}
+    </span>
+    {{ end }}
+
+    {{ with.Params.Cover }}
+    <img src="/img/{{ . }}" class="post-cover" />
+    {{ end }}
+
+    <div class="post-content">
+      {{ .Summary }}
+    </div>
+    <div>
+      <a class="read-more button" href="{{.RelPermalink}}">Read more →</a>
+    </div>
+  </div>
+  {{ end }}
+  {{ partial "pagination.html" . }}
+</div>
+{{ end }}

@@ -1,55 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  
-    <title>Making a Mac Screen Saver :: TrozWare</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="Having just completed the my first screen saver for Mac - the Time In Words Screen Saver, I thought I would share some of the experiences. I am using OS X Lion (10.7) and Xcode 4.3.2
+  <head>
+    
+      <title>
+        Making a Mac Screen Saver ::
+        TrozWare
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Having just completed the my first screen saver for Mac - the Time In Words Screen Saver, I thought I would share some of the experiences. I am using OS X Lion (10.7) and Xcode 4.3.2
 The first thing is to create a new project in Xcode using the Screen Saver template:
 
-Xcode sets up a project for you with everything you need for a screen saver module. Start editing the ScreenSaverView."/>
-<meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]"/>
-<meta name="robots" content="noodp"/>
+Xcode sets up a project for you with everything you need for a screen saver module. Start editing the ScreenSaverView."
+/>
+<meta
+  name="keywords"
+  content="[Swift Apple macOS iOS Apple Watch]"
+/>
+<meta name="robots" content="noodp" />
 <link rel="canonical" href="https://troz.net/post/2012/making-a-mac-screen-saver/" />
 
 
-<link rel="stylesheet" href="https://troz.net/assets/style.css">
 
 
-<link rel="stylesheet" href="https://troz.net/style.css">
+
+<link rel="stylesheet" href="https://troz.net/assets/style.css" />
+
+<link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="https://troz.net/img/favicon.png">
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
 
 
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Making a Mac Screen Saver :: TrozWare — " />
+<link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://troz.net/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Making a Mac Screen Saver"/>
 <meta name="twitter:description" content="Having just completed the my first screen saver for Mac - the Time In Words Screen Saver, I thought I would share some of the experiences. I am using OS X Lion (10.7) and Xcode 4.3.2
 The first thing is to create a new project in Xcode using the Screen Saver template:
 
-Xcode sets up a project for you with everything you need for a screen saver module. Start editing the ScreenSaverView." />
-<meta name="twitter:site" content="https://troz.net/" />
-<meta name="twitter:creator" content="" />
-<meta name="twitter:image" content="">
+Xcode sets up a project for you with everything you need for a screen saver module. Start editing the ScreenSaverView."/>
 
 
-<meta property="og:locale" content="en" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="Making a Mac Screen Saver :: TrozWare — ">
+
+<meta property="og:title" content="Making a Mac Screen Saver" />
 <meta property="og:description" content="Having just completed the my first screen saver for Mac - the Time In Words Screen Saver, I thought I would share some of the experiences. I am using OS X Lion (10.7) and Xcode 4.3.2
 The first thing is to create a new project in Xcode using the Screen Saver template:
 
 Xcode sets up a project for you with everything you need for a screen saver module. Start editing the ScreenSaverView." />
-<meta property="og:url" content="https://troz.net/post/2012/making-a-mac-screen-saver/" />
-<meta property="og:site_name" content="Making a Mac Screen Saver" />
-<meta property="og:image" content="">
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-
-<meta property="article:published_time" content="2012-05-09 00:00:00 &#43;0000 UTC" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troz.net/post/2012/making-a-mac-screen-saver/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2012-05-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2012-05-09T00:00:00+00:00" />
 
 
 
@@ -57,21 +73,25 @@ Xcode sets up a project for you with everything you need for a screen saver modu
 
 
 
-
-
-</head>
-<body class="dark-theme">
-<div class="container">
-  <header class="header">
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
   <span class="header__inner">
-    <a href="https://troz.net/" class="logo" style="text-decoration: none;">
+    <a
+  href="https://troz.net/"
+  class="logo"
+  style="text-decoration: none;"
+>
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
 </svg>
 </span>
-    <span class="logo__text">TrozWare</span>
-    <span class="logo__cursor" style="width: 2px"></span>
+    <span class="logo__text"
+      >TrozWare</span
+    >
+    <span class="logo__cursor"></span>
   
 </a>
 
@@ -131,16 +151,25 @@ Xcode sets up a project for you with everything you need for a screen saver modu
 
         <span class="menu-trigger">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
           </svg>
         </span>
       
       <span class="theme-toggle">
-        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
 </svg>
 
       </span>
@@ -149,8 +178,8 @@ Xcode sets up a project for you with everything you need for a screen saver modu
 </header>
 
 
-  <div class="content">
-    
+      <div class="content">
+        
 <div class="post">
   <h2 class="post-title"><a href="https://troz.net/post/2012/making-a-mac-screen-saver/">Making a Mac Screen Saver</a></h2>
   <div class="post-meta">
@@ -199,7 +228,7 @@ will need to know the bounds of the screen saver area. This will vary depending
 on the monitor, screen size or whether the screen saver is appearing in the
 preview window in System Preferences. The screen saver view has a method that
 does this work for you.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec">NSRect viewBounds <span style="color:#f92672">=</span> [self bounds];
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec">NSRect viewBounds <span style="color:#f92672">=</span> [self bounds];
 </code></pre></div><p>The next trick is that you are most likely going to need some random numbers.
 Again, the screen saver framework supplies these to you in several forms. I used
 <code>SSRandomFloatBetween</code> but there are others. Check the documentation.</p>
@@ -214,14 +243,14 @@ is not difficult, but as always, there are a few things that are not obvious on
 first glance.</p>
 <p>Add a xib file to your project: I used a window template. Then change the
 window&rsquo;s class to NSPanel and configure it as shown:</p>
-<p><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
 <p>Set the File&rsquo;s Owner class to the class of your Screen Saver view. In your
 ScreenSaverView.h file, declare a property for this new panel. e.g.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec"> <span style="color:#66d9ef">@property</span> (<span style="color:#66d9ef">assign</span>) <span style="color:#66d9ef">IBOutlet</span> NSPanel <span style="color:#f92672">*</span>optionsPanel;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec"> <span style="color:#66d9ef">@property</span> (<span style="color:#66d9ef">assign</span>) <span style="color:#66d9ef">IBOutlet</span> NSPanel <span style="color:#f92672">*</span>optionsPanel;
 </code></pre></div><p>@synthesize this in the ScreenSaverView.m file. In the xib file, connect the
 panel to this outlet.</p>
 <p>Now go back to ScreenSaverView.m and add the following code:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec"><span style="color:#f92672">*</span> (<span style="color:#66d9ef">BOOL</span>)hasConfigureSheet { <span style="color:#66d9ef">return</span> YES; }
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec"><span style="color:#f92672">*</span> (<span style="color:#66d9ef">BOOL</span>)hasConfigureSheet { <span style="color:#66d9ef">return</span> YES; }
 
 <span style="color:#f92672">*</span> (NSWindow <span style="color:#f92672">*</span>)configureSheet { <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>self.optionsPanel) { [NSBundle
   loadNibNamed:<span style="color:#e6db74">@&#34;Options&#34;</span> owner:self]; } <span style="color:#66d9ef">return</span> self.optionsPanel; }
@@ -247,18 +276,18 @@ string, so I could use it anywhere I needed.</p>
 <p>In the <code>initWithFrame:isPreview:</code> method, I got a reference to the screen saver
 defaults for my screen saver and registered the defaults. I am never very sure
 about the need to do this, but it is supposed to be a good practice.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec">ScreenSaverDefaults <span style="color:#f92672">*</span>defaults <span style="color:#f92672">=</span> [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec">ScreenSaverDefaults <span style="color:#f92672">*</span>defaults <span style="color:#f92672">=</span> [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
 [defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
   <span style="color:#e6db74">@&#34;NO&#34;</span>, <span style="color:#e6db74">@&#34;UseAlternativeZone&#34;</span>, <span style="color:#e6db74">@&#34;&#34;</span>,
   <span style="color:#e6db74">@&#34;AlternativeZoneName&#34;</span>, nil]
 ];
 </code></pre></div><p>Using them is exactly the same as using NSUserDefaults:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec"><span style="color:#75715e">// Reading
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec"><span style="color:#75715e">// Reading
 </span><span style="color:#75715e"></span>ScreenSaverDefaults <span style="color:#f92672">*</span>defaults <span style="color:#f92672">=</span> [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
 <span style="color:#66d9ef">BOOL</span> useAlternativeZone <span style="color:#f92672">=</span> [defaults boolForKey:<span style="color:#e6db74">@&#34;UseAlternativeZone&#34;</span>];
 NSString <span style="color:#f92672">*</span>alternativeZoneName <span style="color:#f92672">=</span> [defaults objectForKey:<span style="color:#e6db74">@&#34;AlternativeZoneName&#34;</span>];
 </code></pre></div><p>&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec"><span style="color:#75715e">// Writing
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec"><span style="color:#75715e">// Writing
 </span><span style="color:#75715e"></span>ScreenSaverDefaults <span style="color:#f92672">*</span>defaults <span style="color:#f92672">=</span> [ScreenSaverDefaults defaultsForModuleWithName:kModuleName]; [defaults setBool:useAlternative forKey:<span style="color:#e6db74">@&#34;UseAlternativeZone&#34;</span>];
 [defaults setObject:alternativeZoneName forKey:<span style="color:#e6db74">@&#34;AlternativeZoneName&#34;</span>];
 [defaults synchronize];
@@ -295,10 +324,10 @@ I learnt while making this screen saver.</p>
   
 </div>
 
-  </div>
+      </div>
 
-  
-    <link rel="stylesheet" href="/css/footer.css" />
+      
+        <link rel="stylesheet" href="/css/footer.css" />
 
 <footer class="footer">
   <div class="footer__inner">
@@ -352,8 +381,9 @@ I learnt while making this screen saver.</p>
 </script>
 
 
-  
-</div>
+      
+    </div>
 
-</body>
+    
+  </body>
 </html>
