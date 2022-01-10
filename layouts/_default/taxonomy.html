@@ -1,4 +1,7 @@
 {{ define "main"}}
+
+<link rel="stylesheet" href="/css/header.css">
+
 {{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate") }}
 
 <div class="posts post on-list">
