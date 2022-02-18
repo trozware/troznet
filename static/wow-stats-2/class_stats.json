@@ -1,0 +1,786 @@
+[
+  {
+    "classname": "Death Knight",
+    "specs": [
+      {
+        "name": "Blood",
+        "web": "blood-death-knight",
+        "priorities": [
+          "Stamina",
+          "Strength",
+          "Versatility",
+          "Haste",
+          "Crit",
+          "Mastery"
+        ],
+        "talents": [
+          "Heartbreaker",
+          "Hemostasis",
+          "Relish in Blood",
+          "Will of the Necropolis",
+          "Wraith Walk",
+          "Bloodworms",
+          "Purgatory"
+        ]
+      },
+      {
+        "name": "Frost",
+        "web": "frost-death-knight",
+        "priorities": [
+          "Strength",
+          "Crit",
+          "Mastery",
+          "Versatility",
+          "Haste"
+        ],
+        "talents": [
+          "Cold Heart",
+          "Runic Attenuation",
+          "Asphyxiate",
+          "Avalanche",
+          "Wraith Walk",
+          "Gathering Storm",
+          "Obliteration"
+        ]
+      },
+      {
+        "name": "Unholy",
+        "web": "unholy-death-knight",
+        "priorities": [
+          "Strength",
+          "Haste",
+          "Versatility",
+          "Crit",
+          "Mastery"
+        ],
+        "talents": [
+          "All Will Serve",
+          "Unholy Blight",
+          "Asphyxiate",
+          "Soul Reaper",
+          "Wraith Walk",
+          "Unholy Pact",
+          "Unholy Assault"
+        ]
+      }
+    ]
+  },
+  {
+    "classname": "Demon Hunter",
+    "specs": [
+      {
+        "name": "Havoc",
+        "web": "havoc-demon-hunter",
+        "priorities": [
+          "Agility",
+          "Versatility",
+          "Mastery",
+          "Haste",
+          "Crit"
+        ],
+        "talents": [
+          "Demonic Appetite",
+          "Insatiable Hunger",
+          "Unbound Chaos",
+          "Soul Rending",
+          "First Blood",
+          "Master of the Glaive",
+          "Demonic"
+        ]
+      },
+      {
+        "name": "Vengeance",
+        "web": "vengeance-demon-hunter",
+        "priorities": [
+          "Agility",
+          "Haste",
+          "Versatility",
+          "Mastery",
+          "Crit"
+        ],
+        "talents": [
+          "Abyssal Strike",
+          "Fallout",
+          "Spirit Bomb",
+          "Fracture",
+          "Sigil of Chains",
+          "Demonic",
+          "Last Resort"
+        ]
+      }
+    ]
+  },
+  {
+    "classname": "Druid",
+    "specs": [
+      {
+        "name": "Balance",
+        "web": "balance-druid",
+        "priorities": [
+          "Intellect",
+          "Haste",
+          "Mastery",
+          "Versatility",
+          "Crit"
+        ],
+        "talents": [
+          "Nature's Balance",
+          "Wild Charge",
+          "Restoration Affinity",
+          "Mighty Bash",
+          "Soul of the Forest",
+          "Stellar Drift",
+          "Solstice"
+        ]
+      },
+      {
+        "name": "Feral",
+        "web": "feral-druid",
+        "priorities": [
+          "Agility",
+          "Mastery",
+          "Crit",
+          "Haste",
+          "Versatility"
+        ],
+        "talents": [
+          "Predator",
+          "Tiger Dash",
+          "Restoration Affinity",
+          "Mighty Bash",
+          "Soul of the Forest",
+          "Primal Wrath",
+          "Feral Frenzy"
+        ]
+      },
+      {
+        "name": "Guardian",
+        "web": "guardian-druid",
+        "priorities": [
+          "Stamina",
+          "Agility",
+          "Versatility",
+          "Mastery",
+          "Haste",
+          "Crit"
+        ],
+        "talents": [
+          "Brambles",
+          "Wild Charge",
+          "Restoration Affinity",
+          "Heart of the Wild",
+          "Galactic Guardian",
+          "Survival of the Fittest",
+          "Tooth and Claw"
+        ]
+      },
+      {
+        "name": "Restoration",
+        "web": "restoration-druid",
+        "priorities": [
+          "Intellect",
+          "Mastery",
+          "Haste",
+          "Crit",
+          "Versatility"
+        ],
+        "talents": [
+          "Cenarion Ward",
+          "Wild Charge",
+          "Feral Affinity",
+          "Heart of the Wild",
+          "Soul of the Forest",
+          "Overgrowth",
+          "Photosynthesis"
+        ]
+      }
+    ]
+  },
+  {
+    "classname": "Hunter",
+    "specs": [
+      {
+        "name": "Beast Mastery",
+        "web": "beast-mastery-hunter",
+        "priorities": [
+          "Agility",
+          "Versatility",
+          "Haste",
+          "Crit",
+          "Mastery"
+        ],
+        "talents": [
+          "Killer Instinct",
+          "Scent of Blood",
+          "Trailblazer",
+          "A Murder of Crows",
+          "Posthaste",
+          "Barrage for an AoE focus\non pulling many mobs,  Stomp for raw DPS.",
+          "Aspect of the Beast"
+        ]
+      },
+      {
+        "name": "Marksmanship",
+        "web": "marksmanship-hunter",
+        "priorities": [
+          "Agility",
+          "Mastery",
+          "Haste",
+          "Versatility",
+          "Crit"
+        ],
+        "talents": [
+          "Master Marksman",
+          "Barrage (AoE Mass-Pulling) or  Careful Aim (killing single mobs quickly)",
+          "Trailblazer",
+          "Chimaera Shot",
+          "Posthaste",
+          "Double Tap",
+          "Volley"
+        ]
+      },
+      {
+        "name": "Survival",
+        "web": "survival-hunter",
+        "priorities": [
+          "Agility",
+          "Versatility",
+          "Mastery",
+          "Haste",
+          "Crit"
+        ],
+        "talents": [
+          "Terms of Engagement for Questing,  Alpha Predator for Dungeons",
+          "Guerrilla Tactics",
+          "Trailblazer",
+          "Bloodseeker",
+          "Posthaste",
+          "Flanking Strike",
+          "Wildfire Infusion"
+        ]
+      }
+    ]
+  },
+  {
+    "classname": "Mage",
+    "specs": [
+      {
+        "name": "Arcane",
+        "web": "arcane-mage",
+        "priorities": [
+          "Intellect",
+          "Mastery",
+          "Versatility",
+          "Crit",
+          "Haste"
+        ],
+        "talents": [
+          "Amplification",
+          "Shimmer",
+          "Incanter's Flow",
+          "Arcane Echo",
+          "Chrono Shift",
+          "Arcane Orb",
+          "Enlightened"
+        ]
+      },
+      {
+        "name": "Fire",
+        "web": "fire-mage",
+        "priorities": [
+          "Intellect",
+          "Versatility",
+          "Mastery",
+          "Haste",
+          "Crit"
+        ],
+        "talents": [
+          "Searing Touch",
+          "Shimmer",
+          "Incanter's Flow",
+          "Flame On",
+          "Frenetic Speed",
+          "Conflagration",
+          "Meteor"
+        ]
+      },
+      {
+        "name": "Frost",
+        "web": "frost-mage",
+        "priorities": [
+          "Intellect",
+          "Crit",
+          "Haste",
+          "Versatility",
+          "Mastery"
+        ],
+        "talents": [
+          "Lonely Winter or  Bone Chilling depending on if you want to have a pet or not",
+          "Shimmer",
+          "Incanter's Flow",
+          "Frozen Touch",
+          "Frigid Winds",
+          "Splitting Ice",
+          "Thermal Void"
+        ]
+      }
+    ]
+  },
+  {
+    "classname": "Monk",
+    "specs": [
+      {
+        "name": "Brewmaster",
+        "web": "brewmaster-monk",
+        "priorities": [
+          "Versatility",
+          "Crit",
+          "Mastery",
+          "Haste",
+          "Agility"
+        ],
+        "talents": [
+          "Chi Burst",
+          "Chi Torpedo for more passive\nmovespeed or  Tiger's Lust if you want a more-involved speed boost",
+          "Spitfire if you are in War\nMode and using  Incendiary Breath, otherwise  Black Ox Brew purely\nfor the extra energy being valuable while questing",
+          "Summon Black Ox Statue",
+          "Healing Elixir to add a\nreliable form of self-healing",
+          "Rushing Jade Wind\nfor more total damage or  Exploding Keg for more burst damage or massive\npulls",
+          "High Tolerance"
+        ]
+      },
+      {
+        "name": "Mistweaver",
+        "web": "mistweaver-monk",
+        "priorities": [
+          "Intellect",
+          "Crit",
+          "Versatility",
+          "Haste",
+          "Mastery"
+        ],
+        "talents": [
+          "Chi Burst",
+          "Chi Torpedo",
+          "Spirit of the Crane",
+          "Ring of Peace",
+          "Dampen Harm",
+          "Invoke Chi-Ji, the Red Crane",
+          "Focused Thunder"
+        ]
+      },
+      {
+        "name": "Windwalker",
+        "web": "windwalker-monk",
+        "priorities": [
+          "Agility",
+          "Crit",
+          "Versatility",
+          "Mastery",
+          "Haste",
+          "Stamina"
+        ],
+        "talents": [
+          "Chi Burst",
+          "Celerity",
+          "Fist of the White Tiger",
+          "Good Karma",
+          "Inner Strength",
+          "Hit Combo for sustained pulls\nwith no break.  Dance of Chi-Ji for general use.",
+          "Whirling Dragon Punch"
+        ]
+      }
+    ]
+  },
+  {
+    "classname": "Paladin",
+    "specs": [
+      {
+        "name": "Holy",
+        "web": "holy-paladin",
+        "priorities": [
+          "Intellect",
+          "Haste",
+          "Mastery",
+          "Versatility",
+          "Crit"
+        ],
+        "talents": [
+          "Crusader's Might",
+          "Holy Prism",
+          "Fist of Justice",
+          "Cavalier",
+          "Holy Avenger",
+          "Sanctified Wrath",
+          "Glimmer of Light"
+        ]
+      },
+      {
+        "name": "Protection",
+        "web": "protection-paladin",
+        "priorities": [
+          "Strength",
+          "Haste",
+          "Versatility",
+          "Mastery",
+          "Crit"
+        ],
+        "talents": [
+          "Holy Shield defensively,\nor  Blessed Hammer for quality of life",
+          "First Avenger for survival in\nAoE,  Crusader's Judgment for single-target",
+          "Fist of Justice",
+          "Cavalier",
+          "Divine Purpose",
+          "Consecrated Ground",
+          "Sanctified Wrath"
+        ]
+      },
+      {
+        "name": "Retribution",
+        "web": "retribution-paladin",
+        "priorities": [
+          "Strength",
+          "Haste",
+          "Crit",
+          "Versatility",
+          "Mastery"
+        ],
+        "talents": [
+          "Execution Sentence",
+          "Blade of Wrath",
+          "Repentance",
+          "Cavalier",
+          "Divine Purpose",
+          "Healing Hands",
+          "Final Reckoning"
+        ]
+      }
+    ]
+  },
+  {
+    "classname": "Priest",
+    "specs": [
+      {
+        "name": "Discipline",
+        "web": "discipline-priest",
+        "priorities": [
+          "Intellect",
+          "Haste",
+          "Crit",
+          "Versatility",
+          "Mastery"
+        ],
+        "talents": [
+          "Schism",
+          "Angelic Feather",
+          "Power Word: Solace",
+          "Shining Force",
+          "Sins of the Many",
+          "Purge the Wicked",
+          "Lenience"
+        ]
+      },
+      {
+        "name": "Holy",
+        "web": "holy-priest",
+        "priorities": [
+          "Intellect",
+          "Haste",
+          "Versatility",
+          "Crit",
+          "Mastery"
+        ],
+        "talents": [
+          "Trail of Light",
+          "Angelic Feather",
+          "Guardian Angel",
+          "Censure",
+          "Surge of Light",
+          "Divine Star",
+          "Apotheosis"
+        ]
+      },
+      {
+        "name": "Shadow",
+        "web": "shadow-priest",
+        "priorities": [
+          "Intellect",
+          "Mastery",
+          "Crit",
+          "Haste",
+          "Versatility"
+        ],
+        "talents": [
+          "Death and Madness",
+          "Body and Soul",
+          "Misery or\n Searing Nightmare if you doing large pulls or lots of dungeons.",
+          "Psychic Horror",
+          "Shadow Crash",
+          "Void Torrent",
+          "Surrender to Madness or\n Ancient Madness if you do not like the Surrender to Madness\nplaystyle."
+        ]
+      }
+    ]
+  },
+  {
+    "classname": "Rogue",
+    "specs": [
+      {
+        "name": "Assassination",
+        "web": "assassination-rogue",
+        "priorities": [
+          "Agility",
+          "Crit",
+          "Haste",
+          "Versatility",
+          "Mastery"
+        ],
+        "talents": [
+          "Blindside or  Master Poisoner\nif you fight a lot of enemies at once.",
+          "Subterfuge",
+          "Marked for Death",
+          "Leeching Poison",
+          "Internal Bleeding",
+          "Alacrity",
+          "Poison Bomb"
+        ]
+      },
+      {
+        "name": "Outlaw",
+        "web": "outlaw-rogue",
+        "priorities": [
+          "Agility",
+          "Crit",
+          "Haste",
+          "Versatility",
+          "Mastery"
+        ],
+        "talents": [
+          "Quick Draw",
+          "Hit and Run or  Retractable Hook\nif you enjoy using  Grappling Hook to get around.",
+          "Marked for Death",
+          "Iron Stomach",
+          "Prey on the Weak",
+          "Alacrity",
+          "Blade Rush"
+        ]
+      },
+      {
+        "name": "Subtlety",
+        "web": "subtlety-rogue",
+        "priorities": [
+          "Agility",
+          "Versatility",
+          "Crit",
+          "Haste",
+          "Mastery"
+        ],
+        "talents": [
+          "Weaponmaster",
+          "Subterfuge",
+          "Marked for Death",
+          "Soothing Darkness",
+          "Night Terrors",
+          "Enveloping Shadows",
+          "Secret Technique"
+        ]
+      }
+    ]
+  },
+  {
+    "classname": "Shaman",
+    "specs": [
+      {
+        "name": "Elemental",
+        "web": "elemental-shaman",
+        "priorities": [
+          "Intellect",
+          "Versatility",
+          "Haste",
+          "Crit",
+          "Mastery"
+        ],
+        "talents": [
+          "Earthen Rage",
+          "Aftershock or  Echoing Shock",
+          "Earth Shield",
+          "Master of the Elements or  Liquid Magma Totem",
+          "Nature's Guardian or  Ancestral Guidance",
+          "Primal Elementalist or  Icefury",
+          "Stormkeeper"
+        ]
+      },
+      {
+        "name": "Enhancement",
+        "web": "enhancement-shaman",
+        "priorities": [
+          "Agility",
+          "Versatility",
+          "Mastery",
+          "Crit",
+          "Haste"
+        ],
+        "talents": [
+          "Lashing Flames",
+          "Stormflurry",
+          "Spirit Wolf",
+          "Hailstorm",
+          "Nature's Guardian or  Feral Lunge",
+          "Sundering",
+          "Ascendance"
+        ]
+      },
+      {
+        "name": "Restoration",
+        "web": "restoration-shaman",
+        "priorities": [
+          "Intellect",
+          "Versatility",
+          "Crit",
+          "Mastery",
+          "Haste"
+        ],
+        "talents": [
+          "Torrent",
+          "Echo of the Elements",
+          "Spirit Wolf",
+          "Earthen Wall Totem",
+          "Nature's Guardian",
+          "Flash Flood",
+          "Ascendance"
+        ]
+      }
+    ]
+  },
+  {
+    "classname": "Warlock",
+    "specs": [
+      {
+        "name": "Affliction",
+        "web": "affliction-warlock",
+        "priorities": [
+          "Intellect",
+          "Haste",
+          "Versatility",
+          "Mastery",
+          "Crit"
+        ],
+        "talents": [
+          "Nightfall",
+          "Absolute Corruption",
+          "Burning Rush",
+          "Phantom Singularity",
+          "Mortal Coil",
+          "Haunt",
+          "Soul Conduit"
+        ]
+      },
+      {
+        "name": "Demonology",
+        "web": "demonology-warlock",
+        "priorities": [
+          "Intellect",
+          "Haste",
+          "Crit",
+          "Mastery",
+          "Versatility",
+          "Stamina"
+        ],
+        "talents": [
+          "Bilescourge Bombers",
+          "Demonic Calling",
+          "Burning Rush",
+          "Soul Strike",
+          "Mortal Coil",
+          "Inner Demons",
+          "Demonic Consumption"
+        ]
+      },
+      {
+        "name": "Destruction",
+        "web": "destruction-warlock",
+        "priorities": [
+          "Intellect",
+          "Mastery",
+          "Crit",
+          "Versatility",
+          "Haste"
+        ],
+        "talents": [
+          "Soul Fire",
+          "Shadowburn",
+          "Burning Rush",
+          "Fire and Brimstone",
+          "Mortal Coil",
+          "Rain of Chaos",
+          "Channel Demonfire"
+        ]
+      }
+    ]
+  },
+  {
+    "classname": "Warrior",
+    "specs": [
+      {
+        "name": "Arms",
+        "web": "arms-warrior",
+        "priorities": [
+          "Strength",
+          "Haste",
+          "Crit",
+          "Versatility",
+          "Mastery"
+        ],
+        "talents": [
+          "War Machine to reduce downtime between combat.",
+          "Double Time to increase mobility.",
+          "Fervor of Battle to simplify the rotation.",
+          "Bounding Stride for increased mobility.",
+          "Cleave for better multitarget.",
+          "In For The Kill or whichever option you prefer.",
+          "Dreadnaught for better multitarget."
+        ]
+      },
+      {
+        "name": "Fury",
+        "web": "fury-warrior",
+        "priorities": [
+          "Strength",
+          "Mastery",
+          "Crit",
+          "Versatility",
+          "Haste"
+        ],
+        "talents": [
+          "Fresh Meat for the guaranteed\n Enrage when opening combat.",
+          "Double Time",
+          "Onslaught",
+          "Bounding Stride",
+          "Frothing Berserker",
+          "Dragon Roar or\n Bladestorm for bigger bursty pulls.",
+          "Anger Management for more\nconsistent cooldown use or  Reckless Abandon for bigger burst,\nas preferred."
+        ]
+      },
+      {
+        "name": "Protection",
+        "web": "protection-warrior",
+        "priorities": [
+          "Haste",
+          "Versatility",
+          "Crit",
+          "Mastery",
+          "Strength"
+        ],
+        "talents": [
+          "War Machine for the\nincreased movement speed or  Devastator otherwise.",
+          "Double Time",
+          "Dragon Roar",
+          "Bounding Stride",
+          "Indomitable",
+          "Into the Fray or\n Ravager for bigger bursty pulls.",
+          "Anger Management for\noffensive option, otherwise  Bolster."
+        ]
+      }
+    ]
+  }
+]
