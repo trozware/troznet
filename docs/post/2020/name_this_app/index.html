@@ -36,7 +36,7 @@ But I cannot think of a clever name for the app, so please read the story and co
   sizes="144x144"
   href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
 />
-<link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
+<link rel="shortcut icon" href="https://troz.net/icons/favicon-96x96.png" />
 
 
 <link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
@@ -307,7 +307,7 @@ But I cannot think of a clever name for the app, so please read the story and co
 <p><img src="/images/AnagramDiscard.png" alt="Anagram discard tray"></p>
 <hr>
 <p>After this, I added a bit of style to make it look nicer and then moved on to the next feature. If I knew some of the cross letters already, I wanted to be able to place them in the solution squares and then lock them in place. This would allow me to shuffle in letters to test and remove all the unlocked ones with a button click. So here is what the app looked like after those changes:</p>
-<p><img src="/images/AnagramLocks.gif" alt="Anagram with locked letters"></p>
+<p><img src="/images/AnagramLocks.mp4" alt="Anagram with locked letters"></p>
 <p><em>Refresh the page to see the gif play, if it has stopped.</em></p>
 <hr>
 <h3 id="drag--drop">Drag &amp; Drop</h3>
@@ -324,7 +324,7 @@ But I cannot think of a clever name for the app, so please read the story and co
 <p>SwiftUI has animation built in, so I was able to add an <code>animation</code> modifier to the various views to make the transitions look smooth. I particularly liked the way the letters re-arranged themselves around the circle when I removed or replaced a letter.</p>
 <p>But to add something extra, I thought it would be fun if the letters all started in the middle and moved outwards to their places on the circle. The way I did this was by using a Boolean to store whether the letters had had their first draw. If not, the radius of the circle was zero, so they all piled in the middle. After a delay, this Boolean was toggled so the radius was changed to the full size and the animation modifier already applied, made the letters smoothly expand outwards.</p>
 <p>For the letter shuffle, I did the reverse, moving the letters in, shuffling, then moving them out again.</p>
-<p><img src="/images/AnagramAnimation.gif" alt="Animations"></p>
+<p><img src="/images/AnagramAnimation.mp4" alt="Animations"></p>
 <p><em>Refresh the page to see the gif play, if it has stopped.</em></p>
 <p>I also added sound effects and a slide-up sheet view with settings and help. I enjoyed using <a href="https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/">Apple&rsquo;s SF Symbols</a> to show icons for each paragraph of the help, although I may change the colour of these icons as they look at bit too much like buttons right now.</p>
 <p><img src="/images/AnagramHelp.png" alt="Help & Settings"></p>

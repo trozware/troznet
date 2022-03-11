@@ -40,4 +40,4 @@ So thank you to everyone who has used Pic-a-POD over the years and especially th
 [2]: /images/POD2005.png
 [3]: https://www.nationalgeographic.com/photography/photo-of-the-day/
 [4]: https://itunes.apple.com/au/app/24-hour-wallpaper/id1226087575?mt=12
-[5]: /images/POD2018.png
+[5]: /images/POD2018.webp

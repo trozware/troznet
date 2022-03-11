@@ -176,9 +176,9 @@ I haven't tried an iPad version yet. I got stung once by testing an iPad version
 [i1]: /images/Anagram1.gif
 [i2]: /images/AnagramAssistv1.gif
 [i3]: /images/AnagramDiscard.png
-[i4]: /images/AnagramLocks.gif
+[i4]: /images/AnagramLocks.mp4
 [i5]: /images/AnagramDarkMode.png
-[i6]: /images/AnagramAnimation.gif
+[i6]: /images/AnagramAnimation.mp4
 [i7]: /images/AnagramHelp.png
 [1]: https://www.irishtimes.com/games/crosswords/
 [2]: https://www.irishtimes.com

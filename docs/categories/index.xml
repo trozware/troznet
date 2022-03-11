@@ -692,7 +692,7 @@ I also had to buy a monitor to use with it.&lt;/p&gt;
   }
 &lt;/style&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Crossfix-anagram.png&#34; alt=&#34;Anagram solving&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Crossfix-anagram.webp&#34; alt=&#34;Anagram solving&#34;&gt;&lt;/p&gt;
 &lt;p&gt;I knew that the third last letter was &amp;ldquo;I&amp;rdquo; so I locked that in place, then I was able to shuffle the other letters around to find the answer: SURPRISE.&lt;/p&gt;
 &lt;h3 id=&#34;a-different-type-of-anagram&#34;&gt;A Different Type of Anagram&lt;/h3&gt;
 &lt;p&gt;Now we come to a variation of the anagram clue that is very popular with some crossword creators. I don&amp;rsquo;t know if there is an official name, but I call them &amp;ldquo;subtraction anagrams&amp;rdquo;.&lt;/p&gt;
@@ -701,7 +701,7 @@ I also had to buy a monitor to use with it.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Creationist has no taste for what&amp;rsquo;s sarcastic (6)&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;The idea here is to remove the letters in &amp;ldquo;taste&amp;rdquo; from the letters in &amp;ldquo;Creationist&amp;rdquo; and then unscramble the remaining letters to find a word that means &amp;ldquo;sarcastic&amp;rdquo;. This turned out to be &amp;ldquo;ironic&amp;rdquo;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Crossfix-sub-anagram.png&#34; alt=&#34;Subraction anagram solving&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Crossfix-sub-anagram.webp&#34; alt=&#34;Subraction anagram solving&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;using-the-app&#34;&gt;Using the app&lt;/h3&gt;
 &lt;p&gt;Type the letters in your anagram word or words in the entry field at the top. Spell checking is turned off so you can add spaces or not, use abbreviations or anything you like. When you have all the letters in, press Return and the letters will be arranged in a circle.&lt;/p&gt;
 &lt;p&gt;Tap the arrows in the middle of the circle to shuffle the letters randomly. This can be very useful as sometimes a pattern appears.&lt;/p&gt;
@@ -709,7 +709,7 @@ I also had to buy a monitor to use with it.&lt;/p&gt;
 &lt;p&gt;If you already know some of the cross letters, put them into the answer squares and tap the lock button to freeze them in place.&lt;/p&gt;
 &lt;p&gt;The up arrow button will move all the unlocked letters out of the answer squares and back into the circle. Reset starts the word again completely and Clear removes everything so you can start again with a new set of letters.&lt;/p&gt;
 &lt;p&gt;Tap the gear wheel to see some help and to configure the sound and animation settings. Swipe down to dismiss this display.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Crossfix-settings.png&#34; alt=&#34;Settings&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/Crossfix-settings.webp&#34; alt=&#34;Settings&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;which-version-to-get&#34;&gt;Which Version to Get&lt;/h3&gt;
 &lt;p&gt;I have published two version of this app on the App Store: &lt;a href=&#34;https://itunes.apple.com/app/crossfix/id1526235954&#34;&gt;Crossfix&lt;/a&gt; and &lt;a href=&#34;https://itunes.apple.com/app/crossfix-lite/id1526236100&#34;&gt;Crossfix Lite&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Crossfix Lite is free, but you are limited to solving three anagrams per day.
@@ -1237,7 +1237,7 @@ Crossfix is a paid app that allows unlimited solves.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/AnagramDiscard.png&#34; alt=&#34;Anagram discard tray&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;After this, I added a bit of style to make it look nicer and then moved on to the next feature. If I knew some of the cross letters already, I wanted to be able to place them in the solution squares and then lock them in place. This would allow me to shuffle in letters to test and remove all the unlocked ones with a button click. So here is what the app looked like after those changes:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://troz.net/images/AnagramLocks.gif&#34; alt=&#34;Anagram with locked letters&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/AnagramLocks.mp4&#34; alt=&#34;Anagram with locked letters&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Refresh the page to see the gif play, if it has stopped.&lt;/em&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;drag--drop&#34;&gt;Drag &amp;amp; Drop&lt;/h3&gt;
@@ -1254,7 +1254,7 @@ Crossfix is a paid app that allows unlimited solves.&lt;/p&gt;
 &lt;p&gt;SwiftUI has animation built in, so I was able to add an &lt;code&gt;animation&lt;/code&gt; modifier to the various views to make the transitions look smooth. I particularly liked the way the letters re-arranged themselves around the circle when I removed or replaced a letter.&lt;/p&gt;
 &lt;p&gt;But to add something extra, I thought it would be fun if the letters all started in the middle and moved outwards to their places on the circle. The way I did this was by using a Boolean to store whether the letters had had their first draw. If not, the radius of the circle was zero, so they all piled in the middle. After a delay, this Boolean was toggled so the radius was changed to the full size and the animation modifier already applied, made the letters smoothly expand outwards.&lt;/p&gt;
 &lt;p&gt;For the letter shuffle, I did the reverse, moving the letters in, shuffling, then moving them out again.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://troz.net/images/AnagramAnimation.gif&#34; alt=&#34;Animations&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/AnagramAnimation.mp4&#34; alt=&#34;Animations&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Refresh the page to see the gif play, if it has stopped.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;I also added sound effects and a slide-up sheet view with settings and help. I enjoyed using &lt;a href=&#34;https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/&#34;&gt;Apple&amp;rsquo;s SF Symbols&lt;/a&gt; to show icons for each paragraph of the help, although I may change the colour of these icons as they look at bit too much like buttons right now.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/AnagramHelp.png&#34; alt=&#34;Help &amp; Settings&#34;&gt;&lt;/p&gt;
@@ -1342,7 +1342,7 @@ Consumables minus bacon and shellfish (6) = MUSSEL&lt;/p&gt;
 &lt;p&gt;Now your color set has two blocks and you can change the Dark one to whatever color this should be in dark mode. This feature of Color Sets is a very strong argument for using them instead of defining colors using their RGB values.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/swiftui-colors-multi-set.png&#34; alt=&#34;Light &amp; Dark Color Set&#34;&gt;&lt;/p&gt;
 &lt;p&gt;And now for the really neat part. To use any of these color sets in your code, add a modifier like &lt;code&gt;foregroundColor&lt;/code&gt; just the same as usual, but when the placeholder for the color is selected, press Shift-Command-L to bring up the Library palette and choose the Color icon at the right. You will see all your color sets there and you can insert them easily and accurately.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://troz.net/images/swiftui-colors-use-color-set.png&#34; alt=&#34;Using a Color Set&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/swiftui-colors-use-color-set.webp&#34; alt=&#34;Using a Color Set&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Here is the code for my &lt;code&gt;AlertView&lt;/code&gt; using two color sets.&lt;/p&gt;
 &lt;p&gt;Some people may object to using &amp;ldquo;magic strings&amp;rdquo; to specify the color sets but I feel that so long as the Library is used to insert the color names automatically, there is very little chance of error. But you could always make an enum or struct of color name constants and use these instead.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;AlertView&lt;/span&gt;: View {
@@ -1754,7 +1754,7 @@ Just wanted to add that in part 2 when dismissing sheets there are two ways to d
           &lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;.dialogResult = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Cancel clicked in Alert&amp;#34;&lt;/span&gt;
         }))
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This worked very nicely and the Esc and Return keys triggered the two buttons as you would expect with both of them closing the dialog.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://troz.net/images/SwiftUI-Mac-alert.png&#34; alt=&#34;Alert&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/SwiftUI-Mac-alert.jpg&#34; alt=&#34;Alert&#34;&gt;&lt;/p&gt;
 &lt;p&gt;I tried using the &lt;code&gt;destructive&lt;/code&gt; button type, but there was no difference to either the appearance or behavior of the button.&lt;/p&gt;
 &lt;p&gt;So Alert is a great choice for a text-based dialog, either for informational use or to allow two choices of action.&lt;/p&gt;
 &lt;h2 id=&#34;action&#34;&gt;Action&lt;/h2&gt;
@@ -1956,7 +1956,7 @@ Just wanted to add that in part 2 when dismissing sheets there are two ways to d
                         axis: (x: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, y: &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, z: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;))
       .animation(.&lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now the image can be flipped from the menu item or even by using the keyboard shortcut. And with a smooth animation (smoother in the app than in this gif).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://troz.net/images/SwiftUI-Mac-Flip.gif&#34; alt=&#34;Flipping the image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/SwiftUI-Mac-Flip.mp4&#34; alt=&#34;Flipping the image&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;opening-another-window&#34;&gt;Opening another window&lt;/h2&gt;
 &lt;p&gt;For my next challenge, I want to open a second window that I can use to show samples of various UI elements. As I want to open it from a menu command, my first thought was to add a Window Controller to the Main storyboard and open it that way. I replaced the default View Controller with a Hosting Controller so that I could insert my SwiftUI View into it.&lt;/p&gt;
 &lt;p&gt;I had great trouble finding any documentation or examples of how to implement this, but after a lot of trial and error, here is what I got to work:&lt;/p&gt;
@@ -2485,7 +2485,7 @@ print(x, y, z)
 &lt;p&gt;I haven&amp;rsquo;t been able to find a picture of the original version, but here is one from 2005:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/POD2005.png&#34; alt=&#34;Pic-a-POD 2005&#34;&gt;&lt;/p&gt;
 &lt;p&gt;And here it is today:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://troz.net/images/POD2018.png&#34; alt=&#34;Pic-a-POD 2018&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/POD2018.webp&#34; alt=&#34;Pic-a-POD 2018&#34;&gt;&lt;/p&gt;
 &lt;p&gt;It was written originally as a convenient way to download the daily picture-of-the-day from &lt;a href=&#34;https://www.nationalgeographic.com/photography/photo-of-the-day/&#34;&gt;National Geographic&lt;/a&gt; and use it to set the Mac&amp;rsquo;s Desktop Picture automatically. From there is just grew with more sites added (9 at the moment although I think there have been up to 12 at certain times).&lt;/p&gt;
 &lt;p&gt;The main issue was keeping up with the site changes of the various sources. Early versions had each copy of the app interrogate the sites directly which meant that any change to the site broke the app until an update could be released. And without the App Store making updates easy to distribute, this was a problem. Later I switched to having PHP scripts on my server do the data retrieval and store the results in a database. The app then just had to request the data from my server. That way if there was a change, I could react quickly and a fix to the server-side scripts allowed all users to get the new data.&lt;/p&gt;
 &lt;p&gt;As my first Objective-C app and my first app on the Mac App Store, Pic-a-POD has always held a place in my affections, and until last week, it was the one app that was always running on my Mac. So what changed? macOS Mojave&amp;rsquo;s dynamic desktops! I turned off Pic-a-POD, and set the Desktop picture to change dynamically through the day and I loved it.&lt;/p&gt;

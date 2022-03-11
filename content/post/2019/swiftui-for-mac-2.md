@@ -336,7 +336,7 @@ Moving on to an unplanned [part 3 of this series][4], I am going to experiment w
 
 [i1]: /images/SwiftUi-Mac-menus.png
 [i2]: /images/SwiftUI-Mac-dark.png
-[i3]: /images/SwiftUI-Mac-Flip.gif
+[i3]: /images/SwiftUI-Mac-Flip.mp4
 [i4]: /images/SwiftUI-Mac-UI.png
 [1]: /post/2019/swiftui-for-mac-1/
 [2]: https://www.avanderlee.com/swift/property-wrappers/

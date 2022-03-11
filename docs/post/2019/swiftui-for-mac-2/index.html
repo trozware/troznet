@@ -36,7 +36,7 @@ Now it is time to explore some more of the features of a Mac app with SwiftUI.
   sizes="144x144"
   href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
 />
-<link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
+<link rel="shortcut icon" href="https://troz.net/icons/favicon-96x96.png" />
 
 
 <link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
@@ -263,7 +263,7 @@ Now it is time to explore some more of the features of a Mac app with SwiftUI.
                         axis: (x: <span style="color:#ae81ff">0</span>, y: <span style="color:#ae81ff">1</span>, z: <span style="color:#ae81ff">0</span>))
       .animation(.<span style="color:#66d9ef">default</span>)
 </code></pre></div><p>Now the image can be flipped from the menu item or even by using the keyboard shortcut. And with a smooth animation (smoother in the app than in this gif).</p>
-<p><img src="/images/SwiftUI-Mac-Flip.gif" alt="Flipping the image"></p>
+<p><img src="/images/SwiftUI-Mac-Flip.mp4" alt="Flipping the image"></p>
 <h2 id="opening-another-window">Opening another window</h2>
 <p>For my next challenge, I want to open a second window that I can use to show samples of various UI elements. As I want to open it from a menu command, my first thought was to add a Window Controller to the Main storyboard and open it that way. I replaced the default View Controller with a Hosting Controller so that I could insert my SwiftUI View into it.</p>
 <p>I had great trouble finding any documentation or examples of how to implement this, but after a lot of trial and error, here is what I got to work:</p>

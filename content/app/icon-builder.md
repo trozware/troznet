@@ -28,7 +28,7 @@ Updated 7th November 2020 with the ability to create Big Sur style macOS icons w
 
 ![Make an icon set in 3 steps][1]
 
-[1]: /images/IconBuilder1.png
+[1]: /images/IconBuilder1.webp
 
 2: Choose the device family you are building for: iOS Universal, iPhone, iPad, Apple Watch, Mac, Sticker Pack or iMessage.
 
