@@ -11,6 +11,76 @@
     
     
     <item>
+<title>macOS Book</title>
+<link>https://troz.net/post/2022/macos_book/</link>
+<pubDate>Sat, 09 Apr 2022 10:53:43 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2022/macos_book/</guid>
+<description>&lt;p&gt;I can finally reveal the reason I have not been blogging. I have been busy writing a book. It&amp;rsquo;s finally out, so here it is: &lt;a href=&#34;https://www.raywenderlich.com/books/macos-by-tutorials&#34;&gt;macOS by Tutorials&lt;/a&gt;, published by &lt;a href=&#34;https://www.raywenderlich.com/&#34;&gt;raywenderlich.com&lt;/a&gt;.&lt;/p&gt;
+&lt;style&gt;
+  img {
+    margin: 10px auto;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .social_footer img {
+    border: none;
+    box-shadow: none;
+  }
+&lt;/style&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/book_cover.png&#34; alt=&#34;Book Cover&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Anyone who reads my posts or tweets will know that I am a passionate advocate for building real native macOS apps. This book is aimed at iOS developers who know some Swift and SwiftUI but don&amp;rsquo;t yet know all the tips and tricks needed to convert that knowledge into a great Mac experience.&lt;/p&gt;
+&lt;p&gt;You don&amp;rsquo;t need to be a highly experienced developer, but some basic Swift will be useful.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;contents&#34;&gt;Contents&lt;/h3&gt;
+&lt;p&gt;The book consists of five sections. In each of the first four sections, I&amp;rsquo;ll walk you through developing a complete app. Each one is a different type of app using different techniques and different frameworks.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Section 1&lt;/strong&gt;: Use SwiftUI to build a multi-paned window app. Learn how to manage windows, menus and toolbars.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Section 2&lt;/strong&gt;: Build a menu-bar app using AppKit with a bit of SwiftUI.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Section 3&lt;/strong&gt;: Back to SwiftUI to create a document-based app, with a bit of AppKit.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Section 4&lt;/strong&gt;: Use your new skills to make an app that communicates with the macOS Terminal.&lt;/p&gt;
+&lt;p&gt;The final section deals with app distribution, covering both inside and outside the Mac App Store.&lt;/p&gt;
+&lt;p&gt;You can read more details of the book contents and why I wanted to write it in the &lt;a href=&#34;https://www.raywenderlich.com/books/macos-by-tutorials/v1.0/chapters/v-introduction&#34;&gt;Introduction&lt;/a&gt; which is a free section.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;thanks-to&#34;&gt;Thanks to&amp;hellip;&lt;/h3&gt;
+&lt;p&gt;I call this &lt;em&gt;my&lt;/em&gt; book, but of course, it was only made possible by an awesome team. There were a lot of people involved, but I want to give special thanks to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/RayFromVA&#34;&gt;Ray Wenderlich&lt;/a&gt; who always has time for my Mac obsession and who let me write the book I wanted to write.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/mandarazeware&#34;&gt;Manda Frederick&lt;/a&gt; was the RW book team lead when we started and was a huge source of encouragement.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/rcritz&#34;&gt;Richard Critz&lt;/a&gt;, the wonderful editor who had the unenviable task of fixing my grammar. He was very supportive and helped me to convince everyone of the merits of this approach.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/mataharimau&#34;&gt;Audrey Tam&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/Waheiba&#34;&gt;Ehab Amer&lt;/a&gt; were the amazing tech editors who had to make sure the instructions all worked and made sense. They took what I wrote and made it a lot better.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The whole team at &lt;a href=&#34;https://twitter.com/rwenderlich&#34;&gt;Ray Wenderlich&lt;/a&gt; was great, so a hugh thanks to them all. And I hope they enjoyed working on the book half as much as I did, because I had the best time!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;where-can-you-read-the-book&#34;&gt;Where can you read the book?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;You can read it online at &lt;a href=&#34;https://www.raywenderlich.com/books/macos-by-tutorials&#34;&gt;raywenderlich.com&lt;/a&gt; as part of a Ray Wenderlich subscription.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All the code and extra materials for the book can be downloaded or cloned from &lt;a href=&#34;https://github.com/raywenderlich/mos-materials/tree/editions/1.0&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;feedback&#34;&gt;Feedback&lt;/h3&gt;
+&lt;p&gt;I would love to hear from anyone who read the book, loved it, hated it, found an error or just anted to say hello.&lt;/p&gt;
+&lt;p&gt;You can contact me directly using any of the contact links at the bottom of this page or through the &lt;a href=&#34;https://troz.net/contact/&#34;&gt;Contact&lt;/a&gt; page.
+There is also an &lt;a href=&#34;https://forums.raywenderlich.com/c/books/macos-by-tutorials&#34;&gt;official forum&lt;/a&gt; for the book where you can ask questions and tell us about any errors you find.&lt;/p&gt;</description>
+</item>
+    
+    <item>
 <title>Site Search</title>
 <link>https://troz.net/post/2021/site_search/</link>
 <pubDate>Mon, 25 Oct 2021 09:57:12 +1000</pubDate>
