@@ -48,13 +48,15 @@ I call this _my_ book, but of course, it was only made possible by an awesome te
 - [Richard Critz][10], the wonderful editor who had the unenviable task of fixing my grammar. He was very supportive and helped me to convince everyone of the merits of this approach.
 - [Audrey Tam][11] and [Ehab Amer][12] were the amazing tech editors who had to make sure the instructions all worked and made sense. They took what I wrote and made it a lot better.
 
-The whole team at [Ray Wenderlich][14] was great, so a hugh thanks to them all. And I hope they enjoyed working on the book half as much as I did, because I had the best time!
+The whole team at [Ray Wenderlich][14] was great, so a huge thanks to them all. And I hope they enjoyed working on the book half as much as I did, because I had the best time!
 
 ---
 
 ### Where can you read the book?
 
 - You can read it online at [raywenderlich.com][1] as part of a Ray Wenderlich subscription.
+- You can buy an ebook (epub or pdf) at the same page if you don't have a subscription.
+- The paperback is available at [Amazon][15].
 
 All the code and extra materials for the book can be downloaded or cloned from [GitHub][6].
 
@@ -78,3 +80,4 @@ There is also an [official forum][7] for the book where you can ask questions an
 [12]: https://twitter.com/Waheiba
 [13]: https://twitter.com/RayFromVA
 [14]: https://twitter.com/rwenderlich
+[15]: https://www.amazon.com/dp/1950325660/
