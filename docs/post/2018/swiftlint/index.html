@@ -209,21 +209,21 @@
 <h2 id="what-is-style-in-swift">What is style in Swift?</h2>
 <p>Style applies to writing in any programming language and refers to the way you structure your code.</p>
 <p>For example, how to you arrange braces?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">if</span> theValue <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> {
-    <span style="color:#75715e">// do one thing</span>
-} <span style="color:#66d9ef">else</span> {
-    <span style="color:#75715e">// do the other thing</span>
-}
-</code></pre></div><p>or</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">if</span> theValue <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>
-{
-    <span style="color:#75715e">// do one thing</span>
-}
-<span style="color:#66d9ef">else</span>
-{
-    <span style="color:#75715e">// do the other thing</span>
-}
-</code></pre></div><p>or anything in between?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> theValue <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// do one thing</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// do the other thing</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>or</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> theValue <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// do one thing</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// do the other thing</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>or anything in between?</p>
 <p>Do you use camelCase or snake_case?</p>
 <p>Do you always start class names with an uppercase letter?</p>
 <p>And of course there is the Great Debate: tabs or spaces? And how many?</p>
@@ -239,61 +239,61 @@
 <h3 id="installing-and-running-swiftlint">Installing and Running SwiftLint</h3>
 <p>To install SwiftLint, I recommend using <a href="https://brew.sh">HomeBrew</a>. Once you have HomeBrew installed, open Terminal and type <code>brew install swiftlint</code>. You can update it any time using <code>brew upgrade swiftlint</code>.</p>
 <p>You can run SwiftLint directly from the Terminal. <code>cd</code> to the folder containing your Xcode project and type <code>swiftlint</code>. For a brand new iOS project, you will probably get a result similar to this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Linting Swift files in current working directory
-Linting &#39;ViewController.swift&#39; (1/2)
-Linting &#39;AppDelegate.swift&#39; (2/2)
-ViewController.swift:23: warning: Vertical Whitespace Violation: Limit vertical whitespace to a single empty line. Currently 2. (vertical_whitespace)
-ViewController.swift:25: warning: Trailing Newline Violation: Files should have a single trailing newline. (trailing_newline)
-AppDelegate.swift:16: warning: Vertical Whitespace Violation: Limit vertical whitespace to a single empty line. Currently 2. (vertical_whitespace)
-AppDelegate.swift:44: warning: Vertical Whitespace Violation: Limit vertical whitespace to a single empty line. Currently 2. (vertical_whitespace)
-AppDelegate.swift:46: warning: Trailing Newline Violation: Files should have a single trailing newline. (trailing_newline)
-AppDelegate.swift:17: warning: Line Length Violation: Line should be 120 characters or less: currently 144 characters (line_length)
-AppDelegate.swift:23: error: Line Length Violation: Line should be 120 characters or less: currently 285 characters (line_length)
-AppDelegate.swift:24: warning: Line Length Violation: Line should be 120 characters or less: currently 159 characters (line_length)
-AppDelegate.swift:28: error: Line Length Violation: Line should be 120 characters or less: currently 218 characters (line_length)
-AppDelegate.swift:29: warning: Line Length Violation: Line should be 120 characters or less: currently 141 characters (line_length)
-AppDelegate.swift:33: warning: Line Length Violation: Line should be 120 characters or less: currently 155 characters (line_length)
-AppDelegate.swift:37: warning: Line Length Violation: Line should be 120 characters or less: currently 194 characters (line_length)
-AppDelegate.swift:41: warning: Line Length Violation: Line should be 120 characters or less: currently 128 characters (line_length)
-Done linting! Found 13 violations, 2 serious in 2 files.
-</code></pre></div><p><em>I have removed the full path that will be listed for each file just to make this fit better.</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Linting Swift files in current working directory
+</span></span><span style="display:flex;"><span>Linting &#39;ViewController.swift&#39; (1/2)
+</span></span><span style="display:flex;"><span>Linting &#39;AppDelegate.swift&#39; (2/2)
+</span></span><span style="display:flex;"><span>ViewController.swift:23: warning: Vertical Whitespace Violation: Limit vertical whitespace to a single empty line. Currently 2. (vertical_whitespace)
+</span></span><span style="display:flex;"><span>ViewController.swift:25: warning: Trailing Newline Violation: Files should have a single trailing newline. (trailing_newline)
+</span></span><span style="display:flex;"><span>AppDelegate.swift:16: warning: Vertical Whitespace Violation: Limit vertical whitespace to a single empty line. Currently 2. (vertical_whitespace)
+</span></span><span style="display:flex;"><span>AppDelegate.swift:44: warning: Vertical Whitespace Violation: Limit vertical whitespace to a single empty line. Currently 2. (vertical_whitespace)
+</span></span><span style="display:flex;"><span>AppDelegate.swift:46: warning: Trailing Newline Violation: Files should have a single trailing newline. (trailing_newline)
+</span></span><span style="display:flex;"><span>AppDelegate.swift:17: warning: Line Length Violation: Line should be 120 characters or less: currently 144 characters (line_length)
+</span></span><span style="display:flex;"><span>AppDelegate.swift:23: error: Line Length Violation: Line should be 120 characters or less: currently 285 characters (line_length)
+</span></span><span style="display:flex;"><span>AppDelegate.swift:24: warning: Line Length Violation: Line should be 120 characters or less: currently 159 characters (line_length)
+</span></span><span style="display:flex;"><span>AppDelegate.swift:28: error: Line Length Violation: Line should be 120 characters or less: currently 218 characters (line_length)
+</span></span><span style="display:flex;"><span>AppDelegate.swift:29: warning: Line Length Violation: Line should be 120 characters or less: currently 141 characters (line_length)
+</span></span><span style="display:flex;"><span>AppDelegate.swift:33: warning: Line Length Violation: Line should be 120 characters or less: currently 155 characters (line_length)
+</span></span><span style="display:flex;"><span>AppDelegate.swift:37: warning: Line Length Violation: Line should be 120 characters or less: currently 194 characters (line_length)
+</span></span><span style="display:flex;"><span>AppDelegate.swift:41: warning: Line Length Violation: Line should be 120 characters or less: currently 128 characters (line_length)
+</span></span><span style="display:flex;"><span>Done linting! Found 13 violations, 2 serious in 2 files.
+</span></span></code></pre></div><p><em>I have removed the full path that will be listed for each file just to make this fit better.</em></p>
 <p>These reports show the file and line number, whether this is an error or a warning, a description of the error and the name of the SwiftLint rule that caused the warning or error.</p>
 <p>You could now go through and fix each of these but there are 2 solutions to make things easier:
 Try entering this in the Terminal window: <code>swiftlint autocorrect</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Correcting Swift files in current working directory
-Correcting &#39;ViewController.swift&#39; (1/2)
-Correcting &#39;AppDelegate.swift&#39; (2/2)
-ViewController.swift:22:1 Corrected Vertical Whitespace
-ViewController.swift:23 Corrected Trailing Newline
-AppDelegate.swift:15:1 Corrected Vertical Whitespace
-AppDelegate.swift:43:1 Corrected Vertical Whitespace
-AppDelegate.swift:43 Corrected Trailing Newline
-Done correcting 2 files!
-</code></pre></div><p>And now if you run <code>swiftlint</code> again you will only get <code>Done linting! Found 8 violations, 2 serious in 2 files.</code> and all the remaining issues are for <code>Line Length Violation</code> This shows that autocorrect cannot fix everything and while it is good on spacing, it has trouble with more complex issues. But it is still worth doing as it can do a lot of the tedious fixes that creep into Xcode projects.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Correcting Swift files in current working directory
+</span></span><span style="display:flex;"><span>Correcting &#39;ViewController.swift&#39; (1/2)
+</span></span><span style="display:flex;"><span>Correcting &#39;AppDelegate.swift&#39; (2/2)
+</span></span><span style="display:flex;"><span>ViewController.swift:22:1 Corrected Vertical Whitespace
+</span></span><span style="display:flex;"><span>ViewController.swift:23 Corrected Trailing Newline
+</span></span><span style="display:flex;"><span>AppDelegate.swift:15:1 Corrected Vertical Whitespace
+</span></span><span style="display:flex;"><span>AppDelegate.swift:43:1 Corrected Vertical Whitespace
+</span></span><span style="display:flex;"><span>AppDelegate.swift:43 Corrected Trailing Newline
+</span></span><span style="display:flex;"><span>Done correcting 2 files!
+</span></span></code></pre></div><p>And now if you run <code>swiftlint</code> again you will only get <code>Done linting! Found 8 violations, 2 serious in 2 files.</code> and all the remaining issues are for <code>Line Length Violation</code> This shows that autocorrect cannot fix everything and while it is good on spacing, it has trouble with more complex issues. But it is still worth doing as it can do a lot of the tedious fixes that creep into Xcode projects.</p>
 <h3 id="incorporating-swiftlint-into-xcode">Incorporating SwiftLint into Xcode</h3>
 <p>The next thing to do to make your life easier is to add SwiftLint to your Xcode project so that it can run automatically whenever you do a build.</p>
 <p>Open your project in Xcode and select the project itself at the top of the Navigator on the left. Select the target for the main app and click the Build Phases tab along the top. Click the + button at the top left of the existing build phases and choose &lsquo;New Run Script Phase&rsquo;. Expand the newly added phase and paste in the following script:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">if</span> which swiftlint &gt;/dev/null; <span style="color:#66d9ef">then</span>
-  swiftlint autocorrect
-  swiftlint
-<span style="color:#66d9ef">else</span>
-  echo <span style="color:#e6db74">&#34;warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint&#34;</span>
-<span style="color:#66d9ef">fi</span>
-</code></pre></div><p>Your Xcode window should look something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> which swiftlint &gt;/dev/null; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  swiftlint autocorrect
+</span></span><span style="display:flex;"><span>  swiftlint
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><p>Your Xcode window should look something like this:</p>
 <p><a href="/images/SwiftLineRunScript.png"><img src="/images/SwiftLineRunScript.png" alt="SwiftLint Run Script phase"></a></p>
 <p>If you think this looks like it is running SwiftLint twice, you are correct. The first time through it corrects what it can and the second pass reports all remaining issues. This is still faster than manually correcting the easy stuff. So now you will see any violations in the Xcode issue navigator when you do a build and you can click the entry to go directly to the code.</p>
-<p><img src="/images/IssuesNavigator.png" alt="SwiftLint errors & warnings in Xcode issues navigator"></p>
+<p><img src="/images/IssuesNavigator.png" alt="SwiftLint errors &amp; warnings in Xcode issues navigator"></p>
 <h3 id="configuring-swiftlint">Configuring SwiftLint</h3>
 <p>Now you are all set to SwiftLint all your code, but how do you decide what styles SwiftLint should enforce? Go back to Terminal, make the Terminal window as wide as possible and run <code>swiftlint rules</code> which will return a table like this (click to see full-sized image):</p>
 <p><a href="/images/swiftlint_rules.png"><img src="/images/swiftlint_rules.png" alt="SwiftLint Rules"></a></p>
 <p>For details on what each rule does, check out the entries in <a href="https://github.com/realm/SwiftLint/blob/master/Rules.md">Rules.md</a></p>
 <p>As an example, look at the rules for line_length:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">+------------------------------------------+--------+-------------+------------------------+-------------+---------------------+
-| identifier                               | opt-in | correctable | enabled in your config | kind        | configuration       |
-+------------------------------------------+--------+-------------+------------------------+-------------+---------------------+
-| line_length                              | no     | no          | yes                    | metrics     | warning: 120, er... |
-+------------------------------------------+--------+-------------+------------------------+-------------+---------------------+
-</code></pre></div><p>And by making my Terminal window full width, I can see the configuration column contains <code>warning: 120, error: 200, ignores urls: false, ignores function declarations: false, ignores comments: false</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>+------------------------------------------+--------+-------------+------------------------+-------------+---------------------+
+</span></span><span style="display:flex;"><span>| identifier                               | opt-in | correctable | enabled in your config | kind        | configuration       |
+</span></span><span style="display:flex;"><span>+------------------------------------------+--------+-------------+------------------------+-------------+---------------------+
+</span></span><span style="display:flex;"><span>| line_length                              | no     | no          | yes                    | metrics     | warning: 120, er... |
+</span></span><span style="display:flex;"><span>+------------------------------------------+--------+-------------+------------------------+-------------+---------------------+
+</span></span></code></pre></div><p>And by making my Terminal window full width, I can see the configuration column contains <code>warning: 120, error: 200, ignores urls: false, ignores function declarations: false, ignores comments: false</code>.</p>
 <ul>
 <li>The rule name (identifier) is line_length - this is what appears in the issue navigator or Terminal.</li>
 <li>It is not an opt-in rule, meaning that it is enabled by default.</li>
@@ -311,37 +311,37 @@ Done correcting 2 files!
 <p>In the Terminal, <code>cd</code> to the folder containing your Xcode project file and run <code>touch .swiftlint.yml</code> to create the invisible file. You can edit the file in Terminal using <code>nano</code>, <code>vim</code> or whatever you prefer, but you can also open it in any text editor. I prefer to use Atom so I open the file by running this command: <code>atom .swiftlint.yml</code>.</p>
 <p>The SwiftLint ReadMe has a section about <a href="https://github.com/realm/SwiftLint#configuration">configuration</a> which shows the format and the various general headings you can use, as well as how to configure an individual rule.</p>
 <p>Here is my .swiftlint.yml file:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#f92672">disabled_rules</span>: <span style="color:#75715e"># rule identifiers to exclude from running</span>
-<span style="color:#f92672">included</span>: <span style="color:#75715e"># paths to include during linting. `--path` is ignored if present. takes precendence over `excluded`.</span>
-<span style="color:#f92672">excluded</span>: <span style="color:#75715e"># paths to ignore during linting. overridden by `included`.</span>
-  - <span style="color:#ae81ff">Carthage</span>
-  - <span style="color:#ae81ff">Pods</span>
-<span style="color:#f92672">opt_in_rules</span>:
-  - <span style="color:#ae81ff">closure_end_indentation</span>
-  - <span style="color:#ae81ff">closure_spacing</span>
-  - <span style="color:#ae81ff">contains_over_first_not_nil</span>
-  - <span style="color:#ae81ff">empty_count</span>
-  - <span style="color:#ae81ff">explicit_init</span>
-  - <span style="color:#ae81ff">fatal_error_message</span>
-  - <span style="color:#ae81ff">force_unwrapping</span>
-  - <span style="color:#ae81ff">literal_expression_end_indentation</span>
-  - <span style="color:#ae81ff">multiline_arguments</span>
-  - <span style="color:#ae81ff">multiline_parameters</span>
-  - <span style="color:#ae81ff">operator_usage_whitespace</span>
-  - <span style="color:#ae81ff">overridden_super_call</span>
-  - <span style="color:#ae81ff">private_outlet</span>
-  - <span style="color:#ae81ff">prohibited_super_call</span>
-  - <span style="color:#ae81ff">trailing_closure</span>
-  - <span style="color:#ae81ff">unneeded_parentheses_in_closure_argument</span>
-<span style="color:#f92672">function_body_length</span>:
-  - <span style="color:#ae81ff">60</span> <span style="color:#75715e"># warning</span>
-  - <span style="color:#ae81ff">100</span> <span style="color:#75715e"># error</span>
-<span style="color:#f92672">line_length</span>:
-  - <span style="color:#ae81ff">150</span> <span style="color:#75715e"># warning</span>
-  - <span style="color:#ae81ff">200</span> <span style="color:#75715e"># error</span>
-<span style="color:#f92672">cyclomatic_complexity</span>:
-  <span style="color:#f92672">ignores_case_statements</span>: <span style="color:#66d9ef">true</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">disabled_rules</span>: <span style="color:#75715e"># rule identifiers to exclude from running</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">included</span>: <span style="color:#75715e"># paths to include during linting. `--path` is ignored if present. takes precendence over `excluded`.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">excluded</span>: <span style="color:#75715e"># paths to ignore during linting. overridden by `included`.</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Carthage</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Pods</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">opt_in_rules</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">closure_end_indentation</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">closure_spacing</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">contains_over_first_not_nil</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">empty_count</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">explicit_init</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">fatal_error_message</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">force_unwrapping</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">literal_expression_end_indentation</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">multiline_arguments</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">multiline_parameters</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">operator_usage_whitespace</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">overridden_super_call</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">private_outlet</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">prohibited_super_call</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">trailing_closure</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">unneeded_parentheses_in_closure_argument</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">function_body_length</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">60</span> <span style="color:#75715e"># warning</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">100</span> <span style="color:#75715e"># error</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">line_length</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">150</span> <span style="color:#75715e"># warning</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">200</span> <span style="color:#75715e"># error</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">cyclomatic_complexity</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ignores_case_statements</span>: <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><ul>
 <li>No rules are disabled by default.</li>
 <li><code>included</code> is blank which means it checks every folder&hellip;</li>
 <li>&hellip; except for the ones listed in the <code>excluded</code> section.</li>
@@ -353,10 +353,10 @@ Done correcting 2 files!
 <p>Now that my .swiftlint.yml file is edited, doing a build uses those settings and for a new iOS project, I am now down to 2 errors and 3 warnings, all due to long lines in AppDelegate.swift.</p>
 <p>The other main way to configure SwiftLint is by disabling specific rules in my code.</p>
 <p>As an example, I have an <code>enum</code> for direction:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">Direction</span> {
-  <span style="color:#66d9ef">case</span> up, down, <span style="color:#66d9ef">left</span>, <span style="color:#66d9ef">right</span>
-}
-</code></pre></div><p>When I build this, SwiftLint gives a warning:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">Direction</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">case</span> up, down, <span style="color:#66d9ef">left</span>, <span style="color:#66d9ef">right</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>When I build this, SwiftLint gives a warning:
 <code>Identifier Name Violation: Enum element name should be between 3 and 40 characters long: 'up' (identifier_name)</code></p>
 <p>This tells me that <code>up</code> is too short a word to use as an identifier according to the <code>identifier_name</code> rule. In this case, <code>up</code> is the obvious identifier to use, so I want SwiftLint to let it pass. But I don&rsquo;t want to check my configuration file, because I want it to catch other short identifier names.</p>
 <p>The solution is to add this comment to my code, before the <code>case</code> line:</p>

@@ -213,32 +213,32 @@ In this third and final part, I want to look at the various ways to present dial
 <p>So the first thing to do is add a footer to the DetailView to trigger each of these. I am going to separate this out into a new subview for neatness.</p>
 <h2 id="alert">Alert</h2>
 <p>To make an Alert, I need an @State Bool which sets whether the alert is visible or not. All the button has to do is toggle that Bool. Stripping out the extra code and views, this is what I have.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">DialogsView</span>: View {
-    @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> alertIsShowing = <span style="color:#66d9ef">false</span>
-    @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> dialogResult = <span style="color:#e6db74">&#34;Click the buttons above to test the dialogs.&#34;</span>
-
-    <span style="color:#66d9ef">var</span> body: some View {
-        Button(<span style="color:#e6db74">&#34;Alert&#34;</span>) { <span style="color:#66d9ef">self</span>.alertIsShowing.toggle() }
-    }
-}
-</code></pre></div><p>To configure the alert itself, I added an alert modifier to the outmost view in this view. The <code>dialogResult</code> string is a diagnostic that I can use to confirm that the results of the various dialogs get passed back to the parent view.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  Alert(title: Text(<span style="color:#e6db74">&#34;Alert&#34;</span>),
-        message: Text(<span style="color:#e6db74">&#34;This is an alert!&#34;</span>),
-        dismissButton: .<span style="color:#66d9ef">default</span>(Text(<span style="color:#e6db74">&#34;OK&#34;</span>)) {
-          <span style="color:#66d9ef">self</span>.dialogResult = <span style="color:#e6db74">&#34;OK clicked in Alert&#34;</span>
-      })
-</code></pre></div><p>There were a few things that tripped me up in this relatively short chunk of code. Firstly, both title and message must be Text views, not strings. If you get an error message that says &ldquo;Cannot convert value of type &lsquo;String&rsquo; to expected argument type &lsquo;Text&rsquo;&rdquo;, then you have forgotten to use a Text view.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">DialogsView</span>: View {
+</span></span><span style="display:flex;"><span>    @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> alertIsShowing = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>    @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> dialogResult = <span style="color:#e6db74">&#34;Click the buttons above to test the dialogs.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>        Button(<span style="color:#e6db74">&#34;Alert&#34;</span>) { <span style="color:#66d9ef">self</span>.alertIsShowing.toggle() }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>To configure the alert itself, I added an alert modifier to the outmost view in this view. The <code>dialogResult</code> string is a diagnostic that I can use to confirm that the results of the various dialogs get passed back to the parent view.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  Alert(title: Text(<span style="color:#e6db74">&#34;Alert&#34;</span>),
+</span></span><span style="display:flex;"><span>        message: Text(<span style="color:#e6db74">&#34;This is an alert!&#34;</span>),
+</span></span><span style="display:flex;"><span>        dismissButton: .<span style="color:#66d9ef">default</span>(Text(<span style="color:#e6db74">&#34;OK&#34;</span>)) {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">self</span>.dialogResult = <span style="color:#e6db74">&#34;OK clicked in Alert&#34;</span>
+</span></span><span style="display:flex;"><span>      })
+</span></span></code></pre></div><p>There were a few things that tripped me up in this relatively short chunk of code. Firstly, both title and message must be Text views, not strings. If you get an error message that says &ldquo;Cannot convert value of type &lsquo;String&rsquo; to expected argument type &lsquo;Text&rsquo;&rdquo;, then you have forgotten to use a Text view.</p>
 <p>Then there is the button which auto-suggest tells me is of type Alert.Button. I couldn&rsquo;t find any documentation for this, but delving into the definition for Alert, I see that there are three pre-defined button types: default, cancel or destructive. Cancel actually has two variants and will use a label appropriate to the user&rsquo;s locale if no label is supplied.</p>
 <p>Again, these buttons need a Text view as the label (if supplied) and can take an action closure, which I used to update my <code>dialogResult</code> string.</p>
 <p>This version showed a single <code>dismissButton</code> but I saw that there was a variation of Alert with <code>primary</code> and <code>secondary</code> buttons. It was not obvious that these would also dismiss the alert dialog, but I tried anyway.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  Alert(title: Text(<span style="color:#e6db74">&#34;Alert&#34;</span>),
-        message: Text(<span style="color:#e6db74">&#34;This is an alert!&#34;</span>),
-        primaryButton: .<span style="color:#66d9ef">default</span>(Text(<span style="color:#e6db74">&#34;OK&#34;</span>), action: {
-          <span style="color:#66d9ef">self</span>.dialogResult = <span style="color:#e6db74">&#34;OK clicked in Alert&#34;</span>
-        }), secondaryButton: .cancel({
-          <span style="color:#66d9ef">self</span>.dialogResult = <span style="color:#e6db74">&#34;Cancel clicked in Alert&#34;</span>
-        }))
-</code></pre></div><p>This worked very nicely and the Esc and Return keys triggered the two buttons as you would expect with both of them closing the dialog.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  Alert(title: Text(<span style="color:#e6db74">&#34;Alert&#34;</span>),
+</span></span><span style="display:flex;"><span>        message: Text(<span style="color:#e6db74">&#34;This is an alert!&#34;</span>),
+</span></span><span style="display:flex;"><span>        primaryButton: .<span style="color:#66d9ef">default</span>(Text(<span style="color:#e6db74">&#34;OK&#34;</span>), action: {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">self</span>.dialogResult = <span style="color:#e6db74">&#34;OK clicked in Alert&#34;</span>
+</span></span><span style="display:flex;"><span>        }), secondaryButton: .cancel({
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">self</span>.dialogResult = <span style="color:#e6db74">&#34;Cancel clicked in Alert&#34;</span>
+</span></span><span style="display:flex;"><span>        }))
+</span></span></code></pre></div><p>This worked very nicely and the Esc and Return keys triggered the two buttons as you would expect with both of them closing the dialog.</p>
 <p><img src="/images/SwiftUI-Mac-alert.jpg" alt="Alert"></p>
 <p>I tried using the <code>destructive</code> button type, but there was no difference to either the appearance or behavior of the button.</p>
 <p>So Alert is a great choice for a text-based dialog, either for informational use or to allow two choices of action.</p>
@@ -247,29 +247,29 @@ In this third and final part, I want to look at the various ways to present dial
 <h2 id="sheets">Sheets</h2>
 <p>While Alerts have a very fixed structure, sheets allow us to put any SwiftUI view into a sheet dialog.</p>
 <p>So I added another Bool for the Sheet button to toggle, and added this sheet modifier. SheetView right now is simply a TextView.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  .sheet(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing) {
-      SheetView()
-  }
-</code></pre></div><p>This didn&rsquo;t work so well. It showed the sheet, but the sheet was tiny - only the size of the Text view it contained. And I had no way of dismissing it&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  .sheet(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing) {
+</span></span><span style="display:flex;"><span>      SheetView()
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>This didn&rsquo;t work so well. It showed the sheet, but the sheet was tiny - only the size of the Text view it contained. And I had no way of dismissing it&hellip;</p>
 <p>The size problem was solved by setting a frame on the Text view in SheetView.</p>
 <p>The trick to dismissing the sheet is to pass it a Binding to the Bool that triggered it to open in the first place. If a button in the sheet sets this Bool back to false, the parent view will hide the sheet. That sounds confusing, but it works.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  .sheet(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing) {
-      SheetView(isVisible: <span style="color:#66d9ef">self</span>.<span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing)
-  }
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SheetView</span>: View {
-    @Binding <span style="color:#66d9ef">var</span> isVisible: Bool
-
-    <span style="color:#66d9ef">var</span> body: some View {
-        VStack {
-            Text(<span style="color:#e6db74">&#34;This is a sheet.&#34;</span>)
-            Button(<span style="color:#e6db74">&#34;OK&#34;</span>) {
-                <span style="color:#66d9ef">self</span>.isVisible = <span style="color:#66d9ef">false</span>
-            }
-        }
-        .frame(width: <span style="color:#ae81ff">300</span>, height: <span style="color:#ae81ff">150</span>)
-    }
-}
-</code></pre></div><p>Here is a very bad diagram that tries to explain what is happening:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  .sheet(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing) {
+</span></span><span style="display:flex;"><span>      SheetView(isVisible: <span style="color:#66d9ef">self</span>.<span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing)
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SheetView</span>: View {
+</span></span><span style="display:flex;"><span>    @Binding <span style="color:#66d9ef">var</span> isVisible: Bool
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>        VStack {
+</span></span><span style="display:flex;"><span>            Text(<span style="color:#e6db74">&#34;This is a sheet.&#34;</span>)
+</span></span><span style="display:flex;"><span>            Button(<span style="color:#e6db74">&#34;OK&#34;</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">self</span>.isVisible = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        .frame(width: <span style="color:#ae81ff">300</span>, height: <span style="color:#ae81ff">150</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Here is a very bad diagram that tries to explain what is happening:</p>
 <p><img src="/images/SwiftUI-Mac-sheet.png" alt="Sheet"></p>
 <p>The parent view has an @State Boolean variable called <code>sheetIsShowing</code>. This is bound to the alert&rsquo;s <code>isPresented</code> so it dictates whenever the sheet is visible. When the Sheet button is clicked, this variable is set to <code>true</code> and the sheet opens. But at the same time, a Binding to this variable is passed to the sheet. I deliberately gave this a different name, so as to make it clear which View was changing what variable.</p>
 <p>When the sheet wants to close, it does not close itself. Instead it sets this variable to false. Because it is a Binding, this sets the original <code>sheetIsShowing</code> variable on the parent view to false and the parent view then closes the sheet.</p>
@@ -277,93 +277,93 @@ In this third and final part, I want to look at the various ways to present dial
 <h3 id="sheets--data">Sheets &amp; Data</h3>
 <p>With this in place, I had the sheet opening and closing perfectly, but I was not yet passing data back &amp; forth between the sheet and its parent view. I decide to put a TextField in the SheetView and bind its contents to the <code>dialogResult</code> property in the DetailView so that any edits appeared immediately in the DetailView. And while I am there, I might as well add some more decorations to the SheetView since it is a full View and not a restricted Alert.</p>
 <p>Calling the SheetView changed to this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  .sheet(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing) {
-      SheetView(isVisible: <span style="color:#66d9ef">self</span>.<span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing, enteredText: <span style="color:#66d9ef">self</span>.<span style="color:#960050;background-color:#1e0010">$</span>dialogResult)
-  }
-</code></pre></div><p>And the SheetView itself (not all the interface is listed here for brevity):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SheetView</span>: View {
-    @Binding <span style="color:#66d9ef">var</span> isVisible: Bool
-    @Binding <span style="color:#66d9ef">var</span> enteredText: String
-
-    <span style="color:#66d9ef">var</span> body: some View {
-        VStack {
-            Text(<span style="color:#e6db74">&#34;Enter some text below…&#34;</span>)
-                .font(.headline)
-                .multilineTextAlignment(.center)
-
-            TextField(<span style="color:#e6db74">&#34;Enter the result of the dialog here…&#34;</span>, text: <span style="color:#960050;background-color:#1e0010">$</span>enteredText)
-                 .padding()
-
-            HStack {
-                Button(<span style="color:#e6db74">&#34;Cancel&#34;</span>) {
-                    <span style="color:#66d9ef">self</span>.isVisible = <span style="color:#66d9ef">false</span>
-                    <span style="color:#66d9ef">self</span>.enteredText = <span style="color:#e6db74">&#34;Cancel clicked in Sheet&#34;</span>
-                }
-                Spacer()
-                Button(<span style="color:#e6db74">&#34;OK&#34;</span>) {
-                    <span style="color:#66d9ef">self</span>.isVisible = <span style="color:#66d9ef">false</span>
-                    <span style="color:#66d9ef">self</span>.enteredText = <span style="color:#e6db74">&#34;OK: </span><span style="color:#e6db74">\(</span><span style="color:#66d9ef">self</span>.enteredText<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>
-                }
-            }
-        }
-        .frame(width: <span style="color:#ae81ff">300</span>, height: <span style="color:#ae81ff">200</span>)
-        .padding()
-    }
-}
-</code></pre></div><p><img src="/images/SwiftUI-Mac-sheet-data.png" alt="Sheet with data"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  .sheet(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing) {
+</span></span><span style="display:flex;"><span>      SheetView(isVisible: <span style="color:#66d9ef">self</span>.<span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing, enteredText: <span style="color:#66d9ef">self</span>.<span style="color:#960050;background-color:#1e0010">$</span>dialogResult)
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>And the SheetView itself (not all the interface is listed here for brevity):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SheetView</span>: View {
+</span></span><span style="display:flex;"><span>    @Binding <span style="color:#66d9ef">var</span> isVisible: Bool
+</span></span><span style="display:flex;"><span>    @Binding <span style="color:#66d9ef">var</span> enteredText: String
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>        VStack {
+</span></span><span style="display:flex;"><span>            Text(<span style="color:#e6db74">&#34;Enter some text below…&#34;</span>)
+</span></span><span style="display:flex;"><span>                .font(.headline)
+</span></span><span style="display:flex;"><span>                .multilineTextAlignment(.center)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            TextField(<span style="color:#e6db74">&#34;Enter the result of the dialog here…&#34;</span>, text: <span style="color:#960050;background-color:#1e0010">$</span>enteredText)
+</span></span><span style="display:flex;"><span>                 .padding()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            HStack {
+</span></span><span style="display:flex;"><span>                Button(<span style="color:#e6db74">&#34;Cancel&#34;</span>) {
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">self</span>.isVisible = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">self</span>.enteredText = <span style="color:#e6db74">&#34;Cancel clicked in Sheet&#34;</span>
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                Spacer()
+</span></span><span style="display:flex;"><span>                Button(<span style="color:#e6db74">&#34;OK&#34;</span>) {
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">self</span>.isVisible = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">self</span>.enteredText = <span style="color:#e6db74">&#34;OK: </span><span style="color:#e6db74">\(</span><span style="color:#66d9ef">self</span>.enteredText<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        .frame(width: <span style="color:#ae81ff">300</span>, height: <span style="color:#ae81ff">200</span>)
+</span></span><span style="display:flex;"><span>        .padding()
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/SwiftUI-Mac-sheet-data.png" alt="Sheet with data"></p>
 <p>I only had two issues with this now. I was not able to get the focus into the TextField automatically when the sheet opened and I was not able to assign keyboard shortcuts to the Cancel and OK buttons so that they could be operated without a mouse. And as I mentioned in the previous part, I was not able to make the OK button take on the default styling.</p>
 <p>One useful technique that I developed: the SheetView is in the DialogsView.swift file instead of in its own SwiftUI file. It would probably be a good idea to separate it out but I didn&rsquo;t which meant that it had no Canvas preview to look at while I was laying it out.</p>
 <p>So I edited the PreviewProvider like this, so that I could change the comments to switch it between showing the DialogsView and showing the SheetView.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">DialogsView_Previews</span>: PreviewProvider {
-    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">var</span> previews: some View {
-        <span style="color:#75715e">// DialogsView()</span>
-        SheetView(isVisible: .constant(<span style="color:#66d9ef">true</span>), enteredText: .constant(<span style="color:#e6db74">&#34;&#34;</span>))
-    }
-}
-</code></pre></div><h2 id="files">Files</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">DialogsView_Previews</span>: PreviewProvider {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">var</span> previews: some View {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// DialogsView()</span>
+</span></span><span style="display:flex;"><span>        SheetView(isVisible: .constant(<span style="color:#66d9ef">true</span>), enteredText: .constant(<span style="color:#e6db74">&#34;&#34;</span>))
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="files">Files</h2>
 <p>AppKit provides NSOpenPanel for selecting a file and NSSavePanel for saving. I will try to implement NSSavePanel to allow saving the current cat image.</p>
 <p>Since this is an AppKit control rather than a SwiftUI control, I assumed that I would need to use NSViewRepresentable like I did for the NSColorWell in part 2. But while NSColorWell is a descendent of NSView, NSSavePanel is not. So I need a new idea.</p>
 <p>Rather naively, I thought maybe I could just create an NSSavePanel in a function inside DialogsView and see what happened.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">saveImage</span>() {
-      <span style="color:#66d9ef">let</span> panel = NSSavePanel()
-      panel.nameFieldLabel = <span style="color:#e6db74">&#34;Save cat image as:&#34;</span>
-      panel.nameFieldStringValue = <span style="color:#e6db74">&#34;cat.jpg&#34;</span>
-      panel.canCreateDirectories = <span style="color:#66d9ef">true</span>
-      panel.begin { response <span style="color:#66d9ef">in</span>
-          <span style="color:#66d9ef">if</span> response == NSApplication.ModalResponse.OK, <span style="color:#66d9ef">let</span> fileUrl = panel.url {
-              print(fileUrl)
-          }
-      }
-  }
-</code></pre></div><p>Crash &amp; burn&hellip; so what if I made the NSSavePanel an @State property of the View? No, that crashed even faster. Maybe SwiftUI Views don&rsquo;t like this sort of thing, but how about if I get the Application Delegate to handle it? What if I moved the <code>saveImage</code> method to the App Delegate and changed the calling function to access it there?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">saveImage</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">let</span> panel = NSSavePanel()
+</span></span><span style="display:flex;"><span>      panel.nameFieldLabel = <span style="color:#e6db74">&#34;Save cat image as:&#34;</span>
+</span></span><span style="display:flex;"><span>      panel.nameFieldStringValue = <span style="color:#e6db74">&#34;cat.jpg&#34;</span>
+</span></span><span style="display:flex;"><span>      panel.canCreateDirectories = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>      panel.begin { response <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">if</span> response == NSApplication.ModalResponse.OK, <span style="color:#66d9ef">let</span> fileUrl = panel.url {
+</span></span><span style="display:flex;"><span>              print(fileUrl)
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>Crash &amp; burn&hellip; so what if I made the NSSavePanel an @State property of the View? No, that crashed even faster. Maybe SwiftUI Views don&rsquo;t like this sort of thing, but how about if I get the Application Delegate to handle it? What if I moved the <code>saveImage</code> method to the App Delegate and changed the calling function to access it there?</p>
 <p>Still crashed. At this stage I am beginning to wonder if I know how to use an NSSavePanel. Time to create a simple test app without SwiftUI and see what happens. Well it appears that I no longer know how to use an NSSavePanel. Code from an older project that works fine, will not work in my new sample project!</p>
 <p>Guess what - it was another macOS Catalina security issue which I would have realised faster I had opened the Console. Back to the Signing &amp; Capabilities section of the target settings and this time I set File Access for User Selected File to Read/Write.</p>
 <p>Now the NSSavePanel opens when called from DialogsView and prints the selected file URL if one is chosen.</p>
 <p>But this is all happening in DialogsView, which is a subview of DetailView. And DetailView is the view that holds the image, not DialogsView. So how can I save the image? Do I pass the URL to DetailView or pass the image to DialogsView? Or do something clever with Notifications and Subscriptions?</p>
 <p>I really don&rsquo;t know what is best, but I have decided to post a Notification with the URL as its object. DetailView can receive this Notification and save the image whenever it is received.</p>
 <p>So I replaced the <code>print</code> line in the <code>saveImage()</code> method with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  NotificationCenter.<span style="color:#66d9ef">default</span>.post(name: .saveImage, object: fileUrl)
-</code></pre></div><p>And in DetailView, I set up the publisher:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">let</span> saveImageUrlSelected = NotificationCenter.<span style="color:#66d9ef">default</span>
-         .publisher(<span style="color:#66d9ef">for</span>: .saveImage)
-
-    <span style="color:#66d9ef">var</span> body: some View {
-        VStack {
-          <span style="color:#75715e">// view code removed for brevity</span>
-        }
-        .onReceive(saveImageUrlSelected) { publisher <span style="color:#66d9ef">in</span>
-            <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> saveUrl = publisher.object <span style="color:#66d9ef">as</span>? URL,
-                <span style="color:#66d9ef">let</span> imageData = <span style="color:#66d9ef">self</span>.catImage?.tiffRepresentation {
-                <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> imageRep = NSBitmapImageRep(data: imageData) {
-                    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> saveData = imageRep.representation(using: .jpeg,
-                                                              properties: [:]) {
-                        <span style="color:#66d9ef">try</span>? saveData.write(to: saveUrl)
-                    }
-                }
-            }
-        }
-    }
-</code></pre></div><p>And there we have it. Three types of dialogs demonstrated in a SwiftUI for Mac app:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  NotificationCenter.<span style="color:#66d9ef">default</span>.post(name: .saveImage, object: fileUrl)
+</span></span></code></pre></div><p>And in DetailView, I set up the publisher:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">let</span> saveImageUrlSelected = NotificationCenter.<span style="color:#66d9ef">default</span>
+</span></span><span style="display:flex;"><span>         .publisher(<span style="color:#66d9ef">for</span>: .saveImage)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>        VStack {
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e">// view code removed for brevity</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        .onReceive(saveImageUrlSelected) { publisher <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> saveUrl = publisher.object <span style="color:#66d9ef">as</span>? URL,
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">let</span> imageData = <span style="color:#66d9ef">self</span>.catImage?.tiffRepresentation {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> imageRep = NSBitmapImageRep(data: imageData) {
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> saveData = imageRep.representation(using: .jpeg,
+</span></span><span style="display:flex;"><span>                                                              properties: [:]) {
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">try</span>? saveData.write(to: saveUrl)
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>And there we have it. Three types of dialogs demonstrated in a SwiftUI for Mac app:</p>
 <ol>
 <li>Alerts: good for simply text-only dialogs</li>
 <li>Sheets: good for more complex dialogs</li>

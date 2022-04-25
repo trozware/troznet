@@ -206,8 +206,8 @@ found difficult to grasp at first.</p>
 <h2 id="why-does-this-matter">Why does this matter?</h2>
 <p>In Objective-C, any object type could be nil. If you declared a variable like
 this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec">NSString <span style="color:#f92672">*</span>myString;
-</code></pre></div><p>then <code>myString</code> was set to nil by default.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span>NSString <span style="color:#f92672">*</span>myString;
+</span></span></code></pre></div><p>then <code>myString</code> was set to nil by default.</p>
 <p>But this could cause issues, especially as Objective-C does not complain if you
 send a message to nil. This could lead to bugs that were very difficult to track
 down.</p>
@@ -228,16 +228,16 @@ and less prone to error.</p>
 <p>One of the first things that struck me about Swift was how clean the code
 looked, without so many non-alphanumeric characters scattered around. Gone were
 all the:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#f92672">*</span> ; [ ]
-</code></pre></div><p>But instead, Swift code sprouted:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#f92672">!</span> ?
-</code></pre></div><p>What were these?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#f92672">*</span> ; [ ]
+</span></span></code></pre></div><p>But instead, Swift code sprouted:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#f92672">!</span> ?
+</span></span></code></pre></div><p>What were these?</p>
 <p><strong>The key to understanding optionals is to realise that when you declare an
 optional variable of a certain type, you are actually declaring a box that can
 hold a variable of that type or can hold nil.</strong></p>
 <p>Once you grasp that concept, it all becomes much more obvious.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">var</span> optionalInteger: Int?
-</code></pre></div><p>The ? indicates that this is an optional variable. It does not have to be
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> optionalInteger: Int?
+</span></span></code></pre></div><p>The ? indicates that this is an optional variable. It does not have to be
 initialised as it is already set to nil which is valid for an optional variable.
 Without the ? this would require initialisation as it would not be valid for it
 to be nil.</p>
@@ -245,52 +245,52 @@ to be nil.</p>
 <h2 id="setting-an-optional">Setting an optional</h2>
 <p>Setting the value of an optional variable is just the same as any other
 variable:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">optionalInteger = <span style="color:#ae81ff">3</span>
-optionalInteger = <span style="color:#ae81ff">42</span>
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>optionalInteger = <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>optionalInteger = <span style="color:#ae81ff">42</span>
+</span></span></code></pre></div><hr>
 <h2 id="getting-an-optional">Getting an optional</h2>
 <p>The difference arises when you need to get the data out of the optional variable
 in order to use it. This process is called un-wrapping and it means to get the
 variable value out of the &lsquo;box&rsquo; it is stored it.</p>
 <h3 id="the-most-obvious-way-is-to-use-">The most obvious way is to use !</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> newInteger = optionalInteger!
-</code></pre></div><p><strong>DO NOT DO THIS!</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> newInteger = optionalInteger!
+</span></span></code></pre></div><p><strong>DO NOT DO THIS!</strong></p>
 <p>This is called forced-unwrapping and assumes that the optional variable is not
 nil. If the optional is nil, this will crash. In Xcode, when you connect
 interface elements from your storyboard to a Swift file, Xcode will use ! like
 this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">@IBOutlet</span> <span style="color:#66d9ef">weak</span> <span style="color:#66d9ef">var</span> startButton: UIButton!
-</code></pre></div><p>I have to assume Xcode knows what it is doing and the button will be available
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">@IBOutlet</span> <span style="color:#66d9ef">weak</span> <span style="color:#66d9ef">var</span> startButton: UIButton!
+</span></span></code></pre></div><p>I have to assume Xcode knows what it is doing and the button will be available
 when needed, but you should not use ! - it is un-safe. By using it, you are
 vowing to the compiler that when it gets to that point, the optional value will
 not be nil. There are much better and safer ways of doing that.</p>
 <hr>
 <h3 id="use-if-let">Use &lsquo;if let&rsquo;</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">doubleNumber</span>(<span style="color:#66d9ef">_</span> optionalInteger: Int?) -&gt; Int? {
-    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> integerValue = optionalInteger {
-        <span style="color:#75715e">// integerValue is not an optional</span>
-        <span style="color:#75715e">// and is guaranteed to contain an Int</span>
-        <span style="color:#66d9ef">return</span> integerValue <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>
-    }
-
-    <span style="color:#75715e">// no integer found in the optional,</span>
-    <span style="color:#75715e">// so return nil to indicate failure</span>
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
-}
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">doubleNumber</span>(<span style="color:#66d9ef">_</span> optionalInteger: Int?) -&gt; Int? {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> integerValue = optionalInteger {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// integerValue is not an optional</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// and is guaranteed to contain an Int</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> integerValue <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// no integer found in the optional,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// so return nil to indicate failure</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
 <h3 id="use-guard">Use guard</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">doubleNumber</span>(<span style="color:#66d9ef">_</span> optionalInteger: Int?) -&gt; Int? {
-    <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> integerValue = optionalInteger <span style="color:#66d9ef">else</span> {
-        <span style="color:#75715e">// get out quickly,</span>
-        <span style="color:#75715e">// returning nil to indicate failure</span>
-        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
-    }
-
-    <span style="color:#75715e">// integerValue is not an optional</span>
-    <span style="color:#75715e">// and is guaranteed to contain an Int</span>
-    <span style="color:#66d9ef">return</span> integerValue <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>
-}
-</code></pre></div><p>These two alternatives (<code>if let</code> &amp; <code>guard</code>) do the same job but in opposite
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">doubleNumber</span>(<span style="color:#66d9ef">_</span> optionalInteger: Int?) -&gt; Int? {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> integerValue = optionalInteger <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// get out quickly,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// returning nil to indicate failure</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// integerValue is not an optional</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// and is guaranteed to contain an Int</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> integerValue <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>These two alternatives (<code>if let</code> &amp; <code>guard</code>) do the same job but in opposite
 ways. In both cases, they perform a conditional un-wrapping that may or may not
 give a valid result. <code>if let</code> checks if it is OK to proceed. <code>guard</code> checks to
 see if it is NOT OK to proceed. Which you use is really a matter of personal
@@ -301,71 +301,71 @@ success code inside a block and can sometimes leave the failure code a long way
 from the check which can make it less obvious. The other potential issue with
 <code>if let</code> is the &ldquo;pyramid of doom&rdquo; common in early Swift code as demonstrated in
 this rather contrived example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isValidAddressBookEntry</span>(firstName: String?,
-                             lastName: String?,
-                             emailAddress: String?,
-                             phoneNumber: String?) -&gt; Bool {
-        <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> validFirstName = firstName {
-            <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> validLastName = lastName {
-                <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> validEmail = emailAddress {
-                    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> validPhone = phoneNumber {
-                        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-                    }
-                }
-            }
-        }
-        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-}
-</code></pre></div><p>Thankfully, Swift now allows us to chain both <code>if let</code> and <code>guard</code> statements.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isValidAddressBookEntry</span>(firstName: String?,
+</span></span><span style="display:flex;"><span>                             lastName: String?,
+</span></span><span style="display:flex;"><span>                             emailAddress: String?,
+</span></span><span style="display:flex;"><span>                             phoneNumber: String?) -&gt; Bool {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> validFirstName = firstName {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> validLastName = lastName {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> validEmail = emailAddress {
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> validPhone = phoneNumber {
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Thankfully, Swift now allows us to chain both <code>if let</code> and <code>guard</code> statements.
 Here is the previous example re-factored to use <code>if let</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isValidAddressBookEntrySwift2</span>(firstName: String?,
-                                   lastName: String?,
-                                   emailAddress: String?,
-                                   phoneNumber: String?) -&gt; Bool {
-      <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> validFirstName = firstName,
-          <span style="color:#66d9ef">let</span> validLastName = lastName,
-          <span style="color:#66d9ef">let</span> validEmail = emailAddress,
-          <span style="color:#66d9ef">let</span> validPhone = phoneNumber {
-          <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-      }
-      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-}
-</code></pre></div><p>And here is the same function but using <code>guard</code> which allows the inputs to be checked immediately and the function exited if the u=inputs are not valid. For a short function like this, the change is not really significant, but if the function does a lot of processing of the input data, checking first and getting out as soon as possible is more efficient.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isValidAddressBookEntryUsingGuard</span>(firstName: String?,
-                                       lastName: String?,
-                                       emailAddress: String?,
-                                       phoneNumber: String?) -&gt; Bool {
-    <span style="color:#66d9ef">guard</span>
-        <span style="color:#66d9ef">let</span> validFirstName = firstName,
-        <span style="color:#66d9ef">let</span> validLastName = lastName,
-        <span style="color:#66d9ef">let</span> validEmail = emailAddress,
-        <span style="color:#66d9ef">let</span> validPhone = phoneNumber <span style="color:#66d9ef">else</span> {
-            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-    }
-
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-}
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isValidAddressBookEntrySwift2</span>(firstName: String?,
+</span></span><span style="display:flex;"><span>                                   lastName: String?,
+</span></span><span style="display:flex;"><span>                                   emailAddress: String?,
+</span></span><span style="display:flex;"><span>                                   phoneNumber: String?) -&gt; Bool {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> validFirstName = firstName,
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">let</span> validLastName = lastName,
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">let</span> validEmail = emailAddress,
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">let</span> validPhone = phoneNumber {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>And here is the same function but using <code>guard</code> which allows the inputs to be checked immediately and the function exited if the u=inputs are not valid. For a short function like this, the change is not really significant, but if the function does a lot of processing of the input data, checking first and getting out as soon as possible is more efficient.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isValidAddressBookEntryUsingGuard</span>(firstName: String?,
+</span></span><span style="display:flex;"><span>                                       lastName: String?,
+</span></span><span style="display:flex;"><span>                                       emailAddress: String?,
+</span></span><span style="display:flex;"><span>                                       phoneNumber: String?) -&gt; Bool {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">guard</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> validFirstName = firstName,
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> validLastName = lastName,
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> validEmail = emailAddress,
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> validPhone = phoneNumber <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
 <h3 id="use-optional-chaining">Use optional chaining</h3>
 <p>The final way to deal with optionals safely is to use optional chaining:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SocialMediaAccounts</span> {
-    <span style="color:#66d9ef">var</span> facebook: Person?
-    <span style="color:#66d9ef">var</span> twitter: Person?
-}
-
-<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Person</span> {
-    <span style="color:#66d9ef">var</span> firstName: String?
-    <span style="color:#66d9ef">var</span> lastName: String?
-    <span style="color:#66d9ef">var</span> handle: String?
-}
-
-<span style="color:#66d9ef">var</span> socialMedia: SocialMediaAccounts?
-socialMedia = SocialMediaAccounts()
-<span style="color:#66d9ef">var</span> twitterAccount = Person()
-
-socialMedia?.twitter = twitterAccount
-<span style="color:#66d9ef">let</span> twitterHandle = socialMedia?.twitter?.handle
-</code></pre></div><p>In this example, we have defined a <code>SocialMediaAccounts</code> struct that holds
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SocialMediaAccounts</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> facebook: Person?
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> twitter: Person?
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Person</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> firstName: String?
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> lastName: String?
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> handle: String?
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> socialMedia: SocialMediaAccounts?
+</span></span><span style="display:flex;"><span>socialMedia = SocialMediaAccounts()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> twitterAccount = Person()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>socialMedia?.twitter = twitterAccount
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> twitterHandle = socialMedia?.twitter?.handle
+</span></span></code></pre></div><p>In this example, we have defined a <code>SocialMediaAccounts</code> struct that holds
 optional <code>Person</code> structs for the various social media outlets. The
 <code>socialMedia</code> variable is defined as an optional and then created. A
 <code>twitterAccount</code> variable of type <code>Person</code> is also created but contains no data

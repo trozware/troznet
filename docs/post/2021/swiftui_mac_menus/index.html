@@ -208,60 +208,60 @@
 <h2 id="adding-a-new-menu">Adding a New Menu</h2>
 <p>To add a completely new menu, you can use <code>CommandMenu</code>, supplying it with a title and the contents to display.</p>
 <p>After starting this process, the App.swift file looks like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">@main
-<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">MenuSamplesApp</span>: App {
-	<span style="color:#66d9ef">var</span> body: some Scene {
-		WindowGroup {
-			ContentView()
-		}
-		.commands {
-			CommandMenu(<span style="color:#e6db74">&#34;Custom Menu&#34;</span>) {
-				<span style="color:#75715e">// no contents yet</span>
-			}
-		}
-	}
-}
-</code></pre></div><p>So what can be put inside the menu? We are used to only being allowed to use <code>NSMenuItems</code> but with SwiftUI there are no such things. It turns out that you can put quite a few SwiftUI views into a menu.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>@main
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">MenuSamplesApp</span>: App {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> body: some Scene {
+</span></span><span style="display:flex;"><span>		WindowGroup {
+</span></span><span style="display:flex;"><span>			ContentView()
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		.commands {
+</span></span><span style="display:flex;"><span>			CommandMenu(<span style="color:#e6db74">&#34;Custom Menu&#34;</span>) {
+</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// no contents yet</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>So what can be put inside the menu? We are used to only being allowed to use <code>NSMenuItems</code> but with SwiftUI there are no such things. It turns out that you can put quite a few SwiftUI views into a menu.</p>
 <p>The most obvious is a <code>Button</code> with an action which appears like any standard menu item.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">CommandMenu(<span style="color:#e6db74">&#34;Custom Menu&#34;</span>) {
-	Button(action: {
-		print(<span style="color:#e6db74">&#34;Menu Button selected&#34;</span>)
-	}, label: {
-		Text(<span style="color:#e6db74">&#34;Menu Button&#34;</span>)
-	})
-}
-</code></pre></div><p>I have found that the easiest way to pass this selection on to other views is via a notification. Buttons can be disabled and enabled just as usual.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>CommandMenu(<span style="color:#e6db74">&#34;Custom Menu&#34;</span>) {
+</span></span><span style="display:flex;"><span>	Button(action: {
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;Menu Button selected&#34;</span>)
+</span></span><span style="display:flex;"><span>	}, label: {
+</span></span><span style="display:flex;"><span>		Text(<span style="color:#e6db74">&#34;Menu Button&#34;</span>)
+</span></span><span style="display:flex;"><span>	})
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>I have found that the easiest way to pass this selection on to other views is via a notification. Buttons can be disabled and enabled just as usual.</p>
 <p>The contents of the button will usually be a <code>Text</code> view, but it can include an <code>Image</code> view if you want to use an SFSymbol or any other image in the menu.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">Button(action: {}, label: {
-	Image(systemName: <span style="color:#e6db74">&#34;clock&#34;</span>)
-	Text(<span style="color:#e6db74">&#34;Date &amp; Time&#34;</span>)
-})
-</code></pre></div><p>Apart from Buttons, there are several other SwiftUI Views that work in a menu. A very common use case in a menu is to have a switchable boolean setting that is displayed with a leading check mark if it is on.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>Button(action: {}, label: {
+</span></span><span style="display:flex;"><span>	Image(systemName: <span style="color:#e6db74">&#34;clock&#34;</span>)
+</span></span><span style="display:flex;"><span>	Text(<span style="color:#e6db74">&#34;Date &amp; Time&#34;</span>)
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><p>Apart from Buttons, there are several other SwiftUI Views that work in a menu. A very common use case in a menu is to have a switchable boolean setting that is displayed with a leading check mark if it is on.</p>
 <p>This can be done using a <code>Toggle</code> view.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">Toggle(isOn: <span style="color:#960050;background-color:#1e0010">$</span>toggleSetting, label: {
-	Text(<span style="color:#e6db74">&#34;Toggle&#34;</span>)
-})
-</code></pre></div><p>I created a variable to hold the setting using <code>@State</code> but <code>@AppStorage</code> would be better if this setting needed to persist between launches. To respond to changes, you can use an <code>onChange</code> modifier.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>Toggle(isOn: <span style="color:#960050;background-color:#1e0010">$</span>toggleSetting, label: {
+</span></span><span style="display:flex;"><span>	Text(<span style="color:#e6db74">&#34;Toggle&#34;</span>)
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><p>I created a variable to hold the setting using <code>@State</code> but <code>@AppStorage</code> would be better if this setting needed to persist between launches. To respond to changes, you can use an <code>onChange</code> modifier.</p>
 <p>This demonstrates one of the huge strengths of SwiftUI&rsquo;s declarative approach. You tell the compile you want a <code>Toggle</code> and it is automatically structured to fit the place and platform where it is being used.</p>
 <p>A <code>Picker</code> is a good choice for allowing a single selection from multiple options. This makes a sub menu with check marks.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">Picker(<span style="color:#e6db74">&#34;Appearance&#34;</span>, selection: <span style="color:#960050;background-color:#1e0010">$</span>pickerChoice) {
-	Text(<span style="color:#e6db74">&#34;Dark&#34;</span>).tag(<span style="color:#e6db74">&#34;dark&#34;</span>)
-	Text(<span style="color:#e6db74">&#34;Light&#34;</span>).tag(<span style="color:#e6db74">&#34;light&#34;</span>)
-	Text(<span style="color:#e6db74">&#34;System&#34;</span>).tag(<span style="color:#e6db74">&#34;system&#34;</span>)
-}
-</code></pre></div><p>To make a sub-menu with standard menu items like buttons, use <code>Menu</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">Menu(<span style="color:#e6db74">&#34;Sub Menu&#34;</span>) {
-	Button(action: {}, label: {
-		Text(<span style="color:#e6db74">&#34;Sub Item 1&#34;</span>)
-	})
-	Button(action: {}, label: {
-		Text(<span style="color:#e6db74">&#34;Sub Item 2&#34;</span>)
-	})
-	Button(action: {}, label: {
-		Text(<span style="color:#e6db74">&#34;Sub Item 3&#34;</span>)
-	})
-}
-</code></pre></div><p>Menu items are often best split up with a separator and this is done in SwiftUI by adding a <code>Divider()</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>Picker(<span style="color:#e6db74">&#34;Appearance&#34;</span>, selection: <span style="color:#960050;background-color:#1e0010">$</span>pickerChoice) {
+</span></span><span style="display:flex;"><span>	Text(<span style="color:#e6db74">&#34;Dark&#34;</span>).tag(<span style="color:#e6db74">&#34;dark&#34;</span>)
+</span></span><span style="display:flex;"><span>	Text(<span style="color:#e6db74">&#34;Light&#34;</span>).tag(<span style="color:#e6db74">&#34;light&#34;</span>)
+</span></span><span style="display:flex;"><span>	Text(<span style="color:#e6db74">&#34;System&#34;</span>).tag(<span style="color:#e6db74">&#34;system&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>To make a sub-menu with standard menu items like buttons, use <code>Menu</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>Menu(<span style="color:#e6db74">&#34;Sub Menu&#34;</span>) {
+</span></span><span style="display:flex;"><span>	Button(action: {}, label: {
+</span></span><span style="display:flex;"><span>		Text(<span style="color:#e6db74">&#34;Sub Item 1&#34;</span>)
+</span></span><span style="display:flex;"><span>	})
+</span></span><span style="display:flex;"><span>	Button(action: {}, label: {
+</span></span><span style="display:flex;"><span>		Text(<span style="color:#e6db74">&#34;Sub Item 2&#34;</span>)
+</span></span><span style="display:flex;"><span>	})
+</span></span><span style="display:flex;"><span>	Button(action: {}, label: {
+</span></span><span style="display:flex;"><span>		Text(<span style="color:#e6db74">&#34;Sub Item 3&#34;</span>)
+</span></span><span style="display:flex;"><span>	})
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Menu items are often best split up with a separator and this is done in SwiftUI by adding a <code>Divider()</code>.</p>
 <p>If you try a UI element in a menu and it doesn&rsquo;t work, it tends to show as disabled text and doesn&rsquo;t break the menu, so experiment. I was surprised to find that <code>Link</code> does not work in a menu.</p>
 <hr>
 <h2 id="editing-existing-menus">Editing Existing Menus</h2>
@@ -299,10 +299,10 @@
 <p>The options for the menu items inside a <code>CommandGroup</code> are just the same as when creating your own menu.</p>
 <h3 id="removing-a-standard-menu-item">Removing a Standard Menu Item</h3>
 <p>If you really want to get rid of one of the default menu items (or groups of items), you can use <code>CommandGroupPlacement</code> and replace the existing one with an <code>EmptyView()</code>. This is probably not a great idea as regards the Human Interface Guidelines but it is an option if you need it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">CommandGroup(replacing: CommandGroupPlacement.appVisibility) {
-	EmptyView()
-}
-</code></pre></div><p>You can also replace an existing menu item with your own version if you want to be able to respond to it in a more custom way. I can imagine doing this for the Help menu item as I do not like using Apple&rsquo;s Help system and prefer to direct users elsewhere.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>CommandGroup(replacing: CommandGroupPlacement.appVisibility) {
+</span></span><span style="display:flex;"><span>	EmptyView()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>You can also replace an existing menu item with your own version if you want to be able to respond to it in a more custom way. I can imagine doing this for the Help menu item as I do not like using Apple&rsquo;s Help system and prefer to direct users elsewhere.</p>
 <hr>
 <h2 id="preset-menu-groups">Preset Menu Groups</h2>
 <p>If you watched my <a href="https://backtomac.org">Back to the Mac</a> talk called <a href="https://www.youtube.com/watch?v=hus2LksB3O4">Build a Mac app inside 30 minutes using nothing but SwiftUI</a>, you will have seen who I used a rather clunky function to dive into AppKit in order to stop the sidebar disappearing completely and permanently.</p>
@@ -334,44 +334,44 @@
 <p><img src="/images/TextFormattingMenu.png" alt="TextFormattingMenu"></p>
 <p>And finally, there is <code>EmptyCommands()</code> which does nothing and has no obvious use.</p>
 <p>These are used like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">.commands {
-	SidebarCommands()
-	ToolbarCommands()
-	TextEditingCommands()
-	TextFormattingCommands()
-}
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>.commands {
+</span></span><span style="display:flex;"><span>	SidebarCommands()
+</span></span><span style="display:flex;"><span>	ToolbarCommands()
+</span></span><span style="display:flex;"><span>	TextEditingCommands()
+</span></span><span style="display:flex;"><span>	TextFormattingCommands()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
 <h2 id="using-a-separate-file">Using a Separate File</h2>
 <p>If you are adding a lot of menus, you are probably starting to feel that your App.swift file is getting a bit crowded. You can separate out these menu commands into one or more separate files, so long as they are contained in a struct that conforms to the <code>Commands</code> protocol and which has a <code>body</code> that also conforms to <code>Commands</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">MenuCommands</span>: Commands {
-	@Binding <span style="color:#66d9ef">var</span> toggleSetting: Bool
-
-	<span style="color:#66d9ef">var</span> body: some Commands {
-		CommandMenu(<span style="color:#e6db74">&#34;Custom Menu&#34;</span>) {
-			Button(action: {
-				print(<span style="color:#e6db74">&#34;Menu Button selected&#34;</span>)
-			}, label: {
-				Text(<span style="color:#e6db74">&#34;Menu Button&#34;</span>)
-			})
-
-			Divider()
-
-			Toggle(isOn: <span style="color:#960050;background-color:#1e0010">$</span>toggleSetting, label: {
-				Text(<span style="color:#e6db74">&#34;Toggle&#34;</span>)
-			})
-		}
-	}
-}
-</code></pre></div><p>This struct cannot have its own data or you will get lots of warnings, but it can have bindings to data from its parent. Insert a call to this struct, and any others you have created, in the <code>commands</code> modifier, just like for the Apple presets.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">@State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> toggleSetting = <span style="color:#66d9ef">true</span>
-
-<span style="color:#75715e">// ...</span>
-
-.commands {
-	MenuCommands(toggleSetting: <span style="color:#960050;background-color:#1e0010">$</span>toggleSetting)
-	SidebarCommands()
-}
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">MenuCommands</span>: Commands {
+</span></span><span style="display:flex;"><span>	@Binding <span style="color:#66d9ef">var</span> toggleSetting: Bool
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> body: some Commands {
+</span></span><span style="display:flex;"><span>		CommandMenu(<span style="color:#e6db74">&#34;Custom Menu&#34;</span>) {
+</span></span><span style="display:flex;"><span>			Button(action: {
+</span></span><span style="display:flex;"><span>				print(<span style="color:#e6db74">&#34;Menu Button selected&#34;</span>)
+</span></span><span style="display:flex;"><span>			}, label: {
+</span></span><span style="display:flex;"><span>				Text(<span style="color:#e6db74">&#34;Menu Button&#34;</span>)
+</span></span><span style="display:flex;"><span>			})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>			Divider()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>			Toggle(isOn: <span style="color:#960050;background-color:#1e0010">$</span>toggleSetting, label: {
+</span></span><span style="display:flex;"><span>				Text(<span style="color:#e6db74">&#34;Toggle&#34;</span>)
+</span></span><span style="display:flex;"><span>			})
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This struct cannot have its own data or you will get lots of warnings, but it can have bindings to data from its parent. Insert a call to this struct, and any others you have created, in the <code>commands</code> modifier, just like for the Apple presets.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>@State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> toggleSetting = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.commands {
+</span></span><span style="display:flex;"><span>	MenuCommands(toggleSetting: <span style="color:#960050;background-color:#1e0010">$</span>toggleSetting)
+</span></span><span style="display:flex;"><span>	SidebarCommands()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
 <h2 id="bonus-credits">Bonus: Credits</h2>
 <p>Every Mac app has an &ldquo;About …&rdquo; menu item which brings up a simple dialog box with basic app information: icon, app name and version number. These will always appear but there is an easy way to add more information underneath this info and it can include formatted text and links.</p>
 <p>Create a new file called <code>Credits.rtf</code> - the New File dialog has a Rich Text File option. Anything in a file with this exact name will be shown below the standard information in the About box.</p>

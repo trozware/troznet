@@ -221,7 +221,7 @@ manually entering the bundle identifier that I had registered at Apple
 Developer. Xcode accepted the name without any warnings and created the default
 targets using that name.</p>
 <p>In the default unit testing file, the module was defined like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"> @testable <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">What</span><span style="color:#f92672">*</span><span style="color:#a6e22e">Is_My_Speed</span><span style="color:#f92672">*</span> </code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span> @testable <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">What</span><span style="color:#f92672">*</span><span style="color:#a6e22e">Is_My_Speed</span><span style="color:#f92672">*</span> </span></span></code></pre></div>
 <p>which made me think that Xcode was quite happy to have parsed the app name as
 required to replace any unwanted characters to suit.</p>
 <p>The app was built, passed all unit tests, profiled, analyzed, tested on real

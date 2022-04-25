@@ -2,6 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://troz.net/tags/apple/</loc>
+    <lastmod>2022-04-25T19:00:36+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://troz.net/post/</loc>
+    <lastmod>2022-04-25T19:00:36+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://troz.net/tags/</loc>
+    <lastmod>2022-04-25T19:00:36+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://troz.net/</loc>
+    <lastmod>2022-04-25T19:00:36+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://troz.net/tags/wwdc/</loc>
+    <lastmod>2022-04-25T19:00:36+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://troz.net/post/2022/wwdc_wishlist/</loc>
+    <lastmod>2022-04-25T19:00:36+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://troz.net/tags/appkit/</loc>
     <lastmod>2022-04-09T10:53:43+10:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -27,27 +57,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://troz.net/post/</loc>
-    <lastmod>2022-04-09T10:53:43+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://troz.net/tags/swift/</loc>
     <lastmod>2022-04-09T10:53:43+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://troz.net/tags/swiftui/</loc>
-    <lastmod>2022-04-09T10:53:43+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://troz.net/tags/</loc>
-    <lastmod>2022-04-09T10:53:43+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://troz.net/</loc>
     <lastmod>2022-04-09T10:53:43+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -74,11 +89,6 @@
   </url><url>
     <loc>https://troz.net/tags/web/</loc>
     <lastmod>2021-10-25T09:57:12+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://troz.net/tags/apple/</loc>
-    <lastmod>2021-02-04T18:57:21+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>

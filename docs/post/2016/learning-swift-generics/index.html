@@ -212,8 +212,8 @@ more semi-colons, asterisks etc.</p>
 <p>But then you are reading somebody else&rsquo;s code and you find these angle brackets
 all over the place and they don&rsquo;t seem to make sense.</p>
 <p>What does this mean?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">mid</span>&lt;T: Comparable&gt;(array: [T]) -&gt; T
-</code></pre></div><p>It looks like it is a function to find the middle element in an array, but what
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">mid</span>&lt;T: Comparable&gt;(array: [T]) -&gt; T
+</span></span></code></pre></div><p>It looks like it is a function to find the middle element in an array, but what
 is <code>&lt;T: Comparable&gt;</code> or <code>[T]</code> or even just <code>T</code>? They are describing Generic data
 types.</p>
 <p>Using the dictionary, I find the following definition for <code>generic</code>:</p>
@@ -229,36 +229,36 @@ encounter the problem they are meant to solve and then to solve it.</p>
 <p>The other day I was processing data to feed to a charting library. I ended up
 with an array of CGFloats, but there were too many of them, so I wrote a
 function to give me the last x elements of an array of CGFloats:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">endOf</span>(array: [CGFloat], numberOfElementsToInclude: Int) -&gt; [CGFloat] {
-  <span style="color:#66d9ef">if</span> numberOfElementsToInclude <span style="color:#f92672">&gt;</span> array.count { <span style="color:#66d9ef">return</span> array }
-
-  <span style="color:#66d9ef">let</span> startingElement = array.count <span style="color:#f92672">-</span> numberOfElementsToInclude
-  <span style="color:#66d9ef">let</span> endOfArray = Array(array[startingElement ..<span style="color:#f92672">&lt;</span> array.count])
-  <span style="color:#66d9ef">return</span> endOfArray
-}
-
-<span style="color:#66d9ef">let</span> largeArray: [CGFloat] = [<span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">2.0</span>, <span style="color:#ae81ff">3.0</span>, <span style="color:#ae81ff">4.0</span>, <span style="color:#ae81ff">5.0</span>, <span style="color:#ae81ff">6.0</span>, <span style="color:#ae81ff">7.0</span>, <span style="color:#ae81ff">8.0</span>, <span style="color:#ae81ff">9.0</span>, <span style="color:#ae81ff">10.0</span>]
-<span style="color:#66d9ef">let</span> smallArray = endOf(array: largeArray, numberOfElementsToInclude: <span style="color:#ae81ff">3</span>)
-<span style="color:#75715e">//smallArray now equals [8.0, 9.0, 10.0]</span>
-</code></pre></div><p>OK, so <code>largeArray</code> isn&rsquo;t actually the largest array you have ever seen, but it
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">endOf</span>(array: [CGFloat], numberOfElementsToInclude: Int) -&gt; [CGFloat] {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> numberOfElementsToInclude <span style="color:#f92672">&gt;</span> array.count { <span style="color:#66d9ef">return</span> array }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> startingElement = array.count <span style="color:#f92672">-</span> numberOfElementsToInclude
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> endOfArray = Array(array[startingElement ..<span style="color:#f92672">&lt;</span> array.count])
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> endOfArray
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> largeArray: [CGFloat] = [<span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">2.0</span>, <span style="color:#ae81ff">3.0</span>, <span style="color:#ae81ff">4.0</span>, <span style="color:#ae81ff">5.0</span>, <span style="color:#ae81ff">6.0</span>, <span style="color:#ae81ff">7.0</span>, <span style="color:#ae81ff">8.0</span>, <span style="color:#ae81ff">9.0</span>, <span style="color:#ae81ff">10.0</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> smallArray = endOf(array: largeArray, numberOfElementsToInclude: <span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//smallArray now equals [8.0, 9.0, 10.0]</span>
+</span></span></code></pre></div><p>OK, so <code>largeArray</code> isn&rsquo;t actually the largest array you have ever seen, but it
 works for demo purposes. In my code, I had over 20,000 entries in the large
 array and only wanted the last 5,000.</p>
 <p>I was completely happy with that until I found another data source where the
 data was an array of Ints. Still perfectly chartable using my charting library,
 but I could not get the end of the array using my nice function. First thought
 was to replicate the function:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">endOf</span>(array: [Int], numberOfElementsToInclude: Int) -&gt; [Int] {
-  <span style="color:#66d9ef">if</span> numberOfElementsToInclude <span style="color:#f92672">&gt;</span> array.count { <span style="color:#66d9ef">return</span> array }
-
-  <span style="color:#66d9ef">let</span> startingElement = array.count <span style="color:#f92672">-</span> numberOfElementsToInclude
-  <span style="color:#66d9ef">let</span> endOfArray = Array(array[startingElement ..<span style="color:#f92672">&lt;</span> array.count])
-  <span style="color:#66d9ef">return</span> endOfArray
-}
-
-<span style="color:#66d9ef">let</span> largeArrayInt = [ <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">10</span> ] <span style="color:#75715e">// type inferred to be Int</span>
-<span style="color:#66d9ef">let</span> smallArrayInt = endOf(array: largeArrayInt, numberOfElementsToInclude: <span style="color:#ae81ff">7</span>)
-<span style="color:#75715e">// smallArrayInt now equals [4, 5, 6, 7, 8, 9, 10]</span>
-</code></pre></div><p>A quick glance will reveal that the declaration line was the only thing that
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">endOf</span>(array: [Int], numberOfElementsToInclude: Int) -&gt; [Int] {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> numberOfElementsToInclude <span style="color:#f92672">&gt;</span> array.count { <span style="color:#66d9ef">return</span> array }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> startingElement = array.count <span style="color:#f92672">-</span> numberOfElementsToInclude
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> endOfArray = Array(array[startingElement ..<span style="color:#f92672">&lt;</span> array.count])
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> endOfArray
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> largeArrayInt = [ <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">10</span> ] <span style="color:#75715e">// type inferred to be Int</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> smallArrayInt = endOf(array: largeArrayInt, numberOfElementsToInclude: <span style="color:#ae81ff">7</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// smallArrayInt now equals [4, 5, 6, 7, 8, 9, 10]</span>
+</span></span></code></pre></div><p>A quick glance will reveal that the declaration line was the only thing that
 changed. I didn&rsquo;t have to give the function a new name because the compiler
 worked out which of the two functions to use based on the types supplied. So all
 I was doing was replacing <code>CGFloat</code> with <code>Int</code> in two places (the
@@ -278,26 +278,26 @@ supposed to know what a <code>T</code> is?</p>
 warn the compiler that this function is going to get a generic type and that the
 <code>T</code> is only a placeholder, not a real type. So this version compiles and works -
 notice the <code>&lt;T&gt;</code> between the function name and the opening bracket:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">endOf</span>&lt;T&gt;(array: [T], numberOfElementsToInclude: Int) -&gt; [T] {
-  <span style="color:#66d9ef">if</span> numberOfElementsToInclude <span style="color:#f92672">&gt;</span> array.count { <span style="color:#66d9ef">return</span> array }
-
-  <span style="color:#66d9ef">let</span> startingElement = array.count <span style="color:#f92672">-</span> numberOfElementsToInclude
-  <span style="color:#66d9ef">let</span> endOfArray = Array(array[startingElement ..<span style="color:#f92672">&lt;</span> array.count])
-  <span style="color:#66d9ef">return</span> endOfArray
-}
-</code></pre></div><p>Now I have no code duplication and if I ever get another data set that uses a
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">endOf</span>&lt;T&gt;(array: [T], numberOfElementsToInclude: Int) -&gt; [T] {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> numberOfElementsToInclude <span style="color:#f92672">&gt;</span> array.count { <span style="color:#66d9ef">return</span> array }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> startingElement = array.count <span style="color:#f92672">-</span> numberOfElementsToInclude
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> endOfArray = Array(array[startingElement ..<span style="color:#f92672">&lt;</span> array.count])
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> endOfArray
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now I have no code duplication and if I ever get another data set that uses a
 different object type, my function will still work.</p>
 <hr>
 <p>Now we know to use generics instead of replicating code that operates in the
 same way on different data types.</p>
 <p>And we know how to construct a generic function.</p>
 <p>Using it is identical to using the two functions I had before:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> largeArray: [CGFloat] = [ <span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">2.0</span>, <span style="color:#ae81ff">3.0</span>, <span style="color:#ae81ff">4.0</span>, <span style="color:#ae81ff">5.0</span>,<span style="color:#ae81ff">6.0</span>, <span style="color:#ae81ff">7.0</span>, <span style="color:#ae81ff">8.0</span>, <span style="color:#ae81ff">9.0</span>, <span style="color:#ae81ff">10.0</span> ]
-<span style="color:#66d9ef">let</span> smallArray = endOf(array: largeArray, numberOfElementsToInclude: <span style="color:#ae81ff">3</span>)
-
-<span style="color:#66d9ef">let</span> largeArrayInt = [ <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">10</span> ] <span style="color:#75715e">// type inferred to be Int</span>
-<span style="color:#66d9ef">let</span> smallArrayInt = endOf(array: largeArrayInt, numberOfElementsToInclude: <span style="color:#ae81ff">7</span>)
-</code></pre></div><p>You do not have to specify what <code>T</code> is when calling the function, that will be
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> largeArray: [CGFloat] = [ <span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">2.0</span>, <span style="color:#ae81ff">3.0</span>, <span style="color:#ae81ff">4.0</span>, <span style="color:#ae81ff">5.0</span>,<span style="color:#ae81ff">6.0</span>, <span style="color:#ae81ff">7.0</span>, <span style="color:#ae81ff">8.0</span>, <span style="color:#ae81ff">9.0</span>, <span style="color:#ae81ff">10.0</span> ]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> smallArray = endOf(array: largeArray, numberOfElementsToInclude: <span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> largeArrayInt = [ <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">10</span> ] <span style="color:#75715e">// type inferred to be Int</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> smallArrayInt = endOf(array: largeArrayInt, numberOfElementsToInclude: <span style="color:#ae81ff">7</span>)
+</span></span></code></pre></div><p>You do not have to specify what <code>T</code> is when calling the function, that will be
 inferred from the supplied data.</p>
 <hr>
 <p>Moving on into more advanced use cases, we have two things to consider:</p>
@@ -307,18 +307,18 @@ inferred from the supplied data.</p>
 </ol>
 <p>The example function I started with (not mine but I forget where I got it&hellip; If
 it is yours, thanks you very much) used:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">mid</span> &lt;T: Comparable&gt; (array: [T]) -&gt; T
-</code></pre></div><p>Instead of specifying the type as completely generic, it specified that it must
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">mid</span> &lt;T: Comparable&gt; (array: [T]) -&gt; T
+</span></span></code></pre></div><p>Instead of specifying the type as completely generic, it specified that it must
 conform to the Comparable protocol. This is because the function body used a
 <code>sort()</code> function so the generic function needed to be sure that the elements in
 the array could be compared. This technique can also be used to restrict the
 parameter types to sub-classes of a certain class.</p>
 <p>For a function with more than one generic data type, you need to use more than
 one placeholder letter:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">genericWithTwoDifferentTypes</span>&lt;T, U&gt;(param1: T, param2: U) -&gt; Bool {
-  <span style="color:#75715e">// ...</span>
-}
-</code></pre></div><p>And in exactly the same way, both <code>T</code> and <code>U</code> can be set to conform to a
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">genericWithTwoDifferentTypes</span>&lt;T, U&gt;(param1: T, param2: U) -&gt; Bool {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// ...</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>And in exactly the same way, both <code>T</code> and <code>U</code> can be set to conform to a
 protocol or be members of a certain super-class.</p>
 <hr>
 <p>Hopefully this has taken some of the mystery out of generics, but if you have

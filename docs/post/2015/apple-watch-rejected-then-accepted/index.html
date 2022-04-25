@@ -231,13 +231,13 @@ to the phone. The phone can respond, but only the watch can initiate a
 connection. I guess this makes sense since every watch will be paired with a
 phone but the reverse will not always be true.</p>
 <p>To talk to the phone, the watch uses this function:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">openParentApplication</span>(<span style="color:#66d9ef">_</span> userInfo: [NSObject : AnyObject],
-  reply reply: (([NSObject : AnyObject]<span style="color:#f92672">!</span>, NSError!) -&gt; Void)?) -&gt; Bool
-</code></pre></div><p>The phone listens for messages in this event handler:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">application</span>(<span style="color:#66d9ef">_</span> application: UIApplication,
-  handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?,
-  reply reply: (([NSObject : AnyObject]<span style="color:#f92672">!</span>) -&gt; Void)<span style="color:#f92672">!</span>)
-</code></pre></div><p>The name of the WatchKit function is slightly misleading as it does open the
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">openParentApplication</span>(<span style="color:#66d9ef">_</span> userInfo: [NSObject : AnyObject],
+</span></span><span style="display:flex;"><span>  reply reply: (([NSObject : AnyObject]<span style="color:#f92672">!</span>, NSError!) -&gt; Void)?) -&gt; Bool
+</span></span></code></pre></div><p>The phone listens for messages in this event handler:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">application</span>(<span style="color:#66d9ef">_</span> application: UIApplication,
+</span></span><span style="display:flex;"><span>  handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?,
+</span></span><span style="display:flex;"><span>  reply reply: (([NSObject : AnyObject]<span style="color:#f92672">!</span>) -&gt; Void)<span style="color:#f92672">!</span>)
+</span></span></code></pre></div><p>The name of the WatchKit function is slightly misleading as it does open the
 parent application, but only in the background. Then the parent app is supposed
 to do whatever tasks are called for in the handleWatchKitExtensionRequest
 function, and return any required data using the supplied reply() function.</p>

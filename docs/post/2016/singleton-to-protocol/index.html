@@ -209,12 +209,12 @@ but seem to be increasingly frowned upon in the Swift world.</p>
 as a global instance of a class. In some cases this makes perfect sense if there
 can only ever be one instance of a particular class or if there is a default
 variant that suits most cases e.g.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">UIApplication.shared
-UserDefaults.standard
-NotificationCenter.<span style="color:#66d9ef">default</span>
-FileManager.<span style="color:#66d9ef">default</span>
-URLSession.shared
-</code></pre></div><p>If you are using an object with a property name of &ldquo;shared&rdquo;, &ldquo;standard&rdquo; or
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>UIApplication.shared
+</span></span><span style="display:flex;"><span>UserDefaults.standard
+</span></span><span style="display:flex;"><span>NotificationCenter.<span style="color:#66d9ef">default</span>
+</span></span><span style="display:flex;"><span>FileManager.<span style="color:#66d9ef">default</span>
+</span></span><span style="display:flex;"><span>URLSession.shared
+</span></span></code></pre></div><p>If you are using an object with a property name of &ldquo;shared&rdquo;, &ldquo;standard&rdquo; or
 &ldquo;default&rdquo; you can be pretty sure it is an singleton.</p>
 <h2 id="and-whats-the-problem-with-singletons">And what&rsquo;s the problem with singletons?</h2>
 <p>There are probably many different opinions here but I have two thoughts about
@@ -231,18 +231,18 @@ queues, but it isn&rsquo;t easy.</li>
 logging utility that allowed any object in my app (mostly view controllers) to
 save a new entry to a log file. The basic structure of the Logger class was
 this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Logger</span> {
-    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">let</span> sharedLogger = Logger()
-
-    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">addToLog</span>(event: String) {
-      <span style="color:#75715e">// use private functions to find log file URL</span>
-      <span style="color:#75715e">// append event text with time stamp</span>
-    }
-
-}
-</code></pre></div><p>Any object in my app could use the Logger like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">Logger.sharedLogger.addToLog(event: newLogEvent)
-</code></pre></div><p>When I got to think about how I was using this, I realised that instead of a
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Logger</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">let</span> sharedLogger = Logger()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">addToLog</span>(event: String) {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// use private functions to find log file URL</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// append event text with time stamp</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Any object in my app could use the Logger like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>Logger.sharedLogger.addToLog(event: newLogEvent)
+</span></span></code></pre></div><p>When I got to think about how I was using this, I realised that instead of a
 Logger <em>object</em> that everything could use, what I really needed was a Loggable
 <em>behaviour</em> that I could apply &amp; restrict to the few classes that actually
 needed to log events. For me, this was the break-through:</p>
@@ -251,20 +251,20 @@ needed to log events. For me, this was the break-through:</p>
 </blockquote>
 <p>As soon as I started thinking about this as a behaviour, a protocol became the
 obvious solution, so this is what I created:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">protocol</span> <span style="color:#a6e22e">Loggable</span> {
-  <span style="color:#75715e">// not declaring functions here</span>
-  <span style="color:#75715e">// as they should NOT be over-written</span>
-}
-
-<span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">Loggable</span> {
-
-    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">addToLog</span>(event: String) {
-      <span style="color:#75715e">// use private functions to find log file URL</span>
-      <span style="color:#75715e">// append event text with time stamp</span>
-    }
-
-}
-</code></pre></div><p>We run immediately into one of the peculiarities of Swift protocol extensions
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">protocol</span> <span style="color:#a6e22e">Loggable</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// not declaring functions here</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// as they should NOT be over-written</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">Loggable</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">addToLog</span>(event: String) {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// use private functions to find log file URL</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// append event text with time stamp</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We run immediately into one of the peculiarities of Swift protocol extensions
 which has been very well explained by <a href="https://cjwirth.com/tech/swift-protocol-extension-weirdness">Caesar Wirth</a>. If I had declared
 <code>addToLog(_:)</code> in the protocol, then any class or struct conforming to this
 protocol would have been free to over-write this function and provide its own
@@ -273,17 +273,17 @@ version. So I left the function declaration out of the protocol definition and
 only included it in the protocol extension.</p>
 <p>To use this behaviour, a class or struct just has to be declared as conforming
 to the Loggable protocol:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>: Loggable {
-  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">doSomething</span>() {
-    addToLog(event: <span style="color:#e6db74">&#34;I did something!&#34;</span>)
-  }
-}
-</code></pre></div><p>For my app, I knew that I would want all my NSViewControllers to be able to add
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>: Loggable {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">doSomething</span>() {
+</span></span><span style="display:flex;"><span>    addToLog(event: <span style="color:#e6db74">&#34;I did something!&#34;</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>For my app, I knew that I would want all my NSViewControllers to be able to add
 log events, so instead of setting them all individually as conforming to the
 protocol, I used this shortcut which extends all NSViewControllers to conform to
 the protocol.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">NSViewController</span>: Loggable {}
-</code></pre></div><p>I added this line to the Loggable.swift file where I declared the protocol and
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">NSViewController</span>: Loggable {}
+</span></span></code></pre></div><p>I added this line to the Loggable.swift file where I declared the protocol and
 its extension, but outside both of them.</p>
 <hr>
 <p>Protocol-oriented programming is a new technique to me, so it really helps when

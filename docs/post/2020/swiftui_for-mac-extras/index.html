@@ -213,68 +213,68 @@ Just wanted to add that in part 2 when dismissing sheets there are two ways to d
 </blockquote>
 <p>Paul Hudson of Hacking with Swift explains how to use both methods very clearly in his article on <a href="https://www.hackingwithswift.com/quick-start/swiftui/how-to-make-a-view-dismiss-itself">How to make a view dismiss itself</a>.</p>
 <p>My <a href="/post/2019/swiftui-for-mac-3#sheets">original technique</a> passed the Boolean that triggered the sheet to appear, as a Binding to the sheet view. The sheet view could then toggle this to make the parent view dismiss it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  .sheet(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing) {
-      SheetView(isVisible: <span style="color:#66d9ef">self</span>.<span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing)
-  }
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SheetView</span>: View {
-    @Binding <span style="color:#66d9ef">var</span> isVisible: Bool
-
-    <span style="color:#66d9ef">var</span> body: some View {
-        VStack {
-            Text(<span style="color:#e6db74">&#34;This is a sheet.&#34;</span>)
-            Button(<span style="color:#e6db74">&#34;OK&#34;</span>) {
-                <span style="color:#66d9ef">self</span>.isVisible = <span style="color:#66d9ef">false</span>
-            }
-        }
-        .frame(width: <span style="color:#ae81ff">300</span>, height: <span style="color:#ae81ff">150</span>)
-    }
-}
-</code></pre></div><p>The presentation mode method leaves it up to the sheet to dismiss itself. The parent view shows the sheet but does not pass any binding.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  .sheet(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing) {
-      SheetView()
-  }
-</code></pre></div><p>The sheet view gets an environment property that it can use to change its presentation mode, dismissing itself that way.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SheetView</span>: View {
-    @Environment(<span style="color:#960050;background-color:#1e0010">\</span>.presentationMode) <span style="color:#66d9ef">var</span> presentationMode
-
-    <span style="color:#66d9ef">var</span> body: some View {
-        VStack {
-            Text(<span style="color:#e6db74">&#34;This is a sheet.&#34;</span>)
-            Button(<span style="color:#e6db74">&#34;OK&#34;</span>) {
-                <span style="color:#66d9ef">self</span>.presentationMode.wrappedValue.dismiss()
-            }
-        }
-        .frame(width: <span style="color:#ae81ff">300</span>, height: <span style="color:#ae81ff">150</span>)
-    }
-}
-</code></pre></div><p>I guess the presentation mode method is slightly easier to understand and it leaves the caller of the sheet view less cluttered which is a good thing. But the two methods are functionally identical, so use whichever you prefer. The sample project now contains both methods, with one commented out, so you can swap the comments to test.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  .sheet(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing) {
+</span></span><span style="display:flex;"><span>      SheetView(isVisible: <span style="color:#66d9ef">self</span>.<span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing)
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SheetView</span>: View {
+</span></span><span style="display:flex;"><span>    @Binding <span style="color:#66d9ef">var</span> isVisible: Bool
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>        VStack {
+</span></span><span style="display:flex;"><span>            Text(<span style="color:#e6db74">&#34;This is a sheet.&#34;</span>)
+</span></span><span style="display:flex;"><span>            Button(<span style="color:#e6db74">&#34;OK&#34;</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">self</span>.isVisible = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        .frame(width: <span style="color:#ae81ff">300</span>, height: <span style="color:#ae81ff">150</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The presentation mode method leaves it up to the sheet to dismiss itself. The parent view shows the sheet but does not pass any binding.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  .sheet(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing) {
+</span></span><span style="display:flex;"><span>      SheetView()
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>The sheet view gets an environment property that it can use to change its presentation mode, dismissing itself that way.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SheetView</span>: View {
+</span></span><span style="display:flex;"><span>    @Environment(<span style="color:#960050;background-color:#1e0010">\</span>.presentationMode) <span style="color:#66d9ef">var</span> presentationMode
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>        VStack {
+</span></span><span style="display:flex;"><span>            Text(<span style="color:#e6db74">&#34;This is a sheet.&#34;</span>)
+</span></span><span style="display:flex;"><span>            Button(<span style="color:#e6db74">&#34;OK&#34;</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">self</span>.presentationMode.wrappedValue.dismiss()
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        .frame(width: <span style="color:#ae81ff">300</span>, height: <span style="color:#ae81ff">150</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>I guess the presentation mode method is slightly easier to understand and it leaves the caller of the sheet view less cluttered which is a good thing. But the two methods are functionally identical, so use whichever you prefer. The sample project now contains both methods, with one commented out, so you can swap the comments to test.</p>
 <hr>
 <h2 id="subscribing-on-the-main-thread">Subscribing on the Main Thread</h2>
 <p>In <a href="/post/2019/swiftui-for-mac-2#passing-menu-data-to-a-view">part 2 of this series</a>, I created a menu item caused the downloaded image to be flipped. Selecting the menu item posted a notification:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">@IBAction</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">flipImage</span>(<span style="color:#66d9ef">_</span> sender: Any) {
-        NotificationCenter.<span style="color:#66d9ef">default</span>.post(name: .flipImage, object: <span style="color:#66d9ef">nil</span>)
-    }
-</code></pre></div><p>which the view showing the image was listening for.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">let</span> flipImageMenuItemSelected = NotificationCenter.<span style="color:#66d9ef">default</span>
-        .publisher(<span style="color:#66d9ef">for</span>: .flipImage)
-</code></pre></div><p>The outermost component of the view&rsquo;s body used an <code>onReceive</code> modifier to get this notification and react accordingly.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  <span style="color:#66d9ef">var</span> body: some View {
-      VStack {
-        <span style="color:#75715e">// layout omitted for brevity</span>
-      }
-      .onReceive(flipImageMenuItemSelected) { <span style="color:#66d9ef">_</span> <span style="color:#66d9ef">in</span>
-          DispatchQueue.main.async {
-              <span style="color:#66d9ef">self</span>.imageIsFlipped.toggle()
-          }
-      }
-    }
-</code></pre></div><p>Since the notification was triggering a change to the UI, I made sure that this happened on the main thread.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    <span style="color:#66d9ef">@IBAction</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">flipImage</span>(<span style="color:#66d9ef">_</span> sender: Any) {
+</span></span><span style="display:flex;"><span>        NotificationCenter.<span style="color:#66d9ef">default</span>.post(name: .flipImage, object: <span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>which the view showing the image was listening for.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">let</span> flipImageMenuItemSelected = NotificationCenter.<span style="color:#66d9ef">default</span>
+</span></span><span style="display:flex;"><span>        .publisher(<span style="color:#66d9ef">for</span>: .flipImage)
+</span></span></code></pre></div><p>The outermost component of the view&rsquo;s body used an <code>onReceive</code> modifier to get this notification and react accordingly.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>      VStack {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// layout omitted for brevity</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      .onReceive(flipImageMenuItemSelected) { <span style="color:#66d9ef">_</span> <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>          DispatchQueue.main.async {
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">self</span>.imageIsFlipped.toggle()
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>Since the notification was triggering a change to the UI, I made sure that this happened on the main thread.</p>
 <p>But it was pointed out to me that it would be easier to make sure that the publisher was set up to use the main thread all the time, instead of having to specify the main queue when processing the notification.</p>
 <p>So now the publisher is defined like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">let</span> flipImageMenuItemSelected = NotificationCenter.<span style="color:#66d9ef">default</span>
-      .publisher(<span style="color:#66d9ef">for</span>: .flipImage)
-      .receive(on: RunLoop.main)
-</code></pre></div><p>And the <code>onReceive</code> modifier can toggle the <code>imageIsFlipped</code> flag directly, without having to worry about the thread.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">let</span> flipImageMenuItemSelected = NotificationCenter.<span style="color:#66d9ef">default</span>
+</span></span><span style="display:flex;"><span>      .publisher(<span style="color:#66d9ef">for</span>: .flipImage)
+</span></span><span style="display:flex;"><span>      .receive(on: RunLoop.main)
+</span></span></code></pre></div><p>And the <code>onReceive</code> modifier can toggle the <code>imageIsFlipped</code> flag directly, without having to worry about the thread.</p>
 <p>This seems to me a much better solution as it sets the correct thread once when the publisher is created and makes using it much cleaner and easier.</p>
 <hr>
 <h2 id="passing-data-back-from-appkit">Passing data back from AppKit</h2>
@@ -286,45 +286,45 @@ Just wanted to add that in part 2 when dismissing sheets there are two ways to d
 <p>This is in the Form tab of the UI Samples window. As suggested to me, I added a <code>background</code> modifier to set the background of a portion of the view to the selected color. And although the NSColorWell showed newly selected colors, the background remained stubbornly blue.</p>
 <p>The solution was to add a <code>Coordinator</code> to the <code>NSViewRepresentable</code> and have it subscribe to any changes in the color and update the embedded view&rsquo;s selected color as needed. I would not have come up with this by myself, so many thanks to the person who sent it to me.</p>
 <p>Here is the full code for the <code>EmbeddedColorWell</code> struct:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">EmbeddedColorWell</span>: NSViewRepresentable {
-    @Binding <span style="color:#66d9ef">var</span> selectedColor: NSColor
-    
-    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Coordinator</span>: NSObject {
-        <span style="color:#66d9ef">var</span> embedded: EmbeddedColorWell
-        <span style="color:#66d9ef">var</span> subscription: AnyCancellable?
-
-        <span style="color:#66d9ef">init</span>(<span style="color:#66d9ef">_</span> embedded: EmbeddedColorWell) {
-            <span style="color:#66d9ef">self</span>.embedded = embedded
-        }
-        
-        <span style="color:#75715e">// Observe KVO compliant color property on NSColorWell object.</span>
-        <span style="color:#75715e">// Update the selectedColor property on EmbeddedColorWell as needed.</span>
-        <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">changeColor</span>(colorWell: NSColorWell) {
-            subscription = colorWell
-                .publisher(<span style="color:#66d9ef">for</span>: <span style="color:#960050;background-color:#1e0010">\</span>.color, options: .new)
-                .sink { color <span style="color:#66d9ef">in</span>
-                    DispatchQueue.main.async {
-                        <span style="color:#66d9ef">self</span>.embedded.selectedColor = color
-                    }
-            }
-        }
-    }
-    
-    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">makeCoordinator</span>() -&gt; EmbeddedColorWell.Coordinator {
-        Coordinator(<span style="color:#66d9ef">self</span>)
-    }
-    
-    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">makeNSView</span>(context: Context) -&gt; NSColorWell {
-        <span style="color:#66d9ef">let</span> colorWell = NSColorWell(frame: .zero)
-        context.coordinator.changeColor(colorWell: colorWell)
-        <span style="color:#66d9ef">return</span> colorWell
-    }
-    
-    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">updateNSView</span>(<span style="color:#66d9ef">_</span> nsView: NSColorWell, context: Context) {
-        nsView.color = selectedColor
-    }
-}
-</code></pre></div><p>In the previous section, I changed the publisher to use the main RunLoop so as to avoid having the use <code>DispatchQueue.main.async</code>. In this instance, that did not work so well. It only updated the selected color after the mouse had been released. But using <code>DispatchQueue.main.async</code> made the update live.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">EmbeddedColorWell</span>: NSViewRepresentable {
+</span></span><span style="display:flex;"><span>    @Binding <span style="color:#66d9ef">var</span> selectedColor: NSColor
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Coordinator</span>: NSObject {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> embedded: EmbeddedColorWell
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> subscription: AnyCancellable?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">init</span>(<span style="color:#66d9ef">_</span> embedded: EmbeddedColorWell) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">self</span>.embedded = embedded
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Observe KVO compliant color property on NSColorWell object.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Update the selectedColor property on EmbeddedColorWell as needed.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">changeColor</span>(colorWell: NSColorWell) {
+</span></span><span style="display:flex;"><span>            subscription = colorWell
+</span></span><span style="display:flex;"><span>                .publisher(<span style="color:#66d9ef">for</span>: <span style="color:#960050;background-color:#1e0010">\</span>.color, options: .new)
+</span></span><span style="display:flex;"><span>                .sink { color <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>                    DispatchQueue.main.async {
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">self</span>.embedded.selectedColor = color
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">makeCoordinator</span>() -&gt; EmbeddedColorWell.Coordinator {
+</span></span><span style="display:flex;"><span>        Coordinator(<span style="color:#66d9ef">self</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">makeNSView</span>(context: Context) -&gt; NSColorWell {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> colorWell = NSColorWell(frame: .zero)
+</span></span><span style="display:flex;"><span>        context.coordinator.changeColor(colorWell: colorWell)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> colorWell
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">updateNSView</span>(<span style="color:#66d9ef">_</span> nsView: NSColorWell, context: Context) {
+</span></span><span style="display:flex;"><span>        nsView.color = selectedColor
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In the previous section, I changed the publisher to use the main RunLoop so as to avoid having the use <code>DispatchQueue.main.async</code>. In this instance, that did not work so well. It only updated the selected color after the mouse had been released. But using <code>DispatchQueue.main.async</code> made the update live.</p>
 <hr>
 <p>As I explained at the start of these articles, I was documenting my explorations in using SwiftUI for a Mac app and while I hoped there would be some useful examples, this was not intended to be a definitive guide. So I am very grateful to everyone who has contributed to these updates.</p>
 <p>If you have anything more that you would like to be included, please contact me using one of the contact buttons below or through the <a href="/contact/">Contact page</a> on this site.</p>

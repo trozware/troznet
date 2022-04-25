@@ -231,21 +231,21 @@ So what are the differences and which one should you use?</p>
 <hr>
 <p>The reference type vs value type difference is where things really get
 interesting. Have a look at this example of a class with a single property:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PersonClass</span> {
-    <span style="color:#66d9ef">var</span> name: String
-
-    <span style="color:#66d9ef">init</span>(name: String) {
-        <span style="color:#66d9ef">self</span>.name = name
-    }
-}
-
-<span style="color:#66d9ef">var</span> personA = PersonClass(name: <span style="color:#e6db74">&#34;Woody&#34;</span>)
-personA.name <span style="color:#75715e">// Woody</span>
-
-<span style="color:#66d9ef">var</span> personB = personA
-personB.name = <span style="color:#e6db74">&#34;Buzz&#34;</span>
-personB.name <span style="color:#75715e">// Buzz</span>
-</code></pre></div><p>That looks like standard stuff, but what do you think <code>personA</code>&rsquo;s name is now?
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PersonClass</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> name: String
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">init</span>(name: String) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.name = name
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> personA = PersonClass(name: <span style="color:#e6db74">&#34;Woody&#34;</span>)
+</span></span><span style="display:flex;"><span>personA.name <span style="color:#75715e">// Woody</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> personB = personA
+</span></span><span style="display:flex;"><span>personB.name = <span style="color:#e6db74">&#34;Buzz&#34;</span>
+</span></span><span style="display:flex;"><span>personB.name <span style="color:#75715e">// Buzz</span>
+</span></span></code></pre></div><p>That looks like standard stuff, but what do you think <code>personA</code>&rsquo;s name is now?
 If you guessed &ldquo;Buzz&rdquo; then you win a prize! <em>(No, not a real prize - pat
 yourself on the back.)</em></p>
 <p>This is because when we created the <code>personB</code> variable and assigned <code>personA</code> to
@@ -256,19 +256,19 @@ inside.</p>
 for their data. This means that changing the name of <code>personB</code> changed the name
 of <code>personA</code> as well.</p>
 <p>Let&rsquo;s try the same thing with a struct:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">PersonStruct</span> {
-  <span style="color:#66d9ef">var</span> name: String
-}
-
-<span style="color:#66d9ef">var</span> personC = PersonStruct(name: <span style="color:#e6db74">&#34;Rex&#34;</span>)
-personC.name <span style="color:#75715e">// Rex</span>
-
-<span style="color:#66d9ef">var</span> personD = personC
-personD.name = <span style="color:#e6db74">&#34;Hamm&#34;</span>
-personD.name <span style="color:#75715e">// Hamm</span>
-
-personC.name <span style="color:#75715e">// Rex</span>
-</code></pre></div><p>This time, because we are using a struct, when we assign <code>personC</code> to the new
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">PersonStruct</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> name: String
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> personC = PersonStruct(name: <span style="color:#e6db74">&#34;Rex&#34;</span>)
+</span></span><span style="display:flex;"><span>personC.name <span style="color:#75715e">// Rex</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> personD = personC
+</span></span><span style="display:flex;"><span>personD.name = <span style="color:#e6db74">&#34;Hamm&#34;</span>
+</span></span><span style="display:flex;"><span>personD.name <span style="color:#75715e">// Hamm</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>personC.name <span style="color:#75715e">// Rex</span>
+</span></span></code></pre></div><p>This time, because we are using a struct, when we assign <code>personC</code> to the new
 <code>personD</code> variable, we are actually making a copy of <code>personC</code> and setting the
 values of <code>personD</code> to this new copy. So now we can change <code>personD</code> without
 messing with <code>personC</code>.</p>
@@ -299,24 +299,24 @@ lots of errors and warnings, change to a class.</p>
 <p>A logical consequence of this is that all structs should conform to the
 <a href="http://swiftdoc.org/v2.2/protocol/Equatable/">Equatable</a> protocol.</p>
 <p>Extending <code>PersonStruct</code> to make it conform just requires a single function:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">PersonStruct</span>: Equatable {
-  <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">func</span> == (lhs: PersonStruct, rhs: PersonStruct) -&gt; Bool {
-    <span style="color:#66d9ef">return</span> lhs.name == rhs.name
-  }
-}
-</code></pre></div><p>Since this struct only has one property, we can say that two instances of this
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">PersonStruct</span>: Equatable {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">func</span> == (lhs: PersonStruct, rhs: PersonStruct) -&gt; Bool {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> lhs.name == rhs.name
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Since this struct only has one property, we can say that two instances of this
 struct are equal if the names are equal.</p>
 <p>Testing this, we can see:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">var</span> personC = PersonStruct(name: <span style="color:#e6db74">&#34;Rex&#34;</span>)
-<span style="color:#66d9ef">var</span> personD = personC
-personD.name = <span style="color:#e6db74">&#34;Hamm&#34;</span>
-
-personC == personD <span style="color:#75715e">// false</span>
-
-<span style="color:#66d9ef">let</span> personE = PersonStruct(name: <span style="color:#e6db74">&#34;Rex&#34;</span>)
-personC == personE <span style="color:#75715e">// true</span>
-personC <span style="color:#f92672">!=</span> personE <span style="color:#75715e">// false</span>
-</code></pre></div><p>Conveniently, providing an <code>==</code> function effectively gives us a <code>!=</code> function
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> personC = PersonStruct(name: <span style="color:#e6db74">&#34;Rex&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> personD = personC
+</span></span><span style="display:flex;"><span>personD.name = <span style="color:#e6db74">&#34;Hamm&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>personC == personD <span style="color:#75715e">// false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> personE = PersonStruct(name: <span style="color:#e6db74">&#34;Rex&#34;</span>)
+</span></span><span style="display:flex;"><span>personC == personE <span style="color:#75715e">// true</span>
+</span></span><span style="display:flex;"><span>personC <span style="color:#f92672">!=</span> personE <span style="color:#75715e">// false</span>
+</span></span></code></pre></div><p>Conveniently, providing an <code>==</code> function effectively gives us a <code>!=</code> function
 for free as you can see from the last example.</p>
 <hr>
 <p>There is one final point I would like to make about struct and that concerns
@@ -327,22 +327,22 @@ the <code>name</code> property in the struct:</p>
 <code>mutating</code> for this to work and is showing where this should go. Accepting the
 suggestion will get rid of the error and then the name can be changed using this
 method.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">PersonStruct</span>: Equatable {
-    <span style="color:#66d9ef">var</span> name: String
-
-    <span style="color:#66d9ef">mutating</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">changeName</span>(to newName: String) {
-        <span style="color:#66d9ef">if</span> <span style="color:#f92672">!</span>newName.isEmpty {
-            name = newName
-        }
-    }
-}
-
-<span style="color:#66d9ef">var</span> personC = PersonStruct(name: <span style="color:#e6db74">&#34;Woody&#34;</span>)
-personC.name <span style="color:#75715e">// Woody</span>
-
-personC.changeName(to: <span style="color:#e6db74">&#34;Sid&#34;</span>)
-personC.name <span style="color:#75715e">// Sid</span>
-</code></pre></div><p>There is no problem about using <code>mutating</code> and it will not have the unintended
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">PersonStruct</span>: Equatable {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> name: String
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">mutating</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">changeName</span>(to newName: String) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">!</span>newName.isEmpty {
+</span></span><span style="display:flex;"><span>            name = newName
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> personC = PersonStruct(name: <span style="color:#e6db74">&#34;Woody&#34;</span>)
+</span></span><span style="display:flex;"><span>personC.name <span style="color:#75715e">// Woody</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>personC.changeName(to: <span style="color:#e6db74">&#34;Sid&#34;</span>)
+</span></span><span style="display:flex;"><span>personC.name <span style="color:#75715e">// Sid</span>
+</span></span></code></pre></div><p>There is no problem about using <code>mutating</code> and it will not have the unintended
 consequences of using classes. Despite the scary name, a mutating function
 actually returns a new copy of the struct.</p>
 <p>The problem arises if you have many nested structs and the mutating has to

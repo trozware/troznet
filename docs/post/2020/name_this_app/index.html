@@ -268,31 +268,31 @@ But I cannot think of a clever name for the app, so please read the story and co
 <li>place letters in a possible solution</li>
 </ul>
 <p>Arranging the letters in a circle was made relatively easy by using SwiftUI. I placed the letters in a ZStack so they were all piled on the one spot. Then I calculated the X &amp; Y offsets needed to move each letter to the edge of a circle. This involving digging out some long-forgotten trigonometry to convert from polar coordinates to rectangular coordinates. I could calculate the radius of the letter circle based on the screen size and the angle between each letter was 360 degrees divided by the number of letters. So some quick calculations converted these two numbers into X &amp; Y coordinates for each letter, and then I had my circle.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">var</span> radiansBetweenLetters: Double {
-        <span style="color:#66d9ef">let</span> degrees = <span style="color:#ae81ff">360.0</span> <span style="color:#f92672">/</span> Double(anagramLetters.count)
-        <span style="color:#66d9ef">let</span> radians = degrees <span style="color:#f92672">*</span> .pi <span style="color:#f92672">/</span> <span style="color:#ae81ff">180</span>
-        <span style="color:#66d9ef">return</span> radians
-    }
-
-    <span style="color:#66d9ef">var</span> radiusForCircle: Double {
-        <span style="color:#66d9ef">let</span> screenWidth = UIScreen.main.bounds.width
-        <span style="color:#66d9ef">return</span> Double(screenWidth <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.35</span>)
-    }
-
-    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">XoffsetForLetterAt</span>(index: Int) -&gt; CGFloat {
-        <span style="color:#75715e">// x = R cos t</span>
-        <span style="color:#66d9ef">let</span> totalRadians = radiansBetweenLetters <span style="color:#f92672">*</span> Double(index)
-        <span style="color:#66d9ef">let</span> x = radiusForCircle <span style="color:#f92672">*</span> sin(totalRadians)
-        <span style="color:#66d9ef">return</span> CGFloat(x)
-    }
-
-    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">YoffsetForLetterAt</span>(index: Int) -&gt; CGFloat {
-        <span style="color:#75715e">// y = R sin t</span>
-        <span style="color:#66d9ef">let</span> totalRadians = radiansBetweenLetters <span style="color:#f92672">*</span> Double(index)
-        <span style="color:#66d9ef">let</span> y = radiusForCircle <span style="color:#f92672">*</span> cos(totalRadians)
-        <span style="color:#66d9ef">return</span> CGFloat(y)
-    }
-</code></pre></div><p>The original word was converted into an array for display, so re-arranging the letters was a matter of calling <code>shuffle()</code> on the array which automatically triggered a SwiftUI redraw.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> radiansBetweenLetters: Double {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> degrees = <span style="color:#ae81ff">360.0</span> <span style="color:#f92672">/</span> Double(anagramLetters.count)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> radians = degrees <span style="color:#f92672">*</span> .pi <span style="color:#f92672">/</span> <span style="color:#ae81ff">180</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> radians
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> radiusForCircle: Double {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> screenWidth = UIScreen.main.bounds.width
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Double(screenWidth <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.35</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">XoffsetForLetterAt</span>(index: Int) -&gt; CGFloat {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// x = R cos t</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> totalRadians = radiansBetweenLetters <span style="color:#f92672">*</span> Double(index)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> x = radiusForCircle <span style="color:#f92672">*</span> sin(totalRadians)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> CGFloat(x)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">YoffsetForLetterAt</span>(index: Int) -&gt; CGFloat {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// y = R sin t</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> totalRadians = radiansBetweenLetters <span style="color:#f92672">*</span> Double(index)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> y = radiusForCircle <span style="color:#f92672">*</span> cos(totalRadians)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> CGFloat(y)
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>The original word was converted into an array for display, so re-arranging the letters was a matter of calling <code>shuffle()</code> on the array which automatically triggered a SwiftUI redraw.</p>
 <p>And here is version 1 of the interface running in the SwiftUI Canvas:</p>
 <p><img src="/images/AnagramAssistv1.gif" alt="Anagram app version 1"></p>
 <p><em>Refresh the page to see the gif play, if it has stopped.</em></p>
@@ -318,7 +318,7 @@ But I cannot think of a clever name for the app, so please read the story and co
 <h3 id="further-ui-enhancements">Further UI Enhancements</h3>
 <p>I installed a custom font so that it looked more like hand-writing. I wrote about <a href="https://troz.net/post/2020/custom-fonts/">installing custom fonts</a> in a separate article, so if you are interested check that out for details on the multiple steps that you need to take to get them to work. I went through a few different fonts until I found one that I thought worked well and clearly for all the upper case letters but I settled on <a href="https://www.fontspace.com/search?q=oregano">Oregano</a>. And then I made the app work in dark mode too:</p>
 <p><img src="/images/AnagramDarkMode.png" alt="Custom font and dark mode"></p>
-<p>The clue for this one is <em>&ldquo;Consumables minus bacon and shellfish (6)&quot;</em></p>
+<p>The clue for this one is <em>&ldquo;Consumables minus bacon and shellfish (6)&rdquo;</em></p>
 <hr>
 <h3 id="animations">Animations</h3>
 <p>SwiftUI has animation built in, so I was able to add an <code>animation</code> modifier to the various views to make the transitions look smooth. I particularly liked the way the letters re-arranged themselves around the circle when I removed or replaced a letter.</p>
@@ -327,7 +327,7 @@ But I cannot think of a clever name for the app, so please read the story and co
 <p><img src="/images/AnagramAnimation.mp4" alt="Animations"></p>
 <p><em>Refresh the page to see the gif play, if it has stopped.</em></p>
 <p>I also added sound effects and a slide-up sheet view with settings and help. I enjoyed using <a href="https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/">Apple&rsquo;s SF Symbols</a> to show icons for each paragraph of the help, although I may change the colour of these icons as they look at bit too much like buttons right now.</p>
-<p><img src="/images/AnagramHelp.png" alt="Help & Settings"></p>
+<p><img src="/images/AnagramHelp.png" alt="Help &amp; Settings"></p>
 <hr>
 <h3 id="next-steps">Next Steps</h3>
 <p>Well, I am hoping that someone will come up with a good name. I thought of &ldquo;Anagram Assistant&rdquo; but that doesn&rsquo;t fit underneath the home screen icon and it was shortened to &ldquo;Anagram&rdquo;. I don&rsquo;t want people to see it and think it is just one of those dictionary lookup anagram finders, so I would like something more descriptive while still being short, or at least having a short variant.</p>

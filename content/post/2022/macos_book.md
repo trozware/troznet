@@ -55,7 +55,7 @@ The whole team at [Ray Wenderlich][14] was great, so a huge thanks to them all. 
 ### Where can you read the book?
 
 - You can read it online at [raywenderlich.com][1] as part of a Ray Wenderlich subscription.
-- You can buy an ebook (epub or pdf) at the same page if you don't have a subscription.
+- You can download an ebook (ePub or pdf) at the same page if you have a subscription or but one there if you don't.
 - The paperback is available at [Amazon][15].
 
 All the code and extra materials for the book can be downloaded or cloned from [GitHub][6].

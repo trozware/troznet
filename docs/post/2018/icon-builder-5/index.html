@@ -225,28 +225,28 @@
 <h2 id="adding-a-color-profile">Adding a color profile</h2>
 <p>But then we get to the new features needed. Adding the 1024x1024 icon to the app icon set was easy, especially after the re-factoring. But what about the color profile?</p>
 <p>This was not as easy as I expected - there is no built in command to apply a profile but here is the solution that I finally found:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">NSImage</span> {
-
-  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">convertImageTo_sRGB</span>() <span style="color:#66d9ef">throws</span> -&gt; Data {
-      <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> colorSpace = CGColorSpace(name: CGColorSpace.sRGB),
-          <span style="color:#66d9ef">let</span> cgi = <span style="color:#66d9ef">self</span>.cgImage(forProposedRect: <span style="color:#66d9ef">nil</span>,
-                                 context: <span style="color:#66d9ef">nil</span>,
-                                 hints: <span style="color:#66d9ef">nil</span>) <span style="color:#66d9ef">else</span> {
-                                  <span style="color:#66d9ef">throw</span> ImageError.cantMakeCgImage
-      }
-
-      <span style="color:#66d9ef">let</span> ci = CIImage(cgImage: cgi)
-
-      <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> pngData = CIContext().pngRepresentation(of: ci,
-                                                        format: kCIFormatRGBA8,
-                                                        colorSpace: colorSpace) <span style="color:#66d9ef">else</span> {
-          <span style="color:#66d9ef">throw</span> ImageError.cantConvertToPng
-      }
-      <span style="color:#66d9ef">return</span> pngData
-  }
-
-}
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">NSImage</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">convertImageTo_sRGB</span>() <span style="color:#66d9ef">throws</span> -&gt; Data {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> colorSpace = CGColorSpace(name: CGColorSpace.sRGB),
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">let</span> cgi = <span style="color:#66d9ef">self</span>.cgImage(forProposedRect: <span style="color:#66d9ef">nil</span>,
+</span></span><span style="display:flex;"><span>                                 context: <span style="color:#66d9ef">nil</span>,
+</span></span><span style="display:flex;"><span>                                 hints: <span style="color:#66d9ef">nil</span>) <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                                  <span style="color:#66d9ef">throw</span> ImageError.cantMakeCgImage
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">let</span> ci = CIImage(cgImage: cgi)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> pngData = CIContext().pngRepresentation(of: ci,
+</span></span><span style="display:flex;"><span>                                                        format: kCIFormatRGBA8,
+</span></span><span style="display:flex;"><span>                                                        colorSpace: colorSpace) <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">throw</span> ImageError.cantConvertToPng
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> pngData
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>This takes the NSImage and converts it to a CGImage, first checking that the appropriate color space exists.</li>
 <li>Then it uses the Core Graphics CGImage to create a Core Image CIImage.</li>
 <li>There is a new API in macOS 10.13 to extract the png data from a CIImage while assigning a color profile.</li>
@@ -261,51 +261,51 @@
 <h3 id="converting-transparent-pixels-to-white">Converting transparent pixels to white</h3>
 <p>So the first step must be to set the transparent parts of the image to another color. Searching for solutions online, most of the ones I came up with were very slow (processing each pixel) or so complicated that I didn&rsquo;t understand them, and I hate just copy-pasting code that I don&rsquo;t understand at all.</p>
 <p>But eventually I found something that I morphed into this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">NSImage</span> {
-
-    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">makeAlphaWhite</span>() -&gt; NSImage {
-        <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> imageData = <span style="color:#66d9ef">self</span>.tiffRepresentation,
-            <span style="color:#66d9ef">let</span> imageRep = NSBitmapImageRep(data: imageData),
-            <span style="color:#66d9ef">let</span> jpegData = imageRep.representation(using: .jpeg, properties: [
-                NSBitmapImageRep.PropertyKey.compressionFactor: NSNumber(value: <span style="color:#ae81ff">1.0</span>)
-                ]),
-            <span style="color:#66d9ef">let</span> jpegImage = NSImage(data: jpegData) <span style="color:#66d9ef">else</span> {
-                <span style="color:#66d9ef">return</span> image
-        }
-        <span style="color:#66d9ef">return</span> jpegImage
-    }
-
-}
-</code></pre></div><p>It used basically the same trick of converting the image into a JPEG but doing it this way via <code>NSBitmapImageRep</code> turned the transparent pixels white instead of black. And as you can see, this gave a much better looking image:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">NSImage</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">makeAlphaWhite</span>() -&gt; NSImage {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> imageData = <span style="color:#66d9ef">self</span>.tiffRepresentation,
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> imageRep = NSBitmapImageRep(data: imageData),
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> jpegData = imageRep.representation(using: .jpeg, properties: [
+</span></span><span style="display:flex;"><span>                NSBitmapImageRep.PropertyKey.compressionFactor: NSNumber(value: <span style="color:#ae81ff">1.0</span>)
+</span></span><span style="display:flex;"><span>                ]),
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> jpegImage = NSImage(data: jpegData) <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> image
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> jpegImage
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>It used basically the same trick of converting the image into a JPEG but doing it this way via <code>NSBitmapImageRep</code> turned the transparent pixels white instead of black. And as you can see, this gave a much better looking image:</p>
 <p><img src="/images/MakeAlphaWhite.png" alt="Transparent portions converted to white"></p>
 <p>Now I was able to continue with my plans to have JPEGs rule the world! This worked really well in my early tests but then I came to try a Stickers app and the icons didn’t work. I couldn&rsquo;t even drag them in manually! Back to the Apple docs and I see that icons must be PNGs.</p>
 <p>When I changed the transparent pixels to white, added the color space and then saved the PNG data, I got an image that looked correct but the file still contained an alpha channel. So I had to come up with a method that re-wrote the PNG data in such a way that it never contained any alpha data at all.</p>
 <h3 id="removing-the-alpha-channel">Removing the alpha channel</h3>
 <p>Graphics experts are probably groaning aloud by now, but I did eventually arrive at a solution, however hacky:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">NSImage</span> {
-
-    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">convertImageTo_sRGB_noAlpha</span>() <span style="color:#66d9ef">throws</span> -&gt; Data {
-        <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> colorSpace = CGColorSpace(name: CGColorSpace.sRGB),
-            <span style="color:#66d9ef">let</span> cgi = <span style="color:#66d9ef">self</span>.cgImage(forProposedRect: <span style="color:#66d9ef">nil</span>,
-                                   context: <span style="color:#66d9ef">nil</span>,
-                                   hints: <span style="color:#66d9ef">nil</span>) <span style="color:#66d9ef">else</span> {
-                                    <span style="color:#66d9ef">throw</span> ImageError.cantMakeCgImage
-        }
-
-        <span style="color:#66d9ef">let</span> ci = CIImage(cgImage: cgi)
-        <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> jpgData = CIContext().jpegRepresentation(of: ci,
-                                                           colorSpace: colorSpace) <span style="color:#66d9ef">else</span> {
-            <span style="color:#66d9ef">throw</span> ImageError.cantConvertToJpg
-        }
-        <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> jpegImage = NSImage(data: jpgData) <span style="color:#66d9ef">else</span> {
-            <span style="color:#66d9ef">throw</span> ImageError.cantConvertToJpgImage
-        }
-        <span style="color:#66d9ef">let</span> pngData = <span style="color:#66d9ef">try</span> jpegImage.convertImageTo_sRGB()
-        <span style="color:#66d9ef">return</span> pngData
-    }
-
-}
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">NSImage</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">convertImageTo_sRGB_noAlpha</span>() <span style="color:#66d9ef">throws</span> -&gt; Data {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> colorSpace = CGColorSpace(name: CGColorSpace.sRGB),
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> cgi = <span style="color:#66d9ef">self</span>.cgImage(forProposedRect: <span style="color:#66d9ef">nil</span>,
+</span></span><span style="display:flex;"><span>                                   context: <span style="color:#66d9ef">nil</span>,
+</span></span><span style="display:flex;"><span>                                   hints: <span style="color:#66d9ef">nil</span>) <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                                    <span style="color:#66d9ef">throw</span> ImageError.cantMakeCgImage
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> ci = CIImage(cgImage: cgi)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> jpgData = CIContext().jpegRepresentation(of: ci,
+</span></span><span style="display:flex;"><span>                                                           colorSpace: colorSpace) <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> ImageError.cantConvertToJpg
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> jpegImage = NSImage(data: jpgData) <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> ImageError.cantConvertToJpgImage
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> pngData = <span style="color:#66d9ef">try</span> jpegImage.convertImageTo_sRGB()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> pngData
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>Take the image <strong>after</strong> changing the transparent pixels to white.</li>
 <li>Convert it to JPEG data with the required color space.</li>
 <li>Convert the JPEG data back to an image - this will contain <strong>NO</strong> alpha data.</li>

@@ -241,60 +241,60 @@ specific nomenclature would be useful. Have you tried doing a search for
 &lsquo;Data&rsquo;?)</p>
 <p>For sample data, I am using <a href="https://jsonplaceholder.typicode.com/users">https://jsonplaceholder.typicode.com/users</a> which
 returns 10 user objects in this format:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">1</span>,
-  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Leanne Graham&#34;</span>,
-  <span style="color:#f92672">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;Bret&#34;</span>,
-  <span style="color:#f92672">&#34;email&#34;</span>: <span style="color:#e6db74">&#34;Sincere@april.biz&#34;</span>,
-  <span style="color:#f92672">&#34;address&#34;</span>: {
-    <span style="color:#f92672">&#34;street&#34;</span>: <span style="color:#e6db74">&#34;Kulas Light&#34;</span>,
-    <span style="color:#f92672">&#34;suite&#34;</span>: <span style="color:#e6db74">&#34;Apt. 556&#34;</span>,
-    <span style="color:#f92672">&#34;city&#34;</span>: <span style="color:#e6db74">&#34;Gwenborough&#34;</span>,
-    <span style="color:#f92672">&#34;zipcode&#34;</span>: <span style="color:#e6db74">&#34;92998-3874&#34;</span>,
-    <span style="color:#f92672">&#34;geo&#34;</span>: {
-      <span style="color:#f92672">&#34;lat&#34;</span>: <span style="color:#e6db74">&#34;-37.3159&#34;</span>,
-      <span style="color:#f92672">&#34;lng&#34;</span>: <span style="color:#e6db74">&#34;81.1496&#34;</span>
-    }
-  },
-  <span style="color:#f92672">&#34;phone&#34;</span>: <span style="color:#e6db74">&#34;1-770-736-8031 x56442&#34;</span>,
-  <span style="color:#f92672">&#34;website&#34;</span>: <span style="color:#e6db74">&#34;hildegard.org&#34;</span>,
-  <span style="color:#f92672">&#34;company&#34;</span>: {
-    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Romaguera-Crona&#34;</span>,
-    <span style="color:#f92672">&#34;catchPhrase&#34;</span>: <span style="color:#e6db74">&#34;Multi-layered client-server neural-net&#34;</span>,
-    <span style="color:#f92672">&#34;bs&#34;</span>: <span style="color:#e6db74">&#34;harness real-time e-markets&#34;</span>
-  }
-}
-</code></pre></div><p>The goal will be to convert this to an instance of this matching Swift struct:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">User</span> {
-    <span style="color:#66d9ef">let</span> id: Int
-    <span style="color:#66d9ef">let</span> name: String
-    <span style="color:#66d9ef">let</span> username: String
-    <span style="color:#66d9ef">let</span> email: String
-    <span style="color:#66d9ef">let</span> phone: String
-    <span style="color:#66d9ef">let</span> website: String
-    <span style="color:#66d9ef">let</span> address: Address
-    <span style="color:#66d9ef">let</span> company: Company
-
-    <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Address</span> {
-        <span style="color:#66d9ef">let</span> street: String
-        <span style="color:#66d9ef">let</span> suite: String
-        <span style="color:#66d9ef">let</span> city: String
-        <span style="color:#66d9ef">let</span> zipcode: String
-        <span style="color:#66d9ef">let</span> geo: Coordinates
-
-        <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Coordinates</span> {
-            <span style="color:#66d9ef">let</span> lat: Double
-            <span style="color:#66d9ef">let</span> lng: Double
-        }
-    }
-
-    <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Company</span> {
-        <span style="color:#66d9ef">let</span> name: String
-        <span style="color:#66d9ef">let</span> catchPhrase: String
-        <span style="color:#66d9ef">let</span> bs: String
-    }
-}
-</code></pre></div><p>The first thing to note is that the Swift struct (and its embedded structs) use
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Leanne Graham&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;Bret&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;email&#34;</span>: <span style="color:#e6db74">&#34;Sincere@april.biz&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;address&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;street&#34;</span>: <span style="color:#e6db74">&#34;Kulas Light&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;suite&#34;</span>: <span style="color:#e6db74">&#34;Apt. 556&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;city&#34;</span>: <span style="color:#e6db74">&#34;Gwenborough&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;zipcode&#34;</span>: <span style="color:#e6db74">&#34;92998-3874&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;geo&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;lat&#34;</span>: <span style="color:#e6db74">&#34;-37.3159&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;lng&#34;</span>: <span style="color:#e6db74">&#34;81.1496&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;phone&#34;</span>: <span style="color:#e6db74">&#34;1-770-736-8031 x56442&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;website&#34;</span>: <span style="color:#e6db74">&#34;hildegard.org&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;company&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Romaguera-Crona&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;catchPhrase&#34;</span>: <span style="color:#e6db74">&#34;Multi-layered client-server neural-net&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;bs&#34;</span>: <span style="color:#e6db74">&#34;harness real-time e-markets&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The goal will be to convert this to an instance of this matching Swift struct:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">User</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> id: Int
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> name: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> username: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> email: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> phone: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> website: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> address: Address
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> company: Company
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Address</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> street: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> suite: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> city: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> zipcode: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> geo: Coordinates
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Coordinates</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> lat: Double
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> lng: Double
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Company</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> name: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> catchPhrase: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> bs: String
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The first thing to note is that the Swift struct (and its embedded structs) use
 multiple different types: Int, String, Double, Address, Coordinates, Company.
 The JSON data only has strings and numbers and even then, some of the numbers
 are really strings - look at the lat &amp; lng entries. So converting from JSON to a
@@ -303,121 +303,121 @@ built-in Swift 3 processing with no external libraries.</p>
 <h2 id="decoding-in-swift-3">Decoding in Swift 3</h2>
 <p>You can insert this into a playground or <a href="https://github.com/trozware/json">download my playground</a> and check
 out the Swift 3 JSON page:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Foundation</span>
-
-<span style="color:#66d9ef">let</span> sampleDataAddress = <span style="color:#e6db74">&#34;https://jsonplaceholder.typicode.com/users&#34;</span>
-<span style="color:#66d9ef">let</span> url = URL(string: sampleDataAddress)<span style="color:#f92672">!</span>
-<span style="color:#66d9ef">let</span> jsonData = <span style="color:#66d9ef">try</span>! Data(contentsOf: url)
-
-<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">User</span> {
-    <span style="color:#66d9ef">let</span> id: Int
-    <span style="color:#66d9ef">let</span> name: String
-    <span style="color:#66d9ef">let</span> username: String
-    <span style="color:#66d9ef">let</span> email: String
-    <span style="color:#66d9ef">let</span> phone: String
-    <span style="color:#66d9ef">let</span> website: String
-    <span style="color:#66d9ef">let</span> address: Address
-    <span style="color:#66d9ef">let</span> company: Company
-
-    <span style="color:#66d9ef">init</span>?(dict: [String: Any]) {
-        <span style="color:#66d9ef">guard</span>
-            <span style="color:#66d9ef">let</span> id = dict[<span style="color:#e6db74">&#34;id&#34;</span>] <span style="color:#66d9ef">as</span>? Int,
-            <span style="color:#66d9ef">let</span> name = dict[<span style="color:#e6db74">&#34;name&#34;</span>] <span style="color:#66d9ef">as</span>? String,
-            <span style="color:#66d9ef">let</span> username = dict[<span style="color:#e6db74">&#34;username&#34;</span>] <span style="color:#66d9ef">as</span>? String,
-            <span style="color:#66d9ef">let</span> email = dict[<span style="color:#e6db74">&#34;email&#34;</span>] <span style="color:#66d9ef">as</span>? String,
-            <span style="color:#66d9ef">let</span> phone = dict[<span style="color:#e6db74">&#34;phone&#34;</span>] <span style="color:#66d9ef">as</span>? String,
-            <span style="color:#66d9ef">let</span> website = dict[<span style="color:#e6db74">&#34;website&#34;</span>] <span style="color:#66d9ef">as</span>? String,
-            <span style="color:#66d9ef">let</span> addressDict = dict[<span style="color:#e6db74">&#34;address&#34;</span>] <span style="color:#66d9ef">as</span>? [String: Any],
-            <span style="color:#66d9ef">let</span> address = Address(dict: addressDict),
-            <span style="color:#66d9ef">let</span> companyDict = dict[<span style="color:#e6db74">&#34;company&#34;</span>] <span style="color:#66d9ef">as</span>? [String: Any],
-            <span style="color:#66d9ef">let</span> company = Company(dict: companyDict)
-            <span style="color:#66d9ef">else</span> {
-                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
-        }
-
-        <span style="color:#66d9ef">self</span>.id = id
-        <span style="color:#66d9ef">self</span>.name = name
-        <span style="color:#66d9ef">self</span>.username = username
-        <span style="color:#66d9ef">self</span>.email = email
-        <span style="color:#66d9ef">self</span>.phone = phone
-        <span style="color:#66d9ef">self</span>.website = website
-        <span style="color:#66d9ef">self</span>.address = address
-        <span style="color:#66d9ef">self</span>.company = company
-    }
-
-    <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Address</span> {
-        <span style="color:#66d9ef">let</span> street: String
-        <span style="color:#66d9ef">let</span> suite: String
-        <span style="color:#66d9ef">let</span> city: String
-        <span style="color:#66d9ef">let</span> zipcode: String
-        <span style="color:#66d9ef">let</span> geo: Coordinates
-
-        <span style="color:#66d9ef">init</span>?(dict: [String: Any]) {
-            <span style="color:#66d9ef">guard</span>
-                <span style="color:#66d9ef">let</span> street = dict[<span style="color:#e6db74">&#34;street&#34;</span>] <span style="color:#66d9ef">as</span>? String,
-                <span style="color:#66d9ef">let</span> suite = dict[<span style="color:#e6db74">&#34;suite&#34;</span>] <span style="color:#66d9ef">as</span>? String,
-                <span style="color:#66d9ef">let</span> city = dict[<span style="color:#e6db74">&#34;city&#34;</span>] <span style="color:#66d9ef">as</span>? String,
-                <span style="color:#66d9ef">let</span> zipcode = dict[<span style="color:#e6db74">&#34;zipcode&#34;</span>] <span style="color:#66d9ef">as</span>? String,
-                <span style="color:#66d9ef">let</span> geoDict = dict[<span style="color:#e6db74">&#34;geo&#34;</span>] <span style="color:#66d9ef">as</span>? [String: Any],
-                <span style="color:#66d9ef">let</span> geo = Coordinates(dict: geoDict) <span style="color:#66d9ef">else</span> {
-                    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
-            }
-
-            <span style="color:#66d9ef">self</span>.street = street
-            <span style="color:#66d9ef">self</span>.suite = suite
-            <span style="color:#66d9ef">self</span>.city = city
-            <span style="color:#66d9ef">self</span>.zipcode = zipcode
-            <span style="color:#66d9ef">self</span>.geo = geo
-        }
-
-        <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Coordinates</span> {
-            <span style="color:#66d9ef">let</span> lat: Double
-            <span style="color:#66d9ef">let</span> lng: Double
-
-            <span style="color:#66d9ef">init</span>?(dict: [String: Any]) {
-                <span style="color:#66d9ef">guard</span>
-                    <span style="color:#66d9ef">let</span> latString = dict[<span style="color:#e6db74">&#34;lat&#34;</span>] <span style="color:#66d9ef">as</span>? String,
-                    <span style="color:#66d9ef">let</span> lat = Double(latString),
-                    <span style="color:#66d9ef">let</span> lngString = dict[<span style="color:#e6db74">&#34;lng&#34;</span>] <span style="color:#66d9ef">as</span>? String,
-                    <span style="color:#66d9ef">let</span> lng = Double(lngString) <span style="color:#66d9ef">else</span> {
-                        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
-                }
-                <span style="color:#66d9ef">self</span>.lat = lat
-                <span style="color:#66d9ef">self</span>.lng = lng
-            }
-        }
-    }
-
-    <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Company</span> {
-        <span style="color:#66d9ef">let</span> name: String
-        <span style="color:#66d9ef">let</span> catchPhrase: String
-        <span style="color:#66d9ef">let</span> bs: String
-
-        <span style="color:#66d9ef">init</span>?(dict: [String: Any]) {
-            <span style="color:#66d9ef">guard</span>
-                <span style="color:#66d9ef">let</span> name = dict[<span style="color:#e6db74">&#34;name&#34;</span>] <span style="color:#66d9ef">as</span>? String,
-                <span style="color:#66d9ef">let</span> catchPhrase = dict[<span style="color:#e6db74">&#34;catchPhrase&#34;</span>] <span style="color:#66d9ef">as</span>? String,
-                <span style="color:#66d9ef">let</span> bs = dict[<span style="color:#e6db74">&#34;bs&#34;</span>] <span style="color:#66d9ef">as</span>? String <span style="color:#66d9ef">else</span> {
-                    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
-            }
-
-            <span style="color:#66d9ef">self</span>.name = name
-            <span style="color:#66d9ef">self</span>.catchPhrase = catchPhrase
-            <span style="color:#66d9ef">self</span>.bs = bs
-        }
-    }
-}
-
-<span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> json = <span style="color:#66d9ef">try</span>? JSONSerialization.jsonObject(with: jsonData, options: []) {
-    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> jsonArray = json <span style="color:#66d9ef">as</span>? [[String: Any]] {
-        <span style="color:#66d9ef">let</span> users = jsonArray.flatMap {
-            User(dict: $0)
-        }
-        users.count
-        dump(users.first)
-    }
-}
-</code></pre></div><p>I don&rsquo;t actually expect you to go through all this code in detail, but I
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Foundation</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> sampleDataAddress = <span style="color:#e6db74">&#34;https://jsonplaceholder.typicode.com/users&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> url = URL(string: sampleDataAddress)<span style="color:#f92672">!</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> jsonData = <span style="color:#66d9ef">try</span>! Data(contentsOf: url)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">User</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> id: Int
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> name: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> username: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> email: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> phone: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> website: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> address: Address
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> company: Company
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">init</span>?(dict: [String: Any]) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">guard</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> id = dict[<span style="color:#e6db74">&#34;id&#34;</span>] <span style="color:#66d9ef">as</span>? Int,
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> name = dict[<span style="color:#e6db74">&#34;name&#34;</span>] <span style="color:#66d9ef">as</span>? String,
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> username = dict[<span style="color:#e6db74">&#34;username&#34;</span>] <span style="color:#66d9ef">as</span>? String,
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> email = dict[<span style="color:#e6db74">&#34;email&#34;</span>] <span style="color:#66d9ef">as</span>? String,
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> phone = dict[<span style="color:#e6db74">&#34;phone&#34;</span>] <span style="color:#66d9ef">as</span>? String,
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> website = dict[<span style="color:#e6db74">&#34;website&#34;</span>] <span style="color:#66d9ef">as</span>? String,
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> addressDict = dict[<span style="color:#e6db74">&#34;address&#34;</span>] <span style="color:#66d9ef">as</span>? [String: Any],
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> address = Address(dict: addressDict),
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> companyDict = dict[<span style="color:#e6db74">&#34;company&#34;</span>] <span style="color:#66d9ef">as</span>? [String: Any],
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> company = Company(dict: companyDict)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.id = id
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.name = name
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.username = username
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.email = email
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.phone = phone
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.website = website
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.address = address
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.company = company
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Address</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> street: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> suite: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> city: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> zipcode: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> geo: Coordinates
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">init</span>?(dict: [String: Any]) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">guard</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">let</span> street = dict[<span style="color:#e6db74">&#34;street&#34;</span>] <span style="color:#66d9ef">as</span>? String,
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">let</span> suite = dict[<span style="color:#e6db74">&#34;suite&#34;</span>] <span style="color:#66d9ef">as</span>? String,
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">let</span> city = dict[<span style="color:#e6db74">&#34;city&#34;</span>] <span style="color:#66d9ef">as</span>? String,
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">let</span> zipcode = dict[<span style="color:#e6db74">&#34;zipcode&#34;</span>] <span style="color:#66d9ef">as</span>? String,
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">let</span> geoDict = dict[<span style="color:#e6db74">&#34;geo&#34;</span>] <span style="color:#66d9ef">as</span>? [String: Any],
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">let</span> geo = Coordinates(dict: geoDict) <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">self</span>.street = street
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">self</span>.suite = suite
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">self</span>.city = city
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">self</span>.zipcode = zipcode
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">self</span>.geo = geo
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Coordinates</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> lat: Double
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> lng: Double
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">init</span>?(dict: [String: Any]) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">guard</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">let</span> latString = dict[<span style="color:#e6db74">&#34;lat&#34;</span>] <span style="color:#66d9ef">as</span>? String,
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">let</span> lat = Double(latString),
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">let</span> lngString = dict[<span style="color:#e6db74">&#34;lng&#34;</span>] <span style="color:#66d9ef">as</span>? String,
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">let</span> lng = Double(lngString) <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">self</span>.lat = lat
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">self</span>.lng = lng
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Company</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> name: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> catchPhrase: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> bs: String
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">init</span>?(dict: [String: Any]) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">guard</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">let</span> name = dict[<span style="color:#e6db74">&#34;name&#34;</span>] <span style="color:#66d9ef">as</span>? String,
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">let</span> catchPhrase = dict[<span style="color:#e6db74">&#34;catchPhrase&#34;</span>] <span style="color:#66d9ef">as</span>? String,
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">let</span> bs = dict[<span style="color:#e6db74">&#34;bs&#34;</span>] <span style="color:#66d9ef">as</span>? String <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">self</span>.name = name
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">self</span>.catchPhrase = catchPhrase
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">self</span>.bs = bs
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> json = <span style="color:#66d9ef">try</span>? JSONSerialization.jsonObject(with: jsonData, options: []) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> jsonArray = json <span style="color:#66d9ef">as</span>? [[String: Any]] {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> users = jsonArray.flatMap {
+</span></span><span style="display:flex;"><span>            User(dict: $0)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        users.count
+</span></span><span style="display:flex;"><span>        dump(users.first)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>I don&rsquo;t actually expect you to go through all this code in detail, but I
 included it here to make it obvious how verbose this method is.</p>
 <p>The first 3 lines get the data, and I have force-unwrapped the URL and the Data
 which I would not do in a production app but which is OK while testing in a
@@ -436,40 +436,40 @@ extracted from the JSON as Dictionaries and then initialised by themselves.</p>
 takes a lot of code to do the processing. So now I am going to move on to doing
 this in Swift 4. I am using Xcode 9.0 beta 6 (9M214v) so if you have a later
 version, you may need to adapt to any changes.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">User</span>: Codable {
-    <span style="color:#66d9ef">let</span> id: Int
-    <span style="color:#66d9ef">let</span> name: String
-    <span style="color:#66d9ef">let</span> username: String
-    <span style="color:#66d9ef">let</span> email: String
-    <span style="color:#66d9ef">let</span> phone: String
-    <span style="color:#66d9ef">let</span> website: String
-    <span style="color:#66d9ef">let</span> address: Address
-    <span style="color:#66d9ef">let</span> company: Company
-
-    <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Address</span>: Codable {
-        <span style="color:#66d9ef">let</span> street: String
-        <span style="color:#66d9ef">let</span> suite: String
-        <span style="color:#66d9ef">let</span> city: String
-        <span style="color:#66d9ef">let</span> zipcode: String
-        <span style="color:#66d9ef">let</span> geo: Coordinates
-
-        <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Coordinates</span>: Codable {
-            <span style="color:#66d9ef">let</span> lat: String
-            <span style="color:#66d9ef">let</span> lng: String
-        }
-    }
-
-    <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Company</span>: Codable {
-        <span style="color:#66d9ef">let</span> name: String
-        <span style="color:#66d9ef">let</span> catchPhrase: String
-        <span style="color:#66d9ef">let</span> bs: String
-    }
-}
-
-<span style="color:#66d9ef">let</span> jsonDecoder = JSONDecoder()
-<span style="color:#66d9ef">let</span> users = <span style="color:#66d9ef">try</span>? jsonDecoder.decode(Array&lt;User&gt;.<span style="color:#66d9ef">self</span>,
-                                    from: jsonData)
-</code></pre></div><p>Ignoring the complexities of converting latitude and longitude to Doubles, I get
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">User</span>: Codable {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> id: Int
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> name: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> username: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> email: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> phone: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> website: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> address: Address
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> company: Company
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Address</span>: Codable {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> street: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> suite: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> city: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> zipcode: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> geo: Coordinates
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Coordinates</span>: Codable {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> lat: String
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> lng: String
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Company</span>: Codable {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> name: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> catchPhrase: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> bs: String
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> jsonDecoder = JSONDecoder()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> users = <span style="color:#66d9ef">try</span>? jsonDecoder.decode(Array&lt;User&gt;.<span style="color:#66d9ef">self</span>,
+</span></span><span style="display:flex;"><span>                                    from: jsonData)
+</span></span></code></pre></div><p>Ignoring the complexities of converting latitude and longitude to Doubles, I get
 vastly simpler code. I declare all the structs as conforming to the <code>Codable</code>
 protocol and then I can remove all the init methods and just let <code>JSONDecoder</code>
 do its magic. I just have to tell it what data type to expect - in this case an
@@ -485,56 +485,56 @@ conversion from String to Double.</p>
 <p>So here is the complete code for Swift 4 - again, if you don&rsquo;t want to create
 your own playground, you can <a href="https://github.com/trozware/json">use mine</a>, this time looking at the Swift 4
 JSON page:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Foundation</span>
-
-<span style="color:#66d9ef">let</span> sampleDataAddress = <span style="color:#e6db74">&#34;https://jsonplaceholder.typicode.com/users&#34;</span>
-<span style="color:#66d9ef">let</span> url = URL(string: sampleDataAddress)<span style="color:#f92672">!</span>
-<span style="color:#66d9ef">let</span> jsonData = <span style="color:#66d9ef">try</span>! Data(contentsOf: url)
-
-<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">User</span>: Codable {
-    <span style="color:#66d9ef">let</span> id: Int
-    <span style="color:#66d9ef">let</span> name: String
-    <span style="color:#66d9ef">let</span> username: String
-    <span style="color:#66d9ef">let</span> email: String
-    <span style="color:#66d9ef">let</span> phone: String
-    <span style="color:#66d9ef">let</span> website: String
-    <span style="color:#66d9ef">let</span> address: Address
-    <span style="color:#66d9ef">let</span> company: Company
-
-    <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Address</span>: Codable {
-        <span style="color:#66d9ef">let</span> street: String
-        <span style="color:#66d9ef">let</span> suite: String
-        <span style="color:#66d9ef">let</span> city: String
-        <span style="color:#66d9ef">let</span> zipcode: String
-        <span style="color:#66d9ef">let</span> geo: Coordinates
-
-        <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Coordinates</span>: Codable {
-            <span style="color:#66d9ef">let</span> lat: Double
-            <span style="color:#66d9ef">let</span> lng: Double
-
-            <span style="color:#66d9ef">init</span>(from decoder: Decoder) <span style="color:#66d9ef">throws</span> {
-                <span style="color:#66d9ef">let</span> values = <span style="color:#66d9ef">try</span> decoder.container(keyedBy: CodingKeys.<span style="color:#66d9ef">self</span>)
-                <span style="color:#66d9ef">let</span> latString = <span style="color:#66d9ef">try</span> values.decode(String.<span style="color:#66d9ef">self</span>, forKey: .lat)
-                <span style="color:#66d9ef">let</span> lngString = <span style="color:#66d9ef">try</span> values.decode(String.<span style="color:#66d9ef">self</span>, forKey: .lng)
-                lat = Double(latString) ?? <span style="color:#ae81ff">0</span>
-                lng = Double(lngString) ?? <span style="color:#ae81ff">0</span>
-            }
-        }
-    }
-
-    <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Company</span>: Codable {
-        <span style="color:#66d9ef">let</span> name: String
-        <span style="color:#66d9ef">let</span> catchPhrase: String
-        <span style="color:#66d9ef">let</span> bs: String
-    }
-}
-
-<span style="color:#66d9ef">let</span> jsonDecoder = JSONDecoder()
-<span style="color:#66d9ef">let</span> users = <span style="color:#66d9ef">try</span>? jsonDecoder.decode(Array&lt;User&gt;.<span style="color:#66d9ef">self</span>, from: jsonData)
-
-users?.count
-dump(users?.first)
-</code></pre></div><p>For comparative purposes, I counted the lines of code in each, removing the
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Foundation</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> sampleDataAddress = <span style="color:#e6db74">&#34;https://jsonplaceholder.typicode.com/users&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> url = URL(string: sampleDataAddress)<span style="color:#f92672">!</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> jsonData = <span style="color:#66d9ef">try</span>! Data(contentsOf: url)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">User</span>: Codable {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> id: Int
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> name: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> username: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> email: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> phone: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> website: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> address: Address
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> company: Company
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Address</span>: Codable {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> street: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> suite: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> city: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> zipcode: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> geo: Coordinates
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Coordinates</span>: Codable {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> lat: Double
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> lng: Double
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">init</span>(from decoder: Decoder) <span style="color:#66d9ef">throws</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">let</span> values = <span style="color:#66d9ef">try</span> decoder.container(keyedBy: CodingKeys.<span style="color:#66d9ef">self</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">let</span> latString = <span style="color:#66d9ef">try</span> values.decode(String.<span style="color:#66d9ef">self</span>, forKey: .lat)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">let</span> lngString = <span style="color:#66d9ef">try</span> values.decode(String.<span style="color:#66d9ef">self</span>, forKey: .lng)
+</span></span><span style="display:flex;"><span>                lat = Double(latString) ?? <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>                lng = Double(lngString) ?? <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Company</span>: Codable {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> name: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> catchPhrase: String
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> bs: String
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> jsonDecoder = JSONDecoder()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> users = <span style="color:#66d9ef">try</span>? jsonDecoder.decode(Array&lt;User&gt;.<span style="color:#66d9ef">self</span>, from: jsonData)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>users?.count
+</span></span><span style="display:flex;"><span>dump(users?.first)
+</span></span></code></pre></div><p>For comparative purposes, I counted the lines of code in each, removing the
 common boiler plate of the top of each and the two lines for displaying the
 results in the playground. I also removed the blank lines which I always use a
 lot in my code for readability but which are not relevant when comparing code
@@ -567,17 +567,17 @@ JSONSerialization to convert the Dictionary back to JSON. This is very verbose
 and tedious to write so I am not going to bother to demonstrate it here.</p>
 <p>But in Swift 4, this is even easier than decoding. Add this code to the end of
 your Swift 4 JSON playground or playground page:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> users = users {
-    <span style="color:#66d9ef">let</span> jsonEncoder = JSONEncoder()
-    jsonEncoder.outputFormatting = .prettyPrinted
-
-    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> backToJson = <span style="color:#66d9ef">try</span>? jsonEncoder.encode(users) {
-        <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> jsonString = String(data: backToJson, encoding: .utf8) {
-            print(jsonString)
-        }
-    }
-}
-</code></pre></div><p>The <code>JSONEncoder</code> returns Data and I have converted that to a String for
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> users = users {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> jsonEncoder = JSONEncoder()
+</span></span><span style="display:flex;"><span>    jsonEncoder.outputFormatting = .prettyPrinted
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> backToJson = <span style="color:#66d9ef">try</span>? jsonEncoder.encode(users) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> jsonString = String(data: backToJson, encoding: .utf8) {
+</span></span><span style="display:flex;"><span>            print(jsonString)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>JSONEncoder</code> returns Data and I have converted that to a String for
 checking. I set JSONEncoder&rsquo;s outputFormatting property to .prettyPrinted get a
 more readable String.</p>
 <p>Notice how the encoded data is not quite the same as I received because the lat
@@ -596,25 +596,25 @@ In Swift 4, if you want the decoder to change names, you have to tell it what
 you want.</p>
 <p>Make a new playground or playground page and replace the contents with this - or
 go to the Swift 4 Extras page on <a href="https://github.com/trozware/json">my playground</a>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Foundation</span>
-
-<span style="color:#66d9ef">let</span> jsonString = <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">{
-</span><span style="color:#e6db74">&#34;</span>name1<span style="color:#e6db74">&#34;: &#34;</span>Jane<span style="color:#e6db74">&#34;,
-</span><span style="color:#e6db74">&#34;</span>name2<span style="color:#e6db74">&#34;: &#34;</span>Smith<span style="color:#e6db74">&#34;
-</span><span style="color:#e6db74">}
-</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
-<span style="color:#66d9ef">let</span> jsonData = jsonString.data(using: .utf8)<span style="color:#f92672">!</span>
-
-<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Person</span>: Codable {
-    <span style="color:#66d9ef">let</span> firstName: String
-    <span style="color:#66d9ef">let</span> lastName: String
-}
-
-<span style="color:#66d9ef">let</span> jsonDecoder = JSONDecoder()
-<span style="color:#66d9ef">let</span> person = <span style="color:#66d9ef">try</span>? jsonDecoder.decode(Person.<span style="color:#66d9ef">self</span>, from: jsonData)
-dump(person)
-</code></pre></div><p>This uses the new multi-line literals in Swift 4 to assemble the JSON string
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Foundation</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> jsonString = <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>name1<span style="color:#e6db74">&#34;: &#34;</span>Jane<span style="color:#e6db74">&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>name2<span style="color:#e6db74">&#34;: &#34;</span>Smith<span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> jsonData = jsonString.data(using: .utf8)<span style="color:#f92672">!</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Person</span>: Codable {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> firstName: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> lastName: String
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> jsonDecoder = JSONDecoder()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> person = <span style="color:#66d9ef">try</span>? jsonDecoder.decode(Person.<span style="color:#66d9ef">self</span>, from: jsonData)
+</span></span><span style="display:flex;"><span>dump(person)
+</span></span></code></pre></div><p>This uses the new multi-line literals in Swift 4 to assemble the JSON string
 which is amazingly useful as it allows quotes to be embedded in the string
 without having to escape them. As you can see, the JSON property names are not
 very helpful, so I want to change them in my Person struct. At the moment,
@@ -622,53 +622,53 @@ very helpful, so I want to change them in my Person struct. At the moment,
 translate the names. To do that, I have to add a CodingKeys enum to the Person
 struct and it tells the decoder what names in the JSON match up to what
 properties in the struct.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Person</span>: Codable {
-    <span style="color:#66d9ef">let</span> firstName: String
-    <span style="color:#66d9ef">let</span> lastName: String
-
-    <span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">CodingKeys</span>: String, CodingKey {
-        <span style="color:#66d9ef">case</span> firstName = <span style="color:#e6db74">&#34;name1&#34;</span>
-        <span style="color:#66d9ef">case</span> lastName = <span style="color:#e6db74">&#34;name2&#34;</span>
-    }
-}
-</code></pre></div><p>And that&rsquo;s all I have to do. Now the JSON is correctly converted to a Person. As
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Person</span>: Codable {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> firstName: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> lastName: String
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">CodingKeys</span>: String, CodingKey {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> firstName = <span style="color:#e6db74">&#34;name1&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> lastName = <span style="color:#e6db74">&#34;name2&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>And that&rsquo;s all I have to do. Now the JSON is correctly converted to a Person. As
 an exercise, use JSONEncoder to get back to JSON from the Person. You will see
 that the JSON correctly names the elements using &ldquo;name1&rdquo; and &ldquo;name2&rdquo;.</p>
 <h2 id="date-handling">Date Handling</h2>
 <p>Next let&rsquo;s look at dates - add this code to the playground:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> jsonString2 = <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">{
-</span><span style="color:#e6db74">&#34;</span>name<span style="color:#e6db74">&#34;: &#34;</span>My New Project<span style="color:#e6db74">&#34;,
-</span><span style="color:#e6db74">&#34;</span>created<span style="color:#e6db74">&#34;: &#34;</span><span style="color:#ae81ff">2017</span><span style="color:#f92672">-</span><span style="color:#ae81ff">06</span><span style="color:#f92672">-</span><span style="color:#ae81ff">18</span>T06:<span style="color:#ae81ff">28</span>:<span style="color:#ae81ff">25</span>Z<span style="color:#e6db74">&#34;
-</span><span style="color:#e6db74">}
-</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
-<span style="color:#66d9ef">let</span> jsonData2 = jsonString2.data(using: .utf8)<span style="color:#f92672">!</span>
-
-<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Project</span>: Codable {
-    <span style="color:#66d9ef">let</span> name: String
-    <span style="color:#66d9ef">let</span> created: Date
-}
-
-<span style="color:#66d9ef">let</span> jsonDecoder2 = JSONDecoder()
-<span style="color:#66d9ef">let</span> project = <span style="color:#66d9ef">try</span>? jsonDecoder2.decode(Project.<span style="color:#66d9ef">self</span>, from: jsonData2)
-
-dump(project)
-</code></pre></div><p>When this runs, <code>project</code> is nil because the decoder has no idea how to get from
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> jsonString2 = <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>name<span style="color:#e6db74">&#34;: &#34;</span>My New Project<span style="color:#e6db74">&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>created<span style="color:#e6db74">&#34;: &#34;</span><span style="color:#ae81ff">2017</span><span style="color:#f92672">-</span><span style="color:#ae81ff">06</span><span style="color:#f92672">-</span><span style="color:#ae81ff">18</span>T06:<span style="color:#ae81ff">28</span>:<span style="color:#ae81ff">25</span>Z<span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> jsonData2 = jsonString2.data(using: .utf8)<span style="color:#f92672">!</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Project</span>: Codable {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> name: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> created: Date
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> jsonDecoder2 = JSONDecoder()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> project = <span style="color:#66d9ef">try</span>? jsonDecoder2.decode(Project.<span style="color:#66d9ef">self</span>, from: jsonData2)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dump(project)
+</span></span></code></pre></div><p>When this runs, <code>project</code> is nil because the decoder has no idea how to get from
 the String &ldquo;2017-06-18T06:28:25Z&rdquo; to a Date object. Add this line after creating
 <code>jsonDecoder2</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">jsonDecoder2.dateDecodingStrategy = .iso8601
-</code></pre></div><p>Now the date can be converted and an instance of the Project struct will be
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>jsonDecoder2.dateDecodingStrategy = .iso8601
+</span></span></code></pre></div><p>Now the date can be converted and an instance of the Project struct will be
 created.</p>
 <p>And to get back to the JSON, converting the Date back to ISO8601 format:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> jsonEncoder = JSONEncoder()
-jsonEncoder.dateEncodingStrategy = .iso8601
-
-<span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> backToJson = <span style="color:#66d9ef">try</span>? jsonEncoder.encode(project) {
-    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> jsonString = String(data: backToJson, encoding: .utf8) {
-        print(jsonString)
-    }
-}
-</code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> jsonEncoder = JSONEncoder()
+</span></span><span style="display:flex;"><span>jsonEncoder.dateEncodingStrategy = .iso8601
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> backToJson = <span style="color:#66d9ef">try</span>? jsonEncoder.encode(project) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> jsonString = String(data: backToJson, encoding: .utf8) {
+</span></span><span style="display:flex;"><span>        print(jsonString)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h2 id="allowing-for-nulls">Allowing For Nulls</h2>
 <p>JSON data will often include <strong>null</strong> where there is no value for a particular
 property name. When using JSONDecoder or JSONEncoder, this can be allowed for by
@@ -676,32 +676,32 @@ using Optionals. If you are not clear about Optionals, have a look at my
 previous article: <a href="/post/2016-02-12-learning-swift-optionals/">Learning Swift - Optionals</a>.</p>
 <p>The crucial step is to declare the properties of the Swift object as optionals
 if you think they could get a null value.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Role</span>: Codable {
-    <span style="color:#66d9ef">let</span> firstName: String
-    <span style="color:#66d9ef">let</span> lastName: String
-    <span style="color:#66d9ef">let</span> nickName: String?
-}
-
-<span style="color:#66d9ef">let</span> jsonStringWithNulls = <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">[
-</span><span style="color:#e6db74">    {
-</span><span style="color:#e6db74">        &#34;</span>firstName<span style="color:#e6db74">&#34;: &#34;</span>Sally<span style="color:#e6db74">&#34;,
-</span><span style="color:#e6db74">        &#34;</span>lastName<span style="color:#e6db74">&#34;: &#34;</span>Sparrow<span style="color:#e6db74">&#34;,
-</span><span style="color:#e6db74">        &#34;</span>nickName<span style="color:#e6db74">&#34;: null
-</span><span style="color:#e6db74">    },
-</span><span style="color:#e6db74">    {
-</span><span style="color:#e6db74">        &#34;</span>firstName<span style="color:#e6db74">&#34;: &#34;</span>Doctor<span style="color:#e6db74">&#34;,
-</span><span style="color:#e6db74">        &#34;</span>lastName<span style="color:#e6db74">&#34;: &#34;</span>Who<span style="color:#e6db74">&#34;,
-</span><span style="color:#e6db74">        &#34;</span>nickName<span style="color:#e6db74">&#34;: &#34;</span>The Doctor<span style="color:#e6db74">&#34;
-</span><span style="color:#e6db74">    }
-</span><span style="color:#e6db74">]
-</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
-<span style="color:#66d9ef">let</span> jsonDataWithNulls = jsonStringWithNulls.data(using: .utf8)<span style="color:#f92672">!</span>
-
-<span style="color:#66d9ef">let</span> jsonDecoder3 = JSONDecoder()
-<span style="color:#66d9ef">let</span> roles = <span style="color:#66d9ef">try</span>? jsonDecoder3.decode(Array&lt;Role&gt;.<span style="color:#66d9ef">self</span>, from: jsonDataWithNulls)
-dump(roles)
-</code></pre></div><p>In this example (which you can find in the Swift 4 Extras page on <a href="https://github.com/trozware/json">my
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Role</span>: Codable {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> firstName: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> lastName: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> nickName: String?
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> jsonStringWithNulls = <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;</span>firstName<span style="color:#e6db74">&#34;: &#34;</span>Sally<span style="color:#e6db74">&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;</span>lastName<span style="color:#e6db74">&#34;: &#34;</span>Sparrow<span style="color:#e6db74">&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;</span>nickName<span style="color:#e6db74">&#34;: null
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    },
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;</span>firstName<span style="color:#e6db74">&#34;: &#34;</span>Doctor<span style="color:#e6db74">&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;</span>lastName<span style="color:#e6db74">&#34;: &#34;</span>Who<span style="color:#e6db74">&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;</span>nickName<span style="color:#e6db74">&#34;: &#34;</span>The Doctor<span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> jsonDataWithNulls = jsonStringWithNulls.data(using: .utf8)<span style="color:#f92672">!</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> jsonDecoder3 = JSONDecoder()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> roles = <span style="color:#66d9ef">try</span>? jsonDecoder3.decode(Array&lt;Role&gt;.<span style="color:#66d9ef">self</span>, from: jsonDataWithNulls)
+</span></span><span style="display:flex;"><span>dump(roles)
+</span></span></code></pre></div><p>In this example (which you can find in the Swift 4 Extras page on <a href="https://github.com/trozware/json">my
 playground</a>), I have declared a struct called Role with 3 String properties.
 The 3rd String - nickName - is an Optional so it may be a String or it may be
 nil.</p>
@@ -712,39 +712,39 @@ If you remove the question mark to make nickName non-optional, the decoding will
 fail.</p>
 <p>Going back to JSON from a Swift object with optionals works much the same except
 that it does not specifically mark items as null, it just leaves them out.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> jsonEncoder2 = JSONEncoder()
-jsonEncoder2.outputFormatting = .prettyPrinted
-
-<span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> backToJsonWithNulls = <span style="color:#66d9ef">try</span>? jsonEncoder2.encode(roles) {
-    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> jsonString = String(data: backToJsonWithNulls, encoding: .utf8) {
-        print(jsonString)
-    }
-}
-</code></pre></div><h2 id="property-lists">Property Lists</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> jsonEncoder2 = JSONEncoder()
+</span></span><span style="display:flex;"><span>jsonEncoder2.outputFormatting = .prettyPrinted
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> backToJsonWithNulls = <span style="color:#66d9ef">try</span>? jsonEncoder2.encode(roles) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> jsonString = String(data: backToJsonWithNulls, encoding: .utf8) {
+</span></span><span style="display:flex;"><span>        print(jsonString)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="property-lists">Property Lists</h2>
 <p>As well as JSONDecoder and JSONEncoder, Swift 4 has introduced
 PropertyListDecoder and PropertyListEncoder, so let&rsquo;s take a quick look at that.</p>
 <p>Add this to the bottom of the last playground as it uses the Project struct and
 data:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> plistEncoder = PropertyListEncoder()
-plistEncoder.outputFormat = .xml
-<span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> plist = <span style="color:#66d9ef">try</span>? plistEncoder.encode(project) {
-    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> plistString = String(data: plist, encoding: .utf8) {
-        print(plistString)
-    }
-
-    <span style="color:#66d9ef">let</span> plistDecoder = PropertyListDecoder()
-    <span style="color:#66d9ef">let</span> project2 = <span style="color:#66d9ef">try</span>? plistDecoder.decode(Project.<span style="color:#66d9ef">self</span>, from: plist)
-
-    dump(project2)
-}
-</code></pre></div><p>I don&rsquo;t see this is being quite as useful as the JSON Encoding &amp; Decoding, but I
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> plistEncoder = PropertyListEncoder()
+</span></span><span style="display:flex;"><span>plistEncoder.outputFormat = .xml
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> plist = <span style="color:#66d9ef">try</span>? plistEncoder.encode(project) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> plistString = String(data: plist, encoding: .utf8) {
+</span></span><span style="display:flex;"><span>        print(plistString)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> plistDecoder = PropertyListDecoder()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> project2 = <span style="color:#66d9ef">try</span>? plistDecoder.decode(Project.<span style="color:#66d9ef">self</span>, from: plist)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    dump(project2)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>I don&rsquo;t see this is being quite as useful as the JSON Encoding &amp; Decoding, but I
 mention it here for completeness.</p>
 <h2 id="codable">Codable</h2>
 <p>In all the Swift 4 examples above, I set the structs to conform to <code>Codable</code>.
 Reading Apple&rsquo;s docs, I see that <code>Codable</code> is actually a typealias referring to
 2 separate protocols:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Swift" data-lang="Swift"><span style="color:#66d9ef">typealias</span> Codable = Decodable <span style="color:#f92672">&amp;</span> Encodable
-</code></pre></div><p>If you only need to convert data one way, it will be more efficient to set your
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Swift" data-lang="Swift"><span style="display:flex;"><span><span style="color:#66d9ef">typealias</span> Codable = Decodable <span style="color:#f92672">&amp;</span> Encodable
+</span></span></code></pre></div><p>If you only need to convert data one way, it will be more efficient to set your
 struct or class as confirming to only one of these protocols. For example, if
 you download JSON data from an API but never need to send it back, just conform
 to Decodable to transform the JSON data into your data structure.</p>

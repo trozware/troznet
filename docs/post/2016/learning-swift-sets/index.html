@@ -214,13 +214,13 @@ than that. So it is very similar to an Array, but it is not indexed like an
 Array and it cannot contain more than one of each entry.</p>
 <h2 id="creating-a-set">Creating a Set</h2>
 <p>Creating a Set is as easy as creating an Array:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">var</span> myArray = [<span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;hamster&#34;</span>, <span style="color:#e6db74">&#34;dog&#34;</span>]
-<span style="color:#66d9ef">var</span> mySet: Set = [<span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;hamster&#34;</span>, <span style="color:#e6db74">&#34;dog&#34;</span>]
-</code></pre></div><p>If you are running these commands in a playground, notice that the differences
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> myArray = [<span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;hamster&#34;</span>, <span style="color:#e6db74">&#34;dog&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> mySet: Set = [<span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;hamster&#34;</span>, <span style="color:#e6db74">&#34;dog&#34;</span>]
+</span></span></code></pre></div><p>If you are running these commands in a playground, notice that the differences
 between the 2 results:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">[<span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;hamster&#34;</span>, <span style="color:#e6db74">&#34;dog&#34;</span>]    <span style="color:#75715e">// myArray</span>
-{<span style="color:#e6db74">&#34;hamster&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;dog&#34;</span>}           <span style="color:#75715e">// mySet</span>
-</code></pre></div><ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>[<span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;hamster&#34;</span>, <span style="color:#e6db74">&#34;dog&#34;</span>]    <span style="color:#75715e">// myArray</span>
+</span></span><span style="display:flex;"><span>{<span style="color:#e6db74">&#34;hamster&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;dog&#34;</span>}           <span style="color:#75715e">// mySet</span>
+</span></span></code></pre></div><ol>
 <li>The Array is shown wrapped in square brackets, the Set is shown wrapped in
 curly braces. This is just a visual clue and doesn&rsquo;t really mean anything.
 You cannot initialize a set using curly braces.</li>
@@ -237,79 +237,79 @@ compiler thought it was.</p>
 <p><img src="/images/set_types.png" alt="Sets"></p>
 <p>So mySet is actually <code>Set&lt;String&gt;</code>. This means that to create an empty Set, you
 need to use something like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">var</span> emptySetOfStrings: Set&lt;String&gt; = [] <span style="color:#66d9ef">var</span>
-emptySetOfInts: Set&lt;Int&gt; = []
-</code></pre></div><h2 id="adding-and-removing-elements">Adding and removing elements</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> emptySetOfStrings: Set&lt;String&gt; = [] <span style="color:#66d9ef">var</span>
+</span></span><span style="display:flex;"><span>emptySetOfInts: Set&lt;Int&gt; = []
+</span></span></code></pre></div><h2 id="adding-and-removing-elements">Adding and removing elements</h2>
 <p>If you have been using an Array to store unique values, then you have probably
 written code like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">if</span> <span style="color:#f92672">!</span>myArray.contains(<span style="color:#e6db74">&#34;cat&#34;</span>) {
-  myArray.append(<span style="color:#e6db74">&#34;cat&#34;</span>)
-}
-</code></pre></div><p>With Sets, you don&rsquo;t have to care. Just use <code>insert()</code> and let the Set work out
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">!</span>myArray.contains(<span style="color:#e6db74">&#34;cat&#34;</span>) {
+</span></span><span style="display:flex;"><span>  myArray.append(<span style="color:#e6db74">&#34;cat&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>With Sets, you don&rsquo;t have to care. Just use <code>insert()</code> and let the Set work out
 whether to add the item or not.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">mySet.insert(<span style="color:#e6db74">&#34;goldfish&#34;</span>)
-<span style="color:#75715e">// goldfish added: {&#34;hamster&#34;, &#34;cat&#34;, &#34;dog&#34;, &#34;goldfish&#34;}</span>
-mySet.insert(<span style="color:#e6db74">&#34;dog&#34;</span>)
-<span style="color:#75715e">// dog already there: {&#34;hamster&#34;, &#34;cat&#34;, &#34;dog&#34;, &#34;goldfish&#34;}</span>
-</code></pre></div><p>Removing elements is also easier than in Arrays. For an Array, you first have to
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>mySet.insert(<span style="color:#e6db74">&#34;goldfish&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// goldfish added: {&#34;hamster&#34;, &#34;cat&#34;, &#34;dog&#34;, &#34;goldfish&#34;}</span>
+</span></span><span style="display:flex;"><span>mySet.insert(<span style="color:#e6db74">&#34;dog&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// dog already there: {&#34;hamster&#34;, &#34;cat&#34;, &#34;dog&#34;, &#34;goldfish&#34;}</span>
+</span></span></code></pre></div><p>Removing elements is also easier than in Arrays. For an Array, you first have to
 find the index of the element and remove it by index:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#75715e">// myArray.remove(&#34;hamster&#34;) // will not compile</span>
-<span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> index = myArray.index(of: <span style="color:#e6db74">&#34;hamster&#34;</span>) {
-  myArray.remove(at: index)
-}
-</code></pre></div><p>But in a Set, you can remove any element easily and trying to remove an element
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">// myArray.remove(&#34;hamster&#34;) // will not compile</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> index = myArray.index(of: <span style="color:#e6db74">&#34;hamster&#34;</span>) {
+</span></span><span style="display:flex;"><span>  myArray.remove(at: index)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>But in a Set, you can remove any element easily and trying to remove an element
 that doesn&rsquo;t exist will fail without an error.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">mySet.remove(<span style="color:#e6db74">&#34;hamster&#34;</span>)   <span style="color:#75715e">// returns &#34;hamster&#34;</span>
-mySet.remove(<span style="color:#e6db74">&#34;canary&#34;</span>)    <span style="color:#75715e">// returns nil</span>
-</code></pre></div><h2 id="converting-between-sets-and-arrays">Converting between Sets and Arrays</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>mySet.remove(<span style="color:#e6db74">&#34;hamster&#34;</span>)   <span style="color:#75715e">// returns &#34;hamster&#34;</span>
+</span></span><span style="display:flex;"><span>mySet.remove(<span style="color:#e6db74">&#34;canary&#34;</span>)    <span style="color:#75715e">// returns nil</span>
+</span></span></code></pre></div><h2 id="converting-between-sets-and-arrays">Converting between Sets and Arrays</h2>
 <p>Sometimes you need to be able to switch between the two. My most recent example
 was when I wanted to store data from a Set in a plist. Sets are not property
 list types but Arrays are, so I converted the Set to an Array before storing it
 in the plist. When reading the data in from the plist, I converted it back to a
 Set.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> myArrayAsSet = Set(myArray)
-<span style="color:#66d9ef">let</span> mySetAsArray = Array(mySet)
-</code></pre></div><p>One useful side-effect of these easy conversions is the ability to &lsquo;unique&rsquo; an
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> myArrayAsSet = Set(myArray)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> mySetAsArray = Array(mySet)
+</span></span></code></pre></div><p>One useful side-effect of these easy conversions is the ability to &lsquo;unique&rsquo; an
 Array in a single line. This may be inefficient for large arrays, but works very
 well for small ones. Just be careful if the order of the elements is important
 as you cannot guarantee the order of elements in a Set.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> myArrayUniqued = Array(Set(myArray))
-<span style="color:#75715e">// [&#34;cat&#34;, &#34;dog&#34;]</span>
-</code></pre></div><h2 id="iterating-over-elements-in-a-set">Iterating over elements in a Set</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> myArrayUniqued = Array(Set(myArray))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// [&#34;cat&#34;, &#34;dog&#34;]</span>
+</span></span></code></pre></div><h2 id="iterating-over-elements-in-a-set">Iterating over elements in a Set</h2>
 <p>As with an Array, you can use a <code>for element in set</code> structure, or you can use
 <code>enumerated()</code>. But you cannot subscript a Set.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">for</span> animal <span style="color:#66d9ef">in</span> mySet {
-  print(animal)
-}
-
-<span style="color:#66d9ef">for</span> (index, animal) <span style="color:#66d9ef">in</span> mySet.enumerated() {
-  print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">\(</span>index<span style="color:#e6db74">)</span><span style="color:#e6db74"> = </span><span style="color:#e6db74">\(</span>animal<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
-}
-
-<span style="color:#75715e">// will not compile</span>
-<span style="color:#75715e">// for index in 0 ..&lt; mySet.count {</span>
-<span style="color:#75715e">//   print(&#34;\(index) = \(mySet[index])&#34;)</span>
-<span style="color:#75715e">// }</span>
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> animal <span style="color:#66d9ef">in</span> mySet {
+</span></span><span style="display:flex;"><span>  print(animal)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (index, animal) <span style="color:#66d9ef">in</span> mySet.enumerated() {
+</span></span><span style="display:flex;"><span>  print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">\(</span>index<span style="color:#e6db74">)</span><span style="color:#e6db74"> = </span><span style="color:#e6db74">\(</span>animal<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// will not compile</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// for index in 0 ..&lt; mySet.count {</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//   print(&#34;\(index) = \(mySet[index])&#34;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// }</span>
+</span></span></code></pre></div><hr>
 <h2 id="where-sets-get-really-interesting">Where Sets get really interesting</h2>
 <p>Remember in school when you learnt about Venn diagrams with pretty interlocking
 circles? Sets can do the same things, although you will have to do your own
 pretty drawings :-)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> set1: Set = [<span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
-<span style="color:#66d9ef">let</span> set2: Set = [<span style="color:#e6db74">&#34;cow&#34;</span>, <span style="color:#e6db74">&#34;horse&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
-
-<span style="color:#66d9ef">let</span> intersect = set1.intersection(set2)
-<span style="color:#75715e">// {&#34;pig&#34;}</span>
-
-<span style="color:#66d9ef">let</span> subtract = set1.subtracting(set2)
-<span style="color:#75715e">// {&#34;cat&#34;, &#34;dog&#34;}</span>
-
-<span style="color:#66d9ef">let</span> union = set1.union(set2)
-<span style="color:#75715e">// {&#34;pig&#34;, &#34;cat&#34;, &#34;dog&#34;, &#34;cow&#34; &#34;horse&#34;}</span>
-
-<span style="color:#66d9ef">let</span> xor = set1.symmetricDifference(set2)
-<span style="color:#75715e">// {&#34;cat&#34;, &#34;dog&#34;, &#34;cow&#34;, &#34;horse&#34;}</span>
-</code></pre></div><p>In the code example above, we have two Sets of animals, with one animal in
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> set1: Set = [<span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> set2: Set = [<span style="color:#e6db74">&#34;cow&#34;</span>, <span style="color:#e6db74">&#34;horse&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> intersect = set1.intersection(set2)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// {&#34;pig&#34;}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> subtract = set1.subtracting(set2)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// {&#34;cat&#34;, &#34;dog&#34;}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> union = set1.union(set2)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// {&#34;pig&#34;, &#34;cat&#34;, &#34;dog&#34;, &#34;cow&#34; &#34;horse&#34;}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> xor = set1.symmetricDifference(set2)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// {&#34;cat&#34;, &#34;dog&#34;, &#34;cow&#34;, &#34;horse&#34;}</span>
+</span></span></code></pre></div><p>In the code example above, we have two Sets of animals, with one animal in
 common.</p>
 <ul>
 <li><code>intersection()</code> lists the elements in common.</li>
@@ -323,35 +323,35 @@ Sets but not in both. (Swift 3 renamed this function from <code>exclusiveOr()</c
 <p><img src="/images/sets_1.png" alt="Sets"></p>
 <hr>
 <p>The next fun trick is working out sub-sets, super-sets and disjoint sets.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> set1: Set = [<span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
-<span style="color:#66d9ef">let</span> set2: Set = [<span style="color:#e6db74">&#34;cow&#34;</span>, <span style="color:#e6db74">&#34;horse&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
-
-<span style="color:#66d9ef">let</span> smallSet: Set = [<span style="color:#e6db74">&#34;pig&#34;</span>, <span style="color:#e6db74">&#34;cow&#34;</span>]
-
-smallSet.isSubset(of: set1)   <span style="color:#75715e">// false</span>
-smallSet.isSubset(of: set2)   <span style="color:#75715e">// true</span>
-</code></pre></div><p><code>smallSet</code> is <strong>not</strong> a subset of <code>set1</code> because it contains an element that is
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> set1: Set = [<span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> set2: Set = [<span style="color:#e6db74">&#34;cow&#34;</span>, <span style="color:#e6db74">&#34;horse&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> smallSet: Set = [<span style="color:#e6db74">&#34;pig&#34;</span>, <span style="color:#e6db74">&#34;cow&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>smallSet.isSubset(of: set1)   <span style="color:#75715e">// false</span>
+</span></span><span style="display:flex;"><span>smallSet.isSubset(of: set2)   <span style="color:#75715e">// true</span>
+</span></span></code></pre></div><p><code>smallSet</code> is <strong>not</strong> a subset of <code>set1</code> because it contains an element that is
 not in <code>set1</code>. <code>smallSet</code> <strong>is</strong> a subset of <code>set2</code> because every element in
 <code>smallSet</code> is also in <code>set2</code>.</p>
 <p><img src="/images/sets_2.png" alt="Sets"></p>
 <p>If you want to get technical, a Set should not be considered a subset of an
 identical Set. The default <code>isSubset(of:)</code> allows this, but you can use
 <code>isStrictSubset(of:)</code> if you prefer.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">set1.isSubset(of: set1)         <span style="color:#75715e">// true</span>
-set1.isStrictSubset(of: set1)   <span style="color:#75715e">// false</span>
-</code></pre></div><p>Superset works just the same but in reverse so the diagram above explains it
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>set1.isSubset(of: set1)         <span style="color:#75715e">// true</span>
+</span></span><span style="display:flex;"><span>set1.isStrictSubset(of: set1)   <span style="color:#75715e">// false</span>
+</span></span></code></pre></div><p>Superset works just the same but in reverse so the diagram above explains it
 too:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> set1: Set = [<span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
-<span style="color:#66d9ef">let</span> set2: Set = [<span style="color:#e6db74">&#34;cow&#34;</span>, <span style="color:#e6db74">&#34;horse&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
-
-<span style="color:#66d9ef">let</span> smallSet: Set = [<span style="color:#e6db74">&#34;pig&#34;</span>, <span style="color:#e6db74">&#34;cow&#34;</span>]
-
-set1.isSuperset(of: smallSet)       <span style="color:#75715e">// false</span>
-set2.isSuperset(of: smallSet)       <span style="color:#75715e">// true</span>
-
-set1.isSuperset(of: set1)           <span style="color:#75715e">// true</span>
-set1.isStrictSuperset(of: set1)     <span style="color:#75715e">// false</span>
-</code></pre></div><p><code>set1</code> is <strong>not</strong> a superset of <code>smallSet</code> because it does not contain every
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> set1: Set = [<span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> set2: Set = [<span style="color:#e6db74">&#34;cow&#34;</span>, <span style="color:#e6db74">&#34;horse&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> smallSet: Set = [<span style="color:#e6db74">&#34;pig&#34;</span>, <span style="color:#e6db74">&#34;cow&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>set1.isSuperset(of: smallSet)       <span style="color:#75715e">// false</span>
+</span></span><span style="display:flex;"><span>set2.isSuperset(of: smallSet)       <span style="color:#75715e">// true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>set1.isSuperset(of: set1)           <span style="color:#75715e">// true</span>
+</span></span><span style="display:flex;"><span>set1.isStrictSuperset(of: set1)     <span style="color:#75715e">// false</span>
+</span></span></code></pre></div><p><code>set1</code> is <strong>not</strong> a superset of <code>smallSet</code> because it does not contain every
 element in <code>smallSet</code>. <code>set2</code> <strong>is</strong> a superset of <code>smallSet</code> because every
 element in <code>smallSet</code> is also in <code>set2</code>.</p>
 <p>The <code>isSuperset(of:)</code> and <code>isStrictSuperset(of:)</code> functions allow or reject
@@ -359,14 +359,14 @@ identical sets.</p>
 <p>The final comparison tool that might be useful is <code>isDisjoint(with:)</code> which
 returns true only if the two Sets have no elements in common i.e. if there is no
 overlap in the circles.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> set1: Set = [<span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
-<span style="color:#66d9ef">let</span> set2: Set = [<span style="color:#e6db74">&#34;cow&#34;</span>, <span style="color:#e6db74">&#34;horse&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
-
-<span style="color:#66d9ef">let</span> otherSet: Set = [<span style="color:#e6db74">&#34;duck&#34;</span>, <span style="color:#e6db74">&#34;chicken&#34;</span>]
-
-set1.isDisjoint(with: set2)       <span style="color:#75715e">// false</span>
-set1.isDisjoint(with: otherSet)   <span style="color:#75715e">// true</span>
-</code></pre></div><p>&ldquo;pig&rdquo; occurs in both <code>set1</code> and <code>set2</code> so they are <strong>not</strong> disjoint. <code>otherSet</code>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> set1: Set = [<span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> set2: Set = [<span style="color:#e6db74">&#34;cow&#34;</span>, <span style="color:#e6db74">&#34;horse&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> otherSet: Set = [<span style="color:#e6db74">&#34;duck&#34;</span>, <span style="color:#e6db74">&#34;chicken&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>set1.isDisjoint(with: set2)       <span style="color:#75715e">// false</span>
+</span></span><span style="display:flex;"><span>set1.isDisjoint(with: otherSet)   <span style="color:#75715e">// true</span>
+</span></span></code></pre></div><p>&ldquo;pig&rdquo; occurs in both <code>set1</code> and <code>set2</code> so they are <strong>not</strong> disjoint. <code>otherSet</code>
 and <code>set1</code> have no matching entries so they <strong>are</strong> disjoint.</p>
 <hr>
 <h2 id="when-should-you-use-a-set">When should you use a Set?</h2>

@@ -229,10 +229,10 @@ And now I have updated this site too. Click the light bulb icon at the top right
 <p><a href="/knightsmove/"><img src="/images/KnightsMoveMac1.png" alt="Knights Move 1.6"></a></p>
 <p>For A Knight&rsquo;s Move, I wanted to make sure the wood-look background didn&rsquo;t change, so I actually disabled dark mode.
 For any developers looking for the way to do that, I added the following chunk to the <code>applicationDidFinishLaunching(_:)</code> method:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">if</span> <span style="color:#75715e">#available</span>(<span style="color:#75715e">OSX</span> <span style="color:#ae81ff">10.14</span>, <span style="color:#f92672">*</span>) {
-        NSApp.appearance = NSAppearance(named: .aqua)
-    }
-</code></pre></div><p>Similar code could presumably be used to change the appearance of a running app. I may add the ability to switch to my apps later.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#75715e">#available</span>(<span style="color:#75715e">OSX</span> <span style="color:#ae81ff">10.14</span>, <span style="color:#f92672">*</span>) {
+</span></span><span style="display:flex;"><span>        NSApp.appearance = NSAppearance(named: .aqua)
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>Similar code could presumably be used to change the appearance of a running app. I may add the ability to switch to my apps later.</p>
   </div>
   
   <div class="pagination">

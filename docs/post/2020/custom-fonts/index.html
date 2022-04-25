@@ -232,37 +232,37 @@ I probably should have published this on a different day, but it is not a joke&a
 <p><img src="/images/FontsProvided.png" alt="Setting Info.plist entry"></p>
 <p>Your app now has a font file and knows to make it available. But you aren&rsquo;t finished yet.</p>
 <p>To use a custom font, you need to know its exact name. In SwiftUI, the code will be something like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  Text(<span style="color:#e6db74">&#34;Hello, World!&#34;</span>)
-      .font(.custom(<span style="color:#e6db74">&#34;Font-Name-Goes-Here&#34;</span>, size: <span style="color:#ae81ff">14</span>))
-</code></pre></div><p>But the exact name is not always obvious and is rarely the file name. So the best thing to do is to ask the app what fonts it now has available. This will also act as confirmation that the font file is being included correctly in your project.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  Text(<span style="color:#e6db74">&#34;Hello, World!&#34;</span>)
+</span></span><span style="display:flex;"><span>      .font(.custom(<span style="color:#e6db74">&#34;Font-Name-Goes-Here&#34;</span>, size: <span style="color:#ae81ff">14</span>))
+</span></span></code></pre></div><p>But the exact name is not always obvious and is rarely the file name. So the best thing to do is to ask the app what fonts it now has available. This will also act as confirmation that the font file is being included correctly in your project.</p>
 <p>To get the app to list all its fonts, I used this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
-    <span style="color:#66d9ef">var</span> body: some View {
-        Text(<span style="color:#e6db74">&#34;Hello, World!&#34;</span>)
-            .onAppear { <span style="color:#66d9ef">self</span>.listInstalledFonts() }
-    }
-
-    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">listInstalledFonts</span>() {
-        <span style="color:#66d9ef">let</span> fontFamilies = UIFont.familyNames.sorted()
-        <span style="color:#66d9ef">for</span> family <span style="color:#66d9ef">in</span> fontFamilies {
-            print(family)
-            <span style="color:#66d9ef">for</span> font <span style="color:#66d9ef">in</span> UIFont.fontNames(forFamilyName: family).sorted() {
-                print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">\(</span>font<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
-            }
-        }
-    }
-}
-</code></pre></div><p>You can run the app in the Simulator or use &ldquo;Debug Preview&rdquo; to make this show up in the console, but once you have the list, scroll through in until you find the font you just added. The headers are the names of font families and the indented entries are the font names themselves.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>        Text(<span style="color:#e6db74">&#34;Hello, World!&#34;</span>)
+</span></span><span style="display:flex;"><span>            .onAppear { <span style="color:#66d9ef">self</span>.listInstalledFonts() }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">listInstalledFonts</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> fontFamilies = UIFont.familyNames.sorted()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> family <span style="color:#66d9ef">in</span> fontFamilies {
+</span></span><span style="display:flex;"><span>            print(family)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> font <span style="color:#66d9ef">in</span> UIFont.fontNames(forFamilyName: family).sorted() {
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">\(</span>font<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>You can run the app in the Simulator or use &ldquo;Debug Preview&rdquo; to make this show up in the console, but once you have the list, scroll through in until you find the font you just added. The headers are the names of font families and the indented entries are the font names themselves.</p>
 <p><img src="/images/FontsList-iOS.png" alt="List of Fonts"></p>
 <p>This time I found that the name of the font was quite obvious: &ldquo;PaintingWithChocolate&rdquo; but this is not always the case. And if the font has any variants, you will need to use the complete name e.g. &ldquo;Optima-ExtraBlack&rdquo;</p>
 <p>With the name of the font, you are finally able to use it in the app, like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
-    <span style="color:#66d9ef">var</span> body: some View {
-        Text(<span style="color:#e6db74">&#34;Hello, World!&#34;</span>)
-            .font(.custom(<span style="color:#e6db74">&#34;PaintingWithChocolate&#34;</span>, size: <span style="color:#ae81ff">40</span>))
-    }
-}
-</code></pre></div><p><img src="/images/FontUsed-iOS.png" alt="Font in use - iOS"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>        Text(<span style="color:#e6db74">&#34;Hello, World!&#34;</span>)
+</span></span><span style="display:flex;"><span>            .font(.custom(<span style="color:#e6db74">&#34;PaintingWithChocolate&#34;</span>, size: <span style="color:#ae81ff">40</span>))
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/FontUsed-iOS.png" alt="Font in use - iOS"></p>
 <hr>
 <h2 id="using-the-font-in-a-mac-app">Using the Font in a Mac App</h2>
 <p>The process for a Mac app is mostly the same.</p>
@@ -272,41 +272,41 @@ I probably should have published this on a different day, but it is not a joke&a
 <p><img src="/images/AppFontPath.png" alt="Application Font Path"></p>
 <p>You do not need to set &ldquo;Fonts provided by application&rdquo; for a Mac app, although if I had a problem, I would set it as I feel that this is something that Apple may add at some stage.</p>
 <p>While I was using the same font for both apps and so already had the exact name, you may still need to check the list of installed fonts in a Mac app. The function for doing that is quite different:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">listInstalledFonts</span>() {
-      <span style="color:#66d9ef">let</span> fontFamilies = NSFontManager.shared.availableFontFamilies.sorted()
-      <span style="color:#66d9ef">for</span> family <span style="color:#66d9ef">in</span> fontFamilies {
-          print(family)
-          <span style="color:#66d9ef">let</span> familyFonts = NSFontManager.shared.availableMembers(ofFontFamily: family)
-          <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> fonts = familyFonts {
-              <span style="color:#66d9ef">for</span> font <span style="color:#66d9ef">in</span> fonts {
-                print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">\(</span>font<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
-              }
-          }
-      }
-  }
-</code></pre></div><p>The format of the print-out is different too, but you can see where I have selected the exact name to use.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">listInstalledFonts</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">let</span> fontFamilies = NSFontManager.shared.availableFontFamilies.sorted()
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">for</span> family <span style="color:#66d9ef">in</span> fontFamilies {
+</span></span><span style="display:flex;"><span>          print(family)
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">let</span> familyFonts = NSFontManager.shared.availableMembers(ofFontFamily: family)
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> fonts = familyFonts {
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">for</span> font <span style="color:#66d9ef">in</span> fonts {
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">\(</span>font<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>              }
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>The format of the print-out is different too, but you can see where I have selected the exact name to use.</p>
 <p><img src="/images/FontList-Mac.png" alt="List of Fonts - Mac"></p>
 <p>Then the SwiftUI code for using the font was just the same:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
-    <span style="color:#66d9ef">var</span> body: some View {
-        Text(<span style="color:#e6db74">&#34;Hello, World!&#34;</span>)
-            .font(.custom(<span style="color:#e6db74">&#34;PaintingWithChocolate&#34;</span>, size: <span style="color:#ae81ff">60</span>))
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
-}
-</code></pre></div><p><img src="/images/FontUsed-Mac.png" alt="Font in use in Mac app"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>        Text(<span style="color:#e6db74">&#34;Hello, World!&#34;</span>)
+</span></span><span style="display:flex;"><span>            .font(.custom(<span style="color:#e6db74">&#34;PaintingWithChocolate&#34;</span>, size: <span style="color:#ae81ff">60</span>))
+</span></span><span style="display:flex;"><span>            .frame(maxWidth: .infinity, maxHeight: .infinity)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/FontUsed-Mac.png" alt="Font in use in Mac app"></p>
 <hr>
 <h2 id="storyboard-apps">Storyboard apps</h2>
 <p>The examples above were both SwiftUI projects, but these techniques work much the same in a storyboard project.</p>
 <p>Follow the same steps to install the font and configure the Info.plist file and use the same functions to list the installed files.</p>
 <p>To use the fonts, if you are using a storyboard in an iOS project, select &ldquo;Custom&rdquo; in the font picker and then you will be able to see your custom font listed if it is installed correctly. I could not work out how to get the custom font appearing in this menu for a macOS app.</p>
 <p>To apply the font programmatically, you can use something like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#75715e">// iOS</span>
-    fontLabel.font = UIFont(name: <span style="color:#e6db74">&#34;PaintingWithChocolate&#34;</span>, size: <span style="color:#ae81ff">36</span>)
-
-    <span style="color:#75715e">// macOS</span>
-    fontLabel.font = NSFont(name: <span style="color:#e6db74">&#34;PaintingWithChocolate&#34;</span>, size: <span style="color:#ae81ff">24</span>)
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    <span style="color:#75715e">// iOS</span>
+</span></span><span style="display:flex;"><span>    fontLabel.font = UIFont(name: <span style="color:#e6db74">&#34;PaintingWithChocolate&#34;</span>, size: <span style="color:#ae81ff">36</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// macOS</span>
+</span></span><span style="display:flex;"><span>    fontLabel.font = NSFont(name: <span style="color:#e6db74">&#34;PaintingWithChocolate&#34;</span>, size: <span style="color:#ae81ff">24</span>)
+</span></span></code></pre></div><hr>
 <h2 id="trouble-shooting">Trouble-shooting</h2>
 <p>If you have gone through these steps and the font still isn&rsquo;t working, here are a few things to check:</p>
 <ol>

@@ -214,8 +214,8 @@ had discovered the problem. OS X offers two commands for searching for man
 pages: apropos &amp; whatis. The database files used by these commands are updated
 weekly by one of the periodic system commands. I manually ran this update
 command using:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo /etc/periodic/weekly/320.whatis
-</code></pre></div><p>This did part of the job, as the apropos command when used in Terminal now
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo /etc/periodic/weekly/320.whatis
+</span></span></code></pre></div><p>This did part of the job, as the apropos command when used in Terminal now
 contained the MacPorts man pages. However Man Reader still did not show these
 man pages.</p>
 <p>Reverting to the Console log, I found that this was a sand-boxing problem. The

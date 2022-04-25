@@ -214,25 +214,25 @@ Now it is time to explore some more of the features of a Mac app with SwiftUI.
 <p><img src="/images/SwiftUi-Mac-menus.png" alt="Menus"></p>
 <p>Looking at the possibilities along the top that I could send the menu command to, the App Delegate looks like the best option, especially since these menus will change the entire app.</p>
 <p>I opened AppDelegate.swift in the Assistant Editor and Control-dragged from each of the new menu items to create the 3 IBActions and added the code to set the mode.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">@IBAction</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">darkModeSelected</span>(<span style="color:#66d9ef">_</span> sender: Any) {
-        NSApp.appearance = NSAppearance(named: .darkAqua)
-    }
-
-    <span style="color:#66d9ef">@IBAction</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">lightModeSelected</span>(<span style="color:#66d9ef">_</span> sender: Any) {
-        NSApp.appearance = NSAppearance(named: .aqua)
-    }
-
-    <span style="color:#66d9ef">@IBAction</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">systemModeSelected</span>(<span style="color:#66d9ef">_</span> sender: Any) {
-        NSApp.appearance = <span style="color:#66d9ef">nil</span>
-    }
-</code></pre></div><p>And since I realized that I would want to check or un-check these based on the current settings, I added IBOutlets for each of these menu items too. As a side note, I love how Xcode is now clever enough to decide whether to add an IBOutlet or an IBAction depending on where in the file you Control-drag to.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    <span style="color:#66d9ef">@IBAction</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">darkModeSelected</span>(<span style="color:#66d9ef">_</span> sender: Any) {
+</span></span><span style="display:flex;"><span>        NSApp.appearance = NSAppearance(named: .darkAqua)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@IBAction</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">lightModeSelected</span>(<span style="color:#66d9ef">_</span> sender: Any) {
+</span></span><span style="display:flex;"><span>        NSApp.appearance = NSAppearance(named: .aqua)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@IBAction</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">systemModeSelected</span>(<span style="color:#66d9ef">_</span> sender: Any) {
+</span></span><span style="display:flex;"><span>        NSApp.appearance = <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>And since I realized that I would want to check or un-check these based on the current settings, I added IBOutlets for each of these menu items too. As a side note, I love how Xcode is now clever enough to decide whether to add an IBOutlet or an IBAction depending on where in the file you Control-drag to.</p>
 <h2 id="using-a-property-wrapper">Using a Property Wrapper</h2>
 <p>Changing mode worked perfectly in the Xcode Preview and in the built app, but the app was not storing this or displaying the current selection with a check mark in the menu.</p>
 <p>For storing the selection, I decided to try another new thing and use a UserDefaults property wrapper, based on <a href="https://www.avanderlee.com/swift/property-wrappers/">this post by Antoine van der Lee</a>.</p>
 <p>I configured a UserDefault wrapped variable for the mode, set it whenever the menu items changed it and added a function to read it in and apply it on startup.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    @UserDefault(<span style="color:#e6db74">&#34;system_mode&#34;</span>, defaultValue: <span style="color:#e6db74">&#34;system&#34;</span>)
-    <span style="color:#66d9ef">var</span> systemMode: String
-</code></pre></div><p>It would be neater to use an enum here instead of strings, but that would have required fiddling with rawValues to save the data, so for this first test, I stuck to strings.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    @UserDefault(<span style="color:#e6db74">&#34;system_mode&#34;</span>, defaultValue: <span style="color:#e6db74">&#34;system&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> systemMode: String
+</span></span></code></pre></div><p>It would be neater to use an enum here instead of strings, but that would have required fiddling with rawValues to save the data, so for this first test, I stuck to strings.</p>
 <p>The code to toggle the checkmarks in the menu items is standard stuff and nothing particularly SwiftUI related, so I won&rsquo;t detail it here, but it is in the GitHub project if you are interested.</p>
 <p><img src="/images/SwiftUI-Mac-dark.png" alt="Dark mode"></p>
 <h2 id="passing-menu-data-to-a-view">Passing menu data to a View</h2>
@@ -241,28 +241,28 @@ Now it is time to explore some more of the features of a Mac app with SwiftUI.
 <p>I added the new menu item to the Format menu and as a first attempt, I tried to Control-drag from there into the ContentView. It didn&rsquo;t take, so I guess I need to send the message to the AppDelegate as before and then pass it on to the ContentView. I feel like this might be a good place to use a Publisher although so far I have only used the built-in ObservableObject type publishers.</p>
 <p>In this case, it would make more sense to have the DetailView respond to the menu, since it contains the image. But trying to add an @IBAction to a SwiftUI View struct gives this error: <code>Only instance methods can be declared @IBAction</code> so I am using the App Delegate instead. I feel like this is a problem I need to solve, or the AppDelegate is going to end up filled with @IBActions, but for now, let&rsquo;s keep going.</p>
 <p>In AppDelegate.swift, I added the IBAction for the Flip Image menu item and had it issue a Notification, after setting up an extension on Notification.Name to de-stringify the name of the notification.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">@IBAction</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">flipImage</span>(<span style="color:#66d9ef">_</span> sender: Any) {
-        NotificationCenter.<span style="color:#66d9ef">default</span>.post(name: .flipImage, object: <span style="color:#66d9ef">nil</span>)
-    }
-</code></pre></div><p>In DetailView.swift, I set up a Boolean @State property to store whether the image was flipped or not and added an onReceive handler to toggle it. Since this is updating the UI, I made sure that it happened on the main thread, but I am not sure whether this is necessary, or whether onReceive uses the main thread automatically.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    <span style="color:#66d9ef">@IBAction</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">flipImage</span>(<span style="color:#66d9ef">_</span> sender: Any) {
+</span></span><span style="display:flex;"><span>        NotificationCenter.<span style="color:#66d9ef">default</span>.post(name: .flipImage, object: <span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>In DetailView.swift, I set up a Boolean @State property to store whether the image was flipped or not and added an onReceive handler to toggle it. Since this is updating the UI, I made sure that it happened on the main thread, but I am not sure whether this is necessary, or whether onReceive uses the main thread automatically.</p>
 <p><strong>UPDATE:</strong> Check out <strong><a href="/post/2020/swiftui_for-mac-extras#subscribing-on-the-main-thread">Subscribing on the Main Thread</a></strong> in my post of extras &amp; changes to this series for an alternative way to make sure the updates happen on the correct thread.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> imageIsFlipped = <span style="color:#66d9ef">false</span>
-
-    <span style="color:#75715e">// ...</span>
-
-  .onReceive(flipImageMenuItemSelected) { <span style="color:#66d9ef">_</span> <span style="color:#66d9ef">in</span>
-    DispatchQueue.main.async {
-        <span style="color:#66d9ef">self</span>.imageIsFlipped.toggle()
-    }
-  }
-</code></pre></div><p>Once I had that Boolean property, I added two more modifiers to the image. Don&rsquo;t hate me for the force un-wrapping. I tried using if-let but it wouldn&rsquo;t compile so I check for <code>catImage != nil</code> before using this force-unwrap.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  Image(nsImage: catImage!)
-      .resizable()
-      .aspectRatio(contentMode: .fit)
-      .rotation3DEffect(Angle(degrees: imageIsFlipped ? <span style="color:#ae81ff">180</span> : <span style="color:#ae81ff">0</span>),
-                        axis: (x: <span style="color:#ae81ff">0</span>, y: <span style="color:#ae81ff">1</span>, z: <span style="color:#ae81ff">0</span>))
-      .animation(.<span style="color:#66d9ef">default</span>)
-</code></pre></div><p>Now the image can be flipped from the menu item or even by using the keyboard shortcut. And with a smooth animation (smoother in the app than in this gif).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> imageIsFlipped = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  .onReceive(flipImageMenuItemSelected) { <span style="color:#66d9ef">_</span> <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>    DispatchQueue.main.async {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.imageIsFlipped.toggle()
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>Once I had that Boolean property, I added two more modifiers to the image. Don&rsquo;t hate me for the force un-wrapping. I tried using if-let but it wouldn&rsquo;t compile so I check for <code>catImage != nil</code> before using this force-unwrap.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  Image(nsImage: catImage!)
+</span></span><span style="display:flex;"><span>      .resizable()
+</span></span><span style="display:flex;"><span>      .aspectRatio(contentMode: .fit)
+</span></span><span style="display:flex;"><span>      .rotation3DEffect(Angle(degrees: imageIsFlipped ? <span style="color:#ae81ff">180</span> : <span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>                        axis: (x: <span style="color:#ae81ff">0</span>, y: <span style="color:#ae81ff">1</span>, z: <span style="color:#ae81ff">0</span>))
+</span></span><span style="display:flex;"><span>      .animation(.<span style="color:#66d9ef">default</span>)
+</span></span></code></pre></div><p>Now the image can be flipped from the menu item or even by using the keyboard shortcut. And with a smooth animation (smoother in the app than in this gif).</p>
 <p><img src="/images/SwiftUI-Mac-Flip.mp4" alt="Flipping the image"></p>
 <h2 id="opening-another-window">Opening another window</h2>
 <p>For my next challenge, I want to open a second window that I can use to show samples of various UI elements. As I want to open it from a menu command, my first thought was to add a Window Controller to the Main storyboard and open it that way. I replaced the default View Controller with a Hosting Controller so that I could insert my SwiftUI View into it.</p>
@@ -272,14 +272,14 @@ Now it is time to explore some more of the features of a Mac app with SwiftUI.
 <li>Set the Presentation property for the window controller to Single so that multiple copies of the window are not created.</li>
 <li>Create a new Swift file and subclass NSHostingController. Don&rsquo;t bother using a Cocoa class file - the template doesn&rsquo;t work. Use the code below, replacing SamplesView with the name of the SwiftUI view you want to display.</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">SwiftUI</span>
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SamplesHostingController</span>: NSHostingController&lt;PrefsView&gt; {
-      <span style="color:#66d9ef">@objc</span> <span style="color:#66d9ef">required</span> <span style="color:#66d9ef">dynamic</span> <span style="color:#66d9ef">init</span>?(coder: NSCoder) {
-          <span style="color:#66d9ef">super</span>.<span style="color:#66d9ef">init</span>(coder: coder, rootView: SamplesView())
-      }
-}
-</code></pre></div><ol start="4">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">SwiftUI</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SamplesHostingController</span>: NSHostingController&lt;PrefsView&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">@objc</span> <span style="color:#66d9ef">required</span> <span style="color:#66d9ef">dynamic</span> <span style="color:#66d9ef">init</span>?(coder: NSCoder) {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">super</span>.<span style="color:#66d9ef">init</span>(coder: coder, rootView: SamplesView())
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ol start="4">
 <li>Back in the storyboard, set the class of the HostingController to this sub-class: SamplesHostingController in my case.</li>
 <li>Set a minimum size for the new Window Controller, otherwise it shrinks to a very small stripe on the screen.</li>
 <li>Add the <code>.frame(maxWidth: .infinity, maxHeight: .infinity)</code> modifier to the root view in the view you are displaying - my SamplesView.</li>
@@ -294,20 +294,20 @@ Now it is time to explore some more of the features of a Mac app with SwiftUI.
 <p>Of the other UI elements that I wanted to use, a color picker was the main one missing. So I decided to embed an NSColorWell from AppKit into my SwiftUI view.</p>
 <p>The process for embedding a UIKit view is quite well documented elsewhere and the AppKit equivalent was not significantly different. Replace every &ldquo;UI&rdquo; with &ldquo;NS&rdquo; and you are nearly there.</p>
 <p>First I made a struct that conformed to <code>NSViewRepresentable</code> and had the required two functions: <code>makeNSView(context:)</code> and <code>updateNSView(_:context:)</code>. I supplied an @Binding variable to hold the selected color as an NSColor since that is what the NSColorWell uses.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">EmbeddedColorWell</span>: NSViewRepresentable {
-    @Binding <span style="color:#66d9ef">var</span> selectedColor: NSColor
-
-    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">makeNSView</span>(context: Context) -&gt; NSColorWell {
-        NSColorWell(frame: .zero)
-    }
-
-    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">updateNSView</span>(<span style="color:#66d9ef">_</span> nsView: NSColorWell, context: Context) {
-        nsView.color = selectedColor
-    }
-}
-</code></pre></div><p>Back in my SwiftUI view, I was then able to use <code>EmbeddedColorWell</code> just like any other SwiftUI view, passing it a binding to an @State variable to set and get the selected color.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  EmbeddedColorWell(selectedColor: <span style="color:#960050;background-color:#1e0010">$</span>selectedColor)
-</code></pre></div><p><strong>UPDATE:</strong> Be sure to read <strong><a href="/post/2020/swiftui_for-mac-extras#passing-data-back-from-appkit">Passing data back from AppKit</a></strong> in my post of extras &amp; changes to this series. This is an important fix that is needed to make this embedded control pass data back properly.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">EmbeddedColorWell</span>: NSViewRepresentable {
+</span></span><span style="display:flex;"><span>    @Binding <span style="color:#66d9ef">var</span> selectedColor: NSColor
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">makeNSView</span>(context: Context) -&gt; NSColorWell {
+</span></span><span style="display:flex;"><span>        NSColorWell(frame: .zero)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">updateNSView</span>(<span style="color:#66d9ef">_</span> nsView: NSColorWell, context: Context) {
+</span></span><span style="display:flex;"><span>        nsView.color = selectedColor
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Back in my SwiftUI view, I was then able to use <code>EmbeddedColorWell</code> just like any other SwiftUI view, passing it a binding to an @State variable to set and get the selected color.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  EmbeddedColorWell(selectedColor: <span style="color:#960050;background-color:#1e0010">$</span>selectedColor)
+</span></span></code></pre></div><p><strong>UPDATE:</strong> Be sure to read <strong><a href="/post/2020/swiftui_for-mac-extras#passing-data-back-from-appkit">Passing data back from AppKit</a></strong> in my post of extras &amp; changes to this series. This is an important fix that is needed to make this embedded control pass data back properly.</p>
 <p>The other stumbling block that I encountered was that I had no way to close the window programmatically, in response to a button click or some other interaction. Maybe this was not the best way to open a fully SwifUI window, but it was still an interesting experiment.</p>
 <p>One thing I learned while working on this project was that SwiftUI can be a bit too clever about working out what needs to be redrawn in the previews. If you edit something in an separate file to the View, you may need to force a re-build to get the updates to show.</p>
 <h2 id="communicating-between-windows">Communicating Between Windows</h2>
@@ -316,105 +316,105 @@ Now it is time to explore some more of the features of a Mac app with SwiftUI.
 <p>I started out by using the same technique as before with a Hosting View Controller. And here is where I came mightily unstuck as I could not make a data connection. I had hoped an EnvironmentObject would work, but I could not get an EnvironmentObject through to the HostingController as it was not in the same view hierarchy.</p>
 <p>So instead of trying to use the storyboard, I decide to see if I could use something similar to the initial window creation and call that new window from my ContentView so that it was part of the view and therefore the data hierarchy.</p>
 <p>As usual, there was a lot of trial and error involved here, but I came up with a workable solution.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">PrefsView</span>: View {
-    <span style="color:#66d9ef">var</span> body: some View {
-        Text(<span style="color:#e6db74">&#34;Hello, Prefs!&#34;</span>)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
-
-    <span style="color:#66d9ef">var</span> window: NSWindow!
-    <span style="color:#66d9ef">init</span>() {
-        window = NSWindow.createStandardWindow(withTitle: <span style="color:#e6db74">&#34;Preferences&#34;</span>,
-                                               width: <span style="color:#ae81ff">300</span>,
-                                               height: <span style="color:#ae81ff">100</span>)
-        window.contentView = NSHostingView(rootView: <span style="color:#66d9ef">self</span>)
-        window.makeKeyAndOrderFront(<span style="color:#66d9ef">nil</span>)
-    }
-}
-</code></pre></div><p>For convenience and reusability, I made an extension on NSWindow that created a window with the basic properties configured, much like they are in AppDelegate. I temporarily added a Button to ContentView like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">  Button(<span style="color:#e6db74">&#34;Prefs&#34;</span>) {
-      <span style="color:#66d9ef">let</span> _ = PrefsView()
-  }
-</code></pre></div><p>This opened the window perfectly, but it had a problem: repeatedly clicking the button kept opening a new window instead of bringing the existing one to the front.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">PrefsView</span>: View {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>        Text(<span style="color:#e6db74">&#34;Hello, Prefs!&#34;</span>)
+</span></span><span style="display:flex;"><span>            .frame(maxWidth: .infinity, maxHeight: .infinity)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> window: NSWindow!
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">init</span>() {
+</span></span><span style="display:flex;"><span>        window = NSWindow.createStandardWindow(withTitle: <span style="color:#e6db74">&#34;Preferences&#34;</span>,
+</span></span><span style="display:flex;"><span>                                               width: <span style="color:#ae81ff">300</span>,
+</span></span><span style="display:flex;"><span>                                               height: <span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>        window.contentView = NSHostingView(rootView: <span style="color:#66d9ef">self</span>)
+</span></span><span style="display:flex;"><span>        window.makeKeyAndOrderFront(<span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>For convenience and reusability, I made an extension on NSWindow that created a window with the basic properties configured, much like they are in AppDelegate. I temporarily added a Button to ContentView like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  Button(<span style="color:#e6db74">&#34;Prefs&#34;</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">let</span> _ = PrefsView()
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>This opened the window perfectly, but it had a problem: repeatedly clicking the button kept opening a new window instead of bringing the existing one to the front.</p>
 <p>After a lot more trial and error, this is what I ended up with for my <code>PrefsView</code> struct:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">PrefsView</span>: View {
-    @State <span style="color:#66d9ef">var</span> prefsWindowDelegate = PrefsWindowDelegate()
-
-    <span style="color:#66d9ef">var</span> body: some View {
-        Text(<span style="color:#e6db74">&#34;Hello, Prefs!&#34;</span>)
-          .frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
-
-    <span style="color:#66d9ef">var</span> window: NSWindow!
-    <span style="color:#66d9ef">init</span>() {
-        window = NSWindow.createStandardWindow(withTitle: <span style="color:#e6db74">&#34;Preferences&#34;</span>,
-                                               width: <span style="color:#ae81ff">300</span>,
-                                               height: <span style="color:#ae81ff">100</span>)
-        window.contentView = NSHostingView(rootView: <span style="color:#66d9ef">self</span>)
-        window.delegate = prefsWindowDelegate
-        prefsWindowDelegate.windowIsOpen = <span style="color:#66d9ef">true</span>
-        window.makeKeyAndOrderFront(<span style="color:#66d9ef">nil</span>)
-    }
-
-    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PrefsWindowDelegate</span>: NSObject, NSWindowDelegate {
-        <span style="color:#66d9ef">var</span> windowIsOpen = <span style="color:#66d9ef">false</span>
-
-        <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">windowWillClose</span>(<span style="color:#66d9ef">_</span> notification: Notification) {
-            windowIsOpen = <span style="color:#66d9ef">false</span>
-        }
-    }
-}
-</code></pre></div><p>So my PrefsView opens its own window and sets a window delegate that records when the window is closed.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">PrefsView</span>: View {
+</span></span><span style="display:flex;"><span>    @State <span style="color:#66d9ef">var</span> prefsWindowDelegate = PrefsWindowDelegate()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>        Text(<span style="color:#e6db74">&#34;Hello, Prefs!&#34;</span>)
+</span></span><span style="display:flex;"><span>          .frame(maxWidth: .infinity, maxHeight: .infinity)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> window: NSWindow!
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">init</span>() {
+</span></span><span style="display:flex;"><span>        window = NSWindow.createStandardWindow(withTitle: <span style="color:#e6db74">&#34;Preferences&#34;</span>,
+</span></span><span style="display:flex;"><span>                                               width: <span style="color:#ae81ff">300</span>,
+</span></span><span style="display:flex;"><span>                                               height: <span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>        window.contentView = NSHostingView(rootView: <span style="color:#66d9ef">self</span>)
+</span></span><span style="display:flex;"><span>        window.delegate = prefsWindowDelegate
+</span></span><span style="display:flex;"><span>        prefsWindowDelegate.windowIsOpen = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        window.makeKeyAndOrderFront(<span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PrefsWindowDelegate</span>: NSObject, NSWindowDelegate {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> windowIsOpen = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">windowWillClose</span>(<span style="color:#66d9ef">_</span> notification: Notification) {
+</span></span><span style="display:flex;"><span>            windowIsOpen = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>So my PrefsView opens its own window and sets a window delegate that records when the window is closed.</p>
 <p>I removed my temporary button and back in AppDelegate.swift, I added an IBAction called by the Preferences menu item:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">var</span> prefsView: PrefsView?
-
-    <span style="color:#66d9ef">@IBAction</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">openPrefsWindow</span>(<span style="color:#66d9ef">_</span> sender: Any) {
-        <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> prefsView = prefsView, prefsView.prefsWindowDelegate.windowIsOpen {
-            prefsView.window.makeKeyAndOrderFront(<span style="color:#66d9ef">self</span>)
-        } <span style="color:#66d9ef">else</span> {
-            prefsView = PrefsView()
-        }
-    }
-</code></pre></div><p>And this gave me what I was after - a view that opened from a menu item but that knew itself whether it still had a window so could decide whether to open a new one or bring the existing one to the front. This looks a bit convoluted, but it doesn&rsquo;t appear to cause any memory leaks and the responsibility for the window rests on the view that uses it, which feels right to me.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> prefsView: PrefsView?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">@IBAction</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">openPrefsWindow</span>(<span style="color:#66d9ef">_</span> sender: Any) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> prefsView = prefsView, prefsView.prefsWindowDelegate.windowIsOpen {
+</span></span><span style="display:flex;"><span>            prefsView.window.makeKeyAndOrderFront(<span style="color:#66d9ef">self</span>)
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            prefsView = PrefsView()
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>And this gave me what I was after - a view that opened from a menu item but that knew itself whether it still had a window so could decide whether to open a new one or bring the existing one to the front. This looks a bit convoluted, but it doesn&rsquo;t appear to cause any memory leaks and the responsibility for the window rests on the view that uses it, which feels right to me.</p>
 <p>After I had this working, getting the data passing around was quite simple. I created a Prefs class to store the preference data. I wanted this data stored in UserDefaults, but since I also wanted to use an ObservableObject with the @Published property wrapper, I was not able to use the @UserDefaults property wrapper that I had used for the app mode.</p>
 <p>So instead I used @Published with a <code>didSet</code> that saved the changed data to UserDefaults. Thanks to <a href="https://twitter.com/azamsharp">@azamsharp</a> for this technique.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Prefs</span>: ObservableObject {
-    @Published
-    <span style="color:#66d9ef">var</span> showCopyright: Bool = UserDefaults.standard.bool(forKey: <span style="color:#e6db74">&#34;showCopyright&#34;</span>) {
-        <span style="color:#66d9ef">didSet</span> {
-            UserDefaults.standard.<span style="color:#66d9ef">set</span>(<span style="color:#66d9ef">self</span>.showCopyright, forKey: <span style="color:#e6db74">&#34;showCopyright&#34;</span>)
-        }
-    }
-}
-</code></pre></div><p>This preference will dictate whether a copyright notice is shown on every cat image, so it needs to be available to DetailView and to PrefsView. Since I did not want to pass it through every view on the way to DetailView, I decided to use an EnvironmentObject. But I was not able to work out how to set the environmentObject for the PrefsView as I created it, so I ended up sending an @ObservedObject to PrefsView but using an @EnvironmentObject for DetailView. (Actually for CatImageView as I had extracted the image from DetailView as a subview.)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Prefs</span>: ObservableObject {
+</span></span><span style="display:flex;"><span>    @Published
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> showCopyright: Bool = UserDefaults.standard.bool(forKey: <span style="color:#e6db74">&#34;showCopyright&#34;</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">didSet</span> {
+</span></span><span style="display:flex;"><span>            UserDefaults.standard.<span style="color:#66d9ef">set</span>(<span style="color:#66d9ef">self</span>.showCopyright, forKey: <span style="color:#e6db74">&#34;showCopyright&#34;</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This preference will dictate whether a copyright notice is shown on every cat image, so it needs to be available to DetailView and to PrefsView. Since I did not want to pass it through every view on the way to DetailView, I decided to use an EnvironmentObject. But I was not able to work out how to set the environmentObject for the PrefsView as I created it, so I ended up sending an @ObservedObject to PrefsView but using an @EnvironmentObject for DetailView. (Actually for CatImageView as I had extracted the image from DetailView as a subview.)</p>
 <p>In AppDelegate.swift:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#66d9ef">let</span> prefs = Prefs()
-
-    <span style="color:#75715e">// and in the openPrefsWindow IBAction:</span>
-    prefsView = PrefsView(prefs: prefs)
-</code></pre></div><p>In PrefsView.swift:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    @ObservedObject <span style="color:#66d9ef">var</span> prefs: Prefs
-</code></pre></div><p>In CatImageView (a subview of DetailView):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">CatImageView</span>: View {
-    @EnvironmentObject <span style="color:#66d9ef">var</span> prefs: Prefs
-
-    <span style="color:#66d9ef">let</span> catImage: NSImage
-    <span style="color:#66d9ef">let</span> imageIsFlipped: Bool
-
-    <span style="color:#66d9ef">var</span> body: some View {
-        Image(nsImage: catImage)
-          <span style="color:#75715e">// modifiers as before</span>
-
-         .overlay(
-             Text(prefs.showCopyright ? <span style="color:#e6db74">&#34;Copyright © https://http.cat&#34;</span> : <span style="color:#e6db74">&#34;&#34;</span>)
-                 .padding(<span style="color:#ae81ff">6</span>)
-                 .font(.caption)
-                 .foregroundColor(.white)
-                 .shadow(radius: <span style="color:#ae81ff">5</span>)
-             ,alignment: .bottomTrailing)
-    }
-}
-</code></pre></div><p>And that is that! I have shown how it is possible to create an entire Mac app using SwiftUI.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> prefs = Prefs()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// and in the openPrefsWindow IBAction:</span>
+</span></span><span style="display:flex;"><span>    prefsView = PrefsView(prefs: prefs)
+</span></span></code></pre></div><p>In PrefsView.swift:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    @ObservedObject <span style="color:#66d9ef">var</span> prefs: Prefs
+</span></span></code></pre></div><p>In CatImageView (a subview of DetailView):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">CatImageView</span>: View {
+</span></span><span style="display:flex;"><span>    @EnvironmentObject <span style="color:#66d9ef">var</span> prefs: Prefs
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> catImage: NSImage
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> imageIsFlipped: Bool
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>        Image(nsImage: catImage)
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e">// modifiers as before</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>         .overlay(
+</span></span><span style="display:flex;"><span>             Text(prefs.showCopyright ? <span style="color:#e6db74">&#34;Copyright © https://http.cat&#34;</span> : <span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>                 .padding(<span style="color:#ae81ff">6</span>)
+</span></span><span style="display:flex;"><span>                 .font(.caption)
+</span></span><span style="display:flex;"><span>                 .foregroundColor(.white)
+</span></span><span style="display:flex;"><span>                 .shadow(radius: <span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>             ,alignment: .bottomTrailing)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>And that is that! I have shown how it is possible to create an entire Mac app using SwiftUI.</p>
 <p>I am sure that there are numerous ways that this could be improved, so if you have any ideas or suggestions, please use one of the buttons below to contact me.</p>
 <p>If you want to check out the project at this stage, here is a link to the <a href="https://github.com/trozware/swiftui-mac/tree/0ea77f80832e0f32e477ce89ac57d8a95f45f035">relevant GitHub commit</a>. Or if you would prefer, here is a link to the <a href="https://github.com/trozware/swiftui-mac">final version</a> of the project.</p>
 <hr>

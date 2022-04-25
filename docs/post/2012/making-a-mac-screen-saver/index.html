@@ -231,8 +231,8 @@ will need to know the bounds of the screen saver area. This will vary depending
 on the monitor, screen size or whether the screen saver is appearing in the
 preview window in System Preferences. The screen saver view has a method that
 does this work for you.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec">NSRect viewBounds <span style="color:#f92672">=</span> [self bounds];
-</code></pre></div><p>The next trick is that you are most likely going to need some random numbers.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span>NSRect viewBounds <span style="color:#f92672">=</span> [self bounds];
+</span></span></code></pre></div><p>The next trick is that you are most likely going to need some random numbers.
 Again, the screen saver framework supplies these to you in several forms. I used
 <code>SSRandomFloatBetween</code> but there are others. Check the documentation.</p>
 <p>I ran into an oddity in System Preferences that made testing a bit tedious. I
@@ -249,18 +249,18 @@ window&rsquo;s class to NSPanel and configure it as shown:</p>
 <!-- raw HTML omitted -->
 <p>Set the File&rsquo;s Owner class to the class of your Screen Saver view. In your
 ScreenSaverView.h file, declare a property for this new panel. e.g.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec"> <span style="color:#66d9ef">@property</span> (<span style="color:#66d9ef">assign</span>) <span style="color:#66d9ef">IBOutlet</span> NSPanel <span style="color:#f92672">*</span>optionsPanel;
-</code></pre></div><p>@synthesize this in the ScreenSaverView.m file. In the xib file, connect the
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span> <span style="color:#66d9ef">@property</span> (<span style="color:#66d9ef">assign</span>) <span style="color:#66d9ef">IBOutlet</span> NSPanel <span style="color:#f92672">*</span>optionsPanel;
+</span></span></code></pre></div><p>@synthesize this in the ScreenSaverView.m file. In the xib file, connect the
 panel to this outlet.</p>
 <p>Now go back to ScreenSaverView.m and add the following code:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec"><span style="color:#f92672">*</span> (<span style="color:#66d9ef">BOOL</span>)hasConfigureSheet { <span style="color:#66d9ef">return</span> YES; }
-
-<span style="color:#f92672">*</span> (NSWindow <span style="color:#f92672">*</span>)configureSheet { <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>self.optionsPanel) { [NSBundle
-  loadNibNamed:<span style="color:#e6db74">@&#34;Options&#34;</span> owner:self]; } <span style="color:#66d9ef">return</span> self.optionsPanel; }
-
-<span style="color:#f92672">-</span> (<span style="color:#66d9ef">IBAction</span>)closeConfig:(<span style="color:#66d9ef">id</span>)sender { [[NSApplication sharedApplication]
-  endSheet:self.optionsPanel]; }
-</code></pre></div><p>The <code>hasConfigureSheet</code> and <code>configureSheet</code> stubs are already there for you,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#f92672">*</span> (<span style="color:#66d9ef">BOOL</span>)hasConfigureSheet { <span style="color:#66d9ef">return</span> YES; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">*</span> (NSWindow <span style="color:#f92672">*</span>)configureSheet { <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>self.optionsPanel) { [NSBundle
+</span></span><span style="display:flex;"><span>  loadNibNamed:<span style="color:#e6db74">@&#34;Options&#34;</span> owner:self]; } <span style="color:#66d9ef">return</span> self.optionsPanel; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-</span> (<span style="color:#66d9ef">IBAction</span>)closeConfig:(<span style="color:#66d9ef">id</span>)sender { [[NSApplication sharedApplication]
+</span></span><span style="display:flex;"><span>  endSheet:self.optionsPanel]; }
+</span></span></code></pre></div><p>The <code>hasConfigureSheet</code> and <code>configureSheet</code> stubs are already there for you,
 but you can replace them with these versions.</p>
 <p>Go back to the xib file and drag in a button to close the options panel. Connect
 it to the <code>closeConfig:</code> action.</p>
@@ -279,22 +279,22 @@ string, so I could use it anywhere I needed.</p>
 <p>In the <code>initWithFrame:isPreview:</code> method, I got a reference to the screen saver
 defaults for my screen saver and registered the defaults. I am never very sure
 about the need to do this, but it is supposed to be a good practice.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec">ScreenSaverDefaults <span style="color:#f92672">*</span>defaults <span style="color:#f92672">=</span> [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
-[defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
-  <span style="color:#e6db74">@&#34;NO&#34;</span>, <span style="color:#e6db74">@&#34;UseAlternativeZone&#34;</span>, <span style="color:#e6db74">@&#34;&#34;</span>,
-  <span style="color:#e6db74">@&#34;AlternativeZoneName&#34;</span>, nil]
-];
-</code></pre></div><p>Using them is exactly the same as using NSUserDefaults:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec"><span style="color:#75715e">// Reading
-</span><span style="color:#75715e"></span>ScreenSaverDefaults <span style="color:#f92672">*</span>defaults <span style="color:#f92672">=</span> [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
-<span style="color:#66d9ef">BOOL</span> useAlternativeZone <span style="color:#f92672">=</span> [defaults boolForKey:<span style="color:#e6db74">@&#34;UseAlternativeZone&#34;</span>];
-NSString <span style="color:#f92672">*</span>alternativeZoneName <span style="color:#f92672">=</span> [defaults objectForKey:<span style="color:#e6db74">@&#34;AlternativeZoneName&#34;</span>];
-</code></pre></div><p>&hellip;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objectivec" data-lang="objectivec"><span style="color:#75715e">// Writing
-</span><span style="color:#75715e"></span>ScreenSaverDefaults <span style="color:#f92672">*</span>defaults <span style="color:#f92672">=</span> [ScreenSaverDefaults defaultsForModuleWithName:kModuleName]; [defaults setBool:useAlternative forKey:<span style="color:#e6db74">@&#34;UseAlternativeZone&#34;</span>];
-[defaults setObject:alternativeZoneName forKey:<span style="color:#e6db74">@&#34;AlternativeZoneName&#34;</span>];
-[defaults synchronize];
-</code></pre></div><p>One last thing: if you want to distribute the screen saver, you will want to
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span>ScreenSaverDefaults <span style="color:#f92672">*</span>defaults <span style="color:#f92672">=</span> [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
+</span></span><span style="display:flex;"><span>[defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">@&#34;NO&#34;</span>, <span style="color:#e6db74">@&#34;UseAlternativeZone&#34;</span>, <span style="color:#e6db74">@&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">@&#34;AlternativeZoneName&#34;</span>, nil]
+</span></span><span style="display:flex;"><span>];
+</span></span></code></pre></div><p>Using them is exactly the same as using NSUserDefaults:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#75715e">// Reading
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ScreenSaverDefaults <span style="color:#f92672">*</span>defaults <span style="color:#f92672">=</span> [ScreenSaverDefaults defaultsForModuleWithName:kModuleName];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">BOOL</span> useAlternativeZone <span style="color:#f92672">=</span> [defaults boolForKey:<span style="color:#e6db74">@&#34;UseAlternativeZone&#34;</span>];
+</span></span><span style="display:flex;"><span>NSString <span style="color:#f92672">*</span>alternativeZoneName <span style="color:#f92672">=</span> [defaults objectForKey:<span style="color:#e6db74">@&#34;AlternativeZoneName&#34;</span>];
+</span></span></code></pre></div><p>&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#75715e">// Writing
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ScreenSaverDefaults <span style="color:#f92672">*</span>defaults <span style="color:#f92672">=</span> [ScreenSaverDefaults defaultsForModuleWithName:kModuleName]; [defaults setBool:useAlternative forKey:<span style="color:#e6db74">@&#34;UseAlternativeZone&#34;</span>];
+</span></span><span style="display:flex;"><span>[defaults setObject:alternativeZoneName forKey:<span style="color:#e6db74">@&#34;AlternativeZoneName&#34;</span>];
+</span></span><span style="display:flex;"><span>[defaults synchronize];
+</span></span></code></pre></div><p>One last thing: if you want to distribute the screen saver, you will want to
 create an archive, possibly code-signing with your Apple developer ID to allow
 for Mountain Lion&rsquo;s up-coming Gatekeeper security system. I code-signed the
 project and built an archive, but when I clicked &ldquo;Distribute&rdquo; in the Organizer,

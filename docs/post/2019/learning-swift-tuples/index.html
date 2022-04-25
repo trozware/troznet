@@ -225,36 +225,36 @@ There are many different ways of collecting data together in Swift, but for smal
 <h2 id="what-is-a-tuple">What is a Tuple?</h2>
 <p>A tuple is basically an array with a pre-determined length and unlike normal Swift arrays, it can hold a mix of data types.</p>
 <p>Here are some examples:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> pair = (<span style="color:#e6db74">&#34;Jessie&#34;</span>, <span style="color:#e6db74">&#34;Woody&#34;</span>)
-<span style="color:#66d9ef">let</span> coords = (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">6</span>)
-<span style="color:#66d9ef">let</span> pet = (type: <span style="color:#e6db74">&#34;cat&#34;</span>, trained: <span style="color:#66d9ef">false</span>, age: <span style="color:#ae81ff">5</span>)
-</code></pre></div><p>To define a tuple, you enclose the data elements in parentheses - normal brackets, not curly or square. Optionally, the elements can have a label attached as shown in the <code>pet</code> example.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> pair = (<span style="color:#e6db74">&#34;Jessie&#34;</span>, <span style="color:#e6db74">&#34;Woody&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> coords = (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">6</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> pet = (type: <span style="color:#e6db74">&#34;cat&#34;</span>, trained: <span style="color:#66d9ef">false</span>, age: <span style="color:#ae81ff">5</span>)
+</span></span></code></pre></div><p>To define a tuple, you enclose the data elements in parentheses - normal brackets, not curly or square. Optionally, the elements can have a label attached as shown in the <code>pet</code> example.</p>
 <p>Tuples can have any number of components, but if they get too long, a struct might be a better option. <a href="https://github.com/realm/SwiftLint">SwiftLint</a> will complain if you use tuples with more than 3 elements and usually I go along with that.</p>
 <p>There are various ways to access the parts of a tuple. The first way is using index numbers which works but isn&rsquo;t very intuitive and could be hard to decipher when you come back to a project after some time.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">print(pair.<span style="color:#ae81ff">0</span>)
-print(pair.<span style="color:#ae81ff">1</span>)
-</code></pre></div><p>The next way is if the tuple has used labels for the elements as in the <code>pet</code> example above:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">print(pet.type)
-print(pet.trained)
-print(pet.age)
-</code></pre></div><p>But the way I prefer to use them is by deconstructing the parts into separate variables in a single statement:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> (x, y, z) = coords
-print(x, y, z)
-</code></pre></div><p>The elements of a tuple can be of different types but once a tuple has been defined, that type of each element is fixed, so you still get all the benefits of Swift&rsquo;s type safety.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>print(pair.<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>print(pair.<span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><p>The next way is if the tuple has used labels for the elements as in the <code>pet</code> example above:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>print(pet.type)
+</span></span><span style="display:flex;"><span>print(pet.trained)
+</span></span><span style="display:flex;"><span>print(pet.age)
+</span></span></code></pre></div><p>But the way I prefer to use them is by deconstructing the parts into separate variables in a single statement:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> (x, y, z) = coords
+</span></span><span style="display:flex;"><span>print(x, y, z)
+</span></span></code></pre></div><p>The elements of a tuple can be of different types but once a tuple has been defined, that type of each element is fixed, so you still get all the benefits of Swift&rsquo;s type safety.</p>
 <p>Option-clicking on the variable name shows the inferred type of the tuple:</p>
 <p><img src="/images/Tuple_type.png" alt="The type of a tuple."></p>
 <p>Trying to re-assign the tuple or any elements of the tuple will only work if the new assignments match the initial types for each element:</p>
 <p><img src="/images/Tuple_errors.png" alt="Errors when mutating a tuple."></p>
 <h2 id="where-could-you-use-a-tuple-and-why">Where could you use a tuple and why?</h2>
 <p>Let&rsquo;s imagine you have a function that checks a database or web service and comes back with the title of a movie and its rating.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getMovieInfo</span>() {
-  <span style="color:#66d9ef">var</span> movieTitle: String
-  <span style="color:#66d9ef">var</span> rating: Int
-
-  <span style="color:#75715e">// get the data from somewhere</span>
-  <span style="color:#75715e">// now return both movieTitle and rating</span>
-}
-</code></pre></div><p>Having got the data, this function needs to return two pieces of data: <code>movieTitle</code> and <code>rating</code> - one <code>String</code> and one <code>Int</code>. How could this be done?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getMovieInfo</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> movieTitle: String
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> rating: Int
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// get the data from somewhere</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// now return both movieTitle and rating</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Having got the data, this function needs to return two pieces of data: <code>movieTitle</code> and <code>rating</code> - one <code>String</code> and one <code>Int</code>. How could this be done?</p>
 <ol>
 <li>
 <p><strong>Array</strong>: since there are 2 different data types, the array would have to be of type <code>[Any]</code> or the <code>Int</code> could be converted to a <code>String</code> before returning. Neither of these are good options. Using <code>Any</code> removes the protection of Swift&rsquo;s type safety and converting the <code>Int</code> to and from a <code>String</code> may fail, so then you have to deal with optionals.</p>
@@ -269,15 +269,15 @@ print(x, y, z)
 <p><strong>Tuple</strong>: this would get my vote, so let&rsquo;s see how that would work.</p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getMovieInfo</span>() -&gt; (String, Int) {
-  <span style="color:#66d9ef">var</span> movieTitle: String
-  <span style="color:#66d9ef">var</span> rating: Int
-
-  <span style="color:#75715e">// get the data from somewhere</span>
-
-  <span style="color:#66d9ef">return</span> (movieTitle, rating)
-}
-</code></pre></div><p>Two main things to notice here:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getMovieInfo</span>() -&gt; (String, Int) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> movieTitle: String
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> rating: Int
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// get the data from somewhere</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (movieTitle, rating)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Two main things to notice here:</p>
 <ol>
 <li>
 <p>The return type of the function lists the data types of both the elements being returned, enclosed in parentheses.</p>
@@ -287,42 +287,42 @@ print(x, y, z)
 </li>
 </ol>
 <p>And then in the calling function, you can access the parts of the returned data like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> (returnedMovieTitle, returnedRating) = getMovieInfo()
-</code></pre></div><p>The tuple is being returned and immediately deconstructed to give 2 new variables so accessing the parts of the tuple is easy and type-safe.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> (returnedMovieTitle, returnedRating) = getMovieInfo()
+</span></span></code></pre></div><p>The tuple is being returned and immediately deconstructed to give 2 new variables so accessing the parts of the tuple is easy and type-safe.</p>
 <p>A function returning a tuple can also be configured to use named elements by specifying the names in the return type declaration.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getMovieInfo</span>() -&gt; (name: String, score: Int) {
-    <span style="color:#66d9ef">var</span> movieTitle: String
-    <span style="color:#66d9ef">var</span> rating: Int
-
-    <span style="color:#75715e">// get the data from somewhere</span>
-
-    <span style="color:#66d9ef">return</span> (movieTitle, rating)
-}
-
-<span style="color:#66d9ef">let</span> result = getMovieInfo()
-<span style="color:#66d9ef">let</span> returnedMovieTitle = result.name
-<span style="color:#66d9ef">let</span> returnedRating = result.score
-</code></pre></div><p>My feeling is that once a tuple is complex enough to need names, you should really consider using a class or a struct, but for returning 2 or 3 chunks of data from a function, this is a very useful technique, espeicialy if the data types are different.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getMovieInfo</span>() -&gt; (name: String, score: Int) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> movieTitle: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> rating: Int
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// get the data from somewhere</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (movieTitle, rating)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> result = getMovieInfo()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> returnedMovieTitle = result.name
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> returnedRating = result.score
+</span></span></code></pre></div><p>My feeling is that once a tuple is complex enough to need names, you should really consider using a class or a struct, but for returning 2 or 3 chunks of data from a function, this is a very useful technique, espeicialy if the data types are different.</p>
 <h2 id="looping-through-tuples">Looping through tuples</h2>
 <p>If you have an array of tuples, looping through the tuples is made very convenient if you use the deconstruction method of accessing the parts.</p>
 <p>As an example, suppose you are dealing with some 3D coordinate system and you want to perform an operation on each location.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> coords_array = [
-    (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>),
-    (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>),
-    (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">2</span>),
-    (<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">5</span>),
-    (<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>)
-]
-
-<span style="color:#66d9ef">for</span> (x, y, z) <span style="color:#66d9ef">in</span> coords_array {
-    <span style="color:#66d9ef">let</span> distanceFromOrigin = abs(x) <span style="color:#f92672">+</span> abs(y) <span style="color:#f92672">+</span> abs(z)
-    print(distanceForOrigin)
-}
-</code></pre></div><p>You can deconstruct the tuple each time through the loop, assigning temporary variables so you can act on them.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> coords_array = [
+</span></span><span style="display:flex;"><span>    (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>    (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>),
+</span></span><span style="display:flex;"><span>    (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>    (<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">5</span>),
+</span></span><span style="display:flex;"><span>    (<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>)
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (x, y, z) <span style="color:#66d9ef">in</span> coords_array {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> distanceFromOrigin = abs(x) <span style="color:#f92672">+</span> abs(y) <span style="color:#f92672">+</span> abs(z)
+</span></span><span style="display:flex;"><span>    print(distanceForOrigin)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>You can deconstruct the tuple each time through the loop, assigning temporary variables so you can act on them.</p>
 <h2 id="wrapping-up">Wrapping Up</h2>
 <p>So those are the basics of tuples: how to create them, how to use them and where they might be useful. My main use is as a light-weight alternative to a struct for returning multi-part data from a function. But hopefully after reading this article, they have become another tool in your Swift tool belt that you can consider using in certain circumstances.</p>
-<h3 id="that-leaves-only-one-important-question-how-do-you-pronounce-tuple">That leaves only one important question: how do you pronounce &lsquo;tuple&rsquo;?</h3>
-<p>I have heard two variations: &lsquo;toople&rsquo; using a long U as in universe or &lsquo;tupple&rsquo; using a short U as in cup. There does not appear to be any strict geographical differentiation, so take your pick. I prefer &lsquo;toople&rsquo; myself, but if somebody says &lsquo;tupple&rsquo;, I know what they mean.</p>
+<h3 id="that-leaves-only-one-important-question-how-do-you-pronounce-tuple">That leaves only one important question: how do you pronounce &rsquo;tuple'?</h3>
+<p>I have heard two variations: &rsquo;toople&rsquo; using a long U as in universe or &rsquo;tupple&rsquo; using a short U as in cup. There does not appear to be any strict geographical differentiation, so take your pick. I prefer &rsquo;toople&rsquo; myself, but if somebody says &rsquo;tupple&rsquo;, I know what they mean.</p>
   </div>
   
   <div class="pagination">
