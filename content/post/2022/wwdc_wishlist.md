@@ -14,7 +14,7 @@ Apple has announced that their 2022 World Wide Developers Conference will again 
 
 The Apple hardware teams have been doing amazingly well over the last couple of years. The transition of the Mac lineup to Apple Silicon is almost complete and I would guess that they will complete it at WWDC with a new Mac Pro, but that is outside my budget and requirements.
 
-While I was glad to see them offer a more reasonably priced monitor with the Studio Display, it's still a bit pricey for me. The desk lamp iMac was one of my favourite designs so it was great to see the option for the tilt & height adjustable stand, although the extra price for that option was rather eye-popping.
+While I was glad to see them offer a more reasonably priced monitor with the Studio Display, it's still a bit pricey for me. The desk lamp iMac was one of my all time favourite Mac designs so it was great to see the option for the tilt & height adjustable stand, although the extra price for that option was rather eye-popping.
 
 I have long thought that the desktop iMac was terrific value because it attaches a stunningly good monitor to a reasonable computer. I wish Apple would supply an iMac monitor using the exact same design, but without the computer. Imagine how great that would look as a second monitor - two coloured machines side by side.
 
