@@ -30,7 +30,7 @@ And while I'm talking about iCloud sync issues, some apps (Notes, Reminders etc)
 
 ### Software
 
-There are two parts to Apple's software: the operating systems and their own apps. iOS, iPadOS and watchOS seem quite solid in their latest versions. I don't have any particular requests or complaints. 
+There are two parts to Apple's software: the operating systems and their own apps. iOS, iPadOS and watchOS seem quite solid in their latest versions. I don't have any particular requests or complaints.
 
 With macOS, apart from the iCloud problems that I mentioned above, my main complaint is with notifications. The user experience is terrible. Notifications popup at the top corner, and then disappear quickly. If they have action buttons, you have to mouse over the notification to see them, and this obscures the text. I have tried using System Preferences to change the way notifications are displayed, but this seems to have no effect. And trying to explain this system to a newcomer is impossible.
 
@@ -56,5 +56,5 @@ So what would I really like to see at WWDC 2022?
 
 - iCloud syncing that works on all Apple platforms.
 - Real Xcode extensions.
-- New App Store rules to weed out copycat apps and fake reviews and that were applied equally to all developers.
+- New App Store rules to weed out copycat apps and fake reviews and that apply equally to all developers.
 - Better notifications for macOS - preferably the type we used to have.
