@@ -6,10 +6,72 @@
     <description>Recent content on TrozWare</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>© 2012 - 2022 Sarah Reichelt</copyright>
-    <lastBuildDate>Mon, 25 Apr 2022 19:00:36 +1000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jun 2022 14:08:46 +1000</lastBuildDate>
     
         <atom:link href="https://troz.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>Writing Setup</title>
+<link>https://troz.net/post/2022/setup/</link>
+<pubDate>Fri, 17 Jun 2022 14:08:46 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2022/setup/</guid>
+<description>&lt;p&gt;If you read my blog or tweets, you will have detected that I recently wrote a book called &lt;a href=&#34;https://www.raywenderlich.com/books/macos-by-tutorials&#34;&gt;macOS by Tutorials&lt;/a&gt;, published by &lt;a href=&#34;https://www.raywenderlich.com/&#34;&gt;raywenderlich.com&lt;/a&gt;. in this post, I&amp;rsquo;m going to show you what hardware and software I used to write it.&lt;/p&gt;
+&lt;h2 id=&#34;hardware&#34;&gt;Hardware&lt;/h2&gt;
+&lt;p&gt;I use an &lt;a href=&#34;https://www.apple.com/imac-24/&#34;&gt;24 inch M1 iMac - yellow&lt;/a&gt;. I&amp;rsquo;ve always loved the form factor of the iMacs. They offer a superb monitor attached to a very good computer and the price is reasonable. My previous iMac used to make a noise like a kettle boiling when Xcode really got going, but this one is totally silent no matter what I do.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m a recent convert to a dual-monitor rig. I&amp;rsquo;ve always been content to use &lt;a href=&#34;https://support.apple.com/en-au/guide/mac-help/mh14112/mac&#34;&gt;Spaces&lt;/a&gt; which provides virtual screens, and I still do that. But having the luxury of a second screen is great when you&amp;rsquo;re writing and previewing. My second screen is a &lt;a href=&#34;https://www.samsung.com/au/monitors/curved/curved-monitor-24-inch-lc24f390fhexxy/&#34;&gt;Samsung C24F390&lt;/a&gt; - a curved 24 inch display. The resolution isn&amp;rsquo;t anything like as good as the iMac, but I tweaked its settings to give as good a result as possible and I can&amp;rsquo;t imagine going back to a single monitor now.&lt;/p&gt;
+&lt;p&gt;My keyboard is an &lt;a href=&#34;https://www.zsa.io/moonlander/&#34;&gt;Ergodox Moonlander&lt;/a&gt; which I love. This is my first mechanical keyboard and I wasn&amp;rsquo;t sure if I&amp;rsquo;d like it, since I appreciated the low travel on my standard Apple keyboard. But I chose the Kailh Silver key switches which have the lowest travel and are the least clicky. It&amp;rsquo;s still quite noisy, but the travel was not an issue. The configuration options are amazing. It took several iterations, but I now have a &lt;a href=&#34;https://configure.zsa.io/embed/moonlander/layouts/9OwwA/latest/0&#34;&gt;keyboard layout&lt;/a&gt; that works really well for me. And I keep my Apple keyboard tucked under my monitor stand so the Touch ID button is in easy reach.&lt;/p&gt;
+&lt;p&gt;For a pointing device, I have the &lt;a href=&#34;https://www.logitech.com/en-au/products/mice/mx-vertical-ergonomic-mouse.910-005449.html&#34;&gt;Logitech MX Vertical Ergonomic Mouse&lt;/a&gt; which is very comfortable to use and charges via USB-C. Just don&amp;rsquo;t install the Logitech Options utility software which is buggy and causes system problems. Use &lt;a href=&#34;https://folivora.ai&#34;&gt;BetterTouchTool&lt;/a&gt; instead  if you want to customize the buttons.&lt;/p&gt;
+&lt;h2 id=&#34;software&#34;&gt;Software&lt;/h2&gt;
+&lt;h3 id=&#34;app-development&#34;&gt;App Development&lt;/h3&gt;
+&lt;p&gt;For writing sample apps and code, I use &lt;a href=&#34;https://apps.apple.com/app/xcode/id497799835&#34;&gt;Xcode&lt;/a&gt; set up in a completely standard way, using the default light scheme. This is so that my screenshots are consistent with what people will see if they are just getting started.&lt;/p&gt;
+&lt;p&gt;I wrote an article about &lt;a href=&#34;https://troz.net/post/2018/swiftlint/&#34;&gt;Consistent Swift Style&lt;/a&gt; some years ago. The concepts are still valid but the way you integrate it with Xcode has changed. Add a build phase to your project, move it to before the Compile Scripts phase and set it to this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$PATH&lt;span style=&#34;color:#e6db74&#34;&gt;:/opt/homebrew/bin&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; which swiftlint &amp;gt; /dev/null; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  swiftlint
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will use the default SwiftLint config which you can change in Terminal.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;ve saved a custom config file, use something like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/opt/homebrew/bin:$PATH
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -f path/to/your-config-file.yml &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; which swiftlint &amp;gt;/dev/null; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    swiftlint --no-cache --config path-to/your-config-file.yml
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To make SwiftLint fix what it can automatically, duplicate the &lt;code&gt;swiftlint&lt;/code&gt; line and add &lt;code&gt;--fix&lt;/code&gt; as another parameter to the first copy. This will run SwiftLint twice: once to auto-fix what it can, and a second time to supply the warnings and errors about what it couldn&amp;rsquo;t fix.&lt;/p&gt;
+&lt;h3 id=&#34;writing&#34;&gt;Writing&lt;/h3&gt;
+&lt;p&gt;The text of the book was written in &lt;a href=&#34;https://www.markdownguide.org&#34;&gt;Markdown&lt;/a&gt; which is great for producing formatted text in a totally open and transferable format. I&amp;rsquo;m always on the lookout for a new Markdown editor and there are a lot of them around. In Section 3 of the book, I talk you through creating a Markdown editor for yourself, but it isn&amp;rsquo;t quite ready for full-time use yet. I wrote this book using &lt;a href=&#34;https://www.foldingtext.com&#34;&gt;FoldingText&lt;/a&gt; which I was quite happy with. While the folding part was not something I used, I appreciated the outline view. Editing text inside links and image links was difficult and the spell checker sometimes got confused and marked an entire sentence or paragraph as incorrect. But the formatting was good and easy to use with plenty of keyboard shortcuts. Code formatting was also excellent, which is a must.&lt;/p&gt;
+&lt;p&gt;I have a bad habit of using the passive voice, which is not good when trying to teach. I use &lt;a href=&#34;https://hemingwayapp.com&#34;&gt;Hemingway Editor&lt;/a&gt; to help me detect this, so that the passive voice can be eradicated&amp;hellip; (Passive voice joke there.) You can use it online, but I prefer to use the app.&lt;/p&gt;
+&lt;h3 id=&#34;screen-shots&#34;&gt;Screen shots&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;ve read the book, you&amp;rsquo;ll know that it includes a lot of screen shots. There are a lot of third-party utilities for doing this, but the built-in facility gives me everything I need. It&amp;rsquo;s important to memorise the keyboard shortcuts to make this easier:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Shift-Command-3&lt;/strong&gt;: screen shot the entire screen.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shift-Command-4&lt;/strong&gt;: bring up crosshairs to allow selection of an area:
+&lt;ul&gt;
+&lt;li&gt;When in this mode:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Escape&lt;/strong&gt; exits without action.&lt;/li&gt;
+&lt;li&gt;Press &lt;strong&gt;Space&lt;/strong&gt; to enter window mode. The window under the pointer is selected and will be screen shotted.&lt;/li&gt;
+&lt;li&gt;Hold down &lt;strong&gt;Command&lt;/strong&gt; to select a dialog box instead of the complete window.&lt;/li&gt;
+&lt;li&gt;Hold down &lt;strong&gt;Option&lt;/strong&gt; to turn off the default shadow.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shift-Command-5&lt;/strong&gt;: bring up the interface where you set options, take screen recordings and set a delay.
+&lt;ul&gt;
+&lt;li&gt;I find this useful when I want to show the custom cursor during a drag operation. I turn on &lt;strong&gt;Show Mouse Pointer&lt;/strong&gt;, set a 5 second delay and then start dragging before the timer runs out.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once I have the image, I use Preview to crop and resize as needed.&lt;/p&gt;
+&lt;h2 id=&#34;and&#34;&gt;And&amp;hellip;&lt;/h2&gt;
+&lt;p&gt;Finally, there&amp;rsquo;s my support crew who watch every word I type and listen carefully as I explain my code.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/figures.jpg&#34; alt=&#34;Figurines&#34;&gt;&lt;/p&gt;</description>
+</item>
     
     <item>
 <title>WWDC 2022 Wishlist</title>
@@ -20,7 +82,7 @@
 <description>&lt;p&gt;Apple has announced that their 2022 World Wide Developers Conference will again be an online event from June 7 to 11. The poster shows a very dark Swift logo in a coloured circle. While I have long since given up trying the read the tea leaves of Apple&amp;rsquo;s graphics to work out what they will announce, I always enjoy speculating. But this year, I thought that instead of trying to guess what Apple will have for us, I&amp;rsquo;d think about what I would &lt;strong&gt;like&lt;/strong&gt; them to announce, with my main focus being the Mac.&lt;/p&gt;
 &lt;h3 id=&#34;hardware&#34;&gt;Hardware&lt;/h3&gt;
 &lt;p&gt;The Apple hardware teams have been doing amazingly well over the last couple of years. The transition of the Mac lineup to Apple Silicon is almost complete and I would guess that they will complete it at WWDC with a new Mac Pro, but that is outside my budget and requirements.&lt;/p&gt;
-&lt;p&gt;While I was glad to see them offer a more reasonably priced monitor with the Studio Display, it&amp;rsquo;s still a bit pricey for me. The desk lamp iMac was one of my favourite designs so it was great to see the option for the tilt &amp;amp; height adjustable stand, although the extra price for that option was rather eye-popping.&lt;/p&gt;
+&lt;p&gt;While I was glad to see them offer a more reasonably priced monitor with the Studio Display, it&amp;rsquo;s still a bit pricey for me. The desk lamp iMac was one of my all time favourite Mac designs so it was great to see the option for the tilt &amp;amp; height adjustable stand, although the extra price for that option was rather eye-popping.&lt;/p&gt;
 &lt;p&gt;I have long thought that the desktop iMac was terrific value because it attaches a stunningly good monitor to a reasonable computer. I wish Apple would supply an iMac monitor using the exact same design, but without the computer. Imagine how great that would look as a second monitor - two coloured machines side by side.&lt;/p&gt;
 &lt;p&gt;But really, I&amp;rsquo;m not looking for any new hardware right now.&lt;/p&gt;
 &lt;h3 id=&#34;services&#34;&gt;Services&lt;/h3&gt;
@@ -43,7 +105,7 @@
 &lt;ul&gt;
 &lt;li&gt;iCloud syncing that works on all Apple platforms.&lt;/li&gt;
 &lt;li&gt;Real Xcode extensions.&lt;/li&gt;
-&lt;li&gt;New App Store rules to weed out copycat apps and fake reviews and that were applied equally to all developers.&lt;/li&gt;
+&lt;li&gt;New App Store rules to weed out copycat apps and fake reviews and that apply equally to all developers.&lt;/li&gt;
 &lt;li&gt;Better notifications for macOS - preferably the type we used to have.&lt;/li&gt;
 &lt;/ul&gt;</description>
 </item>
