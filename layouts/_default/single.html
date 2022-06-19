@@ -1,12 +1,15 @@
 {{ define "main" }}
 
-<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/header.css" />
 
 <div class="post">
-  <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
+  <h2 class="post-title">
+    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+  </h2>
   <div class="post-meta">
     <span class="post-date">
-      {{ .Lastmod.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}
+      {{ .Lastmod.Format (.Site.Params.dateFormatToUse | default "2006-01-02")
+      }}
     </span>
     {{ if .Site.Params.moreMeta -}}
     <span class="more-meta">- {{ .WordCount }} words, </span>
@@ -16,19 +19,16 @@
 
   {{ if .Params.tags }}
   <span class="post-tags">
-    {{ range .Params.tags }}
-    #<a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a>&nbsp;
-    {{ end }}
+    {{ range .Params.tags }} #<a
+      href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}"
+      >{{ . }}</a
+    >&nbsp; {{ end }}
   </span>
-  {{ end }}
-
-  {{ with .Params.Cover }}
+  {{ end }} {{ with .Params.Cover }}
   <img src="/img/{{ . }}" class="post-cover" />
   {{ end }}
 
-  <div class="post-content">
-    {{ .Content }}
-  </div>
+  <div class="post-content">{{ .Content }}</div>
   {{ if or .NextInSection .PrevInSection }}
   <div class="pagination">
     <div class="pagination__title">
@@ -37,10 +37,13 @@
     </div>
     <div class="pagination__buttons">
       {{ if .NextInSection }}
-      <a class="btn next" href="{{ .NextInSection.Permalink }}">← {{ .NextInSection.Title }}</a>
-      {{ end }}
-      {{ if .PrevInSection }}
-      <a class="btn previous" href="{{ .PrevInSection.Permalink }}">{{ .PrevInSection.Title }} →</a>
+      <a class="btn next" href="{{ .NextInSection.Permalink }}"
+        >← {{ .NextInSection.Title }}</a
+      >
+      {{ end }} {{ if .PrevInSection }}
+      <a class="btn previous" href="{{ .PrevInSection.Permalink }}"
+        >{{ .PrevInSection.Title }} →</a
+      >
       {{ end }}
     </div>
   </div>

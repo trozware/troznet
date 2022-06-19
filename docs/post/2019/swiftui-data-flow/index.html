@@ -175,10 +175,12 @@ Update - January 2021: I think the information in this post is still all valid e
       <div class="content">
         
 
-<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/header.css" />
 
 <div class="post">
-  <h2 class="post-title"><a href="https://troz.net/post/2019/swiftui-data-flow/">SwiftUI Data Flow</a></h2>
+  <h2 class="post-title">
+    <a href="https://troz.net/post/2019/swiftui-data-flow/">SwiftUI Data Flow</a>
+  </h2>
   <div class="post-meta">
     <span class="post-date">
       24 Jan 2021
@@ -189,18 +191,17 @@ Update - January 2021: I think the information in this post is still all valid e
 
   
   <span class="post-tags">
-    
-    #<a href="https://troz.net/tags/swift">swift</a>&nbsp;
-    
-    #<a href="https://troz.net/tags/swiftui">swiftui</a>&nbsp;
-    
+     #<a
+      href="https://troz.net/tags/swift"
+      >swift</a
+    >&nbsp;  #<a
+      href="https://troz.net/tags/swiftui"
+      >swiftui</a
+    >&nbsp; 
   </span>
-  
+   
 
-  
-
-  <div class="post-content">
-    <p><a href="https://developer.apple.com/xcode/swiftui/">SwiftUI</a> gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?</p>
+  <div class="post-content"><p><a href="https://developer.apple.com/xcode/swiftui/">SwiftUI</a> gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?</p>
 <p>In this post, I intend to discuss the possibilities with examples.</p>
 <p><strong>Update - January 2021:</strong> I think the information in this post is still all valid except for one change. When you are initializing an ObservableObject, you should use <code>@StateObject</code> instead of <code>@ObservedObject</code>. Your views can receive objects that are owned by other views as <code>@ObservedObject</code> or <code>@EnvironmentObject</code> but the owner of the data should always create the data object with <code>@StateObject</code>.</p>
 <hr>
@@ -544,8 +545,7 @@ Update - January 2021: I think the information in this post is still all valid e
 <li>Use <code>@Binding</code> or <code>@ObservedObject</code> to pass data to a view that can mutate it.</li>
 </ul>
 <p>And one final tip: while creating a view from scratch, use <code>@State</code> with sample, hard-coded data. Once you have the interface you want, then change it to use real data.</p>
-<p>I am sure people will develop their own theories and their own ways of using SwiftUI, but those are the guidelines that I intend to follow for now. If you have different views and would like to discuss them, please contact me.</p>
-  </div>
+<p>I am sure people will develop their own theories and their own ways of using SwiftUI, but those are the guidelines that I intend to follow for now. If you have different views and would like to discuss them, please contact me.</p></div>
   
   <div class="pagination">
     <div class="pagination__title">
@@ -554,10 +554,13 @@ Update - January 2021: I think the information in this post is still all valid e
     </div>
     <div class="pagination__buttons">
       
-      <a class="btn next" href="https://troz.net/post/2021/swiftui_mac_menus/">← SwifUI Mac Menus</a>
-      
-      
-      <a class="btn previous" href="https://troz.net/post/2020/crossfix/">Crossfix →</a>
+      <a class="btn next" href="https://troz.net/post/2021/swiftui_mac_menus/"
+        >← SwifUI Mac Menus</a
+      >
+       
+      <a class="btn previous" href="https://troz.net/post/2020/crossfix/"
+        >Crossfix →</a
+      >
       
     </div>
   </div>
@@ -578,16 +581,31 @@ Update - January 2021: I think the information in this post is still all valid e
       <a href="https://stackoverflow.com/users/1082632"
         ><img src="/icons/stack-overflow.svg"
       /></a>
-      <a href="https://twitter.com/trozware"><img src="/icons/twitter.svg"/></a>
-      <a href="https://github.com/trozware"><img src="/icons/github.svg"/></a>
-      <a href="https://troz.net/index.xml"><img src="/icons/rss.svg"/></a>
-      <a href="https://troz.net/feed.json"><img src="/icons/json.png"/></a>
+      <a href="https://twitter.com/trozware"
+        ><img src="/icons/twitter.svg"
+      /></a>
+      <a href="https://github.com/trozware"><img src="/icons/github.svg" /></a>
+      <a href="https://troz.net/index.xml"><img src="/icons/rss.svg" /></a>
+      <a href="https://troz.net/feed.json"><img src="/icons/json.png" /></a>
 
       <a href="https://dev.to/trozware">
-        <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" 
-        alt="TrozWare's DEV Profile" 
-        style="height: 37px; margin-top: -3px" height="40" width="40">
+        <img
+          src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
+          alt="TrozWare's DEV Profile"
+          style="height: 37px; margin-top: -3px"
+          height="40"
+          width="40"
+        />
       </a>
+
+      <a href="https://ko-fi.com/H2H3BU7SI" target="_blank"
+        ><img
+          height="36"
+          style="border: 0px; height: 36px; width: unset"
+          src="https://cdn.ko-fi.com/cdn/kofi1.png?v=3"
+          border="0"
+          alt="Buy Me a Coffee at ko-fi.com"
+      /></a>
     </div>
   </div>
 
