@@ -10,7 +10,7 @@ In December 2019, I wrote a [series of articles about using SwiftUI to build a M
 
 <!--more-->
 
-Right now, it's June 2022 and I'm using macOS Ventura 13.0 Beta (22A5266r) with Xcode 14.0 beta (14A5228q). There will undoubtedly be changes before release, but I'll try to update this article or add notes to point out any major differences.
+Right now, it's June 2022 and I'm using macOS Ventura 13 beta 2 (22A5286j) with Xcode 14 beta 2 (14A5229c). There will undoubtedly be changes before release, but I'll try to update this article or add notes to point out any major differences.
 
 I don't intend to cover features that haven't changed much, but here are the new APIs that I am interested in:
 
@@ -21,6 +21,8 @@ I don't intend to cover features that haven't changed much, but here are the new
 - [Image Rendering][a7]
 - [Forms][a5]
 - [Menu Bar Apps][a6]
+
+**Note**: In Xcode 14 beta 2, the SwiftUI Previews are crashing unless I go to Project > Target > Signing & Capabilities and select my developer team and set Signing Certificate to Development. So if you can't see the Previews, make these changes, or run the app directly.
 
 ### Navigation
 
@@ -52,9 +54,9 @@ The `NavigationSplitView` takes various parameters, depending on the result you 
 
 Interestingly, when you create a navigation setup like this, Xcode automatically adds a toolbar with a button to toggle the sidebar. This has always been essential as there is a long-standing bug where a hidden sidebar cannot be dragged back into view. But adding it manually meant digging into AppKit to find a method to call.
 
-Not so interestingly, the sidebar is often hidden on app launch. I tried giving `NavigationStackView` its optional `columnVisibility` parameter, but no setting made any difference.
+Not so interestingly, the sidebar is often hidden on app launch. I tried giving `NavigationStackView` its optional `columnVisibility` parameter, but no setting made it appear consistently.
 
-With the detail, right now there is a bug where you cannot unwrap a conditional and show a view based on that. One workaround is to wrap the entire detail in a `ZStack`, but in the interest of keeping my `ContentView` code simple and as short as possible, I added an intermediary view. `DetailView` takes optional parameters and it decides whether to show the `StatusView` or a placeholder.
+With the detail, right now there is a bug where you cannot unwrap a conditional and show a view based on that. One workaround is to wrap the entire detail in a `ZStack`, but in the interest of keeping my `ContentView` code simple and as short as possible, I added an intermediary view. `DetailView` takes optional parameters and it decides whether to show the `StatusView` or a placeholder. Note: the bug may have gone in beta 2, but as I want to display other UI elements in the detail view anyway, this is still a neater approach.
 
 There is nothing much new in either of these views, except where `StatusView` downloads the selected cat image. I tried using `AsyncImage` which worked really well except for one problem. When I selected a new status, the old image stayed in place until the new one arrived. I was unable to work out how to clear or reset an `AsyncImage` so it would show its placeholder again.
 
@@ -94,9 +96,9 @@ CommandGroup(after: .textEditing) {
   .keyboardShortcut("f")
 }
 ```
-This new items appears in the Edit menu, after the standard items. It has a shortcut of Command-F. The Command key is the default shortcut modifier, so if you only specify a letter, it automatically uses Command. All this menu item does is to broadcast a notification.
+This new item appears in the Edit menu, after the standard items. It has a shortcut of Command-F. The Command key is the default shortcut modifier, so if you only specify a letter, it automatically uses Command. All this menu item does is to broadcast a notification.
 
-The image is shown in a subview called `CatImageView` which includes the following properties:
+The image is shown in a subview called `CatImageView` which now includes the following properties:
 
 ```swift
 @Environment(\.controlActiveState) private var controlActiveState
@@ -128,32 +130,20 @@ As you can see from the text in the images, only the front window image is flipp
 
 ### Opening New Windows
 
-In early versions of SwiftUI, opening a secondary window was a very complex process. Read [part 2 of the original series][6] to see how I struggled with this. Later, we got an easy way to open a Preferences window, using a `Settings` scene. Preferences are now called Settings, which makes this nomenclature more logical. Now there are two good ways to open a secondary window: one new and one which we got last year.
+In early versions of SwiftUI, opening a secondary window was a very complex process. Read [part 2 of the original series][6] to see how I struggled with this. Later, we got an easy way to open a Preferences window, using a `Settings` scene. Preferences are now called Settings, which makes this nomenclature more logical.
 
-The older version works well if you want to open a window from a menu item. SwiftUI menu items can be many different types of views. `Buttons` are the most usual, but `Pickers`, `Toggles` and `Menus` are also very convenient. A SwiftUI menu item can also be a `NavigationLink` and this will open the destination view in a new window.
+Last year, we got the ability to use a `NavigationLink` as a SwiftUI menu item and this will open the destination view in a new window.
 
-I want to display a window with a view demonstrating some UI elements. The view is called `SamplesView`, so I added this to my menu commands:
-
-```swift
-CommandGroup(after: .newItem) {
-  NavigationLink(destination: SamplesView()) {
-    Text("Show UI Samples")
-  }
-  .keyboardShortcut("u")
-}
-```
-
-This adds a new menu item to the File menu, after New Window. Selecting it opens a new window displaying the view. This method has the advantage or not opening a second window to the view if there is already one open.
-
-The second, and newer method involves another new `EnvironmentValue` called `openWindow`. First, in the _App.swift file, I added another new scene to the body - this time a second `WindowGroup`. A `WindowGroup` can be passed an `id`, a data object of a specific type, or both. In this case, I didn't want to pass any data, so I gave it an `id`:
+This year, we have a new method that uses another new `EnvironmentValue` called `openWindow`. First, in the _App.swift file, I added another new scene to the body - this time a second `WindowGroup`. A `WindowGroup` can be passed an `id`, a data object of a specific type, or both. In this case, I didn't want to pass any data, so I gave it an `id`:
 
 ```swift
 WindowGroup(id: "ui_samples") {
   SamplesView()
 }
 ```
+I want to display a window with a view demonstrating some UI elements. The view is called `SamplesView`, so I set this as the content of the `WindowGroup`.
 
-To use this, I added a property to `DetailView`:
+To use it, I added a property to `DetailView`:
 
 ```swift
 @Environment(\.openWindow) private var openWindow
@@ -167,7 +157,7 @@ Button("Show UI Samples") {
 }
 ```
 
-This opens a new window with the appropriate `id`. Unlike when using `NavigationLink`, this can open multiple copies of the same window. If I had passed a data object to the window, it would have brought the window containing that data object to the front instead of opening a new window. To enforce this behavior, I changed the `WindowGroup` to this:
+This opens a new window with the appropriate `id`. This can open multiple copies of the same window. If I had passed a data object to the window, it would have brought the window containing that data object to the front instead of opening a new window. To test this behavior, I changed the `WindowGroup` to this:
 
 ```swift
 WindowGroup(for: String.self) { _ in
@@ -182,7 +172,18 @@ Button("Show UI Samples") {
 }
 ```
 
-Now the WindowGroup expects a String. The Button always passes the same string, so the window only opens once.
+Now the `WindowGroup` expects a `String`. When you pass a `String` that has already been attached to a window, that window is brought to the front. If you pass a different `String`, you get a new window.
+
+After that, I realized that there was another scene type I could use. If you create a `Window` scene instead of a `WindowGroup`, not only does this become a single presentation window, but you get a menu item for it in the Window menu without any extra work. You can add a keyboard shortcut to the `Window` scene too. Supposedly, you can add default sizing and positioning, but they don't appear to work yet.
+
+```swift
+Window("Samples", id: "ui_samples") {
+  SamplesView()
+}
+.keyboardShortcut("u")
+.defaultPosition(.topLeading)  // doesn't work yet
+.defaultSize(width: 600, height: 600)  // doesn't work yet
+```
 
 ### Charts
 
@@ -190,7 +191,7 @@ One of the signature features of SwiftUI at WWDC 2022 was the new Charts API. I 
 
 ![Bar chart][i3]
 
-This charts the number of entries in each category of HTTP status. I drew a line across at the 8 value because this is a feature I have often needed in charts.
+This charts the number of entries in each category of HTTP status. I drew a line across at the 8 value because drawing a marker line is a feature I have often needed in charts.
 
 Creating the chart was smooth:
 
@@ -257,9 +258,9 @@ I added `Text` views for the title of the chart and for the axes, inside a  `VSt
 
 ### Image Rendering
 
-While I am investigating charts, I experimented with another new SwiftUI feature: `ImageRenderer`. When I have made charts, I've often wanted to export them as images for upload. ImageRenderer allows us to convert a SwiftUI view into an image: on macOS, either `NSImage` or `CGImage`.
+While investigating charts, I experimented with another new SwiftUI feature: `ImageRenderer`. When I have made charts, I've often wanted to export them as images for upload. `ImageRenderer` allows us to convert a SwiftUI view into an image: on macOS, either `NSImage` or `CGImage`.
 
-The first step was to convert the chart view plus its labels, into a variable (modifers and RuleMark omitted from this code snippet for brevity):
+The first step was to convert the chart view plus its labels, into a variable (modifiers and RuleMark omitted from this code snippet for brevity):
 
 ```swift
 let chartView = Group {
@@ -274,7 +275,6 @@ let chartView = Group {
     Chart {
       ForEach(chartData.keys.sorted(), id: \.self) { key in
         barMark(for: key)
-          .foregroundStyle(by: .value( "Color", key))
       }
     }
   }
@@ -293,7 +293,7 @@ VStack {
 }
 ```
 
-This left the display unchanged, but allowed me to use this variable to create a view for rendering and left the controls that should not be part of the image outside:
+This left the display unchanged, but allowed me to use this variable to create a view for rendering, omitting the controls that should not be part of the image:
 
 ```swift
 Button("Save Chart as Image") {
@@ -309,11 +309,11 @@ Button("Save Chart as Image") {
 ```
 
 I added `padding` and `frame` modifiers to the view variable as it came out very small without this. Then I created an `ImageRenderer` using this view and converted it into an `NSImage`.
-The `saveImage` method uses an `NSSavePanel` to get a URL and then convert the NSImage to JPG data before writing it out. I used the same technique in [part 3 of the original series][7] but that only exported the downloaded image. this creates an image from a swiftUI view.
+The `saveImage` method uses an `NSSavePanel` to get a URL and then convert the NSImage to JPG data before writing it out. I used the same technique in [part 3 of the original series][7] but that only exported the downloaded image. This creates an image from a complete SwiftUI view.
 
 I would be interested to try the SwiftUI `fileExporter`, but that's for another day.
 
-I also tried to use the new `ShareLink` to share this image, but couldn't get that to work. The `ImageRenderer` seems to work in the background, so that didn't work well with `ShareLink`. Again, that's for another day.
+I also tried to use the new `ShareLink` to share this image, but couldn't get that to work. The `ImageRenderer` seems to work asynchronously so that didn't work well with `ShareLink`. Again, that's for another day.
 
 ### Forms
 
@@ -346,25 +346,28 @@ And finally, I set the Boolean property in the `onAppear` modifier:
 
 With this in place, the email text entry field had the focus whenever this view appeared.
 
-The date picker is slightly confused. It can't seem to decide whether it's a graphical picker or a numeric picker, but it works.
+The date picker is slightly confused. It can't seem to decide whether it's a graphical picker or a numeric picker, but it works. I haven't tried the new date range picker yet.
 
 With the check marks, I was trying to emulate the toggles in System Settings, where they are very small switches. I set the `toggleStyle` to `switch` which gave the right shape but it was big, like on an iPhone or iPad. The outermost form is set to use the `columns` `formStyle`. This lines up the labels and controls very neatly. But when I put the `Toggles` and `Picker` into an inner form with a style of `grouped`, I got the exact System Settings look I was going for.
+
+As an aside, I love the way you can now apply control-specific modifiers to a container view and every appropriate view inside the container will use that setting. For example, I added `.toggleStyle(.switch)` to the `Form` view and it was applied to every `Toggle` inside it.
 
 The final item in the form is a color picker. It opens up the standard macOS color picker and uses the selected color to fill the capsule beside it. The interesting thing is that the color has a `gradient` modifier. So you can see the faint gradient that is automatically applied to the shape.
 
 ### Menu Bar Apps
 
-Writing a menu bar app has previously required using AppKit to create a `NSStatusItem`. Now, we can add a `MenuBarExtra` scene to the app body to create a menu bar app component. To make a pure menu bar app with no windows, remove all `WindowGroups`.
+Writing a menu bar app has previously required using AppKit to create a `NSStatusItem`. Now, we can add a `MenuBarExtra` scene to the app body to create a menu bar app component.
 
 ```swift
-MenuBarExtra("HTTP Status Code", isInserted: $showMenuBar) {
+MenuBarExtra("HTTP Status Code", systemImage: "number.circle", isInserted: $showMenuBar) {
   MenuBarView(httpSections: $httpSections)
 }
 ```
+Setting the title without a `systemImage` shows the text as the menu bar title. when you specify a `systemImage`, the text is not displayed and the menu bar only shows the image.
 
 `MenuBarExtra` takes an `isInserted` parameter, so you can turn it off and on. I added this to the app's settings and stored it using `@AppStorage`.
 
-I set up a new SwiftUI view that looped through the HTTP Status data and created a submenu for each category and set this as the `MenuBarExtra` view. This works and my menu bar component was functional. Selecting a status uses `NSWorkspace` to open the relevant documentation page at MDN. But there is a bug with `MenuBarExtra`. Whenever you make a change, it doesn't always close down the first menu and it sometimes adds a second one. If this happens to you, close the app, quit Xcode and try again.
+I set up a new SwiftUI view that looped through the HTTP Status data and created a submenu for each category and set this as the `MenuBarExtra` view. This works and my menu bar component was functional. Selecting a status uses `NSWorkspace` to open the relevant documentation page at MDN.
 
 ![MenuBarExtra][i6]
 
@@ -372,7 +375,7 @@ I set up a new SwiftUI view that looped through the HTTP Status data and created
 
 2022 is an exciting year to be a SwiftUI programmer. Apple has made it very clear that this is the way forward and as early adopters, we have the ability to influence how the framework develops, so keep filing those feedback reports! There have been some great new features this year: navigation is better than ever, the platforms are unifying and macOS is not getting left behind.
 
-The project from this article is available on [GitHub][9]. And as usual, I'd love to hear any suggestions, corrections or improvements. Please contact me using one of the links below or through the [Contact][contact] page. And if you found this article, I'd love you to [buy me a coffee][kofi].
+The project from this article is available on [GitHub][9]. And as usual, I'd be thrilled to hear any suggestions, corrections or improvements. Please contact me using one of the links below or through the [Contact][contact] page. And if you found this article, I'd love you to [buy me a coffee][kofi].
 
 
 [1]: /post/2019/swiftui-for-mac-1/
