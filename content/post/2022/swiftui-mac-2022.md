@@ -60,23 +60,22 @@ With the detail, right now there is a bug where you cannot unwrap a conditional 
 
 There is nothing much new in either of these views, except where `StatusView` downloads the selected cat image. I tried using `AsyncImage` which worked really well except for one problem. When I selected a new status, the old image stayed in place until the new one arrived. I was unable to work out how to clear or reset an `AsyncImage` so it would show its placeholder again.
 
-However I did switch to using `async/await` to download the image. Updating this was also slightly complicated. I downloaded the first selected image using a `task` modifier and downloaded subsequent selections using an `onChange` modifier. Both of these were required to show the image every time.
+However I did switch to using `async/await` to download the image. 
+
+~~Updating this was also slightly complicated. I downloaded the first selected image using a `task` modifier and downloaded subsequent selections using an `onChange` modifier. Both of these were required to show the image every time.~~
+
+Thanks to [@davbeck](https://twitter.com/davbeck), [@malhal](https://twitter.com/malhal) and [@chriseidhof](https://twitter.com/chriseidhof) for pointing out that if I gave the `task` an `id`, it would be called whenever the `id` property changed. So now I use this which is much neater:
 
 ```swift
-.task {
-  await getCatImage(status: httpStatus)
-}
-.onChange(of: httpStatus) { newStatus in
+.task(id: httpStatus) {
   catImage = nil
-  Task {
-    await getCatImage(status: newStatus)
-  }
+  await getCatImage(status: httpStatus)
 }
 ```
 
 {{< img_border >}}
 
-The `onChange` was able to set the previous image to `nil`, so that the progress indicator appeared. I had to use the `newStatus` explicitly as `onChange` seems to be triggered _before_ the property actually changes.
+The previous image is first set to `nil`, so that the progress indicator appears.
 
 With all this in place, I had the basis of the app and the navigation was complete:
 
