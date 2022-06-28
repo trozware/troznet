@@ -60,22 +60,28 @@ With the detail, right now there is a bug where you cannot unwrap a conditional 
 
 There is nothing much new in either of these views, except where `StatusView` downloads the selected cat image. I tried using `AsyncImage` which worked really well except for one problem. When I selected a new status, the old image stayed in place until the new one arrived. I was unable to work out how to clear or reset an `AsyncImage` so it would show its placeholder again.
 
-However I did switch to using `async/await` to download the image. 
+**Update**: Thanks to [@ramzesenok](https://twitter.com/ramzesenok) who pointed out that this is another case where I could use an `id` to force a refresh. So now, the app uses `AsyncImage` which makes for a lot less code. 
+
+```swift
+AsyncImage(url: httpStatus.imageUrl) { img in
+  CatImageView(catImage: img, statusCode: httpStatus.code)
+} placeholder: {
+  ProgressView()
+}
+.id(httpStatus)   // this resets the AsyncImage whenever httpStatus changes
+```
+
+If anyone is still interested in the `async/await` version, check out this [earlier commit on GitHub][10]. It does appear to have better/faster caching, but a beta is not the right place to make speed assessments.
+
+~~However I did switch to using `async/await` to download the image.~~
 
 ~~Updating this was also slightly complicated. I downloaded the first selected image using a `task` modifier and downloaded subsequent selections using an `onChange` modifier. Both of these were required to show the image every time.~~
 
-Thanks to [@davbeck](https://twitter.com/davbeck), [@malhal](https://twitter.com/malhal) and [@chriseidhof](https://twitter.com/chriseidhof) for pointing out that if I gave the `task` an `id`, it would be called whenever the `id` property changed. So now I use this which is much neater:
-
-```swift
-.task(id: httpStatus) {
-  catImage = nil
-  await getCatImage(status: httpStatus)
-}
-```
+~~Thanks to [@davbeck](https://twitter.com/davbeck), [@malhal](https://twitter.com/malhal) and [@chriseidhof](https://twitter.com/chriseidhof) for pointing out that if I gave the `task` an `id`, it would be called whenever the `id` property changed.~~
 
 {{< img_border >}}
 
-The previous image is first set to `nil`, so that the progress indicator appears.
+~~The previous image is first set to `nil`, so that the progress indicator appears.~~
 
 With all this in place, I had the basis of the app and the navigation was complete:
 
@@ -385,6 +391,8 @@ The project from this article is available on [GitHub][9]. And as usual, I'd be 
 [6]: https://troz.net/post/2019/swiftui-for-mac-2/
 [7]: https://troz.net/post/2019/swiftui-for-mac-3/
 [9]: https://github.com/trozware/swiftui-mac-2022
+[10]: https://github.com/trozware/swiftui-mac-2022/tree/55dc61b57f50379e4a4b0c247014af521d866c5d
+
 [contact]: /contact/
 [kofi]: https://ko-fi.com/trozware
 
