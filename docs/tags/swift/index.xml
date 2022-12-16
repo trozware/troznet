@@ -6,10 +6,313 @@
     <description>Recent content in swift on TrozWare</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>© 2012 - 2022 Sarah Reichelt</copyright>
-    <lastBuildDate>Sat, 09 Apr 2022 10:53:43 +1000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jun 2022 14:18:32 +1000</lastBuildDate>
     
         <atom:link href="https://troz.net/tags/swift/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>New Links</title>
+<link>https://troz.net/post/2022/new_links/</link>
+<pubDate>Sat, 17 Dec 2022 08:47:35 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2022/new_links/</guid>
+<description>&lt;p&gt;As we round out the year, there are several new addresses I&amp;rsquo;d like people to use to contact me or get my book.&lt;/p&gt;
+&lt;p&gt;First, raywenderlich.com has re-branded to &lt;a href=&#34;https://www.kodeco.com/books/&#34;&gt;Kodeco&lt;/a&gt;. Still the same great content created by terrific people, but with a fresh new design that makes it easier to follow the learning path that you prefer.&lt;/p&gt;
+&lt;p&gt;If you want to read my macOS by Tutorials book, it&amp;rsquo;s now at &lt;a href=&#34;https://www.kodeco.com/books/macos-by-tutorials&#34;&gt;kodeco.com/books/macos-by-tutorials&lt;/a&gt;.&lt;/p&gt;
+&lt;style&gt;
+  img {
+    margin: 10px auto;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .social_footer img {
+    border: none;
+    box-shadow: none;
+  }
+&lt;/style&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/book_cover.png&#34; alt=&#34;Book Cover&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As we all know, Twitter is in meltdown and I no longer use it. I&amp;rsquo;d love it if you came over to Mastodon. People on Mastodon are friendly and sharing. It feels much more like a community.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.movetodon.org&#34;&gt;Movetodon&lt;/a&gt; is a great tool for finding your twitter friends on Mastodon and &lt;a href=&#34;https://fedi.tips&#34;&gt;Fedi.tips&lt;/a&gt; is a useful site for learning how to use Mastodon effectively.&lt;/p&gt;
+&lt;p&gt;My suggestions are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Be nice!&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t stress about choosing a server, you can follow anyone from any server and you can transfer your account to a different server if you change your mind.&lt;/li&gt;
+&lt;li&gt;Follow hashtags as well as people, and add hashtags to your posts.&lt;/li&gt;
+&lt;li&gt;Use &lt;strong&gt;Favorite&lt;/strong&gt; to tell people you liked their post and &lt;strong&gt;Boost&lt;/strong&gt; to share with your followers.&lt;/li&gt;
+&lt;li&gt;Add hashtags using UpperCamelCase to assist screen readers e.g. #AdventOfCode, not #adventofcode.&lt;/li&gt;
+&lt;li&gt;Follow me: &lt;a href=&#34;https://mastodon.social/@troz&#34;&gt;@troz@mastodon.social&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I look forward to seeing you there.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve added a &lt;a href=&#34;https://mastodon.social/@troz&#34;&gt;Mastodon&lt;/a&gt; link to my web footer, but I also created a &lt;a href=&#34;https://linktr.ee/trozware&#34;&gt;LinkTree&lt;/a&gt; to gather all my links into one place.&lt;/p&gt;
+&lt;p&gt;And finally, if you want to support my work, please &lt;a href=&#34;https://ko-fi.com/H2H3BU7SI&#34;&gt;buy me a coffee&lt;/a&gt;.&lt;/p&gt;</description>
+</item>
+    
+    <item>
+<title>SwiftUI for Mac 2022</title>
+<link>https://troz.net/post/2022/swiftui-mac-2022/</link>
+<pubDate>Fri, 17 Jun 2022 14:18:32 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2022/swiftui-mac-2022/</guid>
+<description>&lt;p&gt;In December 2019, I wrote a &lt;a href=&#34;https://troz.net/post/2019/swiftui-for-mac-1/&#34;&gt;series of articles about using SwiftUI to build a Mac app&lt;/a&gt;. And in July 2020, I &lt;a href=&#34;https://troz.net/post/2020/swiftui_mac_big_sur/&#34;&gt;re-visited the sample app&lt;/a&gt; to apply the new SwiftUI features made available in macOS BigSur. Now that macOS Ventura and Xcode 14 are in beta, it&amp;rsquo;s time to build the app again while learning how to incorporate the new APIs.&lt;/p&gt;
+&lt;p&gt;Right now, it&amp;rsquo;s June 2022 and I&amp;rsquo;m using macOS Ventura 13 beta 2 (22A5286j) with Xcode 14 beta 2 (14A5229c). There will undoubtedly be changes before release, but I&amp;rsquo;ll try to update this article or add notes to point out any major differences.&lt;/p&gt;
+&lt;p&gt;I don&amp;rsquo;t intend to cover features that haven&amp;rsquo;t changed much, but here are the new APIs that I am interested in:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#navigation&#34;&gt;Navigation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#detecting-the-active-window&#34;&gt;Detecting the Active Window&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#opening-new-windows&#34;&gt;Opening New Windows&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#charts&#34;&gt;Charts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#image-rendering&#34;&gt;Image Rendering&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#forms&#34;&gt;Forms&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#menu-bar-apps&#34;&gt;Menu Bar Apps&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: In Xcode 14 beta 2, the SwiftUI Previews are crashing unless I go to Project &amp;gt; Target &amp;gt; Signing &amp;amp; Capabilities and select my developer team and set Signing Certificate to Development. So if you can&amp;rsquo;t see the Previews, make these changes, or run the app directly.&lt;/p&gt;
+&lt;h3 id=&#34;navigation&#34;&gt;Navigation&lt;/h3&gt;
+&lt;p&gt;The &lt;a href=&#34;https://github.com/trozware/swiftui-mac&#34;&gt;first version of this app&lt;/a&gt; used a two pane layout with a sectioned list in the sidebar leading to a detail view in the main area. With the &lt;a href=&#34;https://github.com/trozware/swiftui-mac-11&#34;&gt;Big Sur version&lt;/a&gt;, I switched to a three pane layout because the sections were not displaying neatly. This time, I&amp;rsquo;ve reverted to two panes with sections. As before, I&amp;rsquo;m using &lt;a href=&#34;https://http.cat&#34;&gt;HTTP Cats&lt;/a&gt; which is a site that serves up a cat image to match almost every HTTP status code.&lt;/p&gt;
+&lt;p&gt;Previous versions used &lt;code&gt;NavigationLinks&lt;/code&gt; inside a &lt;code&gt;NavigationView&lt;/code&gt;. &lt;code&gt;NavigationView&lt;/code&gt; is now deprecated and we should use either &lt;code&gt;NavigationStackView&lt;/code&gt; or &lt;code&gt;NavigationSplitView&lt;/code&gt;. &lt;code&gt;NavigationStackView&lt;/code&gt; is better suited to a small screen where each view is pushed on to a stack and can be popped off to navigate back. I am going to use &lt;code&gt;NavigationSplitView&lt;/code&gt; which works well for bigger displays with all the panes visible at once.&lt;/p&gt;
+&lt;p&gt;My data model is exactly the same as I developed originally and consists of an array of &lt;code&gt;HttpSections&lt;/code&gt;, each containing an array of &lt;code&gt;HttpStatuses&lt;/code&gt;.
+So I was able to render my navigation like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;NavigationSplitView {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  List(httpSections, selection: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;$&lt;/span&gt;selectedStatus) { section &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Section(header: Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;\(&lt;/span&gt;section.headerCode&lt;span style=&#34;color:#e6db74&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; - &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;\(&lt;/span&gt;section.headerText&lt;span style=&#34;color:#e6db74&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      ForEach(section.statuses) { status &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        SidebarRowView(code: status.code, title: status.title)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          .tag(status)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .font(.headline)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .frame(minWidth: &lt;span style=&#34;color:#ae81ff&#34;&gt;250&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;} detail: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  DetailView(sectionTitle: sectionHeader, httpStatus: selectedStatus)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;NavigationSplitView&lt;/code&gt; takes various parameters, depending on the result you want. In this case, the first parameter lays out the sidebar, which is a &lt;code&gt;List&lt;/code&gt;. The detail parameter contains the detail view. For the &lt;code&gt;List&lt;/code&gt;, I loop through the sections, adding a section header for each one and a custom &lt;code&gt;SidebarRowView&lt;/code&gt; to display the individual status entries. The &lt;code&gt;List&lt;/code&gt; selection is bound to an optional &lt;code&gt;HttpStatus&lt;/code&gt;. The key here is to give each row a &lt;code&gt;tag&lt;/code&gt; that maps to the status displayed in that row. If you omit the tag, the sidebar draws but none of the entries are selectable.&lt;/p&gt;
+&lt;p&gt;Interestingly, when you create a navigation setup like this, Xcode automatically adds a toolbar with a button to toggle the sidebar. This has always been essential as there is a long-standing bug where a hidden sidebar cannot be dragged back into view. But adding it manually meant digging into AppKit to find a method to call.&lt;/p&gt;
+&lt;p&gt;Not so interestingly, the sidebar is often hidden on app launch. I tried giving &lt;code&gt;NavigationStackView&lt;/code&gt; its optional &lt;code&gt;columnVisibility&lt;/code&gt; parameter, but no setting made it appear consistently.&lt;/p&gt;
+&lt;p&gt;With the detail, right now there is a bug where you cannot unwrap a conditional and show a view based on that. One workaround is to wrap the entire detail in a &lt;code&gt;ZStack&lt;/code&gt;, but in the interest of keeping my &lt;code&gt;ContentView&lt;/code&gt; code simple and as short as possible, I added an intermediary view. &lt;code&gt;DetailView&lt;/code&gt; takes optional parameters and it decides whether to show the &lt;code&gt;StatusView&lt;/code&gt; or a placeholder. Note: the bug may have gone in beta 2, but as I want to display other UI elements in the detail view anyway, this is still a neater approach.&lt;/p&gt;
+&lt;p&gt;There is nothing much new in either of these views, except where &lt;code&gt;StatusView&lt;/code&gt; downloads the selected cat image. I tried using &lt;code&gt;AsyncImage&lt;/code&gt; which worked really well except for one problem. When I selected a new status, the old image stayed in place until the new one arrived. I was unable to work out how to clear or reset an &lt;code&gt;AsyncImage&lt;/code&gt; so it would show its placeholder again.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: Thanks to &lt;a href=&#34;https://twitter.com/ramzesenok&#34;&gt;@ramzesenok&lt;/a&gt; who pointed out that this is another case where I could use an &lt;code&gt;id&lt;/code&gt; to force a refresh. So now, the app uses &lt;code&gt;AsyncImage&lt;/code&gt; which makes for a lot less code.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AsyncImage(url: httpStatus.imageUrl) { img &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  CatImageView(catImage: img, statusCode: httpStatus.code)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;} placeholder: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ProgressView()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.id(httpStatus)   &lt;span style=&#34;color:#75715e&#34;&gt;// this resets the AsyncImage whenever httpStatus changes&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If anyone is still interested in the &lt;code&gt;async/await&lt;/code&gt; version, check out this &lt;a href=&#34;https://github.com/trozware/swiftui-mac-2022/tree/55dc61b57f50379e4a4b0c247014af521d866c5d&#34;&gt;earlier commit on GitHub&lt;/a&gt;. It does appear to have better/faster caching, but a beta is not the right place to make speed assessments.&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;However I did switch to using &lt;code&gt;async/await&lt;/code&gt; to download the image.&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;Updating this was also slightly complicated. I downloaded the first selected image using a &lt;code&gt;task&lt;/code&gt; modifier and downloaded subsequent selections using an &lt;code&gt;onChange&lt;/code&gt; modifier. Both of these were required to show the image every time.&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;Thanks to &lt;a href=&#34;https://twitter.com/davbeck&#34;&gt;@davbeck&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/malhal&#34;&gt;@malhal&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/chriseidhof&#34;&gt;@chriseidhof&lt;/a&gt; for pointing out that if I gave the &lt;code&gt;task&lt;/code&gt; an &lt;code&gt;id&lt;/code&gt;, it would be called whenever the &lt;code&gt;id&lt;/code&gt; property changed.&lt;/del&gt;&lt;/p&gt;
+&lt;style&gt;
+  img {
+    margin: 10px auto;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .social_footer img {
+    border: none;
+    box-shadow: none;
+  }
+&lt;/style&gt;
+
+&lt;p&gt;&lt;del&gt;The previous image is first set to &lt;code&gt;nil&lt;/code&gt;, so that the progress indicator appears.&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;With all this in place, I had the basis of the app and the navigation was complete:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/navigation_2022.jpg&#34; alt=&#34;Navigation&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;detecting-the-active-window&#34;&gt;Detecting the Active Window&lt;/h3&gt;
+&lt;p&gt;macOS apps can have multiple windows open at once, and in previous iterations of SwiftUI, it has been difficult to detect the active one. Last year, we got &lt;code&gt;@FocusedBinding&lt;/code&gt; but it didn&amp;rsquo;t really work. This year it works, but we also have a new &lt;code&gt;EnvironmentValue&lt;/code&gt; called &lt;code&gt;controlActiveState&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;As I did last time, I set up some menus by adding a &lt;code&gt;commands&lt;/code&gt; modifier to my &lt;code&gt;WindowGroup&lt;/code&gt; in the main _App.swift file. First, I added the pre-built &lt;code&gt;SidebarCommands()&lt;/code&gt; which added a menu item and keyboard shortcut for toggling the sidebar. Next, I added a menu item for flipping the image:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CommandGroup(after: .textEditing) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Button(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Flip Image&amp;#34;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    NotificationCenter.&lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt;.post(name: .flipImage, object: &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .keyboardShortcut(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;f&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This new item appears in the Edit menu, after the standard items. It has a shortcut of Command-F. The Command key is the default shortcut modifier, so if you only specify a letter, it automatically uses Command. All this menu item does is to broadcast a notification.&lt;/p&gt;
+&lt;p&gt;The image is shown in a subview called &lt;code&gt;CatImageView&lt;/code&gt; which now includes the following properties:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@Environment(&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\&lt;/span&gt;.controlActiveState) &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; controlActiveState
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; flipImageMenuItemSelected = NotificationCenter.&lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .publisher(&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;: .flipImage)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .receive(on: RunLoop.main)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@State &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; imageIsFlipped = &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The image has a &lt;code&gt;rotation3Deffect&lt;/code&gt; modifier with the angle set to either 0 degrees, or 180 degrees, depending on the value of &lt;code&gt;imageIsFlipped&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The view subscribes to the &lt;code&gt;flipImage&lt;/code&gt; notification and receives it like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.onReceive(flipImageMenuItemSelected) { &lt;span style=&#34;color:#66d9ef&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; controlActiveState == .key &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; controlActiveState == .active {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    imageIsFlipped.toggle()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When the notification arrives, the code checks the value of &lt;code&gt;controlActiveState&lt;/code&gt;. In my tests, this was always either &lt;code&gt;key&lt;/code&gt; or &lt;code&gt;inactive&lt;/code&gt;, but I saw that &lt;code&gt;active&lt;/code&gt; was an option and added it too, in case it becomes relevant later. If the &lt;code&gt;CatImageView&lt;/code&gt; is in the active window, it flips the image and if not, this notification is ignored.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/target_active_window.jpg&#34; alt=&#34;Target Active Window&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As you can see from the text in the images, only the front window image is flipped.&lt;/p&gt;
+&lt;h3 id=&#34;opening-new-windows&#34;&gt;Opening New Windows&lt;/h3&gt;
+&lt;p&gt;In early versions of SwiftUI, opening a secondary window was a very complex process. Read &lt;a href=&#34;https://troz.net/post/2019/swiftui-for-mac-2/&#34;&gt;part 2 of the original series&lt;/a&gt; to see how I struggled with this. Later, we got an easy way to open a Preferences window, using a &lt;code&gt;Settings&lt;/code&gt; scene. Preferences are now called Settings, which makes this nomenclature more logical.&lt;/p&gt;
+&lt;p&gt;Last year, we got the ability to use a &lt;code&gt;NavigationLink&lt;/code&gt; as a SwiftUI menu item and this will open the destination view in a new window.&lt;/p&gt;
+&lt;p&gt;This year, we have a new method that uses another new &lt;code&gt;EnvironmentValue&lt;/code&gt; called &lt;code&gt;openWindow&lt;/code&gt;. First, in the _App.swift file, I added another new scene to the body - this time a second &lt;code&gt;WindowGroup&lt;/code&gt;. A &lt;code&gt;WindowGroup&lt;/code&gt; can be passed an &lt;code&gt;id&lt;/code&gt;, a data object of a specific type, or both. In this case, I didn&amp;rsquo;t want to pass any data, so I gave it an &lt;code&gt;id&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WindowGroup(id: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ui_samples&amp;#34;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  SamplesView()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I want to display a window with a view demonstrating some UI elements. The view is called &lt;code&gt;SamplesView&lt;/code&gt;, so I set this as the content of the &lt;code&gt;WindowGroup&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;To use it, I added a property to &lt;code&gt;DetailView&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@Environment(&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\&lt;/span&gt;.openWindow) &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; openWindow
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And inserted a &lt;code&gt;Button&lt;/code&gt; to call it:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Button(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Show UI Samples&amp;#34;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  openWindow(id: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ui_samples&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This opens a new window with the appropriate &lt;code&gt;id&lt;/code&gt;. This can open multiple copies of the same window. If I had passed a data object to the window, it would have brought the window containing that data object to the front instead of opening a new window. To test this behavior, I changed the &lt;code&gt;WindowGroup&lt;/code&gt; to this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WindowGroup(&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;: String.&lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;) { &lt;span style=&#34;color:#66d9ef&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  SamplesView()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And changed the &lt;code&gt;Button&lt;/code&gt; to:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Button(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Show UI Samples&amp;#34;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  openWindow(value: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;samples&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now the &lt;code&gt;WindowGroup&lt;/code&gt; expects a &lt;code&gt;String&lt;/code&gt;. When you pass a &lt;code&gt;String&lt;/code&gt; that has already been attached to a window, that window is brought to the front. If you pass a different &lt;code&gt;String&lt;/code&gt;, you get a new window.&lt;/p&gt;
+&lt;p&gt;After that, I realized that there was another scene type I could use. If you create a &lt;code&gt;Window&lt;/code&gt; scene instead of a &lt;code&gt;WindowGroup&lt;/code&gt;, not only does this become a single presentation window, but you get a menu item for it in the Window menu without any extra work. You can add a keyboard shortcut to the &lt;code&gt;Window&lt;/code&gt; scene too. Supposedly, you can add default sizing and positioning, but they don&amp;rsquo;t appear to work yet.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Window(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Samples&amp;#34;&lt;/span&gt;, id: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ui_samples&amp;#34;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  SamplesView()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.keyboardShortcut(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;u&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.defaultPosition(.topLeading)  &lt;span style=&#34;color:#75715e&#34;&gt;// doesn&amp;#39;t work yet&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.defaultSize(width: &lt;span style=&#34;color:#ae81ff&#34;&gt;600&lt;/span&gt;, height: &lt;span style=&#34;color:#ae81ff&#34;&gt;600&lt;/span&gt;)  &lt;span style=&#34;color:#75715e&#34;&gt;// doesn&amp;#39;t work yet&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;charts&#34;&gt;Charts&lt;/h3&gt;
+&lt;p&gt;One of the signature features of SwiftUI at WWDC 2022 was the new Charts API. I have struggled with charts in the past, so this was very interesting. I need to learn more, but I added a simple bar chart to the samples window:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/bar_chart.jpg&#34; alt=&#34;Bar chart&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This charts the number of entries in each category of HTTP status. I drew a line across at the 8 value because drawing a marker line is a feature I have often needed in charts.&lt;/p&gt;
+&lt;p&gt;Creating the chart was smooth:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Chart {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ForEach(chartData.keys.sorted(), id: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\&lt;/span&gt;.&lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;) { key &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    BarMark(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      x: .value(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Category&amp;#34;&lt;/span&gt;, key),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      y: .value(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Count&amp;#34;&lt;/span&gt;, chartData[key] ?? &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    )
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .foregroundStyle(by: .value(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Color&amp;#34;&lt;/span&gt;, key))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  RuleMark(y: .value(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Threshold&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .foregroundStyle(.gray)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Having assembled a dictionary of category codes and counts, I looped through the keys, setting an &lt;code&gt;x&lt;/code&gt; and &lt;code&gt;y&lt;/code&gt; value for each in its own &lt;code&gt;BarMark&lt;/code&gt;. The line used a &lt;code&gt;RuleMark&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;To get the different colors, I added this modifier to the &lt;code&gt;Chart&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.chartForegroundStyleScale([
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1xx&amp;#34;&lt;/span&gt;: .green,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;2xx&amp;#34;&lt;/span&gt;: .purple,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;3xx&amp;#34;&lt;/span&gt;: .blue,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;4xx&amp;#34;&lt;/span&gt;: .yellow,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;5xx&amp;#34;&lt;/span&gt;: .red
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;which was used by &lt;code&gt;foregroundStyle&lt;/code&gt; to assign a different color to each of the categories.&lt;/p&gt;
+&lt;p&gt;Next, I wanted to add the ability to switch between vertical and horizontal bars. This requires swapping the &lt;code&gt;x&lt;/code&gt; and &lt;code&gt;y&lt;/code&gt; data so that &lt;code&gt;y&lt;/code&gt; has the category and &lt;code&gt;x&lt;/code&gt; has the count. After testing this manually, I added a Boolean to specify the orientation, and a method for returning the appropriate &lt;code&gt;BarMark&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;barMark&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; key: String) -&amp;gt; BarMark {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; drawHorizontal {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; BarMark(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      x: .value(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Count&amp;#34;&lt;/span&gt;, chartData[key] ?? &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      y: .value(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Category&amp;#34;&lt;/span&gt;, key)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    )
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; BarMark(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      x: .value(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Category&amp;#34;&lt;/span&gt;, key),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      y: .value(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Count&amp;#34;&lt;/span&gt;, chartData[key] ?? &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    )
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A similar method provided the &lt;code&gt;RuleMark&lt;/code&gt; as either a vertical or horizontal line.&lt;/p&gt;
+&lt;p&gt;A segmented picker switches between the two and the only thing now was to animate the change. There is an &lt;code&gt;animation&lt;/code&gt; modifier added last year that allows you to connect an animation to a property, so that when the property changes, the animation is triggered.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.animation(.easeInOut, value: drawHorizontal)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://troz.net/images/chart_animation.mp4&#34; alt=&#34;Animated chart&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I added &lt;code&gt;Text&lt;/code&gt; views for the title of the chart and for the axes, inside a  &lt;code&gt;VStack&lt;/code&gt; and an &lt;code&gt;HStack&lt;/code&gt;, rotating the text for vertical axis. Maybe there is a chart setting that I&amp;rsquo;m missing for adding these labels automatically using the Chart library.&lt;/p&gt;
+&lt;h3 id=&#34;image-rendering&#34;&gt;Image Rendering&lt;/h3&gt;
+&lt;p&gt;While investigating charts, I experimented with another new SwiftUI feature: &lt;code&gt;ImageRenderer&lt;/code&gt;. When I have made charts, I&amp;rsquo;ve often wanted to export them as images for upload. &lt;code&gt;ImageRenderer&lt;/code&gt; allows us to convert a SwiftUI view into an image: on macOS, either &lt;code&gt;NSImage&lt;/code&gt; or &lt;code&gt;CGImage&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The first step was to convert the chart view plus its labels, into a variable (modifiers and RuleMark omitted from this code snippet for brevity):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; chartView = Group {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Status codes by category&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .font(.title3).bold()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .padding()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  HStack {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Text(drawHorizontal ? &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Category&amp;#34;&lt;/span&gt; : &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Count&amp;#34;&lt;/span&gt;).bold()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      .rotationEffect(.degrees(&lt;span style=&#34;color:#ae81ff&#34;&gt;270&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Chart {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      ForEach(chartData.keys.sorted(), id: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\&lt;/span&gt;.&lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;) { key &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        barMark(&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;: key)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Text(drawHorizontal ? &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Count&amp;#34;&lt;/span&gt; : &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Category&amp;#34;&lt;/span&gt;).bold()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then I displayed the view using the variable:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;VStack {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  chartView
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;// Picker &amp;amp; Button&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This left the display unchanged, but allowed me to use this variable to create a view for rendering, omitting the controls that should not be part of the image:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Button(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Save Chart as Image&amp;#34;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; view = chartView
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .padding()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .frame(width: &lt;span style=&#34;color:#ae81ff&#34;&gt;1200&lt;/span&gt;, height: &lt;span style=&#34;color:#ae81ff&#34;&gt;800&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; renderer = ImageRenderer(content: view)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; exportImage = renderer.nsImage {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    saveImage(exportImage)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I added &lt;code&gt;padding&lt;/code&gt; and &lt;code&gt;frame&lt;/code&gt; modifiers to the view variable as it came out very small without this. Then I created an &lt;code&gt;ImageRenderer&lt;/code&gt; using this view and converted it into an &lt;code&gt;NSImage&lt;/code&gt;.
+The &lt;code&gt;saveImage&lt;/code&gt; method uses an &lt;code&gt;NSSavePanel&lt;/code&gt; to get a URL and then convert the NSImage to JPG data before writing it out. I used the same technique in &lt;a href=&#34;https://troz.net/post/2019/swiftui-for-mac-3/&#34;&gt;part 3 of the original series&lt;/a&gt; but that only exported the downloaded image. This creates an image from a complete SwiftUI view.&lt;/p&gt;
+&lt;p&gt;I would be interested to try the SwiftUI &lt;code&gt;fileExporter&lt;/code&gt;, but that&amp;rsquo;s for another day.&lt;/p&gt;
+&lt;p&gt;I also tried to use the new &lt;code&gt;ShareLink&lt;/code&gt; to share this image, but couldn&amp;rsquo;t get that to work. The &lt;code&gt;ImageRenderer&lt;/code&gt; seems to work asynchronously so that didn&amp;rsquo;t work well with &lt;code&gt;ShareLink&lt;/code&gt;. Again, that&amp;rsquo;s for another day.&lt;/p&gt;
+&lt;h3 id=&#34;forms&#34;&gt;Forms&lt;/h3&gt;
+&lt;p&gt;SwiftUI has always had a &lt;code&gt;Form&lt;/code&gt; object, but the new System Settings app (previously System Preferences) has taken this to a new level. So I added some UI elements to a second tab in the UI Samples window.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/form.jpg&#34; alt=&#34;Form&#34;&gt;&lt;/p&gt;
+&lt;p&gt;There are a few interesting things here. Firstly, I achieved something I was unable to do last time and that is to make the text edit field have focus when the view opens. This was a three part operation:&lt;/p&gt;
+&lt;p&gt;Firstly, I added this property to the view:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@FocusState &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; emailFieldHasFocus: Bool
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then, I added this modifier to the edit field:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;TextField(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Enter your email address&amp;#34;&lt;/span&gt;, text: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;$&lt;/span&gt;email)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .focused(&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;$&lt;/span&gt;emailFieldHasFocus)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And finally, I set the Boolean property in the &lt;code&gt;onAppear&lt;/code&gt; modifier:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.onAppear {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  emailFieldHasFocus = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;With this in place, the email text entry field had the focus whenever this view appeared.&lt;/p&gt;
+&lt;p&gt;The date picker is slightly confused. It can&amp;rsquo;t seem to decide whether it&amp;rsquo;s a graphical picker or a numeric picker, but it works. I haven&amp;rsquo;t tried the new date range picker yet.&lt;/p&gt;
+&lt;p&gt;With the check marks, I was trying to emulate the toggles in System Settings, where they are very small switches. I set the &lt;code&gt;toggleStyle&lt;/code&gt; to &lt;code&gt;switch&lt;/code&gt; which gave the right shape but it was big, like on an iPhone or iPad. The outermost form is set to use the &lt;code&gt;columns&lt;/code&gt; &lt;code&gt;formStyle&lt;/code&gt;. This lines up the labels and controls very neatly. But when I put the &lt;code&gt;Toggles&lt;/code&gt; and &lt;code&gt;Picker&lt;/code&gt; into an inner form with a style of &lt;code&gt;grouped&lt;/code&gt;, I got the exact System Settings look I was going for.&lt;/p&gt;
+&lt;p&gt;As an aside, I love the way you can now apply control-specific modifiers to a container view and every appropriate view inside the container will use that setting. For example, I added &lt;code&gt;.toggleStyle(.switch)&lt;/code&gt; to the &lt;code&gt;Form&lt;/code&gt; view and it was applied to every &lt;code&gt;Toggle&lt;/code&gt; inside it.&lt;/p&gt;
+&lt;p&gt;The final item in the form is a color picker. It opens up the standard macOS color picker and uses the selected color to fill the capsule beside it. The interesting thing is that the color has a &lt;code&gt;gradient&lt;/code&gt; modifier. So you can see the faint gradient that is automatically applied to the shape.&lt;/p&gt;
+&lt;h3 id=&#34;menu-bar-apps&#34;&gt;Menu Bar Apps&lt;/h3&gt;
+&lt;p&gt;Writing a menu bar app has previously required using AppKit to create a &lt;code&gt;NSStatusItem&lt;/code&gt;. Now, we can add a &lt;code&gt;MenuBarExtra&lt;/code&gt; scene to the app body to create a menu bar app component.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;MenuBarExtra(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;HTTP Status Code&amp;#34;&lt;/span&gt;, systemImage: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;number.circle&amp;#34;&lt;/span&gt;, isInserted: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;$&lt;/span&gt;showMenuBar) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  MenuBarView(httpSections: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;$&lt;/span&gt;httpSections)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Setting the title without a &lt;code&gt;systemImage&lt;/code&gt; shows the text as the menu bar title. when you specify a &lt;code&gt;systemImage&lt;/code&gt;, the text is not displayed and the menu bar only shows the image.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;MenuBarExtra&lt;/code&gt; takes an &lt;code&gt;isInserted&lt;/code&gt; parameter, so you can turn it off and on. I added this to the app&amp;rsquo;s settings and stored it using &lt;code&gt;@AppStorage&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;I set up a new SwiftUI view that looped through the HTTP Status data and created a submenu for each category and set this as the &lt;code&gt;MenuBarExtra&lt;/code&gt; view. This works and my menu bar component was functional. Selecting a status uses &lt;code&gt;NSWorkspace&lt;/code&gt; to open the relevant documentation page at MDN.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/menu_bar_extra.jpg&#34; alt=&#34;MenuBarExtra&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;2022 is an exciting year to be a SwiftUI programmer. Apple has made it very clear that this is the way forward and as early adopters, we have the ability to influence how the framework develops, so keep filing those feedback reports! There have been some great new features this year: navigation is better than ever, the platforms are unifying and macOS is not getting left behind.&lt;/p&gt;
+&lt;p&gt;The project from this article is available on &lt;a href=&#34;https://github.com/trozware/swiftui-mac-2022&#34;&gt;GitHub&lt;/a&gt;. And as usual, I&amp;rsquo;d be thrilled to hear any suggestions, corrections or improvements. Please contact me using one of the links below or through the &lt;a href=&#34;https://troz.net/contact/&#34;&gt;Contact&lt;/a&gt; page. And if you found this article, I&amp;rsquo;d love you to &lt;a href=&#34;https://ko-fi.com/trozware&#34;&gt;buy me a coffee&lt;/a&gt;.&lt;/p&gt;</description>
+</item>
     
     <item>
 <title>Writing Setup</title>
