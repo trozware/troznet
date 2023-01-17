@@ -20,7 +20,7 @@ If you want to read my macOS by Tutorials book, it's now at [kodeco.com/books/ma
 
 As we all know, Twitter is in meltdown and I no longer use it. I'd love it if you came over to Mastodon. People on Mastodon are friendly and sharing. It feels much more like a community.
 
-[Movetodon][3] is a great tool for finding your twitter friends on Mastodon and [Fedi.tips][4] is a useful site for learning how to use Mastodon effectively.
+[Movetodon][3] is a great tool for finding your Twitter friends on Mastodon and [Fedi.tips][4] is a useful site for learning how to use Mastodon effectively.
 
 My suggestions are:
 

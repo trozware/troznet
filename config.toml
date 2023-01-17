@@ -12,7 +12,7 @@ hasCJKLanguage = false     # has chinese/japanese/korean ? # 自动检测是否�
 paginate = 10                                              # （可选）首页显示的文章条目数量，默认为10
 disqusShortname = ""      # disqus_shortname
 googleAnalytics = ""      # UA-XXXXXXXX-X
-copyright = "© 2012 - 2022 Sarah Reichelt"            # default: author.name ↓        # 默认为下面配置的author.name ↓
+copyright = "© 2012 - 2023 Sarah Reichelt"            # default: author.name ↓        # 默认为下面配置的author.name ↓
 
 publishDir = "docs"
 
