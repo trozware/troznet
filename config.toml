@@ -102,7 +102,7 @@ publishDir = "docs"
   [params.social]                                         # 社交链接
     a-email = "mailto:sarah@troz.net"
     b-stack-overflow = "https://stackoverflow.com/users/1082632"
-    c-twitter = "https://twitter.com/trozware"
+    # c-twitter = "https://twitter.com/trozware"
     # d-facebook = "http://localhost:1313"
     # e-linkedin = "http://localhost:1313"
     # f-google = "http://localhost:1313"
