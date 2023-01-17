@@ -24,25 +24,23 @@
 
 
 
-<link rel="stylesheet" href="https://troz.net/assets/style.css" />
+
+
+<link rel="stylesheet" href="/css/style.css" />
 
 <link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="144x144"
-  href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
-/>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png" />
 <link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
 
 
-<link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
 
@@ -62,7 +60,7 @@
 
 
   </head>
-  <body class="dark-theme">
+  <body >
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -179,8 +177,8 @@
     <span class="post-date">
       31 Mar 2018
     </span>
-    <span class="more-meta">- 1917 words, </span>
-    <span class="more-meta"> 9 minute read</span>
+    <span class="more-meta">- 1925 words, </span>
+    <span class="more-meta"> 10 minute read</span>
   </div>
 
   
@@ -206,7 +204,10 @@
 <li>How do you decide on a style?</li>
 <li>Is there a way to enforce this style automatically?</li>
 </ul>
-<h2 id="what-is-style-in-swift">What is style in Swift?</h2>
+<h2 id="what-is-style-in-swift">
+  What is style in Swift?
+  <a href="#what-is-style-in-swift" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>Style applies to writing in any programming language and refers to the way you structure your code.</p>
 <p>For example, how to you arrange braces?</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> theValue <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> {
@@ -227,16 +228,28 @@
 <p>Do you use camelCase or snake_case?</p>
 <p>Do you always start class names with an uppercase letter?</p>
 <p>And of course there is the Great Debate: tabs or spaces? And how many?</p>
-<h2 id="why-is-important-to-style-your-code">Why is important to style your code?</h2>
+<h2 id="why-is-important-to-style-your-code">
+  Why is important to style your code?
+  <a href="#why-is-important-to-style-your-code" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>You only write code once, but you &amp; others will read it many times.</p>
 <p>As I tell students, in six months time some poor sucker is going to have to read this code, and worse still, that poor sucker might be you, so make it readable.</p>
 <p>There is a cognitive load involved in reading code but you can lighten that load by using consistent patterns that your brain can recognise quickly without having to re-analyse them each time.</p>
-<h2 id="how-do-you-decide-on-a-style">How do you decide on a style?</h2>
+<h2 id="how-do-you-decide-on-a-style">
+  How do you decide on a style?
+  <a href="#how-do-you-decide-on-a-style" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>Do a search online for <a href="https://encrypted.google.com/search?hl=en&amp;q=Swift%20style%20guide">Swift style guide</a> and you will get numerous results, although you do have to dodge the sites dedicated to Taylor Swift&rsquo;s dress sense! I like the <a href="https://github.com/raywenderlich/swift-style-guide">Ray Wenderlich guide</a> although its emphasis is on styles that read well in print and in web pages. The <a href="https://github.com/linkedin/swift-style-guide">LinkedIn guide</a> is also good. <a href="https://github.com/github/swift-style-guide">GitHub</a> also has a style guide but it hasn&rsquo;t been updated recently. However it contains some good general advice.</p>
 <p>But in the end, you have to decide your own style. The important thing then is to be consistent. I don&rsquo;t care whether you use camelCase or snake_case, tabs or spaces, but if you use a mixture your code will be harder to read, so pick a style and stick to it.</p>
-<h2 id="is-there-a-way-to-enforce-this-style-automatically">Is there a way to enforce this style automatically?</h2>
+<h2 id="is-there-a-way-to-enforce-this-style-automatically">
+  Is there a way to enforce this style automatically?
+  <a href="#is-there-a-way-to-enforce-this-style-automatically" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>This is where <a href="https://github.com/realm/SwiftLint">SwiftLint</a> comes into the picture. SwiftLint is a tool that can check your code and look for style violations. While it comes with a default set of rules, you can configure these rules to suit your own style.</p>
-<h3 id="installing-and-running-swiftlint">Installing and Running SwiftLint</h3>
+<h3 id="installing-and-running-swiftlint">
+  Installing and Running SwiftLint
+  <a href="#installing-and-running-swiftlint" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>To install SwiftLint, I recommend using <a href="https://brew.sh">HomeBrew</a>. Once you have HomeBrew installed, open Terminal and type <code>brew install swiftlint</code>. You can update it any time using <code>brew upgrade swiftlint</code>.</p>
 <p>You can run SwiftLint directly from the Terminal. <code>cd</code> to the folder containing your Xcode project and type <code>swiftlint</code>. For a brand new iOS project, you will probably get a result similar to this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Linting Swift files in current working directory
@@ -270,7 +283,10 @@ Try entering this in the Terminal window: <code>swiftlint autocorrect</code>.</p
 </span></span><span style="display:flex;"><span>AppDelegate.swift:43 Corrected Trailing Newline
 </span></span><span style="display:flex;"><span>Done correcting 2 files!
 </span></span></code></pre></div><p>And now if you run <code>swiftlint</code> again you will only get <code>Done linting! Found 8 violations, 2 serious in 2 files.</code> and all the remaining issues are for <code>Line Length Violation</code> This shows that autocorrect cannot fix everything and while it is good on spacing, it has trouble with more complex issues. But it is still worth doing as it can do a lot of the tedious fixes that creep into Xcode projects.</p>
-<h3 id="incorporating-swiftlint-into-xcode">Incorporating SwiftLint into Xcode</h3>
+<h3 id="incorporating-swiftlint-into-xcode">
+  Incorporating SwiftLint into Xcode
+  <a href="#incorporating-swiftlint-into-xcode" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>The next thing to do to make your life easier is to add SwiftLint to your Xcode project so that it can run automatically whenever you do a build.</p>
 <p>Open your project in Xcode and select the project itself at the top of the Navigator on the left. Select the target for the main app and click the Build Phases tab along the top. Click the + button at the top left of the existing build phases and choose &lsquo;New Run Script Phase&rsquo;. Expand the newly added phase and paste in the following script:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> which swiftlint &gt;/dev/null; <span style="color:#66d9ef">then</span>
@@ -283,7 +299,10 @@ Try entering this in the Terminal window: <code>swiftlint autocorrect</code>.</p
 <p><a href="/images/SwiftLineRunScript.png"><img src="/images/SwiftLineRunScript.png" alt="SwiftLint Run Script phase"></a></p>
 <p>If you think this looks like it is running SwiftLint twice, you are correct. The first time through it corrects what it can and the second pass reports all remaining issues. This is still faster than manually correcting the easy stuff. So now you will see any violations in the Xcode issue navigator when you do a build and you can click the entry to go directly to the code.</p>
 <p><img src="/images/IssuesNavigator.png" alt="SwiftLint errors &amp; warnings in Xcode issues navigator"></p>
-<h3 id="configuring-swiftlint">Configuring SwiftLint</h3>
+<h3 id="configuring-swiftlint">
+  Configuring SwiftLint
+  <a href="#configuring-swiftlint" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>Now you are all set to SwiftLint all your code, but how do you decide what styles SwiftLint should enforce? Go back to Terminal, make the Terminal window as wide as possible and run <code>swiftlint rules</code> which will return a table like this (click to see full-sized image):</p>
 <p><a href="/images/swiftlint_rules.png"><img src="/images/swiftlint_rules.png" alt="SwiftLint Rules"></a></p>
 <p>For details on what each rule does, check out the entries in <a href="https://github.com/realm/SwiftLint/blob/master/Rules.md">Rules.md</a></p>
@@ -363,7 +382,10 @@ Try entering this in the Terminal window: <code>swiftlint autocorrect</code>.</p
 <p><code>// swiftlint:disable next identifier_name</code></p>
 <p>This tells SwiftLint to ignore the next <code>identifier_name</code> warning or error it sees and now my code builds without error.</p>
 <p>Rules can also be disabled or enabled by file. Check out the <a href="https://github.com/realm/SwiftLint#disable-rules-in-code">Disable rules in code</a> section of the SwiftLint ReadMe for more details.</p>
-<h2 id="what-are-the-benefits">What are the benefits?</h2>
+<h2 id="what-are-the-benefits">
+  What are the benefits?
+  <a href="#what-are-the-benefits" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>For me, SwiftLint enforces a number of good habits:</p>
 <ul>
 <li>Files are kept relatively short.</li>

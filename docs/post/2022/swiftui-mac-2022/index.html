@@ -25,25 +25,23 @@
 
 
 
-<link rel="stylesheet" href="https://troz.net/assets/style.css" />
+
+
+<link rel="stylesheet" href="/css/style.css" />
 
 <link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="144x144"
-  href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
-/>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png" />
 <link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
 
 
-<link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
 
@@ -63,7 +61,7 @@
 
 
   </head>
-  <body class="dark-theme">
+  <body >
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -180,7 +178,7 @@
     <span class="post-date">
       17 Jun 2022
     </span>
-    <span class="more-meta">- 3001 words, </span>
+    <span class="more-meta">- 3009 words, </span>
     <span class="more-meta"> 15 minute read</span>
   </div>
 
@@ -212,7 +210,10 @@
 <li><a href="#menu-bar-apps">Menu Bar Apps</a></li>
 </ul>
 <p><strong>Note</strong>: In Xcode 14 beta 2, the SwiftUI Previews are crashing unless I go to Project &gt; Target &gt; Signing &amp; Capabilities and select my developer team and set Signing Certificate to Development. So if you can&rsquo;t see the Previews, make these changes, or run the app directly.</p>
-<h3 id="navigation">Navigation</h3>
+<h3 id="navigation">
+  Navigation
+  <a href="#navigation" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>The <a href="https://github.com/trozware/swiftui-mac">first version of this app</a> used a two pane layout with a sectioned list in the sidebar leading to a detail view in the main area. With the <a href="https://github.com/trozware/swiftui-mac-11">Big Sur version</a>, I switched to a three pane layout because the sections were not displaying neatly. This time, I&rsquo;ve reverted to two panes with sections. As before, I&rsquo;m using <a href="https://http.cat">HTTP Cats</a> which is a site that serves up a cat image to match almost every HTTP status code.</p>
 <p>Previous versions used <code>NavigationLinks</code> inside a <code>NavigationView</code>. <code>NavigationView</code> is now deprecated and we should use either <code>NavigationStackView</code> or <code>NavigationSplitView</code>. <code>NavigationStackView</code> is better suited to a small screen where each view is pushed on to a stack and can be popped off to navigate back. I am going to use <code>NavigationSplitView</code> which works well for bigger displays with all the panes visible at once.</p>
 <p>My data model is exactly the same as I developed originally and consists of an array of <code>HttpSections</code>, each containing an array of <code>HttpStatuses</code>.
@@ -271,7 +272,10 @@ So I was able to render my navigation like this:</p>
 <p><del>The previous image is first set to <code>nil</code>, so that the progress indicator appears.</del></p>
 <p>With all this in place, I had the basis of the app and the navigation was complete:</p>
 <p><img src="/images/navigation_2022.jpg" alt="Navigation"></p>
-<h3 id="detecting-the-active-window">Detecting the Active Window</h3>
+<h3 id="detecting-the-active-window">
+  Detecting the Active Window
+  <a href="#detecting-the-active-window" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>macOS apps can have multiple windows open at once, and in previous iterations of SwiftUI, it has been difficult to detect the active one. Last year, we got <code>@FocusedBinding</code> but it didn&rsquo;t really work. This year it works, but we also have a new <code>EnvironmentValue</code> called <code>controlActiveState</code>.</p>
 <p>As I did last time, I set up some menus by adding a <code>commands</code> modifier to my <code>WindowGroup</code> in the main _App.swift file. First, I added the pre-built <code>SidebarCommands()</code> which added a menu item and keyboard shortcut for toggling the sidebar. Next, I added a menu item for flipping the image:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>CommandGroup(after: .textEditing) {
@@ -299,7 +303,10 @@ So I was able to render my navigation like this:</p>
 </span></span></code></pre></div><p>When the notification arrives, the code checks the value of <code>controlActiveState</code>. In my tests, this was always either <code>key</code> or <code>inactive</code>, but I saw that <code>active</code> was an option and added it too, in case it becomes relevant later. If the <code>CatImageView</code> is in the active window, it flips the image and if not, this notification is ignored.</p>
 <p><img src="/images/target_active_window.jpg" alt="Target Active Window"></p>
 <p>As you can see from the text in the images, only the front window image is flipped.</p>
-<h3 id="opening-new-windows">Opening New Windows</h3>
+<h3 id="opening-new-windows">
+  Opening New Windows
+  <a href="#opening-new-windows" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>In early versions of SwiftUI, opening a secondary window was a very complex process. Read <a href="https://troz.net/post/2019/swiftui-for-mac-2/">part 2 of the original series</a> to see how I struggled with this. Later, we got an easy way to open a Preferences window, using a <code>Settings</code> scene. Preferences are now called Settings, which makes this nomenclature more logical.</p>
 <p>Last year, we got the ability to use a <code>NavigationLink</code> as a SwiftUI menu item and this will open the destination view in a new window.</p>
 <p>This year, we have a new method that uses another new <code>EnvironmentValue</code> called <code>openWindow</code>. First, in the _App.swift file, I added another new scene to the body - this time a second <code>WindowGroup</code>. A <code>WindowGroup</code> can be passed an <code>id</code>, a data object of a specific type, or both. In this case, I didn&rsquo;t want to pass any data, so I gave it an <code>id</code>:</p>
@@ -329,7 +336,10 @@ So I was able to render my navigation like this:</p>
 </span></span><span style="display:flex;"><span>.keyboardShortcut(<span style="color:#e6db74">&#34;u&#34;</span>)
 </span></span><span style="display:flex;"><span>.defaultPosition(.topLeading)  <span style="color:#75715e">// doesn&#39;t work yet</span>
 </span></span><span style="display:flex;"><span>.defaultSize(width: <span style="color:#ae81ff">600</span>, height: <span style="color:#ae81ff">600</span>)  <span style="color:#75715e">// doesn&#39;t work yet</span>
-</span></span></code></pre></div><h3 id="charts">Charts</h3>
+</span></span></code></pre></div><h3 id="charts">
+  Charts
+  <a href="#charts" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>One of the signature features of SwiftUI at WWDC 2022 was the new Charts API. I have struggled with charts in the past, so this was very interesting. I need to learn more, but I added a simple bar chart to the samples window:</p>
 <p><img src="/images/bar_chart.jpg" alt="Bar chart"></p>
 <p>This charts the number of entries in each category of HTTP status. I drew a line across at the 8 value because drawing a marker line is a feature I have often needed in charts.</p>
@@ -375,7 +385,10 @@ So I was able to render my navigation like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>.animation(.easeInOut, value: drawHorizontal)
 </span></span></code></pre></div><p><img src="/images/chart_animation.mp4" alt="Animated chart"></p>
 <p>I added <code>Text</code> views for the title of the chart and for the axes, inside a  <code>VStack</code> and an <code>HStack</code>, rotating the text for vertical axis. Maybe there is a chart setting that I&rsquo;m missing for adding these labels automatically using the Chart library.</p>
-<h3 id="image-rendering">Image Rendering</h3>
+<h3 id="image-rendering">
+  Image Rendering
+  <a href="#image-rendering" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>While investigating charts, I experimented with another new SwiftUI feature: <code>ImageRenderer</code>. When I have made charts, I&rsquo;ve often wanted to export them as images for upload. <code>ImageRenderer</code> allows us to convert a SwiftUI view into an image: on macOS, either <code>NSImage</code> or <code>CGImage</code>.</p>
 <p>The first step was to convert the chart view plus its labels, into a variable (modifiers and RuleMark omitted from this code snippet for brevity):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> chartView = Group {
@@ -417,7 +430,10 @@ So I was able to render my navigation like this:</p>
 The <code>saveImage</code> method uses an <code>NSSavePanel</code> to get a URL and then convert the NSImage to JPG data before writing it out. I used the same technique in <a href="https://troz.net/post/2019/swiftui-for-mac-3/">part 3 of the original series</a> but that only exported the downloaded image. This creates an image from a complete SwiftUI view.</p>
 <p>I would be interested to try the SwiftUI <code>fileExporter</code>, but that&rsquo;s for another day.</p>
 <p>I also tried to use the new <code>ShareLink</code> to share this image, but couldn&rsquo;t get that to work. The <code>ImageRenderer</code> seems to work asynchronously so that didn&rsquo;t work well with <code>ShareLink</code>. Again, that&rsquo;s for another day.</p>
-<h3 id="forms">Forms</h3>
+<h3 id="forms">
+  Forms
+  <a href="#forms" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>SwiftUI has always had a <code>Form</code> object, but the new System Settings app (previously System Preferences) has taken this to a new level. So I added some UI elements to a second tab in the UI Samples window.</p>
 <p><img src="/images/form.jpg" alt="Form"></p>
 <p>There are a few interesting things here. Firstly, I achieved something I was unable to do last time and that is to make the text edit field have focus when the view opens. This was a three part operation:</p>
@@ -435,7 +451,10 @@ The <code>saveImage</code> method uses an <code>NSSavePanel</code> to get a URL 
 <p>With the check marks, I was trying to emulate the toggles in System Settings, where they are very small switches. I set the <code>toggleStyle</code> to <code>switch</code> which gave the right shape but it was big, like on an iPhone or iPad. The outermost form is set to use the <code>columns</code> <code>formStyle</code>. This lines up the labels and controls very neatly. But when I put the <code>Toggles</code> and <code>Picker</code> into an inner form with a style of <code>grouped</code>, I got the exact System Settings look I was going for.</p>
 <p>As an aside, I love the way you can now apply control-specific modifiers to a container view and every appropriate view inside the container will use that setting. For example, I added <code>.toggleStyle(.switch)</code> to the <code>Form</code> view and it was applied to every <code>Toggle</code> inside it.</p>
 <p>The final item in the form is a color picker. It opens up the standard macOS color picker and uses the selected color to fill the capsule beside it. The interesting thing is that the color has a <code>gradient</code> modifier. So you can see the faint gradient that is automatically applied to the shape.</p>
-<h3 id="menu-bar-apps">Menu Bar Apps</h3>
+<h3 id="menu-bar-apps">
+  Menu Bar Apps
+  <a href="#menu-bar-apps" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>Writing a menu bar app has previously required using AppKit to create a <code>NSStatusItem</code>. Now, we can add a <code>MenuBarExtra</code> scene to the app body to create a menu bar app component.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>MenuBarExtra(<span style="color:#e6db74">&#34;HTTP Status Code&#34;</span>, systemImage: <span style="color:#e6db74">&#34;number.circle&#34;</span>, isInserted: <span style="color:#960050;background-color:#1e0010">$</span>showMenuBar) {
 </span></span><span style="display:flex;"><span>  MenuBarView(httpSections: <span style="color:#960050;background-color:#1e0010">$</span>httpSections)
@@ -444,7 +463,10 @@ The <code>saveImage</code> method uses an <code>NSSavePanel</code> to get a URL 
 <p><code>MenuBarExtra</code> takes an <code>isInserted</code> parameter, so you can turn it off and on. I added this to the app&rsquo;s settings and stored it using <code>@AppStorage</code>.</p>
 <p>I set up a new SwiftUI view that looped through the HTTP Status data and created a submenu for each category and set this as the <code>MenuBarExtra</code> view. This works and my menu bar component was functional. Selecting a status uses <code>NSWorkspace</code> to open the relevant documentation page at MDN.</p>
 <p><img src="/images/menu_bar_extra.jpg" alt="MenuBarExtra"></p>
-<h3 id="conclusion">Conclusion</h3>
+<h3 id="conclusion">
+  Conclusion
+  <a href="#conclusion" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>2022 is an exciting year to be a SwiftUI programmer. Apple has made it very clear that this is the way forward and as early adopters, we have the ability to influence how the framework develops, so keep filing those feedback reports! There have been some great new features this year: navigation is better than ever, the platforms are unifying and macOS is not getting left behind.</p>
 <p>The project from this article is available on <a href="https://github.com/trozware/swiftui-mac-2022">GitHub</a>. And as usual, I&rsquo;d be thrilled to hear any suggestions, corrections or improvements. Please contact me using one of the links below or through the <a href="/contact/">Contact</a> page. And if you found this article, I&rsquo;d love you to <a href="https://ko-fi.com/trozware">buy me a coffee</a>.</p></div>
   

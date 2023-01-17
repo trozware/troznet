@@ -25,25 +25,23 @@
 
 
 
-<link rel="stylesheet" href="https://troz.net/assets/style.css" />
+
+
+<link rel="stylesheet" href="/css/style.css" />
 
 <link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="144x144"
-  href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
-/>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png" />
 <link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
 
 
-<link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
 
@@ -63,7 +61,7 @@
 
 
   </head>
-  <body class="dark-theme">
+  <body >
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -180,7 +178,7 @@
     <span class="post-date">
       25 Apr 2022
     </span>
-    <span class="more-meta">- 1271 words, </span>
+    <span class="more-meta">- 1276 words, </span>
     <span class="more-meta"> 6 minute read</span>
   </div>
 
@@ -197,27 +195,42 @@
    
 
   <div class="post-content"><p>Apple has announced that their 2022 World Wide Developers Conference will again be an online event from June 7 to 11. The poster shows a very dark Swift logo in a coloured circle. While I have long since given up trying the read the tea leaves of Apple&rsquo;s graphics to work out what they will announce, I always enjoy speculating. But this year, I thought that instead of trying to guess what Apple will have for us, I&rsquo;d think about what I would <strong>like</strong> them to announce, with my main focus being the Mac.</p>
-<h3 id="hardware">Hardware</h3>
+<h3 id="hardware">
+  Hardware
+  <a href="#hardware" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>The Apple hardware teams have been doing amazingly well over the last couple of years. The transition of the Mac lineup to Apple Silicon is almost complete and I would guess that they will complete it at WWDC with a new Mac Pro, but that is outside my budget and requirements.</p>
 <p>While I was glad to see them offer a more reasonably priced monitor with the Studio Display, it&rsquo;s still a bit pricey for me. The desk lamp iMac was one of my all time favourite Mac designs so it was great to see the option for the tilt &amp; height adjustable stand, although the extra price for that option was rather eye-popping.</p>
 <p>I have long thought that the desktop iMac was terrific value because it attaches a stunningly good monitor to a reasonable computer. I wish Apple would supply an iMac monitor using the exact same design, but without the computer. Imagine how great that would look as a second monitor - two coloured machines side by side.</p>
 <p>But really, I&rsquo;m not looking for any new hardware right now.</p>
-<h3 id="services">Services</h3>
+<h3 id="services">
+  Services
+  <a href="#services" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>iCloud needs a lot of love, especially on the Mac side. I was trying to collaborate with a colleague so they shared a folder on iCloud. I was able to access their small set of files (24K total) after about 30 minutes, but my edits never uploaded. In the Finder sidebar, I have a perpetual progress indicator beside my iCloud folder and uploads never complete. The only solution is to reboot my computer, which does a complete sync once. We switched to sharing on our iPads and it all worked immediately, so the problem is not iCloud itself, but the macOS integration.</p>
 <p>CloudKit has always looked like a great solution for use in apps. It allows public and private data, it syncs between devices, and it doesn&rsquo;t have the potential for unexpected and huge data fees like some other options. But like many developers, I&rsquo;ve tried and failed to get it to work reliably. It appears that the simpler mechanisms work well, but not the more complex options.</p>
 <p>And while I&rsquo;m talking about iCloud sync issues, some apps (Notes, Reminders etc) sync - albeit very slowly, but Messages operates as if it is only partially connected. If I delete a conversation on my iPhone or iPad, I get a warning telling me that this will remove the conversation from my other devices, which is what I would expect. This deletion flows through to my Mac and the conversation is gone everywhere. On my Mac, deleting a conversation only deletes it locally and I have to delete it again on my iPhone or iPad to get it to disappear completely. What is the logic of that?</p>
-<h3 id="software">Software</h3>
+<h3 id="software">
+  Software
+  <a href="#software" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>There are two parts to Apple&rsquo;s software: the operating systems and their own apps. iOS, iPadOS and watchOS seem quite solid in their latest versions. I don&rsquo;t have any particular requests or complaints.</p>
 <p>With macOS, apart from the iCloud problems that I mentioned above, my main complaint is with notifications. The user experience is terrible. Notifications popup at the top corner, and then disappear quickly. If they have action buttons, you have to mouse over the notification to see them, and this obscures the text. I have tried using System Preferences to change the way notifications are displayed, but this seems to have no effect. And trying to explain this system to a newcomer is impossible.</p>
 <p>Apart from that, I like macOS 12 (Monterey). I would prefer Apple to go back to using numbers instead of names. Trying to work out what system people are using by the name is very confusing.</p>
 <p>The other aspect of software is Apple&rsquo;s in-house apps. Sadly, Apple has decided to use Catalyst to port a lot of apps from the iPad to macOS. For a small software house with very limited resources, I can see the attraction of Catalyst although, in my opinion, it results in a greatly inferior product that gives Mac users an inferior experience. However this is hardly a valid excuse for a company the size of Apple.</p>
 <p>As a developer, one of my main tools is Xcode. This is an amazing app and over the past few years it has got a lot of new features that allow it to integrate better with source control and with the app distribution system. But I would love to see Apple open up the extension ecosystem again. For web development, I use Microsoft&rsquo;s Visual Studio Code. Even though this is a cross-platform Electron-based web app, it is a great tool. It doesn&rsquo;t look like a native Mac app but it performs well. But it&rsquo;s major advantage is the huge number and variety of extensions so you can make VSC look and work the way you want. Apple has deliberately closed Xcode off from this sort of community involvement which is great shame.</p>
 <p>Apple will tell you that they do allow Xcode extensions. But these are limited in scope, difficult to install and opaque to use. Xcode extensions used to be great - please bring them back again.</p>
-<h3 id="developer-relations">Developer Relations</h3>
+<h3 id="developer-relations">
+  Developer Relations
+  <a href="#developer-relations" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>This is where things get nasty. We all know that Tim Cook will bounce on to the WWDC stage saying how much they love their developers and how many billions they&rsquo;ve paid out, but this is really just a smoke screen. Most of the money goes to a few large software houses who basically blackmail users into paying over and over again to make their apps (mostly games) usable. The race to the bottom has resulted in app stores where charging up front for an app is virtually impossible, although the Mac App Store is slightly better in this regard.</p>
 <p>The big issue is Apple&rsquo;s extremely erratic policing of the app stores. They allow behaviour in some apps and ban it is others. Big players get different treatment to small. Despite claiming that the app stores are the safe place to buy apps, Apple makes almost no effort to weed out scam apps, copyright infringements or fake reviews even when they are completely obvious to the most casual search.</p>
 <p>I don&rsquo;t mind paying Apple a cut of my app revenue. They do a lot of work that I would find tedious or difficult to set up for myself. I don&rsquo;t even mind their restrictions. What I mind very deeply is the inconsistent way this is handled. I would love it if the App Stores lived up to Apple&rsquo;s claim as being the safe place to buy apps, but in reality, app buyers are being fooled by purchased reviews, tricked into in-app purchases, and cannot assume that the rules designed to keep them safe have been applied to all apps.</p>
-<h3 id="summary">Summary</h3>
+<h3 id="summary">
+  Summary
+  <a href="#summary" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>So what would I really like to see at WWDC 2022?</p>
 <ul>
 <li>iCloud syncing that works on all Apple platforms.</li>

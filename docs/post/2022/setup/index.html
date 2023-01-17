@@ -25,25 +25,23 @@
 
 
 
-<link rel="stylesheet" href="https://troz.net/assets/style.css" />
+
+
+<link rel="stylesheet" href="/css/style.css" />
 
 <link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="144x144"
-  href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
-/>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png" />
 <link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
 
 
-<link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
 
@@ -63,7 +61,7 @@
 
 
   </head>
-  <body class="dark-theme">
+  <body >
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -180,7 +178,7 @@
     <span class="post-date">
       17 Jun 2022
     </span>
-    <span class="more-meta">- 929 words, </span>
+    <span class="more-meta">- 935 words, </span>
     <span class="more-meta"> 5 minute read</span>
   </div>
 
@@ -200,13 +198,22 @@
    
 
   <div class="post-content"><p>If you read my blog or tweets, you will have detected that I recently wrote a book called <a href="https://www.raywenderlich.com/books/macos-by-tutorials">macOS by Tutorials</a>, published by <a href="https://www.raywenderlich.com/">raywenderlich.com</a>. in this post, I&rsquo;m going to show you what hardware and software I used to write it.</p>
-<h2 id="hardware">Hardware</h2>
+<h2 id="hardware">
+  Hardware
+  <a href="#hardware" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>I use an <a href="https://www.apple.com/imac-24/">24 inch M1 iMac - yellow</a>. I&rsquo;ve always loved the form factor of the iMacs. They offer a superb monitor attached to a very good computer and the price is reasonable. My previous iMac used to make a noise like a kettle boiling when Xcode really got going, but this one is totally silent no matter what I do.</p>
 <p>I&rsquo;m a recent convert to a dual-monitor rig. I&rsquo;ve always been content to use <a href="https://support.apple.com/en-au/guide/mac-help/mh14112/mac">Spaces</a> which provides virtual screens, and I still do that. But having the luxury of a second screen is great when you&rsquo;re writing and previewing. My second screen is a <a href="https://www.samsung.com/au/monitors/curved/curved-monitor-24-inch-lc24f390fhexxy/">Samsung C24F390</a> - a curved 24 inch display. The resolution isn&rsquo;t anything like as good as the iMac, but I tweaked its settings to give as good a result as possible and I can&rsquo;t imagine going back to a single monitor now.</p>
 <p>My keyboard is an <a href="https://www.zsa.io/moonlander/">Ergodox Moonlander</a> which I love. This is my first mechanical keyboard and I wasn&rsquo;t sure if I&rsquo;d like it, since I appreciated the low travel on my standard Apple keyboard. But I chose the Kailh Silver key switches which have the lowest travel and are the least clicky. It&rsquo;s still quite noisy, but the travel was not an issue. The configuration options are amazing. It took several iterations, but I now have a <a href="https://configure.zsa.io/embed/moonlander/layouts/9OwwA/latest/0">keyboard layout</a> that works really well for me. And I keep my Apple keyboard tucked under my monitor stand so the Touch ID button is in easy reach.</p>
 <p>For a pointing device, I have the <a href="https://www.logitech.com/en-au/products/mice/mx-vertical-ergonomic-mouse.910-005449.html">Logitech MX Vertical Ergonomic Mouse</a> which is very comfortable to use and charges via USB-C. Just don&rsquo;t install the Logitech Options utility software which is buggy and causes system problems. Use <a href="https://folivora.ai">BetterTouchTool</a> instead  if you want to customize the buttons.</p>
-<h2 id="software">Software</h2>
-<h3 id="app-development">App Development</h3>
+<h2 id="software">
+  Software
+  <a href="#software" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<h3 id="app-development">
+  App Development
+  <a href="#app-development" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>For writing sample apps and code, I use <a href="https://apps.apple.com/app/xcode/id497799835">Xcode</a> set up in a completely standard way, using the default light scheme. This is so that my screenshots are consistent with what people will see if they are just getting started.</p>
 <p>I wrote an article about <a href="/post/2018/swiftlint/">Consistent Swift Style</a> some years ago. The concepts are still valid but the way you integrate it with Xcode has changed. Add a build phase to your project, move it to before the Compile Scripts phase and set it to this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$PATH<span style="color:#e6db74">:/opt/homebrew/bin&#34;</span>
@@ -224,10 +231,16 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">fi</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
 </span></span></code></pre></div><p>To make SwiftLint fix what it can automatically, duplicate the <code>swiftlint</code> line and add <code>--fix</code> as another parameter to the first copy. This will run SwiftLint twice: once to auto-fix what it can, and a second time to supply the warnings and errors about what it couldn&rsquo;t fix.</p>
-<h3 id="writing">Writing</h3>
+<h3 id="writing">
+  Writing
+  <a href="#writing" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>The text of the book was written in <a href="https://www.markdownguide.org">Markdown</a> which is great for producing formatted text in a totally open and transferable format. I&rsquo;m always on the lookout for a new Markdown editor and there are a lot of them around. In Section 3 of the book, I talk you through creating a Markdown editor for yourself, but it isn&rsquo;t quite ready for full-time use yet. I wrote this book using <a href="https://www.foldingtext.com">FoldingText</a> which I was quite happy with. While the folding part was not something I used, I appreciated the outline view. Editing text inside links and image links was difficult and the spell checker sometimes got confused and marked an entire sentence or paragraph as incorrect. But the formatting was good and easy to use with plenty of keyboard shortcuts. Code formatting was also excellent, which is a must.</p>
 <p>I have a bad habit of using the passive voice, which is not good when trying to teach. I use <a href="https://hemingwayapp.com">Hemingway Editor</a> to help me detect this, so that the passive voice can be eradicated&hellip; (Passive voice joke there.) You can use it online, but I prefer to use the app.</p>
-<h3 id="screen-shots">Screen shots</h3>
+<h3 id="screen-shots">
+  Screen shots
+  <a href="#screen-shots" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>If you&rsquo;ve read the book, you&rsquo;ll know that it includes a lot of screen shots. There are a lot of third-party utilities for doing this, but the built-in facility gives me everything I need. It&rsquo;s important to memorise the keyboard shortcuts to make this easier:</p>
 <ul>
 <li><strong>Shift-Command-3</strong>: screen shot the entire screen.</li>
@@ -250,7 +263,10 @@
 </li>
 </ul>
 <p>Once I have the image, I use Preview to crop and resize as needed.</p>
-<h2 id="and">And&hellip;</h2>
+<h2 id="and">
+  And&hellip;
+  <a href="#and" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>Finally, there&rsquo;s my support crew who watch every word I type and listen carefully as I explain my code.</p>
 <p><img src="/images/figures.jpg" alt="Figurines"></p></div>
   

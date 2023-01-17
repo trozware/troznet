@@ -25,25 +25,23 @@
 
 
 
-<link rel="stylesheet" href="https://troz.net/assets/style.css" />
+
+
+<link rel="stylesheet" href="/css/style.css" />
 
 <link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="144x144"
-  href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
-/>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png" />
 <link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
 
 
-<link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
 
@@ -63,7 +61,7 @@
 
 
   </head>
-  <body class="dark-theme">
+  <body >
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -180,7 +178,7 @@
     <span class="post-date">
       18 Feb 2018
     </span>
-    <span class="more-meta">- 1181 words, </span>
+    <span class="more-meta">- 1189 words, </span>
     <span class="more-meta"> 6 minute read</span>
   </div>
 
@@ -207,7 +205,10 @@
 
   <div class="post-content"><p><a href="/icon-builder/">Icon Builder 5.0</a> is now available from the <a href="http://itunes.apple.com/app/icon-builder/id552293482">Mac App Store</a>. This is a complete re-write for better compatibility with Apple&rsquo;s latest icon requirements. Read on to see what I have fixed and how&hellip;</p>
 <hr>
-<h2 id="problems">Problems</h2>
+<h2 id="problems">
+  Problems
+  <a href="#problems" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>When I came to create a new iOS app recently, I found out that Icon Builder had fallen behind Apple&rsquo;s requirements in three ways:</p>
 <ol>
 <li>The 1024 x 1024 marketing icon is now supposed to be inside the app&rsquo;s icon set.</li>
@@ -221,9 +222,15 @@
 <li>There was a lot of legacy code left over from previous changes and extensions.</li>
 </ul>
 <p>So I decided that the most interesting thing to do would be to start almost from scratch and re-write the app in Swift using better techniques.</p>
-<h2 id="the-re-write">The Re-write</h2>
+<h2 id="the-re-write">
+  The Re-write
+  <a href="#the-re-write" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>Now instead of the Massive View Controller, I have a larger set of small files, each with their own responsibility. Enums and structs dictate the various requirements for the different devices or app types. Other structs deal with creating the images, the folder management and writing out the files. An NSImage extension handles the resizing and reformatting of the images. This is now an app that I would not be ashamed to show anyone, except perhaps for the need to add more unit tests.</p>
-<h2 id="adding-a-color-profile">Adding a color profile</h2>
+<h2 id="adding-a-color-profile">
+  Adding a color profile
+  <a href="#adding-a-color-profile" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>But then we get to the new features needed. Adding the 1024x1024 icon to the app icon set was easy, especially after the re-factoring. But what about the color profile?</p>
 <p>This was not as easy as I expected - there is no built in command to apply a profile but here is the solution that I finally found:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">NSImage</span> {
@@ -253,13 +260,19 @@
 <li>There is a new API in macOS 10.13 to extract the png data from a CIImage while assigning a color profile.</li>
 <li>This Data can then be written directly to a file and there you have a PNG with an attached color profile.</li>
 </ul>
-<h2 id="transparency">Transparency</h2>
+<h2 id="transparency">
+  Transparency
+  <a href="#transparency" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>Now problems 1 &amp; 2 have been solved. Problem 3 was the most difficult. It turned out to be a two-part problem because an image file can have no transparent pixels but still have an alpha channel in the file data.</p>
 <p>At first, I thought maybe I could just circumvent the whole problem by converting the images to JPEGs which have no transparency or alpha channel. Using the code above, I just changed it to getting the <code>jpegRepresentation</code> instead and saving with a .jpg file extension.</p>
 <p>While this solved the alpha channel problem, the transparent parts of the icon just went black which was a not a good look.</p>
 <p><img src="/images/Transparent-Jpeg.png" alt="Transparent image converted to JPEG"></p>
 <p><em>For anyone horrified at my use of force-unwrapping, I never do this in a production app but in a playground, it makes the code shorter and it doesn&rsquo;t really matter if I get a crash there.</em></p>
-<h3 id="converting-transparent-pixels-to-white">Converting transparent pixels to white</h3>
+<h3 id="converting-transparent-pixels-to-white">
+  Converting transparent pixels to white
+  <a href="#converting-transparent-pixels-to-white" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>So the first step must be to set the transparent parts of the image to another color. Searching for solutions online, most of the ones I came up with were very slow (processing each pixel) or so complicated that I didn&rsquo;t understand them, and I hate just copy-pasting code that I don&rsquo;t understand at all.</p>
 <p>But eventually I found something that I morphed into this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">NSImage</span> {
@@ -281,7 +294,10 @@
 <p><img src="/images/MakeAlphaWhite.png" alt="Transparent portions converted to white"></p>
 <p>Now I was able to continue with my plans to have JPEGs rule the world! This worked really well in my early tests but then I came to try a Stickers app and the icons didn’t work. I couldn&rsquo;t even drag them in manually! Back to the Apple docs and I see that icons must be PNGs.</p>
 <p>When I changed the transparent pixels to white, added the color space and then saved the PNG data, I got an image that looked correct but the file still contained an alpha channel. So I had to come up with a method that re-wrote the PNG data in such a way that it never contained any alpha data at all.</p>
-<h3 id="removing-the-alpha-channel">Removing the alpha channel</h3>
+<h3 id="removing-the-alpha-channel">
+  Removing the alpha channel
+  <a href="#removing-the-alpha-channel" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>Graphics experts are probably groaning aloud by now, but I did eventually arrive at a solution, however hacky:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">NSImage</span> {
 </span></span><span style="display:flex;"><span>
@@ -317,13 +333,19 @@
 <p>And as you can see from the file info, it results in a file with the correctly assigned color profile and no alpha channel:</p>
 <p><img src="/images/FileInfo.png" alt="Final result file info"></p>
 <p>The double shuffle sounds time-consuming and in-efficient but it really doesn&rsquo;t take long. In my tests, by far the longest part of creating an icon set is opening the file dialog.</p>
-<h2 id="future-plans">Future plans</h2>
+<h2 id="future-plans">
+  Future plans
+  <a href="#future-plans" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <ul>
 <li>Add more unit tests.</li>
 <li>Work out how to replace the transparent pixels with a selected color.</li>
 <li>Offer better cropping and image positioning options.</li>
 </ul>
-<h2 id="references">References</h2>
+<h2 id="references">
+  References
+  <a href="#references" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>For resizing and cropping images, I use <a href="https://mattgemmell.com/imagecrop-source-code/">Matt Gemmell&rsquo;s NSImage+MGCropExtensions</a> and for further reading, I recommend Apple&rsquo;s Human Interface Guidelines concerning app icons for <a href="https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/app-icon/">iOS</a> and <a href="https://developer.apple.com/macos/human-interface-guidelines/icons-and-images/app-icon/">macOS</a>.</p>
 <blockquote>
 <p>Note: here is Australia we use the spelling <strong>colour</strong> but for consistency with the code samples, I have used <strong>color</strong> throughout the text.</p>

@@ -24,25 +24,23 @@
 
 
 
-<link rel="stylesheet" href="https://troz.net/assets/style.css" />
+
+
+<link rel="stylesheet" href="/css/style.css" />
 
 <link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="144x144"
-  href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
-/>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png" />
 <link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
 
 
-<link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
 
@@ -62,7 +60,7 @@
 
 
   </head>
-  <body class="dark-theme">
+  <body >
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -179,7 +177,7 @@
     <span class="post-date">
       03 Jan 2018
     </span>
-    <span class="more-meta">- 1236 words, </span>
+    <span class="more-meta">- 1245 words, </span>
     <span class="more-meta"> 6 minute read</span>
   </div>
 
@@ -200,9 +198,15 @@
 
   <div class="post-content"><p>Today I plan to discuss optionals since they were a feature of Swift that I
 found difficult to grasp at first.</p>
-<h2 id="what-is-an-optional-in-swift">What is an optional in Swift?</h2>
+<h2 id="what-is-an-optional-in-swift">
+  What is an optional in Swift?
+  <a href="#what-is-an-optional-in-swift" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>An optional is a variable of a specified type that can also be nil.</p>
-<h2 id="why-does-this-matter">Why does this matter?</h2>
+<h2 id="why-does-this-matter">
+  Why does this matter?
+  <a href="#why-does-this-matter" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>In Objective-C, any object type could be nil. If you declared a variable like
 this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span>NSString <span style="color:#f92672">*</span>myString;
@@ -223,7 +227,10 @@ optional integer, it can return with an integer with the index of the matching
 element, or it can return nil if the element was not found. This is much clearer
 and less prone to error.</p>
 <hr>
-<h2 id="how-does-swift-handle-optionals">How does Swift handle optionals?</h2>
+<h2 id="how-does-swift-handle-optionals">
+  How does Swift handle optionals?
+  <a href="#how-does-swift-handle-optionals" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>One of the first things that struck me about Swift was how clean the code
 looked, without so many non-alphanumeric characters scattered around. Gone were
 all the:</p>
@@ -241,17 +248,26 @@ initialised as it is already set to nil which is valid for an optional variable.
 Without the ? this would require initialisation as it would not be valid for it
 to be nil.</p>
 <hr>
-<h2 id="setting-an-optional">Setting an optional</h2>
+<h2 id="setting-an-optional">
+  Setting an optional
+  <a href="#setting-an-optional" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>Setting the value of an optional variable is just the same as any other
 variable:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>optionalInteger = <span style="color:#ae81ff">3</span>
 </span></span><span style="display:flex;"><span>optionalInteger = <span style="color:#ae81ff">42</span>
 </span></span></code></pre></div><hr>
-<h2 id="getting-an-optional">Getting an optional</h2>
+<h2 id="getting-an-optional">
+  Getting an optional
+  <a href="#getting-an-optional" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>The difference arises when you need to get the data out of the optional variable
 in order to use it. This process is called un-wrapping and it means to get the
 variable value out of the &lsquo;box&rsquo; it is stored it.</p>
-<h3 id="the-most-obvious-way-is-to-use-">The most obvious way is to use !</h3>
+<h3 id="the-most-obvious-way-is-to-use-">
+  The most obvious way is to use !
+  <a href="#the-most-obvious-way-is-to-use-" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> newInteger = optionalInteger!
 </span></span></code></pre></div><p><strong>DO NOT DO THIS!</strong></p>
 <p>This is called forced-unwrapping and assumes that the optional variable is not
@@ -264,7 +280,10 @@ when needed, but you should not use ! - it is un-safe. By using it, you are
 vowing to the compiler that when it gets to that point, the optional value will
 not be nil. There are much better and safer ways of doing that.</p>
 <hr>
-<h3 id="use-if-let">Use &lsquo;if let&rsquo;</h3>
+<h3 id="use-if-let">
+  Use &lsquo;if let&rsquo;
+  <a href="#use-if-let" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">doubleNumber</span>(<span style="color:#66d9ef">_</span> optionalInteger: Int?) -&gt; Int? {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> integerValue = optionalInteger {
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// integerValue is not an optional</span>
@@ -277,7 +296,10 @@ not be nil. There are much better and safer ways of doing that.</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><hr>
-<h3 id="use-guard">Use guard</h3>
+<h3 id="use-guard">
+  Use guard
+  <a href="#use-guard" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">doubleNumber</span>(<span style="color:#66d9ef">_</span> optionalInteger: Int?) -&gt; Int? {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> integerValue = optionalInteger <span style="color:#66d9ef">else</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// get out quickly,</span>
@@ -345,7 +367,10 @@ Here is the previous example re-factored to use <code>if let</code>:</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><hr>
-<h3 id="use-optional-chaining">Use optional chaining</h3>
+<h3 id="use-optional-chaining">
+  Use optional chaining
+  <a href="#use-optional-chaining" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>The final way to deal with optionals safely is to use optional chaining:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SocialMediaAccounts</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> facebook: Person?

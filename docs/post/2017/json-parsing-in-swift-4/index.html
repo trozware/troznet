@@ -26,25 +26,23 @@ Checked syntax using Xcode 9.0 beta 6. Added section on allowing for nulls. Sinc
 
 
 
-<link rel="stylesheet" href="https://troz.net/assets/style.css" />
+
+
+<link rel="stylesheet" href="/css/style.css" />
 
 <link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="144x144"
-  href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
-/>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png" />
 <link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
 
 
-<link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
 
@@ -74,7 +72,7 @@ what has Swift 4 done to sherlock them all?" />
 
 
   </head>
-  <body class="dark-theme">
+  <body >
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -191,7 +189,7 @@ what has Swift 4 done to sherlock them all?" />
     <span class="post-date">
       18 Jun 2017
     </span>
-    <span class="more-meta">- 2682 words, </span>
+    <span class="more-meta">- 2692 words, </span>
     <span class="more-meta"> 13 minute read</span>
   </div>
 
@@ -289,7 +287,10 @@ The JSON data only has strings and numbers and even then, some of the numbers
 are really strings - look at the lat &amp; lng entries. So converting from JSON to a
 struct and back again has always been problematic, but let&rsquo;s give it a go using
 built-in Swift 3 processing with no external libraries.</p>
-<h2 id="decoding-in-swift-3">Decoding in Swift 3</h2>
+<h2 id="decoding-in-swift-3">
+  Decoding in Swift 3
+  <a href="#decoding-in-swift-3" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>You can insert this into a playground or <a href="https://github.com/trozware/json">download my playground</a> and check
 out the Swift 3 JSON page:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Foundation</span>
@@ -420,7 +421,10 @@ Strings to Doubles.</p>
 guard statements to check that the data can be converted to the required types
 which meant that any typos produced an empty array. The sub-structs have to be
 extracted from the JSON as Dictionaries and then initialised by themselves.</p>
-<h2 id="decoding-in-swift-4">Decoding in Swift 4</h2>
+<h2 id="decoding-in-swift-4">
+  Decoding in Swift 4
+  <a href="#decoding-in-swift-4" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>So this works, and I get an array of Users objects. But it isn&rsquo;t pretty and it
 takes a lot of code to do the processing. So now I am going to move on to doing
 this in Swift 4. I am using Xcode 9.0 beta 6 (9M214v) so if you have a later
@@ -466,7 +470,10 @@ Array of Users. I don&rsquo;t have to worry about the initial conversion of the 
 data to a Dictionary or looping through the elements using flatMap.</p>
 <p><em>In the playground, I used a do&hellip;catch structure to check the result of the
 decode function, but I have used try? here to keep the code short.</em></p>
-<h2 id="changing-data-types">Changing data types</h2>
+<h2 id="changing-data-types">
+  Changing data types
+  <a href="#changing-data-types" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>The lat &amp; lng coordinates are stored in the JSON as Strings, but need to be
 converted to Doubles for the Swift struct.</p>
 <p>This requires a custom init method for the Coordinates struct to do the
@@ -549,7 +556,10 @@ efficiency:</p>
 </tr>
 </tbody>
 </table>
-<h2 id="encoding">Encoding</h2>
+<h2 id="encoding">
+  Encoding
+  <a href="#encoding" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>Encoding back to JSON is very similar. In the Swift 3 version, I would have
 written a method for each struct that created a Dictionary and then used
 JSONSerialization to convert the Dictionary back to JSON. This is very verbose
@@ -574,10 +584,16 @@ more readable String.</p>
 convert back to JSON, I probably would have left them as Strings so as to enable
 data transfer in both directions. I would add computed properties to the struct
 to convert these Strings to Doubles as I needed them.</p>
-<h2 id="advanced-decoding">Advanced Decoding</h2>
+<h2 id="advanced-decoding">
+  Advanced Decoding
+  <a href="#advanced-decoding" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>Now that we have the basics, I want to look at three more features: changing
 property names, date handling and allowing for nulls.</p>
-<h2 id="changing-property-names">Changing Property Names</h2>
+<h2 id="changing-property-names">
+  Changing Property Names
+  <a href="#changing-property-names" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>In these examples I used exactly the same names for the properties as were used
 in the JSON. In the Swift 3 version, it would have been easy to change the
 property names, since the data for each property was being extracted manually.
@@ -623,7 +639,10 @@ properties in the struct.</p>
 </span></span></code></pre></div><p>And that&rsquo;s all I have to do. Now the JSON is correctly converted to a Person. As
 an exercise, use JSONEncoder to get back to JSON from the Person. You will see
 that the JSON correctly names the elements using &ldquo;name1&rdquo; and &ldquo;name2&rdquo;.</p>
-<h2 id="date-handling">Date Handling</h2>
+<h2 id="date-handling">
+  Date Handling
+  <a href="#date-handling" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>Next let&rsquo;s look at dates - add this code to the playground:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> jsonString2 = <span style="color:#e6db74">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{
@@ -658,7 +677,10 @@ created.</p>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<h2 id="allowing-for-nulls">Allowing For Nulls</h2>
+<h2 id="allowing-for-nulls">
+  Allowing For Nulls
+  <a href="#allowing-for-nulls" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>JSON data will often include <strong>null</strong> where there is no value for a particular
 property name. When using JSONDecoder or JSONEncoder, this can be allowed for by
 using Optionals. If you are not clear about Optionals, have a look at my
@@ -709,7 +731,10 @@ that it does not specifically mark items as null, it just leaves them out.</p>
 </span></span><span style="display:flex;"><span>        print(jsonString)
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="property-lists">Property Lists</h2>
+</span></span></code></pre></div><h2 id="property-lists">
+  Property Lists
+  <a href="#property-lists" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>As well as JSONDecoder and JSONEncoder, Swift 4 has introduced
 PropertyListDecoder and PropertyListEncoder, so let&rsquo;s take a quick look at that.</p>
 <p>Add this to the bottom of the last playground as it uses the Project struct and
@@ -728,7 +753,10 @@ data:</p>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>I don&rsquo;t see this is being quite as useful as the JSON Encoding &amp; Decoding, but I
 mention it here for completeness.</p>
-<h2 id="codable">Codable</h2>
+<h2 id="codable">
+  Codable
+  <a href="#codable" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>In all the Swift 4 examples above, I set the structs to conform to <code>Codable</code>.
 Reading Apple&rsquo;s docs, I see that <code>Codable</code> is actually a typealias referring to
 2 separate protocols:</p>

@@ -26,25 +26,23 @@ In this third and final part, I want to look at the various ways to present dial
 
 
 
-<link rel="stylesheet" href="https://troz.net/assets/style.css" />
+
+
+<link rel="stylesheet" href="/css/style.css" />
 
 <link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="144x144"
-  href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
-/>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png" />
 <link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
 
 
-<link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
 
@@ -64,7 +62,7 @@ In this third and final part, I want to look at the various ways to present dial
 
 
   </head>
-  <body class="dark-theme">
+  <body >
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -181,7 +179,7 @@ In this third and final part, I want to look at the various ways to present dial
     <span class="post-date">
       15 Dec 2019
     </span>
-    <span class="more-meta">- 1868 words, </span>
+    <span class="more-meta">- 1873 words, </span>
     <span class="more-meta"> 9 minute read</span>
   </div>
 
@@ -210,7 +208,10 @@ In this third and final part, I want to look at the various ways to present dial
 <li>File dialogs (open &amp; save)</li>
 </ul>
 <p>So the first thing to do is add a footer to the DetailView to trigger each of these. I am going to separate this out into a new subview for neatness.</p>
-<h2 id="alert">Alert</h2>
+<h2 id="alert">
+  Alert
+  <a href="#alert" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>To make an Alert, I need an @State Bool which sets whether the alert is visible or not. All the button has to do is toggle that Bool. Stripping out the extra code and views, this is what I have.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">DialogsView</span>: View {
 </span></span><span style="display:flex;"><span>    @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> alertIsShowing = <span style="color:#66d9ef">false</span>
@@ -241,9 +242,15 @@ In this third and final part, I want to look at the various ways to present dial
 <p><img src="/images/SwiftUI-Mac-alert.jpg" alt="Alert"></p>
 <p>I tried using the <code>destructive</code> button type, but there was no difference to either the appearance or behavior of the button.</p>
 <p>So Alert is a great choice for a text-based dialog, either for informational use or to allow two choices of action.</p>
-<h2 id="action">Action</h2>
+<h2 id="action">
+  Action
+  <a href="#action" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>Very short section here - &lsquo;ActionSheet&rsquo; is unavailable in macOS! I probably should have researched that before I started this section. So use Alerts, I guess or a custom sheet.</p>
-<h2 id="sheets">Sheets</h2>
+<h2 id="sheets">
+  Sheets
+  <a href="#sheets" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>While Alerts have a very fixed structure, sheets allow us to put any SwiftUI view into a sheet dialog.</p>
 <p>So I added another Bool for the Sheet button to toggle, and added this sheet modifier. SheetView right now is simply a TextView.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  .sheet(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing) {
@@ -273,7 +280,10 @@ In this third and final part, I want to look at the various ways to present dial
 <p>The parent view has an @State Boolean variable called <code>sheetIsShowing</code>. This is bound to the alert&rsquo;s <code>isPresented</code> so it dictates whenever the sheet is visible. When the Sheet button is clicked, this variable is set to <code>true</code> and the sheet opens. But at the same time, a Binding to this variable is passed to the sheet. I deliberately gave this a different name, so as to make it clear which View was changing what variable.</p>
 <p>When the sheet wants to close, it does not close itself. Instead it sets this variable to false. Because it is a Binding, this sets the original <code>sheetIsShowing</code> variable on the parent view to false and the parent view then closes the sheet.</p>
 <p><strong>UPDATE:</strong> Look at <strong><a href="/post/2020/swiftui_for-mac-extras#dismissing-sheets">Dismissing sheets</a></strong> in my post of extras &amp; changes to this series for an alternative way to dismiss a sheet.</p>
-<h3 id="sheets--data">Sheets &amp; Data</h3>
+<h3 id="sheets--data">
+  Sheets &amp; Data
+  <a href="#sheets--data" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>With this in place, I had the sheet opening and closing perfectly, but I was not yet passing data back &amp; forth between the sheet and its parent view. I decide to put a TextField in the SheetView and bind its contents to the <code>dialogResult</code> property in the DetailView so that any edits appeared immediately in the DetailView. And while I am there, I might as well add some more decorations to the SheetView since it is a full View and not a restricted Alert.</p>
 <p>Calling the SheetView changed to this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  .sheet(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing) {
@@ -319,7 +329,10 @@ In this third and final part, I want to look at the various ways to present dial
 </span></span><span style="display:flex;"><span>        SheetView(isVisible: .constant(<span style="color:#66d9ef">true</span>), enteredText: .constant(<span style="color:#e6db74">&#34;&#34;</span>))
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="files">Files</h2>
+</span></span></code></pre></div><h2 id="files">
+  Files
+  <a href="#files" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>AppKit provides NSOpenPanel for selecting a file and NSSavePanel for saving. I will try to implement NSSavePanel to allow saving the current cat image.</p>
 <p>Since this is an AppKit control rather than a SwiftUI control, I assumed that I would need to use NSViewRepresentable like I did for the NSColorWell in part 2. But while NSColorWell is a descendent of NSView, NSSavePanel is not. So I need a new idea.</p>
 <p>Rather naively, I thought maybe I could just create an NSSavePanel in a function inside DialogsView and see what happened.</p>

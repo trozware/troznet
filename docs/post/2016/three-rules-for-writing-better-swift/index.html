@@ -25,25 +25,23 @@
 
 
 
-<link rel="stylesheet" href="https://troz.net/assets/style.css" />
+
+
+<link rel="stylesheet" href="/css/style.css" />
 
 <link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="144x144"
-  href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
-/>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png" />
 <link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
 
 
-<link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
 
@@ -68,7 +66,7 @@ Read on for more details&hellip;" />
 
 
   </head>
-  <body class="dark-theme">
+  <body >
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -185,7 +183,7 @@ Read on for more details&hellip;" />
     <span class="post-date">
       24 Feb 2016
     </span>
-    <span class="more-meta">- 643 words, </span>
+    <span class="more-meta">- 646 words, </span>
     <span class="more-meta"> 4 minute read</span>
   </div>
 
@@ -207,7 +205,10 @@ Read on for more details&hellip;" />
 <li>Allow the compiler to infer types.</li>
 </ol>
 <p>Read on for more details&hellip;</p>
-<h2 id="1-do-not-use-">1. Do not use !</h2>
+<h2 id="1-do-not-use-">
+  1. Do not use !
+  <a href="#1-do-not-use-" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>Swift uses optionals for values that can be nil. To use an optional value, you
 need to &ldquo;un-wrap&rdquo; it first, which means getting the actual value out, assuming
 that the value exists and the optional is not actually nil.</p>
@@ -225,7 +226,10 @@ that it is incorrect, but the suggested fix will be to insert !</p>
 <p>When you see this, do not accept the suggested fix, but use it as a warning to
 show that you need to fix the problem properly.</p>
 <hr>
-<h2 id="2-use-let-not-var">2. Use let, not var</h2>
+<h2 id="2-use-let-not-var">
+  2. Use let, not var
+  <a href="#2-use-let-not-var" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>Using constants in C-based languages is a pain. I could never remember the
 Objective-C syntax for declaring a static constant, so used to fall back to
 using <code>#define</code> for global constants. Inside my objects, all instance properties
@@ -240,7 +244,10 @@ have used <code>var</code> where <code>let</code> would do, but I prefer to decl
 playground example:</p>
 <p><img src="/images/Playground3.png" alt="Playground let error"></p>
 <hr>
-<h2 id="3-allow-the-compiler-to-infer-types">3. Allow the compiler to infer types</h2>
+<h2 id="3-allow-the-compiler-to-infer-types">
+  3. Allow the compiler to infer types
+  <a href="#3-allow-the-compiler-to-infer-types" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>With Objective-C and many other languages, you have to tell the compiler exactly
 what each variable is going to be: a string, an integer, an object of a certain
 type.</p>

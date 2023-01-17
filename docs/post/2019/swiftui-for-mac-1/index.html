@@ -25,25 +25,23 @@
 
 
 
-<link rel="stylesheet" href="https://troz.net/assets/style.css" />
+
+
+<link rel="stylesheet" href="/css/style.css" />
 
 <link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="144x144"
-  href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
-/>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png" />
 <link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
 
 
-<link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
 
@@ -63,7 +61,7 @@
 
 
   </head>
-  <body class="dark-theme">
+  <body >
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -180,7 +178,7 @@
     <span class="post-date">
       15 Dec 2019
     </span>
-    <span class="more-meta">- 1587 words, </span>
+    <span class="more-meta">- 1593 words, </span>
     <span class="more-meta"> 8 minute read</span>
   </div>
 
@@ -207,7 +205,10 @@ But SwiftUI works on all Apple&rsquo;s platforms, and as I am primarily a Mac de
   }
 </style>
 
-<h2 id="setup">Setup</h2>
+<h2 id="setup">
+  Setup
+  <a href="#setup" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>I opened up Xcode and created a new project selecting the macOS App template. The project opened at the usual ContentView.swift but there were a few differences in the project structure as well as one in the ContentView struct.</p>
 <p><img src="/images/SwiftUI-Mac-project.png" alt="New Mac project"></p>
 <p>The first thing to notice is that the default &ldquo;Hello, World!&rdquo; Text view has a frame set:</p>
@@ -217,7 +218,10 @@ But SwiftUI works on all Apple&rsquo;s platforms, and as I am primarily a Mac de
 <p>Opening it up reveals that this is where the application menu is configured. I had wondered where the menus were configured in Mac SwiftUI apps.</p>
 <p><img src="/images/SwiftUI-Mac-Storyboard.png" alt="Main storyboard"></p>
 <p>The AppDelegate was the next thing I looked at and here I found some of the code that I would have expected to find in a SceneDelegate. The <code>applicationDidFinishLaunching(_:)</code> method creates an instance of ContentView, creates an NSWindow and uses an NSHostingView to display the ContentView inside the window. At this stage, running the app gives me what I would expect: a fully-fledged Mac app with a window and a menu, both with all the functions you would expect in any standard Mac app.</p>
-<h2 id="the-canvas">The Canvas</h2>
+<h2 id="the-canvas">
+  The Canvas
+  <a href="#the-canvas" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>I was not expecting the Canvas to be much use when it came to previewing a Mac app. It works so well with an iPhone app because the iPhone is tall and thin and fits neatly into one side of the code window. But a Mac view is likely to be much bigger, so it would have to be scaled down a lot to avoid talking up too much precious space in my Xcode window.</p>
 <p>But it works as expected, and even scaled down, you get a good idea of the layout while still getting the live reloading that is part of what makes developing in SwiftUI so much fun.</p>
 <p><img src="/images/SwiftUI-Mac-Canvas.png" alt="Canvas"></p>
@@ -229,7 +233,10 @@ But SwiftUI works on all Apple&rsquo;s platforms, and as I am primarily a Mac de
 <p>In Xcode 11.3, I found that I was having trouble with the previews. They would not display and above the Canvas, I got the super helpful message &ldquo;Cannot preview in this file &mdash; SwiftUI-Mac.app may have crashed.&rdquo;. It turned out that this was a signing issue. If you go to the app target and look in the Signing and Capabilities section, check that Signing Certificate is not set to &ldquo;Sign to Run Locally&rdquo;. If it is, switch to &ldquo;Development&rdquo; and the previews will start working again.</p>
 <p><img src="/images/SwiftUI-Mac-signing.png" alt="Code signing"></p>
 </blockquote>
-<h2 id="laying-out-the-view">Laying out the View</h2>
+<h2 id="laying-out-the-view">
+  Laying out the View
+  <a href="#laying-out-the-view" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>Now that I have the project and I know how to preview it, it&rsquo;s time to work out what to display in the app. The next real app I want to work on will use a master-detail layout, so that is what I decided to try here.</p>
 <p>Before worrying about the data, I decided to try populating the master view with a static list and using that to navigate to a detail view that was simply a Text view.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
@@ -252,7 +259,10 @@ But SwiftUI works on all Apple&rsquo;s platforms, and as I am primarily a Mac de
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  .frame(maxWidth: .infinity, maxHeight: .infinity)
 </span></span></code></pre></div><p>And as you can see from this gif, I then had a full functional master-detail view with a collapsible and expandable semi-transparent sidebar.</p>
 <p><img src="/images/SwiftUI-Mac-master-detail.gif" alt="Master detail view"></p>
-<h2 id="adding-data">Adding Data</h2>
+<h2 id="adding-data">
+  Adding Data
+  <a href="#adding-data" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>After some scouting around for a free API that I could hook into, I came across <a href="https://http.cat">HTTP Cats</a> which is a site that serves up a cat image to match almost every HTTP status code.</p>
 <p>This sounded ideal: I can list the codes in the master view on the left and display the image in the detail view on the right.</p>
 <p>First I created a JSON file to list all the HTTP status codes so that I could put them into a List view. This was a very simple array with each entry having a code and a title:</p>
@@ -270,7 +280,10 @@ But SwiftUI works on all Apple&rsquo;s platforms, and as I am primarily a Mac de
 </span></span></code></pre></div><p>I created an HttpStatus struct with these 2 properties and I borrowed <a href="https://www.hackingwithswift.com/example-code/system/how-to-decode-json-from-your-app-bundle-the-easy-way">Paul Hudson&rsquo;s excellent Helper Bundle extension</a> to decode the JSON file. For a first attempt, I used the numeric codes to build the list and showed the title of the selected one in the detail view. But one of the best things about SwiftUI is that it makes it so easy to configure table rows, so it is time to create a new View to do this.</p>
 <p>After some experimentation, I had a TableRowView that I liked the look of, but the default sidebar width was too narrow and truncated the status code titles, so I added a frame modifier to the List to set a minimum and maximum width for the sidebar.</p>
 <p><img src="/images/SwiftUI-Mac-Master.png" alt="Master view"></p>
-<h2 id="outline-list">Outline List</h2>
+<h2 id="outline-list">
+  Outline List
+  <a href="#outline-list" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>At this point I decided that it would be more useful to have a outline list with the status codes grouped by their category.</p>
 <p>So I re-did the JSON file to show this, added an HttpSection struct and a SectionHeaderView and modified the data loading method and @State variable.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
@@ -298,7 +311,10 @@ But SwiftUI works on all Apple&rsquo;s platforms, and as I am primarily a Mac de
 </span></span><span style="display:flex;"><span>      },
 </span></span></code></pre></div><p>This worked really well and I was thrilled to find that the sections automatically had Show/Hide toggles!</p>
 <p><img src="/images/SwiftUI-Mac-outline.png" alt="Outline view"></p>
-<h2 id="detail-view">Detail View</h2>
+<h2 id="detail-view">
+  Detail View
+  <a href="#detail-view" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>Up until now, I had been using a standard Text view as the destination for my navigation. This is a really useful technique as you can build the interface gradually but have it work from the beginning. But now it was time to create a new view for the details.</p>
 <p>I set up the view and added a method that would download the correct cat image when the view appeared but there was no image. After some digging, I realised that sand-boxed Mac apps do not allow network access by default. I went to the Signing &amp; Capabilities section of the target settings and turned on &ldquo;Outgoing Connections (Client)&rdquo;. And then I had my cat pictures.</p>
 <p><img src="/images/SwiftUI-Mac-detail.png" alt="Detail view"></p>

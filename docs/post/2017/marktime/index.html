@@ -25,25 +25,23 @@
 
 
 
-<link rel="stylesheet" href="https://troz.net/assets/style.css" />
+
+
+<link rel="stylesheet" href="/css/style.css" />
 
 <link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="144x144"
-  href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
-/>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png" />
 <link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
 
 
-<link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
 
@@ -66,7 +64,7 @@ sighting. Here is how it was developed&hellip;" />
 
 
   </head>
-  <body class="dark-theme">
+  <body >
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -183,7 +181,7 @@ sighting. Here is how it was developed&hellip;" />
     <span class="post-date">
       12 Dec 2017
     </span>
-    <span class="more-meta">- 878 words, </span>
+    <span class="more-meta">- 882 words, </span>
     <span class="more-meta"> 5 minute read</span>
   </div>
 
@@ -203,7 +201,10 @@ sighting. And this time has to be in UTC to make your subsequent calculations
 work.</p>
 <p>Since this is a very simple app, I decided it would be fun to describe the
 development process from first specifications to release in the App Store.</p>
-<h3 id="the-basic-specs">The Basic Specs</h3>
+<h3 id="the-basic-specs">
+  The Basic Specs
+  <a href="#the-basic-specs" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <ul>
 <li>tap anywhere on the screen to record the time</li>
 <li>convert the time to Universal Time (UT)</li>
@@ -216,7 +217,10 @@ was a matter of configuring a <code>DateFormatter</code> with a custom format st
 provide the required date display.</p>
 <p>The last 5 times are stored in <code>UserDefaults</code> and displayed in reverse order so
 the most recent is always at the top.</p>
-<h3 id="ui-considerations">UI considerations</h3>
+<h3 id="ui-considerations">
+  UI considerations
+  <a href="#ui-considerations" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <ul>
 <li>colour scheme must work in bright sunlight</li>
 <li>text should use dynamic sizing so it works if people adjust the text size on
@@ -236,7 +240,10 @@ for dynamic font size changes manually.</p>
 <p>For iPad, I didn&rsquo;t make a lot of UI changes since I don&rsquo;t expect it to be used
 much, but the display is bigger and probably easier to read.</p>
 <p><img src="/images/MarkTime1.png" alt="Mark Time"></p>
-<h3 id="refinements">Refinements</h3>
+<h3 id="refinements">
+  Refinements
+  <a href="#refinements" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>As always, once the first few iterations have been through the testing process,
 there were a few things that needed changing and then feature creep set in&hellip;</p>
 <ul>
@@ -274,7 +281,10 @@ something like this: 153° 22&rsquo;.84 E</p>
 nice loud double-beep designed to be clearly audible to tell you when you had
 recorded a time.</p>
 <p><img src="/images/MarkTime2.png" alt="Mark Time"></p>
-<h3 id="release">Release</h3>
+<h3 id="release">
+  Release
+  <a href="#release" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>After numerous rounds of TestFlight, I was ready to release. The app was
 submitted to iTunes Connect and ready for review on Dec 9, 2017 at 7:36 PM. It
 moved into review on Dec 11, 2017 at 8:07 AM and was ready for sale on Dec 11,

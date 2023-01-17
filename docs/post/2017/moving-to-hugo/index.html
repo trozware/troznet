@@ -25,25 +25,23 @@
 
 
 
-<link rel="stylesheet" href="https://troz.net/assets/style.css" />
+
+
+<link rel="stylesheet" href="/css/style.css" />
 
 <link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="144x144"
-  href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
-/>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png" />
 <link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
 
 
-<link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
 
@@ -67,7 +65,7 @@ re-installed Jekyll but found that it had been updated from version 2 to version
 
 
   </head>
-  <body class="dark-theme">
+  <body >
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -184,7 +182,7 @@ re-installed Jekyll but found that it had been updated from version 2 to version
     <span class="post-date">
       29 Nov 2017
     </span>
-    <span class="more-meta">- 1387 words, </span>
+    <span class="more-meta">- 1395 words, </span>
     <span class="more-meta"> 7 minute read</span>
   </div>
 
@@ -212,7 +210,10 @@ removed <a href="https://jekyllrb.com" title="Jekyll">Jekyll</a> which is the si
 re-installed Jekyll but found that it had been updated from version 2 to version
 3.</p>
 <hr>
-<h2 id="jekyll-problems">Jekyll Problems</h2>
+<h2 id="jekyll-problems">
+  Jekyll Problems
+  <a href="#jekyll-problems" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>Then my problems started: missing dependencies due to the basic Jekyll install
 no longer including certain features, and then syntax errors due to changes in
 the way things are done, particularly to do with pagination.</p>
@@ -226,7 +227,10 @@ it might be worth looking at an alternative.</p>
 host on <a href="https://pages.github.com/" title="GitHub Pages">GitHub Pages</a>. After checking out the options, I decided to have a
 look at <a href="https://gohugo.io" title="Hugo">Hugo</a>.</p>
 <hr>
-<h2 id="moving-to-hugo">Moving to Hugo</h2>
+<h2 id="moving-to-hugo">
+  Moving to Hugo
+  <a href="#moving-to-hugo" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>One of the most lauded features of Hugo is speed. I had found with Jekyll that
 when I saved an edited page, it took about 5 seconds before the edits could be
 reloaded into the browser. Hugo is supposedly fast and does auto reloads.</p>
@@ -237,7 +241,10 @@ posts to <code>contents/posts</code> and my other files (status pages, images et
 <p>Then the main exercise appeared to be choosing a theme which would provide not
 only the visuals but the capabilities of the site.</p>
 <p>So I drew up a list of demands for any theme I chose:</p>
-<h3 id="must-have-features">Must Have Features</h3>
+<h3 id="must-have-features">
+  Must Have Features
+  <a href="#must-have-features" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <ul>
 <li>Responsive</li>
 <li>Blog style:
@@ -253,7 +260,10 @@ only the visuals but the capabilities of the site.</p>
 <li>Social links</li>
 <li>Google Analytics</li>
 </ul>
-<h3 id="would-be-nice-features">Would Be Nice Features</h3>
+<h3 id="would-be-nice-features">
+  Would Be Nice Features
+  <a href="#would-be-nice-features" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <ul>
 <li>Disqus commenting</li>
 <li>Twitter cards</li>
@@ -268,7 +278,10 @@ chose did not.</p>
 <p>Conveniently, nearly all these seem to come with an exampleSite folder that
 contains the configuration info.</p>
 <hr>
-<h2 id="configuring-a-theme">Configuring a Theme</h2>
+<h2 id="configuring-a-theme">
+  Configuring a Theme
+  <a href="#configuring-a-theme" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>After testing out several alternatives, I decided to go with <a href="https://github.com/olOwOlo/hugo-theme-even" title="Even">Even</a> - at
 least to start with. I installed the theme and copied the contents of the
 example <code>config.toml</code> to my own <code>config.toml</code> file and started configuring.</p>
@@ -292,7 +305,10 @@ of references to <code>{{ site.url }}</code> so that images and internal links w
 And sometimes I just needed to re-save a file to make Hugo re-evaluate it (there
 is probably a command to force a complete re-build if I looked for it.)</p>
 <hr>
-<h2 id="working-out-the-structure">Working out the Structure</h2>
+<h2 id="working-out-the-structure">
+  Working out the Structure
+  <a href="#working-out-the-structure" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>One thing that I was puzzled by was what templates the various pages are
 generated from.</p>
 <p>The main page is easy enough as the theme folder has a layouts folder with an
@@ -317,14 +333,20 @@ add or edit the headers in some posts, but I really like this feature.</p>
 <p>And if you want a laugh, test out the 404 page - here is a <a href="https://troz.net/bad-link/" title="404">bad link</a> - which
 generates a random text emoji each time!</p>
 <hr>
-<h2 id="publishing">Publishing</h2>
+<h2 id="publishing">
+  Publishing
+  <a href="#publishing" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>I wanted to use my existing GitHub Pages setup, so I replaced the site files in
 my local repository with the new Hugo site files. I generated the static site
 files using <code>hugo</code> in Terminal, then pushed the pages to GitHub. All I had to do
 then was change the settings so that GitHub Pages knew my site was coming from
 the <code>docs</code> folder and I was live with the new site.</p>
 <hr>
-<h2 id="final-thoughts">Final Thoughts</h2>
+<h2 id="final-thoughts">
+  Final Thoughts
+  <a href="#final-thoughts" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>So how am I going with my check list?</p>
 <ul>
 <li>Responsive - ALMOST, not Hugo&rsquo;s fault</li>

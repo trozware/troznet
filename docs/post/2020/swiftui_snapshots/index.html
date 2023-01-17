@@ -25,25 +25,23 @@
 
 
 
-<link rel="stylesheet" href="https://troz.net/assets/style.css" />
+
+
+<link rel="stylesheet" href="/css/style.css" />
 
 <link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="144x144"
-  href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
-/>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png" />
 <link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
 
 
-<link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
 
@@ -63,7 +61,7 @@
 
 
   </head>
-  <body class="dark-theme">
+  <body >
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -180,7 +178,7 @@
     <span class="post-date">
       17 May 2020
     </span>
-    <span class="more-meta">- 2270 words, </span>
+    <span class="more-meta">- 2280 words, </span>
     <span class="more-meta"> 11 minute read</span>
   </div>
 
@@ -201,16 +199,25 @@
 
   <div class="post-content"><p>Snapshot testing is a technique that has been very popular in the web development world and it seems like a great way to test SwiftUI user interfaces. I read about snapshot tests in a recent blog post and was intrigued, but I had some difficulty getting it to work, so when I finally succeeded, I decided to share my experiences in the hope that others will find them useful.</p>
 <hr>
-<h2 id="what-is-snapshot-testing">What is Snapshot Testing</h2>
+<h2 id="what-is-snapshot-testing">
+  What is Snapshot Testing
+  <a href="#what-is-snapshot-testing" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>Unit testing checks that when you call various functions or methods with certain inputs, you get the output you expect. I use unit tests for testing my models and the methods that change them. But this only tests the logic behind the app, it does nothing to test whether the app is displaying what it should, or whether it is responding correctly to the user&rsquo;s actions.</p>
 <p>UI testing emulates user actions by faking taps, clicks, text entry and so on and checks that labels, buttons etc are showing the correct information after these fake interactions.</p>
 <p>Snapshot testing is in between these two as it effectively takes a picture of the interface. The first time you run the test it will store an image and all subsequent test runs will check that the current interface matches this stored image. If there are any differences, the test will fail so you can decide whether to keep the new version or revert to what you had before.</p>
 <hr>
-<h2 id="how-did-i-get-started">How did I get started?</h2>
+<h2 id="how-did-i-get-started">
+  How did I get started?
+  <a href="#how-did-i-get-started" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>I first read about the idea of using snapshot testing for SwiftUI in a blog post by <a href="https://www.vadimbulavin.com/snapshot-testing-swiftui-views/">Vadim Bulavin</a>. He made a very good argument for this, but I found his instructions assumed more knowledge of the topic than I had at the time and so I discarded the idea after an initial attempt.</p>
 <p>But he was suggesting using a <a href="https://github.com/pointfreeco/swift-snapshot-testing">snapshotting library</a> published by <a href="https://www.pointfree.co">Point-Free</a> and I later discovered a link to one of their videos where they discuss this exact thing: <a href="https://www.pointfree.co/episodes/ep86-swiftui-snapshot-testing">SwiftUI Snapshot Testing</a>. This was enough to get me going with attempt #2.</p>
 <hr>
-<h2 id="setting-up-an-app-for-snapshot-testing">Setting up an app for snapshot testing</h2>
+<h2 id="setting-up-an-app-for-snapshot-testing">
+  Setting up an app for snapshot testing
+  <a href="#setting-up-an-app-for-snapshot-testing" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>Since the blog post and video were talking about iOS apps, I decided to start there, but you know me, I will get to macOS apps later&hellip;</p>
 <p>First off, I created a single view iOS app using SwiftUI making sure to check &ldquo;Include Unit Tests&rdquo;, but not &ldquo;Include UI Tests&rdquo;. I created a simple view so I had something to test.</p>
 <p>If you want to use this on an app that does not already have a unit tests target, go to the project settings, click the + button to add a new target and choose a Unit Testing Bundle.</p>
@@ -221,7 +228,10 @@
 <p>On the final pane, it is important to select the correct target for this package. Select the app&rsquo;s test target, not the app itself and not the UI test target if you have one. I made this mistake on my first try as I assumed that snapshot testing would be part of UI testing but it is actually part of unit testing.</p>
 <p><img src="/images/Snapshot-SetTarget.png" alt="Setting the package target"></p>
 <hr>
-<h2 id="writing-a-snapshot-test">Writing a Snapshot Test</h2>
+<h2 id="writing-a-snapshot-test">
+  Writing a Snapshot Test
+  <a href="#writing-a-snapshot-test" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>Now I added a new Unit Test Case Class file to the tests target in my app. I had to import SwiftUI and SnapshotTesting into this test file as well as declaring the app as a testable import. The easiest way to do this is to copy the <code>@testable import</code> heading from the sample test file to make sure it is exactly right. The import needs to match the name of your app module.</p>
 <p>Finally it&rsquo;s time to write the first snapshot test:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">XCTest</span>
@@ -259,7 +269,10 @@
 <p>If you ever get an error message saying &ldquo;No such module &lsquo;SnapshotTesting&rsquo;&rdquo; use Shift-Command-U to re-build for testing. This usually only happens after you have cleaned your build folder.</p>
 </blockquote>
 <hr>
-<h2 id="testing-a-change">Testing a Change</h2>
+<h2 id="testing-a-change">
+  Testing a Change
+  <a href="#testing-a-change" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>Now that I had a passing test, the next thing was to check what happens if the UI changes. This may be due to a deliberate change or because the cat just walked across your keyboard (a not infrequent occurrence around here).</p>
 <p>Where I originally had a button with the label &ldquo;Save&rdquo;, I decided to change this to &ldquo;OK&rdquo; (rejecting the cat&rsquo;s suggestion of &ldquo;q2eegrnh&rdquo;).</p>
 <p>Running the test again produced this result:</p>
@@ -275,7 +288,10 @@
 </span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></div><p>This caused a failing test again as the new version was written to the Snapshots folder, but after removing the <code>record = true</code> line and re-running the test, it passed again, with my new button label now an accepted part of the test.</p>
 <hr>
-<h2 id="using-snapshots-with-state">Using Snapshots with State</h2>
+<h2 id="using-snapshots-with-state">
+  Using Snapshots with State
+  <a href="#using-snapshots-with-state" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>In SwiftUI, the UI displayed is a function of state, so changing state properties changes the UI. This is what makes snapshot testing really good for SwiftUI apps as you can change the state programmatically and confirm that this is reflected in the UI.</p>
 <p>So having proved that the snapshot tests worked, I decided to move on and test it with my new <a href="/post/2020/name_this_app/">anagram assistant app</a>. This is quite a simple app that has a single <code>AppState</code> class that holds all the program data.</p>
 <p>So I was able to write a suite of tests that changed the state in various ways and then snap-shotted the UI with that state. Here are a couple of examples:</p>
@@ -308,7 +324,10 @@
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">as</span>: .image)
 </span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></div><hr>
-<h2 id="accessibility-tests">Accessibility Tests</h2>
+<h2 id="accessibility-tests">
+  Accessibility Tests
+  <a href="#accessibility-tests" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>iOS supports dynamic type and if your app uses standard font styles, it will adopt these dynamic sizes automatically. I can&rsquo;t find the link right now, but I remember reading an article that said nearly half of all iPhone users change the default text size, setting it either smaller or larger.</p>
 <p>With snapshot testing, it is quick and easy to get a view of how you app looks with different font sizes. Here is my test function for taking a snapshot of every possible font size variation.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">testDynamicFonts</span>() {
@@ -343,7 +362,10 @@
 </span></span></code></pre></div><p><img src="/images/Snapshot-DynamicFonts.png" alt="Dynamic font tests"></p>
 <p>This let me quickly see where the problems were and what I needed to adjust.</p>
 <hr>
-<h2 id="snapshot-test-for-mac-apps">Snapshot Test for Mac Apps</h2>
+<h2 id="snapshot-test-for-mac-apps">
+  Snapshot Test for Mac Apps
+  <a href="#snapshot-test-for-mac-apps" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>You knew you weren&rsquo;t going to get through this without me going on about Mac apps&hellip;</p>
 <p>Snapshot tests for a Mac app work well, with one caveat.</p>
 <p>First I had to change the Swift.View extension so that it returned an NSViewController instead of a UIViewController.</p>
@@ -365,7 +387,10 @@
 <p>Option 2 is tedious to set up (<a href="/contact/">contact me</a> if you would like more details) but is more seamless after that.</p>
 <p>The best solution would be for Xcode to allow you to turn off sand-boxing for a test target. Maybe Xcode 12&hellip;</p>
 <hr>
-<h2 id="limitations-of-snapshot-testing">Limitations of Snapshot Testing</h2>
+<h2 id="limitations-of-snapshot-testing">
+  Limitations of Snapshot Testing
+  <a href="#limitations-of-snapshot-testing" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>Ignoring the Mac and concentrating only on iOS apps for the moment, there were a few issues:</p>
 <ol>
 <li>
@@ -395,7 +420,10 @@
 </li>
 </ol>
 <hr>
-<h2 id="summary">Summary</h2>
+<h2 id="summary">
+  Summary
+  <a href="#summary" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>Will I use snapshot tests for my SwiftUI apps? Yes, definitely. I use unit tests for my model classes but mostly avoid UI tests as they are too clumsy to write and time-consuming to run. Snapshot tests are better for SwiftUI, and very fast.</p>
 <p>Huge thanks to <a href="https://twitter.com/V8tr">Vadim Bualvin</a> for the original inspiration for this article. Go and read his <a href="https://www.vadimbulavin.com/snapshot-testing-swiftui-views/">blog post</a> for a more detailed look. And thanks to <a href="https://www.twitter.com/mbrandonw">Brandon Williams</a> &amp; <a href="https://www.twitter.com/stephencelis">Stephen Celis</a> at <a href="https://www.pointfree.co">Point-Free</a> for getting me going after my initial discarding of the idea. Any mistakes or errors are mine and not theirs.</p>
 <p>If you want to learn about UI testing for SwiftUI apps, I recommend watching <a href="https://twitter.com/azamsharp">azamsharp&rsquo;s</a> YouTube video: <a href="https://www.youtube.com/watch?v=dFQtFJsvt04">User Interface Testing for SwiftUI Applications</a>.</p>

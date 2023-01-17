@@ -25,25 +25,23 @@
 
 
 
-<link rel="stylesheet" href="https://troz.net/assets/style.css" />
+
+
+<link rel="stylesheet" href="/css/style.css" />
 
 <link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="144x144"
-  href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
-/>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png" />
 <link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
 
 
-<link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
 
@@ -63,7 +61,7 @@
 
 
   </head>
-  <body class="dark-theme">
+  <body >
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -180,7 +178,7 @@
     <span class="post-date">
       26 May 2018
     </span>
-    <span class="more-meta">- 517 words, </span>
+    <span class="more-meta">- 519 words, </span>
     <span class="more-meta"> 3 minute read</span>
   </div>
 
@@ -203,7 +201,10 @@
    
 
   <div class="post-content"><p>Just a quick post to let you know about some recent app updates&hellip;</p>
-<h2 id="man-reader">Man Reader</h2>
+<h2 id="man-reader">
+  Man Reader
+  <a href="#man-reader" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p><a href="http://itunes.apple.com/app/man-reader/id522583774?mt=12">Man Reader v 1.10</a> was released on 11 May 2018.</p>
 <p>I had to update <a href="/manreader/">Man Reader</a> in November 2017 because of a really strange &ldquo;feature&rdquo; that arrived with macOS High Sierra. Man Reader displays the man pages as HTML which allows the tabs and internal links to work using anchor tags. These had worked for years, but under High Sierra, they just stopped working.</p>
 <p>I eventually discovered that it was because I was loading the text directly into the WebView using:</p>
@@ -217,7 +218,10 @@
 <p>As you can see from the code, ManReader is written in Objective-C. Going back to Objective-C from Swift is painful! And I know that this crash could not have happened if the app had been written in Swift as the identifier would have been an optional and I would have been forced to check that it was not nil before using.</p>
 <p>On the plus side, Objective-C apps are tiny in comparison to Swift apps. And the Mac App Store review process set a new record for me. I submitted the app at 10:58 am and it was on sale at 12:03 pm the same day - 66 minutes from start to finish.</p>
 <hr>
-<h2 id="sequenza-vii">Sequenza VII</h2>
+<h2 id="sequenza-vii">
+  Sequenza VII
+  <a href="#sequenza-vii" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>The other app that I updated recently is <a href="https://itunes.apple.com/us/app/sequenza-vii/id730234638?mt=8&amp;uo=4">Sequenza VII</a>. Version 1.2 was released on 23 April 2018.</p>
 <p>This is an app with a very limited audience - specifically oboe players who want to learn to play Berio&rsquo;s weird music. However Apple sent me a notice saying that as it hadn&rsquo;t been updated for ages, it would be removed from the store within 30 days unless I did something.</p>
 <p>Updating it to use the iPhone X display was surprisingly difficult. I set the minimum system version to 11.0 and changed the storyboards to use the latest Xcode but the horns on either side of the notch were still being left blank. In the end, the trick I found was to create a new Launch storyboard - that seemed to fool the system into re-considering all the layouts.</p></div>

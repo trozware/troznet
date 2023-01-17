@@ -26,25 +26,23 @@ Search online for any definition of functional programming and you will find man
 
 
 
-<link rel="stylesheet" href="https://troz.net/assets/style.css" />
+
+
+<link rel="stylesheet" href="/css/style.css" />
 
 <link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="144x144"
-  href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
-/>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png" />
 <link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
 
 
-<link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
 
@@ -64,7 +62,7 @@ Search online for any definition of functional programming and you will find man
 
 
   </head>
-  <body class="dark-theme">
+  <body >
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -181,7 +179,7 @@ Search online for any definition of functional programming and you will find man
     <span class="post-date">
       14 Jun 2018
     </span>
-    <span class="more-meta">- 2491 words, </span>
+    <span class="more-meta">- 2501 words, </span>
     <span class="more-meta"> 12 minute read</span>
   </div>
 
@@ -202,7 +200,10 @@ Search online for any definition of functional programming and you will find man
 
   <div class="post-content"><p>What is Functional Programming and how can we use it in Swift?</p>
 <p>Search online for any definition of functional programming and you will find many different definitions, few of which are practically helpful. I have no claim to be an expert, but as a Swift enthusiast, this is what I have distilled out of the morass.</p>
-<h2 id="what-is-functional-programming">What is Functional Programming?</h2>
+<h2 id="what-is-functional-programming">
+  What is Functional Programming?
+  <a href="#what-is-functional-programming" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>Without providing a concrete definition, here are what I see as the 3 main goals of functional programming:</p>
 <ul>
 <li>use pure functions where possible</li>
@@ -210,9 +211,15 @@ Search online for any definition of functional programming and you will find man
 <li>use functions as the basic building blocks</li>
 </ul>
 <p>So let&rsquo;s go through those one by one and see how they fit into the Swift language.</p>
-<h2 id="functional-programming-in-swift">Functional Programming in Swift</h2>
+<h2 id="functional-programming-in-swift">
+  Functional Programming in Swift
+  <a href="#functional-programming-in-swift" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>You can <a href="https://github.com/trozware/functional-programming">download a playground containing all these examples from GitHub</a>.</p>
-<h3 id="pure-functions">Pure functions</h3>
+<h3 id="pure-functions">
+  Pure functions
+  <a href="#pure-functions" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>A function is considered pure if it will always produce the same result for the same input, regardless of where it is and what calls it.</p>
 <p>Imagine you are writing a role-playing game and for a given fight, you need to be able to calculate the damage per second caused by a character.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DamageDealer</span> {
@@ -258,11 +265,17 @@ Search online for any definition of functional programming and you will find man
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>mage.damagePerSecondPure(damage: mage.damageDone, time: mage.timeTaken)
 </span></span></code></pre></div><p>Calling the function is now more verbose, but reading the call gives you much more information about what is going to happen. Testing is easy, and the function is completely self-contained so can be copied into any class or struct.</p>
-<h3 id="avoid-mutability">Avoid mutability</h3>
+<h3 id="avoid-mutability">
+  Avoid mutability
+  <a href="#avoid-mutability" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>This one has become the poster child of Swift Functional Programming as Swift provides some very convenient ways to avoid mutability.</p>
 <p>The first is <code>let</code> versus <code>var</code>. My rule is always to start defining any variable/constant with <code>let</code> and only changing to <code>var</code> if the compiler raises an error. In the current versions of Xcode, it will give a warning if you use <code>var</code> unnecessarily which is great, but I still stick to using <code>let</code> first.</p>
 <p>The most powerful way Swift lets us avoid mutability with Functional Programming is with <code>map</code>, <code>filter</code> and <code>reduce</code>.</p>
-<h4 id="filter">Filter</h4>
+<h4 id="filter">
+  Filter
+  <a href="#filter" class="h-anchor" aria-hidden="true">#</a>
+</h4>
 <p>Consider this function that checks possible player names:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">checkPlayerNames</span>(names: [String]) -&gt; [String] {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> validNames: [String] = []
@@ -293,7 +306,10 @@ Search online for any definition of functional programming and you will find man
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> names.filter { $0.count <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>$0.contains(<span style="color:#e6db74">&#34; &#34;</span>) }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>I recommend the first method even if it is a bit more verbose. Storing the result in a constant before returning it makes debugging much easier. Using $0 instead of using a named parameter is convenient, but I prefer not to do this unless the closure is very simple.</p>
-<h4 id="map">Map</h4>
+<h4 id="map">
+  Map
+  <a href="#map" class="h-anchor" aria-hidden="true">#</a>
+</h4>
 <p><code>filter</code> takes an array of objects and returns a sub-array containing every element which returned true for the checks inside the filter body.</p>
 <p><code>map</code> changes the elements in an array and can return an array of the same type or an array of different types.</p>
 <p>Here is a function to square every integer in an array in the old style, using a mutable array to accumulate the result:</p>
@@ -333,7 +349,10 @@ But <code>map</code> can change the type as well.</p>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> strings = [ <span style="color:#e6db74">&#34;1&#34;</span>, <span style="color:#e6db74">&#34;two&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#e6db74">&#34;0.34&#34;</span>, <span style="color:#e6db74">&#34;65&#34;</span>, <span style="color:#e6db74">&#34;-93&#34;</span>, <span style="color:#e6db74">&#34;4e8&#34;</span> ]
 </span></span><span style="display:flex;"><span>convertStringsToInts(strings)
 </span></span></code></pre></div><p>The conversion of <code>String</code> to <code>Int</code> may fail and so returns an optional. If this function had used <code>map</code> instead of <code>compactMap</code>, the result would have been an array of optional Ints: <code>[Int?]</code>. By using <code>compactMap</code>, every <code>nil</code> value was dropped and only valid integers are included.</p>
-<h4 id="reduce">Reduce</h4>
+<h4 id="reduce">
+  Reduce
+  <a href="#reduce" class="h-anchor" aria-hidden="true">#</a>
+</h4>
 <p>The final tool in the immutability toolbox is <code>reduce</code> and this is one that took me a while to wrap my head around.</p>
 <p>Imagine that you wanted to add up all the integers in an array. Here is a way to do it using a mutable variable and a loop:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sumNumbers</span>(<span style="color:#66d9ef">_</span> numbers: [Int]) -&gt; Int {
@@ -386,7 +405,10 @@ But <code>map</code> can change the type as well.</p>
 </span></span><span style="display:flex;"><span>nextValue = 8
 </span></span><span style="display:flex;"><span>about to return 8 + 8 = 16 which will become the next culmulative or the final value
 </span></span><span style="display:flex;"><span>final result = 16
-</span></span></code></pre></div><h3 id="using-functions-as-building-blocks">Using functions as building blocks</h3>
+</span></span></code></pre></div><h3 id="using-functions-as-building-blocks">
+  Using functions as building blocks
+  <a href="#using-functions-as-building-blocks" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <p>This one is more a matter of style than of any particular programming technique. Basically, keep each function small and break your code into small chunks with obvious naming. This makes your code easier to read, test and debug and it beomes vastly more reusable.</p>
 <p>Consider this totally made-up function:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">configureDisplay</span>(<span style="color:#66d9ef">for</span> userId: String?) {
@@ -409,7 +431,10 @@ But <code>map</code> can change the type as well.</p>
 </span></span></code></pre></div><p>Is it easy to read?
 Can you work out what it does? Now imagine all that functionality in a single huge function - would that be as good to use?</p>
 <p>As a way of encouraging shorter functions, which leads inevitably to this sort of structured code, I strongly recommend using SwiftLint to check your code. I wrote a <a href="/post/2018/swiftlint/">post about this</a> a while ago which you might find useful.</p>
-<h4 id="naming">Naming</h4>
+<h4 id="naming">
+  Naming
+  <a href="#naming" class="h-anchor" aria-hidden="true">#</a>
+</h4>
 <p>The other key thing to mention and it is a point that Apple makes very strongly, is to name your functions and their parameters so as to make them as readable as possible from the calling site. You write a function once, but you most likely call it multiple times, so it is the calling site that needs to be really easy to read.</p>
 <p>Returning to the game example, here is a dummy function to show damage caused to a target:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">displayDamage</span>(damage: Int, target: String) {}
@@ -426,7 +451,10 @@ Can you work out what it does? Now imagine all that functionality in a single hu
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>displayDamage(<span style="color:#ae81ff">12</span>, doneTo: <span style="color:#e6db74">&#34;Orc&#34;</span>)
 </span></span></code></pre></div><hr>
-<h2 id="closures">Closures</h2>
+<h2 id="closures">
+  Closures
+  <a href="#closures" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>As promised above, a very quick explanation of closures, which really deserve their own post&hellip;</p>
 <p>In Swift, as in many languages, functions can be passed as parameters to other functions. As an example, I have set up 2 functions to perform a simple calculation on a given integer:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">cube</span>(<span style="color:#66d9ef">_</span> number: Int) -&gt; Int {

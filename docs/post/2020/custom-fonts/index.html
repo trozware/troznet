@@ -27,25 +27,23 @@ I probably should have published this on a different day, but it is not a joke&a
 
 
 
-<link rel="stylesheet" href="https://troz.net/assets/style.css" />
+
+
+<link rel="stylesheet" href="/css/style.css" />
 
 <link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="144x144"
-  href="https://troz.net/img/apple-touch-icon-144-precomposed.png"
-/>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png" />
 <link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
 
 
-<link href="https://troz.net/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="https://troz.net/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
 
@@ -65,7 +63,7 @@ I probably should have published this on a different day, but it is not a joke&a
 
 
   </head>
-  <body class="dark-theme">
+  <body >
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -182,7 +180,7 @@ I probably should have published this on a different day, but it is not a joke&a
     <span class="post-date">
       01 Apr 2020
     </span>
-    <span class="more-meta">- 1328 words, </span>
+    <span class="more-meta">- 1333 words, </span>
     <span class="more-meta"> 7 minute read</span>
   </div>
 
@@ -205,14 +203,20 @@ I probably should have published this on a different day, but it is not a joke&a
 <p>But sometimes, you really need to use a different font in your apps, and as the process of getting a custom font to display in your app can be confusing and tedious, I thought I would go through the steps for both iOS and macOS apps.</p>
 <p>I probably should have published this on a different day, but it is not a joke&hellip;. really.</p>
 <hr>
-<h2 id="getting-a-font-file">Getting a Font File</h2>
+<h2 id="getting-a-font-file">
+  Getting a Font File
+  <a href="#getting-a-font-file" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>The first thing is to find a suitable font and make sure that the license for that font matches your use. I wanted a font that looked like it was hand-written, so I went to fontspace and searched the <a href="https://www.fontspace.com/category/handwriting">hand-writing category</a> there.</p>
 <p><img src="/images/SelectFont1.png" alt="Fonts"></p>
 <p>Since I wanted to use this in a paid app, I checked the &ldquo;Commercial-use&rdquo; button to limit the search. The one I chose was called &ldquo;<a href="https://www.fontspace.com/get/family/4yyjn">Painting With Chocolate</a>&rdquo; by &ldquo;Make mooze&rdquo;</p>
 <p><img src="/images/SelectFont2.png" alt="Download font"></p>
 <p>I downloaded the font and un-zipped the file which gave me a single file called &ldquo;Paintingwithchocolate-K5mo.ttf&rdquo;. You can use either &ldquo;.ttf&rdquo; or &ldquo;.otf&rdquo; font files.</p>
 <hr>
-<h2 id="using-the-font-in-an-ios-app">Using the Font in an iOS App</h2>
+<h2 id="using-the-font-in-an-ios-app">
+  Using the Font in an iOS App
+  <a href="#using-the-font-in-an-ios-app" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>Now to use the font, first in an iOS app. Boot up Xcode and create a new SwiftUI project for iOS.</p>
 <p>Once the project is open, drag the font file into the Project Navigator. At this stage there are 2 crucial settings:</p>
 <ul>
@@ -263,7 +267,10 @@ I probably should have published this on a different day, but it is not a joke&a
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><img src="/images/FontUsed-iOS.png" alt="Font in use - iOS"></p>
 <hr>
-<h2 id="using-the-font-in-a-mac-app">Using the Font in a Mac App</h2>
+<h2 id="using-the-font-in-a-mac-app">
+  Using the Font in a Mac App
+  <a href="#using-the-font-in-a-mac-app" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>The process for a Mac app is mostly the same.</p>
 <p>Install the font file in your project as before, making sure to copy the file into the project and to add it to the app target.</p>
 <p>For a Mac app, you do not need to specify the font file name in your Info.plist file. Instead, you have to tell the Info.plist where to look for custom fonts in your project directory.</p>
@@ -295,7 +302,10 @@ I probably should have published this on a different day, but it is not a joke&a
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><img src="/images/FontUsed-Mac.png" alt="Font in use in Mac app"></p>
 <hr>
-<h2 id="storyboard-apps">Storyboard apps</h2>
+<h2 id="storyboard-apps">
+  Storyboard apps
+  <a href="#storyboard-apps" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>The examples above were both SwiftUI projects, but these techniques work much the same in a storyboard project.</p>
 <p>Follow the same steps to install the font and configure the Info.plist file and use the same functions to list the installed files.</p>
 <p>To use the fonts, if you are using a storyboard in an iOS project, select &ldquo;Custom&rdquo; in the font picker and then you will be able to see your custom font listed if it is installed correctly. I could not work out how to get the custom font appearing in this menu for a macOS app.</p>
@@ -306,7 +316,10 @@ I probably should have published this on a different day, but it is not a joke&a
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// macOS</span>
 </span></span><span style="display:flex;"><span>    fontLabel.font = NSFont(name: <span style="color:#e6db74">&#34;PaintingWithChocolate&#34;</span>, size: <span style="color:#ae81ff">24</span>)
 </span></span></code></pre></div><hr>
-<h2 id="trouble-shooting">Trouble-shooting</h2>
+<h2 id="trouble-shooting">
+  Trouble-shooting
+  <a href="#trouble-shooting" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <p>If you have gone through these steps and the font still isn&rsquo;t working, here are a few things to check:</p>
 <ol>
 <li>
