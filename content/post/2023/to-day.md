@@ -1,7 +1,7 @@
 ---
 title: "To-Day"
 date: 2023-03-08T14:58:01+10:00
-draft: true
+draft: false
 description: "Creating my own minimalist todo application."
 tags: ['mac', 'app', 'swiftui', 'app store', 'menu bar']
 ---

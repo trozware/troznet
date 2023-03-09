@@ -11,6 +11,131 @@
     
     
     <item>
+<title>To-Day</title>
+<link>https://troz.net/post/2023/to-day/</link>
+<pubDate>Wed, 08 Mar 2023 14:58:01 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2023/to-day/</guid>
+<description>&lt;p&gt;When I sit down at my computer at the start of a work day, I typically like to plan out the broad outline of my work. This is the three or four major tasks for my day. I don&amp;rsquo;t want a minute-by-minute plan, just a list of the major items, so that I can check them off as I work, and get to the end of the day without feeling like I&amp;rsquo;ve forgotten anything.&lt;/p&gt;
+&lt;p&gt;There are a ton of todo apps and web services available, but they all provide much more than I need. When I factored in how I wanted to learn about writing a Mac menubar app in SwiftUI, the solution was obvious - write my own.&lt;/p&gt;
+&lt;p&gt;First things first: the project is open-source and on &lt;a href=&#34;https://github.com/trozware/To-Day&#34;&gt;GitHub&lt;/a&gt; so feel free to download it, fork it, edit it, create pull requests, file issues or whatever you like. If you just want to install the app, you can download the &lt;a href=&#34;https://github.com/trozware/To-Day/raw/main/Releases/To-Day.dmg&#34;&gt;disk image&lt;/a&gt;. It requires macOS 13.0 or later.&lt;/p&gt;
+&lt;style&gt;
+  img {
+    margin: 10px auto;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .social_footer img {
+    border: none;
+    box-shadow: none;
+  }
+&lt;/style&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/today1.png&#34; alt=&#34;Running the app for the first time&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m not going to go through the entire app in detail. You can download the project and check out the code to see it all. I&amp;rsquo;m just going to give some details about the app structure and architecture as well as mentioning some code that I  found new or interesting.&lt;/p&gt;
+&lt;h2 id=&#34;the-app&#34;&gt;
+  The App
+  &lt;a href=&#34;#the-app&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;ve written menu bar apps using AppKit but this is my first serious look at SwiftUI&amp;rsquo;s &lt;code&gt;MenuBarExtra&lt;/code&gt;. Configuring the app to be a menu bar app has three steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Remove the &lt;code&gt;WindowGroup&lt;/code&gt; from your app &lt;code&gt;body&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Add a &lt;code&gt;MenuBarExtra&lt;/code&gt; to your app &lt;code&gt;body&lt;/code&gt; with some views to show in the menu.&lt;/li&gt;
+&lt;li&gt;Insert an entry into &lt;strong&gt;Target - Info&lt;/strong&gt;, setting &lt;code&gt;Application is agent (UIElement)&lt;/code&gt; to &lt;code&gt;YES&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/today_info.png&#34; alt=&#34;Editing the app info&#34;&gt;&lt;/p&gt;
+&lt;p&gt;You can then delete &lt;strong&gt;ContentView.swift&lt;/strong&gt; from the project since nothing uses it.&lt;/p&gt;
+&lt;p&gt;Looking at the first screenshot, you can see that I&amp;rsquo;ve split the menu into four sections. The first one displays the actual todos and handles checking them off. This view is provided by the main data object.&lt;/p&gt;
+&lt;p&gt;The other sections are static and deal with editing the todos, configuring the app settings and managing the app itself. Each of these is split off into a separate view file to keep the main app body as uncluttered as possible. The files for these three sections are in the &lt;strong&gt;Menu Views&lt;/strong&gt; group in the Xcode project.&lt;/p&gt;
+&lt;p&gt;Editing the todos caused the most issues with the app and took several iterations, but I&amp;rsquo;m pleased with this version:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/today_edits.png&#34; alt=&#34;Editing the todos&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I tried lots of ways of tracking the focus and adding keyboard commands to move items up and down the list but in the end, I went for simplicity. The editing is embedded in a &lt;code&gt;Form&lt;/code&gt;. This means that I get the standard tabbing behaviour by default, but I also get the small toggle switches, which I really like.&lt;/p&gt;
+&lt;p&gt;The main view for this is &lt;code&gt;EditView&lt;/code&gt; and it, with its subviews, are in the &lt;strong&gt;Edit Views&lt;/strong&gt; project group.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ll discuss the &lt;strong&gt;Models&lt;/strong&gt; group and the data flow in a minute, but to finish describing the app structure, the &lt;code&gt;AboutView&lt;/code&gt; tells you more about the app. I love being able to use basic Markdown styling in &lt;code&gt;Text&lt;/code&gt; views. And I learnt a good lesson: if you&amp;rsquo;re having trouble with truncated text, check out the &lt;code&gt;fixedSize&lt;/code&gt; modifier.&lt;/p&gt;
+&lt;p&gt;Finally, &lt;code&gt;Updater&lt;/code&gt; is a class to handle using the &lt;strong&gt;&lt;a href=&#34;https://sparkle-project.org&#34;&gt;Sparkle&lt;/a&gt;&lt;/strong&gt; updater, which deserves its own post. I must have made every possible mistake when implementing this, so I think a guide would be useful, for future me if for nobody else.&lt;/p&gt;
+&lt;h2 id=&#34;the-data&#34;&gt;
+  The Data
+  &lt;a href=&#34;#the-data&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;I like to use the &lt;a href=&#34;https://swiftuivoodo.com&#34;&gt;VOODO&lt;/a&gt; pattern, which stands for &lt;strong&gt;View - ObservableObject - DataObject&lt;/strong&gt;. Working backwards through this, the &lt;strong&gt;DataObject&lt;/strong&gt; is a struct that contains the properties for a single &lt;code&gt;Todo&lt;/code&gt; item. The &lt;strong&gt;ObservableObject&lt;/strong&gt; is a class called &lt;code&gt;AppState&lt;/code&gt; that contains a published array of todo items as well as a &lt;code&gt;DataStore&lt;/code&gt; struct for saving and loading. The &lt;strong&gt;View&lt;/strong&gt; is the menu itself.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;AppState&lt;/code&gt; also contains a bunch of computed properties to make life easier and methods for adding, deleting and checking. It also has a computed property to generate the view for the todos at the top of the menu.&lt;/p&gt;
+&lt;p&gt;When you have an &lt;code&gt;ObservableObject&lt;/code&gt;, you can pass it around the app in two ways: as an &lt;code&gt;ObservedObject&lt;/code&gt; or as an &lt;code&gt;EnvironmentObject&lt;/code&gt;. Both work fine, but with the ObservedObject, there has to be an unbroken chain of data passing from view to subview to sub-subview and so on. EnvironmentObject makes it easier because once you insert it into a view hierarchy, any view in that hierarchy can access it.&lt;/p&gt;
+&lt;p&gt;It might seem like EnvironmentObject is less efficient, but I&amp;rsquo;ve read recent reports of it using less memory, perhaps because intermediate views that don&amp;rsquo;t need it, don&amp;rsquo;t access it.&lt;/p&gt;
+&lt;p&gt;I decide to use EnvironmentObject so in the App struct, I initialised it as a &lt;code&gt;StateObject&lt;/code&gt;. MenuBarExtra can&amp;rsquo;t take an &lt;code&gt;environmentObject&lt;/code&gt;, so I grouped the menu view sections and assigned the environmentObject to the Group. This let the views in the menu access it using &lt;code&gt;@EnvironmentObject var appState: AppState&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;windows&#34;&gt;
+  Windows
+  &lt;a href=&#34;#windows&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Even though this is a menu bar app, I wanted to be able to open two windows: one for editing the todos and one for showing some info about the app.&lt;/p&gt;
+&lt;p&gt;For each of these, I added a &lt;code&gt;Window&lt;/code&gt; scene to the app. A &lt;code&gt;Window&lt;/code&gt; scene differs from a &lt;code&gt;WindowGroup&lt;/code&gt; in that it only opens one copy of the window. If you try to to open it a second time, it activates the original rather than opening another.&lt;/p&gt;
+&lt;p&gt;Back of these windows has a &lt;code&gt;title&lt;/code&gt; and an &lt;code&gt;id&lt;/code&gt;. The &lt;code&gt;id&lt;/code&gt; is used by the &lt;code&gt;openWindow&lt;/code&gt; &lt;code&gt;Environment&lt;/code&gt; value to show the window and the title is the window title. The contents of the scene is the view that appears in the window.&lt;/p&gt;
+&lt;p&gt;The Edit window also gets the &lt;code&gt;EnvironmentObject&lt;/code&gt; so it can access the data. Both have a &lt;code&gt;defaultSize&lt;/code&gt; - this only applies to the first opening - after that, the app uses whatever you set. The About window also gets a &lt;code&gt;defaultPosition&lt;/code&gt; (which I am not sure works) and a &lt;code&gt;windowResizability&lt;/code&gt; modifier to make sure that the window can&amp;rsquo;t be bigger than the size needed to show the content.&lt;/p&gt;
+&lt;h2 id=&#34;launch-on-login&#34;&gt;
+  Launch on Login
+  &lt;a href=&#34;#launch-on-login&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Getting an app to launch when the user logins in used to be a lot of work. Thankfully, we now have access to &lt;code&gt;SMAppService&lt;/code&gt; which makes it much easier. And that&amp;rsquo;s why the app is only for macOS 13 or higher.&lt;/p&gt;
+&lt;p&gt;To tell whether an app is set to launch on login, import the &lt;code&gt;ServiceManagement&lt;/code&gt; library and run this code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;SMAppService.mainApp.status == .enabled
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And to change the setting, use:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; SMAppService.mainApp.register()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Or:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; SMAppService.mainApp.unregister()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The really neat thing about this is that people can now see what apps will launch on login, unlike with the previous system where this data was hidden deep in the Library folder. Go to &lt;strong&gt;System Settings - General - Login Items&lt;/strong&gt; to check it out.&lt;/p&gt;
+&lt;h2 id=&#34;saving-changes&#34;&gt;
+  Saving Changes
+  &lt;a href=&#34;#saving-changes&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;I wanted to save the todos whenever the user made a change, but with a debounce so it didn&amp;rsquo;t save after every keystroke.&lt;/p&gt;
+&lt;p&gt;After a bit of research, this is what I used:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; saveTask: DispatchWorkItem?
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;debouncedSave&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;.saveTask?.cancel()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; task = DispatchWorkItem { [&lt;span style=&#34;color:#66d9ef&#34;&gt;weak&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;] &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    DispatchQueue.global(qos: .background).async { [&lt;span style=&#34;color:#66d9ef&#34;&gt;weak&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;] &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; self {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;.dataStore.saveTodos(todos: &lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;.todos)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;.saveTask = task
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.5&lt;/span&gt;, execute: task)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I added a &lt;code&gt;didSet&lt;/code&gt; property observer to the &lt;code&gt;todos&lt;/code&gt; array, which calls this function after every change. This cancels any existing task, creates a new one and schedules it for half a second later. If no other changes occur in that half-second, the app saves, using a background queue.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;DataStore&lt;/code&gt; struct saves and loads the data as JSON, storing it in the Documents folder inside the app&amp;rsquo;s Container.&lt;/p&gt;
+&lt;h2 id=&#34;distribution&#34;&gt;
+  Distribution
+  &lt;a href=&#34;#distribution&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Typically, I use the App Store to distribute my apps. Apple handles all the business side of things and it makes distributing updates easy.&lt;/p&gt;
+&lt;p&gt;But lately, it seems that the App Store review process has become even more capricious, blocking good apps for spurious reasons, while utterly failing in their stated mission of &amp;ldquo;keeping us safe&amp;rdquo; from obvious scams, copycat apps and fake reviews.&lt;/p&gt;
+&lt;p&gt;So for this app, I have decided not to charge for it and to distribute it myself. I&amp;rsquo;m using GitHub both as the &lt;a href=&#34;https://github.com/trozware/To-Day&#34;&gt;open-source repository&lt;/a&gt;, and as the &lt;a href=&#34;https://github.com/trozware/To-Day/raw/main/Releases/To-Day.dmg&#34;&gt;app distribution source&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you enjoy using the app, I&amp;rsquo;d love to hear from you. There are contact details at the bottom of the page. And if you really want to contribute, please &lt;a href=&#34;https://ko-fi.com/H2H3BU7SI&#34;&gt;buy me a coffee&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Updating is the missing piece in this puzzle, but that is a sufficiently large topic that I intend to write a follow-up post detailing how I set up &lt;a href=&#34;https://sparkle-project.org&#34;&gt;Sparkle&lt;/a&gt; and eventually got it to work.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;
+  Conclusion
+  &lt;a href=&#34;#conclusion&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;So, how does this compare with writing a Mac menu bar app in AppKit? A lot of things are easier in SwiftUI, but one thing I miss is being able to set up a menu delegate to track when the menu is opened or closed. There doesn&amp;rsquo;t appear to be any way to do this for a &lt;code&gt;MenuBarExtra&lt;/code&gt; - it can&amp;rsquo;t have an &lt;code&gt;onAppear&lt;/code&gt; or &lt;code&gt;onDisappear&lt;/code&gt; modifier and &lt;code&gt;scenePhase&lt;/code&gt; detects nothing.&lt;/p&gt;
+&lt;p&gt;For this app, it&amp;rsquo;s not really a problem, but I have used other apps where it would be a real showstopper.&lt;/p&gt;
+&lt;p&gt;And what&amp;rsquo;s next for this app? I&amp;rsquo;ll use it in my daily routine for a while and see what I like, what I hate and what extra features I&amp;rsquo;d like. One possibility is to add some global shortcuts. This requires hooking into the Accessibility settings, which I am reluctant to do, so I&amp;rsquo;ll need to think about this.&lt;/p&gt;
+&lt;p&gt;If you have any ideas or feature requests, create an issue on GitHub, or fork and edit the project and then create a pull request.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/todo_complete.png&#34; alt=&#34;Day complete&#34;&gt;&lt;/p&gt;</description>
+</item>
+    
+    <item>
 <title>New Links</title>
 <link>https://troz.net/post/2022/new_links/</link>
 <pubDate>Sat, 17 Dec 2022 08:47:35 +1000</pubDate>

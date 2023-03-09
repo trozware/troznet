@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        To-Day ::
+        TrozWare
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="When I sit down at my computer at the start of a work day, I typically like to plan out the broad outline of my work. This is the three or four major tasks for my day. I don&amp;rsquo;t want a minute-by-minute plan, just a list of the major items, so that I can check them off as I work, and get to the end of the day without feeling like I&amp;rsquo;ve forgotten anything.
+There are a ton of todo apps and web services available, but they all provide much more than I need. When I factored in how I wanted to learn about writing a Mac menubar app in SwiftUI, the solution was obvious - write my own.
+"
+/>
+<meta
+  name="keywords"
+  content="[Swift Apple macOS iOS Apple Watch]"
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://troz.net/post/2023/to-day/" />
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.css" />
+
+<link rel="stylesheet" href="https://troz.net/style.css" />
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png" />
+<link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
+
+
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="To-Day"/>
+<meta name="twitter:description" content="Creating my own minimalist todo application."/>
+
+
+
+<meta property="og:title" content="To-Day" />
+<meta property="og:description" content="Creating my own minimalist todo application." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troz.net/post/2023/to-day/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-03-08T14:58:01+10:00" />
+<meta property="article:modified_time" content="2023-03-08T14:58:01+10:00" />
+
+
+
+
+
+
+  </head>
+  <body >
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="https://troz.net/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >TrozWare</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/apps/">Apps</a></li>
+        
+      
+        
+          <li><a href="/post/">Archives</a></li>
+        
+      
+        
+          <li><a href="/tags/">Tags</a></li>
+        
+      
+        
+          <li><a href="/contact/">Contact</a></li>
+        
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/">Home</a></li>
+      
+    
+      
+        <li><a href="/apps/">Apps</a></li>
+      
+    
+      
+        <li><a href="/post/">Archives</a></li>
+      
+    
+      
+        <li><a href="/tags/">Tags</a></li>
+      
+    
+      
+        <li><a href="/contact/">Contact</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+
+<link rel="stylesheet" href="/css/header.css" />
+
+<div class="post">
+  <h2 class="post-title">
+    <a href="https://troz.net/post/2023/to-day/">To-Day</a>
+  </h2>
+  <div class="post-meta">
+    <span class="post-date">
+      08 Mar 2023
+    </span>
+    <span class="more-meta">- 1643 words, </span>
+    <span class="more-meta"> 8 minute read</span>
+  </div>
+
+  
+  <span class="post-tags">
+     #<a
+      href="https://troz.net/tags/mac"
+      >mac</a
+    >&nbsp;  #<a
+      href="https://troz.net/tags/app"
+      >app</a
+    >&nbsp;  #<a
+      href="https://troz.net/tags/swiftui"
+      >swiftui</a
+    >&nbsp;  #<a
+      href="https://troz.net/tags/app-store"
+      >app store</a
+    >&nbsp;  #<a
+      href="https://troz.net/tags/menu-bar"
+      >menu bar</a
+    >&nbsp; 
+  </span>
+   
+
+  <div class="post-content"><p>When I sit down at my computer at the start of a work day, I typically like to plan out the broad outline of my work. This is the three or four major tasks for my day. I don&rsquo;t want a minute-by-minute plan, just a list of the major items, so that I can check them off as I work, and get to the end of the day without feeling like I&rsquo;ve forgotten anything.</p>
+<p>There are a ton of todo apps and web services available, but they all provide much more than I need. When I factored in how I wanted to learn about writing a Mac menubar app in SwiftUI, the solution was obvious - write my own.</p>
+<p>First things first: the project is open-source and on <a href="https://github.com/trozware/To-Day">GitHub</a> so feel free to download it, fork it, edit it, create pull requests, file issues or whatever you like. If you just want to install the app, you can download the <a href="https://github.com/trozware/To-Day/raw/main/Releases/To-Day.dmg">disk image</a>. It requires macOS 13.0 or later.</p>
+<style>
+  img {
+    margin: 10px auto;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .social_footer img {
+    border: none;
+    box-shadow: none;
+  }
+</style>
+
+<p><img src="/images/today1.png" alt="Running the app for the first time"></p>
+<p>I&rsquo;m not going to go through the entire app in detail. You can download the project and check out the code to see it all. I&rsquo;m just going to give some details about the app structure and architecture as well as mentioning some code that I  found new or interesting.</p>
+<h2 id="the-app">
+  The App
+  <a href="#the-app" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>I&rsquo;ve written menu bar apps using AppKit but this is my first serious look at SwiftUI&rsquo;s <code>MenuBarExtra</code>. Configuring the app to be a menu bar app has three steps:</p>
+<ol>
+<li>Remove the <code>WindowGroup</code> from your app <code>body</code>.</li>
+<li>Add a <code>MenuBarExtra</code> to your app <code>body</code> with some views to show in the menu.</li>
+<li>Insert an entry into <strong>Target - Info</strong>, setting <code>Application is agent (UIElement)</code> to <code>YES</code>.</li>
+</ol>
+<p><img src="/images/today_info.png" alt="Editing the app info"></p>
+<p>You can then delete <strong>ContentView.swift</strong> from the project since nothing uses it.</p>
+<p>Looking at the first screenshot, you can see that I&rsquo;ve split the menu into four sections. The first one displays the actual todos and handles checking them off. This view is provided by the main data object.</p>
+<p>The other sections are static and deal with editing the todos, configuring the app settings and managing the app itself. Each of these is split off into a separate view file to keep the main app body as uncluttered as possible. The files for these three sections are in the <strong>Menu Views</strong> group in the Xcode project.</p>
+<p>Editing the todos caused the most issues with the app and took several iterations, but I&rsquo;m pleased with this version:</p>
+<p><img src="/images/today_edits.png" alt="Editing the todos"></p>
+<p>I tried lots of ways of tracking the focus and adding keyboard commands to move items up and down the list but in the end, I went for simplicity. The editing is embedded in a <code>Form</code>. This means that I get the standard tabbing behaviour by default, but I also get the small toggle switches, which I really like.</p>
+<p>The main view for this is <code>EditView</code> and it, with its subviews, are in the <strong>Edit Views</strong> project group.</p>
+<p>I&rsquo;ll discuss the <strong>Models</strong> group and the data flow in a minute, but to finish describing the app structure, the <code>AboutView</code> tells you more about the app. I love being able to use basic Markdown styling in <code>Text</code> views. And I learnt a good lesson: if you&rsquo;re having trouble with truncated text, check out the <code>fixedSize</code> modifier.</p>
+<p>Finally, <code>Updater</code> is a class to handle using the <strong><a href="https://sparkle-project.org">Sparkle</a></strong> updater, which deserves its own post. I must have made every possible mistake when implementing this, so I think a guide would be useful, for future me if for nobody else.</p>
+<h2 id="the-data">
+  The Data
+  <a href="#the-data" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>I like to use the <a href="https://swiftuivoodo.com">VOODO</a> pattern, which stands for <strong>View - ObservableObject - DataObject</strong>. Working backwards through this, the <strong>DataObject</strong> is a struct that contains the properties for a single <code>Todo</code> item. The <strong>ObservableObject</strong> is a class called <code>AppState</code> that contains a published array of todo items as well as a <code>DataStore</code> struct for saving and loading. The <strong>View</strong> is the menu itself.</p>
+<p><code>AppState</code> also contains a bunch of computed properties to make life easier and methods for adding, deleting and checking. It also has a computed property to generate the view for the todos at the top of the menu.</p>
+<p>When you have an <code>ObservableObject</code>, you can pass it around the app in two ways: as an <code>ObservedObject</code> or as an <code>EnvironmentObject</code>. Both work fine, but with the ObservedObject, there has to be an unbroken chain of data passing from view to subview to sub-subview and so on. EnvironmentObject makes it easier because once you insert it into a view hierarchy, any view in that hierarchy can access it.</p>
+<p>It might seem like EnvironmentObject is less efficient, but I&rsquo;ve read recent reports of it using less memory, perhaps because intermediate views that don&rsquo;t need it, don&rsquo;t access it.</p>
+<p>I decide to use EnvironmentObject so in the App struct, I initialised it as a <code>StateObject</code>. MenuBarExtra can&rsquo;t take an <code>environmentObject</code>, so I grouped the menu view sections and assigned the environmentObject to the Group. This let the views in the menu access it using <code>@EnvironmentObject var appState: AppState</code>.</p>
+<h2 id="windows">
+  Windows
+  <a href="#windows" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Even though this is a menu bar app, I wanted to be able to open two windows: one for editing the todos and one for showing some info about the app.</p>
+<p>For each of these, I added a <code>Window</code> scene to the app. A <code>Window</code> scene differs from a <code>WindowGroup</code> in that it only opens one copy of the window. If you try to to open it a second time, it activates the original rather than opening another.</p>
+<p>Back of these windows has a <code>title</code> and an <code>id</code>. The <code>id</code> is used by the <code>openWindow</code> <code>Environment</code> value to show the window and the title is the window title. The contents of the scene is the view that appears in the window.</p>
+<p>The Edit window also gets the <code>EnvironmentObject</code> so it can access the data. Both have a <code>defaultSize</code> - this only applies to the first opening - after that, the app uses whatever you set. The About window also gets a <code>defaultPosition</code> (which I am not sure works) and a <code>windowResizability</code> modifier to make sure that the window can&rsquo;t be bigger than the size needed to show the content.</p>
+<h2 id="launch-on-login">
+  Launch on Login
+  <a href="#launch-on-login" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Getting an app to launch when the user logins in used to be a lot of work. Thankfully, we now have access to <code>SMAppService</code> which makes it much easier. And that&rsquo;s why the app is only for macOS 13 or higher.</p>
+<p>To tell whether an app is set to launch on login, import the <code>ServiceManagement</code> library and run this code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>SMAppService.mainApp.status == .enabled
+</span></span></code></pre></div><p>And to change the setting, use:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> SMAppService.mainApp.register()
+</span></span></code></pre></div><p>Or:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> SMAppService.mainApp.unregister()
+</span></span></code></pre></div><p>The really neat thing about this is that people can now see what apps will launch on login, unlike with the previous system where this data was hidden deep in the Library folder. Go to <strong>System Settings - General - Login Items</strong> to check it out.</p>
+<h2 id="saving-changes">
+  Saving Changes
+  <a href="#saving-changes" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>I wanted to save the todos whenever the user made a change, but with a debounce so it didn&rsquo;t save after every keystroke.</p>
+<p>After a bit of research, this is what I used:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> saveTask: DispatchWorkItem?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">debouncedSave</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">self</span>.saveTask?.cancel()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> task = DispatchWorkItem { [<span style="color:#66d9ef">weak</span> <span style="color:#66d9ef">self</span>] <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>    DispatchQueue.global(qos: .background).async { [<span style="color:#66d9ef">weak</span> <span style="color:#66d9ef">self</span>] <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> self {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.dataStore.saveTodos(todos: <span style="color:#66d9ef">self</span>.todos)
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">self</span>.saveTask = task
+</span></span><span style="display:flex;"><span>  DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.5</span>, execute: task)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>I added a <code>didSet</code> property observer to the <code>todos</code> array, which calls this function after every change. This cancels any existing task, creates a new one and schedules it for half a second later. If no other changes occur in that half-second, the app saves, using a background queue.</p>
+<p>The <code>DataStore</code> struct saves and loads the data as JSON, storing it in the Documents folder inside the app&rsquo;s Container.</p>
+<h2 id="distribution">
+  Distribution
+  <a href="#distribution" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Typically, I use the App Store to distribute my apps. Apple handles all the business side of things and it makes distributing updates easy.</p>
+<p>But lately, it seems that the App Store review process has become even more capricious, blocking good apps for spurious reasons, while utterly failing in their stated mission of &ldquo;keeping us safe&rdquo; from obvious scams, copycat apps and fake reviews.</p>
+<p>So for this app, I have decided not to charge for it and to distribute it myself. I&rsquo;m using GitHub both as the <a href="https://github.com/trozware/To-Day">open-source repository</a>, and as the <a href="https://github.com/trozware/To-Day/raw/main/Releases/To-Day.dmg">app distribution source</a>.</p>
+<p>If you enjoy using the app, I&rsquo;d love to hear from you. There are contact details at the bottom of the page. And if you really want to contribute, please <a href="https://ko-fi.com/H2H3BU7SI">buy me a coffee</a>.</p>
+<p>Updating is the missing piece in this puzzle, but that is a sufficiently large topic that I intend to write a follow-up post detailing how I set up <a href="https://sparkle-project.org">Sparkle</a> and eventually got it to work.</p>
+<h2 id="conclusion">
+  Conclusion
+  <a href="#conclusion" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>So, how does this compare with writing a Mac menu bar app in AppKit? A lot of things are easier in SwiftUI, but one thing I miss is being able to set up a menu delegate to track when the menu is opened or closed. There doesn&rsquo;t appear to be any way to do this for a <code>MenuBarExtra</code> - it can&rsquo;t have an <code>onAppear</code> or <code>onDisappear</code> modifier and <code>scenePhase</code> detects nothing.</p>
+<p>For this app, it&rsquo;s not really a problem, but I have used other apps where it would be a real showstopper.</p>
+<p>And what&rsquo;s next for this app? I&rsquo;ll use it in my daily routine for a while and see what I like, what I hate and what extra features I&rsquo;d like. One possibility is to add some global shortcuts. This requires hooking into the Accessibility settings, which I am reluctant to do, so I&rsquo;ll need to think about this.</p>
+<p>If you have any ideas or feature requests, create an issue on GitHub, or fork and edit the project and then create a pull request.</p>
+<p><img src="/images/todo_complete.png" alt="Day complete"></p></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+       
+      <a class="btn previous" href="https://troz.net/post/2022/new_links/"
+        >New Links →</a
+      >
+      
+    </div>
+  </div>
+  
+</div>
+
+      </div>
+
+      
+        <link rel="stylesheet" href="/css/footer.css" />
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="social_footer">
+      <a id="email-Link" class="mailtoui" href="mailto:sarah@troz.net"
+        ><img src="/icons/envelope.svg"
+      /></a>
+      
+      <a rel="me" href="https://mastodon.social/@troz"
+        ><img src="/icons/mastodon.png"
+      /></a>
+
+      <a href="https://linktr.ee/trozware"><img src="/icons/tree.svg" /></a>
+
+      <a href="https://github.com/trozware"><img src="/icons/github.svg" /></a>
+
+      <a href="https://stackoverflow.com/users/1082632"
+        ><img src="/icons/stack-overflow.svg"
+      /></a>
+
+      <a href="https://troz.net/index.xml"><img src="/icons/rss.svg" /></a>
+      <a href="https://troz.net/feed.json"><img src="/icons/json.png" /></a>
+
+      <a href="https://dev.to/trozware">
+        <img
+          src="/icons/dev-badge.svg"
+          alt="TrozWare's DEV Profile"
+          style="height: 37px; margin-top: -3px"
+          height="40"
+          width="40"
+        />
+      </a>
+
+      <a href="https://ko-fi.com/H2H3BU7SI" target="_blank"
+        ><img
+          height="36"
+          style="border: 0px; height: 36px; width: unset"
+          src="https://cdn.ko-fi.com/cdn/kofi1.png?v=3"
+          border="0"
+          alt="Buy Me a Coffee at ko-fi.com"
+      /></a>
+    </div>
+  </div>
+
+  <div class="footer__inner">
+    <div class="copyright">
+      
+      <span>© 2012 - 2023 Sarah Reichelt</span>
+      
+      <span
+        ><a href="http://gohugo.io">Hugo</a> theme created by
+        <a href="https://twitter.com/panr">panr</a> 2018</span
+      >
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink()
+  })
+</script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

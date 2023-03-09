@@ -6,5 +6,13 @@
     "version": "1.13",
     "updated": "26 May 2021",
     "app_id": "522583774"
+  },
+  {
+    "icon": "to_day_36.png",
+    "name": "To-Day",
+    "webpage": "/post/2023/to-day/",
+    "version": "1.6",
+    "updated": "9 Mar 2023",
+    "download": "https://github.com/trozware/To-Day/raw/main/Releases/To-Day.dmg"
   }
 ]
