@@ -16,10 +16,7 @@ But then you are reading somebody else&amp;rsquo;s code and you find these angle
 What does this mean?
 func mid&amp;lt;T: Comparable&amp;gt;(array: [T]) -&amp;gt; T It looks like it is a function to find the middle element in an array, but what is &amp;lt;T: Comparable&amp;gt; or [T] or even just T?"
 />
-<meta
-  name="keywords"
-  content="[Swift Apple macOS iOS Apple Watch]"
-/>
+<meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
 <link rel="canonical" href="https://troz.net/post/2016/learning-swift-generics/" />
 
@@ -27,32 +24,52 @@ func mid&amp;lt;T: Comparable&amp;gt;(array: [T]) -&amp;gt; T It looks like it i
 
 
 
-
-
+ 
 <link rel="stylesheet" href="/css/style.css" />
 
 <link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://troz.net/img/apple-touch-icon-144-precomposed.png" />
-<link rel="shortcut icon" href="https://troz.net/img/favicon.png" />
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="/static/favs/apple-touch-icon.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="/static/favs/favicon-32x32.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="/static/favs/favicon-16x16.png"
+/>
+<link
+  rel="manifest"
+  href="/static/favs/site.webmanifest"
+  crossorigin="use-credentials"
+/>
+<link
+  rel="mask-icon"
+  href="/static/favs/safari-pinned-tab.svg"
+  color="#5bbad5"
+/>
+<link rel="shortcut icon" href="/static/favs/favicon.ico" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="msapplication-config" content="/static/favs/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" />
 
 
-<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Learning Swift - Generics"/>
-<meta name="twitter:description" content="One of the nice things about Swift is how clean your code looks. A lot of the weird characters that pepper the code of other languages has been eliminated: No more semi-colons, asterisks etc.
-But then you are reading somebody else&rsquo;s code and you find these angle brackets all over the place and they don&rsquo;t seem to make sense.
-What does this mean?
-func mid&lt;T: Comparable&gt;(array: [T]) -&gt; T It looks like it is a function to find the middle element in an array, but what is &lt;T: Comparable&gt; or [T] or even just T?"/>
-
+<link href="/fonts/Inter-Italic.woff2"
+rel="preload" type="font/woff2" as="font" crossorigin=""> <link href="/fonts/Inter-Regular.woff2" rel="preload"
+type="font/woff2" as="font" crossorigin=""> <link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2"
+as="font" crossorigin=""> <link href="/fonts/Inter-MediumItalic.woff2" rel="preload"
+type="font/woff2" as="font" crossorigin=""> <link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2"
+as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2"
+as="font" crossorigin="">
 
 
 <meta property="og:title" content="Learning Swift - Generics" />
