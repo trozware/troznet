@@ -18,7 +18,7 @@ First things first: the project is open-source and on [GitHub][1] so feel free t
 
 ![Running the app for the first time][i1]
 
-I'm not going to go through the entire app in detail. You can download the project and check out the code to see it all. I'm just going to give some details about the app structure and architecture as well as mentioning some code that I  found new or interesting.
+I'm not going to go through the entire app in detail. You can download the project and check out the code to see it all. I'm just going to give some details about the app structure and architecture as well as mentioning some code that I found new or interesting.
 
 ## The App
 

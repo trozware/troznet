@@ -1,0 +1,144 @@
+[
+  {
+    "cycle": "handland",
+    "lands": [
+      { "name": "Port Town", "colours": ["W", "U"] },
+      { "name": "Choked Estuary", "colours": ["U", "B"] },
+      { "name": "Foreboding Ruins", "colours": ["B", "R"] },
+      { "name": "Game Trail", "colours": ["R", "G"] },
+      { "name": "Fortified Village", "colours": ["G", "W"] },
+      { "name": "Shineshadow Snarl", "colours": ["W", "B"] },
+      { "name": "Frostboil Snarl", "colours": ["U", "R"] },
+      { "name": "Necroblossom Snarl", "colours": ["B", "G"] },
+      { "name": "Furycalm Snarl", "colours": ["R", "W"] },
+      { "name": "Vineglimmer Snarl", "colours": ["U", "G"] }
+    ]
+  },
+  {
+    "cycle": "checkland",
+    "lands": [
+      { "name": "Glacial Fortress", "colours": ["W", "U"] },
+      { "name": "Drowned Catacomb", "colours": ["U", "B"] },
+      { "name": "Dragonskull Summit", "colours": ["B", "R"] },
+      { "name": "Rootbound Crag", "colours": ["R", "G"] },
+      { "name": "Sunpetal Grove", "colours": ["G", "W"] },
+      { "name": "Isolated Chapel", "colours": ["W", "B"] },
+      { "name": "Sulfur Falls", "colours": ["U", "R"] },
+      { "name": "Woodland Cemetery", "colours": ["B", "G"] },
+      { "name": "Clifftop Retreat", "colours": ["R", "W"] },
+      { "name": "Hinterland Harbor", "colours": ["U", "G"] }
+    ]
+  },
+  {
+    "cycle": "battleland",
+    "lands": [
+      { "name": "Prairie Stream", "colours": ["W", "U"] },
+      { "name": "Sunken Hollow", "colours": ["U", "B"] },
+      { "name": "Smoldering Marsh", "colours": ["B", "R"] },
+      { "name": "Cinder Glade", "colours": ["R", "G"] },
+      { "name": "Canopy Vista", "colours": ["G", "W"] }
+    ]
+  },
+  {
+    "cycle": "snowdual",
+    "lands": [
+      { "name": "Glacial Floodplain", "colours": ["W", "U"] },
+      { "name": "Ice Tunnel", "colours": ["U", "B"] },
+      { "name": "Sulfurous Mire", "colours": ["B", "R"] },
+      { "name": "Highland Forest", "colours": ["R", "G"] },
+      { "name": "Arctic Treeline", "colours": ["G", "W"] },
+      { "name": "Snowfield Sinkhole", "colours": ["W", "B"] },
+      { "name": "Volatile Fjord", "colours": ["U", "R"] },
+      { "name": "Woodland Chasm", "colours": ["B", "G"] },
+      { "name": "Alpine Meadow", "colours": ["R", "W"] },
+      { "name": "Rimewood Falls", "colours": ["U", "G"] }
+    ]
+  },
+  {
+    "cycle": "bridge",
+    "lands": [
+      { "name": "Razortide Bridge", "colours": ["W", "U"] },
+      { "name": "Mistvault Bridge", "colours": ["U", "B"] },
+      { "name": "Drossforge Bridge", "colours": ["B", "R"] },
+      { "name": "Slagwoods Bridge", "colours": ["R", "G"] },
+      { "name": "Thornglint Bridge", "colours": ["G", "W"] },
+      { "name": "Goldmire Bridge", "colours": ["W", "B"] },
+      { "name": "Silverbluff Bridge", "colours": ["U", "R"] },
+      { "name": "Darkmoss Bridge", "colours": ["B", "G"] },
+      { "name": "Rustvale Bridge", "colours": ["R", "W"] },
+      { "name": "Tanglepool Bridge", "colours": ["U", "G"] }
+    ]
+  },
+  {
+    "cycle": "basicland",
+    "lands": [
+      { "name": "Idyllic Beachfront", "colours": ["W", "U"] },
+      { "name": "Contaminated Aquifer", "colours": ["U", "B"] },
+      { "name": "Geothermal Bog", "colours": ["B", "R"] },
+      { "name": "Wooded Ridgeline", "colours": ["R", "G"] },
+      { "name": "Radiant Grove", "colours": ["G", "W"] },
+      { "name": "Sunlit Marsh", "colours": ["W", "B"] },
+      { "name": "Molten Tributary", "colours": ["U", "R"] },
+      { "name": "Haunted Mire", "colours": ["B", "G"] },
+      { "name": "Sacred Peaks", "colours": ["R", "W"] },
+      { "name": "Tangled Islet", "colours": ["U", "G"] }
+    ]
+  },
+  {
+    "cycle": "scryland",
+    "lands": [
+      { "name": "Temple of Enlightenment", "colours": ["W", "U"] },
+      { "name": "Temple of Deceit", "colours": ["U", "B"] },
+      { "name": "Temple of Malice", "colours": ["B", "R"] },
+      { "name": "Temple of Abandon", "colours": ["R", "G"] },
+      { "name": "Temple of Plenty", "colours": ["G", "W"] },
+      { "name": "Temple of Silence", "colours": ["W", "B"] },
+      { "name": "Temple of Epiphany", "colours": ["U", "R"] },
+      { "name": "Temple of Malady", "colours": ["B", "G"] },
+      { "name": "Temple of Triumph", "colours": ["R", "W"] },
+      { "name": "Temple of Mystery", "colours": ["U", "G"] }
+    ]
+  },
+  {
+    "cycle": "painland",
+    "lands": [
+      { "name": "Adarkar Wastes", "colours": ["W", "U"] },
+      { "name": "Underground River", "colours": ["U", "B"] },
+      { "name": "Sulfurous Springs", "colours": ["B", "R"] },
+      { "name": "Karplusan Forest", "colours": ["R", "G"] },
+      { "name": "Brushland", "colours": ["G", "W"] },
+      { "name": "Caves of Koilos", "colours": ["W", "B"] },
+      { "name": "Shivan Reef", "colours": ["U", "R"] },
+      { "name": "Llanowar Wastes", "colours": ["B", "G"] },
+      { "name": "Battlefield Forge", "colours": ["R", "W"] },
+      { "name": "Yavimaya Coast", "colours": ["U", "G"] }
+    ]
+  },
+  {
+    "cycle": "tripleland",
+    "lands": [
+      { "name": "Seaside Citadel", "colours": ["W", "U", "G"] },
+      { "name": "Arcane Sanctum", "colours": ["U", "B", "W"] },
+      { "name": "Crumbling Necropolis", "colours": ["B", "R", "U"] },
+      { "name": "Savage Lands", "colours": ["R", "G", "B"] },
+      { "name": "Jungle Shrine", "colours": ["G", "W", "R"] },
+      { "name": "Sandsteppe Citadel", "colours": ["W", "B", "G"] },
+      { "name": "Mystic Monastery", "colours": ["U", "R", "W"] },
+      { "name": "Opulent Palace", "colours": ["B", "G", "U"] },
+      { "name": "Nomad Outpost", "colours": ["R", "W", "B"] },
+      { "name": "Frontier Bivouac", "colours": ["U", "G", "R"] }
+    ]
+  },
+  {
+    "cycle": "commandtower",
+    "lands": [{ "name": "Command Tower", "colours": [] }]
+  },
+  {
+    "cycle": "exoticorchard",
+    "lands": [{ "name": "Exotic Orchard", "colours": [] }]
+  },
+  {
+    "cycle": "pathofancestry",
+    "lands": [{ "name": "Path of Ancestry", "colours": [] }]
+  }
+]

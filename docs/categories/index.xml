@@ -41,7 +41,7 @@
 &lt;/style&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/today1.png&#34; alt=&#34;Running the app for the first time&#34;&gt;&lt;/p&gt;
-&lt;p&gt;I&amp;rsquo;m not going to go through the entire app in detail. You can download the project and check out the code to see it all. I&amp;rsquo;m just going to give some details about the app structure and architecture as well as mentioning some code that I  found new or interesting.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m not going to go through the entire app in detail. You can download the project and check out the code to see it all. I&amp;rsquo;m just going to give some details about the app structure and architecture as well as mentioning some code that I found new or interesting.&lt;/p&gt;
 &lt;h2 id=&#34;the-app&#34;&gt;
   The App
   &lt;a href=&#34;#the-app&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
@@ -459,7 +459,7 @@ The &lt;code&gt;saveImage&lt;/code&gt; method uses an &lt;code&gt;NSSavePanel&lt
   &lt;a href=&#34;#conclusion&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;2022 is an exciting year to be a SwiftUI programmer. Apple has made it very clear that this is the way forward and as early adopters, we have the ability to influence how the framework develops, so keep filing those feedback reports! There have been some great new features this year: navigation is better than ever, the platforms are unifying and macOS is not getting left behind.&lt;/p&gt;
-&lt;p&gt;The project from this article is available on &lt;a href=&#34;https://github.com/trozware/swiftui-mac-2022&#34;&gt;GitHub&lt;/a&gt;. And as usual, I&amp;rsquo;d be thrilled to hear any suggestions, corrections or improvements. Please contact me using one of the links below or through the &lt;a href=&#34;https://troz.net/contact/&#34;&gt;Contact&lt;/a&gt; page. And if you found this article, I&amp;rsquo;d love you to &lt;a href=&#34;https://ko-fi.com/trozware&#34;&gt;buy me a coffee&lt;/a&gt;.&lt;/p&gt;</description>
+&lt;p&gt;The project from this article is available on &lt;a href=&#34;https://github.com/trozware/swiftui-mac-2022&#34;&gt;GitHub&lt;/a&gt;. And as usual, I&amp;rsquo;d be thrilled to hear any suggestions, corrections or improvements. Please contact me using one of the links below or through the &lt;a href=&#34;https://troz.net/contact/&#34;&gt;Contact&lt;/a&gt; page. And if you found this article useful, I&amp;rsquo;d love you to &lt;a href=&#34;https://ko-fi.com/trozware&#34;&gt;buy me a coffee&lt;/a&gt;.&lt;/p&gt;</description>
 </item>
     
     <item>

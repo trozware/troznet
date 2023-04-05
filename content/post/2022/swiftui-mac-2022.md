@@ -380,7 +380,7 @@ I set up a new SwiftUI view that looped through the HTTP Status data and created
 
 2022 is an exciting year to be a SwiftUI programmer. Apple has made it very clear that this is the way forward and as early adopters, we have the ability to influence how the framework develops, so keep filing those feedback reports! There have been some great new features this year: navigation is better than ever, the platforms are unifying and macOS is not getting left behind.
 
-The project from this article is available on [GitHub][9]. And as usual, I'd be thrilled to hear any suggestions, corrections or improvements. Please contact me using one of the links below or through the [Contact][contact] page. And if you found this article, I'd love you to [buy me a coffee][kofi].
+The project from this article is available on [GitHub][9]. And as usual, I'd be thrilled to hear any suggestions, corrections or improvements. Please contact me using one of the links below or through the [Contact][contact] page. And if you found this article useful, I'd love you to [buy me a coffee][kofi].
 
 
 [1]: /post/2019/swiftui-for-mac-1/

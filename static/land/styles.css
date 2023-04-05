@@ -1,0 +1,99 @@
+html {
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+  margin-bottom: 1px;
+}
+
+body {
+  color: #16161D;
+  font-size: 15px;
+  font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: #2B253A;
+}
+
+.header {
+  text-align: center;
+  color:azure;
+  padding-top: 0px;
+  padding-right: 2.5%;
+  padding-bottom: 2%;
+  padding-left: 2.5%;
+}
+
+h1 {
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+h2 {
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  font-size: 24px;
+  font-weight: 200;
+}
+
+#manasymbols {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.manasymbol {
+  display: inline-block;
+  position: relative;
+  margin: 0px 15px 0px 15px;
+  border-radius: 55px;
+}
+
+#cycles {
+  display: block;
+  width: 100%;
+  padding: 0 2.5%;
+  margin: 2% 0 2% 0;
+  text-align: left;
+}
+
+.exampleland {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  -webkit-box-shadow: 1px 1px 6px rgb(0 0 0 / 45%);
+  box-shadow: 1px 1px 6px rgb(0 0 0 / 45%);
+  background-color: transparent;
+  z-index: 5;
+}
+
+#output {
+  display: block;
+  padding: 0% 5% 5% 2.5%;
+  text-align: center;
+}
+
+#landbase-textbox {
+  display: inline-block;
+  position: relative;
+  font-family: inherit;
+  font-size: larger;
+  width: 40%;
+  box-sizing: border-box;
+  line-height: 24px;
+}
+
+.checked {
+  border: 2px solid #2ac249;
+}
+
+.unchecked {
+  border: 2px solid transparent;
+}

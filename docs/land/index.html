@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <div class="header">
+      <link rel="stylesheet" href="styles.css" />
+      <h1>Manabase Generator</h1>
+      <h2>for Commander</h2>
+    </div>
+  </head>
+  <body>
+    <div id="manasymbols">
+      <img
+        src="Images/Symbols/White-Symbol.png"
+        alt="White mana symbol"
+        height="100"
+        width="100"
+        id="W"
+        class="unchecked manasymbol"
+      />
+      <img
+        src="Images/Symbols/Blue-Symbol.png"
+        alt="Blue mana symbol"
+        height="100"
+        width="100"
+        id="U"
+        class="unchecked manasymbol"
+      />
+      <img
+        src="Images/Symbols/Black-Symbol.png"
+        alt="Black mana symbol"
+        height="100"
+        width="100"
+        id="B"
+        class="unchecked manasymbol"
+      />
+      <img
+        src="Images/Symbols/Red-Symbol.png"
+        alt="Red mana symbol"
+        height="100"
+        width="100"
+        id="R"
+        class="unchecked manasymbol"
+      />
+      <img
+        src="Images/Symbols/Green-Symbol.png"
+        alt="Green mana symbol"
+        height="100"
+        width="100"
+        id="G"
+        class="unchecked manasymbol"
+      />
+    </div>
+    <div id="cycles">
+      <img
+        src="Images/Lands/command-tower.png"
+        alt="Command Tower"
+        height="200"
+        width="145"
+        class="checked exampleLand"
+        id="commandtower"
+      />
+      <img
+        src="Images/Lands/exotic-orchard.png"
+        alt="Exotic Orchard"
+        height="200"
+        width="145"
+        class="checked exampleLand"
+        id="exoticorchard"
+      />
+      <img
+        src="Images/Lands/path-of-ancestry.png"
+        alt="Path of Ancestry"
+        height="200"
+        width="145"
+        class="checked exampleLand"
+        id="pathofancestry"
+      />
+      <img
+        src="Images/Lands/drowned-catacomb.png"
+        alt="Checklands, like Drowned Catacomb"
+        height="200"
+        width="145"
+        class="unchecked exampleLand"
+        id="checkland"
+      />
+      <img
+        src="Images/Lands/highland-forest.png"
+        alt="Snowduals, like Highland Forest"
+        height="200"
+        width="145"
+        class="unchecked exampleLand"
+        id="snowdual"
+      />
+      <img
+        src="Images/Lands/llanowar-wastes.png"
+        alt="Painlands, like Llanowar Wastes"
+        height="200"
+        width="145"
+        class="unchecked exampleLand"
+        id="painland"
+      />
+      <img
+        src="Images/Lands/port-town.png"
+        alt="Handlands, like Port Town"
+        height="200"
+        width="145"
+        class="unchecked exampleLand"
+        id="handland"
+      />
+      <img
+        src="Images/Lands/smoldering-marsh.png"
+        alt="Battlelands, like Smoldering Marsh"
+        height="200"
+        width="145"
+        class="unchecked exampleLand"
+        id="battleland"
+      />
+      <img
+        src="Images/Lands/temple-of-silence.png"
+        alt="Scrylands, like Temple of Silence"
+        height="200"
+        width="145"
+        class="unchecked exampleLand"
+        id="scryland"
+      />
+      <img
+        src="Images/Lands/molten-tributary.png"
+        alt="Typelands, like Molten Tributary"
+        height="200"
+        width="145"
+        class="unchecked exampleLand"
+        id="basicland"
+      />
+      <img
+        src="Images/Lands/thornglint-bridge.png"
+        alt="Bridges, like Thornglint Bridge"
+        height="200"
+        width="145"
+        class="unchecked exampleLand"
+        id="bridge"
+      />
+      <img
+        src="Images/Lands/frontier-bivouac.png"
+        alt="Triplelands, like Frontier Bivouac"
+        height="200"
+        width="145"
+        class="unchecked exampleLand"
+        id="tripleland"
+      />
+    </div>
+    <!-- Would be great to have a button here that just automatically copies the output to clipboard :) -->
+    <div id="output">
+      <textarea id="landbase-textbox" readonly="true" rows="40"></textarea>
+    </div>
+    <script src="Backend.js"></script>
+  </body>
+</html>
