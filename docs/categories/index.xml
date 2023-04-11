@@ -11,6 +11,256 @@
     
     
     <item>
+<title>Sparkle</title>
+<link>https://troz.net/post/2023/sparkle/</link>
+<pubDate>Tue, 11 Apr 2023 11:48:38 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2023/sparkle/</guid>
+<description>&lt;p&gt;Last month, I posted about writing my new todo app called &lt;a href=&#34;https://troz.net/post/2023/to-day/&#34;&gt;To-Day&lt;/a&gt;: why I wrote it and how I wrote it. At the time, I mentioned that I had set it up to install updates using &lt;a href=&#34;https://sparkle-project.org&#34;&gt;Sparkle&lt;/a&gt; but there was too much detail  to include in the initial post. So here, as promised, is the article about implementing Sparkle.&lt;/p&gt;
+&lt;p&gt;One of the great conveniences of App Store distribution is the update handling. When (or if) an update passes the app review process, Apple does the rest, propagating updates through the App Store app. If you&amp;rsquo;re distributing your apps externally, you need an alternative method.&lt;/p&gt;
+&lt;p&gt;Sparkle is an open-source update framework for macOS. It&amp;rsquo;s very popular and I&amp;rsquo;m sure you will have seen it used, even if you didn&amp;rsquo;t recognise it. But setting it up isn&amp;rsquo;t totally straight-forward, at least I didn&amp;rsquo;t find it so, which I why I&amp;rsquo;m using this post to document the process.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://sparkle-project.org/documentation/&#34;&gt;Sparkle documentation&lt;/a&gt; is excellent and contains everything you need to know, but they allow for a wide range of use cases and configurations, which makes it difficult to follow at times. For this app, I have the following requirements:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SwiftUI app&lt;/li&gt;
+&lt;li&gt;Sandboxed&lt;/li&gt;
+&lt;li&gt;Install framework using Swift Package Manager&lt;/li&gt;
+&lt;li&gt;Distribution as a disk image&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This guide deals with those requirements only.&lt;/p&gt;
+&lt;h3 id=&#34;table-of-contents&#34;&gt;
+  Table of Contents
+  &lt;a href=&#34;#table-of-contents&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#installation&#34;&gt;Installation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#adding-a-public-key-to-your-app&#34;&gt;Adding a Public Key to your App&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#checking-for-a-existing-key&#34;&gt;Checking for a Existing Key&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#creating-a-new-key&#34;&gt;Creating a New Key&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#installing-the-public-key&#34;&gt;Installing the Public Key&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sandboxing&#34;&gt;Sandboxing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#locating-the-updates&#34;&gt;Locating the Updates&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#coding-the-update-check&#34;&gt;Coding the Update Check&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#exporting-the-app&#34;&gt;Exporting the App&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#making-a-disk-image&#34;&gt;Making a Disk Image&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#generating-the-appcast-xml&#34;&gt;Generating the appcast.xml&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#testing&#34;&gt;Testing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#summary&#34;&gt;Summary&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;installation&#34;&gt;
+  Installation
+  &lt;a href=&#34;#installation&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Open your app in Xcode and select the project at the top of the project navigator. Click on the project itself in the next sidebar and then choose &lt;strong&gt;Package Dependencies&lt;/strong&gt; from the tabs across the top.&lt;/p&gt;
+&lt;p&gt;Click the &lt;strong&gt;+&lt;/strong&gt; at the bottom of the list to add a new package. Enter this URL into the search field and when the package appears, click &lt;strong&gt;Add Package&lt;/strong&gt;.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://github.com/sparkle-project/Sparkle
+&lt;/code&gt;&lt;/pre&gt;&lt;style&gt;
+  img {
+    margin: 10px auto;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .social_footer img {
+    border: none;
+    box-shadow: none;
+  }
+&lt;/style&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/sparkle_install.png&#34; alt=&#34;Install Sparkle&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Xcode will download the package and then show another dialog with the Sparkle library checked. Click &lt;strong&gt;Add Package&lt;/strong&gt; again to attach it to your project.&lt;/p&gt;
+&lt;h3 id=&#34;adding-a-public-key-to-your-app&#34;&gt;
+  Adding a Public Key to your App
+  &lt;a href=&#34;#adding-a-public-key-to-your-app&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;The next step depends on whether you&amp;rsquo;ve used Sparkle before. You need to create a private and public key pair for security reasons, but you can then use the same keys for all of your apps (I think).&lt;/p&gt;
+&lt;h4 id=&#34;checking-for-a-existing-key&#34;&gt;
+  Checking for a Existing Key
+  &lt;a href=&#34;#checking-for-a-existing-key&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h4&gt;
+&lt;p&gt;To check if you already have a key, open the &lt;strong&gt;Keychain Access&lt;/strong&gt; app from Applications/Utilities. Search for &lt;strong&gt;sparkle&lt;/strong&gt; and if you have a key, you&amp;rsquo;ll see it listed. If you don&amp;rsquo;t find anything, skip ahead to the &lt;a href=&#34;#creating-a-new-key&#34;&gt;next section&lt;/a&gt; to create a new one.&lt;/p&gt;
+&lt;p&gt;Double-click the key to show its details which conveniently includes the public key in the comments.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/sparkle_key.png&#34; alt=&#34;Existing Sparkle keys&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Select and copy the public key, then jump to &lt;a href=&#34;#installing-the-public-key&#34;&gt;Installing the Public Key&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;creating-a-new-key&#34;&gt;
+  Creating a New Key
+  &lt;a href=&#34;#creating-a-new-key&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h4&gt;
+&lt;p&gt;If you don&amp;rsquo;t already have a key pair, you&amp;rsquo;ll use one of Sparkle&amp;rsquo;s tools to create it.&lt;/p&gt;
+&lt;p&gt;Back in Xcode, right-click on Sparkle in the project navigator and select &lt;strong&gt;Show in Finder&lt;/strong&gt; which opens a folder buried deep in your Library. Press &lt;strong&gt;Command-3&lt;/strong&gt; to show the folder in Columns mode and then click  the &lt;strong&gt;artifacts&lt;/strong&gt; folder that&amp;rsquo;s one level above the Sparkle folder.&lt;/p&gt;
+&lt;p&gt;From there, navigate through &lt;strong&gt;sparkle&lt;/strong&gt; to &lt;strong&gt;Sparkle&lt;/strong&gt; where you&amp;rsquo;ll see a &lt;strong&gt;bin&lt;/strong&gt; folder:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/sparkle_folder.png&#34; alt=&#34;Opening the Sparkle folder&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Open your preferred Terminal app and type &lt;strong&gt;cd&lt;/strong&gt; followed by a &lt;strong&gt;space&lt;/strong&gt;. Drag in the &lt;strong&gt;Sparkle&lt;/strong&gt; folder with the uppercase &lt;strong&gt;S&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Then enter and run this command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./bin/generate_keys
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This generates the keys, saves them to your keychain and displays the public key. Copy the public key for use in the next section.&lt;/p&gt;
+&lt;h4 id=&#34;installing-the-public-key&#34;&gt;
+  Installing the Public Key
+  &lt;a href=&#34;#installing-the-public-key&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h4&gt;
+&lt;p&gt;To insert the key into your app, go back to Xcode and select the project and target. Choose &lt;strong&gt;Info&lt;/strong&gt; from the tabs at the top. Click the &lt;strong&gt;+&lt;/strong&gt; blob that appears beside the last entry when you mouse over it, and type in the key name:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SUPublicEDKey
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The type is String (which should be the default) and the value is the public key you just copied:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/sparkle_info_key.png&#34; alt=&#34;Adding the Sparkle public key&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;sandboxing&#34;&gt;
+  Sandboxing
+  &lt;a href=&#34;#sandboxing&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Mac apps are sandboxed by default, which quarantines their data into their own container and protects the rest of your system. Adding Sparkle to a sandboxed app requires some more steps, but if your app is not sandboxed, &lt;a href=&#34;#locating-the-updates&#34;&gt;move on to the next section&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;First, you need to give your app access to the internet, so it can retrieve the update information and download any updates.&lt;/p&gt;
+&lt;p&gt;In the app&amp;rsquo;s target settings, select &lt;strong&gt;Signing and Capabilities&lt;/strong&gt; and turn on &lt;strong&gt;Outgoing Connections (Client)&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/sparkle_connections.png&#34; alt=&#34;Sand-box connection setting&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Next, add another setting to the target&amp;rsquo;s Info:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Key&lt;/strong&gt;: SUEnableInstallerLauncherService&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Type&lt;/strong&gt;: Boolean&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Value&lt;/strong&gt;: YES&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The next settings go into the &lt;strong&gt;&amp;lt;Your-App-Name&amp;gt;.entitlements&lt;/strong&gt; file which you&amp;rsquo;ll find in the project navigator. Right-click the entitlements file and select &lt;strong&gt;Open As &amp;gt; Source Code&lt;/strong&gt; which makes it possible to paste in the next chunk.&lt;/p&gt;
+&lt;p&gt;Just before the last &lt;code&gt;&amp;lt;/dict&amp;gt;&lt;/code&gt;, add a new line and insert:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;com.apple.security.temporary-exception.mach-lookup.global-name&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;array&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;$(PRODUCT_BUNDLE_IDENTIFIER)-spks&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;$(PRODUCT_BUNDLE_IDENTIFIER)-spki&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/array&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now the app is configured to allow Sparkle to work with the Mac sandbox.&lt;/p&gt;
+&lt;h3 id=&#34;locating-the-updates&#34;&gt;
+  Locating the Updates
+  &lt;a href=&#34;#locating-the-updates&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;You need to have an online location for the app and its update information. Since my To-Day app is on GitHub, I decided to use GitHub for distribution too, but I could have used this web site, AWS or any other online service. It&amp;rsquo;s best if it&amp;rsquo;s coming from an &lt;strong&gt;https&lt;/strong&gt; server.&lt;/p&gt;
+&lt;p&gt;Open my &lt;a href=&#34;https://github.com/trozware/To-Day&#34;&gt;GitHub repo&lt;/a&gt; and look at the file structure. The &lt;strong&gt;Releases&lt;/strong&gt; folder has a disk image (dmg) containing the app and an XML file generated by Sparkle with the update information.&lt;/p&gt;
+&lt;p&gt;Work out where you&amp;rsquo;re going to put these two files for your app and find the exact URL for the &lt;strong&gt;appcast.xml&lt;/strong&gt; file.&lt;/p&gt;
+&lt;p&gt;This gives you the last piece of data that your app needs. Add another setting to your target&amp;rsquo;s Info:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Key&lt;/strong&gt;: SUFeedURL&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Type&lt;/strong&gt;: String&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Value&lt;/strong&gt;: &lt;a href=&#34;https://url-to-your-appcast.xml&#34;&gt;https://url-to-your-appcast.xml&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you&amp;rsquo;re using GitHub, upload a fake file so you can get the URL, remembering to get the URL for the raw file, not its GitHub page.&lt;/p&gt;
+&lt;h3 id=&#34;coding-the-update-check&#34;&gt;
+  Coding the Update Check
+  &lt;a href=&#34;#coding-the-update-check&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;You&amp;rsquo;ve done all the setup work now, but there&amp;rsquo;s nothing to trigger a check in the app. I copied and pasted most of the suggested code from the &lt;a href=&#34;https://sparkle-project.org/documentation/programmatic-setup/&#34;&gt;Sparkle docs&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;First, I created a new file called &lt;strong&gt;Updater.swift&lt;/strong&gt; which contains:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;SwiftUI&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Sparkle&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// This view model class publishes when new updates can be checked by the user&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;CheckForUpdatesViewModel&lt;/span&gt;: ObservableObject {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  @Published &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; canCheckForUpdates = &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;init&lt;/span&gt;(updater: SPUUpdater) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    updater.publisher(&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\&lt;/span&gt;.canCheckForUpdates)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      .assign(to: &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;$&lt;/span&gt;canCheckForUpdates)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// This is the view for the Check for Updates menu item&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Note this intermediate view is necessary for the disabled state on the menu item to work properly before Monterey.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// See https://stackoverflow.com/questions/68553092/menu-not-updating-swiftui-bug for more info&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;CheckForUpdatesView&lt;/span&gt;: View {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  @ObservedObject &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; checkForUpdatesViewModel: CheckForUpdatesViewModel
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; updater: SPUUpdater
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;init&lt;/span&gt;(updater: SPUUpdater) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;.updater = updater
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// Create our view model for our CheckForUpdatesView&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;.checkForUpdatesViewModel = CheckForUpdatesViewModel(updater: updater)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some View {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Button(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Check for Updates…&amp;#34;&lt;/span&gt;, action: updater.checkForUpdates)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      .disabled(&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;checkForUpdatesViewModel.canCheckForUpdates)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The comments are from the Sparkle team.&lt;/p&gt;
+&lt;p&gt;In my To-Day app, I have an &lt;code&gt;AppGroup&lt;/code&gt; view to provide the SwiftUI view for the last section of the menu that controls the app itself.&lt;/p&gt;
+&lt;p&gt;Inside this view, I added an &lt;code&gt;updaterController&lt;/code&gt; property:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; updaterController = SPUStandardUpdaterController(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  startingUpdater: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  updaterDelegate: &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  userDriverDelegate: &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This required another &lt;code&gt;import Sparkle&lt;/code&gt; line at the top of this file.&lt;/p&gt;
+&lt;p&gt;To trigger the update checker, I added &lt;code&gt;CheckForUpdatesView&lt;/code&gt; as one of the views in the menu, providing it with this controller&amp;rsquo;s updater:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CheckForUpdatesView(updater: updaterController.updater)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;exporting-the-app&#34;&gt;
+  Exporting the App
+  &lt;a href=&#34;#exporting-the-app&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Now that the app is coded, you need to export it from Xcode, signing it with your Developer ID and getting it notarised by Apple. This assumes that you have an Apple Developer account.&lt;/p&gt;
+&lt;p&gt;In Xcode, select &lt;strong&gt;Archive&lt;/strong&gt; from the &lt;strong&gt;Product&lt;/strong&gt; menu. This builds the app and opens the Organiser window. Click &lt;strong&gt;Distribute App&lt;/strong&gt;, check &lt;strong&gt;Developer ID&lt;/strong&gt; and click &lt;strong&gt;Next&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Make sure &lt;strong&gt;Upload&lt;/strong&gt; is selected and click &lt;strong&gt;Next&lt;/strong&gt; again. Choose &lt;strong&gt;Automatically manage signing&lt;/strong&gt; and click &lt;strong&gt;Next&lt;/strong&gt; again. When the next dialog appears, click &lt;strong&gt;Upload&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;This sends the app off to Apple&amp;rsquo;s servers to be checked for malicious code. It&amp;rsquo;s not doing any app review, just checking for viruses etc.&lt;/p&gt;
+&lt;p&gt;It may take a few minutes, but the app should then be notarised. You may have to go to another display in the Organiser and back again to force a display refresh so you can see this. If there is an error, click &lt;strong&gt;Show Status Log&lt;/strong&gt; to see what went wrong.&lt;/p&gt;
+&lt;p&gt;Assuming all went well, click &lt;strong&gt;Export Notarised App&lt;/strong&gt; and save it somewhere convenient.&lt;/p&gt;
+&lt;p&gt;If you don&amp;rsquo;t have an Apple Developer account, select &lt;strong&gt;Copy App&lt;/strong&gt; from the distribution dialog and save a folder containing the app. If a user has the default Gatekeeper settings on their Mac, they&amp;rsquo;ll need to right-click the app and select &lt;strong&gt;Open&lt;/strong&gt; to run it, after getting past a couple of warnings.&lt;/p&gt;
+&lt;h3 id=&#34;making-a-disk-image&#34;&gt;
+  Making a Disk Image
+  &lt;a href=&#34;#making-a-disk-image&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;The next step is to create the disk image for distribution. You can use a zip file or a disk image, but I prefer a disk image because it gives you a way to guide users to install the app in their Applications folder.&lt;/p&gt;
+&lt;p&gt;The process for this is:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Make a writeable disk image.&lt;/li&gt;
+&lt;li&gt;Add the app and a link to Applications.&lt;/li&gt;
+&lt;li&gt;Set the view options, including a background image.&lt;/li&gt;
+&lt;li&gt;Convert the image into a read-only copy.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Open &lt;strong&gt;Disk Utility&lt;/strong&gt; from Applications/Utilities. Select &lt;strong&gt;New Image &amp;gt; Blank Image…&lt;/strong&gt; from the &lt;strong&gt;File&lt;/strong&gt; menu. Set its name in two places and its size. The size should be about 2 x the size of your app to allow for future updates.&lt;/p&gt;
+&lt;p&gt;Double-click the image to open it and drag your exported app into the disk image window. &lt;strong&gt;Command-Option-drag&lt;/strong&gt; your Applications folder in. You&amp;rsquo;ll know you&amp;rsquo;re holding down the right modifiers if you see a curved black arrow at the bottom left of the icon. This adds an alias to the current Applications folder, rather than a copy of yours.&lt;/p&gt;
+&lt;p&gt;Now configure the disk image window using Finder&amp;rsquo;s View menu and View Options. I turn off all the extra views: toolbar, path bar, status bar etc. then I set the view options like this:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/sparkle_dmg.png&#34; alt=&#34;Configuring the disk image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Setting a background image takes a few steps. First, find an image you like. Not being graphically minded, I used a rectangle filled with a gradient and added a curved arrow that pointed from the app to the Applications folder. My file is a png, but I think a jpg will work fine. You can click this link if you want to see my sample &lt;a href=&#34;https://troz.net/images/dmg_background.png&#34;&gt;background image&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Drag the image file into your disk image. Don&amp;rsquo;t worry about positioning it - you&amp;rsquo;re about to make the file invisible. With Finder active, press &lt;strong&gt;Shift-Command-.&lt;/strong&gt; to show invisible files. Now, rename the background image file to &lt;strong&gt;.background.png&lt;/strong&gt;. The leading period makes this an invisible file, but you can see it at the moment. Open the View Options again and select &lt;strong&gt;Picture&lt;/strong&gt; for the Background. Drag your image file into the well. This may show that you need to re-position the arrow, so repeat the process until you get an image that looks right. Then press &lt;strong&gt;Shift-Command-.&lt;/strong&gt; again to hide invisible files. Re-position the visible icons to suit and adjust the size of the window to what you want to show.&lt;/p&gt;
+&lt;p&gt;Now that the disk image is configured, eject it. Back in Disk Utility, select &lt;strong&gt;Images &amp;gt; Convert…&lt;/strong&gt; and choose your dmg. On the next dialog, change Image Format to &lt;strong&gt;read-only&lt;/strong&gt; and click &lt;strong&gt;Convert&lt;/strong&gt;. This is the disk image that goes into your Releases folder, so change its name to match your app and move it. Keep the read-write disk image too - it&amp;rsquo;s much easier to edit it when updating instead of going through this process every time.&lt;/p&gt;
+&lt;p&gt;Open the read-only image and check that it&amp;rsquo;s set up the way your want. I have found that sometimes the background image doesn&amp;rsquo;t stick. If this happens to you, eject and trash the read-only image. Mount the read-write image again, confirm its settings and re-convert.&lt;/p&gt;
+&lt;h3 id=&#34;generating-the-appcastxml&#34;&gt;
+  Generating the appcast.xml
+  &lt;a href=&#34;#generating-the-appcastxml&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Now to create the file that Sparkle uses to see if there is an update.&lt;/p&gt;
+&lt;p&gt;Use the method from when you generated a key to open a Terminal at the Sparkle directory. Type in:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./bin/generate_appcast /path/to/your/Releases/folder
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once you&amp;rsquo;re typed the command and a space, you can drag your Releases folder in to get its path.
+Press Return and wait while Sparkle generates the &lt;strong&gt;appcast.xml&lt;/strong&gt; file.&lt;/p&gt;
+&lt;p&gt;And finally, you&amp;rsquo;re ready to release. Upload your Releases folder to wherever you decided to put it, making sure that the URL for the appcast.xml file is the same as in your app&amp;rsquo;s info.&lt;/p&gt;
+&lt;h3 id=&#34;testing&#34;&gt;
+  Testing
+  &lt;a href=&#34;#testing&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Move the notarised app into your applications folder and run it. If all has worked, you should be able to check for updates and see that you have the latest version.&lt;/p&gt;
+&lt;p&gt;If you get an error, check back through all the setup phases. I know I made every mistake possible when setting it up first, so check the sandbox setting, the info and the entitlements. Use a web browser to confirm that the appcast.xml file is where you said it would be.&lt;/p&gt;
+&lt;p&gt;Testing an update requires a new version, so make some small, visible change to your app. Increment the version and build numbers, then archive, notarise and export as before. Find the read-write disk image and mount it. Replace the app there with your new version and then eject the disk image. Create a new read-only disk image and replace the copy in your Releases folder with it.&lt;/p&gt;
+&lt;p&gt;Run the &lt;code&gt;./bin/generate_appcast&lt;/code&gt; again and it will add a new entry to your appcast.xml file with the new version data.&lt;/p&gt;
+&lt;p&gt;If you want to add some release notes, open &lt;strong&gt;appcast.xml&lt;/strong&gt; in a text editor. The top entry is the latest. You can include a description tag and if you use the &lt;code&gt;&amp;lt;![CDATA[ ... ]]&amp;gt;&lt;/code&gt; wrapper, you can add HTML:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/sparkle_release_notes.png&#34; alt=&#34;Adding release notes&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Upload the Releases folder as before and then run your first version of the app. Check for updates and see what happens.&lt;/p&gt;
+&lt;p&gt;If it doesn&amp;rsquo;t work, check the Console app and see if you can see any errors there that might point you in the right direction.&lt;/p&gt;
+&lt;p&gt;This can be a frustrating process, but once you have it all set up correctly, it works very well. I added a ReadMe to my project listing the steps I need to follow when publishing an update, so that I don&amp;rsquo;t have to remember them every time. I recommend this or something similar.&lt;/p&gt;
+&lt;h3 id=&#34;summary&#34;&gt;
+  Summary
+  &lt;a href=&#34;#summary&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Sparkle is a great tool and once you have everything configured, it works really well. Configuring it can be tricky, especially as their docs cover so many different use cases.&lt;/p&gt;
+&lt;p&gt;Check out the &lt;a href=&#34;https://github.com/trozware/To-Day&#34;&gt;GitHub repo&lt;/a&gt; for my To-Day app to see how I&amp;rsquo;ve configured it.&lt;/p&gt;
+&lt;p&gt;If you have any suggestions or if you run into any problems following this guide, please contact me using one of the links below or through the &lt;a href=&#34;https://troz.net/contact/&#34;&gt;Contact&lt;/a&gt; page. And if you found this article useful, I&amp;rsquo;d love you to &lt;a href=&#34;https://ko-fi.com/trozware&#34;&gt;buy me a coffee&lt;/a&gt;.&lt;/p&gt;</description>
+</item>
+    
+    <item>
 <title>To-Day</title>
 <link>https://troz.net/post/2023/to-day/</link>
 <pubDate>Wed, 08 Mar 2023 14:58:01 +1000</pubDate>
@@ -70,7 +320,7 @@
 &lt;p&gt;&lt;code&gt;AppState&lt;/code&gt; also contains a bunch of computed properties to make life easier and methods for adding, deleting and checking. It also has a computed property to generate the view for the todos at the top of the menu.&lt;/p&gt;
 &lt;p&gt;When you have an &lt;code&gt;ObservableObject&lt;/code&gt;, you can pass it around the app in two ways: as an &lt;code&gt;ObservedObject&lt;/code&gt; or as an &lt;code&gt;EnvironmentObject&lt;/code&gt;. Both work fine, but with the ObservedObject, there has to be an unbroken chain of data passing from view to subview to sub-subview and so on. EnvironmentObject makes it easier because once you insert it into a view hierarchy, any view in that hierarchy can access it.&lt;/p&gt;
 &lt;p&gt;It might seem like EnvironmentObject is less efficient, but I&amp;rsquo;ve read recent reports of it using less memory, perhaps because intermediate views that don&amp;rsquo;t need it, don&amp;rsquo;t access it.&lt;/p&gt;
-&lt;p&gt;I decide to use EnvironmentObject so in the App struct, I initialised it as a &lt;code&gt;StateObject&lt;/code&gt;. MenuBarExtra can&amp;rsquo;t take an &lt;code&gt;environmentObject&lt;/code&gt;, so I grouped the menu view sections and assigned the environmentObject to the Group. This let the views in the menu access it using &lt;code&gt;@EnvironmentObject var appState: AppState&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;I decided to use EnvironmentObject so in the App struct, I initialised it as a &lt;code&gt;StateObject&lt;/code&gt;. MenuBarExtra can&amp;rsquo;t take an &lt;code&gt;environmentObject&lt;/code&gt;, so I grouped the menu view sections and assigned the environmentObject to the Group. This let the views in the menu access it using &lt;code&gt;@EnvironmentObject var appState: AppState&lt;/code&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;windows&#34;&gt;
   Windows
   &lt;a href=&#34;#windows&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;

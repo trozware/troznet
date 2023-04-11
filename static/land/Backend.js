@@ -82,10 +82,9 @@ manaSymbols.forEach(function (node) {
   })
 })
 
-const exampleLands = document.querySelectorAll('.exampleLand')
-
-exampleLands.forEach(function (node) {
-  node.addEventListener('click', function (e) {
+const exampleLands = document.querySelectorAll('.landspan')
+for (const div of exampleLands) {
+  div.addEventListener('click', function (e) {
     const checkedCycle = e.target.id
     if (activeCycles.includes(checkedCycle)) {
       activeCycles.splice(
@@ -96,18 +95,41 @@ exampleLands.forEach(function (node) {
       activeCycles.push(checkedCycle)
     }
     printText()
-  })
 
-  node.addEventListener('click', function (e) {
-    console.log(e)
-    if (e.target.classList.contains('checked')) {
-      e.target.classList.remove('checked')
-      e.target.classList.add('unchecked')
+    if (e.target.tagName === 'DIV') {
+      const divToCheck = e.target
+      if (divToCheck.classList.contains('checked')) {
+        divToCheck.classList.remove('checked')
+        divToCheck.classList.add('unchecked')
+      } else {
+        divToCheck.classList.remove('unchecked')
+        divToCheck.classList.add('checked')
+      }
     } else {
-      e.target.classList.remove('unchecked')
-      e.target.classList.add('checked')
+      const divToCheck = e.target.parentElement
+      if (divToCheck.classList.contains('checked')) {
+        divToCheck.classList.remove('checked')
+        divToCheck.classList.add('unchecked')
+      } else {
+        divToCheck.classList.remove('unchecked')
+        divToCheck.classList.add('checked')
+      }
     }
   })
+}
+
+const copyContent = async () => {
+  let textToCopy = document.querySelector('#landbase-textbox').innerHTML
+  try {
+    await navigator.clipboard.writeText(textToCopy)
+  } catch (err) {
+    console.error('Failed to copy: ', err)
+  }
+}
+
+const copyButton = document.querySelector('#copy-button')
+copyButton.addEventListener('click', function (e) {
+  copyContent()
 })
 
 printText()

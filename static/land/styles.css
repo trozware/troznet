@@ -18,7 +18,7 @@ body {
   color:azure;
   padding-top: 0px;
   padding-right: 2.5%;
-  padding-bottom: 2%;
+  padding-bottom: 1%;
   padding-left: 2.5%;
 }
 
@@ -39,6 +39,19 @@ h2 {
   font-weight: 200;
 }
 
+h3 {
+  text-align: center;
+  color:azure;
+}
+
+.checked {
+  border: 2px solid #2ac249;
+}
+
+.unchecked {
+  border: 2px solid transparent;
+}
+
 #manasymbols {
   display: block;
   width: 100%;
@@ -50,18 +63,25 @@ h2 {
   position: relative;
   margin: 0px 15px 0px 15px;
   border-radius: 55px;
+  border-width: 5px;
 }
 
 #cycles {
   display: block;
   width: 100%;
   padding: 0 2.5%;
-  margin: 2% 0 2% 0;
+  margin: 2% 0 0% 0;
   text-align: left;
 }
 
+.landspan {
+  display: inline-flex;
+  flex-direction: column;
+  margin-bottom: 2%;
+  border-radius: 5px;
+}
 .exampleland {
-  display: block;
+  display: inline-block;
   position: absolute;
   top: 0;
   left: 0;
@@ -72,28 +92,40 @@ h2 {
   box-shadow: 1px 1px 6px rgb(0 0 0 / 45%);
   background-color: transparent;
   z-index: 5;
+  border-width: 1px;
+}
+
+#cyclename {
+  display:inline-block;
+  text-align: center;
+  color:azure;
+  margin: 5px 0px 5px 0px
 }
 
 #output {
-  display: block;
-  padding: 0% 5% 5% 2.5%;
+  display:inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0% 0% 5% 0%%;
+  width: 100%;
   text-align: center;
 }
 
 #landbase-textbox {
-  display: inline-block;
+  display: flexbox;
   position: relative;
   font-family: inherit;
   font-size: larger;
   width: 40%;
   box-sizing: border-box;
   line-height: 24px;
+  margin: 0%
 }
 
-.checked {
-  border: 2px solid #2ac249;
-}
-
-.unchecked {
-  border: 2px solid transparent;
+#copy-button {
+  display: flexbox;
+  position: relative;
+  font-family: inherit;
+  font-size: larger;
+  margin: 0%
 }

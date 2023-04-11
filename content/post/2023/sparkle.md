@@ -1,7 +1,7 @@
 ---
 title: "Sparkle"
-date: 2023-04-01T14:08:00+10:00
-draft: true
+date: 2023-04-11T11:48:38+10:00
+draft: false
 description: "Set up your Mac app for updating using the Sparkle framework"
 tags: ["mac",  "sparkle",  "app", "distribution"]
 ---
@@ -91,7 +91,7 @@ This generates the keys, saves them to your keychain and displays the public key
 
 #### Installing the Public Key
 
-To insert the key into your app, go back to Xcode and select the project and target. Choose **Info** from the tabs at the top. Click the **+** blob beside the last entry and type in the key name:
+To insert the key into your app, go back to Xcode and select the project and target. Choose **Info** from the tabs at the top. Click the **+** blob that appears beside the last entry when you mouse over it, and type in the key name:
 
 ```
 SUPublicEDKey
@@ -117,7 +117,7 @@ Next, add another setting to the target's Info:
 - **Type**: Boolean
 - **Value**: YES
 
-The next settings go into the **.entitlements** file which you'll find in the project navigator. Right-click the entitlements file and select **Open As > Source Code** which makes it possible to paste in the next chunk.
+The next settings go into the **\<Your-App-Name\>.entitlements** file which you'll find in the project navigator. Right-click the entitlements file and select **Open As > Source Code** which makes it possible to paste in the next chunk.
 
 Just before the last `</dict>`, add a new line and insert:
 
@@ -145,7 +145,7 @@ This gives you the last piece of data that your app needs. Add another setting t
 - **Type**: String
 - **Value**: https://url-to-your-appcast.xml
 
-If you're using GitHub, upload a fake file so you can get the URL, remembering to get the URL for the raw file, not it's GitHub page.
+If you're using GitHub, upload a fake file so you can get the URL, remembering to get the URL for the raw file, not its GitHub page.
 
 ### Coding the Update Check
 
@@ -202,7 +202,7 @@ private let updaterController = SPUStandardUpdaterController(
 )
 ```
 
-This required an `import Sparkle` line at the top of this file also.
+This required another `import Sparkle` line at the top of this file.
 
 To trigger the update checker, I added `CheckForUpdatesView` as one of the views in the menu, providing it with this controller's updater:
 
@@ -239,7 +239,7 @@ The process for this is:
 
 Open **Disk Utility** from Applications/Utilities. Select **New Image > Blank Image…** from the **File** menu. Set its name in two places and its size. The size should be about 2 x the size of your app to allow for future updates.
 
-Double-click the image to open it and drag your exported app into the disk image window. **Command-Option-drag** your Applications folder in. You'll know you're holding down the right modifiers if you see a curved black arrow at the bottom left of the icon.
+Double-click the image to open it and drag your exported app into the disk image window. **Command-Option-drag** your Applications folder in. You'll know you're holding down the right modifiers if you see a curved black arrow at the bottom left of the icon. This adds an alias to the current Applications folder, rather than a copy of yours.
 
 Now configure the disk image window using Finder's View menu and View Options. I turn off all the extra views: toolbar, path bar, status bar etc. then I set the view options like this:
 

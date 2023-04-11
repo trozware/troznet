@@ -10,6 +10,7 @@
   </head>
   <body>
     <div id="manasymbols">
+      <h3>Step 1: Choose your colours</h3>
       <img
         src="Images/Symbols/White-Symbol.png"
         alt="White mana symbol"
@@ -50,109 +51,175 @@
         id="G"
         class="unchecked manasymbol"
       />
+      <h3>Step 2: Choose your land cycles</h3>
     </div>
+
     <div id="cycles">
-      <img
-        src="Images/Lands/command-tower.png"
-        alt="Command Tower"
-        height="200"
-        width="145"
-        class="checked exampleLand"
-        id="commandtower"
-      />
-      <img
-        src="Images/Lands/exotic-orchard.png"
-        alt="Exotic Orchard"
-        height="200"
-        width="145"
-        class="checked exampleLand"
-        id="exoticorchard"
-      />
-      <img
-        src="Images/Lands/path-of-ancestry.png"
-        alt="Path of Ancestry"
-        height="200"
-        width="145"
-        class="checked exampleLand"
-        id="pathofancestry"
-      />
-      <img
-        src="Images/Lands/drowned-catacomb.png"
-        alt="Checklands, like Drowned Catacomb"
-        height="200"
-        width="145"
-        class="unchecked exampleLand"
-        id="checkland"
-      />
-      <img
-        src="Images/Lands/highland-forest.png"
-        alt="Snowduals, like Highland Forest"
-        height="200"
-        width="145"
-        class="unchecked exampleLand"
-        id="snowdual"
-      />
-      <img
-        src="Images/Lands/llanowar-wastes.png"
-        alt="Painlands, like Llanowar Wastes"
-        height="200"
-        width="145"
-        class="unchecked exampleLand"
-        id="painland"
-      />
-      <img
-        src="Images/Lands/port-town.png"
-        alt="Handlands, like Port Town"
-        height="200"
-        width="145"
-        class="unchecked exampleLand"
-        id="handland"
-      />
-      <img
-        src="Images/Lands/smoldering-marsh.png"
-        alt="Battlelands, like Smoldering Marsh"
-        height="200"
-        width="145"
-        class="unchecked exampleLand"
-        id="battleland"
-      />
-      <img
-        src="Images/Lands/temple-of-silence.png"
-        alt="Scrylands, like Temple of Silence"
-        height="200"
-        width="145"
-        class="unchecked exampleLand"
-        id="scryland"
-      />
-      <img
-        src="Images/Lands/molten-tributary.png"
-        alt="Typelands, like Molten Tributary"
-        height="200"
-        width="145"
-        class="unchecked exampleLand"
-        id="basicland"
-      />
-      <img
-        src="Images/Lands/thornglint-bridge.png"
-        alt="Bridges, like Thornglint Bridge"
-        height="200"
-        width="145"
-        class="unchecked exampleLand"
-        id="bridge"
-      />
-      <img
-        src="Images/Lands/frontier-bivouac.png"
-        alt="Triplelands, like Frontier Bivouac"
-        height="200"
-        width="145"
-        class="unchecked exampleLand"
-        id="tripleland"
-      />
+      <div class="checked landspan">
+        <img
+          src="Images/Lands/command-tower.png"
+          alt="Command Tower"
+          height="200"
+          width="145"
+          class="exampleLand"
+          id="commandtower"
+        />
+        <span id="cyclename">Command Tower</span>
+      </div>
+      <div class="checked landspan">
+        <img
+          src="Images/Lands/exotic-orchard.png"
+          alt="Exotic Orchard"
+          height="200"
+          width="145"
+          class="exampleLand"
+          id="exoticorchard"
+        />
+        <span id="cyclename">Exotic Orchard</span>
+      </div>
+      <div class="checked landspan">
+        <img
+          src="Images/Lands/path-of-ancestry.png"
+          alt="Path of Ancestry"
+          height="200"
+          width="145"
+          class="exampleLand"
+          id="pathofancestry"
+        />
+        <span id="cyclename">Path of Ancestry</span>
+      </div>
+      <div class="unchecked landspan">
+        <img
+          src="Images/Lands/drowned-catacomb.png"
+          alt="Checklands, like Drowned Catacomb"
+          height="200"
+          width="145"
+          class="exampleLand"
+          id="checkland"
+        />
+        <span id="cyclename">Checklands</span>
+      </div>
+      <div class="unchecked landspan">
+        <img
+          src="Images/Lands/llanowar-wastes.png"
+          alt="Painlands, like Llanowar Wastes"
+          height="200"
+          width="145"
+          class="exampleLand"
+          id="painland"
+        />
+        <span id="cyclename">Painlands</span>
+      </div>
+      <div class="unchecked landspan">
+        <img
+          src="Images/Lands/port-town.png"
+          alt="Handlands, like Port Town"
+          height="200"
+          width="145"
+          class="exampleLand"
+          id="handland"
+        />
+        <span id="cyclename">Handlands</span>
+      </div>
+      <div class="unchecked landspan">
+        <img
+          src="Images/Lands/smoldering-marsh.png"
+          alt="Battlelands, like Smoldering Marsh"
+          height="200"
+          width="145"
+          class="exampleLand"
+          id="battleland"
+        />
+        <span id="cyclename">Battlelands</span>
+      </div>
+      <div class="unchecked landspan">
+        <img
+          src="Images/Lands/temple-of-silence.png"
+          alt="Scrylands, like Temple of Silence"
+          height="200"
+          width="145"
+          class="exampleLand"
+          id="scryland"
+        />
+        <span id="cyclename">Temples</span>
+      </div>
+      <div class="unchecked landspan">
+        <img
+          src="Images/Lands/bad-river.png"
+          alt="Slowfetches, like Bad River"
+          height="200"
+          width="145"
+          class="exampleLand"
+          id="slowfetch"
+        />
+        <span id="cyclename">Slowfetches</span>
+      </div>
+      <div class="unchecked landspan">
+        <img
+          src="Images/Lands/desert-of-the-indomitable.png"
+          alt="Cycling Deserts, like Desert of the Indomitable"
+          height="200"
+          width="145"
+          class="exampleLand"
+          id="cyclingdesert"
+        />
+        <span id="cyclename">Cycling Deserts</span>
+      </div>
+      <div class="unchecked landspan">
+        <img
+          src="Images/Lands/molten-tributary.png"
+          alt="Typelands, like Molten Tributary"
+          height="200"
+          width="145"
+          class="exampleLand"
+          id="basicland"
+        />
+        <span id="cyclename">Basicduals</span>
+      </div>
+      <div class="unchecked landspan">
+        <img
+          src="Images/Lands/highland-forest.png"
+          alt="Snowduals, like Highland Forest"
+          height="200"
+          width="145"
+          class="exampleLand"
+          id="snowdual"
+        />
+        <span id="cyclename">Snowduals</span>
+      </div>
+      <div class="unchecked landspan">
+        <img
+          src="Images/Lands/thornglint-bridge.png"
+          alt="Bridges, like Thornglint Bridge"
+          height="200"
+          width="145"
+          class="exampleLand"
+          id="bridge"
+        />
+        <span id="cyclename">Bridges</span>
+      </div>
+      <div class="unchecked landspan">
+        <img
+          src="Images/Lands/frontier-bivouac.png"
+          alt="Triplelands, like Frontier Bivouac"
+          height="200"
+          width="145"
+          class="exampleLand"
+          id="tripleland"
+        />
+        <span id="cyclename">Triplelands</span>
+      </div>
     </div>
-    <!-- Would be great to have a button here that just automatically copies the output to clipboard :) -->
+
     <div id="output">
-      <textarea id="landbase-textbox" readonly="true" rows="40"></textarea>
+      <h3>Step 3: Copy your lands to clipboard</h3>
+      <button id="copy-button">Copy All</button>
+      <textarea id="landbase-textbox" readonly="true" rows="20"></textarea>
     </div>
     <script src="Backend.js"></script>
   </body>
 </html>
+
+<!-- todo:
+add Deserts
+add Bad River cycle -->

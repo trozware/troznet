@@ -40,6 +40,26 @@
     ]
   },
   {
+    "cycle": "slowfetch",
+    "lands": [
+      { "name": "Flood Plain", "colours": ["W", "U"] },
+      { "name": "Bad River", "colours": ["U", "B"] },
+      { "name": "Rocky Tar Pit", "colours": ["B", "R"] },
+      { "name": "Mountain Valley", "colours": ["R", "G"] },
+      { "name": "Grasslands", "colours": ["G", "W"] }
+    ]
+  },
+  {
+    "cycle": "cyclingdesert",
+    "lands": [
+      { "name": "Desert of the True", "colours": ["W"] },
+      { "name": "Desert of the Mindful", "colours": ["U"] },
+      { "name": "Desert of the Glorified", "colours": ["B"] },
+      { "name": "Desert of the Fervent", "colours": ["R"] },
+      { "name": "Desert of the Indomitable", "colours": ["G"] }
+    ]
+  },
+  {
     "cycle": "snowdual",
     "lands": [
       { "name": "Glacial Floodplain", "colours": ["W", "U"] },

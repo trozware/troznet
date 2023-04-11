@@ -58,7 +58,7 @@ When you have an `ObservableObject`, you can pass it around the app in two ways:
 
 It might seem like EnvironmentObject is less efficient, but I've read recent reports of it using less memory, perhaps because intermediate views that don't need it, don't access it.
 
-I decide to use EnvironmentObject so in the App struct, I initialised it as a `StateObject`. MenuBarExtra can't take an `environmentObject`, so I grouped the menu view sections and assigned the environmentObject to the Group. This let the views in the menu access it using `@EnvironmentObject var appState: AppState`.
+I decided to use EnvironmentObject so in the App struct, I initialised it as a `StateObject`. MenuBarExtra can't take an `environmentObject`, so I grouped the menu view sections and assigned the environmentObject to the Group. This let the views in the menu access it using `@EnvironmentObject var appState: AppState`.
 
 ## Windows
 

@@ -280,7 +280,7 @@ as="font" crossorigin="">
 <p><code>AppState</code> also contains a bunch of computed properties to make life easier and methods for adding, deleting and checking. It also has a computed property to generate the view for the todos at the top of the menu.</p>
 <p>When you have an <code>ObservableObject</code>, you can pass it around the app in two ways: as an <code>ObservedObject</code> or as an <code>EnvironmentObject</code>. Both work fine, but with the ObservedObject, there has to be an unbroken chain of data passing from view to subview to sub-subview and so on. EnvironmentObject makes it easier because once you insert it into a view hierarchy, any view in that hierarchy can access it.</p>
 <p>It might seem like EnvironmentObject is less efficient, but I&rsquo;ve read recent reports of it using less memory, perhaps because intermediate views that don&rsquo;t need it, don&rsquo;t access it.</p>
-<p>I decide to use EnvironmentObject so in the App struct, I initialised it as a <code>StateObject</code>. MenuBarExtra can&rsquo;t take an <code>environmentObject</code>, so I grouped the menu view sections and assigned the environmentObject to the Group. This let the views in the menu access it using <code>@EnvironmentObject var appState: AppState</code>.</p>
+<p>I decided to use EnvironmentObject so in the App struct, I initialised it as a <code>StateObject</code>. MenuBarExtra can&rsquo;t take an <code>environmentObject</code>, so I grouped the menu view sections and assigned the environmentObject to the Group. This let the views in the menu access it using <code>@EnvironmentObject var appState: AppState</code>.</p>
 <h2 id="windows">
   Windows
   <a href="#windows" class="h-anchor" aria-hidden="true">#</a>
@@ -350,6 +350,10 @@ as="font" crossorigin="">
       <hr />
     </div>
     <div class="pagination__buttons">
+      
+      <a class="btn next" href="https://troz.net/post/2023/sparkle/"
+        >← Sparkle</a
+      >
        
       <a class="btn previous" href="https://troz.net/post/2022/new_links/"
         >New Links →</a
