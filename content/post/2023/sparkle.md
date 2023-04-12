@@ -245,7 +245,7 @@ Now configure the disk image window using Finder's View menu and View Options. I
 
 ![Configuring the disk image][i6]
 
-Setting a background image takes a few steps. First, find an image you like. Not being graphically minded, I used a rectangle filled with a gradient and added a curved arrow that pointed from the app to the Applications folder. My file is a png, but I think a jpg will work fine. You can click this link if you want to see my sample [background image][i7].
+Setting a background image takes a few steps. First, find an image you like. Not being graphically minded, I used a rectangle filled with a gradient and added a curved arrow that pointed from the app to the Applications folder. My file is a png, but I think a jpg will work fine. You can click this link if you want to see my sample [background image][i7].
 
 Drag the image file into your disk image. Don't worry about positioning it - you're about to make the file invisible. With Finder active, press **Shift-Command-.** to show invisible files. Now, rename the background image file to **.background.png**. The leading period makes this an invisible file, but you can see it at the moment. Open the View Options again and select **Picture** for the Background. Drag your image file into the well. This may show that you need to re-position the arrow, so repeat the process until you get an image that looks right. Then press **Shift-Command-.** again to hide invisible files. Re-position the visible icons to suit and adjust the size of the window to what you want to show.
 
