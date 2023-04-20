@@ -19,6 +19,26 @@ const fetchCycles = async () => {
 
 fetchCycles()
 
+const fetchUtilityData = async () => {
+  return await fetch('UtilityCycles.json')
+    .then(response => response.json())
+    .then(jsonResponse => {
+      return jsonResponse
+    })
+    .catch(error => {
+      console.log(error)
+      return { error }
+    })
+}
+
+let utilityLands = []
+
+const fetchUtilityCycles = async () => {
+  utilityLands = await fetchUtilityData()
+}
+
+fetchUtilityCycles()
+
 let activeColours = []
 let activeCycles = ['commandtower', 'exoticorchard', 'pathofancestry']
 const landbaseTextbox = document.querySelector('#landbase-textbox')
@@ -50,15 +70,55 @@ printText = function () {
     }
   })
 
+  let utilityLandsFilteredByCycle = []
+
+  utilityLands.forEach(e => {
+    if (activeCycles.includes(e.cycle)) {
+      e.lands.forEach(e => {
+        utilityLandsFilteredByCycle.push(e)
+      })
+    }
+  })
+
+  let utilityLandsToPrint = ''
+
+  utilityLandsFilteredByCycle.forEach(e => {
+    if (containsAll(activeColours, e.colours) === true) {
+      utilityLandsToPrint = utilityLandsToPrint + `${e.name} \n`
+    }
+  })
+
   landbaseTextbox.textContent = ''
-  landbaseTextbox.textContent = landsToPrint
+  landbaseTextbox.textContent = landsToPrint + utilityLandsToPrint
 }
 
 const manaSymbols = document.querySelectorAll('.manasymbol')
 
+// hideUnusableUtilityLands = function () {
+//   // for each utility land
+//   // use the containsAll function to check if each of its colours is included in the activeColours array
+//   // if not, set its display to none
+//   // if yes, set its display to inline-block
+//   // this function gets called every time the activeColours array changes
+//   //which should just be during the click event
+//   let utilityLandsToCheck = document.querySelectorAll('.utilityLand')
+//   console.log(utilityLands)
+//   activeUtilityLands = []
+//   utilityLands.forEach(land => {
+//     if (containsAll(activeColours, land.colours) === true) {
+//       activeUtilityLands.push(land.name)
+//     }
+//   })
+//   console.log(activeUtilityLands)
+//   // Shoot. Somehow need to figure out how to cycle through each utility land div one by one. Might need to add a second class to them, I think.
+//   // something like querySelectorAll('.utilityLand')
+//   // Ahhhhh fuck's sake I need to account for cycles where one entrant might be present and the others aren't.
+//   // E.g. G active = Deserts show, Creature duals don't.
+//   //Commenting this function out for now while I make it work
+// }
+
 manaSymbols.forEach(function (node) {
   node.addEventListener('click', function (e) {
-    console.log(e)
     const checkedColour = e.target.id
     if (activeColours.includes(checkedColour)) {
       activeColours.splice(
@@ -69,9 +129,9 @@ manaSymbols.forEach(function (node) {
       activeColours.push(checkedColour)
     }
     printText()
+    // hideUnusableUtilityLands()
   })
   node.addEventListener('click', function (e) {
-    console.log(e)
     if (e.target.classList.contains('checked')) {
       e.target.classList.remove('checked')
       e.target.classList.add('unchecked')
@@ -133,3 +193,27 @@ copyButton.addEventListener('click', function (e) {
 })
 
 printText()
+
+toggleObjectDisplay = function () {
+  const objectToHide = document.querySelector('#utility')
+  if (objectToHide.style.display === 'none') {
+    objectToHide.style.display = 'block'
+  } else {
+    objectToHide.style.display = 'none'
+  }
+}
+
+toggleObjectDisplay()
+
+document
+  .querySelector('#utility-button')
+  .addEventListener('click', function (e) {
+    toggleObjectDisplay()
+  })
+
+// Make a new function
+// The new function is called whenever a mana symbol is changed, after the 'active colours' array has updated.
+// The function checks the utilityCycles JSON, and filters it by selected cycles into an array.
+// Then it takes that array and filters it based on the selected colours, into a second array.
+// The function sets every single item in the utility lands div to display = none.
+// Then, for each item in the div, it checks if its id is present in the second array. If it is, it sets its display = inline-block

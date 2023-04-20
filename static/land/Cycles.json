@@ -50,16 +50,6 @@
     ]
   },
   {
-    "cycle": "cyclingdesert",
-    "lands": [
-      { "name": "Desert of the True", "colours": ["W"] },
-      { "name": "Desert of the Mindful", "colours": ["U"] },
-      { "name": "Desert of the Glorified", "colours": ["B"] },
-      { "name": "Desert of the Fervent", "colours": ["R"] },
-      { "name": "Desert of the Indomitable", "colours": ["G"] }
-    ]
-  },
-  {
     "cycle": "snowdual",
     "lands": [
       { "name": "Glacial Floodplain", "colours": ["W", "U"] },
@@ -87,6 +77,21 @@
       { "name": "Darkmoss Bridge", "colours": ["B", "G"] },
       { "name": "Rustvale Bridge", "colours": ["R", "W"] },
       { "name": "Tanglepool Bridge", "colours": ["U", "G"] }
+    ]
+  },
+  {
+    "cycle": "creature-duals",
+    "lands": [
+      { "name": "Celestial Colonnade", "colours": ["W", "U"] },
+      { "name": "Creeping Tar Pit", "colours": ["U", "B"] },
+      { "name": "Lavaclaw Reaches", "colours": ["B", "R"] },
+      { "name": "Raging Ravine", "colours": ["R", "G"] },
+      { "name": "Stirring Wildwood", "colours": ["G", "W"] },
+      { "name": "Shambling Vent", "colours": ["W", "B"] },
+      { "name": "Wandering Fumarole", "colours": ["U", "R"] },
+      { "name": "Hissing Quagmire", "colours": ["B", "G"] },
+      { "name": "Needle Spires", "colours": ["R", "W"] },
+      { "name": "Lumbering Falls", "colours": ["U", "G"] }
     ]
   },
   {
