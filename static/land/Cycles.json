@@ -155,6 +155,16 @@
     ]
   },
   {
+    "cycle": "thrivingland",
+    "lands": [
+      { "name": "Thriving Heath", "colours": ["W"] },
+      { "name": "Thriving Isle", "colours": ["U"] },
+      { "name": "Thriving Moor", "colours": ["B"] },
+      { "name": "Thriving Bluff", "colours": ["R"] },
+      { "name": "Thriving Grove", "colours": ["G"] }
+    ]
+  },
+  {
     "cycle": "commandtower",
     "lands": [{ "name": "Command Tower", "colours": [] }]
   },

@@ -149,7 +149,7 @@
           alt="Creature Duals, like Creeping Tar Pit"
           height="200"
           width="145"
-          class="exampleLand utilityLand"
+          class="exampleLand"
           id="creature-duals"
         />
         <span id="cyclename">Creature Duals</span>
@@ -200,6 +200,17 @@
       </div>
       <div class="unchecked landspan">
         <img
+          src="Images/Lands/thriving-bluff.png"
+          alt="Thriving Lands, like Thriving Bluff"
+          height="200"
+          width="145"
+          class="exampleLand"
+          id="thrivingland"
+        />
+        <span id="cyclename">Thriving Lands</span>
+      </div>
+      <div class="unchecked landspan">
+        <img
           src="Images/Lands/frontier-bivouac.png"
           alt="Triplelands, like Frontier Bivouac"
           height="200"
@@ -216,8 +227,6 @@
     </div>
 
     <div id="utility">
-      <!-- This div includes all the utility lands. The lands themselves are hidden by default. Outside of/above the div is some sort of button saying show utility lands.
-      Off-colour utility lands remain hidden even when utility lands are unhidden. -->
       <div class="unchecked landspan">
         <img
           src="Images/Utility Lands/forgotten-cave.png"
@@ -748,12 +757,3 @@
     <script src="Backend.js"></script>
   </body>
 </html>
-
-<!-- todo: refactoring :( 
-  I need to give each utility land a colour identity that can be read by the HTML and the javascript so that when a colour is changed
-in the selector, it automatically gives the relevant utility lands display=none or display=block(or whatever)
-Then the 'show utility land' button can still show or hide the div as needed. 
-Actually this might not need a major refactoring. I might just be able to make a secondary function and add it after printText()
-in the mana symbols event listener. -->
-
-<!-- add Thriving Lands -->
