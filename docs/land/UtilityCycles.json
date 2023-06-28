@@ -1,0 +1,210 @@
+[
+  {
+    "cycle": "kessig-wolf-run",
+    "lands": [{ "name": "Kessig Wolf Run", "colours": ["R", "G"] }]
+  },
+  {
+    "cycle": "gavony-township",
+    "lands": [{ "name": "Gavony Township", "colours": ["G", "W"] }]
+  },
+  {
+    "cycle": "vault-of-the-archangel",
+    "lands": [{ "name": "Vault of the Archangel", "colours": ["W", "B"] }]
+  },
+  {
+    "cycle": "slayers-stronghold",
+    "lands": [{ "name": "Slayer's Stronghold", "colours": ["R", "W"] }]
+  },
+  {
+    "cycle": "alchemists-refuge",
+    "lands": [{ "name": "Alchemist's Refuge", "colours": ["U", "G"] }]
+  },
+  {
+    "cycle": "grim-backwoods",
+    "lands": [{ "name": "Grim Backwoods", "colours": ["G", "B"] }]
+  },
+  {
+    "cycle": "desolate-lighthouse",
+    "lands": [{ "name": "Desolate Lighthouse", "colours": ["U", "R"] }]
+  },
+  {
+    "cycle": "nephalia-drownyard",
+    "lands": [{ "name": "Nephalia Drownyard", "colours": ["U", "B"] }]
+  },
+  {
+    "cycle": "sunhome",
+    "lands": [
+      { "name": "Sunhome, Fortress of the Legion", "colours": ["R", "W"] }
+    ]
+  },
+  {
+    "cycle": "skarrg",
+    "lands": [{ "name": "Skarrg, the Rage Pits", "colours": ["R", "G"] }]
+  },
+  {
+    "cycle": "novijen",
+    "lands": [{ "name": "Novijen, Heart of Progress", "colours": ["U", "G"] }]
+  },
+  {
+    "cycle": "axgard-armory",
+    "lands": [{ "name": "Axgard Armory", "colours": ["R", "W"] }]
+  },
+  {
+    "cycle": "castle-lochthwain",
+    "lands": [{ "name": "Castle Lochthwain", "colours": ["B"] }]
+  },
+  {
+    "cycle": "castle-ardenvale",
+    "lands": [{ "name": "Castle Ardenvale", "colours": ["W"] }]
+  },
+  {
+    "cycle": "castle-embereth",
+    "lands": [{ "name": "Castle Embereth", "colours": ["R"] }]
+  },
+  {
+    "cycle": "castle-vantress",
+    "lands": [{ "name": "Castle Vantress", "colours": ["U"] }]
+  },
+  {
+    "cycle": "castle-garenbrig",
+    "lands": [{ "name": "Castle Garenbrig", "colours": ["G"] }]
+  },
+  {
+    "cycle": "cycling-lands",
+    "lands": [
+      { "name": "Secluded Steppe", "colours": ["W"] },
+      { "name": "Lonely Sandbar", "colours": ["U"] },
+      { "name": "Barren Moor", "colours": ["B"] },
+      { "name": "Forgotten Cave", "colours": ["R"] },
+      { "name": "Tranquil Thicket", "colours": ["G"] }
+    ]
+  },
+  {
+    "cycle": "cyclingdesert",
+    "lands": [
+      { "name": "Desert of the True", "colours": ["W"] },
+      { "name": "Desert of the Mindful", "colours": ["U"] },
+      { "name": "Desert of the Glorified", "colours": ["B"] },
+      { "name": "Desert of the Fervent", "colours": ["R"] },
+      { "name": "Desert of the Indomitable", "colours": ["G"] }
+    ]
+  },
+  {
+    "cycle": "bojuka-bog",
+    "lands": [{ "name": "Bojuka Bog", "colours": ["B"] }]
+  },
+  {
+    "cycle": "khalni-garden",
+    "lands": [{ "name": "Khalni Garden", "colours": ["G"] }]
+  },
+  {
+    "cycle": "oran-rief",
+    "lands": [{ "name": "Oran Rief, the Vastwood", "colours": ["G"] }]
+  },
+  {
+    "cycle": "mistveil-plains",
+    "lands": [{ "name": "Mistveil Plains", "colours": ["W"] }]
+  },
+  {
+    "cycle": "mosswort-bridge",
+    "lands": [{ "name": "Mosswort Bridge", "colours": ["G"] }]
+  },
+  {
+    "cycle": "spinerock-knoll",
+    "lands": [{ "name": "Spinerock Knoll", "colours": ["R"] }]
+  },
+  {
+    "cycle": "windbrisk-heights",
+    "lands": [{ "name": "Windbrisk Heights", "colours": ["W"] }]
+  },
+  {
+    "cycle": "mystic-sanctuary",
+    "lands": [{ "name": "Mystic Sanctuary", "colours": ["U"] }]
+  },
+  {
+    "cycle": "witchs-cottage",
+    "lands": [{ "name": "Witch's Cottage", "colours": ["B"] }]
+  },
+  {
+    "cycle": "mortuary-mire",
+    "lands": [{ "name": "Mortuary Mire", "colours": ["B"] }]
+  },
+  {
+    "cycle": "halimar-depths",
+    "lands": [{ "name": "Halimar Depths", "colours": ["U"] }]
+  },
+  {
+    "cycle": "artifact-lands",
+    "lands": [
+      { "name": "Ancient Den", "colours": ["W"] },
+      { "name": "Seat of the Synod", "colours": ["U"] },
+      { "name": "Vault of Whispers", "colours": ["B"] },
+      { "name": "Great Furnace", "colours": ["R"] },
+      { "name": "Tree of Ages", "colours": ["G"] }
+    ]
+  },
+  {
+    "cycle": "darksteel-citadel",
+    "lands": [{ "name": "Darksteel Citadel", "colours": [] }]
+  },
+  {
+    "cycle": "rogues-passage",
+    "lands": [{ "name": "Rogue's Passage", "colours": [] }]
+  },
+  {
+    "cycle": "buried-ruin",
+    "lands": [{ "name": "Buried Ruin", "colours": [] }]
+  },
+  {
+    "cycle": "high-market",
+    "lands": [{ "name": "High Market", "colours": [] }]
+  },
+  {
+    "cycle": "geier-reach-sanitarium",
+    "lands": [{ "name": "Geier Reach Sanitarium", "colours": [] }]
+  },
+  {
+    "cycle": "scavenger-grounds",
+    "lands": [{ "name": "Scavenger Grounds", "colours": [] }]
+  },
+  {
+    "cycle": "kher-keep",
+    "lands": [{ "name": "Kher Keep", "colours": [] }]
+  },
+  {
+    "cycle": "ghost-quarter",
+    "lands": [{ "name": "Ghost Quarter", "colours": [] }]
+  },
+  {
+    "cycle": "field-of-ruin",
+    "lands": [{ "name": "Field of Ruin", "colours": [] }]
+  },
+  {
+    "cycle": "emergence-zone",
+    "lands": [{ "name": "Emergence Zone", "colours": [] }]
+  },
+  {
+    "cycle": "mikokoro",
+    "lands": [{ "name": "Mikokoro, Center of the Sea", "colours": ["U"] }]
+  },
+  {
+    "cycle": "thespians-stage",
+    "lands": [{ "name": "Thespian's Stage", "colours": [] }]
+  },
+  {
+    "cycle": "riptide-laboratory",
+    "lands": [{ "name": "Riptide Laboratory", "colours": ["U"] }]
+  },
+  {
+    "cycle": "bonders-enclave",
+    "lands": [{ "name": "Bonder's Enclave", "colours": [] }]
+  },
+  {
+    "cycle": "tyrite-sanctum",
+    "lands": [{ "name": "Tyrite Sanctum", "colours": [] }]
+  },
+  {
+    "cycle": "reliquary-tower",
+    "lands": [{ "name": "Reliquary Tower", "colours": [] }]
+  }
+]

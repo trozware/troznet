@@ -68,7 +68,15 @@ h3 {
 
 #cycles {
   display: block;
-  width: 100%;
+  width: 96%;
+  padding: 0 2.5%;
+  margin: 2% 0 0% 0;
+  text-align: left;
+}
+
+#utility {
+  display: block;
+  width: 96%;
   padding: 0 2.5%;
   margin: 2% 0 0% 0;
   text-align: left;
@@ -77,8 +85,11 @@ h3 {
 .landspan {
   display: inline-flex;
   flex-direction: column;
-  margin-bottom: 2%;
+  margin-bottom: 1%;
   border-radius: 5px;
+  align-items: center;
+  width: 150px;
+  height: 245px;
 }
 .exampleland {
   display: inline-block;
@@ -99,14 +110,18 @@ h3 {
   display:inline-block;
   text-align: center;
   color:azure;
-  margin: 5px 0px 5px 0px
+  margin: 5px 5px 5px 5px
 }
 
-#output {
-  display:inline-flex;
+
+/* Currently, the .checked border is cutting through the #cyclename text if it goes across more than one line.
+Simplest solution might just be to take the padding from the bottom of .landspan and add it to #cyclename. */
+
+
+#output, #utility-button-div {
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
-  padding: 0% 0% 5% 0%%;
   width: 100%;
   text-align: center;
 }
@@ -122,10 +137,10 @@ h3 {
   margin: 0%
 }
 
-#copy-button {
+button {
   display: flexbox;
   position: relative;
   font-family: inherit;
   font-size: larger;
-  margin: 0%
+  margin: 0%;
 }

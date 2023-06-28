@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        macOS Apprentice ::
+        TrozWare
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="I&amp;rsquo;ve written another book! This one is for people who want to get started in macOS development and here it is: macOS Apprentice, published by kodeco.com (formerly raywenderlich.com).
+If you’re a beginner or near-beginner who wants to start learning Swift, SwiftUI and AppKit for building Mac apps, then this is the book for you.
+"
+/>
+<meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://troz.net/post/2023/macos_book_2/" />
+
+
+
+
+
+ 
+<link rel="stylesheet" href="/css/style.css" />
+
+<link rel="stylesheet" href="https://troz.net/style.css" />
+
+
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="/static/favs/apple-touch-icon.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="/static/favs/favicon-32x32.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="/static/favs/favicon-16x16.png"
+/>
+<link
+  rel="manifest"
+  href="/static/favs/site.webmanifest"
+  crossorigin="use-credentials"
+/>
+<link
+  rel="mask-icon"
+  href="/static/favs/safari-pinned-tab.svg"
+  color="#5bbad5"
+/>
+<link rel="shortcut icon" href="/static/favs/favicon.ico" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="msapplication-config" content="/static/favs/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" />
+
+
+<link href="/fonts/Inter-Italic.woff2"
+rel="preload" type="font/woff2" as="font" crossorigin=""> <link href="/fonts/Inter-Regular.woff2" rel="preload"
+type="font/woff2" as="font" crossorigin=""> <link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2"
+as="font" crossorigin=""> <link href="/fonts/Inter-MediumItalic.woff2" rel="preload"
+type="font/woff2" as="font" crossorigin=""> <link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2"
+as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2"
+as="font" crossorigin="">
+
+
+<meta property="og:title" content="macOS Apprentice" />
+<meta property="og:description" content="I&#39;ve written another book for macOS developers." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troz.net/post/2023/macos_book_2/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-06-29T09:48:37+10:00" />
+<meta property="article:modified_time" content="2023-06-29T09:48:37+10:00" />
+
+
+
+
+
+
+  </head>
+  <body >
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="https://troz.net/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >TrozWare</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/apps/">Apps</a></li>
+        
+      
+        
+          <li><a href="/post/">Archives</a></li>
+        
+      
+        
+          <li><a href="/tags/">Tags</a></li>
+        
+      
+        
+          <li><a href="/contact/">Contact</a></li>
+        
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/">Home</a></li>
+      
+    
+      
+        <li><a href="/apps/">Apps</a></li>
+      
+    
+      
+        <li><a href="/post/">Archives</a></li>
+      
+    
+      
+        <li><a href="/tags/">Tags</a></li>
+      
+    
+      
+        <li><a href="/contact/">Contact</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+
+<link rel="stylesheet" href="/css/header.css" />
+
+<div class="post">
+  <h2 class="post-title">
+    <a href="https://troz.net/post/2023/macos_book_2/">macOS Apprentice</a>
+  </h2>
+  <div class="post-meta">
+    <span class="post-date">
+      29 Jun 2023
+    </span>
+    <span class="more-meta">- 487 words, </span>
+    <span class="more-meta"> 3 minute read</span>
+  </div>
+
+  
+  <span class="post-tags">
+     #<a
+      href="https://troz.net/tags/mac"
+      >Mac</a
+    >&nbsp;  #<a
+      href="https://troz.net/tags/macos"
+      >macOS</a
+    >&nbsp;  #<a
+      href="https://troz.net/tags/swift"
+      >swift</a
+    >&nbsp;  #<a
+      href="https://troz.net/tags/swiftui"
+      >swiftui</a
+    >&nbsp;  #<a
+      href="https://troz.net/tags/appkit"
+      >appkit</a
+    >&nbsp;  #<a
+      href="https://troz.net/tags/book"
+      >book</a
+    >&nbsp; 
+  </span>
+   
+
+  <div class="post-content"><p>I&rsquo;ve written another book! This one is for people who want to get started in macOS development and here it is: <a href="https://www.kodeco.com/books/macos-apprentice/v1.0">macOS Apprentice</a>, published by <a href="https://www.kodeco.com/">kodeco.com</a> (formerly raywenderlich.com).</p>
+<p>If you’re a beginner or near-beginner who wants to start learning Swift, SwiftUI and AppKit for building Mac apps, then this is the book for you.</p>
+<style>
+  img {
+    margin: 10px auto;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .social_footer img {
+    border: none;
+    box-shadow: none;
+  }
+</style>
+
+<p><img src="/images/book_cover_2.png" alt="Book Cover"></p>
+<hr>
+<h3 id="contents">
+  Contents
+  <a href="#contents" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>The book consists of four sections:</p>
+<p><strong>Section 1</strong>: Install Xcode and learn the basics of programming in Swift. Experiment with several different ways to execute Swift code on your Mac.</p>
+<p><strong>Section 2</strong>: Use SwiftUI to develop a word-guessing game called Snowman. Learn about data flow in SwiftUI, managing multiple windows, using charts and adding macOS-specific features such as toolbars and menus.</p>
+<p><strong>Section 3</strong>: There are still a number of tasks where AppKit works better than SwiftUI. In this section, build an AppKit app to browse movie data from IMDb, the online movie database.</p>
+<p><strong>Section 4</strong>: Add AppKit to your SwiftUI app and add SwiftUI to your AppKit app in order to add some finishing touches to both of the apps from the previous sections.</p>
+<p>You can read more details of the book contents in the <a href="https://www.kodeco.com/books/macos-apprentice/v1.0/chapters/v-introduction">Introduction</a>.</p>
+<p>If you are a more experienced iOS developer who wants to branch out into macOS development, then my previous book - <a href="https://www.kodeco.com/books/macos-by-tutorials">macOS by Tutorials</a> - might be a better fit, although I think you could still learn a lot of Mac app tips and tricks from this one.</p>
+<hr>
+<h3 id="where-can-you-read-the-book">
+  Where can you read the book?
+  <a href="#where-can-you-read-the-book" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ul>
+<li>You can read it online at <a href="https://www.kodeco.com/books/macos-apprentice/v1.0">kodeco.com</a> as part of a Kodeco subscription.</li>
+<li>You can download an ebook (ePub or pdf) at the same page if you have a subscription or buy one there if you don&rsquo;t.</li>
+<li>The paperback is available at <a href="https://www.amazon.com/dp/1950325865?&amp;linkCode=sl1&amp;tag=kodeco-20&amp;linkId=66080845dc88e8300c02194f4516961a&amp;language=en_US&amp;ref_=as_li_ss_tl">Amazon</a>.</li>
+</ul>
+<p>All the code and extra materials for the book can be downloaded or cloned from <a href="https://github.com/kodecocodes/maca-materials/tree/editions/1.0">GitHub</a>.</p>
+<p>For support, to ask questions or to report any errors, please go to the <a href="https://forums.kodeco.com/c/books/macos-apprentice/107">forum</a>.</p>
+<hr>
+<h3 id="thanks-to">
+  Thanks to&hellip;
+  <a href="#thanks-to" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>This book was made possible by an awesome team. There were a lot of people involved, but I want to give special thanks to:</p>
+<ul>
+<li><a href="https://www.kodeco.com/u/rcritz">Richard Critz</a>, the wonderful editor who had the unenviable task of fixing my grammar.</li>
+<li><a href="https://www.kodeco.com/u/audrey">Audrey Tam</a> and <a href="https://www.kodeco.com/u/ehabamer">Ehab Amer</a> were the amazing tech editors who had to make sure that it all worked. Audrey also contributed the first chapter on installing and setting up Xcode.</li>
+</ul>
+<p>The whole team at <a href="https://www.kodeco.com/">Kodeco</a> was great, so a huge thanks to them all. I hope they enjoyed working on the book as much as I did! It&rsquo;s wonderful to have such a supportive group working to make my content as good as it can be.</p>
+<hr>
+<h3 id="feedback">
+  Feedback
+  <a href="#feedback" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>I would love to hear from anyone who read the book, loved it, hated it, found an error or just wanted to say hello.</p>
+<p>You can contact me directly using any of the contact links at the bottom of this page or through the <a href="/contact/">Contact</a> page.</p></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+       
+      <a class="btn previous" href="https://troz.net/post/2023/sparkle/"
+        >Sparkle →</a
+      >
+      
+    </div>
+  </div>
+  
+</div>
+
+      </div>
+
+      
+        <link rel="stylesheet" href="/css/footer.css" />
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="social_footer">
+      <a
+        id="email-Link"
+        class="mailtoui"
+        href="mailto:sarah@troz.net"
+        aria-label="Email me"
+        ><img src="/icons/envelope.svg" alt=""
+      /></a>
+      
+      <a
+        rel="me"
+        href="https://mastodon.social/@troz"
+        aria-label="Follow me on Mastodon"
+        ><img src="/icons/mastodon.png" alt=""
+      /></a>
+
+      <a href="https://linktr.ee/trozware" aria-label="Check out all my links"
+        ><img src="/icons/tree.svg" alt=""
+      /></a>
+
+      <a
+        href="https://github.com/trozware"
+        aria-label="Look at my code on Github"
+        ><img src="/icons/github.svg" alt=""
+      /></a>
+
+      <a
+        href="https://stackoverflow.com/users/1082632"
+        aria-label="Check out my Stack Overflow profile"
+        ><img src="/icons/stack-overflow.svg" alt=""
+      /></a>
+
+      <a href="https://troz.net/index.xml" aria-label="Subscribe to my RSS feed"
+        ><img src="/icons/rss.svg" alt=""
+      /></a>
+      <a
+        href="https://troz.net/feed.json"
+        aria-label="Subscribe to my JSON feed"
+        ><img src="/icons/json.png" alt=""
+      /></a>
+
+      <a href="https://dev.to/trozware" aria-label="Check out my DEV profile">
+        <img
+          src="/icons/dev-badge.svg"
+          alt=""
+          alt="TrozWare's DEV Profile"
+          style="height: 37px; margin-top: -3px"
+          height="40"
+          width="40"
+        />
+      </a>
+
+      <a
+        href="https://ko-fi.com/H2H3BU7SI"
+        target="_blank"
+        aria-label="Buy me a coffee"
+        ><img
+          height="36"
+          style="border: 0px; height: 36px; width: unset"
+          src="https://cdn.ko-fi.com/cdn/kofi1.png?v=3"
+          border="0"
+          alt="Buy Me a Coffee at ko-fi.com"
+      /></a>
+    </div>
+  </div>
+
+  <div class="footer__inner">
+    <div class="copyright">
+      
+      <span>© 2012 - 2023 Sarah Reichelt</span>
+      
+      <span
+        ><a href="http://gohugo.io">Hugo</a> theme created by
+        <a href="https://twitter.com/panr">panr</a> 2018</span
+      >
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink()
+  })
+</script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

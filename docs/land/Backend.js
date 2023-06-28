@@ -19,6 +19,27 @@ const fetchCycles = async () => {
 
 fetchCycles()
 
+const fetchUtilityData = async () => {
+  return await fetch('UtilityCycles.json')
+    .then(response => response.json())
+    .then(jsonResponse => {
+      return jsonResponse
+    })
+    .catch(error => {
+      console.log(error)
+      return { error }
+    })
+}
+
+let utilityLands = []
+
+const fetchUtilityCycles = async () => {
+  utilityLands = await fetchUtilityData()
+  hideUnusableUtilityLands()
+}
+
+fetchUtilityCycles()
+
 let activeColours = []
 let activeCycles = ['commandtower', 'exoticorchard', 'pathofancestry']
 const landbaseTextbox = document.querySelector('#landbase-textbox')
@@ -50,15 +71,52 @@ printText = function () {
     }
   })
 
+  let utilityLandsFilteredByCycle = []
+
+  utilityLands.forEach(e => {
+    if (activeCycles.includes(e.cycle)) {
+      e.lands.forEach(e => {
+        utilityLandsFilteredByCycle.push(e)
+      })
+    }
+  })
+
+  let utilityLandsToPrint = ''
+
+  utilityLandsFilteredByCycle.forEach(e => {
+    if (containsAll(activeColours, e.colours) === true) {
+      utilityLandsToPrint = utilityLandsToPrint + `${e.name} \n`
+    }
+  })
+
   landbaseTextbox.textContent = ''
-  landbaseTextbox.textContent = landsToPrint
+  landbaseTextbox.textContent = landsToPrint + utilityLandsToPrint
 }
 
 const manaSymbols = document.querySelectorAll('.manasymbol')
 
+hideUnusableUtilityLands = function () {
+  activeUtilityLands = []
+  utilityLands.forEach(utilityCycle => {
+    utilityCycle.lands.forEach(land => {
+      if (containsAll(activeColours, land.colours) === true) {
+        activeUtilityLands.push(utilityCycle.cycle)
+      }
+    })
+  })
+
+  const utilityLandElements = document.querySelectorAll('.utilityLand')
+
+  utilityLandElements.forEach(e => {
+    e.parentElement.style.display = 'none'
+    if (activeUtilityLands.includes(e.id)) {
+      e.parentElement.style.display = 'inline-flex'
+    }
+  })
+}
+
 manaSymbols.forEach(function (node) {
   node.addEventListener('click', function (e) {
-    console.log(e)
     const checkedColour = e.target.id
     if (activeColours.includes(checkedColour)) {
       activeColours.splice(
@@ -69,9 +127,9 @@ manaSymbols.forEach(function (node) {
       activeColours.push(checkedColour)
     }
     printText()
+    hideUnusableUtilityLands()
   })
   node.addEventListener('click', function (e) {
-    console.log(e)
     if (e.target.classList.contains('checked')) {
       e.target.classList.remove('checked')
       e.target.classList.add('unchecked')
@@ -85,7 +143,15 @@ manaSymbols.forEach(function (node) {
 const exampleLands = document.querySelectorAll('.landspan')
 for (const div of exampleLands) {
   div.addEventListener('click', function (e) {
-    const checkedCycle = e.target.id
+    let checkedCycle = ''
+    if (e.target.nodeName === 'IMG') {
+      checkedCycle = e.target.id
+    } else if (e.target.nodeName === 'DIV') {
+      checkedCycle = e.target.firstElementChild.id
+    } else {
+      checkedCycle = e.target.parentElement.firstElementChild.id
+    }
+
     if (activeCycles.includes(checkedCycle)) {
       activeCycles.splice(
         activeCycles.findIndex(e => e === checkedCycle),
@@ -133,3 +199,24 @@ copyButton.addEventListener('click', function (e) {
 })
 
 printText()
+
+toggleObjectDisplay = function () {
+  const toggleButton = document.querySelector('#utility-button')
+  const objectToHide = document.querySelector('#utility')
+  if (objectToHide.style.display === 'none') {
+    objectToHide.style.display = 'block'
+    toggleButton.textContent = 'Hide Utility Lands'
+  } else {
+    objectToHide.style.display = 'none'
+    toggleButton.textContent = 'Show Utility Lands'
+  }
+}
+
+toggleObjectDisplay()
+
+document
+  .querySelector('#utility-button')
+  .addEventListener('click', function (e) {
+    toggleObjectDisplay()
+    hideUnusableUtilityLands()
+  })

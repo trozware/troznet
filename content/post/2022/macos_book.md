@@ -6,7 +6,7 @@ description: "I've written a book!"
 tags: ['mac', 'macos', 'swift', 'swiftui', 'appkit', 'book']
 ---
 
-I can finally reveal the reason I have not been blogging. I have been busy writing a book. It's finally out, so here it is: [macOS by Tutorials][1], published by [raywenderlich.com][2].
+I can finally reveal the reason I have not been blogging. I have been busy writing a book. It's finally out, so here it is: [macOS by Tutorials][1], published by [kodeco.com][2] (formerly raywenderlich.com).
 
 <!--more-->
 
@@ -44,35 +44,35 @@ I call this _my_ book, but of course, it was only made possible by an awesome te
 
 - [Ray Wenderlich][13] who always has time for my Mac obsession and who let me write the book I wanted to write.
 
-- [Manda Frederick][9] was the RW book team lead when we started and was a huge source of encouragement.
+- [Manda Frederick][9] was the book team lead when we started and was a huge source of encouragement.
 - [Richard Critz][10], the wonderful editor who had the unenviable task of fixing my grammar. He was very supportive and helped me to convince everyone of the merits of this approach.
 - [Audrey Tam][11] and [Ehab Amer][12] were the amazing tech editors who had to make sure the instructions all worked and made sense. They took what I wrote and made it a lot better.
 
-The whole team at [Ray Wenderlich][14] was great, so a huge thanks to them all. And I hope they enjoyed working on the book half as much as I did, because I had the best time!
+The whole team at [Kodeco / Ray Wenderlich][14] was great, so a huge thanks to them all. And I hope they enjoyed working on the book half as much as I did, because I had the best time!
 
 ---
 
 ### Where can you read the book?
 
-- You can read it online at [raywenderlich.com][1] as part of a Ray Wenderlich subscription.
-- You can download an ebook (ePub or pdf) at the same page if you have a subscription or but one there if you don't.
+- You can read it online at [kodeco.com][1] as part of a Kodeco subscription.
+- You can download an ebook (ePub or pdf) at the same page if you have a subscription or buy one there if you don't.
 - The paperback is available at [Amazon][15].
 
 All the code and extra materials for the book can be downloaded or cloned from [GitHub][6].
 
 ### Feedback
 
-I would love to hear from anyone who read the book, loved it, hated it, found an error or just anted to say hello.
+I would love to hear from anyone who read the book, loved it, hated it, found an error or just wanted to say hello.
 
 You can contact me directly using any of the contact links at the bottom of this page or through the [Contact][8] page.
 There is also an [official forum][7] for the book where you can ask questions and tell us about any errors you find.
 
 [i1]: /images/book_cover.png
-[1]: https://www.raywenderlich.com/books/macos-by-tutorials
-[2]: https://www.raywenderlich.com/
-[3]: https://www.raywenderlich.com/books/macos-by-tutorials/v1.0/chapters/v-introduction
-[6]: https://github.com/raywenderlich/mos-materials/tree/editions/1.0
-[7]: https://forums.raywenderlich.com/c/books/macos-by-tutorials
+[1]: https://www.kodeco.com/books/macos-by-tutorials
+[2]: https://www.kodeco.com/
+[3]: https://www.kodeco.com/books/macos-by-tutorials/v1.0/chapters/v-introduction
+[6]: https://github.com/kodeco/mos-materials/tree/editions/1.0
+[7]: https://forums.kodeco.com/c/books/macos-by-tutorials
 [8]: /contact/
 [9]: https://twitter.com/mandarazeware
 [10]: https://twitter.com/rcritz
