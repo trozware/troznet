@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        SwiftUI Data Flow 2023 ::
+        TrozWare
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="SwiftUI is a reactive framework where the data drives the UI. In 2019, I wrote a post detailing how I manage the various forms of data flow through a SwiftUI app, and with the help of others in the community, I iterated over this until I had a good understanding of the concepts and which methods you should use when. In 2021, I updated the post to cover the minor changes, but there have been no major modifications since then.
+At WWDC 2023, things changed a lot! With the introduction of Swift macros, the SwiftUI team was able to reduce the number of property wrappers need to send data around, and remove a lot of boilerplate code.
+For this article, I have re-written my sample app as a Mac app and updated it to use the new data macros.
+"
+/>
+<meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://troz.net/post/2023/swiftui-data-flow-2023/" />
+
+
+
+
+
+ 
+<link rel="stylesheet" href="/css/style.css" />
+
+<link rel="stylesheet" href="https://troz.net/style.css" />
+
+
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="/static/favs/apple-touch-icon.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="/static/favs/favicon-32x32.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="/static/favs/favicon-16x16.png"
+/>
+<link
+  rel="manifest"
+  href="/static/favs/site.webmanifest"
+  crossorigin="use-credentials"
+/>
+<link
+  rel="mask-icon"
+  href="/static/favs/safari-pinned-tab.svg"
+  color="#5bbad5"
+/>
+<link rel="shortcut icon" href="/static/favs/favicon.ico" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="msapplication-config" content="/static/favs/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" />
+
+
+<link href="/fonts/Inter-Italic.woff2"
+rel="preload" type="font/woff2" as="font" crossorigin=""> <link href="/fonts/Inter-Regular.woff2" rel="preload"
+type="font/woff2" as="font" crossorigin=""> <link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2"
+as="font" crossorigin=""> <link href="/fonts/Inter-MediumItalic.woff2" rel="preload"
+type="font/woff2" as="font" crossorigin=""> <link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2"
+as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2"
+as="font" crossorigin="">
+
+
+<meta property="og:title" content="SwiftUI Data Flow 2023" />
+<meta property="og:description" content="Various ways to pass data around your SwiftUI apps, after WWDC 2023." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troz.net/post/2023/swiftui-data-flow-2023/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-07-03T14:54:27+10:00" />
+<meta property="article:modified_time" content="2023-07-03T14:54:27+10:00" />
+
+
+
+
+
+
+  </head>
+  <body >
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="https://troz.net/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >TrozWare</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/apps/">Apps</a></li>
+        
+      
+        
+          <li><a href="/post/">Archives</a></li>
+        
+      
+        
+          <li><a href="/tags/">Tags</a></li>
+        
+      
+        
+          <li><a href="/contact/">Contact</a></li>
+        
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/">Home</a></li>
+      
+    
+      
+        <li><a href="/apps/">Apps</a></li>
+      
+    
+      
+        <li><a href="/post/">Archives</a></li>
+      
+    
+      
+        <li><a href="/tags/">Tags</a></li>
+      
+    
+      
+        <li><a href="/contact/">Contact</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+
+<link rel="stylesheet" href="/css/header.css" />
+
+<div class="post">
+  <h2 class="post-title">
+    <a href="https://troz.net/post/2023/swiftui-data-flow-2023/">SwiftUI Data Flow 2023</a>
+  </h2>
+  <div class="post-meta">
+    <span class="post-date">
+      03 Jul 2023
+    </span>
+    <span class="more-meta">- 3400 words, </span>
+    <span class="more-meta"> 16 minute read</span>
+  </div>
+
+  
+  <span class="post-tags">
+     #<a
+      href="https://troz.net/tags/swift"
+      >swift</a
+    >&nbsp;  #<a
+      href="https://troz.net/tags/swiftui"
+      >swiftui</a
+    >&nbsp; 
+  </span>
+   
+
+  <div class="post-content"><p>SwiftUI is a reactive framework where the data drives the UI. In 2019, I wrote a <a href="/post/2019/swiftui-data-flow/">post</a> detailing how I manage the various forms of data flow through a SwiftUI app, and with the help of others in the community, I iterated over this until I had a good understanding of the concepts and which methods you should use when. In 2021, I updated the post to cover the minor changes, but there have been no major modifications since then.</p>
+<p>At WWDC 2023, things changed a lot! With the introduction of Swift macros, the SwiftUI team was able to reduce the number of property wrappers need to send data around, and remove a lot of boilerplate code.</p>
+<p>For this article, I have re-written my sample app as a Mac app and updated it to use the new data macros.</p>
+<h3 id="table-of-contents">
+  Table of Contents
+  <a href="#table-of-contents" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#observation">Observation</a></li>
+<li><a href="#sample-app">Sample app</a></li>
+<li><a href="#property">Property</a></li>
+<li><a href="#state">@State</a></li>
+<li><a href="#binding">@Binding</a></li>
+<li><a href="#binding-for-a-structure">@Binding for a Structure</a></li>
+<li><a href="#observable-and-bindable">@Observable and @Bindable</a></li>
+<li><a href="#observable-and-bindable-list">@Observable and @Bindable List</a></li>
+<li><a href="#environment">@Environment</a></li>
+<li><a href="#wrapping-up">Wrapping Up</a></li>
+</ul>
+<hr>
+<h3 id="observation">
+  Observation
+  <a href="#observation" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>In the WWDC talk on <a href="https://developer.apple.com/wwdc23/10149">Discover Observation in SwiftUI</a>, Apple showed the following flow chart:</p>
+<style>
+  img {
+    margin: 10px auto;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .social_footer img {
+    border: none;
+    box-shadow: none;
+  }
+</style>
+
+<p><img src="/images/apple_data_flow.jpeg" alt="Apple&amp;rsquo;s flow chart"></p>
+<p>This is a good starting point, but I feel that it leaves out a few cases, so I&rsquo;ve made my own:</p>
+<p><img src="/images/my_data_flow.png" alt="My flow chart"></p>
+<p>Apart from adding some details to the decisions points, there are really only two additions to my chart:</p>
+<ul>
+<li>If a property doesn&rsquo;t need to change, it can be a <code>let</code>.</li>
+<li><code>@Bindable</code> only works for classes. The equivalent for structs or primitive data types is still <code>@Binding</code>.</li>
+</ul>
+<p>The new macros system removes these property wrappers:</p>
+<ul>
+<li><code>@ObservableObject</code></li>
+<li><code>@ObservedObject</code></li>
+<li><code>@EnvironmentObject</code></li>
+<li><code>@Published</code></li>
+</ul>
+<p>That&rsquo;s a lot of typing we don&rsquo;t have to do any more!</p>
+<p><a href="#top">Back to Top</a></p>
+<hr>
+<h3 id="sample-app">
+  Sample app
+  <a href="#sample-app" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>My sample app demonstrates the following data flow options:</p>
+<p><img src="/images/data_flow_types.png" alt="Sample app options"></p>
+<p>The code is available on <a href="https://github.com/trozware/swiftui-data-flow-2023">GitHub</a> and I recommend you download the project and  follow along. It requires macOS 14 and Xcode 15. Currently I&rsquo;m using macOS 14.0 beta 2 and Xcode 15.0 beta 2, but I will update this article with any changes as we work through the beta cycle.</p>
+<p>Because Xcode 15 now supports live previews for Mac apps, you can test all the options from inside Xcode. In the Project navigator, expand the numbered groups and preview the first file in each group to view and interact with that data flow type.</p>
+<p>Or go to the Bookmarks navigator where I&rsquo;ve used the new bookmaking system to provide quick links to each one. You can even check off each one as you finish that section.</p>
+<p>In the code snippets below, I include the essentials, but strip out most display modifiers and some similar views to keep the code short. The project contains all the code.</p>
+<p><a href="#top">Back to Top</a></p>
+<hr>
+<h3 id="property">
+  Property
+  <a href="#property" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>The first option is using a static property. We get so caught up in property wrappers that it&rsquo;s easy to forget that SwiftUI doesn&rsquo;t always need them. Using static text from a constant may seem like a simplistic and obvious example, but separating it out allows for localization or re-usability as well as making the view body neater and easier to read.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Property</span>: View {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// static property that never changes</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> greeting = <span style="color:#e6db74">&#34;Hello from SwiftUI!&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Using the property directly in a View</span>
+</span></span><span style="display:flex;"><span>    Text(greeting)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>My flow chart shows two use cases for <code>let</code>. This covers the first one where the view owns the property. The second is when a parent supplies the property to a view but the child view never changes the property. You&rsquo;ll see an example of this later on in this article.</p>
+<p>A parent view may have some dynamic data that it uses to set properties in a subview where the subview only needs to display the data statically. This data will still change as the parent view changes but the subview will not be able to change the data itself or in the parent view.</p>
+<blockquote>
+<p>If a view owns a property or gets it from a parent but doesn&rsquo;t need to change it, use <code>let</code>.</p>
+</blockquote>
+<p><a href="#top">Back to Top</a></p>
+<hr>
+<h3 id="state">
+  @State
+  <a href="#state" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>This is where things start to get interesting in the SwiftUI world. SwiftUI views are contained in structs, so are non-mutable. Also, views are re-created every time the data changes, so any properties are re-created then too. By marking a property with the <code>@State</code> property wrapper, you are telling SwiftUI that you want it to keep this data in a separate portion of memory, allow it to be mutated, and preserve the current value during view refreshes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">UsingState</span>: View {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Using @State as this view owns and can mutate the property</span>
+</span></span><span style="display:flex;"><span>  @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> counter = <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Displaying and editing @State property</span>
+</span></span><span style="display:flex;"><span>    VStack {
+</span></span><span style="display:flex;"><span>      Text(<span style="color:#e6db74">&#34;Counter = </span><span style="color:#e6db74">\(</span>counter<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      Button(action: {
+</span></span><span style="display:flex;"><span>        counter <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>      }, label: {
+</span></span><span style="display:flex;"><span>        Image(systemName: <span style="color:#e6db74">&#34;plus.circle&#34;</span>)
+</span></span><span style="display:flex;"><span>      })
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In this example, the <code>counter</code> property uses <code>@State</code>. The text view displays it and the <code>Button</code> view can change it. The button&rsquo;s action changes the counter which causes the view to redraw in order to display the new value, but the value of the <code>@State</code> property does not get reset.</p>
+<blockquote>
+<p>Whenever a view owns the property and that property is mutable, declare it using the <code>@State</code> property wrapper.</p>
+</blockquote>
+<p><a href="#top">Back to Top</a></p>
+<hr>
+<h3 id="binding">
+  @Binding
+  <a href="#binding" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>The Apple flow chart mentioned <code>@Bindable</code> but that only works with observable classes. For connecting structures or primitive data types to subviews, use <code>@Binding</code>. Apple does this internally for controls like <code>Toggle</code> and <code>TextField</code>.</p>
+<p>A problem with building SwiftUI views is that it is very easy to end up with a gigantic <em>Pyramid of Doom</em> as you embed views within views within views. Extracting subviews is a great solution, but then you need a way to pass the data to a subview in a way that allows the subview to edit that property <strong>and</strong> have the edits flow back to the parent.</p>
+<p>This is where <code>@Binding</code> and <code>@Bindable</code> come into play.</p>
+<p>The <strong>Binding 1</strong> example uses a primitive data type - in this case an <code>Int</code>. The parent <code>Numbers</code> view declares it using <code>@State</code> because it owns the property, and it displays the value. The <code>Numbers</code> view passes the property to the <code>NumberChooser</code> subview as an <code>@Binding</code> property by using the <code>$</code> prefix.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Numbers</span>: View {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Using @State as this view owns and can mutate the property</span>
+</span></span><span style="display:flex;"><span>  @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> stepperValue = <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>    VStack {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Display @State property</span>
+</span></span><span style="display:flex;"><span>      Text(<span style="color:#e6db74">&#34;Parent view value = </span><span style="color:#e6db74">\(</span>stepperValue<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Pass to subview as a Binding ($) for two-way editing</span>
+</span></span><span style="display:flex;"><span>      NumberChooser(stepperValue: <span style="color:#960050;background-color:#1e0010">$</span>stepperValue)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>NumberChooser</code> subview has this property marked with <code>@Binding</code>. It has no initial value as this view expects to receive the value from its parent view. <code>NumberChooser</code> has a <code>Stepper</code> for changing the value of the property. It displays the value after each change and you can see that the value displayed in the parent view also changes as the change flows back.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">NumberChooser</span>: View {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Using value from parent with 2-way binding</span>
+</span></span><span style="display:flex;"><span>  @Binding <span style="color:#66d9ef">var</span> stepperValue: Int
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>    VStack {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Using bound state from parent with 2-way binding</span>
+</span></span><span style="display:flex;"><span>      Stepper(value: <span style="color:#960050;background-color:#1e0010">$</span>stepperValue, <span style="color:#66d9ef">in</span>: <span style="color:#ae81ff">0.</span>..<span style="color:#ae81ff">20</span>) {
+</span></span><span style="display:flex;"><span>        Text(<span style="color:#e6db74">&#34;Value in child = </span><span style="color:#e6db74">\(</span>stepperValue<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Using bound state from parent as property</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// this view cannot change the value</span>
+</span></span><span style="display:flex;"><span>      NumberBlock(stepperValue: stepperValue)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>NumberChooser</code> has its own subview - <code>NumberBlock</code>. This is purely a display view that never edits the value. <code>NumberChooser</code> passes it the value and it stores it as a <code>let</code>. Whenever the value changes, SwiftUI redraws the view with the new value, and the display updates. This demonstrates the second use of <code>let</code> that I talked about in the property section. There is no need to make this a <code>var</code> because it doesn&rsquo;t change - it gets re-created with every update.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">NumberBlock</span>: View {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// As this view never changes the value, there is no need to bind it</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> stepperValue: Int
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>    Image(systemName: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">\(</span>stepperValue<span style="color:#e6db74">)</span><span style="color:#e6db74">.square&#34;</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><a href="#top">Back to Top</a></p>
+<hr>
+<h3 id="binding-for-a-structure">
+  @Binding for a Structure
+  <a href="#binding-for-a-structure" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>The previous example showed how to use <code>@Binding</code> for a primitive data type like <code>Int</code>, <code>String</code> etc. But bindings also work for any value type, including structures and that&rsquo;s what you can see in <strong>Binding 2</strong>.</p>
+<p>While this is not very common, I enjoyed writing this example for a couple of reasons. Firstly, it shows how to draw the UI based on the different cases in an enum. Check out <strong>Pizza.swift</strong> which has three enums. Each of the picker views loops through one of these enums to draw the view.</p>
+<p>Secondly, it demonstrates how you can pass portions of the data model to a subview, instead of sending everything everywhere.</p>
+<p><code>PizzaView</code> has a <code>Pizza</code> property declared using <code>@State</code> because this view owns the data. It draws a <code>Form</code> containing three different pickers. Each picker gets a binding to one of the properties of the pizza. A <code>Text</code> view shows the assembled data to confirm that the parent knows about any changes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">PizzaView</span>: View {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Using @State for a struct</span>
+</span></span><span style="display:flex;"><span>  @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> pizza = Pizza()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>    VStack {
+</span></span><span style="display:flex;"><span>      Form {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Using 2-way binding but each component</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// only needs 1 property from the struct</span>
+</span></span><span style="display:flex;"><span>        PizzaNamePicker(selectedPizzaName: <span style="color:#960050;background-color:#1e0010">$</span>pizza.name)
+</span></span><span style="display:flex;"><span>        PizzaSizePicker(selectedPizzaSize: <span style="color:#960050;background-color:#1e0010">$</span>pizza.size)
+</span></span><span style="display:flex;"><span>        PizzaCrustPicker(selectedPizzaCrust: <span style="color:#960050;background-color:#1e0010">$</span>pizza.crust)
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Text representation to prove that the</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// subviews are modifying the parent struct</span>
+</span></span><span style="display:flex;"><span>      Text(pizza.pizzaSelection)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>I won&rsquo;t show the code for all of the pickers, but here&rsquo;s the one to select the size:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">PizzaSizePicker</span>: View {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// A single property of the Pizza struct is passed hare.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// It&#39;s a Binding so data flows 2 ways.</span>
+</span></span><span style="display:flex;"><span>  @Binding <span style="color:#66d9ef">var</span> selectedPizzaSize: PizzaSize
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>    Section(header: Text(<span style="color:#e6db74">&#34;Select your size:&#34;</span>).font(.headline)) {
+</span></span><span style="display:flex;"><span>      Picker(<span style="color:#e6db74">&#34;&#34;</span>, selection: <span style="color:#960050;background-color:#1e0010">$</span>selectedPizzaSize) {
+</span></span><span style="display:flex;"><span>        ForEach(PizzaSize.allCases, id: <span style="color:#960050;background-color:#1e0010">\</span>.<span style="color:#66d9ef">self</span>) { pizzaSize <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>          Text(pizzaSize.rawValue.capitalized)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      .pickerStyle(.segmented)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote>
+<p>If you&rsquo;re passing a primitive data type or a struct to a subview, and the subview can change the value of this property, use <code>@Binding</code> in the subview and pass the property with a <code>$</code> prefix.</p>
+</blockquote>
+<p><a href="#top">Back to Top</a></p>
+<hr>
+<h3 id="observable-and-bindable">
+  @Observable and @Bindable
+  <a href="#observable-and-bindable" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>So far, the examples have been largely the same as before. Now the new property wrappers appear. The first big change is in the model class: <code>ColorSet</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">SwiftUI</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Observation</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@Observable <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ColorSet</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Observable class</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// The color components are not private so any changes</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// get published to the views that are observing</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> foregroundRed = <span style="color:#ae81ff">0.0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> foregroundGreen = <span style="color:#ae81ff">0.0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> foregroundBlue = <span style="color:#ae81ff">0.0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Computed variables to create the RGB colors from the components</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> foregroundColor: Color {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Color(red: foregroundRed, green: foregroundGreen, blue: foregroundBlue)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The first thing to notice is the new import: <code>Observation</code>. This is the library that supports the new <code>@Observable</code> macro. Previously, <code>ColorSet</code> conformed to the <code>ObservableObject</code> protocol and the properties that needed to be observed were marked with the <code>@Published</code> property wrapper.</p>
+<p>Now the class uses the <code>@Observable</code> macro and any property that isn&rsquo;t private, is automatically published. This is only available for classes, not structures. The properties must all have an initial value - setting them in an <code>init</code> is not sufficient and will not build.</p>
+<p>If you want a look at what&rsquo;s happening inside the macro, right-click on <code>@Observable</code> and select <strong>Expand Macro</strong>. When you&rsquo;ve finished, right -click again and choose <strong>Hide Macro Expansion</strong>.</p>
+<p><img src="/images/show_macro.png" alt="Expand the macro"></p>
+<p>While this is not something I can read comfortably, it shows how macros are regular Swift code that saves a lot of typing, but are not doing magical things invisibly in the background.</p>
+<p>Now that the model uses the new macro, how do we use it?</p>
+<p>Again, the owning view declares it using <code>@State</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ColorSetView</span>: View {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Using an Observable for reference-based data (classes)</span>
+</span></span><span style="display:flex;"><span>  @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> colorSet = ColorSet()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// ...</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>ColorSetView</code> uses the data to add color modifiers to the view background and to a system image of a cat.</p>
+<p>But the next change is when sending the data to the <code>ColorChooser</code> view. This needs two-way binding so the current values can be passed to the chooser and any changes can be passed back. But with the new Observation methods, this uses <code>@Bindable</code> and not <code>@Binding</code>.</p>
+<p>First, the <code>ColorChooser</code> gets the <code>colorSet</code> property, but this doesn&rsquo;t need the <code>$</code> prefix.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>ColorChooser(colorSet: colorSet)
+</span></span></code></pre></div><p>The <code>ColorChooser</code> view receives it as <code>@Bindable</code> and can in turn, pass it down to its subviews, again using the <code>@Bindable</code> technique which requires no <code>$</code> prefixes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ColorChooser</span>: View {
+</span></span><span style="display:flex;"><span>  @Bindable <span style="color:#66d9ef">var</span> colorSet: ColorSet
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// The chooser subview also get passed the Observed</span>
+</span></span><span style="display:flex;"><span>    ForeColorChooser(colorSet: colorSet)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/images/color_chooser.png" alt="Color chooser"></p>
+<p>There is one oddity to beware of. When declaring the original <code>colorSet</code> property, I use <code>@State</code> but if I declare it as a simple <code>var</code>, the app still works. Don&rsquo;t do this!</p>
+<p>If you remember the older code style, the owning view initialized an <code>ObservableObject</code> using <code>@StateObject</code>. Subsequent views declared the same property using <code>@ObservedObject</code> but it was very important for the owning view to use <code>@StateObject</code> to avoid strange and difficult to trace bugs. The app worked if you used <code>@ObservedObject</code> instead of <code>@StateObject</code> for the original declaration, but then odd things could happen.</p>
+<p>I think this is the same, and it&rsquo;s just as important for the owning view to declare the original property using  <code>@State</code>.</p>
+<p><a href="#top">Back to Top</a></p>
+<hr>
+<h3 id="observable-and-bindable-list">
+  @Observable and @Bindable List
+  <a href="#observable-and-bindable-list" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>In the original post, this was the section that gave me the most trouble - having a list of data objects where each one could be edited and updating the original list to show the edits.</p>
+<p>This is now a lot easier, although it took me some time to realise this.</p>
+<p>I have a sample data file and a <code>Person</code> model class using <code>@Observable</code>. The <code>PersonListModel</code> class holds an array of these <code>Person</code> objects and it also uses <code>@Observable</code>.</p>
+<p>I wanted to make the selection of the list point directly to a <code>Person</code> instead of going through an <code>id</code>, so I added this extension to <code>Person</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">Person</span>: Hashable, Equatable {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">hash</span>(into hasher: <span style="color:#66d9ef">inout</span> Hasher) {
+</span></span><span style="display:flex;"><span>    hasher.combine(id)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">func</span> ==(lhs: Person, rhs: Person) -&gt; Bool {
+</span></span><span style="display:flex;"><span>    lhs.id == rhs.id
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Then I was able to set up a <code>List</code> to display the names of the people, with the list&rsquo;s selection bound to an optional <code>Person</code>. I had to add a <code>tag</code> to the person, I presume the tag is set to the <code>id</code> by default.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>List(selection: <span style="color:#960050;background-color:#1e0010">$</span>selectedPerson) {
+</span></span><span style="display:flex;"><span>  ForEach(<span style="color:#960050;background-color:#1e0010">$</span>personList.persons) { <span style="color:#960050;background-color:#1e0010">$</span>person <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>    Text(person.fullName)
+</span></span><span style="display:flex;"><span>      .tag(person)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Two important things to see in this code snippet:</p>
+<ul>
+<li>The contents of the <code>ForEach</code> is a binding as you can see from the <code>$</code> prefix</li>
+<li>The argument passed in to each entry in the list is also a binding.</li>
+</ul>
+<p>These two bindings make the list respond to edits.</p>
+<p>With this in place, it was time to think about an editor and I decided to try out the new inspector. Unfortunately, unlike with sheets, you can only trigger an inspector with a Boolean so I added an event listener to set the inspector trigger:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>.onChange(of: selectedPerson, { oldValue, newValue <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>  shouldShowInspector = newValue <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><p>After that, I added this inspector modifier:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>.inspector(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>shouldShowInspector) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> selectedPerson {
+</span></span><span style="display:flex;"><span>    PersonEditView(person: selectedPerson)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Even though <code>shouldShowInspector</code> is only true when there is a valid <code>selectedPerson</code>, force unwrapping causes a crash as it appears that the inspector tries to draw itself off-screen on launch.</p>
+<p>The <code>PersonEditView</code> in the inspector receives the person as <code>@Bindable</code> and populates the fields on a form. And editing the data flows right back to the list.</p>
+<p><img src="/images/person_edit.mp4" alt="Editing a person"></p>
+<p>This took a lot less code than the previous version. Part of the improvement was the ability to use bindings in a list, which we got last year, but another big part was using the <code>Person</code> directly as the selection. This needs the <code>Hashable</code> and  <code>Equatable</code> conformance, which I think should be a standard part of <code>Identifiable</code>, but once that&rsquo;s in place, all the data flows smoothly.</p>
+<p>If I was using a sheet for the editor, it would be even neater as I could tie the sheet&rsquo;s appearance to <code>selectedPerson</code>.</p>
+<blockquote>
+<p>When you have a model class and you want changes to be published, declare the class with the <code>@Observable</code> macro. The owning view declares the model using <code>@State</code> and can pass it to editing subviews using <code>@Bindable</code> or to display subviews as <code>let</code>.</p>
+</blockquote>
+<p><a href="#top">Back to Top</a></p>
+<hr>
+<h3 id="environment">
+  @Environment
+  <a href="#environment" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>The last section is <code>Environment</code>, which again, has changed a lot. The benefit of using Environment is that the data flow doesn&rsquo;t have to be unbroken. In the sample app, the parent view (NestedViews) uses the Environment property and so does the GrandChildView, but the ChildView in the middle doesn&rsquo;t.</p>
+<p>Setting up a property for Environment is the same as for Observable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Observation</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// An Environment class is just like any Observable class</span>
+</span></span><span style="display:flex;"><span>@Observable <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserSettings</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> isLoggedIn: Bool = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The difference is in the way that you use it. When creating the first view that needs this environment value, use an <code>environment</code> modifier to inject the initial value. In the sample app, this happens in <strong>DataLink.swift</strong> which displays the view for each example.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>NestedViews()
+</span></span><span style="display:flex;"><span>  .environment(UserSettings())
+</span></span></code></pre></div><p>To access this property, declare an <code>Environment</code> property with a key path, which is its type, in this case <code>UserSettings.self</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">NestedViews</span>: View {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// The injected environment property is accessed by type and assigned a name</span>
+</span></span><span style="display:flex;"><span>  @Environment(UserSettings.<span style="color:#66d9ef">self</span>) <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> userSettings
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ...</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This is similar the way we use built-in environment values like <code>colorScheme</code>, <code>openWindow</code> and so on. Use this same declaration in any view that needs access.</p>
+<p>Previews need to get access too, like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>#Preview {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// The environment object must be injected into the preview too.</span>
+</span></span><span style="display:flex;"><span>  NestedViews()
+</span></span><span style="display:flex;"><span>    .environment(UserSettings())
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>And even though ChildView doesn&rsquo;t use the environment object, because it contains GrandChildView that does, it also needs the <code>environment</code> modifier in its preview, but not in the main view code.</p>
+<p>In the sample app, the various nested views are brightly coloured to show which is which. Using the <strong>Log In</strong> or <strong>Log Out</strong> buttons works on either the outer view or the inner view with the data being synced between them.</p>
+<p><img src="/images/environment.png" alt="Environment"></p>
+<blockquote>
+<p>If you have a class that is global to your app, like UserSettings in this example, declare the class with the <code>@Observable</code> macro. Inject it into your view hierarchy using <code>.environment</code> and then use <code>@Enviroment</code> to access it.</p>
+</blockquote>
+<p><a href="#top">Back to Top</a></p>
+<hr>
+<h3 id="wrapping-up">
+  Wrapping Up
+  <a href="#wrapping-up" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>There are two issues I want to discuss before ending.</p>
+<p>First is the use of <code>private</code> for view properties. Apple recommends marking every <code>@State</code> property as <code>private</code>. It seems a bit strange as you then pass them around and sometimes the subviews change the data, but it means that no object can edit the value unless the view has expressly given permission. I presume there are security and performance benefits to this.</p>
+<p>Similarly, <code>@Enviroment</code> properties can (and I presume, should) be private. The two binding property wrappers do not allow their properties to be private.</p>
+<p>And lastly, in <code>@Observable</code> classes, everything that is <strong>NOT</strong> private is published. This is the opposite to what we had before where you had to explicItly state which properties were published. So mark properties as <code>private</code> if they should not be published.</p>
+<p>The last issue is to do with using <code>var</code> on its own i.e. without any property wrapper. The Apple flow chart suggests doing this if you get to the end of the flow without making any other decision, but I think you should use <code>let</code> in this case. The only time I use a plain <code>var</code> in a view is for computed properties, otherwise I use <code>let</code>.</p>
+<p>In my flow chart, I left the appropriate end point showing <strong>var or let</strong>, to better match Apple&rsquo;s, but I recommend using <code>let</code> and only changing to <code>var</code> if Xcode complains. This is a good rule for any Swift code, not just SwiftUI.</p>
+<hr>
+<p>This article may get several updates before we exit this years beta cycle, but I thought other people might find it useful. Writing it certainly helped clarify the new options in my head.</p>
+<p>If you have any suggestions, ideas or corrections, please contact me using one of the links below or through the <a href="/contact/">Contact</a> page. And if you found this article useful, I&rsquo;d love you to <a href="https://ko-fi.com/trozware">buy me a coffee</a>.</p>
+<p><a href="#top">Back to Top</a></p></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+       
+      <a class="btn previous" href="https://troz.net/post/2023/macos_book_2/"
+        >macOS Apprentice →</a
+      >
+      
+    </div>
+  </div>
+  
+</div>
+
+      </div>
+
+      
+        <link rel="stylesheet" href="/css/footer.css" />
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="social_footer">
+      <a
+        id="email-Link"
+        class="mailtoui"
+        href="mailto:sarah@troz.net"
+        aria-label="Email me"
+        ><img src="/icons/envelope.svg" alt=""
+      /></a>
+      
+      <a
+        rel="me"
+        href="https://mastodon.social/@troz"
+        aria-label="Follow me on Mastodon"
+        ><img src="/icons/mastodon.png" alt=""
+      /></a>
+
+      <a href="https://linktr.ee/trozware" aria-label="Check out all my links"
+        ><img src="/icons/tree.svg" alt=""
+      /></a>
+
+      <a
+        href="https://github.com/trozware"
+        aria-label="Look at my code on Github"
+        ><img src="/icons/github.svg" alt=""
+      /></a>
+
+      <a
+        href="https://stackoverflow.com/users/1082632"
+        aria-label="Check out my Stack Overflow profile"
+        ><img src="/icons/stack-overflow.svg" alt=""
+      /></a>
+
+      <a href="https://troz.net/index.xml" aria-label="Subscribe to my RSS feed"
+        ><img src="/icons/rss.svg" alt=""
+      /></a>
+      <a
+        href="https://troz.net/feed.json"
+        aria-label="Subscribe to my JSON feed"
+        ><img src="/icons/json.png" alt=""
+      /></a>
+
+      <a href="https://dev.to/trozware" aria-label="Check out my DEV profile">
+        <img
+          src="/icons/dev-badge.svg"
+          alt=""
+          alt="TrozWare's DEV Profile"
+          style="height: 37px; margin-top: -3px"
+          height="40"
+          width="40"
+        />
+      </a>
+
+      <a
+        href="https://ko-fi.com/H2H3BU7SI"
+        target="_blank"
+        aria-label="Buy me a coffee"
+        ><img
+          height="36"
+          style="border: 0px; height: 36px; width: unset"
+          src="https://cdn.ko-fi.com/cdn/kofi1.png?v=3"
+          border="0"
+          alt="Buy Me a Coffee at ko-fi.com"
+      /></a>
+    </div>
+  </div>
+
+  <div class="footer__inner">
+    <div class="copyright">
+      
+      <span>© 2012 - 2023 Sarah Reichelt</span>
+      
+      <span
+        ><a href="http://gohugo.io">Hugo</a> theme created by
+        <a href="https://twitter.com/panr">panr</a> 2018</span
+      >
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink()
+  })
+</script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>
