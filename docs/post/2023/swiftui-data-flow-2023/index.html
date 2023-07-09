@@ -14,6 +14,7 @@
   content="SwiftUI is a reactive framework where the data drives the UI. In 2019, I wrote a post detailing how I manage the various forms of data flow through a SwiftUI app, and with the help of others in the community, I iterated over this until I had a good understanding of the concepts and which methods you should use when. In 2021, I updated the post to cover the minor changes, but there have been no major modifications since then.
 At WWDC 2023, things changed a lot! With the introduction of Swift macros, the SwiftUI team was able to reduce the number of property wrappers need to send data around, and remove a lot of boilerplate code.
 For this article, I have re-written my sample app as a Mac app and updated it to use the new data macros.
+Updated 10th July 2023 to cover changes in version 3 of all the betas.
 "
 />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
@@ -76,8 +77,8 @@ as="font" crossorigin="">
 <meta property="og:description" content="Various ways to pass data around your SwiftUI apps, after WWDC 2023." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://troz.net/post/2023/swiftui-data-flow-2023/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-07-03T14:54:27+10:00" />
-<meta property="article:modified_time" content="2023-07-03T14:54:27+10:00" />
+<meta property="article:published_time" content="2023-07-10T09:22:54+10:00" />
+<meta property="article:modified_time" content="2023-07-10T09:22:54+10:00" />
 
 
 
@@ -200,10 +201,10 @@ as="font" crossorigin="">
   </h2>
   <div class="post-meta">
     <span class="post-date">
-      03 Jul 2023
+      10 Jul 2023
     </span>
-    <span class="more-meta">- 3400 words, </span>
-    <span class="more-meta"> 16 minute read</span>
+    <span class="more-meta">- 3749 words, </span>
+    <span class="more-meta"> 18 minute read</span>
   </div>
 
   
@@ -221,12 +222,12 @@ as="font" crossorigin="">
   <div class="post-content"><p>SwiftUI is a reactive framework where the data drives the UI. In 2019, I wrote a <a href="/post/2019/swiftui-data-flow/">post</a> detailing how I manage the various forms of data flow through a SwiftUI app, and with the help of others in the community, I iterated over this until I had a good understanding of the concepts and which methods you should use when. In 2021, I updated the post to cover the minor changes, but there have been no major modifications since then.</p>
 <p>At WWDC 2023, things changed a lot! With the introduction of Swift macros, the SwiftUI team was able to reduce the number of property wrappers need to send data around, and remove a lot of boilerplate code.</p>
 <p>For this article, I have re-written my sample app as a Mac app and updated it to use the new data macros.</p>
+<p>Updated 10th July 2023 to cover changes in version 3 of all the betas.</p>
 <h3 id="table-of-contents">
   Table of Contents
   <a href="#table-of-contents" class="h-anchor" aria-hidden="true">#</a>
 </h3>
 <ul>
-<li><a href="#table-of-contents">Table of Contents</a></li>
 <li><a href="#observation">Observation</a></li>
 <li><a href="#sample-app">Sample app</a></li>
 <li><a href="#property">Property</a></li>
@@ -237,6 +238,12 @@ as="font" crossorigin="">
 <li><a href="#observable-and-bindable-list">@Observable and @Bindable List</a></li>
 <li><a href="#environment">@Environment</a></li>
 <li><a href="#wrapping-up">Wrapping Up</a></li>
+</ul>
+<p>With the release of all the version 3 betas, I have added these sections:</p>
+<ul>
+<li><a href="#update-1">Old code still works</a></li>
+<li><a href="#update-2">Observed properties no longer require initial values</a></li>
+<li><a href="#update-3"><code>@Environment</code> properties cannot be used for bindings.</a></li>
 </ul>
 <hr>
 <h3 id="observation">
@@ -281,6 +288,11 @@ as="font" crossorigin="">
 <li><code>@Published</code></li>
 </ul>
 <p>That&rsquo;s a lot of typing we don&rsquo;t have to do any more!</p>
+<h4 id="update-1">
+  UPDATE 1:
+  <a href="#update-1" class="h-anchor" aria-hidden="true">#</a>
+</h4>
+<p>I didn&rsquo;t make it clear originally, but all these property wrappers still work, and you can still use <code>@Binding</code> for classes, so you can adapt to the new Observation code incrementally. The Apple developer site has a very useful article on <a href="https://developer.apple.com/documentation/swiftui/migrating-from-the-observable-object-protocol-to-the-observable-macro">migrating from ObservableObject</a>.</p>
 <p><a href="#top">Back to Top</a></p>
 <hr>
 <h3 id="sample-app">
@@ -289,10 +301,10 @@ as="font" crossorigin="">
 </h3>
 <p>My sample app demonstrates the following data flow options:</p>
 <p><img src="/images/data_flow_types.png" alt="Sample app options"></p>
-<p>The code is available on <a href="https://github.com/trozware/swiftui-data-flow-2023">GitHub</a> and I recommend you download the project and  follow along. It requires macOS 14 and Xcode 15. Currently I&rsquo;m using macOS 14.0 beta 2 and Xcode 15.0 beta 2, but I will update this article with any changes as we work through the beta cycle.</p>
+<p>The code is available on <a href="https://github.com/trozware/swiftui-data-flow-2023">GitHub</a> and I recommend you download the project and  follow along. It requires macOS 14 and Xcode 15. Currently I&rsquo;m using macOS 14.0 beta 3 (23A5286g) and Xcode 15.0 beta 3 (15A5195k), but I will update this article with any changes as we work through the beta cycle.</p>
 <p>Because Xcode 15 now supports live previews for Mac apps, you can test all the options from inside Xcode. In the Project navigator, expand the numbered groups and preview the first file in each group to view and interact with that data flow type.</p>
 <p>Or go to the Bookmarks navigator where I&rsquo;ve used the new bookmaking system to provide quick links to each one. You can even check off each one as you finish that section.</p>
-<p>In the code snippets below, I include the essentials, but strip out most display modifiers and some similar views to keep the code short. The project contains all the code.</p>
+<p>In the code snippets below, I include the essentials, but strip out most display modifiers and some similar views to keep the code short. The project contains the complete code.</p>
 <p><a href="#top">Back to Top</a></p>
 <hr>
 <h3 id="property">
@@ -338,7 +350,7 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>In this example, the <code>counter</code> property uses <code>@State</code>. The text view displays it and the <code>Button</code> view can change it. The button&rsquo;s action changes the counter which causes the view to redraw in order to display the new value, but the value of the <code>@State</code> property does not get reset.</p>
+</span></span></code></pre></div><p>In this example, the <code>counter</code> property uses <code>@State</code>. The text view displays it and the <code>Button</code> view can change it. The button&rsquo;s action changes the counter which causes the view to redraw in order to display the new value, but the value of the <code>@State</code> property does not get reset to 0 every time.</p>
 <blockquote>
 <p>Whenever a view owns the property and that property is mutable, declare it using the <code>@State</code> property wrapper.</p>
 </blockquote>
@@ -399,7 +411,7 @@ as="font" crossorigin="">
   @Binding for a Structure
   <a href="#binding-for-a-structure" class="h-anchor" aria-hidden="true">#</a>
 </h3>
-<p>The previous example showed how to use <code>@Binding</code> for a primitive data type like <code>Int</code>, <code>String</code> etc. But bindings also work for any value type, including structures and that&rsquo;s what you can see in <strong>Binding 2</strong>.</p>
+<p>The previous example showed how to use <code>@Binding</code> for a primitive data type like <code>Int</code>, <code>String</code> etc. But bindings also work for any value type, including structures, and that&rsquo;s what you can see in <strong>Binding 2</strong>.</p>
 <p>While this is not very common, I enjoyed writing this example for a couple of reasons. Firstly, it shows how to draw the UI based on the different cases in an enum. Check out <strong>Pizza.swift</strong> which has three enums. Each of the picker views loops through one of these enums to draw the view.</p>
 <p>Secondly, it demonstrates how you can pass portions of the data model to a subview, instead of sending everything everywhere.</p>
 <p><code>PizzaView</code> has a <code>Pizza</code> property declared using <code>@State</code> because this view owns the data. It draws a <code>Form</code> containing three different pickers. Each picker gets a binding to one of the properties of the pizza. A <code>Text</code> view shows the assembled data to confirm that the parent knows about any changes.</p>
@@ -468,7 +480,14 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The first thing to notice is the new import: <code>Observation</code>. This is the library that supports the new <code>@Observable</code> macro. Previously, <code>ColorSet</code> conformed to the <code>ObservableObject</code> protocol and the properties that needed to be observed were marked with the <code>@Published</code> property wrapper.</p>
-<p>Now the class uses the <code>@Observable</code> macro and any property that isn&rsquo;t private, is automatically published. This is only available for classes, not structures. The properties must all have an initial value - setting them in an <code>init</code> is not sufficient and will not build.</p>
+<p>Now the class uses the <code>@Observable</code> macro and any property that isn&rsquo;t private, is automatically published. This is only available for classes, not structures.</p>
+<h4 id="update-2">
+  UPDATE 2:
+  <a href="#update-2" class="h-anchor" aria-hidden="true">#</a>
+</h4>
+<p><del>The properties must all have an initial value - setting them in an <code>init</code> is not sufficient and will not build.</del></p>
+<p>In beta 3, observed properties no longer require an initial value. For this class, I actually want to specify initial values, but in the next section, I do not.</p>
+<hr>
 <p>If you want a look at what&rsquo;s happening inside the macro, right-click on <code>@Observable</code> and select <strong>Expand Macro</strong>. When you&rsquo;ve finished, right -click again and choose <strong>Hide Macro Expansion</strong>.</p>
 <p><img src="/images/show_macro.png" alt="Expand the macro"></p>
 <p>While this is not something I can read comfortably, it shows how macros are regular Swift code that saves a lot of typing, but are not doing magical things invisibly in the background.</p>
@@ -504,7 +523,7 @@ as="font" crossorigin="">
   <a href="#observable-and-bindable-list" class="h-anchor" aria-hidden="true">#</a>
 </h3>
 <p>In the original post, this was the section that gave me the most trouble - having a list of data objects where each one could be edited and updating the original list to show the edits.</p>
-<p>This is now a lot easier, although it took me some time to realise this.</p>
+<p>This is now a lot easier, although it took me some time to realize this.</p>
 <p>I have a sample data file and a <code>Person</code> model class using <code>@Observable</code>. The <code>PersonListModel</code> class holds an array of these <code>Person</code> objects and it also uses <code>@Observable</code>.</p>
 <p>I wanted to make the selection of the list point directly to a <code>Person</code> instead of going through an <code>id</code>, so I added this extension to <code>Person</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">Person</span>: Hashable, Equatable {
@@ -580,12 +599,36 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>  NestedViews()
 </span></span><span style="display:flex;"><span>    .environment(UserSettings())
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>And even though ChildView doesn&rsquo;t use the environment object, because it contains GrandChildView that does, it also needs the <code>environment</code> modifier in its preview, but not in the main view code.</p>
-<p>In the sample app, the various nested views are brightly coloured to show which is which. Using the <strong>Log In</strong> or <strong>Log Out</strong> buttons works on either the outer view or the inner view with the data being synced between them.</p>
+</span></span></code></pre></div><p>And even though ChildView doesn&rsquo;t use the environment object, because its preview contains GrandChildView that does, it also needs the <code>environment</code> modifier in its preview, but not in the main view code.</p>
+<p>In the sample app, the various nested views are brightly colored to show which is which. Using the <strong>Log In</strong> or <strong>Log Out</strong> buttons works on either the outer view or the inner view with the data being synced between them.</p>
 <p><img src="/images/environment.png" alt="Environment"></p>
 <blockquote>
 <p>If you have a class that is global to your app, like UserSettings in this example, declare the class with the <code>@Observable</code> macro. Inject it into your view hierarchy using <code>.environment</code> and then use <code>@Enviroment</code> to access it.</p>
 </blockquote>
+<h4 id="update-3">
+  UPDATE 3:
+  <a href="#update-3" class="h-anchor" aria-hidden="true">#</a>
+</h4>
+<p>There is one aspect of using <code>@Enviroment</code> where things get tricky, and that&rsquo;s if you need to use any properties of the environment object as bindings for other controls.</p>
+<p>I added a <code>Toggle</code> to <code>GrandChildView</code> and wanted to connect it to the same <code>userSettings.isLoggedIn</code> Boolean. A toggle takes a binding, so normally, I&rsquo;d do this by adding the <code>$</code> prefix to the property to bind.</p>
+<p>With <code>@Environment</code>, this gives an error:</p>
+<p><img src="/images/env_binding.png" alt="Binding error"></p>
+<p>The solution is to create an intermediary <code>@Bindable</code> property from the <code>@Environment</code> property and bind it to the toggle (or any control that needs a binding).</p>
+<p>Stripping out a lot of what was there, the code becomes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">GrandChildView</span>: View {
+</span></span><span style="display:flex;"><span>  @Environment(UserSettings.<span style="color:#66d9ef">self</span>) <span style="color:#66d9ef">var</span> userSettings
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>    @Bindable <span style="color:#66d9ef">var</span> userSettingsBindable = userSettings
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Toggle(isOn: <span style="color:#960050;background-color:#1e0010">$</span>userSettingsBindable.isLoggedIn, label: {
+</span></span><span style="display:flex;"><span>      Text(<span style="color:#e6db74">&#34;Log In Status&#34;</span>)
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>You declare the <code>@Environment</code> property as usual, then <strong>inside</strong> the <code>body</code>, declare an <code>@Bindable</code> property with the value from the <code>@Environment</code> property. You have to do this inside the body because doing it outside gives an error.</p>
+<p>Surprisingly, I didn&rsquo;t have to add a <code>return</code> before the Toggle, even though it was no longer the only statement in the body.</p>
+<p>Thanks to <a href="https://iosdev.space/@StewartLynch">Stewart Lynch</a> for suggesting I add this. Hopefully it will be fixed soon but until then, this is the workaround.</p>
 <p><a href="#top">Back to Top</a></p>
 <hr>
 <h3 id="wrapping-up">
@@ -596,7 +639,7 @@ as="font" crossorigin="">
 <p>First is the use of <code>private</code> for view properties. Apple recommends marking every <code>@State</code> property as <code>private</code>. It seems a bit strange as you then pass them around and sometimes the subviews change the data, but it means that no object can edit the value unless the view has expressly given permission. I presume there are security and performance benefits to this.</p>
 <p>Similarly, <code>@Enviroment</code> properties can (and I presume, should) be private. The two binding property wrappers do not allow their properties to be private.</p>
 <p>And lastly, in <code>@Observable</code> classes, everything that is <strong>NOT</strong> private is published. This is the opposite to what we had before where you had to explicItly state which properties were published. So mark properties as <code>private</code> if they should not be published.</p>
-<p>The last issue is to do with using <code>var</code> on its own i.e. without any property wrapper. The Apple flow chart suggests doing this if you get to the end of the flow without making any other decision, but I think you should use <code>let</code> in this case. The only time I use a plain <code>var</code> in a view is for computed properties, otherwise I use <code>let</code>.</p>
+<p>The other issue is to do with using <code>var</code> on its own i.e. without any property wrapper. The Apple flow chart suggests doing this if you get to the end of the flow without making any other decision, but I think you should use <code>let</code> in this case. The only time I use a plain <code>var</code> in a view is for computed properties, otherwise I use <code>let</code>.</p>
 <p>In my flow chart, I left the appropriate end point showing <strong>var or let</strong>, to better match Apple&rsquo;s, but I recommend using <code>let</code> and only changing to <code>var</code> if Xcode complains. This is a good rule for any Swift code, not just SwiftUI.</p>
 <hr>
 <p>This article may get several updates before we exit this years beta cycle, but I thought other people might find it useful. Writing it certainly helped clarify the new options in my head.</p>

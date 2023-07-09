@@ -1,6 +1,6 @@
 ---
 title: "SwiftUI Data Flow 2023"
-date: 2023-07-03T14:54:27+10:00
+date: 2023-07-10T09:22:54+10:00
 draft: false
 description: 'Various ways to pass data around your SwiftUI apps, after WWDC 2023.'
 tags: ['swift', 'swiftui']
@@ -13,12 +13,12 @@ At WWDC 2023, things changed a lot! With the introduction of Swift macros, the S
 
 For this article, I have re-written my sample app as a Mac app and updated it to use the new data macros.
 
+Updated 10th July 2023 to cover changes in version 3 of all the betas.
+
 <!--more-->
 
 ### Table of Contents
 
-
-  - [Table of Contents](#table-of-contents)
   - [Observation](#observation)
   - [Sample app](#sample-app)
   - [Property](#property)
@@ -29,6 +29,12 @@ For this article, I have re-written my sample app as a Mac app and updated it to
   - [@Observable and @Bindable List](#observable-and-bindable-list)
   - [@Environment](#environment)
   - [Wrapping Up](#wrapping-up)
+
+With the release of all the version 3 betas, I have added these sections:
+
+- [Old code still works](#update-1)
+- [Observed properties no longer require initial values](#update-2)
+- [`@Environment` properties cannot be used for bindings.](#update-3)
 
 ---
 
@@ -58,6 +64,9 @@ The new macros system removes these property wrappers:
 
 That's a lot of typing we don't have to do any more!
 
+#### UPDATE 1:
+I didn't make it clear originally, but all these property wrappers still work, and you can still use `@Binding` for classes, so you can adapt to the new Observation code incrementally. The Apple developer site has a very useful article on [migrating from ObservableObject][5].
+
 [Back to Top](#top)
 
 ---
@@ -68,13 +77,13 @@ My sample app demonstrates the following data flow options:
 
 ![Sample app options][i3]
 
-The code is available on [GitHub][2] and I recommend you download the project and  follow along. It requires macOS 14 and Xcode 15. Currently I'm using macOS 14.0 beta 2 and Xcode 15.0 beta 2, but I will update this article with any changes as we work through the beta cycle.
+The code is available on [GitHub][2] and I recommend you download the project and  follow along. It requires macOS 14 and Xcode 15. Currently I'm using macOS 14.0 beta 3 (23A5286g) and Xcode 15.0 beta 3 (15A5195k), but I will update this article with any changes as we work through the beta cycle.
 
 Because Xcode 15 now supports live previews for Mac apps, you can test all the options from inside Xcode. In the Project navigator, expand the numbered groups and preview the first file in each group to view and interact with that data flow type.
 
 Or go to the Bookmarks navigator where I've used the new bookmaking system to provide quick links to each one. You can even check off each one as you finish that section.
 
-In the code snippets below, I include the essentials, but strip out most display modifiers and some similar views to keep the code short. The project contains all the code. 
+In the code snippets below, I include the essentials, but strip out most display modifiers and some similar views to keep the code short. The project contains the complete code. 
 
 [Back to Top](#top)
 
@@ -130,7 +139,7 @@ struct UsingState: View {
 }
 ```
 
-In this example, the `counter` property uses `@State`. The text view displays it and the `Button` view can change it. The button's action changes the counter which causes the view to redraw in order to display the new value, but the value of the `@State` property does not get reset.
+In this example, the `counter` property uses `@State`. The text view displays it and the `Button` view can change it. The button's action changes the counter which causes the view to redraw in order to display the new value, but the value of the `@State` property does not get reset to 0 every time.
 
 > Whenever a view owns the property and that property is mutable, declare it using the `@State` property wrapper.
 
@@ -206,7 +215,7 @@ struct NumberBlock: View {
 
 ### @Binding for a Structure
 
-The previous example showed how to use `@Binding` for a primitive data type like `Int`, `String` etc. But bindings also work for any value type, including structures and that's what you can see in **Binding 2**.
+The previous example showed how to use `@Binding` for a primitive data type like `Int`, `String` etc. But bindings also work for any value type, including structures, and that's what you can see in **Binding 2**.
 
 While this is not very common, I enjoyed writing this example for a couple of reasons. Firstly, it shows how to draw the UI based on the different cases in an enum. Check out **Pizza.swift** which has three enums. Each of the picker views loops through one of these enums to draw the view.
 
@@ -290,7 +299,16 @@ import Observation
 
 The first thing to notice is the new import: `Observation`. This is the library that supports the new `@Observable` macro. Previously, `ColorSet` conformed to the `ObservableObject` protocol and the properties that needed to be observed were marked with the `@Published` property wrapper.
 
-Now the class uses the `@Observable` macro and any property that isn't private, is automatically published. This is only available for classes, not structures. The properties must all have an initial value - setting them in an `init` is not sufficient and will not build.
+Now the class uses the `@Observable` macro and any property that isn't private, is automatically published. This is only available for classes, not structures. 
+
+#### UPDATE 2: 
+
+~~The properties must all have an initial value - setting them in an `init` is not sufficient and will not build.~~ 
+
+In beta 3, observed properties no longer require an initial value. For this class, I actually want to specify initial values, but in the next section, I do not.
+
+--- 
+
 
 If you want a look at what's happening inside the macro, right-click on `@Observable` and select **Expand Macro**. When you've finished, right -click again and choose **Hide Macro Expansion**.
 
@@ -350,7 +368,7 @@ I think this is the same, and it's just as important for the owning view to decl
 
 In the original post, this was the section that gave me the most trouble - having a list of data objects where each one could be edited and updating the original list to show the edits.
 
-This is now a lot easier, although it took me some time to realise this.
+This is now a lot easier, although it took me some time to realize this.
 
 I have a sample data file and a `Person` model class using `@Observable`. The `PersonListModel` class holds an array of these `Person` objects and it also uses `@Observable`.
 
@@ -467,13 +485,47 @@ Previews need to get access too, like this:
 }
 ```
 
-And even though ChildView doesn't use the environment object, because it contains GrandChildView that does, it also needs the `environment` modifier in its preview, but not in the main view code.
+And even though ChildView doesn't use the environment object, because its preview contains GrandChildView that does, it also needs the `environment` modifier in its preview, but not in the main view code.
 
-In the sample app, the various nested views are brightly coloured to show which is which. Using the **Log In** or **Log Out** buttons works on either the outer view or the inner view with the data being synced between them.
+In the sample app, the various nested views are brightly colored to show which is which. Using the **Log In** or **Log Out** buttons works on either the outer view or the inner view with the data being synced between them.
 
 ![Environment][i7]
 
 > If you have a class that is global to your app, like UserSettings in this example, declare the class with the `@Observable` macro. Inject it into your view hierarchy using `.environment` and then use `@Enviroment` to access it.
+
+#### UPDATE 3: 
+
+There is one aspect of using `@Enviroment` where things get tricky, and that's if you need to use any properties of the environment object as bindings for other controls.
+
+I added a `Toggle` to `GrandChildView` and wanted to connect it to the same `userSettings.isLoggedIn` Boolean. A toggle takes a binding, so normally, I'd do this by adding the `$` prefix to the property to bind.
+
+With `@Environment`, this gives an error:
+
+![Binding error][i8]
+
+The solution is to create an intermediary `@Bindable` property from the `@Environment` property and bind it to the toggle (or any control that needs a binding).
+
+Stripping out a lot of what was there, the code becomes:
+
+```swift
+struct GrandChildView: View {
+  @Environment(UserSettings.self) var userSettings
+
+  var body: some View {
+    @Bindable var userSettingsBindable = userSettings
+
+    Toggle(isOn: $userSettingsBindable.isLoggedIn, label: {
+      Text("Log In Status")
+    })
+  }
+}
+```
+
+You declare the `@Environment` property as usual, then **inside** the `body`, declare an `@Bindable` property with the value from the `@Environment` property. You have to do this inside the body because doing it outside gives an error.
+
+Surprisingly, I didn't have to add a `return` before the Toggle, even though it was no longer the only statement in the body.
+
+Thanks to [Stewart Lynch][4] for suggesting I add this. Hopefully it will be fixed soon but until then, this is the workaround.
 
 [Back to Top](#top)
 
@@ -489,7 +541,7 @@ Similarly, `@Enviroment` properties can (and I presume, should) be private. The 
 
 And lastly, in `@Observable` classes, everything that is **NOT** private is published. This is the opposite to what we had before where you had to explicItly state which properties were published. So mark properties as `private` if they should not be published.
 
-The last issue is to do with using `var` on its own i.e. without any property wrapper. The Apple flow chart suggests doing this if you get to the end of the flow without making any other decision, but I think you should use `let` in this case. The only time I use a plain `var` in a view is for computed properties, otherwise I use `let`.
+The other issue is to do with using `var` on its own i.e. without any property wrapper. The Apple flow chart suggests doing this if you get to the end of the flow without making any other decision, but I think you should use `let` in this case. The only time I use a plain `var` in a view is for computed properties, otherwise I use `let`.
 
 In my flow chart, I left the appropriate end point showing **var or let**, to better match Apple's, but I recommend using `let` and only changing to `var` if Xcode complains. This is a good rule for any Swift code, not just SwiftUI.
 
@@ -504,6 +556,8 @@ If you have any suggestions, ideas or corrections, please contact me using one o
 [1]: /post/2019/swiftui-data-flow/
 [2]: https://github.com/trozware/swiftui-data-flow-2023
 [3]: https://developer.apple.com/wwdc23/10149
+[4]: https://iosdev.space/@StewartLynch
+[5]: https://developer.apple.com/documentation/swiftui/migrating-from-the-observable-object-protocol-to-the-observable-macro
 
 [contact]: /contact/
 [kofi]: https://ko-fi.com/trozware
@@ -515,3 +569,4 @@ If you have any suggestions, ideas or corrections, please contact me using one o
 [i5]: /images/color_chooser.png
 [i6]: /images/person_edit.mp4
 [i7]: /images/environment.png
+[i8]: /images/env_binding.png
