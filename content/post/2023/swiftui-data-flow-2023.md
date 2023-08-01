@@ -55,9 +55,9 @@ Apart from adding some details to the decisions points, there are really only tw
 - If a property doesn't need to change, it can be a `let`.
 - `@Bindable` only works for classes. The equivalent for structs or primitive data types is still `@Binding`.
 
-The new macros system removes these property wrappers:
+The new macros system removes this protocol and property wrappers:
 
-- `@ObservableObject`
+- `ObservableObject`
 - `@ObservedObject`
 - `@EnvironmentObject`
 - `@Published`

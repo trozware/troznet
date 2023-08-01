@@ -78,9 +78,9 @@
 &lt;li&gt;If a property doesn&amp;rsquo;t need to change, it can be a &lt;code&gt;let&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;@Bindable&lt;/code&gt; only works for classes. The equivalent for structs or primitive data types is still &lt;code&gt;@Binding&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The new macros system removes these property wrappers:&lt;/p&gt;
+&lt;p&gt;The new macros system removes this protocol and property wrappers:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;@ObservableObject&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ObservableObject&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;@ObservedObject&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;@EnvironmentObject&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;@Published&lt;/code&gt;&lt;/li&gt;

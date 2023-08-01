@@ -31,36 +31,12 @@ Updated 10th July 2023 to cover changes in version 3 of all the betas.
 <link rel="stylesheet" href="https://troz.net/style.css" />
 
 
-<link
-  rel="apple-touch-icon"
-  sizes="180x180"
-  href="/static/favs/apple-touch-icon.png"
-/>
-<link
-  rel="icon"
-  type="image/png"
-  sizes="32x32"
-  href="/static/favs/favicon-32x32.png"
-/>
-<link
-  rel="icon"
-  type="image/png"
-  sizes="16x16"
-  href="/static/favs/favicon-16x16.png"
-/>
-<link
-  rel="manifest"
-  href="/static/favs/site.webmanifest"
-  crossorigin="use-credentials"
-/>
-<link
-  rel="mask-icon"
-  href="/static/favs/safari-pinned-tab.svg"
-  color="#5bbad5"
-/>
-<link rel="shortcut icon" href="/static/favs/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
 <meta name="msapplication-TileColor" content="#da532c" />
-<meta name="msapplication-config" content="/static/favs/browserconfig.xml" />
 <meta name="theme-color" content="#ffffff" />
 
 
@@ -203,7 +179,7 @@ as="font" crossorigin="">
     <span class="post-date">
       10 Jul 2023
     </span>
-    <span class="more-meta">- 3749 words, </span>
+    <span class="more-meta">- 3751 words, </span>
     <span class="more-meta"> 18 minute read</span>
   </div>
 
@@ -280,9 +256,9 @@ as="font" crossorigin="">
 <li>If a property doesn&rsquo;t need to change, it can be a <code>let</code>.</li>
 <li><code>@Bindable</code> only works for classes. The equivalent for structs or primitive data types is still <code>@Binding</code>.</li>
 </ul>
-<p>The new macros system removes these property wrappers:</p>
+<p>The new macros system removes this protocol and property wrappers:</p>
 <ul>
-<li><code>@ObservableObject</code></li>
+<li><code>ObservableObject</code></li>
 <li><code>@ObservedObject</code></li>
 <li><code>@EnvironmentObject</code></li>
 <li><code>@Published</code></li>
