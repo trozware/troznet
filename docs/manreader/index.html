@@ -3,7 +3,7 @@
   <head>
     
       <title>
-        Man Reader ::
+        Man Reader 2 ::
         TrozWare
       </title>
     
@@ -11,8 +11,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="Man Reader is a utility app for reading macOS&amp;rsquo;s man pages. Man Reader allows quick, convenient and easy access to the man pages on your system, useful for programmers, system administrators and tweakers.
-Buy Man Reader from the Mac App Store Man pages are available for the Unix commands used mostly in Terminal or when shell scripting. These man pages are normally displayed in Terminal using the &amp;ldquo;man&amp;rdquo; command e.g. &amp;ldquo;man man&amp;rdquo; gives you the man page for the man command."
+  content="Several years after I started planning it, Man Reader version 2 is now available. This is a major update with a completely new, modern, user interface and it&amp;rsquo;s available from the Mac App Store.
+Man Reader is a utility app for reading macOS&amp;rsquo;s man pages. Man Reader allows quick, convenient and easy access to the man pages on your system, useful for programmers, system administrators and tweakers.
+Man pages are available for most of the Unix commands used mostly in Terminal or when shell scripting."
 />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
@@ -46,13 +47,14 @@ as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preloa
 as="font" crossorigin="">
 
 
-<meta property="og:title" content="Man Reader" />
-<meta property="og:description" content="Man Reader is a utility app for reading macOS&rsquo;s man pages. Man Reader allows quick, convenient and easy access to the man pages on your system, useful for programmers, system administrators and tweakers.
-Buy Man Reader from the Mac App Store Man pages are available for the Unix commands used mostly in Terminal or when shell scripting. These man pages are normally displayed in Terminal using the &ldquo;man&rdquo; command e.g. &ldquo;man man&rdquo; gives you the man page for the man command." />
+<meta property="og:title" content="Man Reader 2" />
+<meta property="og:description" content="Several years after I started planning it, Man Reader version 2 is now available. This is a major update with a completely new, modern, user interface and it&rsquo;s available from the Mac App Store.
+Man Reader is a utility app for reading macOS&rsquo;s man pages. Man Reader allows quick, convenient and easy access to the man pages on your system, useful for programmers, system administrators and tweakers.
+Man pages are available for most of the Unix commands used mostly in Terminal or when shell scripting." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://troz.net/manreader/" /><meta property="article:section" content="app" />
-<meta property="article:published_time" content="2018-05-11T00:00:00+00:00" />
-<meta property="article:modified_time" content="2018-05-11T00:00:00+00:00" />
+<meta property="article:published_time" content="2023-10-13T15:46:27+10:00" />
+<meta property="article:modified_time" content="2023-10-13T15:46:27+10:00" />
 
 
 
@@ -171,60 +173,109 @@ Buy Man Reader from the Mac App Store Man pages are available for the Unix comma
 
 <div class="post">
   <h2 class="post-title">
-    <a href="https://troz.net/manreader/">Man Reader</a>
+    <a href="https://troz.net/manreader/">Man Reader 2</a>
   </h2>
   <div class="post-meta">
     <span class="post-date">
-      11 May 2018
+      13 Oct 2023
     </span>
-    <span class="more-meta">- 940 words, </span>
+    <span class="more-meta">- 1043 words, </span>
     <span class="more-meta"> 5 minute read</span>
   </div>
 
    
 
-  <div class="post-content"><p>Man Reader is a utility app for reading macOS&rsquo;s man pages. Man Reader allows
+  <div class="post-content"><p>Several years after I started planning it, Man Reader version 2
+is now available. This is a major update with a completely new,
+modern, user interface and it&rsquo;s available from the Mac App Store.</p>
+<p><a href="http://itunes.apple.com/app/man-reader/id522583774?mt=12"><img src="/icons/ManReader128.png" alt="Buy Man Reader from the Mac App Store"></a></p>
+<p>Man Reader is a utility app for reading macOS&rsquo;s <strong>man</strong> pages. Man Reader allows
 quick, convenient and easy access to the man pages on your system, useful for
 programmers, system administrators and tweakers.</p>
-<p><a href="/images/MR_Start.png"><img src="/images/MR_Start_small.png" alt="MR" title="Man Reader"></a></p>
-<ul>
-<li><a href="http://itunes.apple.com/app/man-reader/id522583774?mt=12">Buy Man Reader from the Mac App Store</a></li>
-</ul>
-<p>Man pages are available for the Unix commands used mostly in Terminal or when
+<style>
+  img {
+    margin: 10px auto;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .social_footer img {
+    border: none;
+    box-shadow: none;
+  }
+</style>
+
+<p><img src="/images/ManReader2.png" alt="Man Reader 2"></p>
+<p>Man pages are available for most of the Unix commands used mostly in Terminal or when
 shell scripting. These man pages are normally displayed in Terminal using the
-&ldquo;man&rdquo; command e.g. &ldquo;man man&rdquo; gives you the man page for the man command.</p>
-<p>However there are problems with this: the man page is displayed to you in your
-Terminal window page by page and when you have got to the bottom, you have to
+<code>man</code> command.<br>
+e.g. <code>man ipconfig</code> gives you the <strong>man</strong> page for the <code>ipconfig</code> command.</p>
+<p>However there are problems with this: the man page is displayed in your
+Terminal window page by page and you have to press Space to get to the next page.
+Once you&rsquo;ve got to the end, you have to
 know to press &lsquo;q&rsquo; to get out of the man page display, at which point it
 disappears completely. Hope you have a good memory!</p>
 <p>There are various tricks to get around this: opening it in a separate window,
 piping it to Preview as a PDF, listing it as a single page etc, but none of
-these are really convenient, which is why I wrote Man Reader. Basically, I
-reckon that if I want a utility, then there must be other people who would want
-the same thing.</p>
-<p>Man Reader assembles a list of the commands with available man pages on your
-system - this will vary according to what developer tools you have installed.
-These commands are listed for you and you can click on any one to display the
-man page for that command.</p>
-<h2 id="man-reader-features">
-  Man Reader Features:
-  <a href="#man-reader-features" class="h-anchor" aria-hidden="true">#</a>
+these are really convenient, which is why I wrote Man Reader.</p>
+<p>Man Reader searches the most usual directories and assembles a list of the man pages
+it finds. These commands are listed in the sidebar and you can select any one
+to display the man page for that command.</p>
+<p>If you have other locations you would like Man Reader to search, you can add
+them using Settings.</p>
+<h2 id="major-features">
+  Major Features:
+  <a href="#major-features" class="h-anchor" aria-hidden="true">#</a>
 </h2>
 <ul>
-<li>List of all available man pages on your system.</li>
-<li>Show only a section of the pages.</li>
+<li>List the man pages on your system.</li>
+<li>Show only pages in a selected section.</li>
 <li>Search for a man page by name.</li>
-<li>Display man page in text or HTML (different pages look best in different
-formats).</li>
-<li>Step back &amp; forward through recently viewed man pages.</li>
+<li>Bookmark your favorite pages.</li>
+<li>Jump to sub-sections in a page.</li>
 <li>Live links to &lsquo;See Also&rsquo; entries.</li>
-<li>&lsquo;Sticky notes&rsquo; at the side to jump to sub-sections in a page.</li>
-<li>Choose a font and size for the display.</li>
-<li>Convenient buttons in the toolbar allow quick access to commonly used
-utilities.</li>
-<li>Sand-boxed for OS X Lion &amp; later.</li>
+<li>Search for text within a page.</li>
+<li>Display man pages in text or HTML (different pages look best in different
+formats).</li>
+<li>See and use your History of recently viewed pages.</li>
+<li>Add your own custom notes to any man page.</li>
+<li>Choose a font and font sizes for the display.</li>
+<li>View the app&rsquo;s custom man page for help.</li>
+<li>Extensive support for keyboard operations.</li>
+<li>Open multiple tabs or windows.</li>
+<li>Add custom search locations.</li>
 </ul>
+<p><img src="/images/ManReader2_dark.png" alt="Man Reader 2 dark mode"></p>
 <hr>
+<h2 id="change-log">
+  Change Log:
+  <a href="#change-log" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<h4 id="man-reader-version-20-changes-26-oct-2022">
+  Man Reader version 2.0 changes (26 Oct 2022):
+  <a href="#man-reader-version-20-changes-26-oct-2022" class="h-anchor" aria-hidden="true">#</a>
+</h4>
+<ul>
+<li>Complete re-write for modern versions of macOS.</li>
+<li>Only runs on macOS Sonoma 14.0 or later.</li>
+<li>Support for tabs and multiple windows.</li>
+</ul>
+<h4 id="man-reader-version-150-changes-18-oct-2022">
+  Man Reader version 1.50 changes (18 Oct 2022):
+  <a href="#man-reader-version-150-changes-18-oct-2022" class="h-anchor" aria-hidden="true">#</a>
+</h4>
+<ul>
+<li>Support for macOS 13 Ventura.</li>
+<li>Use light or dark system modes instead of custom color schemes.</li>
+</ul>
 <h4 id="man-reader-version-113-changes-26-may-2021">
   Man Reader version 1.13 changes (26 May 2021):
   <a href="#man-reader-version-113-changes-26-may-2021" class="h-anchor" aria-hidden="true">#</a>
@@ -353,7 +404,7 @@ own.</li>
 </ul>
 <hr>
 <p>If you have any problems with Man Reader, any suggestions for future versions or
-encounter any bugs, please <a href="mailto:sarah@troz.net?subject=Man%20Reader">contact me</a>.</p>
+encounter any bugs, please <a href="mailto:sarah@troz.net?subject=Man%20Reader%202">email me</a> or get in touch through the <a href="/contact/">Contact</a> page.</p>
 </div>
   
   <div class="pagination">
@@ -362,13 +413,9 @@ encounter any bugs, please <a href="mailto:sarah@troz.net?subject=Man%20Reader">
       <hr />
     </div>
     <div class="pagination__buttons">
-      
-      <a class="btn next" href="https://troz.net/marktime/"
-        >← Marktime</a
-      >
        
-      <a class="btn previous" href="https://troz.net/berio/"
-        >Berio&#39;s Sequenza VII →</a
+      <a class="btn previous" href="https://troz.net/crossfix/"
+        >Crossfix →</a
       >
       
     </div>

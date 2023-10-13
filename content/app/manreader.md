@@ -1,56 +1,83 @@
 ---
-date: 2018-05-11T00:00:00Z
+date: 2023-10-13T15:46:27+10:00
 mac_app_desc: A utility app for reading macOS man pages.
 mac_app_image: /icons/ManReader128.png
 mac_app_name: Man Reader
-title: Man Reader
+title: Man Reader 2
 url: /manreader/
 ---
 
-Man Reader is a utility app for reading macOS's man pages. Man Reader allows
+Several years after I started planning it, Man Reader version 2
+is now available. This is a major update with a completely new, 
+modern, user interface and it's available from the Mac App Store.
+
+[![Buy Man Reader from the Mac App Store][i3]][3]
+
+Man Reader is a utility app for reading macOS's **man** pages. Man Reader allows
 quick, convenient and easy access to the man pages on your system, useful for
 programmers, system administrators and tweakers.
 
-[![MR][1]][2]
+{{< img_border >}}
 
-- [Buy Man Reader from the Mac App Store][3]
+![Man Reader 2][i1]
 
-Man pages are available for the Unix commands used mostly in Terminal or when
+Man pages are available for most of the Unix commands used mostly in Terminal or when
 shell scripting. These man pages are normally displayed in Terminal using the
-"man" command e.g. "man man" gives you the man page for the man command.
+`man` command.   
+e.g. `man ipconfig` gives you the **man** page for the `ipconfig` command.
 
-However there are problems with this: the man page is displayed to you in your
-Terminal window page by page and when you have got to the bottom, you have to
+However there are problems with this: the man page is displayed in your
+Terminal window page by page and you have to press Space to get to the next page.
+Once you've got to the end, you have to
 know to press 'q' to get out of the man page display, at which point it
 disappears completely. Hope you have a good memory!
 
 There are various tricks to get around this: opening it in a separate window,
 piping it to Preview as a PDF, listing it as a single page etc, but none of
-these are really convenient, which is why I wrote Man Reader. Basically, I
-reckon that if I want a utility, then there must be other people who would want
-the same thing.
+these are really convenient, which is why I wrote Man Reader.
 
-Man Reader assembles a list of the commands with available man pages on your
-system - this will vary according to what developer tools you have installed.
-These commands are listed for you and you can click on any one to display the
-man page for that command.
+Man Reader searches the most usual directories and assembles a list of the man pages
+it finds. These commands are listed in the sidebar and you can select any one 
+to display the man page for that command.
 
-## Man Reader Features:
+If you have other locations you would like Man Reader to search, you can add 
+them using Settings.
 
-- List of all available man pages on your system.
-- Show only a section of the pages.
+## Major Features:
+
+- List the man pages on your system.
+- Show only pages in a selected section.
 - Search for a man page by name.
-- Display man page in text or HTML (different pages look best in different
-  formats).
-- Step back & forward through recently viewed man pages.
+- Bookmark your favorite pages.
+- Jump to sub-sections in a page.
 - Live links to 'See Also' entries.
-- 'Sticky notes' at the side to jump to sub-sections in a page.
-- Choose a font and size for the display.
-- Convenient buttons in the toolbar allow quick access to commonly used
-  utilities.
-- Sand-boxed for OS X Lion & later.
+- Search for text within a page.
+- Display man pages in text or HTML (different pages look best in different
+  formats).
+- See and use your History of recently viewed pages.
+- Add your own custom notes to any man page.
+- Choose a font and font sizes for the display.
+- View the app's custom man page for help.
+- Extensive support for keyboard operations.
+- Open multiple tabs or windows.
+- Add custom search locations.
+
+![Man Reader 2 dark mode][i2]
 
 ---
+
+## Change Log:
+
+#### Man Reader version 2.0 changes (26 Oct 2022):
+
+- Complete re-write for modern versions of macOS.
+- Only runs on macOS Sonoma 14.0 or later.
+- Support for tabs and multiple windows.
+
+#### Man Reader version 1.50 changes (18 Oct 2022):
+
+- Support for macOS 13 Ventura.
+- Use light or dark system modes instead of custom color schemes.
 
 #### Man Reader version 1.13 changes (26 May 2021):
 
@@ -142,13 +169,12 @@ man page for that command.
 ---
 
 If you have any problems with Man Reader, any suggestions for future versions or
-encounter any bugs, please [contact me][8].
+encounter any bugs, please [email me][8] or get in touch through the [Contact][contact] page.
 
-[1]: /images/MR_Start_small.png 'Man Reader'
-[2]: /images/MR_Start.png
+[i1]: /images/ManReader2.png
+[i2]: /images/ManReader2_dark.png
+[i3]: /icons/ManReader128.png
+
 [3]: http://itunes.apple.com/app/man-reader/id522583774?mt=12
-[4]: /manreader-paddle/ManReader.zip
-[5]: https://pay.paddle.com/checkout/490552
-[6]: /manreader-sandbox/
-[7]: /man-reader-no-sb/
-[8]: mailto:sarah@troz.net?subject=Man%20Reader
+[8]: mailto:sarah@troz.net?subject=Man%20Reader%202
+[contact]: /contact/

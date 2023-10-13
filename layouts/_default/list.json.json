@@ -5,7 +5,7 @@
     "title" : "{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}{{ end }}",
     "description": "Recent content {{ if ne  .Title  .Site.Title }}{{ with .Title }}in {{.}} {{ end }}{{ end }}on {{ .Site.Title }}",
     "home_page_url" : "{{ .Site.BaseURL }}",
-    "icon": "/favs/apple-touch-icon.png",
+    "icon": "/apple-touch-icon.png",
     {{ with .OutputFormats.Get "JSON" -}}
     "feed_url" : "{{ .Permalink }}",
     {{ end -}}
