@@ -26,9 +26,14 @@ publishDir = "docs"
 
 [[menu.main]]             # config your menu              # 配置目录
   name = "Home"
-  weight = 10
+  weight = 5
   identifier = "home"
   url = "/"
+[[menu.main]]
+  name = "Books"
+  weight = 10
+  identifier = "books"
+  url = "/books/"
 [[menu.main]]
   name = "Apps"
   weight = 15

@@ -1,3 +1,15 @@
 .logo__cursor {
   width: 2px;
 }
+
+a:any-link {
+  text-decoration: underline;
+}
+
+.post-title a {
+  text-decoration: none;
+}
+
+.content {
+  margin: 0;
+}

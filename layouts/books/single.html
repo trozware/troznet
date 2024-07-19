@@ -1,0 +1,30 @@
+{{ define "main" -}}
+
+<link rel="stylesheet" href="/css/books.css" />
+<link rel="stylesheet" href="/css/header.css" />
+
+<div>
+  {{ range .Site.Data.books}}
+  <div>
+    <h2>{{ .title }}</h2>
+    <div class="book">
+      <a href="{{ .link }}">
+        <img src="{{ .image }}" alt="{{ .title }}cover" />
+      </a>
+      <div class="book-info">
+        <p>{{ .description }}</p>
+        <p>Written by {{ .authors }}.</p>
+        <p>
+          Available from
+          <a href="{{ .link }}">{{ .publisher }}</a>.
+        </p>
+        <p class="pub_details">
+          {{ .edition }} published on {{ .published }} for {{ .requirements }}.
+        </p>
+      </div>
+    </div>
+  </div>
+  <hr />
+  {{- end }}
+</div>
+{{- end }}

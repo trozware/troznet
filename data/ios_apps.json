@@ -11,24 +11,24 @@
     "icon": "Crossfix36.png",
     "name": "Crossfix",
     "webpage": "/crossfix/",
-    "version": "1.0.1",
-    "updated": "30 Nov 2020",
+    "version": "1.1",
+    "updated": "2 Jan 2024",
     "app_id": "1526235954"
   },
   {
     "icon": "CrossfixLite36.png",
     "name": "Crossfix Lite",
     "webpage": "/crossfix/",
-    "version": "1.0.1",
-    "updated": "30 Nov 2020",
+    "version": "1.1",
+    "updated": "2 Jan 2024",
     "app_id": "1526236100"
   },
   {
     "icon": "MarkTime36.jpg",
     "name": "Mark Time",
     "webpage": "/marktime/",
-    "version": "1.1",
-    "updated": "4 Feb 2019",
+    "version": "1.2",
+    "updated": "1 Aug 2023",
     "app_id": "1305580742"
   },
   {
@@ -38,13 +38,5 @@
     "version": "2.0",
     "updated": "4 Jun 2021",
     "app_id": "1091394524"
-  },
-  {
-    "icon": "wow-stats36.png",
-    "name": "Stats for WoW",
-    "webpage": "/wow-stats/",
-    "version": "1.8.0",
-    "updated": "14 Dec 2021",
-    "app_id": "1364247768"
   }
 ]
