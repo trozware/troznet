@@ -21,7 +21,7 @@ Every project in this book has been updated to macOS 14 Sonoma and Xcode 15. The
 
 The major changes in this edition include:
 
-- The _On This Day_ app uses `NavigationSpiltView` instead of the older `NavigationView`.
+- The _On This Day_ app uses `NavigationSplitView` instead of the older `NavigationView`.
 - _On This Day_ implements the new `Observation` framework for its data.
 - The _Time-ato_ app no longer imports the external `LaunchAtLogin` package but now uses Apple's `ServiceManagement` library.
 - Creating an app intent in _ImageSipper_ uses the new code-based system.

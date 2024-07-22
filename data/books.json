@@ -8,6 +8,7 @@
     "edition": "First Edition",
     "published": "Apr 13 2022",
     "publisher": "Kodeco",
+    "purchase_link": "https://www.kodeco.com/books/macos-by-tutorials",
     "requirements": "Swift 5.5, macOS 12, Xcode 13. Edition 2.0 coming soon"
   },
   {
@@ -19,6 +20,7 @@
     "edition": "First Edition",
     "published": "May 30 2023",
     "publisher": "Kodeco",
+    "purchase_link": "https://www.kodeco.com/books/macos-apprentice",
     "requirements": "Swift 5.7, macOS 13, Xcode 14.2"
   },
   {
@@ -30,6 +32,7 @@
     "edition": "Fifth Edition",
     "published": "Jun 14 2023",
     "publisher": "Kodeco",
+    "purchase_link": "https://www.kodeco.com/books/macos-apprentice",
     "requirements": "Swift 5.8, iOS 16, macOS 13, Xcode 14.2"
   }
 ]

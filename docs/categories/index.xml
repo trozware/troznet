@@ -50,7 +50,7 @@
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/mos_cover_small.png&#34; alt=&#34;Book cover&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The major changes in this edition include:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;The &lt;em&gt;On This Day&lt;/em&gt; app uses &lt;code&gt;NavigationSpiltView&lt;/code&gt; instead of the older &lt;code&gt;NavigationView&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The &lt;em&gt;On This Day&lt;/em&gt; app uses &lt;code&gt;NavigationSplitView&lt;/code&gt; instead of the older &lt;code&gt;NavigationView&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;On This Day&lt;/em&gt; implements the new &lt;code&gt;Observation&lt;/code&gt; framework for its data.&lt;/li&gt;
 &lt;li&gt;The &lt;em&gt;Time-ato&lt;/em&gt; app no longer imports the external &lt;code&gt;LaunchAtLogin&lt;/code&gt; package but now uses Apple&amp;rsquo;s &lt;code&gt;ServiceManagement&lt;/code&gt; library.&lt;/li&gt;
 &lt;li&gt;Creating an app intent in &lt;em&gt;ImageSipper&lt;/em&gt; uses the new code-based system.&lt;/li&gt;
