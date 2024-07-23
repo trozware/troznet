@@ -1,15 +1,15 @@
 [
   {
     "title": "macOS by Tutorials",
-    "link": "https://www.kodeco.com/books/macos-by-tutorials",
+    "link": "/books/macos_tutorials",
     "image": "/images/mos_cover.png",
     "description": "If you're an iOS developer who wants to branch out into creating native macOS apps, this is the book for you!",
     "authors": "Sarah Reichelt",
-    "edition": "First Edition",
-    "published": "Apr 13 2022",
-    "publisher": "Kodeco",
-    "purchase_link": "https://www.kodeco.com/books/macos-by-tutorials",
-    "requirements": "Swift 5.5, macOS 12, Xcode 13. Edition 2.0 coming soon"
+    "edition": "Edition 2.0",
+    "published": "Jul 23 2024",
+    "publisher": "Gumroad",
+    "purchase_link": "https://sarahreichelt.gumroad.com/l/oximx",
+    "requirements": "macOS 14 & Xcode 15"
   },
   {
     "title": "macOS Apprentice",
