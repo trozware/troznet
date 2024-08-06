@@ -7,10 +7,157 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2012 - 2024 Sarah Reichelt</copyright>
-    <lastBuildDate>Tue, 23 Jul 2024 19:49:12 +1000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Aug 2024 11:29:44 +1000</lastBuildDate>
     
         <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>Book Building</title>
+<link>http://localhost:1313/post/2024/book_building/</link>
+<pubDate>Tue, 06 Aug 2024 11:29:44 +1000</pubDate>
+      
+      <guid>http://localhost:1313/post/2024/book_building/</guid>
+<description>&lt;p&gt;I started writing books for Kodeco when I was asked to contribute some Mac content to &lt;a href=&#34;https://www.kodeco.com/books/swiftui-by-tutorials&#34;&gt;SwiftUI by Tutorials&lt;/a&gt;. I quickly learned that I really enjoyed long form technical writing but I wanted to create more Mac-specific content. After some negotiations, Kodeco agreed to my plan to write &lt;a href=&#34;https://troz.net/books/macos_tutorials&#34;&gt;macOS by Tutorials&lt;/a&gt; and the first edition was published in April 2022.&lt;/p&gt;
+&lt;p&gt;As I have written elsewhere, Kodeco has pivoted away from books and into providing multi-modal courses. They agreed to transfer the rights of the macOS by Tutorials book to me as it was out-of-catalog and since then, I have released an update.&lt;/p&gt;
+&lt;p&gt;When writing for Kodeco, all I had to do was write the text and the accompanying code and images. The people at Kodeco took care of the rest. Many thanks to all involved - I greatly underestimated the work that this entailed! Now that I am self-publishing, I have had to learn how to create the various formats myself. This post is a summary of how I did that.&lt;/p&gt;
+&lt;h3 id=&#34;table-of-contents&#34;&gt;
+  Table of Contents
+  &lt;a href=&#34;#table-of-contents&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#project-structure&#34;&gt;Project Structure&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#formatting&#34;&gt;Formatting&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#html&#34;&gt;HTML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#pdf&#34;&gt;PDF&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#epub&#34;&gt;ePub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#writing-tools&#34;&gt;Writing Tools&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#conclusion&#34;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;introduction&#34;&gt;
+  Introduction
+  &lt;a href=&#34;#introduction&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Since I always used Markdown when writing for Kodeco, that&amp;rsquo;s where I started. I wanted to produce the book as an ePub and a PDF, so I needed to convert the Markdown to those formats. I also wanted to produce a web version, so that required a Markdown to HTML conversion. After some research, I started off with &lt;a href=&#34;https://pandoc.org&#34;&gt;pandoc&lt;/a&gt;. This is a command-line tool that can convert between many different formats, so it seemed like a good choice.&lt;/p&gt;
+&lt;p&gt;I found it very difficult to use and to configure to give the results I wanted. While looking for examples online, I discovered &lt;a href=&#34;https://github.com/progit/progit&#34;&gt;Pro Git&lt;/a&gt;. This looked like it was doing what I was trying to do, but even after following their examples, I was still having problems. Then I discovered that &lt;a href=&#34;https://github.com/progit/progit2&#34;&gt;Pro Git 2nd Edition&lt;/a&gt; was written in AsciiDoc, not Markdown. I had never heard of AsciiDoc but it looked like it might make generating various book formats easier, so I decided to give it a try.&lt;/p&gt;
+&lt;p&gt;AsciiDoc is a markup language very similar to Markdown. This quick reference guide shows the syntax: &lt;a href=&#34;https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/&#34;&gt;AsciiDoc Syntax Quick Reference&lt;/a&gt;. The secret sauce was using AsciiDoctor to convert AsciiDoc files into HTML, ePub and PDF. This was much easier to use than pandoc but it took a bit of tweaking to get the results I wanted for each format.&lt;/p&gt;
+&lt;h2 id=&#34;project-structure&#34;&gt;
+  Project Structure
+  &lt;a href=&#34;#project-structure&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;I started by copying the file and folder structure used for Pro Git. I&amp;rsquo;ve since modified it to suit my needs but the basic structure is much the same. In the root folder, I have the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Rakefile&lt;/strong&gt;: The Ruby file that contains the commands to generate the various formats.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gemfile&lt;/strong&gt; &amp;amp; &lt;strong&gt;Gemfile.lock&lt;/strong&gt;: These files handle the Ruby libraries used to create the various formats.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;book.adoc&lt;/strong&gt;: The main file that assembles the contents of the book and is used for the PDFs and ePub versions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;book-html.adoc&lt;/strong&gt;: The same as book.adoc but with an added image, since the HTML version doesn&amp;rsquo;t have a cover.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;theme folder&lt;/strong&gt;: The files used to style the different versions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;images folder&lt;/strong&gt;: All the images used in the book.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;fonts folder&lt;/strong&gt;: The custom fonts used in the book.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;components folder&lt;/strong&gt;: The adoc files referenced by book.adoc.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;book folder&lt;/strong&gt;: The adoc files for each chapter as well as preface, introduction, conclusion etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;AsciiDoc files can import other AsciiDoc files, so I have a separate file for each chapter in the book as well as files for the non-chapter content. The &lt;strong&gt;book.adoc&lt;/strong&gt; file includes &lt;strong&gt;components/headers.adoc&lt;/strong&gt;, a link to the cover image and &lt;strong&gt;components/contents.adoc&lt;/strong&gt;. &lt;strong&gt;book-html.adoc&lt;/strong&gt; is the same except for including the cover as an image file.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;headers.adoc&lt;/strong&gt; file is where AsciiDoctor reads the metadata for the book:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-asciidoc&#34; data-lang=&#34;asciidoc&#34;&gt;= macOS by Tutorials
+Sarah Reichelt
+:doctype: book
+:doctitle: macOS by Tutorials
+:notitle:
+:toc: macro
+:toclevels: 2
+:figure-caption!:
+:description: macOS App Development for iOS Developers
+:author: Sarah Reichelt
+:copyright: (C) 2024 Sarah Reichelt. All rights reserved.
+:epub3-stylesdir: theme
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Some of these are self-explanatory, but there are some oddities:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;:doctype: book&lt;/code&gt;: Set the type of this document to a book. AsciiDoctor uses different formatting and allows different header levels for different types of documents.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:notitle: &lt;/code&gt;: Turn off default title page. I wanted to customise my title page.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:toc: macro&lt;/code&gt;: Setting this to macro allows me to specify the location for the table of contents, instead of using the default placement.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:toclevels: 2&lt;/code&gt;: Set the number of header levels to include in the table of contents.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:figure-caption!:&lt;/code&gt;: Tell AsciiDoctor not to add &amp;lsquo;Figure #&amp;rsquo; to all image captions.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:epub3-stylesdir: theme&lt;/code&gt;: The folder containing the styles for the ePub version.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The next file in components is &lt;strong&gt;content.adoc&lt;/strong&gt;. This is where I include the title page, the table of contents, the introductory pages, the sections and the conclusion. Each section file has a header, an introduction and links to the chapter files.&lt;/p&gt;
+&lt;p&gt;With the folder structure in place, I copied the matching Markdown files from the original book. Then I used various tools to convert these files into AsciiDoc. The &lt;a href=&#34;https://github.com/asciidoctor/kramdown-asciidoc&#34;&gt;Kramdown AsciiDoc&lt;/a&gt; converter did most of the work to translate Markdown to AsciiDoc. The image links needed special handling, especially when it came to adding captions and sizes. I used Python scripts for this. Python is always my go-to tool for text and file manipulation. I also used Python to strip out the Markdown metadata at the start of every chapter and add the AsciiDoc metadata.&lt;/p&gt;
+&lt;p&gt;I am not artistic, so I used Keynote to create the cover image. This allowed me to do object-oriented design with images, shapes and text. I then exported it as a PNG file for use in the book.&lt;/p&gt;
+&lt;p&gt;Finally, I had all the files in the right places and in the correct formats. Now to generate and style the various versions.&lt;/p&gt;
+&lt;p&gt;This involved using Ruby to run the various AsciiDoctor commands. My Mac had Ruby installed but only an old version, so I used Homebrew to update to Ruby 3.3. I&amp;rsquo;m not familiar with Ruby, so I had to learn how to install and update the required gems. With them in place, I used the commands in the Rakefile to create the various formats.&lt;/p&gt;
+&lt;h2 id=&#34;formatting&#34;&gt;
+  Formatting
+  &lt;a href=&#34;#formatting&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The Pro Git Rakefile started by defining some parameters that could be passed to the AsciiDoctor commands for all the formats.
+In their case, params included two attributes: &lt;code&gt;revnumber&lt;/code&gt; and &lt;code&gt;revdate&lt;/code&gt;. I also wanted to specify the syntax highlighter and its style. Working out what to use for the syntax highlighter was a bit tricky as I wanted the code blocks to look like they would in Xcode, but I eventually found the right combination using &lt;a href=&#34;https://pygments.org&#34;&gt;pygments&lt;/a&gt; and its &lt;strong&gt;xcode&lt;/strong&gt; style:&lt;/p&gt;
+&lt;p&gt;My parameters used by all the different formats ended up like&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;version_string &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;2.0&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;date_string &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Time&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;now&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;strftime(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;%Y-%m-%d&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;params &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;--attribute revnumber=&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;#{&lt;/span&gt;version_string&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39; --attribute revdate=&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;#{&lt;/span&gt;date_string&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;syntax_params &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;--attribute source-highlighter=pygments --attribute pygments-style=xcode&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then I had to work out how to style each format.&lt;/p&gt;
+&lt;h3 id=&#34;html&#34;&gt;
+  HTML
+  &lt;a href=&#34;#html&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Pro Git uses this command for generating the HTML, which gave me my starting point:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sh &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;bundle exec asciidoctor &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;#{&lt;/span&gt;params&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; -a data-uri progit.asc&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I had already added a second set of params for the syntax highlighter, but the next thing was to add my own style sheet. The Pro Git repo had a &lt;strong&gt;theme&lt;/strong&gt; folder with sub-folders for each format. I tried editing &lt;strong&gt;theme/html/html.css&lt;/strong&gt; but that didn&amp;rsquo;t work. I eventually found that I needed to create a new file called &lt;strong&gt;docinfo.html&lt;/strong&gt; in the &lt;strong&gt;theme&lt;/strong&gt; folder and then add more attributes to access it. This changed my command to:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;book_title &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;macOS_by_Tutorials_v2.0.html&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;style_sheet &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;-a docinfodir=theme -a docinfo=shared&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sh &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;bundle exec asciidoctor &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;#{&lt;/span&gt;params&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;#{&lt;/span&gt;syntax_params&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;#{&lt;/span&gt;style_sheet&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; -a data-uri -o &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;#{&lt;/span&gt;book_title&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; book-html.adoc&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This meant that I could add my own CSS or JavaScript to the &lt;strong&gt;theme/docinfo.html&lt;/strong&gt; file and it would be included in the HTML output. The &lt;code&gt;data-uri&lt;/code&gt; attribute tells AsciiDoctor to embed the images in the HTML output. I didn&amp;rsquo;t want to have to give people a folder of images to go with the HTML file, I wanted a single file that could be opened in a browser and would include everything.&lt;/p&gt;
+&lt;p&gt;I generated an HTML file using the default styling, then copied the default CSS into a &lt;code&gt;style&lt;/code&gt; block in this file. I then edited it to my satisfaction.&lt;/p&gt;
+&lt;p&gt;One refinement for the HTML version was to add a copy button on the code blocks. I used &lt;a href=&#34;https://clipboardjs.com&#34;&gt;clipboard.js&lt;/a&gt; for this and tweaked the style and position of the copy button to match my style. I also added JavaScript to make the copy operation ignore the numbered comment lines that are used to mark explanation points throughout the code.&lt;/p&gt;
+&lt;h3 id=&#34;pdf&#34;&gt;
+  PDF
+  &lt;a href=&#34;#pdf&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;The PDF was the most difficult to format as it doesn&amp;rsquo;t use CSS but includes some other formatting options in a YML file, perhaps based on Postscript? I used AsciiDoctor to export the default PDF theme so I could see the format. Then I created my own PDF theme file, extending the default theme. This involved quite a bit of trial and error as I had to work out what the various styles were called and how to override them. I also wanted to create a dark mode version of the PDF, so I made a second theme file for that.&lt;/p&gt;
+&lt;p&gt;The two theme files are called &lt;strong&gt;pdf-theme.yml&lt;/strong&gt; and &lt;strong&gt;pdfdark-theme.yml&lt;/strong&gt;. They are both inside the &lt;strong&gt;theme&lt;/strong&gt; folder. I used these in the Rakefile like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pdf_params &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;-a pdf-theme=pdf -a pdf-themesdir=theme -a pdf-fontsdir=.&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;output_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; book_title &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;_v&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; version_string &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.pdf&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sh &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;bundle exec asciidoctor-pdf &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;#{&lt;/span&gt;pdf_params&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;#{&lt;/span&gt;syntax_params&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;#{&lt;/span&gt;params&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; -o &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;#{&lt;/span&gt;output_name&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; book.adoc&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pdf_params &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;-a pdf-theme=pdfdark -a pdf-themesdir=theme -a pdf-fontsdir=.&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;syntax_params &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;--attribute source-highlighter=pygments --attribute pygments-style=github-dark&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;output_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; book_title &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;_v&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; version_string &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;_dark.pdf&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sh &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;bundle exec asciidoctor-pdf &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;#{&lt;/span&gt;pdf_params&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;#{&lt;/span&gt;syntax_params&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;#{&lt;/span&gt;params&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; -o &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;#{&lt;/span&gt;output_name&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; book.adoc&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;As you can see, the &lt;strong&gt;-theme.yml&lt;/strong&gt; part of the file name is not included in the command, just the base name. The &lt;code&gt;pdf-themesdir&lt;/code&gt; attribute is used to point to the theme folder and the &lt;code&gt;pdf-fontsdir&lt;/code&gt; attribute is used to point to the root folder. This worked because I had the font files in a &lt;strong&gt;fonts&lt;/strong&gt; folder and included the folder path in the font specifications of the YML files.&lt;/p&gt;
+&lt;p&gt;For the PDF versions, I also added a header to every page with the book title and the chapter title using the YML files.&lt;/p&gt;
+&lt;h3 id=&#34;epub&#34;&gt;
+  ePub
+  &lt;a href=&#34;#epub&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Finally, the ePub version. To my surprise, an ePub is actually a zip file. The contents are XHTML files, images and styles. The secret here was again to have files with the correct name in the correct location. In this case, I needed &lt;strong&gt;epub3.scss&lt;/strong&gt; and &lt;strong&gt;epub3-css3-only.css&lt;/strong&gt; in the &lt;strong&gt;theme&lt;/strong&gt; folder. I left &lt;strong&gt;epub3.scss&lt;/strong&gt; empty, but it still had to be there. The &lt;strong&gt;epub3-css3-only.css&lt;/strong&gt; file had styles for where I wanted to override the defaults. It wasn&amp;rsquo;t always easy to know what classes to apply the styles to, but I opened one of the XHTML files in my browser and used the web inspector to find them.&lt;/p&gt;
+&lt;h2 id=&#34;writing-tools&#34;&gt;
+  Writing Tools
+  &lt;a href=&#34;#writing-tools&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The editor I used was &lt;a href=&#34;https://code.visualstudio.com&#34;&gt;Visual Studio Code&lt;/a&gt;. While it&amp;rsquo;s not a native Mac app, it&amp;rsquo;s a very powerful editor and has a fantastic array of extensions. I installed the &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode&#34;&gt;AsciiDoc extension&lt;/a&gt; which allowed me to preview the AsciiDoc files in the editor.&lt;/p&gt;
+&lt;p&gt;There was a problem with previewing because of the image paths. The &lt;strong&gt;book.adoc&lt;/strong&gt; file specifies the path to the images folder, but when previewing an individual chapter file, this was not applied. I had to add a line to the metadata at top of each chapter file to include the path to the images folder. I also added a header to show a table of contents to make it easier to jump around the file while editing. When building the entire book, these headers had to go - the image path over-rode the one in the book.adoc file and meant that book.adoc couldn&amp;rsquo;t find any images, and a table of contents was included in every chapter. I ended up turning to Python again and wrote a script to add and remove these headers as needed.&lt;/p&gt;
+&lt;p&gt;I use &lt;a href=&#34;https://github.com&#34;&gt;GitHub&lt;/a&gt; to store the book files and to collaborate with my editor, or language engineer as he prefers to be called.&lt;/p&gt;
+&lt;p&gt;The other important extension is &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker&#34;&gt;Code Spell Checker&lt;/a&gt;. Of course there will still be typos in the final book, but this extension helps to catch some of them. A big advantage of this spell checker is that it defaults to US English spelling. I normally write UK/Australian English, but I prefer to use US English for my books to avoid things like &lt;strong&gt;Create an NSColor is store the selected colour&lt;/strong&gt; :-). Another big plus is that the custom dictionary is a JSON file stored in the project. That way my editor gets the same spell checking as I do, and I can easily edit the file if I want to delete or change a custom spelling.&lt;/p&gt;
+&lt;p&gt;All the code is written in Xcode using the default settings and theme as much as possible.&lt;/p&gt;
+&lt;p&gt;Screenshots are taken with &lt;a href=&#34;https://cleanshot.com&#34;&gt;CleanShot X&lt;/a&gt; and edited in Preview, which usually just involves cropping.&lt;/p&gt;
+&lt;p&gt;For hardware, my main computer is a 24&amp;quot; M3 iMac, my keyboard is an &lt;a href=&#34;https://www.zsa.io/moonlander/&#34;&gt;Ergodox Moonlander&lt;/a&gt; and my mouse is a &lt;a href=&#34;https://www.logitech.com/en-au/products/mice/mx-vertical-ergonomic-mouse.910-005449.html&#34;&gt;Logitech MX Vertical&lt;/a&gt;. I also have a 13&amp;quot; M1 MacBook Pro for when I need to work in a different location.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;
+  Conclusion
+  &lt;a href=&#34;#conclusion&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;AsciiDoc is just as easy to write as Markdown, but makes creating books vastly easier.&lt;/p&gt;
+&lt;p&gt;While creating all the files to format the first book took a lot of time and effort, I now have a template and subsequent books will start from that, making the process much less complicated. I imagine that I will keep tweaking the configuration and design as I go to make each format look better, but I now have the basic structure in place.&lt;/p&gt;
+&lt;p&gt;If anyone is interested, I am happy to share the template and the scripts I have written. Contact me using one of the links below or through the &lt;a href=&#34;http://localhost:1313/contact/&#34;&gt;Contact&lt;/a&gt; page.&lt;/p&gt;</description>
+</item>
     
     <item>
 <title>macOS by Tutorials</title>

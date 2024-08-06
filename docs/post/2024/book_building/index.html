@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+      <title>
+        Book Building ::
+        TrozWare
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="I started writing books for Kodeco when I was asked to contribute some Mac content to SwiftUI by Tutorials. I quickly learned that I really enjoyed long form technical writing but I wanted to create more Mac-specific content. After some negotiations, Kodeco agreed to my plan to write macOS by Tutorials and the first edition was published in April 2022.
+As I have written elsewhere, Kodeco has pivoted away from books and into providing multi-modal courses. They agreed to transfer the rights of the macOS by Tutorials book to me as it was out-of-catalog and since then, I have released an update.
+When writing for Kodeco, all I had to do was write the text and the accompanying code and images. The people at Kodeco took care of the rest. Many thanks to all involved - I greatly underestimated the work that this entailed! Now that I am self-publishing, I have had to learn how to create the various formats myself. This post is a summary of how I did that.
+"
+/>
+<meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://localhost:1313/post/2024/book_building/" />
+
+
+
+
+
+ 
+<link rel="stylesheet" href="/css/style.css" />
+
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+
+
+<link href="/fonts/Inter-Italic.woff2"
+rel="preload" type="font/woff2" as="font" crossorigin=""> <link href="/fonts/Inter-Regular.woff2" rel="preload"
+type="font/woff2" as="font" crossorigin=""> <link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2"
+as="font" crossorigin=""> <link href="/fonts/Inter-MediumItalic.woff2" rel="preload"
+type="font/woff2" as="font" crossorigin=""> <link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2"
+as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2"
+as="font" crossorigin="">
+
+
+<meta property="og:url" content="http://localhost:1313/post/2024/book_building/">
+  <meta property="og:site_name" content="TrozWare">
+  <meta property="og:title" content="Book Building">
+  <meta property="og:description" content="How I constructed all the versions of macOS by Tutorials">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-08-06T11:29:44+10:00">
+    <meta property="article:modified_time" content="2024-08-06T11:29:44+10:00">
+    <meta property="article:tag" content="Mac">
+    <meta property="article:tag" content="Book">
+    <meta property="article:tag" content="Ebook">
+    <meta property="article:tag" content="Asciidoc">
+    <meta property="article:tag" content="Markdown">
+    <meta property="article:tag" content="Pandoc">
+
+
+
+
+
+
+  </head>
+  <body >
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="http://localhost:1313/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >TrozWare</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/books/">Books</a></li>
+        
+      
+        
+          <li><a href="/apps/">Apps</a></li>
+        
+      
+        
+          <li><a href="/post/">Archives</a></li>
+        
+      
+        
+          <li><a href="/tags/">Tags</a></li>
+        
+      
+        
+          <li><a href="/contact/">Contact</a></li>
+        
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/">Home</a></li>
+      
+    
+      
+        <li><a href="/books/">Books</a></li>
+      
+    
+      
+        <li><a href="/apps/">Apps</a></li>
+      
+    
+      
+        <li><a href="/post/">Archives</a></li>
+      
+    
+      
+        <li><a href="/tags/">Tags</a></li>
+      
+    
+      
+        <li><a href="/contact/">Contact</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+
+<link rel="stylesheet" href="/css/header.css" />
+
+<div class="post">
+  <h2 class="post-title">
+    <a href="http://localhost:1313/post/2024/book_building/">Book Building</a>
+  </h2>
+  <div class="post-meta">
+    <span class="post-date">
+      06 Aug 2024
+    </span>
+    <span class="more-meta">- 2337 words, </span>
+    <span class="more-meta"> 11 minute read</span>
+  </div>
+
+  
+  <span class="post-tags">
+     #<a
+      href="http://localhost:1313/tags/mac"
+      >mac</a
+    >&nbsp;  #<a
+      href="http://localhost:1313/tags/book"
+      >book</a
+    >&nbsp;  #<a
+      href="http://localhost:1313/tags/ebook"
+      >ebook</a
+    >&nbsp;  #<a
+      href="http://localhost:1313/tags/asciidoc"
+      >asciidoc</a
+    >&nbsp;  #<a
+      href="http://localhost:1313/tags/markdown"
+      >markdown</a
+    >&nbsp;  #<a
+      href="http://localhost:1313/tags/pandoc"
+      >pandoc</a
+    >&nbsp;  #<a
+      href="http://localhost:1313/tags/pdf"
+      >pdf</a
+    >&nbsp;  #<a
+      href="http://localhost:1313/tags/epub"
+      >epub</a
+    >&nbsp;  #<a
+      href="http://localhost:1313/tags/html"
+      >html</a
+    >&nbsp; 
+  </span>
+   
+
+  <div class="post-content"><p>I started writing books for Kodeco when I was asked to contribute some Mac content to <a href="https://www.kodeco.com/books/swiftui-by-tutorials">SwiftUI by Tutorials</a>. I quickly learned that I really enjoyed long form technical writing but I wanted to create more Mac-specific content. After some negotiations, Kodeco agreed to my plan to write <a href="https://troz.net/books/macos_tutorials">macOS by Tutorials</a> and the first edition was published in April 2022.</p>
+<p>As I have written elsewhere, Kodeco has pivoted away from books and into providing multi-modal courses. They agreed to transfer the rights of the macOS by Tutorials book to me as it was out-of-catalog and since then, I have released an update.</p>
+<p>When writing for Kodeco, all I had to do was write the text and the accompanying code and images. The people at Kodeco took care of the rest. Many thanks to all involved - I greatly underestimated the work that this entailed! Now that I am self-publishing, I have had to learn how to create the various formats myself. This post is a summary of how I did that.</p>
+<h3 id="table-of-contents">
+  Table of Contents
+  <a href="#table-of-contents" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#project-structure">Project Structure</a></li>
+<li><a href="#formatting">Formatting</a>
+<ul>
+<li><a href="#html">HTML</a></li>
+<li><a href="#pdf">PDF</a></li>
+<li><a href="#epub">ePub</a></li>
+</ul>
+</li>
+<li><a href="#writing-tools">Writing Tools</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+<h3 id="introduction">
+  Introduction
+  <a href="#introduction" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>Since I always used Markdown when writing for Kodeco, that&rsquo;s where I started. I wanted to produce the book as an ePub and a PDF, so I needed to convert the Markdown to those formats. I also wanted to produce a web version, so that required a Markdown to HTML conversion. After some research, I started off with <a href="https://pandoc.org">pandoc</a>. This is a command-line tool that can convert between many different formats, so it seemed like a good choice.</p>
+<p>I found it very difficult to use and to configure to give the results I wanted. While looking for examples online, I discovered <a href="https://github.com/progit/progit">Pro Git</a>. This looked like it was doing what I was trying to do, but even after following their examples, I was still having problems. Then I discovered that <a href="https://github.com/progit/progit2">Pro Git 2nd Edition</a> was written in AsciiDoc, not Markdown. I had never heard of AsciiDoc but it looked like it might make generating various book formats easier, so I decided to give it a try.</p>
+<p>AsciiDoc is a markup language very similar to Markdown. This quick reference guide shows the syntax: <a href="https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/">AsciiDoc Syntax Quick Reference</a>. The secret sauce was using AsciiDoctor to convert AsciiDoc files into HTML, ePub and PDF. This was much easier to use than pandoc but it took a bit of tweaking to get the results I wanted for each format.</p>
+<h2 id="project-structure">
+  Project Structure
+  <a href="#project-structure" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>I started by copying the file and folder structure used for Pro Git. I&rsquo;ve since modified it to suit my needs but the basic structure is much the same. In the root folder, I have the following:</p>
+<ul>
+<li><strong>Rakefile</strong>: The Ruby file that contains the commands to generate the various formats.</li>
+<li><strong>Gemfile</strong> &amp; <strong>Gemfile.lock</strong>: These files handle the Ruby libraries used to create the various formats.</li>
+<li><strong>book.adoc</strong>: The main file that assembles the contents of the book and is used for the PDFs and ePub versions.</li>
+<li><strong>book-html.adoc</strong>: The same as book.adoc but with an added image, since the HTML version doesn&rsquo;t have a cover.</li>
+<li><strong>theme folder</strong>: The files used to style the different versions.</li>
+<li><strong>images folder</strong>: All the images used in the book.</li>
+<li><strong>fonts folder</strong>: The custom fonts used in the book.</li>
+<li><strong>components folder</strong>: The adoc files referenced by book.adoc.</li>
+<li><strong>book folder</strong>: The adoc files for each chapter as well as preface, introduction, conclusion etc.</li>
+</ul>
+<p>AsciiDoc files can import other AsciiDoc files, so I have a separate file for each chapter in the book as well as files for the non-chapter content. The <strong>book.adoc</strong> file includes <strong>components/headers.adoc</strong>, a link to the cover image and <strong>components/contents.adoc</strong>. <strong>book-html.adoc</strong> is the same except for including the cover as an image file.</p>
+<p>The <strong>headers.adoc</strong> file is where AsciiDoctor reads the metadata for the book:</p>
+<pre tabindex="0"><code class="language-asciidoc" data-lang="asciidoc">= macOS by Tutorials
+Sarah Reichelt
+:doctype: book
+:doctitle: macOS by Tutorials
+:notitle:
+:toc: macro
+:toclevels: 2
+:figure-caption!:
+:description: macOS App Development for iOS Developers
+:author: Sarah Reichelt
+:copyright: (C) 2024 Sarah Reichelt. All rights reserved.
+:epub3-stylesdir: theme
+</code></pre><p>Some of these are self-explanatory, but there are some oddities:</p>
+<ul>
+<li><code>:doctype: book</code>: Set the type of this document to a book. AsciiDoctor uses different formatting and allows different header levels for different types of documents.</li>
+<li><code>:notitle: </code>: Turn off default title page. I wanted to customise my title page.</li>
+<li><code>:toc: macro</code>: Setting this to macro allows me to specify the location for the table of contents, instead of using the default placement.</li>
+<li><code>:toclevels: 2</code>: Set the number of header levels to include in the table of contents.</li>
+<li><code>:figure-caption!:</code>: Tell AsciiDoctor not to add &lsquo;Figure #&rsquo; to all image captions.</li>
+<li><code>:epub3-stylesdir: theme</code>: The folder containing the styles for the ePub version.</li>
+</ul>
+<p>The next file in components is <strong>content.adoc</strong>. This is where I include the title page, the table of contents, the introductory pages, the sections and the conclusion. Each section file has a header, an introduction and links to the chapter files.</p>
+<p>With the folder structure in place, I copied the matching Markdown files from the original book. Then I used various tools to convert these files into AsciiDoc. The <a href="https://github.com/asciidoctor/kramdown-asciidoc">Kramdown AsciiDoc</a> converter did most of the work to translate Markdown to AsciiDoc. The image links needed special handling, especially when it came to adding captions and sizes. I used Python scripts for this. Python is always my go-to tool for text and file manipulation. I also used Python to strip out the Markdown metadata at the start of every chapter and add the AsciiDoc metadata.</p>
+<p>I am not artistic, so I used Keynote to create the cover image. This allowed me to do object-oriented design with images, shapes and text. I then exported it as a PNG file for use in the book.</p>
+<p>Finally, I had all the files in the right places and in the correct formats. Now to generate and style the various versions.</p>
+<p>This involved using Ruby to run the various AsciiDoctor commands. My Mac had Ruby installed but only an old version, so I used Homebrew to update to Ruby 3.3. I&rsquo;m not familiar with Ruby, so I had to learn how to install and update the required gems. With them in place, I used the commands in the Rakefile to create the various formats.</p>
+<h2 id="formatting">
+  Formatting
+  <a href="#formatting" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>The Pro Git Rakefile started by defining some parameters that could be passed to the AsciiDoctor commands for all the formats.
+In their case, params included two attributes: <code>revnumber</code> and <code>revdate</code>. I also wanted to specify the syntax highlighter and its style. Working out what to use for the syntax highlighter was a bit tricky as I wanted the code blocks to look like they would in Xcode, but I eventually found the right combination using <a href="https://pygments.org">pygments</a> and its <strong>xcode</strong> style:</p>
+<p>My parameters used by all the different formats ended up like</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>version_string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;2.0&#39;</span>
+</span></span><span style="display:flex;"><span>date_string <span style="color:#f92672">=</span> <span style="color:#66d9ef">Time</span><span style="color:#f92672">.</span>now<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;%Y-%m-%d&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>params <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;--attribute revnumber=&#39;</span><span style="color:#e6db74">#{</span>version_string<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; --attribute revdate=&#39;</span><span style="color:#e6db74">#{</span>date_string<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>syntax_params <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;--attribute source-highlighter=pygments --attribute pygments-style=xcode&#34;</span>
+</span></span></code></pre></div><p>Then I had to work out how to style each format.</p>
+<h3 id="html">
+  HTML
+  <a href="#html" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>Pro Git uses this command for generating the HTML, which gave me my starting point:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>sh <span style="color:#e6db74">&#34;bundle exec asciidoctor </span><span style="color:#e6db74">#{</span>params<span style="color:#e6db74">}</span><span style="color:#e6db74"> -a data-uri progit.asc&#34;</span>
+</span></span></code></pre></div><p>I had already added a second set of params for the syntax highlighter, but the next thing was to add my own style sheet. The Pro Git repo had a <strong>theme</strong> folder with sub-folders for each format. I tried editing <strong>theme/html/html.css</strong> but that didn&rsquo;t work. I eventually found that I needed to create a new file called <strong>docinfo.html</strong> in the <strong>theme</strong> folder and then add more attributes to access it. This changed my command to:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>book_title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;macOS_by_Tutorials_v2.0.html&#39;</span>
+</span></span><span style="display:flex;"><span>style_sheet <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;-a docinfodir=theme -a docinfo=shared&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sh <span style="color:#e6db74">&#34;bundle exec asciidoctor </span><span style="color:#e6db74">#{</span>params<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">#{</span>syntax_params<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">#{</span>style_sheet<span style="color:#e6db74">}</span><span style="color:#e6db74"> -a data-uri -o </span><span style="color:#e6db74">#{</span>book_title<span style="color:#e6db74">}</span><span style="color:#e6db74"> book-html.adoc&#34;</span>
+</span></span></code></pre></div><p>This meant that I could add my own CSS or JavaScript to the <strong>theme/docinfo.html</strong> file and it would be included in the HTML output. The <code>data-uri</code> attribute tells AsciiDoctor to embed the images in the HTML output. I didn&rsquo;t want to have to give people a folder of images to go with the HTML file, I wanted a single file that could be opened in a browser and would include everything.</p>
+<p>I generated an HTML file using the default styling, then copied the default CSS into a <code>style</code> block in this file. I then edited it to my satisfaction.</p>
+<p>One refinement for the HTML version was to add a copy button on the code blocks. I used <a href="https://clipboardjs.com">clipboard.js</a> for this and tweaked the style and position of the copy button to match my style. I also added JavaScript to make the copy operation ignore the numbered comment lines that are used to mark explanation points throughout the code.</p>
+<h3 id="pdf">
+  PDF
+  <a href="#pdf" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>The PDF was the most difficult to format as it doesn&rsquo;t use CSS but includes some other formatting options in a YML file, perhaps based on Postscript? I used AsciiDoctor to export the default PDF theme so I could see the format. Then I created my own PDF theme file, extending the default theme. This involved quite a bit of trial and error as I had to work out what the various styles were called and how to override them. I also wanted to create a dark mode version of the PDF, so I made a second theme file for that.</p>
+<p>The two theme files are called <strong>pdf-theme.yml</strong> and <strong>pdfdark-theme.yml</strong>. They are both inside the <strong>theme</strong> folder. I used these in the Rakefile like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>pdf_params <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;-a pdf-theme=pdf -a pdf-themesdir=theme -a pdf-fontsdir=.&#39;</span>
+</span></span><span style="display:flex;"><span>output_name <span style="color:#f92672">=</span> book_title <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;_v&#39;</span> <span style="color:#f92672">+</span> version_string <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;.pdf&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sh <span style="color:#e6db74">&#34;bundle exec asciidoctor-pdf </span><span style="color:#e6db74">#{</span>pdf_params<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">#{</span>syntax_params<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">#{</span>params<span style="color:#e6db74">}</span><span style="color:#e6db74"> -o </span><span style="color:#e6db74">#{</span>output_name<span style="color:#e6db74">}</span><span style="color:#e6db74"> book.adoc&#34;</span>
+</span></span></code></pre></div><p>And:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>pdf_params <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;-a pdf-theme=pdfdark -a pdf-themesdir=theme -a pdf-fontsdir=.&#39;</span>
+</span></span><span style="display:flex;"><span>syntax_params <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;--attribute source-highlighter=pygments --attribute pygments-style=github-dark&#34;</span>
+</span></span><span style="display:flex;"><span>output_name <span style="color:#f92672">=</span> book_title <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;_v&#39;</span> <span style="color:#f92672">+</span> version_string <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;_dark.pdf&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sh <span style="color:#e6db74">&#34;bundle exec asciidoctor-pdf </span><span style="color:#e6db74">#{</span>pdf_params<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">#{</span>syntax_params<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">#{</span>params<span style="color:#e6db74">}</span><span style="color:#e6db74"> -o </span><span style="color:#e6db74">#{</span>output_name<span style="color:#e6db74">}</span><span style="color:#e6db74"> book.adoc&#34;</span>
+</span></span></code></pre></div><p>As you can see, the <strong>-theme.yml</strong> part of the file name is not included in the command, just the base name. The <code>pdf-themesdir</code> attribute is used to point to the theme folder and the <code>pdf-fontsdir</code> attribute is used to point to the root folder. This worked because I had the font files in a <strong>fonts</strong> folder and included the folder path in the font specifications of the YML files.</p>
+<p>For the PDF versions, I also added a header to every page with the book title and the chapter title using the YML files.</p>
+<h3 id="epub">
+  ePub
+  <a href="#epub" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>Finally, the ePub version. To my surprise, an ePub is actually a zip file. The contents are XHTML files, images and styles. The secret here was again to have files with the correct name in the correct location. In this case, I needed <strong>epub3.scss</strong> and <strong>epub3-css3-only.css</strong> in the <strong>theme</strong> folder. I left <strong>epub3.scss</strong> empty, but it still had to be there. The <strong>epub3-css3-only.css</strong> file had styles for where I wanted to override the defaults. It wasn&rsquo;t always easy to know what classes to apply the styles to, but I opened one of the XHTML files in my browser and used the web inspector to find them.</p>
+<h2 id="writing-tools">
+  Writing Tools
+  <a href="#writing-tools" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>The editor I used was <a href="https://code.visualstudio.com">Visual Studio Code</a>. While it&rsquo;s not a native Mac app, it&rsquo;s a very powerful editor and has a fantastic array of extensions. I installed the <a href="https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode">AsciiDoc extension</a> which allowed me to preview the AsciiDoc files in the editor.</p>
+<p>There was a problem with previewing because of the image paths. The <strong>book.adoc</strong> file specifies the path to the images folder, but when previewing an individual chapter file, this was not applied. I had to add a line to the metadata at top of each chapter file to include the path to the images folder. I also added a header to show a table of contents to make it easier to jump around the file while editing. When building the entire book, these headers had to go - the image path over-rode the one in the book.adoc file and meant that book.adoc couldn&rsquo;t find any images, and a table of contents was included in every chapter. I ended up turning to Python again and wrote a script to add and remove these headers as needed.</p>
+<p>I use <a href="https://github.com">GitHub</a> to store the book files and to collaborate with my editor, or language engineer as he prefers to be called.</p>
+<p>The other important extension is <a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker">Code Spell Checker</a>. Of course there will still be typos in the final book, but this extension helps to catch some of them. A big advantage of this spell checker is that it defaults to US English spelling. I normally write UK/Australian English, but I prefer to use US English for my books to avoid things like <strong>Create an NSColor is store the selected colour</strong> :-). Another big plus is that the custom dictionary is a JSON file stored in the project. That way my editor gets the same spell checking as I do, and I can easily edit the file if I want to delete or change a custom spelling.</p>
+<p>All the code is written in Xcode using the default settings and theme as much as possible.</p>
+<p>Screenshots are taken with <a href="https://cleanshot.com">CleanShot X</a> and edited in Preview, which usually just involves cropping.</p>
+<p>For hardware, my main computer is a 24&quot; M3 iMac, my keyboard is an <a href="https://www.zsa.io/moonlander/">Ergodox Moonlander</a> and my mouse is a <a href="https://www.logitech.com/en-au/products/mice/mx-vertical-ergonomic-mouse.910-005449.html">Logitech MX Vertical</a>. I also have a 13&quot; M1 MacBook Pro for when I need to work in a different location.</p>
+<h2 id="conclusion">
+  Conclusion
+  <a href="#conclusion" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>AsciiDoc is just as easy to write as Markdown, but makes creating books vastly easier.</p>
+<p>While creating all the files to format the first book took a lot of time and effort, I now have a template and subsequent books will start from that, making the process much less complicated. I imagine that I will keep tweaking the configuration and design as I go to make each format look better, but I now have the basic structure in place.</p>
+<p>If anyone is interested, I am happy to share the template and the scripts I have written. Contact me using one of the links below or through the <a href="/contact/">Contact</a> page.</p></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+       
+      <a class="btn previous" href="http://localhost:1313/post/2024/macos_tutorials/"
+        >macOS by Tutorials →</a
+      >
+      
+    </div>
+  </div>
+  
+</div>
+
+      </div>
+
+      
+        <link rel="stylesheet" href="/css/footer.css" />
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="social_footer">
+      <a
+        id="email-Link"
+        class="mailtoui"
+        href="mailto:sarah@troz.net"
+        aria-label="Email me"
+        ><img src="/icons/envelope.svg" alt=""
+      /></a>
+      
+      <a
+        rel="me"
+        href="https://mastodon.social/@troz"
+        aria-label="Follow me on Mastodon"
+        ><img src="/icons/mastodon.png" alt=""
+      /></a>
+
+      <a href="https://linktr.ee/trozware" aria-label="Check out all my links"
+        ><img src="/icons/tree.svg" alt=""
+      /></a>
+
+      <a
+        href="https://github.com/trozware"
+        aria-label="Look at my code on Github"
+        ><img src="/icons/github.svg" alt=""
+      /></a>
+
+      <a
+        href="https://stackoverflow.com/users/1082632"
+        aria-label="Check out my Stack Overflow profile"
+        ><img src="/icons/stack-overflow.svg" alt=""
+      /></a>
+
+      <a href="https://troz.net/index.xml" aria-label="Subscribe to my RSS feed"
+        ><img src="/icons/rss.svg" alt=""
+      /></a>
+      <a
+        href="https://troz.net/feed.json"
+        aria-label="Subscribe to my JSON feed"
+        ><img src="/icons/json.png" alt=""
+      /></a>
+
+      <a href="https://dev.to/trozware" aria-label="Check out my DEV profile">
+        <img
+          src="/icons/dev-badge.svg"
+          alt=""
+          alt="TrozWare's DEV Profile"
+          style="height: 37px; margin-top: -3px"
+          height="40"
+          width="40"
+        />
+      </a>
+
+      <a
+        href="https://ko-fi.com/H2H3BU7SI"
+        target="_blank"
+        aria-label="Buy me a coffee"
+        ><img
+          height="36"
+          style="border: 0px; height: 36px; width: unset"
+          src="https://cdn.ko-fi.com/cdn/kofi1.png?v=3"
+          border="0"
+          alt="Buy Me a Coffee at ko-fi.com"
+      /></a>
+    </div>
+  </div>
+
+  <div class="footer__inner">
+    <div class="copyright">
+      
+      <span>© 2012 - 2024 Sarah Reichelt</span>
+      
+      <span
+        ><a href="http://gohugo.io">Hugo</a> theme created by
+        <a href="https://twitter.com/panr">panr</a> 2018</span
+      >
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink()
+  })
+</script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>
