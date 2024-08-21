@@ -11,6 +11,8 @@ The book is available for sale through Gumroad at [macOS by Tutorials][2].
 
 If you'd like to check out the start of the book including the table of contents and the first chapter, you can read it online at [macOS by Tutorials Sample][4].
 
+Version 2.0.1 is a minor update to address some formatting issues in the HTML and ePub versions. The content is exactly the same as in version 2.0 but for the HTML version, I have worked out how to make the table of contents into a sidebar, which works much better.
+
 ---
 
 In April 2022, Kodeco published the first edition of [macOS by Tutorials][1]. Nothing stays the same in the world of Apple development, so I started to plan an update after WWDC 2023. At around that time, Kodceo was going through a transformation from being like a library to being more of an educational institution. Their focus is now on multi-modal courses and they are no longer interested in publishing books.
@@ -52,6 +54,6 @@ Once you've written your app, you'll want to distribute it to others so they can
 [1]: https://www.kodeco.com/books/macos-by-tutorials
 [2]: https://sarahreichelt.gumroad.com/l/oximx
 [3]: mailto:books@troz.net?subject=macOS%20by%20Tutorials%20Discount
-[4]: /books/mos_2.0_sample.html
+[4]: /books/mos_2.0.1_sample.html
 [contact]: /contact/
 [kofi]: https://ko-fi.com/trozware
