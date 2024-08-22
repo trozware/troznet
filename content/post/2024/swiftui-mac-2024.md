@@ -65,7 +65,7 @@ When I tried to build, I got sensible warnings pointing out that I had not used 
 
 So overall, not great yet. Old technology and a flawed implementation. One of the points Apple people made at WWDC 2024 was that these code tools would be trained on the latest Apple APIs. This is not the case here, but I'm still running a beta, so I'll give them the benefit of the doubt for now. I'll definitely be keeping an eye on this feature and hope to be able to make good use of it in the future.
 
-Before I move on from Xcode, there's one more feature I want to mention and that's the new options for creating a new file. If you press **Command-N**, you get the file template chooser, just as before. But now there are other possibilities. You can use the **File** menu or right-click in the Project navigator to add a new empty file, but the one I like best is the ability to make new files from the clipboard. I don't know about you, but when I'm working on a SwiftUI project, I'll often have more than one view in a file, especially if I've created views by extracting subviews. Later on, I'll want the view to have it's own file.
+Before I move on from Xcode, there's one more feature I want to mention and that's the new options for creating a new file. If you press **Command-N**, you get the file template chooser, just as before. But now there are other possibilities. You can use the **File** menu or right-click in the Project navigator to add a new empty file, but the one I like best is the ability to make new files from the clipboard. I don't know about you, but when I'm working on a SwiftUI project, I'll often have more than one view in a file, especially if I've created views by extracting subviews. Later on, I'll want the view to have its own file.
 
 I had a view called `MeshBackground` which didn't have its own file, so I selected the entire struct and pressed **Command-X** to cut it out. Then both the contextual menu and the **File -> New** menu offered **New "Meshbackground.swift" from Clipboard**. When I selected this, it added the file, named it and pasted in my struct. The only thing I had to do was to add the `import SwiftUI` statement at the top of the new file. I think it could have been smart enough to work this one out, but maybe later.
 
@@ -140,7 +140,7 @@ struct NewApp: App {
 }
 ```
 
-The `id` can be anything so long as you don't use it for any other window in your app. In the default state, this removes the **File** menu completely. If also changes the app behavior so that closing the window quits the app completely. If you add any new commands to the **File** menu, you'll get the **Close** item back, but using it will still quit the app. You can still open secondary windows in this style of app, but you can't duplicate the initial window.
+The `id` can be anything so long as you don't use it for any other window in your app. In the default state, this removes the **File** menu completely. It also changes the app behavior so that closing the window quits the app completely. If you add any new commands to the **File** menu, you'll get the **Close** item back, but using it will still quit the app. You can still open secondary windows in this style of app, but you can't duplicate the initial window.
 
 I covered how to open new windows in my previous article [SwiftUI for Mac 2022][5]. The code is still present in this year's sample app for reference, but commented out.
 
@@ -227,7 +227,7 @@ The `content` is a `WindowLayoutRoot` that gives the `sizeThatFits` for the prop
 
 With these two pieces of data, I can calculate the position for the top left of the window so that the center of the window will be at the center of the screen, and combine this with the size into a `WindowPlacement`.
 
-Now when I run the app and open the **About** box, it's in the center of the screen and the right size for the content. But if move the window, then the next time I run the app, it's where I put it instead of in the center. This is the correct behavior for most windows, but not for the **About** window. I want it to be centered every time.
+Now when I run the app and open the **About** box, it's in the center of the screen and the right size for the content. But if I move the window, then the next time I run the app, it's where I put it instead of in the center. This is the correct behavior for most windows, but not for the **About** window. I want it to be centered every time.
 
 Time for another modifier:
 
