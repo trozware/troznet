@@ -7,10 +7,287 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2012 - 2024 Sarah Reichelt</copyright>
-    <lastBuildDate>Tue, 06 Aug 2024 11:29:44 +1000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Aug 2024 17:21:54 +1000</lastBuildDate>
     
         <atom:link href="https://troz.net/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>SwiftUI for Mac 2024</title>
+<link>https://troz.net/post/2024/swiftui-mac-2024/</link>
+<pubDate>Thu, 22 Aug 2024 17:21:54 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2024/swiftui-mac-2024/</guid>
+<description>&lt;p&gt;Over the years, I have written articles and sample apps to demonstrate the new features of each year&amp;rsquo;s SwiftUI updates with particular emphasis on macOS app development. Last year, the major update to SwiftUI was the new data flow system using the Observation framework. I covered that in my article &lt;a href=&#34;https://troz.net/post/2023/swiftui-data-flow-2023/&#34;&gt;SwiftUI Data Flow 2023&lt;/a&gt; but I didn&amp;rsquo;t feel there were sufficient UI changes to warrant an update to my usual sample app.&lt;/p&gt;
+&lt;p&gt;This year, the &lt;a href=&#34;https://http.cat/&#34;&gt;HTTP Cats&lt;/a&gt; app is back! And I&amp;rsquo;ll cover new features from both WWDC 2023 and WWDC 2024.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s currently August 2024 and I am running macOS Sequoia 15.1 Beta (24B5024e) with Xcode 16.1 beta (16B5001e).&lt;/p&gt;
+&lt;p&gt;Download the project from &lt;a href=&#34;https://github.com/trozware/swiftui-mac-2024&#34;&gt;GitHub&lt;/a&gt; and, if you&amp;rsquo;re running the correct versions of macOS and Xcode, you can run the app and follow along. If not, you can still look at the code, but it won&amp;rsquo;t build.&lt;/p&gt;
+&lt;p&gt;&lt;style&gt;
+  img {
+    margin: 10px auto;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .social_footer img {
+    border: none;
+    box-shadow: none;
+  }
+&lt;/style&gt;
+
+&lt;style&gt;
+  img {
+    margin: 10px auto;
+  }
+&lt;/style&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/http_teapot.png&#34; alt=&#34;HTTP Cats&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Warning&lt;/strong&gt;: there&amp;rsquo;s a bug right now that crashes the app in macOS 15.1. If you scroll down the list in the sidebar and then select a status that is more than 8 or 9 rows below the previous selection, the app crashes with this error: &lt;code&gt;Row index -1 out of row range (numberOfRows: 60)&lt;/code&gt;. I&amp;rsquo;ve tested this with Xcode 16.0 beta 6 and Xcode 16.1 and they both act the same. But on a computer running macOS 15.0 beta 7 and Xcode 16.0 beta 6, it works perfectly. So this is a bug in macOS 15.1.&lt;/p&gt;
+&lt;p&gt;Here are the areas that I&amp;rsquo;m going to discuss:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#xcode&#34;&gt;Xcode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#previews&#34;&gt;Previews&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#windows&#34;&gt;Windows&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tabs&#34;&gt;Tabs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#charts&#34;&gt;Charts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#colors-and-gradients&#34;&gt;Colors and gradients&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sf-symbols&#34;&gt;SF Symbols&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;xcode&#34;&gt;
+  Xcode
+  &lt;a href=&#34;#xcode&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;When you create a new project in Xcode 16.1, the second item in the project navigator is now a folder instead of a group. This sounds trivial, since it really is a folder in Finder but I find it really annoying because it doesn&amp;rsquo;t allow me to arrange my other files and folders as I want them. To fix this, right-click on the folder and select &lt;strong&gt;Convert to Group&lt;/strong&gt;. The icon switches from blue to gray and you can once again drag files and folders to re-order them.&lt;/p&gt;
+&lt;p&gt;The advantage to the folder option is that your project is read directly from the file system, so you can use Finder to move files around and Xcode will reflect the changes. To import a file into the project, you can drag it into the project&amp;rsquo;s Finder window and Xcode will see it. Similarly, to delete a file, you can use Finder directly. With the group option, you have to import files into the Xcode Project navigator, and when you do, source control marks the &lt;strong&gt;.xcodeproj&lt;/strong&gt; file as modified, making source control messier. Using the folder option, only the new file itself gets marked as a change. So use which option works for you, but I much prefer the clarity of being able to organize my files in the Project navigator.&lt;/p&gt;
+&lt;p&gt;The next thing to look at in Xcode is &lt;strong&gt;Predictive Code Completion&lt;/strong&gt;. While the Xcode betas run on macOS Sonoma, predictive code completion requires Sequoia and I think it also requires a minimum of 16GB of memory. We don&amp;rsquo;t yet have the promised &lt;strong&gt;Swift Assist&lt;/strong&gt; which will allow for a more detailed way of asking Xcode to write code, but the code completion is supposed to be much better.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve used &lt;a href=&#34;https://github.com/github-copilot-resources&#34;&gt;GitHub Copilot&lt;/a&gt; for writing JavaScript for a couple of years now and overall, it works well. I use it as a form of super autocomplete and targeted search rather than asking it to write large chunks of code for me, and that&amp;rsquo;s what I&amp;rsquo;m hoping to get for Swift now. Xcode has a way to go to catch up yet. Surprisingly, it suffers from one of the same problems as Copilot - it appears to have been trained on old code!&lt;/p&gt;
+&lt;p&gt;I know some people are very negative about using any form of AI to write parts of your code, but I see it as just another tool to help us be more efficient. For example, I bet you&amp;rsquo;ve written code to download and process JSON many, many times. Why not let Xcode write that for you? You still have to do the thinking. What&amp;rsquo;s the URL? Which properties do I need? How am I going to use the data? But you don&amp;rsquo;t have to write the boilerplate. It&amp;rsquo;s no different to using a library or a pre-built function.&lt;/p&gt;
+&lt;p&gt;I put predictive code completion to the test by creating a new Swift file called &lt;strong&gt;Networker.swift&lt;/strong&gt;. I set up a &lt;code&gt;Networker&lt;/code&gt; class and gave it a web address. Then I started to write a function to fetch the data:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/predictive_code_1.png&#34; alt=&#34;Predictive Code Completion 1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The faded text is the suggestion. I had only typed &lt;code&gt;func fet&lt;/code&gt;. It used the address to deduce that I was downloading quotes - not unreasonable. I pressed &lt;strong&gt;Tab&lt;/strong&gt; to accept and got the next chunk:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/predictive_code_2.png&#34; alt=&#34;Predictive Code Completion 2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;After pressing &lt;strong&gt;Tab&lt;/strong&gt; a few more times, I ended up with this:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/predictive_code_3.png&#34; alt=&#34;Predictive Code Completion 3&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This doesn&amp;rsquo;t build and it uses old-style completion handlers instead of async/await. The biggest problem I see is that it&amp;rsquo;s fallen into the usual &lt;code&gt;URLSession&lt;/code&gt; trap and not called &lt;code&gt;resume&lt;/code&gt; on the task. So this was never going to download anything.&lt;/p&gt;
+&lt;p&gt;I started to define a &lt;code&gt;NetworkError&lt;/code&gt; enum and it filled in the cases it had used, so that was really good. When I started to define a &lt;code&gt;Quote&lt;/code&gt; struct, it also added some reasonable properties, as well as marking it as conforming to &lt;code&gt;Codable&lt;/code&gt; - bonus points there.&lt;/p&gt;
+&lt;p&gt;When I tried to build, I got sensible warnings pointing out that I had not used either &lt;code&gt;task&lt;/code&gt; or &lt;code&gt;data&lt;/code&gt;. This would have reminded me to call &lt;code&gt;resume&lt;/code&gt; if I hadn&amp;rsquo;t already noticed. I also got a Swift 6 concurrency warning about the completion handler.&lt;/p&gt;
+&lt;p&gt;So overall, not great yet. Old technology and a flawed implementation. One of the points Apple people made at WWDC 2024 was that these code tools would be trained on the latest Apple APIs. This is not the case here, but I&amp;rsquo;m still running a beta, so I&amp;rsquo;ll give them the benefit of the doubt for now. I&amp;rsquo;ll definitely be keeping an eye on this feature and hope to be able to make good use of it in the future.&lt;/p&gt;
+&lt;p&gt;Before I move on from Xcode, there&amp;rsquo;s one more feature I want to mention and that&amp;rsquo;s the new options for creating a new file. If you press &lt;strong&gt;Command-N&lt;/strong&gt;, you get the file template chooser, just as before. But now there are other possibilities. You can use the &lt;strong&gt;File&lt;/strong&gt; menu or right-click in the Project navigator to add a new empty file, but the one I like best is the ability to make new files from the clipboard. I don&amp;rsquo;t know about you, but when I&amp;rsquo;m working on a SwiftUI project, I&amp;rsquo;ll often have more than one view in a file, especially if I&amp;rsquo;ve created views by extracting subviews. Later on, I&amp;rsquo;ll want the view to have it&amp;rsquo;s own file.&lt;/p&gt;
+&lt;p&gt;I had a view called &lt;code&gt;MeshBackground&lt;/code&gt; which didn&amp;rsquo;t have its own file, so I selected the entire struct and pressed &lt;strong&gt;Command-X&lt;/strong&gt; to cut it out. Then both the contextual menu and the &lt;strong&gt;File -&amp;gt; New&lt;/strong&gt; menu offered &lt;strong&gt;New &amp;ldquo;Meshbackground.swift&amp;rdquo; from Clipboard&lt;/strong&gt;. When I selected this, it added the file, named it and pasted in my struct. The only thing I had to do was to add the &lt;code&gt;import SwiftUI&lt;/code&gt; statement at the top of the new file. I think it could have been smart enough to work this one out, but maybe later.&lt;/p&gt;
+&lt;p&gt;This is a great time-saver and will really encourage me to keep my code well-structured.&lt;/p&gt;
+&lt;p&gt;In minor Xcode updates over the last two years, my favorite feature is using &lt;strong&gt;Control-M&lt;/strong&gt; to split long lines of code over multiple lines.&lt;/p&gt;
+&lt;h3 id=&#34;previews&#34;&gt;
+  Previews
+  &lt;a href=&#34;#previews&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Last year, we got the &lt;code&gt;#Preview&lt;/code&gt; macro which made SwiftUI previews a lot neater. We went from:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;SidebarRowView_Previews&lt;/span&gt;: PreviewProvider {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; previews: some View {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    SidebarRowView(code: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;418&amp;#34;&lt;/span&gt;, title: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;I&amp;#39;m a teapot&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#Preview {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  SidebarRowView(code: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;418&amp;#34;&lt;/span&gt;, title: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;I&amp;#39;m a teapot&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Xcode 15 has a converter you could use to switch to the new format, and Xcode 16.0 still has it but Xcode 16.1 does not. I&amp;rsquo;m not sure why they removed it, but it&amp;rsquo;s not a big deal to do it manually.&lt;/p&gt;
+&lt;p&gt;The new thing this year in previews is the &lt;code&gt;@Previewable&lt;/code&gt; macro which lets us provide data to a preview. This is especially useful for binding properties. In &lt;strong&gt;SidebarView.swift&lt;/strong&gt; in the sample app, I show the old style commented out:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;SidebarView(httpSections: HttpSection.localData, selectedStatus: .constant(&lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;selectedStatus&lt;/code&gt; is a Binding, so I can&amp;rsquo;t just pass in nil. I had to use &lt;code&gt;.constant&lt;/code&gt; to create a Binding set to nil. With &lt;code&gt;@Previewable&lt;/code&gt;, I can do this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@Previewable @State &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; selectedStatus: HttpStatus? = &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;SidebarView(httpSections: HttpSection.localData, selectedStatus: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;$&lt;/span&gt;selectedStatus)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I expected to be able to supply an actual &lt;code&gt;HttpStatus&lt;/code&gt; here and have it start as the selected item in the list, but although it compiled fine, it didn&amp;rsquo;t show up as selected in the preview initially. But I am now able to change the selection in the preview.&lt;/p&gt;
+&lt;h3 id=&#34;windows&#34;&gt;
+  Windows
+  &lt;a href=&#34;#windows&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;The first window feature I want to address is not new, but I&amp;rsquo;ve been asked about it a few times. How do you make a single window app and get SwiftUI to remove the &lt;strong&gt;File -&amp;gt; New Window&lt;/strong&gt; menu item?&lt;/p&gt;
+&lt;p&gt;When you create a new SwiftUI app, the &lt;strong&gt;&amp;hellip;App.swift&lt;/strong&gt; file contains something like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@main
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;NewApp&lt;/span&gt;: App {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some Scene {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    WindowGroup {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      ContentView()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This defines the main scene of the app as a window group which allows for multiple identical but independent windows. You get a &lt;strong&gt;File&lt;/strong&gt; menu with a &lt;strong&gt;New Window&lt;/strong&gt; item and a &lt;strong&gt;Close&lt;/strong&gt; item. If you want a single window app, you need to change the &lt;code&gt;WindowGroup&lt;/code&gt; to a &lt;code&gt;Window&lt;/code&gt;, supplying the window title and an &lt;code&gt;id&lt;/code&gt; string:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@main
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;NewApp&lt;/span&gt;: App {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some Scene {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Window(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;New App&amp;#34;&lt;/span&gt;, id: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;mainWindow&amp;#34;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      ContentView()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;id&lt;/code&gt; can be anything so long as you don&amp;rsquo;t use it for any other window in your app. In the default state, this removes the &lt;strong&gt;File&lt;/strong&gt; menu completely. If also changes the app behavior so that closing the window quits the app completely. If you add any new commands to the &lt;strong&gt;File&lt;/strong&gt; menu, you&amp;rsquo;ll get the &lt;strong&gt;Close&lt;/strong&gt; item back, but using it will still quit the app. You can still open secondary windows in this style of app, but you can&amp;rsquo;t duplicate the initial window.&lt;/p&gt;
+&lt;p&gt;I covered how to open new windows in my previous article &lt;a href=&#34;https://troz.net/post/2022/swiftui-mac-2022/#opening-new-windows&#34;&gt;SwiftUI for Mac 2022&lt;/a&gt;. The code is still present in this year&amp;rsquo;s sample app for reference, but commented out.&lt;/p&gt;
+&lt;p&gt;There is a new window scene called &lt;code&gt;UtilityWindow&lt;/code&gt;. This is primarily intended for floating palettes and toolbars. I&amp;rsquo;ve used it for the &lt;strong&gt;UI Samples&lt;/strong&gt; window just because that was a window I wanted to show, but it&amp;rsquo;s not really the right design choice for this sort of informational window.&lt;/p&gt;
+&lt;p&gt;In &lt;strong&gt;SwiftUI_Mac_2024App.swift&lt;/strong&gt;, here&amp;rsquo;s how I set up the utility window:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;UtilityWindow(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;UI Samples&amp;#34;&lt;/span&gt;, id: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ui_samples&amp;#34;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  SamplesView()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.keyboardShortcut(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;u&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Similarly to &lt;code&gt;Window&lt;/code&gt;, it needs a window title and an &lt;code&gt;id&lt;/code&gt;. The view to show in the window is in the closure and I&amp;rsquo;ve added an optional keyboard shortcut.&lt;/p&gt;
+&lt;p&gt;If you add a &lt;code&gt;Window&lt;/code&gt; scene that&amp;rsquo;s not the initial window, it appears in the &lt;strong&gt;Window&lt;/strong&gt; menu and you can open it from there with an optional keyboard shortcut. A &lt;code&gt;UtilityWindow&lt;/code&gt; gets a &lt;strong&gt;Show/Hide&lt;/strong&gt; menu item in the &lt;strong&gt;View&lt;/strong&gt; menu instead, and the keyboard shortcut toggles it.&lt;/p&gt;
+&lt;p&gt;A utility window has a few other differences:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It&amp;rsquo;s a floating window that appears above your other windows.&lt;/li&gt;
+&lt;li&gt;It doesn&amp;rsquo;t get focus by default when opened, you have to click in it to make it active.&lt;/li&gt;
+&lt;li&gt;When focused, you can close it with the &lt;strong&gt;Escape&lt;/strong&gt; key.&lt;/li&gt;
+&lt;li&gt;It&amp;rsquo;s hidden when your app is no longer the active app.&lt;/li&gt;
+&lt;li&gt;It cannot be minimized, so the orange button in the title bar is disabled.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These windows can be opened programmatically in exactly the same way as other windows, using &lt;code&gt;openWindow&lt;/code&gt;. Check out the code in &lt;strong&gt;ToolbarView.swift&lt;/strong&gt; to see how I do this.&lt;/p&gt;
+&lt;p&gt;The other window features I want to explore relate to style, initial position, and dragging. In one of the WWDC 2024 videos, the presenters created a custom &lt;strong&gt;About&lt;/strong&gt; window for their app, so I decided to try to do the same.&lt;/p&gt;
+&lt;p&gt;First I made a SwiftUI view called &lt;code&gt;AboutView&lt;/code&gt;. I added some titles and buttons, including one to close the window. I also added a mesh gradient background to make it look a bit more interesting. See the &lt;a href=&#34;#colors-and-gradients&#34;&gt;Colors and gradients&lt;/a&gt; section below for more info on that.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/about_view.png&#34; alt=&#34;About View&#34;&gt;&lt;/p&gt;
+&lt;p&gt;With the view created, now I had to work out how to show it instead of the default &lt;strong&gt;About&lt;/strong&gt; window. I started by adding a new window scene to &lt;strong&gt;SwiftUI_Mac_2024App.swift&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Window(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;About&amp;#34;&lt;/span&gt;, id: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;about&amp;#34;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  AboutView()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then in &lt;strong&gt;MenuView.swift&lt;/strong&gt;, I added a new &lt;code&gt;CommandGroup&lt;/code&gt;, replacing the existing &lt;code&gt;appInfo&lt;/code&gt; command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CommandGroup(replacing: .appInfo) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Button(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;About SwiftUI Mac 2024&amp;#34;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    openWindow(id: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;about&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When testing this, there were two problems:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The window was too large for my content.&lt;/li&gt;
+&lt;li&gt;There was now an &lt;strong&gt;About&lt;/strong&gt; menu item in the &lt;strong&gt;Window&lt;/strong&gt; menu as well as &lt;strong&gt;About SwiftUI Mac 2024&lt;/strong&gt; in the app menu.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;To fix these issues, I added modifiers to the window scene:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.windowResizability(.contentSize)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.commandsRemoved()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now my content filled the window although the sizing could still be too small or too big. But the &lt;strong&gt;Window -&amp;gt; About&lt;/strong&gt; menu item was gone, so I was making progress.&lt;/p&gt;
+&lt;p&gt;Next up is the new &lt;code&gt;defaultWindowPlacement&lt;/code&gt; modifier, which lets you set the initial position and size of a window. I added this to the &lt;strong&gt;About&lt;/strong&gt; window scene:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.defaultWindowPlacement { content, context &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; displayBounds = context.defaultDisplay.bounds
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; contentSize = content.sizeThatFits(.unspecified)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; position = CGPoint(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    x: displayBounds.midX &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; (contentSize.width &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    y: displayBounds.midY &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; (contentSize.height &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  )
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; WindowPlacement(position, size: contentSize)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;context&lt;/code&gt; is a &lt;code&gt;WindowPlacementContext&lt;/code&gt; that provides the display where the window will appear. I&amp;rsquo;m using its &lt;code&gt;bounds&lt;/code&gt; to determine the screen size.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;content&lt;/code&gt; is a &lt;code&gt;WindowLayoutRoot&lt;/code&gt; that gives the &lt;code&gt;sizeThatFits&lt;/code&gt; for the proposed content allowing for various proposed view sizes. I&amp;rsquo;m using the &lt;code&gt;unspecified&lt;/code&gt; size to get the ideal size for the content.&lt;/p&gt;
+&lt;p&gt;With these two pieces of data, I can calculate the position for the top left of the window so that the center of the window will be at the center of the screen, and combine this with the size into a &lt;code&gt;WindowPlacement&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now when I run the app and open the &lt;strong&gt;About&lt;/strong&gt; box, it&amp;rsquo;s in the center of the screen and the right size for the content. But if move the window, then the next time I run the app, it&amp;rsquo;s where I put it instead of in the center. This is the correct behavior for most windows, but not for the &lt;strong&gt;About&lt;/strong&gt; window. I want it to be centered every time.&lt;/p&gt;
+&lt;p&gt;Time for another modifier:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.restorationBehavior(.disabled)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This stops the window from remembering where it was put when the app re-launches. It remembers inside a single launch, but not on the next launch. If your window still remembers where it was because you moved it before adding this modifier, you may need to delete the app&amp;rsquo;s container folder in the &lt;strong&gt;Library/Containers&lt;/strong&gt; folder to reset it.&lt;/p&gt;
+&lt;p&gt;One thing I noticed was that this always put the &lt;strong&gt;About&lt;/strong&gt; box on my primary monitor, even if the app was running on a secondary monitor. If I re-enable the restoration behavior, the window appears on the correct monitor, but then it doesn&amp;rsquo;t center.&lt;/p&gt;
+&lt;p&gt;Now I have two more requirements: I want the &lt;strong&gt;About&lt;/strong&gt; window to have no title bar and I want to be able to drag it around the screen by clicking anywhere in the window. The first part is accomplished with yet another modifier:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.windowStyle(.plain)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now the window has no title bar. Good thing I added a &lt;strong&gt;Close&lt;/strong&gt; button! One annoying bug is that I added a keyboard shortcut to the &lt;strong&gt;Close&lt;/strong&gt; button so I could use &lt;strong&gt;Escape&lt;/strong&gt; to close the window. With a plain window style, it no longer works. The console shows this: &lt;code&gt;Warning: -[NSWindow makeKeyWindow] called on SwiftUI.AppKitWindow 0x139365800 which returned NO from -[NSWindow canBecomeKeyWindow]&lt;/code&gt;, so I guess the plain styled window is unable to become the key window and so cannot detect keyboard events.&lt;/p&gt;
+&lt;p&gt;For the dragging, open &lt;strong&gt;AboutView.swift&lt;/strong&gt; itself. The simplest way to achieve the required result is to add this modifier to the main &lt;code&gt;VStack&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.gesture(WindowDragGesture())
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now I can drag the window around by pressing and dragging from anywhere in the window. But I want more! I want to be able to track when the window is being dragged so I can change it visually. &lt;code&gt;WindowDragGesture&lt;/code&gt; is new but it conforms to the &lt;code&gt;Gesture&lt;/code&gt; protocol so I can use it to detect the state of the drag. I added an &lt;code&gt;@GestureState&lt;/code&gt; property to &lt;code&gt;AboutView&lt;/code&gt; to track it:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@GestureState &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; isDraggingWindow = &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then I created a new &lt;code&gt;WindowDragGesture&lt;/code&gt; with an &lt;code&gt;updating&lt;/code&gt; closure to set the gesture state to &lt;code&gt;true&lt;/code&gt; during a drag operation:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; dragWindow: some Gesture {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  WindowDragGesture()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .updating(&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;$&lt;/span&gt;isDraggingWindow) { &lt;span style=&#34;color:#66d9ef&#34;&gt;_&lt;/span&gt;, state, &lt;span style=&#34;color:#66d9ef&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      state = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally, I changed the &lt;code&gt;gesture&lt;/code&gt; modifier to use this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.gesture(dragWindow)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now that I have a property to track the dragging, I added a modifier to the &lt;code&gt;VStack&lt;/code&gt; to change the &lt;code&gt;opacity&lt;/code&gt; while the window is being dragged:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.opacity(isDraggingWindow ? &lt;span style=&#34;color:#ae81ff&#34;&gt;0.8&lt;/span&gt; : &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And after all this, I finally had what I wanted:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/drag_about.png&#34; alt=&#34;Drag About&#34;&gt;&lt;/p&gt;
+&lt;p&gt;One final tweak would be to show an appropriate cursor when the window is being dragged. I tried adding to the &lt;code&gt;dragWindow&lt;/code&gt; gesture, but in the end I switched to using an &lt;code&gt;onChange&lt;/code&gt; modifier:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.onChange(of: isDraggingWindow) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; isDraggingWindow {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    NSCursor.closedHand.push()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    NSCursor.pop()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;tabs&#34;&gt;
+  Tabs
+  &lt;a href=&#34;#tabs&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;The syntax for defining tabs got what appears to be quite a minor upgrade, but it feels so much better. Here&amp;rsquo;s the old syntax:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;TabView {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ChartSamplesView().tabItem {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Chart&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  FormSamplesView().tabItem {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Form&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This always felt backwards to me. The label of the tab is in the closure and the view that&amp;rsquo;s inside the tab comes first, with a &lt;code&gt;tabItem&lt;/code&gt; modifier.&lt;/p&gt;
+&lt;p&gt;The same tab view now looks like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;TabView {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Tab(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Chart&amp;#34;&lt;/span&gt;, systemImage: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;chart.bar.doc.horizontal&amp;#34;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ChartSamplesView()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Tab(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Form&amp;#34;&lt;/span&gt;, systemImage: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;list.bullet.clipboard&amp;#34;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    FormSamplesView()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This suits my brain much better. I define a tab first and then use the closure to say what it will show. The only issue I have with this is that it has not considered Mac tabs which are mostly text only. You must specify an image for the tab, even when it won&amp;rsquo;t appear. In an app&amp;rsquo;s Settings view, the tabs are styled differently and will show an image, but not in a conventional Mac window.&lt;/p&gt;
+&lt;p&gt;Ok, the image &lt;em&gt;can&lt;/em&gt; appear in a conventional Mac window if you style the tab view differently. If you add a &lt;code&gt;.tabViewStyle&lt;/code&gt; modifier to a tab view, you can set it to either &lt;code&gt;automatic&lt;/code&gt;, &lt;code&gt;grouped&lt;/code&gt;, &lt;code&gt;sidebarAdaptable&lt;/code&gt; or &lt;code&gt;tabBarOnly&lt;/code&gt;. The default is &lt;code&gt;automatic&lt;/code&gt;, which is &lt;code&gt;tabBarOnly&lt;/code&gt; on macOS. The &lt;code&gt;grouped&lt;/code&gt; option is marked as being in beta, but it looks very familiar. It moves the tabs down so they are more like part of the content. The new one is &lt;code&gt;sidebarAdaptable&lt;/code&gt; which moves the tabs to the sidebar and shows the images. I can&amp;rsquo;t see myself using this in a Mac app, I think it&amp;rsquo;s designed more for the other OSes. It would only be useful if you had a long list of tabs that wouldn&amp;rsquo;t fit horizontally.&lt;/p&gt;
+&lt;p&gt;In the sample app, open &lt;strong&gt;SamplesView.swift&lt;/strong&gt; and test the different tab styles to see what you think. I&amp;rsquo;ve added the two non-standard options there commented out so you can try them in the preview.&lt;/p&gt;
+&lt;h3 id=&#34;charts&#34;&gt;
+  Charts
+  &lt;a href=&#34;#charts&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Last year, Swift Charts got a pie or donut option. This year, the charts team added vector and function plotting. In &lt;strong&gt;ChartSamplesView.swift&lt;/strong&gt;, I have three different charts: a bar chart as before, a pie chart and a line chart that plots various sine waves. My understanding is that the various plot types are great for functions or for large data sets but for more comprehensive information, check out the WWDC presentation: &lt;a href=&#34;https://developer.apple.com/wwdc24/10155&#34;&gt;Swift Charts: Vectorized and function plots&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/line_plot.png&#34; alt=&#34;Line Plot&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In my samples, I have a separate computed property for each of the three chart types, with a &lt;code&gt;@ViewBuilder&lt;/code&gt; property to return the correct chart. I&amp;rsquo;ve also updated the chart image export to use SwiftUI&amp;rsquo;s &lt;code&gt;fileExporter&lt;/code&gt; instead of the AppKit&amp;rsquo;s &lt;code&gt;NSSave&lt;/code&gt;. I had a slight issue with &lt;code&gt;fileExporter&lt;/code&gt;. I started off by including the image content type when configuring the exporter. This gave &lt;strong&gt;generic error&lt;/strong&gt; when I tried to save - not the most helpful of messages. I removed the content type and it worked fine. I&amp;rsquo;m not sure if this is a bug or a feature.&lt;/p&gt;
+&lt;h3 id=&#34;colors-and-gradients&#34;&gt;
+  Colors and gradients
+  &lt;a href=&#34;#colors-and-gradients&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;When you specify a &lt;code&gt;Color&lt;/code&gt; in SwiftUI, you have the ability to add a standard gradient:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Capsule()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .fill(.orange.gradient)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is a great modifier as it gives us a very simple way to improve the look of a flat block of color.&lt;/p&gt;
+&lt;p&gt;This year, we also get the ability to mix colors, like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Capsule()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .fill(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    selectedColor
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      .mix(with: mixColor, by: mixPercent)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      .gradient
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  )
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Open the &lt;strong&gt;UI Samples&lt;/strong&gt; window and go to the &lt;strong&gt;Form&lt;/strong&gt; tab to test out some color mixes. This not only allows us to create our own colors, but it also gives us a way to change colors programmatically like I do with the slider in the example. You can even chain &lt;code&gt;mix&lt;/code&gt; modifiers for more variability.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/color_mix.png&#34; alt=&#34;Color Mix&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The other big new thing is mesh gradients. As you saw in the &lt;a href=&#34;#windows&#34;&gt;Windows&lt;/a&gt; section above, I used a mesh gradient to create a background for the &lt;strong&gt;About&lt;/strong&gt; window. The basic technique for creating a mesh gradient is to make a grid of points and assign a color to each point. The points are defined as &lt;code&gt;SIMD2&amp;lt;Float&amp;gt;&lt;/code&gt; so you initialize each point with &lt;code&gt;SIMD2(x, y)&lt;/code&gt;. Then you supply an array of colors for each point. The colors expand out from each point, meshing with their neighbors.&lt;/p&gt;
+&lt;p&gt;In my example, I set most of the colors to white but changed the top left, middle and bottom right points to different colors so that I got a diagonal gradient. I also used even spacing for the points, which is not necessary. Check out the code in &lt;strong&gt;MeshBackground.swift&lt;/strong&gt; to see how I did this.&lt;/p&gt;
+&lt;p&gt;If you want to know more about mesh gradients, I highly recommend Stewart Lynch&amp;rsquo;s video: &lt;a href=&#34;https://www.youtube.com/watch?v=s_eQZ8rRV8Y&#34;&gt;MeshGradients in iOS 18 and Xcode 15&lt;/a&gt;. Although the title says iOS 18, it&amp;rsquo;s all valid for macOS 15 too.&lt;/p&gt;
+&lt;h3 id=&#34;sf-symbols&#34;&gt;
+  SF Symbols
+  &lt;a href=&#34;#sf-symbols&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;My final topic is the ability to add animated effects to &lt;a href=&#34;https://developer.apple.com/sf-symbols/&#34;&gt;SF Symbols&lt;/a&gt;. You can test this in the &lt;strong&gt;FormSamplesView.swift&lt;/strong&gt; preview, which only works because I used &lt;code&gt;@Previewable&lt;/code&gt; to add the menu selection to the preview. Before that, the preview worked but ignored any menu changes. The demo is a bit strange because it will often show the previous animation before using the new one, but this is not the way I would use these effects in an app and it does allow you to see what&amp;rsquo;s happening. Just keep clicking &lt;strong&gt;Show Effect&lt;/strong&gt; to see your selected animation.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/symbol_effects.png&#34; alt=&#34;Symbol Effects&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I wasn&amp;rsquo;t able to get the &lt;code&gt;appear&lt;/code&gt; or &lt;code&gt;scale&lt;/code&gt; effects to work, but maybe that&amp;rsquo;s an Xcode beta issue. They work in the SF Symbols app. The syntax for applying an effect looks like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Image(systemName: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;rainbow&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .font(.system(size: &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .symbolEffect(.bounce, value: showEffect)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Specify a symbol as usual, sizing it as needed. Then add the &lt;code&gt;symbolEffect&lt;/code&gt; modifier with the effect you want and a &lt;code&gt;value&lt;/code&gt;. The effect is triggered whenever the value changes.&lt;/p&gt;
+&lt;h3 id=&#34;conclusion&#34;&gt;
+  Conclusion
+  &lt;a href=&#34;#conclusion&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;So those are my favorite SwiftUI additions from WWDC 2024. As we have seen in recent years, Apple is gradually converging the OSes, especially with SwiftUI, which means that a lot of code is no longer platform-specific. But as developers, we still have the responsibility to make our apps look, feel and behave in a way that suits the platform, whatever it is.&lt;/p&gt;
+&lt;p&gt;One other point is that a lot of resources will state that they are for iOS, but many of them are totally valid for macOS too. Don&amp;rsquo;t skip an article or video just because it doesn&amp;rsquo;t label itself as specifically for macOS.&lt;/p&gt;
+&lt;p&gt;If you want more Mac-specific content, check out my recently updated book: &lt;a href=&#34;https://troz.net/books/macos_tutorials/&#34;&gt;macOS by Tutorials&lt;/a&gt;. It&amp;rsquo;s designed to help iOS developers extend into macOS development.&lt;/p&gt;
+&lt;p&gt;The project from this article is available on &lt;a href=&#34;https://github.com/trozware/swiftui-mac-2024&#34;&gt;GitHub&lt;/a&gt;. And as usual, I&amp;rsquo;d be thrilled to hear any suggestions, corrections or improvements. Please contact me using one of the links below or through the &lt;a href=&#34;https://troz.net/contact/&#34;&gt;Contact&lt;/a&gt; page. And if you found this article useful, I&amp;rsquo;d love you to &lt;a href=&#34;https://ko-fi.com/trozware&#34;&gt;buy me a coffee&lt;/a&gt;.&lt;/p&gt;</description>
+</item>
     
     <item>
 <title>Book Building</title>
