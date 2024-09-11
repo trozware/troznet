@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         Moving to the Dark Side ::
@@ -17,7 +17,7 @@ And now I have updated this site too. Click the light bulb icon at the top right
 />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://troz.net/post/2018/moving-to-the-dark-side/" />
+<link rel="canonical" href="http://localhost:1313/post/2018/moving-to-the-dark-side/" />
 
 
 
@@ -26,7 +26,7 @@ And now I have updated this site too. Click the light bulb icon at the top right
  
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://troz.net/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -47,7 +47,7 @@ as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preloa
 as="font" crossorigin="">
 
 
-<meta property="og:url" content="https://troz.net/post/2018/moving-to-the-dark-side/">
+<meta property="og:url" content="http://localhost:1313/post/2018/moving-to-the-dark-side/">
   <meta property="og:site_name" content="TrozWare">
   <meta property="og:title" content="Moving to the Dark Side">
   <meta property="og:description" content="Upgrading Mac apps for macOS Mojave.">
@@ -70,7 +70,7 @@ as="font" crossorigin="">
       <header class="header">
   <span class="header__inner">
     <a
-  href="https://troz.net/"
+  href="http://localhost:1313/"
   class="logo"
   style="text-decoration: none;"
 >
@@ -184,23 +184,23 @@ as="font" crossorigin="">
 
 <div class="post">
   <h2 class="post-title">
-    <a href="https://troz.net/post/2018/moving-to-the-dark-side/">Moving to the Dark Side</a>
+    <a href="http://localhost:1313/post/2018/moving-to-the-dark-side/">Moving to the Dark Side</a>
   </h2>
   <div class="post-meta">
     <span class="post-date">
       01 Oct 2018
     </span>
-    <span class="more-meta">- 155 words, </span>
+    <span class="more-meta">- 158 words, </span>
     <span class="more-meta"> 1 minute read</span>
   </div>
 
   
   <span class="post-tags">
      #<a
-      href="https://troz.net/tags/mac"
+      href="http://localhost:1313/tags/mac"
       >mac</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/app-store"
+      href="http://localhost:1313/tags/app-store"
       >app store</a
     >&nbsp; 
   </span>
@@ -229,11 +229,19 @@ as="font" crossorigin="">
 
 <p>With the release of macOS Mojave on 24th September 2018, I have started updating my Mac apps, mainly to enable support for dark mode if appropriate.</p>
 <p>And now I have updated this site too. Click the light bulb icon at the top right of the page to toggle between light and dark modes for this site.</p>
-<p>And with my apps, so far (1 st October 2018), I have updated <a href="https://itunes.apple.com/app/apple-store/id552293482">Icon Builder</a>, <a href="https://itunes.apple.com/app/apple-store/id509085586">World Time in Words</a>, <a href="https://itunes.apple.com/app/apple-store/id997688302">Dice Pass</a> and <a href="https://itunes.apple.com/app/apple-store/id533321133">A Knight&rsquo;s Move</a>.</p>
-<p><a href="/icon-builder/"><img src="/images/IconBuilder5.1.png" alt="Icon Builder 5.1"></a></p>
-<p><a href="/time-in-words-for-mac/"><img src="/images/WTiW_dark.png" alt="World Time in Words 3.2"></a></p>
-<p><a href="/dicepass/"><img src="/images/DicePass1.5.png" alt="Dice Pass 3.2"></a></p>
-<p><a href="/knightsmove/"><img src="/images/KnightsMoveMac1.png" alt="Knights Move 1.6"></a></p>
+<p>And with my apps, so far (1 st October 2018), I have updated <a href="https://itunes.apple.com/app/apple-store/id552293482" target="_blank" >Icon Builder</a>
+, <a href="https://itunes.apple.com/app/apple-store/id509085586" target="_blank" >World Time in Words</a>
+, <a href="https://itunes.apple.com/app/apple-store/id997688302" target="_blank" >Dice Pass</a>
+ and <a href="https://itunes.apple.com/app/apple-store/id533321133" target="_blank" >A Knight&rsquo;s Move</a>
+.</p>
+<p><a href="/icon-builder/" ><img src="/images/IconBuilder5.1.png" alt="Icon Builder 5.1"></a>
+</p>
+<p><a href="/time-in-words-for-mac/" ><img src="/images/WTiW_dark.png" alt="World Time in Words 3.2"></a>
+</p>
+<p><a href="/dicepass/" ><img src="/images/DicePass1.5.png" alt="Dice Pass 3.2"></a>
+</p>
+<p><a href="/knightsmove/" ><img src="/images/KnightsMoveMac1.png" alt="Knights Move 1.6"></a>
+</p>
 <p>For A Knight&rsquo;s Move, I wanted to make sure the wood-look background didn&rsquo;t change, so I actually disabled dark mode.
 For any developers looking for the way to do that, I added the following chunk to the <code>applicationDidFinishLaunching(_:)</code> method:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#75715e">#available</span>(<span style="color:#75715e">OSX</span> <span style="color:#ae81ff">10.14</span>, <span style="color:#f92672">*</span>) {
@@ -248,11 +256,11 @@ For any developers looking for the way to do that, I added the following chunk t
     </div>
     <div class="pagination__buttons">
       
-      <a class="btn next" href="https://troz.net/post/2018/moving-to-the-dark-side-2/"
+      <a class="btn next" href="http://localhost:1313/post/2018/moving-to-the-dark-side-2/"
         >← Moving to the Dark Side - Part 2</a
       >
        
-      <a class="btn previous" href="https://troz.net/post/2018/swift-strings-helper/"
+      <a class="btn previous" href="http://localhost:1313/post/2018/swift-strings-helper/"
         >Swift Strings Helper →</a
       >
       
@@ -366,7 +374,5 @@ For any developers looking for the way to do that, I added the following chunk t
 
       
     </div>
-
-    
   </body>
 </html>

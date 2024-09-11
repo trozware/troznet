@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+      <title>
+        Converting an App from Obj-C ::
+        TrozWare
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="A couple of months ago, I got a message from App Store Connect pointing out that one of my iPhone apps - Berio’s Sequenza VII - had not been updated in 3 years and so would be removed from the App Store unless I updated it within 90 days. I disagree with this policy, but small developers like me can&rsquo;t fight Apple. Since I still want the app to be available, I then had to consider how to update it. Once I opened the app project, I realized that the app was written in Objective-C, so I decided to take the plunge and convert it to Swift and SwiftUI.
+"
+/>
+<meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://localhost:1313/post/2024/app_conversion/" />
+
+
+
+
+
+ 
+<link rel="stylesheet" href="/css/style.css" />
+
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+
+
+<link href="/fonts/Inter-Italic.woff2"
+rel="preload" type="font/woff2" as="font" crossorigin=""> <link href="/fonts/Inter-Regular.woff2" rel="preload"
+type="font/woff2" as="font" crossorigin=""> <link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2"
+as="font" crossorigin=""> <link href="/fonts/Inter-MediumItalic.woff2" rel="preload"
+type="font/woff2" as="font" crossorigin=""> <link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2"
+as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2"
+as="font" crossorigin="">
+
+
+<meta property="og:url" content="http://localhost:1313/post/2024/app_conversion/">
+  <meta property="og:site_name" content="TrozWare">
+  <meta property="og:title" content="Converting an App from Obj-C">
+  <meta property="og:description" content="A couple of months ago, I got a message from App Store Connect pointing out that one of my iPhone apps - Berio’s Sequenza VII - had not been updated in 3 years and so would be removed from the App Store unless I updated it within 90 days. I disagree with this policy, but small developers like me can’t fight Apple. Since I still want the app to be available, I then had to consider how to update it. Once I opened the app project, I realized that the app was written in Objective-C, so I decided to take the plunge and convert it to Swift and SwiftUI.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-08-26T10:39:26+10:00">
+    <meta property="article:modified_time" content="2024-08-26T10:39:26+10:00">
+    <meta property="article:tag" content="Objective-C">
+    <meta property="article:tag" content="Swift">
+    <meta property="article:tag" content="Swiftui">
+    <meta property="article:tag" content="Ios">
+    <meta property="article:tag" content="Berio">
+
+
+
+
+
+
+  </head>
+  <body >
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="http://localhost:1313/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >TrozWare</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/books/">Books</a></li>
+        
+      
+        
+          <li><a href="/apps/">Apps</a></li>
+        
+      
+        
+          <li><a href="/post/">Archives</a></li>
+        
+      
+        
+          <li><a href="/tags/">Tags</a></li>
+        
+      
+        
+          <li><a href="/contact/">Contact</a></li>
+        
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/">Home</a></li>
+      
+    
+      
+        <li><a href="/books/">Books</a></li>
+      
+    
+      
+        <li><a href="/apps/">Apps</a></li>
+      
+    
+      
+        <li><a href="/post/">Archives</a></li>
+      
+    
+      
+        <li><a href="/tags/">Tags</a></li>
+      
+    
+      
+        <li><a href="/contact/">Contact</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+
+<link rel="stylesheet" href="/css/header.css" />
+
+<div class="post">
+  <h2 class="post-title">
+    <a href="http://localhost:1313/post/2024/app_conversion/">Converting an App from Obj-C</a>
+  </h2>
+  <div class="post-meta">
+    <span class="post-date">
+      26 Aug 2024
+    </span>
+    <span class="more-meta">- 2216 words, </span>
+    <span class="more-meta"> 11 minute read</span>
+  </div>
+
+  
+  <span class="post-tags">
+     #<a
+      href="http://localhost:1313/tags/objective-c"
+      >objective-c</a
+    >&nbsp;  #<a
+      href="http://localhost:1313/tags/swift"
+      >swift</a
+    >&nbsp;  #<a
+      href="http://localhost:1313/tags/swiftui"
+      >swiftui</a
+    >&nbsp;  #<a
+      href="http://localhost:1313/tags/ios"
+      >ios</a
+    >&nbsp;  #<a
+      href="http://localhost:1313/tags/berio"
+      >berio</a
+    >&nbsp; 
+  </span>
+   
+
+  <div class="post-content"><p>A couple of months ago, I got a message from App Store Connect pointing out that one of my iPhone apps - <a href="/berio/" >Berio’s Sequenza VII</a>
+ - had not been updated in 3 years and so would be removed from the App Store unless I updated it within 90 days. I disagree with this policy, but small developers like me can&rsquo;t fight Apple. Since I still want the app to be available, I then had to consider how to update it. Once I opened the app project, I realized that the app was written in Objective-C, so I decided to take the plunge and convert it to Swift and SwiftUI.</p>
+<p>The app in question is a highly specialized app with an <em>extremely</em> small market - professional musicians or university-level music students who play the oboe. My eldest son fits this category and in 2013, he started to learn a piece called <a href="https://en.wikipedia.org/wiki/Sequenza_VII" target="_blank" >Sequenza VII by Luciano Berio</a>
+. This is a very strange piece because it doesn&rsquo;t have a standard time signature. Instead each line has 13 bars (measures) with each bar being allocated a certain time span in actual seconds. This means that practicing with a metronome is useless. So I wrote an iPhone app that counted each bar and played a sound or flashed the screen at the appropriate times for each bar. I allowed for slowing the whole thing down for practice, and since the performance is supposed to be accompanied by a constant drone playing in the background, I added that too. I can&rsquo;t say it sells well, but every time someone buys it, I get a warm glow of satisfaction.</p>
+<p>I dislike Apple&rsquo;s policy of removing old apps, just because they are old. After all, the piece of music that this app supports was written in 1969 and Berio hasn&rsquo;t updated it since!</p>
+<p>There are valid reasons for removing apps from the App Store:</p>
+<ul>
+<li>The app doesn&rsquo;t run on the latest hardware or operating system.</li>
+<li>The app is a scam.</li>
+<li>The app is an obvious clone of another app.</li>
+<li>The developer no longer maintains the app.</li>
+</ul>
+<p>But basing a removal purely on age is an easy thing to automate, so Apple can convince themselves that they are keeping the App Store safe, without actually doing anything useful. In fact, the last time I got one of these notices, I updated the version and build numbers and re-submitted the identical app to the App Store. It was accepted and the notice went away. I fail to see how this did anything except waste my time and the App Store reviewer&rsquo;s time.</p>
+<p>Anyway, this time I considered doing the same again, but when I realized the app was still in Objective-C, which I am rapidly forgetting, I decided now was the time to convert it. So I opened up Xcode and created a new project using Swift and SwiftUI. Don&rsquo;t you love the smell of a fresh Xcode project?</p>
+<p>There are four main aspects to the app:</p>
+<ol>
+<li>The main screen that shows the bar length and allows control.</li>
+<li>The settings screens that configure the app - there are a lot of options.</li>
+<li>Playing the drone if required.</li>
+<li>The timing functions that work in the background and update the UI as the bars proceed.</li>
+</ol>
+<h3 id="main-screen">
+  Main Screen
+  <a href="#main-screen" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>For the main screen, the UI was quite simple and I was able to recreate it in SwiftUI with no problems. The only issue I had was with <code>Text</code> views that are only visible in certain circumstances. I tried hiding them by adjusting <code>opacity</code> which I expected to work, but it didn&rsquo;t, presumably because there wasn&rsquo;t always any text content. I could have solved this using fixed heights, but I didn&rsquo;t want to do that for accessibility reasons. I ended up keeping the views always visible but clearing or setting the text content. By using <code>Spacers</code> and <code>VStacks</code> I was able to keep the layout looking the way I wanted it at all times.</p>
+<p>As is my usual habit, I populated the UI with local <code>@State</code> variables at this stage. This lets me adjust the preview data quickly to make sure the UI works with a range of different values, without having to worry about the actual data flow. Then I plugged in real data later. For the SwiftUI preview, I selected the <strong>iPhone SE 3rd generation</strong> as the standard device. This is the smallest screen size so everything has to fit on it. Later, I used the <strong>iPhone 15 Pro Max</strong> to confirm that it all looks good on a large screen too.</p>
+<p>The only other trick was to use a <code>.monospacedDigit()</code> for the large counter in the middle of the screen. This stops the numbers jumping around as they change.</p>
+<p><style>
+  img {
+    margin: 10px auto;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .social_footer img {
+    border: none;
+    box-shadow: none;
+  }
+</style>
+
+<style>
+  img {
+    margin: 10px auto;
+  }
+</style>
+</p>
+<p><img src="/images/Berio_ContentView.png" alt="Berio ContentView"></p>
+<h3 id="settings">
+  Settings
+  <a href="#settings" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>Now on to the settings which take up two screens. In the Objective-C app, I used storyboards. The main screen segued to a tab view with three tabs: two for settings and one for the about screen. The settings views used lots of nested stack views and many, many constraints.</p>
+<p>Getting the basic UI elements into SwiftUI was relatively easy, but I wanted them to look good on large or small iPhones. I didn&rsquo;t want something that looked good on an SE being all crammed into the top half of a 15 Pro, but that ended up being more-or-less what I got.</p>
+<p>I tried various techniques using nested stacks, spacers, forms, groups and so on. Nothing I tried gave me quite the result I wanted, but I ended up with nested <code>VStacks</code> which allowed me to group related settings. In hindsight, I probably should have swallowed my <code>GeometryReader</code> aversion and used it to adjust the layout spacing, based on the screen size. I will probably go back and do that later.</p>
+<p><img src="/images/Berio_settings.png" alt="Settings"></p>
+<p>But the most important thing about the setting screens was the settings themselves and here is where SwiftUI really shone. The two view controllers for these pages had masses of code for handling the settings. First, they had to read them in from <code>UserDefaults</code>, providing logical defaults if needed. Then they had to update the UI to reflect the settings. Since several of the settings depended on other settings, monitoring changes mean potentially adjusting other settings and then saving them all back to <code>UserDefaults</code> as well as adjusting all the UI elements manually. And finally, reverting the settings to the standard defaults required even more code and UI updates.</p>
+<p>With SwiftUI, I used <code>@AppStorage</code> extensively. Not only did this remove all the hassle of reading and writing to <code>UserDefaults</code>, but it also automatically updated the UI when the settings changed. And by setting up <code>disabled</code> modifiers, the connections between the linked settings were automatic. I was able to remove a lot of code and make the settings screens much simpler and easier to understand. And this flowed on to the main screen when I was adding it&rsquo;s data as it used the same <code>@AppStorage</code> properties.</p>
+<p>Counting the lines of code using <a href="https://github.com/boyter/scc" target="_blank" >scc</a>
+, I found the following:</p>
+<table>
+<thead>
+<tr>
+<th>View</th>
+<th>Obj-C</th>
+<th>Swift</th>
+<th>Reduction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Settings</td>
+<td>173 (13)</td>
+<td>101 (0)</td>
+<td>72 (42%)</td>
+</tr>
+<tr>
+<td>Bar &amp; Sounds</td>
+<td>166 (18)</td>
+<td>124 (8)</td>
+<td>42 (25%)</td>
+</tr>
+</tbody>
+</table>
+<p>The numbers in brackets after the line count are the complexity rating. The bar &amp; sounds view is more complex because it has to be able to flash the screen.</p>
+<p>Which reminds me of another thing. In the original, I used a background image with a gradient that stretched to fill whatever screen size was in use. In the new version, SwiftUI makes the background gradient itself. I set the starting colors and use a <code>LinearGradient</code> which I can change programmatically if the user wants the screen to flash at the start of each new bar.</p>
+<h3 id="the-drone">
+  The Drone
+  <a href="#the-drone" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>The drone plays a B4 constantly. But some oboists like to adjust the frequency of their basic A from the standard of 440 Hz, so I had to allow for that and adjust the B4 to match.</p>
+<p>I am not a sound expert, so in the original app, I imported some third-party code to do this. It&rsquo;s very much C code even though it&rsquo;s written in Objective-C and although I have modified it over the years, I do not possess the expertise to convert it to Swift. So in this case, I added the <strong>DronePlayer.h</strong> and <strong>DronePlayer.m</strong> files to my new project. When I did this, Xcode kindly offered to create a bridging header for me, which was great because it&rsquo;s been so long since I did this, that I would not have remembered how to do it manually. I did need to check an older project to remember what to put into the bridging header. The format is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objc" data-lang="objc"><span style="display:flex;"><span><span style="color:#75715e">#import &#34;DronePlayer.h&#34;
+</span></span></span></code></pre></div><p>You import the header file (.h), and don&rsquo;t forget the <code>#</code> or the import won&rsquo;t work.</p>
+<p>After that, I created a Swift class to act as the intermediary between SwiftUI and this Objective-C class and it works very well. I am concerned that this is very old code that may not always work, but hopefully by the time Apple deprecates it, there will be Swift alternatives I can use.</p>
+<h3 id="timing">
+  Timing
+  <a href="#timing" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>Finally we get to the most crucial part of the app: timing the bars.</p>
+<p>In the original, I used a custom thread with a high priority. While running the main loop, it would compute the time until the next bar and sleep until then. Then it would proceed to the next bar and update the UI. This worked well and when I logged some timing tests, it was accurate to within about 0.01 of a second.</p>
+<p>But it all felt very complicated and perhaps unnecessarily accurate, so I started experimenting with using a <code>Timer</code>. That got complicated because each interval can be different. But my next attempt was to use <code>DispatchQueue.main.asyncAfter</code> and that worked. At the start of the main loop function, I calculate when the next bar should start and call <code>asyncAfter</code> with that time. Then I update the UI so that this never slows down the loop.</p>
+<p>This worked quite well but my timing tests showed that the first two bars were always out by about 0.1 seconds. The later bars were more accurate. I can&rsquo;t explain why the longer bars at the beginning of each line were less accurate than the shorter ones, but maybe the internal code that <code>asyncAfter</code> uses to schedule the call is inherently less accurate for longer times.</p>
+<p>I decided to have some fun with this inaccuracy and I added routines to track the error of each bar and store that for adjusting the call time the next time round. For example, bar 1 should last 3 seconds. If it took 3.1 seconds, then next time, I apply that 0.1 second error and call it after only 2.9 seconds. After two complete loops, the timings were as accurate as the original, with the added bonus that they would self-adjust to suit if the user&rsquo;s device was busy doing something else in the background.</p>
+<p>I used <code>OSLog</code> to track the timings. This takes a bit more effort to set up than <code>print</code>, but it makes it much easier to filter out the logs you&rsquo;re interested in. And since Xcode seems to have got more verbose over the years, being able to filter is very useful.</p>
+<p>At the top of my <em>ContentView.swift</em> file, I added:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">OSLog</span>
+</span></span></code></pre></div><p>Then, where I was declaring properties, I created a logger:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">let</span> logger = Logger(subsystem: <span style="color:#e6db74">&#34;Berio&#34;</span>, category: <span style="color:#e6db74">&#34;ContentView&#34;</span>)
+</span></span></code></pre></div><p>It seems to be a standard to set the subsystem to an app identifier and the category to the class you&rsquo;re logging. These are useful when filtering.</p>
+<p>To log my timings, I used:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>logger.info(<span style="color:#e6db74">&#34;Bar </span><span style="color:#e6db74">\(</span>runState.barCounter<span style="color:#e6db74">)</span><span style="color:#e6db74"> - Elapsed time: </span><span style="color:#e6db74">\(</span>elapsedTime<span style="color:#e6db74">)</span><span style="color:#e6db74">, Error = </span><span style="color:#e6db74">\(</span>error<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
+</span></span></code></pre></div><p>Even though I could run the app in the live preview, that didn&rsquo;t produce any log entries, but in the simulator, they appeared. I filtered them to show only the <code>ContentView</code> category and then I was able to track all the timings:</p>
+<p><img src="/images/berio_logging.png" alt="Logging"></p>
+<h3 id="conclusion">
+  Conclusion
+  <a href="#conclusion" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>This was an interesting exercise. It is extremely impressive that 11 year old Objective-C code can still build and run with the current Xcode and on current devices. In the Swift world, we do not have such a luxury, but I still feel more comfortable moving forward with Swift. I&rsquo;m left with the drone code being in Objective-C, but that&rsquo;s a good reminder to me that it is still possible to mix the two languages.</p>
+<p>The remaining items on my to-do list are to implement a better layout for the settings pages so that they fill the screen no matter what the screen size. And to keep an eye out for a Swift way of playing a drone at a set frequency with a particular waveform.</p>
+<p>Anyway, this has got Apple off my back for another 3 years, at least as far as this app is concerned :-)</p>
+<p>And always, I&rsquo;d love to hear from you if you have any suggestions, corrections or improvements. If you are an oboe student, let me know which music school you are at and I&rsquo;ll send you a discount code for the app.</p>
+<p>You can contact me using one of the links below or through the <a href="/contact/" >Contact</a>
+ page. And if you found this article useful, I&rsquo;d love you to <a href="https://ko-fi.com/trozware" target="_blank" >buy me a coffee</a>
+.</p></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+       
+      <a class="btn previous" href="http://localhost:1313/post/2024/swiftui-mac-2024/"
+        >SwiftUI for Mac 2024 →</a
+      >
+      
+    </div>
+  </div>
+  
+</div>
+
+      </div>
+
+      
+        <link rel="stylesheet" href="/css/footer.css" />
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="social_footer">
+      <a
+        id="email-Link"
+        class="mailtoui"
+        href="mailto:sarah@troz.net"
+        aria-label="Email me"
+        ><img src="/icons/envelope.svg" alt=""
+      /></a>
+      
+      <a
+        rel="me"
+        href="https://mastodon.social/@troz"
+        aria-label="Follow me on Mastodon"
+        ><img src="/icons/mastodon.png" alt=""
+      /></a>
+
+      <a href="https://linktr.ee/trozware" aria-label="Check out all my links"
+        ><img src="/icons/tree.svg" alt=""
+      /></a>
+
+      <a
+        href="https://github.com/trozware"
+        aria-label="Look at my code on Github"
+        ><img src="/icons/github.svg" alt=""
+      /></a>
+
+      <a
+        href="https://stackoverflow.com/users/1082632"
+        aria-label="Check out my Stack Overflow profile"
+        ><img src="/icons/stack-overflow.svg" alt=""
+      /></a>
+
+      <a href="https://troz.net/index.xml" aria-label="Subscribe to my RSS feed"
+        ><img src="/icons/rss.svg" alt=""
+      /></a>
+      <a
+        href="https://troz.net/feed.json"
+        aria-label="Subscribe to my JSON feed"
+        ><img src="/icons/json.png" alt=""
+      /></a>
+
+      <a href="https://dev.to/trozware" aria-label="Check out my DEV profile">
+        <img
+          src="/icons/dev-badge.svg"
+          alt=""
+          alt="TrozWare's DEV Profile"
+          style="height: 37px; margin-top: -3px"
+          height="40"
+          width="40"
+        />
+      </a>
+
+      <a
+        href="https://ko-fi.com/H2H3BU7SI"
+        target="_blank"
+        aria-label="Buy me a coffee"
+        ><img
+          height="36"
+          style="border: 0px; height: 36px; width: unset"
+          src="https://cdn.ko-fi.com/cdn/kofi1.png?v=3"
+          border="0"
+          alt="Buy Me a Coffee at ko-fi.com"
+      /></a>
+    </div>
+  </div>
+
+  <div class="footer__inner">
+    <div class="copyright">
+      
+      <span>© 2012 - 2024 Sarah Reichelt</span>
+      
+      <span
+        ><a href="http://gohugo.io">Hugo</a> theme created by
+        <a href="https://twitter.com/panr">panr</a> 2018</span
+      >
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink()
+  })
+</script>
+
+
+      
+    </div>
+  </body>
+</html>

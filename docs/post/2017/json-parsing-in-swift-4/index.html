@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         JSON Parsing in Swift 4 ::
@@ -12,12 +12,12 @@
 <meta
   name="description"
   content="Updated: 3rd September 2017.
-Checked syntax using Xcode 9.0 beta 6. Added section on allowing for nulls. Since JSON has become the de facto standard for data transfers around the internet, there has always been a lot of interest in Swift libraries to parse JSON into Swift classes or structs. Searching for &amp;ldquo;swift json library&amp;rdquo; on GitHub discovers 77 86 repositories. So why are there so many? And what has Swift 4 done to sherlock them all?
+Checked syntax using Xcode 9.0 beta 6. Added section on allowing for nulls . Since JSON has become the de facto standard for data transfers around the internet, there has always been a lot of interest in Swift libraries to parse JSON into Swift classes or structs. Searching for &ldquo;swift json library&rdquo; on GitHub discovers 77 86 repositories. So why are there so many? And what has Swift 4 done to sherlock them all?
 "
 />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://troz.net/post/2017/json-parsing-in-swift-4/" />
+<link rel="canonical" href="http://localhost:1313/post/2017/json-parsing-in-swift-4/" />
 
 
 
@@ -26,7 +26,7 @@ Checked syntax using Xcode 9.0 beta 6. Added section on allowing for nulls. Sinc
  
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://troz.net/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -47,11 +47,11 @@ as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preloa
 as="font" crossorigin="">
 
 
-<meta property="og:url" content="https://troz.net/post/2017/json-parsing-in-swift-4/">
+<meta property="og:url" content="http://localhost:1313/post/2017/json-parsing-in-swift-4/">
   <meta property="og:site_name" content="TrozWare">
   <meta property="og:title" content="JSON Parsing in Swift 4">
   <meta property="og:description" content="Updated: 3rd September 2017.
-Checked syntax using Xcode 9.0 beta 6. Added section on allowing for nulls. Since JSON has become the de facto standard for data transfers around the internet, there has always been a lot of interest in Swift libraries to parse JSON into Swift classes or structs. Searching for “swift json library” on GitHub discovers 77 86 repositories. So why are there so many? And what has Swift 4 done to sherlock them all?">
+Checked syntax using Xcode 9.0 beta 6. Added section on allowing for nulls . Since JSON has become the de facto standard for data transfers around the internet, there has always been a lot of interest in Swift libraries to parse JSON into Swift classes or structs. Searching for “swift json library” on GitHub discovers 77 86 repositories. So why are there so many? And what has Swift 4 done to sherlock them all?">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -72,7 +72,7 @@ Checked syntax using Xcode 9.0 beta 6. Added section on allowing for nulls. Sinc
       <header class="header">
   <span class="header__inner">
     <a
-  href="https://troz.net/"
+  href="http://localhost:1313/"
   class="logo"
   style="text-decoration: none;"
 >
@@ -186,26 +186,26 @@ Checked syntax using Xcode 9.0 beta 6. Added section on allowing for nulls. Sinc
 
 <div class="post">
   <h2 class="post-title">
-    <a href="https://troz.net/post/2017/json-parsing-in-swift-4/">JSON Parsing in Swift 4</a>
+    <a href="http://localhost:1313/post/2017/json-parsing-in-swift-4/">JSON Parsing in Swift 4</a>
   </h2>
   <div class="post-meta">
     <span class="post-date">
       18 Jun 2017
     </span>
-    <span class="more-meta">- 2692 words, </span>
+    <span class="more-meta">- 2698 words, </span>
     <span class="more-meta"> 13 minute read</span>
   </div>
 
   
   <span class="post-tags">
      #<a
-      href="https://troz.net/tags/swift"
+      href="http://localhost:1313/tags/swift"
       >swift</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/json"
+      href="http://localhost:1313/tags/json"
       >json</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/learning-swift"
+      href="http://localhost:1313/tags/learning-swift"
       >learning swift</a
     >&nbsp; 
   </span>
@@ -214,13 +214,15 @@ Checked syntax using Xcode 9.0 beta 6. Added section on allowing for nulls. Sinc
   <div class="post-content"><p><strong>Updated:</strong> 3rd September 2017.</p>
 <ul>
 <li>Checked syntax using Xcode 9.0 beta 6.</li>
-<li>Added section on <a href="#nulls">allowing for nulls</a>.</li>
+<li>Added section on <a href="#nulls" >allowing for nulls</a>
+.</li>
 </ul>
 <hr>
 <p>Since <strong>JSON</strong> has become the de facto standard for data transfers around the
 internet, there has always been a lot of interest in Swift libraries to parse
 JSON into Swift classes or structs. Searching for &ldquo;swift json library&rdquo; on
-<a href="https://github.com/search?q=swift+json+library">GitHub</a> discovers <!-- raw HTML omitted -->77<!-- raw HTML omitted --> 86 repositories. So why are there so many? And
+<a href="https://github.com/search?q=swift&#43;json&#43;library" target="_blank" >GitHub</a>
+ discovers <!-- raw HTML omitted -->77<!-- raw HTML omitted --> 86 repositories. So why are there so many? And
 what has Swift 4 done to <em>sherlock</em> them all?</p>
 <p>The problem has always been converting loosely typed JSON to strictly typed
 Swift which involves a lot of type casting, checking, optionals etc. Swift has
@@ -229,7 +231,8 @@ from NSData, NSDictionary and NSArray. (These are now called Data, Dictionary
 and Array, but those labels are so universal, that I sometimes feel a more
 specific nomenclature would be useful. Have you tried doing a search for
 &lsquo;Data&rsquo;?)</p>
-<p>For sample data, I am using <a href="https://jsonplaceholder.typicode.com/users">https://jsonplaceholder.typicode.com/users</a> which
+<p>For sample data, I am using <a href="https://jsonplaceholder.typicode.com/users" target="_blank" >https://jsonplaceholder.typicode.com/users</a>
+ which
 returns 10 user objects in this format:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">1</span>,
@@ -294,7 +297,8 @@ built-in Swift 3 processing with no external libraries.</p>
   Decoding in Swift 3
   <a href="#decoding-in-swift-3" class="h-anchor" aria-hidden="true">#</a>
 </h2>
-<p>You can insert this into a playground or <a href="https://github.com/trozware/json">download my playground</a> and check
+<p>You can insert this into a playground or <a href="https://github.com/trozware/json" target="_blank" >download my playground</a>
+ and check
 out the Swift 3 JSON page:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Foundation</span>
 </span></span><span style="display:flex;"><span>
@@ -482,7 +486,8 @@ converted to Doubles for the Swift struct.</p>
 <p>This requires a custom init method for the Coordinates struct to do the
 conversion from String to Double.</p>
 <p>So here is the complete code for Swift 4 - again, if you don&rsquo;t want to create
-your own playground, you can <a href="https://github.com/trozware/json">use mine</a>, this time looking at the Swift 4
+your own playground, you can <a href="https://github.com/trozware/json" target="_blank" >use mine</a>
+, this time looking at the Swift 4
 JSON page:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Foundation</span>
 </span></span><span style="display:flex;"><span>
@@ -603,7 +608,8 @@ property names, since the data for each property was being extracted manually.
 In Swift 4, if you want the decoder to change names, you have to tell it what
 you want.</p>
 <p>Make a new playground or playground page and replace the contents with this - or
-go to the Swift 4 Extras page on <a href="https://github.com/trozware/json">my playground</a>:</p>
+go to the Swift 4 Extras page on <a href="https://github.com/trozware/json" target="_blank" >my playground</a>
+:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Foundation</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> jsonString = <span style="color:#e6db74">&#34;&#34;&#34;
@@ -687,7 +693,8 @@ created.</p>
 <p>JSON data will often include <strong>null</strong> where there is no value for a particular
 property name. When using JSONDecoder or JSONEncoder, this can be allowed for by
 using Optionals. If you are not clear about Optionals, have a look at my
-previous article: <a href="/post/2016-02-12-learning-swift-optionals/">Learning Swift - Optionals</a>.</p>
+previous article: <a href="/post/2016-02-12-learning-swift-optionals/" >Learning Swift - Optionals</a>
+.</p>
 <p>The crucial step is to declare the properties of the Swift object as optionals
 if you think they could get a null value.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Role</span>: Codable {
@@ -715,8 +722,9 @@ if you think they could get a null value.</p>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> jsonDecoder3 = JSONDecoder()
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> roles = <span style="color:#66d9ef">try</span>? jsonDecoder3.decode(Array&lt;Role&gt;.<span style="color:#66d9ef">self</span>, from: jsonDataWithNulls)
 </span></span><span style="display:flex;"><span>dump(roles)
-</span></span></code></pre></div><p>In this example (which you can find in the Swift 4 Extras page on <a href="https://github.com/trozware/json">my
-playground</a>), I have declared a struct called Role with 3 String properties.
+</span></span></code></pre></div><p>In this example (which you can find in the Swift 4 Extras page on <a href="https://github.com/trozware/json" target="_blank" >my
+playground</a>
+), I have declared a struct called Role with 3 String properties.
 The 3rd String - nickName - is an Optional so it may be a String or it may be
 nil.</p>
 <p>The JSON contains 2 elements - one has a nickName value and the other has it as
@@ -768,7 +776,8 @@ Reading Apple&rsquo;s docs, I see that <code>Codable</code> is actually a typeal
 struct or class as confirming to only one of these protocols. For example, if
 you download JSON data from an API but never need to send it back, just conform
 to Decodable to transform the JSON data into your data structure.</p>
-<p>Much more information can be found in the <a href="https://developer.apple.com/documentation/swift/encoding_decoding_and_serialization">Apple documentation</a>.</p></div>
+<p>Much more information can be found in the <a href="https://developer.apple.com/documentation/swift/encoding_decoding_and_serialization" target="_blank" >Apple documentation</a>
+.</p></div>
   
   <div class="pagination">
     <div class="pagination__title">
@@ -777,11 +786,11 @@ to Decodable to transform the JSON data into your data structure.</p>
     </div>
     <div class="pagination__buttons">
       
-      <a class="btn next" href="https://troz.net/post/2017/moving-to-hugo/"
+      <a class="btn next" href="http://localhost:1313/post/2017/moving-to-hugo/"
         >← Moving to Hugo</a
       >
        
-      <a class="btn previous" href="https://troz.net/post/2017/posting-from-my-new-ipad/"
+      <a class="btn previous" href="http://localhost:1313/post/2017/posting-from-my-new-ipad/"
         >Posting from my new iPad →</a
       >
       
@@ -895,7 +904,5 @@ to Decodable to transform the JSON data into your data structure.</p>
 
       
     </div>
-
-    
   </body>
 </html>

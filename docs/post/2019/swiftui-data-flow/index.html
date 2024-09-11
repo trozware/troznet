@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         SwiftUI Data Flow ::
@@ -18,7 +18,7 @@ Update - January 2021: I think the information in this post is still all valid e
 />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://troz.net/post/2019/swiftui-data-flow/" />
+<link rel="canonical" href="http://localhost:1313/post/2019/swiftui-data-flow/" />
 
 
 
@@ -27,7 +27,7 @@ Update - January 2021: I think the information in this post is still all valid e
  
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://troz.net/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -48,7 +48,7 @@ as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preloa
 as="font" crossorigin="">
 
 
-<meta property="og:url" content="https://troz.net/post/2019/swiftui-data-flow/">
+<meta property="og:url" content="http://localhost:1313/post/2019/swiftui-data-flow/">
   <meta property="og:site_name" content="TrozWare">
   <meta property="og:title" content="SwiftUI Data Flow">
   <meta property="og:description" content="Various ways to pass data around your SwiftUI apps.">
@@ -71,7 +71,7 @@ as="font" crossorigin="">
       <header class="header">
   <span class="header__inner">
     <a
-  href="https://troz.net/"
+  href="http://localhost:1313/"
   class="logo"
   style="text-decoration: none;"
 >
@@ -185,39 +185,44 @@ as="font" crossorigin="">
 
 <div class="post">
   <h2 class="post-title">
-    <a href="https://troz.net/post/2019/swiftui-data-flow/">SwiftUI Data Flow</a>
+    <a href="http://localhost:1313/post/2019/swiftui-data-flow/">SwiftUI Data Flow</a>
   </h2>
   <div class="post-meta">
     <span class="post-date">
       24 Jan 2021
     </span>
-    <span class="more-meta">- 3515 words, </span>
+    <span class="more-meta">- 3517 words, </span>
     <span class="more-meta"> 17 minute read</span>
   </div>
 
   
   <span class="post-tags">
      #<a
-      href="https://troz.net/tags/swift"
+      href="http://localhost:1313/tags/swift"
       >swift</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/swiftui"
+      href="http://localhost:1313/tags/swiftui"
       >swiftui</a
     >&nbsp; 
   </span>
    
 
-  <div class="post-content"><p><a href="https://developer.apple.com/xcode/swiftui/">SwiftUI</a> gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?</p>
+  <div class="post-content"><p><a href="https://developer.apple.com/xcode/swiftui/" target="_blank" >SwiftUI</a>
+ gives us a completely new way to lay out out user interfaces, in a declarative and responsive way. Your data dictates what is displayed. But this leads to a new problem - how should the data models be constructed and how can they be passed around between the various views that make up your app?</p>
 <p>In this post, I intend to discuss the possibilities with examples.</p>
 <p><strong>Update - January 2021:</strong> I think the information in this post is still all valid except for one change. When you are initializing an ObservableObject, you should use <code>@StateObject</code> instead of <code>@ObservedObject</code>. Your views can receive objects that are owned by other views as <code>@ObservedObject</code> or <code>@EnvironmentObject</code> but the owner of the data should always create the data object with <code>@StateObject</code>.</p>
 <hr>
-<p>For a great diagram showing what data object type to use where, check out this image from <a href="https://twitter.com/chriseidhof/status/1280433133813456896">Chris Edihof</a> - thanks Chris!</p>
+<p>For a great diagram showing what data object type to use where, check out this image from <a href="https://twitter.com/chriseidhof/status/1280433133813456896" target="_blank" >Chris Edihof</a>
+ - thanks Chris!</p>
 <p><img src="/images/dataflow.png" alt="Data flow"></p>
-<p>If you read this article before November 18th 2019, please check out <a href="/post/2019/swiftui-data-flow/#observable2">ObservableObject &amp; @ObservedObject - Part 2</a> again as it has gone through several iterations, which are all shown for comparison.</p>
+<p>If you read this article before November 18th 2019, please check out <a href="/post/2019/swiftui-data-flow/#observable2" >ObservableObject &amp; @ObservedObject - Part 2</a>
+ again as it has gone through several iterations, which are all shown for comparison.</p>
 <hr>
-<p>At WWDC 2019, some Apple engineers gave a great presentation on <a href="https://developer.apple.com/videos/play/wwdc2019/226/">Data Flow Through SwiftUI</a> and I strongly recommend watching the video. But you need to watch it twice. First watch it so that you can get started, and then, when you feel that this is all way too complicated, watch it again and it will start to click into place. The only real difference between then and now is that BindableObject has become ObservableObject.</p>
+<p>At WWDC 2019, some Apple engineers gave a great presentation on <a href="https://developer.apple.com/videos/play/wwdc2019/226/" target="_blank" >Data Flow Through SwiftUI</a>
+ and I strongly recommend watching the video. But you need to watch it twice. First watch it so that you can get started, and then, when you feel that this is all way too complicated, watch it again and it will start to click into place. The only real difference between then and now is that BindableObject has become ObservableObject.</p>
 <p>I guess I could stop there, but I will be illustrating my ideas with code examples, which I hope will make things clearer. Some of the examples are rather contrived in order to make a point, but the sample code is also sprinkled with other SwiftUI examples which I hope will prove useful.</p>
-<p><a href="https://github.com/trozware/swiftui-data-flow/tree/master">Download the sample project from GitHub</a> and open it in Xcode. Go to ContentView.swift and make sure the Canvas is open. Click Resume to make the view appear. Then click the Live Preview button and wait for the view to become active. I recommend clicking the Pin button at the bottom left of the Canvas so that you can investigate the code samples, while still working in the main navigation.</p>
+<p><a href="https://github.com/trozware/swiftui-data-flow/tree/master" target="_blank" >Download the sample project from GitHub</a>
+ and open it in Xcode. Go to ContentView.swift and make sure the Canvas is open. Click Resume to make the view appear. Then click the Live Preview button and wait for the view to become active. I recommend clicking the Pin button at the bottom left of the Canvas so that you can investigate the code samples, while still working in the main navigation.</p>
 <h2 id="data-flow-options">
   Data Flow Options
   <a href="#data-flow-options" class="h-anchor" aria-hidden="true">#</a>
@@ -445,7 +450,8 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>This works but as well as being hard to read, it has one major flaw. The rows in the table are identified by their row number, rather than by anything in the data like the <code>person.id</code>. This can really mess with how SwiftUI handles the List and how it knows which rows have changed and need to be re-rendered. It is important to identify rows by something unique to the data in each row so that SwiftUI knows that you have deleted the row with the ID &ldquo;abcd-1234&rdquo; and not row #7. Because if you delete row ID &ldquo;abcd-1234&rdquo; there is no longer a row ID &ldquo;abcd-1234&rdquo; but if you delete row #7, there is now a different row #7 and anything could happen.</p>
-<p><!-- raw HTML omitted --><strong>Update 1:</strong> <a href="https://twitter.com/StewartLynch">@StewartLynch</a> contacted me to suggest a much neater way to pass the person data to the PersonDetailView by using a function to get a <code>Binding&lt;PersonViewModel&gt;</code> for each <code>person</code> being displayed. This worked perfectly and made for a much cleaner looking bit of code. Thanks Stewart.</p>
+<p><!-- raw HTML omitted --><strong>Update 1:</strong> <a href="https://twitter.com/StewartLynch" target="_blank" >@StewartLynch</a>
+ contacted me to suggest a much neater way to pass the person data to the PersonDetailView by using a function to get a <code>Binding&lt;PersonViewModel&gt;</code> for each <code>person</code> being displayed. This worked perfectly and made for a much cleaner looking bit of code. Thanks Stewart.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>ForEach(personList.persons) { person <span style="color:#66d9ef">in</span>
 </span></span><span style="display:flex;"><span>    NavigationLink(destination:
 </span></span><span style="display:flex;"><span>        PersonDetailView(person: <span style="color:#66d9ef">self</span>.selectedPerson(id: person.id))
@@ -460,8 +466,10 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">self</span>.<span style="color:#960050;background-color:#1e0010">$</span>personList.persons[index]
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>If you want to have a look at Stewart&rsquo;s solution, check out <a href="https://github.com/trozware/swiftui-data-flow/tree/57f48ea28d1e987566398800e74f12e339eac231">this commit on GitHub</a>.</p>
-<p><strong>Update 2:</strong> <a href="https://twitter.com/vadimshpakovski">@vadimshpakovski</a> says that creating a binding for every <code>person</code> object is inefficient and that the function to create this binding will slow things down. He suggests using <code>onReceive</code> to react to changes to <code>person</code> and trigger an update of <code>personList</code>. In this case, <code>PersonDetailView</code> uses <code>@ObservedObject var person: PersonViewModel</code>. This also works perfectly.</p>
+</span></span></code></pre></div><p>If you want to have a look at Stewart&rsquo;s solution, check out <a href="https://github.com/trozware/swiftui-data-flow/tree/57f48ea28d1e987566398800e74f12e339eac231" target="_blank" >this commit on GitHub</a>
+.</p>
+<p><strong>Update 2:</strong> <a href="https://twitter.com/vadimshpakovski" target="_blank" >@vadimshpakovski</a>
+ says that creating a binding for every <code>person</code> object is inefficient and that the function to create this binding will slow things down. He suggests using <code>onReceive</code> to react to changes to <code>person</code> and trigger an update of <code>personList</code>. In this case, <code>PersonDetailView</code> uses <code>@ObservedObject var person: PersonViewModel</code>. This also works perfectly.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  ForEach(personList.persons) { person <span style="color:#66d9ef">in</span>
 </span></span><span style="display:flex;"><span>      NavigationLink(destination:
 </span></span><span style="display:flex;"><span>          PersonDetailView(person: person)
@@ -472,7 +480,8 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>          Text(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">\(</span>person.first<span style="color:#e6db74">)</span><span style="color:#e6db74"> </span><span style="color:#e6db74">\(</span>person.last<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>      }
 </span></span><span style="display:flex;"><span>  }
-</span></span></code></pre></div><p>If you want to have a look at Vadim&rsquo;s&rsquo;s solution, check out <a href="https://github.com/trozware/swiftui-data-flow/tree/093810bab93a984292c4a7b8bf29316a830e9f50">this commit on GitHub</a>.</p>
+</span></span></code></pre></div><p>If you want to have a look at Vadim&rsquo;s&rsquo;s solution, check out <a href="https://github.com/trozware/swiftui-data-flow/tree/093810bab93a984292c4a7b8bf29316a830e9f50" target="_blank" >this commit on GitHub</a>
+.</p>
 <p><strong>Update 3:</strong> More suggestions have come in from the community (thanks to everyone who contributed) and it has been pointed out to me that while Vadim&rsquo;s solution does solve a lot of the issues, it means that the entire <code>ForEach</code> has to be recalculated to check for changes every time a single <code>Person</code> is edited. And it also inserts model management code into the view code, which is not great.</p>
 <p>So my next attempt goes back to using <code>@Binding var person: PersonViewModel</code> in <code>PersonDetailView</code> but instead of <code>PersonListModel</code> having an array of <code>PersonViewModels</code>, it has an array of <code>UUIDs</code> and a dictionary of <code>UUID: PersonListModel</code>. The benefit of this is that the UUIDs can be used in the <code>ForEach</code> as they are unique to each row, and the dictionary can be used to provide a Binding to the <code>person</code> for each <code>UUID</code>.</p>
 <p>This removes the problem of my original solution by identifying each row uniquely, it goes back to Stewart&rsquo;s solution but eliminates the potential slow function to create a binding for the matching person, and eliminates the issue of complete redraws and model management inside views from Vadim&rsquo;s suggestion.</p>
@@ -525,7 +534,8 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><img src="/images/PersonListView.png" alt="Person List View"></p>
 <p>This ended up a bit more complicated than my original idea, but I think it is now <em>good</em> SwiftUI, avoiding several problems from the earlier solutions.</p>
-<p>Thanks to <a href="https://next.json-generator.com">JSON Generator</a> for the sample data. And if anyone has any other solutions to this problem, I would love to hear it. You can contact me using any of the buttons at the end of this article.</p>
+<p>Thanks to <a href="https://next.json-generator.com" target="_blank" >JSON Generator</a>
+ for the sample data. And if anyone has any other solutions to this problem, I would love to hear it. You can contact me using any of the buttons at the end of this article.</p>
 <h2 id="environmentobject">
   @EnvironmentObject
   <a href="#environmentobject" class="h-anchor" aria-hidden="true">#</a>
@@ -587,11 +597,11 @@ as="font" crossorigin="">
     </div>
     <div class="pagination__buttons">
       
-      <a class="btn next" href="https://troz.net/post/2021/swiftui_mac_menus/"
+      <a class="btn next" href="http://localhost:1313/post/2021/swiftui_mac_menus/"
         >← SwifUI Mac Menus</a
       >
        
-      <a class="btn previous" href="https://troz.net/post/2020/crossfix/"
+      <a class="btn previous" href="http://localhost:1313/post/2020/crossfix/"
         >Crossfix →</a
       >
       
@@ -705,7 +715,5 @@ as="font" crossorigin="">
 
       
     </div>
-
-    
   </body>
 </html>

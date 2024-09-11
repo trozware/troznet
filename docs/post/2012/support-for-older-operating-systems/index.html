@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         Support for older operating systems ::
@@ -11,12 +11,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="Working out what operating systems to support in your software is always a difficult decision. I only program for Mac &amp;amp; iOS systems for starters. This is because they are the systems I use and understand. I am not interested in expending the time &amp;amp; money needed to program and test my software for other systems.
-Within the Mac &amp;amp; iOS ecosystems, there is still the decision of which versions to support."
+  content="Working out what operating systems to support in your software is always a difficult decision. I only program for Mac &amp; iOS systems for starters. This is because they are the systems I use and understand. I am not interested in expending the time &amp; money needed to program and test my software for other systems.
+Within the Mac &amp; iOS ecosystems, there is still the decision of which versions to support."
 />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://troz.net/post/2012/support-for-older-operating-systems/" />
+<link rel="canonical" href="http://localhost:1313/post/2012/support-for-older-operating-systems/" />
 
 
 
@@ -25,7 +25,7 @@ Within the Mac &amp;amp; iOS ecosystems, there is still the decision of which ve
  
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://troz.net/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -46,7 +46,7 @@ as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preloa
 as="font" crossorigin="">
 
 
-<meta property="og:url" content="https://troz.net/post/2012/support-for-older-operating-systems/">
+<meta property="og:url" content="http://localhost:1313/post/2012/support-for-older-operating-systems/">
   <meta property="og:site_name" content="TrozWare">
   <meta property="og:title" content="Support for older operating systems">
   <meta property="og:description" content="Working out what operating systems to support in your software is always a difficult decision. I only program for Mac &amp; iOS systems for starters. This is because they are the systems I use and understand. I am not interested in expending the time &amp; money needed to program and test my software for other systems.
@@ -69,7 +69,7 @@ Within the Mac &amp; iOS ecosystems, there is still the decision of which versio
       <header class="header">
   <span class="header__inner">
     <a
-  href="https://troz.net/"
+  href="http://localhost:1313/"
   class="logo"
   style="text-decoration: none;"
 >
@@ -183,20 +183,20 @@ Within the Mac &amp; iOS ecosystems, there is still the decision of which versio
 
 <div class="post">
   <h2 class="post-title">
-    <a href="https://troz.net/post/2012/support-for-older-operating-systems/">Support for older operating systems</a>
+    <a href="http://localhost:1313/post/2012/support-for-older-operating-systems/">Support for older operating systems</a>
   </h2>
   <div class="post-meta">
     <span class="post-date">
       02 May 2012
     </span>
-    <span class="more-meta">- 510 words, </span>
+    <span class="more-meta">- 512 words, </span>
     <span class="more-meta"> 3 minute read</span>
   </div>
 
   
   <span class="post-tags">
      #<a
-      href="https://troz.net/tags/operating-systems"
+      href="http://localhost:1313/tags/operating-systems"
       >operating systems</a
     >&nbsp; 
   </span>
@@ -215,7 +215,8 @@ of Mac OS X versions<!-- raw HTML omitted -->. This tells me that OS 10.6 &amp; 
 83% which makes 10.6 a good cut-off point.</p>
 <p>Distribution of iOS versions is harder to discover, but I found a post that did
 a good job of analysing the statistics that are available:</p>
-<p><a href="http://pxldot.com/post/18754186750/ios-ebb-and-flow"> pxldot (iOS Ebb and Flow)</a>. According to this post, by March 2012, iOS had
+<p><a href="http://pxldot.com/post/18754186750/ios-ebb-and-flow" target="_blank" > pxldot (iOS Ebb and Flow)</a>
+. According to this post, by March 2012, iOS had
 about 75% with the remainder being almost exclusively iOS 4.</p>
 <p>So based on statistics alone, it makes sense to support Mac OS X 10.6 or later
 and iOS 4 and later. However this doesn&rsquo;t cover all the relevant issues. Another
@@ -223,7 +224,8 @@ important factor is new techniques and APIs introduced in Apple&rsquo;s develope
 tools.</p>
 <p>In iOS 4, Apple gave us ARC - Automatic Reference Counting - which basically
 removes the tedious job of memory management. This was especially painful in iOS
-apps where there is no garbage collection. <a href="http://longweekendmobile.com/2011/09/07/objc-automatic-reference-counting-in-xcode-explained/">The Long Weekend Website</a> has an
+apps where there is no garbage collection. <a href="http://longweekendmobile.com/2011/09/07/objc-automatic-reference-counting-in-xcode-explained/" target="_blank" >The Long Weekend Website</a>
+ has an
 excellent summary of ARC - what it is and how to use it. Since this only
 excludes iOS 3 or earlier, there is no issue using this for all iOS projects.</p>
 <p>But now Apple has extended ARC to Mac apps as well, but only for apps built to
@@ -236,7 +238,8 @@ trend.</p>
 <p>Back to iOS, there is another new feature of Xcode that is really too attractive
 to ignore and that is story-boarding. This is a graphical way of laying out the
 navigation logic for your app and providing segues between different views. Ray
-Wenderlich has a good <a href="http://www.raywenderlich.com/5138/beginning-storyboards-in-ios-5-part-1">introduction to storyboards</a>. So this means that my
+Wenderlich has a good <a href="http://www.raywenderlich.com/5138/beginning-storyboards-in-ios-5-part-1" target="_blank" >introduction to storyboards</a>
+. So this means that my
 future iOS apps will all require 10.5 or later.</p>
 <p>One final factor is testing. You really need to have a device running each
 version of any supported operating system. I would rather concentrate on getting
@@ -253,11 +256,11 @@ the App Store is making updates easier to apply.</p>
     </div>
     <div class="pagination__buttons">
       
-      <a class="btn next" href="https://troz.net/post/2012/making-a-mac-screen-saver/"
+      <a class="btn next" href="http://localhost:1313/post/2012/making-a-mac-screen-saver/"
         >← Making a Mac Screen Saver</a
       >
        
-      <a class="btn previous" href="https://troz.net/post/2012/time-in-words-the-new-ipad/"
+      <a class="btn previous" href="http://localhost:1313/post/2012/time-in-words-the-new-ipad/"
         >Time In Words &amp; the new iPad →</a
       >
       
@@ -371,7 +374,5 @@ the App Store is making updates easier to apply.</p>
 
       
     </div>
-
-    
   </body>
 </html>

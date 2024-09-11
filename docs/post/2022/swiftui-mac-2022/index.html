@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         SwiftUI for Mac 2022 ::
@@ -11,12 +11,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="In December 2019, I wrote a series of articles about using SwiftUI to build a Mac app. And in July 2020, I re-visited the sample app to apply the new SwiftUI features made available in macOS BigSur. Now that macOS Ventura and Xcode 14 are in beta, it&amp;rsquo;s time to build the app again while learning how to incorporate the new APIs.
+  content="In December 2019, I wrote a series of articles about using SwiftUI to build a Mac app . And in July 2020, I re-visited the sample app to apply the new SwiftUI features made available in macOS BigSur. Now that macOS Ventura and Xcode 14 are in beta, it&rsquo;s time to build the app again while learning how to incorporate the new APIs.
 "
 />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://troz.net/post/2022/swiftui-mac-2022/" />
+<link rel="canonical" href="http://localhost:1313/post/2022/swiftui-mac-2022/" />
 
 
 
@@ -25,7 +25,7 @@
  
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://troz.net/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -46,7 +46,7 @@ as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preloa
 as="font" crossorigin="">
 
 
-<meta property="og:url" content="https://troz.net/post/2022/swiftui-mac-2022/">
+<meta property="og:url" content="http://localhost:1313/post/2022/swiftui-mac-2022/">
   <meta property="og:site_name" content="TrozWare">
   <meta property="og:title" content="SwiftUI for Mac 2022">
   <meta property="og:description" content="Mac app development using SwiftUI on macOS Ventura">
@@ -70,7 +70,7 @@ as="font" crossorigin="">
       <header class="header">
   <span class="header__inner">
     <a
-  href="https://troz.net/"
+  href="http://localhost:1313/"
   class="logo"
   style="text-decoration: none;"
 >
@@ -184,49 +184,61 @@ as="font" crossorigin="">
 
 <div class="post">
   <h2 class="post-title">
-    <a href="https://troz.net/post/2022/swiftui-mac-2022/">SwiftUI for Mac 2022</a>
+    <a href="http://localhost:1313/post/2022/swiftui-mac-2022/">SwiftUI for Mac 2022</a>
   </h2>
   <div class="post-meta">
     <span class="post-date">
       17 Jun 2022
     </span>
-    <span class="more-meta">- 3010 words, </span>
+    <span class="more-meta">- 3016 words, </span>
     <span class="more-meta"> 15 minute read</span>
   </div>
 
   
   <span class="post-tags">
      #<a
-      href="https://troz.net/tags/swift"
+      href="http://localhost:1313/tags/swift"
       >swift</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/swiftui"
+      href="http://localhost:1313/tags/swiftui"
       >swiftui</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/mac"
+      href="http://localhost:1313/tags/mac"
       >mac</a
     >&nbsp; 
   </span>
    
 
-  <div class="post-content"><p>In December 2019, I wrote a <a href="/post/2019/swiftui-for-mac-1/">series of articles about using SwiftUI to build a Mac app</a>. And in July 2020, I <a href="/post/2020/swiftui_mac_big_sur/">re-visited the sample app</a> to apply the new SwiftUI features made available in macOS BigSur. Now that macOS Ventura and Xcode 14 are in beta, it&rsquo;s time to build the app again while learning how to incorporate the new APIs.</p>
+  <div class="post-content"><p>In December 2019, I wrote a <a href="/post/2019/swiftui-for-mac-1/" >series of articles about using SwiftUI to build a Mac app</a>
+. And in July 2020, I <a href="/post/2020/swiftui_mac_big_sur/" >re-visited the sample app</a>
+ to apply the new SwiftUI features made available in macOS BigSur. Now that macOS Ventura and Xcode 14 are in beta, it&rsquo;s time to build the app again while learning how to incorporate the new APIs.</p>
 <p>Right now, it&rsquo;s June 2022 and I&rsquo;m using macOS Ventura 13 beta 2 (22A5286j) with Xcode 14 beta 2 (14A5229c). There will undoubtedly be changes before release, but I&rsquo;ll try to update this article or add notes to point out any major differences.</p>
 <p>I don&rsquo;t intend to cover features that haven&rsquo;t changed much, but here are the new APIs that I am interested in:</p>
 <ul>
-<li><a href="#navigation">Navigation</a></li>
-<li><a href="#detecting-the-active-window">Detecting the Active Window</a></li>
-<li><a href="#opening-new-windows">Opening New Windows</a></li>
-<li><a href="#charts">Charts</a></li>
-<li><a href="#image-rendering">Image Rendering</a></li>
-<li><a href="#forms">Forms</a></li>
-<li><a href="#menu-bar-apps">Menu Bar Apps</a></li>
+<li><a href="#navigation" >Navigation</a>
+</li>
+<li><a href="#detecting-the-active-window" >Detecting the Active Window</a>
+</li>
+<li><a href="#opening-new-windows" >Opening New Windows</a>
+</li>
+<li><a href="#charts" >Charts</a>
+</li>
+<li><a href="#image-rendering" >Image Rendering</a>
+</li>
+<li><a href="#forms" >Forms</a>
+</li>
+<li><a href="#menu-bar-apps" >Menu Bar Apps</a>
+</li>
 </ul>
 <p><strong>Note</strong>: In Xcode 14 beta 2, the SwiftUI Previews are crashing unless I go to Project &gt; Target &gt; Signing &amp; Capabilities and select my developer team and set Signing Certificate to Development. So if you can&rsquo;t see the Previews, make these changes, or run the app directly.</p>
 <h3 id="navigation">
   Navigation
   <a href="#navigation" class="h-anchor" aria-hidden="true">#</a>
 </h3>
-<p>The <a href="https://github.com/trozware/swiftui-mac">first version of this app</a> used a two pane layout with a sectioned list in the sidebar leading to a detail view in the main area. With the <a href="https://github.com/trozware/swiftui-mac-11">Big Sur version</a>, I switched to a three pane layout because the sections were not displaying neatly. This time, I&rsquo;ve reverted to two panes with sections. As before, I&rsquo;m using <a href="https://http.cat">HTTP Cats</a> which is a site that serves up a cat image to match almost every HTTP status code.</p>
+<p>The <a href="https://github.com/trozware/swiftui-mac" target="_blank" >first version of this app</a>
+ used a two pane layout with a sectioned list in the sidebar leading to a detail view in the main area. With the <a href="https://github.com/trozware/swiftui-mac-11" target="_blank" >Big Sur version</a>
+, I switched to a three pane layout because the sections were not displaying neatly. This time, I&rsquo;ve reverted to two panes with sections. As before, I&rsquo;m using <a href="https://http.cat" target="_blank" >HTTP Cats</a>
+ which is a site that serves up a cat image to match almost every HTTP status code.</p>
 <p>Previous versions used <code>NavigationLinks</code> inside a <code>NavigationView</code>. <code>NavigationView</code> is now deprecated and we should use either <code>NavigationStackView</code> or <code>NavigationSplitView</code>. <code>NavigationStackView</code> is better suited to a small screen where each view is pushed on to a stack and can be popped off to navigate back. I am going to use <code>NavigationSplitView</code> which works well for bigger displays with all the panes visible at once.</p>
 <p>My data model is exactly the same as I developed originally and consists of an array of <code>HttpSections</code>, each containing an array of <code>HttpStatuses</code>.
 So I was able to render my navigation like this:</p>
@@ -249,17 +261,22 @@ So I was able to render my navigation like this:</p>
 <p>Not so interestingly, the sidebar is often hidden on app launch. I tried giving <code>NavigationStackView</code> its optional <code>columnVisibility</code> parameter, but no setting made it appear consistently.</p>
 <p>With the detail, right now there is a bug where you cannot unwrap a conditional and show a view based on that. One workaround is to wrap the entire detail in a <code>ZStack</code>, but in the interest of keeping my <code>ContentView</code> code simple and as short as possible, I added an intermediary view. <code>DetailView</code> takes optional parameters and it decides whether to show the <code>StatusView</code> or a placeholder. Note: the bug may have gone in beta 2, but as I want to display other UI elements in the detail view anyway, this is still a neater approach.</p>
 <p>There is nothing much new in either of these views, except where <code>StatusView</code> downloads the selected cat image. I tried using <code>AsyncImage</code> which worked really well except for one problem. When I selected a new status, the old image stayed in place until the new one arrived. I was unable to work out how to clear or reset an <code>AsyncImage</code> so it would show its placeholder again.</p>
-<p><strong>Update</strong>: Thanks to <a href="https://twitter.com/ramzesenok">@ramzesenok</a> who pointed out that this is another case where I could use an <code>id</code> to force a refresh. So now, the app uses <code>AsyncImage</code> which makes for a lot less code.</p>
+<p><strong>Update</strong>: Thanks to <a href="https://twitter.com/ramzesenok" target="_blank" >@ramzesenok</a>
+ who pointed out that this is another case where I could use an <code>id</code> to force a refresh. So now, the app uses <code>AsyncImage</code> which makes for a lot less code.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>AsyncImage(url: httpStatus.imageUrl) { img <span style="color:#66d9ef">in</span>
 </span></span><span style="display:flex;"><span>  CatImageView(catImage: img, statusCode: httpStatus.code)
 </span></span><span style="display:flex;"><span>} placeholder: {
 </span></span><span style="display:flex;"><span>  ProgressView()
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>.id(httpStatus)   <span style="color:#75715e">// this resets the AsyncImage whenever httpStatus changes</span>
-</span></span></code></pre></div><p>If anyone is still interested in the <code>async/await</code> version, check out this <a href="https://github.com/trozware/swiftui-mac-2022/tree/55dc61b57f50379e4a4b0c247014af521d866c5d">earlier commit on GitHub</a>. It does appear to have better/faster caching, but a beta is not the right place to make speed assessments.</p>
+</span></span></code></pre></div><p>If anyone is still interested in the <code>async/await</code> version, check out this <a href="https://github.com/trozware/swiftui-mac-2022/tree/55dc61b57f50379e4a4b0c247014af521d866c5d" target="_blank" >earlier commit on GitHub</a>
+. It does appear to have better/faster caching, but a beta is not the right place to make speed assessments.</p>
 <p><del>However I did switch to using <code>async/await</code> to download the image.</del></p>
 <p><del>Updating this was also slightly complicated. I downloaded the first selected image using a <code>task</code> modifier and downloaded subsequent selections using an <code>onChange</code> modifier. Both of these were required to show the image every time.</del></p>
-<p><del>Thanks to <a href="https://twitter.com/davbeck">@davbeck</a>, <a href="https://twitter.com/malhal">@malhal</a> and <a href="https://twitter.com/chriseidhof">@chriseidhof</a> for pointing out that if I gave the <code>task</code> an <code>id</code>, it would be called whenever the <code>id</code> property changed.</del></p>
+<p><del>Thanks to <a href="https://twitter.com/davbeck" target="_blank" >@davbeck</a>
+, <a href="https://twitter.com/malhal" target="_blank" >@malhal</a>
+ and <a href="https://twitter.com/chriseidhof" target="_blank" >@chriseidhof</a>
+ for pointing out that if I gave the <code>task</code> an <code>id</code>, it would be called whenever the <code>id</code> property changed.</del></p>
 <style>
   img {
     margin: 10px auto;
@@ -319,7 +336,8 @@ So I was able to render my navigation like this:</p>
   Opening New Windows
   <a href="#opening-new-windows" class="h-anchor" aria-hidden="true">#</a>
 </h3>
-<p>In early versions of SwiftUI, opening a secondary window was a very complex process. Read <a href="https://troz.net/post/2019/swiftui-for-mac-2/">part 2 of the original series</a> to see how I struggled with this. Later, we got an easy way to open a Preferences window, using a <code>Settings</code> scene. Preferences are now called Settings, which makes this nomenclature more logical.</p>
+<p>In early versions of SwiftUI, opening a secondary window was a very complex process. Read <a href="https://troz.net/post/2019/swiftui-for-mac-2/" target="_blank" >part 2 of the original series</a>
+ to see how I struggled with this. Later, we got an easy way to open a Preferences window, using a <code>Settings</code> scene. Preferences are now called Settings, which makes this nomenclature more logical.</p>
 <p>Last year, we got the ability to use a <code>NavigationLink</code> as a SwiftUI menu item and this will open the destination view in a new window.</p>
 <p>This year, we have a new method that uses another new <code>EnvironmentValue</code> called <code>openWindow</code>. First, in the _App.swift file, I added another new scene to the body - this time a second <code>WindowGroup</code>. A <code>WindowGroup</code> can be passed an <code>id</code>, a data object of a specific type, or both. In this case, I didn&rsquo;t want to pass any data, so I gave it an <code>id</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>WindowGroup(id: <span style="color:#e6db74">&#34;ui_samples&#34;</span>) {
@@ -439,7 +457,8 @@ So I was able to render my navigation like this:</p>
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>I added <code>padding</code> and <code>frame</code> modifiers to the view variable as it came out very small without this. Then I created an <code>ImageRenderer</code> using this view and converted it into an <code>NSImage</code>.
-The <code>saveImage</code> method uses an <code>NSSavePanel</code> to get a URL and then convert the NSImage to JPG data before writing it out. I used the same technique in <a href="https://troz.net/post/2019/swiftui-for-mac-3/">part 3 of the original series</a> but that only exported the downloaded image. This creates an image from a complete SwiftUI view.</p>
+The <code>saveImage</code> method uses an <code>NSSavePanel</code> to get a URL and then convert the NSImage to JPG data before writing it out. I used the same technique in <a href="https://troz.net/post/2019/swiftui-for-mac-3/" target="_blank" >part 3 of the original series</a>
+ but that only exported the downloaded image. This creates an image from a complete SwiftUI view.</p>
 <p>I would be interested to try the SwiftUI <code>fileExporter</code>, but that&rsquo;s for another day.</p>
 <p>I also tried to use the new <code>ShareLink</code> to share this image, but couldn&rsquo;t get that to work. The <code>ImageRenderer</code> seems to work asynchronously so that didn&rsquo;t work well with <code>ShareLink</code>. Again, that&rsquo;s for another day.</p>
 <h3 id="forms">
@@ -480,7 +499,10 @@ The <code>saveImage</code> method uses an <code>NSSavePanel</code> to get a URL 
   <a href="#conclusion" class="h-anchor" aria-hidden="true">#</a>
 </h3>
 <p>2022 is an exciting year to be a SwiftUI programmer. Apple has made it very clear that this is the way forward and as early adopters, we have the ability to influence how the framework develops, so keep filing those feedback reports! There have been some great new features this year: navigation is better than ever, the platforms are unifying and macOS is not getting left behind.</p>
-<p>The project from this article is available on <a href="https://github.com/trozware/swiftui-mac-2022">GitHub</a>. And as usual, I&rsquo;d be thrilled to hear any suggestions, corrections or improvements. Please contact me using one of the links below or through the <a href="/contact/">Contact</a> page. And if you found this article useful, I&rsquo;d love you to <a href="https://ko-fi.com/trozware">buy me a coffee</a>.</p></div>
+<p>The project from this article is available on <a href="https://github.com/trozware/swiftui-mac-2022" target="_blank" >GitHub</a>
+. And as usual, I&rsquo;d be thrilled to hear any suggestions, corrections or improvements. Please contact me using one of the links below or through the <a href="/contact/" >Contact</a>
+ page. And if you found this article useful, I&rsquo;d love you to <a href="https://ko-fi.com/trozware" target="_blank" >buy me a coffee</a>
+.</p></div>
   
   <div class="pagination">
     <div class="pagination__title">
@@ -489,11 +511,11 @@ The <code>saveImage</code> method uses an <code>NSSavePanel</code> to get a URL 
     </div>
     <div class="pagination__buttons">
       
-      <a class="btn next" href="https://troz.net/post/2022/new_links/"
+      <a class="btn next" href="http://localhost:1313/post/2022/new_links/"
         >← New Links</a
       >
        
-      <a class="btn previous" href="https://troz.net/post/2022/setup/"
+      <a class="btn previous" href="http://localhost:1313/post/2022/setup/"
         >Writing Setup →</a
       >
       
@@ -607,7 +629,5 @@ The <code>saveImage</code> method uses an <code>NSSavePanel</code> to get a URL 
 
       
     </div>
-
-    
   </body>
 </html>

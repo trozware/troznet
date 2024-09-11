@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         Sparkle ::
@@ -11,12 +11,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="Last month, I posted about writing my new todo app called To-Day: why I wrote it and how I wrote it. At the time, I mentioned that I had set it up to install updates using Sparkle but there was too much detail to include in the initial post. So here, as promised, is the article about implementing Sparkle.
+  content="Last month, I posted about writing my new todo app called To-Day : why I wrote it and how I wrote it. At the time, I mentioned that I had set it up to install updates using Sparkle but there was too much detail to include in the initial post. So here, as promised, is the article about implementing Sparkle.
 "
 />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://troz.net/post/2023/sparkle/" />
+<link rel="canonical" href="http://localhost:1313/post/2023/sparkle/" />
 
 
 
@@ -25,7 +25,7 @@
  
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://troz.net/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -46,7 +46,7 @@ as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preloa
 as="font" crossorigin="">
 
 
-<meta property="og:url" content="https://troz.net/post/2023/sparkle/">
+<meta property="og:url" content="http://localhost:1313/post/2023/sparkle/">
   <meta property="og:site_name" content="TrozWare">
   <meta property="og:title" content="Sparkle">
   <meta property="og:description" content="Set up your Mac app for updating using the Sparkle framework">
@@ -71,7 +71,7 @@ as="font" crossorigin="">
       <header class="header">
   <span class="header__inner">
     <a
-  href="https://troz.net/"
+  href="http://localhost:1313/"
   class="logo"
   style="text-decoration: none;"
 >
@@ -185,38 +185,41 @@ as="font" crossorigin="">
 
 <div class="post">
   <h2 class="post-title">
-    <a href="https://troz.net/post/2023/sparkle/">Sparkle</a>
+    <a href="http://localhost:1313/post/2023/sparkle/">Sparkle</a>
   </h2>
   <div class="post-meta">
     <span class="post-date">
       11 Apr 2023
     </span>
-    <span class="more-meta">- 2522 words, </span>
+    <span class="more-meta">- 2528 words, </span>
     <span class="more-meta"> 12 minute read</span>
   </div>
 
   
   <span class="post-tags">
      #<a
-      href="https://troz.net/tags/mac"
+      href="http://localhost:1313/tags/mac"
       >mac</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/sparkle"
+      href="http://localhost:1313/tags/sparkle"
       >sparkle</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/app"
+      href="http://localhost:1313/tags/app"
       >app</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/distribution"
+      href="http://localhost:1313/tags/distribution"
       >distribution</a
     >&nbsp; 
   </span>
    
 
-  <div class="post-content"><p>Last month, I posted about writing my new todo app called <a href="/post/2023/to-day/">To-Day</a>: why I wrote it and how I wrote it. At the time, I mentioned that I had set it up to install updates using <a href="https://sparkle-project.org">Sparkle</a> but there was too much detail  to include in the initial post. So here, as promised, is the article about implementing Sparkle.</p>
+  <div class="post-content"><p>Last month, I posted about writing my new todo app called <a href="/post/2023/to-day/" >To-Day</a>
+: why I wrote it and how I wrote it. At the time, I mentioned that I had set it up to install updates using <a href="https://sparkle-project.org" target="_blank" >Sparkle</a>
+ but there was too much detail  to include in the initial post. So here, as promised, is the article about implementing Sparkle.</p>
 <p>One of the great conveniences of App Store distribution is the update handling. When (or if) an update passes the app review process, Apple does the rest, propagating updates through the App Store app. If you&rsquo;re distributing your apps externally, you need an alternative method.</p>
 <p>Sparkle is an open-source update framework for macOS. It&rsquo;s very popular and I&rsquo;m sure you will have seen it used, even if you didn&rsquo;t recognise it. But setting it up isn&rsquo;t totally straight-forward, at least I didn&rsquo;t find it so, which I why I&rsquo;m using this post to document the process.</p>
-<p>The <a href="https://sparkle-project.org/documentation/">Sparkle documentation</a> is excellent and contains everything you need to know, but they allow for a wide range of use cases and configurations, which makes it difficult to follow at times. For this app, I have the following requirements:</p>
+<p>The <a href="https://sparkle-project.org/documentation/" target="_blank" >Sparkle documentation</a>
+ is excellent and contains everything you need to know, but they allow for a wide range of use cases and configurations, which makes it difficult to follow at times. For this app, I have the following requirements:</p>
 <ul>
 <li>SwiftUI app</li>
 <li>Sandboxed</li>
@@ -229,22 +232,35 @@ as="font" crossorigin="">
   <a href="#table-of-contents" class="h-anchor" aria-hidden="true">#</a>
 </h3>
 <ul>
-<li><a href="#installation">Installation</a></li>
-<li><a href="#adding-a-public-key-to-your-app">Adding a Public Key to your App</a>
+<li><a href="#installation" >Installation</a>
+</li>
+<li><a href="#adding-a-public-key-to-your-app" >Adding a Public Key to your App</a>
+
 <ul>
-<li><a href="#checking-for-a-existing-key">Checking for a Existing Key</a></li>
-<li><a href="#creating-a-new-key">Creating a New Key</a></li>
-<li><a href="#installing-the-public-key">Installing the Public Key</a></li>
+<li><a href="#checking-for-a-existing-key" >Checking for a Existing Key</a>
+</li>
+<li><a href="#creating-a-new-key" >Creating a New Key</a>
+</li>
+<li><a href="#installing-the-public-key" >Installing the Public Key</a>
+</li>
 </ul>
 </li>
-<li><a href="#sandboxing">Sandboxing</a></li>
-<li><a href="#locating-the-updates">Locating the Updates</a></li>
-<li><a href="#coding-the-update-check">Coding the Update Check</a></li>
-<li><a href="#exporting-the-app">Exporting the App</a></li>
-<li><a href="#making-a-disk-image">Making a Disk Image</a></li>
-<li><a href="#generating-the-appcast-xml">Generating the appcast.xml</a></li>
-<li><a href="#testing">Testing</a></li>
-<li><a href="#summary">Summary</a></li>
+<li><a href="#sandboxing" >Sandboxing</a>
+</li>
+<li><a href="#locating-the-updates" >Locating the Updates</a>
+</li>
+<li><a href="#coding-the-update-check" >Coding the Update Check</a>
+</li>
+<li><a href="#exporting-the-app" >Exporting the App</a>
+</li>
+<li><a href="#making-a-disk-image" >Making a Disk Image</a>
+</li>
+<li><a href="#generating-the-appcast-xml" >Generating the appcast.xml</a>
+</li>
+<li><a href="#testing" >Testing</a>
+</li>
+<li><a href="#summary" >Summary</a>
+</li>
 </ul>
 <h3 id="installation">
   Installation
@@ -285,10 +301,12 @@ as="font" crossorigin="">
   Checking for a Existing Key
   <a href="#checking-for-a-existing-key" class="h-anchor" aria-hidden="true">#</a>
 </h4>
-<p>To check if you already have a key, open the <strong>Keychain Access</strong> app from Applications/Utilities. Search for <strong>sparkle</strong> and if you have a key, you&rsquo;ll see it listed. If you don&rsquo;t find anything, skip ahead to the <a href="#creating-a-new-key">next section</a> to create a new one.</p>
+<p>To check if you already have a key, open the <strong>Keychain Access</strong> app from Applications/Utilities. Search for <strong>sparkle</strong> and if you have a key, you&rsquo;ll see it listed. If you don&rsquo;t find anything, skip ahead to the <a href="#creating-a-new-key" >next section</a>
+ to create a new one.</p>
 <p>Double-click the key to show its details which conveniently includes the public key in the comments.</p>
 <p><img src="/images/sparkle_key.png" alt="Existing Sparkle keys"></p>
-<p>Select and copy the public key, then jump to <a href="#installing-the-public-key">Installing the Public Key</a>.</p>
+<p>Select and copy the public key, then jump to <a href="#installing-the-public-key" >Installing the Public Key</a>
+.</p>
 <h4 id="creating-a-new-key">
   Creating a New Key
   <a href="#creating-a-new-key" class="h-anchor" aria-hidden="true">#</a>
@@ -313,7 +331,8 @@ as="font" crossorigin="">
   Sandboxing
   <a href="#sandboxing" class="h-anchor" aria-hidden="true">#</a>
 </h3>
-<p>Mac apps are sandboxed by default, which quarantines their data into their own container and protects the rest of your system. Adding Sparkle to a sandboxed app requires some more steps, but if your app is not sandboxed, <a href="#locating-the-updates">move on to the next section</a>.</p>
+<p>Mac apps are sandboxed by default, which quarantines their data into their own container and protects the rest of your system. Adding Sparkle to a sandboxed app requires some more steps, but if your app is not sandboxed, <a href="#locating-the-updates" >move on to the next section</a>
+.</p>
 <p>First, you need to give your app access to the internet, so it can retrieve the update information and download any updates.</p>
 <p>In the app&rsquo;s target settings, select <strong>Signing and Capabilities</strong> and turn on <strong>Outgoing Connections (Client)</strong>:</p>
 <p><img src="/images/sparkle_connections.png" alt="Sand-box connection setting"></p>
@@ -336,20 +355,23 @@ as="font" crossorigin="">
   <a href="#locating-the-updates" class="h-anchor" aria-hidden="true">#</a>
 </h3>
 <p>You need to have an online location for the app and its update information. Since my To-Day app is on GitHub, I decided to use GitHub for distribution too, but I could have used this web site, AWS or any other online service. It&rsquo;s best if it&rsquo;s coming from an <strong>https</strong> server.</p>
-<p>Open my <a href="https://github.com/trozware/To-Day">GitHub repo</a> and look at the file structure. The <strong>Releases</strong> folder has a disk image (dmg) containing the app and an XML file generated by Sparkle with the update information.</p>
+<p>Open my <a href="https://github.com/trozware/To-Day" target="_blank" >GitHub repo</a>
+ and look at the file structure. The <strong>Releases</strong> folder has a disk image (dmg) containing the app and an XML file generated by Sparkle with the update information.</p>
 <p>Work out where you&rsquo;re going to put these two files for your app and find the exact URL for the <strong>appcast.xml</strong> file.</p>
 <p>This gives you the last piece of data that your app needs. Add another setting to your target&rsquo;s Info:</p>
 <ul>
 <li><strong>Key</strong>: SUFeedURL</li>
 <li><strong>Type</strong>: String</li>
-<li><strong>Value</strong>: <a href="https://url-to-your-appcast.xml">https://url-to-your-appcast.xml</a></li>
+<li><strong>Value</strong>: <a href="https://url-to-your-appcast.xml" target="_blank" >https://url-to-your-appcast.xml</a>
+</li>
 </ul>
 <p>If you&rsquo;re using GitHub, upload a fake file so you can get the URL, remembering to get the URL for the raw file, not its GitHub page.</p>
 <h3 id="coding-the-update-check">
   Coding the Update Check
   <a href="#coding-the-update-check" class="h-anchor" aria-hidden="true">#</a>
 </h3>
-<p>You&rsquo;ve done all the setup work now, but there&rsquo;s nothing to trigger a check in the app. I copied and pasted most of the suggested code from the <a href="https://sparkle-project.org/documentation/programmatic-setup/">Sparkle docs</a>.</p>
+<p>You&rsquo;ve done all the setup work now, but there&rsquo;s nothing to trigger a check in the app. I copied and pasted most of the suggested code from the <a href="https://sparkle-project.org/documentation/programmatic-setup/" target="_blank" >Sparkle docs</a>
+.</p>
 <p>First, I created a new file called <strong>Updater.swift</strong> which contains:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">SwiftUI</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Sparkle</span>
@@ -421,7 +443,8 @@ as="font" crossorigin="">
 <p>Double-click the image to open it and drag your exported app into the disk image window. <strong>Command-Option-drag</strong> your Applications folder in. You&rsquo;ll know you&rsquo;re holding down the right modifiers if you see a curved black arrow at the bottom left of the icon. This adds an alias to the current Applications folder, rather than a copy of yours.</p>
 <p>Now configure the disk image window using Finder&rsquo;s View menu and View Options. I turn off all the extra views: toolbar, path bar, status bar etc. then I set the view options like this:</p>
 <p><img src="/images/sparkle_dmg.png" alt="Configuring the disk image"></p>
-<p>Setting a background image takes a few steps. First, find an image you like. Not being graphically minded, I used a rectangle filled with a gradient and added a curved arrow that pointed from the app to the Applications folder. My file is a png, but I think a jpg will work fine. You can click this link if you want to see my sample <a href="/images/dmg_background.png">background image</a>.</p>
+<p>Setting a background image takes a few steps. First, find an image you like. Not being graphically minded, I used a rectangle filled with a gradient and added a curved arrow that pointed from the app to the Applications folder. My file is a png, but I think a jpg will work fine. You can click this link if you want to see my sample <a href="/images/dmg_background.png" >background image</a>
+.</p>
 <p>Drag the image file into your disk image. Don&rsquo;t worry about positioning it - you&rsquo;re about to make the file invisible. With Finder active, press <strong>Shift-Command-.</strong> to show invisible files. Now, rename the background image file to <strong>.background.png</strong>. The leading period makes this an invisible file, but you can see it at the moment. Open the View Options again and select <strong>Picture</strong> for the Background. Drag your image file into the well. This may show that you need to re-position the arrow, so repeat the process until you get an image that looks right. Then press <strong>Shift-Command-.</strong> again to hide invisible files. Re-position the visible icons to suit and adjust the size of the window to what you want to show.</p>
 <p>Now that the disk image is configured, eject it. Back in Disk Utility, select <strong>Images &gt; Convert…</strong> and choose your dmg. On the next dialog, change Image Format to <strong>read-only</strong> and click <strong>Convert</strong>. This is the disk image that goes into your Releases folder, so change its name to match your app and move it. Keep the read-write disk image too - it&rsquo;s much easier to edit it when updating instead of going through this process every time.</p>
 <p>Open the read-only image and check that it&rsquo;s set up the way your want. I have found that sometimes the background image doesn&rsquo;t stick. If this happens to you, eject and trash the read-only image. Mount the read-write image again, confirm its settings and re-convert.</p>
@@ -453,8 +476,11 @@ Press Return and wait while Sparkle generates the <strong>appcast.xml</strong> f
   <a href="#summary" class="h-anchor" aria-hidden="true">#</a>
 </h3>
 <p>Sparkle is a great tool and once you have everything configured, it works really well. Configuring it can be tricky, especially as their docs cover so many different use cases.</p>
-<p>Check out the <a href="https://github.com/trozware/To-Day">GitHub repo</a> for my To-Day app to see how I&rsquo;ve configured it.</p>
-<p>If you have any suggestions or if you run into any problems following this guide, please contact me using one of the links below or through the <a href="/contact/">Contact</a> page. And if you found this article useful, I&rsquo;d love you to <a href="https://ko-fi.com/trozware">buy me a coffee</a>.</p></div>
+<p>Check out the <a href="https://github.com/trozware/To-Day" target="_blank" >GitHub repo</a>
+ for my To-Day app to see how I&rsquo;ve configured it.</p>
+<p>If you have any suggestions or if you run into any problems following this guide, please contact me using one of the links below or through the <a href="/contact/" >Contact</a>
+ page. And if you found this article useful, I&rsquo;d love you to <a href="https://ko-fi.com/trozware" target="_blank" >buy me a coffee</a>
+.</p></div>
   
   <div class="pagination">
     <div class="pagination__title">
@@ -463,11 +489,11 @@ Press Return and wait while Sparkle generates the <strong>appcast.xml</strong> f
     </div>
     <div class="pagination__buttons">
       
-      <a class="btn next" href="https://troz.net/post/2023/macos_book_2/"
+      <a class="btn next" href="http://localhost:1313/post/2023/macos_book_2/"
         >← macOS Apprentice</a
       >
        
-      <a class="btn previous" href="https://troz.net/post/2023/to-day/"
+      <a class="btn previous" href="http://localhost:1313/post/2023/to-day/"
         >To-Day →</a
       >
       
@@ -581,7 +607,5 @@ Press Return and wait while Sparkle generates the <strong>appcast.xml</strong> f
 
       
     </div>
-
-    
   </body>
 </html>

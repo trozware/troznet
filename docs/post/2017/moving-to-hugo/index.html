@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         Moving to Hugo ::
@@ -16,7 +16,7 @@
 />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://troz.net/post/2017/moving-to-hugo/" />
+<link rel="canonical" href="http://localhost:1313/post/2017/moving-to-hugo/" />
 
 
 
@@ -25,7 +25,7 @@
  
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://troz.net/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -46,7 +46,7 @@ as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preloa
 as="font" crossorigin="">
 
 
-<meta property="og:url" content="https://troz.net/post/2017/moving-to-hugo/">
+<meta property="og:url" content="http://localhost:1313/post/2017/moving-to-hugo/">
   <meta property="og:site_name" content="TrozWare">
   <meta property="og:title" content="Moving to Hugo">
   <meta property="og:description" content="Yesterday, I came to update my blog: I had a new post in draft form and I wanted to update the Swift code to version 4. However installing High Sierra had removed Jekyll which is the site generator that I had been using. I re-installed Jekyll but found that it had been updated from version 2 to version 3.">
@@ -71,7 +71,7 @@ as="font" crossorigin="">
       <header class="header">
   <span class="header__inner">
     <a
-  href="https://troz.net/"
+  href="http://localhost:1313/"
   class="logo"
   style="text-decoration: none;"
 >
@@ -185,29 +185,29 @@ as="font" crossorigin="">
 
 <div class="post">
   <h2 class="post-title">
-    <a href="https://troz.net/post/2017/moving-to-hugo/">Moving to Hugo</a>
+    <a href="http://localhost:1313/post/2017/moving-to-hugo/">Moving to Hugo</a>
   </h2>
   <div class="post-meta">
     <span class="post-date">
       29 Nov 2017
     </span>
-    <span class="more-meta">- 1395 words, </span>
+    <span class="more-meta">- 1398 words, </span>
     <span class="more-meta"> 7 minute read</span>
   </div>
 
   
   <span class="post-tags">
      #<a
-      href="https://troz.net/tags/hugo"
+      href="http://localhost:1313/tags/hugo"
       >hugo</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/jekyll"
+      href="http://localhost:1313/tags/jekyll"
       >jekyll</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/web"
+      href="http://localhost:1313/tags/web"
       >web</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/blog"
+      href="http://localhost:1313/tags/blog"
       >blog</a
     >&nbsp; 
   </span>
@@ -215,7 +215,8 @@ as="font" crossorigin="">
 
   <div class="post-content"><p>Yesterday, I came to update my blog: I had a new post in draft form and I wanted
 to update the Swift code to version 4. However installing High Sierra had
-removed <a href="https://jekyllrb.com" title="Jekyll">Jekyll</a> which is the site generator that I had been using. I
+removed <a href="https://jekyllrb.com" title="Jekyll" target="_blank" >Jekyll</a>
+ which is the site generator that I had been using. I
 re-installed Jekyll but found that it had been updated from version 2 to version
 3.</p>
 <hr>
@@ -233,8 +234,10 @@ that back&hellip;</p>
 <p>At this point I decided that if Jekyll was going to cause me a lot of trouble,
 it might be worth looking at an alternative.</p>
 <p>My main criteria were the ability to import my Jekyll site and the ability to
-host on <a href="https://pages.github.com/" title="GitHub Pages">GitHub Pages</a>. After checking out the options, I decided to have a
-look at <a href="https://gohugo.io" title="Hugo">Hugo</a>.</p>
+host on <a href="https://pages.github.com/" title="GitHub Pages" target="_blank" >GitHub Pages</a>
+. After checking out the options, I decided to have a
+look at <a href="https://gohugo.io" title="Hugo" target="_blank" >Hugo</a>
+.</p>
 <hr>
 <h2 id="moving-to-hugo">
   Moving to Hugo
@@ -243,7 +246,8 @@ look at <a href="https://gohugo.io" title="Hugo">Hugo</a>.</p>
 <p>One of the most lauded features of Hugo is speed. I had found with Jekyll that
 when I saved an edited page, it took about 5 seconds before the edits could be
 reloaded into the browser. Hugo is supposedly fast and does auto reloads.</p>
-<p>Following the <a href="https://gohugo.io/getting-started/quick-start/" title="Hugo Quick Start">Quick Start</a> guide, I installed Hugo. Importing my Jekyll site
+<p>Following the <a href="https://gohugo.io/getting-started/quick-start/" title="Hugo Quick Start" target="_blank" >Quick Start</a>
+ guide, I installed Hugo. Importing my Jekyll site
 worked easily and so fast I wasn&rsquo;t sure anything had happened, transferring my
 posts to <code>contents/posts</code> and my other files (status pages, images etc.) to
 <code>static</code>.</p>
@@ -279,7 +283,8 @@ only the visuals but the capabilities of the site.</p>
 <li>JSON Feed</li>
 <li>Searching within the site</li>
 </ul>
-<p>The Hugo themes page <a href="https://themes.gohugo.io">https://themes.gohugo.io</a> has themes listed by capabilities,
+<p>The Hugo themes page <a href="https://themes.gohugo.io" target="_blank" >https://themes.gohugo.io</a>
+ has themes listed by capabilities,
 but no way that I could see to combine a selection of capabilities.</p>
 <p>Some of the features like Google Analytics or Disqus comments, I could probably
 add myself using templates from theme that did include them, if the template I
@@ -291,7 +296,8 @@ contains the configuration info.</p>
   Configuring a Theme
   <a href="#configuring-a-theme" class="h-anchor" aria-hidden="true">#</a>
 </h2>
-<p>After testing out several alternatives, I decided to go with <a href="https://github.com/olOwOlo/hugo-theme-even" title="Even">Even</a> - at
+<p>After testing out several alternatives, I decided to go with <a href="https://github.com/olOwOlo/hugo-theme-even" title="Even" target="_blank" >Even</a>
+ - at
 least to start with. I installed the theme and copied the contents of the
 example <code>config.toml</code> to my own <code>config.toml</code> file and started configuring.</p>
 <p>I wasn&rsquo;t happy with some of the fonts, but soon worked out how to change the CSS
@@ -325,13 +331,16 @@ generated from.</p>
 looks like it comes from <code>layouts/posts/single.html</code> while
 <code>layouts/posts/summary.html</code> contains the templating for each entry in the index
 page.</p>
-<p>But clicking on the Archives link in the me takes me to <a href="https://troz.net/post/">https://troz.net/post/</a>
+<p>But clicking on the Archives link in the me takes me to <a href="https://troz.net/post/" target="_blank" >https://troz.net/post/</a>
+
 and there is no <code>post.html</code> file in layouts. There is a <code>post</code> folder, but it
 contains the <code>single.html</code> &amp; <code>summary.html</code> files described already.</p>
 <p>Delving ever deeper, <code>layouts/_default/section.html</code> appears to contains the
-Archives page template. But how does that relate to the <a href="https://troz.net/post/">https://troz.net/post/</a>
+Archives page template. But how does that relate to the <a href="https://troz.net/post/" target="_blank" >https://troz.net/post/</a>
+
 link? And the Tags template is in <code>layouts/_default/terms.html</code> but appears in
-<a href="https://troz.net/tags/">https://troz.net/tags/</a>. Checking the Hugo documentation for creating a theme, I
+<a href="https://troz.net/tags/" target="_blank" >https://troz.net/tags/</a>
+. Checking the Hugo documentation for creating a theme, I
 find the information I need. Hugo has a selection of file paths that it checks
 for such templates, and these file paths match some of those. So now I know
 where to go to customise further.</p>
@@ -339,7 +348,8 @@ where to go to customise further.</p>
 table of contents displayed beside each blog post if your page is wide enough.
 It takes the headers in the post and uses them to make the table. I may need to
 add or edit the headers in some posts, but I really like this feature.</p>
-<p>And if you want a laugh, test out the 404 page - here is a <a href="https://troz.net/bad-link/" title="404">bad link</a> - which
+<p>And if you want a laugh, test out the 404 page - here is a <a href="https://troz.net/bad-link/" title="404" target="_blank" >bad link</a>
+ - which
 generates a random text emoji each time!</p>
 <hr>
 <h2 id="publishing">
@@ -381,7 +391,8 @@ haven&rsquo;t yet worked out how to implement it - hopefully later.</p>
 but not in Jekyll. There are Hugo themes listed that support search, but they
 seem to just give a link to Google or DuckDuckGo. Maybe this can be edited to
 restrict it to the site, but I dislike using such searches, so I will not add a
-search unless it works internally. One theme I found uses <a href="https://www.algolia.com" title="Algolia">Algolia</a> to search
+search unless it works internally. One theme I found uses <a href="https://www.algolia.com" title="Algolia" target="_blank" >Algolia</a>
+ to search
 the site, so I will investigate that.</p>
 <p>Overall, I am impressed. The transition was relatively easy, especially
 considering that I didn&rsquo;t take the time to learn anything about Hugo first, but
@@ -398,11 +409,11 @@ investigating Twitter cards, search &amp; JSON Feed.</p></div>
     </div>
     <div class="pagination__buttons">
       
-      <a class="btn next" href="https://troz.net/post/2017/marktime/"
+      <a class="btn next" href="http://localhost:1313/post/2017/marktime/"
         >← Mark Time</a
       >
        
-      <a class="btn previous" href="https://troz.net/post/2017/json-parsing-in-swift-4/"
+      <a class="btn previous" href="http://localhost:1313/post/2017/json-parsing-in-swift-4/"
         >JSON Parsing in Swift 4 →</a
       >
       
@@ -516,7 +527,5 @@ investigating Twitter cards, search &amp; JSON Feed.</p></div>
 
       
     </div>
-
-    
   </body>
 </html>

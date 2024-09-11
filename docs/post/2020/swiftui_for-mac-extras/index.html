@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         SwiftUI for Mac Extras ::
@@ -17,7 +17,7 @@ Some of the responses I got were pointing out different or better ways to do thi
 />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://troz.net/post/2020/swiftui_for-mac-extras/" />
+<link rel="canonical" href="http://localhost:1313/post/2020/swiftui_for-mac-extras/" />
 
 
 
@@ -26,7 +26,7 @@ Some of the responses I got were pointing out different or better ways to do thi
  
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://troz.net/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -47,7 +47,7 @@ as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preloa
 as="font" crossorigin="">
 
 
-<meta property="og:url" content="https://troz.net/post/2020/swiftui_for-mac-extras/">
+<meta property="og:url" content="http://localhost:1313/post/2020/swiftui_for-mac-extras/">
   <meta property="og:site_name" content="TrozWare">
   <meta property="og:title" content="SwiftUI for Mac Extras">
   <meta property="og:description" content="Last year, I wrote a 3 part series of articles on using SwiftUI to build a Mac app. I would like to thank everyone who contacted me about this series. It was received very well and revealed that there is still a large amount of interest in programming for the Mac.
@@ -72,7 +72,7 @@ Some of the responses I got were pointing out different or better ways to do thi
       <header class="header">
   <span class="header__inner">
     <a
-  href="https://troz.net/"
+  href="http://localhost:1313/"
   class="logo"
   style="text-decoration: none;"
 >
@@ -186,32 +186,33 @@ Some of the responses I got were pointing out different or better ways to do thi
 
 <div class="post">
   <h2 class="post-title">
-    <a href="https://troz.net/post/2020/swiftui_for-mac-extras/">SwiftUI for Mac Extras</a>
+    <a href="http://localhost:1313/post/2020/swiftui_for-mac-extras/">SwiftUI for Mac Extras</a>
   </h2>
   <div class="post-meta">
     <span class="post-date">
       27 Jan 2020
     </span>
-    <span class="more-meta">- 1139 words, </span>
+    <span class="more-meta">- 1143 words, </span>
     <span class="more-meta"> 6 minute read</span>
   </div>
 
   
   <span class="post-tags">
      #<a
-      href="https://troz.net/tags/swift"
+      href="http://localhost:1313/tags/swift"
       >swift</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/swiftui"
+      href="http://localhost:1313/tags/swiftui"
       >swiftui</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/mac"
+      href="http://localhost:1313/tags/mac"
       >mac</a
     >&nbsp; 
   </span>
    
 
-  <div class="post-content"><p>Last year, I wrote a 3 part series of articles on <a href="/post/2019/swiftui-for-mac-1/">using SwiftUI to build a Mac</a> app. I would like to thank everyone who contacted me about this series. It was received very well and revealed that there is still a large amount of interest in programming for the Mac.</p>
+  <div class="post-content"><p>Last year, I wrote a 3 part series of articles on <a href="/post/2019/swiftui-for-mac-1/" >using SwiftUI to build a Mac</a>
+ app. I would like to thank everyone who contacted me about this series. It was received very well and revealed that there is still a large amount of interest in programming for the Mac.</p>
 <p>Some of the responses I got were pointing out different or better ways to do things, so I am going to list them here, adding to this post as I get new information. The relevant sections in the original posts will have links to the fixes suggested here, but I decided it was easier to list the changes in a separate post, rather than asking people to re-read the whole series looking for modifications.</p>
 <hr>
 <h2 id="dismissing-sheets">
@@ -222,8 +223,10 @@ Some of the responses I got were pointing out different or better ways to do thi
 <p>I just read your series on writing Mac apps with SwiftUI. Great stuff!
 Just wanted to add that in part 2 when dismissing sheets there are two ways to do that, one of them is the one that you figured out and the other is to have the view dismiss itself by grabbing its PresentationMode from the environment. This way you don’t need to pass presentation bindings to your sheet views.</p>
 </blockquote>
-<p>Paul Hudson of Hacking with Swift explains how to use both methods very clearly in his article on <a href="https://www.hackingwithswift.com/quick-start/swiftui/how-to-make-a-view-dismiss-itself">How to make a view dismiss itself</a>.</p>
-<p>My <a href="/post/2019/swiftui-for-mac-3#sheets">original technique</a> passed the Boolean that triggered the sheet to appear, as a Binding to the sheet view. The sheet view could then toggle this to make the parent view dismiss it.</p>
+<p>Paul Hudson of Hacking with Swift explains how to use both methods very clearly in his article on <a href="https://www.hackingwithswift.com/quick-start/swiftui/how-to-make-a-view-dismiss-itself" target="_blank" >How to make a view dismiss itself</a>
+.</p>
+<p>My <a href="/post/2019/swiftui-for-mac-3#sheets" >original technique</a>
+ passed the Boolean that triggered the sheet to appear, as a Binding to the sheet view. The sheet view could then toggle this to make the parent view dismiss it.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  .sheet(isPresented: <span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing) {
 </span></span><span style="display:flex;"><span>      SheetView(isVisible: <span style="color:#66d9ef">self</span>.<span style="color:#960050;background-color:#1e0010">$</span>sheetIsShowing)
 </span></span><span style="display:flex;"><span>  }
@@ -264,7 +267,8 @@ Just wanted to add that in part 2 when dismissing sheets there are two ways to d
   Subscribing on the Main Thread
   <a href="#subscribing-on-the-main-thread" class="h-anchor" aria-hidden="true">#</a>
 </h2>
-<p>In <a href="/post/2019/swiftui-for-mac-2#passing-menu-data-to-a-view">part 2 of this series</a>, I created a menu item caused the downloaded image to be flipped. Selecting the menu item posted a notification:</p>
+<p>In <a href="/post/2019/swiftui-for-mac-2#passing-menu-data-to-a-view" >part 2 of this series</a>
+, I created a menu item caused the downloaded image to be flipped. Selecting the menu item posted a notification:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    <span style="color:#66d9ef">@IBAction</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">flipImage</span>(<span style="color:#66d9ef">_</span> sender: Any) {
 </span></span><span style="display:flex;"><span>        NotificationCenter.<span style="color:#66d9ef">default</span>.post(name: .flipImage, object: <span style="color:#66d9ef">nil</span>)
 </span></span><span style="display:flex;"><span>    }
@@ -296,7 +300,8 @@ Just wanted to add that in part 2 when dismissing sheets there are two ways to d
   <a href="#passing-data-back-from-appkit" class="h-anchor" aria-hidden="true">#</a>
 </h2>
 <p>The previous two changes have been more a matter of style, but this one is a real error that would stop an app working as it should.</p>
-<p>In <a href="/post/2019/swiftui-for-mac-2#user-interface-elements">the User Interface Elements section of the series</a>, I used <code>NSViewRepresentable</code> to embed a standard <code>NSColorWell</code> in a SwiftUI view. I thought this was working properly, but then I got this email:</p>
+<p>In <a href="/post/2019/swiftui-for-mac-2#user-interface-elements" >the User Interface Elements section of the series</a>
+, I used <code>NSViewRepresentable</code> to embed a standard <code>NSColorWell</code> in a SwiftUI view. I thought this was working properly, but then I got this email:</p>
 <blockquote>
 <p>I noticed that the selectedColor in the EmbeddedColorWell is not being mutated and is not being used in a two-way manner. The selectedColor is initialized to NSColor.blue and used to set the color in the NSColorWell view. When the NSColorWell color is changed, it does change the color of the EmbeddedColorWell view. However, the actual @State var selectedColor value is never mutated in this process beyond the initialized value of NSColor.blue.</p>
 </blockquote>
@@ -344,8 +349,10 @@ Just wanted to add that in part 2 when dismissing sheets there are two ways to d
 </span></span></code></pre></div><p>In the previous section, I changed the publisher to use the main RunLoop so as to avoid having the use <code>DispatchQueue.main.async</code>. In this instance, that did not work so well. It only updated the selected color after the mouse had been released. But using <code>DispatchQueue.main.async</code> made the update live.</p>
 <hr>
 <p>As I explained at the start of these articles, I was documenting my explorations in using SwiftUI for a Mac app and while I hoped there would be some useful examples, this was not intended to be a definitive guide. So I am very grateful to everyone who has contributed to these updates.</p>
-<p>If you have anything more that you would like to be included, please contact me using one of the contact buttons below or through the <a href="/contact/">Contact page</a> on this site.</p>
-<p>The edited project is available on <a href="https://github.com/trozware/swiftui-mac">GitHub</a>.</p></div>
+<p>If you have anything more that you would like to be included, please contact me using one of the contact buttons below or through the <a href="/contact/" >Contact page</a>
+ on this site.</p>
+<p>The edited project is available on <a href="https://github.com/trozware/swiftui-mac" target="_blank" >GitHub</a>
+.</p></div>
   
   <div class="pagination">
     <div class="pagination__title">
@@ -354,11 +361,11 @@ Just wanted to add that in part 2 when dismissing sheets there are two ways to d
     </div>
     <div class="pagination__buttons">
       
-      <a class="btn next" href="https://troz.net/post/2020/custom-fonts/"
+      <a class="btn next" href="http://localhost:1313/post/2020/custom-fonts/"
         >← Custom Fonts in iOS &amp; macOS apps</a
       >
        
-      <a class="btn previous" href="https://troz.net/post/2019/swiftui-for-mac-3/"
+      <a class="btn previous" href="http://localhost:1313/post/2019/swiftui-for-mac-3/"
         >SwiftUI for Mac - Part 3 →</a
       >
       
@@ -472,7 +479,5 @@ Just wanted to add that in part 2 when dismissing sheets there are two ways to d
 
       
     </div>
-
-    
   </body>
 </html>

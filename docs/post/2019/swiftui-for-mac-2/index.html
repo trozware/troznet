@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         SwiftUI for Mac - Part 2 ::
@@ -11,13 +11,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="In part 1 of this series, I created a Mac app using SwiftUI. The app uses a Master-Detail design to list entries in an outline on the left and show details about the selected entry in the detail view on the right.
+  content="In part 1 of this series , I created a Mac app using SwiftUI. The app uses a Master-Detail design to list entries in an outline on the left and show details about the selected entry in the detail view on the right.
 Now it is time to explore some more of the features of a Mac app with SwiftUI.
 "
 />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://troz.net/post/2019/swiftui-for-mac-2/" />
+<link rel="canonical" href="http://localhost:1313/post/2019/swiftui-for-mac-2/" />
 
 
 
@@ -26,7 +26,7 @@ Now it is time to explore some more of the features of a Mac app with SwiftUI.
  
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://troz.net/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -47,7 +47,7 @@ as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preloa
 as="font" crossorigin="">
 
 
-<meta property="og:url" content="https://troz.net/post/2019/swiftui-for-mac-2/">
+<meta property="og:url" content="http://localhost:1313/post/2019/swiftui-for-mac-2/">
   <meta property="og:site_name" content="TrozWare">
   <meta property="og:title" content="SwiftUI for Mac - Part 2">
   <meta property="og:description" content="Explorations in building a Mac app in Swift.">
@@ -71,7 +71,7 @@ as="font" crossorigin="">
       <header class="header">
   <span class="header__inner">
     <a
-  href="https://troz.net/"
+  href="http://localhost:1313/"
   class="logo"
   style="text-decoration: none;"
 >
@@ -185,32 +185,33 @@ as="font" crossorigin="">
 
 <div class="post">
   <h2 class="post-title">
-    <a href="https://troz.net/post/2019/swiftui-for-mac-2/">SwiftUI for Mac - Part 2</a>
+    <a href="http://localhost:1313/post/2019/swiftui-for-mac-2/">SwiftUI for Mac - Part 2</a>
   </h2>
   <div class="post-meta">
     <span class="post-date">
       15 Dec 2019
     </span>
-    <span class="more-meta">- 2621 words, </span>
+    <span class="more-meta">- 2625 words, </span>
     <span class="more-meta"> 13 minute read</span>
   </div>
 
   
   <span class="post-tags">
      #<a
-      href="https://troz.net/tags/swift"
+      href="http://localhost:1313/tags/swift"
       >swift</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/swiftui"
+      href="http://localhost:1313/tags/swiftui"
       >swiftui</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/mac"
+      href="http://localhost:1313/tags/mac"
       >mac</a
     >&nbsp; 
   </span>
    
 
-  <div class="post-content"><p>In <a href="/post/2019/swiftui-for-mac-1/">part 1 of this series</a>, I created a Mac app using SwiftUI. The app uses a Master-Detail design to list entries in an outline on the left and show details about the selected entry in the detail view on the right.</p>
+  <div class="post-content"><p>In <a href="/post/2019/swiftui-for-mac-1/" >part 1 of this series</a>
+, I created a Mac app using SwiftUI. The app uses a Master-Detail design to list entries in an outline on the left and show details about the selected entry in the detail view on the right.</p>
 <p>Now it is time to explore some more of the features of a Mac app with SwiftUI.</p>
 <h2 id="menus">
   Menus
@@ -243,7 +244,8 @@ as="font" crossorigin="">
   <a href="#using-a-property-wrapper" class="h-anchor" aria-hidden="true">#</a>
 </h2>
 <p>Changing mode worked perfectly in the Xcode Preview and in the built app, but the app was not storing this or displaying the current selection with a check mark in the menu.</p>
-<p>For storing the selection, I decided to try another new thing and use a UserDefaults property wrapper, based on <a href="https://www.avanderlee.com/swift/property-wrappers/">this post by Antoine van der Lee</a>.</p>
+<p>For storing the selection, I decided to try another new thing and use a UserDefaults property wrapper, based on <a href="https://www.avanderlee.com/swift/property-wrappers/" target="_blank" >this post by Antoine van der Lee</a>
+.</p>
 <p>I configured a UserDefault wrapped variable for the mode, set it whenever the menu items changed it and added a function to read it in and apply it on startup.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    @UserDefault(<span style="color:#e6db74">&#34;system_mode&#34;</span>, defaultValue: <span style="color:#e6db74">&#34;system&#34;</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> systemMode: String
@@ -263,7 +265,8 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>        NotificationCenter.<span style="color:#66d9ef">default</span>.post(name: .flipImage, object: <span style="color:#66d9ef">nil</span>)
 </span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></div><p>In DetailView.swift, I set up a Boolean @State property to store whether the image was flipped or not and added an onReceive handler to toggle it. Since this is updating the UI, I made sure that it happened on the main thread, but I am not sure whether this is necessary, or whether onReceive uses the main thread automatically.</p>
-<p><strong>UPDATE:</strong> Check out <strong><a href="/post/2020/swiftui_for-mac-extras#subscribing-on-the-main-thread">Subscribing on the Main Thread</a></strong> in my post of extras &amp; changes to this series for an alternative way to make sure the updates happen on the correct thread.</p>
+<p><strong>UPDATE:</strong> Check out <strong><a href="/post/2020/swiftui_for-mac-extras#subscribing-on-the-main-thread" >Subscribing on the Main Thread</a>
+</strong> in my post of extras &amp; changes to this series for an alternative way to make sure the updates happen on the correct thread.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> imageIsFlipped = <span style="color:#66d9ef">false</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ...</span>
@@ -311,7 +314,8 @@ as="font" crossorigin="">
   <a href="#user-interface-elements" class="h-anchor" aria-hidden="true">#</a>
 </h2>
 <p>Not all the expected user interface elements are available in SwiftUI and some of the ones that are implemented are using different names. Again this is a point at which iOS development has got all the attention, so there are conversion tables out there listing UIKit elements and their SwiftUI equivalents, but I was not able to find a similar listing for AppKit. If you find one, please let me know.</p>
-<p>Anyway, I experimented and got most of what I wanted as you can see below. The <a href="https://github.com/trozware/swiftui-mac">sample app on GitHub</a> shows the SwiftUI code for these samples, but the main advice I would give is firstly to use the Object Browser to look for what is available and then to check out the styles that can be applied to the element you have chosen.</p>
+<p>Anyway, I experimented and got most of what I wanted as you can see below. The <a href="https://github.com/trozware/swiftui-mac" target="_blank" >sample app on GitHub</a>
+ shows the SwiftUI code for these samples, but the main advice I would give is firstly to use the Object Browser to look for what is available and then to check out the styles that can be applied to the element you have chosen.</p>
 <p><img src="/images/SwiftUI-Mac-UI.png" alt="UI elements"></p>
 <p>Mostly, I managed to achieve what I wanted but there were a few exceptions.</p>
 <p>Buttons were a bit odd as there are multiple button styles listed, but I found that they either all looked the same or they disappeared completely. I was not able to style a button with an image and text which is now easy to do in iOS. And I was not able to set a button as the default button and I could not work out how to set a keyboard equivalent for a button. (Setting the keyboard equivalent to Return or Enter might set it to the default style automatically.)</p>
@@ -331,7 +335,8 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Back in my SwiftUI view, I was then able to use <code>EmbeddedColorWell</code> just like any other SwiftUI view, passing it a binding to an @State variable to set and get the selected color.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  EmbeddedColorWell(selectedColor: <span style="color:#960050;background-color:#1e0010">$</span>selectedColor)
-</span></span></code></pre></div><p><strong>UPDATE:</strong> Be sure to read <strong><a href="/post/2020/swiftui_for-mac-extras#passing-data-back-from-appkit">Passing data back from AppKit</a></strong> in my post of extras &amp; changes to this series. This is an important fix that is needed to make this embedded control pass data back properly.</p>
+</span></span></code></pre></div><p><strong>UPDATE:</strong> Be sure to read <strong><a href="/post/2020/swiftui_for-mac-extras#passing-data-back-from-appkit" >Passing data back from AppKit</a>
+</strong> in my post of extras &amp; changes to this series. This is an important fix that is needed to make this embedded control pass data back properly.</p>
 <p>The other stumbling block that I encountered was that I had no way to close the window programmatically, in response to a button click or some other interaction. Maybe this was not the best way to open a fully SwifUI window, but it was still an interesting experiment.</p>
 <p>One thing I learned while working on this project was that SwiftUI can be a bit too clever about working out what needs to be redrawn in the previews. If you edit something in an separate file to the View, you may need to force a re-build to get the updates to show.</p>
 <h2 id="communicating-between-windows">
@@ -404,7 +409,8 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></div><p>And this gave me what I was after - a view that opened from a menu item but that knew itself whether it still had a window so could decide whether to open a new one or bring the existing one to the front. This looks a bit convoluted, but it doesn&rsquo;t appear to cause any memory leaks and the responsibility for the window rests on the view that uses it, which feels right to me.</p>
 <p>After I had this working, getting the data passing around was quite simple. I created a Prefs class to store the preference data. I wanted this data stored in UserDefaults, but since I also wanted to use an ObservableObject with the @Published property wrapper, I was not able to use the @UserDefaults property wrapper that I had used for the app mode.</p>
-<p>So instead I used @Published with a <code>didSet</code> that saved the changed data to UserDefaults. Thanks to <a href="https://twitter.com/azamsharp">@azamsharp</a> for this technique.</p>
+<p>So instead I used @Published with a <code>didSet</code> that saved the changed data to UserDefaults. Thanks to <a href="https://twitter.com/azamsharp" target="_blank" >@azamsharp</a>
+ for this technique.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Prefs</span>: ObservableObject {
 </span></span><span style="display:flex;"><span>    @Published
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> showCopyright: Bool = UserDefaults.standard.bool(forKey: <span style="color:#e6db74">&#34;showCopyright&#34;</span>) {
@@ -443,9 +449,12 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>And that is that! I have shown how it is possible to create an entire Mac app using SwiftUI.</p>
 <p>I am sure that there are numerous ways that this could be improved, so if you have any ideas or suggestions, please use one of the buttons below to contact me.</p>
-<p>If you want to check out the project at this stage, here is a link to the <a href="https://github.com/trozware/swiftui-mac/tree/0ea77f80832e0f32e477ce89ac57d8a95f45f035">relevant GitHub commit</a>. Or if you would prefer, here is a link to the <a href="https://github.com/trozware/swiftui-mac">final version</a> of the project.</p>
+<p>If you want to check out the project at this stage, here is a link to the <a href="https://github.com/trozware/swiftui-mac/tree/0ea77f80832e0f32e477ce89ac57d8a95f45f035" target="_blank" >relevant GitHub commit</a>
+. Or if you would prefer, here is a link to the <a href="https://github.com/trozware/swiftui-mac" target="_blank" >final version</a>
+ of the project.</p>
 <hr>
-<p>Moving on to an unplanned <a href="/post/2019/swiftui-for-mac-3/">part 3 of this series</a>, I am going to experiment with various forms of dialog.</p></div>
+<p>Moving on to an unplanned <a href="/post/2019/swiftui-for-mac-3/" >part 3 of this series</a>
+, I am going to experiment with various forms of dialog.</p></div>
   
   <div class="pagination">
     <div class="pagination__title">
@@ -454,11 +463,11 @@ as="font" crossorigin="">
     </div>
     <div class="pagination__buttons">
       
-      <a class="btn next" href="https://troz.net/post/2019/swiftui-for-mac-3/"
+      <a class="btn next" href="http://localhost:1313/post/2019/swiftui-for-mac-3/"
         >← SwiftUI for Mac - Part 3</a
       >
        
-      <a class="btn previous" href="https://troz.net/post/2019/swiftui-for-mac-1/"
+      <a class="btn previous" href="http://localhost:1313/post/2019/swiftui-for-mac-1/"
         >SwiftUI for Mac - Part 1 →</a
       >
       
@@ -572,7 +581,5 @@ as="font" crossorigin="">
 
       
     </div>
-
-    
   </body>
 </html>

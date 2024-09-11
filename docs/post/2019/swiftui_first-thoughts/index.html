@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         SwiftUI First Thoughts ::
@@ -11,12 +11,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content=" At WWDC 2019, Apple surprised us all by announcing a completely new declarative UI framework called SwiftUI. Quoting snippets from the Apple announcements, &amp;ldquo;SwiftUI is an innovative, exceptionally simple way to build user interfaces across all Apple platforms with the power of Swift&amp;rdquo; and &amp;ldquo;SwiftUI uses a declarative syntax so you can simply state what your user interface should do.&amp;rdquo; But what does this mean and should we all adopt it now?
+  content=" At WWDC 2019, Apple surprised us all by announcing a completely new declarative UI framework called SwiftUI . Quoting snippets from the Apple announcements, &ldquo;SwiftUI is an innovative, exceptionally simple way to build user interfaces across all Apple platforms with the power of Swift&rdquo; and &ldquo;SwiftUI uses a declarative syntax so you can simply state what your user interface should do.&rdquo; But what does this mean and should we all adopt it now?
 "
 />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://troz.net/post/2019/swiftui_first-thoughts/" />
+<link rel="canonical" href="http://localhost:1313/post/2019/swiftui_first-thoughts/" />
 
 
 
@@ -25,7 +25,7 @@
  
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://troz.net/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -46,7 +46,7 @@ as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preloa
 as="font" crossorigin="">
 
 
-<meta property="og:url" content="https://troz.net/post/2019/swiftui_first-thoughts/">
+<meta property="og:url" content="http://localhost:1313/post/2019/swiftui_first-thoughts/">
   <meta property="og:site_name" content="TrozWare">
   <meta property="og:title" content="SwiftUI First Thoughts">
   <meta property="og:description" content="Should you be using SwiftUI?">
@@ -69,7 +69,7 @@ as="font" crossorigin="">
       <header class="header">
   <span class="header__inner">
     <a
-  href="https://troz.net/"
+  href="http://localhost:1313/"
   class="logo"
   style="text-decoration: none;"
 >
@@ -183,23 +183,23 @@ as="font" crossorigin="">
 
 <div class="post">
   <h2 class="post-title">
-    <a href="https://troz.net/post/2019/swiftui_first-thoughts/">SwiftUI First Thoughts</a>
+    <a href="http://localhost:1313/post/2019/swiftui_first-thoughts/">SwiftUI First Thoughts</a>
   </h2>
   <div class="post-meta">
     <span class="post-date">
       18 Aug 2019
     </span>
-    <span class="more-meta">- 2801 words, </span>
+    <span class="more-meta">- 2807 words, </span>
     <span class="more-meta"> 14 minute read</span>
   </div>
 
   
   <span class="post-tags">
      #<a
-      href="https://troz.net/tags/swift"
+      href="http://localhost:1313/tags/swift"
       >swift</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/swiftui"
+      href="http://localhost:1313/tags/swiftui"
       >swiftui</a
     >&nbsp; 
   </span>
@@ -211,7 +211,8 @@ as="font" crossorigin="">
   }
 </style>
 
-<p>At WWDC 2019, Apple surprised us all by announcing a completely new declarative UI framework called <a href="https://developer.apple.com/xcode/swiftui/">SwiftUI</a>. Quoting snippets from the Apple announcements, &ldquo;SwiftUI is an innovative, exceptionally simple way to build user interfaces across all Apple platforms with the power of Swift&rdquo; and &ldquo;SwiftUI uses a declarative syntax so you can simply state what your user interface should do.&rdquo; But what does this mean and should we all adopt it now?</p>
+<p>At WWDC 2019, Apple surprised us all by announcing a completely new declarative UI framework called <a href="https://developer.apple.com/xcode/swiftui/" target="_blank" >SwiftUI</a>
+. Quoting snippets from the Apple announcements, &ldquo;SwiftUI is an innovative, exceptionally simple way to build user interfaces across all Apple platforms with the power of Swift&rdquo; and &ldquo;SwiftUI uses a declarative syntax so you can simply state what your user interface should do.&rdquo; But what does this mean and should we all adopt it now?</p>
 <p><img src="https://developer.apple.com/assets/elements/icons/swift/swift-96x96_2x.png" alt="Swift"></p>
 <h2 id="swift">
   Swift
@@ -224,7 +225,8 @@ as="font" crossorigin="">
   1. I&rsquo;m very comfortable and productive in Objective-C
   <a href="#1-im-very-comfortable-and-productive-in-objective-c" class="h-anchor" aria-hidden="true">#</a>
 </h4>
-<p>This is not a bad reason and for many people, their employer may insist on the language anyway, but this argument doesn&rsquo;t work for me. Firstly, I think that there is never going to be the One Perfect Language (with apologies to <a href="https://oleb.net/blog/2017/06/chris-lattner-wwdc-swift-panel/#in-which-fields-would-you-like-to-see-swift-in-the-future">Chris Lattner</a>) so I am always open to new ideas. And personally, I love learning new languages even if I am never going to use them in production. I feel that this makes me a better programmer overall. And there are vast benefits to Swift - it is a much safer language to write it, it is easier to read and more concise to write, it is just a much more modern language.</p>
+<p>This is not a bad reason and for many people, their employer may insist on the language anyway, but this argument doesn&rsquo;t work for me. Firstly, I think that there is never going to be the One Perfect Language (with apologies to <a href="https://oleb.net/blog/2017/06/chris-lattner-wwdc-swift-panel/#in-which-fields-would-you-like-to-see-swift-in-the-future" target="_blank" >Chris Lattner</a>
+) so I am always open to new ideas. And personally, I love learning new languages even if I am never going to use them in production. I feel that this makes me a better programmer overall. And there are vast benefits to Swift - it is a much safer language to write it, it is easier to read and more concise to write, it is just a much more modern language.</p>
 <h4 id="2-swift-is-too-new-and-changes-too-much-between-versions">
   2. Swift is too new and changes too much between versions
   <a href="#2-swift-is-too-new-and-changes-too-much-between-versions" class="h-anchor" aria-hidden="true">#</a>
@@ -234,7 +236,8 @@ as="font" crossorigin="">
   3. No ABI stability
   <a href="#3-no-abi-stability" class="h-anchor" aria-hidden="true">#</a>
 </h4>
-<p>ABI stability was a crutch that many people clung to as an excuse to avoid Swift. But unless you were building frameworks for distribution, I don&rsquo;t see that it was ever a complete deal-breaker. The <a href="https://github.com/apple/swift/blob/master/docs/ABIStabilityManifesto.md#what-does-abi-stability-enable">Swift ABI Stability Manifesto</a> has a good review of what ABI stability is and what it will allow. As app developers, the main advantage is that the Swift libraries will no longer need to be bundled with each app. This will decrease app sizes dramatically. But either way, we now have ABI stability, so again, this argument is finished.</p>
+<p>ABI stability was a crutch that many people clung to as an excuse to avoid Swift. But unless you were building frameworks for distribution, I don&rsquo;t see that it was ever a complete deal-breaker. The <a href="https://github.com/apple/swift/blob/master/docs/ABIStabilityManifesto.md#what-does-abi-stability-enable" target="_blank" >Swift ABI Stability Manifesto</a>
+ has a good review of what ABI stability is and what it will allow. As app developers, the main advantage is that the Swift libraries will no longer need to be bundled with each app. This will decrease app sizes dramatically. But either way, we now have ABI stability, so again, this argument is finished.</p>
 <h4 id="4-apple-may-not-be-serious-about-swift-and-it-may-not-last">
   4. Apple may not be serious about Swift and it may not last
   <a href="#4-apple-may-not-be-serious-about-swift-and-it-may-not-last" class="h-anchor" aria-hidden="true">#</a>
@@ -254,7 +257,8 @@ as="font" crossorigin="">
 <p>Now imagine that you are trying to write a multi-platform app. You have to learn at least 3 different ways of doing everything. And there are differences that always catch me out. For example, in AppKit, to set the text in a text field, you set the field&rsquo;s <code>stringValue</code> but in iOS, you can set the field&rsquo;s <code>text</code> property. And in WatchKit, you call the <code>setText()</code> method.</p>
 <p>Want to change the background color of a view? UIView - no problem, set <code>backgroundColor</code>. NSView - nope - do something weird with layers. I forget what, I have to look it up every time.</p>
 <p>These inconsistencies are annoying, time-consuming and a huge barrier to cross-platform development. It really annoys me when I read articles or tweets that assume Swift programming = iOS programming when it is so much more. But before SwiftUI, it was not easy to jump between the platforms.</p>
-<p><a href="https://developer.apple.com/ipad-apps-for-mac/">Catalyst</a>, previously code-named Marzipan, was supposed to be the answer. And it is a partial answer. It allows iPad apps to be ported to the Mac and that&rsquo;s great for iPad developers who want to expand their reach. But it isn&rsquo;t the answer for everybody.</p>
+<p><a href="https://developer.apple.com/ipad-apps-for-mac/" target="_blank" >Catalyst</a>
+, previously code-named Marzipan, was supposed to be the answer. And it is a partial answer. It allows iPad apps to be ported to the Mac and that&rsquo;s great for iPad developers who want to expand their reach. But it isn&rsquo;t the answer for everybody.</p>
 <h3 id="interface-builder">
   Interface Builder
   <a href="#interface-builder" class="h-anchor" aria-hidden="true">#</a>
@@ -263,14 +267,18 @@ as="font" crossorigin="">
 <p>And then came Auto Layout&hellip; It was vastly more flexible than the old school springs &amp; struts and with the ever increasing number of iPhone &amp; iPad models something had to be done, but if you have never ended up swearing at Auto Layout and reverting to a previous commit or mashing Undo repeatedly, then you can&rsquo;t have used Auto Layout very much!</p>
 <p>WatchKit had an entirely different approach to layout and it was easy, intuitive and very refreshing. You drag in objects, they go one under another. You can group them horizontally or vertically, you can make them into table cells. WatchKit has a much more limited set of interface elements and a much more limited set of device sizes to deal with, but I think we can clearly see the origins of SwiftUI in the way it worked. Even if you still had to use Interface Builder to do it.</p>
 <p>Interface Builder&rsquo;s quirks lead to a category of programmers who felt the need to write all their interface in code. To my way of thinking, this is a huge waste of time and you still had to wrestle with Auto Layout, but without the visual clues! But if it makes them happy&hellip;</p>
-<p><a href="https://developer.apple.com/xcode/swiftui/"><img src="https://developer.apple.com/assets/elements/icons/swiftui/swiftui-96x96_2x.png" alt="SwiftUI"></a></p>
+<p><a href="https://developer.apple.com/xcode/swiftui/" target="_blank" ><img src="https://developer.apple.com/assets/elements/icons/swiftui/swiftui-96x96_2x.png" alt="SwiftUI"></a>
+</p>
 <h2 id="what-is-swiftui">
   What Is SwiftUI?
   <a href="#what-is-swiftui" class="h-anchor" aria-hidden="true">#</a>
 </h2>
 <p>A &ldquo;declarative UI framework&rdquo; - what does that mean? Basically, declarative programming is a way of specifying what a program should do, rather than specifying how to do it. A common example is making a sandwich. If you want a sandwich, you say to the sandwich maker, &ldquo;Please can I have a ham, cheese and tomato sandwich&rdquo;. You don&rsquo;t say &ldquo;Get two pieces of bread, butter both of them, cut 3 slices of ham and 2 slices of cheese&hellip;&rdquo;. They know how to make a sandwich so you only have to ask for what you want.</p>
 <p>Back in the Apple UI world, what if you want a button? Is it for an iPhone app? Then you need an UIButton with a certain type. Set its title, size, location, layout constraints. What are the default sizes for an iPhone button? What is the default font? What color should the text be? Now make a button for a tvOS app? That has to be huge! And what other settings does it have? But the thing is, iOS, macOS, tvOS etc. already <strong>KNOW</strong> what their buttons should look like. So why not just tell the system &ldquo;I want a button&rdquo;? Let the system work out the details and you can get on with the cool app ideas.</p>
-<p>I&rsquo;m not going to turn this post into a SwiftUI tutorial, but I would like to thank and recommend the people that have really helped me get to grips with it, especially <a href="https://www.hackingwithswift.com/articles/196/learn-swiftui-with-free-tutorials">Paul Hudson of Hacking with Swift with his Learn SwiftUI tutorials</a>, <a href="https://www.youtube.com/user/azamsharp/videos">Mohammad Azam&rsquo;s great YouTube series</a>, and <a href="https://designcode.io/swiftui-course">Meng To&rsquo;s SwiftUI course at Design+Code</a>.</p>
+<p>I&rsquo;m not going to turn this post into a SwiftUI tutorial, but I would like to thank and recommend the people that have really helped me get to grips with it, especially <a href="https://www.hackingwithswift.com/articles/196/learn-swiftui-with-free-tutorials" target="_blank" >Paul Hudson of Hacking with Swift with his Learn SwiftUI tutorials</a>
+, <a href="https://www.youtube.com/user/azamsharp/videos" target="_blank" >Mohammad Azam&rsquo;s great YouTube series</a>
+, and <a href="https://designcode.io/swiftui-course" target="_blank" >Meng To&rsquo;s SwiftUI course at Design+Code</a>
+.</p>
 <p>The other great benefit of SwiftUI is that when used with the Combine framework, it gives you a reactive interface. There have been various third-party libraries for doing this: RxSwift, ReactiveSwift, ReactiveCocoa, Bond etc, but with Combine, Apple is baking this into the ecosystem, which makes it a lot easier to set up and means that it will stay up-to-date with the operating systems. A reactive interface is one where you can bind a UI element to a piece of data and then when the data changes, the user interface updates automatically. You can even bind both ways so that the user interface updates the data without you having to do a thing. Imagine how much boiler-plate code that can eliminate?</p>
 <h2 id="the-good-the-bad-and-the-ugly">
   The Good, The Bad and The Ugly
@@ -303,8 +311,10 @@ as="font" crossorigin="">
 </h2>
 <p>I hope that from my previous paragraphs, you have come away with a good feeling for why Apple made SwiftUI and why it is good for us as developers. Personally, I find it a joy to use even in these early beta stages, but some of the arguments against using Swift, can now be applied again to SwiftUI.</p>
 <p>That SwiftUI is very new cannot be debated. It is extremely new and even in the handful of betas released since WWDC, we have seen some breaking changes. It feels quite buggy still but as I am running it in a beta operating system with a beta version of Xcode, it would be unfair to blame all the instability on SwiftUI.</p>
-<p>SwiftUI is not yet a complete replacement for UIKit/AppKit/WatchKit etc. There are SwiftUI equivalents for many of the interface elements and I recommend the <a href="https://goshdarnswiftui.com">Gosh Darn SwiftUI site</a> which maintains a list of UIKit equivalents as well as really useful snippets of SwiftUI code. But even when SwiftUI does not have the UI element you want, there are two easy options: use UIKit/AppKit or build your own. Apple has made sure that there is no problem about mixing and matching UIKIt/AppKit code with SwiftUI. And maybe the SwiftUI tools would allow you to build your own version of the missing element. I needed a progress bar and I built one myself with not much code and ended up with what I think is a better look than the standard one.</p>
-<p><a href="https://github.com/trozware/swiftui_progressbar"><img src="/images/SwiftUi_progressbar.png" alt="Progress Bar"></a></p>
+<p>SwiftUI is not yet a complete replacement for UIKit/AppKit/WatchKit etc. There are SwiftUI equivalents for many of the interface elements and I recommend the <a href="https://goshdarnswiftui.com" target="_blank" >Gosh Darn SwiftUI site</a>
+ which maintains a list of UIKit equivalents as well as really useful snippets of SwiftUI code. But even when SwiftUI does not have the UI element you want, there are two easy options: use UIKit/AppKit or build your own. Apple has made sure that there is no problem about mixing and matching UIKIt/AppKit code with SwiftUI. And maybe the SwiftUI tools would allow you to build your own version of the missing element. I needed a progress bar and I built one myself with not much code and ended up with what I think is a better look than the standard one.</p>
+<p><a href="https://github.com/trozware/swiftui_progressbar" target="_blank" ><img src="/images/SwiftUi_progressbar.png" alt="Progress Bar"></a>
+</p>
 <p><em>Click the image for a link to the GitHub repository.</em></p>
 <p>For years, Apple has been telling us to use standard interface elements in our apps and if we did this, when system updates changed the look and feel, we mostly got that change for free. Now they are giving us even more for free by saying effectively, tell us what UI element you want and we will do all the work of configuring it for the platform and for the user&rsquo;s settings.</p>
 <p>But with this, Apple has given us a lot of modifiers we can apply to elements as well as a great animation suite, so I expect to see a lot of more interesting design choices being made in apps, while they are still adhering to all the standard human interface guidelines for the various platforms.</p>
@@ -319,11 +329,11 @@ as="font" crossorigin="">
     </div>
     <div class="pagination__buttons">
       
-      <a class="btn next" href="https://troz.net/post/2019/swiftui-for-mac-1/"
+      <a class="btn next" href="http://localhost:1313/post/2019/swiftui-for-mac-1/"
         >← SwiftUI for Mac - Part 1</a
       >
        
-      <a class="btn previous" href="https://troz.net/post/2019/learning-swift-tuples/"
+      <a class="btn previous" href="http://localhost:1313/post/2019/learning-swift-tuples/"
         >Learning Swift  - Tuples →</a
       >
       
@@ -437,7 +447,5 @@ as="font" crossorigin="">
 
       
     </div>
-
-    
   </body>
 </html>

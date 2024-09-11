@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         How To Confuse TestFlight ::
@@ -11,12 +11,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="I ran into an unusual problem when testing my latest app: &amp;ldquo;What Is My Speed?&amp;rdquo;. It is now available from the iTunes App Store, but getting there was a struggle.
+  content="I ran into an unusual problem when testing my latest app: &ldquo;What Is My Speed? &rdquo;. It is now available from the iTunes App Store , but getting there was a struggle.
 "
 />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://troz.net/post/2016/how-to-confuse-testflight/" />
+<link rel="canonical" href="http://localhost:1313/post/2016/how-to-confuse-testflight/" />
 
 
 
@@ -25,7 +25,7 @@
  
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://troz.net/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -46,10 +46,10 @@ as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preloa
 as="font" crossorigin="">
 
 
-<meta property="og:url" content="https://troz.net/post/2016/how-to-confuse-testflight/">
+<meta property="og:url" content="http://localhost:1313/post/2016/how-to-confuse-testflight/">
   <meta property="og:site_name" content="TrozWare">
   <meta property="og:title" content="How To Confuse TestFlight">
-  <meta property="og:description" content="I ran into an unusual problem when testing my latest app: “What Is My Speed?”. It is now available from the iTunes App Store, but getting there was a struggle.">
+  <meta property="og:description" content="I ran into an unusual problem when testing my latest app: “What Is My Speed? ”. It is now available from the iTunes App Store , but getting there was a struggle.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -70,7 +70,7 @@ as="font" crossorigin="">
       <header class="header">
   <span class="header__inner">
     <a
-  href="https://troz.net/"
+  href="http://localhost:1313/"
   class="logo"
   style="text-decoration: none;"
 >
@@ -184,35 +184,38 @@ as="font" crossorigin="">
 
 <div class="post">
   <h2 class="post-title">
-    <a href="https://troz.net/post/2016/how-to-confuse-testflight/">How To Confuse TestFlight</a>
+    <a href="http://localhost:1313/post/2016/how-to-confuse-testflight/">How To Confuse TestFlight</a>
   </h2>
   <div class="post-meta">
     <span class="post-date">
       24 Apr 2016
     </span>
-    <span class="more-meta">- 664 words, </span>
+    <span class="more-meta">- 667 words, </span>
     <span class="more-meta"> 4 minute read</span>
   </div>
 
   
   <span class="post-tags">
      #<a
-      href="https://troz.net/tags/app-store"
+      href="http://localhost:1313/tags/app-store"
       >app store</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/testflight"
+      href="http://localhost:1313/tags/testflight"
       >testflight</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/xcode"
+      href="http://localhost:1313/tags/xcode"
       >xcode</a
     >&nbsp; 
   </span>
    
 
-  <div class="post-content"><p>I ran into an unusual problem when testing my latest app: &ldquo;<a href="/what-is-my-speed/">What Is My
-Speed?</a>&rdquo;. It is now available from the <a href="https://itunes.apple.com/app/what-is-my-speed/id1091394524">iTunes App Store</a>, but getting
+  <div class="post-content"><p>I ran into an unusual problem when testing my latest app: &ldquo;<a href="/what-is-my-speed/" >What Is My
+Speed?</a>
+&rdquo;. It is now available from the <a href="https://itunes.apple.com/app/what-is-my-speed/id1091394524" target="_blank" >iTunes App Store</a>
+, but getting
 there was a struggle.</p>
-<p><a href="#tldr">TL;DR</a></p>
+<p><a href="#tldr" >TL;DR</a>
+</p>
 <p>Xcode is terrible at renaming projects, so it is a really good idea to have
 worked out your app&rsquo;s name before starting. I would even recommend creating an
 app ID in your Apple Developer account and registering the app name in iTunes
@@ -234,8 +237,9 @@ devices as well as the simulators and uploaded to TestFlight.</p>
 <p><strong>BARRRPPPP!</strong></p>
 <p><img src="/images/TestFlight_error.png" alt="This app cannot be installed"></p>
 <p>What?</p>
-<p><em>(I forgot to take a screenshot but found a similar one online. Thanks <a href="https://www.simpletechs.net/apps/easy-fix-for-testflight-problem-after-restoring-from-backup/">Simple
-Techs</a>)</em></p>
+<p><em>(I forgot to take a screenshot but found a similar one online. Thanks <a href="https://www.simpletechs.net/apps/easy-fix-for-testflight-problem-after-restoring-from-backup/" target="_blank" >Simple
+Techs</a>
+)</em></p>
 <p>I have had experience with TestFlight&rsquo;s oddities in the past, so I incremented
 the build number and tried again, thinking that maybe there had been a
 processing issue. Same result.</p>
@@ -261,7 +265,8 @@ profiles.</li>
 <li>Created a completely blank project with same app name and bundle identifier.</li>
 </ol>
 <p>As you can see from this list, I thought it was a code signing or profile error.
-Using <a href="https://itunes.apple.com/app/apple-configurator-2/id1037126344">Apple Configurator 2</a> (the modern version of iPhone Configuration
+Using <a href="https://itunes.apple.com/app/apple-configurator-2/id1037126344" target="_blank" >Apple Configurator 2</a>
+ (the modern version of iPhone Configuration
 Utility), I was able to get the logs from my iPhone and entries like the
 following seemed to confirm this:</p>
 <blockquote>
@@ -287,11 +292,11 @@ Alphanumerics and spaces are OK, but I am not sure about anything else.</p></div
     </div>
     <div class="pagination__buttons">
       
-      <a class="btn next" href="https://troz.net/post/2016/my-year-with-apple-watch/"
+      <a class="btn next" href="http://localhost:1313/post/2016/my-year-with-apple-watch/"
         >← My Year With Apple Watch</a
       >
        
-      <a class="btn previous" href="https://troz.net/post/2016/road-trip-apps/"
+      <a class="btn previous" href="http://localhost:1313/post/2016/road-trip-apps/"
         >Road Trip Apps →</a
       >
       
@@ -405,7 +410,5 @@ Alphanumerics and spaces are OK, but I am not sure about anything else.</p></div
 
       
     </div>
-
-    
   </body>
 </html>

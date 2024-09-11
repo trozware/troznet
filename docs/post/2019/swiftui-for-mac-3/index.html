@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         SwiftUI for Mac - Part 3 ::
@@ -11,13 +11,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="In part 1 of this series, I created a Mac app using SwiftUI. The app uses a Master-Detail design to list entries in an outline on the left and show details about the selected entry in the detail view on the right. In part 2 I explored using menus, adding all the expected user interface elements and opening secondary windows.
+  content="In part 1 of this series , I created a Mac app using SwiftUI. The app uses a Master-Detail design to list entries in an outline on the left and show details about the selected entry in the detail view on the right. In part 2 I explored using menus, adding all the expected user interface elements and opening secondary windows.
 In this third and final part, I want to look at the various ways to present dialogs to the user.
 "
 />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://troz.net/post/2019/swiftui-for-mac-3/" />
+<link rel="canonical" href="http://localhost:1313/post/2019/swiftui-for-mac-3/" />
 
 
 
@@ -26,7 +26,7 @@ In this third and final part, I want to look at the various ways to present dial
  
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://troz.net/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -47,7 +47,7 @@ as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preloa
 as="font" crossorigin="">
 
 
-<meta property="og:url" content="https://troz.net/post/2019/swiftui-for-mac-3/">
+<meta property="og:url" content="http://localhost:1313/post/2019/swiftui-for-mac-3/">
   <meta property="og:site_name" content="TrozWare">
   <meta property="og:title" content="SwiftUI for Mac - Part 3">
   <meta property="og:description" content="Explorations in building a Mac app in Swift.">
@@ -71,7 +71,7 @@ as="font" crossorigin="">
       <header class="header">
   <span class="header__inner">
     <a
-  href="https://troz.net/"
+  href="http://localhost:1313/"
   class="logo"
   style="text-decoration: none;"
 >
@@ -185,32 +185,34 @@ as="font" crossorigin="">
 
 <div class="post">
   <h2 class="post-title">
-    <a href="https://troz.net/post/2019/swiftui-for-mac-3/">SwiftUI for Mac - Part 3</a>
+    <a href="http://localhost:1313/post/2019/swiftui-for-mac-3/">SwiftUI for Mac - Part 3</a>
   </h2>
   <div class="post-meta">
     <span class="post-date">
       15 Dec 2019
     </span>
-    <span class="more-meta">- 1873 words, </span>
+    <span class="more-meta">- 1874 words, </span>
     <span class="more-meta"> 9 minute read</span>
   </div>
 
   
   <span class="post-tags">
      #<a
-      href="https://troz.net/tags/swift"
+      href="http://localhost:1313/tags/swift"
       >swift</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/swiftui"
+      href="http://localhost:1313/tags/swiftui"
       >swiftui</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/mac"
+      href="http://localhost:1313/tags/mac"
       >mac</a
     >&nbsp; 
   </span>
    
 
-  <div class="post-content"><p>In <a href="/post/2019/swiftui-for-mac-1/">part 1 of this series</a>, I created a Mac app using SwiftUI. The app uses a Master-Detail design to list entries in an outline on the left and show details about the selected entry in the detail view on the right. In <a href="/post/2019/swiftui-for-mac-2/">part 2</a> I explored using menus, adding all the expected user interface elements and opening secondary windows.</p>
+  <div class="post-content"><p>In <a href="/post/2019/swiftui-for-mac-1/" >part 1 of this series</a>
+, I created a Mac app using SwiftUI. The app uses a Master-Detail design to list entries in an outline on the left and show details about the selected entry in the detail view on the right. In <a href="/post/2019/swiftui-for-mac-2/" >part 2</a>
+ I explored using menus, adding all the expected user interface elements and opening secondary windows.</p>
 <p>In this third and final part, I want to look at the various ways to present dialogs to the user.</p>
 <p>There are four different types of dialog that I want to explore:</p>
 <ul>
@@ -291,7 +293,8 @@ as="font" crossorigin="">
 <p><img src="/images/SwiftUI-Mac-sheet.png" alt="Sheet"></p>
 <p>The parent view has an @State Boolean variable called <code>sheetIsShowing</code>. This is bound to the alert&rsquo;s <code>isPresented</code> so it dictates whenever the sheet is visible. When the Sheet button is clicked, this variable is set to <code>true</code> and the sheet opens. But at the same time, a Binding to this variable is passed to the sheet. I deliberately gave this a different name, so as to make it clear which View was changing what variable.</p>
 <p>When the sheet wants to close, it does not close itself. Instead it sets this variable to false. Because it is a Binding, this sets the original <code>sheetIsShowing</code> variable on the parent view to false and the parent view then closes the sheet.</p>
-<p><strong>UPDATE:</strong> Look at <strong><a href="/post/2020/swiftui_for-mac-extras#dismissing-sheets">Dismissing sheets</a></strong> in my post of extras &amp; changes to this series for an alternative way to dismiss a sheet.</p>
+<p><strong>UPDATE:</strong> Look at <strong><a href="/post/2020/swiftui_for-mac-extras#dismissing-sheets" >Dismissing sheets</a>
+</strong> in my post of extras &amp; changes to this series for an alternative way to dismiss a sheet.</p>
 <h3 id="sheets--data">
   Sheets &amp; Data
   <a href="#sheets--data" class="h-anchor" aria-hidden="true">#</a>
@@ -393,8 +396,10 @@ as="font" crossorigin="">
 <li>Sheets: good for more complex dialogs</li>
 <li>Panels: AppKit dialogs that can be called from a SwiftUI View.</li>
 </ol>
-<p>I think this time I really am finished. This article has already expanded out into a 3-part monster, so I think it is way past time that I stopped typing. I hope you have enjoyed this series. Please use any of the buttons below to contact me or use the <a href="/contact/">Contact page</a> on this site. I would love to hear from anyone who found this series useful or who had any suggestions or corrections to make.</p>
-<p>The final project is available on <a href="https://github.com/trozware/swiftui-mac">GitHub</a> if you would like to download it and take a look.</p></div>
+<p>I think this time I really am finished. This article has already expanded out into a 3-part monster, so I think it is way past time that I stopped typing. I hope you have enjoyed this series. Please use any of the buttons below to contact me or use the <a href="/contact/" >Contact page</a>
+ on this site. I would love to hear from anyone who found this series useful or who had any suggestions or corrections to make.</p>
+<p>The final project is available on <a href="https://github.com/trozware/swiftui-mac" target="_blank" >GitHub</a>
+ if you would like to download it and take a look.</p></div>
   
   <div class="pagination">
     <div class="pagination__title">
@@ -403,11 +408,11 @@ as="font" crossorigin="">
     </div>
     <div class="pagination__buttons">
       
-      <a class="btn next" href="https://troz.net/post/2020/swiftui_for-mac-extras/"
+      <a class="btn next" href="http://localhost:1313/post/2020/swiftui_for-mac-extras/"
         >← SwiftUI for Mac Extras</a
       >
        
-      <a class="btn previous" href="https://troz.net/post/2019/swiftui-for-mac-2/"
+      <a class="btn previous" href="http://localhost:1313/post/2019/swiftui-for-mac-2/"
         >SwiftUI for Mac - Part 2 →</a
       >
       
@@ -521,7 +526,5 @@ as="font" crossorigin="">
 
       
     </div>
-
-    
   </body>
 </html>

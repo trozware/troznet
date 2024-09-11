@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         The End of Pic-a-POD ::
@@ -16,7 +16,7 @@
 />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://troz.net/post/2018/the-end-of-picapod/" />
+<link rel="canonical" href="http://localhost:1313/post/2018/the-end-of-picapod/" />
 
 
 
@@ -25,7 +25,7 @@
  
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://troz.net/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -46,7 +46,7 @@ as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preloa
 as="font" crossorigin="">
 
 
-<meta property="og:url" content="https://troz.net/post/2018/the-end-of-picapod/">
+<meta property="og:url" content="http://localhost:1313/post/2018/the-end-of-picapod/">
   <meta property="og:site_name" content="TrozWare">
   <meta property="og:title" content="The End of Pic-a-POD">
   <meta property="og:description" content="I think I wrote the first version of Pic-a-POD in 2003 and have been updating and maintaining it ever since, but the time has come to shut it down.">
@@ -69,7 +69,7 @@ as="font" crossorigin="">
       <header class="header">
   <span class="header__inner">
     <a
-  href="https://troz.net/"
+  href="http://localhost:1313/"
   class="logo"
   style="text-decoration: none;"
 >
@@ -183,7 +183,7 @@ as="font" crossorigin="">
 
 <div class="post">
   <h2 class="post-title">
-    <a href="https://troz.net/post/2018/the-end-of-picapod/">The End of Pic-a-POD</a>
+    <a href="http://localhost:1313/post/2018/the-end-of-picapod/">The End of Pic-a-POD</a>
   </h2>
   <div class="post-meta">
     <span class="post-date">
@@ -196,27 +196,30 @@ as="font" crossorigin="">
   
   <span class="post-tags">
      #<a
-      href="https://troz.net/tags/pic-a-pod"
+      href="http://localhost:1313/tags/pic-a-pod"
       >pic a pod</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/mac"
+      href="http://localhost:1313/tags/mac"
       >mac</a
     >&nbsp; 
   </span>
    
 
-  <div class="post-content"><p>I think I wrote the first version of <a href="https://picapod.com">Pic-a-POD</a> in 2003 and have been updating and maintaining it ever since, but the time has come to shut it down.</p>
+  <div class="post-content"><p>I think I wrote the first version of <a href="https://picapod.com" target="_blank" >Pic-a-POD</a>
+ in 2003 and have been updating and maintaining it ever since, but the time has come to shut it down.</p>
 <p>I haven&rsquo;t been able to find a picture of the original version, but here is one from 2005:</p>
 <p><img src="/images/POD2005.png" alt="Pic-a-POD 2005"></p>
 <p>And here it is today:</p>
 <p><img src="/images/POD2018.webp" alt="Pic-a-POD 2018"></p>
-<p>It was written originally as a convenient way to download the daily picture-of-the-day from <a href="https://www.nationalgeographic.com/photography/photo-of-the-day/">National Geographic</a> and use it to set the Mac&rsquo;s Desktop Picture automatically. From there is just grew with more sites added (9 at the moment although I think there have been up to 12 at certain times).</p>
+<p>It was written originally as a convenient way to download the daily picture-of-the-day from <a href="https://www.nationalgeographic.com/photography/photo-of-the-day/" target="_blank" >National Geographic</a>
+ and use it to set the Mac&rsquo;s Desktop Picture automatically. From there is just grew with more sites added (9 at the moment although I think there have been up to 12 at certain times).</p>
 <p>The main issue was keeping up with the site changes of the various sources. Early versions had each copy of the app interrogate the sites directly which meant that any change to the site broke the app until an update could be released. And without the App Store making updates easy to distribute, this was a problem. Later I switched to having PHP scripts on my server do the data retrieval and store the results in a database. The app then just had to request the data from my server. That way if there was a change, I could react quickly and a fix to the server-side scripts allowed all users to get the new data.</p>
 <p>As my first Objective-C app and my first app on the Mac App Store, Pic-a-POD has always held a place in my affections, and until last week, it was the one app that was always running on my Mac. So what changed? macOS Mojave&rsquo;s dynamic desktops! I turned off Pic-a-POD, and set the Desktop picture to change dynamically through the day and I loved it.</p>
 <p>On the server, I have kept Pic-a-POD updated regularly, adding and removing sites, fixing the scripts to accommodate changes and so on. But the desktop app has languished and has needed an update for many years now. It&rsquo;s networking is primitive and I know so much more about programming for the Mac now that looking at the code is positiviely embarrassing! But it has never been a big seller so a re-write is definitely not economically viable, it would only be for my satisfaction. And if even I am not using it any more, what is the point?</p>
 <p>So I have made the sad decision to shut it down. But what does this mean for users of Pic-a-POD right now?</p>
 <p>Firstly, it is not going away immediately. I will remove it from the App Store, but existing copies are still going to work. If any of the source sites change their data structure, I will not be monitoring this and I will not update the server-side scripts - just turn off that source and carry on with whatever still works. And finally, when the picapod.com domain name expires in 2021, I will not renew it and the app will cease to operate.</p>
-<p>What can you use instead? The default dynamic desktops in Mojave are great although there are only two of them, but I have bought myself an app called <a href="https://itunes.apple.com/au/app/24-hour-wallpaper/id1226087575?mt=12">24 Hour Wallpaper</a> which includes a great range of dynamic desktop pictures.</p>
+<p>What can you use instead? The default dynamic desktops in Mojave are great although there are only two of them, but I have bought myself an app called <a href="https://itunes.apple.com/au/app/24-hour-wallpaper/id1226087575?mt=12" target="_blank" >24 Hour Wallpaper</a>
+ which includes a great range of dynamic desktop pictures.</p>
 <p>So thank you to everyone who has used Pic-a-POD over the years and especially those of you who took the time and trouble to contact me. It has been a fun journey, but there are other apps in my future now.</p></div>
   
   <div class="pagination">
@@ -226,11 +229,11 @@ as="font" crossorigin="">
     </div>
     <div class="pagination__buttons">
       
-      <a class="btn next" href="https://troz.net/post/2019/learning-swift-tuples/"
+      <a class="btn next" href="http://localhost:1313/post/2019/learning-swift-tuples/"
         >← Learning Swift  - Tuples</a
       >
        
-      <a class="btn previous" href="https://troz.net/post/2018/moving-to-the-dark-side-2/"
+      <a class="btn previous" href="http://localhost:1313/post/2018/moving-to-the-dark-side-2/"
         >Moving to the Dark Side - Part 2 →</a
       >
       
@@ -344,7 +347,5 @@ as="font" crossorigin="">
 
       
     </div>
-
-    
   </body>
 </html>

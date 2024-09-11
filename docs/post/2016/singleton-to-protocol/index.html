@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         Singleton to Protocol ::
@@ -11,12 +11,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="I was driving through the town of Singleton the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple&amp;rsquo;s own APIs, but seem to be increasingly frowned upon in the Swift world.
+  content="I was driving through the town of Singleton the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple&rsquo;s own APIs, but seem to be increasingly frowned upon in the Swift world.
 So what is a singleton? # A singleton is a class that only expects to have a single instance."
 />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://troz.net/post/2016/singleton-to-protocol/" />
+<link rel="canonical" href="http://localhost:1313/post/2016/singleton-to-protocol/" />
 
 
 
@@ -25,7 +25,7 @@ So what is a singleton? # A singleton is a class that only expects to have a sin
  
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://troz.net/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -46,7 +46,7 @@ as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preloa
 as="font" crossorigin="">
 
 
-<meta property="og:url" content="https://troz.net/post/2016/singleton-to-protocol/">
+<meta property="og:url" content="http://localhost:1313/post/2016/singleton-to-protocol/">
   <meta property="og:site_name" content="TrozWare">
   <meta property="og:title" content="Singleton to Protocol">
   <meta property="og:description" content="I was driving through the town of Singleton the other day and of course, it got me thinking about using singletons in my apps. Singletons were a commonly used pattern in Objective-C programming and appear in many of Apple’s own APIs, but seem to be increasingly frowned upon in the Swift world.
@@ -70,7 +70,7 @@ So what is a singleton? # A singleton is a class that only expects to have a sin
       <header class="header">
   <span class="header__inner">
     <a
-  href="https://troz.net/"
+  href="http://localhost:1313/"
   class="logo"
   style="text-decoration: none;"
 >
@@ -184,29 +184,30 @@ So what is a singleton? # A singleton is a class that only expects to have a sin
 
 <div class="post">
   <h2 class="post-title">
-    <a href="https://troz.net/post/2016/singleton-to-protocol/">Singleton to Protocol</a>
+    <a href="http://localhost:1313/post/2016/singleton-to-protocol/">Singleton to Protocol</a>
   </h2>
   <div class="post-meta">
     <span class="post-date">
       26 Feb 2016
     </span>
-    <span class="more-meta">- 677 words, </span>
+    <span class="more-meta">- 678 words, </span>
     <span class="more-meta"> 4 minute read</span>
   </div>
 
   
   <span class="post-tags">
      #<a
-      href="https://troz.net/tags/swift"
+      href="http://localhost:1313/tags/swift"
       >swift</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/learning-swift"
+      href="http://localhost:1313/tags/learning-swift"
       >learning swift</a
     >&nbsp; 
   </span>
    
 
-  <div class="post-content"><p>I was driving through the town of <a href="https://en.wikipedia.org/wiki/Singleton,_New_South_Wales">Singleton</a> the other day and of course, it
+  <div class="post-content"><p>I was driving through the town of <a href="https://en.wikipedia.org/wiki/Singleton,_New_South_Wales" target="_blank" >Singleton</a>
+ the other day and of course, it
 got me thinking about using singletons in my apps. Singletons were a commonly
 used pattern in Objective-C programming and appear in many of Apple&rsquo;s own APIs,
 but seem to be increasingly frowned upon in the Swift world.</p>
@@ -280,7 +281,8 @@ obvious solution, so this is what I created:</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>We run immediately into one of the peculiarities of Swift protocol extensions
-which has been very well explained by <a href="https://cjwirth.com/tech/swift-protocol-extension-weirdness">Caesar Wirth</a>. If I had declared
+which has been very well explained by <a href="https://cjwirth.com/tech/swift-protocol-extension-weirdness" target="_blank" >Caesar Wirth</a>
+. If I had declared
 <code>addToLog(_:)</code> in the protocol, then any class or struct conforming to this
 protocol would have been free to over-write this function and provide its own
 version. This is not what I wanted here - I wanted every object to use the same
@@ -303,8 +305,10 @@ its extension, but outside both of them.</p>
 <hr>
 <p>Protocol-oriented programming is a new technique to me, so it really helps when
 I can find a practical example of where it solves a problem.</p>
-<p>If you are new to POP, I highly recommend the <a href="https://developer.apple.com/videos/play/wwdc2015/408/">Crusty talk</a> from WWDC 2015.
-And this article by <a href="http://matthijshollemans.com/2015/07/22/mixins-and-traits-in-swift-2/">Matthijs Hollemans</a> was invaluable to me in
+<p>If you are new to POP, I highly recommend the <a href="https://developer.apple.com/videos/play/wwdc2015/408/" target="_blank" >Crusty talk</a>
+ from WWDC 2015.
+And this article by <a href="http://matthijshollemans.com/2015/07/22/mixins-and-traits-in-swift-2/" target="_blank" >Matthijs Hollemans</a>
+ was invaluable to me in
 demonstrating the problems with object inheritance that are solved by protocols.</p>
 </div>
   
@@ -315,11 +319,11 @@ demonstrating the problems with object inheritance that are solved by protocols.
     </div>
     <div class="pagination__buttons">
       
-      <a class="btn next" href="https://troz.net/post/2016/learning-swift-generics/"
+      <a class="btn next" href="http://localhost:1313/post/2016/learning-swift-generics/"
         >← Learning Swift - Generics</a
       >
        
-      <a class="btn previous" href="https://troz.net/post/2016/three-rules-for-writing-better-swift/"
+      <a class="btn previous" href="http://localhost:1313/post/2016/three-rules-for-writing-better-swift/"
         >Three Rules for Writing Better Swift →</a
       >
       
@@ -433,7 +437,5 @@ demonstrating the problems with object inheritance that are solved by protocols.
 
       
     </div>
-
-    
   </body>
 </html>

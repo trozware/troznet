@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         SwiftUI for Mac 2024 ::
@@ -11,13 +11,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="Over the years, I have written articles and sample apps to demonstrate the new features of each year&amp;rsquo;s SwiftUI updates with particular emphasis on macOS app development. Last year, the major update to SwiftUI was the new data flow system using the Observation framework. I covered that in my article SwiftUI Data Flow 2023 but I didn&amp;rsquo;t feel there were sufficient UI changes to warrant an update to my usual sample app.
-This year, the HTTP Cats app is back! And I&amp;rsquo;ll cover new features from both WWDC 2023 and WWDC 2024.
+  content="Over the years, I have written articles and sample apps to demonstrate the new features of each year&rsquo;s SwiftUI updates with particular emphasis on macOS app development. Last year, the major update to SwiftUI was the new data flow system using the Observation framework. I covered that in my article SwiftUI Data Flow 2023 but I didn&rsquo;t feel there were sufficient UI changes to warrant an update to my usual sample app.
+This year, the HTTP Cats app is back! And I&rsquo;ll cover new features from both WWDC 2023 and WWDC 2024.
 "
 />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://troz.net/post/2024/swiftui-mac-2024/" />
+<link rel="canonical" href="http://localhost:1313/post/2024/swiftui-mac-2024/" />
 
 
 
@@ -26,7 +26,7 @@ This year, the HTTP Cats app is back! And I&amp;rsquo;ll cover new features from
  
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://troz.net/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -47,7 +47,7 @@ as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preloa
 as="font" crossorigin="">
 
 
-<meta property="og:url" content="https://troz.net/post/2024/swiftui-mac-2024/">
+<meta property="og:url" content="http://localhost:1313/post/2024/swiftui-mac-2024/">
   <meta property="og:site_name" content="TrozWare">
   <meta property="og:title" content="SwiftUI for Mac 2024">
   <meta property="og:description" content="Mac app development using SwiftUI on macOS Sequoia">
@@ -71,7 +71,7 @@ as="font" crossorigin="">
       <header class="header">
   <span class="header__inner">
     <a
-  href="https://troz.net/"
+  href="http://localhost:1313/"
   class="logo"
   style="text-decoration: none;"
 >
@@ -185,35 +185,38 @@ as="font" crossorigin="">
 
 <div class="post">
   <h2 class="post-title">
-    <a href="https://troz.net/post/2024/swiftui-mac-2024/">SwiftUI for Mac 2024</a>
+    <a href="http://localhost:1313/post/2024/swiftui-mac-2024/">SwiftUI for Mac 2024</a>
   </h2>
   <div class="post-meta">
     <span class="post-date">
       22 Aug 2024
     </span>
-    <span class="more-meta">- 4101 words, </span>
+    <span class="more-meta">- 4108 words, </span>
     <span class="more-meta"> 20 minute read</span>
   </div>
 
   
   <span class="post-tags">
      #<a
-      href="https://troz.net/tags/swift"
+      href="http://localhost:1313/tags/swift"
       >swift</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/swiftui"
+      href="http://localhost:1313/tags/swiftui"
       >swiftui</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/mac"
+      href="http://localhost:1313/tags/mac"
       >mac</a
     >&nbsp; 
   </span>
    
 
-  <div class="post-content"><p>Over the years, I have written articles and sample apps to demonstrate the new features of each year&rsquo;s SwiftUI updates with particular emphasis on macOS app development. Last year, the major update to SwiftUI was the new data flow system using the Observation framework. I covered that in my article <a href="/post/2023/swiftui-data-flow-2023/">SwiftUI Data Flow 2023</a> but I didn&rsquo;t feel there were sufficient UI changes to warrant an update to my usual sample app.</p>
-<p>This year, the <a href="https://http.cat/">HTTP Cats</a> app is back! And I&rsquo;ll cover new features from both WWDC 2023 and WWDC 2024.</p>
+  <div class="post-content"><p>Over the years, I have written articles and sample apps to demonstrate the new features of each year&rsquo;s SwiftUI updates with particular emphasis on macOS app development. Last year, the major update to SwiftUI was the new data flow system using the Observation framework. I covered that in my article <a href="/post/2023/swiftui-data-flow-2023/" >SwiftUI Data Flow 2023</a>
+ but I didn&rsquo;t feel there were sufficient UI changes to warrant an update to my usual sample app.</p>
+<p>This year, the <a href="https://http.cat/" target="_blank" >HTTP Cats</a>
+ app is back! And I&rsquo;ll cover new features from both WWDC 2023 and WWDC 2024.</p>
 <p>It&rsquo;s currently August 2024 and I am running macOS Sequoia 15.1 Beta (24B5024e) with Xcode 16.1 beta (16B5001e).</p>
-<p>Download the project from <a href="https://github.com/trozware/swiftui-mac-2024">GitHub</a> and, if you&rsquo;re running the correct versions of macOS and Xcode, you can run the app and follow along. If not, you can still look at the code, but it won&rsquo;t build.</p>
+<p>Download the project from <a href="https://github.com/trozware/swiftui-mac-2024" target="_blank" >GitHub</a>
+ and, if you&rsquo;re running the correct versions of macOS and Xcode, you can run the app and follow along. If not, you can still look at the code, but it won&rsquo;t build.</p>
 <p><style>
   img {
     margin: 10px auto;
@@ -245,13 +248,20 @@ as="font" crossorigin="">
 <p><strong>Warning</strong>: there&rsquo;s a bug right now that crashes the app in macOS 15.1. If you scroll down the list in the sidebar and then select a status that is more than 8 or 9 rows below the previous selection, the app crashes with this error: <code>Row index -1 out of row range (numberOfRows: 60)</code>. I&rsquo;ve tested this with Xcode 16.0 beta 6 and Xcode 16.1 and they both act the same. But on a computer running macOS 15.0 beta 7 and Xcode 16.0 beta 6, it works perfectly. So this is a bug in macOS 15.1.</p>
 <p>Here are the areas that I&rsquo;m going to discuss:</p>
 <ul>
-<li><a href="#xcode">Xcode</a></li>
-<li><a href="#previews">Previews</a></li>
-<li><a href="#windows">Windows</a></li>
-<li><a href="#tabs">Tabs</a></li>
-<li><a href="#charts">Charts</a></li>
-<li><a href="#colors-and-gradients">Colors and gradients</a></li>
-<li><a href="#sf-symbols">SF Symbols</a></li>
+<li><a href="#xcode" >Xcode</a>
+</li>
+<li><a href="#previews" >Previews</a>
+</li>
+<li><a href="#windows" >Windows</a>
+</li>
+<li><a href="#tabs" >Tabs</a>
+</li>
+<li><a href="#charts" >Charts</a>
+</li>
+<li><a href="#colors-and-gradients" >Colors and gradients</a>
+</li>
+<li><a href="#sf-symbols" >SF Symbols</a>
+</li>
 </ul>
 <h3 id="xcode">
   Xcode
@@ -260,7 +270,8 @@ as="font" crossorigin="">
 <p>When you create a new project in Xcode 16.1, the second item in the project navigator is now a folder instead of a group. This sounds trivial, since it really is a folder in Finder but I find it really annoying because it doesn&rsquo;t allow me to arrange my other files and folders as I want them. To fix this, right-click on the folder and select <strong>Convert to Group</strong>. The icon switches from blue to gray and you can once again drag files and folders to re-order them.</p>
 <p>The advantage to the folder option is that your project is read directly from the file system, so you can use Finder to move files around and Xcode will reflect the changes. To import a file into the project, you can drag it into the project&rsquo;s Finder window and Xcode will see it. Similarly, to delete a file, you can use Finder directly. With the group option, you have to import files into the Xcode Project navigator, and when you do, source control marks the <strong>.xcodeproj</strong> file as modified, making source control messier. Using the folder option, only the new file itself gets marked as a change. So use which option works for you, but I much prefer the clarity of being able to organize my files in the Project navigator.</p>
 <p>The next thing to look at in Xcode is <strong>Predictive Code Completion</strong>. While the Xcode betas run on macOS Sonoma, predictive code completion requires Sequoia and I think it also requires a minimum of 16GB of memory. We don&rsquo;t yet have the promised <strong>Swift Assist</strong> which will allow for a more detailed way of asking Xcode to write code, but the code completion is supposed to be much better.</p>
-<p>I&rsquo;ve used <a href="https://github.com/github-copilot-resources">GitHub Copilot</a> for writing JavaScript for a couple of years now and overall, it works well. I use it as a form of super autocomplete and targeted search rather than asking it to write large chunks of code for me, and that&rsquo;s what I&rsquo;m hoping to get for Swift now. Xcode has a way to go to catch up yet. Surprisingly, it suffers from one of the same problems as Copilot - it appears to have been trained on old code!</p>
+<p>I&rsquo;ve used <a href="https://github.com/github-copilot-resources" target="_blank" >GitHub Copilot</a>
+ for writing JavaScript for a couple of years now and overall, it works well. I use it as a form of super autocomplete and targeted search rather than asking it to write large chunks of code for me, and that&rsquo;s what I&rsquo;m hoping to get for Swift now. Xcode has a way to go to catch up yet. Surprisingly, it suffers from one of the same problems as Copilot - it appears to have been trained on old code!</p>
 <p>I know some people are very negative about using any form of AI to write parts of your code, but I see it as just another tool to help us be more efficient. For example, I bet you&rsquo;ve written code to download and process JSON many, many times. Why not let Xcode write that for you? You still have to do the thinking. What&rsquo;s the URL? Which properties do I need? How am I going to use the data? But you don&rsquo;t have to write the boilerplate. It&rsquo;s no different to using a library or a pre-built function.</p>
 <p>I put predictive code completion to the test by creating a new Swift file called <strong>Networker.swift</strong>. I set up a <code>Networker</code> class and gave it a web address. Then I started to write a function to fetch the data:</p>
 <p><img src="/images/predictive_code_1.png" alt="Predictive Code Completion 1"></p>
@@ -321,7 +332,8 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The <code>id</code> can be anything so long as you don&rsquo;t use it for any other window in your app. In the default state, this removes the <strong>File</strong> menu completely. It also changes the app behavior so that closing the window quits the app completely. If you add any new commands to the <strong>File</strong> menu, you&rsquo;ll get the <strong>Close</strong> item back, but using it will still quit the app. You can still open secondary windows in this style of app, but you can&rsquo;t duplicate the initial window.</p>
-<p>I covered how to open new windows in my previous article <a href="/post/2022/swiftui-mac-2022/#opening-new-windows">SwiftUI for Mac 2022</a>. The code is still present in this year&rsquo;s sample app for reference, but commented out.</p>
+<p>I covered how to open new windows in my previous article <a href="/post/2022/swiftui-mac-2022/#opening-new-windows" >SwiftUI for Mac 2022</a>
+. The code is still present in this year&rsquo;s sample app for reference, but commented out.</p>
 <p>There is a new window scene called <code>UtilityWindow</code>. This is primarily intended for floating palettes and toolbars. I&rsquo;ve used it for the <strong>UI Samples</strong> window just because that was a window I wanted to show, but it&rsquo;s not really the right design choice for this sort of informational window.</p>
 <p>In <strong>SwiftUI_Mac_2024App.swift</strong>, here&rsquo;s how I set up the utility window:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>UtilityWindow(<span style="color:#e6db74">&#34;UI Samples&#34;</span>, id: <span style="color:#e6db74">&#34;ui_samples&#34;</span>) {
@@ -340,7 +352,8 @@ as="font" crossorigin="">
 </ul>
 <p>These windows can be opened programmatically in exactly the same way as other windows, using <code>openWindow</code>. Check out the code in <strong>ToolbarView.swift</strong> to see how I do this.</p>
 <p>The other window features I want to explore relate to style, initial position, and dragging. In one of the WWDC 2024 videos, the presenters created a custom <strong>About</strong> window for their app, so I decided to try to do the same.</p>
-<p>First I made a SwiftUI view called <code>AboutView</code>. I added some titles and buttons, including one to close the window. I also added a mesh gradient background to make it look a bit more interesting. See the <a href="#colors-and-gradients">Colors and gradients</a> section below for more info on that.</p>
+<p>First I made a SwiftUI view called <code>AboutView</code>. I added some titles and buttons, including one to close the window. I also added a mesh gradient background to make it look a bit more interesting. See the <a href="#colors-and-gradients" >Colors and gradients</a>
+ section below for more info on that.</p>
 <p><img src="/images/about_view.png" alt="About View"></p>
 <p>With the view created, now I had to work out how to show it instead of the default <strong>About</strong> window. I started by adding a new window scene to <strong>SwiftUI_Mac_2024App.swift</strong>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>Window(<span style="color:#e6db74">&#34;About&#34;</span>, id: <span style="color:#e6db74">&#34;about&#34;</span>) {
@@ -437,7 +450,8 @@ as="font" crossorigin="">
   Charts
   <a href="#charts" class="h-anchor" aria-hidden="true">#</a>
 </h3>
-<p>Last year, Swift Charts got a pie or donut option. This year, the charts team added vector and function plotting. In <strong>ChartSamplesView.swift</strong>, I have three different charts: a bar chart as before, a pie chart and a line chart that plots various sine waves. My understanding is that the various plot types are great for functions or for large data sets but for more comprehensive information, check out the WWDC presentation: <a href="https://developer.apple.com/wwdc24/10155">Swift Charts: Vectorized and function plots</a>.</p>
+<p>Last year, Swift Charts got a pie or donut option. This year, the charts team added vector and function plotting. In <strong>ChartSamplesView.swift</strong>, I have three different charts: a bar chart as before, a pie chart and a line chart that plots various sine waves. My understanding is that the various plot types are great for functions or for large data sets but for more comprehensive information, check out the WWDC presentation: <a href="https://developer.apple.com/wwdc24/10155" target="_blank" >Swift Charts: Vectorized and function plots</a>
+.</p>
 <p><img src="/images/line_plot.png" alt="Line Plot"></p>
 <p>In my samples, I have a separate computed property for each of the three chart types, with a <code>@ViewBuilder</code> property to return the correct chart. I&rsquo;ve also updated the chart image export to use SwiftUI&rsquo;s <code>fileExporter</code> instead of the AppKit&rsquo;s <code>NSSave</code>. I had a slight issue with <code>fileExporter</code>. I started off by including the image content type when configuring the exporter. This gave <strong>generic error</strong> when I tried to save - not the most helpful of messages. I removed the content type and it worked fine. I&rsquo;m not sure if this is a bug or a feature.</p>
 <h3 id="colors-and-gradients">
@@ -457,14 +471,17 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>  )
 </span></span></code></pre></div><p>Open the <strong>UI Samples</strong> window and go to the <strong>Form</strong> tab to test out some color mixes. This not only allows us to create our own colors, but it also gives us a way to change colors programmatically like I do with the slider in the example. You can even chain <code>mix</code> modifiers for more variability.</p>
 <p><img src="/images/color_mix.png" alt="Color Mix"></p>
-<p>The other big new thing is mesh gradients. As you saw in the <a href="#windows">Windows</a> section above, I used a mesh gradient to create a background for the <strong>About</strong> window. The basic technique for creating a mesh gradient is to make a grid of points and assign a color to each point. The points are defined as <code>SIMD2&lt;Float&gt;</code> so you initialize each point with <code>SIMD2(x, y)</code>. Then you supply an array of colors for each point. The colors expand out from each point, meshing with their neighbors.</p>
+<p>The other big new thing is mesh gradients. As you saw in the <a href="#windows" >Windows</a>
+ section above, I used a mesh gradient to create a background for the <strong>About</strong> window. The basic technique for creating a mesh gradient is to make a grid of points and assign a color to each point. The points are defined as <code>SIMD2&lt;Float&gt;</code> so you initialize each point with <code>SIMD2(x, y)</code>. Then you supply an array of colors for each point. The colors expand out from each point, meshing with their neighbors.</p>
 <p>In my example, I set most of the colors to white but changed the top left, middle and bottom right points to different colors so that I got a diagonal gradient. I also used even spacing for the points, which is not necessary. Check out the code in <strong>MeshBackground.swift</strong> to see how I did this.</p>
-<p>If you want to know more about mesh gradients, I highly recommend Stewart Lynch&rsquo;s video: <a href="https://www.youtube.com/watch?v=s_eQZ8rRV8Y">MeshGradients in iOS 18 and Xcode 15</a>. Although the title says iOS 18, it&rsquo;s all valid for macOS 15 too.</p>
+<p>If you want to know more about mesh gradients, I highly recommend Stewart Lynch&rsquo;s video: <a href="https://www.youtube.com/watch?v=s_eQZ8rRV8Y" target="_blank" >MeshGradients in iOS 18 and Xcode 15</a>
+. Although the title says iOS 18, it&rsquo;s all valid for macOS 15 too.</p>
 <h3 id="sf-symbols">
   SF Symbols
   <a href="#sf-symbols" class="h-anchor" aria-hidden="true">#</a>
 </h3>
-<p>My final topic is the ability to add animated effects to <a href="https://developer.apple.com/sf-symbols/">SF Symbols</a>. You can test this in the <strong>FormSamplesView.swift</strong> preview, which only works because I used <code>@Previewable</code> to add the menu selection to the preview. Before that, the preview worked but ignored any menu changes. The demo is a bit strange because it will often show the previous animation before using the new one, but this is not the way I would use these effects in an app and it does allow you to see what&rsquo;s happening. Just keep clicking <strong>Show Effect</strong> to see your selected animation.</p>
+<p>My final topic is the ability to add animated effects to <a href="https://developer.apple.com/sf-symbols/" target="_blank" >SF Symbols</a>
+. You can test this in the <strong>FormSamplesView.swift</strong> preview, which only works because I used <code>@Previewable</code> to add the menu selection to the preview. Before that, the preview worked but ignored any menu changes. The demo is a bit strange because it will often show the previous animation before using the new one, but this is not the way I would use these effects in an app and it does allow you to see what&rsquo;s happening. Just keep clicking <strong>Show Effect</strong> to see your selected animation.</p>
 <p><img src="/images/symbol_effects.png" alt="Symbol Effects"></p>
 <p>I wasn&rsquo;t able to get the <code>appear</code> or <code>scale</code> effects to work, but maybe that&rsquo;s an Xcode beta issue. They work in the SF Symbols app. The syntax for applying an effect looks like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>Image(systemName: <span style="color:#e6db74">&#34;rainbow&#34;</span>)
@@ -477,8 +494,12 @@ as="font" crossorigin="">
 </h3>
 <p>So those are my favorite SwiftUI additions from WWDC 2024. As we have seen in recent years, Apple is gradually converging the OSes, especially with SwiftUI, which means that a lot of code is no longer platform-specific. But as developers, we still have the responsibility to make our apps look, feel and behave in a way that suits the platform, whatever it is.</p>
 <p>One other point is that a lot of resources will state that they are for iOS, but many of them are totally valid for macOS too. Don&rsquo;t skip an article or video just because it doesn&rsquo;t label itself as specifically for macOS.</p>
-<p>If you want more Mac-specific content, check out my recently updated book: <a href="https://troz.net/books/macos_tutorials/">macOS by Tutorials</a>. It&rsquo;s designed to help iOS developers extend into macOS development.</p>
-<p>The project from this article is available on <a href="https://github.com/trozware/swiftui-mac-2024">GitHub</a>. And as usual, I&rsquo;d be thrilled to hear any suggestions, corrections or improvements. Please contact me using one of the links below or through the <a href="/contact/">Contact</a> page. And if you found this article useful, I&rsquo;d love you to <a href="https://ko-fi.com/trozware">buy me a coffee</a>.</p></div>
+<p>If you want more Mac-specific content, check out my recently updated book: <a href="https://troz.net/books/macos_tutorials/" target="_blank" >macOS by Tutorials</a>
+. It&rsquo;s designed to help iOS developers extend into macOS development.</p>
+<p>The project from this article is available on <a href="https://github.com/trozware/swiftui-mac-2024" target="_blank" >GitHub</a>
+. And as usual, I&rsquo;d be thrilled to hear any suggestions, corrections or improvements. Please contact me using one of the links below or through the <a href="/contact/" >Contact</a>
+ page. And if you found this article useful, I&rsquo;d love you to <a href="https://ko-fi.com/trozware" target="_blank" >buy me a coffee</a>
+.</p></div>
   
   <div class="pagination">
     <div class="pagination__title">
@@ -486,8 +507,12 @@ as="font" crossorigin="">
       <hr />
     </div>
     <div class="pagination__buttons">
+      
+      <a class="btn next" href="http://localhost:1313/post/2024/app_conversion/"
+        >← Converting an App from Obj-C</a
+      >
        
-      <a class="btn previous" href="https://troz.net/post/2024/book_building/"
+      <a class="btn previous" href="http://localhost:1313/post/2024/book_building/"
         >Book Building →</a
       >
       
@@ -601,7 +626,5 @@ as="font" crossorigin="">
 
       
     </div>
-
-    
   </body>
 </html>

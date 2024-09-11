@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         SwiftUI Color ::
@@ -16,7 +16,7 @@
 />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://troz.net/post/2020/swiftui-color/" />
+<link rel="canonical" href="http://localhost:1313/post/2020/swiftui-color/" />
 
 
 
@@ -25,7 +25,7 @@
  
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://troz.net/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -46,7 +46,7 @@ as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preloa
 as="font" crossorigin="">
 
 
-<meta property="og:url" content="https://troz.net/post/2020/swiftui-color/">
+<meta property="og:url" content="http://localhost:1313/post/2020/swiftui-color/">
   <meta property="og:site_name" content="TrozWare">
   <meta property="og:title" content="SwiftUI Color">
   <meta property="og:description" content="Using the SwiftUI Color view">
@@ -70,7 +70,7 @@ as="font" crossorigin="">
       <header class="header">
   <span class="header__inner">
     <a
-  href="https://troz.net/"
+  href="http://localhost:1313/"
   class="logo"
   style="text-decoration: none;"
 >
@@ -184,26 +184,26 @@ as="font" crossorigin="">
 
 <div class="post">
   <h2 class="post-title">
-    <a href="https://troz.net/post/2020/swiftui-color/">SwiftUI Color</a>
+    <a href="http://localhost:1313/post/2020/swiftui-color/">SwiftUI Color</a>
   </h2>
   <div class="post-meta">
     <span class="post-date">
       09 May 2020
     </span>
-    <span class="more-meta">- 1546 words, </span>
+    <span class="more-meta">- 1547 words, </span>
     <span class="more-meta"> 8 minute read</span>
   </div>
 
   
   <span class="post-tags">
      #<a
-      href="https://troz.net/tags/swift"
+      href="http://localhost:1313/tags/swift"
       >swift</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/swiftui"
+      href="http://localhost:1313/tags/swiftui"
       >swiftui</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/color"
+      href="http://localhost:1313/tags/color"
       >color</a
     >&nbsp; 
   </span>
@@ -339,7 +339,8 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The canvas shows two previews: one for light mode and one for dark mode.</p>
-<p>If you have a color picker app (I use <a href="https://github.com/Toinane/colorpicker/releases/tag/2.0.3">Colorpicker</a>), you can detect the RGB values in the two previews. I made the font bold to make this easier. Red is <code>rgb(232, 77, 61)</code> in light mode but <code>rgb(233, 85, 69)</code> in dark mode. And the others have similar modifications to make them look their best in each environment.</p>
+<p>If you have a color picker app (I use <a href="https://github.com/Toinane/colorpicker/releases/tag/2.0.3" target="_blank" >Colorpicker</a>
+), you can detect the RGB values in the two previews. I made the font bold to make this easier. Red is <code>rgb(232, 77, 61)</code> in light mode but <code>rgb(233, 85, 69)</code> in dark mode. And the others have similar modifications to make them look their best in each environment.</p>
 <p>Take particular note of the three at the bottom of the list: primary, secondary and accentColor. These are incredibly useful when making a layout that works in both light and dark modes.</p>
 <p><img src="/images/swiftui-colors-light-dark.png" alt="Color previews"></p>
 <p>When choosing a UIColor or NSColor, it is best to use the system versions, so <code>.systemBlue</code> instead of <code>.blue</code> as this gives the dark/light variants that we just saw. And the other semantic colors like <code>UIColor.secondarySystemBackground</code> also have dark/light variants automatically.</p>
@@ -374,7 +375,8 @@ as="font" crossorigin="">
 </span></span></code></pre></div><p>I prefer to put the <code>edgesIgnoringSafeArea</code> modifier on the <code>Color</code> only and not on the entire <code>ZStack</code>. That way the other contents of the <code>ZStack</code> will all stay inside the safe area.</p>
 <hr>
 <p>So in summary, use preset colors or color assets to set your colors. And use the <code>Color</code> view to set a background color for a view.</p>
-<p>I hope you found this article useful, and if you have any suggestions, corrections or improvements, please contact me using one of the links below or through the <a href="/contact/">Contact</a> page.</p></div>
+<p>I hope you found this article useful, and if you have any suggestions, corrections or improvements, please contact me using one of the links below or through the <a href="/contact/" >Contact</a>
+ page.</p></div>
   
   <div class="pagination">
     <div class="pagination__title">
@@ -383,11 +385,11 @@ as="font" crossorigin="">
     </div>
     <div class="pagination__buttons">
       
-      <a class="btn next" href="https://troz.net/post/2020/name_this_app/"
+      <a class="btn next" href="http://localhost:1313/post/2020/name_this_app/"
         >← Name This App</a
       >
        
-      <a class="btn previous" href="https://troz.net/post/2020/custom-fonts/"
+      <a class="btn previous" href="http://localhost:1313/post/2020/custom-fonts/"
         >Custom Fonts in iOS &amp; macOS apps →</a
       >
       
@@ -501,7 +503,5 @@ as="font" crossorigin="">
 
       
     </div>
-
-    
   </body>
 </html>

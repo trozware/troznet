@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         My First Apple Watch App ::
@@ -16,7 +16,7 @@ At the moment, Apple has only made a limited set of Apple Watch features availab
 />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://troz.net/post/2015/my-first-apple-watch-app/" />
+<link rel="canonical" href="http://localhost:1313/post/2015/my-first-apple-watch-app/" />
 
 
 
@@ -25,7 +25,7 @@ At the moment, Apple has only made a limited set of Apple Watch features availab
  
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://troz.net/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -46,7 +46,7 @@ as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preloa
 as="font" crossorigin="">
 
 
-<meta property="og:url" content="https://troz.net/post/2015/my-first-apple-watch-app/">
+<meta property="og:url" content="http://localhost:1313/post/2015/my-first-apple-watch-app/">
   <meta property="og:site_name" content="TrozWare">
   <meta property="og:title" content="My First Apple Watch App">
   <meta property="og:description" content="I have just submitted my first Apple Watch app to the iTunes App Store. This is a scary thing to do, since I have never seen, touched or used an Apple Watch and all I had to go on was the Simulator that Apple supplies with Xcode.
@@ -72,7 +72,7 @@ At the moment, Apple has only made a limited set of Apple Watch features availab
       <header class="header">
   <span class="header__inner">
     <a
-  href="https://troz.net/"
+  href="http://localhost:1313/"
   class="logo"
   style="text-decoration: none;"
 >
@@ -186,29 +186,29 @@ At the moment, Apple has only made a limited set of Apple Watch features availab
 
 <div class="post">
   <h2 class="post-title">
-    <a href="https://troz.net/post/2015/my-first-apple-watch-app/">My First Apple Watch App</a>
+    <a href="http://localhost:1313/post/2015/my-first-apple-watch-app/">My First Apple Watch App</a>
   </h2>
   <div class="post-meta">
     <span class="post-date">
       02 Apr 2015
     </span>
-    <span class="more-meta">- 1053 words, </span>
+    <span class="more-meta">- 1057 words, </span>
     <span class="more-meta"> 5 minute read</span>
   </div>
 
   
   <span class="post-tags">
      #<a
-      href="https://troz.net/tags/apple-watch"
+      href="http://localhost:1313/tags/apple-watch"
       >apple watch</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/watch"
+      href="http://localhost:1313/tags/watch"
       >watch</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/ios"
+      href="http://localhost:1313/tags/ios"
       >ios</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/golf"
+      href="http://localhost:1313/tags/golf"
       >golf</a
     >&nbsp; 
   </span>
@@ -222,7 +222,9 @@ available to developers, and all Apple Watch apps come tethered to an iOS app -
 presumably this will mainly be iPhone apps, but I wonder will we be able to
 connect Apple Watches to iPads? Anyway, it made sense to extend one of my
 existing apps to use the Apple Watch instead of starting from scratch.</p>
-<p>Of my <a href="/apps-ios/">iOS apps</a>, I decided that <a href="/19th-hole/">The 19th Hole</a>, my golf scoring app,
+<p>Of my <a href="/apps-ios/" >iOS apps</a>
+, I decided that <a href="/19th-hole/" >The 19th Hole</a>
+, my golf scoring app,
 would be well suited to the Apple Watch. The problem with using the iPhone
 version to score is that you have to keep pulling your iPhone in and out of your
 golf bag, sometimes in the rain, sometimes in bright sunlight. Being able to
@@ -234,14 +236,16 @@ considerable effort into this.</p>
 <p>Once I decided to write an Apple Watch app, the first step was to learn how. I
 read all Apple&rsquo;s published documents to get a feel for what was possible and
 what user-interface objects would be available. I find online courses very
-helpful and by far the best Apple Watch course that I found was <a href="http://www.raywenderlich.com/video-tutorials#watchkit">Ray
-Wenderlich&rsquo;s WatchKit video tutorial series</a>. The instructors were very clear
+helpful and by far the best Apple Watch course that I found was <a href="http://www.raywenderlich.com/video-tutorials#watchkit" target="_blank" >Ray
+Wenderlich&rsquo;s WatchKit video tutorial series</a>
+. The instructors were very clear
 and explained how the layout and sizing of objects works on the Apple Watch, as
 well as how to set up and move between views and how to communicate from the
 Watch back to the iPhone. The layout section of the course was particularly
 valuable as no other course I found even mentioned this, although it is crucial
 to the interface design and allowing for the two sizes of watch.</p>
-<p>I had released an update to <a href="/19th-hole/">The 19th Hole</a> recently in preparation for this.
+<p>I had released an update to <a href="/19th-hole/" >The 19th Hole</a>
+ recently in preparation for this.
 I wanted to have squashed the bugs and updated the interface, so the only
 changes needed would be the WatchKit ones.</p>
 <p>The first step in adding a WatchKit app to your existing app is to create a new
@@ -299,7 +303,8 @@ reporting this, and somebody said that the solution was to remove the alpha
 channel from your screen shots. Sorry for not giving credit here - I forget who
 said this, but it worked, so thank you whoever you are.</p>
 <p>So now my app is waiting for review and who knows how long that will take.
-According to <a href="http://appreviewtimes.com">App Review Times</a>, the current estimate is 8 days, but the
+According to <a href="http://appreviewtimes.com" target="_blank" >App Review Times</a>
+, the current estimate is 8 days, but the
 trend is heading upwards. I would expect that to blow out in the next few weeks
 as developers try to get their apps ready for the Apple Watch release date of
 April 24th.</p>
@@ -312,11 +317,11 @@ April 24th.</p>
     </div>
     <div class="pagination__buttons">
       
-      <a class="btn next" href="https://troz.net/post/2015/apple-watch-rejected-then-accepted/"
+      <a class="btn next" href="http://localhost:1313/post/2015/apple-watch-rejected-then-accepted/"
         >← Apple Watch App - Rejected, then Accepted</a
       >
        
-      <a class="btn previous" href="https://troz.net/post/2015/livecode-stacks/"
+      <a class="btn previous" href="http://localhost:1313/post/2015/livecode-stacks/"
         >LiveCode stacks →</a
       >
       
@@ -430,7 +435,5 @@ April 24th.</p>
 
       
     </div>
-
-    
   </body>
 </html>

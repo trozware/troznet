@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         App Updates ::
@@ -11,12 +11,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="Just a quick post to let you know about some recent app updates&amp;hellip;
+  content="Just a quick post to let you know about some recent app updates&hellip;
 "
 />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://troz.net/post/2018/app-updates/" />
+<link rel="canonical" href="http://localhost:1313/post/2018/app-updates/" />
 
 
 
@@ -25,7 +25,7 @@
  
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://troz.net/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -46,7 +46,7 @@ as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preloa
 as="font" crossorigin="">
 
 
-<meta property="og:url" content="https://troz.net/post/2018/app-updates/">
+<meta property="og:url" content="http://localhost:1313/post/2018/app-updates/">
   <meta property="og:site_name" content="TrozWare">
   <meta property="og:title" content="App Updates">
   <meta property="og:description" content="Just a quick post to let you know about some recent app updates…">
@@ -71,7 +71,7 @@ as="font" crossorigin="">
       <header class="header">
   <span class="header__inner">
     <a
-  href="https://troz.net/"
+  href="http://localhost:1313/"
   class="logo"
   style="text-decoration: none;"
 >
@@ -185,29 +185,29 @@ as="font" crossorigin="">
 
 <div class="post">
   <h2 class="post-title">
-    <a href="https://troz.net/post/2018/app-updates/">App Updates</a>
+    <a href="http://localhost:1313/post/2018/app-updates/">App Updates</a>
   </h2>
   <div class="post-meta">
     <span class="post-date">
       26 May 2018
     </span>
-    <span class="more-meta">- 519 words, </span>
+    <span class="more-meta">- 520 words, </span>
     <span class="more-meta"> 3 minute read</span>
   </div>
 
   
   <span class="post-tags">
      #<a
-      href="https://troz.net/tags/app-store"
+      href="http://localhost:1313/tags/app-store"
       >app store</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/apps"
+      href="http://localhost:1313/tags/apps"
       >apps</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/mac"
+      href="http://localhost:1313/tags/mac"
       >mac</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/ios"
+      href="http://localhost:1313/tags/ios"
       >ios</a
     >&nbsp; 
   </span>
@@ -218,8 +218,10 @@ as="font" crossorigin="">
   Man Reader
   <a href="#man-reader" class="h-anchor" aria-hidden="true">#</a>
 </h2>
-<p><a href="http://itunes.apple.com/app/man-reader/id522583774?mt=12">Man Reader v 1.10</a> was released on 11 May 2018.</p>
-<p>I had to update <a href="/manreader/">Man Reader</a> in November 2017 because of a really strange &ldquo;feature&rdquo; that arrived with macOS High Sierra. Man Reader displays the man pages as HTML which allows the tabs and internal links to work using anchor tags. These had worked for years, but under High Sierra, they just stopped working.</p>
+<p><a href="http://itunes.apple.com/app/man-reader/id522583774?mt=12" target="_blank" >Man Reader v 1.10</a>
+ was released on 11 May 2018.</p>
+<p>I had to update <a href="/manreader/" >Man Reader</a>
+ in November 2017 because of a really strange &ldquo;feature&rdquo; that arrived with macOS High Sierra. Man Reader displays the man pages as HTML which allows the tabs and internal links to work using anchor tags. These had worked for years, but under High Sierra, they just stopped working.</p>
 <p>I eventually discovered that it was because I was loading the text directly into the WebView using:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span>[self.web.mainFrame loadHTMLString:manText baseURL:nil];
 </span></span></code></pre></div><p>With no baseURL, the anchor links were all defaulting to <code>about:blank</code> and going nowhere. The solution was to save the text to a temporary file and then load using:</p>
@@ -235,7 +237,8 @@ as="font" crossorigin="">
   Sequenza VII
   <a href="#sequenza-vii" class="h-anchor" aria-hidden="true">#</a>
 </h2>
-<p>The other app that I updated recently is <a href="https://itunes.apple.com/us/app/sequenza-vii/id730234638?mt=8&amp;uo=4">Sequenza VII</a>. Version 1.2 was released on 23 April 2018.</p>
+<p>The other app that I updated recently is <a href="https://itunes.apple.com/us/app/sequenza-vii/id730234638?mt=8&amp;uo=4" target="_blank" >Sequenza VII</a>
+. Version 1.2 was released on 23 April 2018.</p>
 <p>This is an app with a very limited audience - specifically oboe players who want to learn to play Berio&rsquo;s weird music. However Apple sent me a notice saying that as it hadn&rsquo;t been updated for ages, it would be removed from the store within 30 days unless I did something.</p>
 <p>Updating it to use the iPhone X display was surprisingly difficult. I set the minimum system version to 11.0 and changed the storyboards to use the latest Xcode but the horns on either side of the notch were still being left blank. In the end, the trick I found was to create a new Launch storyboard - that seemed to fool the system into re-considering all the layouts.</p></div>
   
@@ -246,11 +249,11 @@ as="font" crossorigin="">
     </div>
     <div class="pagination__buttons">
       
-      <a class="btn next" href="https://troz.net/post/2018/privacy-policy/"
+      <a class="btn next" href="http://localhost:1313/post/2018/privacy-policy/"
         >← Privacy Policy</a
       >
        
-      <a class="btn previous" href="https://troz.net/post/2018/swiftlint/"
+      <a class="btn previous" href="http://localhost:1313/post/2018/swiftlint/"
         >Consistent Swift Style →</a
       >
       
@@ -364,7 +367,5 @@ as="font" crossorigin="">
 
       
     </div>
-
-    
   </body>
 </html>

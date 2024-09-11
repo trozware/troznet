@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         SwiftUI Data Flow 2023 ::
@@ -19,7 +19,7 @@ Updated 10th July 2023 to cover changes in version 3 of all the betas.
 />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://troz.net/post/2023/swiftui-data-flow-2023/" />
+<link rel="canonical" href="http://localhost:1313/post/2023/swiftui-data-flow-2023/" />
 
 
 
@@ -28,7 +28,7 @@ Updated 10th July 2023 to cover changes in version 3 of all the betas.
  
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://troz.net/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -49,7 +49,7 @@ as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preloa
 as="font" crossorigin="">
 
 
-<meta property="og:url" content="https://troz.net/post/2023/swiftui-data-flow-2023/">
+<meta property="og:url" content="http://localhost:1313/post/2023/swiftui-data-flow-2023/">
   <meta property="og:site_name" content="TrozWare">
   <meta property="og:title" content="SwiftUI Data Flow 2023">
   <meta property="og:description" content="Various ways to pass data around your SwiftUI apps, after WWDC 2023.">
@@ -72,7 +72,7 @@ as="font" crossorigin="">
       <header class="header">
   <span class="header__inner">
     <a
-  href="https://troz.net/"
+  href="http://localhost:1313/"
   class="logo"
   style="text-decoration: none;"
 >
@@ -186,29 +186,30 @@ as="font" crossorigin="">
 
 <div class="post">
   <h2 class="post-title">
-    <a href="https://troz.net/post/2023/swiftui-data-flow-2023/">SwiftUI Data Flow 2023</a>
+    <a href="http://localhost:1313/post/2023/swiftui-data-flow-2023/">SwiftUI Data Flow 2023</a>
   </h2>
   <div class="post-meta">
     <span class="post-date">
       10 Jul 2023
     </span>
-    <span class="more-meta">- 3751 words, </span>
+    <span class="more-meta">- 3754 words, </span>
     <span class="more-meta"> 18 minute read</span>
   </div>
 
   
   <span class="post-tags">
      #<a
-      href="https://troz.net/tags/swift"
+      href="http://localhost:1313/tags/swift"
       >swift</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/swiftui"
+      href="http://localhost:1313/tags/swiftui"
       >swiftui</a
     >&nbsp; 
   </span>
    
 
-  <div class="post-content"><p>SwiftUI is a reactive framework where the data drives the UI. In 2019, I wrote a <a href="/post/2019/swiftui-data-flow/">post</a> detailing how I manage the various forms of data flow through a SwiftUI app, and with the help of others in the community, I iterated over this until I had a good understanding of the concepts and which methods you should use when. In 2021, I updated the post to cover the minor changes, but there have been no major modifications since then.</p>
+  <div class="post-content"><p>SwiftUI is a reactive framework where the data drives the UI. In 2019, I wrote a <a href="/post/2019/swiftui-data-flow/" >post</a>
+ detailing how I manage the various forms of data flow through a SwiftUI app, and with the help of others in the community, I iterated over this until I had a good understanding of the concepts and which methods you should use when. In 2021, I updated the post to cover the minor changes, but there have been no major modifications since then.</p>
 <p>At WWDC 2023, things changed a lot! With the introduction of Swift macros, the SwiftUI team was able to reduce the number of property wrappers need to send data around, and remove a lot of boilerplate code.</p>
 <p>For this article, I have re-written my sample app as a Mac app and updated it to use the new data macros.</p>
 <p>Updated 10th July 2023 to cover changes in version 3 of all the betas.</p>
@@ -217,29 +218,43 @@ as="font" crossorigin="">
   <a href="#table-of-contents" class="h-anchor" aria-hidden="true">#</a>
 </h3>
 <ul>
-<li><a href="#observation">Observation</a></li>
-<li><a href="#sample-app">Sample app</a></li>
-<li><a href="#property">Property</a></li>
-<li><a href="#state">@State</a></li>
-<li><a href="#binding">@Binding</a></li>
-<li><a href="#binding-for-a-structure">@Binding for a Structure</a></li>
-<li><a href="#observable-and-bindable">@Observable and @Bindable</a></li>
-<li><a href="#observable-and-bindable-list">@Observable and @Bindable List</a></li>
-<li><a href="#environment">@Environment</a></li>
-<li><a href="#wrapping-up">Wrapping Up</a></li>
+<li><a href="#observation" >Observation</a>
+</li>
+<li><a href="#sample-app" >Sample app</a>
+</li>
+<li><a href="#property" >Property</a>
+</li>
+<li><a href="#state" >@State</a>
+</li>
+<li><a href="#binding" >@Binding</a>
+</li>
+<li><a href="#binding-for-a-structure" >@Binding for a Structure</a>
+</li>
+<li><a href="#observable-and-bindable" >@Observable and @Bindable</a>
+</li>
+<li><a href="#observable-and-bindable-list" >@Observable and @Bindable List</a>
+</li>
+<li><a href="#environment" >@Environment</a>
+</li>
+<li><a href="#wrapping-up" >Wrapping Up</a>
+</li>
 </ul>
 <p>With the release of all the version 3 betas, I have added these sections:</p>
 <ul>
-<li><a href="#update-1">Old code still works</a></li>
-<li><a href="#update-2">Observed properties no longer require initial values</a></li>
-<li><a href="#update-3"><code>@Environment</code> properties cannot be used for bindings.</a></li>
+<li><a href="#update-1" >Old code still works</a>
+</li>
+<li><a href="#update-2" >Observed properties no longer require initial values</a>
+</li>
+<li><a href="#update-3" ><code>@Environment</code> properties cannot be used for bindings.</a>
+</li>
 </ul>
 <hr>
 <h3 id="observation">
   Observation
   <a href="#observation" class="h-anchor" aria-hidden="true">#</a>
 </h3>
-<p>In the WWDC talk on <a href="https://developer.apple.com/wwdc23/10149">Discover Observation in SwiftUI</a>, Apple showed the following flow chart:</p>
+<p>In the WWDC talk on <a href="https://developer.apple.com/wwdc23/10149" target="_blank" >Discover Observation in SwiftUI</a>
+, Apple showed the following flow chart:</p>
 <style>
   img {
     margin: 10px auto;
@@ -281,8 +296,10 @@ as="font" crossorigin="">
   UPDATE 1:
   <a href="#update-1" class="h-anchor" aria-hidden="true">#</a>
 </h4>
-<p>I didn&rsquo;t make it clear originally, but all these property wrappers still work, and you can still use <code>@Binding</code> for classes, so you can adapt to the new Observation code incrementally. The Apple developer site has a very useful article on <a href="https://developer.apple.com/documentation/swiftui/migrating-from-the-observable-object-protocol-to-the-observable-macro">migrating from ObservableObject</a>.</p>
-<p><a href="#top">Back to Top</a></p>
+<p>I didn&rsquo;t make it clear originally, but all these property wrappers still work, and you can still use <code>@Binding</code> for classes, so you can adapt to the new Observation code incrementally. The Apple developer site has a very useful article on <a href="https://developer.apple.com/documentation/swiftui/migrating-from-the-observable-object-protocol-to-the-observable-macro" target="_blank" >migrating from ObservableObject</a>
+.</p>
+<p><a href="#top" >Back to Top</a>
+</p>
 <hr>
 <h3 id="sample-app">
   Sample app
@@ -290,11 +307,13 @@ as="font" crossorigin="">
 </h3>
 <p>My sample app demonstrates the following data flow options:</p>
 <p><img src="/images/data_flow_types.png" alt="Sample app options"></p>
-<p>The code is available on <a href="https://github.com/trozware/swiftui-data-flow-2023">GitHub</a> and I recommend you download the project and  follow along. It requires macOS 14 and Xcode 15. Currently I&rsquo;m using macOS 14.0 beta 3 (23A5286g) and Xcode 15.0 beta 3 (15A5195k), but I will update this article with any changes as we work through the beta cycle.</p>
+<p>The code is available on <a href="https://github.com/trozware/swiftui-data-flow-2023" target="_blank" >GitHub</a>
+ and I recommend you download the project and  follow along. It requires macOS 14 and Xcode 15. Currently I&rsquo;m using macOS 14.0 beta 3 (23A5286g) and Xcode 15.0 beta 3 (15A5195k), but I will update this article with any changes as we work through the beta cycle.</p>
 <p>Because Xcode 15 now supports live previews for Mac apps, you can test all the options from inside Xcode. In the Project navigator, expand the numbered groups and preview the first file in each group to view and interact with that data flow type.</p>
 <p>Or go to the Bookmarks navigator where I&rsquo;ve used the new bookmaking system to provide quick links to each one. You can even check off each one as you finish that section.</p>
 <p>In the code snippets below, I include the essentials, but strip out most display modifiers and some similar views to keep the code short. The project contains the complete code.</p>
-<p><a href="#top">Back to Top</a></p>
+<p><a href="#top" >Back to Top</a>
+</p>
 <hr>
 <h3 id="property">
   Property
@@ -315,7 +334,8 @@ as="font" crossorigin="">
 <blockquote>
 <p>If a view owns a property or gets it from a parent but doesn&rsquo;t need to change it, use <code>let</code>.</p>
 </blockquote>
-<p><a href="#top">Back to Top</a></p>
+<p><a href="#top" >Back to Top</a>
+</p>
 <hr>
 <h3 id="state">
   @State
@@ -343,7 +363,8 @@ as="font" crossorigin="">
 <blockquote>
 <p>Whenever a view owns the property and that property is mutable, declare it using the <code>@State</code> property wrapper.</p>
 </blockquote>
-<p><a href="#top">Back to Top</a></p>
+<p><a href="#top" >Back to Top</a>
+</p>
 <hr>
 <h3 id="binding">
   @Binding
@@ -394,7 +415,8 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>    Image(systemName: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">\(</span>stepperValue<span style="color:#e6db74">)</span><span style="color:#e6db74">.square&#34;</span>)
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><a href="#top">Back to Top</a></p>
+</span></span></code></pre></div><p><a href="#top" >Back to Top</a>
+</p>
 <hr>
 <h3 id="binding-for-a-structure">
   @Binding for a Structure
@@ -444,7 +466,8 @@ as="font" crossorigin="">
 </span></span></code></pre></div><blockquote>
 <p>If you&rsquo;re passing a primitive data type or a struct to a subview, and the subview can change the value of this property, use <code>@Binding</code> in the subview and pass the property with a <code>$</code> prefix.</p>
 </blockquote>
-<p><a href="#top">Back to Top</a></p>
+<p><a href="#top" >Back to Top</a>
+</p>
 <hr>
 <h3 id="observable-and-bindable">
   @Observable and @Bindable
@@ -505,7 +528,8 @@ as="font" crossorigin="">
 <p>There is one oddity to beware of. When declaring the original <code>colorSet</code> property, I use <code>@State</code> but if I declare it as a simple <code>var</code>, the app still works. Don&rsquo;t do this!</p>
 <p>If you remember the older code style, the owning view initialized an <code>ObservableObject</code> using <code>@StateObject</code>. Subsequent views declared the same property using <code>@ObservedObject</code> but it was very important for the owning view to use <code>@StateObject</code> to avoid strange and difficult to trace bugs. The app worked if you used <code>@ObservedObject</code> instead of <code>@StateObject</code> for the original declaration, but then odd things could happen.</p>
 <p>I think this is the same, and it&rsquo;s just as important for the owning view to declare the original property using  <code>@State</code>.</p>
-<p><a href="#top">Back to Top</a></p>
+<p><a href="#top" >Back to Top</a>
+</p>
 <hr>
 <h3 id="observable-and-bindable-list">
   @Observable and @Bindable List
@@ -555,7 +579,8 @@ as="font" crossorigin="">
 <blockquote>
 <p>When you have a model class and you want changes to be published, declare the class with the <code>@Observable</code> macro. The owning view declares the model using <code>@State</code> and can pass it to editing subviews using <code>@Bindable</code> or to display subviews as <code>let</code>.</p>
 </blockquote>
-<p><a href="#top">Back to Top</a></p>
+<p><a href="#top" >Back to Top</a>
+</p>
 <hr>
 <h3 id="environment">
   @Environment
@@ -617,8 +642,10 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>You declare the <code>@Environment</code> property as usual, then <strong>inside</strong> the <code>body</code>, declare an <code>@Bindable</code> property with the value from the <code>@Environment</code> property. You have to do this inside the body because doing it outside gives an error.</p>
 <p>Surprisingly, I didn&rsquo;t have to add a <code>return</code> before the Toggle, even though it was no longer the only statement in the body.</p>
-<p>Thanks to <a href="https://iosdev.space/@StewartLynch">Stewart Lynch</a> for suggesting I add this. Hopefully it will be fixed soon but until then, this is the workaround.</p>
-<p><a href="#top">Back to Top</a></p>
+<p>Thanks to <a href="https://iosdev.space/@StewartLynch" target="_blank" >Stewart Lynch</a>
+ for suggesting I add this. Hopefully it will be fixed soon but until then, this is the workaround.</p>
+<p><a href="#top" >Back to Top</a>
+</p>
 <hr>
 <h3 id="wrapping-up">
   Wrapping Up
@@ -632,8 +659,11 @@ as="font" crossorigin="">
 <p>In my flow chart, I left the appropriate end point showing <strong>var or let</strong>, to better match Apple&rsquo;s, but I recommend using <code>let</code> and only changing to <code>var</code> if Xcode complains. This is a good rule for any Swift code, not just SwiftUI.</p>
 <hr>
 <p>This article may get several updates before we exit this years beta cycle, but I thought other people might find it useful. Writing it certainly helped clarify the new options in my head.</p>
-<p>If you have any suggestions, ideas or corrections, please contact me using one of the links below or through the <a href="/contact/">Contact</a> page. And if you found this article useful, I&rsquo;d love you to <a href="https://ko-fi.com/trozware">buy me a coffee</a>.</p>
-<p><a href="#top">Back to Top</a></p></div>
+<p>If you have any suggestions, ideas or corrections, please contact me using one of the links below or through the <a href="/contact/" >Contact</a>
+ page. And if you found this article useful, I&rsquo;d love you to <a href="https://ko-fi.com/trozware" target="_blank" >buy me a coffee</a>
+.</p>
+<p><a href="#top" >Back to Top</a>
+</p></div>
   
   <div class="pagination">
     <div class="pagination__title">
@@ -642,11 +672,11 @@ as="font" crossorigin="">
     </div>
     <div class="pagination__buttons">
       
-      <a class="btn next" href="https://troz.net/post/2023/manreader2/"
+      <a class="btn next" href="http://localhost:1313/post/2023/manreader2/"
         >← Man Reader 2</a
       >
        
-      <a class="btn previous" href="https://troz.net/post/2023/macos_book_2/"
+      <a class="btn previous" href="http://localhost:1313/post/2023/macos_book_2/"
         >macOS Apprentice →</a
       >
       
@@ -760,7 +790,5 @@ as="font" crossorigin="">
 
       
     </div>
-
-    
   </body>
 </html>

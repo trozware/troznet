@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         SwiftUI Snapshot Testing ::
@@ -16,7 +16,7 @@
 />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://troz.net/post/2020/swiftui_snapshots/" />
+<link rel="canonical" href="http://localhost:1313/post/2020/swiftui_snapshots/" />
 
 
 
@@ -25,7 +25,7 @@
  
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://troz.net/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -46,7 +46,7 @@ as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preloa
 as="font" crossorigin="">
 
 
-<meta property="og:url" content="https://troz.net/post/2020/swiftui_snapshots/">
+<meta property="og:url" content="http://localhost:1313/post/2020/swiftui_snapshots/">
   <meta property="og:site_name" content="TrozWare">
   <meta property="og:title" content="SwiftUI Snapshot Testing">
   <meta property="og:description" content="Using snapshot testing for SwiftUI apps">
@@ -70,7 +70,7 @@ as="font" crossorigin="">
       <header class="header">
   <span class="header__inner">
     <a
-  href="https://troz.net/"
+  href="http://localhost:1313/"
   class="logo"
   style="text-decoration: none;"
 >
@@ -184,26 +184,26 @@ as="font" crossorigin="">
 
 <div class="post">
   <h2 class="post-title">
-    <a href="https://troz.net/post/2020/swiftui_snapshots/">SwiftUI Snapshot Testing</a>
+    <a href="http://localhost:1313/post/2020/swiftui_snapshots/">SwiftUI Snapshot Testing</a>
   </h2>
   <div class="post-meta">
     <span class="post-date">
       17 May 2020
     </span>
-    <span class="more-meta">- 2280 words, </span>
+    <span class="more-meta">- 2284 words, </span>
     <span class="more-meta"> 11 minute read</span>
   </div>
 
   
   <span class="post-tags">
      #<a
-      href="https://troz.net/tags/swiftui"
+      href="http://localhost:1313/tags/swiftui"
       >swiftui</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/unit-tests"
+      href="http://localhost:1313/tags/unit-tests"
       >unit tests</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/snapshot"
+      href="http://localhost:1313/tags/snapshot"
       >snapshot</a
     >&nbsp; 
   </span>
@@ -223,8 +223,12 @@ as="font" crossorigin="">
   How did I get started?
   <a href="#how-did-i-get-started" class="h-anchor" aria-hidden="true">#</a>
 </h2>
-<p>I first read about the idea of using snapshot testing for SwiftUI in a blog post by <a href="https://www.vadimbulavin.com/snapshot-testing-swiftui-views/">Vadim Bulavin</a>. He made a very good argument for this, but I found his instructions assumed more knowledge of the topic than I had at the time and so I discarded the idea after an initial attempt.</p>
-<p>But he was suggesting using a <a href="https://github.com/pointfreeco/swift-snapshot-testing">snapshotting library</a> published by <a href="https://www.pointfree.co">Point-Free</a> and I later discovered a link to one of their videos where they discuss this exact thing: <a href="https://www.pointfree.co/episodes/ep86-swiftui-snapshot-testing">SwiftUI Snapshot Testing</a>. This was enough to get me going with attempt #2.</p>
+<p>I first read about the idea of using snapshot testing for SwiftUI in a blog post by <a href="https://www.vadimbulavin.com/snapshot-testing-swiftui-views/" target="_blank" >Vadim Bulavin</a>
+. He made a very good argument for this, but I found his instructions assumed more knowledge of the topic than I had at the time and so I discarded the idea after an initial attempt.</p>
+<p>But he was suggesting using a <a href="https://github.com/pointfreeco/swift-snapshot-testing" target="_blank" >snapshotting library</a>
+ published by <a href="https://www.pointfree.co" target="_blank" >Point-Free</a>
+ and I later discovered a link to one of their videos where they discuss this exact thing: <a href="https://www.pointfree.co/episodes/ep86-swiftui-snapshot-testing" target="_blank" >SwiftUI Snapshot Testing</a>
+. This was enough to get me going with attempt #2.</p>
 <hr>
 <h2 id="setting-up-an-app-for-snapshot-testing">
   Setting up an app for snapshot testing
@@ -274,7 +278,8 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>        assertSnapshot(matching: contentView.toVC(), <span style="color:#66d9ef">as</span>: .image)
 </span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></div><p>And it worked. Or rather it failed as expected because there was no image to compare it with.</p>
-<p><a href="/images/Snapshot-Test1Result.png"><img src="/images/Snapshot-Test1Result.png" alt="Test result"></a></p>
+<p><a href="/images/Snapshot-Test1Result.png" ><img src="/images/Snapshot-Test1Result.png" alt="Test result"></a>
+</p>
 <p>Checking the error message, I was able to see where it had created the snapshot image file which I could look at. And the second time I ran the test, it passed.</p>
 <p><img src="/images/Snapshot-TestImage1.png" alt="Test image in Finder"></p>
 <blockquote>
@@ -288,7 +293,8 @@ as="font" crossorigin="">
 <p>Now that I had a passing test, the next thing was to check what happens if the UI changes. This may be due to a deliberate change or because the cat just walked across your keyboard (a not infrequent occurrence around here).</p>
 <p>Where I originally had a button with the label &ldquo;Save&rdquo;, I decided to change this to &ldquo;OK&rdquo; (rejecting the cat&rsquo;s suggestion of &ldquo;q2eegrnh&rdquo;).</p>
 <p>Running the test again produced this result:</p>
-<p><a href="/images/Snapshot-FailedTest.png"><img src="/images/Snapshot-FailedTest.png" alt="Failed snapshot test"></a></p>
+<p><a href="/images/Snapshot-FailedTest.png" ><img src="/images/Snapshot-FailedTest.png" alt="Failed snapshot test"></a>
+</p>
 <p>And I was then able to compare the 2 images, using the path to the failing image from the error message.</p>
 <p><img src="/images/Snapshot-TestResults.png" alt="Test results: success and failure"></p>
 <p>Once I had confirmed that the new image was what I wanted and not a result of error, either feline or human, I set the test to <code>record</code> a new result so that the new version became the official test version.</p>
@@ -305,7 +311,8 @@ as="font" crossorigin="">
   <a href="#using-snapshots-with-state" class="h-anchor" aria-hidden="true">#</a>
 </h2>
 <p>In SwiftUI, the UI displayed is a function of state, so changing state properties changes the UI. This is what makes snapshot testing really good for SwiftUI apps as you can change the state programmatically and confirm that this is reflected in the UI.</p>
-<p>So having proved that the snapshot tests worked, I decided to move on and test it with my new <a href="/post/2020/name_this_app/">anagram assistant app</a>. This is quite a simple app that has a single <code>AppState</code> class that holds all the program data.</p>
+<p>So having proved that the snapshot tests worked, I decided to move on and test it with my new <a href="/post/2020/name_this_app/" >anagram assistant app</a>
+. This is quite a simple app that has a single <code>AppState</code> class that holds all the program data.</p>
 <p>So I was able to write a suite of tests that changed the state in various ways and then snap-shotted the UI with that state. Here are a couple of examples:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">testEmptyContentView</span>() {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> contentView = ContentView()
@@ -396,7 +403,8 @@ as="font" crossorigin="">
 <li>Make a non-sand-boxed target and use it for testing against.</li>
 </ol>
 <p>Neither of these are particularly great. Option 1 is tedious, although I think it can work if the snapshots remain the same, it only fails if there is a change that it needs to write to disk.</p>
-<p>Option 2 is tedious to set up (<a href="/contact/">contact me</a> if you would like more details) but is more seamless after that.</p>
+<p>Option 2 is tedious to set up (<a href="/contact/" >contact me</a>
+ if you would like more details) but is more seamless after that.</p>
 <p>The best solution would be for Xcode to allow you to turn off sand-boxing for a test target. Maybe Xcode 12&hellip;</p>
 <hr>
 <h2 id="limitations-of-snapshot-testing">
@@ -437,9 +445,17 @@ as="font" crossorigin="">
   <a href="#summary" class="h-anchor" aria-hidden="true">#</a>
 </h2>
 <p>Will I use snapshot tests for my SwiftUI apps? Yes, definitely. I use unit tests for my model classes but mostly avoid UI tests as they are too clumsy to write and time-consuming to run. Snapshot tests are better for SwiftUI, and very fast.</p>
-<p>Huge thanks to <a href="https://twitter.com/V8tr">Vadim Bualvin</a> for the original inspiration for this article. Go and read his <a href="https://www.vadimbulavin.com/snapshot-testing-swiftui-views/">blog post</a> for a more detailed look. And thanks to <a href="https://www.twitter.com/mbrandonw">Brandon Williams</a> &amp; <a href="https://www.twitter.com/stephencelis">Stephen Celis</a> at <a href="https://www.pointfree.co">Point-Free</a> for getting me going after my initial discarding of the idea. Any mistakes or errors are mine and not theirs.</p>
-<p>If you want to learn about UI testing for SwiftUI apps, I recommend watching <a href="https://twitter.com/azamsharp">azamsharp&rsquo;s</a> YouTube video: <a href="https://www.youtube.com/watch?v=dFQtFJsvt04">User Interface Testing for SwiftUI Applications</a>.</p>
-<p>As always, if you have any comments, suggestions or ideas, I would love to hear from you. Please contact me using one of the links below or through my <a href="/contact/">Contact</a> page.</p></div>
+<p>Huge thanks to <a href="https://twitter.com/V8tr" target="_blank" >Vadim Bualvin</a>
+ for the original inspiration for this article. Go and read his <a href="https://www.vadimbulavin.com/snapshot-testing-swiftui-views/" target="_blank" >blog post</a>
+ for a more detailed look. And thanks to <a href="https://www.twitter.com/mbrandonw" target="_blank" >Brandon Williams</a>
+ &amp; <a href="https://www.twitter.com/stephencelis" target="_blank" >Stephen Celis</a>
+ at <a href="https://www.pointfree.co" target="_blank" >Point-Free</a>
+ for getting me going after my initial discarding of the idea. Any mistakes or errors are mine and not theirs.</p>
+<p>If you want to learn about UI testing for SwiftUI apps, I recommend watching <a href="https://twitter.com/azamsharp" target="_blank" >azamsharp&rsquo;s</a>
+ YouTube video: <a href="https://www.youtube.com/watch?v=dFQtFJsvt04" target="_blank" >User Interface Testing for SwiftUI Applications</a>
+.</p>
+<p>As always, if you have any comments, suggestions or ideas, I would love to hear from you. Please contact me using one of the links below or through my <a href="/contact/" >Contact</a>
+ page.</p></div>
   
   <div class="pagination">
     <div class="pagination__title">
@@ -448,11 +464,11 @@ as="font" crossorigin="">
     </div>
     <div class="pagination__buttons">
       
-      <a class="btn next" href="https://troz.net/post/2020/swiftui_mac_big_sur/"
+      <a class="btn next" href="http://localhost:1313/post/2020/swiftui_mac_big_sur/"
         >← SwiftUI for Mac on Big Sur</a
       >
        
-      <a class="btn previous" href="https://troz.net/post/2020/name_this_app/"
+      <a class="btn previous" href="http://localhost:1313/post/2020/name_this_app/"
         >Name This App →</a
       >
       
@@ -566,7 +582,5 @@ as="font" crossorigin="">
 
       
     </div>
-
-    
   </body>
 </html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         Name This App ::
@@ -17,7 +17,7 @@ But I cannot think of a clever name for the app, so please read the story and co
 />
 <meta name="keywords" content="[Swift Apple macOS iOS Apple Watch]" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://troz.net/post/2020/name_this_app/" />
+<link rel="canonical" href="http://localhost:1313/post/2020/name_this_app/" />
 
 
 
@@ -26,7 +26,7 @@ But I cannot think of a clever name for the app, so please read the story and co
  
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://troz.net/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -47,7 +47,7 @@ as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preloa
 as="font" crossorigin="">
 
 
-<meta property="og:url" content="https://troz.net/post/2020/name_this_app/">
+<meta property="og:url" content="http://localhost:1313/post/2020/name_this_app/">
   <meta property="og:site_name" content="TrozWare">
   <meta property="og:title" content="Name This App">
   <meta property="og:description" content="Read the story and help me name my new app">
@@ -73,7 +73,7 @@ as="font" crossorigin="">
       <header class="header">
   <span class="header__inner">
     <a
-  href="https://troz.net/"
+  href="http://localhost:1313/"
   class="logo"
   style="text-decoration: none;"
 >
@@ -187,32 +187,32 @@ as="font" crossorigin="">
 
 <div class="post">
   <h2 class="post-title">
-    <a href="https://troz.net/post/2020/name_this_app/">Name This App</a>
+    <a href="http://localhost:1313/post/2020/name_this_app/">Name This App</a>
   </h2>
   <div class="post-meta">
     <span class="post-date">
       09 May 2020
     </span>
-    <span class="more-meta">- 1970 words, </span>
+    <span class="more-meta">- 1975 words, </span>
     <span class="more-meta"> 10 minute read</span>
   </div>
 
   
   <span class="post-tags">
      #<a
-      href="https://troz.net/tags/app-store"
+      href="http://localhost:1313/tags/app-store"
       >app store</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/swiftui"
+      href="http://localhost:1313/tags/swiftui"
       >swiftui</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/ios"
+      href="http://localhost:1313/tags/ios"
       >ios</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/crosswords"
+      href="http://localhost:1313/tags/crosswords"
       >crosswords</a
     >&nbsp;  #<a
-      href="https://troz.net/tags/puzzles"
+      href="http://localhost:1313/tags/puzzles"
       >puzzles</a
     >&nbsp; 
   </span>
@@ -226,7 +226,9 @@ as="font" crossorigin="">
   <a href="#cryptic-crosswords" class="h-anchor" aria-hidden="true">#</a>
 </h3>
 <p>Programmers are basically puzzlers, and programming is the world&rsquo;s best type of puzzle, but I like to start my day with a cryptic crossword. Like programming, cryptic crossword clues have their own syntax and what seems like gibberish on a first glance, can be parsed into logical parts to take you to the answer. But there are aspects of solving crosswords that were easier with pencil and paper, so I decided to write an app to help fill one of those gaps.</p>
-<p>My crossword of choice is the <a href="https://www.irishtimes.com/games/crosswords/">Crosaire</a> crossword from <a href="https://www.irishtimes.com">The Irish Times</a>. A lot of newspapers have a cryptic crossword and most of them need a subscription, but the Irish Times has a crossword only subscription that I really like. Crosswords also tend to require some local knowledge, but for the Crosaire, if you remember that the Abbey and the Gate are both theatres and that Down is a county, you will have most of what you need. And as an added bonus, the crossword creator later blogs the solutions with explanations so you can learn how the clues were constructed if you are totally mystified.</p>
+<p>My crossword of choice is the <a href="https://www.irishtimes.com/games/crosswords/" target="_blank" >Crosaire</a>
+ crossword from <a href="https://www.irishtimes.com" target="_blank" >The Irish Times</a>
+. A lot of newspapers have a cryptic crossword and most of them need a subscription, but the Irish Times has a crossword only subscription that I really like. Crosswords also tend to require some local knowledge, but for the Crosaire, if you remember that the Abbey and the Gate are both theatres and that Down is a county, you will have most of what you need. And as an added bonus, the crossword creator later blogs the solutions with explanations so you can learn how the clues were constructed if you are totally mystified.</p>
 <hr>
 <h3 id="anagrams">
   Anagrams
@@ -340,14 +342,18 @@ as="font" crossorigin="">
   <a href="#drag--drop" class="h-anchor" aria-hidden="true">#</a>
 </h3>
 <p>My next experiment was with drag &amp; drop to place or discard letters. I waited until iOS 13.4 brought drag &amp; drop to SwiftUI but I was not happy with the result. Firstly, there is a big lag on dragging. You have to hold your finger down on a letter for quite a while before it becomes draggable. This was so counter-intuitive that I thought it wasn&rsquo;t working, but occasionally it did work and so I eventually deduced that it was a timing issue.</p>
-<p>The second problem was solved thanks to a suggestion by <a href="https://twitter.com/luisramos1337">Luis Ramos</a> on <a href="https://twitter.com/trozware/status/1254568520295124992">Twitter</a>. When I dragged a letter, the drag preview image was the shuffle button from the middle of the ZStack instead of the selected letter. This was solved by moving the <code>onDrag</code> modifier to BEFORE the <code>offset</code> modifier (not AFTER like I said in my original response to Luis). But I was still not happy with it, so I decided to discard this idea and stick to tapping.</p>
+<p>The second problem was solved thanks to a suggestion by <a href="https://twitter.com/luisramos1337" target="_blank" >Luis Ramos</a>
+ on <a href="https://twitter.com/trozware/status/1254568520295124992" target="_blank" >Twitter</a>
+. When I dragged a letter, the drag preview image was the shuffle button from the middle of the ZStack instead of the selected letter. This was solved by moving the <code>onDrag</code> modifier to BEFORE the <code>offset</code> modifier (not AFTER like I said in my original response to Luis). But I was still not happy with it, so I decided to discard this idea and stick to tapping.</p>
 <p>There was one side-effect: I wasn&rsquo;t able to get the drag preview to be round - it was a square with opaque corners. As a work-around, I changed the letters to be inside squares and then decided this was a better look anyway, since it was more like what you see in a crossword.</p>
 <hr>
 <h3 id="further-ui-enhancements">
   Further UI Enhancements
   <a href="#further-ui-enhancements" class="h-anchor" aria-hidden="true">#</a>
 </h3>
-<p>I installed a custom font so that it looked more like hand-writing. I wrote about <a href="https://troz.net/post/2020/custom-fonts/">installing custom fonts</a> in a separate article, so if you are interested check that out for details on the multiple steps that you need to take to get them to work. I went through a few different fonts until I found one that I thought worked well and clearly for all the upper case letters but I settled on <a href="https://www.fontspace.com/search?q=oregano">Oregano</a>. And then I made the app work in dark mode too:</p>
+<p>I installed a custom font so that it looked more like hand-writing. I wrote about <a href="https://troz.net/post/2020/custom-fonts/" target="_blank" >installing custom fonts</a>
+ in a separate article, so if you are interested check that out for details on the multiple steps that you need to take to get them to work. I went through a few different fonts until I found one that I thought worked well and clearly for all the upper case letters but I settled on <a href="https://www.fontspace.com/search?q=oregano" target="_blank" >Oregano</a>
+. And then I made the app work in dark mode too:</p>
 <p><img src="/images/AnagramDarkMode.png" alt="Custom font and dark mode"></p>
 <p>The clue for this one is <em>&ldquo;Consumables minus bacon and shellfish (6)&rdquo;</em></p>
 <hr>
@@ -360,7 +366,8 @@ as="font" crossorigin="">
 <p>For the letter shuffle, I did the reverse, moving the letters in, shuffling, then moving them out again.</p>
 <p><img src="/images/AnagramAnimation.mp4" alt="Animations"></p>
 <p><em>Refresh the page to see the gif play, if it has stopped.</em></p>
-<p>I also added sound effects and a slide-up sheet view with settings and help. I enjoyed using <a href="https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/">Apple&rsquo;s SF Symbols</a> to show icons for each paragraph of the help, although I may change the colour of these icons as they look at bit too much like buttons right now.</p>
+<p>I also added sound effects and a slide-up sheet view with settings and help. I enjoyed using <a href="https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/" target="_blank" >Apple&rsquo;s SF Symbols</a>
+ to show icons for each paragraph of the help, although I may change the colour of these icons as they look at bit too much like buttons right now.</p>
 <p><img src="/images/AnagramHelp.png" alt="Help &amp; Settings"></p>
 <hr>
 <h3 id="next-steps">
@@ -369,7 +376,9 @@ as="font" crossorigin="">
 </h3>
 <p>Well, I am hoping that someone will come up with a good name. I thought of &ldquo;Anagram Assistant&rdquo; but that doesn&rsquo;t fit underneath the home screen icon and it was shortened to &ldquo;Anagram&rdquo;. I don&rsquo;t want people to see it and think it is just one of those dictionary lookup anagram finders, so I would like something more descriptive while still being short, or at least having a short variant.</p>
 <p>In honour of P.G.Wodehouse&rsquo;s favourite crossword clue, I thought of calling it &ldquo;E blank U&rdquo; but that isn&rsquo;t an anagram, so it doesn&rsquo;t really work. For people not familiar with that reference, Wodehouse&rsquo;s less quick-witted characters always get stuck on &ldquo;Large flightless Australian bird, 3 letters. E blank U&rdquo;.</p>
-<p>A clever name would be good - perhaps an anagram itself? If you think of anything, please let me know on <a href="https://twitter.com/trozware">Twitter</a>, by using the email link below or through the <a href="/contact/">Contact page</a>. The namer will get full credit in the app. And use one of those methods to contact me if you would like to test the app before it is released.</p>
+<p>A clever name would be good - perhaps an anagram itself? If you think of anything, please let me know on <a href="https://twitter.com/trozware" target="_blank" >Twitter</a>
+, by using the email link below or through the <a href="/contact/" >Contact page</a>
+. The namer will get full credit in the app. And use one of those methods to contact me if you would like to test the app before it is released.</p>
 <p>Once I have a name, I can get to work on the usual secondary tasks which take so much time: App Store set up, screen shots, a support page and so on.</p>
 <p>I haven&rsquo;t tried an iPad version yet. I got stung once by testing an iPad version of an app, deciding it didn&rsquo;t work well and then running into Apple&rsquo;s ban on dropping a platform from a published app. This has discouraged me from iPad apps ever since, which I doubt was their intention.</p>
 <hr>
@@ -387,11 +396,11 @@ Consumables minus bacon and shellfish (6) = MUSSEL</p>
     </div>
     <div class="pagination__buttons">
       
-      <a class="btn next" href="https://troz.net/post/2020/swiftui_snapshots/"
+      <a class="btn next" href="http://localhost:1313/post/2020/swiftui_snapshots/"
         >← SwiftUI Snapshot Testing</a
       >
        
-      <a class="btn previous" href="https://troz.net/post/2020/swiftui-color/"
+      <a class="btn previous" href="http://localhost:1313/post/2020/swiftui-color/"
         >SwiftUI Color →</a
       >
       
@@ -505,7 +514,5 @@ Consumables minus bacon and shellfish (6) = MUSSEL</p>
 
       
     </div>
-
-    
   </body>
 </html>
