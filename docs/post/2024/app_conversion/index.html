@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     
       <title>
         Converting an App from Obj-C ::
@@ -16,7 +16,7 @@
 />
 <meta name="keywords" content="[Swift SwiftUI Apple macOS]" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="http://localhost:1313/post/2024/app_conversion/" />
+<link rel="canonical" href="https://troz.net/post/2024/app_conversion/" />
 
 
 
@@ -25,7 +25,7 @@
  
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="http://localhost:1313/style.css" />
+<link rel="stylesheet" href="https://troz.net/style.css" />
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -46,7 +46,7 @@ as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preloa
 as="font" crossorigin="">
 
 
-<meta property="og:url" content="http://localhost:1313/post/2024/app_conversion/">
+<meta property="og:url" content="https://troz.net/post/2024/app_conversion/">
   <meta property="og:site_name" content="TrozWare">
   <meta property="og:title" content="Converting an App from Obj-C">
   <meta property="og:description" content="Converting an iphone app from Objective-C to Swift and SwiftUI">
@@ -72,7 +72,7 @@ as="font" crossorigin="">
       <header class="header">
   <span class="header__inner">
     <a
-  href="http://localhost:1313/"
+  href="https://troz.net/"
   class="logo"
   style="text-decoration: none;"
 >
@@ -186,7 +186,7 @@ as="font" crossorigin="">
 
 <div class="post">
   <h2 class="post-title">
-    <a href="http://localhost:1313/post/2024/app_conversion/">Converting an App from Obj-C</a>
+    <a href="https://troz.net/post/2024/app_conversion/">Converting an App from Obj-C</a>
   </h2>
   <div class="post-meta">
     <span class="post-date">
@@ -199,19 +199,19 @@ as="font" crossorigin="">
   
   <span class="post-tags">
      #<a
-      href="http://localhost:1313/tags/objective-c"
+      href="https://troz.net/tags/objective-c"
       >objective-c</a
     >&nbsp;  #<a
-      href="http://localhost:1313/tags/swift"
+      href="https://troz.net/tags/swift"
       >swift</a
     >&nbsp;  #<a
-      href="http://localhost:1313/tags/swiftui"
+      href="https://troz.net/tags/swiftui"
       >swiftui</a
     >&nbsp;  #<a
-      href="http://localhost:1313/tags/ios"
+      href="https://troz.net/tags/ios"
       >ios</a
     >&nbsp;  #<a
-      href="http://localhost:1313/tags/berio"
+      href="https://troz.net/tags/berio"
       >berio</a
     >&nbsp; 
   </span>
@@ -279,7 +279,7 @@ as="font" crossorigin="">
 <p>Now on to the settings which take up two screens. In the Objective-C app, I used storyboards. The main screen segued to a tab view with three tabs: two for settings and one for the about screen. The settings views used lots of nested stack views and many, many constraints.</p>
 <p>Getting the basic UI elements into SwiftUI was relatively easy, but I wanted them to look good on large or small iPhones. I didn&rsquo;t want something that looked good on an SE being all crammed into the top half of a 15 Pro, but that ended up being more-or-less what I got.</p>
 <p>I tried various techniques using nested stacks, spacers, forms, groups and so on. Nothing I tried gave me quite the result I wanted, but I ended up with nested <code>VStacks</code> which allowed me to group related settings. In hindsight, I probably should have swallowed my <code>GeometryReader</code> aversion and used it to adjust the layout spacing, based on the screen size. I&rsquo;ll probably go back and do that later.</p>
-<p><img src="/images/Berio_settings.png" alt="Settings"></p>
+<p><img src="/images/berio_settings.png" alt="Settings"></p>
 <p>But the most important thing about the setting screens is the settings themselves and here is where SwiftUI really shone. The two view controllers for these pages had masses of code for handling the settings. First, they had to read them in from <code>UserDefaults</code>, providing logical defaults if needed. Then they had to update the UI to reflect the settings. Since several of the settings depended on other settings, monitoring changes meant potentially adjusting other settings and then saving them all back to <code>UserDefaults</code> as well as adjusting all the UI elements manually. And finally, reverting the settings to the standard defaults required even more code and UI updates.</p>
 <p>With SwiftUI, I used <code>@AppStorage</code> extensively. Not only did this remove all the hassle of reading and writing to <code>UserDefaults</code>, but it also automatically updated the UI when the settings changed. And by setting up <code>disabled</code> modifiers, the connections between the linked settings were automatic. I was able to remove a lot of code and make the settings screens much simpler and easier to understand. And this flowed on to the main screen when I was adding its data as it used the same <code>@AppStorage</code> properties.</p>
 <p>Counting the lines of code using <a href="https://github.com/boyter/scc" target="_blank" >scc</a>
@@ -357,7 +357,7 @@ as="font" crossorigin="">
     </div>
     <div class="pagination__buttons">
        
-      <a class="btn previous" href="http://localhost:1313/post/2024/swiftui-mac-2024/"
+      <a class="btn previous" href="https://troz.net/post/2024/swiftui-mac-2024/"
         >SwiftUI for Mac 2024 →</a
       >
       

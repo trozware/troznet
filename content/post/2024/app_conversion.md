@@ -139,5 +139,5 @@ You can contact me using one of the links below or through the [Contact][contact
 [contact]: /contact/
 [kofi]: https://ko-fi.com/trozware
 [i1]: /images/Berio_ContentView.png
-[i2]: /images/Berio_settings.png
+[i2]: /images/berio_settings.png
 [i3]: /images/berio_logging.png
