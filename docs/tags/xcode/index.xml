@@ -7,10 +7,96 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2012 - 2024 Sarah Reichelt</copyright>
-    <lastBuildDate>Sun, 24 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Sep 2024 14:12:42 +1000</lastBuildDate>
     
         <atom:link href="https://troz.net/tags/xcode/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>Xcode Folders &amp; Groups</title>
+<link>https://troz.net/post/2024/xcode_folders_groups/</link>
+<pubDate>Tue, 17 Sep 2024 14:12:42 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2024/xcode_folders_groups/</guid>
+<description>&lt;p&gt;In Xcode 16, project files and folders are arranged differently in the Project navigator. What used to be a &lt;strong&gt;group&lt;/strong&gt; is now a &lt;strong&gt;folder&lt;/strong&gt;, and this simple change has some interesting effects. At first, I was against the new scheme - in fact in my &lt;a href=&#34;https://troz.net/post/2024/swiftui-mac-2024/&#34; &gt;SwiftUI for Mac 2024&lt;/a&gt;
+ article, I specifically recommended reverting back to the old group method. But after doing some more reading and testing, I think the answer is not so clear cut.&lt;/p&gt;
+&lt;p&gt;Since Xcode 15 doesn&amp;rsquo;t work on macOS Sequoia, now&amp;rsquo;s my last chance to create sample apps with both Xcode 15 and Xcode 16 in macOS Sonoma, and compare the two.&lt;/p&gt;
+&lt;p&gt;Using Xcode 15.4 and Xcode 16.0, I created a macOS app using Swift and SwiftUI. Both projects were placed under &lt;code&gt;git&lt;/code&gt; control - you&amp;rsquo;ll see why this is important soon. Both projects have identical files with identical contents, but take a look at the Project navigators:&lt;/p&gt;
+&lt;p&gt;&lt;style&gt;
+  img {
+    margin: 10px auto;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .social_footer img {
+    border: none;
+    box-shadow: none;
+  }
+&lt;/style&gt;
+
+&lt;style&gt;
+  img {
+    margin: 10px auto;
+  }
+&lt;/style&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/xcode_diffs.png&#34; alt=&#34;Xcode 15 &amp;amp; 16 Project navigators&#34;&gt;&lt;/p&gt;
+&lt;p&gt;At a first glance, there are two differences: the order of the files &amp;amp; folders and the color of the folder icons. A less obvious difference is that in Xcode 15, I can drag files around to arrange them in the order I prefer. In Xcode 16, I can&amp;rsquo;t do that. I can drag files into or out of folders, but I can&amp;rsquo;t move them around at the same level.&lt;/p&gt;
+&lt;p&gt;I like my Project navigator to be organized in a certain way, so I have to confess that I do find this annoying, especially since the folders at the top are ones I use infrequently. I did wonder whether the folders sorting to the top was due to the fact that I have that option turned on for Finder, but when I turned it off in Finder and made a new project, it was still the same.&lt;/p&gt;
+&lt;h3 id=&#34;adding-a-new-file&#34;&gt;
+  Adding a new file
+  &lt;a href=&#34;#adding-a-new-file&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;What happens when you add a new file? There are many different ways to do this in Xcode 16, but I&amp;rsquo;ll stick to the same old method that works for both. With &lt;strong&gt;ContentView.swift&lt;/strong&gt; selected, press &lt;strong&gt;Command-N&lt;/strong&gt; to open the file template chooser, select a new SwiftUI View file, and click &lt;strong&gt;Next&lt;/strong&gt;. Name it &lt;strong&gt;DetailView.swift&lt;/strong&gt; and click &lt;strong&gt;Create&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;This is why I created &lt;code&gt;git&lt;/code&gt; repositories for both projects - I wanted to see what source control changes were detected. In Xcode 16, the new &lt;strong&gt;DetailView.swift&lt;/strong&gt; file is marked with the &lt;strong&gt;A&lt;/strong&gt; that indicates an added file. But the top item in the Project navigator - the project itself - has no change marker. Going to the Source Control navigator confirms that there is only one change in the repository: the new file.&lt;/p&gt;
+&lt;p&gt;In Xcode 15, the new &lt;strong&gt;DetailView.swift&lt;/strong&gt; file is marked with the &lt;strong&gt;A&lt;/strong&gt;, but the project file is also marked with an &lt;strong&gt;M&lt;/strong&gt; for a modified file. The Changes tab in the Source control navigator shows a lot of unreadable changes to the &lt;strong&gt;project.pbxproj&lt;/strong&gt; file, which is one of the files hidden inside the &lt;strong&gt;.xcodeproj&lt;/strong&gt; bundle:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/group_changes.png&#34; alt=&#34;Xcode 15 Changes tab&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This points out the fundamental difference between the two approaches: &lt;strong&gt;groups&lt;/strong&gt; are an artificial construct that is stored in the project files. Usually, this mirrors the file and folder structure in Finder, but it doesn&amp;rsquo;t have to. When you use &lt;strong&gt;folders&lt;/strong&gt;, Xcode is reading the file and folder structure directly from the Finder.&lt;/p&gt;
+&lt;p&gt;One other difference: in Xcode 15, the new file is added to the Project navigator directly after the selected file. In Xcode 16, there appears to be a preset sort order, the logic of which escapes me for now. If I add a file with no other file selected, it&amp;rsquo;s added to the root of the project, outside the main folder. Otherwise, it&amp;rsquo;s added after &lt;strong&gt;ContentView.swift&lt;/strong&gt;, no matter which file was selected.&lt;/p&gt;
+&lt;h3 id=&#34;importing-files&#34;&gt;
+  Importing files
+  &lt;a href=&#34;#importing-files&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;So how does this affect importing files? For both projects, I used &lt;strong&gt;Integrate -&amp;gt; Discard All Changes&amp;hellip;&lt;/strong&gt; to revert them to their original states. Then in Xcode 15, I dragged my folder of sample files into the Project navigator, selecting where I wanted it to appear:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/import_folder_15.png&#34; alt=&#34;Import folder in Xcode 15&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This led to the dialog that I&amp;rsquo;ve always found slightly confusing and far too large, but I chose my standard settings.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/import_settings_15.png&#34; alt=&#34;Import settings in Xcode 15&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The source control markers showed three added files and a modified project file. Checking the project folder in Finder, I could see the new folder and its files in the correct place.&lt;/p&gt;
+&lt;p&gt;With Xcode 16, I wasn&amp;rsquo;t able to select a precise location for the dropped folder, but I was able to choose the destination folder:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/import_folder_16.png&#34; alt=&#34;Import folder in Xcode 16&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The import dialog was less confusing - the only real option was whether to copy the files or move them.&lt;/p&gt;
+&lt;p&gt;The Utilities folder appeared below the Preview Content folder, the three files in it got the &lt;strong&gt;A&lt;/strong&gt; marker, and the project file showed no changes.&lt;/p&gt;
+&lt;p&gt;But since Xcode is reading the file and folder structure directly from the Finder, I can add and move files in Finder as well as in Xcode. Still in Xcode 16, I discarded all changes again to revert to the starting app, then I right-clicked on &lt;strong&gt;ContentView.swift&lt;/strong&gt; and selected &lt;strong&gt;Show in Finder&lt;/strong&gt;. Then I dragged my Utilities folder into the project folder in Finder:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/finder_import.png&#34; alt=&#34;Finder import&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Back in Xcode, there was the folder and its files, but with no &lt;strong&gt;A&lt;/strong&gt; markers on the files. The Source Control navigator showed only the addition of the Utilities folder and not the files inside it. I made a change in &lt;strong&gt;ContentView.swift&lt;/strong&gt;, then went to &lt;strong&gt;Source Control navigator -&amp;gt; Changes&lt;/strong&gt; and clicked &lt;strong&gt;Stage All&lt;/strong&gt;. This added the three new files to the commit. So that worked, just not very smoothly, but again, there were no changes to the project file.&lt;/p&gt;
+&lt;h3 id=&#34;changing-the-folder-structure&#34;&gt;
+  Changing the Folder Structure
+  &lt;a href=&#34;#changing-the-folder-structure&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;What else can I do in Finder that Xcode 16 will pick up? For my next test, I dragged a SwiftUI view file into the project folder in Finder. Then, still in Finder, I selected both the &lt;strong&gt;&amp;hellip;View.swift&lt;/strong&gt; files, right-clicked, and selected &lt;strong&gt;New Folder with Selection&lt;/strong&gt;. I named the folder &lt;strong&gt;Views&lt;/strong&gt; and sure enough, Xcode picked up the changes. The folders in the project appear to sort alphabetically, so the &lt;strong&gt;Views&lt;/strong&gt; folder appeared after the &lt;strong&gt;Utilities&lt;/strong&gt; folder. So I guess that while I don&amp;rsquo;t have total control over the arrangement of the files in the Project navigator, I can organize the files into folders to suit.&lt;/p&gt;
+&lt;p&gt;Then I got to thinking about assets - can I add them to &lt;strong&gt;Assets.xcassets&lt;/strong&gt; using Finder? The assets I add most frequently are images and app icons. I tried dragging an image into the &lt;strong&gt;Assets.xcassets&lt;/strong&gt; folder but it didn&amp;rsquo;t appear in Xcode - I had to import the image as usual which creates an &lt;strong&gt;imageset&lt;/strong&gt; folder with the image and a &lt;strong&gt;Contents.json&lt;/strong&gt; file. If I took an &lt;strong&gt;imageset&lt;/strong&gt; folder from another project and added it using Finder, that worked as expected. Similarly, if I dragged an &lt;strong&gt;AppIcon.appiconset&lt;/strong&gt; folder from another project into &lt;strong&gt;Assets.xcassets&lt;/strong&gt;, that worked too, with Finder offering to merge or replace the existing folder. I chose replace, and my icon was there.&lt;/p&gt;
+&lt;h3 id=&#34;conclusion&#34;&gt;
+  Conclusion
+  &lt;a href=&#34;#conclusion&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Which style will I use going forward? With &lt;strong&gt;groups&lt;/strong&gt;, I get the total flexibility that I&amp;rsquo;m used to, so I can arrange my files and folders exactly as I like. But with &lt;strong&gt;folders&lt;/strong&gt;, I can use Finder to import and organize my files and folders. The big difference is in source control, especially if you&amp;rsquo;re working with other people. When every file addition, deletion or move also changes the project file, you have a much greater chance of getting a merge conflict.&lt;/p&gt;
+&lt;p&gt;Finally, Apple has obviously decided that folders are the way to go - they are the default for new projects in Xcode. Over the years, I have seen Apple make many changes which seemed nonsensical or irritating at first, but nearly every time, it turned out that these changes were the precursor to more significant changes and if you had accepted the initial changes, you were in much better shape to handle the larger changes down the track.&lt;/p&gt;
+&lt;p&gt;Finally, as an educator, I try to stick to the defaults as much as possible. I don&amp;rsquo;t want to confuse anyone by requiring them to make changes to their setup to match me. So I&amp;rsquo;ll be using folders from now on.&lt;/p&gt;
+&lt;p&gt;But remember, if you hate it, or if you want to upgrade an older project, you can always swap. Right-click on the project folder in the Project navigator (the second item), and select &lt;strong&gt;Convert to Group&lt;/strong&gt; or &lt;strong&gt;Convert to Folder&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;What do you think? Will you go with the flow and use folders, or do you intend to stick with groups? If you have any other thoughts, ideas, suggestions or questions, I&amp;rsquo;d love to hear from you.&lt;/p&gt;
+&lt;p&gt;You can contact me using one of the links below or through the &lt;a href=&#34;https://troz.net/contact/&#34; &gt;Contact&lt;/a&gt;
+ page. And if you found this article useful, please &lt;a href=&#34;https://ko-fi.com/trozware&#34; target=&#34;_blank&#34; &gt;buy me a coffee&lt;/a&gt;
+.&lt;/p&gt;</description>
+</item>
     
     <item>
 <title>Converting an App from Obj-C</title>
