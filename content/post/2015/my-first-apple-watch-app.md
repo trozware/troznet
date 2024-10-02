@@ -1,10 +1,10 @@
 ---
 date: 2015-04-02T00:00:00Z
 tags:
-- apple watch
-- watch
-- ios
-- golf
+  - apple watch
+  - watch
+  - ios
+  - golf
 title: My First Apple Watch App
 ---
 
@@ -54,14 +54,14 @@ has a table, with one row per player. A slider with plus & minus buttons lets
 you enter the score for each player and the total score for each player is also
 displayed.
 
-![Data entry](/images/19thHole-Watch2.png)
+![Data entry][i1]
 
 Apart from this data entry view, I have a splash screen which shows you the
 current round as set up on the iPhone and a final summary screen showing
 everyone's totals.
 
-![Splash screen](/images/19thHole-Watch1.png)
-![Summary](/images/19thHole-Watch3.png)
+![Splash screen][i2]
+![Summary][i3]
 
 These images are taken from the Apple Watch simulator running in 42mm mode.
 
@@ -82,10 +82,10 @@ devices.
 The other issue is the fact that I have never seen, touched or used an Apple
 Watch. This means that I had to guess a lot of things:
 
-* how well will it perform?
-* will the icon look OK?
-* are the controls large enough to use?
-* will the text be large enough to read?
+- how well will it perform?
+- will the icon look OK?
+- are the controls large enough to use?
+- will the text be large enough to read?
 
 My main philosophy was to keep the Watch app as simple as possible and use the
 standard interface elements, font sizes etc. Hopefully that will work.
@@ -122,3 +122,6 @@ April 24th.
 [2]: /19th-hole/
 [3]: http://www.raywenderlich.com/video-tutorials#watchkit
 [4]: http://appreviewtimes.com
+[i1]: /images/2015/19thHole-Watch2.png
+[i2]: /images/2015/19thHole-Watch1.png
+[i3]: /images/2015/19thHole-Watch3.png

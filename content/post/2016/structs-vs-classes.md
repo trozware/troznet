@@ -198,4 +198,4 @@ deep!
 
 [1]: http://faq.sealedabstract.com/structs_or_classes/#an-alternative-hypothesis
 [2]: http://swiftdoc.org/v2.2/protocol/Equatable/
-[3]: /images/mutating.png
+[3]: /images/2016/mutating.png

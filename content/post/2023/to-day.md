@@ -1,8 +1,8 @@
 ---
-title: "To-Day"
+title: 'To-Day'
 date: 2023-03-08T14:58:01+10:00
 draft: false
-description: "Creating my own minimalist todo application."
+description: 'Creating my own minimalist todo application.'
 tags: ['mac', 'app', 'swiftui', 'app store', 'menu bar']
 ---
 
@@ -152,8 +152,7 @@ If you have any ideas or feature requests, create an issue on GitHub, or fork an
 [3]: https://sparkle-project.org
 [4]: https://swiftuivoodo.com
 [5]: https://ko-fi.com/H2H3BU7SI
-
-[i1]: /images/today1.png
-[i2]: /images/today_edits.png
-[i3]: /images/today_info.png
-[i4]: /images/todo_complete.png
+[i1]: /images/2023/today1.png
+[i2]: /images/2023/today_edits.png
+[i3]: /images/2023/today_info.png
+[i4]: /images/2023/todo_complete.png

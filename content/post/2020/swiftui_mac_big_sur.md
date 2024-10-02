@@ -295,9 +295,9 @@ Thanks to [Sungbin Jo (조성빈)][12] for proof-reading and suggestions.
 [10]: /contact/
 [11]: https://github.com/apple/swift-evolution/blob/master/proposals/0269-implicit-self-explicit-capture.md
 [12]: https://twitter.com/kb091412
-[i1]: /images/swiftui-mac-11-BadCollapse.png
-[i2]: /images/swiftui-mac-11-ThreeColumns.png
-[i3]: /images/swiftui-mac-11-menus-bad-format.png
-[i4]: /images/swiftui-mac-11-alert.png
-[i5]: /images/swiftui-mac-11-toolbar.png
-[i6]: /images/Xcode_b2_error.png
+[i1]: /images/2020/swiftui-mac-11-BadCollapse.png
+[i2]: /images/2020/swiftui-mac-11-ThreeColumns.png
+[i3]: /images/2020/swiftui-mac-11-menus-bad-format.png
+[i4]: /images/2020/swiftui-mac-11-alert.png
+[i5]: /images/2020/swiftui-mac-11-toolbar.png
+[i6]: /images/2020/Xcode_b2_error.png

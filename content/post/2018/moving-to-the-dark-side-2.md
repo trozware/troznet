@@ -36,9 +36,9 @@ As I said in my [previous post][8], I have already updated several of my macOS a
 [4]: https://themes.gohugo.io
 [5]: https://themes.gohugo.io/hugo-theme-hello-friend/
 [6]: https://twitter.com/panr
-[7]: /images/Dark_Light_web.png
+[7]: /images/2018/Dark_Light_web.png
 [8]: /post/2018/moving-to-the-dark-side/
-[9]: /images/SelectMode.png
+[9]: /images/2018/SelectMode.png
 [1a]: https://itunes.apple.com/app/apple-store/id552293482
 [2a]: https://itunes.apple.com/app/apple-store/id509085586
 [3a]: https://itunes.apple.com/app/apple-store/id997688302

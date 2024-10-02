@@ -138,6 +138,6 @@ You can contact me using one of the links below or through the [Contact][contact
 [3]: /berio/
 [contact]: /contact/
 [kofi]: https://ko-fi.com/trozware
-[i1]: /images/Berio_ContentView.png
-[i2]: /images/berio_settings.png
-[i3]: /images/berio_logging.png
+[i1]: /images/2024/Berio_ContentView.png
+[i2]: /images/2024/berio_settings.png
+[i3]: /images/2024/berio_logging.png

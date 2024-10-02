@@ -20,7 +20,7 @@ And if you are interested in the back story and the development process, have a 
 
 This is the first app that I have published that is 100% SwiftUI, although as I started it several months ago, it still uses the old App Delegate life cycle.
 
-[i1]: /images/Crossfix-anagram.png
+[i1]: /images/2020/Crossfix-anagram.webp
 [1]: https://itunes.apple.com/app/crossfix/id1526235954
 [2]: https://itunes.apple.com/app/crossfix-lite/id1526236100
 [3]: /crossfix/

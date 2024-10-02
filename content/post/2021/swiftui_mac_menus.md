@@ -254,12 +254,12 @@ To insert a web link, go to the Editor menu and select Add Link…
 
 Well that's it. A quick round-up of the ways to use menus in your SwiftIU Mac apps. I hope you found it useful. If you have any suggestions, comments, corrections or improvements, please contact me using one of the links below or through the [Contact][3] page.
 
-[i1]: /images/CommandGroupPlacement.png
-[i2]: /images/BasicViewMenu.png
-[i3]: /images/SidebarToolbarMenu.png
-[i4]: /images/BasicEditMenu.png
-[i5]: /images/TextEditingMenu.png
-[i6]: /images/TextFormattingMenu.png
+[i1]: /images/2021/CommandGroupPlacement.png
+[i2]: /images/2021/BasicViewMenu.png
+[i3]: /images/2021/SidebarToolbarMenu.png
+[i4]: /images/2021/BasicEditMenu.png
+[i5]: /images/2021/TextEditingMenu.png
+[i6]: /images/2021/TextFormattingMenu.png
 [1]: https://backtomac.org
 [2]: https://www.youtube.com/watch?v=hus2LksB3O4
 [3]: /contact/

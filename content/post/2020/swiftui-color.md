@@ -224,11 +224,11 @@ So in summary, use preset colors or color assets to set your colors. And use the
 
 I hope you found this article useful, and if you have any suggestions, corrections or improvements, please contact me using one of the links below or through the [Contact][3] page.
 
-[i1]: /images/swiftui-colors-light-dark.png
-[i2]: /images/swiftui-colors-add-set.png
-[i3]: /images/swiftui-colors-set.png
-[i4]: /images/swiftui-colors-multi-set.png
-[i5]: /images/swiftui-colors-use-color-set.webp
-[i6]: /images/swiftui-colors-alerts.png
+[i1]: /images/2020/swiftui-colors-light-dark.png
+[i2]: /images/2020/swiftui-colors-add-set.png
+[i3]: /images/2020/swiftui-colors-set.png
+[i4]: /images/2020/swiftui-colors-multi-set.png
+[i5]: /images/2020/swiftui-colors-use-color-set.webp
+[i6]: /images/2020/swiftui-colors-alerts.png
 [1]: https://github.com/Toinane/colorpicker/releases/tag/2.0.3
 [3]: /contact/

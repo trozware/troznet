@@ -1,12 +1,12 @@
 ---
-title: "Sparkle"
+title: 'Sparkle'
 date: 2023-04-11T11:48:38+10:00
 draft: false
-description: "Set up your Mac app for updating using the Sparkle framework"
-tags: ["mac",  "sparkle",  "app", "distribution"]
+description: 'Set up your Mac app for updating using the Sparkle framework'
+tags: ['mac', 'sparkle', 'app', 'distribution']
 ---
 
-Last month, I posted about writing my new todo app called [To-Day][1]: why I wrote it and how I wrote it. At the time, I mentioned that I had set it up to install updates using [Sparkle][2] but there was too much detail  to include in the initial post. So here, as promised, is the article about implementing Sparkle.
+Last month, I posted about writing my new todo app called [To-Day][1]: why I wrote it and how I wrote it. At the time, I mentioned that I had set it up to install updates using [Sparkle][2] but there was too much detail to include in the initial post. So here, as promised, is the article about implementing Sparkle.
 
 <!--more-->
 
@@ -25,19 +25,19 @@ This guide deals with those requirements only.
 
 ### Table of Contents
 
-  - [Installation](#installation)
-  - [Adding a Public Key to your App](#adding-a-public-key-to-your-app)
-    - [Checking for a Existing Key](#checking-for-a-existing-key)
-    - [Creating a New Key](#creating-a-new-key)
-    - [Installing the Public Key](#installing-the-public-key)
-  - [Sandboxing](#sandboxing)
-  - [Locating the Updates](#locating-the-updates)
-  - [Coding the Update Check](#coding-the-update-check)
-  - [Exporting the App](#exporting-the-app)
-  - [Making a Disk Image](#making-a-disk-image)
-  - [Generating the appcast.xml](#generating-the-appcast-xml)
-  - [Testing](#testing)
-  - [Summary](#summary)
+- [Installation](#installation)
+- [Adding a Public Key to your App](#adding-a-public-key-to-your-app)
+  - [Checking for a Existing Key](#checking-for-a-existing-key)
+  - [Creating a New Key](#creating-a-new-key)
+  - [Installing the Public Key](#installing-the-public-key)
+- [Sandboxing](#sandboxing)
+- [Locating the Updates](#locating-the-updates)
+- [Coding the Update Check](#coding-the-update-check)
+- [Exporting the App](#exporting-the-app)
+- [Making a Disk Image](#making-a-disk-image)
+- [Generating the appcast.xml](#generating-the-appcast-xml)
+- [Testing](#testing)
+- [Summary](#summary)
 
 ### Installation
 
@@ -69,11 +69,11 @@ Double-click the key to show its details which conveniently includes the public 
 
 Select and copy the public key, then jump to [Installing the Public Key](#installing-the-public-key).
 
-#### Creating a New Key 
+#### Creating a New Key
 
-If you don't already have a key pair, you'll use one of Sparkle's tools to create it. 
+If you don't already have a key pair, you'll use one of Sparkle's tools to create it.
 
-Back in Xcode, right-click on Sparkle in the project navigator and select **Show in Finder** which opens a folder buried deep in your Library. Press **Command-3** to show the folder in Columns mode and then click  the **artifacts** folder that's one level above the Sparkle folder.
+Back in Xcode, right-click on Sparkle in the project navigator and select **Show in Finder** which opens a folder buried deep in your Library. Press **Command-3** to show the folder in Columns mode and then click the **artifacts** folder that's one level above the Sparkle folder.
 
 From there, navigate through **sparkle** to **Sparkle** where you'll see a **bin** folder:
 
@@ -87,7 +87,7 @@ Then enter and run this command:
 ./bin/generate_keys
 ```
 
-This generates the keys, saves them to your keychain and displays the public key. Copy the public key for use in the next section. 
+This generates the keys, saves them to your keychain and displays the public key. Copy the public key for use in the next section.
 
 #### Installing the Public Key
 
@@ -296,21 +296,18 @@ Check out the [GitHub repo][4] for my To-Day app to see how I've configured it.
 
 If you have any suggestions or if you run into any problems following this guide, please contact me using one of the links below or through the [Contact][contact] page. And if you found this article useful, I'd love you to [buy me a coffee][kofi].
 
-
 [1]: /post/2023/to-day/
 [2]: https://sparkle-project.org
 [3]: https://sparkle-project.org/documentation/
 [4]: https://github.com/trozware/To-Day
 [5]: https://sparkle-project.org/documentation/programmatic-setup/
-
 [contact]: /contact/
 [kofi]: https://ko-fi.com/trozware
-
-[i1]: /images/sparkle_install.png
-[i2]: /images/sparkle_key.png
-[i3]: /images/sparkle_folder.png
-[i4]: /images/sparkle_info_key.png
-[i5]: /images/sparkle_connections.png
-[i6]: /images/sparkle_dmg.png
-[i7]: /images/dmg_background.png
-[i8]: /images/sparkle_release_notes.png
+[i1]: /images/2023/sparkle_install.png
+[i2]: /images/2023/sparkle_key.png
+[i3]: /images/2023/sparkle_folder.png
+[i4]: /images/2023/sparkle_info_key.png
+[i5]: /images/2023/sparkle_connections.png
+[i6]: /images/2023/sparkle_dmg.png
+[i7]: /images/2023/dmg_background.png
+[i8]: /images/2023/sparkle_release_notes.png

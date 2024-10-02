@@ -214,7 +214,7 @@ as="font" crossorigin="">
 <hr>
 <p>For a great diagram showing what data object type to use where, check out this image from <a href="https://twitter.com/chriseidhof/status/1280433133813456896" target="_blank" >Chris Edihof</a>
  - thanks Chris!</p>
-<p><img src="/images/dataflow.png" alt="Data flow"></p>
+<p><img src="/images/2019/dataflow.png" alt="Data flow"></p>
 <p>If you read this article before November 18th 2019, please check out <a href="/post/2019/swiftui-data-flow/#observable2" >ObservableObject &amp; @ObservedObject - Part 2</a>
  again as it has gone through several iterations, which are all shown for comparison.</p>
 <hr>
@@ -241,7 +241,7 @@ as="font" crossorigin="">
   }
 </style>
 
-<p><img src="/images/ContentView.png" alt="Content View"></p>
+<p><img src="/images/2019/ContentView.png" alt="Content View"></p>
 <h2 id="property">
   Property
   <a href="#property" class="h-anchor" aria-hidden="true">#</a>
@@ -276,7 +276,7 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>In this example, <code>toggleValue</code> is declared as a <code>Bool</code> with a property wrapper of <code>@State</code>. Inside the <code>Toggle</code>, the <code>isOn</code> value is bound to <code>toggleValue</code> by the leading <code>$</code>. This allows the variable to set the toggle and the toggle to set the variable - 2-way binding.</p>
-<p><img src="/images/Toggle.png" alt="Toggle"></p>
+<p><img src="/images/2019/Toggle.png" alt="Toggle"></p>
 <p><code>@State</code> variables are always value types and are usually local to their view, so Apple recommends marking them as <code>private</code>.</p>
 <p>And unlike properties, <code>@State</code> variables allow you to have data that is dynamic but it can still be passed to subviews as properties for display.</p>
 <h2 id="binding">
@@ -321,7 +321,7 @@ as="font" crossorigin="">
 </span></span></code></pre></div><p>In this example, I have declared a <code>stepperValue</code> property and marked it with <code>@State</code>.</p>
 <p>The interface has been extracted into a subview called <code>NumberChooser</code> and a <code>Binding</code> to the <code>stepperValue</code> property has been passed to <code>NumberChooser</code> using the <code>$</code> prefix, which will ensure that changes to the value can come back. Inside <code>NumberChooser</code> this property is wrapped in the <code>@Binding</code> property wrapper to indicate that it is coming from another source and that changes will be returned.</p>
 <p><code>NumberChooser</code> itself has a subview called <code>NumberBlock</code> but it is a display view only and never mutates the value itself, so <code>stepperValue</code> is passed to this subview as a property only, without the <code>$</code> prefix. It will still be updated every time the data changes as it is contained by the view with the <code>@State</code> property.</p>
-<p><img src="/images/NumberChooser.png" alt="Number Chooser"></p>
+<p><img src="/images/2019/NumberChooser.png" alt="Number Chooser"></p>
 <h2 id="state--binding---part-2">
   @State &amp; @Binding - Part 2
   <a href="#state--binding---part-2" class="h-anchor" aria-hidden="true">#</a>
@@ -356,7 +356,7 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>      <span style="color:#75715e">// see the GitHub project for more details</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></div><p>The form consists of 3 subviews - one each for selecting the pizza, size and crust. The Pizza struct holds all three properties, but each subview only needs a <code>Binding</code> to the single property that it controls. The Text view after the Form is to prove that all the selections come back to the parent.</p>
-<p><img src="/images/PizzaView.png" alt="Pizza View"></p>
+<p><img src="/images/2019/PizzaView.png" alt="Pizza View"></p>
 <h2 id="observableobject--observedobject---part-1">
   ObservableObject &amp; @ObservedObject - Part 1
   <a href="#observableobject--observedobject---part-1" class="h-anchor" aria-hidden="true">#</a>
@@ -396,7 +396,7 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>A sheet is not the ideal way of presenting a view that uses sliders for editing, but I wanted to demonstrate that changing the sliders instantly changes the value of the <code>@ObservedObject</code> for the parent view as well as for the subview. Editing the background color components shows the new background color in the back at the top of the sheet.</p>
 <p>The <code>ColorChooser</code> itself uses 2 subviews and they get a reference to the <code>ColorSet</code> in the same manner.</p>
-<p><img src="/images/ColorChooser.png" alt="Color Chooser"></p>
+<p><img src="/images/2019/ColorChooser.png" alt="Color Chooser"></p>
 <h2 id="a-nameobservable2observableobject--observedobject---part-2a">
   <!-- raw HTML omitted -->ObservableObject &amp; @ObservedObject - Part 2<!-- raw HTML omitted -->
   <a href="#a-nameobservable2observableobject--observedobject---part-2a" class="h-anchor" aria-hidden="true">#</a>
@@ -532,7 +532,7 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>            Text(<span style="color:#e6db74">&#34; </span><span style="color:#e6db74">\(</span><span style="color:#66d9ef">self</span>.personList.persons[unchecked: id].last<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><img src="/images/PersonListView.png" alt="Person List View"></p>
+</span></span></code></pre></div><p><img src="/images/2019/PersonListView.png" alt="Person List View"></p>
 <p>This ended up a bit more complicated than my original idea, but I think it is now <em>good</em> SwiftUI, avoiding several problems from the earlier solutions.</p>
 <p>Thanks to <a href="https://next.json-generator.com" target="_blank" >JSON Generator</a>
  for the sample data. And if anyone has any other solutions to this problem, I would love to hear it. You can contact me using any of the buttons at the end of this article.</p>
@@ -545,7 +545,7 @@ as="font" crossorigin="">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserSettings</span>: ObservableObject {
 </span></span><span style="display:flex;"><span>    @Published <span style="color:#66d9ef">var</span> isLoggedIn: Bool = <span style="color:#66d9ef">false</span>
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><img src="/images/NestedViews.png" alt="Nested Views"></p>
+</span></span></code></pre></div><p><img src="/images/2019/NestedViews.png" alt="Nested Views"></p>
 <p>In this example, the yellow view is the parent view - the different views have different brightly colored backgrounds to make them easy to distinguish. The yellow view has access to the <code>UserSettings</code> like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">NestingViews</span>: View {
 </span></span><span style="display:flex;"><span>    @EnvironmentObject <span style="color:#66d9ef">var</span> userSettings: UserSettings

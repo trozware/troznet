@@ -102,7 +102,7 @@ Alphanumerics and spaces are OK, but I am not sure about anything else.
 
 [1]: /what-is-my-speed/
 [2]: https://itunes.apple.com/app/what-is-my-speed/id1091394524
-[3]: /images/TestFlight_error.png
+[3]: /images/2016/TestFlight_error.png
 [4]: https://itunes.apple.com/app/apple-configurator-2/id1037126344
 [5]: #tldr
 [6]: https://www.simpletechs.net/apps/easy-fix-for-testflight-problem-after-restoring-from-backup/

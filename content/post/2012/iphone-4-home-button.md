@@ -1,9 +1,9 @@
 ---
 date: 2012-03-28T00:00:00Z
 tags:
-- ui
-- iphone
-- trouble-shooting
+  - ui
+  - iphone
+  - trouble-shooting
 title: iPhone 4 Home Button
 ---
 
@@ -40,25 +40,25 @@ to get a software Home button on the screen.
 Go to Settings - General - Accessibility. Scroll down to "Physical & Motor".
 Turn on AssistiveTouch.
 
-[<img title="AssistiveTouch settings" src="/images/HomeButton1-small.png" alt="AssistiveTouch settings" width="200" height="300" />][2]
+![AssistiveTouch settings][2]
 
 When you back out of Settings, you will see a white blob somewhere on your
 screen. This can be dragged to any location around the edge of the screen, so
 you can always move it out of the way in any app.
 
-[<img title="The White Blob" src="/images/HomeButton2-small.png" alt="The White Blob" width="200" height="300" />][3]
+![The White Blob][3]
 
 Tapping on the white blob gives you an overlay view with four options, one of
 which is Home. Tapping this is exactly the same as pressing the physical Home
 button. So with this and the power button, you can do everything, even if the
 Home button stops working completely.
 
-[<img title="AssistiveTouch panel open" src="/images/HomeButton3-small.png" alt="AssistiveTouch panel open" width="200" height="300" />][4]
+![AssistiveTouch panel open][4]
 
 Thanks to Tom at our local Apple Store (Robina, Queensland, Australia) for this
 tip.
 
 [1]: http://www.idownloadblog.com/2011/12/22/recalibrate-home-button-responsive/
-[2]: /images/HomeButton1.png
-[3]: /images/HomeButton2.png
-[4]: /images/HomeButton3.png
+[2]: /images/2012/HomeButton1.png
+[3]: /images/2012/HomeButton2.png
+[4]: /images/2012/HomeButton3.png

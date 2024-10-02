@@ -244,7 +244,7 @@ as="font" crossorigin="">
   }
 </style>
 </p>
-<p><img src="/images/http_teapot.png" alt="HTTP Cats"></p>
+<p><img src="/images/2024/http_teapot.png" alt="HTTP Cats"></p>
 <p><strong>Warning</strong>: there&rsquo;s a bug right now that crashes the app in macOS 15.1. If you scroll down the list in the sidebar and then select a status that is more than 8 or 9 rows below the previous selection, the app crashes with this error: <code>Row index -1 out of row range (numberOfRows: 60)</code>. I&rsquo;ve tested this with Xcode 16.0 beta 6 and Xcode 16.1 and they both act the same. But on a computer running macOS 15.0 beta 7 and Xcode 16.0 beta 6, it works perfectly. So this is a bug in macOS 15.1.</p>
 <p>Here are the areas that I&rsquo;m going to discuss:</p>
 <ul>
@@ -274,11 +274,11 @@ as="font" crossorigin="">
  for writing JavaScript for a couple of years now and overall, it works well. I use it as a form of super autocomplete and targeted search rather than asking it to write large chunks of code for me, and that&rsquo;s what I&rsquo;m hoping to get for Swift now. Xcode has a way to go to catch up yet. Surprisingly, it suffers from one of the same problems as Copilot - it appears to have been trained on old code!</p>
 <p>I know some people are very negative about using any form of AI to write parts of your code, but I see it as just another tool to help us be more efficient. For example, I bet you&rsquo;ve written code to download and process JSON many, many times. Why not let Xcode write that for you? You still have to do the thinking. What&rsquo;s the URL? Which properties do I need? How am I going to use the data? But you don&rsquo;t have to write the boilerplate. It&rsquo;s no different to using a library or a pre-built function.</p>
 <p>I put predictive code completion to the test by creating a new Swift file called <strong>Networker.swift</strong>. I set up a <code>Networker</code> class and gave it a web address. Then I started to write a function to fetch the data:</p>
-<p><img src="/images/predictive_code_1.png" alt="Predictive Code Completion 1"></p>
+<p><img src="/images/2024/predictive_code_1.png" alt="Predictive Code Completion 1"></p>
 <p>The faded text is the suggestion. I had only typed <code>func fet</code>. It used the address to deduce that I was downloading quotes - not unreasonable. I pressed <strong>Tab</strong> to accept and got the next chunk:</p>
-<p><img src="/images/predictive_code_2.png" alt="Predictive Code Completion 2"></p>
+<p><img src="/images/2024/predictive_code_2.png" alt="Predictive Code Completion 2"></p>
 <p>After pressing <strong>Tab</strong> a few more times, I ended up with this:</p>
-<p><img src="/images/predictive_code_3.png" alt="Predictive Code Completion 3"></p>
+<p><img src="/images/2024/predictive_code_3.png" alt="Predictive Code Completion 3"></p>
 <p>This doesn&rsquo;t build and it uses old-style completion handlers instead of async/await. The biggest problem I see is that it&rsquo;s fallen into the usual <code>URLSession</code> trap and not called <code>resume</code> on the task. So this was never going to download anything.</p>
 <p>I started to define a <code>NetworkError</code> enum and it filled in the cases it had used, so that was really good. When I started to define a <code>Quote</code> struct, it also added some reasonable properties, as well as marking it as conforming to <code>Codable</code> - bonus points there.</p>
 <p>When I tried to build, I got sensible warnings pointing out that I had not used either <code>task</code> or <code>data</code>. This would have reminded me to call <code>resume</code> if I hadn&rsquo;t already noticed. I also got a Swift 6 concurrency warning about the completion handler.</p>
@@ -354,7 +354,7 @@ as="font" crossorigin="">
 <p>The other window features I want to explore relate to style, initial position, and dragging. In one of the WWDC 2024 videos, the presenters created a custom <strong>About</strong> window for their app, so I decided to try to do the same.</p>
 <p>First I made a SwiftUI view called <code>AboutView</code>. I added some titles and buttons, including one to close the window. I also added a mesh gradient background to make it look a bit more interesting. See the <a href="#colors-and-gradients" >Colors and gradients</a>
  section below for more info on that.</p>
-<p><img src="/images/about_view.png" alt="About View"></p>
+<p><img src="/images/2024/about_view.png" alt="About View"></p>
 <p>With the view created, now I had to work out how to show it instead of the default <strong>About</strong> window. I started by adding a new window scene to <strong>SwiftUI_Mac_2024App.swift</strong>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>Window(<span style="color:#e6db74">&#34;About&#34;</span>, id: <span style="color:#e6db74">&#34;about&#34;</span>) {
 </span></span><span style="display:flex;"><span>  AboutView()
@@ -411,7 +411,7 @@ as="font" crossorigin="">
 </span></span></code></pre></div><p>Now that I have a property to track the dragging, I added a modifier to the <code>VStack</code> to change the <code>opacity</code> while the window is being dragged:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>.opacity(isDraggingWindow ? <span style="color:#ae81ff">0.8</span> : <span style="color:#ae81ff">1</span>)
 </span></span></code></pre></div><p>And after all this, I finally had what I wanted:</p>
-<p><img src="/images/drag_about.png" alt="Drag About"></p>
+<p><img src="/images/2024/drag_about.png" alt="Drag About"></p>
 <p>One final tweak would be to show an appropriate cursor when the window is being dragged. I tried adding to the <code>dragWindow</code> gesture, but in the end I switched to using an <code>onChange</code> modifier:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>.onChange(of: isDraggingWindow) {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> isDraggingWindow {
@@ -452,7 +452,7 @@ as="font" crossorigin="">
 </h3>
 <p>Last year, Swift Charts got a pie or donut option. This year, the charts team added vector and function plotting. In <strong>ChartSamplesView.swift</strong>, I have three different charts: a bar chart as before, a pie chart and a line chart that plots various sine waves. My understanding is that the various plot types are great for functions or for large data sets but for more comprehensive information, check out the WWDC presentation: <a href="https://developer.apple.com/wwdc24/10155" target="_blank" >Swift Charts: Vectorized and function plots</a>
 .</p>
-<p><img src="/images/line_plot.png" alt="Line Plot"></p>
+<p><img src="/images/2024/line_plot.png" alt="Line Plot"></p>
 <p>In my samples, I have a separate computed property for each of the three chart types, with a <code>@ViewBuilder</code> property to return the correct chart. I&rsquo;ve also updated the chart image export to use SwiftUI&rsquo;s <code>fileExporter</code> instead of the AppKit&rsquo;s <code>NSSave</code>. I had a slight issue with <code>fileExporter</code>. I started off by including the image content type when configuring the exporter. This gave <strong>generic error</strong> when I tried to save - not the most helpful of messages. I removed the content type and it worked fine. I&rsquo;m not sure if this is a bug or a feature.</p>
 <h3 id="colors-and-gradients">
   Colors and gradients
@@ -470,7 +470,7 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>      .gradient
 </span></span><span style="display:flex;"><span>  )
 </span></span></code></pre></div><p>Open the <strong>UI Samples</strong> window and go to the <strong>Form</strong> tab to test out some color mixes. This not only allows us to create our own colors, but it also gives us a way to change colors programmatically like I do with the slider in the example. You can even chain <code>mix</code> modifiers for more variability.</p>
-<p><img src="/images/color_mix.png" alt="Color Mix"></p>
+<p><img src="/images/2024/color_mix.png" alt="Color Mix"></p>
 <p>The other big new thing is mesh gradients. As you saw in the <a href="#windows" >Windows</a>
  section above, I used a mesh gradient to create a background for the <strong>About</strong> window. The basic technique for creating a mesh gradient is to make a grid of points and assign a color to each point. The points are defined as <code>SIMD2&lt;Float&gt;</code> so you initialize each point with <code>SIMD2(x, y)</code>. Then you supply an array of colors for each point. The colors expand out from each point, meshing with their neighbors.</p>
 <p>In my example, I set most of the colors to white but changed the top left, middle and bottom right points to different colors so that I got a diagonal gradient. I also used even spacing for the points, which is not necessary. Check out the code in <strong>MeshBackground.swift</strong> to see how I did this.</p>
@@ -482,7 +482,7 @@ as="font" crossorigin="">
 </h3>
 <p>My final topic is the ability to add animated effects to <a href="https://developer.apple.com/sf-symbols/" target="_blank" >SF Symbols</a>
 . You can test this in the <strong>FormSamplesView.swift</strong> preview, which only works because I used <code>@Previewable</code> to add the menu selection to the preview. Before that, the preview worked but ignored any menu changes. The demo is a bit strange because it will often show the previous animation before using the new one, but this is not the way I would use these effects in an app and it does allow you to see what&rsquo;s happening. Just keep clicking <strong>Show Effect</strong> to see your selected animation.</p>
-<p><img src="/images/symbol_effects.png" alt="Symbol Effects"></p>
+<p><img src="/images/2024/symbol_effects.png" alt="Symbol Effects"></p>
 <p>I wasn&rsquo;t able to get the <code>appear</code> or <code>scale</code> effects to work, but maybe that&rsquo;s an Xcode beta issue. They work in the SF Symbols app. The syntax for applying an effect looks like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>Image(systemName: <span style="color:#e6db74">&#34;rainbow&#34;</span>)
 </span></span><span style="display:flex;"><span>  .font(.system(size: <span style="color:#ae81ff">50</span>))

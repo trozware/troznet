@@ -1,9 +1,9 @@
 ---
 date: 2012-02-25T00:00:00Z
 tags:
-- time in words
-- mac
-- ui
+  - time in words
+  - mac
+  - ui
 title: Interface options for selecting time zones
 ---
 
@@ -61,4 +61,5 @@ It is fast to populate, responsive to searches and didn't take long to set up.
 So I am happy, although still perplexed about NSBrowser. It is on my to-do list
 of things I want to work out one day.
 
-[1]: /time-in-words-for-mac/ [2]: /time-in-words/
+[1]: /time-in-words-for-mac/
+[2]: /time-in-words/

@@ -1,8 +1,8 @@
 ---
 date: 2016-02-17T00:00:00Z
 tags:
-- xcode
-- learning swift
+  - xcode
+  - learning swift
 title: Configuring Xcode
 ---
 
@@ -34,10 +34,10 @@ character for faster comprehension.
 
 My other favourites are:
 
-* [Source Code Pro][2]
-* [Hack][3]
-* [Fira][4]
-* [Inconsolata][5]
+- [Source Code Pro][2]
+- [Hack][3]
+- [Fira][4]
+- [Inconsolata][5]
 
 Look for a font that makes it easy to distinguish the digit '1' from a lowercase
 'l' and where the digit '0' is different to the 'O'.
@@ -51,7 +51,7 @@ need to restart Xcode in order to make it available.
 ## 2. Add-ons:
 
 **Update:** Xcode 8 has removed the ability to run any plugins or to use
-Alcatraz, so this sectrion is no longer valid. Instead Apple is offering offical
+Alcatraz, so this section is no longer valid. Instead Apple is offering official
 support for Xcode Source Editor Extensions, so they are the way of the future.
 
 ---
@@ -90,16 +90,16 @@ Fonts & Colors and Downloads are discussed above.
 
 I tend to leave the others set to the defaults.
 
-[1]: /images/XcodeFontPrefs.png
+[1]: /images/2016/XcodeFontPrefs.png
 [2]: https://github.com/adobe-fonts/source-code-pro
 [3]: https://github.com/chrissimpkins/hack
 [4]: https://github.com/mozilla/Fira
 [5]: http://www.fontsquirrel.com/fonts/Inconsolata
 [6]: http://alcatraz.io
-[7]: /images/Alcatraz.png
-[8]: /images/CocoaPods.png
-[9]: /images/ColorSenseRainbow.png
+[7]: /images/2016/Alcatraz.png
+[8]: /images/2016/CocoaPods.png
+[9]: /images/2016/ColorSenseRainbow.png
 [10]: https://cocoapods.org
 [11]: https://kapeli.com/dash
-[12]: /images/Dash.png
+[12]: /images/2016/Dash.png
 [13]: https://github.com/tonsky/FiraCode

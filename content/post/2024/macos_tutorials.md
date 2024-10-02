@@ -42,4 +42,4 @@ To keep up-to-date with my books and other projects, please read my introduction
 [4]: https://sarahreichelt.gumroad.com/p/welcome-to-sarah-s-books
 [contact]: /contact/
 [kofi]: https://ko-fi.com/trozware
-[i1]: /images/mos_cover_small.png
+[i1]: /images/2024/mos_cover_small.png

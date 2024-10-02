@@ -175,6 +175,6 @@ Hopefully this has taken some of the mystery out of generics, but if you have
 any questions, please get in touch using the [Contact page][2], comment below or
 contact me via Twitter: [@trozware][3].
 
-[1]: /images/Generics_error.png
+[1]: /images/2016/Generics_error.png
 [2]: /contact/
 [3]: https://twitter.com/trozware

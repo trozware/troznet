@@ -396,12 +396,12 @@ The project from this article is available on [GitHub][9]. And as usual, I'd be 
 [contact]: /contact/
 [kofi]: https://ko-fi.com/trozware
 
-[i1]: /images/navigation_2022.jpg
-[i2]: /images/target_active_window.jpg
-[i3]: /images/bar_chart.jpg
-[i4]: /images/chart_animation.mp4
-[i5]: /images/form.jpg
-[i6]: /images/menu_bar_extra.jpg
+[i1]: /images/2022/navigation_2022.jpg
+[i2]: /images/2022/target_active_window.jpg
+[i3]: /images/2022/bar_chart.jpg
+[i4]: /images/2022/chart_animation.mp4
+[i5]: /images/2022/form.jpg
+[i6]: /images/2022/menu_bar_extra.jpg
 
 [a1]: #navigation
 [a2]: #detecting-the-active-window

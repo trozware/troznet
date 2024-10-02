@@ -269,15 +269,15 @@ as="font" crossorigin="">
   }
 </style>
 
-<p><img src="/images/swiftui-colors-add-set.png" alt="Add Color Set"></p>
+<p><img src="/images/2020/swiftui-colors-add-set.png" alt="Add Color Set"></p>
 <p>While naming it after the color may seem logical, I prefer to think about the use cases for this color and set the name to something like &ldquo;cardBackground&rdquo; or &ldquo;alertText&rdquo;.</p>
 <p>By default, your new color set will contains a single color block. Click in the color block itself and then you will be able to edit the color in the Attributes Inspector. If you click the &ldquo;Content&rdquo; popup, you will get access to all the system colors, and you can also select any color space and create a custom color using that color space. Click &ldquo;Color Panel&rdquo; to access a standard color picker if you need it. And change the input method to whatever suits the color information you have.</p>
-<p><img src="/images/swiftui-colors-set.png" alt="Edit Color Set"></p>
+<p><img src="/images/2020/swiftui-colors-set.png" alt="Edit Color Set"></p>
 <p>Modern apps need to be able to handle light and dark modes, and this is where using a color set really shines. Set the color to what you want to use for light mode and then choose &ldquo;Any, Dark&rdquo; from the Appearances popup menu in the Attributes Inspector.</p>
 <p>Now your color set has two blocks and you can change the Dark one to whatever color this should be in dark mode. This feature of Color Sets is a very strong argument for using them instead of defining colors using their RGB values.</p>
-<p><img src="/images/swiftui-colors-multi-set.png" alt="Light &amp; Dark Color Set"></p>
+<p><img src="/images/2020/swiftui-colors-multi-set.png" alt="Light &amp; Dark Color Set"></p>
 <p>And now for the really neat part. To use any of these color sets in your code, add a modifier like <code>foregroundColor</code> just the same as usual, but when the placeholder for the color is selected, press Shift-Command-L to bring up the Library palette and choose the Color icon at the right. You will see all your color sets there and you can insert them easily and accurately.</p>
-<p><img src="/images/swiftui-colors-use-color-set.webp" alt="Using a Color Set"></p>
+<p><img src="/images/2020/swiftui-colors-use-color-set.webp" alt="Using a Color Set"></p>
 <p>Here is the code for my <code>AlertView</code> using two color sets.</p>
 <p>Some people may object to using &ldquo;magic strings&rdquo; to specify the color sets but I feel that so long as the Library is used to insert the color names automatically, there is very little chance of error. But you could always make an enum or struct of color name constants and use these instead.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">AlertView</span>: View {
@@ -303,7 +303,7 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>And here is a composite image showing the two versions of the alert with the colors specified by two color sets:</p>
-<p><img src="/images/swiftui-colors-alerts.png" alt="Alerts Using Color Set"></p>
+<p><img src="/images/2020/swiftui-colors-alerts.png" alt="Alerts Using Color Set"></p>
 <hr>
 <h2 id="light--dark-mode-system-colors">
   Light &amp; Dark Mode System Colors
@@ -342,7 +342,7 @@ as="font" crossorigin="">
 <p>If you have a color picker app (I use <a href="https://github.com/Toinane/colorpicker/releases/tag/2.0.3" target="_blank" >Colorpicker</a>
 ), you can detect the RGB values in the two previews. I made the font bold to make this easier. Red is <code>rgb(232, 77, 61)</code> in light mode but <code>rgb(233, 85, 69)</code> in dark mode. And the others have similar modifications to make them look their best in each environment.</p>
 <p>Take particular note of the three at the bottom of the list: primary, secondary and accentColor. These are incredibly useful when making a layout that works in both light and dark modes.</p>
-<p><img src="/images/swiftui-colors-light-dark.png" alt="Color previews"></p>
+<p><img src="/images/2020/swiftui-colors-light-dark.png" alt="Color previews"></p>
 <p>When choosing a UIColor or NSColor, it is best to use the system versions, so <code>.systemBlue</code> instead of <code>.blue</code> as this gives the dark/light variants that we just saw. And the other semantic colors like <code>UIColor.secondarySystemBackground</code> also have dark/light variants automatically.</p>
 <hr>
 <h3 id="color-as-a-view">

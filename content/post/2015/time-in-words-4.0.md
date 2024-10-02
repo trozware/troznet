@@ -1,8 +1,8 @@
 ---
 date: 2015-04-15T00:00:00Z
 tags:
-- time in words
-- ios
+  - time in words
+  - ios
 title: Time In Words 4.0
 ---
 
@@ -17,9 +17,9 @@ words.
 When it comes to converting times, I doubt there are many people in the world
 who haven't had problems.
 
-* Is that morning or afternoon for them?
-* Are they in tomorrow, today or yesterday?
-* What if they are using daylight-savings?
+- Is that morning or afternoon for them?
+- Are they in tomorrow, today or yesterday?
+- What if they are using daylight-savings?
 
 Having the time written out removes all ambiguity. As an example, Time In Words
 currently reports very clearly:
@@ -46,7 +46,7 @@ once the app opens.
 One new feature (again taken from the Mac version), is the ability to calculate
 "What time will it be..."
 
-![What time](/images/TiW_what_time.png)
+![What time][i1]
 
 You dial in your local date and time to see what time that will be in your
 selected zone. And if you want to calculate the other way around, tap the "Swap
@@ -89,8 +89,8 @@ policy and allow me to try again, but who knows.
 So you can see what you are missing, here are a couple of screen shots from the
 watch app showing my local time, plus one time zone:
 
-![Local time](/images/Watch_1.png)
-<span class="float_right">![Converted time](/images/Watch_2.png)</span>
+![Local time][i2]
+![Converted time][i3]
 
 ---
 
@@ -105,3 +105,6 @@ be a .0 release, so that meant going to version 4.0
 [2]: http://www.qlocktwo.com/
 [3]: /time-in-words-for-mac/
 [4]: /19th-hole/
+[i1]: /images/2015/TiW_what_time.png
+[i2]: /images/2015/Watch_1.png
+[i3]: /images/2015/Watch_2.png

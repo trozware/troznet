@@ -216,7 +216,7 @@ as="font" crossorigin="">
 <p>For reference, I am running the beta of macOS 11 Big Sur (20A4299v) and the beta of Xcode 12 (12A6159) on a rather aged MacBook with a dodgy battery. I do not have Xcode 12 installed on my Catalina Mac, so I have no way of telling whether some of the oddities are due to Xcode or Big Sur but I will try to keep this article updated as the new betas improve things.</p>
 <hr>
 <p><strong>Update:</strong> I have downloaded macOS Big Sur beta 2 (20A4300b) and Xcode 12 beta 2, oddly labelled in the About box as 11.5 (11E608c). I have only found one thing that needs to be changed. I had set the deployment target to 11.0 but the new Xcode does not allow this as an option and the app fails to build. Change the deployment target to 10.16 to make it work.</p>
-<p><img src="/images/Xcode_b2_error.png" alt="Xcode 12 beta 6 error"></p>
+<p><img src="/images/2020/Xcode_b2_error.png" alt="Xcode 12 beta 6 error"></p>
 <p>It looks like Apple is having some problems with consistency in the new version numbers in both macOS and Xcode.</p>
 <hr>
 <h2 id="the-new-project">
@@ -302,7 +302,7 @@ as="font" crossorigin="">
   }
 </style>
 
-<p><img src="/images/swiftui-mac-11-BadCollapse.png" alt="Initial collapsible sections"></p>
+<p><img src="/images/2020/swiftui-mac-11-BadCollapse.png" alt="Initial collapsible sections"></p>
 <p>The <code>Detail</code> view to be displayed when a status is selected had no major changes, so I dropped in the file from the previous app, without the extra bits to do with notifications and preferences. However since SwiftUI now includes a <code>ProgressView</code>, I swapped out my &ldquo;Loading&hellip;&rdquo; text for a indeterminate progress twirly.</p>
 <hr>
 <h3 id="three-column-layout">
@@ -313,7 +313,7 @@ as="font" crossorigin="">
 <p>The way I implemented this was to have the first list only show the section headers with <code>NavigationLinks</code> to a sub menu. To reserve the column layout, I had an empty submenu after the main list.</p>
 <p>In the second column, I showed the sub-headers with <code>NavigationLinks</code> to the <code>DetailView</code>. This view reserved the space for the third column with a <code>Text</code> view that changed its text depending on whether that submenu was displaying anything or not.</p>
 <p>I expanded the menu items to be big and chunky, which I feel fits the new style. The only remaining problem was that with the primary list set to use <code>SidebarListStyle()</code>, it only ever showed the first item. I had to change this to <code>InsetListStyle()</code> to see all the items! This lost the full height sidebar effect, but I assume this is a temporary bug.</p>
-<p><img src="/images/swiftui-mac-11-ThreeColumns.png" alt="Three column layout"></p>
+<p><img src="/images/2020/swiftui-mac-11-ThreeColumns.png" alt="Three column layout"></p>
 <hr>
 <h3 id="menus">
   Menus
@@ -348,7 +348,7 @@ as="font" crossorigin="">
 </span></span></code></pre></div><p>A <code>CommandMenu</code> adds a new menu and it is always positioned between the standard View and Window menus. To add items to an existing menu, you need to use a <code>CommandGroup</code> and tell it where to appear. It can be <code>after</code> or <code>before</code> various standard menu items. Look up the docs for <a href="https://developer.apple.com/documentation/swiftui/commandgroupplacement" target="_blank" >CommandGroupPlacement</a>
  to see which items you can use as positional markers. I used <code>after .windowArrangement</code>.</p>
 <p>Weirdly, the font, color and spacing of these menu items was different to the standard menu items. I can only assume this is a bug which will be fixed. I faked the proper look with modifiers, but it didn&rsquo;t feel right. This screen shot shows the default look with the three mode items being my additions to the standard Window menu.</p>
-<p><img src="/images/swiftui-mac-11-menus-bad-format.png" alt="Menus with incorrect formatting"></p>
+<p><img src="/images/2020/swiftui-mac-11-menus-bad-format.png" alt="Menus with incorrect formatting"></p>
 <p>I tried using <code>Labels</code> to add an icon to the menu item. As I was switching between view modes, I wanted to have a checkmark before the selected menu item. This worked when first drawn, but the menus did not refresh when the data changed, so that was no use.</p>
 <p>I also tested using <code>Divider()</code> to get a menu separator. It worked, but the look didn&rsquo;t match the standard dividers. So menus need a lot of work still&hellip;</p>
 <p>I kept the technique of having menu items publish notifications that other views could pick up. This seems to work well. I would have liked to have certain menus or menu items only appear conditionally or perhaps enable/disable conditionally, but I could not see how to do that. Since menus do not appear to update when data changes, this may not be possible right now.</p>
@@ -397,7 +397,7 @@ as="font" crossorigin="">
   <a href="#dialogs" class="h-anchor" aria-hidden="true">#</a>
 </h3>
 <p>I have already used a sheet to display the UI elements and ActionSheets are not available on macOS, so that just leaves Alerts and file dialogs. File dialogs work identically in the app although they look quite different on Big Sur. Alerts look quite different but I think they are nice. Since the app icon is a prominent part of the dialog, I added one to make it look good. I understand that different numbers of buttons will get arranged in different ways.</p>
-<p><img src="/images/swiftui-mac-11-alert.png" alt="Alert dialog"></p>
+<p><img src="/images/2020/swiftui-mac-11-alert.png" alt="Alert dialog"></p>
 <hr>
 <h3 id="other-improvements">
   Other Improvements
@@ -420,7 +420,7 @@ as="font" crossorigin="">
 </h4>
 <p>This was an aspect of macOS apps that I referred to but didn&rsquo;t explore last time mainly because I assumed it would be done through the storyboard, just as with an AppKit app. Now we can add a <code>.toolbar</code> modifier to a view and have it include <code>ToolbarItems</code>. For the first time, we can now use <a href="https://developer.apple.com/sf-symbols/" target="_blank" >SF Symbols</a>
  in a macOS app, so that made it easy to add good looking toolbar items.</p>
-<p><img src="/images/swiftui-mac-11-toolbar.png" alt="Toolbar and navigation title"></p>
+<p><img src="/images/2020/swiftui-mac-11-toolbar.png" alt="Toolbar and navigation title"></p>
 <p>I would like to vary the toolbar according to what is being displayed, and the toolbar is also used to show the navigation title, but perhaps that is a topic for another day. There is certainly a lot to explore there.</p>
 <h4 id="pyramid-of-doom">
   Pyramid of Doom

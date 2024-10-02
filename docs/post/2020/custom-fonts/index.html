@@ -58,7 +58,7 @@ as="font" crossorigin="">
     <meta property="article:published_time" content="2020-04-01T10:27:59+10:00">
     <meta property="article:modified_time" content="2020-04-01T10:27:59+10:00">
     <meta property="article:tag" content="Font">
-    <meta property="article:tag" content="MacOS">
+    <meta property="article:tag" content="Macos">
     <meta property="article:tag" content="Ios">
 
 
@@ -221,10 +221,10 @@ as="font" crossorigin="">
 </h2>
 <p>The first thing is to find a suitable font and make sure that the license for that font matches your use. I wanted a font that looked like it was hand-written, so I went to fontspace and searched the <a href="https://www.fontspace.com/category/handwriting" target="_blank" >hand-writing category</a>
  there.</p>
-<p><img src="/images/SelectFont1.png" alt="Fonts"></p>
+<p><img src="/images/2020/SelectFont1.png" alt="Fonts"></p>
 <p>Since I wanted to use this in a paid app, I checked the &ldquo;Commercial-use&rdquo; button to limit the search. The one I chose was called &ldquo;<a href="https://www.fontspace.com/get/family/4yyjn" target="_blank" >Painting With Chocolate</a>
 &rdquo; by &ldquo;Make mooze&rdquo;</p>
-<p><img src="/images/SelectFont2.png" alt="Download font"></p>
+<p><img src="/images/2020/SelectFont2.png" alt="Download font"></p>
 <p>I downloaded the font and un-zipped the file which gave me a single file called &ldquo;Paintingwithchocolate-K5mo.ttf&rdquo;. You can use either &ldquo;.ttf&rdquo; or &ldquo;.otf&rdquo; font files.</p>
 <hr>
 <h2 id="using-the-font-in-an-ios-app">
@@ -237,16 +237,16 @@ as="font" crossorigin="">
 <li>Check &ldquo;Copy files if needed&rdquo;.</li>
 <li>Check your app in the &ldquo;Add to targets&rdquo; section.</li>
 </ul>
-<p><img src="/images/AddFontToProject.png" alt="Add font to project"></p>
+<p><img src="/images/2020/AddFontToProject.png" alt="Add font to project"></p>
 <blockquote>
 <p><em>In one of my tests, the file stayed in the Downloads folder even after checking &ldquo;Copy files&rdquo;, so I deleted the reference, manually moved the font file to my project folder and added it again.</em></p>
 </blockquote>
 <p>Now the font file is in the project but there is still more work to do.</p>
 <p>Select the font file in the Project Navigator. Press Return as if you are going to edit the name. Select the complete file name, <strong>including the file extension</strong> and copy it.</p>
-<p><img src="/images/CopyFontName.png" alt="Copy font file name"></p>
+<p><img src="/images/2020/CopyFontName.png" alt="Copy font file name"></p>
 <p>Now go to the Info.plist file. Right-click in the blank space below the existing entries and select &ldquo;Add Row&rdquo; from the popup menu. In the box that appears, start typing &ldquo;Font&rdquo; using an upper-case &ldquo;F&rdquo;. When you see &ldquo;Fonts provided by application&rdquo;, select that.</p>
 <p>This entry is an array. Click the disclosure triangle to the left and you should see &ldquo;Item 0&rdquo; appear. Paste the name of your font file, including the file extension, into the value for &ldquo;Item 0&rdquo;.</p>
-<p><img src="/images/FontsProvided.png" alt="Setting Info.plist entry"></p>
+<p><img src="/images/2020/FontsProvided.png" alt="Setting Info.plist entry"></p>
 <p>Your app now has a font file and knows to make it available. But you aren&rsquo;t finished yet.</p>
 <p>To use a custom font, you need to know its exact name. In SwiftUI, the code will be something like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  Text(<span style="color:#e6db74">&#34;Hello, World!&#34;</span>)
@@ -270,7 +270,7 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>You can run the app in the Simulator or use &ldquo;Debug Preview&rdquo; to make this show up in the console, but once you have the list, scroll through in until you find the font you just added. The headers are the names of font families and the indented entries are the font names themselves.</p>
-<p><img src="/images/FontsList-iOS.png" alt="List of Fonts"></p>
+<p><img src="/images/2020/FontsList-iOS.png" alt="List of Fonts"></p>
 <p>This time I found that the name of the font was quite obvious: &ldquo;PaintingWithChocolate&rdquo; but this is not always the case. And if the font has any variants, you will need to use the complete name e.g. &ldquo;Optima-ExtraBlack&rdquo;</p>
 <p>With the name of the font, you are finally able to use it in the app, like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
@@ -279,7 +279,7 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>            .font(.custom(<span style="color:#e6db74">&#34;PaintingWithChocolate&#34;</span>, size: <span style="color:#ae81ff">40</span>))
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><img src="/images/FontUsed-iOS.png" alt="Font in use - iOS"></p>
+</span></span></code></pre></div><p><img src="/images/2020/FontUsed-iOS.png" alt="Font in use - iOS"></p>
 <hr>
 <h2 id="using-the-font-in-a-mac-app">
   Using the Font in a Mac App
@@ -289,7 +289,7 @@ as="font" crossorigin="">
 <p>Install the font file in your project as before, making sure to copy the file into the project and to add it to the app target.</p>
 <p>For a Mac app, you do not need to specify the font file name in your Info.plist file. Instead, you have to tell the Info.plist where to look for custom fonts in your project directory.</p>
 <p>Open your Info.plist, right-click in the blank space below the existing entries and select &ldquo;Add Row&rdquo; from the popup menu. Start typing &ldquo;Application&rdquo; using an upper-case &ldquo;A&rdquo;. When you see &ldquo;Application fonts resource path&rdquo;, select that and enter a period as the value. A period or full-stop tells Xcode that you mean the current directory but even if you have your fonts in a sub-directory, this seems to work.</p>
-<p><img src="/images/AppFontPath.png" alt="Application Font Path"></p>
+<p><img src="/images/2020/AppFontPath.png" alt="Application Font Path"></p>
 <p>You do not need to set &ldquo;Fonts provided by application&rdquo; for a Mac app, although if I had a problem, I would set it as I feel that this is something that Apple may add at some stage.</p>
 <p>While I was using the same font for both apps and so already had the exact name, you may still need to check the list of installed fonts in a Mac app. The function for doing that is quite different:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">listInstalledFonts</span>() {
@@ -305,7 +305,7 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>      }
 </span></span><span style="display:flex;"><span>  }
 </span></span></code></pre></div><p>The format of the print-out is different too, but you can see where I have selected the exact name to use.</p>
-<p><img src="/images/FontList-Mac.png" alt="List of Fonts - Mac"></p>
+<p><img src="/images/2020/FontList-Mac.png" alt="List of Fonts - Mac"></p>
 <p>Then the SwiftUI code for using the font was just the same:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> body: some View {
@@ -314,7 +314,7 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>            .frame(maxWidth: .infinity, maxHeight: .infinity)
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><img src="/images/FontUsed-Mac.png" alt="Font in use in Mac app"></p>
+</span></span></code></pre></div><p><img src="/images/2020/FontUsed-Mac.png" alt="Font in use in Mac app"></p>
 <hr>
 <h2 id="storyboard-apps">
   Storyboard apps
@@ -338,11 +338,11 @@ as="font" crossorigin="">
 <ol>
 <li>
 <p>Is the font file&rsquo;s target membership set to the app?
-<img src="/images/FontFileTargetSet.png" alt="File target Set"></p>
+<img src="/images/2020/FontFileTargetSet.png" alt="File target Set"></p>
 </li>
 <li>
 <p>Is the font file being included in the &ldquo;Copy Bundle Resources&rdquo; build phase? If not, drag it in manually from the Project Navigator.
-<img src="/images/FontInCopyBundleResources.png" alt="Copy Bundle Resources"></p>
+<img src="/images/2020/FontInCopyBundleResources.png" alt="Copy Bundle Resources"></p>
 </li>
 <li>
 <p>iOS Info.plist - is there a typo in the &ldquo;Fonts provided by application&rdquo; setting? Copy the file name and paste it in directly rather than trying to re-type it.</p>

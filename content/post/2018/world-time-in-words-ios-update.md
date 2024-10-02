@@ -38,9 +38,9 @@ But the feature that I use most in the Mac app is "What time will it be when..."
 The iPad version of the app is identical at this stage, but I am thinking of adjusting the interface so as to take advantage of the increased real estate. If other work doesn't get in the way, this may happen...
 
 [1]: /post/2015/time-in-words-4.0/
-[2]: /images/WTiW-iOS.jpg
+[2]: /images/2018/WTiW-iOS.jpg
 [3]: /time-in-words-for-mac/
-[4]: /images/WTiW-iOS-1.jpg
-[5]: /images/WTiW-iOS-4.jpg
-[6]: /images/WTiW-iOS-2.jpg
+[4]: /images/2018/WTiW-iOS-1.jpg
+[5]: /images/2018/WTiW-iOS-4.jpg
+[6]: /images/2018/WTiW-iOS-2.jpg
 [7]: http://itunes.apple.com/app/time-in-words/id498403851

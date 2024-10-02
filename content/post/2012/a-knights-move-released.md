@@ -1,13 +1,14 @@
 ---
 date: 2012-07-09T00:00:00Z
-mac_app_desc: A puzzle game where you have to move your knight across a board to a target
+mac_app_desc:
+  A puzzle game where you have to move your knight across a board to a target
   square using the same movements as a knight in chess.
 mac_app_image: /icons/KnightsMove128.png
 mac_app_name: A Knight's Move
 tags:
-- knight's move
-- chess
-- mac
+  - knight's move
+  - chess
+  - mac
 title: A Knight's Move Released
 ---
 
@@ -38,17 +39,17 @@ with themes.
 
 See more about "A Knight's Move" at the [Knight's Move web page][1]
 
-Get the game from the
-<a href="http://itunes.apple.com/app/a-knights-move/id533321133" target="_blank">Mac
-App Store</a>.
+Get the game from the [Mac App Store][2].
 
-<img title="Tutorial puzzle on iPhone" src="/images/Tutorial-500.png" alt="Tutorial puzzle on iPhone"/>
+![Tutorial puzzle on iPhone][4]
 
 Tutorial puzzle on iPhone
 
-[<img title="Pesky Pawns - one of the more difficult puzzles on Mac." src="/images/PeskyPawns-600.png" alt="Pesky Pawns - one of the more difficult puzzles on Mac." />][3]
+![Pesky Pawns - one of the more difficult puzzles on Mac.][3]
 
 Pesky Pawns - one of the more difficult puzzles on Mac.
 
 [1]: /knightsmove/
-[3]: /images/PeskyPawns.png
+[2]: http://itunes.apple.com/app/a-knights-move/id533321133
+[3]: /images/2012/PeskyPawns.png
+[4]: /images/2012/Tutorial-500.png

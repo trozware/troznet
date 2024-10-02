@@ -276,9 +276,9 @@ as="font" crossorigin="">
   }
 </style>
 
-<p><img src="/images/apple_data_flow.jpeg" alt="Apple&rsquo;s flow chart"></p>
+<p><img src="/images/2023/apple_data_flow.jpeg" alt="Apple&rsquo;s flow chart"></p>
 <p>This is a good starting point, but I feel that it leaves out a few cases, so I&rsquo;ve made my own:</p>
-<p><img src="/images/my_data_flow.png" alt="My flow chart"></p>
+<p><img src="/images/2023/my_data_flow.png" alt="My flow chart"></p>
 <p>Apart from adding some details to the decisions points, there are really only two additions to my chart:</p>
 <ul>
 <li>If a property doesn&rsquo;t need to change, it can be a <code>let</code>.</li>
@@ -306,9 +306,9 @@ as="font" crossorigin="">
   <a href="#sample-app" class="h-anchor" aria-hidden="true">#</a>
 </h3>
 <p>My sample app demonstrates the following data flow options:</p>
-<p><img src="/images/data_flow_types.png" alt="Sample app options"></p>
+<p><img src="/images/2023/data_flow_types.png" alt="Sample app options"></p>
 <p>The code is available on <a href="https://github.com/trozware/swiftui-data-flow-2023" target="_blank" >GitHub</a>
- and I recommend you download the project and  follow along. It requires macOS 14 and Xcode 15. Currently I&rsquo;m using macOS 14.0 beta 3 (23A5286g) and Xcode 15.0 beta 3 (15A5195k), but I will update this article with any changes as we work through the beta cycle.</p>
+ and I recommend you download the project and follow along. It requires macOS 14 and Xcode 15. Currently I&rsquo;m using macOS 14.0 beta 3 (23A5286g) and Xcode 15.0 beta 3 (15A5195k), but I will update this article with any changes as we work through the beta cycle.</p>
 <p>Because Xcode 15 now supports live previews for Mac apps, you can test all the options from inside Xcode. In the Project navigator, expand the numbered groups and preview the first file in each group to view and interact with that data flow type.</p>
 <p>Or go to the Bookmarks navigator where I&rsquo;ve used the new bookmaking system to provide quick links to each one. You can even check off each one as you finish that section.</p>
 <p>In the code snippets below, I include the essentials, but strip out most display modifiers and some similar views to keep the code short. The project contains the complete code.</p>
@@ -501,7 +501,7 @@ as="font" crossorigin="">
 <p>In beta 3, observed properties no longer require an initial value. For this class, I actually want to specify initial values, but in the next section, I do not.</p>
 <hr>
 <p>If you want a look at what&rsquo;s happening inside the macro, right-click on <code>@Observable</code> and select <strong>Expand Macro</strong>. When you&rsquo;ve finished, right -click again and choose <strong>Hide Macro Expansion</strong>.</p>
-<p><img src="/images/show_macro.png" alt="Expand the macro"></p>
+<p><img src="/images/2023/show_macro.png" alt="Expand the macro"></p>
 <p>While this is not something I can read comfortably, it shows how macros are regular Swift code that saves a lot of typing, but are not doing magical things invisibly in the background.</p>
 <p>Now that the model uses the new macro, how do we use it?</p>
 <p>Again, the owning view declares it using <code>@State</code>.</p>
@@ -524,10 +524,10 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>    ForeColorChooser(colorSet: colorSet)
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><img src="/images/color_chooser.png" alt="Color chooser"></p>
+</span></span></code></pre></div><p><img src="/images/2023/color_chooser.png" alt="Color chooser"></p>
 <p>There is one oddity to beware of. When declaring the original <code>colorSet</code> property, I use <code>@State</code> but if I declare it as a simple <code>var</code>, the app still works. Don&rsquo;t do this!</p>
 <p>If you remember the older code style, the owning view initialized an <code>ObservableObject</code> using <code>@StateObject</code>. Subsequent views declared the same property using <code>@ObservedObject</code> but it was very important for the owning view to use <code>@StateObject</code> to avoid strange and difficult to trace bugs. The app worked if you used <code>@ObservedObject</code> instead of <code>@StateObject</code> for the original declaration, but then odd things could happen.</p>
-<p>I think this is the same, and it&rsquo;s just as important for the owning view to declare the original property using  <code>@State</code>.</p>
+<p>I think this is the same, and it&rsquo;s just as important for the owning view to declare the original property using <code>@State</code>.</p>
 <p><a href="#top" >Back to Top</a>
 </p>
 <hr>
@@ -573,8 +573,8 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Even though <code>shouldShowInspector</code> is only true when there is a valid <code>selectedPerson</code>, force unwrapping causes a crash as it appears that the inspector tries to draw itself off-screen on launch.</p>
 <p>The <code>PersonEditView</code> in the inspector receives the person as <code>@Bindable</code> and populates the fields on a form. And editing the data flows right back to the list.</p>
-<p><img src="/images/person_edit.mp4" alt="Editing a person"></p>
-<p>This took a lot less code than the previous version. Part of the improvement was the ability to use bindings in a list, which we got last year, but another big part was using the <code>Person</code> directly as the selection. This needs the <code>Hashable</code> and  <code>Equatable</code> conformance, which I think should be a standard part of <code>Identifiable</code>, but once that&rsquo;s in place, all the data flows smoothly.</p>
+<p><img src="/images/2023/person_edit.mp4" alt="Editing a person"></p>
+<p>This took a lot less code than the previous version. Part of the improvement was the ability to use bindings in a list, which we got last year, but another big part was using the <code>Person</code> directly as the selection. This needs the <code>Hashable</code> and <code>Equatable</code> conformance, which I think should be a standard part of <code>Identifiable</code>, but once that&rsquo;s in place, all the data flows smoothly.</p>
 <p>If I was using a sheet for the editor, it would be even neater as I could tie the sheet&rsquo;s appearance to <code>selectedPerson</code>.</p>
 <blockquote>
 <p>When you have a model class and you want changes to be published, declare the class with the <code>@Observable</code> macro. The owning view declares the model using <code>@State</code> and can pass it to editing subviews using <code>@Bindable</code> or to display subviews as <code>let</code>.</p>
@@ -615,7 +615,7 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>And even though ChildView doesn&rsquo;t use the environment object, because its preview contains GrandChildView that does, it also needs the <code>environment</code> modifier in its preview, but not in the main view code.</p>
 <p>In the sample app, the various nested views are brightly colored to show which is which. Using the <strong>Log In</strong> or <strong>Log Out</strong> buttons works on either the outer view or the inner view with the data being synced between them.</p>
-<p><img src="/images/environment.png" alt="Environment"></p>
+<p><img src="/images/2023/environment.png" alt="Environment"></p>
 <blockquote>
 <p>If you have a class that is global to your app, like UserSettings in this example, declare the class with the <code>@Observable</code> macro. Inject it into your view hierarchy using <code>.environment</code> and then use <code>@Enviroment</code> to access it.</p>
 </blockquote>
@@ -626,7 +626,7 @@ as="font" crossorigin="">
 <p>There is one aspect of using <code>@Enviroment</code> where things get tricky, and that&rsquo;s if you need to use any properties of the environment object as bindings for other controls.</p>
 <p>I added a <code>Toggle</code> to <code>GrandChildView</code> and wanted to connect it to the same <code>userSettings.isLoggedIn</code> Boolean. A toggle takes a binding, so normally, I&rsquo;d do this by adding the <code>$</code> prefix to the property to bind.</p>
 <p>With <code>@Environment</code>, this gives an error:</p>
-<p><img src="/images/env_binding.png" alt="Binding error"></p>
+<p><img src="/images/2023/env_binding.png" alt="Binding error"></p>
 <p>The solution is to create an intermediary <code>@Bindable</code> property from the <code>@Environment</code> property and bind it to the toggle (or any control that needs a binding).</p>
 <p>Stripping out a lot of what was there, the code becomes:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">GrandChildView</span>: View {

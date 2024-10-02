@@ -244,7 +244,7 @@ as="font" crossorigin="">
   }
 </style>
 
-<p><img src="/images/today1.png" alt="Running the app for the first time"></p>
+<p><img src="/images/2023/today1.png" alt="Running the app for the first time"></p>
 <p>I&rsquo;m not going to go through the entire app in detail. You can download the project and check out the code to see it all. I&rsquo;m just going to give some details about the app structure and architecture as well as mentioning some code that I found new or interesting.</p>
 <h2 id="the-app">
   The App
@@ -256,12 +256,12 @@ as="font" crossorigin="">
 <li>Add a <code>MenuBarExtra</code> to your app <code>body</code> with some views to show in the menu.</li>
 <li>Insert an entry into <strong>Target - Info</strong>, setting <code>Application is agent (UIElement)</code> to <code>YES</code>.</li>
 </ol>
-<p><img src="/images/today_info.png" alt="Editing the app info"></p>
+<p><img src="/images/2023/today_info.png" alt="Editing the app info"></p>
 <p>You can then delete <strong>ContentView.swift</strong> from the project since nothing uses it.</p>
 <p>Looking at the first screenshot, you can see that I&rsquo;ve split the menu into four sections. The first one displays the actual todos and handles checking them off. This view is provided by the main data object.</p>
 <p>The other sections are static and deal with editing the todos, configuring the app settings and managing the app itself. Each of these is split off into a separate view file to keep the main app body as uncluttered as possible. The files for these three sections are in the <strong>Menu Views</strong> group in the Xcode project.</p>
 <p>Editing the todos caused the most issues with the app and took several iterations, but I&rsquo;m pleased with this version:</p>
-<p><img src="/images/today_edits.png" alt="Editing the todos"></p>
+<p><img src="/images/2023/today_edits.png" alt="Editing the todos"></p>
 <p>I tried lots of ways of tracking the focus and adding keyboard commands to move items up and down the list but in the end, I went for simplicity. The editing is embedded in a <code>Form</code>. This means that I get the standard tabbing behaviour by default, but I also get the small toggle switches, which I really like.</p>
 <p>The main view for this is <code>EditView</code> and it, with its subviews, are in the <strong>Edit Views</strong> project group.</p>
 <p>I&rsquo;ll discuss the <strong>Models</strong> group and the data flow in a minute, but to finish describing the app structure, the <code>AboutView</code> tells you more about the app. I love being able to use basic Markdown styling in <code>Text</code> views. And I learnt a good lesson: if you&rsquo;re having trouble with truncated text, check out the <code>fixedSize</code> modifier.</p>
@@ -342,7 +342,7 @@ as="font" crossorigin="">
 <p>For this app, it&rsquo;s not really a problem, but I have used other apps where it would be a real showstopper.</p>
 <p>And what&rsquo;s next for this app? I&rsquo;ll use it in my daily routine for a while and see what I like, what I hate and what extra features I&rsquo;d like. One possibility is to add some global shortcuts. This requires hooking into the Accessibility settings, which I am reluctant to do, so I&rsquo;ll need to think about this.</p>
 <p>If you have any ideas or feature requests, create an issue on GitHub, or fork and edit the project and then create a pull request.</p>
-<p><img src="/images/todo_complete.png" alt="Day complete"></p></div>
+<p><img src="/images/2023/todo_complete.png" alt="Day complete"></p></div>
   
   <div class="pagination">
     <div class="pagination__title">

@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="Sets are the forgotten collection type in many languages, including Swift. I think most developers use Arrays without really considering the advantages of using a Set but they have some amazingly useful features that should make them a part of any progammer&amp;rsquo;s toolkit.
+  content="Sets are the forgotten collection type in many languages, including Swift. I think most developers use Arrays without really considering the advantages of using a Set but they have some amazingly useful features that should make them a part of any programmer&amp;rsquo;s toolkit.
 If you want to follow along with a playground, you can download it here .
 What is a Set? # A Set is an un-ordered collection of unique items."
 />
@@ -50,7 +50,7 @@ as="font" crossorigin="">
 <meta property="og:url" content="https://troz.net/post/2016/learning-swift-sets/">
   <meta property="og:site_name" content="TrozWare">
   <meta property="og:title" content="Learning Swift - Sets">
-  <meta property="og:description" content="Sets are the forgotten collection type in many languages, including Swift. I think most developers use Arrays without really considering the advantages of using a Set but they have some amazingly useful features that should make them a part of any progammer’s toolkit.
+  <meta property="og:description" content="Sets are the forgotten collection type in many languages, including Swift. I think most developers use Arrays without really considering the advantages of using a Set but they have some amazingly useful features that should make them a part of any programmer’s toolkit.
 If you want to follow along with a playground, you can download it here .
 What is a Set? # A Set is an un-ordered collection of unique items.">
   <meta property="og:locale" content="en">
@@ -211,7 +211,7 @@ What is a Set? # A Set is an un-ordered collection of unique items.">
   <div class="post-content"><p>Sets are the forgotten collection type in many languages, including Swift. I
 think most developers use Arrays without really considering the advantages of
 using a Set but they have some amazingly useful features that should make them a
-part of any progammer&rsquo;s toolkit.</p>
+part of any programmer&rsquo;s toolkit.</p>
 <p>If you want to follow along with a playground, you can download it <a href="https://github.com/trozware/sets" target="_blank" >here</a>
 .</p>
 <h2 id="what-is-a-set">
@@ -246,7 +246,7 @@ elements in the Set as the Swift compiler was able to infer this from the
 contents. But if initializing an empty array, the data type must be specified.
 To check how to do this, I option-clicked on <code>mySet</code> to see what the Swift
 compiler thought it was.</p>
-<p><img src="/images/set_types.png" alt="Sets"></p>
+<p><img src="/images/2016/set_types.png" alt="Sets"></p>
 <p>So mySet is actually <code>Set&lt;String&gt;</code>. This means that to create an empty Set, you
 need to use something like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> emptySetOfStrings: Set&lt;String&gt; = [] <span style="color:#66d9ef">var</span>
@@ -344,7 +344,7 @@ are in the other.</li>
 Sets but not in both. (Swift 3 renamed this function from <code>exclusiveOr()</code>)</li>
 </ul>
 <p>Here is my best attempt at a pretty drawing to show how these go together:</p>
-<p><img src="/images/sets_1.png" alt="Sets"></p>
+<p><img src="/images/2016/sets_1.png" alt="Sets"></p>
 <hr>
 <p>The next fun trick is working out sub-sets, super-sets and disjoint sets.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> set1: Set = [<span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;cat&#34;</span>, <span style="color:#e6db74">&#34;pig&#34;</span>]
@@ -357,7 +357,7 @@ Sets but not in both. (Swift 3 renamed this function from <code>exclusiveOr()</c
 </span></span></code></pre></div><p><code>smallSet</code> is <strong>not</strong> a subset of <code>set1</code> because it contains an element that is
 not in <code>set1</code>. <code>smallSet</code> <strong>is</strong> a subset of <code>set2</code> because every element in
 <code>smallSet</code> is also in <code>set2</code>.</p>
-<p><img src="/images/sets_2.png" alt="Sets"></p>
+<p><img src="/images/2016/sets_2.png" alt="Sets"></p>
 <p>If you want to get technical, a Set should not be considered a subset of an
 identical Set. The default <code>isSubset(of:)</code> allows this, but you can use
 <code>isStrictSubset(of:)</code> if you prefer.</p>

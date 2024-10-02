@@ -237,7 +237,7 @@ as="font" crossorigin="">
   }
 </style>
 </p>
-<p><img src="/images/xcode_diffs.png" alt="Xcode 15 &amp; 16 Project navigators"></p>
+<p><img src="/images/2024/xcode_diffs.png" alt="Xcode 15 &amp; 16 Project navigators"></p>
 <p>At a first glance, there are two differences: the order of the files &amp; folders and the color of the folder icons. A less obvious difference is that in Xcode 15, I can drag files around to arrange them in the order I prefer. In Xcode 16, I can&rsquo;t do that. I can drag files into or out of folders, but I can&rsquo;t move them around at the same level.</p>
 <p>I like my Project navigator to be organized in a certain way, so I have to confess that I do find this annoying, especially since the folders at the top are ones I use infrequently. I did wonder whether the folders sorting to the top was due to the fact that I have that option turned on for Finder, but when I turned it off in Finder and made a new project, it was still the same.</p>
 <h3 id="adding-a-new-file">
@@ -247,7 +247,7 @@ as="font" crossorigin="">
 <p>What happens when you add a new file? There are many different ways to do this in Xcode 16, but I&rsquo;ll stick to the same old method that works for both. With <strong>ContentView.swift</strong> selected, press <strong>Command-N</strong> to open the file template chooser, select a new SwiftUI View file, and click <strong>Next</strong>. Name it <strong>DetailView.swift</strong> and click <strong>Create</strong>.</p>
 <p>This is why I created <code>git</code> repositories for both projects - I wanted to see what source control changes were detected. In Xcode 16, the new <strong>DetailView.swift</strong> file is marked with the <strong>A</strong> that indicates an added file. But the top item in the Project navigator - the project itself - has no change marker. Going to the Source Control navigator confirms that there is only one change in the repository: the new file.</p>
 <p>In Xcode 15, the new <strong>DetailView.swift</strong> file is marked with the <strong>A</strong>, but the project file is also marked with an <strong>M</strong> for a modified file. The Changes tab in the Source control navigator shows a lot of unreadable changes to the <strong>project.pbxproj</strong> file, which is one of the files hidden inside the <strong>.xcodeproj</strong> bundle:</p>
-<p><img src="/images/group_changes.png" alt="Xcode 15 Changes tab"></p>
+<p><img src="/images/2024/group_changes.png" alt="Xcode 15 Changes tab"></p>
 <p>This points out the fundamental difference between the two approaches: <strong>groups</strong> are an artificial construct that is stored in the project files. Usually, this mirrors the file and folder structure in Finder, but it doesn&rsquo;t have to. When you use <strong>folders</strong>, Xcode is reading the file and folder structure directly from the Finder.</p>
 <p>One other difference: in Xcode 15, the new file is added to the Project navigator directly after the selected file. In Xcode 16, there appears to be a preset sort order, the logic of which escapes me for now. If I add a file with no other file selected, it&rsquo;s added to the root of the project, outside the main folder. Otherwise, it&rsquo;s added after <strong>ContentView.swift</strong>, no matter which file was selected.</p>
 <h3 id="importing-files">
@@ -255,16 +255,16 @@ as="font" crossorigin="">
   <a href="#importing-files" class="h-anchor" aria-hidden="true">#</a>
 </h3>
 <p>So how does this affect importing files? For both projects, I used <strong>Integrate -&gt; Discard All Changes&hellip;</strong> to revert them to their original states. Then in Xcode 15, I dragged my folder of sample files into the Project navigator, selecting where I wanted it to appear:</p>
-<p><img src="/images/import_folder_15.png" alt="Import folder in Xcode 15"></p>
+<p><img src="/images/2024/import_folder_15.png" alt="Import folder in Xcode 15"></p>
 <p>This led to the dialog that I&rsquo;ve always found slightly confusing and far too large, but I chose my standard settings.</p>
-<p><img src="/images/import_settings_15.png" alt="Import settings in Xcode 15"></p>
+<p><img src="/images/2024/import_settings_15.png" alt="Import settings in Xcode 15"></p>
 <p>The source control markers showed three added files and a modified project file. Checking the project folder in Finder, I could see the new folder and its files in the correct place.</p>
 <p>With Xcode 16, I wasn&rsquo;t able to select a precise location for the dropped folder, but I was able to choose the destination folder:</p>
-<p><img src="/images/import_folder_16.png" alt="Import folder in Xcode 16"></p>
+<p><img src="/images/2024/import_folder_16.png" alt="Import folder in Xcode 16"></p>
 <p>The import dialog was less confusing - the only real option was whether to copy the files or move them.</p>
 <p>The Utilities folder appeared below the Preview Content folder, the three files in it got the <strong>A</strong> marker, and the project file showed no changes.</p>
 <p>But since Xcode is reading the file and folder structure directly from the Finder, I can add and move files in Finder as well as in Xcode. Still in Xcode 16, I discarded all changes again to revert to the starting app, then I right-clicked on <strong>ContentView.swift</strong> and selected <strong>Show in Finder</strong>. Then I dragged my Utilities folder into the project folder in Finder:</p>
-<p><img src="/images/finder_import.png" alt="Finder import"></p>
+<p><img src="/images/2024/finder_import.png" alt="Finder import"></p>
 <p>Back in Xcode, there was the folder and its files, but with no <strong>A</strong> markers on the files. The Source Control navigator showed only the addition of the Utilities folder and not the files inside it. I made a change in <strong>ContentView.swift</strong>, then went to <strong>Source Control navigator -&gt; Changes</strong> and clicked <strong>Stage All</strong>. This added the three new files to the commit. So that worked, just not very smoothly, but again, there were no changes to the project file.</p>
 <h3 id="changing-the-folder-structure">
   Changing the Folder Structure
@@ -291,6 +291,10 @@ as="font" crossorigin="">
       <hr />
     </div>
     <div class="pagination__buttons">
+      
+      <a class="btn next" href="https://troz.net/post/2024/sequoia_app_permissions/"
+        >← App Permissions on macOS Sequoia</a
+      >
        
       <a class="btn previous" href="https://troz.net/post/2024/app_conversion/"
         >Converting an App from Obj-C →</a

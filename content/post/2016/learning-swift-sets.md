@@ -2,15 +2,15 @@
 date: 2016-05-28T00:00:00Z
 lastmod: 2018-01-03T19:53:00+10:00
 tags:
-- swift
-- learning swift
+  - swift
+  - learning swift
 title: Learning Swift - Sets
 ---
 
 Sets are the forgotten collection type in many languages, including Swift. I
 think most developers use Arrays without really considering the advantages of
 using a Set but they have some amazingly useful features that should make them a
-part of any progammer's toolkit.
+part of any programmer's toolkit.
 
 If you want to follow along with a playground, you can download it [here][6].
 
@@ -171,11 +171,11 @@ let xor = set1.symmetricDifference(set2)
 In the code example above, we have two Sets of animals, with one animal in
 common.
 
-* `intersection()` lists the elements in common.
-* `subtracting()` lists the elements in one Set after removing all elements that
+- `intersection()` lists the elements in common.
+- `subtracting()` lists the elements in one Set after removing all elements that
   are in the other.
-* `union()` joins all the elements without duplicates.
-* `symmetricDifference()` lists the elements that are in one or other of the
+- `union()` joins all the elements without duplicates.
+- `symmetricDifference()` lists the elements that are in one or other of the
   Sets but not in both. (Swift 3 renamed this function from `exclusiveOr()`)
 
 Here is my best attempt at a pretty drawing to show how these go together:
@@ -268,9 +268,8 @@ and `set1` have no matching entries so they **are** disjoint.
 
 For more details on Sets, check out [SwiftDoc.org][5].
 
-[1]: /images/set_types.png
-[2]: /images/sets_1.png
-[3]: /images/sets_2.png
-[4]: /images/sets_title.png
+[1]: /images/2016/set_types.png
+[2]: /images/2016/sets_1.png
+[3]: /images/2016/sets_2.png
 [5]: http://swiftdoc.org/v2.2/type/Set/
 [6]: https://github.com/trozware/sets

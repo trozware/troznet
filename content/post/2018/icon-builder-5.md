@@ -1,10 +1,10 @@
 ---
-title: "Icon Builder 5"
+title: 'Icon Builder 5'
 date: 2018-02-18T10:19:18+10:00
 lastmod: 2018-02-18T10:19:18+10:00
 draft: false
-description: ""
-tags: ["icons", "mac", "ios", "watch", "apple watch"]
+description: ''
+tags: ['icons', 'mac', 'ios', 'watch', 'apple watch']
 toc: true
 mac_app_desc: Updating a Mac app - what, why, how...
 mac_app_image: /icons/IconBuilder128.png
@@ -27,9 +27,9 @@ When I came to create a new iOS app recently, I found out that Icon Builder had 
 
 When I set to work fixing these problems I soon ran into issues with the existing version of Icon Builder which was created 6 years ago.
 
-* It was written in Objective-C which I am increasingly finding difficult and un-safe to write.
-* The app was written when I was very much a beginner in Mac apps and this is obvious from the code...
-* There was a lot of legacy code left over from previous changes and extensions.
+- It was written in Objective-C which I am increasingly finding difficult and un-safe to write.
+- The app was written when I was very much a beginner in Mac apps and this is obvious from the code...
+- There was a lot of legacy code left over from previous changes and extensions.
 
 So I decided that the most interesting thing to do would be to start almost from scratch and re-write the app in Swift using better techniques.
 
@@ -67,10 +67,10 @@ extension NSImage {
 }
 ```
 
-* This takes the NSImage and converts it to a CGImage, first checking that the appropriate color space exists.
-* Then it uses the Core Graphics CGImage to create a Core Image CIImage.
-* There is a new API in macOS 10.13 to extract the png data from a CIImage while assigning a color profile.
-* This Data can then be written directly to a file and there you have a PNG with an attached color profile.
+- This takes the NSImage and converts it to a CGImage, first checking that the appropriate color space exists.
+- Then it uses the Core Graphics CGImage to create a Core Image CIImage.
+- There is a new API in macOS 10.13 to extract the png data from a CIImage while assigning a color profile.
+- This Data can then be written directly to a file and there you have a PNG with an attached color profile.
 
 ## Transparency
 
@@ -146,10 +146,10 @@ extension NSImage {
 }
 ```
 
-* Take the image **after** changing the transparent pixels to white.
-* Convert it to JPEG data with the required color space.
-* Convert the JPEG data back to an image - this will contain **NO** alpha data.
-* Use the original routine to convert this JPEG into PNG data with the correct color space.
+- Take the image **after** changing the transparent pixels to white.
+- Convert it to JPEG data with the required color space.
+- Convert the JPEG data back to an image - this will contain **NO** alpha data.
+- Use the original routine to convert this JPEG into PNG data with the correct color space.
 
 Running this in the playground looks like this:
 ![Creating non-transparent PNG in playground][6]
@@ -162,9 +162,9 @@ The double shuffle sounds time-consuming and in-efficient but it really doesn't 
 
 ## Future plans
 
-* Add more unit tests.
-* Work out how to replace the transparent pixels with a selected color.
-* Offer better cropping and image positioning options.
+- Add more unit tests.
+- Work out how to replace the transparent pixels with a selected color.
+- Offer better cropping and image positioning options.
 
 ## References
 
@@ -175,9 +175,9 @@ For resizing and cropping images, I use [Matt Gemmell's NSImage+MGCropExtensions
 [1]: http://itunes.apple.com/app/icon-builder/id552293482
 [2]: https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/app-icon/
 [3]: https://developer.apple.com/macos/human-interface-guidelines/icons-and-images/app-icon/
-[4]: /images/Transparent-Jpeg.png
-[5]: /images/MakeAlphaWhite.png
-[6]: /images/TransparentPng.png
-[7]: /images/FileInfo.png
+[4]: /images/2018/Transparent-Jpeg.png
+[5]: /images/2018/MakeAlphaWhite.png
+[6]: /images/2018/TransparentPng.png
+[7]: /images/2018/FileInfo.png
 [8]: https://mattgemmell.com/imagecrop-source-code/
 [9]: /icon-builder/

@@ -8,7 +8,7 @@ url: /manreader/
 ---
 
 Several years after I started planning it, Man Reader version 2
-is now available. This is a major update with a completely new, 
+is now available. This is a major update with a completely new,
 modern, user interface and it's available from the Mac App Store.
 
 [![Buy Man Reader from the Mac App Store][i3]][3]
@@ -23,7 +23,7 @@ programmers, system administrators and tweakers.
 
 Man pages are available for most of the Unix commands used mostly in Terminal or when
 shell scripting. These man pages are normally displayed in Terminal using the
-`man` command.   
+`man` command.  
 e.g. `man ipconfig` gives you the **man** page for the `ipconfig` command.
 
 However there are problems with this: the man page is displayed in your
@@ -37,10 +37,10 @@ piping it to Preview as a PDF, listing it as a single page etc, but none of
 these are really convenient, which is why I wrote Man Reader.
 
 Man Reader searches the most usual directories and assembles a list of the man pages
-it finds. These commands are listed in the sidebar and you can select any one 
+it finds. These commands are listed in the sidebar and you can select any one
 to display the man page for that command.
 
-If you have other locations you would like Man Reader to search, you can add 
+If you have other locations you would like Man Reader to search, you can add
 them using Settings.
 
 ## Major Features:
@@ -171,10 +171,9 @@ them using Settings.
 If you have any problems with Man Reader, any suggestions for future versions or
 encounter any bugs, please [email me][8] or get in touch through the [Contact][contact] page.
 
-[i1]: /images/ManReader2.png
-[i2]: /images/ManReader2_dark.png
+[i1]: /images/2023/ManReader2.png
+[i2]: /images/2023/ManReader2_dark.png
 [i3]: /icons/ManReader128.png
-
 [3]: http://itunes.apple.com/app/man-reader/id522583774?mt=12
 [8]: mailto:sarah@troz.net?subject=Man%20Reader%202
 [contact]: /contact/

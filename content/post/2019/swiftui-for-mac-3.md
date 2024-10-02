@@ -268,6 +268,6 @@ The final project is available on [GitHub][4] if you would like to download it a
 [3]: /contact/
 [4]: https://github.com/trozware/swiftui-mac
 [5]: /post/2020/swiftui_for-mac-extras#dismissing-sheets
-[i1]: /images/SwiftUI-Mac-sheet.png
-[i2]: /images/SwiftUI-Mac-sheet-data.png
-[i3]: /images/SwiftUI-Mac-alert.jpg
+[i1]: /images/2019/SwiftUI-Mac-sheet.png
+[i2]: /images/2019/SwiftUI-Mac-sheet-data.png
+[i3]: /images/2019/SwiftUI-Mac-alert.jpg

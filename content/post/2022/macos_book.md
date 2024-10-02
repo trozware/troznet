@@ -67,7 +67,7 @@ I would love to hear from anyone who read the book, loved it, hated it, found an
 You can contact me directly using any of the contact links at the bottom of this page or through the [Contact][8] page.
 There is also an [official forum][7] for the book where you can ask questions and tell us about any errors you find.
 
-[i1]: /images/book_cover.png
+[i1]: /images/2022/book_cover.png
 [1]: https://www.kodeco.com/books/macos-by-tutorials
 [2]: https://www.kodeco.com/
 [3]: https://www.kodeco.com/books/macos-by-tutorials/v1.0/chapters/v-introduction

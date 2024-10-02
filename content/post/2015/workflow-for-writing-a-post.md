@@ -98,5 +98,5 @@ going to work my way through it.
    * Automating this is an obvious next step, so stay tuned...
 
 [1]: http://jekyllrb.com/docs/frontmatter/
-[2]: /images/post_header.png
+[2]: /images/2015/post_header.png
 [3]: http://jekyllrb.com/docs/posts/

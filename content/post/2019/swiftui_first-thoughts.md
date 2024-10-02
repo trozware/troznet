@@ -133,4 +133,4 @@ One caveat is that SwiftUI apps will require the latest operating systems, iOS 1
 [9]: https://github.com/trozware/swiftui_progressbar
 [i1]: https://developer.apple.com/assets/elements/icons/swiftui/swiftui-96x96_2x.png
 [i2]: https://developer.apple.com/assets/elements/icons/swift/swift-96x96_2x.png
-[i3]: /images/SwiftUi_progressbar.png
+[i3]: /images/2019/SwiftUi_progressbar.png

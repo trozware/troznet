@@ -283,7 +283,7 @@ as="font" crossorigin="">
 <p>Now problems 1 &amp; 2 have been solved. Problem 3 was the most difficult. It turned out to be a two-part problem because an image file can have no transparent pixels but still have an alpha channel in the file data.</p>
 <p>At first, I thought maybe I could just circumvent the whole problem by converting the images to JPEGs which have no transparency or alpha channel. Using the code above, I just changed it to getting the <code>jpegRepresentation</code> instead and saving with a .jpg file extension.</p>
 <p>While this solved the alpha channel problem, the transparent parts of the icon just went black which was a not a good look.</p>
-<p><img src="/images/Transparent-Jpeg.png" alt="Transparent image converted to JPEG"></p>
+<p><img src="/images/2018/Transparent-Jpeg.png" alt="Transparent image converted to JPEG"></p>
 <p><em>For anyone horrified at my use of force-unwrapping, I never do this in a production app but in a playground, it makes the code shorter and it doesn&rsquo;t really matter if I get a crash there.</em></p>
 <h3 id="converting-transparent-pixels-to-white">
   Converting transparent pixels to white
@@ -307,7 +307,7 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>It used basically the same trick of converting the image into a JPEG but doing it this way via <code>NSBitmapImageRep</code> turned the transparent pixels white instead of black. And as you can see, this gave a much better looking image:</p>
-<p><img src="/images/MakeAlphaWhite.png" alt="Transparent portions converted to white"></p>
+<p><img src="/images/2018/MakeAlphaWhite.png" alt="Transparent portions converted to white"></p>
 <p>Now I was able to continue with my plans to have JPEGs rule the world! This worked really well in my early tests but then I came to try a Stickers app and the icons didn’t work. I couldn&rsquo;t even drag them in manually! Back to the Apple docs and I see that icons must be PNGs.</p>
 <p>When I changed the transparent pixels to white, added the color space and then saved the PNG data, I got an image that looked correct but the file still contained an alpha channel. So I had to come up with a method that re-wrote the PNG data in such a way that it never contained any alpha data at all.</p>
 <h3 id="removing-the-alpha-channel">
@@ -345,9 +345,9 @@ as="font" crossorigin="">
 <li>Use the original routine to convert this JPEG into PNG data with the correct color space.</li>
 </ul>
 <p>Running this in the playground looks like this:
-<img src="/images/TransparentPng.png" alt="Creating non-transparent PNG in playground"></p>
+<img src="/images/2018/TransparentPng.png" alt="Creating non-transparent PNG in playground"></p>
 <p>And as you can see from the file info, it results in a file with the correctly assigned color profile and no alpha channel:</p>
-<p><img src="/images/FileInfo.png" alt="Final result file info"></p>
+<p><img src="/images/2018/FileInfo.png" alt="Final result file info"></p>
 <p>The double shuffle sounds time-consuming and in-efficient but it really doesn&rsquo;t take long. In my tests, by far the longest part of creating an icon set is opening the file dialog.</p>
 <h2 id="future-plans">
   Future plans

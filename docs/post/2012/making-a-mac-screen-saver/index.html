@@ -218,8 +218,7 @@ Screen Saver</a>
 X Lion (10.7) and Xcode 4.3.2</p>
 <p>The first thing is to create a new project in Xcode using the Screen Saver
 template:</p>
-<p><a href="/images/ScreenSaverTemplate.png" ><!-- raw HTML omitted --></a>
-</p>
+<p><img src="/images/2012/ScreenSaverTemplate.png" alt="Xcode Screen Saver Template"></p>
 <p>Xcode sets up a project for you with everything you need for a screen saver
 module. Start editing the ScreenSaverView.m file. The most important method here
 is animateOneFrame.</p>
@@ -252,7 +251,7 @@ is not difficult, but as always, there are a few things that are not obvious on
 first glance.</p>
 <p>Add a xib file to your project: I used a window template. Then change the
 window&rsquo;s class to NSPanel and configure it as shown:</p>
-<!-- raw HTML omitted -->
+<p><img src="/images/2012/PanelSettings.png" alt="NSPanel Settings"></p>
 <p>Set the File&rsquo;s Owner class to the class of your Screen Saver view. In your
 ScreenSaverView.h file, declare a property for this new panel. e.g.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span> <span style="color:#66d9ef">@property</span> (<span style="color:#66d9ef">assign</span>) <span style="color:#66d9ef">IBOutlet</span> NSPanel <span style="color:#f92672">*</span>optionsPanel;
@@ -312,7 +311,7 @@ distributed like this, but I pulled it out of the folders and it worked fine.</p
 but there are enough oddities to make it worthwhile gathering together all that
 I learnt while making this screen saver.</p>
 <p>Click this icon to download the screen saver:</p>
-<p><a href="/screensaver/TimeInWords-ScreenSaver.zip" ><!-- raw HTML omitted --></a>
+<p><a href="/screensaver/TimeInWords-ScreenSaver.zip" ><img src="/images/2012/ScreenSaverIcon128.png" alt="Screensaver icon"></a>
 </p>
 </div>
   

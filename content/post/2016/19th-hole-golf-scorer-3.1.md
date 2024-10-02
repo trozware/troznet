@@ -43,6 +43,6 @@ on at any time.
 This should make the app much more usable as an Apple Watch app, so happy
 golfing :-)
 
-[1]: /images/WakeScreen.jpg
-[2]: /images/Watch-workout.png
-[3]: /images/Watch_end_workout.png
+[1]: /images/2016/WakeScreen.jpg
+[2]: /images/2016/Watch-workout.png
+[3]: /images/2016/Watch_end_workout.png

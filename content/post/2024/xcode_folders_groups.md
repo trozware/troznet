@@ -83,13 +83,13 @@ What do you think? Will you go with the flow and use folders, or do you intend t
 
 You can contact me using one of the links below or through the [Contact][contact] page. And if you found this article useful, please [buy me a coffee][kofi].
 
-[i1]: /images/xcode_diffs.png
-[i2]: /images/group_changes.png
-[i3]: /images/import_folder_15.png
-[i4]: /images/import_settings_15.png
-[i5]: /images/import_folder_16.png
-[i6]: /images/import_settings_16.png
-[i7]: /images/finder_import.png
+[i1]: /images/2024/xcode_diffs.png
+[i2]: /images/2024/group_changes.png
+[i3]: /images/2024/import_folder_15.png
+[i4]: /images/2024/import_settings_15.png
+[i5]: /images/2024/import_folder_16.png
+[i6]: /images/2024/import_settings_16.png
+[i7]: /images/2024/finder_import.png
 [contact]: /contact/
 [kofi]: https://ko-fi.com/trozware
 [1]: /post/2024/swiftui-mac-2024/

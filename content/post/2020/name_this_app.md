@@ -173,13 +173,13 @@ I haven't tried an iPad version yet. I got stung once by testing an iPad version
 > Creationist has no taste for what's sarcastic (6) = IRONIC  
 > Consumables minus bacon and shellfish (6) = MUSSEL
 
-[i1]: /images/Anagram1.gif
-[i2]: /images/AnagramAssistv1.gif
-[i3]: /images/AnagramDiscard.png
-[i4]: /images/AnagramLocks.mp4
-[i5]: /images/AnagramDarkMode.png
-[i6]: /images/AnagramAnimation.mp4
-[i7]: /images/AnagramHelp.png
+[i1]: /images/2020/Anagram1.gif
+[i2]: /images/2020/AnagramAssistv1.gif
+[i3]: /images/2020/AnagramDiscard.png
+[i4]: /images/2020/AnagramLocks.mp4
+[i5]: /images/2020/AnagramDarkMode.png
+[i6]: /images/2020/AnagramAnimation.mp4
+[i7]: /images/2020/AnagramHelp.png
 [1]: https://www.irishtimes.com/games/crosswords/
 [2]: https://www.irishtimes.com
 [3]: https://twitter.com/luisramos1337

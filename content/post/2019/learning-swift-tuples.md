@@ -164,6 +164,6 @@ So those are the basics of tuples: how to create them, how to use them and where
 
 I have heard two variations: 'toople' using a long U as in universe or 'tupple' using a short U as in cup. There does not appear to be any strict geographical differentiation, so take your pick. I prefer 'toople' myself, but if somebody says 'tupple', I know what they mean.
 
-[1]: /images/Tuple_type.png
-[2]: /images/Tuple_errors.png
+[1]: /images/2019/Tuple_type.png
+[2]: /images/2019/Tuple_errors.png
 [3]: https://github.com/realm/SwiftLint

@@ -78,4 +78,4 @@ You can contact me directly using any of the contact links at the bottom of this
 [11]: https://www.kodeco.com/u/audrey
 [12]: https://www.kodeco.com/u/ehabamer
 
-[i1]: /images/book_cover_2.png
+[i1]: /images/2023/book_cover_2.png

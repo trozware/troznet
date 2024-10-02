@@ -96,6 +96,6 @@ Finally, there's my support crew who watch every word I type and listen carefull
 [12]: https://www.markdownguide.org
 [13]: https://www.foldingtext.com
 [14]: https://folivora.ai
-[15]: /images/figures.jpg
+[15]: /images/2022/figures.jpg
 [16]: https://hemingwayapp.com
 [17]: https://configure.zsa.io/embed/moonlander/layouts/9OwwA/latest/0

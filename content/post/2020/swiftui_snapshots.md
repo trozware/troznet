@@ -322,10 +322,10 @@ As always, if you have any comments, suggestions or ideas, I would love to hear 
 [9]: /contact/
 [10]: https://www.youtube.com/watch?v=dFQtFJsvt04
 [11]: https://twitter.com/azamsharp
-[i1]: /images/Snapshot-TestImage1.png
-[i2]: /images/Snapshot-AddPackage.png
-[i3]: /images/Snapshot-SetTarget.png
-[i4]: /images/Snapshot-Test1Result.png
-[i5]: /images/Snapshot-FailedTest.png
-[i6]: /images/Snapshot-TestResults.png
-[i7]: /images/Snapshot-DynamicFonts.png
+[i1]: /images/2020/Snapshot-TestImage1.png
+[i2]: /images/2020/Snapshot-AddPackage.png
+[i3]: /images/2020/Snapshot-SetTarget.png
+[i4]: /images/2020/Snapshot-Test1Result.png
+[i5]: /images/2020/Snapshot-FailedTest.png
+[i6]: /images/2020/Snapshot-TestResults.png
+[i7]: /images/2020/Snapshot-DynamicFonts.png

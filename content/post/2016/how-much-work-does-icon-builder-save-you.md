@@ -59,4 +59,4 @@ work. (No need to tell the designer that...)
 
 [1]: /icon-builder/
 [2]: https://itunes.apple.com/app/icon-builder/id552293482
-[3]: /images/IconBuilder.png
+[3]: /images/2016/IconBuilder.png

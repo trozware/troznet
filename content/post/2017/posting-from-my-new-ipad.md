@@ -1,12 +1,12 @@
 ---
 date: 2017-06-17T00:00:00Z
 summary:
-- As the proud owner of a new 10.5 inch iPad Pro, I am exploring how to create blog
-  posts while away from my Mac.
+  - As the proud owner of a new 10.5 inch iPad Pro, I am exploring how to create blog
+    posts while away from my Mac.
 tags:
-- ipad
-- jekyll
-- blog
+  - ipad
+  - jekyll
+  - blog
 title: Posting from my new iPad
 ---
 
@@ -87,11 +87,11 @@ then drag it up into the Editorial window. Now it is open as an overlay.
 
 At this point, I have several options:
 
-* Swiping from the left or right of the overlay window lets me position it to
+- Swiping from the left or right of the overlay window lets me position it to
   the right or left of the screen, still as an overlay.
-* Dragging from the bar at the top of the overlap allows me to convert to split
+- Dragging from the bar at the top of the overlap allows me to convert to split
   screen mode, and I can then drag the divider to adjust the ratios.
-* Swiping all the way to the right disappears the overlay, but swiping back from
+- Swiping all the way to the right disappears the overlay, but swiping back from
   the right edge returns it. Since I want to copy and paste some links, this
   looks like the best option right now.
 
@@ -116,14 +116,14 @@ web site folder.
 ![Editing a screenshot][9]
 
 I want to insert an image link but I have just worked out that I saved this
-Markdown file in the root folder instead of the _posts folder. I can’t see a way
+Markdown file in the root folder instead of the \_posts folder. I can’t see a way
 to move it from inside Editorial, so I will swap to the Dropbox app to move the
 file - be right back... (I see now how I could have done this in Editorial.)
 
 Ok, this file is in the right place and the images are in the right folder, so
 how to add an image link? Checking back at previous posts, I see that the format
 I use for inserting an image is: `![Alt text][#]` and the reference at the foot
-of the page is like`[#]: /images/image_name.jpg` but I don’t want to have to
+of the page is like`[#]: /images/2017/image_name.jpg` but I don’t want to have to
 remember that every time, so I think it is time for some snippets. Tapping the
 lightning icon on the Editorial keyboard lets me edit and create snippets, so I
 have made one for the image link and one for the image reference. Time to scroll
@@ -207,8 +207,8 @@ test my shell script...
 [2]: http://jekyllrb.com/
 [3]: http://omz-software.com/editorial/
 [4]: http://mattgemmell.com/using-the-ipad-for-blogging-with-jekyll/
-[5]: /images/safari-overlay.png
-[6]: /images/Workflow.jpeg
-[7]: /images/keyboard-drag.png
+[5]: /images/2017/safari-overlay.png
+[6]: /images/2017/Workflow.jpeg
+[7]: /images/2017/keyboard-drag.png
 [8]: https://workflow.is/
-[9]: /images/screenshot.jpeg
+[9]: /images/2017/screenshot.jpeg

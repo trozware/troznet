@@ -100,8 +100,8 @@ Option-click on it in Xcode and you willl get a popup telling you what it is.
 This was going to be five rules, but then I got a bit too verbose so will add
 more rules in a separate post.
 
-[1]: /images/Playground2.png
-[2]: /images/Playground3.png
-[3]: /images/Playground4.png
-[4]: /images/optional_fix.png
+[1]: /images/2016/Playground2.png
+[2]: /images/2016/Playground3.png
+[3]: /images/2016/Playground4.png
+[4]: /images/2016/optional_fix.png
 [5]: /post/2016-02-12-learning-swift-optionals/

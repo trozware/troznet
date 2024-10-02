@@ -253,7 +253,7 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">self</span>.dialogResult = <span style="color:#e6db74">&#34;Cancel clicked in Alert&#34;</span>
 </span></span><span style="display:flex;"><span>        }))
 </span></span></code></pre></div><p>This worked very nicely and the Esc and Return keys triggered the two buttons as you would expect with both of them closing the dialog.</p>
-<p><img src="/images/SwiftUI-Mac-alert.jpg" alt="Alert"></p>
+<p><img src="/images/2019/SwiftUI-Mac-alert.jpg" alt="Alert"></p>
 <p>I tried using the <code>destructive</code> button type, but there was no difference to either the appearance or behavior of the button.</p>
 <p>So Alert is a great choice for a text-based dialog, either for informational use or to allow two choices of action.</p>
 <h2 id="action">
@@ -290,7 +290,7 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Here is a very bad diagram that tries to explain what is happening:</p>
-<p><img src="/images/SwiftUI-Mac-sheet.png" alt="Sheet"></p>
+<p><img src="/images/2019/SwiftUI-Mac-sheet.png" alt="Sheet"></p>
 <p>The parent view has an @State Boolean variable called <code>sheetIsShowing</code>. This is bound to the alert&rsquo;s <code>isPresented</code> so it dictates whenever the sheet is visible. When the Sheet button is clicked, this variable is set to <code>true</code> and the sheet opens. But at the same time, a Binding to this variable is passed to the sheet. I deliberately gave this a different name, so as to make it clear which View was changing what variable.</p>
 <p>When the sheet wants to close, it does not close itself. Instead it sets this variable to false. Because it is a Binding, this sets the original <code>sheetIsShowing</code> variable on the parent view to false and the parent view then closes the sheet.</p>
 <p><strong>UPDATE:</strong> Look at <strong><a href="/post/2020/swiftui_for-mac-extras#dismissing-sheets" >Dismissing sheets</a>
@@ -334,7 +334,7 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>        .padding()
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><img src="/images/SwiftUI-Mac-sheet-data.png" alt="Sheet with data"></p>
+</span></span></code></pre></div><p><img src="/images/2019/SwiftUI-Mac-sheet-data.png" alt="Sheet with data"></p>
 <p>I only had two issues with this now. I was not able to get the focus into the TextField automatically when the sheet opened and I was not able to assign keyboard shortcuts to the Cancel and OK buttons so that they could be operated without a mouse. And as I mentioned in the previous part, I was not able to make the OK button take on the default styling.</p>
 <p>One useful technique that I developed: the SheetView is in the DialogsView.swift file instead of in its own SwiftUI file. It would probably be a good idea to separate it out but I didn&rsquo;t which meant that it had no Canvas preview to look at while I was laying it out.</p>
 <p>So I edited the PreviewProvider like this, so that I could change the comments to switch it between showing the DialogsView and showing the SheetView.</p>

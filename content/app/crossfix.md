@@ -84,7 +84,7 @@ Try out Crossfix Lite and then pay for Crossfix if you need more solves or if yo
 
 You may be wondering why I chose to release two apps instead of using in-app purchases to unlock the full version and there is one big reason: family sharing. I share a family account and it has always really annoyed me that direct app purchases are shared, but in-app purchases are not. So if I used IAPs and more than one member of your family wanted to use the app, you would have to pay twice, which seems unfair. I have deliberately chosen to have two distinct apps so as to allow family members to share all the features of the full app with a single purchase.
 
-[i1]: /images/Crossfix-anagram.webp
+[i1]: /images/2020/Crossfix-anagram.webp
 [i2]: /images/Crossfix-sub-anagram.webp
 [i3]: /images/Crossfix-settings.webp
 [1]: https://itunes.apple.com/app/crossfix/id1526235954

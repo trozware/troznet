@@ -334,10 +334,10 @@ If you want to check out the project at this stage, here is a link to the [relev
 
 Moving on to an unplanned [part 3 of this series][4], I am going to experiment with various forms of dialog.
 
-[i1]: /images/SwiftUi-Mac-menus.png
-[i2]: /images/SwiftUI-Mac-dark.png
-[i3]: /images/SwiftUI-Mac-Flip.mp4
-[i4]: /images/SwiftUI-Mac-UI.png
+[i1]: /images/2019/SwiftUi-Mac-menus.png
+[i2]: /images/2019/SwiftUI-Mac-dark.png
+[i3]: /images/2019/SwiftUI-Mac-Flip.mp4
+[i4]: /images/2019/SwiftUI-Mac-UI.png
 [1]: /post/2019/swiftui-for-mac-1/
 [2]: https://www.avanderlee.com/swift/property-wrappers/
 [3]: https://twitter.com/azamsharp

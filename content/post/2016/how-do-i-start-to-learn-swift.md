@@ -71,7 +71,7 @@ articles are available.
 [1]: https://itunes.apple.com/book/swift-programming-language/id881256329
 [2]: https://developer.apple.com/go/?id=swift-tour
 [3]: https://itunes.apple.com/app/xcode/id497799835
-[4]: /images/Playground1.png
+[4]: /images/2016/Playground1.png
 [5]: http://www.raywenderlich.com
 [6]: https://www.natashatherobot.com
 [7]: https://developer.apple.com/swift/blog/

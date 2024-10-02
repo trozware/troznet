@@ -44,4 +44,4 @@ And finally, if you want to support my work, please [buy me a coffee][7].
 [5]: https://mastodon.social/@troz
 [6]: https://linktr.ee/trozware
 [7]: https://ko-fi.com/H2H3BU7SI
-[i1]: /images/book_cover.png
+[i1]: /images/2022/book_cover.png

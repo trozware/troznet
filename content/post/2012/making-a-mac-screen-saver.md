@@ -1,9 +1,9 @@
 ---
 date: 2012-05-09T00:00:00Z
 tags:
-- screen saver
-- time in words
-- mac
+  - screen saver
+  - time in words
+  - mac
 title: Making a Mac Screen Saver
 ---
 
@@ -14,7 +14,7 @@ X Lion (10.7) and Xcode 4.3.2
 The first thing is to create a new project in Xcode using the Screen Saver
 template:
 
-[<img title="Xcode Screen Saver Template" src="/images/ScreenSaverTemplate-441x300.png" alt="Xcode Screen Saver Template" />][2]
+![Xcode Screen Saver Template][2]
 
 Xcode sets up a project for you with everything you need for a screen saver
 module. Start editing the ScreenSaverView.m file. The most important method here
@@ -59,7 +59,7 @@ first glance.
 Add a xib file to your project: I used a window template. Then change the
 window's class to NSPanel and configure it as shown:
 
-<img title="NSPanel Settings" src="/images/PanelSettings.png" alt="NSPanel Settings" />
+![NSPanel Settings][5]
 
 Set the File's Owner class to the class of your Screen Saver view. In your
 ScreenSaverView.h file, declare a property for this new panel. e.g.
@@ -149,9 +149,10 @@ I learnt while making this screen saver.
 
 Click this icon to download the screen saver:
 
-[<img src="/images/ScreenSaverIcon128.png">](/screensaver/TimeInWords-ScreenSaver.zip)
+[![Screensaver icon][4]][3]
 
-[1]: /time-in-words-screen-saver-for-mac/ "Time In Words Screen Saver for Mac"
-[2]: /images/ScreenSaverTemplate.png
+[1]: /time-in-words-screen-saver-for-mac/ 'Time In Words Screen Saver for Mac'
+[2]: /images/2012/ScreenSaverTemplate.png
 [3]: /screensaver/TimeInWords-ScreenSaver.zip
-[4]: /images/ScreenSaverIcon128.png
+[4]: /images/2012/ScreenSaverIcon128.png
+[5]: /images/2012/PanelSettings.png

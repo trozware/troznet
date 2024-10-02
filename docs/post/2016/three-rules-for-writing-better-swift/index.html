@@ -223,13 +223,13 @@ that the value exists and the optional is not actually nil.</p>
 will just say this: When you use ! you are <strong>promising</strong> the compiler that you
 will make sure there is a real value in that optional by the time it is needed.</p>
 <p>If this is not the case, your app will crash as shown in this playground:</p>
-<p><img src="/images/Playground2.png" alt="Playground crash"></p>
+<p><img src="/images/2016/Playground2.png" alt="Playground crash"></p>
 <p>Instead of using ! you should use optional chaining with ? or check the value
 with <code>guard</code> or <code>if let</code> before use.</p>
 <p>One trap to beware of is with Xcode&rsquo;s attempts to be helpful and suggest fixes
 to problems. If you use an optional where it cannot work, Xcode will warn you
 that it is incorrect, but the suggested fix will be to insert !</p>
-<p><img src="/images/optional_fix.png" alt="Optional fix"></p>
+<p><img src="/images/2016/optional_fix.png" alt="Optional fix"></p>
 <p>When you see this, do not accept the suggested fix, but use it as a warning to
 show that you need to fix the problem properly.</p>
 <hr>
@@ -249,7 +249,7 @@ and declare variables using <code>var</code>. The Swift compiler will now warn y
 have used <code>var</code> where <code>let</code> would do, but I prefer to declare everything using
 <code>let</code> and only change to <code>var</code> when this causes an error as shown in this
 playground example:</p>
-<p><img src="/images/Playground3.png" alt="Playground let error"></p>
+<p><img src="/images/2016/Playground3.png" alt="Playground let error"></p>
 <hr>
 <h2 id="3-allow-the-compiler-to-infer-types">
   3. Allow the compiler to infer types
@@ -274,7 +274,7 @@ The more text you enter , the more change of mistake and it leaves your code
 looking cluttered.</p>
 <p>If you ever need to check what type has been assigned to a constant or variable,
 Option-click on it in Xcode and you willl get a popup telling you what it is.</p>
-<p><img src="/images/Playground4.png" alt="Playground types"></p>
+<p><img src="/images/2016/Playground4.png" alt="Playground types"></p>
 <hr>
 <p>This was going to be five rules, but then I got a bit too verbose so will add
 more rules in a separate post.</p></div>

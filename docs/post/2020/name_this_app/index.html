@@ -275,7 +275,7 @@ as="font" crossorigin="">
   }
 </style>
 </p>
-<p><img src="/images/Anagram1.gif" alt="Anagram solving manually"></p>
+<p><img src="/images/2020/Anagram1.gif" alt="Anagram solving manually"></p>
 <p>If you watch this gif and then look at it when it stops repeating, hopefully you will be able to see that the answer is &ldquo;SURPRISE&rdquo;. Refresh the page if you want to start the gif looping again.</p>
 <p>But I do crosswords on my iPad now and while I could use a notes app and my Apple Pencil to draw the letters out like I did in the GIF above, I don&rsquo;t always have the Pencil with me and I want to keep looking at the crossword. So I decided that a companion iPhone app was the way that would work best for me.</p>
 <p>There are sites and apps that offer anagram solvers, but they are just looking through a dictionary and showing you all the possibilities. To me, this feels like cheating, but I don&rsquo;t have a problem with using an app to emulate the techniques I used to use with pencil and paper.</p>
@@ -318,7 +318,7 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></div><p>The original word was converted into an array for display, so re-arranging the letters was a matter of calling <code>shuffle()</code> on the array which automatically triggered a SwiftUI redraw.</p>
 <p>And here is version 1 of the interface running in the SwiftUI Canvas:</p>
-<p><img src="/images/AnagramAssistv1.gif" alt="Anagram app version 1"></p>
+<p><img src="/images/2020/AnagramAssistv1.gif" alt="Anagram app version 1"></p>
 <p><em>Refresh the page to see the gif play, if it has stopped.</em></p>
 <hr>
 <h3 id="a-different-type-of-anagram">
@@ -331,10 +331,10 @@ as="font" crossorigin="">
 <p><em>Creationist has no taste for what&rsquo;s sarcastic (6)</em></p>
 </blockquote>
 <p>The idea here is to remove the letters in &ldquo;taste&rdquo; from the letters in &ldquo;Creationist&rdquo; and then unscramble the remaining letters to find a word that means &ldquo;sarcastic&rdquo;. My first attempt at this used a Trash can button that removed the letter and shortened the space for the solution, but then I decided to have a discard tray at the bottom of the screen to show what had been removed and allow replacing any letters discarded by mistake.</p>
-<p><img src="/images/AnagramDiscard.png" alt="Anagram discard tray"></p>
+<p><img src="/images/2020/AnagramDiscard.png" alt="Anagram discard tray"></p>
 <hr>
 <p>After this, I added a bit of style to make it look nicer and then moved on to the next feature. If I knew some of the cross letters already, I wanted to be able to place them in the solution squares and then lock them in place. This would allow me to shuffle in letters to test and remove all the unlocked ones with a button click. So here is what the app looked like after those changes:</p>
-<p><img src="/images/AnagramLocks.mp4" alt="Anagram with locked letters"></p>
+<p><img src="/images/2020/AnagramLocks.mp4" alt="Anagram with locked letters"></p>
 <p><em>Refresh the page to see the gif play, if it has stopped.</em></p>
 <hr>
 <h3 id="drag--drop">
@@ -354,7 +354,7 @@ as="font" crossorigin="">
 <p>I installed a custom font so that it looked more like hand-writing. I wrote about <a href="https://troz.net/post/2020/custom-fonts/" target="_blank" >installing custom fonts</a>
  in a separate article, so if you are interested check that out for details on the multiple steps that you need to take to get them to work. I went through a few different fonts until I found one that I thought worked well and clearly for all the upper case letters but I settled on <a href="https://www.fontspace.com/search?q=oregano" target="_blank" >Oregano</a>
 . And then I made the app work in dark mode too:</p>
-<p><img src="/images/AnagramDarkMode.png" alt="Custom font and dark mode"></p>
+<p><img src="/images/2020/AnagramDarkMode.png" alt="Custom font and dark mode"></p>
 <p>The clue for this one is <em>&ldquo;Consumables minus bacon and shellfish (6)&rdquo;</em></p>
 <hr>
 <h3 id="animations">
@@ -364,11 +364,11 @@ as="font" crossorigin="">
 <p>SwiftUI has animation built in, so I was able to add an <code>animation</code> modifier to the various views to make the transitions look smooth. I particularly liked the way the letters re-arranged themselves around the circle when I removed or replaced a letter.</p>
 <p>But to add something extra, I thought it would be fun if the letters all started in the middle and moved outwards to their places on the circle. The way I did this was by using a Boolean to store whether the letters had had their first draw. If not, the radius of the circle was zero, so they all piled in the middle. After a delay, this Boolean was toggled so the radius was changed to the full size and the animation modifier already applied, made the letters smoothly expand outwards.</p>
 <p>For the letter shuffle, I did the reverse, moving the letters in, shuffling, then moving them out again.</p>
-<p><img src="/images/AnagramAnimation.mp4" alt="Animations"></p>
+<p><img src="/images/2020/AnagramAnimation.mp4" alt="Animations"></p>
 <p><em>Refresh the page to see the gif play, if it has stopped.</em></p>
 <p>I also added sound effects and a slide-up sheet view with settings and help. I enjoyed using <a href="https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/" target="_blank" >Apple&rsquo;s SF Symbols</a>
  to show icons for each paragraph of the help, although I may change the colour of these icons as they look at bit too much like buttons right now.</p>
-<p><img src="/images/AnagramHelp.png" alt="Help &amp; Settings"></p>
+<p><img src="/images/2020/AnagramHelp.png" alt="Help &amp; Settings"></p>
 <hr>
 <h3 id="next-steps">
   Next Steps

@@ -224,7 +224,7 @@ as="font" crossorigin="">
   }
 </style>
 
-<p><img src="/images/SwiftUi-Mac-menus.png" alt="Menus"></p>
+<p><img src="/images/2019/SwiftUi-Mac-menus.png" alt="Menus"></p>
 <p>Looking at the possibilities along the top that I could send the menu command to, the App Delegate looks like the best option, especially since these menus will change the entire app.</p>
 <p>I opened AppDelegate.swift in the Assistant Editor and Control-dragged from each of the new menu items to create the 3 IBActions and added the code to set the mode.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    <span style="color:#66d9ef">@IBAction</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">darkModeSelected</span>(<span style="color:#66d9ef">_</span> sender: Any) {
@@ -251,7 +251,7 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> systemMode: String
 </span></span></code></pre></div><p>It would be neater to use an enum here instead of strings, but that would have required fiddling with rawValues to save the data, so for this first test, I stuck to strings.</p>
 <p>The code to toggle the checkmarks in the menu items is standard stuff and nothing particularly SwiftUI related, so I won&rsquo;t detail it here, but it is in the GitHub project if you are interested.</p>
-<p><img src="/images/SwiftUI-Mac-dark.png" alt="Dark mode"></p>
+<p><img src="/images/2019/SwiftUI-Mac-dark.png" alt="Dark mode"></p>
 <h2 id="passing-menu-data-to-a-view">
   Passing menu data to a View
   <a href="#passing-menu-data-to-a-view" class="h-anchor" aria-hidden="true">#</a>
@@ -284,7 +284,7 @@ as="font" crossorigin="">
 </span></span><span style="display:flex;"><span>                        axis: (x: <span style="color:#ae81ff">0</span>, y: <span style="color:#ae81ff">1</span>, z: <span style="color:#ae81ff">0</span>))
 </span></span><span style="display:flex;"><span>      .animation(.<span style="color:#66d9ef">default</span>)
 </span></span></code></pre></div><p>Now the image can be flipped from the menu item or even by using the keyboard shortcut. And with a smooth animation (smoother in the app than in this gif).</p>
-<p><img src="/images/SwiftUI-Mac-Flip.mp4" alt="Flipping the image"></p>
+<p><img src="/images/2019/SwiftUI-Mac-Flip.mp4" alt="Flipping the image"></p>
 <h2 id="opening-another-window">
   Opening another window
   <a href="#opening-another-window" class="h-anchor" aria-hidden="true">#</a>
@@ -316,7 +316,7 @@ as="font" crossorigin="">
 <p>Not all the expected user interface elements are available in SwiftUI and some of the ones that are implemented are using different names. Again this is a point at which iOS development has got all the attention, so there are conversion tables out there listing UIKit elements and their SwiftUI equivalents, but I was not able to find a similar listing for AppKit. If you find one, please let me know.</p>
 <p>Anyway, I experimented and got most of what I wanted as you can see below. The <a href="https://github.com/trozware/swiftui-mac" target="_blank" >sample app on GitHub</a>
  shows the SwiftUI code for these samples, but the main advice I would give is firstly to use the Object Browser to look for what is available and then to check out the styles that can be applied to the element you have chosen.</p>
-<p><img src="/images/SwiftUI-Mac-UI.png" alt="UI elements"></p>
+<p><img src="/images/2019/SwiftUI-Mac-UI.png" alt="UI elements"></p>
 <p>Mostly, I managed to achieve what I wanted but there were a few exceptions.</p>
 <p>Buttons were a bit odd as there are multiple button styles listed, but I found that they either all looked the same or they disappeared completely. I was not able to style a button with an image and text which is now easy to do in iOS. And I was not able to set a button as the default button and I could not work out how to set a keyboard equivalent for a button. (Setting the keyboard equivalent to Return or Enter might set it to the default style automatically.)</p>
 <p>Of the other UI elements that I wanted to use, a color picker was the main one missing. So I decided to embed an NSColorWell from AppKit into my SwiftUI view.</p>

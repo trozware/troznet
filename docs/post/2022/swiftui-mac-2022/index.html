@@ -300,7 +300,7 @@ So I was able to render my navigation like this:</p>
 
 <p><del>The previous image is first set to <code>nil</code>, so that the progress indicator appears.</del></p>
 <p>With all this in place, I had the basis of the app and the navigation was complete:</p>
-<p><img src="/images/navigation_2022.jpg" alt="Navigation"></p>
+<p><img src="/images/2022/navigation_2022.jpg" alt="Navigation"></p>
 <h3 id="detecting-the-active-window">
   Detecting the Active Window
   <a href="#detecting-the-active-window" class="h-anchor" aria-hidden="true">#</a>
@@ -330,7 +330,7 @@ So I was able to render my navigation like this:</p>
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>When the notification arrives, the code checks the value of <code>controlActiveState</code>. In my tests, this was always either <code>key</code> or <code>inactive</code>, but I saw that <code>active</code> was an option and added it too, in case it becomes relevant later. If the <code>CatImageView</code> is in the active window, it flips the image and if not, this notification is ignored.</p>
-<p><img src="/images/target_active_window.jpg" alt="Target Active Window"></p>
+<p><img src="/images/2022/target_active_window.jpg" alt="Target Active Window"></p>
 <p>As you can see from the text in the images, only the front window image is flipped.</p>
 <h3 id="opening-new-windows">
   Opening New Windows
@@ -371,7 +371,7 @@ So I was able to render my navigation like this:</p>
   <a href="#charts" class="h-anchor" aria-hidden="true">#</a>
 </h3>
 <p>One of the signature features of SwiftUI at WWDC 2022 was the new Charts API. I have struggled with charts in the past, so this was very interesting. I need to learn more, but I added a simple bar chart to the samples window:</p>
-<p><img src="/images/bar_chart.jpg" alt="Bar chart"></p>
+<p><img src="/images/2022/bar_chart.jpg" alt="Bar chart"></p>
 <p>This charts the number of entries in each category of HTTP status. I drew a line across at the 8 value because drawing a marker line is a feature I have often needed in charts.</p>
 <p>Creating the chart was smooth:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>Chart {
@@ -413,7 +413,7 @@ So I was able to render my navigation like this:</p>
 </span></span></code></pre></div><p>A similar method provided the <code>RuleMark</code> as either a vertical or horizontal line.</p>
 <p>A segmented picker switches between the two and the only thing now was to animate the change. There is an <code>animation</code> modifier added last year that allows you to connect an animation to a property, so that when the property changes, the animation is triggered.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>.animation(.easeInOut, value: drawHorizontal)
-</span></span></code></pre></div><p><img src="/images/chart_animation.mp4" alt="Animated chart"></p>
+</span></span></code></pre></div><p><img src="/images/2022/chart_animation.mp4" alt="Animated chart"></p>
 <p>I added <code>Text</code> views for the title of the chart and for the axes, inside a  <code>VStack</code> and an <code>HStack</code>, rotating the text for vertical axis. Maybe there is a chart setting that I&rsquo;m missing for adding these labels automatically using the Chart library.</p>
 <h3 id="image-rendering">
   Image Rendering
@@ -466,7 +466,7 @@ The <code>saveImage</code> method uses an <code>NSSavePanel</code> to get a URL 
   <a href="#forms" class="h-anchor" aria-hidden="true">#</a>
 </h3>
 <p>SwiftUI has always had a <code>Form</code> object, but the new System Settings app (previously System Preferences) has taken this to a new level. So I added some UI elements to a second tab in the UI Samples window.</p>
-<p><img src="/images/form.jpg" alt="Form"></p>
+<p><img src="/images/2022/form.jpg" alt="Form"></p>
 <p>There are a few interesting things here. Firstly, I achieved something I was unable to do last time and that is to make the text edit field have focus when the view opens. This was a three part operation:</p>
 <p>Firstly, I added this property to the view:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>@FocusState <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> emailFieldHasFocus: Bool
@@ -493,7 +493,7 @@ The <code>saveImage</code> method uses an <code>NSSavePanel</code> to get a URL 
 </span></span></code></pre></div><p>Setting the title without a <code>systemImage</code> shows the text as the menu bar title. when you specify a <code>systemImage</code>, the text is not displayed and the menu bar only shows the image.</p>
 <p><code>MenuBarExtra</code> takes an <code>isInserted</code> parameter, so you can turn it off and on. I added this to the app&rsquo;s settings and stored it using <code>@AppStorage</code>.</p>
 <p>I set up a new SwiftUI view that looped through the HTTP Status data and created a submenu for each category and set this as the <code>MenuBarExtra</code> view. This works and my menu bar component was functional. Selecting a status uses <code>NSWorkspace</code> to open the relevant documentation page at MDN.</p>
-<p><img src="/images/menu_bar_extra.jpg" alt="MenuBarExtra"></p>
+<p><img src="/images/2022/menu_bar_extra.jpg" alt="MenuBarExtra"></p>
 <h3 id="conclusion">
   Conclusion
   <a href="#conclusion" class="h-anchor" aria-hidden="true">#</a>

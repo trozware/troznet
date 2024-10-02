@@ -414,5 +414,5 @@ let checkedNames = checkPlayerNamesUsingFunction(names: allNames)
 Which methods you use are up to you - they all work. If you have a function that will be called in many different places, maybe it makes more sense to define it once and pass around a reference to that function. If not, a closure has the advantage that it keeps everything together. There is more to closures, particularly to do with variable scope, but I think this post has gone on long enough already.... maybe next time.
 
 [1]: /post/2018/swiftlint/
-[2]: /images/FunctionType.png
+[2]: /images/2018/FunctionType.png
 [3]: https://github.com/trozware/functional-programming

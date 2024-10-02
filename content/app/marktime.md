@@ -47,5 +47,5 @@ provide this data if you wish.
 link above to get in touch.
 
 [1]: https://itunes.apple.com/us/app/mark-time/id1305580742?mt=8
-[2]: /images/MarkTime1.png
-[3]: /images/MarkTime2.png
+[2]: /images/2017/MarkTime1.png
+[3]: /images/2017/MarkTime2.png

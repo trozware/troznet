@@ -182,15 +182,15 @@ In [part 2 of this series][3], I will look into:
 - more user interface controls
 - how to pass data around between windows
 
-[i1]: /images/SwiftUI-Mac-project.png
-[i2]: /images/SwiftUI-Mac-Storyboard.png
-[i3]: /images/SwiftUI-Mac-Canvas.png
-[i4]: /images/SwiftUI-Mac-LivePreview.png
-[i5]: /images/SwiftUI-Mac-master-detail.gif
-[i6]: /images/SwiftUI-Mac-Master.png
-[i7]: /images/SwiftUI-Mac-outline.png
-[i8]: /images/SwiftUI-Mac-detail.png
-[i9]: /images/SwiftUI-Mac-signing.png
+[i1]: /images/2019/SwiftUI-Mac-project.png
+[i2]: /images/2019/SwiftUI-Mac-Storyboard.png
+[i3]: /images/2019/SwiftUI-Mac-Canvas.png
+[i4]: /images/2019/SwiftUI-Mac-LivePreview.png
+[i5]: /images/2019/SwiftUI-Mac-master-detail.gif
+[i6]: /images/2019/SwiftUI-Mac-Master.png
+[i7]: /images/2019/SwiftUI-Mac-outline.png
+[i8]: /images/2019/SwiftUI-Mac-detail.png
+[i9]: /images/2019/SwiftUI-Mac-signing.png
 [1]: https://http.cat
 [2]: https://www.hackingwithswift.com/example-code/system/how-to-decode-json-from-your-app-bundle-the-easy-way
 [3]: /post/2019/swiftui-for-mac-2/

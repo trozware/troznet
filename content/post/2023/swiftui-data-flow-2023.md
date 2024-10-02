@@ -1,5 +1,5 @@
 ---
-title: "SwiftUI Data Flow 2023"
+title: 'SwiftUI Data Flow 2023'
 date: 2023-07-10T09:22:54+10:00
 draft: false
 description: 'Various ways to pass data around your SwiftUI apps, after WWDC 2023.'
@@ -19,16 +19,16 @@ Updated 10th July 2023 to cover changes in version 3 of all the betas.
 
 ### Table of Contents
 
-  - [Observation](#observation)
-  - [Sample app](#sample-app)
-  - [Property](#property)
-  - [@State](#state)
-  - [@Binding](#binding)
-  - [@Binding for a Structure](#binding-for-a-structure)
-  - [@Observable and @Bindable](#observable-and-bindable)
-  - [@Observable and @Bindable List](#observable-and-bindable-list)
-  - [@Environment](#environment)
-  - [Wrapping Up](#wrapping-up)
+- [Observation](#observation)
+- [Sample app](#sample-app)
+- [Property](#property)
+- [@State](#state)
+- [@Binding](#binding)
+- [@Binding for a Structure](#binding-for-a-structure)
+- [@Observable and @Bindable](#observable-and-bindable)
+- [@Observable and @Bindable List](#observable-and-bindable-list)
+- [@Environment](#environment)
+- [Wrapping Up](#wrapping-up)
 
 With the release of all the version 3 betas, I have added these sections:
 
@@ -50,7 +50,7 @@ This is a good starting point, but I feel that it leaves out a few cases, so I'v
 
 ![My flow chart][i2]
 
-Apart from adding some details to the decisions points, there are really only two additions to my chart: 
+Apart from adding some details to the decisions points, there are really only two additions to my chart:
 
 - If a property doesn't need to change, it can be a `let`.
 - `@Bindable` only works for classes. The equivalent for structs or primitive data types is still `@Binding`.
@@ -65,6 +65,7 @@ The new macros system removes this protocol and property wrappers:
 That's a lot of typing we don't have to do any more!
 
 #### UPDATE 1:
+
 I didn't make it clear originally, but all these property wrappers still work, and you can still use `@Binding` for classes, so you can adapt to the new Observation code incrementally. The Apple developer site has a very useful article on [migrating from ObservableObject][5].
 
 [Back to Top](#top)
@@ -73,17 +74,17 @@ I didn't make it clear originally, but all these property wrappers still work, a
 
 ### Sample app
 
-My sample app demonstrates the following data flow options: 
+My sample app demonstrates the following data flow options:
 
 ![Sample app options][i3]
 
-The code is available on [GitHub][2] and I recommend you download the project and  follow along. It requires macOS 14 and Xcode 15. Currently I'm using macOS 14.0 beta 3 (23A5286g) and Xcode 15.0 beta 3 (15A5195k), but I will update this article with any changes as we work through the beta cycle.
+The code is available on [GitHub][2] and I recommend you download the project and follow along. It requires macOS 14 and Xcode 15. Currently I'm using macOS 14.0 beta 3 (23A5286g) and Xcode 15.0 beta 3 (15A5195k), but I will update this article with any changes as we work through the beta cycle.
 
 Because Xcode 15 now supports live previews for Mac apps, you can test all the options from inside Xcode. In the Project navigator, expand the numbered groups and preview the first file in each group to view and interact with that data flow type.
 
 Or go to the Bookmarks navigator where I've used the new bookmaking system to provide quick links to each one. You can even check off each one as you finish that section.
 
-In the code snippets below, I include the essentials, but strip out most display modifiers and some similar views to keep the code short. The project contains the complete code. 
+In the code snippets below, I include the essentials, but strip out most display modifiers and some similar views to keep the code short. The project contains the complete code.
 
 [Back to Top](#top)
 
@@ -106,7 +107,7 @@ struct Property: View {
 ```
 
 My flow chart shows two use cases for `let`. This covers the first one where the view owns the property. The second is when a parent supplies the property to a view but the child view never changes the property. You'll see an example of this later on in this article.
- 
+
 A parent view may have some dynamic data that it uses to set properties in a subview where the subview only needs to display the data statically. This data will still change as the parent view changes but the subview will not be able to change the data itself or in the parent view.
 
 > If a view owns a property or gets it from a parent but doesn't need to change it, use `let`.
@@ -151,7 +152,7 @@ In this example, the `counter` property uses `@State`. The text view displays it
 
 The Apple flow chart mentioned `@Bindable` but that only works with observable classes. For connecting structures or primitive data types to subviews, use `@Binding`. Apple does this internally for controls like `Toggle` and `TextField`.
 
-A problem with building SwiftUI views is that it is very easy to end up with a gigantic *Pyramid of Doom* as you embed views within views within views. Extracting subviews is a great solution, but then you need a way to pass the data to a subview in a way that allows the subview to edit that property **and** have the edits flow back to the parent.
+A problem with building SwiftUI views is that it is very easy to end up with a gigantic _Pyramid of Doom_ as you embed views within views within views. Extracting subviews is a great solution, but then you need a way to pass the data to a subview in a way that allows the subview to edit that property **and** have the edits flow back to the parent.
 
 This is where `@Binding` and `@Bindable` come into play.
 
@@ -299,16 +300,15 @@ import Observation
 
 The first thing to notice is the new import: `Observation`. This is the library that supports the new `@Observable` macro. Previously, `ColorSet` conformed to the `ObservableObject` protocol and the properties that needed to be observed were marked with the `@Published` property wrapper.
 
-Now the class uses the `@Observable` macro and any property that isn't private, is automatically published. This is only available for classes, not structures. 
+Now the class uses the `@Observable` macro and any property that isn't private, is automatically published. This is only available for classes, not structures.
 
-#### UPDATE 2: 
+#### UPDATE 2:
 
-~~The properties must all have an initial value - setting them in an `init` is not sufficient and will not build.~~ 
+~~The properties must all have an initial value - setting them in an `init` is not sufficient and will not build.~~
 
 In beta 3, observed properties no longer require an initial value. For this class, I actually want to specify initial values, but in the next section, I do not.
 
---- 
-
+---
 
 If you want a look at what's happening inside the macro, right-click on `@Observable` and select **Expand Macro**. When you've finished, right -click again and choose **Hide Macro Expansion**.
 
@@ -358,7 +358,7 @@ There is one oddity to beware of. When declaring the original `colorSet` propert
 
 If you remember the older code style, the owning view initialized an `ObservableObject` using `@StateObject`. Subsequent views declared the same property using `@ObservedObject` but it was very important for the owning view to use `@StateObject` to avoid strange and difficult to trace bugs. The app worked if you used `@ObservedObject` instead of `@StateObject` for the original declaration, but then odd things could happen.
 
-I think this is the same, and it's just as important for the owning view to declare the original property using  `@State`.
+I think this is the same, and it's just as important for the owning view to declare the original property using `@State`.
 
 [Back to Top](#top)
 
@@ -428,7 +428,7 @@ The `PersonEditView` in the inspector receives the person as `@Bindable` and pop
 
 ![Editing a person][i6]
 
-This took a lot less code than the previous version. Part of the improvement was the ability to use bindings in a list, which we got last year, but another big part was using the `Person` directly as the selection. This needs the `Hashable` and  `Equatable` conformance, which I think should be a standard part of `Identifiable`, but once that's in place, all the data flows smoothly.
+This took a lot less code than the previous version. Part of the improvement was the ability to use bindings in a list, which we got last year, but another big part was using the `Person` directly as the selection. This needs the `Hashable` and `Equatable` conformance, which I think should be a standard part of `Identifiable`, but once that's in place, all the data flows smoothly.
 
 If I was using a sheet for the editor, it would be even neater as I could tie the sheet's appearance to `selectedPerson`.
 
@@ -442,7 +442,7 @@ If I was using a sheet for the editor, it would be even neater as I could tie th
 
 The last section is `Environment`, which again, has changed a lot. The benefit of using Environment is that the data flow doesn't have to be unbroken. In the sample app, the parent view (NestedViews) uses the Environment property and so does the GrandChildView, but the ChildView in the middle doesn't.
 
-Setting up a property for Environment is the same as for Observable. 
+Setting up a property for Environment is the same as for Observable.
 
 ```swift
 import Observation
@@ -493,7 +493,7 @@ In the sample app, the various nested views are brightly colored to show which i
 
 > If you have a class that is global to your app, like UserSettings in this example, declare the class with the `@Observable` macro. Inject it into your view hierarchy using `.environment` and then use `@Enviroment` to access it.
 
-#### UPDATE 3: 
+#### UPDATE 3:
 
 There is one aspect of using `@Enviroment` where things get tricky, and that's if you need to use any properties of the environment object as bindings for other controls.
 
@@ -558,15 +558,13 @@ If you have any suggestions, ideas or corrections, please contact me using one o
 [3]: https://developer.apple.com/wwdc23/10149
 [4]: https://iosdev.space/@StewartLynch
 [5]: https://developer.apple.com/documentation/swiftui/migrating-from-the-observable-object-protocol-to-the-observable-macro
-
 [contact]: /contact/
 [kofi]: https://ko-fi.com/trozware
-
-[i1]: /images/apple_data_flow.jpeg
-[i2]: /images/my_data_flow.png
-[i3]: /images/data_flow_types.png
-[i4]: /images/show_macro.png
-[i5]: /images/color_chooser.png
-[i6]: /images/person_edit.mp4
-[i7]: /images/environment.png
-[i8]: /images/env_binding.png
+[i1]: /images/2023/apple_data_flow.jpeg
+[i2]: /images/2023/my_data_flow.png
+[i3]: /images/2023/data_flow_types.png
+[i4]: /images/2023/show_macro.png
+[i5]: /images/2023/color_chooser.png
+[i6]: /images/2023/person_edit.mp4
+[i7]: /images/2023/environment.png
+[i8]: /images/2023/env_binding.png

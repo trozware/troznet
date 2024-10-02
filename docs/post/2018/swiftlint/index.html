@@ -315,16 +315,16 @@ Try entering this in the Terminal window: <code>swiftlint autocorrect</code>.</p
 </span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
 </span></span></code></pre></div><p>Your Xcode window should look something like this:</p>
-<p><a href="/images/SwiftLineRunScript.png" ><img src="/images/SwiftLineRunScript.png" alt="SwiftLint Run Script phase"></a>
+<p><a href="/images/2018/SwiftLineRunScript.png" ><img src="/images/2018/SwiftLineRunScript.png" alt="SwiftLint Run Script phase"></a>
 </p>
 <p>If you think this looks like it is running SwiftLint twice, you are correct. The first time through it corrects what it can and the second pass reports all remaining issues. This is still faster than manually correcting the easy stuff. So now you will see any violations in the Xcode issue navigator when you do a build and you can click the entry to go directly to the code.</p>
-<p><img src="/images/IssuesNavigator.png" alt="SwiftLint errors &amp; warnings in Xcode issues navigator"></p>
+<p><img src="/images/2018/IssuesNavigator.png" alt="SwiftLint errors &amp; warnings in Xcode issues navigator"></p>
 <h3 id="configuring-swiftlint">
   Configuring SwiftLint
   <a href="#configuring-swiftlint" class="h-anchor" aria-hidden="true">#</a>
 </h3>
 <p>Now you are all set to SwiftLint all your code, but how do you decide what styles SwiftLint should enforce? Go back to Terminal, make the Terminal window as wide as possible and run <code>swiftlint rules</code> which will return a table like this (click to see full-sized image):</p>
-<p><a href="/images/swiftlint_rules.png" ><img src="/images/swiftlint_rules.png" alt="SwiftLint Rules"></a>
+<p><a href="/images/2018/swiftlint_rules.png" ><img src="/images/2018/swiftlint_rules.png" alt="SwiftLint Rules"></a>
 </p>
 <p>For details on what each rule does, check out the entries in <a href="https://github.com/realm/SwiftLint/blob/master/Rules.md" target="_blank" >Rules.md</a>
 </p>

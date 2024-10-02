@@ -50,7 +50,7 @@ Because macOS has its roots in Unix, it provides a vast array of command line to
 
 Once you've written your app, you'll want to distribute it to others so they can benefit from your creativity. On macOS, you have more distribution options than you do on iOS. In this section, you'll explore the pros and cons of those options so you can choose which is best for you.
 
-[i1]: /images/mos_cover_small.png
+[i1]: /images/2024/mos_cover_small.png
 [1]: https://www.kodeco.com/books/macos-by-tutorials
 [2]: https://sarahreichelt.gumroad.com/l/oximx
 [3]: mailto:books@troz.net?subject=macOS%20by%20Tutorials%20Discount

@@ -1,9 +1,9 @@
 ---
-title: "Mark Time"
+title: 'Mark Time'
 date: 2017-12-12T09:14:07+10:00
 lastmod: 2017-12-12T09:14:07+10:00
 draft: false
-description: ""
+description: ''
 tags: []
 toc: true
 ---
@@ -32,10 +32,10 @@ development process from first specifications to release in the App Store.
 
 ### The Basic Specs
 
-* tap anywhere on the screen to record the time
-* convert the time to Universal Time (UT)
-* display that time in a specific format: DD:HH:MM:SS
-* store the last 5 tap times
+- tap anywhere on the screen to record the time
+- convert the time to Universal Time (UT)
+- display that time in a specific format: DD:HH:MM:SS
+- store the last 5 tap times
 
 A `UITapGestureRecognizer` over the entire view solved the first requirement.
 The native `Date` object handles time zone conversions perfectly, and then it
@@ -47,14 +47,14 @@ the most recent is always at the top.
 
 ### UI considerations
 
-* colour scheme must work in bright sunlight
-* text should use dynamic sizing so it works if people adjust the text size on
+- colour scheme must work in bright sunlight
+- text should use dynamic sizing so it works if people adjust the text size on
   their iPhones
-* the UI elements must be out of the way of the new iPhone X system gestures.
-* while it will most likely be used on iPhones, allow for iPads as well
+- the UI elements must be out of the way of the new iPhone X system gestures.
+- while it will most likely be used on iPhones, allow for iPads as well
 
-I had done extensive tests of colour schemes when developing my golf scoring app
-[19th Hole][5], so I already had the answer to the colours question: dark grey
+I had done extensive tests of colour schemes when developing my golf scoring app,
+so I already had the answer to the colours question: dark grey
 background with white text.
 
 Allowing for dynamic type should have been easy - choose a font style e.g. body,
@@ -75,15 +75,15 @@ much, but the display is bigger and probably easier to read.
 As always, once the first few iterations have been through the testing process,
 there were a few things that needed changing and then feature creep set in...
 
-* change the date format to be more readable
-* change the basic tap gesture so that it triggers on tap down, not tap up
-* add a button to clear all the stored data
-* display the current time in UTC and in the same format
-* cheat mode - record latitude and longitude for each time so the calculations
+- change the date format to be more readable
+- change the basic tap gesture so that it triggers on tap down, not tap up
+- add a button to clear all the stored data
+- display the current time in UTC and in the same format
+- cheat mode - record latitude and longitude for each time so the calculations
   can be checked
-* change the format for showing the latitude and longitude
-* sound & haptics to provide feedback
-* settings
+- change the format for showing the latitude and longitude
+- sound & haptics to provide feedback
+- settings
 
 The date format was DD:HH:MM:SS so for 12th December at 1:01:46 pm, this would
 show 12:13:01:46 which we decided was a bit confusing. One tended to assume the
@@ -127,7 +127,7 @@ process for a new app - things have certainly changed!
 The app is free - you can get it from the [iTunes App Store][1].
 
 [1]: https://itunes.apple.com/us/app/mark-time/id1305580742?mt=8
-[2]: /images/MarkTime1.png
-[3]: /images/MarkTime2.png
-[4]: /images/MarkTime3.png
+[2]: /images/2017/MarkTime1.png
+[3]: /images/2017/MarkTime2.png
+[4]: /images/2017/MarkTime3.png
 [5]: /19th-hole/

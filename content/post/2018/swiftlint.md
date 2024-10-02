@@ -257,9 +257,9 @@ And sometimes the warnings make me think of a better way to do things.
 [4]: https://github.com/realm/SwiftLint
 [5]: https://brew.sh
 [6]: https://github.com/realm/SwiftLint/blob/master/Rules.md
-[7]: /images/swiftlint_rules.png
-[8]: /images/SwiftLineRunScript.png
-[9]: /images/IssuesNavigator.png
+[7]: /images/2018/swiftlint_rules.png
+[8]: /images/2018/SwiftLineRunScript.png
+[9]: /images/2018/IssuesNavigator.png
 [10]: https://github.com/realm/SwiftLint#configuration
 [11]: https://github.com/realm/SwiftLint#disable-rules-in-code
 [12]: https://github.com/github/swift-style-guide
