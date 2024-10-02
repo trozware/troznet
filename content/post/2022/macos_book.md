@@ -71,7 +71,7 @@ There is also an [official forum][7] for the book where you can ask questions an
 [1]: https://www.kodeco.com/books/macos-by-tutorials
 [2]: https://www.kodeco.com/
 [3]: https://www.kodeco.com/books/macos-by-tutorials/v1.0/chapters/v-introduction
-[6]: https://github.com/kodeco/mos-materials/tree/editions/1.0
+[6]: https://github.com/kodecocodes/mos-materials/tree/editions/1.0
 [7]: https://forums.kodeco.com/c/books/macos-by-tutorials
 [8]: /contact/
 [9]: https://twitter.com/mandarazeware

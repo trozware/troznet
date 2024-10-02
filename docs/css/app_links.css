@@ -14,7 +14,7 @@ img {
 .mac_app_button {
   display: inline-block;
   overflow: hidden;
-  background: url(http://linkmaker.itunes.apple.com/assets/shared/badges/en-us/macappstore-lrg.svg)
+  background: url(../icons/Mac_App_Store_Badge_white.svg)
     no-repeat;
   width: 165px;
   height: 40px;
@@ -24,9 +24,21 @@ img {
 .ios_app_button {
   display: inline-block;
   overflow: hidden;
-  background: url(http://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg)
+  background: url(../icons/App_Store_Badge_white.svg)
     no-repeat;
   width: 135px;
   height: 40px;
   background-size: contain;
+}
+
+@media (prefers-color-scheme: dark) {
+  .mac_app_button {
+    background: url(../icons/Mac_App_Store_Badge.svg)
+      no-repeat;
+  }
+  
+  .ios_app_button {
+    background: url(../icons/App_Store_Badge.svg)
+      no-repeat;
+  }
 }
