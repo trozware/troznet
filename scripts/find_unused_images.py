@@ -2,7 +2,9 @@ import os
 import sys
 import re
 
-os.chdir(sys.path[0])
+scripts_dir = sys.path[0]
+parent_dir = os.path.abspath(os.path.join(scripts_dir, os.pardir))
+os.chdir(parent_dir)
 
 images_dir = "./static/images/"
 html_dir = "./docs/"
