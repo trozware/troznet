@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+      <title>
+        Swift Format in Xcode ::
+        TrozWare — Mac books &amp; articles
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="In Xcode 16, Apple quietly introduced the ability to format your Swift files using Swift Format. I&amp;rsquo;m a long-time user of SwiftLint, but having such a tool built into Xcode would be a great convenience, so I decided to give it a try. Here is my description of why I use such a tool, how well it works compared to the alternatives, and how I configured it for my own purposes.
+"
+/>
+<meta name="keywords" content="[Mac app development Apple Mac Xcode Swift SwiftUI Apple macOS books articles blog apps developer author Sarah Reichelt]" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://localhost:1313/post/2024/swift_format/" />
+
+
+
+
+
+ 
+<link rel="stylesheet" href="/css/style.css" />
+
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+
+
+<link href="/fonts/Inter-Italic.woff2"
+rel="preload" type="font/woff2" as="font" crossorigin=""> <link href="/fonts/Inter-Regular.woff2" rel="preload"
+type="font/woff2" as="font" crossorigin=""> <link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2"
+as="font" crossorigin=""> <link href="/fonts/Inter-MediumItalic.woff2" rel="preload"
+type="font/woff2" as="font" crossorigin=""> <link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2"
+as="font" crossorigin=""> <link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2"
+as="font" crossorigin="">
+
+
+<meta property="og:url" content="http://localhost:1313/post/2024/swift_format/">
+  <meta property="og:site_name" content="TrozWare">
+  <meta property="og:title" content="Swift Format in Xcode">
+  <meta property="og:description" content="With Xcode 16, Apple has included Swift Format for code formatting.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-11-06T16:29:20+10:00">
+    <meta property="article:modified_time" content="2024-11-06T16:29:20+10:00">
+    <meta property="article:tag" content="Swift">
+    <meta property="article:tag" content="Xcode">
+    <meta property="article:tag" content="Swiftlint">
+    <meta property="article:tag" content="Swiftformat">
+
+
+
+
+
+
+  </head>
+  <body >
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="http://localhost:1313/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >TrozWare</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/books/">Books</a></li>
+        
+      
+        
+          <li><a href="/apps/">Apps</a></li>
+        
+      
+        
+          <li><a href="/post/">Archives</a></li>
+        
+      
+        
+          <li><a href="/tags/">Tags</a></li>
+        
+      
+        
+          <li><a href="/contact/">Contact</a></li>
+        
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/">Home</a></li>
+      
+    
+      
+        <li><a href="/books/">Books</a></li>
+      
+    
+      
+        <li><a href="/apps/">Apps</a></li>
+      
+    
+      
+        <li><a href="/post/">Archives</a></li>
+      
+    
+      
+        <li><a href="/tags/">Tags</a></li>
+      
+    
+      
+        <li><a href="/contact/">Contact</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+
+<link rel="stylesheet" href="/css/header.css" />
+
+<div class="post">
+  <h2 class="post-title">
+    <a href="http://localhost:1313/post/2024/swift_format/">Swift Format in Xcode</a>
+  </h2>
+  <div class="post-meta">
+    <span class="post-date">
+      06 Nov 2024
+    </span>
+    <span class="more-meta">- 2002 words, </span>
+    <span class="more-meta"> 10 minute read</span>
+  </div>
+
+  
+  <span class="post-tags">
+     #<a
+      href="http://localhost:1313/tags/swift"
+      >swift</a
+    >&nbsp;  #<a
+      href="http://localhost:1313/tags/xcode"
+      >xcode</a
+    >&nbsp;  #<a
+      href="http://localhost:1313/tags/swiftlint"
+      >swiftlint</a
+    >&nbsp;  #<a
+      href="http://localhost:1313/tags/swiftformat"
+      >swiftformat</a
+    >&nbsp; 
+  </span>
+   
+
+  <div class="post-content"><p>In Xcode 16, Apple quietly introduced the ability to format your Swift files using Swift Format. I&rsquo;m a long-time user of SwiftLint, but having such a tool built into Xcode would be a great convenience, so I decided to give it a try. Here is my description of why I use such a tool, how well it works compared to the alternatives, and how I configured it for my own purposes.</p>
+<h2 id="why-format-your-code">
+  Why Format Your Code?
+  <a href="#why-format-your-code" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>I have always been a big fan of consistent code formatting. As I wrote years ago in <a href="/post/2018/swiftlint/" >Consistent Swift Style</a>
+, we read code far more often than we write it, so anything that improves readability is great for productivity, even for a solo developer. If you work as part of a team, consistency is even more important as you don&rsquo;t want other people to have to spend their valuable time trying to understand your code, or the other way round.</p>
+<p>I have been an editor and writer for <a href="https://www.kodeco.com/" target="_blank" >Kodeco</a>
+ (formerly raywenderlich.com) for many years and with so many different authors on the team, it was crucial for there to be a consistent style. This is why I always use SwiftLint in my Kodeco projects, using the configuration file found here: <a href="https://github.com/kodecocodes/swift-style-guide/blob/main/SWIFTLINT.markdown" target="_blank" >Kodeco Swift Style Guide</a>
+. For my own projects, I vary this configuration slightly, but I always use SwiftLint. Similarly, when doing web development, I always use <a href="https://prettier.io" target="_blank" >Prettier</a>
+ which integrates beautifully with Visual Studio Code so that my files are automatically prettified on save.</p>
+<h2 id="swift-format">
+  Swift Format
+  <a href="#swift-format" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>The name Apple chose is logical but confusing. I had experimented with Nick Lockwood&rsquo;s <a href="https://github.com/nicklockwood/SwiftFormat" target="_blank" >SwiftFormat</a>
+ a few years ago, but found that I preferred SwiftLint, so I stuck with the latter. When I saw that Xcode included Swift Format, I assumed that they had acquired Nick&rsquo;s formatter but it appears to be a different tool, officially called <a href="https://github.com/swiftlang/swift-format" target="_blank" >swift-format</a>
+. It&rsquo;s downloaded as part of the toolchain when you install Xcode 16, so no further installation is required.</p>
+<h2 id="test-code">
+  Test Code
+  <a href="#test-code" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>I created a test project in Xcode 16 and wrote a chunk of Swift and SwiftUI for testing. I deliberately formatted it badly so as to see which formatter did what to it, so don&rsquo;t hate me for this nonsensical code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">SwiftUI</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
+</span></span><span style="display:flex;"><span>  @State <span style="color:#66d9ef">var</span> data = [String]()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>      NavigationSplitView(sidebar: {
+</span></span><span style="display:flex;"><span>        List(data, id: <span style="color:#960050;background-color:#1e0010">\</span>.<span style="color:#66d9ef">self</span>) { row <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>          Text(row)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      }, detail: {
+</span></span><span style="display:flex;"><span>        Text(someComputedProperty)
+</span></span><span style="display:flex;"><span>      })
+</span></span><span style="display:flex;"><span>        .onAppear(perform: createTestData)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">createTestData</span>() {
+</span></span><span style="display:flex;"><span>    data = Array(<span style="color:#ae81ff">0</span> ..<span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1000</span>).map { <span style="color:#e6db74">&#34;Row #</span><span style="color:#e6db74">\(</span>$0<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">downloadData</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> address = <span style="color:#e6db74">&#34;https://zenquotes.io/api/quotes&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> url = URL(string: address)<span style="color:#f92672">!</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> task = URLSession.shared.dataTask(with: url) { data, response, error <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> data = data,<span style="color:#66d9ef">let</span> string = String(data: data, encoding: .utf8) {
+</span></span><span style="display:flex;"><span>          print(string)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    task.resume()
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> someComputedProperty: String {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    This is a multiline string,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    that is a computed property which can be tricky to format.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    It has nothing to do with the list on the side, but I wanted to see how swift-format would handle it.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">longFunctionNameThatDoesSomething</span>() {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;This is a long function name that does something&#34;</span>)
+</span></span><span style="display:flex;"><span>    FunctionwithLotsOfArguments(arg1: <span style="color:#ae81ff">1</span>, arg2: <span style="color:#ae81ff">2</span>, arg3: <span style="color:#ae81ff">3</span>, arg4: <span style="color:#ae81ff">4</span>, arg5: <span style="color:#ae81ff">5</span>, arg6: <span style="color:#ae81ff">6</span>, arg7: <span style="color:#ae81ff">7</span>, arg8: <span style="color:#ae81ff">8</span>, arg9: <span style="color:#ae81ff">9</span>, arg10: <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Yes, this deliberately starts with an uppercase letter</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">FunctionwithLotsOfArguments</span>(arg1: Int, arg2: Int, arg3: Int, arg4: Int, arg5: Int, arg6: Int, arg7: Int, arg8: Int, arg9: Int, arg10: Int) {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;This is a function with a lot of arguments&#34;</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#Preview {
+</span></span><span style="display:flex;"><span>    ContentView()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Some comments on this code:</p>
+<ul>
+<li>I use 2 space indentation, but Xcode creates files with 4 spaces, so indentation is a mess.</li>
+<li>The <code>NavigationSplitView</code> is not using multiple trailing closure syntax.</li>
+<li>I&rsquo;ve left unnecessary blank lines in the code.</li>
+<li>The networking code is not what I would write, but it was suggested by GitHub Copilot.</li>
+<li>Multi-line strings are often difficult to format.</li>
+<li>The two functions at the end really need to spread over more lines and the last one should start with a lowercase letter.</li>
+</ul>
+<h2 id="using-other-formatters">
+  Using Other Formatters
+  <a href="#using-other-formatters" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Before checking out Xcode&rsquo;s <code>swift-format</code>, I want to try <strong>SwiftLint</strong> and <strong>Prettier</strong>. I have SwiftLint installed already, so I can run it from the Terminal. After I used <code>cd</code> to step into the project&rsquo;s code folder, I ran:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>swiftlint ContentView.swift
+</span></span></code></pre></div><p>This is using the default SwiftLint configuration and gave this result (I deleted the folder path but you&rsquo;ll still have to scroll sideways to read this.):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Linting Swift files at paths ContentView.swift
+</span></span><span style="display:flex;"><span>Linting &#39;ContentView.swift&#39; (1/1)
+</span></span><span style="display:flex;"><span>ContentView.swift:28:25: warning: Comma Spacing Violation: There should be no space before and one after any comma (comma)
+</span></span><span style="display:flex;"><span>ContentView.swift:51:3: error: Function Parameter Count Violation: Function should have 5 parameters or less: it currently has 10 (function_parameter_count)
+</span></span><span style="display:flex;"><span>ContentView.swift:51:8: error: Identifier Name Violation: Function name &#39;FunctionwithLotsOfArguments(arg1:arg2:arg3:arg4:arg5:arg6:arg7:arg8:arg9:arg10:)&#39; should start with a lowercase character (identifier_name)
+</span></span><span style="display:flex;"><span>ContentView.swift:47:1: warning: Line Length Violation: Line should be 120 characters or less; currently it has 123 characters (line_length)
+</span></span><span style="display:flex;"><span>ContentView.swift:51:1: warning: Line Length Violation: Line should be 120 characters or less; currently it has 147 characters (line_length)
+</span></span><span style="display:flex;"><span>ContentView.swift:28:39: warning: Non-Optional String &lt;-&gt; Data Conversion Violation: Prefer using UTF-8 encoded strings when converting between `String` and `Data` (non_optional_string_data_conversion)
+</span></span><span style="display:flex;"><span>ContentView.swift:59:1: warning: Trailing Newline Violation: Files should have a single trailing newline (trailing_newline)
+</span></span><span style="display:flex;"><span>ContentView.swift:40:1: warning: Trailing Whitespace Violation: Lines should not have trailing whitespace (trailing_whitespace)
+</span></span><span style="display:flex;"><span>ContentView.swift:26:62: warning: Unused Closure Parameter Violation: Unused parameter in a closure should be replaced with _ (unused_closure_parameter)
+</span></span><span style="display:flex;"><span>ContentView.swift:26:72: warning: Unused Closure Parameter Violation: Unused parameter in a closure should be replaced with _ (unused_closure_parameter)
+</span></span><span style="display:flex;"><span>ContentView.swift:20:1: warning: Vertical Whitespace Violation: Limit vertical whitespace to a single empty line; currently 2 (vertical_whitespace)
+</span></span><span style="display:flex;"><span>Done linting! Found 11 violations, 2 serious in 1 file.
+</span></span></code></pre></div><p>SwiftLint has the ability to fix some issues, so I ran:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>swiftlint --fix ContentView.swift
+</span></span></code></pre></div><p>The result was:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Correcting Swift files at paths ContentView.swift
+</span></span><span style="display:flex;"><span>Correcting &#39;ContentView.swift&#39; (1/1)
+</span></span><span style="display:flex;"><span>ContentView.swift:28:25 Corrected Comma Spacing
+</span></span><span style="display:flex;"><span>ContentView.swift:58:1 Corrected Trailing Newline
+</span></span><span style="display:flex;"><span>ContentView.swift:40:1 Corrected Trailing Whitespace
+</span></span><span style="display:flex;"><span>ContentView.swift:26:62 Corrected Unused Closure Parameter
+</span></span><span style="display:flex;"><span>ContentView.swift:26:72 Corrected Unused Closure Parameter
+</span></span><span style="display:flex;"><span>ContentView.swift:19:1 Corrected Vertical Whitespace
+</span></span><span style="display:flex;"><span>Done correcting 1 file!
+</span></span></code></pre></div><p>This reduced the number of problems to 5, with 2 serious. What it fixed was mostly whitespace issues, but it also removed the two used parameters from the networking closure. It did not fix the indentation.</p>
+<p>Next on my list was Prettier, so I reverted to the badly formatted code and opened the project folder in Visual Studio Code. I had already installed the Swift and Prettier extensions, so I opened and re-saved the file to make Prettier do its thing. This did a slightly better job than SwiftLint: it fixed the indentation and spread the long function call and definition over three lines. It also removed the two parameters from the networking closure and added some line feeds to make the code more readable.</p>
+<h2 id="swift-format-1">
+  swift-format
+  <a href="#swift-format-1" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Finally, it was time to see what <code>swift-format</code> can do. After reverting to the original code again, I chose <strong>Editor -&gt; Structure -&gt; Format File with &lsquo;swift-format&rsquo;</strong>:</p>
+<style>
+  img {
+    margin: 10px auto;
+    border: 0.5rem #dfe7f0 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .dark-theme img {
+    margin: 10px auto;
+    border: 0.5rem #4a4d50 solid;
+    border-radius: 0.5rem;
+     
+  }
+
+  .social_footer img {
+    border: none;
+    box-shadow: none;
+  }
+</style>
+
+<p><img src="/images/2024/swift-format.png" alt="Swift Format"></p>
+<p>This fixed the indentation and the whitespace issues. Interestingly, it split the long function call and definition over multiple lines, but still with more than one argument per line. It did not remove the two parameters from the networking closure. I think I may be running into the difference between a formatter and a linter.</p>
+<p>While I was impressed overall, I disliked the way it removed spaces around the range operator. I prefer:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>data = Array(<span style="color:#ae81ff">0</span> ..<span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1000</span>).map { <span style="color:#e6db74">&#34;Row #</span><span style="color:#e6db74">\(</span>$0<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span> }
+</span></span></code></pre></div><p>But after using swift-format, it was:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>data = Array(<span style="color:#ae81ff">0.</span>.&lt;<span style="color:#ae81ff">1000</span>).map { <span style="color:#e6db74">&#34;Row #</span><span style="color:#e6db74">\(</span>$0<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span> }
+</span></span></code></pre></div><h2 id="configuring-swift-format">
+  Configuring swift-format
+  <a href="#configuring-swift-format" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>The <code>swift-format</code> tool is installed as part of the Xcode toolchain, so the first step in configuring it was to locate it, using the instructions found <a href="https://github.com/swiftlang/swift-format" target="_blank" >here</a>
+ under <strong>Included in the Swift Toolchain</strong>. In Terminal, I used:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>xcrun --find swift-format
+</span></span></code></pre></div><p>Which gave me: <strong>/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-format</strong></p>
+<p>Using this path, I was able to export the default configuration file (I included the full path to the tool in the command, but faked it here for ease of reading):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>path-to/swift-format dump-configuration &gt; swift-format-default-config.json
+</span></span></code></pre></div><p>Opening the file, it has a bunch of settings and a long list of rules. I&rsquo;m not going to go through them, but the file is in the project folder, so you can see it if you download the project from <a href="https://github.com/trozware/swift-format-tests" target="_blank" >GitHub</a>
+ and switch to the <code>swift-format</code> branch.</p>
+<p>The indentation is set to use 2 spaces. I assume that was picked up from my Xcode settings, since it&rsquo;s different to the default. The setting I want to change is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;spacesAroundRangeFormationOperators&#34;</span> <span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#66d9ef">false</span>
+</span></span></code></pre></div><p>Before making any changes, I need to save the file in a location and with a name that <code>swift-format</code> can find. In my tests, I found that saving it as <strong>.swift-format</strong> in my home directory meant that it applied to every Xcode project. To do this, I followed this sequence in Finder:</p>
+<ul>
+<li>Open my <strong>Home</strong> directory.</li>
+<li>Press <strong>Command-Shift-Period</strong> to show hidden files.</li>
+<li>Option-drag <strong>swift-format-default-config.json</strong> to the Home directory.</li>
+<li>Rename the file to <strong>.swift-format</strong> agreeing to the warning about making it invisible.</li>
+</ul>
+<p>Then I edited it, changing the setting to:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;spacesAroundRangeFormationOperators&#34;</span> <span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><p>Back in Xcode, I pressed <strong>Shift-Control-I</strong> to reformat the file. This time, the range operator was formatted with spaces as I wanted.</p>
+<p>To make future configuration changes easier, I created an alias to <strong>.swift-format</strong> in my Home folder and called it <strong>swift-format alias.json</strong>. This gives me a visible link that will open in a JSON editor. With that in place, I pressed <strong>Shift-Command-Period</strong> again to hide invisible files.</p>
+<p><code>swift-format</code> has a lint option, so in Terminal, I ran:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>swift-format lint ContentView.swift
+</span></span></code></pre></div><p>Which reported:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>ContentView.swift:55:8: warning: [AlwaysUseLowerCamelCase] rename the function &#39;FunctionwithLotsOfArguments&#39; using lowerCamelCase
+</span></span></code></pre></div><p>If I was going to do this on a regular basis, I would want to add the path to the<code> swift-format</code> tool to my <code>PATH</code> variable or create an alias to it in my <strong>.zshrc</strong> file, but it was valid information.</p>
+<p>One extra tip: use <strong>Editor -&gt; Structure -&gt; Format to Multiple Lines</strong> or <strong>Control-M</strong> to split long lines into multiples. This is a much more consistent way of spreading out long function calls and definitions. You&rsquo;d think that <strong>Editor -&gt; Structure -&gt; Reformat to Width</strong> would do the opposite, but in my tests, it did either nothing, or the same thing as <strong>Format to Multiple Lines</strong>.</p>
+<h2 id="conclusion">
+  Conclusion
+  <a href="#conclusion" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>I am going to use <code>swift-format</code> in my projects from now on. It&rsquo;s less intrusive than SwiftLint and I like that it&rsquo;s built into the Xcode toolchain. I am going to assign a different keyboard shortcut as <strong>Shift-Control-I</strong> is an awkward combination to reach on my Ergodox Moonlander keyboard.</p>
+<p>Conveniently, the command applies to the entire active file, regardless of selection. I&rsquo;m used to using <strong>Command-A -&gt; Control-I</strong> to fix indentation issues, but this method only requires a single key command.</p>
+<p>For future reference, be aware of this note from the <a href="https://github.com/swiftlang/swift-format" target="_blank" >swift-format GitHub page</a>
+:</p>
+<blockquote>
+<p>NOTE: No default Swift code style guidelines have yet been proposed. The style that is currently applied by swift-format is just one possibility, and the code is provided so that it can be tested on real-world code and experiments can be made by modifying it.</p>
+</blockquote>
+<p>I am hoping that Apple or the Swift team does develop a style guide while still allowing for customization, but in the meantime, I will continue to tweak the settings to suit myself. I presume that if I include a <code>.swift-format</code> file in my project, it will override any other settings. This would be great for distributing tutorial projects with a consistent style. I&rsquo;d also love to be able to set the formatter to run on save, like Prettier does in Visual Studio Code.</p>
+<p>The test project is on GitHub at <a href="https://github.com/trozware/swift-format-tests" target="_blank" >trozware/swift-format-tests</a>
+ if you want to try it out for yourself. There&rsquo;s a separate branch for each formatter, with <code>main</code> holding the original, badly formatted code.</p>
+<p>If you have any other thoughts or suggestions, I&rsquo;d love to hear them. You can contact me using one of the links below or through the <a href="/contact/" >Contact</a>
+ page. And if you found this, or any of my articles useful, please <a href="https://ko-fi.com/trozware" target="_blank" >buy me a coffee</a>
+.</p></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+       
+      <a class="btn previous" href="http://localhost:1313/post/2024/sequoia_app_permissions/"
+        >App Permissions on macOS Sequoia →</a
+      >
+      
+    </div>
+  </div>
+  
+</div>
+
+      </div>
+
+      
+        <link rel="stylesheet" href="/css/footer.css" />
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="social_footer">
+      <a
+        id="email-Link"
+        class="mailtoui"
+        href="mailto:sarah@troz.net"
+        aria-label="Email me"
+        ><img src="/icons/envelope.svg" alt=""
+      /></a>
+      
+      <a
+        rel="me"
+        href="https://mastodon.social/@troz"
+        aria-label="Follow me on Mastodon"
+        ><img src="/icons/mastodon.png" alt=""
+      /></a>
+
+      <a href="https://linktr.ee/trozware" aria-label="Check out all my links"
+        ><img src="/icons/tree.svg" alt=""
+      /></a>
+
+      <a
+        href="https://github.com/trozware"
+        aria-label="Look at my code on Github"
+        ><img src="/icons/github.svg" alt=""
+      /></a>
+
+      <a
+        href="https://stackoverflow.com/users/1082632"
+        aria-label="Check out my Stack Overflow profile"
+        ><img src="/icons/stack-overflow.svg" alt=""
+      /></a>
+
+      <a href="https://troz.net/index.xml" aria-label="Subscribe to my RSS feed"
+        ><img src="/icons/rss.svg" alt=""
+      /></a>
+      <a
+        href="https://troz.net/feed.json"
+        aria-label="Subscribe to my JSON feed"
+        ><img src="/icons/json.png" alt=""
+      /></a>
+
+      <a href="https://dev.to/trozware" aria-label="Check out my DEV profile">
+        <img
+          src="/icons/dev-badge.svg"
+          alt=""
+          alt="TrozWare's DEV Profile"
+          style="height: 37px; margin-top: -3px"
+          height="40"
+          width="40"
+        />
+      </a>
+
+      <a
+        href="https://ko-fi.com/H2H3BU7SI"
+        target="_blank"
+        aria-label="Buy me a coffee"
+        ><img
+          height="36"
+          style="border: 0px; height: 36px; width: unset"
+          src="https://cdn.ko-fi.com/cdn/kofi1.png?v=3"
+          border="0"
+          alt="Buy Me a Coffee at ko-fi.com"
+      /></a>
+    </div>
+  </div>
+
+  <div class="footer__inner">
+    <div class="copyright">
+      
+      <span>© 2012 - 2024 Sarah Reichelt</span>
+      
+      <span
+        ><a href="http://gohugo.io">Hugo</a> theme created by
+        <a href="https://twitter.com/panr">panr</a> 2018</span
+      >
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mailtoui@latest/dist/mailtoui-min.js"></script>
+
+
+
+<script src="/quicklink.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    quicklink()
+  })
+</script>
+
+
+      
+    </div>
+  </body>
+</html>

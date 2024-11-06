@@ -62,9 +62,9 @@ publishDir = "docs"
   
   # site info (option)                                    # 站点信息（可选）
   logoTitle = "TrozWare"        # default: the title value    # 默认值: 上面设置的title值
-  keywords = ["Swift", "SwiftUI", "Apple", "macOS"]
+  keywords = ["Mac app development", "Apple", "Mac", "Xcode", "Swift", "SwiftUI", "Apple", "macOS", "books", "articles", "blog", "apps", "developer", "author", "Sarah Reichelt"]
   description = "Crazy Mac lady. Mac author & developer. Lover of Apple computers and devices. Swift & SwiftUI enthusiast. Unofficial Mac app dev evangelist."
-  subtitle = ""
+  subtitle = "Mac books & articles"
 
   # paginate of archives, tags and categories             # 归档、标签、分类每页显示的文章数目
   archive-paginate = 20
