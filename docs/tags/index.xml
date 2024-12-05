@@ -7,54 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2012 - 2024 Sarah Reichelt</copyright>
-    <lastBuildDate>Thu, 28 Nov 2024 09:22:54 +1000</lastBuildDate>
+    <lastBuildDate>Wed, 06 Nov 2024 16:29:20 +1000</lastBuildDate>
     
         <atom:link href="https://troz.net/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-<title>Black Friday Sale</title>
-<link>https://troz.net/post/2024/black_friday/</link>
-<pubDate>Thu, 28 Nov 2024 09:22:54 +1000</pubDate>
-      
-      <guid>https://troz.net/post/2024/black_friday/</guid>
-<description>&lt;p&gt;For Black Friday weekend 2024, &lt;a href=&#34;https://sarahreichelt.gumroad.com/l/oximx/4xfw8q6&#34; target=&#34;_blank&#34; &gt;macOS by Tutorials is on sale for 30% off&lt;/a&gt;
-.&lt;/p&gt;
-&lt;p&gt;&lt;style&gt;
-  img {
-    margin: 10px auto;
-    border: 0.5rem #dfe7f0 solid;
-    border-radius: 0.5rem;
-     
-  }
-
-  .dark-theme img {
-    margin: 10px auto;
-    border: 0.5rem #4a4d50 solid;
-    border-radius: 0.5rem;
-     
-  }
-
-  .social_footer img {
-    border: none;
-    box-shadow: none;
-  }
-&lt;/style&gt;
-
-&lt;style&gt;
-  img {
-    margin: 10px auto;
-  }
-&lt;/style&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://troz.net/books/macos_tutorials/&#34; &gt;&lt;img src=&#34;https://troz.net/images/2024/mos_cover_horizontal.png&#34; alt=&#34;Book cover&#34;&gt;&lt;/a&gt;
-&lt;/p&gt;
-&lt;p&gt;If you&amp;rsquo;re an iOS developer who wants to branch out into creating native macOS apps, this is the book for you!&lt;/p&gt;
-&lt;p&gt;If you&amp;rsquo;d like to check out the start of the book including the table of contents and the first chapter, you can read it online at &lt;a href=&#34;https://troz.net/books/mos_2.0.1_sample.html&#34; &gt;macOS by Tutorials Sample&lt;/a&gt;
-.&lt;/p&gt;
-&lt;p&gt;For anyone who previously bought the book from Kodeco, please &lt;a href=&#34;mailto:books@troz.net?subject=macOS%20by%20Tutorials%20Discount&#34; &gt;email me&lt;/a&gt;
- for a 50% discount code.&lt;/p&gt;</description>
-</item>
     
     <item>
 <title>Swift Format in Xcode</title>

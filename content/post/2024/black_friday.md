@@ -1,7 +1,7 @@
 ---
 title: "Black Friday Sale"
 date: 2024-11-28T09:22:54+10:00
-draft: false
+draft: true
 description: "macOS by Tutorials on sale"
 tags: ['mac', 'book', 'swift', 'swiftui', 'sale']
 ---

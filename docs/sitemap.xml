@@ -2,48 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://troz.net/post/2024/black_friday/</loc>
-    <lastmod>2024-11-28T09:22:54+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://troz.net/tags/book/</loc>
-    <lastmod>2024-11-28T09:22:54+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://troz.net/tags/mac/</loc>
-    <lastmod>2024-11-28T09:22:54+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://troz.net/post/</loc>
-    <lastmod>2024-11-28T09:22:54+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://troz.net/tags/sale/</loc>
-    <lastmod>2024-11-28T09:22:54+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://troz.net/tags/swift/</loc>
-    <lastmod>2024-11-28T09:22:54+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://troz.net/tags/swiftui/</loc>
-    <lastmod>2024-11-28T09:22:54+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://troz.net/tags/</loc>
     <lastmod>2024-11-28T09:22:54+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://troz.net/</loc>
     <lastmod>2024-11-28T09:22:54+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://troz.net/tags/swift/</loc>
+    <lastmod>2024-11-06T16:29:20+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -58,6 +28,11 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://troz.net/tags/swiftlint/</loc>
+    <lastmod>2024-11-06T16:29:20+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://troz.net/tags/</loc>
     <lastmod>2024-11-06T16:29:20+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -107,12 +82,27 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://troz.net/tags/swiftui/</loc>
+    <lastmod>2024-09-12T10:28:24+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://troz.net/tags/mac/</loc>
+    <lastmod>2024-08-22T17:21:54+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://troz.net/post/2024/swiftui-mac-2024/</loc>
     <lastmod>2024-08-22T17:21:54+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://troz.net/tags/asciidoc/</loc>
+    <lastmod>2024-08-06T11:29:44+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://troz.net/tags/book/</loc>
     <lastmod>2024-08-06T11:29:44+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

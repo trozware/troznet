@@ -7,14 +7,6 @@
     "feed_url" : "https://troz.net/feed.json",
     "items" : [
     {
-        "title" : "Black Friday Sale",
-        "date_published" : "2024-11-28T09:22:54+10:00",
-        "date_modified" : "2024-11-28T09:22:54+10:00",
-        "id" : "https://troz.net/post/2024/black_friday/",
-        "url" : "https://troz.net/post/2024/black_friday/",
-        "content_html" : "\u003cp\u003eFor Black Friday weekend 2024, \u003ca href=\"https://sarahreichelt.gumroad.com/l/oximx/4xfw8q6\" target=\"_blank\" \u003emacOS by Tutorials is on sale for 30% off\u003c/a\u003e\n.\u003c/p\u003e\n\u003cp\u003e\u003cstyle\u003e\n  img {\n    margin: 10px auto;\n    border: 0.5rem #dfe7f0 solid;\n    border-radius: 0.5rem;\n     \n  }\n\n  .dark-theme img {\n    margin: 10px auto;\n    border: 0.5rem #4a4d50 solid;\n    border-radius: 0.5rem;\n     \n  }\n\n  .social_footer img {\n    border: none;\n    box-shadow: none;\n  }\n\u003c/style\u003e\n\n\u003cstyle\u003e\n  img {\n    margin: 10px auto;\n  }\n\u003c/style\u003e\n\u003c/p\u003e\n\u003cp\u003e\u003ca href=\"/books/macos_tutorials/\" \u003e\u003cimg src=\"/images/2024/mos_cover_horizontal.png\" alt=\"Book cover\"\u003e\u003c/a\u003e\n\u003c/p\u003e\n\u003cp\u003eIf you\u0026rsquo;re an iOS developer who wants to branch out into creating native macOS apps, this is the book for you!\u003c/p\u003e\n\u003cp\u003eIf you\u0026rsquo;d like to check out the start of the book including the table of contents and the first chapter, you can read it online at \u003ca href=\"/books/mos_2.0.1_sample.html\" \u003emacOS by Tutorials Sample\u003c/a\u003e\n.\u003c/p\u003e\n\u003cp\u003eFor anyone who previously bought the book from Kodeco, please \u003ca href=\"mailto:books@troz.net?subject=macOS%20by%20Tutorials%20Discount\" \u003eemail me\u003c/a\u003e\n for a 50% discount code.\u003c/p\u003e"
-    },
-    {
         "title" : "Swift Format in Xcode",
         "date_published" : "2024-11-06T16:29:20+10:00",
         "date_modified" : "2024-11-06T16:29:20+10:00",
