@@ -54,6 +54,6 @@ Once you've written your app, you'll want to distribute it to others so they can
 [1]: https://www.kodeco.com/books/macos-by-tutorials
 [2]: https://sarahreichelt.gumroad.com/l/oximx
 [3]: mailto:books@troz.net?subject=macOS%20by%20Tutorials%20Discount
-[4]: /books/mos_2.0.1_sample.html
+[4]: /books/mos_sample.html
 [contact]: /contact/
 [kofi]: https://ko-fi.com/trozware
