@@ -5,11 +5,11 @@
     "image": "/images/mos_cover.png",
     "description": "If you're an iOS developer who wants to branch out into creating native macOS apps, this is the book for you!",
     "authors": "Sarah Reichelt",
-    "edition": "Edition 2.0.1",
-    "published": "Aug 21 2024",
+    "edition": "Edition 3.0",
+    "published": "Dec 23 2024",
     "publisher": "Gumroad",
     "purchase_link": "https://sarahreichelt.gumroad.com/l/oximx",
-    "requirements": "macOS 14 & Xcode 15"
+    "requirements": "macOS 15 & Xcode 16"
   },
   {
     "title": "macOS Apprentice",

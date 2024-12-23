@@ -1,7 +1,7 @@
 ---
 title: 'macOS by Tutorials'
 date: 2024-07-22T09:26:32+10:00
-lastmod: 2024-07-22T09:26:36+10:00
+lastmod: 2024-12-23T14:11:45+10:00
 url: /books/macos_tutorials/
 ---
 
@@ -11,17 +11,17 @@ The book is available for sale through Gumroad at [macOS by Tutorials][2].
 
 If you'd like to check out the start of the book including the table of contents and the first chapter, you can read it online at [macOS by Tutorials Sample][4].
 
-Version 2.0.1 is a minor update to address some formatting issues in the HTML and ePub versions. The content is exactly the same as in version 2.0 but for the HTML version, I have worked out how to make the table of contents into a sidebar, which works much better.
+Version 3.0 - released December 2024 - is fully updated to cover macOS 15 Sequoia & Xcode 16.
 
 ---
 
-In April 2022, Kodeco published the first edition of [macOS by Tutorials][1]. Nothing stays the same in the world of Apple development, so I started to plan an update after WWDC 2023. At around that time, Kodceo was going through a transformation from being like a library to being more of an educational institution. Their focus is now on multi-modal courses and they are no longer interested in publishing books.
+In April 2022, Kodeco published the first edition of [macOS by Tutorials][1]. Nothing stays the same in the world of Apple development, so I started to plan an update after WWDC 2023. At around that time, Kodceo was going through a transformation from being like a library to being more of an educational institution. Their focus was now on multi-modal courses and not on books. They have since reversed their stance on publishing, so you can expect to see more Kodeco books in the future.
 
-Kodeco agreed to transfer the rights of the macOS by Tutorials book to me, since it was out-of-catalog and since then, I have been working on an update which is almost ready for release. I had hoped to have it out before WWDC 2024, but real-life has a habit of getting in the way, and that was not possible.
+Kodeco agreed to transfer the rights of the macOS by Tutorials book to me, since it was out-of-catalog and since then, I have been working on an update which is almost ready for release. I had hoped to have it out before WWDC 2024, but real-life has a habit of getting in the way, and that was not possible, so version 2 was released in July 2024. In October 2024, Apple released macOS 15 Sequoia and Xcode 16. Version 3 of macOS by Tutorials covers changes made in those version of the operating system and development tool.
 
 ---
 
-Every project in this book has been updated to macOS 14 Sonoma and Xcode 15. They have also been tested using Xcode 16 beta 3.
+Every project in this book has been updated to macOS 15 Sequoia and Xcode 16.
 
 {{< img_border >}}
 {{< img_center >}}
