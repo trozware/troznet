@@ -2,8 +2,8 @@
 title: "The Mac Menubar and SwiftUI"
 date: 2025-02-17T17:16:34+10:00
 draft: false
-description: "Communications between the Mac menubar and a sWiftUI app are not always straight-forward. Here, I explore some of the possibilities."
-tags: ["macos", "swiftui", "menu"]
+description: "Communications between the Mac menubar and a SwiftUI app are not always straight-forward. Here, I explore some of the possibilities."
+tags: ["macos", "swift", "swiftui", "menu"]
 ---
 
 When you create a Mac app using SwiftUI, you get the standard Mac menubar by default. The `commands` modifier lets you customize the menu bar, either by adding, replacing or removing items and menus. You can even add some presets which give a consistent way to add groups of common items.

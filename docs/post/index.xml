@@ -6,10 +6,207 @@
     <description>Recent content in Posts on TrozWare</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>© 2012 - 2025 Sarah Reichelt</copyright>
-    <lastBuildDate>Mon, 23 Dec 2024 14:22:15 +1000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Feb 2025 17:16:34 +1000</lastBuildDate>
     
         <atom:link href="https://troz.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>The Mac Menubar and SwiftUI</title>
+<link>https://troz.net/post/2025/mac_menu_data/</link>
+<pubDate>Mon, 17 Feb 2025 17:16:34 +1000</pubDate>
+      
+      <guid>https://troz.net/post/2025/mac_menu_data/</guid>
+<description>&lt;p&gt;When you create a Mac app using SwiftUI, you get the standard Mac menubar by default. The &lt;code&gt;commands&lt;/code&gt; modifier lets you customize the menu bar, either by adding, replacing or removing items and menus. You can even add some presets which give a consistent way to add groups of common items.&lt;/p&gt;
+&lt;p&gt;The problem comes when you want to communicate back to the SwiftUI views from the menubar. How can you direct your menubar commands to the correct destination? AppKit uses the responder chain, so it effectively broadcasts any menubar message until something handles it. This might be an edit field, a view, a window or even the app itself. SwiftUI doesn&amp;rsquo;t work like this, but I&amp;rsquo;ve explored multiple possibilities for passing messages from the menubar to the active window.&lt;/p&gt;
+&lt;p&gt;My usual approach is to use &lt;code&gt;NotificationCenter&lt;/code&gt; to send messages. This takes a few steps to set up.&lt;/p&gt;
+&lt;h2 id=&#34;notificationcenter&#34;&gt;
+  NotificationCenter
+  &lt;a href=&#34;#notificationcenter&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Start by defining a name for your custom notification, like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;extension&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Notification&lt;/span&gt;.Name {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; menuSelected = Notification.Name(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;menuSelected&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then, in your menu item&amp;rsquo;s action, &lt;code&gt;post&lt;/code&gt; the notification like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;NotificationCenter.&lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt;.post(name: .menuSelected, object: &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Add an object if you want the notification to be more specific. This allows you to combine several menu items into a single notification name.&lt;/p&gt;
+&lt;p&gt;Now, you need to add a listener as a property of your SwiftUI view, receiving it on the main run loop so that UI updates are handled correctly:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; menuSelectedNotification = NotificationCenter.&lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .publisher(&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;: .menuSelected)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .receive(on: RunLoop.main)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally, add an &lt;code&gt;onReceive&lt;/code&gt; modifier to your view, with a closure to process the notification:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.onReceive(menuSelectedNotification) { notification &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;// process the notification, checking for the object if you added one&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; stringObject = notification.object &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt;? String {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// do something with the string&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// do something else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The main issue with this is that it broadcasts the message to all instances of the view, so if you have multiple windows open and displaying this view, they&amp;rsquo;ll all receive and process the notification. There are cases where this will be valid - maybe changing the theme of the complete app or setting something else which effects every open window. But mostly, you only want to send the message to the active window.&lt;/p&gt;
+&lt;p&gt;You can improve this by using the &lt;code&gt;appearsActive&lt;/code&gt; environment value to see if the current view is active. Truncated for ease of reading, &lt;code&gt;ContentView&lt;/code&gt; now looks like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ContentView&lt;/span&gt;: View {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  @Environment(&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\&lt;/span&gt;.appearsActive) &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; appearsActive
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; menuSelectedNotification = NotificationCenter.&lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .publisher(&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;: .menuSelected)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .receive(on: RunLoop.main)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some View {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// UI defined here&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .onReceive(menuSelectedNotification) { notification &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;guard&lt;/span&gt; appearsActive &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; { &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; stringObject = notification.object &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt;? String {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// process the new string&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;onReceive&lt;/code&gt; closure starts with a &lt;code&gt;guard&lt;/code&gt; to check that the view is active. If it&amp;rsquo;s not, the closure returns immediately.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: You may have used &lt;code&gt;controlActiveState&lt;/code&gt; for this in the past, but it has been deprecated in favor of &lt;code&gt;appearsActive&lt;/code&gt; which is easier to use as it&amp;rsquo;s a Boolean instead of an enum.&lt;/p&gt;
+&lt;p&gt;This looks like exactly what we need, but there&amp;rsquo;s a problem. If you merge multiple windows into tabs, the &lt;code&gt;appearsActive&lt;/code&gt; property will be the same for all the tabs in the window.&lt;/p&gt;
+&lt;p&gt;So basically, this only works if you disallow tabbing for your windows, so it&amp;rsquo;s not a complete solution.&lt;/p&gt;
+&lt;h2 id=&#34;failed-attempts&#34;&gt;
+  Failed Attempts
+  &lt;a href=&#34;#failed-attempts&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;My next attempt was to step into AppKit and have &lt;code&gt;NSApp&lt;/code&gt; send a selector through the responder chain. This looked like it should work, but I could never get it to, and it looked clunky&lt;/p&gt;
+&lt;p&gt;Looking though an Apple tutorial, it appears that they prefer to use &lt;code&gt;@FocusedBinding&lt;/code&gt; and &lt;code&gt;focusedValue&lt;/code&gt;. This worked in their sample app, but there was something different about my data structure that meant it never worked for me, even after extracting my data into a separate data type.&lt;/p&gt;
+&lt;p&gt;Then I came across &lt;code&gt;focusedSceneObject&lt;/code&gt;. This required me to create an &lt;code&gt;@ObservableObject&lt;/code&gt; data type, but then it worked perfectly, even in tabbed windows. But this is not viable going forward, as I have switched to using &lt;code&gt;Observation&lt;/code&gt;. However the docs did point me in the right direction.&lt;/p&gt;
+&lt;h2 id=&#34;success-at-last&#34;&gt;
+  Success at Last
+  &lt;a href=&#34;#success-at-last&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;After a bit of research and a &lt;em&gt;lot&lt;/em&gt; of testing, I finally came up with a complete solution, using &lt;code&gt;@FocusedBinding&lt;/code&gt; and &lt;code&gt;focusedSceneValue&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;First, you need a data object to handle your menu messages. This can be a &lt;code&gt;struct&lt;/code&gt; or an observable &lt;code&gt;class&lt;/code&gt;. My sample app has both in &lt;strong&gt;Symbol.swift&lt;/strong&gt; with one commented out, so you can test this. The data model has properties for an icon and a color and you can also have it choose a random icon and color. For convenience, it has two static arrays to provide the names and colors for the menus and pickers.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Symbol&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; name = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;globe&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; color = Color.blue
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;mutating&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;chooseRandomSymbolAndColor&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// choose random values&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Or as a class:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@Observable
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Symbol&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; name = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;globe&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; color = Color.blue
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;chooseRandomSymbolAndColor&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// choose random values&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Next, you need to extend &lt;code&gt;FocusedValues&lt;/code&gt; so it has a key to your data type. This has become a lot less verbose with the new &lt;code&gt;@Entry&lt;/code&gt; macro. The binding must be to an optional:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;extension&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;FocusedValues&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  @Entry &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; selectedSymbol: Binding&amp;lt;Symbol&amp;gt;?
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In your &lt;code&gt;ContentView&lt;/code&gt; (or wherever you&amp;rsquo;re using this property), set the data property as the &lt;code&gt;focusedSceneValue&lt;/code&gt; for this key:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ContentView&lt;/span&gt;: View {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  @State &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; symbol = Symbol()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some View {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    VStack {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#75715e&#34;&gt;// UI defined here&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .focusedSceneValue(&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\&lt;/span&gt;.selectedSymbol, &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;$&lt;/span&gt;symbol)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The last step is to use this in the menu (again, truncated for brevity):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@main
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MenuDataApp&lt;/span&gt;: App {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  @FocusedBinding(&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\&lt;/span&gt;.selectedSymbol) &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; selectedSymbol
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some Scene {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    WindowGroup {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      ContentView()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .commands {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      CommandMenu(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Symbol&amp;#34;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Menu(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Symbol&amp;#34;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          ForEach(Symbol.names, id: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\&lt;/span&gt;.&lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;) { name &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            Button(name == selectedSymbol?.name ? &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;✔︎ &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;\(&lt;/span&gt;name&lt;span style=&#34;color:#e6db74&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; : name) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;              selectedSymbol?.name = name
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        .disabled(selectedSymbol == &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Button(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Random&amp;#34;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          selectedSymbol?.chooseRandomSymbolAndColor()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        .keyboardShortcut(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;r&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        .disabled(selectedSymbol == &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The important features here are the &lt;code&gt;@FocusedBinding&lt;/code&gt; property at the top and the fact that the menu items use optional chaining to access this property if it exists. If you have no open windows, this will be nil, otherwise it will point to the instance of the data property in the active window.&lt;/p&gt;
+&lt;p&gt;To improve the user experience, I added a &lt;code&gt;disabled&lt;/code&gt; modifier to the menus and the button so that the menus are not active unless there&amp;rsquo;s a valid &lt;code&gt;selectedSymbol&lt;/code&gt;. Unfortunately, you can&amp;rsquo;t disable an entire &lt;code&gt;CommandMenu&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The wonderful part of this is that it works with windows and tabbed windows. Hurray!&lt;/p&gt;
+&lt;h3 id=&#34;showing-the-current-selections-in-the-menu&#34;&gt;
+  Showing the Current Selections in the Menu
+  &lt;a href=&#34;#showing-the-current-selections-in-the-menu&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;The ugly part is that the menu item indicating the current choice is set to show a check mark manually, instead of using the standard menu checkmark. But you can&amp;rsquo;t bind a &lt;code&gt;@FocusedBinding&lt;/code&gt; property to a &lt;code&gt;Picker&lt;/code&gt; as it&amp;rsquo;s selection.&lt;/p&gt;
+&lt;p&gt;My solution was to use a &lt;code&gt;Picker&lt;/code&gt; with a local state property. Then I track for changes to the &lt;code&gt;@FocusedBinding&lt;/code&gt; property and to the local property. When either changes, the other is set to match, remembering that the &lt;code&gt;@FocusedBinding&lt;/code&gt; property may be nil:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@main
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MenuDataApp&lt;/span&gt;: App {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  @FocusedBinding(&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\&lt;/span&gt;.selectedSymbol) &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; selectedSymbol
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  @State &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; symbolName = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;globe&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some Scene {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    WindowGroup {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      ContentView()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        .onChange(of: selectedSymbol?.name) { &lt;span style=&#34;color:#66d9ef&#34;&gt;_&lt;/span&gt;, newValue &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          symbolName = newValue ?? &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;globe&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        .onChange(of: symbolName) { &lt;span style=&#34;color:#66d9ef&#34;&gt;_&lt;/span&gt;, newValue &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          selectedSymbol?.name = newValue
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .commands {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      CommandMenu(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Symbol&amp;#34;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Picker(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Symbol&amp;#34;&lt;/span&gt;, selection: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;$&lt;/span&gt;symbolName) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          ForEach(Symbol.names, id: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\&lt;/span&gt;.&lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;) { name &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            Text(name)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;              .tag(name)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It was important to add the &lt;code&gt;onChange&lt;/code&gt; modifiers to the &lt;code&gt;ContentView&lt;/code&gt;. I tried them on the &lt;code&gt;Picker&lt;/code&gt; first, but they only got updated as the menu opened.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troz.net/images/2025/mac_menu_data.png&#34; alt=&#34;Final app&#34;&gt;&lt;/p&gt;
+&lt;p&gt;So this is my new technique for communications between the menubar and SwiftUI. It takes a bit of setting up, but then it works really well. For a more complex app, I might need more bindings, or I could merge the relevant data objects in a larger struct or class.&lt;/p&gt;
+&lt;p&gt;Going back to Apple&amp;rsquo;s example which used &lt;code&gt;@FocusedBinding&lt;/code&gt; and &lt;code&gt;focusedValue&lt;/code&gt;, I think this worked because they had a &lt;code&gt;NavigationSplitView&lt;/code&gt; and the focused value was the selected item, so there was an object to focus on. From the Apple&amp;rsquo;s docs for &lt;code&gt;focusedSceneValue&lt;/code&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Use this method instead of focusedValue(&lt;em&gt;:&lt;/em&gt;:) for values that must be visible regardless of where focus is located in the active scene.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is what solved it for me because there was no real focus element in my view. I was able to go back to the Apple sample app and get it working using  &lt;code&gt;focusedSceneValue&lt;/code&gt; instead of &lt;code&gt;focusedValue&lt;/code&gt;, so I think this is a solid technique.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m sure there are other ways to do this, so if you have an alternative method or can suggest any improvements to my technique, I&amp;rsquo;d love to hear about it.&lt;/p&gt;
+&lt;h2 id=&#34;the-code&#34;&gt;
+  The Code
+  &lt;a href=&#34;#the-code&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The sample project is available &lt;a href=&#34;https://github.com/trozware/MacMenuComms&#34; target=&#34;_blank&#34; &gt;on GitHub&lt;/a&gt;
+. Check out the &lt;code&gt;main&lt;/code&gt; branch for the final version of the code, but explore the other branches to see my experiments along the way.&lt;/p&gt;
+&lt;p&gt;Here they are, in order of progress:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;basic_ui&lt;/strong&gt;: The starter version of the app with the UI set up for selecting an icon and a color.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;menu&lt;/strong&gt;: Menus added but not working.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;notifications&lt;/strong&gt;: Using &lt;code&gt;NotificationCenter&lt;/code&gt; to send menu messages.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;focusedSceneObject&lt;/strong&gt;: Works but only with &lt;code&gt;@ObservableObject&lt;/code&gt; data types.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;main&lt;/strong&gt;: The technique I&amp;rsquo;ve settled on with &lt;code&gt;@FocusedBinding&lt;/code&gt; and &lt;code&gt;focusedSceneValue&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can contact me using one of the links below or through the &lt;a href=&#34;https://troz.net/contact/&#34; &gt;Contact&lt;/a&gt;
+ page. And if you found this article useful, please &lt;a href=&#34;https://ko-fi.com/trozware&#34; target=&#34;_blank&#34; &gt;buy me a coffee&lt;/a&gt;
+.&lt;/p&gt;</description>
+</item>
     
     <item>
 <title>macOS by Tutorials 3.0</title>
