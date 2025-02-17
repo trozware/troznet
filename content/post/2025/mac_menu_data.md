@@ -1,7 +1,7 @@
 ---
 title: "The Mac Menubar and SwiftUI"
-date: 2025-02-16T15:10:38+10:00
-draft: true
+date: 2025-02-17T17:16:34+10:00
+draft: false
 description: "Communications between the Mac menubar and a sWiftUI app are not always straight-forward. Here, I explore some of the possibilities."
 tags: ["macos", "swiftui", "menu"]
 ---
@@ -240,7 +240,7 @@ I'm sure there are other ways to do this, so if you have an alternative method o
 
 ## The Code
 
-The sample project is available [on GitHub](https://github.com/trozware/MenuData). Check out the `main` branch for the final version of the code, but explore the other branches to see my experiments along the way.
+The sample project is available [on GitHub](https://github.com/trozware/MacMenuComms). Check out the `main` branch for the final version of the code, but explore the other branches to see my experiments along the way.
 
 Here they are, in order of progress:
 
