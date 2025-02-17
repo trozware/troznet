@@ -9,10 +9,10 @@ theme = "hello-friend"
 rssLimit = 10
 
 hasCJKLanguage = false     # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
-paginate = 10                                              # （可选）首页显示的文章条目数量，默认为10
+# paginate = 10                                              # （可选）首页显示的文章条目数量，默认为10
 disqusShortname = ""      # disqus_shortname
 googleAnalytics = ""      # UA-XXXXXXXX-X
-copyright = "© 2012 - 2024 Sarah Reichelt"            # default: author.name ↓        # 默认为下面配置的author.name ↓
+copyright = "© 2012 - 2025 Sarah Reichelt"            # default: author.name ↓        # 默认为下面配置的author.name ↓
 
 publishDir = "docs"
 
@@ -146,3 +146,10 @@ publishDir = "docs"
  isPlainText = true
  isHTML = false
  baseName = "feed"
+
+[pagination]
+  disableAliases = false
+  pagerSize = 10
+  path = 'page'
+
+ignoreLogs = ['warning-goldmark-raw-html']
