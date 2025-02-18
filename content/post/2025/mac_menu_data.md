@@ -192,39 +192,30 @@ The wonderful part of this is that it works with windows and tabbed windows. Hur
 
 The ugly part is that the menu item indicating the current choice is set to show a check mark manually, instead of using the standard menu checkmark. But you can't bind a `@FocusedBinding` property to a `Picker` as it's selection.
 
-My solution was to use a `Picker` with a local state property. Then I track for changes to the `@FocusedBinding` property and to the local property. When either changes, the other is set to match, remembering that the `@FocusedBinding` property may be nil:
+~~My solution was to use a `Picker` with a local state property. Then I track for changes to the `@FocusedBinding` property and to the local property. When either changes, the other is set to match, remembering that the `@FocusedBinding` property may be nil:
+It was important to add the `onChange` modifiers to the `ContentView`. I tried them on the `Picker` first, but they only got updated as the menu opened.~~
+
+I've updated the project, thanks to [Malcolm Hall](https://github.com/malhal) who added this comment:
+
+> onChange is just for external actions. For linking states its Binding and it has an init that handles conversion from optional, that allows you to access the keypath binding to the symbol's colour and name you were missing.
+
+Now, the picker code looks like this (I omitted the color picker to make for a shorter and more readable code block):
 
 ```swift
-@main
-struct MenuDataApp: App {
-  @FocusedBinding(\.selectedSymbol) var selectedSymbol
-  @State private var symbolName = "globe"
-
-  var body: some Scene {
-    WindowGroup {
-      ContentView()
-        .onChange(of: selectedSymbol?.name) { _, newValue in
-          symbolName = newValue ?? "globe"
-        }
-        .onChange(of: symbolName) { _, newValue in
-          selectedSymbol?.name = newValue
-        }
-    }
-    .commands {
-      CommandMenu("Symbol") {
-        Picker("Symbol", selection: $symbolName) {
-          ForEach(Symbol.names, id: \.self) { name in
-            Text(name)
-              .tag(name)
-          }
-        }
-      }
+if let selectedSymbol = Binding($selectedSymbol) {
+  Picker("Symbol", selection: selectedSymbol.name) {
+    ForEach(Symbol.names, id: \.self) { name in
+      Text(name)
+        .tag(name)
     }
   }
+  .pickerStyle(.inline)
+} else {
+  Text("Symbol")
 }
 ```
 
-It was important to add the `onChange` modifiers to the `ContentView`. I tried them on the `Picker` first, but they only got updated as the menu opened.
+I also made the pickers inline for better visibility. With this version, I really like the way the menus use a `Text` view to display the header with no possible selections, when there's no `selectedSymbol`.
 
 ![Final app](/images/2025/mac_menu_data.png)
 

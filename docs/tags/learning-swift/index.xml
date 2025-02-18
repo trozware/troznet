@@ -152,35 +152,26 @@
   &lt;a href=&#34;#showing-the-current-selections-in-the-menu&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;The ugly part is that the menu item indicating the current choice is set to show a check mark manually, instead of using the standard menu checkmark. But you can&amp;rsquo;t bind a &lt;code&gt;@FocusedBinding&lt;/code&gt; property to a &lt;code&gt;Picker&lt;/code&gt; as it&amp;rsquo;s selection.&lt;/p&gt;
-&lt;p&gt;My solution was to use a &lt;code&gt;Picker&lt;/code&gt; with a local state property. Then I track for changes to the &lt;code&gt;@FocusedBinding&lt;/code&gt; property and to the local property. When either changes, the other is set to match, remembering that the &lt;code&gt;@FocusedBinding&lt;/code&gt; property may be nil:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@main
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MenuDataApp&lt;/span&gt;: App {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  @FocusedBinding(&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\&lt;/span&gt;.selectedSymbol) &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; selectedSymbol
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  @State &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; symbolName = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;globe&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some Scene {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    WindowGroup {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      ContentView()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        .onChange(of: selectedSymbol?.name) { &lt;span style=&#34;color:#66d9ef&#34;&gt;_&lt;/span&gt;, newValue &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          symbolName = newValue ?? &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;globe&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        .onChange(of: symbolName) { &lt;span style=&#34;color:#66d9ef&#34;&gt;_&lt;/span&gt;, newValue &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          selectedSymbol?.name = newValue
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .commands {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      CommandMenu(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Symbol&amp;#34;&lt;/span&gt;) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Picker(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Symbol&amp;#34;&lt;/span&gt;, selection: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;$&lt;/span&gt;symbolName) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          ForEach(Symbol.names, id: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\&lt;/span&gt;.&lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;) { name &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            Text(name)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;              .tag(name)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      }
+&lt;p&gt;&lt;del&gt;My solution was to use a &lt;code&gt;Picker&lt;/code&gt; with a local state property. Then I track for changes to the &lt;code&gt;@FocusedBinding&lt;/code&gt; property and to the local property. When either changes, the other is set to match, remembering that the &lt;code&gt;@FocusedBinding&lt;/code&gt; property may be nil:
+It was important to add the &lt;code&gt;onChange&lt;/code&gt; modifiers to the &lt;code&gt;ContentView&lt;/code&gt;. I tried them on the &lt;code&gt;Picker&lt;/code&gt; first, but they only got updated as the menu opened.&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve updated the project, thanks to &lt;a href=&#34;https://github.com/malhal&#34; target=&#34;_blank&#34; &gt;Malcolm Hall&lt;/a&gt;
+ who added this comment:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;onChange is just for external actions. For linking states its Binding and it has an init that handles conversion from optional, that allows you to access the keypath binding to the symbol&amp;rsquo;s colour and name you were missing.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Now, the picker code looks like this (I omitted the color picker to make for a shorter and more readable code block):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; selectedSymbol = Binding(&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;$&lt;/span&gt;selectedSymbol) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Picker(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Symbol&amp;#34;&lt;/span&gt;, selection: selectedSymbol.name) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ForEach(Symbol.names, id: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\&lt;/span&gt;.&lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;) { name &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      Text(name)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        .tag(name)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .pickerStyle(.inline)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Symbol&amp;#34;&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It was important to add the &lt;code&gt;onChange&lt;/code&gt; modifiers to the &lt;code&gt;ContentView&lt;/code&gt;. I tried them on the &lt;code&gt;Picker&lt;/code&gt; first, but they only got updated as the menu opened.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I also made the pickers inline for better visibility. With this version, I really like the way the menus use a &lt;code&gt;Text&lt;/code&gt; view to display the header with no possible selections, when there&amp;rsquo;s no &lt;code&gt;selectedSymbol&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://troz.net/images/2025/mac_menu_data.png&#34; alt=&#34;Final app&#34;&gt;&lt;/p&gt;
 &lt;p&gt;So this is my new technique for communications between the menubar and SwiftUI. It takes a bit of setting up, but then it works really well. For a more complex app, I might need more bindings, or I could merge the relevant data objects in a larger struct or class.&lt;/p&gt;
 &lt;p&gt;Going back to Apple&amp;rsquo;s example which used &lt;code&gt;@FocusedBinding&lt;/code&gt; and &lt;code&gt;focusedValue&lt;/code&gt;, I think this worked because they had a &lt;code&gt;NavigationSplitView&lt;/code&gt; and the focused value was the selected item, so there was an object to focus on. From the Apple&amp;rsquo;s docs for &lt;code&gt;focusedSceneValue&lt;/code&gt;:&lt;/p&gt;

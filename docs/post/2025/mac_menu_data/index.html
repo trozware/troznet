@@ -186,7 +186,7 @@ as="font" crossorigin="">
     <span class="post-date">
       17 Feb 2025
     </span>
-    <span class="more-meta">- 1594 words, </span>
+    <span class="more-meta">- 1660 words, </span>
     <span class="more-meta"> 8 minute read</span>
   </div>
 
@@ -343,35 +343,26 @@ as="font" crossorigin="">
   <a href="#showing-the-current-selections-in-the-menu" class="h-anchor" aria-hidden="true">#</a>
 </h3>
 <p>The ugly part is that the menu item indicating the current choice is set to show a check mark manually, instead of using the standard menu checkmark. But you can&rsquo;t bind a <code>@FocusedBinding</code> property to a <code>Picker</code> as it&rsquo;s selection.</p>
-<p>My solution was to use a <code>Picker</code> with a local state property. Then I track for changes to the <code>@FocusedBinding</code> property and to the local property. When either changes, the other is set to match, remembering that the <code>@FocusedBinding</code> property may be nil:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>@main
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">MenuDataApp</span>: App {
-</span></span><span style="display:flex;"><span>  @FocusedBinding(<span style="color:#960050;background-color:#1e0010">\</span>.selectedSymbol) <span style="color:#66d9ef">var</span> selectedSymbol
-</span></span><span style="display:flex;"><span>  @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> symbolName = <span style="color:#e6db74">&#34;globe&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> body: some Scene {
-</span></span><span style="display:flex;"><span>    WindowGroup {
-</span></span><span style="display:flex;"><span>      ContentView()
-</span></span><span style="display:flex;"><span>        .onChange(of: selectedSymbol?.name) { <span style="color:#66d9ef">_</span>, newValue <span style="color:#66d9ef">in</span>
-</span></span><span style="display:flex;"><span>          symbolName = newValue ?? <span style="color:#e6db74">&#34;globe&#34;</span>
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        .onChange(of: symbolName) { <span style="color:#66d9ef">_</span>, newValue <span style="color:#66d9ef">in</span>
-</span></span><span style="display:flex;"><span>          selectedSymbol?.name = newValue
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    .commands {
-</span></span><span style="display:flex;"><span>      CommandMenu(<span style="color:#e6db74">&#34;Symbol&#34;</span>) {
-</span></span><span style="display:flex;"><span>        Picker(<span style="color:#e6db74">&#34;Symbol&#34;</span>, selection: <span style="color:#960050;background-color:#1e0010">$</span>symbolName) {
-</span></span><span style="display:flex;"><span>          ForEach(Symbol.names, id: <span style="color:#960050;background-color:#1e0010">\</span>.<span style="color:#66d9ef">self</span>) { name <span style="color:#66d9ef">in</span>
-</span></span><span style="display:flex;"><span>            Text(name)
-</span></span><span style="display:flex;"><span>              .tag(name)
-</span></span><span style="display:flex;"><span>          }
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>      }
+<p><del>My solution was to use a <code>Picker</code> with a local state property. Then I track for changes to the <code>@FocusedBinding</code> property and to the local property. When either changes, the other is set to match, remembering that the <code>@FocusedBinding</code> property may be nil:
+It was important to add the <code>onChange</code> modifiers to the <code>ContentView</code>. I tried them on the <code>Picker</code> first, but they only got updated as the menu opened.</del></p>
+<p>I&rsquo;ve updated the project, thanks to <a href="https://github.com/malhal" target="_blank" >Malcolm Hall</a>
+ who added this comment:</p>
+<blockquote>
+<p>onChange is just for external actions. For linking states its Binding and it has an init that handles conversion from optional, that allows you to access the keypath binding to the symbol&rsquo;s colour and name you were missing.</p>
+</blockquote>
+<p>Now, the picker code looks like this (I omitted the color picker to make for a shorter and more readable code block):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> selectedSymbol = Binding(<span style="color:#960050;background-color:#1e0010">$</span>selectedSymbol) {
+</span></span><span style="display:flex;"><span>  Picker(<span style="color:#e6db74">&#34;Symbol&#34;</span>, selection: selectedSymbol.name) {
+</span></span><span style="display:flex;"><span>    ForEach(Symbol.names, id: <span style="color:#960050;background-color:#1e0010">\</span>.<span style="color:#66d9ef">self</span>) { name <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>      Text(name)
+</span></span><span style="display:flex;"><span>        .tag(name)
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  .pickerStyle(.inline)
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>  Text(<span style="color:#e6db74">&#34;Symbol&#34;</span>)
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>It was important to add the <code>onChange</code> modifiers to the <code>ContentView</code>. I tried them on the <code>Picker</code> first, but they only got updated as the menu opened.</p>
+</span></span></code></pre></div><p>I also made the pickers inline for better visibility. With this version, I really like the way the menus use a <code>Text</code> view to display the header with no possible selections, when there&rsquo;s no <code>selectedSymbol</code>.</p>
 <p><img src="/images/2025/mac_menu_data.png" alt="Final app"></p>
 <p>So this is my new technique for communications between the menubar and SwiftUI. It takes a bit of setting up, but then it works really well. For a more complex app, I might need more bindings, or I could merge the relevant data objects in a larger struct or class.</p>
 <p>Going back to Apple&rsquo;s example which used <code>@FocusedBinding</code> and <code>focusedValue</code>, I think this worked because they had a <code>NavigationSplitView</code> and the focused value was the selected item, so there was an object to focus on. From the Apple&rsquo;s docs for <code>focusedSceneValue</code>:</p>
